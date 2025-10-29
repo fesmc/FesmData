@@ -19,11 +19,12 @@ https://www.nature.com/articles/s41467-019-11601-2
 
 1. Download the data to a directory.
 2. Modify map_batchelor.jl to use that source directory. Adjust resolution of output NetCDF file.
-3. Run the script.
+3. Run the script. This will produce the NetCDF file:
 
-This will produce the NetCDF file:
+        Batchelor2019_ice_masks.nc
 
-Batchelor2019_ice_masks.nc
+    which is on a standard lon-lat grid (e.g. 0.5deg). This can be used as an input dataset.
+4. Optionally run cdo remapping script to generate dataset on a particular domain+grid.
 
 ## Notes
 
