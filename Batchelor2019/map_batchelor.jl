@@ -221,6 +221,10 @@ function gen_grid_raster(grid_name_tgt)
     return r, gd
 end
 
+# Generate a raster object matching our target grid,
+# and load a grid description file. Note this should be created
+# externally before calling the next function.
+
 rg, gd = gen_grid_raster("NH-32KM")
 
 # Define new NetCDF dataset
