@@ -10,10 +10,10 @@ Batchelor et al. (2019) produced ice-coverage masks
 for the Northern Hemisphere for various paleo time slices.
 These are originally provided in shapefiles here:
 
-https://osf.io/7jen3/
+[https://osf.io/7jen3/](https://osf.io/7jen3/)
 
 Original reference:
-https://www.nature.com/articles/s41467-019-11601-2
+[https://www.nature.com/articles/s41467-019-11601-2](https://www.nature.com/articles/s41467-019-11601-2)
 
 ## Processing steps
 
