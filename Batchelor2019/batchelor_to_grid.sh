@@ -15,4 +15,4 @@ cdo gencon,../maps/grid_${grid_name_tgt}.txt -setgrid,grid_${grid_name_src}.txt 
 
 # Perform remapping
 nc_out=${grid_name_tgt}_${nc_src}
-cdo remap,grid_${grid_name_tgt}.txt,scrip-con_${grid_name_src}_${grid_name_tgt}.nc ${nc_src} ${nc_out}
+cdo remap,../maps/grid_${grid_name_tgt}.txt,scrip-con_${grid_name_src}_${grid_name_tgt}.nc ${nc_src} ${nc_out}
