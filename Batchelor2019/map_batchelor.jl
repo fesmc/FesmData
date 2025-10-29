@@ -96,9 +96,8 @@ begin
     
 end
 
+# Update fields in new dataset file
 begin
-    
-    # 
     ds = NCDataset("Batchelor2019_ice_masks.nc", "a")
     
     # Update output dataset for each time slice

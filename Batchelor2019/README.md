@@ -18,13 +18,24 @@ https://www.nature.com/articles/s41467-019-11601-2
 ## Processing steps
 
 1. Download the data to a directory.
-2. Modify map_batchelor.jl to use that source directory. Adjust resolution of output NetCDF file.
+2. Modify map_batchelor.jl to use that source directory. Adjust resolution of output NetCDF file(s).
 3. Run the script. This will produce the NetCDF file:
 
         Batchelor2019_ice_masks.nc
 
     which is on a standard lon-lat grid (e.g. 0.5deg). This can be used as an input dataset.
-4. Optionally run cdo remapping script to generate dataset on a particular domain+grid.
+
+Then if an additional dataset is desired on a projected grid:
+
+1. Generate grid description file from file created above by running:
+
+        ```
+        ./define_latlon_grid.sh
+        ```
+
+2. Run the second part of map_batchelor.jl that relates to generating a projected dataset, like:
+
+        NH-32KM_Batchelor2019_ice_masks.nc
 
 ## Notes
 
