@@ -12,7 +12,3 @@ The data itself most often should not be stored in this repository itself. In fa
 | Key | Description | Ref(s) |
 |-----|-------------|--------|
 Batchelor2019 | Northern Hemisphere ice extent masks | Batchelor et al. (2019) |
-
-## Instructions
-
-E
