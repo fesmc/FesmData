@@ -133,6 +133,9 @@ end
 # Now the lonlat NetCDF dataset has been written.
 # Use code below to map to a given domain+grid
 
+"""
+Read and parse a cdo derived (cdo griddes) grid description file.
+"""
 function read_cdo_griddes(filename)
 
     grid_info = Dict{String, Any}()
@@ -202,6 +205,10 @@ function read_cdo_griddes(filename)
     return out
 end
 
+"""
+Generate a raster object that is consistent with an 
+available cdo griddes grid description file.
+"""
 function gen_grid_raster(grid_name_tgt)
 
     gd = read_cdo_griddes("../maps/grid_$(grid_name_tgt).txt")
@@ -212,10 +219,10 @@ function gen_grid_raster(grid_name_tgt)
     r = Rasters.Raster(zeros(length(x), length(y)); dims=(X(x), Y(y)))
     r = Rasters.setcrs(r, crs)
 
-    return r
+    return r, gd
 end
 
-rg = gen_grid_raster("NH-32KM")
+rg, gd = gen_grid_raster("NH-32KM")
 
 # Define new NetCDF dataset
 # Initialize NCDataset
@@ -226,20 +233,36 @@ begin
     # Define reference information
     ds.attrib["source"] = "Batchelor et al. (2019) https://www.nature.com/articles/s41467-019-11601-2"
 
+    # Define crs
+    crsvar = defVar(ds, "crs", Int32, () )
+    proj_keys = [
+        "grid_mapping", 
+        "grid_mapping_name",
+        "straight_vertical_longitude_from_pole",
+        "latitude_of_projection_origin",
+        "standard_parallel",
+        "false_easting",
+        "false_northing",
+        "semi_major_axis",
+        "inverse_flattening"]
+    for key in proj_keys
+        crsvar.attrib[key] = gd[key]
+    end
+
     nx, ny = size(rg)
     defDim(ds, "x", nx)
     defDim(ds, "y", ny)
     defDim(ds, "time", nt)
 
-    lonvar = defVar(ds, "x", Float64, ("x",))
-    lonvar.attrib["standard_name"] = "x"
-    lonvar.attrib["units"] = "km"
-    lonvar[:] = x
+    xvar = defVar(ds, "x", Float64, ("x",))
+    xvar.attrib["standard_name"] = "projection_x_coordinate"
+    xvar.attrib["units"] = "km"
+    xvar[:] = x
     
-    latvar = defVar(ds, "y", Float64, ("y",))
-    lonvar.attrib["standard_name"] = "y"
-    lonvar.attrib["units"] = "km"
-    latvar[:] = y
+    yvar = defVar(ds, "y", Float64, ("y",))
+    yvar.attrib["standard_name"] = "projection_y_coordinate"
+    yvar.attrib["units"] = "km"
+    yvar[:] = y
     
     timevar = defVar(ds, "time", Float64, ("time",))
     timevar[:] = time
@@ -248,9 +271,9 @@ begin
     timelabelvar[:] = time_label
 
     maskvar = defVar(ds, "mask", Int8, ("x","y","time"))
-    maskvar[:,:,1] = rg
-
     maskvar.attrib["long_name"] = " Ice mask (1=ice,0=no ice)"
+    maskvar.attrib["grid_mapping"] = "crs"
+    maskvar[:,:,1] = rg
 
     close(ds)
 
@@ -258,23 +281,28 @@ begin
     
 end
 
-ds = NCDataset("Batchelor2019_ice_masks.nc")
-nt = length(ds["time"])
+# Open original dataset and our target grid dataset,
+# map variable to target grid and write to file.
 
-dsg = NCDataset("$(grid_name_tgt)_Batchelor2019_ice_masks.nc", "a")
+begin
+    ds = NCDataset("Batchelor2019_ice_masks.nc")
+    nt = length(ds["time"])
 
-# Redefine corresponding lon/lat vectors here, so that they are "evenly spaced"
-# (when reading from nc file, apparently interpreted as not evenly spaced)
-lon = -180:0.5:180
-lat = 0:0.5:90
+    dsg = NCDataset("$(grid_name_tgt)_Batchelor2019_ice_masks.nc", "a")
 
-for k in 1:nt
-    # Create the raster: lon/lat
-    r = Rasters.Raster(ds["mask"][:,:,k]; dims=(X(lon), Y(lat)))
-    r = Rasters.setcrs(r, EPSG(4326))
-    maskg = Rasters.resample(r; to=rg, method=:mode)
-    dsg["mask"][:,:,k] = maskg
+    # Redefine corresponding lon/lat vectors here, so that they are "evenly spaced"
+    # (when reading from nc file, apparently interpreted as not evenly spaced)
+    lon = -180:0.5:180
+    lat = 0:0.5:90
+
+    for k in 1:nt
+        # Create the raster: lon/lat
+        r = Rasters.Raster(ds["mask"][:,:,k]; dims=(X(lon), Y(lat)))
+        r = Rasters.setcrs(r, EPSG(4326))
+        maskg = Rasters.resample(r; to=rg, method=:mode)
+        dsg["mask"][:,:,k] = maskg
+    end
+
+    close(ds)
+    close(dsg)
 end
-
-close(ds)
-close(dsg)
