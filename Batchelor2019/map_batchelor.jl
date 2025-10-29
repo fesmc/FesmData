@@ -94,7 +94,7 @@ begin
         
         # Read shapefile and convert to raster grid
         fldr_str = string(time_label[k])
-        dir = "../data/Batchelor2019_NHextent/$(fldr_str)/hypothesised ice-sheet reconstructions/"
+        dir = "Batchelor2019_NHextent/$(fldr_str)/hypothesised ice-sheet reconstructions/"
         filename = filter(f -> endswith(f, "_best_estimate.shp"), readdir(dir))[1]
         path_now = joinpath(dir,filename)
         shp = GeoDataFrames.read(path_now)
