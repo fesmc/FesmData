@@ -8,8 +8,6 @@ using GeoFormatTypes
 using Rasters
 using NCDatasets
 
-
-
 # 1. Output grid definition
 begin
     # Define coordinate ranges
