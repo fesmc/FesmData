@@ -1,4 +1,3 @@
-cd(@__DIR__)
 using NCDatasets
 using Proj
 using GeographicLib
@@ -147,7 +146,7 @@ function read_cdo_grid_file(filepath::String,grid_name::String,domain::String)
                "+lat_ts=$(grid_info["standard_parallel"]) " *
                "+lon_0=$(grid_info["straight_vertical_longitude_from_pole"]) " *
                "+k=1 +x_0=$(grid_info["false_easting"] * 1000) +y_0=$(grid_info["false_northing"] * 1000) " * # Convert to meters
-               "+a=$(grid_info["semi_major_axis"]) +rf=$(grid_info["inverse_flattening"]) +units=m +no_defs" # Units set to meters
+               "+a=$(grid_info["semi_major_axis"]) +rf=$(grid_info["inverse_flattening"]) +units=$(grid_info["xunits"]) +datum=WGS84" # Units set to meters
 
     # Add domain and grid_name too
     grid_info["domain"] = domain
@@ -198,7 +197,8 @@ function proj_to_cf(proj::Dict)
         "+x_0"    => "false_easting",
         "+y_0"    => "false_northing",
         "+a"      => "semi_major_axis",
-        "+rf"     => "inverse_flattening"
+        "+rf"     => "inverse_flattening",
+        "+units"  => "units"
     )
 
     # Build output dictionary
@@ -395,7 +395,7 @@ end
 function write_2d_variable(
     filename::String,
     varname::String,
-    data::AbstractMatrix;
+    data::AbstractMatrix{Any};
     xdim::String = "xc",
     ydim::String = "yc",
     units::String = "",
