@@ -24,7 +24,8 @@ In the past, we used the `gridding` (https://github.com/alex-robinson/gridding)[
 
 | Category | Key | Description | Ref(s) |
 |----------|-----|-------------|--------|
-| masks    | regions                  | Ice relevant regions                 | Robinson et al.  - no ref |
-| topo     | Batchelor2019_NHIceMasks | Northern Hemisphere ice extent masks | Batchelor et al. (2019)   |
-| topo     | Morlighem2017_BedMachine | Bedmachine ice topography data       | Morlighem et al. (2017)   |
-| topo     | RTOPO2                   | RTopo2 global topography data        | Schaeffer et al. (2019)   |
+| masks    | regions                  | Ice relevant regions                  | Robinson et al.  - no ref      |
+| topo     | Batchelor2019_NHIceMasks | Northern Hemisphere ice extent masks  | Batchelor et al. (2019)        |
+| topo     | Morlighem2017_BedMachine | Bedmachine ice topography data        | Morlighem et al. (2017)        |
+| topo     | RTOPO2                   | RTopo2 global topography data         | Schaeffer et al. (2019)        |
+| topo     | GEBCO2025                | GEBCO 2025 global bath. and topo data | GEBCO Compilation Group (2025) |

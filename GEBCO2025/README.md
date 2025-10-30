@@ -1,5 +1,8 @@
 # GEBCO2025 Bathymetry and topography
 
+Source: https://www.gebco.net/data-products-gridded-bathymetry-data/gebco2025-grid
+Citable as: GEBCO Compilation Group (2025) GEBCO 2025 Grid (doi:10.5285/37c52e96-24ea-67ce-e063-7086abc05f29)
+
 
 
 ## Steps
