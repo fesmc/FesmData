@@ -18,7 +18,7 @@ Eventually we may include a `remapping` folder dedicated to taking processed dat
 
 ## Alternative and past approaches
 
-In the past, we used the `gridding` (https://github.com/alex-robinson/gridding)[https://github.com/alex-robinson/gridding] program to handle remapping (and preprocessing) of a wide variety of datasets that were relevant for ice-sheet modeling. This was how the original `ice_data` repository of gridded datasets was populated. It worked well, but was difficult to modify for new datasets, since it is entirely in Fortran, and requires configuration and compilation. For this reason, remapping via conservative interpolation using `cdo` became the favored approach for individual datasets. What was not included then was the preprocessing steps needed before applying interpolation. Hopefully this repository solves that problem.
+In the past, we used the `gridding` [https://github.com/alex-robinson/gridding](https://github.com/alex-robinson/gridding) program to handle remapping (and preprocessing) of a wide variety of datasets that were relevant for ice-sheet modeling. This was how the original `ice_data` repository of gridded datasets was populated. It worked well, but was difficult to modify for new datasets, since it is entirely in Fortran, and requires configuration and compilation. For this reason, remapping via conservative interpolation using `cdo` became the favored approach for individual datasets. What was not included then was the preprocessing steps needed before applying interpolation. Hopefully this repository solves that problem.
 
 ## List of available datasets/methods (alphabetical order)
 
