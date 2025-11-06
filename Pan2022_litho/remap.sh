@@ -1,20 +1,25 @@
-# Perform remapping using cdo by defining the source and target grid_name values,
-# as well as the source file infile and the target file outfile. This script
-# assumes that the scrip map weights have already been generated, e.g. using genmap.sh.
-
-# ./remap.sh lonlat-0.5deg LIS-32KM isostasy_data/earth_structure/lithothickness/pan2022.nc LIS-32KM_GEO_P22.nc
-
+# General information
 mapfldr=../maps
 
-grid_name_src=$1
-grid_name_tgt=$2
-infile=$3
-outfile=$4
+# Source data location and name to call it
+grid_name_src=lonlat-0.5deg
+nc_src=isostasy_data/earth_structure/lithothickness/pan2022.nc
+name_src="GEO-P22"
 
-# To perform remapping using the weights file
-cdo remap,${mapfldr}/grid_${grid_name_tgt}.txt,scrip-con_${grid_name_src}_${grid_name_tgt}.nc ${infile} ${outfile}
+# TARGET domain and grid name
+domain_tgt=Laurentide
+grid_name_tgt=LIS-16KM
 
-# Add attributes with reference
+# Output filename to be produced
+outfile=${grid_name_tgt}_${name_src}.nc
+
+# Generate the weights file
+cdo gencon,${mapfldr}/grid_${grid_name_tgt}.txt -setgrid,${mapfldr}/grid_${grid_name_src}.txt ${nc_src} scrip-con_${grid_name_src}_${grid_name_tgt}.nc
+
+# Perform remapping using the weights file
+cdo remap,${mapfldr}/grid_${grid_name_tgt}.txt,scrip-con_${grid_name_src}_${grid_name_tgt}.nc ${nc_src} ${outfile}
+
+# Add attributes with reference information
 ncatted -O -h -a reference,global,o,c,\
 "Pan et al., The influence of lateral Earth structure on inferences of global ice volume during the Last Glacial Maximum, Quarternary Science Reviews, doi:10.1016/j.quascirev.2022.107644, 2022." \
 ${outfile}
