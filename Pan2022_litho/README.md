@@ -9,11 +9,11 @@ Citable as: Pan et al., The influence of lateral Earth structure on inferences o
 
 1. Obtain original data from the Pan et al. (2022) publication.
 
-    To document.
+    To document (Jan?).
 
 2. Convert the dataset to a standard 0.5degree lonlat grid.
 
-    To document.
+    To document (Jan?).
 
     File is stored in the `isostasy_data` repository ([https://github.com/JanJereczek/isostasy_data/](https://github.com/JanJereczek/isostasy_data/)) as `isostasy_data/earth_structure/lithothickness/pan2022.nc`.
 
