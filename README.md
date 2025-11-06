@@ -29,3 +29,4 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | topo     | Morlighem2017_BedMachine | Bedmachine ice topography data        | Morlighem et al. (2017)        |
 | topo     | RTOPO2                   | RTopo2 global topography data         | Schaeffer et al. (2019)        |
 | topo     | GEBCO2025                | GEBCO 2025 global bath. and topo data | GEBCO Compilation Group (2025) |
+| geo      | Pan2022_litho            | Global lithospheric thickness data    | Pan et al. (2022)              |

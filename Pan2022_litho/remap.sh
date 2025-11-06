@@ -2,7 +2,7 @@
 # as well as the source file infile and the target file outfile. This script
 # assumes that the scrip map weights have already been generated, e.g. using genmap.sh.
 
-# ./remap.sh lonlat-0.5deg LIS-32KM isostasy_data/earth_structure/lithothickness/pan2022.nc LIS-32KM_LITH_P22.nc
+# ./remap.sh lonlat-0.5deg LIS-32KM isostasy_data/earth_structure/lithothickness/pan2022.nc LIS-32KM_GEO_P22.nc
 
 mapfldr=../maps
 

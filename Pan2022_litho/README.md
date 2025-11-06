@@ -42,10 +42,10 @@ grid_name_tgt=LIS-16KM
 
 ```bash
 # LIS-16KM 
-./remap.sh lonlat-0.5deg LIS-16KM isostasy_data/earth_structure/lithothickness/pan2022.nc LIS-16KM_LITH_P22.nc
+./remap.sh lonlat-0.5deg LIS-16KM isostasy_data/earth_structure/lithothickness/pan2022.nc LIS-16KM_GEO_P22.nc
 
 # LIS-32KM 
-./remap.sh lonlat-0.5deg LIS-32KM isostasy_data/earth_structure/lithothickness/pan2022.nc LIS-32KM_LITH_P22.nc
+./remap.sh lonlat-0.5deg LIS-32KM isostasy_data/earth_structure/lithothickness/pan2022.nc LIS-32KM_GEO_P22.nc
 ```
 
 That's it. Files are now available on the target grid.
