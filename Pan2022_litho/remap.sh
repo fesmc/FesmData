@@ -1,3 +1,6 @@
+# TARGET grid name
+grid_name_tgt=${1}   # e.g., LIS-32KM
+
 # General information
 mapfldr=../maps
 
@@ -5,10 +8,6 @@ mapfldr=../maps
 grid_name_src=lonlat-0.5deg
 nc_src=isostasy_data/earth_structure/lithothickness/pan2022.nc
 name_src="GEO-P22"
-
-# TARGET domain and grid name
-domain_tgt=Laurentide
-grid_name_tgt=LIS-16KM
 
 # Output filename to be produced
 outfile=${grid_name_tgt}_${name_src}.nc
