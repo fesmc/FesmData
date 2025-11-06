@@ -25,27 +25,10 @@ Citable as: Pan et al., The influence of lateral Earth structure on inferences o
 ln -s /path/to/isostasy_data ./
 ```
 
-2. Open `genmap.sh` and modify the target domain and grid name variables to match your goal:
+2. Run `remap.sh GRID_NAME` with your target grid name specified as the first argument. For example to produce the file `LIS-32KM_GEO-P22.nc` for the Laurentide 32KM grid, run:
 
 ```bash
-domain_tgt=Laurentide
-grid_name_tgt=LIS-16KM
+./remap.sh LIS-32KM
 ```
 
-3. Run `genmap.sh` to produce scrip weight files for conservative remapping to the new domain:
-
-```bash
-./genmap.sh
-```
-
-4. Run `remap.sh` to perform the remapping to the new grid, with arguments matching your target grid:
-
-```bash
-# LIS-16KM 
-./remap.sh lonlat-0.5deg LIS-16KM isostasy_data/earth_structure/lithothickness/pan2022.nc LIS-16KM_GEO_P22.nc
-
-# LIS-32KM 
-./remap.sh lonlat-0.5deg LIS-32KM isostasy_data/earth_structure/lithothickness/pan2022.nc LIS-32KM_GEO_P22.nc
-```
-
-That's it. Files are now available on the target grid.
+That's it. Output file is now available on the target grid, and the map weights have also been saved.
