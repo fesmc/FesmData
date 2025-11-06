@@ -13,3 +13,8 @@ outfile=$4
 
 # To perform remapping using the weights file
 cdo remap,${mapfldr}/grid_${grid_name_tgt}.txt,scrip-con_${grid_name_src}_${grid_name_tgt}.nc ${infile} ${outfile}
+
+# Add attributes with reference
+ncatted -O -h -a reference,global,o,c,\
+"Pan et al., The influence of lateral Earth structure on inferences of global ice volume during the Last Glacial Maximum, Quarternary Science Reviews, doi:10.1016/j.quascirev.2022.107644, 2022." \
+${outfile}
