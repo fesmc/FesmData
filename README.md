@@ -30,3 +30,4 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | topo     | RTOPO2                   | RTopo2 global topography data         | Schaeffer et al. (2019)        |
 | topo     | GEBCO2025                | GEBCO 2025 global bath. and topo data | GEBCO Compilation Group (2025) |
 | geo      | Pan2022_litho            | Global lithospheric thickness data    | Pan et al. (2022)              |
+| ts       | PaleoIndex_ts            | Paleo index time series data.         | Unpublished                    |

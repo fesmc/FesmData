@@ -1,0 +1,14 @@
+#
+# gridID 1
+#
+gridtype  = latlon
+gridsize  = 259200
+datatype  = float
+xsize     = 720
+ysize     = 360
+xname     = lon
+yname     = lat
+xfirst    = -179.75
+xinc      = 0.5
+yfirst    = 89.75
+yinc      = -0.5
