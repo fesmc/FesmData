@@ -68,18 +68,24 @@ begin
     defDim(ds, "lat", ny)
     defDim(ds, "time", nt)
 
-    lonvar = defVar(ds, "lon", Float64, ("lon",))
-    lonvar.attrib["standard_name"] = "longitude"
-    lonvar.attrib["units"] = "degrees_east"
-    lonvar[:] = lon
-    
+    # Define coordinate variables (with CF-compliant attributes)
+    lon_var = defVar(ds, "lon", Float32, ("lon",), attrib = Dict(
+        "standard_name" => "longitude",
+        "long_name"     => "longitude",
+        "units"         => "degrees_east",
+        "axis"          => "X"
+    ))
+    lon_var[:] = lon
 
-    latvar = defVar(ds, "lat", Float64, ("lat",))
-    lonvar.attrib["standard_name"] = "latitude"
-    lonvar.attrib["units"] = "degrees_north"
-    latvar[:] = lat
+    lat_var = defVar(ds, "lat", Float32, ("lat",), attrib = Dict(
+        "standard_name" => "latitude",
+        "long_name"     => "latitude",
+        "units"         => "degrees_north",
+        "axis"          => "Y"
+    ))
+    lat_var[:] = lat
     
-    timevar = defVar(ds, "time", Float64, ("time",))
+    timevar = defVar(ds, "time", Float32, ("time",))
     timevar[:] = time
 
     timelabelvar = defVar(ds, "label", String, ("time",))

@@ -30,7 +30,7 @@ Then if an additional dataset is desired on a projected grid:
 1. Generate grid description file from file created above by running:
 
         ```
-        ./define_latlon_grid.sh
+        cdo griddes Batchelor2019_ice_masks.nc > ../maps/grid_lonlat-0.5deg.txt
         ```
 
 2. Run the second part of map_batchelor.jl that relates to generating a projected dataset, like:

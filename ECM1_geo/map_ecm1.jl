@@ -39,27 +39,23 @@ begin
         "units"         => "degrees_east",
         "axis"          => "X"
     ))
-
+    lon_var[:] = lon
+    
     lat_var = defVar(ds, "lat", Float32, ("lat",), attrib = Dict(
         "standard_name" => "latitude",
         "long_name"     => "latitude",
         "units"         => "degrees_north",
         "axis"          => "Y"
     ))
+    lat_var[:] = lat
 
     # Define data variables
     sed_var     = defVar(ds, "H_sed", Float32, ("lon", "lat"), attrib = Dict(
         "units" => "m",
         "long_name" => "Sediment thickness"
     ))
-
-    # Write coordinate data
-    lon_var[:] = lon
-    lat_var[:] = lat
-
-    # Write field data
     sed_var[:, :] = H_sed
-
+    
     # Optional global attributes
     ds.attrib["title"] = "Earth Crustal Model 1 (ECM1): A 1°x 1° Global Seismic and Density Model "
     ds.attrib["source"] = "Mooney, Walter D., et al.: Earth Crustal Model 1 (ECM1): A 1° x 1° Global Seismic and Density Model, Earth Science Rev., 243, 104493, doi:10.1016/j.earscirev.2023.104493, 2023."
