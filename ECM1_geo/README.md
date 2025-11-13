@@ -35,3 +35,8 @@ cdo griddes Mooney2023_Sediments.nc > ../maps/grid_lonlat-1.0deg-360x180.txt
 
 ### Map to grid as needed using CDO
 
+To map to the Laurentide 32KM grid, for example, run:
+
+```bash
+./remap.sh LIS-32KM
+```
