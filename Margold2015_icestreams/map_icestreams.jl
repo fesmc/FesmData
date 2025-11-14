@@ -1,7 +1,8 @@
 cd(@__DIR__)
 import Pkg; Pkg.activate(".")
-# add Shapefile, Proj, GeoDataFrames, GeoFormatTypes, Rasters, NCDatasets, CairoMakie
+# add CSV, Shapefile, Proj, GeoDataFrames, GeoFormatTypes, Rasters, NCDatasets, CairoMakie
 
+using CSV
 using Shapefile
 using Proj
 using GeoDataFrames
@@ -210,7 +211,13 @@ end
 
 # Load the ice-stream data from shapefile, to check things out
 shp = GeoDataFrames.read("ISshp/IS_polygons.shp")
+transform!(shp, :Stable_ID => ByRow(x -> parse(Int, x)) => :Stable_ID)
 #plot(shp[!,:geomtery]) # Looks correct!
+
+# Filter to LGM too
+lgm_stream_numbers = CSV.read("lgm_ice_streams_Stokes2016.txt",DataFrame)
+lgm_stream_numbers = lgm_stream_numbers[!,1]
+shp_lgm = filter(row -> row.Stable_ID in lgm_stream_numbers, shp)
 
 begin
     shp_grd = load_projection_from_file("ISshp/IS_polygons.prj")
@@ -302,11 +309,16 @@ begin
         yvar.attrib["units"] = "m"
         yvar[:] = collect(r.dims[2].val.data) #.* 1e-3
         
-        # Add a data variable, link it to the CRS:
+        # Add data variables, link it to the CRS:
         maskvar = defVar(ds, "mask", Int8, ("x","y"))
-        maskvar.attrib["long_name"] = " Stream mask (1=stream,0=no stream)"
+        maskvar.attrib["long_name"] = "Stream mask (1=stream,0=no stream)"
         maskvar.attrib["grid_mapping"] = "crs"
         maskvar[:,:] = r[:,:]
+
+        masklgmvar = defVar(ds, "mask_lgm", Int8, ("x","y"))
+        masklgmvar.attrib["long_name"] = "LGM stream mask (1=stream,0=no stream)"
+        masklgmvar.attrib["grid_mapping"] = "crs"
+        masklgmvar[:,:] = r[:,:]
 
     end
     
@@ -320,13 +332,22 @@ begin
     
     # Read shapefile and convert to raster grid
     shp = GeoDataFrames.read("ISshp/IS_polygons.shp")
-
+    transform!(shp, :Stable_ID => ByRow(x -> parse(Int, x)) => :Stable_ID)
     #shp.geometry = GeoDataFrames.reproject(shp.geometry, proj_str, GeoFormatTypes.EPSG(4326))
     mask = Rasters.rasterize(last,shp,fill=1,to=r)
     Rasters.replace_missing!(mask, 0)
-
     # Write to the file
     ds["mask"][:, :] = mask
+    
+    # Also for LGM
+    lgm_stream_numbers = CSV.read("lgm_ice_streams_Stokes2016.txt",DataFrame)
+    lgm_stream_numbers = lgm_stream_numbers[!,1]
+    shp_lgm = filter(row -> row.Stable_ID in lgm_stream_numbers, shp)
+    #shp.geometry = GeoDataFrames.reproject(shp.geometry, proj_str, GeoFormatTypes.EPSG(4326))
+    mask = Rasters.rasterize(last,shp_lgm,fill=1,to=r)
+    Rasters.replace_missing!(mask, 0)
+    # Write to the file
+    ds["mask_lgm"][:, :] = mask
     
     close(ds)
 end
@@ -380,9 +401,14 @@ begin
     yvar[:] = collect(rg.dims[2].val.data)
     
     maskvar = defVar(ds, "mask", Int8, ("x","y"))
-    maskvar.attrib["long_name"] = " Stream mask (1=stream,0=no stream)"
+    maskvar.attrib["long_name"] = "Stream mask (1=stream,0=no stream)"
     maskvar.attrib["grid_mapping"] = "crs"
     maskvar[:,:,1] = rg
+
+    masklgmvar = defVar(ds, "mask_lgm", Int8, ("x","y"))
+    masklgmvar.attrib["long_name"] = "LGM stream mask (1=stream,0=no stream)"
+    masklgmvar.attrib["grid_mapping"] = "crs"
+    masklgmvar[:,:,1] = rg
 
     close(ds)
 
@@ -399,10 +425,17 @@ begin
 
     # Create the raster: lon/lat
     r = Rasters.Raster(ds["mask"])
-    r = Rasters.setcrs(r, crs)
+    r = Rasters.setcrs(r, crs) 
     maskg = Rasters.resample(r; to=rg, method=:mode)
     Rasters.replace_missing!(maskg, 0)
     dsg["mask"][:,:] = maskg[:,:]
+
+    # LGM mask
+    r = Rasters.Raster(ds["mask_lgm"])
+    r = Rasters.setcrs(r, crs) 
+    maskg = Rasters.resample(r; to=rg, method=:mode)
+    Rasters.replace_missing!(maskg, 0)
+    dsg["mask_lgm"][:,:] = maskg[:,:]
 
     close(ds)
     close(dsg)
