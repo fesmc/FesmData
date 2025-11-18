@@ -1,0 +1,5 @@
+[deps]
+CairoMakie = "13f3f980-e62b-5c42-98c6-ff1f3baf88f0"
+MAT = "23992714-dd62-5051-b70f-ba57cb901cac"
+NCDatasets = "85f8d34a-cbdd-5861-8df4-14fed0d494ab"
+Rasters = "a3a2b9e3-a471-40c9-b274-f788e487c689"

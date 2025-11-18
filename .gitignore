@@ -4,3 +4,4 @@ GEBCO2025/GEBCO_2025.nc
 GEBCO2025/*.zip
 *isostasy_data
 Pan2022_litho/*.nc
+*/Antarctica_Initialization.mat
