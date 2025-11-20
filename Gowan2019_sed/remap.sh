@@ -13,8 +13,10 @@ name_src="SED-G19"
 outfile=${grid_name_tgt}_${name_src}.nc
 
 # Generate the weights file
-cdo gencon,${mapfldr}/grid_${grid_name_tgt}.txt -setgrid,${mapfldr}/grid_${grid_name_src}.txt ${nc_src} scrip-con_${grid_name_src}_${grid_name_tgt}.nc
+#cdo gencon,${mapfldr}/grid_${grid_name_tgt}.txt -setgrid,${mapfldr}/grid_${grid_name_src}.txt ${nc_src} scrip-con_${grid_name_src}_${grid_name_tgt}.nc
 
 # Perform remapping using the weights file
-cdo remap,${mapfldr}/grid_${grid_name_tgt}.txt,scrip-con_${grid_name_src}_${grid_name_tgt}.nc ${nc_src} ${outfile}
+# Use remapmedian since these are all mask values and should maintain integers
+#cdo remapcon,${mapfldr}/grid_${grid_name_tgt}.txt,scrip-con_${grid_name_src}_${grid_name_tgt}.nc ${nc_src} ${outfile}
+cdo remapnn,${mapfldr}/grid_${grid_name_tgt}.txt ${nc_src} ${outfile}
 
