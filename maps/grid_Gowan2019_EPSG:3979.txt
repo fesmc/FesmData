@@ -1,0 +1,29 @@
+#
+# gridID 1
+#
+gridtype  = projection
+gridsize  = 1785672
+datatype  = float
+xsize     = 1512
+ysize     = 1181
+xname     = x
+xlongname = "x coordinate of projection"
+xunits    = "m"
+yname     = y
+ylongname = "y coordinate of projection"
+yunits    = "m"
+xfirst    = -3962375
+xinc      = 5000
+yfirst    = -1438650
+yinc      = 5000
+grid_mapping = crs
+grid_mapping_name = lambert_conformal_conic
+longitude_of_prime_meridian = 0.
+false_easting = 0.
+epsg_code = "EPSG:3979"
+standard_parallel = 49. 77.
+inverse_flattening = 298.257222101
+latitude_of_projection_origin = 49.
+false_northing = 0.
+semi_major_axis = 6378137.
+longitude_of_central_meridian = -95.
