@@ -1,6 +1,6 @@
 # Relative Sea Level reconstructions in Greenland
 
-This repository contains the dataset `rsl_gris.nc`, which is a compilation (still under construction) of relative sea level (RSL) observations from 26 sites in Greenland.
+This repository contains the dataset `rsl_gris_preliminary.nc`, which is a compilation (still under construction) of relative sea level (RSL) observations from 26 sites in Greenland.
 
 
 ## Dataset Description
