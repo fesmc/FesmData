@@ -39,4 +39,4 @@ The **`rsl_gris.nc`** NetCDF file includes the following dimensions and variable
 
 This map shows all the locations included in the dataset along with their references:
 
-<img src="figs/locations_map.pdf" alt="Locations map and references" width="500">
+<img src="./figs/locations_map.png" alt="Locations map and references" width="500">
