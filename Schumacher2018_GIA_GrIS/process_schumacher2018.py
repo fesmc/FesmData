@@ -48,6 +48,14 @@ ds = ds.assign_coords(
 
 ds_gris=ds.where((ds.xc>-600)&(ds.xc<900)&(ds.yc>-3400)&(ds.yc<0))
 ds_gris = ds_gris.dropna(dim="station", subset=["v_vert", "std"])
+
+order = ['NUUK','KAPI','KELY','AASI','ILUL','KAGA','QEQE','QAAR','RINK','UPVK','SRMP','KULL','ASKY',
+         'DKSG','THU2','MARG','KAGZ','KMOR','SCBY','HRDG','JWLF','KMJP','JGBL','NORD','LEFN','BLAS',
+         'NRSK','GROK','GMMA','YMER','DMHN','LBIB','DANE','WTHG','HMBG','MSVG','DGJG','SCOR','VFDG',
+         'KUAQ','MIK2','PLPK','KSNB','HEL2','KULU','KBUG','LYNS','TREO','HJOR','UTMG','TIMM','NNVN',
+         'SENU','QAQ1']
+
+ds_gris = ds_gris.reindex(station=order)
 ds_gris.to_netcdf("./data/schumacher2018_GR.nc")
 
 
