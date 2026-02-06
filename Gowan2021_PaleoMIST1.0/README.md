@@ -25,8 +25,9 @@ rm -r rm -r __MACOSX Gowan_ice_reconstruction.zip
 
 In the folder ```Gowan_ice_reconstruction/ice_reconstruction/ice_reconstruction_files``` run the script:
 ```bash
+cp process_paleomist.sh ./Gowan_ice_reconstruction/ice_reconstruction/ice_reconstruction_files/
 cd Gowan_ice_reconstruction/ice_reconstruction/ice_reconstruction_files/
 bash process_paleomist.sh
 ```
-This will produce a nc file for each region (Antartica, Eurasia, North America and Patagonia). Note that "North America" includes all the ice sheets in  the North Emisphere.  
+This will produce a nc file for each region (Antartica, Eurasia, North America and Patagonia). Note that "North America" includes also Greenland. 
 
