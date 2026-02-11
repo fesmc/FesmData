@@ -14,11 +14,11 @@ As an example, let's say we want to determine all models that provided simulatio
 
 ### Using intake-esm
 
-`intake-esm` is a Python package that has a search function that let's you achieve this. See the script "test-intake-esm.py" for a working example, first for CMIP6 models and then for CMIP5 models.
+`intake-esm` is a Python package that has a search function that let's you achieve this. See the script [test-intake-esm.py](test-intake-esm.py) for a working example, first for CMIP6 models and then for CMIP5 models.
 
 ### Using pyesgf
 
-`pyesgf` can do something similar but in a different way. See the script "test-esgf.py" for a working example.
+`pyesgf` can do something similar but in a different way. See the script [test-esgf.py](test-esgf.py) for a working example.
 
 ### Refinement to pyesgf
 
