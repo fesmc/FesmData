@@ -1,10 +1,68 @@
-from pyesgf.search import SearchConnection
+from itertools import groupby
+from pyesgf.search import SearchConnection   # pip install esgf-pyclient
 
-from itertools import groupby, product
+conn = SearchConnection('https://esgf-data.dkrz.de/esg-search', distrib=True)
+
+queries = [
+    # CMIP6 naming conventions
+    {
+        "project" : "CMIP6", 
+        "variable_id" : ["thetao", "so"],
+        "experiment_id" : ["lgm", "historical","ssp585"],
+        "table_id" : "Omon",
+        "facets" : 'source_id,variable_id,experiment_id',
+    },
+    # CMIP5 naming conventions
+    {
+        "project" : 'CMIP5',
+        "variable" : ["thetao", "so"],  # 'variable' not 'variable_id'
+        "experiment" : ["lgm", "historical", "rcp85"],  # 'experiment' not 'experiment_id'; rcp85 instead of ssp585
+        "time_frequency" : "mon",  # monthly data
+        "facets" : 'model,variable,experiment',  # 'model' not 'source_id'
+    }
+]
+
+query_results = []
+
+for query in queries:
+    # Server-side constraints: OR for vars/exps
+    ctx = conn.new_context(**query)
+
+    # Download all metadata matching any of the constraints above
+    results = ctx.search()
+    js_results = [result.json for result in results]
+
+    # cache the result for re-use with `search_listing` function below
+    query_results.append(js_results)
+
+    if query["project"] == "CMIP5":
+        model_key, experiment_key, variable_key = "model", "experiment", "variable"
+    else:
+        model_key, experiment_key, variable_key = "source_id", "experiment_id", "variable_id"
+
+    # Refine the constraints (product)
+    required_combos = set((x, v) for x in query[experiment_key] for v in query[variable_key])
+    
+    valid_models = []
+    key_func = lambda x: x[model_key][0] # sort by model
+    for model, group in groupby(sorted(js_results, key=key_func), key=key_func):
+        combos = set((r[experiment_key][0], r[variable_key][0]) for r in group)
+        if required_combos.issubset(combos):
+            valid_models.append(model)
+    
+    print(f"{query['project']} Models matching all criteria: {valid_models}")
+    
+    # save result as additional query field for later use
+    query[model_key] = valid_models
+
+
+# Alternatively we can write a more generic function:
 
 def search_listing(js_results, query, require_all_on=["source_id"]):
     """
-    Find unique group values for which all combinations of fields in query are present. 
+    Find unique group values for which all combinations of fields in query
+    (of length 2+) are present.
+    By default, finds source_ids for which all variable_id/experiment_id combos exist.
     """
     # Infer which keys have >1 value (excluding keys in require_all_on)
     keys_to_combine = [k for k, v in query.items() if k not in require_all_on and isinstance(v, (list, tuple))]
@@ -27,81 +85,12 @@ def search_listing(js_results, query, require_all_on=["source_id"]):
             found_keys.append(key if len(key) > 1 else key[0])
     return found_keys
 
-# Example use:
-query = dict(
-    variable_id=["thetao", "so"],
-    experiment_id=["lgm", "historical", "ssp585"],
-    table_id=["Omon"],
-)
 
-valid_models = search_listing(js_results, query, require_all_on=["source_id"])
-valid_models
-
-
-
-# conn = SearchConnection('https://esgf-node.llnl.gov', distrib=True)
-conn = SearchConnection('https://esgf-data.dkrz.de/esg-search', distrib=True)
-
-
-## CMIP6 ##
-
-# 1. Define your requirements
-required_vars = ["thetao", "so"]
-required_exps = ["lgm", "historical","ssp585"]
-table_id = "Omon"
-
-# 2. Server-side constraints: OR for vars/exps. Request facet counts only (limit=0, no dataset download)
-ctx = conn.new_context(
-    project='CMIP6',
-    variable_id=required_vars,
-    experiment_id=required_exps,
-    table_id=table_id,
-    facets='source_id,variable_id,experiment_id',
-)
-
-# 3. facet_counts triggers a single query with limit=0 — returns counts only, no dataset records
-all_models = list(ctx.facet_counts.get('source_id', {}).keys())
-
-# 4. For each model: constrain server-side and check facet_counts (again limit=0, no download)
-valid_models = []
-for model in all_models:
-    model_ctx = ctx.constrain(source_id=model)
-    model_vars = set(model_ctx.facet_counts.get('variable_id', {}).keys())
-    model_exps = set(model_ctx.facet_counts.get('experiment_id', {}).keys())
-    if set(required_vars).issubset(model_vars) and set(required_exps).issubset(model_exps):
-        valid_models.append(model)
-
-print(f"Models matching all criteria: {valid_models}")
-
-## CMIP5 ##
-
-# 1. Define your requirements (CMIP5 naming conventions)
-required_vars = ["thetao", "so"]
-required_exps = ["lgm", "historical", "rcp85"]  # Note: rcp85 instead of ssp585
-time_frequency = "mon"  # monthly data
-
-# 2. Server-side constraints: OR for vars/exps
-ctx = conn.new_context(
-    project='CMIP5',
-    variable=required_vars,          # 'variable' not 'variable_id'
-    experiment=required_exps,         # 'experiment' not 'experiment_id'
-    time_frequency=time_frequency,
-    facets='model,variable,experiment',  # 'model' not 'source_id'
-)
-
-# 3. Get all models
-all_models = list(ctx.facet_counts.get('model', {}).keys())
-
-# 4. For each model: check if it has all required variables and experiments
-valid_models = []
-for model in all_models:
-    model_ctx = ctx.constrain(model=model)
-    model_vars = set(model_ctx.facet_counts.get('variable', {}).keys())
-    model_exps = set(model_ctx.facet_counts.get('experiment', {}).keys())
-    if set(required_vars).issubset(model_vars) and set(required_exps).issubset(model_exps):
-        valid_models.append(model)
-
-print(f"Models matching all criteria: {valid_models}")
+# for use:
+for query, js_results in zip(queries, query_results):
+    model_key = "model" if query["project"] == "CMIP5" else "source_id"
+    valid_models = search_listing(js_results, query, require_all_on=[model_key])
+    print(query["project"], valid_models)
 
 
 
