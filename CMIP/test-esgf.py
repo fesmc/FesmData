@@ -1,4 +1,4 @@
-from itertools import groupby
+from itertools import groupby, product
 from pyesgf.search import SearchConnection   # pip install esgf-pyclient
 
 conn = SearchConnection('https://esgf-data.dkrz.de/esg-search', distrib=True)
