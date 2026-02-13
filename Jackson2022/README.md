@@ -22,18 +22,18 @@ Original reference:
 cdo expr,'hosing = (hosing > 1e30) ? 0 : hosing' mask_gl_0.3Sv.nc mask_gl_0.3Sv_corr.nc
 ```
 
-4. As cdo remapcon doesnt work directly, remap first to a high resolution latlon grid, afterwards do coservative regridding to the Climber X grid
+4. As cdo remapcon doesnt work directly, remap first to a high resolution latlon grid, afterwards do conservative regridding to the ClimberX grid
 ```bash
 cdo remapnn,grid_lonlat-0.5deg.txt mask_gl_0.3Sv_corr.nc mask_gl_remapnn_highres_latlon_0.3Sv.nc
 cdo remapcon,grid_GEO-5x5.txt mask_gl_remapnn_highres_latlon_0.3Sv.nc mask_hosing_gl_remapcon_0.3Sv.nc
 ```
 
-5. `create_gl_mask.jl` : Julia script used for plotting the mask on different grids (optinal) and data is normalized and saved in a new .nc file: `mask_greenland_fw_distribution.nc`. This is the final mask which is copied to climber-x/input 
+5. `create_gl_mask.jl` : Julia script used for plotting the mask on different grids (optional) and data is normalized and saved in `mask_greenland_fw_distribution.nc`. This is the final mask which is copied to climber-x/input 
 
 
 ## Additional script to create hosing-rate files
 
-`create_hosing_rate_ts.jl` : Julia function to create linear time series of freshwater hosing that can be used as input for ClimberX when doing fw hosing experiments 
+`create_hosing_rate_ts.jl` : Julia function to create linear time series of freshwater hosing that can be used as input for ClimberX when doing fw hosing experiments. 
 Example output file as used for TIPMIP experiment A: `hos_rate_0.3_tipmip-ocn-p1t1-Acd.nc`
 
 
