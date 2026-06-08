@@ -1,0 +1,16 @@
+gridtype = lonlat
+gridsize =       2592
+xsize    =         72
+ysize    =         36
+xname    = lon
+xunits   = degrees_east
+yname    = lat
+yunits   = degrees_north
+xfirst   =     -177.500000
+xinc     =        5.000000
+yfirst   =      -87.500000
+yinc     =        5.000000
+grid_mapping = crs
+grid_mapping_name = latitude_longitude
+semi_major_axis =        6378137.000
+inverse_flattening =         298.25722356
