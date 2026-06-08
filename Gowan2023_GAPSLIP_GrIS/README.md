@@ -8,6 +8,8 @@ These files follow the header structure shown below:
 | LAB_ID | lat | lon | time | time_err | type | RSL | RSL_err_max | RSL_err_min |
 |--------|-----|-----|------|----------|------|-----|-------------|-------------|
 
+Source: Gowan, E. J. (2023). Paleo sea-level indicators and proxies from Greenland in the GAPSLIP database and comparison with modelled sea level from the PaleoMIST ice-sheet reconstruction. GEUS Bulletin, 53.
+
 ## Workflow
 
 1. Download the original Greenland data.

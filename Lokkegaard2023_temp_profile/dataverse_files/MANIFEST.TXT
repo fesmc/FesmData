@@ -1,0 +1,5 @@
+boreholes.gpkg (application/geopackage+sqlite3) 172031 bytes.
+boreholes.kml (application/vnd.google-earth.kml+xml) 245389 bytes.
+meta.csv (text/csv) 52436 bytes.
+Temperature profiles/temperature.csv (text/csv) 2738573 bytes.
+temperature_dnorm.csv (text/csv) 70430 bytes.
