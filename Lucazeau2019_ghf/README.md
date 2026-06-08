@@ -17,3 +17,14 @@ You should now have the original CSV file `HFgrid14.csv` in the subdirectory.
 
 ## Process the data onto a lonlat grid and save as NetCDF
 
+First, run script to produce a global lonlat NetCDF file `Lucazeau2019_ghf.nc`:
+
+```bash
+julia map-lucazeau-ghf.jl
+```
+
+Next generate a grid description file:
+
+```bash
+cdo griddes Lucazeau2019_ghf.nc > ../maps/grid_lonlat-0.5deg-720x360.txt
+```
