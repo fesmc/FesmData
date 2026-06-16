@@ -15,27 +15,41 @@ These are originally provided in shapefiles here:
 Original reference:
 [https://www.nature.com/articles/s41467-019-11601-2](https://www.nature.com/articles/s41467-019-11601-2)
 
-## Processing steps
+Processing is split into two scripts: building the regular lon-lat dataset
+from the shapefiles, and resampling it onto a projected target grid. The
+lon-lat dataset is a prerequisite for the projected one.
 
-1. Download the data to a directory.
-2. Modify map_batchelor.jl to use that source directory. Adjust resolution of output NetCDF file(s).
-3. Run the script. This will produce the NetCDF file:
+### Step 1: lon-lat dataset
 
-        Batchelor2019_ice_masks.nc
+1. Download the shapefiles into the source directory (default:
+   `Batchelor2019_NHextent`). To change the directory or resolution, edit the
+   constants at the top of `build_lonlat_dataset.jl`.
+2. Run:
 
-    which is on a standard lon-lat grid (e.g. 0.5deg). This can be used as an input dataset.
+        julia --project=. build_lonlat_dataset.jl
 
-Then if an additional dataset is desired on a projected grid:
+    This rasterizes the shapefiles onto a regular lon-lat grid (0.5deg by
+    default) and writes `Batchelor2019_ice_masks.nc`, which can be used
+    directly as an input dataset.
 
-1. Generate grid description file from file created above by running:
+### Step 2: projected dataset
 
-        ```
-        cdo griddes Batchelor2019_ice_masks.nc > ../maps/grid_lonlat-0.5deg.txt
-        ```
+With `Batchelor2019_ice_masks.nc` in place, resample it onto a projected
+target grid:
 
-2. Run the second part of map_batchelor.jl that relates to generating a projected dataset, like:
+        julia --project=. build_projected_dataset.jl --grid LIS-32KM
 
-        NH-32KM_Batchelor2019_ice_masks.nc
+This writes e.g. `LIS-32KM_Batchelor2019_ice_masks.nc`. The target grid is
+described by `../maps/grid_<grid>.txt`, which must exist beforehand (generate
+with `cdo griddes`).
+
+Options:
+
+| Option | Default | Description |
+| --- | --- | --- |
+| `--grid NAME` | `NH-32KM` | Projected target grid, matching `../maps/grid_NAME.txt` |
+| `--lonlat-nc PATH` | `Batchelor2019_ice_masks.nc` | Source lon-lat NetCDF file |
+| `-h`, `--help` | | Show usage |
 
 ## Notes
 
