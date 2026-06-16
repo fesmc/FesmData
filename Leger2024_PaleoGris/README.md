@@ -14,7 +14,7 @@ Data can be download [here](https://data.mendeley.com/datasets/nh57cz4gys/1). We
 
 ### Process the data
 
-1. Modify the paths in `process_isochrones.py` to point to the downloaded data, de desired grid.
+1. Modify the paths in `process_isochrones.py` to point to the downloaded data, the desired grid.
 2. Run `process_isochrones.py`. This will produce a combined two NetCDF files:
    1. `./output/paleogris_8km.nc` with the age and uncertainty of the isochrones on the desired grid. It also removes ocean cells that in the original data have an age of 0.
    2.  `./output/regions_area_paleogris.nc` with the timeserie area of each region.
