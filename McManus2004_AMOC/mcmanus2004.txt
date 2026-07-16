@@ -1,0 +1,375 @@
+North Atlantic Core GGC5 231Pa/230Th Meridional Circulation Data
+-----------------------------------------------------------------------
+               World Data Center for Paleoclimatology, Boulder
+                                  and
+                     NOAA Paleoclimatology Program
+-----------------------------------------------------------------------
+NOTE: PLEASE CITE ORIGINAL REFERENCE WHEN USING THIS DATA!!!!!
+
+
+NAME OF DATA SET: 
+North Atlantic Core GGC5 231Pa/230Th Meridional Circulation Data
+
+LAST UPDATE: 4/2008 (Original receipt by WDC Paleo)
+CONTRIBUTOR: Jerry McManus, Woods Hole Oceanographic Institution
+
+IGBP PAGES/WDCA CONTRIBUTION SERIES NUMBER: 2008-039
+
+WDC PALEO CONTRIBUTION SERIES CITATION: 
+McManus, J.F., et al. 2008.
+North Atlantic Core GGC5 231Pa/230Th Meridional Circulation Data. 
+IGBP PAGES/World Data Center for Paleoclimatology 
+Data Contribution Series # 2008-039.    
+NOAA/NCDC Paleoclimatology Program, Boulder CO, USA.
+
+
+ORIGINAL REFERENCE:  McManus, J.F., R. Francois, J.-M. Gherardi, 
+L.D. Keigwin, and S. Brown-Leger.  2004. 
+Collapse and rapid resumption of Atlantic meridional circulation
+linked to deglacial climate changes.
+Nature, Vol. 428, pp. 834-837, 22 April 2004.  
+
+ABSTRACT:
+The Atlantic meridional overturning circulation is widely believed 
+to affect climate.  Changes in ocean circulation have been inferred 
+from records of the deep water chemical composition derived from 
+sedimentary nutrient proxies, but their impact on climate is difficult 
+to assess because such reconstructions provide insufficient constraints 
+on the rate of overturning.  Here we report measurements of 231Pa/230Th, 
+a kinematic proxy for the meridional overturning circulation, 
+in a sediment core from the subtropical North Atlantic Ocean. 
+We find that the meridional overturning was nearly, or completely, 
+eliminated during the coldest deglacial interval in the North Atlantic 
+region, beginning with the catastrophic iceberg discharge Heinrich 
+event H1, 17,500 yr ago, and declined sharply but briefly into the
+Younger Dryas cold event, about 12,700 yr ago.  Following these cold 
+events, the 231Pa/230Th record indicates that rapid accelerations
+of the meridional overturning circulation were concurrent with the 
+two strongest regional warming events during deglaciation.
+These results confirm the significance of variations in the rate of the 
+Atlantic meridional overturning circulation for abrupt climate changes.
+
+
+GEOGRAPHIC REGION: Subtropical North Atlantic Ocean
+PERIOD OF RECORD: 20 KYrBP - present
+
+FUNDING SOURCES:  
+US National Science Foundation OCE and INT programmes, the France CNRS, 
+WHOI-OCCI and Mellon awards, and the Comer Science and Education Foundation.
+
+
+
+DESCRIPTION:  
+231Pa/230Th data from sediments from the Bermuda rise in the
+deep western subtropical Atlantic, as a proxy for meridional 
+overturning circulation.
+
+Core OCE326-GGC5: 33° 42' N, 57° 35'W, 4550 m water depth.
+
+
+
+
+DATA:
+1. GGC5 Pa/Th 
+
+Column 1: Age kyr 
+Column 2: Pa/Th 238-based 
+Column 3: Error 
+Column 4: Pa/Th 232-based 
+Column 5: Error 
+
+
+Age     Pa/Th238       Err.   Pa/Th232       Err.
+0.1       0.0548     0.0023     0.0543     0.0022
+0.48      0.0537     0.0024     0.0538     0.0021
+0.96      0.0571     0.0041     0.0572     0.0037
+1.43      0.0541     0.0018     0.0535     0.0017
+1.91      0.0554     0.0016     0.0549     0.0015
+2.87      0.0552     0.0028      0.055     0.0025
+4.78      0.0612     0.0047     0.0619     0.0049
+5.73      0.0524     0.0014     0.0517     0.0013
+8.46        0.05     0.0006     0.0499     0.0006
+9.95      0.0574     0.0015     0.0572     0.0015
+10.25     0.0607     0.0026     0.0609     0.0026
+10.85     0.0621     0.0011     0.0632     0.0012
+11.3      0.0643     0.0026     0.0639     0.0015
+11.69     0.0673     0.0012     0.0666      0.001
+11.79     0.0727     0.0045     0.0732     0.0046
+11.99     0.0736     0.0036     0.0735     0.0028
+12.09     0.0707     0.0017     0.0701     0.0012
+12.18     0.0712     0.0013     0.0697     0.0012
+12.28     0.0745      0.003     0.0746     0.0025
+12.48     0.0764     0.0056      0.077      0.005
+12.58     0.0794     0.0026     0.0752     0.0022
+12.68     0.0706     0.0014      0.071     0.0014
+12.78     0.0618     0.0021      0.062     0.0021
+12.87     0.0674     0.0027     0.0674     0.0021
+12.97     0.0678     0.0015     0.0667     0.0017
+13.07     0.0666     0.0029     0.0661     0.0025
+13.27     0.0677     0.0018     0.0676     0.0017
+13.47     0.0674     0.0017     0.0665     0.0016
+14.12     0.0657      0.005     0.0648     0.0045
+14.38     0.0648     0.0019     0.0624     0.0017
+14.51     0.0703     0.0037     0.0657     0.0029
+14.59     0.0845     0.0036     0.0786     0.0032
+14.66     0.0876     0.0024     0.0813     0.0019
+15.09     0.0954     0.0031     0.0889     0.0025
+15.56     0.0884     0.0041     0.0827     0.0034
+16.03     0.0943     0.0043     0.0895     0.0038
+16.48     0.0878     0.0049     0.0826     0.0041
+16.79     0.0875     0.0039     0.0839     0.0035
+17.16     0.0869     0.0046     0.0833     0.0041
+17.21     0.0931      0.005     0.0864     0.0041
+17.24     0.0906     0.0047     0.0848      0.004
+17.27     0.0861     0.0048     0.0816     0.0041
+17.3      0.0865     0.0039     0.0826     0.0034
+17.33     0.0859     0.0037     0.0804     0.0031
+17.47     0.0831     0.0046     0.0773     0.0037
+17.62     0.0839     0.0089     0.0806     0.0079
+17.98     0.0746     0.0096      0.072     0.0084
+18.12      0.067     0.0078     0.0646     0.0066
+18.19     0.0749     0.0086      0.072     0.0075
+18.29     0.0633     0.0077     0.0622      0.007
+18.44      0.072     0.0076     0.0654     0.0038
+18.82     0.0598     0.0075     0.0585     0.0066
+19.2      0.0704     0.0031     0.0665     0.0022
+19.32     0.0701     0.0043     0.0665     0.0029
+19.39      0.075     0.0071     0.0691     0.0043
+19.43     0.0776     0.0059     0.0748     0.0051
+19.47     0.0678     0.0036     0.0655     0.0027
+19.54     0.0722     0.0037     0.0684     0.0026
+19.62       0.07      0.004     0.0677     0.0013
+
+
+
+
+
+Column 1: Age (kyr)
+Column 2: GGC5 G. inflata d18O (per mil)
+
+
+Age       G. inflata d18O (per mil)
+0.57      0.84
+0.76      0.79
+0.96      0.66
+1.15      0.69
+1.34      0.71
+1.53      0.83
+1.72      0.66
+1.91      0.63
+2.1       0.59
+2.29      0.62
+2.48      0.31
+2.68      0.19
+2.87      0.35
+3.06      0.57
+3.25      0.59
+3.44      0.52
+3.63      0.52
+3.82      0.58
+4.01       0.4
+4.2       0.47
+4.39      0.44
+4.59      0.58
+4.78      0.46
+4.97      0.52
+5.16      0.56
+5.35      0.68
+5.54      0.56
+5.73      0.37
+5.92      0.43
+6.11      0.52
+6.58      0.73
+7.33      0.62
+8.08      0.58
+8.46      0.47
+8.83      0.39
+9.2       0.36
+9.58      0.49
+9.95      0.51
+10.33     0.55
+10.7      0.36
+11.05     0.83
+11.3      1.24
+11.39     1.39
+11.49     0.91
+11.54     0.91
+11.59     1.07
+11.69      1.5
+11.79      1.5
+11.89     1.79
+11.99      1.5
+12.04     1.59
+12.09     1.54
+12.18     1.84
+12.28     1.81
+12.38     1.86
+12.48     1.92
+12.53      1.9
+12.58     1.89
+12.68     1.88
+12.78     1.72
+12.87     1.54
+12.97     1.54
+13.02      1.6
+13.07     1.69
+13.17     1.53
+13.27      1.5
+13.37     1.52
+13.47     1.49
+13.52     1.43
+13.57     1.26
+13.66     1.33
+13.76     1.31
+13.86     1.29
+13.96     1.02
+13.99     1.15
+14.01     1.21
+14.07     1.49
+14.12     1.31
+14.17     1.33
+14.23     1.21
+14.25     1.29
+14.28     1.27
+14.33      1.2
+14.38     1.39
+14.44     1.48
+14.46     1.64
+14.49     1.47
+14.5      1.36
+14.51     1.53
+14.51     1.53
+14.52     1.55
+14.53     1.34
+14.54     1.33
+14.55     1.28
+14.57     1.27
+14.58     1.12
+14.6      1.11
+14.61     1.47
+14.63     1.75
+14.64     1.88
+14.66      1.8
+14.67     1.95
+14.76     1.93
+14.86     2.03
+14.95     1.97
+15.04     1.92
+15.14     1.81
+15.23     1.76
+15.33     1.89
+15.42     1.88
+15.51     1.89
+15.61     2.11
+15.7       1.8
+15.79     1.86
+15.89     1.56
+15.98     1.72
+16.08     1.55
+16.17     1.56
+16.26     1.52
+16.45     1.75
+16.51     2.07
+16.57     2.45
+16.62     2.58
+16.68     2.61
+16.75     2.48
+16.83     2.35
+16.9      2.06
+16.98     2.27
+17.05     2.22
+17.13     2.44
+17.2      2.28
+17.23     2.39
+17.26     2.61
+17.29     2.54
+17.32     2.52
+17.34     2.32
+17.37     2.32
+17.4       2.3
+17.43     2.16
+17.46     2.08
+17.49     2.25
+17.52     2.24
+17.55     2.44
+17.58     2.46
+17.6      2.64
+17.63     2.55
+17.66     2.32
+17.69     2.48
+17.72     2.52
+17.89     2.41
+18.06     2.19
+18.07     2.03
+18.09     2.17
+18.1      2.01
+18.12        2
+18.13     1.81
+18.14     1.83
+18.16     1.84
+18.17     1.82
+18.18     1.72
+18.2       1.7
+18.21      1.8
+18.23     1.79
+18.24     1.96
+18.27     1.96
+18.3      2.08
+18.33     2.02
+18.36     2.12
+18.39     2.04
+18.42      2.1
+18.45     1.77
+18.48     1.76
+18.52     1.74
+18.55     2.08
+18.58     2.13
+18.61     2.06
+18.64     1.83
+18.67     1.83
+18.7      1.66
+18.76     1.74
+18.79     1.68
+18.82     1.89
+18.85     1.79
+18.88     1.75
+18.91     1.57
+18.94     1.89
+18.97     1.92
+19        2.02
+19.04     1.81
+19.07     1.86
+19.1      1.75
+19.13      1.8
+19.16     1.85
+19.19     1.87
+19.22     1.76
+19.25     1.68
+19.28     1.79
+19.3       1.8
+19.31     1.89
+19.33     1.78
+19.34     1.95
+19.36     1.73
+19.37     1.68
+19.39      1.5
+19.4       1.5
+19.42     1.61
+19.43     1.56
+19.45     1.78
+19.46     1.81
+19.48     1.85
+19.49     1.87
+19.51     1.73
+19.52     1.85
+19.54     1.75
+19.55     1.76
+19.57     1.78
+19.58     1.83
+19.6      1.83
+19.61     1.72
+19.68     1.69
+19.79     1.77
+19.91     1.79
+20.02    1.775
+
