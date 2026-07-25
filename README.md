@@ -34,3 +34,4 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | geo      | Pan2022_litho            | Global lithospheric thickness data               | Pan et al. (2022)              |
 | ts       | PaleoIndex_ts            | Paleo index time series data.                    | Unpublished                    |
 | climate  | CMIP                     | Working with CMIP data (CMIP5/CMIP6/etc)         | Unpublished                    |
+| climate  | ERA5                     | Monthly ERA5 for radiation + moist-stack valid.  | Hersbach et al. (2020)         |
