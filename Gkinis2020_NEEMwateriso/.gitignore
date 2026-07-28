@@ -1,0 +1,6 @@
+# Downloaded source and generated outputs (regenerable via build_neem_dataset.jl)
+NEEM_Gkinis2020.tab
+*.nc
+*.png
+logs/
+Manifest.toml
