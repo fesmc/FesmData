@@ -51,6 +51,18 @@ Options:
 | `--lonlat-nc PATH` | `Batchelor2019_ice_masks.nc` | Source lon-lat NetCDF file |
 | `-h`, `--help` | | Show usage |
 
+### Step 3: last-glacial-cycle subset with a real time axis
+
+`Batchelor2019_ice_masks.nc` has an index time axis (1–18) because the source
+only gives stage names and age ranges. `time_slices.md` documents an assigned
+age for every slice. To write the MIS 6 – LGM subset on that time axis (years
+relative to present, negative = before present; LGM repeated at -21000 yr):
+
+        julia --project=. build_lgc_dataset.jl
+
+This writes `Batchelor2019_ice_masks_lgc.nc`, used by CLIMBER-X as the
+transient target extent of the synthetic ice-sheet geometry.
+
 ## Notes
 
 - The dataset is supposed to be defined on a projected grid. And this is
