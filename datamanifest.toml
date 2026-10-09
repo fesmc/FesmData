@@ -18,9 +18,8 @@ uri = "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/I
 
 [bedmap3]
 doi = "10.5285/2d0e4791-8e20-46a3-80e4-f5f6716025d2"
-skip_download = true
 storage_path = "$datasets_dir/bedmap3/bedmap3.nc"
-uri = "https://ramadda.data.bas.ac.uk/repository/entry/show?entryid=2d0e4791-8e20-46a3-80e4-f5f6716025d2"
+uri = "https://ramadda.data.bas.ac.uk/repository/entry/get/bedmap3.nc?entryid=synth%3A2d0e4791-8e20-46a3-80e4-f5f6716025d2%3AL2JlZG1hcDMubmM%3D"
 
 [gebco2025]
 key = "gebco2025"

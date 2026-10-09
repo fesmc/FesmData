@@ -70,8 +70,8 @@ List the datasets and whether they are present:
 julia --project=Topo Topo/scripts/00_sources.jl
 ```
 
-GEBCO 2025 (surface and sub-ice, ~4 GB each zipped) is downloaded automatically
-(Levante login node):
+GEBCO 2025 (surface and sub-ice, ~4 GB each zipped) and Bedmap3 (2.5 GB) are
+downloaded automatically (Levante login node):
 
 ```bash
 julia --project=Topo Topo/scripts/00_sources.jl --download
@@ -89,8 +89,6 @@ The other sources need a manual download into the path printed by the script:
   ```
 
   with `<uri>` from `../datamanifest.toml`.
-- **Bedmap3**: download `bedmap3.nc` (2.4 GB) from the
-  [UK Polar Data Centre](https://doi.org/10.5285/2d0e4791-8e20-46a3-80e4-f5f6716025d2).
 
 ### 1. Grids
 
