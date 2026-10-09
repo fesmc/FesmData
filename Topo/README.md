@@ -138,8 +138,8 @@ Source notes (see `sources.jl`):
   sources), and differs from the main grid by a few metres elsewhere.
 - IceBoost v2.0 (Maffezzoli et al., doi:10.5281/zenodo.17724512; RGI 7.0 outlines)
   gives the ice thickness of the glaciers and ice caps outside Greenland in the NH
-  product. BedMachine
-  Greenland v6 uses the same dataset for the peripheral glaciers of Greenland.
+  product. BedMachine Greenland v6 uses the same dataset for the peripheral
+  glaciers of Greenland.
 
 ### 3. Merge
 
@@ -155,16 +155,16 @@ it fully covers a cell, with a weight rising linearly from 0 at the edge of its
 coverage to 1 at 20 km inside it. The ice fraction of each cell is then grounded or
 floating as a whole, by flotation of its mean ice thickness and bed (densities in
 `domains.toml`). Surface elevation is kept as given by the sources (in Antarctica it
-includes firn air).
+includes firn air). The file also has `mask` (dominant surface type: 0 ocean, 1
+ice-free land, 2 grounded ice, 3 floating ice) and `src_id` (source with the largest
+weight).
 
 A thickness source adds its glaciers onto the ice-free land of the sources below it
 (GEBCO, whose elevation is the ice surface): the glacier fraction, at most the
 ice-free land fraction, becomes grounded ice, and the bed is lowered by the
 cell-mean ice thickness. Glaciers on GEBCO ocean (e.g. retreated termini) are
 dropped. Cells with glacier ice are always grounded. In the NH product, BedMachine
-replaces the glaciers within its coverage. The file also has `mask` (dominant surface type: 0 ocean, 1
-ice-free land, 2 grounded ice, 3 floating ice) and `src_id` (source with the largest
-weight).
+replaces the glaciers within its coverage.
 
 ### 4. All grids
 
@@ -200,3 +200,21 @@ as one job per source), each starting when the previous step succeeded:
 Topo/jobs/submit_domain.sh ANT        # all steps
 Topo/jobs/submit_domain.sh ANT 3      # from step 3
 ```
+
+## Glaciers in the NH product
+
+IceBoost glaciers in the NH product (run of 2026-10-09):
+
+| | Area (km²) | Volume (km³) |
+|---|---:|---:|
+| IceBoost tiles overlapping NH-2KM (73,841 of 80,411, incl. parts outside the domain) | 348,853 | 74,614 |
+| Raw tile pixels, before scaling to the glacier area and volume | 376,646 | 76,802 |
+| Glaciers on NH-2KM (`f_ice` ≤ 1; max before limiting 1.16) | 348,134 | 74,656 |
+| Within BedMachine Greenland coverage (replaced by BedMachine) | 49,679 | 11,384 |
+| On GEBCO ocean (dropped) | 548 | 55 |
+| NH product ice, without glaciers | 1,865,112 | 3,007,068 |
+| NH product ice, with glaciers | 2,164,848 | 3,070,581 |
+
+Step 2 for IceBoost takes about 25 min on a Levante node. The GRL-PAL and ANT
+products are unchanged (bitwise identical before and after adding thickness
+sources).
