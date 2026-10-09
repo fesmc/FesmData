@@ -12,7 +12,7 @@
 #     julia --project=Topo -t N Topo/scripts/05_plots.jl DOMAIN [PRODUCTS]
 #
 # PRODUCTS is "default" (the default products, if omitted), "variants", "all",
-# or the name of one product (see domains.toml).
+# or the name of one product (see products.toml).
 #
 include(joinpath(@__DIR__, "..", "common.jl"))
 include(joinpath(TOPO_DIR, "sources.jl"))
@@ -41,6 +41,7 @@ const MASK_COLORS = [:steelblue, :tan, :white, :lightblue]
 
 1 <= length(ARGS) <= 2 || error("usage: 05_plots.jl DOMAIN [PRODUCTS]")
 dom = Domain(ARGS[1])
+sources_of = product_sources(dom)
 products = select_products(dom, get(ARGS, 2, "default"))
 plotdir = mkpath(joinpath(workdir(), "plots"))
 
@@ -94,14 +95,14 @@ end
 for product in products
     # Base product
     g, f = read_fields(product_file(dom.grids[1], product))
-    nsrc = length(dom.products[product])
+    nsrc = length(sources_of[product])
     fig = Figure(size=(1500, 950))
     panel!(fig[1, 1], g, f["z_bed"], "z_bed (m)"; colormap=:oleron, colorrange=(-4000, 4000))
     panel!(fig[1, 2], g, f["z_srf"], "z_srf (m)"; colormap=:oleron, colorrange=(-4000, 4000))
     panel!(fig[1, 3], g, f["H_ice"], "H_ice (m)"; colormap=:Blues, colorrange=(0, 4000))
     panel!(fig[2, 1], g, f["z_bed_sd"], "z_bed_sd (m)"; colormap=:viridis, colorrange=(0, 300))
     panel!(fig[2, 2], g, f["mask"], "mask: ocean, land, grounded, floating"; colormap=MASK_COLORS, categorical=4)
-    panel!(fig[2, 3], g, f["src_id"], "src_id: " * join(reverse(dom.products[product]), ", ");
+    panel!(fig[2, 3], g, f["src_id"], "src_id: " * join(reverse(sources_of[product]), ", ");
            colormap=nsrc > 1 ? :Set2_8 : [:gray], categorical=nsrc)
     Label(fig[0, :], "$(g.name)_TOPO-$(product)"; fontsize=20)
     save(joinpath(plotdir, "$(g.name)_TOPO-$(product).png"), fig)

@@ -8,7 +8,7 @@
 #
 # FIRST_STEP (1-5, default 1) skips the earlier steps. PRODUCTS selects the products
 # of steps 2-5: "default" (the default), "variants", "all", or one product (see
-# domains.toml); step 2 remaps the sources of these products.
+# products.toml); step 2 remaps the sources of these products.
 #
 set -euo pipefail
 domain=$1
@@ -17,7 +17,7 @@ products=${3:-default}
 run=Topo/jobs/run_step.sbatch
 
 sources=$(julia --project=Topo -e 'include("Topo/common.jl"); d = Domain(ARGS[1]);
-    println(join(unique(reduce(vcat, [d.products[p] for p in select_products(d, ARGS[2])]; init=String[])), " "))' \
+    println(join(unique(reduce(vcat, [product_sources(d)[p] for p in select_products(d, ARGS[2])]; init=String[])), " "))' \
     "$domain" "$products")
 [ -n "$sources" ] || { echo "$domain has no $products products"; exit 1; }
 tag=$domain; [ "$products" = default ] || tag=$domain-$products

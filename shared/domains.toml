@@ -1,0 +1,44 @@
+# Model domains shared by all FesmData pipelines (Topo, Regions, ...).
+#
+# Each domain has a base grid at its finest resolution, `resolutions[1]` (km). All
+# other grids, at the remaining resolutions and for the crops, are derived from the
+# base grid by coarsening (and cropping), so all grids of a domain are nested. Extents
+# (km) follow the v1 grids in maps/, so all grids share their first cell centre.
+#
+# `folder` is the output folder under $ICE_DATA/v2.
+
+[ANT]
+folder = "Antarctica"
+proj = "+proj=stere +lat_0=-90 +lat_ts=-71 +lon_0=0 +x_0=0 +y_0=0 +a=6378137 +rf=298.25722356 +units=km"
+xlim = [-3040, 3040]
+ylim = [-3040, 3040]
+resolutions = [1, 2, 4, 8, 16, 32]
+
+[GRL-PAL]
+folder = "Greenland"
+proj = "+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +x_0=0 +y_0=0 +a=6378137 +rf=298.25722356 +units=km"
+xlim = [-1360, 960]
+ylim = [-3450, -570]
+resolutions = [0.5, 1, 2, 4, 8, 16, 32]
+
+[GRL-PAL.crops.GRL]
+folder = "Greenland"
+xlim = [-720, 960]
+ylim = [-3450, -570]
+
+[NH]
+folder = "North"
+proj = "+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +x_0=0 +y_0=0 +a=6378137 +rf=298.25722356 +units=km"
+xlim = [-4900, 3900]
+ylim = [-5400, 3400]
+resolutions = [2, 4, 8, 16, 32]
+
+[NH.crops.LIS]
+folder = "Laurentide"
+xlim = [-4900, -36]
+ylim = [-5400, 1576]
+
+[NH.crops.EIS]
+folder = "Eurasia"
+xlim = [380, 3900]
+ylim = [-5000, 1400]

@@ -2,7 +2,7 @@
 #
 # The data are stored outside the repository, under the folder given by the
 # environment variable DATAMANIFEST_DATASETS_DIR (set per machine, see
-# Topo/machines/*.env). Entries with `skip_download = true` need a manual download
+# shared/machines/*.env). Entries with `skip_download = true` need a manual download
 # (e.g. a NASA Earthdata login) into their `storage_path`.
 
 [bedmachine_antarctica_v4]
@@ -11,7 +11,7 @@ skip_download = true
 storage_path = "$datasets_dir/bedmachine_antarctica_v4/NSIDC-0756_BedMachineAntarctica_19700101-20191001_V04.1.nc"
 uri = "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/MEASURES/NSIDC-0756/4/1970/01/01/NSIDC-0756_BedMachineAntarctica_19700101-20191001_V04.1.nc"
 
-# Earlier versions of BedMachine (topography variants, see Topo/domains.toml)
+# Earlier versions of BedMachine (topography variants, see Topo/products.toml)
 
 [bedmachine_antarctica_v3]
 doi = "10.5067/FPSU0V1MWUB6"

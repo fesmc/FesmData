@@ -15,7 +15,7 @@
 #     julia --project=Topo -t N Topo/scripts/03_merge.jl DOMAIN [PRODUCTS]
 #
 # PRODUCTS is "default" (the default products, if omitted), "variants", "all",
-# or the name of one product (see domains.toml).
+# or the name of one product (see products.toml).
 #
 include(joinpath(@__DIR__, "..", "common.jl"))
 include(joinpath(TOPO_DIR, "sources.jl"))
@@ -25,6 +25,8 @@ const BLEND = ("z_bed", "z_srf", "H_ice", "z_bed_sd", "f_ocn", "f_land", "f_grnd
 
 1 <= length(ARGS) <= 2 || error("usage: 03_merge.jl DOMAIN [PRODUCTS]")
 dom = Domain(ARGS[1])
+rho_ice, rho_sw = densities(dom)
+sources_of = product_sources(dom)
 products = select_products(dom, get(ARGS, 2, "default"))
 base = dom.base
 dx, dy = spacing(base)
@@ -108,7 +110,7 @@ const MASK_ATTRIB = Pair{String,Any}["flag_values" => collect(MASK_CLASSES),
 
 for product in products
     t0 = time()
-    sources = dom.products[product]       # highest priority first
+    sources = sources_of[product]       # highest priority first
     println("Product $product: ", join(sources, " > "))
 
     out = nothing
@@ -138,7 +140,7 @@ for product in products
     for (wl, source) in zip(weights, reverse(sources))
         is_thickness_source(source) && (grounded .|= wl .> 0)
     end
-    mask = apply_flotation!(out, dom.rho_ice, dom.rho_sw, grounded)
+    mask = apply_flotation!(out, rho_ice, rho_sw, grounded)
     src_id = Int8.(map(I -> argmax([wl[I] for wl in weights]), CartesianIndices(mask)) .- 1)
     out_fields = Dict{String,Matrix}(out)
     out_fields["mask"] = mask
@@ -146,10 +148,9 @@ for product in products
 
     src_attrib = Pair{String,Any}["flag_values" => Int8.(0:length(sources)-1),
                                   "flag_meanings" => join(reverse(sources), " ")]
-    path = write_fields(product_file(dom.grids[1], product), base, out_fields;
+    path = write_fields(product_file(dom.grids[1], product), base, out_fields; dataset=DATASET,
         attrib=["product" => product, "sources" => join(sources, " > "),
-                "taper_km" => string(TAPER_KM), "rho_ice" => string(dom.rho_ice), "rho_sw" => string(dom.rho_sw),
-                "history" => "Topo/scripts/03_merge.jl"],
+                "taper_km" => string(TAPER_KM), "rho_ice" => string(rho_ice), "rho_sw" => string(rho_sw)],
         varattrib=Dict("mask" => MASK_ATTRIB, "src_id" => src_attrib))
     println("Wrote $path ($(round(time() - t0; digits=1)) s)")
 end

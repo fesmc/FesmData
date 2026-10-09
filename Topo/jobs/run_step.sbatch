@@ -11,11 +11,11 @@
 # Run one step of the topography pipeline on a full Levante compute node, using
 # all of its cores as Julia threads. Submit from the FesmData root:
 #
-#     source Topo/machines/levante.env
+#     source shared/machines/levante.env
 #     sbatch --job-name=grids-ANT Topo/jobs/run_step.sbatch 01_grids.jl ANT
 #
 set -euo pipefail
-source Topo/machines/levante.env
+source shared/machines/levante.env
 export JULIA_NUM_THREADS=$(nproc)
 
 echo "$(date)  host=$(hostname)  threads=$JULIA_NUM_THREADS  step: $*"

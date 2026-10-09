@@ -13,9 +13,7 @@ dom = Domain(ARGS[1])
 
 for og in dom.grids
     g = og.grid
-    dir = mkpath(outdir(og))
-    write_griddes(joinpath(dir, "grid_$(g.name).txt"), g)
-    write_grid_nc(joinpath(dir, "$(g.name)_grid.nc"), g)
+    dir = write_grid_files(outdir(og), g; dataset=DATASET)
 
     nx, ny = size(g)
     msg = rpad(g.name, 16) * rpad("$nx x $ny", 14) * dir
