@@ -70,7 +70,9 @@ towards the ice sheet are therefore shelf. The parameters are in `regions.toml`.
 | IMBIE2016, IMBIE2016-refined | ANT | IMBIE 2016 and refined basins (Mouginot et al., 2017, NSIDC-0709 v2) |
 
 Each file has `basin`, `basin_mask` (1 within the original basins) and, for sets
-with groups (e.g. Mouginot regions, IMBIE regions, Zwally systems), `basin_group`.
+with groups (e.g. Mouginot regions, IMBIE regions, Zwally systems), `basin_group`. The
+islands in the ice shelves of IMBIE2016-refined keep their extent but are not
+extended, so the ice shelves around them go to the neighbouring grounded basins.
 
 ## Layout
 

@@ -12,11 +12,12 @@ struct BasinSet
     source::String
     id_field::String
     group_field::Union{Nothing,String}
+    no_extension::Vector{String}
 end
 
 function read_basin_sets(path=joinpath(@__DIR__, "basins.toml"))
     return [BasinSet(b["name"], b["domains"], b["region"], b["source"], b["id_field"],
-                     get(b, "group_field", nothing))
+                     get(b, "group_field", nothing), get(b, "no_extension", String[]))
             for b in TOML.parsefile(path)["basins"]]
 end
 
@@ -65,9 +66,13 @@ function build_basins(g::ProjGrid, set::BasinSet, region_codes::AbstractMatrix, 
     B[.!inregion] .= 0
     basin_mask = Int8.(B .!= 0)
 
-    # Extend over land and shelf within the region
-    allowed = inregion .& ((zone .== ZONE_LAND) .| (zone .== ZONE_SHELF))
-    B = extend_labels(B, allowed, dx, dy)
+    # Extend over land and shelf within the region, except from the basins in
+    # no_extension, which keep their extent and block the extension of the others
+    fixed = Set(id for (s, id) in zip(shapes, ids) if string(s.attrs[set.id_field]) in set.no_extension)
+    isfixed = map(in(fixed), B)
+    allowed = inregion .& ((zone .== ZONE_LAND) .| (zone .== ZONE_SHELF)) .& .!isfixed
+    E = extend_labels(ifelse.(isfixed, Int32(0), B), allowed, dx, dy)
+    B = ifelse.(isfixed, B, E)
     @info "$(set.name): $(length(unique(B)) - 1) basins, $(count(basin_mask .== 1)) cells in basins, $(count(B .!= 0)) after extension"
 
     present = sort(filter(!=(0), unique(B)))

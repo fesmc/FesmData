@@ -35,7 +35,7 @@
 # topography product of each domain in `products`.
 
 [zone]
-products = { "ANT" = "BedMachine-v4", "GRL-PAL" = "BedMachine-v6", "NH" = "GEBCO2025" }
+products = { "ANT" = "BedMachine-v4", "GRL-PAL" = "BedMachine-v6", "NH" = "GEBCO2026" }
 z_break = { "1" = -500.0, "2" = -500.0, "2.1" = -1000.0 }
 z_abyss = -2000.0
 r_open = 50.0

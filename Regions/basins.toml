@@ -13,6 +13,9 @@
 #   group_field - optional attribute grouping the basins (e.g. into regions), written
 #                 as basin_group (numbered like id_field); "zwally_system" groups
 #                 Zwally sub-systems (e.g. 11 = 1.1) by their major system (1)
+#   no_extension - optional basins (values of id_field) that keep their original
+#                 extent but are not extended (e.g. islands in ice shelves, which
+#                 would otherwise take over the ice shelves around them)
 
 [[basins]]
 name = "Mouginot2019"
@@ -45,6 +48,7 @@ region = "2.1"
 source = "imbie_refined"
 id_field = "NAME"
 group_field = "Regions"
+no_extension = ["Islands"]
 
 [[basins]]
 name = "Zwally2012"
