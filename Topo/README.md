@@ -30,9 +30,9 @@ earlier versions of the ice-sheet datasets, made on request:
 |---|---|---|
 | ANT | BedMachine-v4, Bedmap3 | BedMachine-v3, BedMachine-v2, Bedmap2 |
 | GRL-PAL | BedMachine-v6 | BedMachine-v5, BedMachine-v4 |
-| NH | GEBCO2025 | |
+| NH | GEBCO2026 | |
 
-All products use GEBCO 2025 outside the ice-sheet datasets. A new variant is a new
+All products use GEBCO 2026 outside the ice-sheet datasets. A new variant is a new
 entry under `[<domain>.variants]` in `domains.toml` (with its sources in
 `../datamanifest.toml` and `sources.jl`).
 
@@ -84,7 +84,7 @@ List the datasets and whether they are present:
 julia --project=Topo Topo/scripts/00_sources.jl
 ```
 
-GEBCO 2025 (4 GB zipped), Bedmap3 (2.5 GB) and IceBoost v2.0 (1.3 GB zipped, one
+GEBCO 2026 (4 GB zipped), Bedmap3 (2.5 GB) and IceBoost v2.0 (1.3 GB zipped, one
 zip per RGI region) are downloaded automatically (Levante login node):
 
 ```bash
@@ -122,7 +122,7 @@ minute each on a Levante node):
 
 ```bash
 sbatch --job-name=src-GRL-PAL-bm Topo/jobs/run_step.sbatch 02_regrid_source.jl GRL-PAL bedmachine_greenland_v6
-sbatch --job-name=src-GRL-PAL-gebco Topo/jobs/run_step.sbatch 02_regrid_source.jl GRL-PAL gebco2025
+sbatch --job-name=src-GRL-PAL-gebco Topo/jobs/run_step.sbatch 02_regrid_source.jl GRL-PAL gebco2026
 ```
 
 Each writes `$FESMDATA_WORK/topo/<BASE>/<BASE>_<source>.nc` with `z_bed`, `z_srf`,

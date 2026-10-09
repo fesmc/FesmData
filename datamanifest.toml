@@ -47,11 +47,11 @@ doi = "10.5285/2d0e4791-8e20-46a3-80e4-f5f6716025d2"
 storage_path = "$datasets_dir/bedmap3/bedmap3.nc"
 uri = "https://ramadda.data.bas.ac.uk/repository/entry/get/bedmap3.nc?entryid=synth%3A2d0e4791-8e20-46a3-80e4-f5f6716025d2%3AL2JlZG1hcDMubmM%3D"
 
-[gebco2025]
-key = "gebco2025.zip"
-doi = "10.5285/37c52e96-24ea-67ce-e063-7086abc05f29"
+[gebco2026]
+key = "gebco2026.zip"
+doi = "10.5285/4f68d5c7-45eb-f999-e063-7086abc036fa"
 extract = true
-uri = "https://dap.ceda.ac.uk/bodc/gebco/global/gebco_2025/ice_surface_elevation/netcdf/gebco_2025.zip"
+uri = "https://dap.ceda.ac.uk/bodc/gebco/global/gebco_2026/ice_surface_elevation/netcdf/GEBCO_2026.zip"
 
 # Bedmap2 (Fretwell et al., 2013), one GeoTIFF per field
 

@@ -24,7 +24,7 @@ const V1 = Dict(
     ("ANT", "BedMachine-v4")     => ("ANT-16KM", "Antarctica/ANT-16KM/ANT-16KM_TOPO-BedMachine.nc"),
     ("ANT", "Bedmap3")           => ("ANT-16KM", "Antarctica/ANT-16KM/ANT-16KM_TOPO-Bedmap3.nc"),
     ("GRL-PAL", "BedMachine-v6") => ("GRL-16KM", "Greenland/GRL-16KM/GRL-16KM_TOPO-M17-v5.nc"),
-    ("NH", "GEBCO2025")          => ("NH-32KM", "North/NH-32KM/NH-32KM_TOPO-RTOPO-2.0.1.nc"),
+    ("NH", "GEBCO2026")          => ("NH-32KM", "North/NH-32KM/NH-32KM_TOPO-RTOPO-2.0.1.nc"),
 )
 
 # Default product to compare a variant with: (domain, variant) => (grid, product)
