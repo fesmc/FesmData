@@ -1,12 +1,17 @@
-# Readers of the original datasets. Each returns the fields on the native grid of
-# the source, with ascending axes:
+# Readers of the original datasets. Each topography source returns the fields on
+# its native grid, with ascending axes:
 #
 #     (grid, z_bed, z_srf, H_ice, mask)
 #
 # where `grid` is a ProjGrid or LonLatGrid, and `mask` uses the classes below
 # (`missing` where the source has no data).
+#
+# Thickness sources (`is_thickness_source`) only give the ice thickness of glaciers,
+# as tiles on their own projections (`GlacierTiles`). In a product they add grounded
+# ice onto the ice-free land of the sources below them (see 03_merge.jl).
 
 using NCDatasets
+import ArchGDAL as AG
 
 const OCEAN = Int8(0)
 const LAND  = Int8(1)
@@ -33,9 +38,14 @@ function read_source(name::AbstractString, dom::Domain)
         return read_bedmap3(get_dataset_path(db, name))
     elseif name == "gebco2025"
         return read_gebco(_only_nc(get_dataset_path(db, "gebco2025")), dom)
+    elseif name == "iceboost_v2"
+        return read_iceboost(db)
     end
     error("unknown source $name")
 end
+
+"True for sources that only give glacier ice thickness (see `GlacierTiles`)."
+is_thickness_source(name::AbstractString) = name == "iceboost_v2"
 
 function _only_nc(dir)
     files = filter(endswith(".nc"), readdir(dir; join=true))
@@ -107,5 +117,69 @@ function read_gebco(path, dom::Domain)
         H_ice = zeros(Float32, size(z_bed))
         mask = map(z -> z <= 0 ? OCEAN : LAND, z_bed)
         return (grid=grid, z_bed=z_bed, z_srf=z_srf, H_ice=H_ice, mask=mask)
+    end
+end
+
+"""
+    GlacierTiles(files)
+
+Glacier ice thickness as one GeoTIFF per glacier, each on its own projected grid,
+with the thickness (m) in band 1, NaN outside the glacier, and the area (km2) and
+volume (km3) of the glacier in the metadata items `area` and `volume`. The pixels
+touched by the outline count as glacier, so neighbouring tiles overlap along their
+shared boundaries. Read one tile with `read_tile`.
+"""
+struct GlacierTiles
+    files::Vector{String}
+end
+
+"""
+IceBoost v2.0 (Maffezzoli et al.) glacier ice thickness for RGI 7.0 outlines:
+one GeoTIFF per glacier, 100 m (finer for small glaciers), in UTM. Uses the regions
+listed in datamanifest.toml (`iceboost_v2_rgiNN`), which cover the NH domain except
+Greenland (region 05), where BedMachine includes the peripheral glaciers (also from
+IceBoost).
+"""
+function read_iceboost(db)
+    files = String[]
+    for key in sort(filter(startswith("iceboost_v2_rgi"), collect(keys(db.datasets))))
+        for (root, _, fs) in walkdir(get_dataset_path(db, key))
+            append!(files, joinpath.(root, filter(endswith(".tif"), fs)))
+        end
+    end
+    isempty(files) && error("no IceBoost tiles found (run 00_sources.jl --download)")
+    return GlacierTiles(sort(files))
+end
+
+"""
+    read_tile(path) -> (grid, H, area, volume)
+
+Grid (km, ascending axes), thickness (band 1), and glacier area (km2) and volume
+(km3) of a glacier tile (see `GlacierTiles`), a north-up GeoTIFF on a projection in
+metres.
+"""
+function read_tile(path::AbstractString)
+    AG.read(path) do ds
+        x0, dx, rx, y0, ry, dy = AG.getgeotransform(ds)
+        (rx == 0 && ry == 0 && dy < 0) || error("$path: not a north-up grid")
+        proj = AG.toPROJ4(AG.importWKT(AG.getproj(ds)))
+        occursin("+units=m ", proj * " ") || error("$path: projection not in metres: $proj")
+        proj = replace(proj * " ", "+units=m " => "+units=km ") |> strip
+        nx, ny = AG.width(ds), AG.height(ds)
+        xc = (x0 .+ dx .* ((1:nx) .- 0.5)) ./ 1000
+        yc = reverse(y0 .+ dy .* ((1:ny) .- 0.5)) ./ 1000
+        H = reverse(AG.read(AG.getband(ds, 1)); dims=2)
+        meta = Dict(Pair(split(m, "="; limit=2)...) for m in AG.metadata(ds))
+        area, volume = parse(Float64, meta["area"]), parse(Float64, meta["volume"])
+        # A grid needs two cells along each axis: pad single-cell tiles with NaN
+        if nx == 1
+            xc = [xc[1], xc[1] + dx / 1000]
+            H = vcat(H, fill(eltype(H)(NaN), 1, size(H, 2)))
+        end
+        if ny == 1
+            yc = [yc[1], yc[1] - dy / 1000]
+            H = hcat(H, fill(eltype(H)(NaN), size(H, 1), 1))
+        end
+        return ProjGrid(basename(path), xc, yc, proj), H, area, volume
     end
 end
