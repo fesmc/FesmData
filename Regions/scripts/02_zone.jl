@@ -28,5 +28,5 @@ end
 path = write_fields(regions_work_file(dom, "zone"), dom.base,
                     Dict("zone" => zone, "dist_shelfbreak" => dist); dataset=DATASET,
                     attrib=["title" => "Zones (FesmData/Regions, regions.toml)", "topography" => product],
-                    varattrib=Dict("zone" => ZONE_ATTRIB))
+                    varattrib=Dict("zone" => ZONE_ATTRIB, "dist_shelfbreak" => DIST_ATTRIB))
 @info "wrote $path"

@@ -44,6 +44,7 @@ for og in dom.grids
     fields["zone"] = Int8.(remap_dominant(m, Z["zone"]))
     attrib["zone"] = ZONE_ATTRIB
     fields["dist_shelfbreak"] = remap(m, Z["dist_shelfbreak"])[1]
+    attrib["dist_shelfbreak"] = DIST_ATTRIB
     write_fields(regions_file(og), g, fields; dataset=DATASET,
                  attrib=["title" => "Regions v2 (FesmData/Regions)", "base_grid" => dom.base.name,
                          "sources" => join(sort(unique(region_keys)), ", ")],

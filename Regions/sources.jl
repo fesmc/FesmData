@@ -37,6 +37,7 @@ Entries of datamanifest.toml that a region or basin source is read from (none fo
 """
 function manifest_keys(source::AbstractString)
     source == "box" && return String[]
+    is_glacier_source(source) && return [String(source)]
     source == "eez_land" && return ["marineregions_eez_land_v4", "iso3166_m49"]
     source == "iho" && return ["marineregions_iho_v3"]
     source == "goas" && return ["marineregions_goas_v1"]
@@ -141,4 +142,27 @@ function read_zwally(path)
     end
     return [Shape([pts[id]], Dict{String,Any}("basin" => greenland ? round(Int, 10 * parse(Float64, id)) : parse(Int, id)))
             for id in order]
+end
+
+"True for glacier outlines of IceBoost v2 (`iceboost_v2_rgiNN`, see `glacier_mask`)."
+is_glacier_source(source::AbstractString) = startswith(source, "iceboost_v2_rgi")
+
+"""
+    glacier_mask(g, source, rgi_id) -> BitMatrix
+
+Cells of grid `g` at least half covered by a glacier of IceBoost v2 (`source`
+`iceboost_v2_rgiNN`, `rgi_id` e.g. "RGI2000-v7.0-G-17-12835"): the footprint of its
+thickness tile (see ../Topo/sources.jl), whose pixels include those touched by the RGI
+7.0 outline.
+"""
+function glacier_mask(g::ProjGrid, source::AbstractString, rgi_id::AbstractString)
+    dir = get_dataset_path(manifest(), source)
+    for (root, _, fs) in walkdir(dir)
+        "$rgi_id.tif" in fs || continue
+        tg, H, _, _ = read_tile(joinpath(root, "$rgi_id.tif"))
+        n = max(1, ceil(Int, 2 * spacing(g)[1] / spacing(tg)[1]))
+        _, f = remap(g, tg, H; nsub=n)
+        return BitMatrix(f .>= 0.5)
+    end
+    error("no IceBoost tile $rgi_id.tif in $dir")
 end

@@ -7,9 +7,12 @@
 # the nearest basin along paths through these cells. `basin_mask` marks the original
 # extent of the basins.
 #
-#   source      - polygon source (see sources.jl)
+#   source      - polygon source (see sources.jl), or glacier outlines of IceBoost v2
+#                 (`iceboost_v2_rgiNN`, the footprints of its thickness tiles, with
+#                 the RGI 7.0 id as id_field "rgi_id")
 #   id_field    - attribute identifying a basin: integers are used as basin ids;
 #                 names are numbered 1, 2, ... in alphabetical order
+#   features    - optional values of id_field: only these basins (needed for glaciers)
 #   group_field - optional attribute grouping the basins (e.g. into regions), written
 #                 as basin_group (numbered like id_field); "zwally_system" groups
 #                 Zwally sub-systems (e.g. 11 = 1.1) by their major system (1)
@@ -56,3 +59,15 @@ domains = ["ANT"]
 region = "2.1"
 source = "zwally2012_antarctica"
 id_field = "basin"
+
+# San Rafael Glacier: the part of the SRG domain that evolves freely in yelmox, the rest
+# relaxing to the present-day state (v1: SRG-250M_REGIONS.nc, regions = 1). Its RGI 7.0
+# outline (684.6 km2); not extended.
+[[basins]]
+name = "SanRafael"
+domains = ["SRG"]
+region = "2.2"
+source = "iceboost_v2_rgi17"
+id_field = "rgi_id"
+features = ["RGI2000-v7.0-G-17-12835"]
+no_extension = ["RGI2000-v7.0-G-17-12835"]

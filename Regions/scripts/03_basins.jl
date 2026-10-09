@@ -12,8 +12,11 @@ include(joinpath(@__DIR__, "..", "common.jl"))
 1 <= length(ARGS) <= 2 || error("usage: 03_basins.jl DOMAIN [SET]")
 dom = Domain(ARGS[1])
 sets = basin_sets(dom)
-length(ARGS) == 2 && (sets = filter(b -> b.name == ARGS[2], sets))
-isempty(sets) && error("no basin set $(get(ARGS, 2, "")) for domain $(dom.key)")
+if length(ARGS) == 2
+    sets = filter(b -> b.name == ARGS[2], sets)
+    isempty(sets) && error("no basin set $(ARGS[2]) for domain $(dom.key)")
+end
+isempty(sets) && @info "$(dom.key) has no basin sets"
 
 _, R = read_fields(regions_work_file(dom, "regions"))
 _, Z = read_fields(regions_work_file(dom, "zone"))
