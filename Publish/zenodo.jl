@@ -185,10 +185,11 @@ zenodo_token(sandbox::Bool) = _env(sandbox ? "ZENODO_SANDBOX_TOKEN" : "ZENODO_TO
     api(method, url; token="", json=nothing, file=nothing)
 
 Request to the Zenodo API, with a JSON body or a file as body. Returns the parsed JSON
-response (`nothing` if empty); errors on an HTTP status other than 2xx.
+response (`nothing` if empty, or if not found with `missing_ok`); errors on an HTTP
+status other than 2xx.
 """
 function api(method::AbstractString, url::AbstractString; token::AbstractString="", json=nothing,
-             file::Union{Nothing,AbstractString}=nothing)
+             file::Union{Nothing,AbstractString}=nothing, missing_ok::Bool=false)
     headers = isempty(token) ? Pair{String,String}[] : ["Authorization" => "Bearer $token"]
     input = nothing
     if json !== nothing
@@ -201,6 +202,7 @@ function api(method::AbstractString, url::AbstractString; token::AbstractString=
     output = IOBuffer()
     response = Downloads.request(url; method=method, headers=headers, input=input, output=output)
     body = String(take!(output))
+    missing_ok && response.status == 404 && return nothing
     200 <= response.status < 300 || error("Zenodo $method $url: HTTP $(response.status)\n$body")
     return isempty(body) ? nothing : JSON.parse(body)
 end
@@ -300,7 +302,8 @@ local files (names and checksums).
 function register(domain::AbstractString, dataset::AbstractString, record_id::Integer;
                   sandbox::Bool=false, allow_untagged::Bool=false)
     base = zenodo_url(sandbox)
-    rec = api("GET", "$base/api/records/$record_id")
+    rec = api("GET", "$base/api/records/$record_id"; missing_ok=true)
+    rec === nothing && error("record $record_id is not published on $base (publish its draft first)")
     files = collect_files(domain, dataset)
     version = release_version(files, dataset; allow_untagged=allow_untagged)
     remote = Dict(f["key"] => f for f in rec["files"])
