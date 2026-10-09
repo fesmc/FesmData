@@ -49,9 +49,9 @@ xlim = [380, 3900]
 ylim = [-5000, 1400]
 
 # Pyrenees (no v1 grid): UTM zone 31N (EPSG:32631), the whole range from the Bay of
-# Biscay (2W) to Cap de Creus (3.3E), about 41.7-43.9N, with some 20-30 km of
-# foreland on each side, so it includes a corner of the Bay of Biscay and of the Gulf
-# of Lion. The extent is a multiple of 32 km.
+# Biscay (2W) to Cap de Creus (3.3E) with some 20-30 km of foreland on each side
+# (2.2W-3.7E, 41.6-43.9N), so it includes a corner of the Bay of Biscay and of the
+# Gulf of Lion. The extent is a multiple of 32 km.
 [PYR]
 folder = "Pyrenees"
 proj = "+proj=tmerc +lat_0=0 +lon_0=3 +k=0.9996 +x_0=500000 +y_0=0 +a=6378137 +rf=298.257223563 +units=km"
