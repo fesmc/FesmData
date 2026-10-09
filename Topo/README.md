@@ -100,7 +100,33 @@ julia --project=Topo -t 8 Topo/scripts/01_grids.jl GRL-PAL
 
 The script also reports which grids match the v1 definitions in `../maps`.
 
-### 2-5. Sources, merge, all grids, checks
+### 2. Sources on the base grid
 
-To come: remap each source onto the base grid, merge them into each product,
-remap the product onto all grids, and plot checks.
+Remap each source of a domain onto its base grid (one job per source, about a
+minute each on a Levante node):
+
+```bash
+sbatch --job-name=src-GRL-PAL-bm Topo/jobs/run_step.sbatch 02_regrid_source.jl GRL-PAL bedmachine_greenland_v6
+sbatch --job-name=src-GRL-PAL-gebco Topo/jobs/run_step.sbatch 02_regrid_source.jl GRL-PAL gebco2025
+```
+
+Each writes `$FESMDATA_WORK/topo/<BASE>/<BASE>_<source>.nc` with `z_bed`, `z_srf`,
+`H_ice`, `z_bed_sd` (sub-cell standard deviation of the bed), the area fractions
+`f_ocn`, `f_land`, `f_grnd`, `f_flt`, and `f_valid` (fraction of the cell covered
+by the source). Sources on the domain projection (BedMachine, Bedmap3) are remapped
+exactly; GEBCO is sampled at about half its resolution within each cell.
+
+Source notes (see `sources.jl`):
+
+- Surface elevation is 0 over the ocean for all sources.
+- BedMachine Antarctica: the surface includes firn air (`firn`), and the ice
+  thickness does not. Lake Vostok is grounded ice.
+- Bedmap3: the transiently grounded ice shelf is floating ice.
+- GEBCO: ice thickness is surface minus sub-ice elevation, which is only non-zero
+  on the Greenland and Antarctic ice sheets. Under ice shelves the sub-ice
+  elevation is the sea floor, so GEBCO ice-shelf thickness is not usable.
+
+### 3-5. Merge, all grids, checks
+
+To come: merge the sources into each product, remap the product onto all grids,
+and plot checks.
