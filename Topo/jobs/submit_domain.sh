@@ -4,17 +4,23 @@
 # each starting when the previous step has succeeded. Step 2 runs one job per source.
 # Run from the FesmData root after sourcing the machine environment:
 #
-#     Topo/jobs/submit_domain.sh DOMAIN [FIRST_STEP]
+#     Topo/jobs/submit_domain.sh DOMAIN [FIRST_STEP] [PRODUCTS]
 #
-# FIRST_STEP (1-5, default 1) skips the earlier steps.
+# FIRST_STEP (1-5, default 1) skips the earlier steps. PRODUCTS selects the products
+# of steps 2-5: "default" (the default), "variants", "all", or one product (see
+# domains.toml); step 2 remaps the sources of these products.
 #
 set -euo pipefail
 domain=$1
 first=${2:-1}
+products=${3:-default}
 run=Topo/jobs/run_step.sbatch
 
 sources=$(julia --project=Topo -e 'include("Topo/common.jl"); d = Domain(ARGS[1]);
-    println(join(unique(reduce(vcat, collect(values(d.products)))), " "))' "$domain")
+    println(join(unique(reduce(vcat, [d.products[p] for p in select_products(d, ARGS[2])]; init=String[])), " "))' \
+    "$domain" "$products")
+[ -n "$sources" ] || { echo "$domain has no $products products"; exit 1; }
+tag=$domain; [ "$products" = default ] || tag=$domain-$products
 
 dep=""
 submit() {  # submit NAME TIME SCRIPT ARGS...; prints the job id
@@ -32,12 +38,12 @@ if [ "$first" -le 2 ]; then
     dep="--dependency=afterok:$(IFS=:; echo "${ids[*]}")"
 fi
 if [ "$first" -le 3 ]; then
-    id=$(submit "merge-$domain" 01:00:00 03_merge.jl "$domain"); dep="--dependency=afterok:$id"
+    id=$(submit "merge-$tag" 01:00:00 03_merge.jl "$domain" "$products"); dep="--dependency=afterok:$id"
 fi
 if [ "$first" -le 4 ]; then
-    id=$(submit "grids-all-$domain" 01:00:00 04_grids.jl "$domain"); dep="--dependency=afterok:$id"
+    id=$(submit "grids-all-$tag" 01:00:00 04_grids.jl "$domain" "$products"); dep="--dependency=afterok:$id"
 fi
 if [ "$first" -le 5 ]; then
-    id=$(submit "plots-$domain" 01:00:00 05_plots.jl "$domain")
+    id=$(submit "plots-$tag" 01:00:00 05_plots.jl "$domain" "$products")
 fi
 squeue -u "$USER" -o "%.10i %.28j %.10T %.12r"

@@ -31,7 +31,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | topo     | GEBCO2025                | GEBCO 2025 global bath. and topo data            | GEBCO Compilation Group (2025) |
 | topo     | Morlighem2017_BedMachine | Bedmachine ice topography data                   | Morlighem et al. (2017)        |
 | topo     | RTOPO2                   | RTopo2 global topography data                    | Schaeffer et al. (2019)        |
-| topo     | Topo                     | Topography v2: GEBCO2025 + BedMachine/Bedmap3, 0.5-32 km | Multiple (see Topo/README.md) |
+| topo     | Topo                     | Topography v2: GEBCO2026 + BedMachine/Bedmap3, 0.5-32 km | Multiple (see Topo/README.md) |
 | geo      | ECM1_geo                 | Global sediment thickness data (ECM1)            | Mooney et al. (2023).          |
 | geo      | Pan2022_litho            | Global lithospheric thickness data               | Pan et al. (2022)              |
 | ts       | PaleoIndex_ts            | Paleo index time series data.                    | Unpublished                    |

@@ -9,7 +9,10 @@
 # one half), and `src_id` the source covering most of the cell.
 #
 # Usage:
-#     julia --project=Topo -t N Topo/scripts/04_grids.jl DOMAIN [PRODUCT]
+#     julia --project=Topo -t N Topo/scripts/04_grids.jl DOMAIN [PRODUCTS]
+#
+# PRODUCTS is "default" (the default products, if omitted), "variants", "all",
+# or the name of one product (see domains.toml).
 #
 include(joinpath(@__DIR__, "..", "common.jl"))
 include(joinpath(TOPO_DIR, "sources.jl"))
@@ -18,9 +21,9 @@ const MEANS = ("z_bed", "z_srf", "H_ice", "f_ocn", "f_land", "f_grnd", "f_flt")
 const MASK_ATTRIB = Pair{String,Any}["flag_values" => collect(MASK_CLASSES),
                                      "flag_meanings" => "ocean ice_free_land grounded_ice floating_ice"]
 
-1 <= length(ARGS) <= 2 || error("usage: 04_grids.jl DOMAIN [PRODUCT]")
+1 <= length(ARGS) <= 2 || error("usage: 04_grids.jl DOMAIN [PRODUCTS]")
 dom = Domain(ARGS[1])
-products = length(ARGS) == 2 ? [ARGS[2]] : sort(collect(keys(dom.products)))
+products = select_products(dom, get(ARGS, 2, "default"))
 base = dom.base
 
 function dominant_mask(f)

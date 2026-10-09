@@ -7,7 +7,9 @@
 #
 # `folder` is the output folder under $ICE_DATA/v2. `products` maps each output
 # product name to its sources, in order of priority (see sources.jl); a thickness
-# source (glaciers) adds ice onto the sources below it. `rho_ice` and
+# source (glaciers) adds ice onto the sources below it. `products` are the default
+# products of a domain, from the latest sources; `variants` are further products
+# from earlier versions or other sources, made on request. `rho_ice` and
 # `rho_sw` (kg m-3) are used for flotation, as in the BedMachine product of the domain.
 
 [ANT]
@@ -20,8 +22,13 @@ rho_ice = 917.0
 rho_sw = 1027.0
 
 [ANT.products]
-"BedMachine-v4" = ["bedmachine_antarctica_v4", "gebco2025"]
-"Bedmap3" = ["bedmap3", "gebco2025"]
+"BedMachine-v4" = ["bedmachine_antarctica_v4", "gebco2026"]
+"Bedmap3" = ["bedmap3", "gebco2026"]
+
+[ANT.variants]
+"BedMachine-v3" = ["bedmachine_antarctica_v3", "gebco2026"]
+"BedMachine-v2" = ["bedmachine_antarctica_v2", "gebco2026"]
+"Bedmap2" = ["bedmap2", "gebco2026"]
 
 [GRL-PAL]
 folder = "Greenland"
@@ -33,7 +40,11 @@ rho_ice = 917.0
 rho_sw = 1023.0
 
 [GRL-PAL.products]
-"BedMachine-v6" = ["bedmachine_greenland_v6", "gebco2025"]
+"BedMachine-v6" = ["bedmachine_greenland_v6", "gebco2026"]
+
+[GRL-PAL.variants]
+"BedMachine-v5" = ["bedmachine_greenland_v5", "gebco2026"]
+"BedMachine-v4" = ["bedmachine_greenland_v4", "gebco2026"]
 
 [GRL-PAL.crops.GRL]
 folder = "Greenland"
@@ -50,7 +61,7 @@ rho_ice = 917.0
 rho_sw = 1023.0
 
 [NH.products]
-"GEBCO2025" = ["bedmachine_greenland_v6", "iceboost_v2", "gebco2025"]
+"GEBCO2026" = ["bedmachine_greenland_v6", "iceboost_v2", "gebco2026"]
 
 [NH.crops.LIS]
 folder = "Laurentide"

@@ -12,7 +12,10 @@
 # thickness source. Surface elevation is kept as given by the sources.
 #
 # Usage:
-#     julia --project=Topo -t N Topo/scripts/03_merge.jl DOMAIN [PRODUCT]
+#     julia --project=Topo -t N Topo/scripts/03_merge.jl DOMAIN [PRODUCTS]
+#
+# PRODUCTS is "default" (the default products, if omitted), "variants", "all",
+# or the name of one product (see domains.toml).
 #
 include(joinpath(@__DIR__, "..", "common.jl"))
 include(joinpath(TOPO_DIR, "sources.jl"))
@@ -20,9 +23,9 @@ include(joinpath(TOPO_DIR, "sources.jl"))
 const TAPER_KM = 20.0
 const BLEND = ("z_bed", "z_srf", "H_ice", "z_bed_sd", "f_ocn", "f_land", "f_grnd", "f_flt")
 
-1 <= length(ARGS) <= 2 || error("usage: 03_merge.jl DOMAIN [PRODUCT]")
+1 <= length(ARGS) <= 2 || error("usage: 03_merge.jl DOMAIN [PRODUCTS]")
 dom = Domain(ARGS[1])
-products = length(ARGS) == 2 ? [ARGS[2]] : sort(collect(keys(dom.products)))
+products = select_products(dom, get(ARGS, 2, "default"))
 base = dom.base
 dx, dy = spacing(base)
 

@@ -25,19 +25,22 @@ const PS_SOUTH = polar_stereographic_proj(lat_0=-90, lat_ts=-71, lon_0=0, a=6378
 """
     read_source(name, dom) -> (grid, z_bed, z_srf, H_ice, mask)
 
-Read source `name` (an entry of datamanifest.toml) for domain `dom`.
-Lon-lat sources are read only over the latitudes covered by its base grid.
+Read source `name` (an entry of datamanifest.toml, or `bedmap2` for its entries
+`bedmap2_*`) for domain `dom`. Lon-lat sources are read only over the latitudes
+covered by its base grid.
 """
 function read_source(name::AbstractString, dom::Domain)
     db = manifest()
-    if name == "bedmachine_greenland_v6"
-        return read_bedmachine(get_dataset_path(db, name), PS_NORTH)
-    elseif name == "bedmachine_antarctica_v4"
-        return read_bedmachine(get_dataset_path(db, name), PS_SOUTH)
+    if startswith(name, "bedmachine_greenland_")
+        return read_bedmachine(get_dataset_path(db, name), PS_NORTH, LAND)
+    elseif startswith(name, "bedmachine_antarctica_")
+        return read_bedmachine(get_dataset_path(db, name), PS_SOUTH, GRND)
     elseif name == "bedmap3"
         return read_bedmap3(get_dataset_path(db, name))
-    elseif name == "gebco2025"
-        return read_gebco(_only_nc(get_dataset_path(db, "gebco2025")), dom)
+    elseif name == "bedmap2"
+        return read_bedmap2(db)
+    elseif startswith(name, "gebco")
+        return read_gebco(_nc_file(get_dataset_path(db, name)), dom)
     elseif name == "iceboost_v2"
         return read_iceboost(db)
     end
@@ -47,9 +50,11 @@ end
 "True for sources that only give glacier ice thickness (see `GlacierTiles`)."
 is_thickness_source(name::AbstractString) = name == "iceboost_v2"
 
-function _only_nc(dir)
-    files = filter(endswith(".nc"), readdir(dir; join=true))
-    length(files) == 1 || error("expected one .nc file in $dir, found $(length(files))")
+# The NetCDF file `path`, or the only one in folder `path` (an extracted zip)
+function _nc_file(path)
+    isfile(path) && return path
+    files = filter(endswith(".nc"), readdir(path; join=true))
+    length(files) == 1 || error("expected one .nc file in $path, found $(length(files))")
     return files[1]
 end
 
@@ -64,12 +69,13 @@ _read2d(v, flip) = flip ? reverse(v[:, :]; dims=2) : v[:, :]
 
 """
 BedMachine Greenland/Antarctica: mask 0 ocean, 1 ice-free land, 2 grounded ice,
-3 floating ice, 4 Lake Vostok (taken as grounded ice).
+3 floating ice, and 4, taken as class `mask4`: Lake Vostok in Antarctica (grounded
+ice), non-Greenland land in Greenland up to v5 (ice-free land).
 """
-function read_bedmachine(path, proj)
+function read_bedmachine(path, proj, mask4)
     NCDataset(path) do ds
         grid, flip = _proj_axes(ds["x"][:], ds["y"][:], proj)
-        mask = map(v -> v == 4 ? GRND : Int8(v), _read2d(ds["mask"], flip))
+        mask = map(v -> v == 4 ? mask4 : Int8(v), _read2d(ds["mask"], flip))
         return (grid=grid,
                 z_bed=_read2d(ds["bed"], flip),
                 z_srf=_read2d(ds["surface"], flip),
@@ -101,7 +107,59 @@ function read_bedmap3(path)
 end
 
 """
-GEBCO 2025 topography and bathymetry, used without ice: its sub-ice grid only has
+Bedmap2 (Fretwell et al., 2013): one GeoTIFF per field (datamanifest entries
+`bedmap2_*`), 1 km. The ice mask is 0 for grounded ice (including rock outcrops),
+1 for floating ice, and no data elsewhere; the rock mask is 0 on rock outcrops
+(ice-free land). Cells without ice mask but with a valid bed are ocean, where
+surface and thickness are 0. Heights are relative to the GL04C geoid. Lake Vostok
+is grounded ice.
+"""
+function read_bedmap2(db)
+    tif(field) = _read_tif(get_dataset_path(db, "bedmap2_$field"))
+    x, y, z_bed = tif("bed")
+    _, _, z_srf = tif("surface")
+    _, _, H_ice = tif("thickness")
+    _, _, ice = tif("icemask_grounded_and_shelves")
+    _, _, rock = tif("rockmask")
+    ocean = ismissing.(ice) .& .!ismissing.(z_bed)
+    mask = map(ice, rock, ocean) do i, r, o
+        o ? OCEAN : ismissing(i) ? missing : i == 1 ? FLT : ismissing(r) ? GRND : LAND
+    end
+    z_srf[ocean] .= 0
+    H_ice[ocean] .= 0
+    return (grid=ProjGrid("native", x, y, PS_SOUTH), z_bed=z_bed, z_srf=z_srf, H_ice=H_ice, mask=mask)
+end
+
+"""
+    _read_tif(path) -> (xc, yc, A)
+
+Cell centres (km, ascending) and band 1 of a north-up GeoTIFF on a projection in
+metres, with `missing` for no data.
+"""
+function _read_tif(path)
+    AG.read(path) do ds
+        xc, yc, _ = _tif_axes(ds, path)
+        b = AG.getband(ds, 1)
+        A = reverse(AG.read(b); dims=2)
+        nd = AG.getnodatavalue(b)
+        return xc, yc, nd === nothing ? A : map(v -> v == nd ? missing : v, A)
+    end
+end
+
+# Cell centres (km, ascending) and projection (km) of a north-up GeoTIFF in metres
+function _tif_axes(ds, path)
+    x0, dx, rx, y0, ry, dy = AG.getgeotransform(ds)
+    (rx == 0 && ry == 0 && dy < 0) || error("$path: not a north-up grid")
+    proj = AG.toPROJ4(AG.importWKT(AG.getproj(ds)))
+    occursin("+units=m ", proj * " ") || error("$path: projection not in metres: $proj")
+    proj = strip(replace(proj * " ", "+units=m " => "+units=km "))
+    xc = (x0 .+ dx .* ((1:AG.width(ds)) .- 0.5)) ./ 1000
+    yc = reverse(y0 .+ dy .* ((1:AG.height(ds)) .- 0.5)) ./ 1000
+    return xc, yc, proj
+end
+
+"""
+GEBCO topography and bathymetry, used without ice: its sub-ice grid only has
 ice thickness for the Greenland and Antarctic ice sheets, which the regional
 sources cover. Bed elevation is the GEBCO elevation; cells at or below sea level are
 ocean (surface elevation 0), and cells above are land.
@@ -160,14 +218,9 @@ metres.
 """
 function read_tile(path::AbstractString)
     AG.read(path) do ds
-        x0, dx, rx, y0, ry, dy = AG.getgeotransform(ds)
-        (rx == 0 && ry == 0 && dy < 0) || error("$path: not a north-up grid")
-        proj = AG.toPROJ4(AG.importWKT(AG.getproj(ds)))
-        occursin("+units=m ", proj * " ") || error("$path: projection not in metres: $proj")
-        proj = replace(proj * " ", "+units=m " => "+units=km ") |> strip
-        nx, ny = AG.width(ds), AG.height(ds)
-        xc = (x0 .+ dx .* ((1:nx) .- 0.5)) ./ 1000
-        yc = reverse(y0 .+ dy .* ((1:ny) .- 0.5)) ./ 1000
+        xc, yc, proj = _tif_axes(ds, path)
+        dx, dy = AG.getgeotransform(ds)[[2, 6]]
+        nx, ny = length(xc), length(yc)
         H = reverse(AG.read(AG.getband(ds, 1)); dims=2)
         meta = Dict(Pair(split(m, "="; limit=2)...) for m in AG.metadata(ds))
         area, volume = parse(Float64, meta["area"]), parse(Float64, meta["volume"])

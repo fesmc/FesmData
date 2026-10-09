@@ -23,6 +23,19 @@ follow the v1 grids in `../maps`, so the v1 grids at 4-32 km are reproduced, exc
 GRL-32KM, which has 53 instead of 54 columns so that its extent matches the finer
 GRL grids.
 
+Each domain has default products, from the latest sources, and variants, from
+earlier versions of the ice-sheet datasets, made on request:
+
+| Domain | Default products | Variants |
+|---|---|---|
+| ANT | BedMachine-v4, Bedmap3 | BedMachine-v3, BedMachine-v2, Bedmap2 |
+| GRL-PAL | BedMachine-v6 | BedMachine-v5, BedMachine-v4 |
+| NH | GEBCO2026 | |
+
+All products use GEBCO 2026 outside the ice-sheet datasets. A new variant is a new
+entry under `[<domain>.variants]` in `domains.toml` (with its sources in
+`../datamanifest.toml` and `sources.jl`).
+
 ## Layout
 
 | Location | Contents |
@@ -71,7 +84,7 @@ List the datasets and whether they are present:
 julia --project=Topo Topo/scripts/00_sources.jl
 ```
 
-GEBCO 2025 (4 GB zipped), Bedmap3 (2.5 GB) and IceBoost v2.0 (1.3 GB zipped, one
+GEBCO 2026 (4 GB zipped), Bedmap3 (2.5 GB) and IceBoost v2.0 (1.3 GB zipped, one
 zip per RGI region) are downloaded automatically (Levante login node):
 
 ```bash
@@ -80,7 +93,8 @@ julia --project=Topo Topo/scripts/00_sources.jl --download
 
 The other sources need a manual download into the path printed by the script:
 
-- **BedMachine Greenland v6** and **BedMachine Antarctica v4** (NSIDC) need a free
+- **BedMachine Greenland** (v4-v6) and **BedMachine Antarctica** (v2-v4) (NSIDC),
+  including the versions no longer listed by NSIDC, need a free
   [NASA Earthdata login](https://urs.earthdata.nasa.gov). With the login in
   `~/.netrc` (`machine urs.earthdata.nasa.gov login <user> password <password>`):
 
@@ -108,7 +122,7 @@ minute each on a Levante node):
 
 ```bash
 sbatch --job-name=src-GRL-PAL-bm Topo/jobs/run_step.sbatch 02_regrid_source.jl GRL-PAL bedmachine_greenland_v6
-sbatch --job-name=src-GRL-PAL-gebco Topo/jobs/run_step.sbatch 02_regrid_source.jl GRL-PAL gebco2025
+sbatch --job-name=src-GRL-PAL-gebco Topo/jobs/run_step.sbatch 02_regrid_source.jl GRL-PAL gebco2026
 ```
 
 Each writes `$FESMDATA_WORK/topo/<BASE>/<BASE>_<source>.nc` with `z_bed`, `z_srf`,
@@ -132,7 +146,11 @@ Source notes (see `sources.jl`):
 - Surface elevation is 0 over the ocean for all sources.
 - BedMachine Antarctica: the surface includes firn air (`firn`), and the ice
   thickness does not. Lake Vostok is grounded ice.
+- BedMachine Greenland v4 and v5: non-Greenland land (Canadian Arctic) is ice-free
+  land.
 - Bedmap3: the transiently grounded ice shelf is floating ice.
+- Bedmap2 (1 km, GeoTIFFs): rock outcrops are ice-free land, and Lake Vostok is
+  grounded ice. Heights are relative to the GL04C geoid (EIGEN-6C4 for BedMachine).
 - GEBCO is used as ice-free topography and bathymetry. Its sub-ice grid only has
   ice thickness for the Greenland and Antarctic ice sheets (covered by the regional
   sources), and differs from the main grid by a few metres elsewhere.
@@ -143,11 +161,14 @@ Source notes (see `sources.jl`):
 
 ### 3. Merge
 
-Merge the sources of each product of a domain (all products, or one):
+Merge the sources of the products of a domain:
 
 ```bash
-sbatch --job-name=merge-ANT Topo/jobs/run_step.sbatch 03_merge.jl ANT [PRODUCT]
+sbatch --job-name=merge-ANT Topo/jobs/run_step.sbatch 03_merge.jl ANT [PRODUCTS]
 ```
+
+`PRODUCTS` is `default` (the default products, if omitted), `variants`, `all`, or
+the name of one product; the same holds for steps 4 and 5.
 
 This writes `$ICE_DATA/v2/<folder>/<BASE>/<BASE>_TOPO-<product>.nc`. Sources are
 blended in order of increasing priority: a source replaces the fields below it where
@@ -172,7 +193,7 @@ Remap each product from the base grid onto all other grids of the domain, includ
 the crops (GRL from GRL-PAL, LIS and EIS from NH):
 
 ```bash
-sbatch --job-name=grids-all-ANT Topo/jobs/run_step.sbatch 04_grids.jl ANT [PRODUCT]
+sbatch --job-name=grids-all-ANT Topo/jobs/run_step.sbatch 04_grids.jl ANT [PRODUCTS]
 ```
 
 This writes `$ICE_DATA/v2/<folder>/<GRID>/<GRID>_TOPO-<product>.nc`. Fields and
@@ -184,11 +205,12 @@ source covering most of the cell.
 ### 5. Checks
 
 ```bash
-sbatch --job-name=plots-ANT Topo/jobs/run_step.sbatch 05_plots.jl ANT [PRODUCT]
+sbatch --job-name=plots-ANT Topo/jobs/run_step.sbatch 05_plots.jl ANT [PRODUCTS]
 ```
 
 This writes plots to `$FESMDATA_WORK/topo/plots/` (the base product, ice thickness
-on all grids, and the difference with the v1 product at 16 or 32 km), and prints
+on all grids, the difference with the v1 product at 16 or 32 km, and for a variant
+the difference with a default product at 4 km), and prints
 the ice area and volume on every grid in the job log as a conservation check.
 
 ## Running a whole domain
@@ -197,9 +219,13 @@ the ice area and volume on every grid in the job log as a conservation check.
 as one job per source), each starting when the previous step succeeded:
 
 ```bash
-Topo/jobs/submit_domain.sh ANT        # all steps
-Topo/jobs/submit_domain.sh ANT 3      # from step 3
+Topo/jobs/submit_domain.sh ANT                # all steps
+Topo/jobs/submit_domain.sh ANT 3              # from step 3
+Topo/jobs/submit_domain.sh ANT 2 variants     # the variants, from step 2
 ```
+
+The third argument selects the products (as for steps 3-5), and step 2 then remaps
+only their sources.
 
 ## Glaciers in the NH product
 
