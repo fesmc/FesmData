@@ -40,3 +40,41 @@ julia --project=Publish Publish/scripts/fetch.jl Antarctica Topo ANT-8KM ANT-16K
 Files already present are kept if their checksum matches the registry. A file that
 differs (another version, or changed locally) stops the download, unless
 `--overwrite` is given.
+
+## Release
+
+The datasets, their file patterns and the record metadata (creators, licence,
+community, description) are set in `datasets.toml`. A release of a dataset on a domain
+folder:
+
+1. Tag the release, e.g. `topo-v2.0.0`, and push the tag.
+2. Run the pipeline at the tag (clean checkout), so that every file has
+   `fesmdata_version = "topo-v2.0.0"`.
+3. Upload the files to a Zenodo draft (on Levante, where the files are):
+
+   ```bash
+   julia --project=Publish Publish/scripts/zenodo.jl upload Antarctica Topo --dry-run
+   julia --project=Publish Publish/scripts/zenodo.jl upload Antarctica Topo
+   ```
+
+   The first release creates the record, later ones a new version of the record in
+   the registry. Files that are unchanged on Zenodo are kept, the others uploaded.
+4. Review the draft on Zenodo and publish it there. Publishing cannot be undone.
+5. Register the published record and commit the registry file:
+
+   ```bash
+   julia --project=Publish Publish/scripts/zenodo.jl register Antarctica Topo <record id>
+   ```
+
+   This checks that the files on Zenodo are the local files (md5) and writes
+   `registry/Antarctica/Topo.toml` with their sha256 checksums.
+
+`upload` checks that all files of the dataset have the same version, an existing
+release tag, and that the grid files were made at a commit. `--allow-untagged` skips
+these checks (e.g. for a test). `--draft=<id>` continues an existing draft.
+
+The token is read from `ZENODO_TOKEN` (scopes `deposit:write` and `deposit:actions`),
+which the machine environments set from `~/.zenodo_token`. To test, use
+[the sandbox](https://sandbox.zenodo.org) with `--sandbox` (token in
+`~/.zenodo_sandbox_token`); its registry files go to `registry/_sandbox/`, which is not
+tracked, and `fetch.jl --sandbox` downloads from them.

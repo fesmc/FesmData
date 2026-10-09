@@ -1,0 +1,38 @@
+# Datasets published on Zenodo (see README.md). Each dataset has one record per domain
+# folder under $ICE_DATA/v2. `tag` is the dataset name of its provenance attributes and
+# release tags (<tag>-vX.Y.Z). `files` are the patterns of its files in a grid folder,
+# after the grid name (regular expressions); the grid files grid_<GRID>.txt and
+# <GRID>_grid.nc are added to every grid folder with files of the dataset.
+
+# Metadata common to all records
+[_zenodo]
+community = "fesmc"
+license = "cc-by-4.0"
+creators = [
+    { name = "Robinson, Alexander", affiliation = "Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research" },
+]
+
+[Topo]
+tag = "topo"
+title = "high-resolution topography"
+readme = "Topo/README.md"
+files = ['_TOPO-.+\.nc']
+keywords = ["topography", "bathymetry", "ice thickness", "ice sheet", "model input"]
+description = """
+Bed topography, surface elevation, ice thickness and ice/ocean area fractions on the
+grids of a model domain, from the base grid to 32 km. Each source is remapped
+conservatively onto the base grid, the sources are merged in order of priority, and
+the coarser grids are derived from the base grid by conservative remapping.
+"""
+
+[Regions]
+tag = "regions"
+title = "regions and ice-sheet basins"
+readme = "Regions/README.md"
+files = ['_REGIONS\.nc', '_BASINS-.+\.nc']
+keywords = ["regions", "drainage basins", "continental shelf", "ice sheet", "model input"]
+description = """
+Region codes (a hierarchy of hemispheres, continents, ice sheets and oceans), zones
+(open ocean, continental shelf, land) with the distance to the shelf break, and
+ice-sheet drainage basins extended to the shelf break, on the grids of a model domain.
+"""

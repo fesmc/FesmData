@@ -2,6 +2,8 @@
 # folder) has a registry file, registry/<Domain>/<Dataset>.toml, with one entry per
 # file (uri, checksum, size, storage_path) and the record metadata in a `[_ZENODO]`
 # table. The files are DataManifest.jl databases, with `$datasets_dir` = $ICE_DATA/v2.
+# Records on the Zenodo sandbox (tests) have their registry in registry/_sandbox/,
+# which is not tracked.
 
 using Downloads
 using SHA
@@ -9,22 +11,25 @@ using TOML
 
 include(joinpath(@__DIR__, "..", "shared", "provenance.jl"))
 
-const REGISTRY_DIR = joinpath(REPO_DIR, "registry")
+"Registry folder, of the Zenodo sandbox with `sandbox`."
+registry_dir(sandbox::Bool=false) =
+    sandbox ? joinpath(REPO_DIR, "registry", "_sandbox") : joinpath(REPO_DIR, "registry")
 
 "Root of the products, \$ICE_DATA/v2, which `\$datasets_dir` in the registry stands for."
 products_dir() = joinpath(_env("ICE_DATA"), "v2")
 
 "Registry file of the record of a dataset on a domain folder."
-registry_file(domain::AbstractString, dataset::AbstractString) =
-    joinpath(REGISTRY_DIR, domain, "$dataset.toml")
+registry_file(domain::AbstractString, dataset::AbstractString; sandbox::Bool=false) =
+    joinpath(registry_dir(sandbox), domain, "$dataset.toml")
 
 "All records in the registry, as (domain, dataset) pairs."
-function list_records()
+function list_records(; sandbox::Bool=false)
+    dir = registry_dir(sandbox)
     records = Tuple{String,String}[]
-    isdir(REGISTRY_DIR) || return records
-    for domain in sort(readdir(REGISTRY_DIR))
-        isdir(joinpath(REGISTRY_DIR, domain)) || continue
-        for f in sort(readdir(joinpath(REGISTRY_DIR, domain)))
+    isdir(dir) || return records
+    for domain in sort(readdir(dir))
+        (startswith(domain, "_") || !isdir(joinpath(dir, domain))) && continue
+        for f in sort(readdir(joinpath(dir, domain)))
             endswith(f, ".toml") && push!(records, (domain, f[1:end-5]))
         end
     end
@@ -32,14 +37,14 @@ function list_records()
 end
 
 """
-    read_record(domain, dataset) -> (info, files)
+    read_record(domain, dataset; sandbox=false) -> (info, files)
 
 Record metadata (the `[_ZENODO]` table) and file entries (name => entry) of a record.
 """
-function read_record(domain::AbstractString, dataset::AbstractString)
-    path = registry_file(domain, dataset)
+function read_record(domain::AbstractString, dataset::AbstractString; sandbox::Bool=false)
+    path = registry_file(domain, dataset; sandbox=sandbox)
     isfile(path) || error("no record $domain/$dataset, available: " *
-                          join(["$d/$s" for (d, s) in list_records()], ", "))
+                          join(["$d/$s" for (d, s) in list_records(; sandbox=sandbox)], ", "))
     reg = TOML.parsefile(path)
     files = Dict(k => v for (k, v) in reg if !startswith(k, "_"))
     return get(reg, "_ZENODO", Dict{String,Any}()), files
@@ -85,14 +90,14 @@ function fetch_file(entry::AbstractDict; overwrite::Bool=false)
 end
 
 """
-    fetch_record(domain, dataset; grids=String[], overwrite=false) -> Vector{String}
+    fetch_record(domain, dataset; grids=String[], overwrite=false, sandbox=false) -> Vector{String}
 
 Download the files of a record into \$ICE_DATA/v2/<Domain>/<GRID>/, only those of
 `grids` if given (see `fetch_file`). Returns the local paths.
 """
 function fetch_record(domain::AbstractString, dataset::AbstractString; grids=String[],
-                      overwrite::Bool=false)
-    _, files = read_record(domain, dataset)
+                      overwrite::Bool=false, sandbox::Bool=false)
+    _, files = read_record(domain, dataset; sandbox=sandbox)
     available = sort(unique(entry_grid(e) for e in values(files)))
     unknown = setdiff(grids, available)
     isempty(unknown) || error("$domain/$dataset: no grids $(join(unknown, ", ")), available: $(join(available, ", "))")
