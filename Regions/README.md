@@ -13,8 +13,9 @@ and of ice-sheet drainage basins, for each model domain on all its grids
 - **Basins** (`basins.toml`) are the drainage basins of the ice sheets, extended over
   the land and shelf of their region up to the shelf break.
 
-Everything is computed on the base grid of a domain (ANT-1KM, GRL-PAL-500M, NH-2KM)
-and then mapped onto all other grids and crops, as for the topography.
+Everything is computed on the base grid of a domain (ANT-1KM, GRL-PAL-500M, NH-2KM,
+PYR-500M, SRG-250M) and then mapped onto all other grids and crops, as for the
+topography.
 
 ## Region codes
 
@@ -47,6 +48,10 @@ The rules of each region are documented in `regions.toml`. In short:
   only the coastal basins draining into them, not the large rivers.
 - The Antarctic subregions are the IMBIE regions, extended to fill all of 2.1.
 
+The mountain domains lie within single regions of level 2: PYR in 1.2 Western
+Eurasia (land and EEZs of Spain, France and Andorra) and 1.52 North Atlantic Ocean
+(beyond the EEZs, if any), SRG in 2.2 Latin America and the Caribbean.
+
 ## Zones
 
 `zone` is 3 for present-day land (ice-free land and grounded ice), 2 for the
@@ -61,6 +66,11 @@ The open ocean is the ice-free ocean connected to the abyss (deeper than
 100 km (an opening of radius `r_open` = 50 km), which also smooths the shelf break. Deep troughs on the shelf that deepen
 towards the ice sheet are therefore shelf. The parameters are in `regions.toml`.
 
+A domain without open ocean, where no ocean deeper than `z_abyss` lies within the
+domain (the mountain domains PYR and SRG), has only land and shelf, and
+`dist_shelfbreak` is -Inf everywhere (as noted in the `comment` attribute of the
+variable).
+
 ## Basins
 
 | Set | Domains | Source |
@@ -68,11 +78,17 @@ towards the ice sheet are therefore shelf. The parameters are in `regions.toml`.
 | Mouginot2019 | GRL-PAL, NH | Greenland glacier basins, 260 basins in 7 regions (Mouginot & Rignot, 2019) |
 | Zwally2012 | GRL-PAL, NH; ANT | GSFC drainage systems (Zwally et al., 2012); Greenland sub-systems 11 = 1.1 |
 | IMBIE2016, IMBIE2016-refined | ANT | IMBIE 2016 and refined basins (Mouginot et al., 2017, NSIDC-0709 v2) |
+| SanRafael | SRG | San Rafael Glacier (RGI2000-v7.0-G-17-12835), its RGI 7.0 outline as the footprint of its IceBoost v2 tile |
 
 Each file has `basin`, `basin_mask` (1 within the original basins) and, for sets
 with groups (e.g. Mouginot regions, IMBIE regions, Zwally systems), `basin_group`. The
 islands in the ice shelves of IMBIE2016-refined keep their extent but are not
 extended, so the ice shelves around them go to the neighbouring grounded basins.
+
+SanRafael is a single basin (1), the cells at least half covered by the glacier, not
+extended: the part of the SRG domain that evolves freely in yelmox, while the rest
+relaxes to the present-day state (in v1, `regions = 1` of SRG-250M_REGIONS.nc). PYR
+has no basins.
 
 ## Layout
 
