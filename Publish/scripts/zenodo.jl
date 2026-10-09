@@ -1,4 +1,4 @@
-# Publish the products of a dataset on a domain folder on Zenodo (see Publish/README.md).
+# Publish the products of a dataset on a domain on Zenodo (see Publish/README.md).
 #
 #   julia --project=Publish Publish/scripts/zenodo.jl upload <Domain> <Dataset> [options]
 #   julia --project=Publish Publish/scripts/zenodo.jl register <Domain> <Dataset> <record id> [options]

@@ -1,8 +1,12 @@
 [deps]
 Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
 Downloads = "f43a241f-c20a-4ad4-852c-f6b1247861c6"
+FesmUtils = "87fa8290-809d-4b2a-a2bb-fb70d9529671"
 JSON = "682c06a0-de6a-54ab-a142-c8b1cf79cde6"
 MD5 = "6ac74813-4b46-53a4-afec-0b5dc9d7885c"
 NCDatasets = "85f8d34a-cbdd-5861-8df4-14fed0d494ab"
 SHA = "ea8e919c-243c-51af-8825-aaa63cd721ce"
 TOML = "fa267f1f-6049-4f14-aa54-33bafae1ed76"
+
+[sources]
+FesmUtils = {rev = "main", url = "https://github.com/fesmc/FesmUtils.jl"}

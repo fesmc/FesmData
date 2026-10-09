@@ -1,8 +1,8 @@
-# Datasets published on Zenodo (see README.md). Each dataset has one record per domain
-# folder under $ICE_DATA/v2. `tag` is the dataset name of its provenance attributes and
-# release tags (<tag>-vX.Y.Z). `files` are the patterns of its files in a grid folder,
-# after the grid name (regular expressions); the grid files grid_<GRID>.txt and
-# <GRID>_grid.nc are added to every grid folder with files of the dataset.
+# Datasets published on Zenodo (see README.md): one record per dataset and domain (the
+# output folder under $ICE_DATA/v2, e.g. Greenland). `tag` is the dataset name of the
+# provenance attributes and release tags (<tag>-vX.Y.Z). The files of a release on each
+# grid are defined by the pipeline (e.g. topo_release_files in ../Topo/files.jl), with
+# the grid files grid_<GRID>.txt and <GRID>_grid.nc.
 
 # Metadata common to all records
 [_zenodo]
@@ -16,7 +16,6 @@ creators = [
 tag = "topo"
 title = "high-resolution topography"
 readme = "Topo/README.md"
-files = ['_TOPO-.+\.nc']
 keywords = ["topography", "bathymetry", "ice thickness", "ice sheet", "model input"]
 description = """
 Bed topography, surface elevation, ice thickness and ice/ocean area fractions on the
@@ -29,7 +28,6 @@ the coarser grids are derived from the base grid by conservative remapping.
 tag = "regions"
 title = "regions and ice-sheet basins"
 readme = "Regions/README.md"
-files = ['_REGIONS\.nc', '_BASINS-.+\.nc']
 keywords = ["regions", "drainage basins", "continental shelf", "ice sheet", "model input"]
 description = """
 Region codes (a hierarchy of hemispheres, continents, ice sheets and oceans), zones

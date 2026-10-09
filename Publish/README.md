@@ -2,8 +2,10 @@
 
 The processed products of the v2 pipelines (Topo, Regions, ...) are published on
 [Zenodo](https://zenodo.org/communities/fesmc), in the `fesmc` community, with one
-record per dataset and domain folder (e.g. Antarctica / Topo). A record holds all grids
-of that folder, from the base grid to 32 km, and the grid files. Each release of a
+record per dataset and domain (e.g. Antarctica / Topo). Domains are named by their
+output folder (`folder` in `../shared/domains.toml`): Antarctica, GreenlandPaleo
+(GRL-PAL), Greenland (GRL), North (NH), Laurentide (LIS), Eurasia (EIS). A record holds
+all grids of its domain, from the base grid to 32 km, with their grid files. Each release of a
 dataset (git tag `<dataset>-vX.Y.Z`, e.g. `topo-v2.0.0`) is a new version of its
 record, with its own DOI; the concept DOI of the record always resolves to the latest
 version.
@@ -43,9 +45,11 @@ differs (another version, or changed locally) stops the download, unless
 
 ## Release
 
-The datasets, their file patterns and the record metadata (creators, licence,
-community, description) are set in `datasets.toml`. A release of a dataset on a domain
-folder:
+The datasets and the record metadata (creators, licence, community, description) are
+set in `datasets.toml`. The files of a release on each grid are defined by the pipeline
+of the dataset (`topo_release_files` in `../Topo/files.jl`: all products of the domain,
+default and variants; `regions_release_files` in `../Regions/files.jl`), and must all be
+present. A release of a dataset on a domain:
 
 1. Tag the release, e.g. `topo-v2.0.0`, and push the tag.
 2. Run the pipeline at the tag (clean checkout), so that every file has

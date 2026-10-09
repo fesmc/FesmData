@@ -1,4 +1,4 @@
-# Upload of the products of a dataset on a domain folder to a Zenodo draft, and
+# Upload of the products of a dataset on a domain to a Zenodo draft, and
 # registration of the published record (see README.md). Uses the deposit API of
 # Zenodo with a personal token (scopes deposit:write and deposit:actions) in
 # ZENODO_TOKEN, or ZENODO_SANDBOX_TOKEN for the sandbox.
@@ -8,13 +8,19 @@ using MD5
 using NCDatasets
 
 include(joinpath(@__DIR__, "registry.jl"))
+include(joinpath(REPO_DIR, "shared", "domains.jl"))
+include(joinpath(REPO_DIR, "Topo", "files.jl"))
+include(joinpath(REPO_DIR, "Regions", "files.jl"))
+
+"Files of a release of each dataset on a grid of a domain, defined by its pipeline."
+const RELEASE_FILES = Dict("Topo" => topo_release_files, "Regions" => regions_release_files)
 
 read_datasets() = TOML.parsefile(joinpath(@__DIR__, "datasets.toml"))
 
 function dataset_config(dataset::AbstractString)
     all = read_datasets()
-    haskey(all, dataset) && !startswith(dataset, "_") ||
-        error("unknown dataset $dataset, available: $(join(filter(!startswith("_"), collect(keys(all))), ", "))")
+    haskey(all, dataset) && haskey(RELEASE_FILES, dataset) ||
+        error("unknown dataset $dataset, available: $(join(sort(collect(keys(RELEASE_FILES))), ", "))")
     return all[dataset]
 end
 
@@ -38,27 +44,24 @@ Base.basename(f::ProductFile) = basename(f.path)
 """
     collect_files(domain, dataset) -> Vector{ProductFile}
 
-Files of a dataset in \$ICE_DATA/v2/<domain>/<GRID>/ (patterns `files` of datasets.toml),
-with the grid files of every grid folder that has files of the dataset.
+Files of a release of a dataset on a domain (its output folder, e.g. Greenland): on
+every grid of the domain, the grid files and the files the pipeline of the dataset
+defines (`RELEASE_FILES`). All of them must be present.
 """
 function collect_files(domain::AbstractString, dataset::AbstractString)
-    cfg = dataset_config(dataset)
-    dir = joinpath(products_dir(), domain)
-    isdir(dir) || error("no folder $dir")
+    dataset_config(dataset)
+    dom, grids = folder_grids(domain)
     files = ProductFile[]
-    for grid in sort(readdir(dir))
-        gdir = joinpath(dir, grid)
-        isdir(gdir) || continue
-        patterns = [Regex("^\\Q$grid\\E" * p * "\$") for p in cfg["files"]]
-        names = sort(filter(f -> any(p -> occursin(p, f), patterns), readdir(gdir)))
-        isempty(names) && continue
-        for name in ("grid_$grid.txt", "$(grid)_grid.nc")
-            isfile(joinpath(gdir, name)) || error("grid file $name missing in $gdir (Topo step 1)")
-            push!(files, ProductFile(grid, joinpath(gdir, name), true))
-        end
-        append!(files, [ProductFile(grid, joinpath(gdir, n), false) for n in names])
+    for og in grids
+        g = og.grid.name
+        push!(files, ProductFile(g, joinpath(outdir(og), "grid_$g.txt"), true),
+                     ProductFile(g, joinpath(outdir(og), "$(g)_grid.nc"), true))
+        append!(files, [ProductFile(g, joinpath(outdir(og), name), false) for name in RELEASE_FILES[dataset](dom, og)])
     end
-    isempty(files) && error("no files of $dataset in $dir")
+    missing_files = [f.path for f in files if !isfile(f.path)]
+    isempty(missing_files) ||
+        error("$(length(missing_files)) of $(length(files)) files of $domain/$dataset are missing:\n  " *
+              join(missing_files, "\n  "))
     return files
 end
 
@@ -131,7 +134,7 @@ end
 """
     record_metadata(domain, dataset, files, version) -> Dict
 
-Zenodo metadata of the record of a dataset on a domain folder.
+Zenodo metadata of the record of a dataset on a domain.
 """
 function record_metadata(domain::AbstractString, dataset::AbstractString,
                          files::Vector{ProductFile}, version::AbstractString)
@@ -144,7 +147,7 @@ function record_metadata(domain::AbstractString, dataset::AbstractString,
     readme = "$REPO_URL/blob/$ref/$(cfg["readme"])"
     description = """
         <p>$(strip(replace(cfg["description"], '\n' => ' ')))</p>
-        <p>Domain folder: $domain. Grids: $(join(grids, ", ")).</p>
+        <p>Domain: $domain. Grids: $(join(grids, ", ")).</p>
         <p>Produced with <a href="$REPO_URL">FesmData</a> version $version (commit
         $commit); see the <a href="$readme">$dataset README</a> for the sources and methods.
         Each grid has its own files, named after the grid (e.g. <code>$(basename(first(data)))</code>),
@@ -260,7 +263,7 @@ end
 """
     upload(domain, dataset; sandbox=false, allow_untagged=false, draft=nothing, dry_run=false)
 
-Upload the files of a dataset on a domain folder to a draft of the next version of
+Upload the files of a dataset on a domain to a draft of the next version of
 its record, with its metadata. The draft is published on the Zenodo website, after
 review, and then registered with `register`.
 """
