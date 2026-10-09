@@ -230,7 +230,7 @@ only their sources.
 
 ## Glaciers in the NH product
 
-IceBoost glaciers in the NH product (run of 2026-10-09):
+IceBoost glaciers in the NH product (GEBCO 2026, run of 2026-10-09):
 
 | | Area (km²) | Volume (km³) |
 |---|---:|---:|
@@ -238,9 +238,9 @@ IceBoost glaciers in the NH product (run of 2026-10-09):
 | Raw tile pixels, before scaling to the glacier area and volume | 376,646 | 76,802 |
 | Glaciers on NH-2KM (`f_ice` ≤ 1; max before limiting 1.16) | 348,134 | 74,656 |
 | Within BedMachine Greenland coverage (replaced by BedMachine) | 49,679 | 11,384 |
-| On GEBCO ocean (dropped) | 548 | 55 |
+| On GEBCO ocean (dropped) | 600 | 61 |
 | NH product ice, without glaciers | 1,865,112 | 3,007,068 |
-| NH product ice, with glaciers | 2,164,848 | 3,070,581 |
+| NH product ice, with glaciers | 2,164,800 | 3,070,576 |
 
 Step 2 for IceBoost takes about 25 min on a Levante node. The GRL-PAL and ANT
 products are unchanged (bitwise identical before and after adding thickness
