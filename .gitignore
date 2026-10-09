@@ -1,4 +1,6 @@
 .DS_Store
+*.nc
+*.zip
 regions/*.nc
 Batchelor2019_NHIceMasks/Batchelor2019_NHextent
 regions/marineregions
@@ -8,3 +10,4 @@ GEBCO2025/*.zip
 Pan2022_litho/*.nc
 Dawson2022_AntarcticaBasalState/readme.rtf
 Dawson2022_AntarcticaBasalState/Antarctica_Initialization.mat
+SUMup_smb/*
