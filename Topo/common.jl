@@ -99,14 +99,19 @@ const VARINFO = Dict(
     "f_grnd"   => ("1", "area fraction of grounded ice"),
     "f_flt"    => ("1", "area fraction of floating ice"),
     "f_valid"  => ("1", "area fraction covered by source data"),
+    "mask"     => ("1", "dominant surface type"),
+    "src_id"   => ("1", "source with the largest weight"),
 )
 
 """
-    write_fields(path, g, fields; attrib=[])
+    write_fields(path, g, fields; attrib=[], varattrib=Dict())
 
-Write the 2D fields (NaN = missing) on grid `g` to a new NetCDF file.
+Write the 2D fields on grid `g` to a new NetCDF file. Float fields are written as
+Float32 with NaN as missing; integer fields (e.g. masks) are written as they are.
+`varattrib[name]` gives extra attributes of a variable (e.g. flag values).
 """
-function write_fields(path::AbstractString, g::ProjGrid, fields::AbstractDict; attrib=Pair{String,String}[])
+function write_fields(path::AbstractString, g::ProjGrid, fields::AbstractDict;
+                      attrib=Pair{String,String}[], varattrib=Dict{String,Vector{Pair{String,Any}}}())
     mkpath(dirname(path))
     NCDataset(path, "c") do ds
         init_grid_nc!(ds, g)
@@ -115,9 +120,15 @@ function write_fields(path::AbstractString, g::ProjGrid, fields::AbstractDict; a
         end
         for name in sort(collect(keys(fields)))
             units, long_name = get(VARINFO, name, ("", name))
-            F = replace(Float32.(fields[name]), NaN32 => FILLVALUE)
-            defVar(ds, name, F, ("xc", "yc"); fillvalue=FILLVALUE, deflatelevel=1, shuffle=true,
-                   attrib=["units" => units, "long_name" => long_name, "grid_mapping" => "crs"])
+            atts = vcat(["units" => units, "long_name" => long_name, "grid_mapping" => "crs"],
+                        get(varattrib, name, Pair{String,Any}[]))
+            F = fields[name]
+            if eltype(F) <: Integer
+                defVar(ds, name, F, ("xc", "yc"); deflatelevel=1, shuffle=true, attrib=atts)
+            else
+                defVar(ds, name, replace(Float32.(F), NaN32 => FILLVALUE), ("xc", "yc");
+                       fillvalue=FILLVALUE, deflatelevel=1, shuffle=true, attrib=atts)
+            end
         end
     end
     return path
@@ -131,10 +142,11 @@ Read all 2D fields of a file written by `write_fields` (missing = NaN).
 function read_fields(path::AbstractString)
     NCDataset(path) do ds
         g = ProjGrid(ds.attrib["grid_name"], ds["xc"][:], ds["yc"][:], ds["crs"].attrib["proj_params"])
-        fields = Dict{String,Matrix{Float32}}()
+        fields = Dict{String,Matrix}()
         for (name, v) in ds
             dimnames(v) == ("xc", "yc") || continue
-            fields[name] = nomissing(v[:, :], NaN32)
+            A = v[:, :]
+            fields[name] = eltype(A) <: Union{Missing,Integer} ? A : nomissing(A, NaN32)
         end
         return g, fields
     end
@@ -143,3 +155,7 @@ end
 "Intermediate file of a source remapped onto the base grid of a domain."
 source_file(dom::Domain, source::AbstractString) =
     joinpath(workdir(), dom.base.name, "$(dom.base.name)_$(source).nc")
+
+"Output file of a product on a grid."
+product_file(og::OutGrid, product::AbstractString) =
+    joinpath(outdir(og), "$(og.grid.name)_TOPO-$(product).nc")

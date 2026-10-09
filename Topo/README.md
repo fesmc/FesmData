@@ -126,7 +126,24 @@ Source notes (see `sources.jl`):
   on the Greenland and Antarctic ice sheets. Under ice shelves the sub-ice
   elevation is the sea floor, so GEBCO ice-shelf thickness is not usable.
 
-### 3-5. Merge, all grids, checks
+### 3. Merge
 
-To come: merge the sources into each product, remap the product onto all grids,
-and plot checks.
+Merge the sources of each product of a domain (all products, or one):
+
+```bash
+sbatch --job-name=merge-ANT Topo/jobs/run_step.sbatch 03_merge.jl ANT [PRODUCT]
+```
+
+This writes `$ICE_DATA/v2/<folder>/<BASE>/<BASE>_TOPO-<product>.nc`. Sources are
+blended in order of increasing priority: a source replaces the fields below it where
+it fully covers a cell, with a weight rising linearly from 0 at the edge of its
+coverage to 1 at 20 km inside it. The ice fraction of each cell is then grounded or
+floating as a whole, by flotation of its mean ice thickness and bed (densities in
+`domains.toml`). Surface elevation is kept as given by the sources (in Antarctica it
+includes firn air). The file also has `mask` (dominant surface type: 0 ocean, 1
+ice-free land, 2 grounded ice, 3 floating ice) and `src_id` (source with the largest
+weight).
+
+### 4-5. All grids, checks
+
+To come: remap each product onto all grids of its domain, and plot checks.
