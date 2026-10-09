@@ -55,5 +55,21 @@ function _derived(g::ProjGrid, factor::Real, name::String)
     return coarsen(g, Int(factor); name=name)
 end
 
+"""
+    folder_grids(folder) -> (Domain, Vector{OutGrid})
+
+Domain whose grids (the domain or one of its crops) are in output folder `folder`, and
+those grids.
+"""
+function folder_grids(folder::AbstractString)
+    doms = Domain.(domain_keys())
+    found = [(dom, filter(og -> og.folder == folder, dom.grids)) for dom in doms]
+    filter!(x -> !isempty(x[2]), found)
+    folders = sort(unique(og.folder for dom in doms for og in dom.grids))
+    isempty(found) && error("no domain with folder $folder, available: $(join(folders, ", "))")
+    length(found) == 1 || error("folder $folder is shared by domains $(join([d.key for (d, _) in found], ", "))")
+    return only(found)
+end
+
 "Output folder of a grid: \$ICE_DATA/v2/<folder>/<grid name>."
 outdir(og::OutGrid) = joinpath(_env("ICE_DATA"), "v2", og.folder, og.grid.name)

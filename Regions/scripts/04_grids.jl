@@ -41,7 +41,7 @@ for og in dom.grids
     fields["zone"] = Int8.(remap_dominant(m, Z["zone"]))
     attrib["zone"] = ZONE_ATTRIB
     fields["dist_shelfbreak"] = remap(m, Z["dist_shelfbreak"])[1]
-    write_fields(joinpath(outdir(og), "$(g.name)_REGIONS.nc"), g, fields; dataset=DATASET,
+    write_fields(regions_file(og), g, fields; dataset=DATASET,
                  attrib=["title" => "Regions v2 (FesmData/Regions)", "base_grid" => dom.base.name],
                  varattrib=attrib)
 
@@ -56,7 +56,7 @@ for og in dom.grids
         end
         bf["basin_mask"] = Int8.(remap_dominant(m, B["basin_mask"]))
         ba = Dict(k => flag_attrib(flags[k], bf[k]) for k in keys(flags) if haskey(bf, k))
-        write_fields(joinpath(outdir(og), "$(g.name)_BASINS-$(name).nc"), g, bf; dataset=DATASET,
+        write_fields(basins_file(og, set), g, bf; dataset=DATASET,
                      attrib=["title" => "Basins $name (FesmData/Regions)", "basin_source" => set.source,
                              "base_grid" => dom.base.name],
                      varattrib=ba)

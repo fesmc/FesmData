@@ -1,28 +1,4 @@
-# Basin sets of basins.toml on a grid.
-
-"""
-    BasinSet
-
-A basin set of basins.toml.
-"""
-struct BasinSet
-    name::String
-    domains::Vector{String}
-    region::String
-    source::String
-    id_field::String
-    group_field::Union{Nothing,String}
-    no_extension::Vector{String}
-end
-
-function read_basin_sets(path=joinpath(@__DIR__, "basins.toml"))
-    return [BasinSet(b["name"], b["domains"], b["region"], b["source"], b["id_field"],
-                     get(b, "group_field", nothing), get(b, "no_extension", String[]))
-            for b in TOML.parsefile(path)["basins"]]
-end
-
-"Basin sets of a domain."
-basin_sets(dom::Domain) = filter(b -> dom.key in b.domains, read_basin_sets())
+# Basin sets of basins.toml on a grid (the sets are read in files.jl).
 
 # Integer ids of attribute values: integers as they are, names numbered in
 # alphabetical order. Returns the ids and their names.

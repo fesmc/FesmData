@@ -1,6 +1,7 @@
 # Shared definitions for the topography v2 scripts: products, sources and paths.
 # Domains, grids, NetCDF output and the original datasets are shared with the other
-# pipelines (../shared); the output file names are in files.jl.
+# pipelines (../shared); the products of each domain and the output file names are in
+# files.jl.
 
 using TOML
 
@@ -13,14 +14,6 @@ const TOPO_DIR = @__DIR__
 
 "Dataset name of the topography files (provenance attributes, release tags topo-v*)."
 const DATASET = "topo"
-
-read_products() = TOML.parsefile(joinpath(TOPO_DIR, "products.toml"))
-
-function _products(dom::Domain)
-    all = read_products()
-    haskey(all, dom.key) || error("no products for domain $(dom.key) in products.toml")
-    return all[dom.key]
-end
 
 "Names reserved for selecting sets of products (see `select_products`)."
 const PRODUCT_SETS = ("default", "variants", "all")

@@ -5,7 +5,8 @@
 # base grid by coarsening (and cropping), so all grids of a domain are nested. Extents
 # (km) follow the v1 grids in maps/, so all grids share their first cell centre.
 #
-# `folder` is the output folder under $ICE_DATA/v2.
+# `folder` is the output folder under $ICE_DATA/v2, and the name of the domain (or
+# crop) in published records, unique to each.
 
 [ANT]
 folder = "Antarctica"
@@ -15,7 +16,7 @@ ylim = [-3040, 3040]
 resolutions = [1, 2, 4, 8, 16, 32]
 
 [GRL-PAL]
-folder = "Greenland"
+folder = "GreenlandPaleo"
 proj = "+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +x_0=0 +y_0=0 +a=6378137 +rf=298.25722356 +units=km"
 xlim = [-1360, 960]
 ylim = [-3450, -570]

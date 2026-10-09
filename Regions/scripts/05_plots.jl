@@ -37,7 +37,7 @@ function classmap!(ax, g, L, labels; seed=1)
     hidedecorations!(ax)
 end
 
-path = joinpath(outdir(og), "$(g.name)_REGIONS.nc")
+path = regions_file(og)
 _, F = read_fields(path)
 fig = Figure(size=(2400, 900))
 for (k, var) in enumerate(("region_2", "region_3"))
@@ -51,7 +51,7 @@ hidedecorations!(ax)
 save(joinpath(plotdir, "$(g.name)_regions.png"), fig)
 
 for set in basin_sets(dom)
-    bpath = joinpath(outdir(og), "$(g.name)_BASINS-$(set.name).nc")
+    bpath = basins_file(og, set)
     _, B = read_fields(bpath)
     vars = filter(v -> haskey(B, v), ["basin", "basin_group"])
     fig = Figure(size=(1100 * length(vars), 1000))
