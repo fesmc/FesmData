@@ -272,6 +272,7 @@ function upload(domain::AbstractString, dataset::AbstractString; sandbox::Bool=f
     files = collect_files(domain, dataset)
     version = release_version(files, dataset; allow_untagged=allow_untagged)
     meta = record_metadata(domain, dataset, files, version)
+    sandbox && delete!(meta, "communities")   # the community exists only on Zenodo
     total = sum(filesize(f.path) for f in files)
     println("$domain/$dataset $version: $(length(files)) files, $(round(total / 1e9; digits=2)) GB")
     if dry_run
