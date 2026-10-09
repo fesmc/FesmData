@@ -282,10 +282,12 @@ function upload(domain::AbstractString, dataset::AbstractString; sandbox::Bool=f
     sync_files!(dep, files; sandbox=sandbox)
     api("PUT", "$(zenodo_url(sandbox))/api/deposit/depositions/$(dep["id"])";
         token=zenodo_token(sandbox), json=Dict("metadata" => meta))
+    # The published record keeps the id of its draft
+    flags = (sandbox ? " --sandbox" : "") * (allow_untagged ? " --allow-untagged" : "")
     println("""
         Draft ready: $(dep["links"]["html"])
         Review and publish it on Zenodo, then register the published record:
-            julia --project=Publish Publish/scripts/zenodo.jl register $domain $dataset <record id>$(sandbox ? " --sandbox" : "")""")
+            julia --project=Publish Publish/scripts/zenodo.jl register $domain $dataset $(dep["id"])$flags""")
     return dep
 end
 
