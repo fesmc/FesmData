@@ -22,13 +22,13 @@ storage_path = "$datasets_dir/bedmap3/bedmap3.nc"
 uri = "https://ramadda.data.bas.ac.uk/repository/entry/get/bedmap3.nc?entryid=synth%3A2d0e4791-8e20-46a3-80e4-f5f6716025d2%3AL2JlZG1hcDMubmM%3D"
 
 [gebco2025]
-key = "gebco2025"
+key = "gebco2025.zip"
 doi = "10.5285/37c52e96-24ea-67ce-e063-7086abc05f29"
 extract = true
 uri = "https://dap.ceda.ac.uk/bodc/gebco/global/gebco_2025/ice_surface_elevation/netcdf/gebco_2025.zip"
 
 [gebco2025_sub_ice]
-key = "gebco2025_sub_ice"
+key = "gebco2025_sub_ice.zip"
 doi = "10.5285/37c52e96-24ea-67ce-e063-7086abc05f29"
 extract = true
 uri = "https://dap.ceda.ac.uk/bodc/gebco/global/gebco_2025/sub_ice_topography_bathymetry/netcdf/gebco_2025_sub_ice_topo.zip"
