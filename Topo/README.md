@@ -70,7 +70,7 @@ List the datasets and whether they are present:
 julia --project=Topo Topo/scripts/00_sources.jl
 ```
 
-GEBCO 2025 (surface and sub-ice, ~4 GB each zipped) and Bedmap3 (2.5 GB) are
+GEBCO 2025 (4 GB zipped) and Bedmap3 (2.5 GB) are
 downloaded automatically (Levante login node):
 
 ```bash
@@ -122,9 +122,10 @@ Source notes (see `sources.jl`):
 - BedMachine Antarctica: the surface includes firn air (`firn`), and the ice
   thickness does not. Lake Vostok is grounded ice.
 - Bedmap3: the transiently grounded ice shelf is floating ice.
-- GEBCO: ice thickness is surface minus sub-ice elevation, which is only non-zero
-  on the Greenland and Antarctic ice sheets. Under ice shelves the sub-ice
-  elevation is the sea floor, so GEBCO ice-shelf thickness is not usable.
+- GEBCO is used as ice-free topography and bathymetry. Its sub-ice grid only has
+  ice thickness for the Greenland and Antarctic ice sheets (covered by the regional
+  sources), and differs from the main grid by a few metres elsewhere. Ice caps
+  outside Greenland and Antarctica are therefore missing in the NH product.
 
 ### 3. Merge
 
@@ -144,6 +145,37 @@ includes firn air). The file also has `mask` (dominant surface type: 0 ocean, 1
 ice-free land, 2 grounded ice, 3 floating ice) and `src_id` (source with the largest
 weight).
 
-### 4-5. All grids, checks
+### 4. All grids
 
-To come: remap each product onto all grids of its domain, and plot checks.
+Remap each product from the base grid onto all other grids of the domain, including
+the crops (GRL from GRL-PAL, LIS and EIS from NH):
+
+```bash
+sbatch --job-name=grids-all-ANT Topo/jobs/run_step.sbatch 04_grids.jl ANT [PRODUCT]
+```
+
+This writes `$ICE_DATA/v2/<folder>/<GRID>/<GRID>_TOPO-<product>.nc`. Fields and
+fractions are conservative cell means, `z_bed_sd` combines the sub-cell variance of
+the base grid with the variance of the base-grid means, `mask` is the dominant
+surface type (ice where the ice fraction is at least one half), and `src_id` the
+source covering most of the cell.
+
+### 5. Checks
+
+```bash
+sbatch --job-name=plots-ANT Topo/jobs/run_step.sbatch 05_plots.jl ANT [PRODUCT]
+```
+
+This writes plots to `$FESMDATA_WORK/topo/plots/` (the base product, ice thickness
+on all grids, and the difference with the v1 product at 16 or 32 km), and prints
+the ice area and volume on every grid in the job log as a conservation check.
+
+## Running a whole domain
+
+`jobs/submit_domain.sh` submits steps 1-5 of a domain as a chain of jobs (step 2
+as one job per source), each starting when the previous step succeeded:
+
+```bash
+Topo/jobs/submit_domain.sh ANT        # all steps
+Topo/jobs/submit_domain.sh ANT 3      # from step 3
+```

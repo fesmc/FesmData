@@ -26,9 +26,3 @@ key = "gebco2025.zip"
 doi = "10.5285/37c52e96-24ea-67ce-e063-7086abc05f29"
 extract = true
 uri = "https://dap.ceda.ac.uk/bodc/gebco/global/gebco_2025/ice_surface_elevation/netcdf/gebco_2025.zip"
-
-[gebco2025_sub_ice]
-key = "gebco2025_sub_ice.zip"
-doi = "10.5285/37c52e96-24ea-67ce-e063-7086abc05f29"
-extract = true
-uri = "https://dap.ceda.ac.uk/bodc/gebco/global/gebco_2025/sub_ice_topography_bathymetry/netcdf/gebco_2025_sub_ice_topo.zip"

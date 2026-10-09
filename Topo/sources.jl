@@ -20,7 +20,7 @@ const PS_SOUTH = polar_stereographic_proj(lat_0=-90, lat_ts=-71, lon_0=0, a=6378
 """
     read_source(name, dom) -> (grid, z_bed, z_srf, H_ice, mask)
 
-Read source `name` (a key of datamanifest.toml, or "gebco2025") for domain `dom`.
+Read source `name` (an entry of datamanifest.toml) for domain `dom`.
 Lon-lat sources are read only over the latitudes covered by its base grid.
 """
 function read_source(name::AbstractString, dom::Domain)
@@ -32,8 +32,7 @@ function read_source(name::AbstractString, dom::Domain)
     elseif name == "bedmap3"
         return read_bedmap3(get_dataset_path(db, name))
     elseif name == "gebco2025"
-        return read_gebco(_only_nc(get_dataset_path(db, "gebco2025.zip")),
-                          _only_nc(get_dataset_path(db, "gebco2025_sub_ice.zip")), dom)
+        return read_gebco(_only_nc(get_dataset_path(db, "gebco2025")), dom)
     end
     error("unknown source $name")
 end
@@ -92,34 +91,21 @@ function read_bedmap3(path)
 end
 
 """
-GEBCO 2025: ice surface elevation and sub-ice topography. Ice thickness is their
-difference, which is only non-zero for the Greenland and Antarctic ice sheets.
-Cells with ice are grounded or floating by flotation; ice-free cells are ocean at or
-below sea level (surface elevation 0) and land above.
+GEBCO 2025 topography and bathymetry, used without ice: its sub-ice grid only has
+ice thickness for the Greenland and Antarctic ice sheets, which the regional
+sources cover. Bed elevation is the GEBCO elevation; cells at or below sea level are
+ocean (surface elevation 0), and cells above are land.
 """
-function read_gebco(path_srf, path_bed, dom::Domain)
+function read_gebco(path, dom::Domain)
     latmin, latmax = lat_bounds(dom.base)
-    r = dom.rho_ice / dom.rho_sw
-    ds = NCDataset(path_srf)
-    db = NCDataset(path_bed)
-    lat = ds["lat"][:]
-    j = findall(l -> latmin <= l <= latmax, lat)
-    grid = LonLatGrid(ds["lon"][:], lat[j])
-    z_srf = ds["elevation"][:, j]
-    z_bed = db["elevation"][:, j]
-    close(ds); close(db)
-
-    H_ice = Matrix{Float32}(undef, size(z_srf))
-    mask = Matrix{Int8}(undef, size(z_srf))
-    Threads.@threads for jj in axes(z_srf, 2)
-        @inbounds for i in axes(z_srf, 1)
-            H = max(Float32(z_srf[i, jj]) - Float32(z_bed[i, jj]), 0f0)
-            H_ice[i, jj] = H
-            mask[i, jj] = H > 0 ? (z_bed[i, jj] + H * r < 0 ? FLT : GRND) :
-                          z_srf[i, jj] <= 0 ? OCEAN : LAND
-            # Surface of the ocean is sea level, not the sea floor
-            mask[i, jj] == OCEAN && (z_srf[i, jj] = 0)
-        end
+    NCDataset(path) do ds
+        lat = ds["lat"][:]
+        j = findall(l -> latmin <= l <= latmax, lat)
+        grid = LonLatGrid(ds["lon"][:], lat[j])
+        z_bed = ds["elevation"][:, j]
+        z_srf = max.(z_bed, Int16(0))
+        H_ice = zeros(Float32, size(z_bed))
+        mask = map(z -> z <= 0 ? OCEAN : LAND, z_bed)
+        return (grid=grid, z_bed=z_bed, z_srf=z_srf, H_ice=H_ice, mask=mask)
     end
-    return (grid=grid, z_bed=z_bed, z_srf=z_srf, H_ice=H_ice, mask=mask)
 end
