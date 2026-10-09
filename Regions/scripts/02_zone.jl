@@ -26,7 +26,7 @@ for (k, name) in enumerate(split(ZONE_ATTRIB[2].second))
 end
 
 path = write_fields(regions_work_file(dom, "zone"), dom.base,
-                    Dict("zone" => zone, "dist_shelfbreak" => dist);
+                    Dict("zone" => zone, "dist_shelfbreak" => dist); dataset=DATASET,
                     attrib=["title" => "Zones (FesmData/Regions, regions.toml)", "topography" => product],
                     varattrib=Dict("zone" => ZONE_ATTRIB))
 @info "wrote $path"

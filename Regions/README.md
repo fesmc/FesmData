@@ -1,8 +1,8 @@
 # Regions: region masks, zones and basins (v2)
 
 Masks of geographic regions, of present-day land, continental shelf and open ocean,
-and of ice-sheet drainage basins, for each model domain on all grids of the
-topography v2 pipeline (`../Topo`).
+and of ice-sheet drainage basins, for each model domain on all its grids
+(`../shared/domains.toml`, as for the topography v2 pipeline in `../Topo`).
 
 - **Regions** are a tree defined once, globally, in `regions.toml`, from standard
   datasets (countries and EEZs, IHO seas, oceans, HydroBASINS, IMBIE basins), so the
@@ -82,11 +82,12 @@ extended, so the ice shelves around them go to the neighbouring grounded basins.
 | `$ICE_DATA/v2/<Domain>/<GRID>/` | Output: `<GRID>_REGIONS.nc`, `<GRID>_BASINS-<set>.nc` |
 | `$FESMDATA_WORK/regions/` | Intermediate files (base grids) and check plots |
 
-The machine environment and Julia setup are those of `../Topo` (see its README).
+The machine environments are in `../shared/machines`, and the Julia setup is that of
+`../Topo` (see its README).
 Install the packages once (on Levante on a login node):
 
 ```bash
-source Topo/machines/levante.env
+source shared/machines/levante.env
 julia --project=Regions -e 'using Pkg; Pkg.instantiate()'
 ```
 

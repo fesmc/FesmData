@@ -1,12 +1,19 @@
-# Shared definitions for the regions v2 scripts. Domains, grids and the output paths
-# are those of the topography pipeline (../Topo).
+# Shared definitions for the regions v2 scripts. Domains, grids, NetCDF output and the
+# original datasets are shared with the other pipelines (../shared); the topography
+# products (step 2) are read from the output of ../Topo.
 
-include(joinpath(@__DIR__, "..", "Topo", "common.jl"))
+include(joinpath(@__DIR__, "..", "shared", "io.jl"))
+include(joinpath(@__DIR__, "..", "shared", "domains.jl"))
+include(joinpath(@__DIR__, "..", "shared", "manifest.jl"))
+include(joinpath(@__DIR__, "..", "Topo", "files.jl"))
 include(joinpath(@__DIR__, "shapes.jl"))
 include(joinpath(@__DIR__, "sources.jl"))
 include(joinpath(@__DIR__, "tree.jl"))
 include(joinpath(@__DIR__, "zone.jl"))
 include(joinpath(@__DIR__, "basins.jl"))
+
+"Dataset name of the regions files (provenance attributes, release tags regions-v*)."
+const DATASET = "regions"
 
 merge!(VARINFO, Dict(
     "region_1" => ("1", "region code, level 1 (hemisphere)"),

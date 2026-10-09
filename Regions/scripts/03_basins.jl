@@ -21,9 +21,9 @@ codes = R["region_$(length(filter(startswith("region_"), keys(R))))"]
 
 for set in sets
     fields, varattrib = @time build_basins(dom.base, set, codes, Z["zone"])
-    path = write_fields(regions_work_file(dom, "basins-$(set.name)"), dom.base, fields;
+    path = write_fields(regions_work_file(dom, "basins-$(set.name)"), dom.base, fields; dataset=DATASET,
                         attrib=["title" => "Basins $(set.name) (FesmData/Regions, basins.toml)",
-                                "source" => set.source],
+                                "basin_source" => set.source],
                         varattrib=varattrib)
     @info "wrote $path"
 end

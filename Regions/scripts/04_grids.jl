@@ -22,7 +22,7 @@ nlev = count(startswith("region_"), keys(R))
 basins = Dict{String,Any}()
 for set in basin_sets(dom)
     path = regions_work_file(dom, "basins-$(set.name)")
-    basins[set.name] = (read_fields(path)[2], Dict(k => read_flags(path, k) for k in ("basin", "basin_group")))
+    basins[set.name] = (set, read_fields(path)[2], Dict(k => read_flags(path, k) for k in ("basin", "basin_group")))
 end
 
 for og in dom.grids
@@ -41,11 +41,11 @@ for og in dom.grids
     fields["zone"] = Int8.(remap_dominant(m, Z["zone"]))
     attrib["zone"] = ZONE_ATTRIB
     fields["dist_shelfbreak"] = remap(m, Z["dist_shelfbreak"])[1]
-    write_fields(joinpath(outdir(og), "$(g.name)_REGIONS.nc"), g, fields;
+    write_fields(joinpath(outdir(og), "$(g.name)_REGIONS.nc"), g, fields; dataset=DATASET,
                  attrib=["title" => "Regions v2 (FesmData/Regions)", "base_grid" => dom.base.name],
                  varattrib=attrib)
 
-    for (name, (B, flags)) in basins
+    for (name, (set, B, flags)) in basins
         bf = Dict{String,Any}()
         if haskey(B, "basin_group")
             Gt = remap_dominant(m, B["basin_group"])
@@ -56,8 +56,9 @@ for og in dom.grids
         end
         bf["basin_mask"] = Int8.(remap_dominant(m, B["basin_mask"]))
         ba = Dict(k => flag_attrib(flags[k], bf[k]) for k in keys(flags) if haskey(bf, k))
-        write_fields(joinpath(outdir(og), "$(g.name)_BASINS-$(name).nc"), g, bf;
-                     attrib=["title" => "Basins $name (FesmData/Regions)", "base_grid" => dom.base.name],
+        write_fields(joinpath(outdir(og), "$(g.name)_BASINS-$(name).nc"), g, bf; dataset=DATASET,
+                     attrib=["title" => "Basins $name (FesmData/Regions)", "basin_source" => set.source,
+                             "base_grid" => dom.base.name],
                      varattrib=ba)
     end
     @info "wrote $(g.name)"

@@ -13,7 +13,7 @@ Some resources are used across datasets, in particular grid definitions that may
 
 `maps` : this folder contains predefined grid description files following the `cdo` conventions.
 `grids` : this folder contains some tools to generate files corresponding to specific grid definitions as in `maps`.
-`shared` : code and settings shared by the v2 pipelines (Topo, Regions): the model domains and their grids (`domains.toml`), the machine environments (`machines/<machine>.env`), and the NetCDF output (`io.jl`).
+`shared` : code and settings shared by the v2 pipelines (Topo, Regions): the model domains and their grids (`domains.toml`), the machine environments (`machines/<machine>.env`), the NetCDF output (`io.jl`), and the original datasets (`manifest.jl`).
 
 Every NetCDF file written by a v2 pipeline has the global attributes `source` (this repository), `fesmdata_version` (`git describe` against the release tags of the dataset, e.g. `topo-v2.0.0`, with `-dirty` for uncommitted changes), `fesmdata_commit` and `history` (time, script and arguments).
 
