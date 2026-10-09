@@ -78,3 +78,14 @@ which the machine environments set from `~/.zenodo_token`. To test, use
 [the sandbox](https://sandbox.zenodo.org) with `--sandbox` (token in
 `~/.zenodo_sandbox_token`); its registry files go to `registry/_sandbox/`, which is not
 tracked, and `fetch.jl --sandbox` downloads from them.
+
+## Website
+
+The website (GitHub Pages) lists the datasets of `datasets.toml` and the records,
+grids and files of the registry, with download links. It is built by
+`.github/workflows/site.yml` on every push to main that changes the registry or
+Publish. To build it locally:
+
+```bash
+julia --project=Publish Publish/scripts/site.jl _site
+```
