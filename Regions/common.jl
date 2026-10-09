@@ -26,3 +26,18 @@ regions_workdir() = joinpath(_env("FESMDATA_WORK"), "regions")
 regions_work_file(dom::Domain, what::AbstractString) =
     joinpath(regions_workdir(), dom.base.name, "$(dom.base.name)_$(what).nc")
 
+"Flag values and meanings of a variable in a file, as code => name (empty without flags)."
+function read_flags(path::AbstractString, var::AbstractString)
+    NCDataset(path) do ds
+        haskey(ds, var) && haskey(ds[var].attrib, "flag_values") || return Dict{Int,String}()
+        a = ds[var].attrib
+        return Dict(zip(Int.(a["flag_values"]), split(a["flag_meanings"])))
+    end
+end
+
+"Flag attributes for the classes of `flags` (code => name) present in field `L`."
+function flag_attrib(flags::AbstractDict, L::AbstractArray)
+    present = Set(L)
+    codes = sort(filter(in(present), collect(keys(flags))))
+    return region_flag_attrib(codes, [flags[c] for c in codes])
+end
