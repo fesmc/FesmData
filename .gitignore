@@ -1,9 +1,9 @@
 .DS_Store
 *.nc
 *.zip
-regions/*.nc
+regions_legacy/*.nc
 Batchelor2019_NHIceMasks/Batchelor2019_NHextent
-regions/marineregions
+regions_legacy/marineregions
 GEBCO2025/GEBCO_2025.nc
 GEBCO2025/*.zip
 *isostasy_data

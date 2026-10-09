@@ -24,7 +24,8 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 
 | Category | Key | Description | Ref(s) |
 |----------|-----|-------------|--------|
-| masks    | regions                  | Ice relevant regions                             | Robinson et al.  - no ref      |
+| masks    | Regions                  | Regions v2: region tree, shelf zone, ice-sheet basins, 0.5-32 km | Multiple (see Regions/README.md) |
+| masks    | regions_legacy           | Ice relevant regions (v1, deprecated)            | Robinson et al.  - no ref      |
 | masks    | Schmidt2025_fwf          | Runoff basins GrIS and AIS, plus fwf time series | Schmidt et al. (2025)          |
 | topo     | Batchelor2019_NHIceMasks | Northern Hemisphere ice extent masks             | Batchelor et al. (2019)        |
 | topo     | GEBCO2025                | GEBCO 2025 global bath. and topo data            | GEBCO Compilation Group (2025) |
