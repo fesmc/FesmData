@@ -179,3 +179,10 @@ doi = "10.5067/AXE4121732AD"
 skip_download = true
 storage_path = "$datasets_dir/nsidc0709_v2_basins"
 uri = "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/MEASURES/NSIDC-0709/2/1992/02/07/"
+
+# ISO 3166 countries with their UN M49 regions (lukes/ISO-3166-Countries-with-Regional-
+# Codes, pinned commit), to group the territories of the EEZ-land union by continent.
+
+[iso3166_m49]
+storage_path = "$datasets_dir/iso3166_m49/all.csv"
+uri = "https://raw.githubusercontent.com/lukes/ISO-3166-Countries-with-Regional-Codes/145f1ad3caff212ed25f42b0ee2c8b92a75af895/all/all.csv"

@@ -1,0 +1,13 @@
+[deps]
+ArchGDAL = "c9ce4bd3-c3d5-55b8-8973-c0e20141b8c3"
+CairoMakie = "13f3f980-e62b-5c42-98c6-ff1f3baf88f0"
+DataManifest = "b8ee69ef-a20a-4d38-bceb-a68d72817f72"
+DelimitedFiles = "8bb1440f-4735-579b-a4ab-409b98df4dab"
+FesmUtils = "87fa8290-809d-4b2a-a2bb-fb70d9529671"
+GeoInterface = "cf35fbd7-0cd7-5166-be24-54bfbe79505f"
+NCDatasets = "85f8d34a-cbdd-5861-8df4-14fed0d494ab"
+Proj = "c94c279d-25a6-4763-9509-64d165bea63e"
+TOML = "fa267f1f-6049-4f14-aa54-33bafae1ed76"
+
+[sources]
+FesmUtils = {rev = "regions-v2", url = "https://github.com/fesmc/FesmUtils.jl"}

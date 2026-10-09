@@ -1,0 +1,276 @@
+# Region tree of the regions v2 masks (see README.md).
+#
+# Each region has a `path` ("1.3.1" is subregion 1 of region 3 of region 1; its code
+# is 10301, see FesmUtils.region_code), a `name` and `rules`. A region covers the
+# union of its rules, intersected with its parent region. Siblings are applied in the
+# order of this file: a cell already taken by an earlier sibling is not changed.
+# Cells of a region that none of its subregions covers keep the code of the region,
+# unless the region has `fill = true`: then they get the nearest subregion, along
+# paths within the region. Ocean regions are numbered from 51.
+#
+# A rule is a table with:
+#   source  - "eez_land", "iho", "goas", "hydrobasins" or "imbie" (see sources.jl);
+#             "box" for a lon/lat box, with `lon = [min, max]` and/or `lat = [min, max]`
+#   field   - attribute of the source features; "m49_region" and "m49_subregion" give
+#             the UN M49 region of an eez_land territory (of its sovereign state for
+#             territories without an ISO code, e.g. Alaska)
+#   values  - the features to use, by their value of `field`
+#   level   - for hydrobasins: the Pfafstetter level of the basins (1-12); `values`
+#             are PFAF_ID values (at this level, or a prefix at a coarser level)
+#   within  - optional list of rules: only the part within their union
+#   without - optional list of rules: except the part within their union
+#   fill_holes - optional: also cover the areas enclosed by the rule (e.g. islands in
+#             a sea)
+
+# ---------------------------------------------------------------------------
+# Level 1: hemispheres
+# ---------------------------------------------------------------------------
+
+[[region]]
+path = "1"
+name = "Northern Hemisphere"
+fill = true
+rules = [{ source = "box", lat = [0, 90] }]
+
+[[region]]
+path = "2"
+name = "Southern Hemisphere"
+fill = true
+rules = [{ source = "box", lat = [-90, 0] }]
+
+# ---------------------------------------------------------------------------
+# Level 2, Northern Hemisphere
+# ---------------------------------------------------------------------------
+
+[[region]]
+path = "1.3"
+name = "Greenland"
+rules = [{ source = "eez_land", field = "territory1", values = ["Greenland"] }]
+
+[[region]]
+path = "1.5"
+name = "Iceland"
+rules = [{ source = "eez_land", field = "territory1", values = ["Iceland"] }]
+
+[[region]]
+path = "1.1"
+name = "North America"
+rules = [{ source = "eez_land", field = "m49_subregion", values = ["Northern America"] }]
+
+# Europe; Russia draining to the Kara Sea or west of it (HydroBASINS Europe; Ob,
+# Yenisei and Taymyr west of the Khatanga; Severnaya Zemlya) and its EEZ north of the
+# Kara Sea; and the Barents, White and Kara seas.
+[[region]]
+path = "1.2"
+name = "Western Eurasia"
+rules = [
+    { source = "eez_land", field = "m49_region", values = ["Europe"],
+      without = [{ source = "eez_land", field = "territory1", values = ["Russia"] }] },
+    { source = "eez_land", field = "territory1", values = ["Russia"],
+      within = [{ source = "hydrobasins", level = 4,
+                  values = [2, 31, 32, 3311, 3312, 3313, 3314, 3315, 332] },
+                { source = "box", lon = [16, 100], lat = [79, 90] }] },
+    { source = "iho", field = "name", values = ["Barentsz Sea", "White Sea", "Kara Sea"] },
+]
+
+# Asia, and the rest of Russia: Siberia and the Far East (HydroBASINS Siberia and
+# Asia), the seas east of the Kara Sea and the Arctic EEZ east of 100E. Cells of Russia
+# in neither part (e.g. lakes, coastal mismatches) get the nearest region (`fill` of 1).
+[[region]]
+path = "1.4"
+name = "Asia"
+rules = [
+    { source = "eez_land", field = "m49_region", values = ["Asia"] },
+    { source = "eez_land", field = "territory1", values = ["Russia"],
+      within = [{ source = "hydrobasins", level = 1, values = [3, 4] },
+                { source = "iho", field = "name",
+                  values = ["Laptev Sea", "East Siberian Sea", "Chukchi Sea", "Bering Sea",
+                            "Sea of Okhotsk", "Japan Sea"] },
+                { source = "box", lon = [100, 180] },
+                { source = "box", lon = [-180, -160] }] },
+]
+
+[[region]]
+path = "1.6"
+name = "Africa"
+rules = [{ source = "eez_land", field = "m49_region", values = ["Africa"] }]
+
+[[region]]
+path = "1.7"
+name = "Latin America and the Caribbean"
+rules = [{ source = "eez_land", field = "m49_subregion", values = ["Latin America and the Caribbean"] }]
+
+[[region]]
+path = "1.8"
+name = "Oceania"
+rules = [{ source = "eez_land", field = "m49_region", values = ["Oceania"] }]
+
+[[region]]
+path = "1.51"
+name = "Arctic Ocean"
+rules = [{ source = "goas", field = "name", values = ["Arctic Ocean"] }]
+
+[[region]]
+path = "1.52"
+name = "North Atlantic Ocean"
+rules = [{ source = "goas", field = "name", values = ["North Atlantic Ocean", "Baltic Sea", "Mediterranean Region"] }]
+
+[[region]]
+path = "1.53"
+name = "North Pacific Ocean"
+rules = [{ source = "goas", field = "name", values = ["North Pacific Ocean"] }]
+
+[[region]]
+path = "1.54"
+name = "Indian Ocean"
+rules = [{ source = "goas", field = "name", values = ["Indian Ocean"] }]
+
+[[region]]
+path = "1.55"
+name = "South China and Eastern Archipelagic Seas"
+rules = [{ source = "goas", field = "name", values = ["South China and Easter Archipelagic Seas"] }]
+
+# ---------------------------------------------------------------------------
+# Level 3, North America
+# ---------------------------------------------------------------------------
+
+# Islands of the Canadian Arctic Archipelago (HydroBASINS 84-86) and its channels
+[[region]]
+path = "1.1.1"
+name = "Canadian Arctic Archipelago"
+rules = [
+    { source = "hydrobasins", level = 2, values = [84, 85, 86] },
+    { source = "iho", field = "name", values = ["The Northwestern Passages", "Lincoln Sea", "Baffin Bay"],
+      fill_holes = true },
+]
+
+# Hudson Bay and Hudson Strait with their islands, and the coastal basins draining
+# into them: the odd-numbered (inter-)basins of HydroBASINS level 4 along their
+# coasts, without the lower Nelson River (7121)
+[[region]]
+path = "1.1.2"
+name = "Hudson Bay and Strait"
+rules = [
+    { source = "iho", field = "name", values = ["Hudson Bay", "Hudson Strait"], fill_holes = true },
+    { source = "hydrobasins", level = 4,
+      values = [7111, 7113, 7115, 7117, 7119, 7131, 7133, 7135, 7137, 7139,
+                7211, 7213, 7215, 7217, 7219, 7221, 7223, 7225, 7227, 7229,
+                8321, 8323, 8325, 8327, 8329] },
+]
+
+# Pacific drainage of North America (HydroBASINS 78) and Alaska (81, and the Alaskan
+# land and EEZ)
+[[region]]
+path = "1.1.3"
+name = "Cordillera and Alaska"
+rules = [
+    { source = "hydrobasins", level = 2, values = [78, 81] },
+    { source = "eez_land", field = "territory1", values = ["Alaska"] },
+    { source = "iho", field = "name",
+      values = ["Gulf of Alaska", "The Coastal Waters of Southeast Alaska and British Columbia"] },
+]
+
+# ---------------------------------------------------------------------------
+# Level 3, Western Eurasia
+# ---------------------------------------------------------------------------
+
+[[region]]
+path = "1.2.3"
+name = "Svalbard"
+rules = [{ source = "eez_land", field = "territory1", values = ["Svalbard"] }]
+
+[[region]]
+path = "1.2.2"
+name = "British Isles"
+rules = [{ source = "eez_land", field = "territory1",
+           values = ["United Kingdom", "Ireland", "Isle of Man", "Guernsey", "Jersey"] }]
+
+# Barents, White and Kara seas with their islands (Novaya Zemlya, Franz Josef Land),
+# Severnaya Zemlya (HydroBASINS 332), and the Russian EEZ north of them
+[[region]]
+path = "1.2.1"
+name = "Barents-Kara"
+rules = [
+    { source = "iho", field = "name", values = ["Barentsz Sea", "White Sea", "Kara Sea"], fill_holes = true },
+    { source = "hydrobasins", level = 3, values = [332] },
+    { source = "box", lon = [16, 100], lat = [79, 90] },
+]
+
+# Norway, Sweden and Finland, and Kola and Karelia (HydroBASINS 2522-2527)
+[[region]]
+path = "1.2.4"
+name = "Fennoscandia"
+rules = [
+    { source = "eez_land", field = "territory1", values = ["Norway", "Sweden", "Finland"] },
+    { source = "hydrobasins", level = 4, values = [2522, 2523, 2524, 2525, 2526, 2527] },
+]
+
+# ---------------------------------------------------------------------------
+# Level 2, Southern Hemisphere
+# ---------------------------------------------------------------------------
+
+# South of 60S (the Antarctic Treaty area and GOaS Southern Ocean)
+[[region]]
+path = "2.1"
+name = "Antarctica"
+fill = true
+rules = [{ source = "box", lat = [-90, -60] }]
+
+[[region]]
+path = "2.2"
+name = "Latin America and the Caribbean"
+rules = [{ source = "eez_land", field = "m49_subregion", values = ["Latin America and the Caribbean"] }]
+
+[[region]]
+path = "2.3"
+name = "Africa"
+rules = [{ source = "eez_land", field = "m49_region", values = ["Africa"] }]
+
+[[region]]
+path = "2.4"
+name = "Asia"
+rules = [{ source = "eez_land", field = "m49_region", values = ["Asia"] }]
+
+[[region]]
+path = "2.5"
+name = "Oceania"
+rules = [{ source = "eez_land", field = "m49_region", values = ["Oceania"] }]
+
+[[region]]
+path = "2.51"
+name = "South Atlantic Ocean"
+rules = [{ source = "goas", field = "name", values = ["South Atlantic Ocean"] }]
+
+[[region]]
+path = "2.52"
+name = "South Pacific Ocean"
+rules = [{ source = "goas", field = "name", values = ["South Pacific Ocean"] }]
+
+[[region]]
+path = "2.53"
+name = "Indian Ocean"
+rules = [{ source = "goas", field = "name", values = ["Indian Ocean"] }]
+
+[[region]]
+path = "2.54"
+name = "South China and Eastern Archipelagic Seas"
+rules = [{ source = "goas", field = "name", values = ["South China and Easter Archipelagic Seas"] }]
+
+# ---------------------------------------------------------------------------
+# Level 3, Antarctica: IMBIE regions, filling Antarctica including the Southern Ocean
+# ---------------------------------------------------------------------------
+
+[[region]]
+path = "2.1.1"
+name = "West Antarctica"
+rules = [{ source = "imbie", field = "Regions", values = ["West"] }]
+
+[[region]]
+path = "2.1.2"
+name = "East Antarctica"
+rules = [{ source = "imbie", field = "Regions", values = ["East"] }]
+
+[[region]]
+path = "2.1.3"
+name = "Antarctic Peninsula"
+rules = [{ source = "imbie", field = "Regions", values = ["Peninsula"] }]
