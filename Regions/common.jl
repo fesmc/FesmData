@@ -5,11 +5,14 @@ include(joinpath(@__DIR__, "..", "Topo", "common.jl"))
 include(joinpath(@__DIR__, "shapes.jl"))
 include(joinpath(@__DIR__, "sources.jl"))
 include(joinpath(@__DIR__, "tree.jl"))
+include(joinpath(@__DIR__, "zone.jl"))
 
 merge!(VARINFO, Dict(
     "region_1" => ("1", "region code, level 1 (hemisphere)"),
     "region_2" => ("1", "region code, level 2"),
     "region_3" => ("1", "region code, level 3"),
+    "zone" => ("1", "zone: open ocean, shelf-break buffer, continental shelf, land"),
+    "dist_shelfbreak" => ("km", "distance to the shelf break, positive in the open ocean"),
 ))
 
 "Folder for intermediate files: \$FESMDATA_WORK/regions."

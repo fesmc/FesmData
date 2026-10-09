@@ -23,6 +23,25 @@
 #             a sea)
 
 # ---------------------------------------------------------------------------
+# Zones: present-day land, continental shelf, open ocean (see zone.jl)
+# ---------------------------------------------------------------------------
+#
+# The open ocean is the part of the ice-free ocean connected to the abyss (deeper than
+# `z_abyss`) through cells deeper than the shelf-break depth `z_break`, after removing
+# channels narrower than about 2 `r_open` (an opening of radius `r_open`). Deep troughs
+# on the shelf that deepen towards the ice sheet are thus not open ocean. `z_break`
+# is given per region (the most specific region path wins). `buffer` is the width of
+# the zone of open ocean along the shelf break. The bed elevation is that of the
+# topography product of each domain in `products`.
+
+[zone]
+products = { "ANT" = "BedMachine-v4", "GRL-PAL" = "BedMachine-v6", "NH" = "GEBCO2025" }
+z_break = { "1" = -500.0, "2" = -500.0, "2.1" = -1000.0 }
+z_abyss = -2000.0
+r_open = 50.0
+buffer = 50.0
+
+# ---------------------------------------------------------------------------
 # Level 1: hemispheres
 # ---------------------------------------------------------------------------
 
