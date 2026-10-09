@@ -3,7 +3,11 @@
 # Each domain has a base grid at its finest resolution, `resolutions[1]` (km). All
 # other grids, at the remaining resolutions and for the crops, are derived from the
 # base grid by coarsening (and cropping), so all grids of a domain are nested. Extents
-# (km) follow the v1 grids in maps/, so all grids share their first cell centre.
+# (km) are the first and last cell centres of the base grid, and follow the v1 grids
+# in maps/ where there are any, so all grids share their first cell centre.
+#
+# `proj` is a polar stereographic or transverse Mercator (e.g. UTM) PROJ string in km
+# (false easting and northing in m, as in PROJ).
 #
 # `folder` is the output folder under $ICE_DATA/v2, and the name of the domain (or
 # crop) in published records, unique to each.
@@ -43,3 +47,25 @@ ylim = [-5400, 1576]
 folder = "Eurasia"
 xlim = [380, 3900]
 ylim = [-5000, 1400]
+
+# Pyrenees (no v1 grid): UTM zone 31N (EPSG:32631), the whole range from the Bay of
+# Biscay (2W) to Cap de Creus (3.3E), about 41.7-43.9N, with some 20-30 km of
+# foreland on each side, so it includes a corner of the Bay of Biscay and of the Gulf
+# of Lion. The extent is a multiple of 32 km.
+[PYR]
+folder = "Pyrenees"
+proj = "+proj=tmerc +lat_0=0 +lon_0=3 +k=0.9996 +x_0=500000 +y_0=0 +a=6378137 +rf=298.257223563 +units=km"
+xlim = [80, 560]
+ylim = [4620, 4860]
+resolutions = [0.5, 1, 2, 4, 8, 16, 32]
+
+# San Rafael Glacier, Northern Patagonian Icefield: UTM zone 18S (EPSG:32718), as the
+# v1 grids. The extent is that of the v1 SRG-16KM grid (5 x 3 cells), whose cell
+# centres it reproduces. The v1 SRG-250M grid covers a smaller area, with cell
+# centres offset by half a cell (125 m) in x and y from those of SRG-250M here.
+[SRG]
+folder = "SRG"
+proj = "+proj=tmerc +lat_0=0 +lon_0=-75 +k=0.9996 +x_0=500000 +y_0=10000000 +a=6378137 +rf=298.257223563 +units=km"
+xlim = [576.962171469987, 640.962171469987]
+ylim = [4809.977314639904, 4841.977314639904]
+resolutions = [0.25, 0.5, 1, 2, 4, 8, 16]

@@ -196,7 +196,7 @@ IceBoost v2.0 (Maffezzoli et al.) glacier ice thickness for RGI 7.0 outlines:
 one GeoTIFF per glacier, 100 m (finer for small glaciers), in UTM. Uses the regions
 listed in datamanifest.toml (`iceboost_v2_rgiNN`), which cover the NH domain except
 Greenland (region 05), where BedMachine includes the peripheral glaciers (also from
-IceBoost).
+IceBoost), and the PYR and SRG domains. Tiles outside a domain are skipped.
 """
 function read_iceboost(db)
     files = String[]

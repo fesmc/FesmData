@@ -82,7 +82,8 @@ storage_path = "$datasets_dir/bedmap2/bedmap2_rockmask.tif"
 uri = "https://ramadda.data.bas.ac.uk/repository/entry/get/bedmap2_rockmask.tif?entryid=synth%3Afa5d606c-dc95-47ee-9016-7a82e446f2f2%3AL2JlZG1hcDJfdGlmZi9iZWRtYXAyX3JvY2ttYXNrLnRpZg%3D%3D"
 
 # IceBoost v2.0 glacier ice thickness (RGI 7.0), the regions of the NH domain except
-# Greenland (05). One zip per RGI region, one GeoTIFF per glacier.
+# Greenland (05), and 11 (Central Europe, PYR) and 17 (Southern Andes, SRG). One zip
+# per RGI region, one GeoTIFF per glacier.
 
 [iceboost_v2_rgi01]
 key = "iceboost_v2_rgi01.zip"
@@ -143,6 +144,12 @@ key = "iceboost_v2_rgi11.zip"
 doi = "10.5281/zenodo.17724512"
 extract = true
 uri = "https://zenodo.org/records/17724512/files/RGI70G_rgi11.zip?download=1"
+
+[iceboost_v2_rgi17]
+key = "iceboost_v2_rgi17.zip"
+doi = "10.5281/zenodo.17724512"
+extract = true
+uri = "https://zenodo.org/records/17724512/files/RGI70G_rgi17.zip?download=1"
 
 # Regions v2 (see Regions/README.md)
 

@@ -10,4 +10,4 @@ Proj = "c94c279d-25a6-4763-9509-64d165bea63e"
 TOML = "fa267f1f-6049-4f14-aa54-33bafae1ed76"
 
 [sources]
-FesmUtils = {rev = "main", url = "https://github.com/fesmc/FesmUtils.jl"}
+FesmUtils = {rev = "tmerc", url = "https://github.com/fesmc/FesmUtils.jl"}
