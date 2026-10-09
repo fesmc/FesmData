@@ -196,14 +196,10 @@ function api(method::AbstractString, url::AbstractString; token::AbstractString=
         input = IOBuffer(JSON.json(json))
     elseif file !== nothing
         push!(headers, "Content-Type" => "application/octet-stream")
-        input = open(file)
+        input = file   # a path, so that the upload has a known size (Content-Length)
     end
     output = IOBuffer()
-    response = try
-        Downloads.request(url; method=method, headers=headers, input=input, output=output)
-    finally
-        input isa IOStream && close(input)
-    end
+    response = Downloads.request(url; method=method, headers=headers, input=input, output=output)
     body = String(take!(output))
     200 <= response.status < 300 || error("Zenodo $method $url: HTTP $(response.status)\n$body")
     return isempty(body) ? nothing : JSON.parse(body)
