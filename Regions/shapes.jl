@@ -91,8 +91,10 @@ function project_rings(rings::AbstractVector, g::ProjGrid; maxseg::Real=0.1)
         if boxes === nothing
             push!(out, [trans(p) for p in pts])
         else
-            for box in boxes
-                c = _clip(pts, box)
+            pts = _unwrap(pts)
+            lo, hi = extrema(first.(pts))
+            for box in boxes, s in 360 .* (floor(Int, (lo - box[2]) / 360):ceil(Int, (hi - box[1]) / 360))
+                c = _clip(pts, (box[1] + s, box[2] + s, box[3], box[4]))
                 length(c) >= 3 && push!(out, [trans(p) for p in c])
             end
         end
@@ -101,12 +103,12 @@ function project_rings(rings::AbstractVector, g::ProjGrid; maxseg::Real=0.1)
 end
 
 """
-    lonlat_box(g; margin=1) -> nothing or [(lonmin, lonmax, latmin, latmax), ...]
+    lonlat_box(g; margin=1) -> nothing or [(lonmin, lonmax, latmin, latmax)]
 
 Lon/lat box around grid `g`, widened by `margin` degrees, from points along the
 outline of its cells (nothing for a grid with a pole). Longitudes may extend beyond
-180 degrees; the box is also given shifted by 360 degrees where that overlaps
--180 to 180, for rings in either range.
+180 degrees; rings are clipped to it shifted by multiples of 360 degrees (see
+`project_rings`).
 """
 function lonlat_box(g::ProjGrid; margin::Real=1)
     latmin, latmax = lat_bounds(g; margin=margin)
@@ -122,7 +124,26 @@ function lonlat_box(g::ProjGrid; margin::Real=1)
         lons[k] += 360 * round((lons[k-1] - lons[k]) / 360)
     end
     lo, hi = minimum(lons) - margin, maximum(lons) + margin
-    return [(lo + s, hi + s, latmin, latmax) for s in (-360, 0, 360) if lo + s < 180 && hi + s > -180]
+    return [(lo, hi, latmin, latmax)]
+end
+
+# Densified ring with continuous longitudes (no jumps of 360 degrees where it crosses
+# 180 degrees), so that its edges are straight in lon/lat. A ring around a pole (net
+# change of longitude of 360 degrees, e.g. a circle around Antarctica) is closed
+# along the pole of its hemisphere, which it encloses.
+function _unwrap(pts)
+    out = copy(pts)
+    for k in 2:length(out)
+        lon, lat = out[k]
+        out[k] = (lon + 360 * round((out[k-1][1] - lon) / 360), lat)
+    end
+    # Closing edge, from the last point back to the first
+    lon1 = out[1][1] + 360 * round((out[end][1] - out[1][1]) / 360)
+    if abs(lon1 - out[1][1]) > 180
+        pole = sum(last, out) > 0 ? 90.0 : -90.0
+        append!(out, [(lon1, out[1][2]), (lon1, pole), (out[1][1], pole)])
+    end
+    return out
 end
 
 # Ring clipped to a lon/lat box (Sutherland-Hodgman, one side at a time). Edges are
