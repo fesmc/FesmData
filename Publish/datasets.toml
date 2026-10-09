@@ -9,7 +9,7 @@
 community = "fesmc"
 license = "cc-by-4.0"
 creators = [
-    { name = "Robinson, Alexander", affiliation = "Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research" },
+    { name = "Robinson, Alexander", affiliation = "Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research", orcid = "0000-0003-3519-5293" },
 ]
 
 [Topo]
