@@ -2,7 +2,7 @@
 
 julia_version = "1.13.1"
 manifest_format = "2.1"
-project_hash = "57b180f7b170ace16863f542d5d6401710777cc8"
+project_hash = "5874a094c737c2fe69c0805abb26c8d5a5ecd7c5"
 
 [[deps.AbstractFFTs]]
 deps = ["LinearAlgebra"]
@@ -484,8 +484,8 @@ version = "0.3.1"
 
 [[deps.FesmUtils]]
 deps = ["NCDatasets", "Proj"]
-git-tree-sha1 = "6ce6fdbbb84d4b2fae1cf39c4b7bb445d4b4e0dc"
-repo-rev = "main"
+git-tree-sha1 = "1de0ef5928cc185a3b8ae27451237259f89a3421"
+repo-rev = "tmerc"
 repo-url = "https://github.com/fesmc/FesmUtils.jl"
 uuid = "87fa8290-809d-4b2a-a2bb-fb70d9529671"
 version = "0.1.0"
