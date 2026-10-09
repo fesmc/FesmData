@@ -20,7 +20,8 @@ const MASK_ATTRIB = Pair{String,Any}["flag_values" => collect(MASK_CLASSES),
 
 1 <= length(ARGS) <= 2 || error("usage: 04_grids.jl DOMAIN [PRODUCT]")
 dom = Domain(ARGS[1])
-products = length(ARGS) == 2 ? [ARGS[2]] : sort(collect(keys(dom.products)))
+sources_of = product_sources(dom)
+products = length(ARGS) == 2 ? [ARGS[2]] : sort(collect(keys(sources_of)))
 base = dom.base
 
 function dominant_mask(f)
@@ -39,9 +40,9 @@ for product in products
     _, fb = read_fields(product_file(dom.grids[1], product))
     # Second moment of the bed on the base grid (cell variance + mean^2)
     z2 = Float64.(fb["z_bed_sd"]) .^ 2 .+ Float64.(fb["z_bed"]) .^ 2
-    src_classes = Int8.(0:length(dom.products[product])-1)
+    src_classes = Int8.(0:length(sources_of[product])-1)
     src_attrib = Pair{String,Any}["flag_values" => collect(src_classes),
-                                  "flag_meanings" => join(reverse(dom.products[product]), " ")]
+                                  "flag_meanings" => join(reverse(sources_of[product]), " ")]
 
     for og in dom.grids[2:end]
         t0 = time()
@@ -56,9 +57,9 @@ for product in products
         fr, _ = remap_fractions(g, base, fb["src_id"], src_classes)
         f["src_id"] = Int8.(map(I -> argmax([fr[c][I] for c in src_classes]), CartesianIndices(f["mask"])) .- 1)
 
-        write_fields(product_file(og, product), g, f;
-            attrib=["product" => product, "sources" => join(dom.products[product], " > "),
-                    "base_grid" => base.name, "history" => "Topo/scripts/04_grids.jl"],
+        write_fields(product_file(og, product), g, f; dataset=DATASET,
+            attrib=["product" => product, "sources" => join(sources_of[product], " > "),
+                    "base_grid" => base.name],
             varattrib=Dict("mask" => MASK_ATTRIB, "src_id" => src_attrib))
         println(rpad(g.name, 16), rpad("$(join(size(g), " x "))", 14), "$(round(time() - t0; digits=1)) s  ",
                 product_file(og, product))

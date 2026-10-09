@@ -1,0 +1,28 @@
+# Products of the topography v2 pipeline on each domain (see ../shared/domains.toml).
+#
+# `products` maps each output product name to its sources, in order of priority (see
+# sources.jl); a thickness source (glaciers) adds ice onto the sources below it.
+# `rho_ice` and `rho_sw` (kg m-3) are used for flotation, as in the BedMachine product
+# of the domain.
+
+[ANT]
+rho_ice = 917.0
+rho_sw = 1027.0
+
+[ANT.products]
+"BedMachine-v4" = ["bedmachine_antarctica_v4", "gebco2025"]
+"Bedmap3" = ["bedmap3", "gebco2025"]
+
+[GRL-PAL]
+rho_ice = 917.0
+rho_sw = 1023.0
+
+[GRL-PAL.products]
+"BedMachine-v6" = ["bedmachine_greenland_v6", "gebco2025"]
+
+[NH]
+rho_ice = 917.0
+rho_sw = 1023.0
+
+[NH.products]
+"GEBCO2025" = ["bedmachine_greenland_v6", "iceboost_v2", "gebco2025"]

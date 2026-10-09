@@ -18,7 +18,8 @@ IceBoost glacier tiles). The
 methods are in [FesmUtils.jl](https://github.com/fesmc/FesmUtils.jl) and are
 threaded.
 
-Domains, resolutions and products are defined in `domains.toml`. Grid extents
+Domains and resolutions are defined in `../shared/domains.toml` (shared with the
+other pipelines), and the products of each domain in `products.toml`. Grid extents
 follow the v1 grids in `../maps`, so the v1 grids at 4-32 km are reproduced, except
 GRL-32KM, which has 53 instead of 54 columns so that its extent matches the finer
 GRL grids.
@@ -31,7 +32,7 @@ GRL grids.
 | `$ICE_DATA/v2/<Domain>/<GRID>/` | Output: `grid_<GRID>.txt`, `<GRID>_grid.nc`, `<GRID>_TOPO-<product>.nc` |
 | `$FESMDATA_WORK/topo/` | Intermediate files (sources on base grids) |
 
-The environment variables are set per machine in `machines/<machine>.env`.
+The environment variables are set per machine in `../shared/machines/<machine>.env`.
 
 ## Setup on a new machine
 
@@ -48,7 +49,7 @@ From the FesmData root, set the environment and install the packages (on Levante
 on a login node, since compute nodes have no internet access):
 
 ```bash
-source Topo/machines/levante.env
+source shared/machines/levante.env
 julia --project=Topo -e 'using Pkg; Pkg.instantiate()'
 ```
 
@@ -154,7 +155,7 @@ blended in order of increasing priority: a source replaces the fields below it w
 it fully covers a cell, with a weight rising linearly from 0 at the edge of its
 coverage to 1 at 20 km inside it. The ice fraction of each cell is then grounded or
 floating as a whole, by flotation of its mean ice thickness and bed (densities in
-`domains.toml`). Surface elevation is kept as given by the sources (in Antarctica it
+`products.toml`). Surface elevation is kept as given by the sources (in Antarctica it
 includes firn air). The file also has `mask` (dominant surface type: 0 ocean, 1
 ice-free land, 2 grounded ice, 3 floating ice) and `src_id` (source with the largest
 weight).

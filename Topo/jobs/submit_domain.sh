@@ -14,7 +14,7 @@ first=${2:-1}
 run=Topo/jobs/run_step.sbatch
 
 sources=$(julia --project=Topo -e 'include("Topo/common.jl"); d = Domain(ARGS[1]);
-    println(join(unique(reduce(vcat, collect(values(d.products)))), " "))' "$domain")
+    println(join(unique(reduce(vcat, collect(values(product_sources(d))))), " "))' "$domain")
 
 dep=""
 submit() {  # submit NAME TIME SCRIPT ARGS...; prints the job id
