@@ -4,11 +4,15 @@
 #   <BASE>_TOPO-<product>.png         fields of the product on the base grid
 #   <DOMAIN>_TOPO-<product>_grids.png ice thickness on every grid of the domain
 #   <GRID>_TOPO-<product>_v1.png      difference with the v1 product, if any
+#   <GRID>_TOPO-<product>_<ref>.png   difference of a variant with a default product
 #
 # and a table of ice area and volume on every grid (conservation check).
 #
 # Usage:
-#     julia --project=Topo -t N Topo/scripts/05_plots.jl DOMAIN [PRODUCT]
+#     julia --project=Topo -t N Topo/scripts/05_plots.jl DOMAIN [PRODUCTS]
+#
+# PRODUCTS is "default" (the default products, if omitted), "variants", "all",
+# or the name of one product (see domains.toml).
 #
 include(joinpath(@__DIR__, "..", "common.jl"))
 include(joinpath(TOPO_DIR, "sources.jl"))
@@ -23,12 +27,21 @@ const V1 = Dict(
     ("NH", "GEBCO2025")          => ("NH-32KM", "North/NH-32KM/NH-32KM_TOPO-RTOPO-2.0.1.nc"),
 )
 
+# Default product to compare a variant with: (domain, variant) => (grid, product)
+const REF = Dict(
+    ("ANT", "BedMachine-v3")     => ("ANT-4KM", "BedMachine-v4"),
+    ("ANT", "BedMachine-v2")     => ("ANT-4KM", "BedMachine-v4"),
+    ("ANT", "Bedmap2")           => ("ANT-4KM", "Bedmap3"),
+    ("GRL-PAL", "BedMachine-v5") => ("GRL-4KM", "BedMachine-v6"),
+    ("GRL-PAL", "BedMachine-v4") => ("GRL-4KM", "BedMachine-v6"),
+)
+
 const MAXPIX = 1200
 const MASK_COLORS = [:steelblue, :tan, :white, :lightblue]
 
-1 <= length(ARGS) <= 2 || error("usage: 05_plots.jl DOMAIN [PRODUCT]")
+1 <= length(ARGS) <= 2 || error("usage: 05_plots.jl DOMAIN [PRODUCTS]")
 dom = Domain(ARGS[1])
-products = length(ARGS) == 2 ? [ARGS[2]] : sort(collect(keys(dom.products)))
+products = select_products(dom, get(ARGS, 2, "default"))
 plotdir = mkpath(joinpath(workdir(), "plots"))
 
 # Subsample a field to at most MAXPIX cells per axis
@@ -49,6 +62,33 @@ function panel!(pos, g, F, title; colormap=:viridis, colorrange=nothing, categor
     end
     Colorbar(pos[1, 2], hm; height=Relative(0.8))
     return ax
+end
+
+outgrid(name) = only(filter(o -> o.grid.name == name, dom.grids))
+
+"""
+Plot z_bed and H_ice of `product` on grid `gname`, of the reference fields `f1`, and
+their difference, to <GRID>_TOPO-<product>_<suffix>.png.
+"""
+function compare(product, gname, f1, label, suffix)
+    g2, f2 = read_fields(product_file(outgrid(gname), product))
+    if size(f1["z_bed"]) != size(g2)
+        println("$label on $gname has size $(size(f1["z_bed"])), $product has $(size(g2)): comparing common cells")
+    end
+    nx, ny = min.(size(f1["z_bed"]), size(g2))
+    gc = ProjGrid(gname, g2.xc[1:nx], g2.yc[1:ny], g2.proj)
+    fig = Figure(size=(1500, 950))
+    for (r, name) in enumerate(("z_bed", "H_ice"))
+        a, b = f2[name][1:nx, 1:ny], f1[name][1:nx, 1:ny]
+        cmap, crange = name == "z_bed" ? (:oleron, (-4000, 4000)) : (:Blues, (0, 4000))
+        panel!(fig[r, 1], gc, a, "$name $product"; colormap=cmap, colorrange=crange)
+        panel!(fig[r, 2], gc, b, "$name $label"; colormap=cmap, colorrange=crange)
+        panel!(fig[r, 3], gc, a .- b, "$name difference (m)"; colormap=:RdBu, colorrange=(-300, 300))
+        d = filter(!isnan, a .- b)
+        println(@sprintf("%s - %s %-6s on %s: mean %.1f m, rms %.1f m", product, label, name, gname,
+                         sum(d) / length(d), sqrt(sum(d .^ 2) / length(d))))
+    end
+    save(joinpath(plotdir, "$(gname)_TOPO-$(product)_$(suffix).png"), fig)
 end
 
 for product in products
@@ -81,31 +121,23 @@ for product in products
     end
     save(joinpath(plotdir, "$(dom.key)_TOPO-$(product)_grids.png"), fig)
 
-    # Comparison with v1
-    haskey(V1, (dom.key, product)) || continue
-    gname, v1file = V1[(dom.key, product)]
-    v1path = joinpath(ENV["ICE_DATA"], v1file)
-    isfile(v1path) || (println("No v1 file $v1path"); continue)
-    og = only(filter(o -> o.grid.name == gname, grids))
-    g2, f2 = read_fields(product_file(og, product))
-    f1 = NCDataset(v1path) do ds
-        Dict(k => Float32.(coalesce.(ds[k][:, :], NaN32)) for k in ("z_bed", "H_ice", "z_srf") if haskey(ds, k))
+    # Comparison with v1, and of a variant with its default product
+    if haskey(V1, (dom.key, product))
+        gname, v1file = V1[(dom.key, product)]
+        v1path = joinpath(ENV["ICE_DATA"], v1file)
+        if isfile(v1path)
+            f1 = NCDataset(v1path) do ds
+                Dict(k => Float32.(coalesce.(ds[k][:, :], NaN32)) for k in ("z_bed", "H_ice") if haskey(ds, k))
+            end
+            compare(product, gname, f1, "v1 $(basename(v1file))", "v1")
+        else
+            println("No v1 file $v1path")
+        end
     end
-    if size(f1["z_bed"]) != size(g2)
-        println("v1 $gname has size $(size(f1["z_bed"])), v2 has $(size(g2)): comparing common cells")
+    if haskey(REF, (dom.key, product))
+        gname, ref = REF[(dom.key, product)]
+        _, f1 = read_fields(product_file(outgrid(gname), ref))
+        compare(product, gname, f1, ref, ref)
     end
-    nx, ny = min.(size(f1["z_bed"]), size(g2))
-    fig = Figure(size=(1500, 950))
-    for (r, name) in enumerate(("z_bed", "H_ice"))
-        a, b = f2[name][1:nx, 1:ny], f1[name][1:nx, 1:ny]
-        gc = ProjGrid(gname, g2.xc[1:nx], g2.yc[1:ny], g2.proj)
-        cmap, crange = name == "z_bed" ? (:oleron, (-4000, 4000)) : (:Blues, (0, 4000))
-        panel!(fig[r, 1], gc, a, "$name v2 $product"; colormap=cmap, colorrange=crange)
-        panel!(fig[r, 2], gc, b, "$name v1 $(basename(v1file))"; colormap=cmap, colorrange=crange)
-        panel!(fig[r, 3], gc, a .- b, "$name v2 - v1 (m)"; colormap=:RdBu, colorrange=(-300, 300))
-        d = filter(!isnan, a .- b)
-        println(@sprintf("v2 - v1 %-6s on %s: mean %.1f m, rms %.1f m", name, gname, sum(d) / length(d), sqrt(sum(d .^ 2) / length(d))))
-    end
-    save(joinpath(plotdir, "$(gname)_TOPO-$(product)_v1.png"), fig)
 end
 println("Plots in $plotdir")

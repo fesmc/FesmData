@@ -28,7 +28,9 @@ struct Domain
     folder::String
     base::ProjGrid
     grids::Vector{OutGrid}        # all output grids, base first
-    products::Dict{String,Vector{String}}
+    products::Dict{String,Vector{String}}   # sources of each product, defaults and variants
+    defaults::Vector{String}      # names of the default products
+    variants::Vector{String}      # names of the variant products
     rho_ice::Float64              # densities for flotation (kg m-3)
     rho_sw::Float64
 end
@@ -55,8 +57,30 @@ function Domain(key::AbstractString)
             push!(grids, OutGrid(c["folder"], _derived(cbase, r / dx, grid_name(ckey, r))))
         end
     end
-    products = Dict{String,Vector{String}}(k => Vector{String}(v) for (k, v) in d["products"])
-    return Domain(String(key), d["folder"], base, grids, products, d["rho_ice"], d["rho_sw"])
+    defaults, variants = d["products"], get(d, "variants", Dict())
+    common = intersect(keys(defaults), keys(variants))
+    isempty(common) || error("$key: products listed as default and variant: $(join(common, ", "))")
+    products = Dict{String,Vector{String}}(k => Vector{String}(v) for (k, v) in merge(defaults, variants))
+    reserved = intersect(keys(products), PRODUCT_SETS)
+    isempty(reserved) || error("$key: reserved product names: $(join(reserved, ", "))")
+    return Domain(String(key), d["folder"], base, grids, products, sort(collect(keys(defaults))),
+                  sort(collect(keys(variants))), d["rho_ice"], d["rho_sw"])
+end
+
+const PRODUCT_SETS = ("default", "variants", "all")
+
+"""
+    select_products(dom, sel="default") -> Vector{String}
+
+Products of `dom` selected by `sel`: "default" (the default products), "variants",
+"all", or the name of one product.
+"""
+function select_products(dom::Domain, sel::AbstractString="default")
+    sel == "default" && return dom.defaults
+    sel == "variants" && return dom.variants
+    sel == "all" && return vcat(dom.defaults, dom.variants)
+    haskey(dom.products, sel) && return [String(sel)]
+    error("$(dom.key): unknown product $sel, available: $(join(PRODUCT_SETS, ", ")), $(join(sort(collect(keys(dom.products))), ", "))")
 end
 
 function _derived(g::ProjGrid, factor::Real, name::String)
