@@ -11,6 +11,32 @@ skip_download = true
 storage_path = "$datasets_dir/bedmachine_antarctica_v4/NSIDC-0756_BedMachineAntarctica_19700101-20191001_V04.1.nc"
 uri = "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/MEASURES/NSIDC-0756/4/1970/01/01/NSIDC-0756_BedMachineAntarctica_19700101-20191001_V04.1.nc"
 
+# Earlier versions of BedMachine (topography variants, see Topo/domains.toml)
+
+[bedmachine_antarctica_v3]
+doi = "10.5067/FPSU0V1MWUB6"
+skip_download = true
+storage_path = "$datasets_dir/bedmachine_antarctica_v3/BedMachineAntarctica-v3.nc"
+uri = "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/MEASURES/NSIDC-0756/3/1970/01/01/BedMachineAntarctica-v3.nc"
+
+[bedmachine_antarctica_v2]
+doi = "10.5067/E1QL9HFQ7A8M"
+skip_download = true
+storage_path = "$datasets_dir/bedmachine_antarctica_v2/BedMachineAntarctica_2020-07-15_v02.nc"
+uri = "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/MEASURES/NSIDC-0756/2/1970/01/01/BedMachineAntarctica_2020-07-15_v02.nc"
+
+[bedmachine_greenland_v5]
+doi = "10.5067/GMEVBWFLWA7X"
+skip_download = true
+storage_path = "$datasets_dir/bedmachine_greenland_v5/BedMachineGreenland-v5.nc"
+uri = "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/ICEBRIDGE/IDBMG4/5/1993/01/01/BedMachineGreenland-v5.nc"
+
+[bedmachine_greenland_v4]
+doi = "10.5067/VLJ5YXKCNGXO"
+skip_download = true
+storage_path = "$datasets_dir/bedmachine_greenland_v4/BedMachineGreenland-2021-04-20.nc"
+uri = "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/ICEBRIDGE/IDBMG4/4/1993/01/01/BedMachineGreenland-2021-04-20.nc"
+
 [bedmachine_greenland_v6]
 skip_download = true
 storage_path = "$datasets_dir/bedmachine_greenland_v6/BedMachineGreenland-v6.nc"
@@ -26,6 +52,33 @@ key = "gebco2025.zip"
 doi = "10.5285/37c52e96-24ea-67ce-e063-7086abc05f29"
 extract = true
 uri = "https://dap.ceda.ac.uk/bodc/gebco/global/gebco_2025/ice_surface_elevation/netcdf/gebco_2025.zip"
+
+# Bedmap2 (Fretwell et al., 2013), one GeoTIFF per field
+
+[bedmap2_bed]
+doi = "10.5285/fa5d606c-dc95-47ee-9016-7a82e446f2f2"
+storage_path = "$datasets_dir/bedmap2/bedmap2_bed.tif"
+uri = "https://ramadda.data.bas.ac.uk/repository/entry/get/bedmap2_bed.tif?entryid=synth%3Afa5d606c-dc95-47ee-9016-7a82e446f2f2%3AL2JlZG1hcDJfdGlmZi9iZWRtYXAyX2JlZC50aWY%3D"
+
+[bedmap2_surface]
+doi = "10.5285/fa5d606c-dc95-47ee-9016-7a82e446f2f2"
+storage_path = "$datasets_dir/bedmap2/bedmap2_surface.tif"
+uri = "https://ramadda.data.bas.ac.uk/repository/entry/get/bedmap2_surface.tif?entryid=synth%3Afa5d606c-dc95-47ee-9016-7a82e446f2f2%3AL2JlZG1hcDJfdGlmZi9iZWRtYXAyX3N1cmZhY2UudGlm"
+
+[bedmap2_thickness]
+doi = "10.5285/fa5d606c-dc95-47ee-9016-7a82e446f2f2"
+storage_path = "$datasets_dir/bedmap2/bedmap2_thickness.tif"
+uri = "https://ramadda.data.bas.ac.uk/repository/entry/get/bedmap2_thickness.tif?entryid=synth%3Afa5d606c-dc95-47ee-9016-7a82e446f2f2%3AL2JlZG1hcDJfdGlmZi9iZWRtYXAyX3RoaWNrbmVzcy50aWY%3D"
+
+[bedmap2_icemask_grounded_and_shelves]
+doi = "10.5285/fa5d606c-dc95-47ee-9016-7a82e446f2f2"
+storage_path = "$datasets_dir/bedmap2/bedmap2_icemask_grounded_and_shelves.tif"
+uri = "https://ramadda.data.bas.ac.uk/repository/entry/get/bedmap2_icemask_grounded_and_shelves.tif?entryid=synth%3Afa5d606c-dc95-47ee-9016-7a82e446f2f2%3AL2JlZG1hcDJfdGlmZi9iZWRtYXAyX2ljZW1hc2tfZ3JvdW5kZWRfYW5kX3NoZWx2ZXMudGlm"
+
+[bedmap2_rockmask]
+doi = "10.5285/fa5d606c-dc95-47ee-9016-7a82e446f2f2"
+storage_path = "$datasets_dir/bedmap2/bedmap2_rockmask.tif"
+uri = "https://ramadda.data.bas.ac.uk/repository/entry/get/bedmap2_rockmask.tif?entryid=synth%3Afa5d606c-dc95-47ee-9016-7a82e446f2f2%3AL2JlZG1hcDJfdGlmZi9iZWRtYXAyX3JvY2ttYXNrLnRpZg%3D%3D"
 
 # IceBoost v2.0 glacier ice thickness (RGI 7.0), the regions of the NH domain except
 # Greenland (05). One zip per RGI region, one GeoTIFF per glacier.
