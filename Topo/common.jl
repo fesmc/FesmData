@@ -98,6 +98,7 @@ const VARINFO = Dict(
     "f_land"   => ("1", "area fraction of ice-free land"),
     "f_grnd"   => ("1", "area fraction of grounded ice"),
     "f_flt"    => ("1", "area fraction of floating ice"),
+    "f_ice"    => ("1", "area fraction of glacier ice"),
     "f_valid"  => ("1", "area fraction covered by source data"),
     "mask"     => ("1", "dominant surface type"),
     "src_id"   => ("1", "source with the largest weight"),

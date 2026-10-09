@@ -26,3 +26,66 @@ key = "gebco2025.zip"
 doi = "10.5285/37c52e96-24ea-67ce-e063-7086abc05f29"
 extract = true
 uri = "https://dap.ceda.ac.uk/bodc/gebco/global/gebco_2025/ice_surface_elevation/netcdf/gebco_2025.zip"
+
+# IceBoost v2.0 glacier ice thickness (RGI 7.0), the regions of the NH domain except
+# Greenland (05). One zip per RGI region, one GeoTIFF per glacier.
+
+[iceboost_v2_rgi01]
+key = "iceboost_v2_rgi01.zip"
+doi = "10.5281/zenodo.17724512"
+extract = true
+uri = "https://zenodo.org/records/17724512/files/RGI70G_rgi1.zip?download=1"
+
+[iceboost_v2_rgi02]
+key = "iceboost_v2_rgi02.zip"
+doi = "10.5281/zenodo.17724512"
+extract = true
+uri = "https://zenodo.org/records/17724512/files/RGI70G_rgi2.zip?download=1"
+
+[iceboost_v2_rgi03]
+key = "iceboost_v2_rgi03.zip"
+doi = "10.5281/zenodo.17724512"
+extract = true
+uri = "https://zenodo.org/records/17724512/files/RGI70G_rgi3.zip?download=1"
+
+[iceboost_v2_rgi04]
+key = "iceboost_v2_rgi04.zip"
+doi = "10.5281/zenodo.17724512"
+extract = true
+uri = "https://zenodo.org/records/17724512/files/RGI70G_rgi4.zip?download=1"
+
+[iceboost_v2_rgi06]
+key = "iceboost_v2_rgi06.zip"
+doi = "10.5281/zenodo.17724512"
+extract = true
+uri = "https://zenodo.org/records/17724512/files/RGI70G_rgi6.zip?download=1"
+
+[iceboost_v2_rgi07]
+key = "iceboost_v2_rgi07.zip"
+doi = "10.5281/zenodo.17724512"
+extract = true
+uri = "https://zenodo.org/records/17724512/files/RGI70G_rgi7.zip?download=1"
+
+[iceboost_v2_rgi08]
+key = "iceboost_v2_rgi08.zip"
+doi = "10.5281/zenodo.17724512"
+extract = true
+uri = "https://zenodo.org/records/17724512/files/RGI70G_rgi8.zip?download=1"
+
+[iceboost_v2_rgi09]
+key = "iceboost_v2_rgi09.zip"
+doi = "10.5281/zenodo.17724512"
+extract = true
+uri = "https://zenodo.org/records/17724512/files/RGI70G_rgi9.zip?download=1"
+
+[iceboost_v2_rgi10]
+key = "iceboost_v2_rgi10.zip"
+doi = "10.5281/zenodo.17724512"
+extract = true
+uri = "https://zenodo.org/records/17724512/files/RGI70G_rgi10.zip?download=1"
+
+[iceboost_v2_rgi11]
+key = "iceboost_v2_rgi11.zip"
+doi = "10.5281/zenodo.17724512"
+extract = true
+uri = "https://zenodo.org/records/17724512/files/RGI70G_rgi11.zip?download=1"

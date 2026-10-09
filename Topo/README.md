@@ -13,7 +13,8 @@ The processing has two stages:
    LIS, EIS), is remapped from the merged base product.
 
 Remapping is conservative: exact for sources on the same projection as the domain
-(BedMachine, Bedmap3), and from sub-cell sampling for lon-lat sources (GEBCO). The
+(BedMachine, Bedmap3), and from sub-cell sampling for sources on other grids (GEBCO,
+IceBoost glacier tiles). The
 methods are in [FesmUtils.jl](https://github.com/fesmc/FesmUtils.jl) and are
 threaded.
 
@@ -70,8 +71,8 @@ List the datasets and whether they are present:
 julia --project=Topo Topo/scripts/00_sources.jl
 ```
 
-GEBCO 2025 (4 GB zipped) and Bedmap3 (2.5 GB) are
-downloaded automatically (Levante login node):
+GEBCO 2025 (4 GB zipped), Bedmap3 (2.5 GB) and IceBoost v2.0 (1.3 GB zipped, one
+zip per RGI region) are downloaded automatically (Levante login node):
 
 ```bash
 julia --project=Topo Topo/scripts/00_sources.jl --download
@@ -116,6 +117,16 @@ Each writes `$FESMDATA_WORK/topo/<BASE>/<BASE>_<source>.nc` with `z_bed`, `z_srf
 by the source). Sources on the domain projection (BedMachine, Bedmap3) are remapped
 exactly; GEBCO is sampled at about half its resolution within each cell.
 
+Thickness sources (IceBoost) give only glacier ice thickness, as one tile per
+glacier on its own projection (UTM). Each tile is sampled at about half its
+resolution within the base cells it covers, and the file has `H_ice` (cell mean, 0
+off the glaciers) and `f_ice` (glacier area fraction). The pixels touched by a
+glacier outline count as glacier in the tiles, so the thickness and area of each
+tile are scaled to the glacier volume and area given with it (the raw pixels give
+2% more volume and 3-6% more area). Tiles still overlap along shared ice divides,
+where `f_ice` is limited to 1. The job log compares the glacier area and volume with
+those of the tiles.
+
 Source notes (see `sources.jl`):
 
 - Surface elevation is 0 over the ocean for all sources.
@@ -124,8 +135,11 @@ Source notes (see `sources.jl`):
 - Bedmap3: the transiently grounded ice shelf is floating ice.
 - GEBCO is used as ice-free topography and bathymetry. Its sub-ice grid only has
   ice thickness for the Greenland and Antarctic ice sheets (covered by the regional
-  sources), and differs from the main grid by a few metres elsewhere. Ice caps
-  outside Greenland and Antarctica are therefore missing in the NH product.
+  sources), and differs from the main grid by a few metres elsewhere.
+- IceBoost v2.0 (Maffezzoli et al., doi:10.5281/zenodo.17724512; RGI 7.0 outlines)
+  gives the ice thickness of the glaciers and ice caps outside Greenland in the NH
+  product. BedMachine
+  Greenland v6 uses the same dataset for the peripheral glaciers of Greenland.
 
 ### 3. Merge
 
@@ -141,7 +155,14 @@ it fully covers a cell, with a weight rising linearly from 0 at the edge of its
 coverage to 1 at 20 km inside it. The ice fraction of each cell is then grounded or
 floating as a whole, by flotation of its mean ice thickness and bed (densities in
 `domains.toml`). Surface elevation is kept as given by the sources (in Antarctica it
-includes firn air). The file also has `mask` (dominant surface type: 0 ocean, 1
+includes firn air).
+
+A thickness source adds its glaciers onto the ice-free land of the sources below it
+(GEBCO, whose elevation is the ice surface): the glacier fraction, at most the
+ice-free land fraction, becomes grounded ice, and the bed is lowered by the
+cell-mean ice thickness. Glaciers on GEBCO ocean (e.g. retreated termini) are
+dropped. Cells with glacier ice are always grounded. In the NH product, BedMachine
+replaces the glaciers within its coverage. The file also has `mask` (dominant surface type: 0 ocean, 1
 ice-free land, 2 grounded ice, 3 floating ice) and `src_id` (source with the largest
 weight).
 
