@@ -39,8 +39,9 @@ Install Julia 1.13.1 with juliaup:
 ```bash
 curl -fsSL https://install.julialang.org | sh
 juliaup add 1.13.1
-juliaup default 1.13.1
 ```
+
+The machine environment selects this version (`JULIAUP_CHANNEL`).
 
 From the FesmData root, set the environment and install the packages (on Levante,
 on a login node, since compute nodes have no internet access):
