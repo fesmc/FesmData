@@ -1,0 +1,35 @@
+# Original datasets used by FesmData workflows (read with DataManifest.jl).
+#
+# The data are stored outside the repository, under the folder given by the
+# environment variable DATAMANIFEST_DATASETS_DIR (set per machine, see
+# Topo/machines/*.env). Entries with `skip_download = true` need a manual download
+# (e.g. a NASA Earthdata login) into their `storage_path`.
+
+[bedmachine_antarctica_v4]
+doi = "10.5067/POJQI54A45HX"
+skip_download = true
+storage_path = "$datasets_dir/bedmachine_antarctica_v4/NSIDC-0756_BedMachineAntarctica_19700101-20191001_V04.1.nc"
+uri = "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/MEASURES/NSIDC-0756/4/1970/01/01/NSIDC-0756_BedMachineAntarctica_19700101-20191001_V04.1.nc"
+
+[bedmachine_greenland_v6]
+skip_download = true
+storage_path = "$datasets_dir/bedmachine_greenland_v6/BedMachineGreenland-v6.nc"
+uri = "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/ICEBRIDGE/IDBMG4/6/1993/01/01/BedMachineGreenland-v6.nc"
+
+[bedmap3]
+doi = "10.5285/2d0e4791-8e20-46a3-80e4-f5f6716025d2"
+skip_download = true
+storage_path = "$datasets_dir/bedmap3/bedmap3.nc"
+uri = "https://ramadda.data.bas.ac.uk/repository/entry/show?entryid=2d0e4791-8e20-46a3-80e4-f5f6716025d2"
+
+[gebco2025]
+key = "gebco2025"
+doi = "10.5285/37c52e96-24ea-67ce-e063-7086abc05f29"
+extract = true
+uri = "https://dap.ceda.ac.uk/bodc/gebco/global/gebco_2025/ice_surface_elevation/netcdf/gebco_2025.zip"
+
+[gebco2025_sub_ice]
+key = "gebco2025_sub_ice"
+doi = "10.5285/37c52e96-24ea-67ce-e063-7086abc05f29"
+extract = true
+uri = "https://dap.ceda.ac.uk/bodc/gebco/global/gebco_2025/sub_ice_topography_bathymetry/netcdf/gebco_2025_sub_ice_topo.zip"

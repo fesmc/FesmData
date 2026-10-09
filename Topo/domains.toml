@@ -1,0 +1,55 @@
+# Domains of the topography v2 pipeline.
+#
+# Each domain has a base grid at its finest resolution, `resolutions[1]` (km). All
+# other grids, at the remaining resolutions and for the crops, are derived from the
+# base product by exact conservative remapping. Extents (km) follow the v1 grids in
+# maps/, so all grids share their first cell centre and are nested.
+#
+# `folder` is the output folder under $ICE_DATA/v2. `products` maps each output
+# product name to its sources, in order of priority (see sources.toml).
+
+[ANT]
+folder = "Antarctica"
+proj = "+proj=stere +lat_0=-90 +lat_ts=-71 +lon_0=0 +x_0=0 +y_0=0 +a=6378137 +rf=298.25722356 +units=km"
+xlim = [-3040, 3040]
+ylim = [-3040, 3040]
+resolutions = [1, 2, 4, 8, 16, 32]
+
+[ANT.products]
+"BedMachine-v4" = ["bedmachine_antarctica_v4", "gebco2025"]
+"Bedmap3" = ["bedmap3", "gebco2025"]
+
+[GRL-PAL]
+folder = "Greenland"
+proj = "+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +x_0=0 +y_0=0 +a=6378137 +rf=298.25722356 +units=km"
+xlim = [-1360, 960]
+ylim = [-3450, -570]
+resolutions = [0.5, 1, 2, 4, 8, 16, 32]
+
+[GRL-PAL.products]
+"BedMachine-v6" = ["bedmachine_greenland_v6", "gebco2025"]
+
+[GRL-PAL.crops.GRL]
+folder = "Greenland"
+xlim = [-720, 960]
+ylim = [-3450, -570]
+
+[NH]
+folder = "North"
+proj = "+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +x_0=0 +y_0=0 +a=6378137 +rf=298.25722356 +units=km"
+xlim = [-4900, 3900]
+ylim = [-5400, 3400]
+resolutions = [2, 4, 8, 16, 32]
+
+[NH.products]
+"GEBCO2025" = ["bedmachine_greenland_v6", "gebco2025"]
+
+[NH.crops.LIS]
+folder = "Laurentide"
+xlim = [-4900, -36]
+ylim = [-5400, 1576]
+
+[NH.crops.EIS]
+folder = "Eurasia"
+xlim = [380, 3900]
+ylim = [-5000, 1400]
