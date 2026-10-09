@@ -15,26 +15,6 @@ const TOPO_DIR = @__DIR__
 "Dataset name of the topography files (provenance attributes, release tags topo-v*)."
 const DATASET = "topo"
 
-"Names reserved for selecting sets of products (see `select_products`)."
-const PRODUCT_SETS = ("default", "variants", "all")
-
-"""
-    product_sources(dom) -> Dict{String,Vector{String}}
-
-Sources of each product of a domain, default products and variants, highest priority
-first (see products.toml).
-"""
-function product_sources(dom::Domain)
-    p = _products(dom)
-    defaults, variants = p["products"], get(p, "variants", Dict{String,Any}())
-    common = intersect(keys(defaults), keys(variants))
-    isempty(common) || error("$(dom.key): products listed as default and variant: $(join(common, ", "))")
-    products = Dict{String,Vector{String}}(k => Vector{String}(v) for (k, v) in merge(defaults, variants))
-    reserved = intersect(keys(products), PRODUCT_SETS)
-    isempty(reserved) || error("$(dom.key): reserved product names: $(join(reserved, ", "))")
-    return products
-end
-
 """
     select_products(dom, sel="default") -> Vector{String}
 

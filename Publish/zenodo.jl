@@ -119,7 +119,7 @@ function source_dois(files::Vector{ProductFile})
     for f in files
         (f.is_grid || !endswith(f.path, ".nc")) && continue
         s = nc_attrib(f.path, "sources")
-        s === nothing || union!(sources, strip.(split(s, ">")))
+        s === nothing || union!(sources, strip.(split(s, r"[>,]")))   # Topo "a > b", Regions "a, b"
     end
     dois = String[]
     for s in sort(collect(sources))

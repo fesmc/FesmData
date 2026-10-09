@@ -35,6 +35,15 @@ function read_regions(path=joinpath(@__DIR__, "regions.toml"))
     return defs
 end
 
+"Region and basin sources used by the rules of the regions (see sources.jl)."
+function region_sources(defs)
+    sources = Set{String}()
+    add!(rule) = (push!(sources, rule["source"]);
+                  foreach(add!, vcat(get(rule, "within", []), get(rule, "without", []))))
+    foreach(d -> foreach(add!, d.rules), defs)
+    return sort(collect(sources))
+end
+
 """
     RuleContext(g)
 

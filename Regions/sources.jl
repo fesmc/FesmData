@@ -29,6 +29,24 @@ function source_shapes(source::AbstractString; level::Integer=0)
     end
 end
 
+"""
+    manifest_keys(source) -> Vector{String}
+
+Entries of datamanifest.toml that a region or basin source is read from (none for
+"box").
+"""
+function manifest_keys(source::AbstractString)
+    source == "box" && return String[]
+    source == "eez_land" && return ["marineregions_eez_land_v4", "iso3166_m49"]
+    source == "iho" && return ["marineregions_iho_v3"]
+    source == "goas" && return ["marineregions_goas_v1"]
+    source == "hydrobasins" && return ["hydrobasins_v1c_$r" for r in HYDROBASINS_REGIONS]
+    source in ("imbie", "imbie_refined") && return ["nsidc0709_v2_basins"]
+    source == "mouginot2019" && return ["mouginot2019_greenland_basins"]
+    source in ("zwally2012_antarctica", "zwally2012_greenland") && return [String(source)]
+    error("unknown source $source")
+end
+
 function _read_source(source, level)
     db = manifest()
     path(key) = get_dataset_path(db, key)

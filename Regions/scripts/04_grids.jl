@@ -18,6 +18,9 @@ defs = read_regions()
 
 _, R = read_fields(regions_work_file(dom, "regions"))
 _, Z = read_fields(regions_work_file(dom, "zone"))
+# Original datasets (datamanifest.toml) of the regions and of the topography of the zones
+topography = NCDataset(ds -> ds.attrib["topography"], regions_work_file(dom, "zone"))
+region_keys = vcat(manifest_keys.(region_sources(defs))..., product_sources(dom)[topography])
 nlev = count(startswith("region_"), keys(R))
 basins = Dict{String,Any}()
 for set in basin_sets(dom)
@@ -42,7 +45,8 @@ for og in dom.grids
     attrib["zone"] = ZONE_ATTRIB
     fields["dist_shelfbreak"] = remap(m, Z["dist_shelfbreak"])[1]
     write_fields(regions_file(og), g, fields; dataset=DATASET,
-                 attrib=["title" => "Regions v2 (FesmData/Regions)", "base_grid" => dom.base.name],
+                 attrib=["title" => "Regions v2 (FesmData/Regions)", "base_grid" => dom.base.name,
+                         "sources" => join(sort(unique(region_keys)), ", ")],
                  varattrib=attrib)
 
     for (name, (set, B, flags)) in basins
@@ -58,6 +62,7 @@ for og in dom.grids
         ba = Dict(k => flag_attrib(flags[k], bf[k]) for k in keys(flags) if haskey(bf, k))
         write_fields(basins_file(og, set), g, bf; dataset=DATASET,
                      attrib=["title" => "Basins $name (FesmData/Regions)", "basin_source" => set.source,
+                             "sources" => join(manifest_keys(set.source), ", "),
                              "base_grid" => dom.base.name],
                      varattrib=ba)
     end
