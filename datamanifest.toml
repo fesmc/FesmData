@@ -38,6 +38,7 @@ storage_path = "$datasets_dir/bedmachine_greenland_v4/BedMachineGreenland-2021-0
 uri = "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/ICEBRIDGE/IDBMG4/4/1993/01/01/BedMachineGreenland-2021-04-20.nc"
 
 [bedmachine_greenland_v6]
+doi = "10.5067/6B6B225B8V2D"
 skip_download = true
 storage_path = "$datasets_dir/bedmachine_greenland_v6/BedMachineGreenland-v6.nc"
 uri = "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/ICEBRIDGE/IDBMG4/6/1993/01/01/BedMachineGreenland-v6.nc"
