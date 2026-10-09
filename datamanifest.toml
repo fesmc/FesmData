@@ -89,3 +89,93 @@ key = "iceboost_v2_rgi11.zip"
 doi = "10.5281/zenodo.17724512"
 extract = true
 uri = "https://zenodo.org/records/17724512/files/RGI70G_rgi11.zip?download=1"
+
+# Regions v2 (see Regions/README.md)
+
+# Marine Regions (Flanders Marine Institute), from its WFS server as zipped shapefiles:
+# IHO Sea Areas v3 (doi:10.14284/323), Global Oceans and Seas v1 (doi:10.14284/542),
+# union of world country boundaries and EEZs v4 (EEZ v12, doi:10.14284/698).
+
+[marineregions_iho_v3]
+key = "marineregions_iho_v3.zip"
+doi = "10.14284/323"
+extract = true
+uri = "https://geo.vliz.be/geoserver/MarineRegions/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=MarineRegions:iho&outputFormat=SHAPE-ZIP"
+
+[marineregions_goas_v1]
+key = "marineregions_goas_v1.zip"
+doi = "10.14284/542"
+extract = true
+uri = "https://geo.vliz.be/geoserver/MarineRegions/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=MarineRegions:goas&outputFormat=SHAPE-ZIP"
+
+[marineregions_eez_land_v4]
+key = "marineregions_eez_land_v4.zip"
+doi = "10.14284/698"
+extract = true
+uri = "https://geo.vliz.be/geoserver/MarineRegions/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=MarineRegions:eez_land&outputFormat=SHAPE-ZIP"
+
+# HydroBASINS v1c (Lehner & Grill 2013), levels 1-12, the regions covering the NH
+# domain: North America (na), Arctic (ar), Greenland (gr), Europe (eu), Siberia (si),
+# Asia (as).
+
+[hydrobasins_v1c_na]
+key = "hydrobasins_v1c_na.zip"
+extract = true
+uri = "https://data.hydrosheds.org/file/HydroBASINS/standard/hybas_na_lev01-12_v1c.zip"
+
+[hydrobasins_v1c_ar]
+key = "hydrobasins_v1c_ar.zip"
+extract = true
+uri = "https://data.hydrosheds.org/file/HydroBASINS/standard/hybas_ar_lev01-12_v1c.zip"
+
+[hydrobasins_v1c_gr]
+key = "hydrobasins_v1c_gr.zip"
+extract = true
+uri = "https://data.hydrosheds.org/file/HydroBASINS/standard/hybas_gr_lev01-12_v1c.zip"
+
+[hydrobasins_v1c_eu]
+key = "hydrobasins_v1c_eu.zip"
+extract = true
+uri = "https://data.hydrosheds.org/file/HydroBASINS/standard/hybas_eu_lev01-12_v1c.zip"
+
+[hydrobasins_v1c_si]
+key = "hydrobasins_v1c_si.zip"
+extract = true
+uri = "https://data.hydrosheds.org/file/HydroBASINS/standard/hybas_si_lev01-12_v1c.zip"
+
+[hydrobasins_v1c_as]
+key = "hydrobasins_v1c_as.zip"
+extract = true
+uri = "https://data.hydrosheds.org/file/HydroBASINS/standard/hybas_as_lev01-12_v1c.zip"
+
+# Ice-sheet drainage basins.
+# Zwally et al. (2012), GSFC: full drainage systems of Antarctica (incl. floating ice)
+# and Greenland (with sub-systems), as lat/lon outlines.
+
+[zwally2012_antarctica]
+storage_path = "$datasets_dir/zwally2012/ant_full_drainagesystem_polygons.txt"
+uri = "https://earth.gsfc.nasa.gov/sites/default/files/lab_cryo/data/polar_ice_altimetry/antarctic_and_greenland_drainage_systems/ant_full_drainagesystem_polygons.txt"
+
+[zwally2012_greenland]
+storage_path = "$datasets_dir/zwally2012/grndrainagesystems_ekholm.txt"
+uri = "https://earth.gsfc.nasa.gov/sites/default/files/lab_cryo/data/polar_ice_altimetry/antarctic_and_greenland_drainage_systems/grndrainagesystems_ekholm.txt"
+
+# Mouginot & Rignot (2019): 260 Greenland glacier basins in 7 regions (shapefile).
+# Manual download (Dryad), all Greenland_Basins_PS_v1.4.2.* files into the folder.
+
+[mouginot2019_greenland_basins]
+doi = "10.7280/D1WT11"
+skip_download = true
+storage_path = "$datasets_dir/mouginot2019_greenland_basins"
+uri = "https://datadryad.org/dataset/doi:10.7280/D1WT11"
+
+# MEaSUREs Antarctic Boundaries v2 (NSIDC-0709): IMBIE 2016 basins and the refined
+# basins (shapefiles). Manual download (NASA Earthdata login), the .shp, .shx, .dbf
+# and .prj files of Basins_IMBIE_Antarctica_v02 and Basins_Antarctica_v02 into the
+# folder, from the uri below.
+
+[nsidc0709_v2_basins]
+doi = "10.5067/AXE4121732AD"
+skip_download = true
+storage_path = "$datasets_dir/nsidc0709_v2_basins"
+uri = "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/MEASURES/NSIDC-0709/2/1992/02/07/"
