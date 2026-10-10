@@ -10,9 +10,12 @@ domains and onto global lon-lat grids. GHF is a thematic dataset made by remappi
 | Product | Source | Fields | Domains |
 |---|---|---|---|
 | `GHF-Lucazeau2019` | Lucazeau (2019): 0.5° global map fitted to heat flow observations, [doi:10.1029/2019GC008389](https://doi.org/10.1029/2019GC008389) | `ghf`, `ghf_sd` (standard deviation) | Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Eurasia, Global |
+| `GHF-Martos2017` | Martos et al. (2017): 15 km map of Antarctica from airborne magnetic data (Curie depth), [doi:10.1594/PANGAEA.882503](https://doi.org/10.1594/PANGAEA.882503) | `ghf`, `ghf_sd` (uncertainty), `depth_curie`, `depth_curie_sd` (km) | Antarctica |
+| `GHF-Martos2018` | Martos et al. (2018): 15 km map of Greenland (land only) from magnetic Curie depths, [doi:10.1594/PANGAEA.892973](https://doi.org/10.1594/PANGAEA.892973) | `ghf`, `ghf_sd` (uncertainty), `depth_curie`, `depth_curie_sd` (km) | Greenland |
+| `GHF-HazzardRichards2024` | Hazzard and Richards (2024): 0.5° map of Antarctica inferred from seismic velocities, [doi:10.1029/2023GL106274](https://doi.org/10.1029/2023GL106274) | `ghf`, `ghf_sd` (standard deviation) | Antarctica |
 
 Each file `<GRID>_GHF-<Source>.nc` also has `f_valid`, the fraction of each cell
-covered by the source. The source is remapped conservatively; on grids finer than the
+covered by the source. Each source is remapped conservatively; on grids finer than the
 source it is then smoothed with a Gaussian of half the source spacing (about 28 km
 for 0.5°), so that its cells do not show as steps. The global attribute
 `remap_method` records what was done on each grid.
@@ -22,6 +25,9 @@ for 0.5°), so that its cells do not show as steps. The global attribute
 | Source | Licence |
 |---|---|
 | Lucazeau (2019) | Wiley standard terms (no open licence): permission from AGU or the author is needed before release |
+| Martos et al. (2017) | CC BY 3.0 (PANGAEA) |
+| Martos et al. (2018) | CC BY 3.0 (PANGAEA) |
+| Hazzard and Richards (2024) | No licence set on OSF (article CC BY 4.0); publishing assumed to be allowed |
 
 The licence of each source is in its README and in the `license` attribute of its
 files. A source can be released under the FesmData licence (CC BY 4.0) only if its own

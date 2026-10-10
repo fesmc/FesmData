@@ -13,3 +13,21 @@ source = "Lucazeau2019_ghf"
 file = "Lucazeau2019_GHF.nc"
 variables = ["ghf", "ghf_sd"]
 domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+
+[products.Martos2017]
+source = "Martos2017_ghf"
+file = "Martos2017_GHF.nc"
+variables = ["ghf", "ghf_sd", "depth_curie", "depth_curie_sd"]
+domains = ["Antarctica"]
+
+[products.Martos2018]
+source = "Martos2018_ghf"
+file = "Martos2018_GHF.nc"
+variables = ["ghf", "ghf_sd", "depth_curie", "depth_curie_sd"]
+domains = ["Greenland"]
+
+[products.HazzardRichards2024]
+source = "HazzardRichards2024_ghf"
+file = "HazzardRichards2024_GHF.nc"
+variables = ["ghf", "ghf_sd"]
+domains = ["Antarctica"]
