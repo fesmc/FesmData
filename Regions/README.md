@@ -138,6 +138,44 @@ of the line gives IoU 0.74 (centre) and 0.79 (south), and a cut at a distance al
 stream from the grounding line of 79N (200 km) 0.68 and 0.63. The Mouginot basins of
 79N, Zachariae Isstrom and Storstrommen are far broader than the stream (IoU 0.23).
 
+## Adding a region, a basin set or a domain
+
+**A region** is an entry of `regions.toml`, with its path, name and rules:
+
+```toml
+[[region]]
+path = "1.2.3"
+name = "Svalbard"
+rules = [{ source = "eez_land", field = "territory1", values = ["Svalbard"] }]
+```
+
+A region covers the union of its rules, within its parent; siblings are applied in the
+order of the file, so a cell taken by an earlier sibling stays with it. A rule selects
+features of a polygon source (`eez_land`, `iho`, `goas`, `hydrobasins`, `imbie`) by the
+`values` of a `field`, or a lon/lat `box`, and can be limited `within` or `without`
+other rules (see the header of `regions.toml`). A region with `fill = true` gives its
+cells outside all its subregions to the nearest subregion. Ocean regions are numbered
+from 51. Changing the tree changes the codes of all domains, so it is a new release of
+Regions; then run steps 1 and 4 (and 5) for every domain.
+
+**A basin set** is an entry of `basins.toml`: its name, domains, the region it is
+extended in (up to the shelf break), its polygon source, and the attribute identifying
+the basins (`id_field`), optionally a grouping (`group_field`), selected `features`, or
+basins that are not extended (`no_extension`); see the header of `basins.toml`. Then
+run steps 3-5 for its domains (`03_basins.jl <DOMAIN> <SET>`, `04_grids.jl <DOMAIN>
+<SET>`). Its files are released with the next release of Regions.
+
+**A polygon source** is an entry of `../datamanifest.toml` (with its DOI), a branch in
+`_read_source` and in `manifest_keys` in `sources.jl` (the polygons in lon/lat as
+`Shape`s, with their attributes).
+
+**A domain**: define it in `../shared/domains.toml` (see `../shared/README.md`), make its
+topography (Topo), and add the topography product of its zones to `[zone] products` in
+`regions.toml` (and its shelf-break depth `z_break` if its region needs another one).
+Add it to the `domains` of its basin sets, if any, and run all steps
+(`jobs/submit_domain.sh <DOMAIN>`). The region tree is global, so a new domain needs no
+new regions.
+
 ## Layout
 
 | Location | Contents |

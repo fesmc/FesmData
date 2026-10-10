@@ -245,6 +245,43 @@ Topo/jobs/submit_domain.sh ANT 2 variants     # the variants, from step 2
 The third argument selects the products (as for steps 3-5), and step 2 then remaps
 only their sources.
 
+## Adding a source, a product or a domain
+
+**A source** (a new topography dataset, or a new version of one):
+
+1. Add it to `../datamanifest.toml`, with its `uri`, `doi` and, for a manual download
+   (e.g. NSIDC), `skip_download = true`; `00_sources.jl` then lists and downloads it.
+2. Add a reader to `sources.jl` and a branch for it in `read_source`. A topography
+   source returns `(grid, z_bed, z_srf, H_ice, mask)` on its native grid, with
+   ascending axes: `grid` a `ProjGrid` (any projection) or `LonLatGrid`, heights in m
+   (surface 0 over the ocean), and `mask` with the classes `OCEAN`, `LAND`, `GRND`,
+   `FLT`; all fields are `missing` where the source has no data (the part of a base
+   cell with data is its `f_valid`).
+   A source on the projection of a domain is remapped exactly; any other is sampled
+   within each base cell. A source that only gives glacier thickness (like IceBoost)
+   is a thickness source (`is_thickness_source`, `GlacierTiles`).
+3. Use it in a product (below) and run the steps from step 2 for the domain (step 2
+   only for the new source: `02_regrid_source.jl <DOMAIN> <source>`).
+
+**A product or a variant** is an entry in `products.toml`: its name and its sources in
+order of priority, highest first, under `[<domain>.products]` (default products,
+released and made by default) or `[<domain>.variants]` (made on request with
+`variants` or `all`):
+
+```toml
+[ANT.variants]
+"BedMachine-v3" = ["bedmachine_antarctica_v3", "gebco2026"]
+```
+
+Then run steps 2-5 for it (`submit_domain.sh ANT 2 BedMachine-v3`). The lowest-priority
+source must be a topography source covering the whole domain (GEBCO). Variants are
+released with the default products.
+
+**A domain**: define it in `../shared/domains.toml` (see `../shared/README.md`), add its
+densities (`rho_ice`, `rho_sw`) and products to `products.toml`, and run all steps
+(`submit_domain.sh <DOMAIN>`). For glaciers outside the IceBoost regions already listed
+in `../datamanifest.toml` (`iceboost_v2_rgiNN`), add the RGI region there.
+
 ## Glaciers in the NH product
 
 IceBoost glaciers in the NH product (GEBCO 2026, run of 2026-10-09):
