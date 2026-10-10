@@ -20,7 +20,18 @@ struct RemapProduct
     domains::Vector{String}         # output folders (e.g. Greenland, Global)
     method::String
     smooth::Union{String,Float64}
+    min_spacing_km::Float64         # grids finer than this are left out (0: none)
 end
+
+"Spacing of a grid in km (of a lon-lat grid: its mean latitude spacing)."
+spacing_km(g::ProjGrid) = maximum(spacing(g))
+spacing_km(g::LonLatGrid) = 111.195 * g.dlat
+
+"Whether a product is made on grid `og`: a grid of its domains, not finer than its `min_spacing_km`."
+on_grid(p::RemapProduct, og::OutGrid) = og.folder in p.domains && spacing_km(og.grid) >= p.min_spacing_km - 1e-9
+
+"Grids of a product (see `on_grid`)."
+product_grids(p::RemapProduct) = [og for key in domain_keys() for og in Domain(key).grids if on_grid(p, og)]
 
 "Path of the definition of a thematic dataset."
 remap_spec_file(dataset::AbstractString) = joinpath(REPO_DIR, dataset, "remap.toml")
@@ -52,7 +63,8 @@ function remap_products(dataset::AbstractString)
         push!(products, RemapProduct(dataset, name, p["source"], p["file"],
                                      haskey(p, "variables") ? Vector{String}(p["variables"]) : nothing,
                                      Vector{String}(p["domains"]), get(p, "method", "con"),
-                                     smooth isa Real ? Float64(smooth) : String(smooth)))
+                                     smooth isa Real ? Float64(smooth) : String(smooth),
+                                     Float64(get(p, "min_spacing_km", 0))))
     end
     return sort(products; by=p -> p.name)
 end
@@ -73,4 +85,4 @@ Files of a release of a thematic dataset on grid `og`: the products on its domai
 ../Publish).
 """
 remap_release_files(dataset::AbstractString, og::OutGrid) =
-    sort(["$(og.grid.name)_$(product_name(p)).nc" for p in remap_products(dataset) if og.folder in p.domains])
+    sort(["$(og.grid.name)_$(product_name(p)).nc" for p in remap_products(dataset) if on_grid(p, og)])

@@ -4,8 +4,9 @@
 # of its `domains` (output folders), from the prepared file `file` of the source
 # `source` (made by <source>/prepare.jl in $FESMDATA_WORK/prepared/<source>/).
 # `variables` are the fields remapped (default: all), `method` the remapping ("con" or
-# "bilinear", default "con") and `smooth` the Gaussian smoothing after it ("auto" or a
-# standard deviation in km, default "auto"). The dataset and its release tag are in
+# "bilinear", default "con"), `smooth` the Gaussian smoothing after it ("auto" or a
+# standard deviation in km, default "auto") and `min_spacing_km` the finest grid spacing
+# made (default 0: all grids). The dataset and its release tag are in
 # ../Publish/datasets.toml.
 
 [products.Lucazeau2019]
@@ -13,3 +14,4 @@ source = "Lucazeau2019_ghf"
 file = "Lucazeau2019_GHF.nc"
 variables = ["ghf", "ghf_sd"]
 domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 4

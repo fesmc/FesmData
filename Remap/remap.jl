@@ -264,9 +264,6 @@ end
 "Remapping methods: conservative and bilinear."
 const METHODS = ("con", "bilinear")
 
-"Spacing of a grid in km (of a lon-lat grid: its latitude spacing)."
-spacing_km(g::ProjGrid) = maximum(spacing(g))
-spacing_km(g::LonLatGrid) = 111.195 * g.dlat
 
 # Samples per cell side for conservative remapping from `src` onto `tgt` (`nothing`:
 # exact). Sampled remapping uses samples spaced at most half the source spacing; a
@@ -522,7 +519,7 @@ function remap_dataset(dataset::AbstractString, args=String[]; overwrite::Bool=f
     tag = remap_tag(dataset)
     paths = String[]
     for p in selected
-        grids = [og for key in domain_keys() for og in Domain(key).grids if og.folder in p.domains]
+        grids = product_grids(p)
         only_grids === nothing || filter!(og -> og.grid.name in only_grids, grids)
         isempty(grids) && continue
         isfile(prepared_file(p)) || run_prepare(p.source)
