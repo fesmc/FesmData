@@ -283,8 +283,27 @@ con_nsub(::LonLatGrid, ::LonLatGrid) = nothing
 
 con_nsub(tgt::LonLatGrid, src::ProjGrid) = max(1, ceil(Int, 2 * spacing_km(tgt) / minimum(spacing(src))))
 
-"Conservative remapping of `F` onto `tgt`, exact or with `nsub` samples per cell side (see `con_nsub`)."
-remap_con(tgt, src, F; nsub=con_nsub(tgt, src)) = nsub === nothing ? remap(tgt, src, F) : remap(tgt, src, F; nsub)
+"Largest number of samples of a `SampledMap` (about 16 bytes each while it is built)."
+const MAX_MAP_SAMPLES = 200_000_000
+
+"""
+    con_map(tgt, src, nsub) -> AlignedMap, SampledMap or nothing
+
+Conservative remapping from `src` onto `tgt` (see `con_nsub`) prepared once, to remap
+many fields (e.g. time steps, classes): exact, or sampled if it is not too large
+(`nothing` otherwise).
+"""
+con_map(tgt, src, nsub) = nsub === nothing ? AlignedMap(tgt, src) :
+                          prod(size(tgt)) * nsub^2 <= MAX_MAP_SAMPLES ? SampledMap(tgt, src, nsub) : nothing
+
+"""
+    remap_con(tgt, src, F; nsub, conmap=nothing)
+
+Conservative remapping of `F` onto `tgt`, exact or with `nsub` samples per cell side
+(see `con_nsub`), or by `conmap` (see `con_map`) if given.
+"""
+remap_con(tgt, src, F; nsub=con_nsub(tgt, src), conmap=nothing) =
+    conmap !== nothing ? remap(conmap, F) : nsub === nothing ? remap(tgt, src, F) : remap(tgt, src, F; nsub)
 
 """
     smoothing_sigma(method, smooth, tgt, src) -> Float64
@@ -300,15 +319,15 @@ function smoothing_sigma(method::AbstractString, smooth, tgt, src)
 end
 
 """
-    remap_field(tgt, src, F; method="con", sigma=0, nsub) -> (Ft, f_valid)
+    remap_field(tgt, src, F; method="con", sigma=0, nsub, conmap=nothing) -> (Ft, f_valid)
 
 2D field `F` on `src` remapped onto `tgt` by `method` (see `METHODS`), then smoothed
 with a Gaussian of standard deviation `sigma` (km) if `sigma > 0`. `f_valid` is the
 fraction of each cell covered by the source, before smoothing.
 """
 function remap_field(tgt, src, F::AbstractMatrix; method::AbstractString="con", sigma::Real=0,
-                     nsub=con_nsub(tgt, src))
-    Ft, fv = method == "con" ? remap_con(tgt, src, F; nsub) :
+                     nsub=con_nsub(tgt, src), conmap=nothing)
+    Ft, fv = method == "con" ? remap_con(tgt, src, F; nsub, conmap) :
              method == "bilinear" ? remap_bilinear(tgt, src, F) :
              error("unknown method $method, available: $(join(METHODS, ", "))")
     return (sigma > 0 ? smooth(tgt, Ft, sigma) : Ft), fv
@@ -318,21 +337,22 @@ end
 const MAX_CLASSES = 1000
 
 """
-    remap_classes(tgt, src, M; nsub, classes) -> (Mt, f_valid)
+    remap_classes(tgt, src, M; nsub, classes, conmap=nothing) -> (Mt, f_valid)
 
 Class of the 2D integer field `M` covering the largest area of each target cell, from
 the conservatively remapped area fraction of each class (ties go to the smaller
 class), `missing` where the source has no data; `f_valid` is the fraction of each
 cell covered by the source.
 """
-function remap_classes(tgt, src, M::AbstractMatrix; nsub=con_nsub(tgt, src), classes=sort(unique(skipmissing(M))))
+function remap_classes(tgt, src, M::AbstractMatrix; nsub=con_nsub(tgt, src), classes=sort(unique(skipmissing(M))),
+                       conmap=nothing)
     Mt = Matrix{Union{Missing,nonmissingtype(eltype(M))}}(missing, size(tgt))
     best = fill(-1.0f0, size(tgt))
     fv = zeros(Float32, size(tgt))
     ind = Matrix{Float32}(undef, size(M))
     for c in classes
         @. ind = ifelse(ismissing(M), NaN32, Float32(coalesce(M == c, false)))
-        fr, fv = remap_con(tgt, src, ind; nsub)
+        fr, fv = remap_con(tgt, src, ind; nsub, conmap)
         for k in eachindex(fr)
             if fr[k] > best[k] + 1.0f-6
                 best[k] = fr[k]
@@ -344,12 +364,13 @@ function remap_classes(tgt, src, M::AbstractMatrix; nsub=con_nsub(tgt, src), cla
 end
 
 """
-    remap_array(tgt, src, F; method, sigma, nsub) -> (Ft, f_valid)
+    remap_array(tgt, src, F; method, sigma, nsub, conmap=nothing) -> (Ft, f_valid)
 
 Field `F` (size `(nx, ny, extra...)`) remapped onto `tgt` slice by slice: by
-`remap_field`, or by `remap_classes` if `F` is integer. `f_valid` has the size of `Ft`.
+`remap_field`, or by `remap_classes` if `F` is integer, conservatively by `conmap` if
+given (see `con_map`). `f_valid` has the size of `Ft`.
 """
-function remap_array(tgt, src, F::AbstractArray; method::AbstractString, sigma::Real, nsub)
+function remap_array(tgt, src, F::AbstractArray; method::AbstractString, sigma::Real, nsub, conmap=nothing)
     extra = size(F)[3:end]
     isint = nonmissingtype(eltype(F)) <: Integer
     if isint
@@ -364,8 +385,8 @@ function remap_array(tgt, src, F::AbstractArray; method::AbstractString, sigma::
     fv = Array{Float32}(undef, size(tgt)..., extra...)
     for I in CartesianIndices(extra)
         S = view(F, :, :, I)
-        Ft[:, :, I], fv[:, :, I] = isint ? remap_classes(tgt, src, S; nsub, classes) :
-                                   remap_field(tgt, src, S; method, sigma, nsub)
+        Ft[:, :, I], fv[:, :, I] = isint ? remap_classes(tgt, src, S; nsub, classes, conmap) :
+                                   remap_field(tgt, src, S; method, sigma, nsub, conmap)
     end
     return Ft, fv
 end
@@ -446,7 +467,13 @@ function remap_prepared(p::Prepared, grids::Vector{OutGrid}; name::AbstractStrin
         end
         sigma = smoothing_sigma(method, smooth, og.grid, p.grid)
         nsub = con_nsub(og.grid, p.grid)
-        t = @elapsed out = Dict(f => remap_array(og.grid, p.grid, p.fields[f]; method, sigma, nsub) for f in names)
+        t = @elapsed begin
+            # The remapping is prepared once when it is used many times: integer fields
+            # (one remapping per class), several fields or slices
+            reuse = integers || sum(f -> prod(size(p.fields[f])[3:end]; init=1), names) > 1
+            conmap = reuse ? con_map(og.grid, p.grid, nsub) : nothing
+            out = Dict(f => remap_array(og.grid, p.grid, p.fields[f]; method, sigma, nsub, conmap) for f in names)
+        end
         if all(f -> all(iszero, out[f][2]), names)
             strict && error("$(og.grid.name) is not covered by $(basename(p.path))")
             println("$(og.grid.name): not covered by the source, skipped")
