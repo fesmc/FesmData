@@ -455,3 +455,10 @@ doi = "10.5061/dryad.5hqbzkhg2"
 skip_download = true
 storage_path = "$datasets_dir/rignot2013_melt_v2/Ant_MeltingRate.v2.nc"
 uri = "https://datadryad.org/dataset/doi:10.5061/dryad.5hqbzkhg2"
+# Schmidtko et al. (2014): Antarctic continental shelf bottom water, conservative
+# temperature and absolute salinity (means 1975-2012), ASCII list of 0.25° x 0.125° cells.
+
+[schmidtko2014_shelf]
+doi = "10.1126/science.1256117"
+storage_path = "$datasets_dir/schmidtko2014_shelf/Antarctic_shelf_data.txt"
+uri = "https://www.geomar.de/fileadmin/personal/fb1/po/sschmidtko/Antarctic_shelf_data.txt"
