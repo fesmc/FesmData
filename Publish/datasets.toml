@@ -131,3 +131,14 @@ Monthly climatologies of the atmosphere from reanalysis (ERA5) and satellite (CE
 data, remapped conservatively onto the grids of a model domain, or onto global lon-lat
 grids.
 """
+
+[Paleoclimate]
+tag = "paleoclimate"
+title = "simulations and reconstructions of past climates"
+readme = "Paleoclimate/README.md"
+keywords = ["paleoclimate", "PMIP", "Last Glacial Maximum", "Holocene", "deglaciation", "model input"]
+description = """
+Climatologies of past climates from the PMIP3 and PMIP4 model intercomparisons, and
+reconstructions of the deglacial climate of Greenland, remapped conservatively onto the
+grids of a model domain, or onto global lon-lat grids.
+"""

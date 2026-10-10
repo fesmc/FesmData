@@ -50,6 +50,8 @@ website:
             href: datasets/smb.qmd
           - text: "Atmosphere — reanalysis and satellite"
             href: datasets/atmosphere.qmd
+          - text: "Paleoclimate — past climates"
+            href: datasets/paleoclimate.qmd
       - text: "Your own data"
         href: remap.qmd
       - text: "Releasing"

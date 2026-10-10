@@ -1,0 +1,246 @@
+# Paleoclimate: climate model simulations and reconstructions of past climates
+# (thematic dataset, see ../Remap/README.md). Products are written as
+# <GRID>_Paleoclimate-<name>.nc on every grid of their `domains`; see ../GHF/remap.toml
+# for the options. The dataset and its release tag are in ../Publish/datasets.toml.
+
+[products.PMIP3-CCSM4-lgm]
+source = "PMIP3_cvdp"
+file = "PMIP3_CCSM4_lgm.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
+
+[products.PMIP3-CCSM4-midHolocene]
+source = "PMIP3_cvdp"
+file = "PMIP3_CCSM4_midHolocene.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
+
+[products.PMIP3-CCSM4-piControl]
+source = "PMIP3_cvdp"
+file = "PMIP3_CCSM4_piControl.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
+
+[products.PMIP3-CNRM-CM5-lgm]
+source = "PMIP3_cvdp"
+file = "PMIP3_CNRM-CM5_lgm.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
+
+[products.PMIP3-CNRM-CM5-midHolocene]
+source = "PMIP3_cvdp"
+file = "PMIP3_CNRM-CM5_midHolocene.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
+
+[products.PMIP3-CNRM-CM5-piControl]
+source = "PMIP3_cvdp"
+file = "PMIP3_CNRM-CM5_piControl.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
+
+[products.PMIP3-FGOALS-g2-lgm]
+source = "PMIP3_cvdp"
+file = "PMIP3_FGOALS-g2_lgm.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
+
+[products.PMIP3-FGOALS-g2-midHolocene]
+source = "PMIP3_cvdp"
+file = "PMIP3_FGOALS-g2_midHolocene.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
+
+[products.PMIP3-FGOALS-g2-piControl]
+source = "PMIP3_cvdp"
+file = "PMIP3_FGOALS-g2_piControl.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
+
+[products.PMIP3-GISS-E2-R-lgm]
+source = "PMIP3_cvdp"
+file = "PMIP3_GISS-E2-R_lgm.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
+
+[products.PMIP3-GISS-E2-R-midHolocene]
+source = "PMIP3_cvdp"
+file = "PMIP3_GISS-E2-R_midHolocene.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
+
+[products.PMIP3-GISS-E2-R-piControl]
+source = "PMIP3_cvdp"
+file = "PMIP3_GISS-E2-R_piControl.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
+
+[products.PMIP3-IPSL-CM5A-LR-lgm]
+source = "PMIP3_cvdp"
+file = "PMIP3_IPSL-CM5A-LR_lgm.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
+
+[products.PMIP3-IPSL-CM5A-LR-midHolocene]
+source = "PMIP3_cvdp"
+file = "PMIP3_IPSL-CM5A-LR_midHolocene.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
+
+[products.PMIP3-IPSL-CM5A-LR-piControl]
+source = "PMIP3_cvdp"
+file = "PMIP3_IPSL-CM5A-LR_piControl.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
+
+[products.PMIP3-MIROC-ESM-lgm]
+source = "PMIP3_cvdp"
+file = "PMIP3_MIROC-ESM_lgm.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
+
+[products.PMIP3-MIROC-ESM-midHolocene]
+source = "PMIP3_cvdp"
+file = "PMIP3_MIROC-ESM_midHolocene.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
+
+[products.PMIP3-MIROC-ESM-piControl]
+source = "PMIP3_cvdp"
+file = "PMIP3_MIROC-ESM_piControl.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
+
+[products.PMIP3-MPI-ESM-P-lgm]
+source = "PMIP3_cvdp"
+file = "PMIP3_MPI-ESM-P_lgm.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
+
+[products.PMIP3-MPI-ESM-P-midHolocene]
+source = "PMIP3_cvdp"
+file = "PMIP3_MPI-ESM-P_midHolocene.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
+
+[products.PMIP3-MPI-ESM-P-piControl]
+source = "PMIP3_cvdp"
+file = "PMIP3_MPI-ESM-P_piControl.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
+
+[products.PMIP3-MRI-CGCM3-lgm]
+source = "PMIP3_cvdp"
+file = "PMIP3_MRI-CGCM3_lgm.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
+
+[products.PMIP3-MRI-CGCM3-midHolocene]
+source = "PMIP3_cvdp"
+file = "PMIP3_MRI-CGCM3_midHolocene.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
+
+[products.PMIP3-MRI-CGCM3-piControl]
+source = "PMIP3_cvdp"
+file = "PMIP3_MRI-CGCM3_piControl.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
+
+[products.PMIP3-lgm-boundary-conditions]
+source = "PMIP3_cvdp"
+file = "PMIP3_lgm_boundary_conditions.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
+
+[products.PMIP4-AWI-ESM-1-1-LR-lgm]
+source = "PMIP4_cmip6"
+file = "PMIP4_AWI-ESM-1-1-LR_lgm.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
+
+[products.PMIP4-AWI-ESM-1-1-LR-midHolocene]
+source = "PMIP4_cmip6"
+file = "PMIP4_AWI-ESM-1-1-LR_midHolocene.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
+
+[products.PMIP4-AWI-ESM-1-1-LR-piControl]
+source = "PMIP4_cmip6"
+file = "PMIP4_AWI-ESM-1-1-LR_piControl.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
+
+[products.PMIP4-INM-CM4-8-lgm]
+source = "PMIP4_cmip6"
+file = "PMIP4_INM-CM4-8_lgm.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
+
+[products.PMIP4-INM-CM4-8-midHolocene]
+source = "PMIP4_cmip6"
+file = "PMIP4_INM-CM4-8_midHolocene.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
+
+[products.PMIP4-INM-CM4-8-piControl]
+source = "PMIP4_cmip6"
+file = "PMIP4_INM-CM4-8_piControl.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
+
+[products.PMIP4-MIROC-ES2L-lgm]
+source = "PMIP4_cmip6"
+file = "PMIP4_MIROC-ES2L_lgm.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
+
+[products.PMIP4-MIROC-ES2L-midHolocene]
+source = "PMIP4_cmip6"
+file = "PMIP4_MIROC-ES2L_midHolocene.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
+
+[products.PMIP4-MIROC-ES2L-piControl]
+source = "PMIP4_cmip6"
+file = "PMIP4_MIROC-ES2L_piControl.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
+
+[products.PMIP4-MPI-ESM1-2-LR-lgm]
+source = "PMIP4_cmip6"
+file = "PMIP4_MPI-ESM1-2-LR_lgm.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
+
+[products.PMIP4-MPI-ESM1-2-LR-midHolocene]
+source = "PMIP4_cmip6"
+file = "PMIP4_MPI-ESM1-2-LR_midHolocene.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
+
+[products.PMIP4-MPI-ESM1-2-LR-piControl]
+source = "PMIP4_cmip6"
+file = "PMIP4_MPI-ESM1-2-LR_piControl.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
+
+[products.Buizert2018]
+source = "Buizert2018"
+file = "Buizert2018.nc"
+variables = ["tas", "pr", "z_srf"]
+domains = ["Greenland"]
+min_spacing_km = 16
+
+[products."Buizert2018-1981-2010"]
+source = "Buizert2018"
+file = "Buizert2018_1981-2010.nc"
+domains = ["Greenland"]
+min_spacing_km = 8
+
+[products.Badgeley2020]
+source = "Badgeley2020_recon"
+file = "Badgeley2020.nc"
+variables = ["tas_anom", "pr_frac", "pr_frac_low", "pr_frac_high"]
+domains = ["Greenland"]
+min_spacing_km = 8
