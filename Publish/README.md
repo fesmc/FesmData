@@ -49,46 +49,70 @@ The datasets and the record metadata (creators, licence, community, description)
 set in `datasets.toml`. The files of a release on each grid are defined by the pipeline
 of the dataset (`topo_release_files` in `../Topo/files.jl`: all products of the domain,
 default and variants; `regions_release_files` in `../Regions/files.jl`), and must all be
-present. A release of a dataset on a domain:
+present. A release of a dataset (here Topo, version 2.0.1) on Levante, where the files
+are, needs a Zenodo token (see Zenodo access below) and takes five steps.
 
-1. Tag the release, e.g. `topo-v2.0.0`, and push the tag.
-2. Run the pipeline at the tag, in a clean checkout of it, so that every file has
-   `fesmdata_version = "topo-v2.0.0"` (changes in another checkout would make them
-   `-dirty`):
+**1. Tag the release** (from any checkout, after the changes are on main):
 
-   ```bash
-   git fetch origin --tags
-   git worktree add ../FesmData-topo-v2.0.0 topo-v2.0.0
-   cd ../FesmData-topo-v2.0.0
-   source shared/machines/levante.env
-   julia --project=Topo -e 'using Pkg; Pkg.instantiate()'
-   for d in ANT GRL-PAL NH; do Topo/jobs/submit_domain.sh $d 1 all; done
-   ```
+```bash
+git fetch origin
+git tag -a topo-v2.0.1 -m "Topo v2.0.1" origin/main
+git push origin topo-v2.0.1
+```
 
-3. From the usual checkout on main, upload the files to a Zenodo draft (on Levante,
-   where the files are):
+**2. Run the pipeline at the tag**, in a clean checkout of it next to the usual one, so
+that every file gets `fesmdata_version = "topo-v2.0.1"` (uncommitted changes would make
+it `-dirty`). For Topo, all steps and all products of the three domains:
 
-   ```bash
-   julia --project=Publish Publish/scripts/zenodo.jl upload Antarctica Topo --dry-run
-   julia --project=Publish Publish/scripts/zenodo.jl upload Antarctica Topo
-   ```
+```bash
+git worktree add ../FesmData-topo-v2.0.1 topo-v2.0.1
+cd ../FesmData-topo-v2.0.1
+source shared/machines/levante.env
+julia --project=Topo -e 'using Pkg; Pkg.instantiate()'
+for d in ANT GRL-PAL NH; do Topo/jobs/submit_domain.sh $d 1 all; done
+```
 
-   The first release creates the record, later ones a new version of the record in
-   the registry. Files that are unchanged on Zenodo are kept, the others uploaded.
-4. Review the draft on Zenodo and publish it there. Publishing cannot be undone.
-5. Register the published record, then commit and push the registry file (the website
-   is then updated):
+**3. Upload**, once the jobs have finished, from the usual checkout on main:
 
-   ```bash
-   julia --project=Publish Publish/scripts/zenodo.jl register Antarctica Topo <record id>
-   ```
+```bash
+cd ../FesmData && git pull
+source shared/machines/levante.env
+julia --project=Publish -e 'using Pkg; Pkg.instantiate()'
+julia --project=Publish Publish/scripts/zenodo.jl upload Topo --dry-run
+julia --project=Publish Publish/scripts/zenodo.jl upload Topo
+```
 
-   This checks that the files on Zenodo are the local files (md5) and writes
-   `registry/Antarctica/Topo.toml` with their sha256 checksums.
+The dry run checks every domain: all files present, all at the release tag. `upload`
+then puts the files of each domain into a draft of the next version of its record (a
+new record the first time); files unchanged on Zenodo are kept. If it stops, run it
+again: it continues the same drafts.
 
-`upload` checks that all files of the dataset have the same version, an existing
-release tag, and that the grid files were made at a commit. `--allow-untagged` skips
-these checks (e.g. for a test). `--draft=<id>` continues an existing draft.
+**4. Publish** the drafts on https://zenodo.org/me/uploads, after checking them.
+Publishing cannot be undone.
+
+**5. Register** the published records, and commit and push the registry, which also
+updates the website:
+
+```bash
+julia --project=Publish Publish/scripts/zenodo.jl register Topo
+git add registry && git commit -m "registry: Topo v2.0.1" && git push
+```
+
+`register` checks that the files on Zenodo are the local files and writes
+`registry/<Domain>/Topo.toml`. Drafts not yet published are skipped, so it can be run
+again after publishing them.
+
+At any point, `status` shows each domain: its local files and their version, its draft
+(and whether it is published), and its registered version:
+
+```bash
+julia --project=Publish Publish/scripts/zenodo.jl status Topo
+```
+
+All commands take domains after the dataset to work on some only (e.g. `upload Topo
+Antarctica`). `--allow-untagged` skips the release checks, e.g. for a test. The drafts
+of `upload` are recorded in `registry/_drafts/` (local, not tracked) until they are
+registered.
 
 ## Zenodo access
 

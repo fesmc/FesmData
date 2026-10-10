@@ -71,5 +71,8 @@ function folder_grids(folder::AbstractString)
     return only(found)
 end
 
+"Output folders of all domains and crops, i.e. the names of the domains in published records."
+domain_folders() = sort(unique(og.folder for key in domain_keys() for og in Domain(key).grids))
+
 "Output folder of a grid: \$ICE_DATA/v2/<folder>/<grid name>."
 outdir(og::OutGrid) = joinpath(_env("ICE_DATA"), "v2", og.folder, og.grid.name)
