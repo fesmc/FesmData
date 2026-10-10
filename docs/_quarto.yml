@@ -46,6 +46,8 @@ website:
             href: datasets/basalmelt.qmd
           - text: "Ocean — temperature and salinity"
             href: datasets/ocean.qmd
+          - text: "SMB — surface mass balance"
+            href: datasets/smb.qmd
       - text: "Your own data"
         href: remap.qmd
       - text: "Releasing"

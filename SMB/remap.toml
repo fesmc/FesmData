@@ -1,0 +1,19 @@
+# Surface mass balance and surface climate from regional climate models (thematic
+# dataset, see ../Remap/README.md). Products are written as <GRID>_SMB-<name>.nc on
+# every grid of their `domains`; see ../GHF/remap.toml for the options. The dataset and
+# its release tag are in ../Publish/datasets.toml.
+
+[products."RACMO2.4p1-1981-2010"]
+source = "vanDalum2025_racmo24"
+file = "RACMO2.4p1_1981-2010.nc"
+domains = ["Antarctica"]
+
+[products."RACMO2.4p1-1991-2020"]
+source = "vanDalum2025_racmo24"
+file = "RACMO2.4p1_1991-2020.nc"
+domains = ["Antarctica"]
+
+[products."RACMO2.4p1-annual"]
+source = "vanDalum2025_racmo24"
+file = "RACMO2.4p1_annual_1979-2023.nc"
+domains = ["Antarctica"]

@@ -110,3 +110,13 @@ description = """
 Surface velocity of the ice sheets from satellite observations, remapped conservatively
 onto the grids of a model domain, with the components along the grid axes.
 """
+
+[SMB]
+tag = "smb"
+title = "surface mass balance and surface climate"
+readme = "SMB/README.md"
+keywords = ["surface mass balance", "regional climate model", "ice sheet", "model input"]
+description = """
+Surface mass balance and surface climate of the ice sheets from regional climate models
+(RACMO, MAR), remapped conservatively onto the grids of a model domain.
+"""

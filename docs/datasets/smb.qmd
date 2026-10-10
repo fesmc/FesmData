@@ -1,0 +1,5 @@
+---
+pagetitle: "SMB"
+---
+
+{{< include ../../SMB/README.md >}}
