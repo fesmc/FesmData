@@ -258,3 +258,13 @@ uri = "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/M
 [iso3166_m49]
 storage_path = "$datasets_dir/iso3166_m49/all.csv"
 uri = "https://raw.githubusercontent.com/lukes/ISO-3166-Countries-with-Regional-Codes/145f1ad3caff212ed25f42b0ee2c8b92a75af895/all/all.csv"
+
+# Radiostratigraphy and age structure of the Greenland Ice Sheet, version 2 (RRRAG4 v2;
+# MacGregor et al., 2025), 5 km grid. Manual download (NASA Earthdata login) from the
+# uri below. Version 1 (MacGregor et al., 2015; doi:10.5067/UGI2BGTC4QJA) is retired.
+
+[rrrag4_v2]
+doi = "10.5067/SZSVA3CWV3U4"
+skip_download = true
+storage_path = "$datasets_dir/rrrag4_v2/RRRAG4_Greenland_1993_2019_02_age_grid.nc"
+uri = "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/ICEBRIDGE-Related/RRRAG4/2/1993/06/24/RRRAG4_Greenland_1993_2019_02_age_grid.nc"
