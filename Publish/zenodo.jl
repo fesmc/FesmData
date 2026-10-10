@@ -63,7 +63,7 @@ must be those of the registry (checksums).
 function released_files(domain::AbstractString, dataset::AbstractString; sandbox::Bool=false,
                         allow_untagged::Bool=false)
     files = collect_files(domain, dataset)
-    version = release_version(files, dataset; allow_untagged=allow_untagged)
+    version = release_version(files, dataset; allow_untagged=allow_untagged, what="$domain/$dataset")
     reg = registry_file(domain, dataset; sandbox=sandbox)
     isfile(reg) || error("$domain/$dataset is not released yet (gitlab.jl upload first)")
     tables, entries = read_record(domain, dataset; sandbox=sandbox)

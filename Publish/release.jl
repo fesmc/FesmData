@@ -99,7 +99,8 @@ grid files must not be made from uncommitted changes. With `allow_untagged`, no 
 are made and the version is that of the files if they all have the same, else that of
 the repository.
 """
-function release_version(files::Vector{ProductFile}, dataset::AbstractString; allow_untagged::Bool=false)
+function release_version(files::Vector{ProductFile}, dataset::AbstractString; allow_untagged::Bool=false,
+                         what::AbstractString=dataset)
     tag = dataset_config(dataset)["tag"]
     data = filter(f -> !f.is_grid && endswith(f.path, ".nc"), files)
     versions = Dict(basename(f) => something(nc_attrib(f.path, "fesmdata_version"), "missing") for f in data)
@@ -108,11 +109,11 @@ function release_version(files::Vector{ProductFile}, dataset::AbstractString; al
         return length(found) == 1 ? only(found) : git_version(tag)
     end
     length(found) == 1 ||
-        error("files of $dataset have different versions: " *
+        error("files of $what have different versions: " *
               join(["$v ($(count(==(v), values(versions))) files)" for v in found], ", "))
     version = only(found)
     occursin(Regex("^$(tag)-v\\d+\\.\\d+\\.\\d+\$"), version) ||
-        error("files of $dataset have version $version, not a release tag $(tag)-vX.Y.Z " *
+        error("files of $what have version $version, not a release tag $(tag)-vX.Y.Z " *
               "(rerun the pipeline at the tag, or use --allow-untagged)")
     _git("tag", "--list", version) == version || error("tag $version does not exist in the repository")
     for f in filter(f -> f.is_grid && endswith(f.path, ".nc"), files)

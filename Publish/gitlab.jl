@@ -101,7 +101,7 @@ function upload(dataset::AbstractString, domains=String[]; sandbox::Bool=false,
     releases = []
     for domain in select_domains(dataset, domains)
         files = collect_files(domain, dataset)
-        version = release_version(files, dataset; allow_untagged=allow_untagged)
+        version = release_version(files, dataset; allow_untagged=allow_untagged, what="$domain/$dataset")
         number = release_number(version, dataset)
         grids = unique(f.grid for f in files)
         total = sum(filesize(f.path) for f in files)
