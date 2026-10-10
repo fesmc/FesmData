@@ -258,3 +258,26 @@ uri = "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/M
 [iso3166_m49]
 storage_path = "$datasets_dir/iso3166_m49/all.csv"
 uri = "https://raw.githubusercontent.com/lukes/ISO-3166-Countries-with-Regional-Codes/145f1ad3caff212ed25f42b0ee2c8b92a75af895/all/all.csv"
+
+# Martos et al. (2017): Antarctic geothermal heat flow and Curie depth with their
+# uncertainties, 15 km grid in polar stereographic coordinates (x, y, z ASCII).
+
+[martos2017_ghf]
+doi = "10.1594/PANGAEA.882503"
+storage_path = "$datasets_dir/martos2017/Antarctic_GHF.xyz"
+uri = "https://store.pangaea.de/Publications/Martos-etal_2017/Antarctic_GHF.xyz"
+
+[martos2017_ghf_uncertainty]
+doi = "10.1594/PANGAEA.882503"
+storage_path = "$datasets_dir/martos2017/Antarctic_GHF_uncertainty.xyz"
+uri = "https://store.pangaea.de/Publications/Martos-etal_2017/Antarctic_GHF_uncertainty.xyz"
+
+[martos2017_curie_depth]
+doi = "10.1594/PANGAEA.882503"
+storage_path = "$datasets_dir/martos2017/Curie_Depth.xyz"
+uri = "https://store.pangaea.de/Publications/Martos-etal_2017/Curie_Depth.xyz"
+
+[martos2017_curie_depth_uncertainty]
+doi = "10.1594/PANGAEA.882503"
+storage_path = "$datasets_dir/martos2017/Curie_Depth_Uncertainty.xyz"
+uri = "https://store.pangaea.de/Publications/Martos-etal_2017/Curie_Depth_Uncertainty.xyz"
