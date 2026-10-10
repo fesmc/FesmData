@@ -258,3 +258,11 @@ uri = "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/M
 [iso3166_m49]
 storage_path = "$datasets_dir/iso3166_m49/all.csv"
 uri = "https://raw.githubusercontent.com/lukes/ISO-3166-Countries-with-Regional-Codes/145f1ad3caff212ed25f42b0ee2c8b92a75af895/all/all.csv"
+
+# Schmidtko et al. (2014): Antarctic continental shelf bottom water, conservative
+# temperature and absolute salinity (means 1975-2012), ASCII list of 0.25° x 0.125° cells.
+
+[schmidtko2014_shelf]
+doi = "10.1126/science.1256117"
+storage_path = "$datasets_dir/schmidtko2014_shelf/Antarctic_shelf_data.txt"
+uri = "https://www.geomar.de/fileadmin/personal/fb1/po/sschmidtko/Antarctic_shelf_data.txt"
