@@ -7,6 +7,10 @@
 # meridians (e.g. where polygons are cut at 180 degrees) are straight lines on these
 # grids. Rings that lie entirely outside the latitudes of a grid are dropped, which
 # also removes the rings around the opposite pole, which have no image on the grid.
+# On grids without a pole (e.g. the UTM grids of mountain domains), the rings are
+# also clipped to a lon/lat box around the grid before they are projected, since
+# such projections cannot map points far from the grid (e.g. transverse Mercator
+# beyond 90 degrees from its central meridian).
 
 import ArchGDAL as AG
 import GeoInterface as GI
@@ -71,30 +75,115 @@ end
     project_rings(rings, g::ProjGrid; maxseg=0.1) -> rings in grid coordinates
 
 Rings in lon/lat projected onto grid `g`, after densifying their edges to at most
-`maxseg` degrees. Rings entirely outside the latitudes of `g` are dropped.
+`maxseg` degrees. Rings entirely outside the latitudes of `g` are dropped. On grids
+without a pole, the rings are clipped to the lon/lat box of the grid (`lonlat_box`)
+first, which leaves them unchanged within the grid.
 """
 function project_rings(rings::AbstractVector, g::ProjGrid; maxseg::Real=0.1)
     latmin, latmax = lat_bounds(g)
+    boxes = lonlat_box(g)
     trans = Proj.Transformation("EPSG:4326", g.proj; always_xy=true)
     out = Vector{NTuple{2,Float64}}[]
     for ring in rings
         lats = last.(ring)
         (maximum(lats) < latmin || minimum(lats) > latmax) && continue
-        push!(out, [trans(p) for p in _densify(ring, maxseg)])
+        pts = _densify(ring, maxseg)
+        if boxes === nothing
+            push!(out, [trans(p) for p in pts])
+        else
+            pts = _unwrap(pts)
+            lo, hi = extrema(first.(pts))
+            for box in boxes, s in 360 .* (floor(Int, (lo - box[2]) / 360):ceil(Int, (hi - box[1]) / 360))
+                c = _clip(pts, (box[1] + s, box[2] + s, box[3], box[4]))
+                length(c) >= 3 && push!(out, [trans(p) for p in _densify(c, maxseg; shortway=false)])
+            end
+        end
     end
     return out
+end
+
+"""
+    lonlat_box(g; margin=1) -> nothing or [(lonmin, lonmax, latmin, latmax)]
+
+Lon/lat box around grid `g`, widened by `margin` degrees, from points along the
+outline of its cells (nothing for a grid with a pole). Longitudes may extend beyond
+180 degrees; rings are clipped to it shifted by multiples of 360 degrees (see
+`project_rings`).
+"""
+function lonlat_box(g::ProjGrid; margin::Real=1)
+    latmin, latmax = lat_bounds(g; margin=margin)
+    (latmin == -90 || latmax == 90) && return nothing
+    dx, dy = spacing(g)
+    xe = vcat(g.xc .- dx / 2, g.xc[end] + dx / 2)
+    ye = vcat(g.yc .- dy / 2, g.yc[end] + dy / 2)
+    outline = vcat([(x, ye[1]) for x in xe], [(xe[end], y) for y in ye],
+                   [(x, ye[end]) for x in reverse(xe)], [(xe[1], y) for y in reverse(ye)])
+    trans = Proj.Transformation(g.proj, "EPSG:4326"; always_xy=true)
+    lons = [first(trans(p)) for p in outline]
+    for k in 2:length(lons)     # continuous across 180 degrees
+        lons[k] += 360 * round((lons[k-1] - lons[k]) / 360)
+    end
+    lo, hi = minimum(lons) - margin, maximum(lons) + margin
+    return [(lo, hi, latmin, latmax)]
+end
+
+# Densified ring with continuous longitudes (no jumps of 360 degrees where it crosses
+# 180 degrees), so that its edges are straight in lon/lat. A ring around a pole (net
+# change of longitude of 360 degrees, e.g. a circle around Antarctica) is closed
+# along the pole of its hemisphere, which it encloses.
+function _unwrap(pts)
+    out = copy(pts)
+    for k in 2:length(out)
+        lon, lat = out[k]
+        out[k] = (lon + 360 * round((out[k-1][1] - lon) / 360), lat)
+    end
+    # Closing edge, from the last point back to the first
+    lon1 = out[1][1] + 360 * round((out[end][1] - out[1][1]) / 360)
+    if abs(lon1 - out[1][1]) > 180
+        pole = sum(last, out) > 0 ? 90.0 : -90.0
+        append!(out, [(lon1, out[1][2]), (lon1, pole), (out[1][1], pole)])
+    end
+    return out
+end
+
+# Ring clipped to a lon/lat box (Sutherland-Hodgman, one side at a time). Edges are
+# straight in lon/lat, as after `_densify`; parts of the result along the sides of the
+# box, outside the grid, do not change which cells of the grid the ring covers. These
+# can be long, and are densified again before projecting.
+function _clip(ring, box)
+    lo, hi, latmin, latmax = box
+    pts = ring
+    for (k, v, keep_above) in ((1, lo, true), (1, hi, false), (2, latmin, true), (2, latmax, false))
+        isempty(pts) && break
+        inside(p) = keep_above ? p[k] >= v : p[k] <= v
+        out = NTuple{2,Float64}[]
+        n = length(pts)
+        for i in 1:n
+            a, b = pts[i], pts[i == n ? 1 : i + 1]
+            ia, ib = inside(a), inside(b)
+            ia && push!(out, a)
+            if ia != ib
+                t = (v - a[k]) / (b[k] - a[k])
+                push!(out, (a[1] + t * (b[1] - a[1]), a[2] + t * (b[2] - a[2])))
+            end
+        end
+        pts = out
+    end
+    return pts
 end
 
 # Edges are interpolated in lon/lat the short way round, so that rings around a pole
 # or across 180 degrees (outlines given as points) stay intact, except edges spanning
 # all longitudes (-180 to 180), which follow their parallel.
-function _densify(ring, maxseg)
+# With `shortway = false`, edges are straight in lon/lat as given (e.g. rings with
+# continuous longitudes, see `_unwrap`).
+function _densify(ring, maxseg; shortway::Bool=true)
     out = NTuple{2,Float64}[]
     n = length(ring)
     for k in 1:n
         a, b = ring[k], ring[k == n ? 1 : k + 1]
         dlon = b[1] - a[1]
-        if 180 < abs(dlon) < 360 - 1e-6
+        if shortway && 180 < abs(dlon) < 360 - 1e-6
             dlon -= sign(dlon) * 360
         end
         dlat = b[2] - a[2]

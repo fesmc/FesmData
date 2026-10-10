@@ -5,15 +5,19 @@
 # dist_shelfbreak the cell mean.
 #
 # Usage:
-#     julia --project=Regions -t 8 Regions/scripts/04_grids.jl DOMAIN
+#     julia --project=Regions -t 8 Regions/scripts/04_grids.jl DOMAIN [SET]
 #
 # Writes $ICE_DATA/v2/<folder>/<GRID>/<GRID>_REGIONS.nc (region_1-3, zone,
-# dist_shelfbreak) and <GRID>_BASINS-<SET>.nc for each basin set of the domain.
+# dist_shelfbreak) and <GRID>_BASINS-<SET>.nc for each basin set of the domain, or only
+# the files of basin set SET.
 #
 include(joinpath(@__DIR__, "..", "common.jl"))
 
-length(ARGS) == 1 || error("usage: 04_grids.jl DOMAIN")
+1 <= length(ARGS) <= 2 || error("usage: 04_grids.jl DOMAIN [SET]")
 dom = Domain(ARGS[1])
+only_set = length(ARGS) == 2 ? ARGS[2] : nothing
+sets = filter(set -> only_set === nothing || set.name == only_set, basin_sets(dom))
+isempty(sets) && only_set !== nothing && error("no basin set $only_set for domain $(dom.key)")
 defs = read_regions()
 
 _, R = read_fields(regions_work_file(dom, "regions"))
@@ -23,14 +27,14 @@ topography = NCDataset(ds -> ds.attrib["topography"], regions_work_file(dom, "zo
 region_keys = vcat(manifest_keys.(region_sources(defs))..., product_sources(dom)[topography])
 nlev = count(startswith("region_"), keys(R))
 basins = Dict{String,Any}()
-for set in basin_sets(dom)
+for set in sets
     path = regions_work_file(dom, "basins-$(set.name)")
     basins[set.name] = (set, read_fields(path)[2], Dict(k => read_flags(path, k) for k in ("basin", "basin_group")))
 end
 
-for og in dom.grids
+# Region codes, zone and distance to the shelf break on grid og (map m from the base grid)
+function write_regions(og, m)
     g = og.grid
-    m = AlignedMap(g, dom.base)
     fields = Dict{String,Any}()
     attrib = Dict{String,Vector{Pair{String,Any}}}()
     prev = nothing
@@ -44,10 +48,17 @@ for og in dom.grids
     fields["zone"] = Int8.(remap_dominant(m, Z["zone"]))
     attrib["zone"] = ZONE_ATTRIB
     fields["dist_shelfbreak"] = remap(m, Z["dist_shelfbreak"])[1]
+    attrib["dist_shelfbreak"] = DIST_ATTRIB
     write_fields(regions_file(og), g, fields; dataset=DATASET,
                  attrib=["title" => "Regions v2 (FesmData/Regions)", "base_grid" => dom.base.name,
                          "sources" => join(sort(unique(region_keys)), ", ")],
                  varattrib=attrib)
+end
+
+for og in dom.grids
+    g = og.grid
+    m = AlignedMap(g, dom.base)
+    only_set === nothing && write_regions(og, m)
 
     for (name, (set, B, flags)) in basins
         bf = Dict{String,Any}()
@@ -60,11 +71,15 @@ for og in dom.grids
         end
         bf["basin_mask"] = Int8.(remap_dominant(m, B["basin_mask"]))
         ba = Dict(k => flag_attrib(flags[k], bf[k]) for k in keys(flags) if haskey(bf, k))
-        write_fields(basins_file(og, set), g, bf; dataset=DATASET,
-                     attrib=["title" => "Basins $name (FesmData/Regions)", "basin_source" => set.source,
-                             "sources" => join(manifest_keys(set.source), ", "),
-                             "base_grid" => dom.base.name],
-                     varattrib=ba)
+        keys_set = manifest_keys(set.source)
+        set.source == "negis" && append!(keys_set, product_sources(dom)[topography])
+        battrib = ["title" => "Basins $name (FesmData/Regions)", "basin_source" => set.source,
+                   "sources" => join(unique(keys_set), ", "), "base_grid" => dom.base.name]
+        if is_negis_source(set.source)
+            push!(battrib, "comment" => negis_comment(set))
+            ba["basin"] = vcat(Pair{String,Any}["long_name" => NEGIS_LONG_NAME], ba["basin"])
+        end
+        write_fields(basins_file(og, set), g, bf; dataset=DATASET, attrib=battrib, varattrib=ba)
     end
     @info "wrote $(g.name)"
 end

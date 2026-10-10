@@ -15,12 +15,15 @@ struct BasinSet
     source::String
     id_field::String
     group_field::Union{Nothing,String}
+    features::Vector{String}
     no_extension::Vector{String}
+    params::Dict{String,Any}        # [basins.<source>] of a rule source (e.g. negis)
 end
 
 function read_basin_sets(path=joinpath(@__DIR__, "basins.toml"))
-    return [BasinSet(b["name"], b["domains"], b["region"], b["source"], b["id_field"],
-                     get(b, "group_field", nothing), get(b, "no_extension", String[]))
+    return [BasinSet(b["name"], b["domains"], b["region"], b["source"], get(b, "id_field", ""),
+                     get(b, "group_field", nothing), get(b, "features", String[]),
+                     get(b, "no_extension", String[]), get(b, b["source"], Dict{String,Any}()))
             for b in TOML.parsefile(path)["basins"]]
 end
 

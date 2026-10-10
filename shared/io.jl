@@ -31,7 +31,7 @@ Write the 2D fields on grid `g` to a new NetCDF file of `dataset` (e.g. "topo"),
 the provenance attributes of the dataset and the global attributes `attrib`. Float
 fields are written as Float32 with NaN as missing; integer fields (e.g. masks) are
 written as they are. `varattrib[name]` gives extra attributes of a variable (e.g.
-flag values).
+flag values), and replaces its default units or long name.
 """
 function write_fields(path::AbstractString, g::ProjGrid, fields::AbstractDict; dataset::AbstractString,
                       attrib=Pair{String,String}[], varattrib=Dict{String,Vector{Pair{String,Any}}}())
@@ -42,8 +42,10 @@ function write_fields(path::AbstractString, g::ProjGrid, fields::AbstractDict; d
         foreach(((k, v),) -> ds.attrib[k] = v, gatts)
         for name in sort(collect(keys(fields)))
             units, long_name = get(VARINFO, name, ("", name))
-            atts = vcat(["units" => units, "long_name" => long_name, "grid_mapping" => "crs"],
-                        get(varattrib, name, Pair{String,Any}[]))
+            extra = get(varattrib, name, Pair{String,Any}[])
+            given = Set(first.(extra))
+            atts = vcat(filter(p -> !(first(p) in given), ["units" => units, "long_name" => long_name, "grid_mapping" => "crs"]),
+                        extra)
             F = fields[name]
             if eltype(F) <: Integer
                 defVar(ds, name, F, ("xc", "yc"); deflatelevel=1, shuffle=true, attrib=atts)

@@ -9,6 +9,9 @@ const ZONE_LAND = Int8(3)        # present-day land: ice-free land and grounded 
 const ZONE_ATTRIB = Pair{String,Any}["flag_values" => Int8[0, 1, 2, 3],
     "flag_meanings" => "open_ocean shelf_break_buffer continental_shelf land"]
 
+const DIST_ATTRIB = Pair{String,Any}["comment" =>
+    "-Inf everywhere on a domain without open ocean (no ocean connected to depths below z_abyss within the domain)"]
+
 read_zone_params(path=joinpath(@__DIR__, "regions.toml")) = TOML.parsefile(path)["zone"]
 
 """
@@ -38,7 +41,8 @@ end
 Zones on grid `g` from the bed elevation `z_bed`, the surface type `mask` of the
 topography product (0 ocean, 1 ice-free land, 2 grounded ice, 3 floating ice) and the
 shelf-break depth of each cell. `dist_shelfbreak` (km) is the distance to the shelf
-break, positive in the open ocean and negative on the shelf and land.
+break, positive in the open ocean and negative on the shelf and land, and -Inf
+everywhere if the domain has no open ocean (e.g. small mountain domains).
 """
 function build_zone(g::ProjGrid, z_bed::AbstractMatrix, mask::AbstractMatrix, z_break::AbstractMatrix, params)
     dx, dy = spacing(g)

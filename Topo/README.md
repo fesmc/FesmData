@@ -2,12 +2,14 @@
 
 Bed topography, surface elevation, ice thickness and ice/ocean fractions for each
 model domain, from the best available sources, at resolutions from the base grid
-down to 32 km.
+down to 32 km (16 km for SRG). The domains are the ice sheets (ANT, GRL-PAL, NH)
+and two mountain-glacier domains, the Pyrenees (PYR) and the San Rafael Glacier
+in Patagonia (SRG).
 
 The processing has two stages:
 
 1. **Sources → base grid.** Each source is remapped once onto the base grid of a
-   domain (ANT-1KM, GRL-PAL-500M, NH-2KM), and the sources are then merged in
+   domain (ANT-1KM, GRL-PAL-500M, NH-2KM, PYR-500M, SRG-250M), and the sources are then merged in
    order of priority (e.g. BedMachine over GEBCO).
 2. **Base → all other grids.** Every coarser grid, and the crops of a domain (GRL,
    LIS, EIS), is remapped from the merged base product.
@@ -22,7 +24,12 @@ Domains and resolutions are defined in `../shared/domains.toml` (shared with the
 other pipelines), and the products of each domain in `products.toml`. Grid extents
 follow the v1 grids in `../maps`, so the v1 grids at 4-32 km are reproduced, except
 GRL-32KM, which has 53 instead of 54 columns so that its extent matches the finer
-GRL grids.
+GRL grids. The ice-sheet domains are on polar stereographic projections, PYR and SRG
+on UTM (zones 31N and 18S). PYR has no v1 grid: it covers the whole range with
+20-30 km of foreland (see `domains.toml`). SRG reproduces the v1 SRG-16KM grid (5 x 3
+cells), and its base grid SRG-250M covers the same area; it is therefore larger than
+the v1 SRG-250M grid (257 x 129 instead of 208 x 120 cells), whose cell centres are
+offset by half a cell (125 m) in x and y from those of SRG-250M here.
 
 Each domain has default products, from the latest sources, and variants, from
 earlier versions of the ice-sheet datasets, made on request:
@@ -32,8 +39,11 @@ earlier versions of the ice-sheet datasets, made on request:
 | ANT | BedMachine-v4, Bedmap3 | BedMachine-v3, BedMachine-v2, Bedmap2 |
 | GRL-PAL | BedMachine-v6 | BedMachine-v5, BedMachine-v4 |
 | NH | GEBCO2026 | |
+| PYR | GEBCO2026 | |
+| SRG | GEBCO2026 | |
 
-All products use GEBCO 2026 outside the ice-sheet datasets. A new variant is a new
+All products use GEBCO 2026 outside the ice-sheet datasets, and the NH, PYR and
+SRG products add the IceBoost glaciers onto it. A new variant is a new
 entry under `[<domain>.variants]` in `products.toml` (with its sources in
 `../datamanifest.toml` and `sources.jl`).
 
@@ -157,8 +167,8 @@ Source notes (see `sources.jl`):
   sources), and differs from the main grid by a few metres elsewhere.
 - IceBoost v2.0 (Maffezzoli et al., doi:10.5281/zenodo.17724512; RGI 7.0 outlines)
   gives the ice thickness of the glaciers and ice caps outside Greenland in the NH
-  product. BedMachine Greenland v6 uses the same dataset for the peripheral
-  glaciers of Greenland.
+  product, and of the glaciers of PYR (RGI region 11) and SRG (region 17). BedMachine
+  Greenland v6 uses the same dataset for the peripheral glaciers of Greenland.
 
 ### 3. Merge
 
@@ -226,7 +236,9 @@ Topo/jobs/submit_domain.sh ANT 2 variants     # the variants, from step 2
 ```
 
 The third argument selects the products (as for steps 3-5), and step 2 then remaps
-only their sources.
+only their sources. Step 2 for IceBoost opens every tile of all its RGI regions (111,045
+tiles), whatever the domain, which takes about an hour; the jobs of step 2 therefore
+have a time limit of 3 hours.
 
 ## Glaciers in the NH product
 
@@ -245,3 +257,25 @@ IceBoost glaciers in the NH product (GEBCO 2026, run of 2026-10-09):
 Step 2 for IceBoost takes about 25 min on a Levante node. The GRL-PAL and ANT
 products are unchanged (bitwise identical before and after adding thickness
 sources).
+
+## Glaciers in the PYR and SRG products
+
+IceBoost glaciers (RGI 7.0, 2000 outlines) on the base grids (GEBCO 2026, run of
+2026-10-10):
+
+| | Tiles | Area (km²) | Volume (km³) |
+|---|---:|---:|---:|
+| PYR-500M (RGI 11) | 45 | 4 | 0.08 |
+| SRG-250M (RGI 17) | 134 | 1,261 | 483 |
+
+On the extent of the v1 SRG-250M grid, the SRG product has 1,224 km² and 433 km³ of
+ice, against 1,149 km² and 358 km³ in the v1 SRG-250M_TOPO.nc (from an inversion of
+the Northern Patagonian Icefield thickness). Surface elevations agree (v2 - v1: mean
+1 m, rmse 56 m); the ice thickness differs by 164 m rms (v2 thinner along the trunk of
+the San Rafael Glacier, thicker on its sides).
+
+The coarser SRG grids extend beyond the base grid (by half a coarse cell, as for all
+domains), where their cells are means over the part the base grid covers. On a domain
+this small the overhang is a large part of the coarse grids (SRG-16KM covers 1.85
+times the area of SRG-250M), so their ice volume grows with the cell size, from 483
+km³ on SRG-250M to 762 km³ on SRG-16KM.

@@ -6,11 +6,13 @@ include(joinpath(@__DIR__, "..", "shared", "io.jl"))
 include(joinpath(@__DIR__, "..", "shared", "domains.jl"))
 include(joinpath(@__DIR__, "..", "shared", "manifest.jl"))
 include(joinpath(@__DIR__, "..", "Topo", "files.jl"))
+include(joinpath(@__DIR__, "..", "Topo", "sources.jl"))      # glacier tiles (basins)
 include(joinpath(@__DIR__, "files.jl"))
 include(joinpath(@__DIR__, "shapes.jl"))
 include(joinpath(@__DIR__, "sources.jl"))
 include(joinpath(@__DIR__, "tree.jl"))
 include(joinpath(@__DIR__, "zone.jl"))
+include(joinpath(@__DIR__, "negis.jl"))
 include(joinpath(@__DIR__, "basins.jl"))
 
 "Dataset name of the regions files (provenance attributes, release tags regions-v*)."
