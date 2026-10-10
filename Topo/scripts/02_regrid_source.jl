@@ -71,55 +71,64 @@ end
     regrid(src::GlacierTiles) -> fields
 
 Cell-mean ice thickness `H_ice` (0 off the glaciers) and glacier area fraction
-`f_ice` on the base grid. Each tile is remapped onto the base cells covering it,
-with samples spaced at most half the tile spacing, and the tiles are summed. Since
+`f_ice` on the base grid. Only the tiles whose extent overlaps the base grid are
+read (threaded). Each is remapped onto the base cells covering it, with samples
+spaced at most half the tile spacing, and the tiles are summed in order. Since
 the glacier pixels of a tile extend beyond its outline, the thickness and area of
 each tile are scaled to the glacier volume and area given with it. Neighbouring
 tiles still overlap along shared boundaries, so `f_ice` is limited to 1.
 """
 function regrid(src::GlacierTiles)
-    # (base cells covered, grid, thickness, area scale, volume scale) of each tile
-    tiles = Tuple{UnitRange{Int},UnitRange{Int},ProjGrid,Matrix{Float32},Float32,Float32}[]
-    area_tiles, vol_tiles, area_pix, vol_pix = 0.0, 0.0, 0.0, 0.0
-    for path in src.files
-        g, H, area, volume = read_tile(path)
+    # Base cells covered by each tile, from its grid (on one thread: Proj
+    # transformations are not thread-safe)
+    cover = map(src.grids) do g
         xl, yl = xy_bounds(g, base.proj)
-        ix, iy = _cover(base.xc, xl), _cover(base.yc, yl)
-        (isempty(ix) || isempty(iy)) && continue
+        (_cover(base.xc, xl), _cover(base.yc, yl))
+    end
+    sel = findall(c -> !(isempty(c[1]) || isempty(c[2])), cover)
+
+    # Read and remap these tiles in parallel: thickness and glacier fraction on the
+    # cells covered, and glacier area and volume, given and from the pixels (nothing
+    # for tiles without glacier pixels)
+    parts = Vector{Union{Nothing,Tuple{Matrix{Float32},Matrix{Float32},NTuple{4,Float64}}}}(nothing, length(sel))
+    Threads.@threads :dynamic for k in eachindex(sel)
+        ix, iy = cover[sel[k]]
+        g, H, area, volume = read_tile(src.files[sel[k]])
         dx, dy = spacing(g)
         a = count(!isnan, H) * dx * dy
         v = sum(h -> isnan(h) ? 0.0 : Float64(h), H) / 1000 * dx * dy
-        a > 0 || continue
-        push!(tiles, (ix, iy, g, H, area / a, v > 0 ? volume / v : 1.0))
-        area_tiles += area; vol_tiles += volume; area_pix += a; vol_pix += v
+        if a > 0
+            sa, sv = Float32(area / a), Float32(v > 0 ? volume / v : 1.0)
+            sub = ProjGrid("sub", base.xc[ix], base.yc[iy], base.proj)
+            n = max(1, ceil(Int, 2 * spacing(base)[1] / spacing(g)[1]))
+            Ht, fv = remap(sub, g, H; nsub=n)
+            parts[k] = (map((h, f) -> f > 0 ? sv * h * f : 0f0, Ht, fv), sa .* fv, (area, volume, a, v))
+        end
     end
-    println("$(length(tiles)) of $(length(src.files)) tiles overlap $(base.name): ",
+
+    # Sum the tiles in a fixed order (reproducible)
+    H_ice = zeros(Float64, size(base))
+    f_ice = zeros(Float64, size(base))
+    ntiles, area_tiles, vol_tiles, area_pix, vol_pix = 0, 0.0, 0.0, 0.0, 0.0
+    for (k, p) in enumerate(parts)
+        p === nothing && continue
+        ix, iy = cover[sel[k]]
+        H_ice[ix, iy] .+= p[1]
+        f_ice[ix, iy] .+= p[2]
+        area, volume, a, v = p[3]
+        ntiles += 1; area_tiles += area; vol_tiles += volume; area_pix += a; vol_pix += v
+    end
+    println("$ntiles of $(length(src.files)) tiles overlap $(base.name) ($(length(sel)) read): ",
             "area $(round(area_tiles; digits=0)) km2 (pixels $(round(area_pix; digits=0))), ",
             "volume $(round(vol_tiles; digits=0)) km3 (pixels $(round(vol_pix; digits=0))), ",
             "incl. parts outside the domain")
 
-    # Remap the tiles in parallel, then sum them in a fixed order (reproducible)
-    parts = Vector{NTuple{2,Matrix{Float32}}}(undef, length(tiles))
-    Threads.@threads :dynamic for k in eachindex(tiles)
-        ix, iy, g, H, sa, sv = tiles[k]
-        sub = ProjGrid("sub", base.xc[ix], base.yc[iy], base.proj)
-        n = max(1, ceil(Int, 2 * spacing(base)[1] / spacing(g)[1]))
-        Ht, fv = remap(sub, g, H; nsub=n)
-        parts[k] = (map((h, f) -> f > 0 ? sv * h * f : 0f0, Ht, fv), sa .* fv)
-    end
-    H_ice = zeros(Float64, size(base))
-    f_ice = zeros(Float64, size(base))
-    for (k, (ix, iy, _, _)) in enumerate(tiles)
-        H_ice[ix, iy] .+= parts[k][1]
-        f_ice[ix, iy] .+= parts[k][2]
-    end
-
     lon, lat = lonlat(base)
-    area = cell_area(base, lon, lat) ./ 1e6  # km2
-    println("On $(base.name): glacier area $(round(sum(f_ice .* area); digits=0)) km2 ",
-            "($(round(sum(min.(f_ice, 1) .* area); digits=0)) km2 with f_ice <= 1, ",
+    area_cells = cell_area(base, lon, lat) ./ 1e6  # km2
+    println("On $(base.name): glacier area $(round(sum(f_ice .* area_cells); digits=0)) km2 ",
+            "($(round(sum(min.(f_ice, 1) .* area_cells); digits=0)) km2 with f_ice <= 1, ",
             "max f_ice $(round(maximum(f_ice); digits=3))), ",
-            "volume $(round(sum(H_ice .* area) / 1000; digits=0)) km3")
+            "volume $(round(sum(H_ice .* area_cells) / 1000; digits=0)) km3")
     return Dict("H_ice" => Float32.(H_ice), "f_ice" => Float32.(min.(f_ice, 1)))
 end
 
