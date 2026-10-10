@@ -36,7 +36,9 @@ A prepared file is a NetCDF file with:
 - **a regular grid**, given by 1D coordinate variables, either
   - `lon`, `lat` in degrees (`units = "degrees_east"`, `"degrees_north"`): global or
     regional, with longitudes in -180:180 (preferred) or 0:360, in any order, and
-    latitudes ascending or descending; or
+    latitudes ascending or descending, evenly spaced or not (e.g. a Gaussian grid,
+    with its cell edges from a CF `bounds` variable such as `lat_bnds` if there is
+    one, else halfway between the latitudes); or
   - `x`, `y` in m or km, with the fields pointing to a grid-mapping variable
     (`grid_mapping` attribute) that holds a PROJ string in `proj_params` or `proj4`;
 - **fields** on that grid, each with `units` and `long_name`, and missing values
