@@ -84,8 +84,10 @@ julia --project=Publish Publish/scripts/zenodo.jl upload Topo
 
 The dry run checks every domain: all files present, all at the release tag. `upload`
 then puts the files of each domain into a draft of the next version of its record (a
-new record the first time); files unchanged on Zenodo are kept. If it stops, run it
-again: it continues the same drafts.
+new record the first time); files unchanged on Zenodo are kept. Requests that fail
+because Zenodo is busy are tried again after a wait (up to about 7 min). If it still
+stops, run it again: it continues the same drafts, also those of an upload from
+another checkout (found by their title).
 
 **4. Publish** the drafts on https://zenodo.org/me/uploads, after checking them.
 Publishing cannot be undone.

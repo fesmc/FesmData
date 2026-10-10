@@ -146,6 +146,10 @@ function source_dois(files::Vector{ProductFile})
     return unique(dois)
 end
 
+"Title of the record of a dataset on a domain."
+record_title(domain::AbstractString, dataset::AbstractString) =
+    "FesmData $domain $dataset: $(dataset_config(dataset)["title"])"
+
 """
     record_metadata(domain, dataset, files, version) -> Dict
 
@@ -177,7 +181,7 @@ function record_metadata(domain::AbstractString, dataset::AbstractString,
     end
     return Dict(
         "upload_type" => "dataset",
-        "title" => "FesmData $domain $dataset: $(cfg["title"])",
+        "title" => record_title(domain, dataset),
         "creators" => common["creators"],
         "description" => description,
         "version" => zenodo_version(version, cfg["tag"]),
@@ -196,30 +200,62 @@ zenodo_url(sandbox::Bool) = sandbox ? "https://sandbox.zenodo.org" : "https://ze
 
 zenodo_token(sandbox::Bool) = _env(sandbox ? "ZENODO_SANDBOX_TOKEN" : "ZENODO_TOKEN")
 
+"HTTP statuses of a busy or failing Zenodo, after which a request is tried again."
+const TRANSIENT_STATUS = (429, 500, 502, 503, 504)
+
+"Waits (s) before the retries of a request."
+const RETRY_WAITS = (30, 120, 300)
+
+const _DOWNLOADER = Ref{Union{Nothing,Downloads.Downloader}}(nothing)
+
+# Zenodo can take minutes to answer when busy: allow 10 min without data, instead of
+# the 20 s of Downloads.
+function zenodo_downloader()
+    if _DOWNLOADER[] === nothing
+        d = Downloads.Downloader()
+        d.easy_hook = (easy, info) -> Downloads.Curl.setopt(easy, Downloads.Curl.CURLOPT_LOW_SPEED_TIME, 600)
+        _DOWNLOADER[] = d
+    end
+    return _DOWNLOADER[]
+end
+
 """
-    api(method, url; token="", json=nothing, file=nothing)
+    api(method, url; token="", json=nothing, file=nothing, missing_ok=false, retry=method != "POST")
 
 Request to the Zenodo API, with a JSON body or a file as body. Returns the parsed JSON
 response (`nothing` if empty, or if not found with `missing_ok`); errors on an HTTP
-status other than 2xx.
+status other than 2xx. With `retry` (not for POST, which may not be repeatable), a
+request that fails on the network or with a transient status is tried again, after
+the waits of `RETRY_WAITS`.
 """
 function api(method::AbstractString, url::AbstractString; token::AbstractString="", json=nothing,
-             file::Union{Nothing,AbstractString}=nothing, missing_ok::Bool=false)
+             file::Union{Nothing,AbstractString}=nothing, missing_ok::Bool=false,
+             retry::Bool=method != "POST")
     headers = isempty(token) ? Pair{String,String}[] : ["Authorization" => "Bearer $token"]
-    input = nothing
-    if json !== nothing
-        push!(headers, "Content-Type" => "application/json")
-        input = IOBuffer(JSON.json(json))
-    elseif file !== nothing
-        push!(headers, "Content-Type" => "application/octet-stream")
-        input = file   # a path, so that the upload has a known size (Content-Length)
+    json === nothing || push!(headers, "Content-Type" => "application/json")
+    file === nothing || push!(headers, "Content-Type" => "application/octet-stream")
+    waits = retry ? RETRY_WAITS : ()
+    for attempt in 0:length(waits)
+        # a file is passed as its path, so that the upload has a known size (Content-Length)
+        input = json !== nothing ? IOBuffer(JSON.json(json)) : file
+        output = IOBuffer()
+        problem = try
+            response = Downloads.request(url; method=method, headers=headers, input=input, output=output,
+                                         downloader=zenodo_downloader())
+            body = String(take!(output))
+            missing_ok && response.status == 404 && return nothing
+            200 <= response.status < 300 && return isempty(body) ? nothing : JSON.parse(body)
+            msg = "Zenodo $method $url: HTTP $(response.status)\n$body"
+            response.status in TRANSIENT_STATUS || error(msg)
+            msg
+        catch e
+            e isa Downloads.RequestError || rethrow()
+            "Zenodo $method $url: " * sprint(showerror, e)
+        end
+        attempt == length(waits) && error(problem)
+        println("  $(first(split(problem, '\n'))); trying again in $(waits[attempt+1]) s")
+        sleep(waits[attempt+1])
     end
-    output = IOBuffer()
-    response = Downloads.request(url; method=method, headers=headers, input=input, output=output)
-    body = String(take!(output))
-    missing_ok && response.status == 404 && return nothing
-    200 <= response.status < 300 || error("Zenodo $method $url: HTTP $(response.status)\n$body")
-    return isempty(body) ? nothing : JSON.parse(body)
 end
 
 """
@@ -274,6 +310,14 @@ function open_draft(domain::AbstractString, dataset::AbstractString; sandbox::Bo
         r = api("POST", "$base/api/deposit/depositions/$id/actions/newversion"; token=token)
         return api("GET", r["links"]["latest_draft"]; token=token)
     end
+    # An unpublished draft of the record from an upload not recorded here (e.g. from
+    # another checkout), found by its title
+    title = record_title(domain, dataset)
+    drafts = filter(d -> get(d["metadata"], "title", "") == title && !d["submitted"],
+                    api("GET", "$base/api/deposit/depositions?status=draft&size=100"; token=token))
+    length(drafts) > 1 && error("$domain/$dataset: several drafts titled \"$title\" " *
+                                "($(join([d["id"] for d in drafts], ", "))); delete all but one on Zenodo")
+    length(drafts) == 1 && (println("Draft $(only(drafts)["id"]) of an earlier upload"); return only(drafts))
     println("New record")
     return api("POST", "$base/api/deposit/depositions"; token=token, json=Dict())
 end
@@ -292,14 +336,14 @@ function sync_files!(dep, files::Vector{ProductFile}; sandbox::Bool=false)
     for (name, f) in remote
         name in local_names && continue
         println("delete    $name")
-        api("DELETE", "$base/api/deposit/depositions/$id/files/$(f["id"])"; token=token)
+        api("DELETE", "$base/api/deposit/depositions/$id/files/$(f["id"])"; token=token, missing_ok=true)
     end
     for f in files
         name = basename(f)
         sum = file_md5(f.path)
         if haskey(remote, name)
             replace(remote[name]["checksum"], "md5:" => "") == sum && (println("keep      $name"); continue)
-            api("DELETE", "$base/api/deposit/depositions/$id/files/$(remote[name]["id"])"; token=token)
+            api("DELETE", "$base/api/deposit/depositions/$id/files/$(remote[name]["id"])"; token=token, missing_ok=true)
         end
         println("upload    $name ($(round(filesize(f.path) / 1e6; digits=1)) MB)")
         r = api("PUT", "$(dep["links"]["bucket"])/$name"; token=token, file=f.path)
@@ -353,9 +397,10 @@ function upload(dataset::AbstractString, domains=String[]; sandbox::Bool=false,
         println("\n$domain/$dataset")
         dep = open_draft(domain, dataset; sandbox=sandbox)
         write_draft(domain, dataset, dep, version; sandbox=sandbox)
-        sync_files!(dep, files; sandbox=sandbox)
+        # Metadata first, so that an interrupted draft has its title (see open_draft)
         api("PUT", "$(zenodo_url(sandbox))/api/deposit/depositions/$(dep["id"])";
             token=zenodo_token(sandbox), json=Dict("metadata" => meta))
+        sync_files!(dep, files; sandbox=sandbox)
         println("Draft ready: $(dep["links"]["html"])")
     end
     flags = (sandbox ? " --sandbox" : "") * (allow_untagged ? " --allow-untagged" : "")
