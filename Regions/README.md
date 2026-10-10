@@ -79,6 +79,8 @@ variable).
 | Zwally2012 | GRL-PAL, NH; ANT | GSFC drainage systems (Zwally et al., 2012); Greenland sub-systems 11 = 1.1 |
 | IMBIE2016, IMBIE2016-refined | ANT | IMBIE 2016 and refined basins (Mouginot et al., 2017, NSIDC-0709 v2) |
 | SanRafael | SRG | San Rafael Glacier (RGI2000-v7.0-G-17-12835), its RGI 7.0 outline as the footprint of its IceBoost v2 tile |
+| NEGIS-v1 | GRL-PAL | Northeast Greenland Ice Stream in three parts, drawn by hand for yelmox v1 on GRL-16KM (Ilaria Tabone, 2024) |
+| NEGIS | GRL-PAL | Northeast Greenland Ice Stream in three parts: centre and south from the surface speed (Joughin et al., 2018), north from NEGIS-v1 |
 
 Each file has `basin`, `basin_mask` (1 within the original basins) and, for sets
 with groups (e.g. Mouginot regions, IMBIE regions, Zwally systems), `basin_group`. The
@@ -89,6 +91,52 @@ SanRafael is a single basin (1), the cells at least half covered by the glacier,
 extended: the part of the SRG domain that evolves freely in yelmox, while the rest
 relaxes to the present-day state (in v1, `regions = 1` of SRG-250M_REGIONS.nc). PYR
 has no basins.
+
+### NEGIS
+
+The NEGIS sets split the Northeast Greenland Ice Stream into three parts, to tune basal
+friction by part in yelmox: `basin` 1 centre (the trunk of 79N and Zachariae Isstrom
+down to the coast), 2 south (the trunk upstream), 3 north (the northern arm), 0 outside.
+They are not extended, so `basin_mask` is `basin != 0`, and have no groups (`negis.jl`).
+
+**NEGIS-v1** are the parts of yelmox v1 (`basin_sub` 9.1, 9.2, 9.3 of
+GRL-16KM_BASINS-nasa-negis-three.nc), drawn by hand by Ilaria Tabone (2024) on GRL-16KM.
+They cannot be rebuilt, so the 248 cells are kept in the repository
+(`sources/negis_v1_GRL-16KM.csv`). Each cell of the base grid takes the part of the
+GRL-16KM cell containing its centre, so GRL-16KM reproduces v1 exactly (checked by
+`06_negis.jl`, 0 cells differ), and the other grids are the majority as for all basins.
+
+**NEGIS** builds the centre and south parts from the present-day surface speed, the
+cell mean of the 250 m MEaSUREs velocity mosaic (NSIDC-0670 v1; Joughin et al., 2018) on
+the base grid. The stream is the cells of Zwally drainage system 2 with grounded ice
+(the topography of the zones) and a speed of at least 50 m/yr (30 m/yr south of the
+cut), connected to the cell nearest to (400, -1162) km in the trunk of 79N. This leaves
+out the separate fast cells of Storstrommen and L. Bistrup Brae. South is the stream
+south of the cut line y = -1140 - 0.3 x (km, GRL polar stereographic), centre the rest.
+The north part of v1 follows a palaeo ice stream that shut down in the Holocene (Franke
+et al., 2022) and is slow today (4-50 m/yr), so neither a lower speed threshold nor a
+band along the present flow reproduces it (IoU of the north part 0.50 and 0.73 at
+best). Franke et al.
+publish only the radar data (PANGAEA), not an outline, so the north part is that of
+NEGIS-v1, and replaces the others where they overlap. The parameters are in
+`basins.toml` ([basins.negis]).
+
+The parameters give the best match of the v1 parts on GRL-16KM, among cut lines,
+thresholds of the south part of 20-50 m/yr, and other splits (`06_negis.jl`):
+
+| Part | Cells | v1 cells | IoU |
+|---|---|---|---|
+| centre | 82 | 94 | 0.80 |
+| south | 101 | 96 | 0.86 |
+| north | 58 | 58 | 1.00 |
+| all | 241 | 248 | 0.90 |
+
+The whole stream at 50 m/yr matches the single v1 NEGIS basin (basin 9 of
+GRL-16KM_BASINS-nasa-negis.nc) with IoU 0.88. The v1 centre also has a few isolated
+cells near Storstrommen, left out here. A cut at a surface elevation of 1450 m instead
+of the line gives IoU 0.74 (centre) and 0.79 (south), and a cut at a distance along the
+stream from the grounding line of 79N (200 km) 0.68 and 0.63. The Mouginot basins of
+79N, Zachariae Isstrom and Storstrommen are far broader than the stream (IoU 0.23).
 
 ## Layout
 
@@ -136,6 +184,8 @@ table directly. Two need a manual download into the folder printed by the script
 - **NSIDC-0709 v2** (NASA Earthdata login, see Topo): the `.shp`, `.shx`, `.dbf` and
   `.prj` files of `Basins_IMBIE_Antarctica_v02` and `Basins_Antarctica_v02`, from the
   `uri` in `../datamanifest.toml`.
+- **NSIDC-0670 v1** (NASA Earthdata login): `greenland_vel_mosaic250_vx_v1.tif` and
+  `greenland_vel_mosaic250_vy_v1.tif` (NEGIS), from the `uri` in `../datamanifest.toml`.
 
 ### 1. Regions
 
@@ -158,11 +208,15 @@ sbatch --job-name=zone-NH Regions/jobs/run_step.sbatch 02_zone.jl NH
 sbatch --job-name=basins-ANT Regions/jobs/run_step.sbatch 03_basins.jl ANT [SET]
 ```
 
+NEGIS reads the grounded ice of the topography of the zones (step 2).
+
 ### 4. All grids
 
 ```bash
-sbatch --job-name=grids-all-NH Regions/jobs/run_step.sbatch 04_grids.jl NH
+sbatch --job-name=grids-all-NH Regions/jobs/run_step.sbatch 04_grids.jl NH [SET]
 ```
+
+With SET, only the files of that basin set are written.
 
 Region codes, zones and basins on each grid are the class covering most of a cell,
 nested level by level (a cell's `region_3` lies within its `region_2`; basins within
@@ -176,12 +230,29 @@ sbatch --job-name=plots-NH Regions/jobs/run_step.sbatch 05_plots.jl NH [GRID]
 
 Writes maps of the regions, zones and basins to `$FESMDATA_WORK/regions/plots/`.
 
+The NEGIS sets are checked against v1 on GRL-16KM (cells and IoU of each part, and a
+map, `$FESMDATA_WORK/regions/plots/GRL-16KM_negis.png`):
+
+```bash
+sbatch --job-name=negis Regions/jobs/run_step.sbatch 06_negis.jl \
+    /work/ba1442/ice_data/Greenland/GRL-16KM/GRL-16KM_BASINS-nasa-negis-three.nc
+```
+
+The v1 file is optional; with it, the script checks that NEGIS-v1 reproduces it.
+
 ## Sources
 
+- Franke, S., Bons, P. D., Westhoff, J., et al. (2022). Holocene ice-stream shutdown and
+  drainage basin reconfiguration in northeast Greenland. Nature Geoscience, 15,
+  995-1001. doi:10.1038/s41561-022-01082-2
 - Flanders Marine Institute (2024). Union of the ESRI Country shapefile and the
   Exclusive Economic Zones (version 4). doi:10.14284/698
 - Flanders Marine Institute (2018). IHO Sea Areas, version 3. doi:10.14284/323
 - Flanders Marine Institute (2021). Global Oceans and Seas, version 1. doi:10.14284/542
+- Joughin, I., Smith, B. E. and Howat, I. M. (2018). A complete map of Greenland ice
+  velocity derived from satellite data collected over 20 years. Journal of Glaciology,
+  64(243), 1-11. doi:10.1017/jog.2017.73 (MEaSUREs Multi-year Greenland Ice Sheet
+  Velocity Mosaic, Version 1, NSIDC-0670, doi:10.5067/QUA5Q9SVMSJG)
 - Lehner, B. and Grill, G. (2013). Global river hydrography and network routing:
   baseline data and new approaches to study the world's large river systems.
   Hydrological Processes, 27(15), 2171-2186 (HydroBASINS v1c).
