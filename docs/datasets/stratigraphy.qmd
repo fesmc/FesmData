@@ -1,0 +1,5 @@
+---
+pagetitle: "Stratigraphy"
+---
+
+{{< include ../../Stratigraphy/README.md >}}

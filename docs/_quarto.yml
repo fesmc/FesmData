@@ -38,6 +38,10 @@ website:
             href: datasets/sediment.qmd
           - text: "IceHistory — paleo ice sheets"
             href: datasets/icehistory.qmd
+          - text: "Stratigraphy — age structure"
+            href: datasets/stratigraphy.qmd
+          - text: "BasalMelt — ice-shelf melt"
+            href: datasets/basalmelt.qmd
       - text: "Your own data"
         href: remap.qmd
       - text: "Releasing"

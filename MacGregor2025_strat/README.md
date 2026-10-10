@@ -40,11 +40,11 @@ The same grid (identical values) is in the Zenodo record of the article,
 ## Prepare and remap
 
 ```bash
-julia --project=MacGregor2015_strat MacGregor2015_strat/prepare.jl
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/MacGregor2015_strat/MacGregor2015_STRAT.nc Greenland GreenlandPaleo --name=Stratigraphy-MacGregor2015
+julia --project=MacGregor2025_strat MacGregor2025_strat/prepare.jl
+julia fesmdata.jl remap $FESMDATA_WORK/prepared/MacGregor2025_strat/MacGregor2025_STRAT.nc Greenland GreenlandPaleo --name=Stratigraphy-MacGregor2025
 ```
 
-`prepare.jl` writes to `$FESMDATA_WORK/prepared/MacGregor2015_strat/MacGregor2015_STRAT.nc`
+`prepare.jl` writes to `$FESMDATA_WORK/prepared/MacGregor2025_strat/MacGregor2025_STRAT.nc`
 (see `Remap/README.md`), on the original grid (y made ascending):
 
 - `ice_age`, `ice_age_sd` (ka): age of the ice and its uncertainty at `depth_norm`

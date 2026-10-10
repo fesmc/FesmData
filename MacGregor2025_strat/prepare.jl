@@ -1,11 +1,11 @@
 # Prepare the radiostratigraphy of the Greenland Ice Sheet (RRRAG4 v2, MacGregor et al.)
 # for remapping: the 5 km grid of the original file as a prepared NetCDF file,
-# $FESMDATA_WORK/prepared/MacGregor2015_strat/MacGregor2015_STRAT.nc, with the age of
+# $FESMDATA_WORK/prepared/MacGregor2025_strat/MacGregor2025_STRAT.nc, with the age of
 # the ice at normalized depths (x, y, depth_norm) and the depth of isochrones (x, y, age),
 # and their uncertainties.
 #
 # Usage:
-#     julia --project=MacGregor2015_strat MacGregor2015_strat/prepare.jl
+#     julia --project=MacGregor2025_strat MacGregor2025_strat/prepare.jl
 
 using NCDatasets
 
@@ -24,7 +24,7 @@ const FIELDS = [
     ("depth_iso_sd", "depth_std", "age", "m", "uncertainty (total) of the depth of isochrone below ice surface"),
 ]
 
-path = joinpath(prepared_dir("MacGregor2015_strat"), "MacGregor2015_STRAT.nc")
+path = joinpath(prepared_dir("MacGregor2025_strat"), "MacGregor2025_STRAT.nc")
 mkpath(dirname(path))
 NCDataset(input) do src
     x = Float64.(src["x"][:])

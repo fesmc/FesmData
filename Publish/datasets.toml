@@ -70,3 +70,23 @@ description = """
 Reconstructions of past ice sheets and topography (ICE-5G, ICE-6G_C, PRISM4), remapped
 conservatively onto the grids of a model domain, or onto global lon-lat grids.
 """
+
+[Stratigraphy]
+tag = "stratigraphy"
+title = "age structure of the ice"
+readme = "Stratigraphy/README.md"
+keywords = ["radiostratigraphy", "ice age", "isochrones", "Greenland", "model validation"]
+description = """
+Age structure of the ice from radar stratigraphy (ice age at normalized depths and depth
+of isochrones), remapped conservatively onto the grids of a model domain.
+"""
+
+[BasalMelt]
+tag = "basalmelt"
+title = "ice-shelf basal melt rates"
+readme = "BasalMelt/README.md"
+keywords = ["basal melt", "ice shelves", "Antarctica", "model input", "model validation"]
+description = """
+Basal melt rates of ice shelves from observations, remapped conservatively onto the
+grids of a model domain.
+"""

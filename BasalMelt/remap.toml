@@ -1,0 +1,10 @@
+# Ice-shelf basal melt rates (thematic dataset, see ../Remap/README.md). Products are
+# written as <GRID>_BasalMelt-<name>.nc on every grid of their `domains`; see
+# ../GHF/remap.toml for the options. The dataset and its release tag are in
+# ../Publish/datasets.toml.
+
+[products.Rignot2013]
+source = "Rignot2013_bmelt"
+file = "Rignot2013_BMELT.nc"
+variables = ["bmelt", "bmelt_ss"]
+domains = ["Antarctica"]

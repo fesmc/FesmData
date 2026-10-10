@@ -1,0 +1,10 @@
+# Englacial stratigraphy and age structure (thematic dataset, see ../Remap/README.md).
+# Products are written as <GRID>_Stratigraphy-<name>.nc on every grid of their
+# `domains`; see ../GHF/remap.toml for the options. The dataset and its release tag are
+# in ../Publish/datasets.toml.
+
+[products.MacGregor2025]
+source = "MacGregor2025_strat"
+file = "MacGregor2025_STRAT.nc"
+variables = ["ice_age", "ice_age_sd", "depth_iso", "depth_iso_sd"]
+domains = ["Greenland", "GreenlandPaleo"]
