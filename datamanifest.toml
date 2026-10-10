@@ -311,3 +311,22 @@ key = "hazzardrichards2024_ghf.zip"
 doi = "10.1029/2023GL106274"
 extract = true
 uri = "https://osf.io/download/p678r/"
+# Sediment thickness (Sediment thematic dataset).
+# CRUST1.0 (Laske et al., 2013): 1x1° global crustal model; crust1.bnds holds the
+# boundaries of its layers, among them three sediment layers.
+
+[crust1]
+key = "crust1.tar.gz"
+extract = true
+uri = "https://igppweb.ucsd.edu/~gabi/crust1/crust1.0.tar.gz"
+
+# GlobSed v3 (Straume et al., 2019): 5 arc-min total sediment thickness of the oceans,
+# archived at PANGAEA after the NCEI page was retired (also at CaltechDATA,
+# doi:10.22002/k4070-ngc79). GlobSed.zip holds GlobSed-v3.nc, GlobSed-v3.xyz and an
+# ArcGIS ascii grid.
+
+[globsed_v3]
+key = "globsed_v3.zip"
+doi = "10.1594/PANGAEA.982339"
+extract = true
+uri = "https://download.pangaea.de/dataset/982339/files/GlobSed.zip"
