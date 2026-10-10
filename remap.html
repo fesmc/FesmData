@@ -224,7 +224,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="prepare-a-source">1. Prepare a source</h2>
 <p>Make a folder for the source, named after it (e.g.&nbsp;<code>Lucazeau2019_ghf/</code>), with:</p>
 <ul>
-<li><code>README.md</code>: what the data are, where they come from, how to cite them, and their licence;</li>
+<li><code>README.md</code>: what the data are, where they come from, how to cite them, and their licence (check that it allows redistributing derived products before releasing them);</li>
 <li><code>prepare.jl</code> (with its own <code>Project.toml</code>): get the original files and write the prepared file(s) to <code>$FESMDATA_WORK/prepared/&lt;source folder&gt;/</code> (in Julia: <code>prepared_dir("&lt;source folder&gt;")</code> from <code>shared/provenance.jl</code>).</li>
 </ul>
 <p>A prepared file is a NetCDF file with:</p>
@@ -235,7 +235,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>x</code>, <code>y</code> in m or km, with the fields pointing to a grid-mapping variable (<code>grid_mapping</code> attribute) that holds a PROJ string in <code>proj_params</code> or <code>proj4</code>;</li>
 </ul></li>
 <li><strong>2D fields</strong> on that grid, each with <code>units</code> and <code>long_name</code>, and missing values as <code>_FillValue</code> or NaN;</li>
-<li><strong>global attributes</strong> <code>title</code>, <code>references</code> and, where there is one, <code>doi</code> (copied to the remapped files).</li>
+<li><strong>global attributes</strong> <code>title</code>, <code>references</code>, <code>license</code> and, where there is one, <code>doi</code> (copied to the remapped files).</li>
 </ul>
 <p>Prepare the data at their own resolution: no smoothing or regridding, that is left to the remapping. Keep names and units simple (e.g.&nbsp;<code>ghf</code> in mW m-2).</p>
 </section>

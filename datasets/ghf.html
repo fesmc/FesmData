@@ -195,6 +195,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#ghf-geothermal-heat-flow" id="toc-ghf-geothermal-heat-flow" class="nav-link active" data-scroll-target="#ghf-geothermal-heat-flow">GHF: geothermal heat flow</a>
   <ul class="collapse">
   <li><a href="#products" id="toc-products" class="nav-link" data-scroll-target="#products">Products</a></li>
+  <li><a href="#licences" id="toc-licences" class="nav-link" data-scroll-target="#licences">Licences</a></li>
   <li><a href="#making-the-dataset" id="toc-making-the-dataset" class="nav-link" data-scroll-target="#making-the-dataset">Making the dataset</a></li>
   <li><a href="#adding-a-source" id="toc-adding-a-source" class="nav-link" data-scroll-target="#adding-a-source">Adding a source</a></li>
   </ul></li>
@@ -231,6 +232,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <p>Each file <code>&lt;GRID&gt;_GHF-&lt;Source&gt;.nc</code> also has <code>f_valid</code>, the fraction of each cell covered by the source. The source is remapped conservatively; on grids finer than the source it is then smoothed with a Gaussian of half the source spacing (about 28 km for 0.5°), so that its cells do not show as steps. The global attribute <code>remap_method</code> records what was done on each grid.</p>
+</section>
+<section id="licences" class="level2">
+<h2 class="anchored" data-anchor-id="licences">Licences</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Source</th>
+<th>Licence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Lucazeau (2019)</td>
+<td>Wiley standard terms (no open licence): permission from AGU or the author is needed before release</td>
+</tr>
+</tbody>
+</table>
+<p>The licence of each source is in its README and in the <code>license</code> attribute of its files. A source can be released under the FesmData licence (CC BY 4.0) only if its own licence allows it.</p>
 </section>
 <section id="making-the-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="making-the-dataset">Making the dataset</h2>
