@@ -242,9 +242,9 @@ storage_path = "$datasets_dir/nsidc0709_v2_basins"
 uri = "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/MEASURES/NSIDC-0709/2/1992/02/07/"
 
 # MEaSUREs Multi-year Greenland Ice Sheet Velocity Mosaic v1 (NSIDC-0670; Joughin et al.,
-# 2018), 250 m: the surface velocity of the NEGIS basins (Regions/basins.toml). Manual
-# download (NASA Earthdata login), greenland_vel_mosaic250_vx_v1.tif and
-# greenland_vel_mosaic250_vy_v1.tif into the folder, from the uri below.
+# 2018), 250 m: the surface velocity of the NEGIS basins (Regions/basins.toml) and
+# Joughin2018/. Manual download (NASA Earthdata login), greenland_vel_mosaic250_<c>_v1.tif
+# with <c> = vx, vy, ex, ey into the folder, from the uri below.
 
 [nsidc0670_v1_greenland_vel]
 doi = "10.5067/QUA5Q9SVMSJG"
@@ -258,3 +258,13 @@ uri = "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/M
 [iso3166_m49]
 storage_path = "$datasets_dir/iso3166_m49/all.csv"
 uri = "https://raw.githubusercontent.com/lukes/ISO-3166-Countries-with-Regional-Codes/145f1ad3caff212ed25f42b0ee2c8b92a75af895/all/all.csv"
+
+# MEaSUREs InSAR-based Antarctica Ice Velocity Map v2 (NSIDC-0484; Rignot et al., 2011;
+# Mouginot et al., 2012, 2017), 450 m: Rignot2011_vel/. Manual download (NASA Earthdata
+# login), antarctica_ice_velocity_450m_v2.nc into the folder, from the uri below.
+
+[nsidc0484_v2_antarctica_vel]
+doi = "10.5067/D7GK8F5J8M8R"
+skip_download = true
+storage_path = "$datasets_dir/nsidc0484_v2_antarctica_vel/antarctica_ice_velocity_450m_v2.nc"
+uri = "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/MEASURES/NSIDC-0484/2/1996/01/01/antarctica_ice_velocity_450m_v2.nc"
