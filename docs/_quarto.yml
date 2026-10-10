@@ -6,6 +6,7 @@ project:
     - "products.qmd"
     - "domains.qmd"
     - "datasets/*.qmd"
+    - "remap.qmd"
     - "releasing.qmd"
 
 website:
@@ -31,6 +32,8 @@ website:
             href: datasets/topo.qmd
           - text: "Regions — regions and basins"
             href: datasets/regions.qmd
+      - text: "Your own data"
+        href: remap.qmd
       - text: "Releasing"
         href: releasing.qmd
     right:

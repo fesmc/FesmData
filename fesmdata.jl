@@ -23,6 +23,13 @@ Find and download:
                                                again to update (--yes: no confirmation)
   (arguments in any order)
 
+Bring your own data (see Remap/README.md):
+  remap <file.nc> <Domain> | <GRID> | all ...  remap the fields of a prepared NetCDF file
+                                               (lon-lat or projected grid) onto the grids,
+                                               as \$ICE_DATA/v2/<Domain>/<GRID>/<GRID>_<name>.nc
+                                               (--vars=a,b: only these fields; --name=NAME:
+                                               default the file name; --overwrite)
+
 Release (maintainers, see Publish/README.md):
   release <Dataset> [<Domain> ...]             upload to the GitLab packages and write the
                                                registry (--dry-run: check and list only)
@@ -36,16 +43,18 @@ Release (maintainers, see Publish/README.md):
 
 Options: --sandbox (test releases: registry/_sandbox/, test packages, Zenodo sandbox),
 --allow-untagged (skip the release checks), --dry-run, --yes (mirror, archive publish),
---overwrite (fetch).
+--overwrite (fetch, remap).
 """
 
 const PUBLISH_DIR = joinpath(@__DIR__, "Publish")
+const REMAP_DIR = joinpath(@__DIR__, "Remap")
 
-"Activate the Publish environment, with its packages installed if needed (fast if they are)."
-function publish_env()
+"Activate the environment in `dir`, with its packages installed if needed (fast if they are)."
+function activate_env(dir)
     @eval import Pkg
-    Base.invokelatest(Pkg.activate, PUBLISH_DIR; io=devnull)
-    Base.invokelatest(Pkg.instantiate)
+    pkg = Base.invokelatest(getglobal, Main, :Pkg)
+    Base.invokelatest(pkg.activate, dir; io=devnull)
+    Base.invokelatest(pkg.instantiate)
 end
 
 "Call the function `name` of a file included at run time (in the latest world)."
@@ -53,11 +62,17 @@ call(name::Symbol, args...; kwargs...) =
     Base.invokelatest(Base.invokelatest(getglobal, Main, name), args...; kwargs...)
 
 function main(argv)
-    opts = filter(startswith("--"), argv)
+    opts = filter(o -> startswith(o, "--") && !occursin('=', o), argv)
     args = filter(!startswith("--"), argv)
     known = ("--sandbox", "--allow-untagged", "--dry-run", "--yes", "--overwrite")
     for o in opts
         o in known || error("unknown option $o\n\n$USAGE")
+    end
+    # Options with a value: --name=value
+    valued = Dict(String(k) => String(v) for (k, v) in
+                  (split(o[3:end], '='; limit=2) for o in argv if startswith(o, "--") && occursin('=', o)))
+    for k in keys(valued)
+        k in ("vars", "name") || error("unknown option --$k\n\n$USAGE")
     end
     sandbox, allow_untagged, dry_run = "--sandbox" in opts, "--allow-untagged" in opts, "--dry-run" in opts
     command = isempty(args) ? "help" : args[1]
@@ -77,12 +92,19 @@ function main(argv)
         include(joinpath(PUBLISH_DIR, "catalog.jl"))
         paths = call(:mirror, rest; overwrite="--overwrite" in opts, sandbox=sandbox, yes="--yes" in opts)
         println("$(length(paths)) files in $(call(:products_dir))")
+    elseif command == "remap"
+        activate_env(REMAP_DIR)
+        include(joinpath(REMAP_DIR, "remap.jl"))
+        vars = haskey(valued, "vars") ? split(valued["vars"], ',') : nothing
+        paths = call(:remap_command, rest; vars, name=get(valued, "name", nothing),
+                     overwrite="--overwrite" in opts)
+        println("$(length(paths)) files written")
     elseif command == "docs"
         include(joinpath(PUBLISH_DIR, "site.jl"))
         println("Wrote ", call(:write_products, joinpath(@__DIR__, "docs", "_products.md")))
     elseif command in ("release", "status", "delete")
         isempty(rest) && usage("$command: give a dataset")
-        publish_env()
+        activate_env(PUBLISH_DIR)
         include(joinpath(PUBLISH_DIR, "gitlab.jl"))
         dataset = rest[1]
         if command == "release"
@@ -96,7 +118,7 @@ function main(argv)
     elseif command == "archive"
         isempty(rest) && usage("archive: give a subcommand")
         sub, rest = rest[1], rest[2:end]
-        publish_env()
+        activate_env(PUBLISH_DIR)
         include(joinpath(PUBLISH_DIR, "zenodo.jl"))
         if sub == "drafts"
             call(:list_drafts; sandbox=sandbox)

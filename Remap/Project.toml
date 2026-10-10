@@ -1,0 +1,8 @@
+[deps]
+Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
+FesmUtils = "87fa8290-809d-4b2a-a2bb-fb70d9529671"
+NCDatasets = "85f8d34a-cbdd-5861-8df4-14fed0d494ab"
+TOML = "fa267f1f-6049-4f14-aa54-33bafae1ed76"
+
+[sources]
+FesmUtils = {rev = "main", url = "https://github.com/fesmc/FesmUtils.jl"}

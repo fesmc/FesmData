@@ -11,6 +11,9 @@ function _env(name)
     return ENV[name]
 end
 
+"Folder of the prepared files of a source (input to remapping): \$FESMDATA_WORK/prepared/<source>."
+prepared_dir(source::AbstractString) = joinpath(_env("FESMDATA_WORK"), "prepared", source)
+
 """
     git_version(dataset) -> String
 
