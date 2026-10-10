@@ -406,8 +406,8 @@ function upload(dataset::AbstractString, domains=String[]; sandbox::Bool=false,
     flags = (sandbox ? " --sandbox" : "") * (allow_untagged ? " --allow-untagged" : "")
     println("""
 
-        Review and publish the drafts on $(zenodo_url(sandbox))/me/uploads, then register them:
-            julia --project=Publish Publish/scripts/zenodo.jl register $dataset$flags""")
+        Review the drafts on $(zenodo_url(sandbox))/me/uploads if needed, then publish and register them:
+            julia --project=Publish Publish/scripts/zenodo.jl publish $dataset$flags""")
 end
 
 """
@@ -440,6 +440,117 @@ function register(dataset::AbstractString, domains=String[]; sandbox::Bool=false
 end
 
 """
+    check_remote_files(files, remote, what)
+
+Check that the files on Zenodo (`remote`: name => md5) are the local files of a release.
+"""
+function check_remote_files(files::Vector{ProductFile}, remote::AbstractDict, what::AbstractString)
+    names = Set(basename(f) for f in files)
+    missing_remote = setdiff(names, keys(remote))
+    extra_remote = setdiff(keys(remote), names)
+    isempty(missing_remote) && isempty(extra_remote) ||
+        error("files of $what differ from the local files: missing on Zenodo " *
+              "$(join(sort(collect(missing_remote)), ", ")); only on Zenodo $(join(sort(collect(extra_remote)), ", "))")
+    for f in files
+        remote[basename(f)] == file_md5(f.path) || error("$(basename(f)) of $what differs from the local file $(f.path)")
+    end
+end
+
+"Files of a draft (deposition) as name => md5."
+draft_md5(dep) = Dict(f["filename"] => replace(f["checksum"], "md5:" => "") for f in dep["files"])
+
+"Recorded drafts of a dataset that are not published yet, as domain => draft."
+function open_drafts(dataset::AbstractString, domains=String[]; sandbox::Bool=false)
+    drafts = Pair{String,Any}[]
+    for domain in (isempty(domains) ? domain_folders() : domains)
+        draft = read_draft(domain, dataset; sandbox=sandbox)
+        draft === nothing && continue
+        published_record(draft["draft_id"]; sandbox=sandbox) === nothing && push!(drafts, domain => draft)
+    end
+    return drafts
+end
+
+function confirm(question::AbstractString)
+    print(question, " [y/N] ")
+    return lowercase(strip(readline())) in ("y", "yes")
+end
+
+"""
+    publish(dataset, domains=String[]; sandbox=false, allow_untagged=false, yes=false)
+
+Publish the recorded drafts of a dataset (all domains by default), then register them.
+Each draft is checked first (its files are the local files of the release), and all
+are published after one confirmation (none with `yes`). Publishing cannot be undone.
+"""
+function publish(dataset::AbstractString, domains=String[]; sandbox::Bool=false,
+                 allow_untagged::Bool=false, yes::Bool=false)
+    dataset_config(dataset)
+    drafts = open_drafts(dataset, domains; sandbox=sandbox)
+    isempty(drafts) && error("no unpublished drafts of $dataset (run upload first)")
+    base, token = zenodo_url(sandbox), zenodo_token(sandbox)
+    println("Drafts to publish on $base:")
+    for (domain, draft) in drafts
+        id = draft["draft_id"]
+        dep = api("GET", "$base/api/deposit/depositions/$id"; token=token)
+        files = collect_files(domain, dataset)
+        version = release_version(files, dataset; allow_untagged=allow_untagged)
+        check_remote_files(files, draft_md5(dep), "draft $id ($domain/$dataset, run upload again)")
+        println("  ", rpad(domain, 16), rpad(id, 10), get(dep["metadata"], "title", "(no title)"),
+                ", $version, $(length(files)) files")
+    end
+    yes || confirm("Publish these $(length(drafts)) drafts? This cannot be undone.") ||
+        (println("Nothing published."); return String[])
+    for (domain, draft) in drafts
+        api("POST", "$base/api/deposit/depositions/$(draft["draft_id"])/actions/publish"; token=token)
+        println("$domain/$dataset: published $(draft["draft_id"])")
+    end
+    return register(dataset, first.(drafts); sandbox=sandbox, allow_untagged=allow_untagged)
+end
+
+"""
+    discard(dataset, domains=String[]; sandbox=false)
+
+Delete the recorded unpublished drafts of a dataset (all domains by default) on Zenodo,
+and their draft files. Published records are not touched.
+"""
+function discard(dataset::AbstractString, domains=String[]; sandbox::Bool=false)
+    dataset_config(dataset)
+    drafts = open_drafts(dataset, domains; sandbox=sandbox)
+    isempty(drafts) && (println("No unpublished drafts of $dataset"); return)
+    discard_drafts([d["draft_id"] for (_, d) in drafts]; sandbox=sandbox)
+    foreach(((domain, _),) -> rm(drafts_file(domain, dataset; sandbox=sandbox)), drafts)
+end
+
+"""
+    discard_drafts(ids; sandbox=false)
+
+Delete unpublished drafts on Zenodo by id (e.g. from `list_drafts`). Published records
+are not touched.
+"""
+function discard_drafts(ids; sandbox::Bool=false)
+    base, token = zenodo_url(sandbox), zenodo_token(sandbox)
+    for id in ids
+        dep = api("GET", "$base/api/deposit/depositions/$id"; token=token, missing_ok=true)
+        dep === nothing && (println("draft $id: not found"); continue)
+        dep["submitted"] && (println("$id is published, not discarded"); continue)
+        api("DELETE", "$base/api/deposit/depositions/$id"; token=token, missing_ok=true)
+        println("discarded draft $id ($(get(dep["metadata"], "title", "no title")))")
+    end
+end
+
+"List the unpublished drafts of the account of the token."
+function list_drafts(; sandbox::Bool=false)
+    base, token = zenodo_url(sandbox), zenodo_token(sandbox)
+    deps = filter(d -> !d["submitted"], api("GET", "$base/api/deposit/depositions?status=draft&size=100"; token=token))
+    isempty(deps) && (println("No unpublished drafts on $base"); return)
+    println(rpad("Draft", 10), rpad("Created", 12), rpad("Files", 7), "Title")
+    for d in deps
+        println(rpad(d["id"], 10), rpad(first(d["created"], 10), 12), rpad(length(d["files"]), 7),
+                get(d["metadata"], "title", "(no title)"))
+    end
+end
+
+"""
     register_record(domain, dataset, rec; sandbox=false, allow_untagged=false)
 
 Write the registry file of a published record `rec` (from the records API), after
@@ -451,18 +562,11 @@ function register_record(domain::AbstractString, dataset::AbstractString, rec;
     record_id = rec["id"]
     files = collect_files(domain, dataset)
     version = release_version(files, dataset; allow_untagged=allow_untagged)
-    remote = Dict(f["key"] => f for f in rec["files"])
-    missing_remote = setdiff(Set(basename(f) for f in files), keys(remote))
-    extra_remote = setdiff(keys(remote), Set(basename(f) for f in files))
-    isempty(missing_remote) && isempty(extra_remote) ||
-        error("files of record $record_id differ from the local files: missing on Zenodo " *
-              "$(join(sort(collect(missing_remote)), ", ")); only on Zenodo $(join(sort(collect(extra_remote)), ", "))")
-
+    check_remote_files(files, Dict(f["key"] => replace(f["checksum"], "md5:" => "") for f in rec["files"]),
+                       "record $record_id")
     entries = Dict{String,Any}()
     for f in files
         name = basename(f)
-        replace(remote[name]["checksum"], "md5:" => "") == file_md5(f.path) ||
-            error("$name of record $record_id differs from the local file $(f.path)")
         entries[name] = Dict(
             "uri" => "$base/records/$record_id/files/$name?download=1",
             "checksum" => checksum(f.path),

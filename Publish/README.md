@@ -89,20 +89,24 @@ because Zenodo is busy are tried again after a wait (up to about 7 min). If it s
 stops, run it again: it continues the same drafts, also those of an upload from
 another checkout (found by their title).
 
-**4. Publish** the drafts on https://zenodo.org/me/uploads, after checking them.
-Publishing cannot be undone.
-
-**5. Register** the published records, and commit and push the registry, which also
-updates the website:
+**4. Publish** the drafts and register them:
 
 ```bash
-julia --project=Publish Publish/scripts/zenodo.jl register Topo
-git add registry && git commit -m "registry: Topo v2.0.1" && git push
+julia --project=Publish Publish/scripts/zenodo.jl publish Topo
 ```
 
-`register` checks that the files on Zenodo are the local files and writes
-`registry/<Domain>/Topo.toml`. Drafts not yet published are skipped, so it can be run
-again after publishing them.
+`publish` checks each draft (its files are the local files of the release), lists
+them, and publishes them all after one confirmation; publishing cannot be undone. The
+drafts can also be looked at first on https://zenodo.org/me/uploads. It then registers
+the records: it writes `registry/<Domain>/Topo.toml` for each. (Drafts published on
+the website instead are registered with `register Topo`, which skips drafts not
+published yet.)
+
+**5. Commit and push the registry**, which also updates the website:
+
+```bash
+git add registry && git commit -m "registry: Topo v2.0.1" && git push
+```
 
 At any point, `status` shows each domain: its local files and their version, its draft
 (and whether it is published), and its registered version:
@@ -115,6 +119,11 @@ All commands take domains after the dataset to work on some only (e.g. `upload T
 Antarctica`). `--allow-untagged` skips the release checks, e.g. for a test. The drafts
 of `upload` are recorded in `registry/_drafts/` (local, not tracked) until they are
 registered.
+
+To start over, `discard Topo` deletes the unpublished drafts of a dataset on Zenodo.
+`drafts` lists all unpublished drafts of your account, and `discard <id> ...` deletes
+drafts by id (e.g. left over from an interrupted upload). Published records are never
+deleted.
 
 ## Zenodo access
 
