@@ -732,3 +732,24 @@ uris = [
     "http://ftp.climato.be/fettweis/MARv3.14/Greenland/ERA5-1km-monthly/MARv3.14-monthly-ERA5-2024.nc",
     "http://ftp.climato.be/fettweis/MARv3.14/Greenland/ERA5-1km-monthly/MARv3.14-monthly-ERA5-2025.nc",
 ]
+
+# Fox Maule et al. (2005), updated with the MF7 magnetic field model (M. Purucker, NASA
+# GSFC, core2.gsfc.nasa.gov/research/purucker/heatflux_updates.html, offline): equal-area
+# points (rings 1.5° apart) of Antarctica and Greenland, of the land north of 55°N, and
+# the magnetic crustal thickness north of 55°N. From the Wayback Machine (identical to
+# the copies in the old PIK archive, hpc:/data/sicopolis/data/GeothermalHeatFlux/).
+
+[foxmaule2005_ghf]
+doi = "10.1126/science.1106888"
+storage_path = "$datasets_dir/foxmaule2005_ghf/heatflux_mf7_foxmaule05.txt"
+uri = "https://web.archive.org/web/20161203221136id_/http://core2.gsfc.nasa.gov/research/purucker/heatflux_mf7_foxmaule05.txt"
+
+[foxmaule2005_ghf_npolar]
+doi = "10.1126/science.1106888"
+storage_path = "$datasets_dir/foxmaule2005_ghf/heatflux_mf7_foxmaule05_npolar.txt"
+uri = "https://web.archive.org/web/20161203221157id_/http://core2.gsfc.nasa.gov/research/purucker/heatflux_mf7_foxmaule05_npolar.txt"
+
+[foxmaule2005_mct_npolar]
+doi = "10.1126/science.1106888"
+storage_path = "$datasets_dir/foxmaule2005_ghf/mct_mf7_foxmaule05_npolar.txt"
+uri = "https://web.archive.org/web/20161204031812id_/http://core2.gsfc.nasa.gov/research/purucker/mct_mf7_foxmaule05_npolar.txt"
