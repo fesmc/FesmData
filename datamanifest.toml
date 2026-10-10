@@ -436,3 +436,22 @@ uri = "https://agupubs.onlinelibrary.wiley.com/action/downloadSupplement?doi=10.
 doi = "10.1016/j.epsl.2004.04.011"
 storage_path = "$datasets_dir/shapiro2004_ghf/hfmap.asc.gz"
 uri = "https://web.archive.org/web/20240806132053id_/http://ciei.colorado.edu/~nshapiro/MODEL/ASC_VERSION/hfmap.asc.gz"
+# Radiostratigraphy and age structure of the Greenland Ice Sheet, version 2 (RRRAG4 v2;
+# MacGregor et al., 2025), 5 km grid. Manual download (NASA Earthdata login) from the
+# uri below. Version 1 (MacGregor et al., 2015; doi:10.5067/UGI2BGTC4QJA) is retired.
+
+[rrrag4_v2]
+doi = "10.5067/SZSVA3CWV3U4"
+skip_download = true
+storage_path = "$datasets_dir/rrrag4_v2/RRRAG4_Greenland_1993_2019_02_age_grid.nc"
+uri = "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/ICEBRIDGE-Related/RRRAG4/2/1993/06/24/RRRAG4_Greenland_1993_2019_02_age_grid.nc"
+
+# Antarctic ice-shelf basal melt rates (Rignot et al., 2013), 1 km grid, version 2 on
+# Dryad. Manual download (Dryad does not allow scripted downloads), Ant_MeltingRate.v2.nc
+# into the folder, from the uri below.
+
+[rignot2013_melt_v2]
+doi = "10.5061/dryad.5hqbzkhg2"
+skip_download = true
+storage_path = "$datasets_dir/rignot2013_melt_v2/Ant_MeltingRate.v2.nc"
+uri = "https://datadryad.org/dataset/doi:10.5061/dryad.5hqbzkhg2"
