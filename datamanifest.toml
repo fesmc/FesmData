@@ -268,3 +268,13 @@ doi = "10.5067/SZSVA3CWV3U4"
 skip_download = true
 storage_path = "$datasets_dir/rrrag4_v2/RRRAG4_Greenland_1993_2019_02_age_grid.nc"
 uri = "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/ICEBRIDGE-Related/RRRAG4/2/1993/06/24/RRRAG4_Greenland_1993_2019_02_age_grid.nc"
+
+# Antarctic ice-shelf basal melt rates (Rignot et al., 2013), 1 km grid, version 2 on
+# Dryad. Manual download (Dryad does not allow scripted downloads), Ant_MeltingRate.v2.nc
+# into the folder, from the uri below.
+
+[rignot2013_melt_v2]
+doi = "10.5061/dryad.5hqbzkhg2"
+skip_download = true
+storage_path = "$datasets_dir/rignot2013_melt_v2/Ant_MeltingRate.v2.nc"
+uri = "https://datadryad.org/dataset/doi:10.5061/dryad.5hqbzkhg2"
