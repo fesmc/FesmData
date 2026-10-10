@@ -258,3 +258,39 @@ uri = "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/M
 [iso3166_m49]
 storage_path = "$datasets_dir/iso3166_m49/all.csv"
 uri = "https://raw.githubusercontent.com/lukes/ISO-3166-Countries-with-Regional-Codes/145f1ad3caff212ed25f42b0ee2c8b92a75af895/all/all.csv"
+
+# Buizert et al. (2018): Greenland seasonal temperature reconstruction, 22 ka to present
+# (NOAA NCEI paleo archive), and its 1981-2010 baseline climatology.
+
+[buizert2018_recon]
+doi = "10.25921/psvs-yg80"
+storage_path = "$datasets_dir/buizert2018/GLand_22ka_recon_Buizert_20161228.nc"
+uri = "https://www.ncei.noaa.gov/pub/data/paleo/reconstructions/buizert2018/GLand_22ka_recon_Buizert_20161228.nc"
+
+[buizert2018_baseline]
+doi = "10.25921/psvs-yg80"
+storage_path = "$datasets_dir/buizert2018/GLand_1981-2010_baseline_12282016.nc"
+uri = "https://www.ncei.noaa.gov/pub/data/paleo/reconstructions/buizert2018/GLand_1981-2010_baseline_12282016.nc"
+
+# Badgeley et al. (2020): Greenland annual mean temperature and precipitation, 20 ka to
+# present, from data assimilation (Arctic Data Center, CC0).
+
+[badgeley2020_tas_main]
+doi = "10.18739/A2599Z26M"
+storage_path = "$datasets_dir/badgeley2020/tas_main_Badgeley_etal_2020.nc"
+uri = "https://arcticdata.io/metacat/d1/mn/v2/object/urn:uuid:4a846c8d-5bd7-4e7c-a3c2-42be36ac0595"
+
+[badgeley2020_pr_main]
+doi = "10.18739/A2599Z26M"
+storage_path = "$datasets_dir/badgeley2020/pr_main_Badgeley_etal_2020.nc"
+uri = "https://arcticdata.io/metacat/d1/mn/v2/object/urn:uuid:6889d480-65c8-4b21-949e-7a1f81d18c42"
+
+[badgeley2020_pr_low]
+doi = "10.18739/A2599Z26M"
+storage_path = "$datasets_dir/badgeley2020/pr_low_Badgeley_etal_2020.nc"
+uri = "https://arcticdata.io/metacat/d1/mn/v2/object/urn:uuid:64b58bc8-0cf6-4e6b-95fd-7ee8d5e7d481"
+
+[badgeley2020_pr_high]
+doi = "10.18739/A2599Z26M"
+storage_path = "$datasets_dir/badgeley2020/pr_high_Badgeley_etal_2020.nc"
+uri = "https://arcticdata.io/metacat/d1/mn/v2/object/urn:uuid:c5e3fa59-7117-4fee-8163-07aae8519886"
