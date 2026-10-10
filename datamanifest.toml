@@ -258,3 +258,34 @@ uri = "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/M
 [iso3166_m49]
 storage_path = "$datasets_dir/iso3166_m49/all.csv"
 uri = "https://raw.githubusercontent.com/lukes/ISO-3166-Countries-with-Regional-Codes/145f1ad3caff212ed25f42b0ee2c8b92a75af895/all/all.csv"
+
+# PMIP3 (CMIP5) lgm, midHolocene and piControl: output of the NCAR Climate Variability
+# Diagnostics Package (CVDP v4.1.0) collected by the PMIP variability database
+# (past2future.org, Brierley & Wainer, 2018), one cvdp_data file per model and experiment
+# (PMIP3_cvdp/README.md). Not online any more: copied from the old PIK archive with
+#   scp hpc:/data/sicopolis/data/PMIP3/all_PMIP_cvdp_data/data/<file> /work/ba1442/data/pmip3_cvdp/
+# for the files listed in PMIP3_cvdp/prepare.jl.
+
+[pmip3_cvdp]
+doi = "10.5194/cp-14-1377-2018"
+skip_download = true
+storage_path = "$datasets_dir/pmip3_cvdp"
+uri = "http://past2future.org/"
+
+# PMIP3/CMIP5 LGM boundary conditions (v0, 2010; Abe-Ouchi et al., 2015): change of
+# surface elevation (LGM - PI), land fraction and ice fraction on a 1° grid.
+
+[pmip3_21k_orog_diff]
+doi = "10.5194/gmd-8-3621-2015"
+storage_path = "$datasets_dir/pmip3_21k_bc/pmip3_21k_orog_diff_v0.nc"
+uri = "https://pmip3.lsce.ipsl.fr/share/design/ice_bc/pmip3_21k_orog_diff_v0.nc"
+
+[pmip3_21k_sftlf]
+doi = "10.5194/gmd-8-3621-2015"
+storage_path = "$datasets_dir/pmip3_21k_bc/pmip3_21k_sftlf_v0.nc"
+uri = "https://pmip3.lsce.ipsl.fr/share/design/ice_bc/pmip3_21k_sftlf_v0.nc"
+
+[pmip3_21k_sftgif]
+doi = "10.5194/gmd-8-3621-2015"
+storage_path = "$datasets_dir/pmip3_21k_bc/pmip3_21k_sftgif_v0.nc"
+uri = "https://pmip3.lsce.ipsl.fr/share/design/ice_bc/pmip3_21k_sftgif_v0.nc"
