@@ -43,3 +43,21 @@ source = "Shapiro2004_ghf"
 file = "Shapiro2004_GHF.nc"
 variables = ["ghf", "ghf_sd"]
 domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+
+[products.Loesing2021]
+source = "Loesing2021_ghf"
+file = "Loesing2021_GHF.nc"
+variables = ["ghf", "ghf_min", "ghf_max"]
+domains = ["Antarctica"]
+
+[products.Stal2020]
+source = "Stal2020_ghf"
+file = "Stal2020_GHF.nc"
+variables = ["ghf", "ghf_unc"]
+domains = ["Antarctica"]
+
+[products.Colgan2021]
+source = "Colgan2021_ghf"
+file = "Colgan2021_GHF.nc"
+variables = ["ghf", "ghf_min", "ghf_max"]
+domains = ["Greenland"]

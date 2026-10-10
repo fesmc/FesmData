@@ -15,6 +15,9 @@ domains and onto global lon-lat grids. GHF is a thematic dataset made by remappi
 | `GHF-HazzardRichards2024` | Hazzard and Richards (2024): 0.5° map of Antarctica inferred from seismic velocities, [doi:10.1029/2023GL106274](https://doi.org/10.1029/2023GL106274) | `ghf`, `ghf_sd` (standard deviation) | Antarctica |
 | `GHF-Davies2013` | Davies (2013): 2° global map from observations, geology and young-ocean cooling, [doi:10.1002/ggge.20271](https://doi.org/10.1002/ggge.20271) | `ghf` (mean), `ghf_median`, `ghf_err` (error estimate) | Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Eurasia, Global |
 | `GHF-Shapiro2004` | Shapiro and Ritzwoller (2004): 1° global map extrapolated with a seismic model, [doi:10.1016/j.epsl.2004.04.011](https://doi.org/10.1016/j.epsl.2004.04.011) | `ghf`, `ghf_sd` (standard deviation) | Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Eurasia, Global |
+| `GHF-Loesing2021` | Lösing and Ebbing (2021): machine-learning map of Antarctica, about 55 km, [doi:10.1594/PANGAEA.930237](https://doi.org/10.1594/PANGAEA.930237) | `ghf`, `ghf_min`, `ghf_max` (range of alternative models) | Antarctica |
+| `GHF-Stal2020` | Stål et al. (2021): Aq1, 20 km map of Antarctica, [doi:10.1594/PANGAEA.924857](https://doi.org/10.1594/PANGAEA.924857) | `ghf`, `ghf_unc` (uncertainty) | Antarctica |
+| `GHF-Colgan2021` | Colgan and Wansing (2021): machine-learning map of Greenland, about 55 km, [doi:10.22008/FK2/F9P03L](https://doi.org/10.22008/FK2/F9P03L) | `ghf`, `ghf_min`, `ghf_max` (ensemble range) | Greenland |
 
 Each file `<GRID>_GHF-<Source>.nc` also has `f_valid`, the fraction of each cell
 covered by the source. Each source is remapped conservatively; on grids finer than the
@@ -32,6 +35,9 @@ for 0.5°), so that its cells do not show as steps. The global attribute
 | Hazzard and Richards (2024) | No licence set on OSF (article CC BY 4.0); publishing assumed to be allowed |
 | Davies (2013) | Wiley standard terms (no open licence): permission from AGU or the author is needed before release |
 | Shapiro and Ritzwoller (2004) | No licence stated; publishing assumed to be allowed |
+| Lösing and Ebbing (2021) | CC BY 4.0 (PANGAEA) |
+| Stål et al. (2021) | CC BY 4.0 (PANGAEA) |
+| Colgan and Wansing (2021) | CC0 1.0 (GEUS Dataverse) |
 
 The licence of each source is in its README and in the `license` attribute of its
 files. A source can be released under the FesmData licence (CC BY 4.0) only if its own
