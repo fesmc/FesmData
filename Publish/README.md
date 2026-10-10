@@ -85,9 +85,8 @@ for d in ANT GRL-PAL NH; do Topo/jobs/submit_domain.sh $d 1 all; done
 ```bash
 cd ../FesmData && git pull
 source shared/machines/levante.env
-julia --project=Publish -e 'using Pkg; Pkg.instantiate()'
-julia --project=Publish Publish/scripts/gitlab.jl upload Topo --dry-run
-julia --project=Publish Publish/scripts/gitlab.jl upload Topo
+julia Publish/scripts/gitlab.jl upload Topo --dry-run
+julia Publish/scripts/gitlab.jl upload Topo
 ```
 
 The dry run checks every domain (all files present, all at the release tag) and lists
@@ -106,7 +105,7 @@ At any point, `status` shows each domain: its local files and their version, its
 packages on GitLab, and its registered release (and DOI):
 
 ```bash
-julia --project=Publish Publish/scripts/gitlab.jl status Topo
+julia Publish/scripts/gitlab.jl status Topo
 ```
 
 All commands take domains after the dataset to work on some only (e.g. `upload Topo
@@ -119,8 +118,8 @@ the registry files go to `registry/_sandbox/`, which is not tracked (`fetch.jl
 --sandbox` downloads from them). Delete the test packages afterwards:
 
 ```bash
-julia --project=Publish Publish/scripts/gitlab.jl upload Topo Eurasia --sandbox --allow-untagged
-julia --project=Publish Publish/scripts/gitlab.jl delete Topo <version> Eurasia --sandbox
+julia Publish/scripts/gitlab.jl upload Topo Eurasia --sandbox --allow-untagged
+julia Publish/scripts/gitlab.jl delete Topo <version> Eurasia --sandbox
 ```
 
 ## Archive on Zenodo (optional)
@@ -129,8 +128,8 @@ A release on GitLab (with its registry) can be archived on Zenodo for a DOI, wit
 same local files, after step 3:
 
 ```bash
-julia --project=Publish Publish/scripts/zenodo.jl upload Topo
-julia --project=Publish Publish/scripts/zenodo.jl publish Topo
+julia Publish/scripts/zenodo.jl upload Topo
+julia Publish/scripts/zenodo.jl publish Topo
 git add registry && git commit -m "registry: Topo v2.0.1 on Zenodo" && git push
 ```
 
@@ -180,5 +179,5 @@ grids and files of the registry, with download links. It is built by
 Publish. To build it locally:
 
 ```bash
-julia --project=Publish Publish/scripts/site.jl _site
+julia Publish/scripts/site.jl _site
 ```

@@ -1,9 +1,9 @@
 # Release the products of a dataset on the store, the package registry of the GitLab
 # project (see Publish/README.md): one package per domain, dataset and grid.
 #
-#   julia --project=Publish Publish/scripts/gitlab.jl upload <Dataset> [<Domain> ...] [options]
-#   julia --project=Publish Publish/scripts/gitlab.jl status <Dataset> [<Domain> ...] [options]
-#   julia --project=Publish Publish/scripts/gitlab.jl delete <Dataset> <version> [<Domain> ...] [options]
+#   julia Publish/scripts/gitlab.jl upload <Dataset> [<Domain> ...] [options]
+#   julia Publish/scripts/gitlab.jl status <Dataset> [<Domain> ...] [options]
+#   julia Publish/scripts/gitlab.jl delete <Dataset> <version> [<Domain> ...] [options]
 #
 # Without domains: all domains with files of the dataset (upload), all domains (status,
 # delete).
@@ -18,6 +18,11 @@
 #                       in registry/_sandbox/
 #   --allow-untagged    skip the release checks (files made at a release tag)
 #   --dry-run           (upload) check and list the packages and files only
+
+# The Publish environment, with its packages installed if needed (fast if they are)
+import Pkg
+Pkg.activate(joinpath(@__DIR__, ".."); io=devnull)
+Pkg.instantiate()
 
 include(joinpath(@__DIR__, "..", "gitlab.jl"))
 

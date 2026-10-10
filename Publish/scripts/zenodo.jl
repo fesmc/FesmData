@@ -1,13 +1,13 @@
 # Archive releases of a dataset on Zenodo, optional, for a DOI: one record per domain
 # (see Publish/README.md). The release must be on the store first (gitlab.jl upload).
 #
-#   julia --project=Publish Publish/scripts/zenodo.jl upload   <Dataset> [<Domain> ...] [options]
-#   julia --project=Publish Publish/scripts/zenodo.jl status   <Dataset> [<Domain> ...] [options]
-#   julia --project=Publish Publish/scripts/zenodo.jl publish  <Dataset> [<Domain> ...] [options]
-#   julia --project=Publish Publish/scripts/zenodo.jl register <Dataset> [<Domain> ...] [options]
-#   julia --project=Publish Publish/scripts/zenodo.jl discard  <Dataset> [<Domain> ...] [options]
-#   julia --project=Publish Publish/scripts/zenodo.jl discard  <draft id> ... [options]
-#   julia --project=Publish Publish/scripts/zenodo.jl drafts [options]
+#   julia Publish/scripts/zenodo.jl upload   <Dataset> [<Domain> ...] [options]
+#   julia Publish/scripts/zenodo.jl status   <Dataset> [<Domain> ...] [options]
+#   julia Publish/scripts/zenodo.jl publish  <Dataset> [<Domain> ...] [options]
+#   julia Publish/scripts/zenodo.jl register <Dataset> [<Domain> ...] [options]
+#   julia Publish/scripts/zenodo.jl discard  <Dataset> [<Domain> ...] [options]
+#   julia Publish/scripts/zenodo.jl discard  <draft id> ... [options]
+#   julia Publish/scripts/zenodo.jl drafts [options]
 #
 # Without domains: all domains with files of the dataset (upload), all domains (status),
 # all domains with a draft (publish, register, discard).
@@ -25,6 +25,11 @@
 #   --allow-untagged    skip the release checks (files made at a release tag)
 #   --dry-run           (upload) check and list the files only
 #   --yes               (publish) do not ask for confirmation
+
+# The Publish environment, with its packages installed if needed (fast if they are)
+import Pkg
+Pkg.activate(joinpath(@__DIR__, ".."); io=devnull)
+Pkg.instantiate()
 
 include(joinpath(@__DIR__, "..", "zenodo.jl"))
 

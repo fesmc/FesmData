@@ -251,7 +251,7 @@ function upload(dataset::AbstractString, domains=String[]; sandbox::Bool=false,
     println("""
 
         Review the drafts on $(zenodo_url(sandbox))/me/uploads if needed, then publish them:
-            julia --project=Publish Publish/scripts/zenodo.jl publish $dataset$flags""")
+            julia Publish/scripts/zenodo.jl publish $dataset$flags""")
 end
 
 "Recorded drafts of a dataset that are not published yet, as domain => draft."

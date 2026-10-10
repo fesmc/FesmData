@@ -1,6 +1,6 @@
 # Write the website of the published products (see Publish/README.md).
 #
-#   julia --project=Publish Publish/scripts/site.jl [DIR]     # default: _site
+#   julia Publish/scripts/site.jl [DIR]     # default: _site
 
 include(joinpath(@__DIR__, "..", "site.jl"))
 
