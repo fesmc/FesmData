@@ -50,3 +50,13 @@ description = """
 Geothermal heat flow from published maps, remapped conservatively onto the grids of a
 model domain (and smoothed on grids finer than the map), or onto global lon-lat grids.
 """
+
+[Sediment]
+tag = "sediment"
+title = "sediment thickness"
+readme = "Sediment/README.md"
+keywords = ["sediment thickness", "ice sheet", "model input"]
+description = """
+Sediment thickness from global maps, remapped conservatively onto the grids of a model
+domain (and smoothed on grids finer than the map), or onto global lon-lat grids.
+"""

@@ -34,6 +34,8 @@ website:
             href: datasets/regions.qmd
           - text: "GHF — geothermal heat flow"
             href: datasets/ghf.qmd
+          - text: "Sediment — sediment thickness"
+            href: datasets/sediment.qmd
       - text: "Your own data"
         href: remap.qmd
       - text: "Releasing"
