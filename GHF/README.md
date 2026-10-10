@@ -18,6 +18,15 @@ domains and onto global lon-lat grids. GHF is a thematic dataset made by remappi
 | `GHF-Loesing2021` | Lösing and Ebbing (2021): machine-learning map of Antarctica, about 55 km, [doi:10.1594/PANGAEA.930237](https://doi.org/10.1594/PANGAEA.930237) | `ghf`, `ghf_min`, `ghf_max` (range of alternative models) | Antarctica |
 | `GHF-Stal2020` | Stål et al. (2021): Aq1, 20 km map of Antarctica, [doi:10.1594/PANGAEA.924857](https://doi.org/10.1594/PANGAEA.924857) | `ghf`, `ghf_unc` (uncertainty) | Antarctica |
 | `GHF-Colgan2021` | Colgan and Wansing (2021): machine-learning map of Greenland, about 55 km, [doi:10.22008/FK2/F9P03L](https://doi.org/10.22008/FK2/F9P03L) | `ghf`, `ghf_min`, `ghf_max` (ensemble range) | Greenland |
+| `GHF-FoxMaule2005` | Fox Maule et al. (2005): map from satellite magnetic data (Curie depth), updated with the MF7 model, about 170 km, land only, [doi:10.1126/science.1106888](https://doi.org/10.1126/science.1106888) | `ghf`, `h_mag` (magnetic crustal thickness, km, north of 55°N only) | Antarctica (no data south of 87.75°S), GreenlandPaleo, Greenland |
+| `GHF-Colgan2021-topocorr-GRL` | Colgan et al. (2021): relative topographic correction at 150 m (BedMachine), [doi:10.22008/FK2/BQGYYG](https://doi.org/10.22008/FK2/BQGYYG) | `ghf_corr`, `ghf_corr_unc` (dimensionless) | Greenland |
+| `GHF-Colgan2021-topocorr-ANT` | Colgan et al. (2021): relative topographic correction at 500 m (BedMachine), [doi:10.22008/FK2/BQGYYG](https://doi.org/10.22008/FK2/BQGYYG) | `ghf_corr`, `ghf_corr_unc` (dimensionless) | Antarctica |
+
+The topographic correction of Colgan et al. (2021) is not a heat flow but a
+dimensionless relative correction (about 0 on average), to be applied to any heat flow
+product as corrected heat flow = (1 + `ghf_corr`) × `ghf` (higher heat flow in
+valleys, lower on ridges). It is made on all grids, as it resolves the bed topography
+finer than any of them.
 
 Each file `<GRID>_GHF-<Source>.nc` also has `f_valid`, the fraction of each cell
 covered by the source. Each source is remapped conservatively; on grids finer than the
@@ -38,6 +47,8 @@ for 0.5°), so that its cells do not show as steps. The global attribute
 | Lösing and Ebbing (2021) | CC BY 4.0 (PANGAEA) |
 | Stål et al. (2021) | CC BY 4.0 (PANGAEA) |
 | Colgan and Wansing (2021) | CC0 1.0 (GEUS Dataverse) |
+| Fox Maule et al. (2005) | No licence stated (NASA GSFC web page, users asked to cite the paper); publishing assumed to be allowed |
+| Colgan et al. (2021), topographic correction | CC0 1.0 (GEUS Dataverse) |
 
 The licence of each source is in its README and in the `license` attribute of its
 files. A source can be released under the FesmData licence (CC BY 4.0) only if its own

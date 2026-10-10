@@ -757,3 +757,37 @@ uri = "https://g-ab4495.8c185.08cc.data.globus.org/ISMIP7/AIS/obs/ocean/climatol
 doi = "10.5194/egusphere-2026-5337"
 storage_path = "$datasets_dir/ismip7_ais_ocean/IMBIE-basins_AIS_obs_ocean_v3.nc"
 uri = "https://g-ab4495.8c185.08cc.data.globus.org/ISMIP7/AIS/obs/ocean/IMBIE-basins/v3/IMBIE-basins_AIS_obs_ocean_v3.nc"
+# Fox Maule et al. (2005), updated with the MF7 magnetic field model (M. Purucker, NASA
+# GSFC, core2.gsfc.nasa.gov/research/purucker/heatflux_updates.html, offline): equal-area
+# points (rings 1.5° apart) of Antarctica and Greenland, of the land north of 55°N, and
+# the magnetic crustal thickness north of 55°N. From the Wayback Machine (identical to
+# the copies in the old PIK archive, hpc:/data/sicopolis/data/GeothermalHeatFlux/).
+
+[foxmaule2005_ghf]
+doi = "10.1126/science.1106888"
+storage_path = "$datasets_dir/foxmaule2005_ghf/heatflux_mf7_foxmaule05.txt"
+uri = "https://web.archive.org/web/20161203221136id_/http://core2.gsfc.nasa.gov/research/purucker/heatflux_mf7_foxmaule05.txt"
+
+[foxmaule2005_ghf_npolar]
+doi = "10.1126/science.1106888"
+storage_path = "$datasets_dir/foxmaule2005_ghf/heatflux_mf7_foxmaule05_npolar.txt"
+uri = "https://web.archive.org/web/20161203221157id_/http://core2.gsfc.nasa.gov/research/purucker/heatflux_mf7_foxmaule05_npolar.txt"
+
+[foxmaule2005_mct_npolar]
+doi = "10.1126/science.1106888"
+storage_path = "$datasets_dir/foxmaule2005_ghf/mct_mf7_foxmaule05_npolar.txt"
+uri = "https://web.archive.org/web/20161204031812id_/http://core2.gsfc.nasa.gov/research/purucker/mct_mf7_foxmaule05_npolar.txt"
+
+# Colgan et al. (2021): topographic correction of geothermal heat flow (dimensionless
+# factor and its uncertainty) on the BedMachine grids (Antarctica 500 m, Greenland
+# 150 m), GEUS Dataverse file ids 19029 and 19030.
+
+[colgan2021_topocorr_antarctica]
+doi = "10.22008/FK2/BQGYYG"
+storage_path = "$datasets_dir/colgan2021_topoheat/TopoHeat_Antarctica_20210224.nc"
+uri = "https://dataverse.geus.dk/api/access/datafile/19029"
+
+[colgan2021_topocorr_greenland]
+doi = "10.22008/FK2/BQGYYG"
+storage_path = "$datasets_dir/colgan2021_topoheat/TopoHeat_Greenland_20210224.nc"
+uri = "https://dataverse.geus.dk/api/access/datafile/19030"
