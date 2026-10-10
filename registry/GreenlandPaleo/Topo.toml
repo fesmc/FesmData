@@ -1,0 +1,217 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-10"
+git_tag = "topo-v2.0.0"
+store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=GreenlandPaleo_Topo_"
+version = "2.0.0"
+
+["GRL-PAL-16KM_TOPO-BedMachine-v4.nc"]
+checksum = "sha256:989b113847494727a691a1cfb6f9e493592ab8869881f1d309b1fc14b7961301"
+size = 390369
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_TOPO-BedMachine-v4.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Topo_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_TOPO-BedMachine-v4.nc"
+
+["GRL-PAL-16KM_TOPO-BedMachine-v5.nc"]
+checksum = "sha256:56499ba8d92ea14b54a81d309e48b9ecd1b5f1a24f1c9233b62678ed1cf0cf98"
+size = 391494
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_TOPO-BedMachine-v5.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Topo_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_TOPO-BedMachine-v5.nc"
+
+["GRL-PAL-16KM_TOPO-BedMachine-v6.nc"]
+checksum = "sha256:9a9a5e77da82b91757671dddb4271b5bb7fd5c5f9e16682f3127f14c7fc28c9a"
+size = 395933
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_TOPO-BedMachine-v6.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Topo_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_TOPO-BedMachine-v6.nc"
+
+["GRL-PAL-16KM_grid.nc"]
+checksum = "sha256:641614ed64e7a6989a9b632764bc593855f65f70fc7a200f9a89263c0fee7f3e"
+size = 197958
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Topo_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_grid.nc"
+
+["GRL-PAL-1KM_TOPO-BedMachine-v4.nc"]
+checksum = "sha256:c0a1b8bbd79866359e10949bd04a9f9caaff95cf086fdf457283d86d37948ab2"
+size = 60111166
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-1KM/GRL-PAL-1KM_TOPO-BedMachine-v4.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Topo_GRL-PAL-1KM/2.0.0/GRL-PAL-1KM_TOPO-BedMachine-v4.nc"
+
+["GRL-PAL-1KM_TOPO-BedMachine-v5.nc"]
+checksum = "sha256:044cbfc5265d5477dde7128ce705f7000ff66f7ccd4b529f92ba25cd81cf7dbc"
+size = 60494398
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-1KM/GRL-PAL-1KM_TOPO-BedMachine-v5.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Topo_GRL-PAL-1KM/2.0.0/GRL-PAL-1KM_TOPO-BedMachine-v5.nc"
+
+["GRL-PAL-1KM_TOPO-BedMachine-v6.nc"]
+checksum = "sha256:4a1a52f82af4d7ea4bd9b92d06ef1f6af1df70d1f6dfe95df608659601d246b4"
+size = 60893921
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-1KM/GRL-PAL-1KM_TOPO-BedMachine-v6.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Topo_GRL-PAL-1KM/2.0.0/GRL-PAL-1KM_TOPO-BedMachine-v6.nc"
+
+["GRL-PAL-1KM_grid.nc"]
+checksum = "sha256:051ad90e75b01946068ed84b3a3a0968ccd06820fa40c751454ad2e9e7f17eea"
+size = 26440010
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-1KM/GRL-PAL-1KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Topo_GRL-PAL-1KM/2.0.0/GRL-PAL-1KM_grid.nc"
+
+["GRL-PAL-2KM_TOPO-BedMachine-v4.nc"]
+checksum = "sha256:dbbcf31935ae999ca81ac8a06be3a83f29f3ff9ff983583732384840f3ab20eb"
+size = 16236070
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-2KM/GRL-PAL-2KM_TOPO-BedMachine-v4.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Topo_GRL-PAL-2KM/2.0.0/GRL-PAL-2KM_TOPO-BedMachine-v4.nc"
+
+["GRL-PAL-2KM_TOPO-BedMachine-v5.nc"]
+checksum = "sha256:30b358b1db0c816c6ee4b9de229548062f30fd5171954a5be016fe63781c25e3"
+size = 16322585
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-2KM/GRL-PAL-2KM_TOPO-BedMachine-v5.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Topo_GRL-PAL-2KM/2.0.0/GRL-PAL-2KM_TOPO-BedMachine-v5.nc"
+
+["GRL-PAL-2KM_TOPO-BedMachine-v6.nc"]
+checksum = "sha256:560d67b4ab848292b7da43f686ca23659ee4b9912febe38f6acfdcd1d1b0958c"
+size = 16464791
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-2KM/GRL-PAL-2KM_TOPO-BedMachine-v6.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Topo_GRL-PAL-2KM/2.0.0/GRL-PAL-2KM_TOPO-BedMachine-v6.nc"
+
+["GRL-PAL-2KM_grid.nc"]
+checksum = "sha256:b8bc00290e86b21effb37f08445b745f46a9b507cf09422dcc0fa8e3784ed031"
+size = 7452261
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-2KM/GRL-PAL-2KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Topo_GRL-PAL-2KM/2.0.0/GRL-PAL-2KM_grid.nc"
+
+["GRL-PAL-32KM_TOPO-BedMachine-v4.nc"]
+checksum = "sha256:538b639b96a0e4a30009e119a761ecbd1008e2df3d3e98a4e3c8f44019eedfbf"
+size = 146355
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_TOPO-BedMachine-v4.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Topo_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_TOPO-BedMachine-v4.nc"
+
+["GRL-PAL-32KM_TOPO-BedMachine-v5.nc"]
+checksum = "sha256:a461d506e079569b28fdc220d01a0971ff9088048b3ea55a9f3c0cecea84551b"
+size = 146478
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_TOPO-BedMachine-v5.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Topo_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_TOPO-BedMachine-v5.nc"
+
+["GRL-PAL-32KM_TOPO-BedMachine-v6.nc"]
+checksum = "sha256:52cb21b3aea841aecdfacf1c2f5c449b880f2714ad7bb4ea5568c0de7ada5634"
+size = 147793
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_TOPO-BedMachine-v6.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Topo_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_TOPO-BedMachine-v6.nc"
+
+["GRL-PAL-32KM_grid.nc"]
+checksum = "sha256:c94aeb9d12df68c5429b6e9ac944b6ed3328db1b3bcc9d10942a26343bde80f1"
+size = 70200
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Topo_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_grid.nc"
+
+["GRL-PAL-4KM_TOPO-BedMachine-v4.nc"]
+checksum = "sha256:1f8481bd16b3e32a1d939af20b5710d8d86ed10b93f38d709e54646cae3d3af9"
+size = 4423428
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/GRL-PAL-4KM_TOPO-BedMachine-v4.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Topo_GRL-PAL-4KM/2.0.0/GRL-PAL-4KM_TOPO-BedMachine-v4.nc"
+
+["GRL-PAL-4KM_TOPO-BedMachine-v5.nc"]
+checksum = "sha256:ee8e4534c5b11e4fbcc84e29e943035360552985b1717697e9586d23bd3760f2"
+size = 4445090
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/GRL-PAL-4KM_TOPO-BedMachine-v5.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Topo_GRL-PAL-4KM/2.0.0/GRL-PAL-4KM_TOPO-BedMachine-v5.nc"
+
+["GRL-PAL-4KM_TOPO-BedMachine-v6.nc"]
+checksum = "sha256:1b266e6230f45623d0abc2b47d58bafa0f09d35cc26a0c7a9215132d833e897f"
+size = 4491712
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/GRL-PAL-4KM_TOPO-BedMachine-v6.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Topo_GRL-PAL-4KM/2.0.0/GRL-PAL-4KM_TOPO-BedMachine-v6.nc"
+
+["GRL-PAL-4KM_grid.nc"]
+checksum = "sha256:69ea06b475ce4c286038e45b4e083ee61794c4e80053a4c21c0e088399a16270"
+size = 2137731
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/GRL-PAL-4KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Topo_GRL-PAL-4KM/2.0.0/GRL-PAL-4KM_grid.nc"
+
+["GRL-PAL-500M_TOPO-BedMachine-v4.nc"]
+checksum = "sha256:0bfdd63eaee9d3046b93c10a5c458fcfbeb18a65bee9c5504720a1f4f30460cf"
+size = 217998464
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-500M/GRL-PAL-500M_TOPO-BedMachine-v4.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Topo_GRL-PAL-500M/2.0.0/GRL-PAL-500M_TOPO-BedMachine-v4.nc"
+
+["GRL-PAL-500M_TOPO-BedMachine-v5.nc"]
+checksum = "sha256:246bdb4e003cf26718f02257d1aaa8dec4e9362a7b6bac601049bd8caf18f4e2"
+size = 219809141
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-500M/GRL-PAL-500M_TOPO-BedMachine-v5.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Topo_GRL-PAL-500M/2.0.0/GRL-PAL-500M_TOPO-BedMachine-v5.nc"
+
+["GRL-PAL-500M_TOPO-BedMachine-v6.nc"]
+checksum = "sha256:31d9bbb96ae159e3e710f9dbbba1047e189d6daee38508253c73312e60b471f1"
+size = 220559091
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-500M/GRL-PAL-500M_TOPO-BedMachine-v6.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Topo_GRL-PAL-500M/2.0.0/GRL-PAL-500M_TOPO-BedMachine-v6.nc"
+
+["GRL-PAL-500M_grid.nc"]
+checksum = "sha256:4a90f13716e62533ae4a184dbc1fdc85e6802cb6a9e3e62eb0b34ca226e18cdc"
+size = 88238159
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-500M/GRL-PAL-500M_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Topo_GRL-PAL-500M/2.0.0/GRL-PAL-500M_grid.nc"
+
+["GRL-PAL-8KM_TOPO-BedMachine-v4.nc"]
+checksum = "sha256:abfde7de9623c4f732cfba3a0589cebfec1924ab2c5ea4be9a0064af30ed531d"
+size = 1254672
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_TOPO-BedMachine-v4.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Topo_GRL-PAL-8KM/2.0.0/GRL-PAL-8KM_TOPO-BedMachine-v4.nc"
+
+["GRL-PAL-8KM_TOPO-BedMachine-v5.nc"]
+checksum = "sha256:5bebc322096b9b1e2a54b1c65efb317f0f8e2e62ca04cf5f530f6e1dcc4b7575"
+size = 1258641
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_TOPO-BedMachine-v5.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Topo_GRL-PAL-8KM/2.0.0/GRL-PAL-8KM_TOPO-BedMachine-v5.nc"
+
+["GRL-PAL-8KM_TOPO-BedMachine-v6.nc"]
+checksum = "sha256:60c3ad109a6e7f51ae05310b1f56790ae71fb2f31a9ec20597ad643dc0910a69"
+size = 1273231
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_TOPO-BedMachine-v6.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Topo_GRL-PAL-8KM/2.0.0/GRL-PAL-8KM_TOPO-BedMachine-v6.nc"
+
+["GRL-PAL-8KM_grid.nc"]
+checksum = "sha256:16aa24f1cb3018fd4813ef64d58bd23aac3af70ef50ee98296c75ddad16c6f0b"
+size = 631820
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Topo_GRL-PAL-8KM/2.0.0/GRL-PAL-8KM_grid.nc"
+
+["grid_GRL-PAL-16KM.txt"]
+checksum = "sha256:1f2dd6b17cd99dee69b34afe4a7f49e087d4f935e01d862b2392ebebb071ea31"
+size = 466
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/grid_GRL-PAL-16KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Topo_GRL-PAL-16KM/2.0.0/grid_GRL-PAL-16KM.txt"
+
+["grid_GRL-PAL-1KM.txt"]
+checksum = "sha256:2fc92ab8c6623174a42f3ce9eba446c9bae25d8e1a162e5afa009ed5e15cde74"
+size = 468
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-1KM/grid_GRL-PAL-1KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Topo_GRL-PAL-1KM/2.0.0/grid_GRL-PAL-1KM.txt"
+
+["grid_GRL-PAL-2KM.txt"]
+checksum = "sha256:0b3a2eb4e99075435eb56acb2ded8b17cf553fce8a38af0feae840e8a1c4896e"
+size = 468
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-2KM/grid_GRL-PAL-2KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Topo_GRL-PAL-2KM/2.0.0/grid_GRL-PAL-2KM.txt"
+
+["grid_GRL-PAL-32KM.txt"]
+checksum = "sha256:cf0d0b1b8155818d7b19aa0eb4ebc0539c6a7d4d2ed0ddca89822c5f697e6646"
+size = 463
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/grid_GRL-PAL-32KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Topo_GRL-PAL-32KM/2.0.0/grid_GRL-PAL-32KM.txt"
+
+["grid_GRL-PAL-4KM.txt"]
+checksum = "sha256:3ef324e1bb441b7c2b48632ee65a337255fe992cdba249417f182c929089cf0f"
+size = 465
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/grid_GRL-PAL-4KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Topo_GRL-PAL-4KM/2.0.0/grid_GRL-PAL-4KM.txt"
+
+["grid_GRL-PAL-500M.txt"]
+checksum = "sha256:e09884485736d8b25bc95d5ed7e8d12114f9ce1b56e0d793f6b0ecbd862ffb2b"
+size = 469
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-500M/grid_GRL-PAL-500M.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Topo_GRL-PAL-500M/2.0.0/grid_GRL-PAL-500M.txt"
+
+["grid_GRL-PAL-8KM.txt"]
+checksum = "sha256:08c7a03da8b258951eebef55634ad60f44f0f7fe965aa38e7dd26e4ca287d743"
+size = 465
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/grid_GRL-PAL-8KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Topo_GRL-PAL-8KM/2.0.0/grid_GRL-PAL-8KM.txt"

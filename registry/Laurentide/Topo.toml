@@ -1,0 +1,97 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-10"
+git_tag = "topo-v2.0.0"
+store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=Laurentide_Topo_"
+version = "2.0.0"
+
+["LIS-16KM_TOPO-GEBCO2026.nc"]
+checksum = "sha256:8d97cbf2eb6be97d0066f4e541734195960480d378c2715d1d917ea00423f5b2"
+size = 1434771
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_TOPO-GEBCO2026.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Topo_LIS-16KM/2.0.0/LIS-16KM_TOPO-GEBCO2026.nc"
+
+["LIS-16KM_grid.nc"]
+checksum = "sha256:9d90be456f08f945c8b097fb0900ddcb853666ea15d98e038b850317967362a3"
+size = 772321
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Topo_LIS-16KM/2.0.0/LIS-16KM_grid.nc"
+
+["LIS-2KM_TOPO-GEBCO2026.nc"]
+checksum = "sha256:3323881b5c9aaa06ce4f4d2451f041cc8d2a61ee2256f077eeb44bf73a3e6ed8"
+size = 70363801
+storage_path = "$datasets_dir/Laurentide/LIS-2KM/LIS-2KM_TOPO-GEBCO2026.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Topo_LIS-2KM/2.0.0/LIS-2KM_TOPO-GEBCO2026.nc"
+
+["LIS-2KM_grid.nc"]
+checksum = "sha256:345ed788bff752a95c87edcf1cb0e6fbab9172937a7205137ab3416362c25257"
+size = 34480008
+storage_path = "$datasets_dir/Laurentide/LIS-2KM/LIS-2KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Topo_LIS-2KM/2.0.0/LIS-2KM_grid.nc"
+
+["LIS-32KM_TOPO-GEBCO2026.nc"]
+checksum = "sha256:1b51633d4a26eeb3d67eebc50ff0f3fb4cc2736cdb30ce9ac4d5099465299b2f"
+size = 434506
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_TOPO-GEBCO2026.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Topo_LIS-32KM/2.0.0/LIS-32KM_TOPO-GEBCO2026.nc"
+
+["LIS-32KM_grid.nc"]
+checksum = "sha256:a0c50b74b4a45787d5ad2c6183e5f1d339143079fd1302b0aad52cb13f8c5bbc"
+size = 249167
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Topo_LIS-32KM/2.0.0/LIS-32KM_grid.nc"
+
+["LIS-4KM_TOPO-GEBCO2026.nc"]
+checksum = "sha256:a44420598d61ef013f7406bcf8ed2892fc360c016fe3bae9dc5da2e0a3d0fd84"
+size = 19134964
+storage_path = "$datasets_dir/Laurentide/LIS-4KM/LIS-4KM_TOPO-GEBCO2026.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Topo_LIS-4KM/2.0.0/LIS-4KM_TOPO-GEBCO2026.nc"
+
+["LIS-4KM_grid.nc"]
+checksum = "sha256:3000d9a81efb07c8b6ca0c9adcdab153945f8954ed05ca5e1435767d38896d80"
+size = 9665107
+storage_path = "$datasets_dir/Laurentide/LIS-4KM/LIS-4KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Topo_LIS-4KM/2.0.0/LIS-4KM_grid.nc"
+
+["LIS-8KM_TOPO-GEBCO2026.nc"]
+checksum = "sha256:5f4fd1610044b2ed45db32d2269ee16eea38da6459625c29036272cf105dfd2b"
+size = 5136109
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_TOPO-GEBCO2026.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Topo_LIS-8KM/2.0.0/LIS-8KM_TOPO-GEBCO2026.nc"
+
+["LIS-8KM_grid.nc"]
+checksum = "sha256:39001f264d08010e472852f6861b6b6d6cdc15ffd7553d52b01acb51f22501ee"
+size = 2816888
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Topo_LIS-8KM/2.0.0/LIS-8KM_grid.nc"
+
+["grid_LIS-16KM.txt"]
+checksum = "sha256:4ff24933bce97627a1ffe6ec62ed994aabb15889197dda6597cc2ef85b623178"
+size = 467
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/grid_LIS-16KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Topo_LIS-16KM/2.0.0/grid_LIS-16KM.txt"
+
+["grid_LIS-2KM.txt"]
+checksum = "sha256:9ed5e4f961114dee7efdb6c2a7f7141f748388059c72eae33d846d2784d22408"
+size = 468
+storage_path = "$datasets_dir/Laurentide/LIS-2KM/grid_LIS-2KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Topo_LIS-2KM/2.0.0/grid_LIS-2KM.txt"
+
+["grid_LIS-32KM.txt"]
+checksum = "sha256:0c5e99f11a025d656ee88fcbce389f89b815c0ca4c6a1dcf08868ffbafe0d09b"
+size = 466
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/grid_LIS-32KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Topo_LIS-32KM/2.0.0/grid_LIS-32KM.txt"
+
+["grid_LIS-4KM.txt"]
+checksum = "sha256:fe2c0508c9d2b2faa8ef7ac20d6c196e1e726d93c5ffbf7d4b59901783a837be"
+size = 468
+storage_path = "$datasets_dir/Laurentide/LIS-4KM/grid_LIS-4KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Topo_LIS-4KM/2.0.0/grid_LIS-4KM.txt"
+
+["grid_LIS-8KM.txt"]
+checksum = "sha256:97811d3bbc0376118996535a4ec7c0209bf01f10bfb60bc738bb05b6eab6caa4"
+size = 465
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/grid_LIS-8KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Topo_LIS-8KM/2.0.0/grid_LIS-8KM.txt"

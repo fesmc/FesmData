@@ -1,0 +1,97 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-10"
+git_tag = "topo-v2.0.0"
+store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=North_Topo_"
+version = "2.0.0"
+
+["NH-16KM_TOPO-GEBCO2026.nc"]
+checksum = "sha256:f07ef7bb60a04229e05d0ca7fc2a0a1b863735948e9dc99b4e6bffe5169a1910"
+size = 3037949
+storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_TOPO-GEBCO2026.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/North_Topo_NH-16KM/2.0.0/NH-16KM_TOPO-GEBCO2026.nc"
+
+["NH-16KM_grid.nc"]
+checksum = "sha256:5a64b9ab83264c23ca7c96aa0a1a1b02debcea94890fb2556039c205a148d957"
+size = 1877147
+storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/North_Topo_NH-16KM/2.0.0/NH-16KM_grid.nc"
+
+["NH-2KM_TOPO-GEBCO2026.nc"]
+checksum = "sha256:a0304f4d961cfe02c4765d8374e68c988f49481bb7ab1945a35303dd74c56c3d"
+size = 155009492
+storage_path = "$datasets_dir/North/NH-2KM/NH-2KM_TOPO-GEBCO2026.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/North_Topo_NH-2KM/2.0.0/NH-2KM_TOPO-GEBCO2026.nc"
+
+["NH-2KM_grid.nc"]
+checksum = "sha256:17ea7246834ca75081390a11841f74d1316d1f58fcc4bb33e6df3d5a2b3febe6"
+size = 81390432
+storage_path = "$datasets_dir/North/NH-2KM/NH-2KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/North_Topo_NH-2KM/2.0.0/NH-2KM_grid.nc"
+
+["NH-32KM_TOPO-GEBCO2026.nc"]
+checksum = "sha256:06e13d800d7d31e7431da787972a433e494f8a81e67c6a40915ad84fd34f11bb"
+size = 876276
+storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_TOPO-GEBCO2026.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/North_Topo_NH-32KM/2.0.0/NH-32KM_TOPO-GEBCO2026.nc"
+
+["NH-32KM_grid.nc"]
+checksum = "sha256:3d48fc58818a8820d1c19088ab3ac0a0aa5f463ca080d4d5f8f60d0fc525894f"
+size = 543810
+storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/North_Topo_NH-32KM/2.0.0/NH-32KM_grid.nc"
+
+["NH-4KM_TOPO-GEBCO2026.nc"]
+checksum = "sha256:4616bb721440f66331b8b32917f0c5146d174d975f3056351835fe48bc690d63"
+size = 41733402
+storage_path = "$datasets_dir/North/NH-4KM/NH-4KM_TOPO-GEBCO2026.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/North_Topo_NH-4KM/2.0.0/NH-4KM_TOPO-GEBCO2026.nc"
+
+["NH-4KM_grid.nc"]
+checksum = "sha256:e237d8848d1250e9fa59fc281f80e16784adff8c496c9d9989f29046f6830e94"
+size = 22917775
+storage_path = "$datasets_dir/North/NH-4KM/NH-4KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/North_Topo_NH-4KM/2.0.0/NH-4KM_grid.nc"
+
+["NH-8KM_TOPO-GEBCO2026.nc"]
+checksum = "sha256:d248269a868b044132ee73d7e681a8dcf2c90afd39f615f765735ca5efcc0b8d"
+size = 11169930
+storage_path = "$datasets_dir/North/NH-8KM/NH-8KM_TOPO-GEBCO2026.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/North_Topo_NH-8KM/2.0.0/NH-8KM_TOPO-GEBCO2026.nc"
+
+["NH-8KM_grid.nc"]
+checksum = "sha256:ae6fa2991da8179295e27f76c8de94a400b394c3335375b0255f570a6ceb95cf"
+size = 6587106
+storage_path = "$datasets_dir/North/NH-8KM/NH-8KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/North_Topo_NH-8KM/2.0.0/NH-8KM_grid.nc"
+
+["grid_NH-16KM.txt"]
+checksum = "sha256:b784904b58207dc754c6dbb670f90ccd35dfccfadbd68bfea1c239abac6a7c89"
+size = 467
+storage_path = "$datasets_dir/North/NH-16KM/grid_NH-16KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/North_Topo_NH-16KM/2.0.0/grid_NH-16KM.txt"
+
+["grid_NH-2KM.txt"]
+checksum = "sha256:8512e56bf6d59c6a51776662bdc110a6179897b1b4e1b898f2bce8bdb71c7189"
+size = 469
+storage_path = "$datasets_dir/North/NH-2KM/grid_NH-2KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/North_Topo_NH-2KM/2.0.0/grid_NH-2KM.txt"
+
+["grid_NH-32KM.txt"]
+checksum = "sha256:6562aa2ab0d5e8ac51d50e7caac9b766095e22eb71e450ead46ce581543d44a4"
+size = 466
+storage_path = "$datasets_dir/North/NH-32KM/grid_NH-32KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/North_Topo_NH-32KM/2.0.0/grid_NH-32KM.txt"
+
+["grid_NH-4KM.txt"]
+checksum = "sha256:4338207aa84d7d969fa1ea8827f49543d1f8c6a16329965e82d1ce27874918c7"
+size = 468
+storage_path = "$datasets_dir/North/NH-4KM/grid_NH-4KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/North_Topo_NH-4KM/2.0.0/grid_NH-4KM.txt"
+
+["grid_NH-8KM.txt"]
+checksum = "sha256:8220a06ea13149c0973191099db52b5d789c8ecc190c3d1b8ed05223dcb25b41"
+size = 468
+storage_path = "$datasets_dir/North/NH-8KM/grid_NH-8KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/North_Topo_NH-8KM/2.0.0/grid_NH-8KM.txt"

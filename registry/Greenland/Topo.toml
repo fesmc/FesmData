@@ -1,0 +1,217 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-10"
+git_tag = "topo-v2.0.0"
+store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=Greenland_Topo_"
+version = "2.0.0"
+
+["GRL-16KM_TOPO-BedMachine-v4.nc"]
+checksum = "sha256:1290c6e7fefb8b294a7775fe51072609c73b44603713c23373cf9f04d6459573"
+size = 299069
+storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_TOPO-BedMachine-v4.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Topo_GRL-16KM/2.0.0/GRL-16KM_TOPO-BedMachine-v4.nc"
+
+["GRL-16KM_TOPO-BedMachine-v5.nc"]
+checksum = "sha256:4598013e613c1a8fed0be6353e4855d4d95a826e390c28f1383aad64fb43003f"
+size = 300133
+storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_TOPO-BedMachine-v5.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Topo_GRL-16KM/2.0.0/GRL-16KM_TOPO-BedMachine-v5.nc"
+
+["GRL-16KM_TOPO-BedMachine-v6.nc"]
+checksum = "sha256:acaba06c2842a7402c7baae397bad85d17a8d6173d57880b69d7042b2286f215"
+size = 304377
+storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_TOPO-BedMachine-v6.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Topo_GRL-16KM/2.0.0/GRL-16KM_TOPO-BedMachine-v6.nc"
+
+["GRL-16KM_grid.nc"]
+checksum = "sha256:e835518450bae0a863fdb7cd68adc7d4f59c48c790090d497939939518960d41"
+size = 150482
+storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Topo_GRL-16KM/2.0.0/GRL-16KM_grid.nc"
+
+["GRL-1KM_TOPO-BedMachine-v4.nc"]
+checksum = "sha256:078afd4af4935d092f707f46ad0eb1828ef0f60b06498ad43a2d397eb44cde15"
+size = 45509184
+storage_path = "$datasets_dir/Greenland/GRL-1KM/GRL-1KM_TOPO-BedMachine-v4.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Topo_GRL-1KM/2.0.0/GRL-1KM_TOPO-BedMachine-v4.nc"
+
+["GRL-1KM_TOPO-BedMachine-v5.nc"]
+checksum = "sha256:ec9ec90b673d4d51944e28ccdb01ee144dd3edac58b5d68dd991e11fdc5282a5"
+size = 45892574
+storage_path = "$datasets_dir/Greenland/GRL-1KM/GRL-1KM_TOPO-BedMachine-v5.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Topo_GRL-1KM/2.0.0/GRL-1KM_TOPO-BedMachine-v5.nc"
+
+["GRL-1KM_TOPO-BedMachine-v6.nc"]
+checksum = "sha256:e0a7ff39bb717a71f235a4a5c42ba76581e8067b263f8b786e01687217c53992"
+size = 46288613
+storage_path = "$datasets_dir/Greenland/GRL-1KM/GRL-1KM_TOPO-BedMachine-v6.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Topo_GRL-1KM/2.0.0/GRL-1KM_TOPO-BedMachine-v6.nc"
+
+["GRL-1KM_grid.nc"]
+checksum = "sha256:04da63872f29f82b9a5ae9f8f3dbb0996e9b8a272f539629d1af272147c92f9b"
+size = 19073467
+storage_path = "$datasets_dir/Greenland/GRL-1KM/GRL-1KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Topo_GRL-1KM/2.0.0/GRL-1KM_grid.nc"
+
+["GRL-2KM_TOPO-BedMachine-v4.nc"]
+checksum = "sha256:753daf92e01549176e246a3e246be68c361d4da4ce3a00f168a63b46efac797c"
+size = 12232938
+storage_path = "$datasets_dir/Greenland/GRL-2KM/GRL-2KM_TOPO-BedMachine-v4.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Topo_GRL-2KM/2.0.0/GRL-2KM_TOPO-BedMachine-v4.nc"
+
+["GRL-2KM_TOPO-BedMachine-v5.nc"]
+checksum = "sha256:5eafc6e5da3a3ab2faa1268de012eaa3f2c6efa7eeb6e2e736cc5a5233107adf"
+size = 12321762
+storage_path = "$datasets_dir/Greenland/GRL-2KM/GRL-2KM_TOPO-BedMachine-v5.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Topo_GRL-2KM/2.0.0/GRL-2KM_TOPO-BedMachine-v5.nc"
+
+["GRL-2KM_TOPO-BedMachine-v6.nc"]
+checksum = "sha256:270bf32716b6f0d4df087d02c5e63111ed3a919ab67944acd70111001f71abf1"
+size = 12456865
+storage_path = "$datasets_dir/Greenland/GRL-2KM/GRL-2KM_TOPO-BedMachine-v6.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Topo_GRL-2KM/2.0.0/GRL-2KM_TOPO-BedMachine-v6.nc"
+
+["GRL-2KM_grid.nc"]
+checksum = "sha256:f14a977d6e3a1f3163a45f02a604b05efc34d00a2f27fba14f8114ddf5725fc1"
+size = 5378392
+storage_path = "$datasets_dir/Greenland/GRL-2KM/GRL-2KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Topo_GRL-2KM/2.0.0/GRL-2KM_grid.nc"
+
+["GRL-32KM_TOPO-BedMachine-v4.nc"]
+checksum = "sha256:dbd195590f6374c074eae30cca37d6942e8c1251b7eed9a791869cd354944f09"
+size = 119798
+storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_TOPO-BedMachine-v4.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Topo_GRL-32KM/2.0.0/GRL-32KM_TOPO-BedMachine-v4.nc"
+
+["GRL-32KM_TOPO-BedMachine-v5.nc"]
+checksum = "sha256:cc6a65c55987bc79f93f8d2dbf831c2cdfa8295ad8615e9fb9668f4ab39755cf"
+size = 119942
+storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_TOPO-BedMachine-v5.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Topo_GRL-32KM/2.0.0/GRL-32KM_TOPO-BedMachine-v5.nc"
+
+["GRL-32KM_TOPO-BedMachine-v6.nc"]
+checksum = "sha256:d023d48f4eea7458b226a3c8ee8d413f06f5f2cf0edd8d4eca33d7a152b212e4"
+size = 121165
+storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_TOPO-BedMachine-v6.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Topo_GRL-32KM/2.0.0/GRL-32KM_TOPO-BedMachine-v6.nc"
+
+["GRL-32KM_grid.nc"]
+checksum = "sha256:c922307bd72e9e5bd3d10d86b97e3c108dcd5a4264dd47b305b9c562ba81e775"
+size = 57245
+storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Topo_GRL-32KM/2.0.0/GRL-32KM_grid.nc"
+
+["GRL-4KM_TOPO-BedMachine-v4.nc"]
+checksum = "sha256:77ba49b9d62f96583452b047faf94ef3ef41ec0292a690934bc542388d92ea31"
+size = 3295598
+storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_TOPO-BedMachine-v4.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Topo_GRL-4KM/2.0.0/GRL-4KM_TOPO-BedMachine-v4.nc"
+
+["GRL-4KM_TOPO-BedMachine-v5.nc"]
+checksum = "sha256:5bad9b142c956cc68004d7d5a3d20c69e777c37d1c987642eaaf7a50d62375e8"
+size = 3316902
+storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_TOPO-BedMachine-v5.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Topo_GRL-4KM/2.0.0/GRL-4KM_TOPO-BedMachine-v5.nc"
+
+["GRL-4KM_TOPO-BedMachine-v6.nc"]
+checksum = "sha256:1b3455ea14f6f2d4d2d2d95638d347bbddf93bb7240c2e7d2ad73376adce9a9a"
+size = 3362908
+storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_TOPO-BedMachine-v6.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Topo_GRL-4KM/2.0.0/GRL-4KM_TOPO-BedMachine-v6.nc"
+
+["GRL-4KM_grid.nc"]
+checksum = "sha256:bfc44b679d56099bfb9306c3bfe8d74d1663a5b7168c2f18b404fdb3b6cabe4f"
+size = 1546343
+storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Topo_GRL-4KM/2.0.0/GRL-4KM_grid.nc"
+
+["GRL-500M_TOPO-BedMachine-v4.nc"]
+checksum = "sha256:7a2cf181281b23185ef1ee9ca6bf846b322ba53083c56aa9162f5b6e22f5fa02"
+size = 167776946
+storage_path = "$datasets_dir/Greenland/GRL-500M/GRL-500M_TOPO-BedMachine-v4.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Topo_GRL-500M/2.0.0/GRL-500M_TOPO-BedMachine-v4.nc"
+
+["GRL-500M_TOPO-BedMachine-v5.nc"]
+checksum = "sha256:db8c4d55349b8e0d3531060773bbb6f52e447d42d36324d3b11aef49db219cac"
+size = 169571768
+storage_path = "$datasets_dir/Greenland/GRL-500M/GRL-500M_TOPO-BedMachine-v5.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Topo_GRL-500M/2.0.0/GRL-500M_TOPO-BedMachine-v5.nc"
+
+["GRL-500M_TOPO-BedMachine-v6.nc"]
+checksum = "sha256:dfac2d32bf7ee23e57609ee4b50792152c9eb689d440209229807f8e2d2555e4"
+size = 170312351
+storage_path = "$datasets_dir/Greenland/GRL-500M/GRL-500M_TOPO-BedMachine-v6.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Topo_GRL-500M/2.0.0/GRL-500M_TOPO-BedMachine-v6.nc"
+
+["GRL-500M_grid.nc"]
+checksum = "sha256:b05848d86ae7e9cec6c530c7f2ea298350898c1410ce6d86fe6589ec20567045"
+size = 63040154
+storage_path = "$datasets_dir/Greenland/GRL-500M/GRL-500M_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Topo_GRL-500M/2.0.0/GRL-500M_grid.nc"
+
+["GRL-8KM_TOPO-BedMachine-v4.nc"]
+checksum = "sha256:dc9fc96d876cb487928ce694cfdac23c0dfa0e04f274e7c79044b1b2ca65968e"
+size = 934945
+storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_TOPO-BedMachine-v4.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Topo_GRL-8KM/2.0.0/GRL-8KM_TOPO-BedMachine-v4.nc"
+
+["GRL-8KM_TOPO-BedMachine-v5.nc"]
+checksum = "sha256:0c7bebd653f3aabe969dfbc709e89801e200201cf9eb80dd2d08969c30472c70"
+size = 938677
+storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_TOPO-BedMachine-v5.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Topo_GRL-8KM/2.0.0/GRL-8KM_TOPO-BedMachine-v5.nc"
+
+["GRL-8KM_TOPO-BedMachine-v6.nc"]
+checksum = "sha256:22ff583c25e3edb926c1a163d32149c50f47fa5852ec7c8df59203a48ceda738"
+size = 953638
+storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_TOPO-BedMachine-v6.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Topo_GRL-8KM/2.0.0/GRL-8KM_TOPO-BedMachine-v6.nc"
+
+["GRL-8KM_grid.nc"]
+checksum = "sha256:a7c9769dfbac2eefa4f4a79985475995596d3035f3481009cfff72c2c45fb40e"
+size = 467101
+storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Topo_GRL-8KM/2.0.0/GRL-8KM_grid.nc"
+
+["grid_GRL-16KM.txt"]
+checksum = "sha256:96d8ae58fe971c0fe4bcf3433b0f78c1c46af7104133c842859d47b655060cd6"
+size = 465
+storage_path = "$datasets_dir/Greenland/GRL-16KM/grid_GRL-16KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Topo_GRL-16KM/2.0.0/grid_GRL-16KM.txt"
+
+["grid_GRL-1KM.txt"]
+checksum = "sha256:6c3c8dcbe453c0b9226de89c2c6349a5f1c8b9eb11b395fafcc03e514e756ae6"
+size = 467
+storage_path = "$datasets_dir/Greenland/GRL-1KM/grid_GRL-1KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Topo_GRL-1KM/2.0.0/grid_GRL-1KM.txt"
+
+["grid_GRL-2KM.txt"]
+checksum = "sha256:d795d6d9de510cf0e66e83fb14a1a16680f9914baffb4e23fb521553bf0c47b3"
+size = 466
+storage_path = "$datasets_dir/Greenland/GRL-2KM/grid_GRL-2KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Topo_GRL-2KM/2.0.0/grid_GRL-2KM.txt"
+
+["grid_GRL-32KM.txt"]
+checksum = "sha256:60caa1794ee7701429bc7ccece8aa52f1f4555ddc051c056409acb398cad52a0"
+size = 462
+storage_path = "$datasets_dir/Greenland/GRL-32KM/grid_GRL-32KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Topo_GRL-32KM/2.0.0/grid_GRL-32KM.txt"
+
+["grid_GRL-4KM.txt"]
+checksum = "sha256:17883e1fab0cfa9f8b288bb7d2fb6fa27955ff3a437d06b0ec4d0fb1e358165f"
+size = 464
+storage_path = "$datasets_dir/Greenland/GRL-4KM/grid_GRL-4KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Topo_GRL-4KM/2.0.0/grid_GRL-4KM.txt"
+
+["grid_GRL-500M.txt"]
+checksum = "sha256:7731e4372f47b90a680fc2a2a329da0988c1c8448eb6636894e6718e946c9d57"
+size = 468
+storage_path = "$datasets_dir/Greenland/GRL-500M/grid_GRL-500M.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Topo_GRL-500M/2.0.0/grid_GRL-500M.txt"
+
+["grid_GRL-8KM.txt"]
+checksum = "sha256:455c0a221c44c016c9129b7e1305cc2e1cf1f17be11aace7a68103e92f6c2c5c"
+size = 463
+storage_path = "$datasets_dir/Greenland/GRL-8KM/grid_GRL-8KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Topo_GRL-8KM/2.0.0/grid_GRL-8KM.txt"

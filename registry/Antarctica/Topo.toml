@@ -1,0 +1,259 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-10"
+git_tag = "topo-v2.0.0"
+store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=Antarctica_Topo_"
+version = "2.0.0"
+
+["ANT-16KM_TOPO-BedMachine-v2.nc"]
+checksum = "sha256:bd3aba14aef8aced7778f389a8252f580ea3098bbc9ab33affc13be70c521a24"
+size = 1419559
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_TOPO-BedMachine-v2.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-16KM/2.0.0/ANT-16KM_TOPO-BedMachine-v2.nc"
+
+["ANT-16KM_TOPO-BedMachine-v3.nc"]
+checksum = "sha256:4238429bbc401ea2f5abf3155e0c2c9747f5e3f11d55bb7708bdadd64a05d7cf"
+size = 1417933
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_TOPO-BedMachine-v3.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-16KM/2.0.0/ANT-16KM_TOPO-BedMachine-v3.nc"
+
+["ANT-16KM_TOPO-BedMachine-v4.nc"]
+checksum = "sha256:7e010aad77353c4039a2584f64f398dc3efa6b1ee8b47240877e4fc70a21b753"
+size = 1419610
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_TOPO-BedMachine-v4.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-16KM/2.0.0/ANT-16KM_TOPO-BedMachine-v4.nc"
+
+["ANT-16KM_TOPO-Bedmap2.nc"]
+checksum = "sha256:19d92ee575ad888a447c8ab81b8cacb80ff77352d291df352e9fa3c9e09ef2eb"
+size = 1340063
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_TOPO-Bedmap2.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-16KM/2.0.0/ANT-16KM_TOPO-Bedmap2.nc"
+
+["ANT-16KM_TOPO-Bedmap3.nc"]
+checksum = "sha256:179451e554674e815e88e43ec50c3a448d17b3a16613b3d2ea2189b08aa008ba"
+size = 1398249
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_TOPO-Bedmap3.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-16KM/2.0.0/ANT-16KM_TOPO-Bedmap3.nc"
+
+["ANT-16KM_grid.nc"]
+checksum = "sha256:dea44445828fdc3adbae04afc6662224e96a6838c8381f80a855659b3ad6460c"
+size = 892250
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-16KM/2.0.0/ANT-16KM_grid.nc"
+
+["ANT-1KM_TOPO-BedMachine-v2.nc"]
+checksum = "sha256:5cfc7d5b7325e2de87cf535a404c5f70c52fce67cb6016e5946545301f16f78c"
+size = 290842562
+storage_path = "$datasets_dir/Antarctica/ANT-1KM/ANT-1KM_TOPO-BedMachine-v2.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-1KM/2.0.0/ANT-1KM_TOPO-BedMachine-v2.nc"
+
+["ANT-1KM_TOPO-BedMachine-v3.nc"]
+checksum = "sha256:e4eeede3c1ef28becc067ccd18dcb6f98ce65aa39640c2c298d8ae0a72f156c5"
+size = 290703288
+storage_path = "$datasets_dir/Antarctica/ANT-1KM/ANT-1KM_TOPO-BedMachine-v3.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-1KM/2.0.0/ANT-1KM_TOPO-BedMachine-v3.nc"
+
+["ANT-1KM_TOPO-BedMachine-v4.nc"]
+checksum = "sha256:e507f888397535c228f6863ac49fcd0a0a6f3642915631eb7e27c2319a53dc8d"
+size = 293960887
+storage_path = "$datasets_dir/Antarctica/ANT-1KM/ANT-1KM_TOPO-BedMachine-v4.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-1KM/2.0.0/ANT-1KM_TOPO-BedMachine-v4.nc"
+
+["ANT-1KM_TOPO-Bedmap2.nc"]
+checksum = "sha256:35d7556559a5fc00ad1d8eb955a8c2d83fc0b59d8f71178024fc077bf8bd1a17"
+size = 91647648
+storage_path = "$datasets_dir/Antarctica/ANT-1KM/ANT-1KM_TOPO-Bedmap2.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-1KM/2.0.0/ANT-1KM_TOPO-Bedmap2.nc"
+
+["ANT-1KM_TOPO-Bedmap3.nc"]
+checksum = "sha256:b84f3b6cbabf2981cc191e07aceacddb0b43a4dc0b2351130a9626ec53871261"
+size = 198072346
+storage_path = "$datasets_dir/Antarctica/ANT-1KM/ANT-1KM_TOPO-Bedmap3.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-1KM/2.0.0/ANT-1KM_TOPO-Bedmap3.nc"
+
+["ANT-1KM_grid.nc"]
+checksum = "sha256:1564185a4ce4e24d55ceaa7e6a6fc6170b28746fb5435d96af1ddb267a5da085"
+size = 142664883
+storage_path = "$datasets_dir/Antarctica/ANT-1KM/ANT-1KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-1KM/2.0.0/ANT-1KM_grid.nc"
+
+["ANT-2KM_TOPO-BedMachine-v2.nc"]
+checksum = "sha256:a724ffbc7708da75f5f989f614c1e7c8c15436f16eeb6108943298fee8c29ad0"
+size = 76305716
+storage_path = "$datasets_dir/Antarctica/ANT-2KM/ANT-2KM_TOPO-BedMachine-v2.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-2KM/2.0.0/ANT-2KM_TOPO-BedMachine-v2.nc"
+
+["ANT-2KM_TOPO-BedMachine-v3.nc"]
+checksum = "sha256:414300bf7c4ef6ece7957c6def1c44bf5a60eb6b77cc0c878358ebc97eed76fb"
+size = 76298151
+storage_path = "$datasets_dir/Antarctica/ANT-2KM/ANT-2KM_TOPO-BedMachine-v3.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-2KM/2.0.0/ANT-2KM_TOPO-BedMachine-v3.nc"
+
+["ANT-2KM_TOPO-BedMachine-v4.nc"]
+checksum = "sha256:53bde2c7040d3b42d13f1794198dc1104331001c8a59b0dcef4dcc11aa65feab"
+size = 76905446
+storage_path = "$datasets_dir/Antarctica/ANT-2KM/ANT-2KM_TOPO-BedMachine-v4.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-2KM/2.0.0/ANT-2KM_TOPO-BedMachine-v4.nc"
+
+["ANT-2KM_TOPO-Bedmap2.nc"]
+checksum = "sha256:a54adda1d328cd0e0c7ede117b5c267f2e073b04993323e3bdadc225c12829d5"
+size = 59547461
+storage_path = "$datasets_dir/Antarctica/ANT-2KM/ANT-2KM_TOPO-Bedmap2.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-2KM/2.0.0/ANT-2KM_TOPO-Bedmap2.nc"
+
+["ANT-2KM_TOPO-Bedmap3.nc"]
+checksum = "sha256:88509c87f61ba66790fccba3bceda06362a48edb19b29d648abd22c42022cdcd"
+size = 64872416
+storage_path = "$datasets_dir/Antarctica/ANT-2KM/ANT-2KM_TOPO-Bedmap3.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-2KM/2.0.0/ANT-2KM_TOPO-Bedmap3.nc"
+
+["ANT-2KM_grid.nc"]
+checksum = "sha256:405a1131131ba119609bf7c4147b29477ab4801fd0221f56656ab6ff1abf8ffc"
+size = 40215317
+storage_path = "$datasets_dir/Antarctica/ANT-2KM/ANT-2KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-2KM/2.0.0/ANT-2KM_grid.nc"
+
+["ANT-32KM_TOPO-BedMachine-v2.nc"]
+checksum = "sha256:c06bd291907a890c713fa30ad644eca4fd7ccd55fa6b3ed9b12646c749de0eb8"
+size = 418141
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_TOPO-BedMachine-v2.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-32KM/2.0.0/ANT-32KM_TOPO-BedMachine-v2.nc"
+
+["ANT-32KM_TOPO-BedMachine-v3.nc"]
+checksum = "sha256:2bbb27783e7319fa45558ec08e80ac8c71938eee597f7e3c08e9c24f6b701389"
+size = 418130
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_TOPO-BedMachine-v3.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-32KM/2.0.0/ANT-32KM_TOPO-BedMachine-v3.nc"
+
+["ANT-32KM_TOPO-BedMachine-v4.nc"]
+checksum = "sha256:ae6ea84a04433de4a6291dcc02f666a7f1ebf5d977fdb8bb080ce5eff21cbc89"
+size = 418641
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_TOPO-BedMachine-v4.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-32KM/2.0.0/ANT-32KM_TOPO-BedMachine-v4.nc"
+
+["ANT-32KM_TOPO-Bedmap2.nc"]
+checksum = "sha256:6c7ab10bace59ae9c558d045cf9b1cbcfb048f797511d25c7a763efa99d86761"
+size = 408761
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_TOPO-Bedmap2.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-32KM/2.0.0/ANT-32KM_TOPO-Bedmap2.nc"
+
+["ANT-32KM_TOPO-Bedmap3.nc"]
+checksum = "sha256:8495de1b355bdbf549d975f52dc46b455bcfebf274eabf0d6f2100384c10a18e"
+size = 415787
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_TOPO-Bedmap3.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-32KM/2.0.0/ANT-32KM_TOPO-Bedmap3.nc"
+
+["ANT-32KM_grid.nc"]
+checksum = "sha256:66765d3512c62479e60ad1095a4ee84b38edb681fe816eddf9896c3a2799efd8"
+size = 212550
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-32KM/2.0.0/ANT-32KM_grid.nc"
+
+["ANT-4KM_TOPO-BedMachine-v2.nc"]
+checksum = "sha256:6f9da94332be9f139a195a148694b94c669646a9ec82724c0bf47fa2982d036e"
+size = 20027410
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_TOPO-BedMachine-v2.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-4KM/2.0.0/ANT-4KM_TOPO-BedMachine-v2.nc"
+
+["ANT-4KM_TOPO-BedMachine-v3.nc"]
+checksum = "sha256:37392c6d5f2c10b1febc6804ee2b7e29c270888b5d00b665102432beb478bb59"
+size = 20018264
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_TOPO-BedMachine-v3.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-4KM/2.0.0/ANT-4KM_TOPO-BedMachine-v3.nc"
+
+["ANT-4KM_TOPO-BedMachine-v4.nc"]
+checksum = "sha256:f1a3b797dc1cb1d5b07f3007a86a5ba111996e1455d415f86703f87e4728bf6d"
+size = 20108722
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_TOPO-BedMachine-v4.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-4KM/2.0.0/ANT-4KM_TOPO-BedMachine-v4.nc"
+
+["ANT-4KM_TOPO-Bedmap2.nc"]
+checksum = "sha256:8ee56288c18864c4967841f769bbf49c41a4bf46f3d3e2e790dca7761a8d9603"
+size = 16975103
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_TOPO-Bedmap2.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-4KM/2.0.0/ANT-4KM_TOPO-Bedmap2.nc"
+
+["ANT-4KM_TOPO-Bedmap3.nc"]
+checksum = "sha256:86d1d620a5cfd645edd70eb321404e73a6f1add02c033d5ddcbd366b95e5de27"
+size = 18211173
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_TOPO-Bedmap3.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-4KM/2.0.0/ANT-4KM_TOPO-Bedmap3.nc"
+
+["ANT-4KM_grid.nc"]
+checksum = "sha256:b553afcb6273200e9cd436c4f3ba5f081c599c58237374342aade5c4588e879f"
+size = 11450508
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-4KM/2.0.0/ANT-4KM_grid.nc"
+
+["ANT-8KM_TOPO-BedMachine-v2.nc"]
+checksum = "sha256:c31d8589adee470941397404a2aa5ebab5d38e46f28b0f9a13cf1af6af83cdec"
+size = 5236927
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_TOPO-BedMachine-v2.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-8KM/2.0.0/ANT-8KM_TOPO-BedMachine-v2.nc"
+
+["ANT-8KM_TOPO-BedMachine-v3.nc"]
+checksum = "sha256:426c918dd0c160d288a4b9a90483a612fe75a8f954d71fd940251f402a635c55"
+size = 5232229
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_TOPO-BedMachine-v3.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-8KM/2.0.0/ANT-8KM_TOPO-BedMachine-v3.nc"
+
+["ANT-8KM_TOPO-BedMachine-v4.nc"]
+checksum = "sha256:c9e8fc9ec70084902e3ab5a8557be8ccd9296a96af8908039b27c14db646dfdd"
+size = 5244661
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_TOPO-BedMachine-v4.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-8KM/2.0.0/ANT-8KM_TOPO-BedMachine-v4.nc"
+
+["ANT-8KM_TOPO-Bedmap2.nc"]
+checksum = "sha256:ce72711c1e38d56b1892667dc1ff72483fccab17b459fb4334a59427d6df4bbe"
+size = 4731539
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_TOPO-Bedmap2.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-8KM/2.0.0/ANT-8KM_TOPO-Bedmap2.nc"
+
+["ANT-8KM_TOPO-Bedmap3.nc"]
+checksum = "sha256:69fff797e984cd7cc879a65bb3332758fbfd25a2f225ae99049e6be673f01554"
+size = 4987165
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_TOPO-Bedmap3.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-8KM/2.0.0/ANT-8KM_TOPO-Bedmap3.nc"
+
+["ANT-8KM_grid.nc"]
+checksum = "sha256:6d00ae1cafbf496c1375c74c9153d92c5e2aec79d8026f004ba0dc26d0c47ece"
+size = 3314952
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-8KM/2.0.0/ANT-8KM_grid.nc"
+
+["grid_ANT-16KM.txt"]
+checksum = "sha256:09d646757fe153b435cee10a90cf772b4626efbe2f187d410eab83876c8305cb"
+size = 467
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/grid_ANT-16KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-16KM/2.0.0/grid_ANT-16KM.txt"
+
+["grid_ANT-1KM.txt"]
+checksum = "sha256:d8e6029b241c90da5ba2b6f4aed5fc6736d2251dfbf96e1432952605eaf02d67"
+size = 469
+storage_path = "$datasets_dir/Antarctica/ANT-1KM/grid_ANT-1KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-1KM/2.0.0/grid_ANT-1KM.txt"
+
+["grid_ANT-2KM.txt"]
+checksum = "sha256:d02bf6fb1a40ffa3a09cad2982212ffa925a643e487b74b8c38af6cf773faff5"
+size = 468
+storage_path = "$datasets_dir/Antarctica/ANT-2KM/grid_ANT-2KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-2KM/2.0.0/grid_ANT-2KM.txt"
+
+["grid_ANT-32KM.txt"]
+checksum = "sha256:619c2b14b9667a6ff1efe4de41f1b2bd0ddc8d3e10df6d5fd99222b80be20276"
+size = 466
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/grid_ANT-32KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-32KM/2.0.0/grid_ANT-32KM.txt"
+
+["grid_ANT-4KM.txt"]
+checksum = "sha256:dc549c434411d3f7ad5b46e4f954f9bb180d0d2e272e1942d97e7072ae8b711d"
+size = 468
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/grid_ANT-4KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-4KM/2.0.0/grid_ANT-4KM.txt"
+
+["grid_ANT-8KM.txt"]
+checksum = "sha256:66ff6285f42ec156b6c6a6c30fcb0d2e4c94e07d67512fb002cb0348b3420ce5"
+size = 465
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/grid_ANT-8KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-8KM/2.0.0/grid_ANT-8KM.txt"

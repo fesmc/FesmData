@@ -1,0 +1,97 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-10"
+git_tag = "topo-v2.0.0"
+store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=Eurasia_Topo_"
+version = "2.0.0"
+
+["EIS-16KM_TOPO-GEBCO2026.nc"]
+checksum = "sha256:a56438b3cbcef8b110822fb5e77503ae41c428eff06db41a104391ae54d3f0b8"
+size = 905201
+storage_path = "$datasets_dir/Eurasia/EIS-16KM/EIS-16KM_TOPO-GEBCO2026.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Eurasia_Topo_EIS-16KM/2.0.0/EIS-16KM_TOPO-GEBCO2026.nc"
+
+["EIS-16KM_grid.nc"]
+checksum = "sha256:3ccbbbaff781920c19b763490d74854b90eb5c81a20c242e5969e11498bb2aaf"
+size = 536454
+storage_path = "$datasets_dir/Eurasia/EIS-16KM/EIS-16KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Eurasia_Topo_EIS-16KM/2.0.0/EIS-16KM_grid.nc"
+
+["EIS-2KM_TOPO-GEBCO2026.nc"]
+checksum = "sha256:45a9290d22beb09de7c3dbccbd0ea2bd7ccb068c8c86d5e608a3b9576c2d65eb"
+size = 43345411
+storage_path = "$datasets_dir/Eurasia/EIS-2KM/EIS-2KM_TOPO-GEBCO2026.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Eurasia_Topo_EIS-2KM/2.0.0/EIS-2KM_TOPO-GEBCO2026.nc"
+
+["EIS-2KM_grid.nc"]
+checksum = "sha256:1be738832e5a153b12b3f0a4950683a72b5ec28c08082de3236696959f96664e"
+size = 24482944
+storage_path = "$datasets_dir/Eurasia/EIS-2KM/EIS-2KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Eurasia_Topo_EIS-2KM/2.0.0/EIS-2KM_grid.nc"
+
+["EIS-32KM_TOPO-GEBCO2026.nc"]
+checksum = "sha256:6c91f812a8be5511f56a3b8bfd1969947c75ef2458f72cbba3c0f3ae3e16042c"
+size = 290880
+storage_path = "$datasets_dir/Eurasia/EIS-32KM/EIS-32KM_TOPO-GEBCO2026.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Eurasia_Topo_EIS-32KM/2.0.0/EIS-32KM_TOPO-GEBCO2026.nc"
+
+["EIS-32KM_grid.nc"]
+checksum = "sha256:9e10ed988c345621993429a7fc642860b6592e15c52089fec9a2ed510dc4848d"
+size = 183729
+storage_path = "$datasets_dir/Eurasia/EIS-32KM/EIS-32KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Eurasia_Topo_EIS-32KM/2.0.0/EIS-32KM_grid.nc"
+
+["EIS-4KM_TOPO-GEBCO2026.nc"]
+checksum = "sha256:cbdc05b6c713446e443f0909cd471aaf1625dc8173cbe89050d4c5afdf647020"
+size = 11850855
+storage_path = "$datasets_dir/Eurasia/EIS-4KM/EIS-4KM_TOPO-GEBCO2026.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Eurasia_Topo_EIS-4KM/2.0.0/EIS-4KM_TOPO-GEBCO2026.nc"
+
+["EIS-4KM_grid.nc"]
+checksum = "sha256:373c757f707abbe99f9ab7b7abe03f492dcea72388500bb37b202746fd7fc65e"
+size = 6902031
+storage_path = "$datasets_dir/Eurasia/EIS-4KM/EIS-4KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Eurasia_Topo_EIS-4KM/2.0.0/EIS-4KM_grid.nc"
+
+["EIS-8KM_TOPO-GEBCO2026.nc"]
+checksum = "sha256:1c7ffcec8e032d188064910f8c2e2683edcf530de30d403cf72f34e758acb08a"
+size = 3195395
+storage_path = "$datasets_dir/Eurasia/EIS-8KM/EIS-8KM_TOPO-GEBCO2026.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Eurasia_Topo_EIS-8KM/2.0.0/EIS-8KM_TOPO-GEBCO2026.nc"
+
+["EIS-8KM_grid.nc"]
+checksum = "sha256:90639828c760ba55d266c036fc40c47b59325e59152e2e621d239c047cda490b"
+size = 1990141
+storage_path = "$datasets_dir/Eurasia/EIS-8KM/EIS-8KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Eurasia_Topo_EIS-8KM/2.0.0/EIS-8KM_grid.nc"
+
+["grid_EIS-16KM.txt"]
+checksum = "sha256:f9dcc420be94b52e00da717a5a3cd27ae5ec77529c8270863e2c22037d5a2a57"
+size = 464
+storage_path = "$datasets_dir/Eurasia/EIS-16KM/grid_EIS-16KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Eurasia_Topo_EIS-16KM/2.0.0/grid_EIS-16KM.txt"
+
+["grid_EIS-2KM.txt"]
+checksum = "sha256:02790e920a9945695a5bc4cd34e864bfe0279ff8ec58fd1a33a13d927fb58cfd"
+size = 466
+storage_path = "$datasets_dir/Eurasia/EIS-2KM/grid_EIS-2KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Eurasia_Topo_EIS-2KM/2.0.0/grid_EIS-2KM.txt"
+
+["grid_EIS-32KM.txt"]
+checksum = "sha256:584cc251e7f41da6803698d607738c531a0c41d306088e866eb3c4afa2d3c7f4"
+size = 464
+storage_path = "$datasets_dir/Eurasia/EIS-32KM/grid_EIS-32KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Eurasia_Topo_EIS-32KM/2.0.0/grid_EIS-32KM.txt"
+
+["grid_EIS-4KM.txt"]
+checksum = "sha256:caf47ab7f9cc3083416e8d211838b46d9ee04abe3b62e628cd8c875d0861e48e"
+size = 465
+storage_path = "$datasets_dir/Eurasia/EIS-4KM/grid_EIS-4KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Eurasia_Topo_EIS-4KM/2.0.0/grid_EIS-4KM.txt"
+
+["grid_EIS-8KM.txt"]
+checksum = "sha256:4d139fd20ce9e7a1137a553e0bec79dd31f2c05ccac88be0baca279d6a07dd95"
+size = 463
+storage_path = "$datasets_dir/Eurasia/EIS-8KM/grid_EIS-8KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Eurasia_Topo_EIS-8KM/2.0.0/grid_EIS-8KM.txt"
