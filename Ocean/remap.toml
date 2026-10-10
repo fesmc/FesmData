@@ -8,15 +8,18 @@ source = "Schmidtko2014_ocean"
 file = "Schmidtko2014_OCEAN.nc"
 variables = ["ct_bottom", "ct_bottom_std", "sa_bottom", "sa_bottom_std", "z_bottom"]
 domains = ["Antarctica"]
+min_spacing_km = 4
 
 [products.ORAS5-1981-2010]
 source = "Zuo2019_oras5"
 file = "ORAS5_1981-2010.nc"
 variables = ["to", "so"]
 domains = ["Antarctica", "Greenland", "GreenlandPaleo", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 16
 
 [products.ORAS5-annual]
 source = "Zuo2019_oras5"
 file = "ORAS5_annual_1979-2018.nc"
 variables = ["to", "so"]
 domains = ["Antarctica", "Greenland", "GreenlandPaleo", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 16

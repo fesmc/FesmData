@@ -11,9 +11,11 @@ source = "Laske2013_crust1"
 file = "Laske2013_CRUST1_sed.nc"
 variables = ["z_sed", "z_sed_upper", "z_sed_middle", "z_sed_lower"]
 domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 4
 
 [products.GlobSed]
 source = "Straume2019_globsed"
 file = "Straume2019_GlobSed.nc"
 variables = ["z_sed"]
 domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 4

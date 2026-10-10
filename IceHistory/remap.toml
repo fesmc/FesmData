@@ -8,15 +8,18 @@ source = "Peltier2004_ice5g"
 file = "Peltier2004_ICE5G.nc"
 variables = ["z_topo", "H_ice", "f_ice"]
 domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 4
 
 [products.ICE6G_C]
 source = "Peltier2015_ice6g"
 file = "Peltier2015_ICE6G_C.nc"
 variables = ["z_topo", "z_srf", "dz_topo", "H_ice", "f_ice", "f_land"]
 domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 4
 
 [products.PRISM4]
 source = "Dowsett2016_prism4"
 file = "Dowsett2016_PRISM4.nc"
 variables = ["z_topo_enh", "z_topo_std", "z_topo_mod", "mask_enh", "mask_std"]
 domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 4

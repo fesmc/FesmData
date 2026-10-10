@@ -8,3 +8,4 @@ source = "MacGregor2025_strat"
 file = "MacGregor2025_STRAT.nc"
 variables = ["ice_age", "ice_age_sd", "depth_iso", "depth_iso_sd"]
 domains = ["Greenland", "GreenlandPaleo"]
+min_spacing_km = 4

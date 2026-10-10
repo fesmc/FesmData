@@ -7,13 +7,16 @@
 source = "vanDalum2025_racmo24"
 file = "RACMO2.4p1_1981-2010.nc"
 domains = ["Antarctica"]
+min_spacing_km = 4
 
 [products."RACMO2.4p1-1991-2020"]
 source = "vanDalum2025_racmo24"
 file = "RACMO2.4p1_1991-2020.nc"
 domains = ["Antarctica"]
+min_spacing_km = 4
 
 [products."RACMO2.4p1-annual"]
 source = "vanDalum2025_racmo24"
 file = "RACMO2.4p1_annual_1979-2023.nc"
 domains = ["Antarctica"]
+min_spacing_km = 4

@@ -7,23 +7,28 @@
 source = "Hersbach2020_era5"
 file = "Hersbach2020_ERA5_1981-2010.nc"
 domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
 
 [products.ERA5-1991-2020]
 source = "Hersbach2020_era5"
 file = "Hersbach2020_ERA5_1991-2020.nc"
 domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 8
 
 [products.ERA5-plev-1981-2010]
 source = "Hersbach2020_era5"
 file = "Hersbach2020_ERA5-plev_1981-2010.nc"
 domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 16
 
 [products.ERA5-plev-1991-2020]
 source = "Hersbach2020_era5"
 file = "Hersbach2020_ERA5-plev_1991-2020.nc"
 domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 16
 
 [products.CERES-2001-2020]
 source = "Loeb2018_ceres"
 file = "Loeb2018_CERES-EBAF_2001-2020.nc"
 domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 16
