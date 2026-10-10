@@ -20,3 +20,21 @@ source = "vanDalum2025_racmo24"
 file = "RACMO2.4p1_annual_1979-2023.nc"
 domains = ["Antarctica"]
 min_spacing_km = 4
+
+[products."MARv3.14-1981-2010"]
+source = "Fettweis2017_mar314"
+file = "MARv3.14_ERA5_1981-2010.nc"
+domains = ["Greenland"]
+min_spacing_km = 1
+
+[products."MARv3.14-1991-2020"]
+source = "Fettweis2017_mar314"
+file = "MARv3.14_ERA5_1991-2020.nc"
+domains = ["Greenland"]
+min_spacing_km = 1
+
+[products."MARv3.14-annual"]
+source = "Fettweis2017_mar314"
+file = "MARv3.14_ERA5_annual_1940-2025.nc"
+domains = ["Greenland"]
+min_spacing_km = 8
