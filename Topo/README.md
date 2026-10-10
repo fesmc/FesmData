@@ -257,3 +257,25 @@ IceBoost glaciers in the NH product (GEBCO 2026, run of 2026-10-09):
 Step 2 for IceBoost takes about 25 min on a Levante node. The GRL-PAL and ANT
 products are unchanged (bitwise identical before and after adding thickness
 sources).
+
+## Glaciers in the PYR and SRG products
+
+IceBoost glaciers (RGI 7.0, 2000 outlines) on the base grids (GEBCO 2026, run of
+2026-10-10):
+
+| | Tiles | Area (km²) | Volume (km³) |
+|---|---:|---:|---:|
+| PYR-500M (RGI 11) | 45 | 4 | 0.08 |
+| SRG-250M (RGI 17) | 134 | 1,261 | 483 |
+
+On the extent of the v1 SRG-250M grid, the SRG product has 1,224 km² and 433 km³ of
+ice, against 1,149 km² and 358 km³ in the v1 SRG-250M_TOPO.nc (from an inversion of
+the Northern Patagonian Icefield thickness). Surface elevations agree (v2 - v1: mean
+1 m, rmse 56 m); the ice thickness differs by 164 m rms (v2 thinner along the trunk of
+the San Rafael Glacier, thicker on its sides).
+
+The coarser SRG grids extend beyond the base grid (by half a coarse cell, as for all
+domains), where their cells are means over the part the base grid covers. On a domain
+this small the overhang is a large part of the coarse grids (SRG-16KM covers 1.85
+times the area of SRG-250M), so their ice volume grows with the cell size, from 483
+km³ on SRG-250M to 762 km³ on SRG-16KM.
