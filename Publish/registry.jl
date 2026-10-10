@@ -1,9 +1,10 @@
-# Registry of the published products. Each Zenodo record (one dataset on one domain
-# folder) has a registry file, registry/<Domain>/<Dataset>.toml, with one entry per
-# file (uri, checksum, size, storage_path) and the record metadata in a `[_ZENODO]`
+# Registry of the released products. Each record (one dataset on one domain) has a
+# registry file, registry/<Domain>/<Dataset>.toml, with one entry per file (uri,
+# checksum, size, storage_path), the release in a `[_RELEASE]` table (version, tag,
+# date, store), and, if the release is archived on Zenodo, its DOIs in a `[_ZENODO]`
 # table. The files are DataManifest.jl databases, with `$datasets_dir` = $ICE_DATA/v2.
-# Records on the Zenodo sandbox (tests) have their registry in registry/_sandbox/,
-# which is not tracked.
+# Test releases (test packages, Zenodo sandbox) have their registry in
+# registry/_sandbox/, which is not tracked.
 
 using Downloads
 using SHA
@@ -11,14 +12,14 @@ using TOML
 
 include(joinpath(@__DIR__, "..", "shared", "provenance.jl"))
 
-"Registry folder, of the Zenodo sandbox with `sandbox`."
+"Registry folder, of the test releases with `sandbox`."
 registry_dir(sandbox::Bool=false) =
     sandbox ? joinpath(REPO_DIR, "registry", "_sandbox") : joinpath(REPO_DIR, "registry")
 
 "Root of the products, \$ICE_DATA/v2, which `\$datasets_dir` in the registry stands for."
 products_dir() = joinpath(_env("ICE_DATA"), "v2")
 
-"Registry file of the record of a dataset on a domain folder."
+"Registry file of the record of a dataset on a domain."
 registry_file(domain::AbstractString, dataset::AbstractString; sandbox::Bool=false) =
     joinpath(registry_dir(sandbox), domain, "$dataset.toml")
 
@@ -37,17 +38,36 @@ function list_records(; sandbox::Bool=false)
 end
 
 """
-    read_record(domain, dataset; sandbox=false) -> (info, files)
+    read_record(domain, dataset; sandbox=false) -> (tables, files)
 
-Record metadata (the `[_ZENODO]` table) and file entries (name => entry) of a record.
+Metadata tables (`_RELEASE`, and `_ZENODO` if archived) and file entries (name =>
+entry) of a record.
 """
 function read_record(domain::AbstractString, dataset::AbstractString; sandbox::Bool=false)
     path = registry_file(domain, dataset; sandbox=sandbox)
     isfile(path) || error("no record $domain/$dataset, available: " *
                           join(["$d/$s" for (d, s) in list_records(; sandbox=sandbox)], ", "))
     reg = TOML.parsefile(path)
+    tables = Dict(k => v for (k, v) in reg if startswith(k, "_"))
     files = Dict(k => v for (k, v) in reg if !startswith(k, "_"))
-    return get(reg, "_ZENODO", Dict{String,Any}()), files
+    return tables, files
+end
+
+"Write a registry file: the metadata tables first, then the entries by name."
+function write_registry(path::AbstractString, tables::AbstractDict, entries::AbstractDict)
+    mkpath(dirname(path))
+    open(path, "w") do io
+        println(io, "# Registry of a released record, written by Publish (see Publish/README.md).")
+        for name in sort(collect(keys(tables)))
+            println(io)
+            TOML.print(io, Dict(name => tables[name]); sorted=true)
+        end
+        for name in sort(collect(keys(entries)))
+            println(io)
+            TOML.print(io, Dict(name => entries[name]); sorted=true)
+        end
+    end
+    return path
 end
 
 "Local path of a registry entry, under \$ICE_DATA/v2."

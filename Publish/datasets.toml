@@ -1,10 +1,15 @@
-# Datasets published on Zenodo (see README.md): one record per dataset and domain (the
+# Datasets released by Publish (see README.md): one record per dataset and domain (the
 # output folder under $ICE_DATA/v2, e.g. Greenland). `tag` is the dataset name of the
 # provenance attributes and release tags (<tag>-vX.Y.Z). The files of a release on each
 # grid are defined by the pipeline (e.g. topo_release_files in ../Topo/files.jl), with
 # the grid files grid_<GRID>.txt and <GRID>_grid.nc.
 
-# Metadata common to all records
+# Store of the releases: the package registry of a GitLab project
+[_gitlab]
+url = "https://gitlab.dkrz.de"
+project = "fesmc/fesmdata-products"
+
+# Metadata of the records archived on Zenodo
 [_zenodo]
 community = "fesmc"
 license = "cc-by-4.0"

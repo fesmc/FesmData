@@ -1,5 +1,5 @@
-# Publish the products of a dataset on Zenodo, one record per domain (see
-# Publish/README.md).
+# Archive releases of a dataset on Zenodo, optional, for a DOI: one record per domain
+# (see Publish/README.md). The release must be on the store first (gitlab.jl upload).
 #
 #   julia --project=Publish Publish/scripts/zenodo.jl upload   <Dataset> [<Domain> ...] [options]
 #   julia --project=Publish Publish/scripts/zenodo.jl status   <Dataset> [<Domain> ...] [options]
@@ -15,13 +15,13 @@
 # `upload` puts the files and metadata of each domain into a draft of the next version
 # of its record (a new record the first time); running it again continues the drafts.
 # `publish` checks the drafts, publishes them after one confirmation, and registers
-# them (writes their registry files). `register` does the latter for drafts published
-# on the Zenodo website. `status` shows where each domain is. `discard` deletes
+# them (adds their DOIs to the registry files). `register` does the latter for drafts
+# published on the Zenodo website. `status` shows where each domain is. `discard` deletes
 # unpublished drafts, of a dataset or by id; `drafts` lists all unpublished drafts of
 # the account.
 #
 # Options:
-#   --sandbox           use the Zenodo sandbox (tests); registry in registry/_sandbox/
+#   --sandbox           use the Zenodo sandbox, for test releases (registry/_sandbox/)
 #   --allow-untagged    skip the release checks (files made at a release tag)
 #   --dry-run           (upload) check and list the files only
 #   --yes               (publish) do not ask for confirmation

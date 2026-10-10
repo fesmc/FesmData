@@ -54,14 +54,17 @@ function record_grids(files::AbstractDict)
 end
 
 function record_html(io::IO, domain::AbstractString, dataset::AbstractString)
-    info, files = read_record(domain, dataset)
+    tables, files = read_record(domain, dataset)
+    release, zenodo = tables["_RELEASE"], get(tables, "_ZENODO", nothing)
     total = sum(e -> get(e, "size", 0), values(files); init=0)
-    concept = get(info, "concept_doi", "")
+    doi(d) = "<a href=\"https://doi.org/$(esc(d))\">doi:$(esc(d))</a>"
+    archive = zenodo === nothing ? "" :
+        zenodo["git_tag"] == release["git_tag"] ? "; $(doi(zenodo["doi"])) (all versions: $(doi(zenodo["concept_doi"])))" :
+        "; archived versions: $(doi(zenodo["concept_doi"]))"
     println(io, "<h3>$(esc(domain))</h3>")
-    println(io, "<p>Version $(esc(get(info, "version", "?"))) ($(esc(get(info, "publication_date", ""))), ",
-            "<a href=\"https://doi.org/$(esc(get(info, "doi", "")))\">doi:$(esc(get(info, "doi", "")))</a>",
-            isempty(concept) ? "" : "; all versions: <a href=\"https://doi.org/$(esc(concept))\">doi:$(esc(concept))</a>",
-            "). $(length(files)) files, $(human_size(total)).</p>")
+    println(io, "<p>Version $(esc(release["version"])) ($(esc(release["date"])), ",
+            "<a href=\"$(esc(release["store"]))\">packages</a>$archive). ",
+            "$(length(files)) files, $(human_size(total)).</p>")
     println(io, "<pre>julia --project=Publish Publish/scripts/fetch.jl $(esc(domain)) $(esc(dataset)) [GRID ...]</pre>")
     for (grid, entries) in record_grids(files)
         size = sum(e -> get(e, "size", 0), last.(entries); init=0)
@@ -94,9 +97,11 @@ function write_site(dir::AbstractString)
             <h1>FesmData products</h1>
             <p class="muted">Processed datasets for ice-sheet and Earth-system models, on the
             grids of each model domain.</p>
-            <p>The products are made with <a href="$REPO_URL">FesmData</a> and archived on
-            <a href="https://zenodo.org/communities/fesmc">Zenodo</a>, one record per dataset
-            and domain, with a DOI per version. Each grid has its own files, with its grid
+            <p>The products are made with <a href="$REPO_URL">FesmData</a> and released on
+            <a href="$(datasets["_gitlab"]["url"])/$(datasets["_gitlab"]["project"])/-/packages">GitLab
+            (DKRZ)</a>, one package per domain, dataset and grid, versioned by the release.
+            Releases can also be archived on <a href="https://zenodo.org/communities/fesmc">Zenodo</a>,
+            with a DOI. Each grid has its own files, with its grid
             description for cdo (<code>grid_&lt;GRID&gt;.txt</code>) and grid file
             (<code>&lt;GRID&gt;_grid.nc</code>). To download into <code>\$ICE_DATA/v2/&lt;Domain&gt;/&lt;GRID&gt;/</code>
             and verify the checksums, from a clone of FesmData:</p>
