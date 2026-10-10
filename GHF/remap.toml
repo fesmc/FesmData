@@ -31,3 +31,15 @@ source = "HazzardRichards2024_ghf"
 file = "HazzardRichards2024_GHF.nc"
 variables = ["ghf", "ghf_sd"]
 domains = ["Antarctica"]
+
+[products.Davies2013]
+source = "Davies2013_ghf"
+file = "Davies2013_GHF.nc"
+variables = ["ghf", "ghf_median", "ghf_err"]
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+
+[products.Shapiro2004]
+source = "Shapiro2004_ghf"
+file = "Shapiro2004_GHF.nc"
+variables = ["ghf", "ghf_sd"]
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]

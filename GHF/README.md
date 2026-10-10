@@ -13,6 +13,8 @@ domains and onto global lon-lat grids. GHF is a thematic dataset made by remappi
 | `GHF-Martos2017` | Martos et al. (2017): 15 km map of Antarctica from airborne magnetic data (Curie depth), [doi:10.1594/PANGAEA.882503](https://doi.org/10.1594/PANGAEA.882503) | `ghf`, `ghf_sd` (uncertainty), `depth_curie`, `depth_curie_sd` (km) | Antarctica |
 | `GHF-Martos2018` | Martos et al. (2018): 15 km map of Greenland (land only) from magnetic Curie depths, [doi:10.1594/PANGAEA.892973](https://doi.org/10.1594/PANGAEA.892973) | `ghf`, `ghf_sd` (uncertainty), `depth_curie`, `depth_curie_sd` (km) | Greenland |
 | `GHF-HazzardRichards2024` | Hazzard and Richards (2024): 0.5° map of Antarctica inferred from seismic velocities, [doi:10.1029/2023GL106274](https://doi.org/10.1029/2023GL106274) | `ghf`, `ghf_sd` (standard deviation) | Antarctica |
+| `GHF-Davies2013` | Davies (2013): 2° global map from observations, geology and young-ocean cooling, [doi:10.1002/ggge.20271](https://doi.org/10.1002/ggge.20271) | `ghf` (mean), `ghf_median`, `ghf_err` (error estimate) | Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Eurasia, Global |
+| `GHF-Shapiro2004` | Shapiro and Ritzwoller (2004): 1° global map extrapolated with a seismic model, [doi:10.1016/j.epsl.2004.04.011](https://doi.org/10.1016/j.epsl.2004.04.011) | `ghf`, `ghf_sd` (standard deviation) | Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Eurasia, Global |
 
 Each file `<GRID>_GHF-<Source>.nc` also has `f_valid`, the fraction of each cell
 covered by the source. Each source is remapped conservatively; on grids finer than the
@@ -28,6 +30,8 @@ for 0.5°), so that its cells do not show as steps. The global attribute
 | Martos et al. (2017) | CC BY 3.0 (PANGAEA) |
 | Martos et al. (2018) | CC BY 3.0 (PANGAEA) |
 | Hazzard and Richards (2024) | No licence set on OSF (article CC BY 4.0); publishing assumed to be allowed |
+| Davies (2013) | Wiley standard terms (no open licence): permission from AGU or the author is needed before release |
+| Shapiro and Ritzwoller (2004) | No licence stated; publishing assumed to be allowed |
 
 The licence of each source is in its README and in the `license` attribute of its
 files. A source can be released under the FesmData licence (CC BY 4.0) only if its own
