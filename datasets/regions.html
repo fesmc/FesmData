@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.19">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Regions – FesmData</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d37df8fd7b43e116a420b34c208e916c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-2664ab39a1afdca443dc613af4e4f7b3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">FesmData</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../products.html"> 
+<span class="menu-text">Products</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../domains.html"> 
+<span class="menu-text">Domains and grids</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-datasets" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Datasets</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-datasets">    
+        <li>
+    <a class="dropdown-item" href="../datasets/topo.html">
+ <span class="dropdown-text">Topo — topography</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/regions.html">
+ <span class="dropdown-text">Regions — regions and basins</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../releasing.html"> 
+<span class="menu-text">Releasing</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/fesmc/FesmData"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#regions-region-masks-zones-and-basins-v2" id="toc-regions-region-masks-zones-and-basins-v2" class="nav-link active" data-scroll-target="#regions-region-masks-zones-and-basins-v2">Regions: region masks, zones and basins (v2)</a>
+  <ul class="collapse">
+  <li><a href="#region-codes" id="toc-region-codes" class="nav-link" data-scroll-target="#region-codes">Region codes</a></li>
+  <li><a href="#zones" id="toc-zones" class="nav-link" data-scroll-target="#zones">Zones</a></li>
+  <li><a href="#basins" id="toc-basins" class="nav-link" data-scroll-target="#basins">Basins</a>
+  <ul class="collapse">
+  <li><a href="#negis" id="toc-negis" class="nav-link" data-scroll-target="#negis">NEGIS</a></li>
+  </ul></li>
+  <li><a href="#adding-a-region-a-basin-set-or-a-domain" id="toc-adding-a-region-a-basin-set-or-a-domain" class="nav-link" data-scroll-target="#adding-a-region-a-basin-set-or-a-domain">Adding a region, a basin set or a domain</a></li>
+  <li><a href="#layout" id="toc-layout" class="nav-link" data-scroll-target="#layout">Layout</a></li>
+  <li><a href="#steps" id="toc-steps" class="nav-link" data-scroll-target="#steps">Steps</a>
+  <ul class="collapse">
+  <li><a href="#original-datasets" id="toc-original-datasets" class="nav-link" data-scroll-target="#original-datasets">0. Original datasets</a></li>
+  <li><a href="#regions" id="toc-regions" class="nav-link" data-scroll-target="#regions">1. Regions</a></li>
+  <li><a href="#zones-1" id="toc-zones-1" class="nav-link" data-scroll-target="#zones-1">2. Zones</a></li>
+  <li><a href="#basins-1" id="toc-basins-1" class="nav-link" data-scroll-target="#basins-1">3. Basins</a></li>
+  <li><a href="#all-grids" id="toc-all-grids" class="nav-link" data-scroll-target="#all-grids">4. All grids</a></li>
+  <li><a href="#checks" id="toc-checks" class="nav-link" data-scroll-target="#checks">5. Checks</a></li>
+  </ul></li>
+  <li><a href="#sources" id="toc-sources" class="nav-link" data-scroll-target="#sources">Sources</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/fesmc/FesmData/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="regions-region-masks-zones-and-basins-v2" class="level1">
+<h1>Regions: region masks, zones and basins (v2)</h1>
+<p>Masks of geographic regions, of present-day land, continental shelf and open ocean, and of ice-sheet drainage basins, for each model domain on all its grids (<code>../shared/domains.toml</code>, as for the topography v2 pipeline in <code>../Topo</code>).</p>
+<ul>
+<li><strong>Regions</strong> are a tree defined once, globally, in <code>regions.toml</code>, from standard datasets (countries and EEZs, IHO seas, oceans, HydroBASINS, IMBIE basins), so the same region has the same code in every domain. Each level of the tree covers the globe without gaps or overlaps.</li>
+<li><strong>Zones</strong> separate present-day land, the continental shelf (up to the shelf break) and the open ocean, from the bed elevation of the topography product.</li>
+<li><strong>Basins</strong> (<code>basins.toml</code>) are the drainage basins of the ice sheets, extended over the land and shelf of their region up to the shelf break.</li>
+</ul>
+<p>Everything is computed on the base grid of a domain (ANT-1KM, GRL-PAL-500M, NH-2KM, PYR-500M, SRG-250M) and then mapped onto all other grids and crops, as for the topography.</p>
+<section id="region-codes" class="level2">
+<h2 class="anchored" data-anchor-id="region-codes">Region codes</h2>
+<p>A region is named by its path in the tree: “1.3.1” is subregion 1 of region 3 of region 1. Its code is the integer with two digits per level below the first: “1” = 1, “1.3” = 103, “1.3.1” = 10301. The files have one variable per level, <code>region_1</code>, <code>region_2</code>, <code>region_3</code>, each with the code of the deepest region at or above that level, so a cell without a subregion keeps the code of its region. The names of the codes are in the attributes <code>flag_values</code> and <code>flag_meanings</code>. Codes of ocean regions start at 51. Helpers for codes are in FesmUtils.jl (<code>region_code</code>, <code>region_path</code>, <code>region_ancestor</code>, <code>in_region</code>).</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Level 2</th>
+<th>Level 3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1.1 North America</td>
+<td>1.1.1 Canadian Arctic Archipelago, 1.1.2 Hudson Bay and Strait, 1.1.3 Cordillera and Alaska</td>
+</tr>
+<tr class="even">
+<td>1.2 Western Eurasia</td>
+<td>1.2.1 Barents-Kara, 1.2.2 British Isles, 1.2.3 Svalbard, 1.2.4 Fennoscandia</td>
+</tr>
+<tr class="odd">
+<td>1.3 Greenland, 1.4 Asia, 1.5 Iceland, 1.6 Africa, 1.7 Latin America and the Caribbean, 1.8 Oceania</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>1.51 Arctic Ocean, 1.52 North Atlantic Ocean (with Baltic and Mediterranean), 1.53 North Pacific Ocean, 1.54 Indian Ocean, 1.55 South China and Eastern Archipelagic Seas</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2.1 Antarctica (south of 60S)</td>
+<td>2.1.1 West Antarctica, 2.1.2 East Antarctica, 2.1.3 Antarctic Peninsula</td>
+</tr>
+<tr class="even">
+<td>2.2 Latin America and the Caribbean, 2.3 Africa, 2.4 Asia, 2.5 Oceania, 2.51 South Atlantic, 2.52 South Pacific, 2.53 Indian Ocean, 2.54 South China and Eastern Archipelagic Seas</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The rules of each region are documented in <code>regions.toml</code>. In short:</p>
+<ul>
+<li>Continents are the countries and their EEZs grouped by UN M49 region; Greenland and Iceland come first; oceans (GOaS) take the rest.</li>
+<li>Russia is split between Western Eurasia and Asia at the divide between the rivers draining to the Kara and Laptev seas (HydroBASINS), and at sea at the boundary between the Kara and Laptev seas (IHO).</li>
+<li>The NA subregions follow HydroBASINS and IHO seas; Hudson Bay and Strait include only the coastal basins draining into them, not the large rivers.</li>
+<li>The Antarctic subregions are the IMBIE regions, extended to fill all of 2.1.</li>
+</ul>
+<p>The mountain domains lie within single regions of level 2: PYR in 1.2 Western Eurasia (land and EEZs of Spain, France and Andorra) and 1.52 North Atlantic Ocean (beyond the EEZs, if any), SRG in 2.2 Latin America and the Caribbean.</p>
+</section>
+<section id="zones" class="level2">
+<h2 class="anchored" data-anchor-id="zones">Zones</h2>
+<p><code>zone</code> is 3 for present-day land (ice-free land and grounded ice), 2 for the continental shelf (including floating ice), 1 for open ocean within <code>buffer</code> (50 km) of the shelf break, and 0 for the open ocean beyond. <code>dist_shelfbreak</code> (km) is the distance to the shelf break, positive in the open ocean, so other buffers are a threshold on it.</p>
+<p>The open ocean is the ice-free ocean connected to the abyss (deeper than <code>z_abyss</code> = -2000 m) through cells deeper than the shelf-break depth <code>z_break</code> (-500 m, -1000 m around Antarctica), after removing channels narrower than about 100 km (an opening of radius <code>r_open</code> = 50 km), which also smooths the shelf break. Deep troughs on the shelf that deepen towards the ice sheet are therefore shelf. The parameters are in <code>regions.toml</code>.</p>
+<p>A domain without open ocean, where no ocean deeper than <code>z_abyss</code> lies within the domain (the mountain domains PYR and SRG), has only land and shelf, and <code>dist_shelfbreak</code> is -Inf everywhere (as noted in the <code>comment</code> attribute of the variable).</p>
+</section>
+<section id="basins" class="level2">
+<h2 class="anchored" data-anchor-id="basins">Basins</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Set</th>
+<th>Domains</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mouginot2019</td>
+<td>GRL-PAL, NH</td>
+<td>Greenland glacier basins, 260 basins in 7 regions (Mouginot &amp; Rignot, 2019)</td>
+</tr>
+<tr class="even">
+<td>Zwally2012</td>
+<td>GRL-PAL, NH; ANT</td>
+<td>GSFC drainage systems (Zwally et al., 2012); Greenland sub-systems 11 = 1.1</td>
+</tr>
+<tr class="odd">
+<td>IMBIE2016, IMBIE2016-refined</td>
+<td>ANT</td>
+<td>IMBIE 2016 and refined basins (Mouginot et al., 2017, NSIDC-0709 v2)</td>
+</tr>
+<tr class="even">
+<td>SanRafael</td>
+<td>SRG</td>
+<td>San Rafael Glacier (RGI2000-v7.0-G-17-12835), its RGI 7.0 outline as the footprint of its IceBoost v2 tile</td>
+</tr>
+<tr class="odd">
+<td>NEGIS-v1</td>
+<td>GRL-PAL</td>
+<td>Northeast Greenland Ice Stream in three parts, drawn by hand for yelmox v1 on GRL-16KM (Ilaria Tabone, 2024)</td>
+</tr>
+<tr class="even">
+<td>NEGIS</td>
+<td>GRL-PAL</td>
+<td>Northeast Greenland Ice Stream in three parts: centre and south from the surface speed (Joughin et al., 2018), north from NEGIS-v1</td>
+</tr>
+</tbody>
+</table>
+<p>Each file has <code>basin</code>, <code>basin_mask</code> (1 within the original basins) and, for sets with groups (e.g.&nbsp;Mouginot regions, IMBIE regions, Zwally systems), <code>basin_group</code>. The islands in the ice shelves of IMBIE2016-refined keep their extent but are not extended, so the ice shelves around them go to the neighbouring grounded basins.</p>
+<p>SanRafael is a single basin (1), the cells at least half covered by the glacier, not extended: the part of the SRG domain that evolves freely in yelmox, while the rest relaxes to the present-day state (in v1, <code>regions = 1</code> of SRG-250M_REGIONS.nc). PYR has no basins.</p>
+<section id="negis" class="level3">
+<h3 class="anchored" data-anchor-id="negis">NEGIS</h3>
+<p>The NEGIS sets split the Northeast Greenland Ice Stream into three parts, to tune basal friction by part in yelmox: <code>basin</code> 1 centre (the trunk of 79N and Zachariae Isstrom down to the coast), 2 south (the trunk upstream), 3 north (the northern arm), 0 outside. They are not extended, so <code>basin_mask</code> is <code>basin != 0</code>, and have no groups (<code>negis.jl</code>).</p>
+<p><strong>NEGIS-v1</strong> are the parts of yelmox v1 (<code>basin_sub</code> 9.1, 9.2, 9.3 of GRL-16KM_BASINS-nasa-negis-three.nc), drawn by hand by Ilaria Tabone (2024) on GRL-16KM. They cannot be rebuilt, so the 248 cells are kept in the repository (<code>sources/negis_v1_GRL-16KM.csv</code>). Each cell of the base grid takes the part of the GRL-16KM cell containing its centre, so GRL-16KM reproduces v1 exactly (checked by <code>06_negis.jl</code>, 0 cells differ), and the other grids are the majority as for all basins.</p>
+<p><strong>NEGIS</strong> builds the centre and south parts from the present-day surface speed, the cell mean of the 250 m MEaSUREs velocity mosaic (NSIDC-0670 v1; Joughin et al., 2018) on the base grid. The stream is the cells of Zwally drainage system 2 with grounded ice (the topography of the zones) and a speed of at least 50 m/yr (30 m/yr south of the cut), connected to the cell nearest to (400, -1162) km in the trunk of 79N. This leaves out the separate fast cells of Storstrommen and L. Bistrup Brae. South is the stream south of the cut line y = -1140 - 0.3 x (km, GRL polar stereographic), centre the rest. The north part of v1 follows a palaeo ice stream that shut down in the Holocene (Franke et al., 2022) and is slow today (4-50 m/yr), so neither a lower speed threshold nor a band along the present flow reproduces it (IoU of the north part 0.50 and 0.73 at best). Franke et al. publish only the radar data (PANGAEA), not an outline, so the north part is that of NEGIS-v1, and replaces the others where they overlap. The parameters are in <code>basins.toml</code> ([basins.negis]).</p>
+<p>The parameters give the best match of the v1 parts on GRL-16KM, among cut lines, thresholds of the south part of 20-50 m/yr, and other splits (<code>06_negis.jl</code>):</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Part</th>
+<th>Cells</th>
+<th>v1 cells</th>
+<th>IoU</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>centre</td>
+<td>82</td>
+<td>94</td>
+<td>0.80</td>
+</tr>
+<tr class="even">
+<td>south</td>
+<td>101</td>
+<td>96</td>
+<td>0.86</td>
+</tr>
+<tr class="odd">
+<td>north</td>
+<td>58</td>
+<td>58</td>
+<td>1.00</td>
+</tr>
+<tr class="even">
+<td>all</td>
+<td>241</td>
+<td>248</td>
+<td>0.90</td>
+</tr>
+</tbody>
+</table>
+<p>The whole stream at 50 m/yr matches the single v1 NEGIS basin (basin 9 of GRL-16KM_BASINS-nasa-negis.nc) with IoU 0.88. The v1 centre also has a few isolated cells near Storstrommen, left out here. A cut at a surface elevation of 1450 m instead of the line gives IoU 0.74 (centre) and 0.79 (south), and a cut at a distance along the stream from the grounding line of 79N (200 km) 0.68 and 0.63. The Mouginot basins of 79N, Zachariae Isstrom and Storstrommen are far broader than the stream (IoU 0.23).</p>
+</section>
+</section>
+<section id="adding-a-region-a-basin-set-or-a-domain" class="level2">
+<h2 class="anchored" data-anchor-id="adding-a-region-a-basin-set-or-a-domain">Adding a region, a basin set or a domain</h2>
+<p><strong>A region</strong> is an entry of <code>regions.toml</code>, with its path, name and rules:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">[[region]]</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">path</span> <span class="op">=</span> <span class="st">"1.2.3"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dt">name</span> <span class="op">=</span> <span class="st">"Svalbard"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="dt">rules</span> <span class="op">=</span> <span class="op">[{ </span><span class="dt">source</span><span class="op"> =</span> <span class="st">"eez_land"</span><span class="op">, </span><span class="dt">field</span><span class="op"> =</span> <span class="st">"territory1"</span><span class="op">, </span><span class="dt">values</span><span class="op"> =</span> <span class="op">[</span><span class="st">"Svalbard"</span><span class="op">] }]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>A region covers the union of its rules, within its parent; siblings are applied in the order of the file, so a cell taken by an earlier sibling stays with it. A rule selects features of a polygon source (<code>eez_land</code>, <code>iho</code>, <code>goas</code>, <code>hydrobasins</code>, <code>imbie</code>) by the <code>values</code> of a <code>field</code>, or a lon/lat <code>box</code>, and can be limited <code>within</code> or <code>without</code> other rules (see the header of <code>regions.toml</code>). A region with <code>fill = true</code> gives its cells outside all its subregions to the nearest subregion. Ocean regions are numbered from 51. Changing the tree changes the codes of all domains, so it is a new release of Regions; then run steps 1 and 4 (and 5) for every domain.</p>
+<p><strong>A basin set</strong> is an entry of <code>basins.toml</code>: its name, domains, the region it is extended in (up to the shelf break), its polygon source, and the attribute identifying the basins (<code>id_field</code>), optionally a grouping (<code>group_field</code>), selected <code>features</code>, or basins that are not extended (<code>no_extension</code>); see the header of <code>basins.toml</code>. Then run steps 3-5 for its domains (<code>03_basins.jl &lt;DOMAIN&gt; &lt;SET&gt;</code>, <code>04_grids.jl &lt;DOMAIN&gt; &lt;SET&gt;</code>). Its files are released with the next release of Regions.</p>
+<p><strong>A polygon source</strong> is an entry of <code>../datamanifest.toml</code> (with its DOI), a branch in <code>_read_source</code> and in <code>manifest_keys</code> in <code>sources.jl</code> (the polygons in lon/lat as <code>Shape</code>s, with their attributes).</p>
+<p><strong>A domain</strong>: define it in <code>../shared/domains.toml</code> (see <code>../shared/README.md</code>), make its topography (Topo), and add the topography product of its zones to <code>[zone] products</code> in <code>regions.toml</code> (and its shelf-break depth <code>z_break</code> if its region needs another one). Add it to the <code>domains</code> of its basin sets, if any, and run all steps (<code>jobs/submit_domain.sh &lt;DOMAIN&gt;</code>). The region tree is global, so a new domain needs no new regions.</p>
+</section>
+<section id="layout" class="level2">
+<h2 class="anchored" data-anchor-id="layout">Layout</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Location</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>$DATAMANIFEST_DATASETS_DIR</code></td>
+<td>Original datasets (see <code>../datamanifest.toml</code>)</td>
+</tr>
+<tr class="even">
+<td><code>$ICE_DATA/v2/&lt;Domain&gt;/&lt;GRID&gt;/</code></td>
+<td>Output: <code>&lt;GRID&gt;_REGIONS.nc</code>, <code>&lt;GRID&gt;_BASINS-&lt;set&gt;.nc</code></td>
+</tr>
+<tr class="odd">
+<td><code>$FESMDATA_WORK/regions/</code></td>
+<td>Intermediate files (base grids) and check plots</td>
+</tr>
+</tbody>
+</table>
+<p>The machine environments are in <code>../shared/machines</code>, and the Julia setup is that of <code>../Topo</code> (see its README). Install the packages once (on Levante on a login node):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> shared/machines/levante.env</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> <span class="at">--project</span><span class="op">=</span>Regions <span class="at">-e</span> <span class="st">'using Pkg; Pkg.instantiate()'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="steps" class="level2">
+<h2 class="anchored" data-anchor-id="steps">Steps</h2>
+<p>All commands are run from the FesmData root after sourcing the machine environment. Each step can be submitted as a job on a Levante compute node:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> <span class="at">--job-name</span><span class="op">=&lt;</span>name<span class="op">&gt;</span> Regions/jobs/run_step.sbatch <span class="op">&lt;</span>script<span class="op">&gt;</span> <span class="op">&lt;</span>args...<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>and <code>Regions/jobs/submit_domain.sh DOMAIN [FIRST_STEP]</code> submits steps 1-5 as a chain of jobs. The topography product of the domain (Topo, step 3) is needed from step 2.</p>
+<section id="original-datasets" class="level3">
+<h3 class="anchored" data-anchor-id="original-datasets">0. Original datasets</h3>
+<p>The datasets are listed and downloaded with the Topo script (on a login node):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> <span class="at">--project</span><span class="op">=</span>Topo Topo/scripts/00_sources.jl <span class="at">--download</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The Marine Regions layers (EEZ-land union v4, IHO Sea Areas v3, GOaS v1) are fetched from its WFS server, HydroBASINS, the Zwally drainage systems and the ISO 3166/M49 table directly. Two need a manual download into the folder printed by the script:</p>
+<ul>
+<li><strong>Mouginot &amp; Rignot (2019)</strong> basins: the <code>Greenland_Basins_PS_v1.4.2.*</code> files from <a href="https://doi.org/10.7280/D1WT11">Dryad</a>.</li>
+<li><strong>NSIDC-0709 v2</strong> (NASA Earthdata login, see Topo): the <code>.shp</code>, <code>.shx</code>, <code>.dbf</code> and <code>.prj</code> files of <code>Basins_IMBIE_Antarctica_v02</code> and <code>Basins_Antarctica_v02</code>, from the <code>uri</code> in <code>../datamanifest.toml</code>.</li>
+<li><strong>NSIDC-0670 v1</strong> (NASA Earthdata login): <code>greenland_vel_mosaic250_vx_v1.tif</code> and <code>greenland_vel_mosaic250_vy_v1.tif</code> (NEGIS), from the <code>uri</code> in <code>../datamanifest.toml</code>.</li>
+</ul>
+</section>
+<section id="regions" class="level3">
+<h3 class="anchored" data-anchor-id="regions">1. Regions</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> <span class="at">--job-name</span><span class="op">=</span>regions-NH Regions/jobs/run_step.sbatch 01_regions.jl NH</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Writes <code>region_1</code>-<code>region_3</code> on the base grid. The job log lists the cells of each region, and the cells that were filled with the nearest region.</p>
+</section>
+<section id="zones-1" class="level3">
+<h3 class="anchored" data-anchor-id="zones-1">2. Zones</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> <span class="at">--job-name</span><span class="op">=</span>zone-NH Regions/jobs/run_step.sbatch 02_zone.jl NH</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="basins-1" class="level3">
+<h3 class="anchored" data-anchor-id="basins-1">3. Basins</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> <span class="at">--job-name</span><span class="op">=</span>basins-ANT Regions/jobs/run_step.sbatch 03_basins.jl ANT <span class="pp">[</span><span class="ss">SET</span><span class="pp">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>NEGIS reads the grounded ice of the topography of the zones (step 2).</p>
+</section>
+<section id="all-grids" class="level3">
+<h3 class="anchored" data-anchor-id="all-grids">4. All grids</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> <span class="at">--job-name</span><span class="op">=</span>grids-all-NH Regions/jobs/run_step.sbatch 04_grids.jl NH <span class="pp">[</span><span class="ss">SET</span><span class="pp">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>With SET, only the files of that basin set are written.</p>
+<p>Region codes, zones and basins on each grid are the class covering most of a cell, nested level by level (a cell’s <code>region_3</code> lies within its <code>region_2</code>; basins within their group). <code>dist_shelfbreak</code> is the cell mean.</p>
+</section>
+<section id="checks" class="level3">
+<h3 class="anchored" data-anchor-id="checks">5. Checks</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> <span class="at">--job-name</span><span class="op">=</span>plots-NH Regions/jobs/run_step.sbatch 05_plots.jl NH <span class="pp">[</span><span class="ss">GRID</span><span class="pp">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Writes maps of the regions, zones and basins to <code>$FESMDATA_WORK/regions/plots/</code>.</p>
+<p>The NEGIS sets are checked against v1 on GRL-16KM (cells and IoU of each part, and a map, <code>$FESMDATA_WORK/regions/plots/GRL-16KM_negis.png</code>):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> <span class="at">--job-name</span><span class="op">=</span>negis Regions/jobs/run_step.sbatch 06_negis.jl <span class="dt">\</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    /work/ba1442/ice_data/Greenland/GRL-16KM/GRL-16KM_BASINS-nasa-negis-three.nc</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The v1 file is optional; with it, the script checks that NEGIS-v1 reproduces it.</p>
+</section>
+</section>
+<section id="sources" class="level2">
+<h2 class="anchored" data-anchor-id="sources">Sources</h2>
+<ul>
+<li>Franke, S., Bons, P. D., Westhoff, J., et al.&nbsp;(2022). Holocene ice-stream shutdown and drainage basin reconfiguration in northeast Greenland. Nature Geoscience, 15, 995-1001. doi:10.1038/s41561-022-01082-2</li>
+<li>Flanders Marine Institute (2024). Union of the ESRI Country shapefile and the Exclusive Economic Zones (version 4). doi:10.14284/698</li>
+<li>Flanders Marine Institute (2018). IHO Sea Areas, version 3. doi:10.14284/323</li>
+<li>Flanders Marine Institute (2021). Global Oceans and Seas, version 1. doi:10.14284/542</li>
+<li>Joughin, I., Smith, B. E. and Howat, I. M. (2018). A complete map of Greenland ice velocity derived from satellite data collected over 20 years. Journal of Glaciology, 64(243), 1-11. doi:10.1017/jog.2017.73 (MEaSUREs Multi-year Greenland Ice Sheet Velocity Mosaic, Version 1, NSIDC-0670, doi:10.5067/QUA5Q9SVMSJG)</li>
+<li>Lehner, B. and Grill, G. (2013). Global river hydrography and network routing: baseline data and new approaches to study the world’s large river systems. Hydrological Processes, 27(15), 2171-2186 (HydroBASINS v1c).</li>
+<li>ISO 3166 countries with UN M49 regions: github.com/lukes/ISO-3166-Countries-with-Regional-Codes</li>
+<li>Mouginot, J. and Rignot, E. (2019). Glacier catchments/basins for the Greenland Ice Sheet. Dryad. doi:10.7280/D1WT11</li>
+<li>Mouginot, J., Scheuchl, B. and Rignot, E. (2017). MEaSUREs Antarctic Boundaries for IPY 2007-2009 from Satellite Radar, Version 2. NSIDC. doi:10.5067/AXE4121732AD</li>
+<li>Zwally, H. J., Giovinetto, M. B., Beckley, M. A. and Saba, J. L. (2012). Antarctic and Greenland Drainage Systems. GSFC Cryospheric Sciences Laboratory.</li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/fesmc\.github\.io\/FesmData\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>FesmData · fesmc</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/fesmc/FesmData/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Built with <a href="https://quarto.org">Quarto</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

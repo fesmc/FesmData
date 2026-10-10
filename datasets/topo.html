@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.19">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Topo – FesmData</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d37df8fd7b43e116a420b34c208e916c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-2664ab39a1afdca443dc613af4e4f7b3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">FesmData</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../products.html"> 
+<span class="menu-text">Products</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../domains.html"> 
+<span class="menu-text">Domains and grids</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-datasets" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Datasets</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-datasets">    
+        <li>
+    <a class="dropdown-item" href="../datasets/topo.html">
+ <span class="dropdown-text">Topo — topography</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/regions.html">
+ <span class="dropdown-text">Regions — regions and basins</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../releasing.html"> 
+<span class="menu-text">Releasing</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/fesmc/FesmData"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#topo-high-resolution-topography-v2" id="toc-topo-high-resolution-topography-v2" class="nav-link active" data-scroll-target="#topo-high-resolution-topography-v2">Topo: high-resolution topography (v2)</a>
+  <ul class="collapse">
+  <li><a href="#layout" id="toc-layout" class="nav-link" data-scroll-target="#layout">Layout</a></li>
+  <li><a href="#setup-on-a-new-machine" id="toc-setup-on-a-new-machine" class="nav-link" data-scroll-target="#setup-on-a-new-machine">Setup on a new machine</a></li>
+  <li><a href="#steps" id="toc-steps" class="nav-link" data-scroll-target="#steps">Steps</a>
+  <ul class="collapse">
+  <li><a href="#original-datasets" id="toc-original-datasets" class="nav-link" data-scroll-target="#original-datasets">0. Original datasets</a></li>
+  <li><a href="#grids" id="toc-grids" class="nav-link" data-scroll-target="#grids">1. Grids</a></li>
+  <li><a href="#sources-on-the-base-grid" id="toc-sources-on-the-base-grid" class="nav-link" data-scroll-target="#sources-on-the-base-grid">2. Sources on the base grid</a></li>
+  <li><a href="#merge" id="toc-merge" class="nav-link" data-scroll-target="#merge">3. Merge</a></li>
+  <li><a href="#all-grids" id="toc-all-grids" class="nav-link" data-scroll-target="#all-grids">4. All grids</a></li>
+  <li><a href="#checks" id="toc-checks" class="nav-link" data-scroll-target="#checks">5. Checks</a></li>
+  </ul></li>
+  <li><a href="#running-a-whole-domain" id="toc-running-a-whole-domain" class="nav-link" data-scroll-target="#running-a-whole-domain">Running a whole domain</a></li>
+  <li><a href="#adding-a-source-a-product-or-a-domain" id="toc-adding-a-source-a-product-or-a-domain" class="nav-link" data-scroll-target="#adding-a-source-a-product-or-a-domain">Adding a source, a product or a domain</a></li>
+  <li><a href="#glaciers-in-the-nh-product" id="toc-glaciers-in-the-nh-product" class="nav-link" data-scroll-target="#glaciers-in-the-nh-product">Glaciers in the NH product</a></li>
+  <li><a href="#glaciers-in-the-pyr-and-srg-products" id="toc-glaciers-in-the-pyr-and-srg-products" class="nav-link" data-scroll-target="#glaciers-in-the-pyr-and-srg-products">Glaciers in the PYR and SRG products</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/fesmc/FesmData/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="topo-high-resolution-topography-v2" class="level1">
+<h1>Topo: high-resolution topography (v2)</h1>
+<p>Bed topography, surface elevation, ice thickness and ice/ocean fractions for each model domain, from the best available sources, at resolutions from the base grid down to 32 km (16 km for SRG). The domains are the ice sheets (ANT, GRL-PAL, NH) and two mountain-glacier domains, the Pyrenees (PYR) and the San Rafael Glacier in Patagonia (SRG).</p>
+<p>The processing has two stages:</p>
+<ol type="1">
+<li><strong>Sources → base grid.</strong> Each source is remapped once onto the base grid of a domain (ANT-1KM, GRL-PAL-500M, NH-2KM, PYR-500M, SRG-250M), and the sources are then merged in order of priority (e.g.&nbsp;BedMachine over GEBCO).</li>
+<li><strong>Base → all other grids.</strong> Every coarser grid, and the crops of a domain (GRL, LIS, EIS), is remapped from the merged base product.</li>
+</ol>
+<p>Remapping is conservative: exact for sources on the same projection as the domain (BedMachine, Bedmap3), and from sub-cell sampling for sources on other grids (GEBCO, IceBoost glacier tiles). The methods are in <a href="https://github.com/fesmc/FesmUtils.jl">FesmUtils.jl</a> and are threaded.</p>
+<p>Domains and resolutions are defined in <code>../shared/domains.toml</code> (shared with the other pipelines), and the products of each domain in <code>products.toml</code>. Grid extents follow the v1 grids in <code>../maps</code>, so the v1 grids at 4-32 km are reproduced, except GRL-32KM, which has 53 instead of 54 columns so that its extent matches the finer GRL grids. The ice-sheet domains are on polar stereographic projections, PYR and SRG on UTM (zones 31N and 18S). PYR has no v1 grid: it covers the whole range with 20-30 km of foreland (see <code>domains.toml</code>). SRG reproduces the v1 SRG-16KM grid (5 x 3 cells), and its base grid SRG-250M covers the same area; it is therefore larger than the v1 SRG-250M grid (257 x 129 instead of 208 x 120 cells), whose cell centres are offset by half a cell (125 m) in x and y from those of SRG-250M here.</p>
+<p>Each domain has default products, from the latest sources, and variants, from earlier versions of the ice-sheet datasets, made on request:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Domain</th>
+<th>Default products</th>
+<th>Variants</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ANT</td>
+<td>BedMachine-v4, Bedmap3</td>
+<td>BedMachine-v3, BedMachine-v2, Bedmap2</td>
+</tr>
+<tr class="even">
+<td>GRL-PAL</td>
+<td>BedMachine-v6</td>
+<td>BedMachine-v5, BedMachine-v4</td>
+</tr>
+<tr class="odd">
+<td>NH</td>
+<td>GEBCO2026</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>PYR</td>
+<td>GEBCO2026</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>SRG</td>
+<td>GEBCO2026</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>All products use GEBCO 2026 outside the ice-sheet datasets, and the NH, PYR and SRG products add the IceBoost glaciers onto it. A new variant is a new entry under <code>[&lt;domain&gt;.variants]</code> in <code>products.toml</code> (with its sources in <code>../datamanifest.toml</code> and <code>sources.jl</code>).</p>
+<section id="layout" class="level2">
+<h2 class="anchored" data-anchor-id="layout">Layout</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Location</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>$DATAMANIFEST_DATASETS_DIR</code></td>
+<td>Original datasets (see <code>../datamanifest.toml</code>)</td>
+</tr>
+<tr class="even">
+<td><code>$ICE_DATA/v2/&lt;Domain&gt;/&lt;GRID&gt;/</code></td>
+<td>Output: <code>grid_&lt;GRID&gt;.txt</code>, <code>&lt;GRID&gt;_grid.nc</code>, <code>&lt;GRID&gt;_TOPO-&lt;product&gt;.nc</code></td>
+</tr>
+<tr class="odd">
+<td><code>$FESMDATA_WORK/topo/</code></td>
+<td>Intermediate files (sources on base grids, IceBoost tile index)</td>
+</tr>
+</tbody>
+</table>
+<p>The environment variables are set per machine in <code>../shared/machines/&lt;machine&gt;.env</code>.</p>
+</section>
+<section id="setup-on-a-new-machine" class="level2">
+<h2 class="anchored" data-anchor-id="setup-on-a-new-machine">Setup on a new machine</h2>
+<p>Install Julia 1.13.1 with juliaup:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-fsSL</span> https://install.julialang.org <span class="kw">|</span> <span class="fu">sh</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">juliaup</span> add 1.13.1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The machine environment selects this version (<code>JULIAUP_CHANNEL</code>).</p>
+<p>From the FesmData root, set the environment and install the packages (on Levante, on a login node, since compute nodes have no internet access):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> shared/machines/levante.env</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> <span class="at">--project</span><span class="op">=</span>Topo <span class="at">-e</span> <span class="st">'using Pkg; Pkg.instantiate()'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="steps" class="level2">
+<h2 class="anchored" data-anchor-id="steps">Steps</h2>
+<p>All commands are run from the FesmData root after sourcing the machine environment. On Levante, every step can be submitted as a job on a full compute node:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> <span class="at">--job-name</span><span class="op">=&lt;</span>name<span class="op">&gt;</span> Topo/jobs/run_step.sbatch <span class="op">&lt;</span>script<span class="op">&gt;</span> <span class="op">&lt;</span>args...<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Logs go to <code>Topo/logs/</code>.</p>
+<section id="original-datasets" class="level3">
+<h3 class="anchored" data-anchor-id="original-datasets">0. Original datasets</h3>
+<p>List the datasets and whether they are present:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> <span class="at">--project</span><span class="op">=</span>Topo Topo/scripts/00_sources.jl</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>GEBCO 2026 (4 GB zipped), Bedmap3 (2.5 GB) and IceBoost v2.0 (1.3 GB zipped, one zip per RGI region) are downloaded automatically (Levante login node):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> <span class="at">--project</span><span class="op">=</span>Topo Topo/scripts/00_sources.jl <span class="at">--download</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The other sources need a manual download into the path printed by the script:</p>
+<ul>
+<li><p><strong>BedMachine Greenland</strong> (v4-v6) and <strong>BedMachine Antarctica</strong> (v2-v4) (NSIDC), including the versions no longer listed by NSIDC, need a free <a href="https://urs.earthdata.nasa.gov">NASA Earthdata login</a>. With the login in <code>~/.netrc</code> (<code>machine urs.earthdata.nasa.gov login &lt;user&gt; password &lt;password&gt;</code>):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">--load-cookies</span> ~/.urs_cookies <span class="at">--save-cookies</span> ~/.urs_cookies <span class="dt">\</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">--keep-session-cookies</span> <span class="at">-P</span> <span class="op">&lt;</span>folder<span class="op">&gt;</span> <span class="op">&lt;</span>uri<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>with <code>&lt;uri&gt;</code> from <code>../datamanifest.toml</code>.</p></li>
+</ul>
+</section>
+<section id="grids" class="level3">
+<h3 class="anchored" data-anchor-id="grids">1. Grids</h3>
+<p>Write the grid description and grid file of every grid of a domain:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> <span class="at">--project</span><span class="op">=</span>Topo <span class="at">-t</span> 8 Topo/scripts/01_grids.jl GRL-PAL</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The script also reports which grids match the v1 definitions in <code>../maps</code>.</p>
+</section>
+<section id="sources-on-the-base-grid" class="level3">
+<h3 class="anchored" data-anchor-id="sources-on-the-base-grid">2. Sources on the base grid</h3>
+<p>Remap each source of a domain onto its base grid (one job per source, about a minute each on a Levante node):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> <span class="at">--job-name</span><span class="op">=</span>src-GRL-PAL-bm Topo/jobs/run_step.sbatch 02_regrid_source.jl GRL-PAL bedmachine_greenland_v6</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> <span class="at">--job-name</span><span class="op">=</span>src-GRL-PAL-gebco Topo/jobs/run_step.sbatch 02_regrid_source.jl GRL-PAL gebco2026</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Each writes <code>$FESMDATA_WORK/topo/&lt;BASE&gt;/&lt;BASE&gt;_&lt;source&gt;.nc</code> with <code>z_bed</code>, <code>z_srf</code>, <code>H_ice</code>, <code>z_bed_sd</code> (sub-cell standard deviation of the bed), the area fractions <code>f_ocn</code>, <code>f_land</code>, <code>f_grnd</code>, <code>f_flt</code>, and <code>f_valid</code> (fraction of the cell covered by the source). Sources on the domain projection (BedMachine, Bedmap3) are remapped exactly; GEBCO is sampled at about half its resolution within each cell.</p>
+<p>Thickness sources (IceBoost) give only glacier ice thickness, as one tile per glacier on its own projection (UTM). Each tile is sampled at about half its resolution within the base cells it covers, and the file has <code>H_ice</code> (cell mean, 0 off the glaciers) and <code>f_ice</code> (glacier area fraction). The pixels touched by a glacier outline count as glacier in the tiles, so the thickness and area of each tile are scaled to the glacier volume and area given with it (the raw pixels give 2% more volume and 3-6% more area). Tiles still overlap along shared ice divides, where <code>f_ice</code> is limited to 1. The job log compares the glacier area and volume with those of the tiles.</p>
+<p>Only the tiles overlapping the base grid are read (threaded). Their grids and latitude ranges, from the file headers, are kept in an index per RGI region (<code>$FESMDATA_WORK/topo/tiles/iceboost_v2_rgiNN.tsv</code>), which the first IceBoost job builds in about 5 min, and rebuilds when the files of a region change. With the index, IceBoost takes under a minute for PYR and SRG and about 11 min for NH, mostly for sampling the 74,000 tiles that overlap NH-2KM.</p>
+<p>Source notes (see <code>sources.jl</code>):</p>
+<ul>
+<li>Surface elevation is 0 over the ocean for all sources.</li>
+<li>BedMachine Antarctica: the surface includes firn air (<code>firn</code>), and the ice thickness does not. Lake Vostok is grounded ice.</li>
+<li>BedMachine Greenland v4 and v5: non-Greenland land (Canadian Arctic) is ice-free land.</li>
+<li>Bedmap3: the transiently grounded ice shelf is floating ice.</li>
+<li>Bedmap2 (1 km, GeoTIFFs): rock outcrops are ice-free land, and Lake Vostok is grounded ice. Heights are relative to the GL04C geoid (EIGEN-6C4 for BedMachine).</li>
+<li>GEBCO is used as ice-free topography and bathymetry. Its sub-ice grid only has ice thickness for the Greenland and Antarctic ice sheets (covered by the regional sources), and differs from the main grid by a few metres elsewhere.</li>
+<li>IceBoost v2.0 (Maffezzoli et al., doi:10.5281/zenodo.17724512; RGI 7.0 outlines) gives the ice thickness of the glaciers and ice caps outside Greenland in the NH product, and of the glaciers of PYR (RGI region 11) and SRG (region 17). BedMachine Greenland v6 uses the same dataset for the peripheral glaciers of Greenland.</li>
+</ul>
+</section>
+<section id="merge" class="level3">
+<h3 class="anchored" data-anchor-id="merge">3. Merge</h3>
+<p>Merge the sources of the products of a domain:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> <span class="at">--job-name</span><span class="op">=</span>merge-ANT Topo/jobs/run_step.sbatch 03_merge.jl ANT <span class="pp">[</span><span class="ss">PRODUCTS</span><span class="pp">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>PRODUCTS</code> is <code>default</code> (the default products, if omitted), <code>variants</code>, <code>all</code>, or the name of one product; the same holds for steps 4 and 5.</p>
+<p>This writes <code>$ICE_DATA/v2/&lt;folder&gt;/&lt;BASE&gt;/&lt;BASE&gt;_TOPO-&lt;product&gt;.nc</code>. Sources are blended in order of increasing priority: a source replaces the fields below it where it fully covers a cell, with a weight rising linearly from 0 at the edge of its coverage to 1 at 20 km inside it. The ice fraction of each cell is then grounded or floating as a whole, by flotation of its mean ice thickness and bed (densities in <code>products.toml</code>). Surface elevation is kept as given by the sources (in Antarctica it includes firn air). The file also has <code>mask</code> (dominant surface type: 0 ocean, 1 ice-free land, 2 grounded ice, 3 floating ice) and <code>src_id</code> (source with the largest weight).</p>
+<p>A thickness source adds its glaciers onto the ice-free land of the sources below it (GEBCO, whose elevation is the ice surface): the glacier fraction, at most the ice-free land fraction, becomes grounded ice, and the bed is lowered by the cell-mean ice thickness. Glaciers on GEBCO ocean (e.g.&nbsp;retreated termini) are dropped. Cells with glacier ice are always grounded. In the NH product, BedMachine replaces the glaciers within its coverage.</p>
+</section>
+<section id="all-grids" class="level3">
+<h3 class="anchored" data-anchor-id="all-grids">4. All grids</h3>
+<p>Remap each product from the base grid onto all other grids of the domain, including the crops (GRL from GRL-PAL, LIS and EIS from NH):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> <span class="at">--job-name</span><span class="op">=</span>grids-all-ANT Topo/jobs/run_step.sbatch 04_grids.jl ANT <span class="pp">[</span><span class="ss">PRODUCTS</span><span class="pp">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This writes <code>$ICE_DATA/v2/&lt;folder&gt;/&lt;GRID&gt;/&lt;GRID&gt;_TOPO-&lt;product&gt;.nc</code>. Fields and fractions are conservative cell means, <code>z_bed_sd</code> combines the sub-cell variance of the base grid with the variance of the base-grid means, <code>mask</code> is the dominant surface type (ice where the ice fraction is at least one half), and <code>src_id</code> the source covering most of the cell.</p>
+</section>
+<section id="checks" class="level3">
+<h3 class="anchored" data-anchor-id="checks">5. Checks</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> <span class="at">--job-name</span><span class="op">=</span>plots-ANT Topo/jobs/run_step.sbatch 05_plots.jl ANT <span class="pp">[</span><span class="ss">PRODUCTS</span><span class="pp">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This writes plots to <code>$FESMDATA_WORK/topo/plots/</code> (the base product, ice thickness on all grids, the difference with the v1 product at 16 or 32 km, and for a variant the difference with a default product at 4 km), and prints the ice area and volume on every grid in the job log as a conservation check.</p>
+</section>
+</section>
+<section id="running-a-whole-domain" class="level2">
+<h2 class="anchored" data-anchor-id="running-a-whole-domain">Running a whole domain</h2>
+<p><code>jobs/submit_domain.sh</code> submits steps 1-5 of a domain as a chain of jobs (step 2 as one job per source), each starting when the previous step succeeded:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Topo/jobs/submit_domain.sh</span> ANT                <span class="co"># all steps</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Topo/jobs/submit_domain.sh</span> ANT 3              <span class="co"># from step 3</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Topo/jobs/submit_domain.sh</span> ANT 2 variants     <span class="co"># the variants, from step 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The third argument selects the products (as for steps 3-5), and step 2 then remaps only their sources.</p>
+</section>
+<section id="adding-a-source-a-product-or-a-domain" class="level2">
+<h2 class="anchored" data-anchor-id="adding-a-source-a-product-or-a-domain">Adding a source, a product or a domain</h2>
+<p><strong>A source</strong> (a new topography dataset, or a new version of one):</p>
+<ol type="1">
+<li>Add it to <code>../datamanifest.toml</code>, with its <code>uri</code>, <code>doi</code> and, for a manual download (e.g.&nbsp;NSIDC), <code>skip_download = true</code>; <code>00_sources.jl</code> then lists and downloads it.</li>
+<li>Add a reader to <code>sources.jl</code> and a branch for it in <code>read_source</code>. A topography source returns <code>(grid, z_bed, z_srf, H_ice, mask)</code> on its native grid, with ascending axes: <code>grid</code> a <code>ProjGrid</code> (any projection) or <code>LonLatGrid</code>, heights in m (surface 0 over the ocean), and <code>mask</code> with the classes <code>OCEAN</code>, <code>LAND</code>, <code>GRND</code>, <code>FLT</code>; all fields are <code>missing</code> where the source has no data (the part of a base cell with data is its <code>f_valid</code>). A source on the projection of a domain is remapped exactly; any other is sampled within each base cell. A source that only gives glacier thickness (like IceBoost) is a thickness source (<code>is_thickness_source</code>, <code>GlacierTiles</code>).</li>
+<li>Use it in a product (below) and run the steps from step 2 for the domain (step 2 only for the new source: <code>02_regrid_source.jl &lt;DOMAIN&gt; &lt;source&gt;</code>).</li>
+</ol>
+<p><strong>A product or a variant</strong> is an entry in <code>products.toml</code>: its name and its sources in order of priority, highest first, under <code>[&lt;domain&gt;.products]</code> (default products, released and made by default) or <code>[&lt;domain&gt;.variants]</code> (made on request with <code>variants</code> or <code>all</code>):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">[ANT.variants]</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="dt">"BedMachine-v3"</span> <span class="op">=</span> <span class="op">[</span><span class="st">"bedmachine_antarctica_v3"</span><span class="op">,</span> <span class="st">"gebco2026"</span><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then run steps 2-5 for it (<code>submit_domain.sh ANT 2 BedMachine-v3</code>). The lowest-priority source must be a topography source covering the whole domain (GEBCO). Variants are released with the default products.</p>
+<p><strong>A domain</strong>: define it in <code>../shared/domains.toml</code> (see <code>../shared/README.md</code>), add its densities (<code>rho_ice</code>, <code>rho_sw</code>) and products to <code>products.toml</code>, and run all steps (<code>submit_domain.sh &lt;DOMAIN&gt;</code>). For glaciers outside the IceBoost regions already listed in <code>../datamanifest.toml</code> (<code>iceboost_v2_rgiNN</code>), add the RGI region there.</p>
+</section>
+<section id="glaciers-in-the-nh-product" class="level2">
+<h2 class="anchored" data-anchor-id="glaciers-in-the-nh-product">Glaciers in the NH product</h2>
+<p>IceBoost glaciers in the NH product (GEBCO 2026, run of 2026-10-09):</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 36%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: right;">Area (km²)</th>
+<th style="text-align: right;">Volume (km³)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>IceBoost tiles overlapping NH-2KM (73,841 of 80,411, incl.&nbsp;parts outside the domain)</td>
+<td style="text-align: right;">348,853</td>
+<td style="text-align: right;">74,614</td>
+</tr>
+<tr class="even">
+<td>Raw tile pixels, before scaling to the glacier area and volume</td>
+<td style="text-align: right;">376,646</td>
+<td style="text-align: right;">76,802</td>
+</tr>
+<tr class="odd">
+<td>Glaciers on NH-2KM (<code>f_ice</code> ≤ 1; max before limiting 1.16)</td>
+<td style="text-align: right;">348,134</td>
+<td style="text-align: right;">74,656</td>
+</tr>
+<tr class="even">
+<td>Within BedMachine Greenland coverage (replaced by BedMachine)</td>
+<td style="text-align: right;">49,679</td>
+<td style="text-align: right;">11,384</td>
+</tr>
+<tr class="odd">
+<td>On GEBCO ocean (dropped)</td>
+<td style="text-align: right;">600</td>
+<td style="text-align: right;">61</td>
+</tr>
+<tr class="even">
+<td>NH product ice, without glaciers</td>
+<td style="text-align: right;">1,865,112</td>
+<td style="text-align: right;">3,007,068</td>
+</tr>
+<tr class="odd">
+<td>NH product ice, with glaciers</td>
+<td style="text-align: right;">2,164,800</td>
+<td style="text-align: right;">3,070,576</td>
+</tr>
+</tbody>
+</table>
+<p>The GRL-PAL and ANT products are unchanged (bitwise identical before and after adding thickness sources).</p>
+</section>
+<section id="glaciers-in-the-pyr-and-srg-products" class="level2">
+<h2 class="anchored" data-anchor-id="glaciers-in-the-pyr-and-srg-products">Glaciers in the PYR and SRG products</h2>
+<p>IceBoost glaciers (RGI 7.0, 2000 outlines) on the base grids (GEBCO 2026, run of 2026-10-10):</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: right;">Tiles</th>
+<th style="text-align: right;">Area (km²)</th>
+<th style="text-align: right;">Volume (km³)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>PYR-500M (RGI 11)</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0.08</td>
+</tr>
+<tr class="even">
+<td>SRG-250M (RGI 17)</td>
+<td style="text-align: right;">134</td>
+<td style="text-align: right;">1,261</td>
+<td style="text-align: right;">483</td>
+</tr>
+</tbody>
+</table>
+<p>On the extent of the v1 SRG-250M grid, the SRG product has 1,224 km² and 433 km³ of ice, against 1,149 km² and 358 km³ in the v1 SRG-250M_TOPO.nc (from an inversion of the Northern Patagonian Icefield thickness). Surface elevations agree (v2 - v1: mean 1 m, rmse 56 m); the ice thickness differs by 164 m rms (v2 thinner along the trunk of the San Rafael Glacier, thicker on its sides).</p>
+<p>The coarser SRG grids extend beyond the base grid (by half a coarse cell, as for all domains), where their cells are means over the part the base grid covers. On a domain this small the overhang is a large part of the coarse grids (SRG-16KM covers 1.85 times the area of SRG-250M), so their ice volume grows with the cell size, from 483 km³ on SRG-250M to 762 km³ on SRG-16KM.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/fesmc\.github\.io\/FesmData\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>FesmData · fesmc</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/fesmc/FesmData/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Built with <a href="https://quarto.org">Quarto</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
