@@ -25,16 +25,20 @@ const VARINFO = Dict(
 )
 
 """
-    Dim(name, values, attrib)
+    Dim(name, values, attrib, bounds=nothing)
 
 A dimension of fields besides the grid (e.g. month, time, depth), with the values and
-attributes of its coordinate variable.
+attributes of its coordinate variable, and the cell bounds (2 x n) of its CF `bounds`
+attribute, if it has one.
 """
 struct Dim
     name::String
     values::Vector
     attrib::Vector{Pair{String,Any}}
+    bounds::Union{Nothing,Matrix}
 end
+
+Dim(name, values, attrib) = Dim(name, values, attrib, nothing)
 
 """
     write_fields(path, g, fields; dataset, attrib=[], varattrib=Dict(), dims=Dict())
@@ -63,6 +67,10 @@ function write_fields(path::AbstractString, g::Union{ProjGrid,LonLatGrid}, field
         foreach(((k, v),) -> ds.attrib[k] = v, gatts)
         for d in sort(collect(values(extra)); by=d -> d.name)
             defVar(ds, d.name, d.values, (d.name,); attrib=d.attrib)
+            if d.bounds !== nothing
+                haskey(ds.dim, "bnds") || defDim(ds, "bnds", 2)
+                defVar(ds, Dict(d.attrib)["bounds"], d.bounds, ("bnds", d.name))
+            end
         end
         for name in sort(collect(keys(fields)))
             units, long_name = get(VARINFO, name, ("", name))
