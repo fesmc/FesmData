@@ -32,6 +32,8 @@ website:
             href: datasets/topo.qmd
           - text: "Regions — regions and basins"
             href: datasets/regions.qmd
+          - text: "GHF — geothermal heat flow"
+            href: datasets/ghf.qmd
       - text: "Your own data"
         href: remap.qmd
       - text: "Releasing"

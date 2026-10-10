@@ -257,7 +257,7 @@ end
 "Recorded drafts of a dataset that are not published yet, as domain => draft."
 function open_drafts(dataset::AbstractString, domains=String[]; sandbox::Bool=false)
     drafts = Pair{String,Any}[]
-    for domain in (isempty(domains) ? domain_folders() : domains)
+    for domain in (isempty(domains) ? release_domains(dataset) : domains)
         draft = read_draft(domain, dataset; sandbox=sandbox)
         draft === nothing && continue
         published_record(draft["draft_id"]; sandbox=sandbox) === nothing && push!(drafts, domain => draft)
@@ -306,7 +306,7 @@ Zenodo website) are skipped.
 function register(dataset::AbstractString, domains=String[]; sandbox::Bool=false,
                   allow_untagged::Bool=false)
     dataset_config(dataset)
-    domains = isempty(domains) ? filter(d -> read_draft(d, dataset; sandbox=sandbox) !== nothing, domain_folders()) : domains
+    domains = isempty(domains) ? filter(d -> read_draft(d, dataset; sandbox=sandbox) !== nothing, release_domains(dataset)) : domains
     isempty(domains) && error("no drafts of $dataset to register (run upload first)")
     written = String[]
     for domain in domains
@@ -363,7 +363,7 @@ archived version with its DOI.
 function status(dataset::AbstractString, domains=String[]; sandbox::Bool=false)
     dataset_config(dataset)
     println(rpad("Domain", 16), rpad("Released", 22), rpad("Draft", 26), "Archived")
-    for domain in (isempty(domains) ? domain_folders() : domains)
+    for domain in (isempty(domains) ? release_domains(dataset) : domains)
         tables = registry_tables(domain, dataset; sandbox=sandbox)
         relinfo = haskey(tables, "_RELEASE") ? tables["_RELEASE"]["git_tag"] : "-"
         draft = read_draft(domain, dataset; sandbox=sandbox)

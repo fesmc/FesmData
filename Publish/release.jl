@@ -10,16 +10,31 @@ include(joinpath(@__DIR__, "registry.jl"))
 include(joinpath(REPO_DIR, "shared", "domains.jl"))
 include(joinpath(REPO_DIR, "Topo", "files.jl"))
 include(joinpath(REPO_DIR, "Regions", "files.jl"))
+include(joinpath(REPO_DIR, "Remap", "datasets.jl"))
 
-"Files of a release of each dataset on a grid of a domain, defined by its pipeline."
-const RELEASE_FILES = Dict("Topo" => topo_release_files, "Regions" => regions_release_files)
+"Output folders of the domains `keys`, with their crops."
+key_folders(keys) = sort(unique(og.folder for key in keys for og in Domain(key).grids))
 
-read_datasets() = TOML.parsefile(joinpath(@__DIR__, "datasets.toml"))
+"""
+    dataset_pipeline(dataset) -> (files, domains)
+
+What the pipeline of a dataset releases: `files(dom, og)`, the names of the files on
+grid `og` of domain `dom`, and `domains()`, the output folders of its domains. Topo and
+Regions have their own pipelines; thematic datasets (<Dataset>/remap.toml) are made by
+remapping.
+"""
+function dataset_pipeline(dataset::AbstractString)
+    dataset == "Topo" && return (topo_release_files, () -> key_folders(topo_domains()))
+    dataset == "Regions" && return (regions_release_files, () -> key_folders(regions_domains()))
+    is_remap_dataset(dataset) && return ((dom, og) -> remap_release_files(dataset, og), () -> remap_domains(dataset))
+    error("dataset $dataset has no pipeline (no Topo, Regions or $dataset/remap.toml)")
+end
 
 function dataset_config(dataset::AbstractString)
     all = read_datasets()
-    haskey(all, dataset) && haskey(RELEASE_FILES, dataset) ||
-        error("unknown dataset $dataset, available: $(join(sort(collect(keys(RELEASE_FILES))), ", "))")
+    known = sort([k for k in keys(all) if !startswith(k, "_")])
+    dataset in known || error("unknown dataset $dataset, available: $(join(known, ", "))")
+    dataset_pipeline(dataset)
     return all[dataset]
 end
 
@@ -40,22 +55,26 @@ end
 
 Base.basename(f::ProductFile) = basename(f.path)
 
+"Domains (output folders, with the crops) on which a dataset is released."
+release_domains(dataset::AbstractString) = dataset_pipeline(dataset)[2]()
+
 """
     release_files(domain, dataset) -> Vector{ProductFile}
 
 Files of a release of a dataset on a domain (its output folder, e.g. Greenland): on
 every grid of the domain, the grid files and the files the pipeline of the dataset
-defines (`RELEASE_FILES`), present or not.
+defines (`dataset_pipeline`), present or not.
 """
 function release_files(domain::AbstractString, dataset::AbstractString)
     dataset_config(dataset)
+    pipeline_files = dataset_pipeline(dataset)[1]
     dom, grids = folder_grids(domain)
     files = ProductFile[]
     for og in grids
         g = og.grid.name
         push!(files, ProductFile(g, joinpath(outdir(og), "grid_$g.txt"), true),
                      ProductFile(g, joinpath(outdir(og), "$(g)_grid.nc"), true))
-        append!(files, [ProductFile(g, joinpath(outdir(og), name), false) for name in RELEASE_FILES[dataset](dom, og)])
+        append!(files, [ProductFile(g, joinpath(outdir(og), name), false) for name in pipeline_files(dom, og)])
     end
     return files
 end
@@ -169,7 +188,7 @@ Domains of a command: `domains` if given, else all domains with files of the dat
 function select_domains(dataset::AbstractString, domains)
     dataset_config(dataset)
     isempty(domains) || return collect(String, domains)
-    found = filter(d -> has_files(d, dataset), domain_folders())
+    found = filter(d -> has_files(d, dataset), release_domains(dataset))
     isempty(found) && error("no files of $dataset in $(products_dir())")
     return found
 end

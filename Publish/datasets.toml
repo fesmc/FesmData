@@ -1,8 +1,9 @@
 # Datasets released by Publish (see README.md): one record per dataset and domain (the
 # output folder under $ICE_DATA/v2, e.g. Greenland). `tag` is the dataset name of the
 # provenance attributes and release tags (<tag>-vX.Y.Z). The files of a release on each
-# grid are defined by the pipeline (e.g. topo_release_files in ../Topo/files.jl), with
-# the grid files grid_<GRID>.txt and <GRID>_grid.nc.
+# grid are defined by the pipeline (e.g. topo_release_files in ../Topo/files.jl, or
+# <Dataset>/remap.toml for a thematic dataset), with the grid files grid_<GRID>.txt and
+# <GRID>_grid.nc.
 
 # Store of the releases: the package registry of a GitLab project
 [_gitlab]
@@ -38,4 +39,14 @@ description = """
 Region codes (a hierarchy of hemispheres, continents, ice sheets and oceans), zones
 (open ocean, continental shelf, land) with the distance to the shelf break, and
 ice-sheet drainage basins extended to the shelf break, on the grids of a model domain.
+"""
+
+[GHF]
+tag = "ghf"
+title = "geothermal heat flow"
+readme = "GHF/README.md"
+keywords = ["geothermal heat flow", "ice sheet", "model input"]
+description = """
+Geothermal heat flow from published maps, remapped conservatively onto the grids of a
+model domain (and smoothed on grids finer than the map), or onto global lon-lat grids.
 """

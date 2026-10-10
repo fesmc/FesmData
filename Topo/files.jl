@@ -11,6 +11,9 @@ function _products(dom::Domain)
     return all[dom.key]
 end
 
+"Keys of the domains with topography products (products.toml)."
+topo_domains() = sort([k for (k, v) in read_products() if v isa AbstractDict])
+
 "Names reserved for selecting sets of products (see `select_products`)."
 const PRODUCT_SETS = ("default", "variants", "all")
 

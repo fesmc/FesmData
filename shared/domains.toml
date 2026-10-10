@@ -11,6 +11,14 @@
 #
 # `folder` is the output folder under $ICE_DATA/v2, and the name of the domain (or
 # crop) in published records, unique to each.
+#
+# A domain with `type = "lonlat"` has global lon-lat grids instead, one per resolution
+# (degrees), independent of each other (GLOBAL-0.5DEG, ...).
+
+[GLOBAL]
+folder = "Global"
+type = "lonlat"
+resolutions = [0.1, 0.25, 0.5, 1, 2, 5]
 
 [ANT]
 folder = "Antarctica"

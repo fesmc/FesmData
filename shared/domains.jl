@@ -10,18 +10,20 @@ A grid of a domain together with its output folder under \$ICE_DATA/v2.
 """
 struct OutGrid
     folder::String
-    grid::ProjGrid
+    grid::Union{ProjGrid,LonLatGrid}
 end
 
 """
     Domain
 
 A model domain: its base grid and all output grids derived from it (see domains.toml).
+For a lon-lat domain (GLOBAL), the grids are global lon-lat grids and the base grid is
+the finest.
 """
 struct Domain
     key::String
     folder::String
-    base::ProjGrid
+    base::Union{ProjGrid,LonLatGrid}
     grids::Vector{OutGrid}        # all output grids, base first
 end
 
@@ -34,6 +36,10 @@ function Domain(key::AbstractString)
     haskey(all, key) || error("unknown domain $key, available: $(join(keys(all), ", "))")
     d = all[key]
     res = Float64.(d["resolutions"])
+    if get(d, "type", "projected") == "lonlat"
+        grids = [OutGrid(d["folder"], LonLatGrid(grid_name(key, r; units="deg"), r)) for r in res]
+        return Domain(String(key), d["folder"], grids[1].grid, grids)
+    end
     dx = res[1]
     base = ProjGrid(grid_name(key, dx), Tuple(d["xlim"]), Tuple(d["ylim"]), dx, d["proj"])
 

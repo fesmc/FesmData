@@ -27,15 +27,17 @@ const VARINFO = Dict(
 """
     write_fields(path, g, fields; dataset, attrib=[], varattrib=Dict())
 
-Write the 2D fields on grid `g` to a new NetCDF file of `dataset` (e.g. "topo"), with
+Write the 2D fields on grid `g` (projected or lon-lat) to a new NetCDF file of `dataset` (e.g. "topo"), with
 the provenance attributes of the dataset and the global attributes `attrib`. Float
 fields are written as Float32 with NaN as missing; integer fields (e.g. masks) are
 written as they are. `varattrib[name]` gives extra attributes of a variable (e.g.
 flag values), and replaces its default units or long name.
 """
-function write_fields(path::AbstractString, g::ProjGrid, fields::AbstractDict; dataset::AbstractString,
+function write_fields(path::AbstractString, g::Union{ProjGrid,LonLatGrid}, fields::AbstractDict; dataset::AbstractString,
                       attrib=Pair{String,String}[], varattrib=Dict{String,Vector{Pair{String,Any}}}())
     gatts = global_attrib(dataset, attrib)
+    dims = grid_dims(g)
+    mapping = g isa ProjGrid ? ["grid_mapping" => "crs"] : Pair{String,String}[]
     mkpath(dirname(path))
     NCDataset(path, "c") do ds
         init_grid_nc!(ds, g)
@@ -44,13 +46,13 @@ function write_fields(path::AbstractString, g::ProjGrid, fields::AbstractDict; d
             units, long_name = get(VARINFO, name, ("", name))
             extra = get(varattrib, name, Pair{String,Any}[])
             given = Set(first.(extra))
-            atts = vcat(filter(p -> !(first(p) in given), ["units" => units, "long_name" => long_name, "grid_mapping" => "crs"]),
+            atts = vcat(filter(p -> !(first(p) in given), vcat(["units" => units, "long_name" => long_name], mapping)),
                         extra)
             F = fields[name]
             if eltype(F) <: Integer
-                defVar(ds, name, F, ("xc", "yc"); deflatelevel=1, shuffle=true, attrib=atts)
+                defVar(ds, name, F, dims; deflatelevel=1, shuffle=true, attrib=atts)
             else
-                defVar(ds, name, replace(Float32.(F), NaN32 => FILLVALUE), ("xc", "yc");
+                defVar(ds, name, replace(Float32.(F), NaN32 => FILLVALUE), dims;
                        fillvalue=FILLVALUE, deflatelevel=1, shuffle=true, attrib=atts)
             end
         end
@@ -82,7 +84,7 @@ end
 Write the grid description file (grid_<GRID>.txt, cdo format) and the grid file
 (<GRID>_grid.nc, with the provenance attributes of `dataset`) of grid `g` to `dir`.
 """
-function write_grid_files(dir::AbstractString, g::ProjGrid; dataset::AbstractString)
+function write_grid_files(dir::AbstractString, g::Union{ProjGrid,LonLatGrid}; dataset::AbstractString)
     mkpath(dir)
     write_griddes(joinpath(dir, "grid_$(g.name).txt"), g)
     path = write_grid_nc(joinpath(dir, "$(g.name)_grid.nc"), g)

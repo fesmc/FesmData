@@ -27,6 +27,9 @@ function read_basin_sets(path=joinpath(@__DIR__, "basins.toml"))
             for b in TOML.parsefile(path)["basins"]]
 end
 
+"Keys of the domains with regions: all projected domains."
+regions_domains() = filter(k -> Domain(k).base isa ProjGrid, domain_keys())
+
 "Basin sets of a domain."
 basin_sets(dom::Domain) = filter(b -> dom.key in b.domains, read_basin_sets())
 

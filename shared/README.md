@@ -28,21 +28,27 @@ the datasets on them are exact conservative means of the base grid.
 | NH | NH-2KM | LIS, EIS | polar stereographic, north |
 | PYR | PYR-500M | | UTM 31N |
 | SRG | SRG-250M | | UTM 18S |
+| GLOBAL | GLOBAL-0.1DEG | | lon-lat |
 
-Grids are named after their domain (or crop) and resolution: `ANT-8KM`, `GRL-500M`.
-Each domain and crop has an output **folder** under `$ICE_DATA/v2`, which is also its
-name in the released records (Antarctica, GreenlandPaleo, Greenland, North,
-Laurentide, Eurasia, Pyrenees, SRG). Every grid has its own folder there, with all
+The **GLOBAL** domain has global lon-lat grids at 0.1°, 0.25°, 0.5°, 1°, 2° and 5°,
+each with cell edges at -180° and -90° (so they are not nested: 0.25° is not a
+multiple of 0.1°). Its data are made by remapping (see Bring your own data).
+
+Grids are named after their domain (or crop) and resolution: `ANT-8KM`, `GRL-500M`,
+`GLOBAL-0.5DEG`. Each domain and crop has an output **folder** under `$ICE_DATA/v2`,
+which is also its name in the released records (Antarctica, GreenlandPaleo, Greenland,
+North, Laurentide, Eurasia, Pyrenees, SRG, Global). Every grid has its own folder there, with all
 datasets on that grid:
 
 ```
 $ICE_DATA/v2/<folder>/<GRID>/
     grid_<GRID>.txt         grid description (cdo)
     <GRID>_grid.nc          x, y, lon, lat and area of the cells
-    <GRID>_TOPO-<product>.nc, <GRID>_REGIONS.nc, ...
+    <GRID>_TOPO-<product>.nc, <GRID>_REGIONS.nc, <GRID>_GHF-<source>.nc, ...
 ```
 
-The grid files are written by Topo step 1 (`Topo/scripts/01_grids.jl`).
+The grid files are written by Topo step 1 (`Topo/scripts/01_grids.jl`), or by
+`fesmdata.jl remap` if they are missing.
 
 ## Adding a domain, a crop or a resolution
 
@@ -68,6 +74,16 @@ resolutions = [0.5, 1, 2, 4, 8, 16, 32]  # km; the first is the base grid
   reproduced (Topo step 1 reports which grids match).
 - `folder` must be unique among all domains and crops.
 
+A lon-lat domain has `type = "lonlat"` and its resolutions in degrees, each dividing
+180°; it needs no projection or extent:
+
+```toml
+[GLOBAL]
+folder = "Global"
+type = "lonlat"
+resolutions = [0.1, 0.25, 0.5, 1, 2, 5]
+```
+
 A crop is a table below its domain, with its own folder and extent (on the cell
 centres of the base grid):
 
@@ -86,6 +102,9 @@ A new resolution is a new entry in `resolutions`. Then, for each dataset:
   `Regions/regions.toml` (`[zone] products`), and basin sets if any to
   `Regions/basins.toml` (see the Regions README), and run its steps.
 
+- **Thematic datasets** (e.g. GHF): add the domain to the `domains` of its products
+  in `<Dataset>/remap.toml`, and run `julia fesmdata.jl remap <Dataset>`.
+
 The domain is released as a new record with the next release of each dataset.
 
 ## Machines
@@ -103,8 +122,14 @@ A new machine is a new file with the same variables.
 
 ## Adding a dataset
 
-A new dataset (e.g. geothermal heat flux) is a new pipeline folder, built like Topo and
-Regions, so that it can be released in the same way:
+Most new datasets are fields from published maps (e.g. geothermal heat flow, surface
+velocity, basal melt): these are **thematic datasets made by remapping**, defined by a
+short `<Dataset>/remap.toml`, with one small `prepare.jl` per source (see Bring your
+own data, `Remap/README.md`, and the GHF dataset).
+
+A dataset that needs its own processing (merging sources, deriving fields) is a new
+pipeline folder, built like Topo and Regions, so that it can be released in the same
+way:
 
 1. **Folder** `<Dataset>/` with a `README.md` (what it is, its sources, the steps to
    produce it), `Project.toml`, `common.jl`, `scripts/` (numbered steps) and `jobs/`.
@@ -121,8 +146,8 @@ Regions, so that it can be released in the same way:
    `<name>_release_files(dom, og)` giving the files of a release on a grid. It must
    need only `../shared/domains.jl` (no other packages), since Publish reads it.
 6. **Release**: add the dataset to `Publish/datasets.toml` (tag, title, README,
-   keywords, description) and its function to `RELEASE_FILES` in `Publish/release.jl`
-   (and include its `files.jl` there). It can then be released with
+   keywords, description) and its functions to `dataset_pipeline` in
+   `Publish/release.jl` (and include its `files.jl` there). It can then be released with
    `julia fesmdata.jl release <Dataset>` (see `Publish/README.md`), and appears on the
    website.
 7. **Documentation**: add its README to the website (`docs/datasets/`, see

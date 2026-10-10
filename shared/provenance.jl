@@ -2,6 +2,7 @@
 # NetCDF file produced by FesmData. No package dependencies, so that Publish can use it.
 
 using Dates
+using TOML
 
 const REPO_DIR = dirname(@__DIR__)
 const REPO_URL = "https://github.com/fesmc/FesmData"
@@ -10,6 +11,9 @@ function _env(name)
     haskey(ENV, name) || error("environment variable $name is not set (source shared/machines/<machine>.env)")
     return ENV[name]
 end
+
+"Datasets released by Publish, with their release tags (Publish/datasets.toml)."
+read_datasets() = TOML.parsefile(joinpath(REPO_DIR, "Publish", "datasets.toml"))
 
 "Folder of the prepared files of a source (input to remapping): \$FESMDATA_WORK/prepared/<source>."
 prepared_dir(source::AbstractString) = joinpath(_env("FESMDATA_WORK"), "prepared", source)

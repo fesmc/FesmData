@@ -28,7 +28,13 @@ Bring your own data (see Remap/README.md):
                                                (lon-lat or projected grid) onto the grids,
                                                as \$ICE_DATA/v2/<Domain>/<GRID>/<GRID>_<name>.nc
                                                (--vars=a,b: only these fields; --name=NAME:
-                                               default the file name; --overwrite)
+                                               default the file name; --method=con|bilinear;
+                                               --smooth=auto|<km>: Gaussian smoothing after,
+                                               auto for a coarser source only; --overwrite)
+  remap <Dataset> [<product> ...] [<Domain> | <GRID> ...]
+                                               make the products of a thematic dataset (e.g.
+                                               GHF, defined in GHF/remap.toml), preparing
+                                               missing sources first (--overwrite)
 
 Release (maintainers, see Publish/README.md):
   release <Dataset> [<Domain> ...]             upload to the GitLab packages and write the
@@ -72,7 +78,7 @@ function main(argv)
     valued = Dict(String(k) => String(v) for (k, v) in
                   (split(o[3:end], '='; limit=2) for o in argv if startswith(o, "--") && occursin('=', o)))
     for k in keys(valued)
-        k in ("vars", "name") || error("unknown option --$k\n\n$USAGE")
+        k in ("vars", "name", "method", "smooth") || error("unknown option --$k\n\n$USAGE")
     end
     sandbox, allow_untagged, dry_run = "--sandbox" in opts, "--allow-untagged" in opts, "--dry-run" in opts
     command = isempty(args) ? "help" : args[1]
@@ -97,6 +103,7 @@ function main(argv)
         include(joinpath(REMAP_DIR, "remap.jl"))
         vars = haskey(valued, "vars") ? split(valued["vars"], ',') : nothing
         paths = call(:remap_command, rest; vars, name=get(valued, "name", nothing),
+                     method=get(valued, "method", nothing), smooth=get(valued, "smooth", nothing),
                      overwrite="--overwrite" in opts)
         println("$(length(paths)) files written")
     elseif command == "docs"

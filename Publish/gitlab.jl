@@ -155,7 +155,7 @@ release (and its DOI if archived on Zenodo).
 """
 function status(dataset::AbstractString, domains=String[]; sandbox::Bool=false)
     dataset_config(dataset)
-    domains = isempty(domains) ? domain_folders() : domains
+    domains = isempty(domains) ? release_domains(dataset) : domains
     println(rpad("Domain", 16), rpad("Local files", 34), rpad("GitLab packages", 28), "Registered")
     for domain in domains
         files = release_files(domain, dataset)
@@ -189,7 +189,7 @@ is not deleted (outside the tests).
 function delete_release(dataset::AbstractString, number::AbstractString, domains=String[]; sandbox::Bool=false)
     dataset_config(dataset)
     targets = []
-    for domain in (isempty(domains) ? domain_folders() : domains)
+    for domain in (isempty(domains) ? release_domains(dataset) : domains)
         tables = registry_tables(domain, dataset; sandbox=sandbox)
         registered = get(get(tables, "_RELEASE", Dict()), "version", "") == number
         registered && !sandbox && (println("$domain/$dataset $number is registered, not deleted"); continue)

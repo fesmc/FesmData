@@ -1,10 +1,12 @@
 # Remap a prepared NetCDF file (fields on their native lon-lat or projected grid) onto
-# the grids of the domains, with conservative remapping (see README.md).
+# the grids of the domains, or all products of a thematic dataset (see README.md).
 #
 #     julia fesmdata.jl remap <file.nc> <Domain|GRID|all> ... [--vars=a,b] [--name=NAME]
+#     julia fesmdata.jl remap <Dataset> [<product> ...] [<Domain|GRID> ...]
 
 include(joinpath(@__DIR__, "..", "shared", "io.jl"))
 include(joinpath(@__DIR__, "..", "shared", "domains.jl"))
+include(joinpath(@__DIR__, "datasets.jl"))
 
 # ---------------------------------------------------------------------------
 # Prepared files
@@ -203,35 +205,84 @@ end
 # Remapping
 # ---------------------------------------------------------------------------
 
+"Remapping methods: conservative and bilinear."
+const METHODS = ("con", "bilinear")
+
+"Spacing of a grid in km (of a lon-lat grid: its latitude spacing)."
+spacing_km(g::ProjGrid) = maximum(spacing(g))
+spacing_km(g::LonLatGrid) = 111.195 * g.dlat
+
 # Conservative remapping onto a target grid. Sampled remapping uses samples spaced at
-# most half the source spacing; a source on the same projection is remapped exactly.
-# The spacing of a lon-lat source is the smallest over the target, where its cells
-# are narrowest (up to 85°, nearer the pole the samples are coarser than its cells).
-function remap_field(tgt::ProjGrid, src::LonLatGrid, F)
+# most half the source spacing; a source on the same projection, or a lon-lat source
+# on a lon-lat grid, is remapped exactly. The spacing of a lon-lat source is the
+# smallest over the target, where its cells are narrowest (up to 85°, nearer the pole
+# the samples are coarser than its cells).
+function remap_con(tgt::ProjGrid, src::LonLatGrid, F)
     latmax = min(maximum(abs, lat_bounds(tgt)), 85.0)
     ds = 111.195 * min(src.dlat, src.dlon * cosd(latmax))
-    return remap(tgt, src, F; nsub=max(1, ceil(Int, 2 * spacing(tgt)[1] / ds)))
+    return remap(tgt, src, F; nsub=max(1, ceil(Int, 2 * spacing_km(tgt) / ds)))
 end
 
-function remap_field(tgt::ProjGrid, src::ProjGrid, F)
+function remap_con(tgt::ProjGrid, src::ProjGrid, F)
     same_projection(tgt, src) && return remap(tgt, src, F)
-    return remap(tgt, src, F; nsub=max(1, ceil(Int, 2 * spacing(tgt)[1] / minimum(spacing(src)))))
+    return remap(tgt, src, F; nsub=max(1, ceil(Int, 2 * spacing_km(tgt) / minimum(spacing(src)))))
+end
+
+remap_con(tgt::LonLatGrid, src::LonLatGrid, F) = remap(tgt, src, F)
+
+remap_con(tgt::LonLatGrid, src::ProjGrid, F) =
+    remap(tgt, src, F; nsub=max(1, ceil(Int, 2 * spacing_km(tgt) / minimum(spacing(src)))))
+
+"""
+    smoothing_sigma(method, smooth, tgt, src) -> Float64
+
+Standard deviation (km) of the Gaussian smoothing after remapping from `src` onto
+`tgt`: `smooth` in km, or with `smooth = "auto"`, half the source spacing when a
+coarser source is remapped conservatively (which removes the steps between its
+cells), and no smoothing otherwise.
+"""
+function smoothing_sigma(method::AbstractString, smooth, tgt, src)
+    smooth == "auto" || return Float64(smooth)
+    return method == "con" && spacing_km(src) > spacing_km(tgt) ? spacing_km(src) / 2 : 0.0
+end
+
+"""
+    remap_field(tgt, src, F; method="con", sigma=0) -> (Ft, f_valid)
+
+Field `F` on `src` remapped onto `tgt` by `method` (see `METHODS`), then smoothed with a
+Gaussian of standard deviation `sigma` (km) if `sigma > 0`. `f_valid` is the fraction
+of each cell covered by the source, before smoothing.
+"""
+function remap_field(tgt, src, F; method::AbstractString="con", sigma::Real=0)
+    Ft, fv = method == "con" ? remap_con(tgt, src, F) :
+             method == "bilinear" ? remap_bilinear(tgt, src, F) :
+             error("unknown method $method, available: $(join(METHODS, ", "))")
+    return (sigma > 0 ? smooth(tgt, Ft, sigma) : Ft), fv
+end
+
+"Description of a remapping for the global attribute `remap_method`."
+function method_description(method::AbstractString, sigma::Real)
+    d = method == "con" ? "conservative" : "bilinear"
+    return sigma > 0 ? "$d, then Gaussian smoothing (sigma = $(round(sigma; digits=1)) km)" : d
 end
 
 "Output file of the remapped fields `name` on a grid."
 remap_file(og::OutGrid, name::AbstractString) = joinpath(outdir(og), "$(og.grid.name)_$(name).nc")
 
 """
-    remap_prepared(p, grids; name, dataset="remap", overwrite=false) -> Vector{String}
+    remap_prepared(p, grids; name, method="con", smooth="auto", dataset="remap",
+                   overwrite=false, strict=false) -> Vector{String}
 
-Remap the fields of `p` onto each grid and write them to `<GRID>_<name>.nc` in its
-output folder, with `f_valid`, the area fraction of each cell covered by source data
-(`f_valid_<field>` for each field when their coverage differs). Grids not covered by
-the source are skipped. The grid files are written if missing. Existing files are
-kept unless `overwrite`.
+Remap the fields of `p` onto each grid (see `remap_field` and `smoothing_sigma`) and
+write them to `<GRID>_<name>.nc` in its output folder, with `f_valid`, the area
+fraction of each cell covered by source data (`f_valid_<field>` for each field when
+their coverage differs). Grids not covered by the source are skipped (an error if
+`strict`). The grid files are written if missing. Existing files are kept unless
+`overwrite`. `dataset` is the dataset of the provenance attributes.
 """
-function remap_prepared(p::Prepared, grids::Vector{OutGrid}; name::AbstractString,
-                        dataset::AbstractString="remap", overwrite::Bool=false)
+function remap_prepared(p::Prepared, grids::Vector{OutGrid}; name::AbstractString, method::AbstractString="con",
+                        smooth="auto", dataset::AbstractString="remap", overwrite::Bool=false, strict::Bool=false)
+    method in METHODS || error("unknown method $method, available: $(join(METHODS, ", "))")
     paths = String[]
     names = sort(collect(keys(p.fields)))
     for og in grids
@@ -240,8 +291,10 @@ function remap_prepared(p::Prepared, grids::Vector{OutGrid}; name::AbstractStrin
             println("$(og.grid.name): exists, skipped (--overwrite to replace)")
             continue
         end
-        t = @elapsed out = Dict(f => remap_field(og.grid, p.grid, p.fields[f]) for f in names)
+        sigma = smoothing_sigma(method, smooth, og.grid, p.grid)
+        t = @elapsed out = Dict(f => remap_field(og.grid, p.grid, p.fields[f]; method, sigma) for f in names)
         if all(f -> all(iszero, out[f][2]), names)
+            strict && error("$(og.grid.name) is not covered by $(basename(p.path))")
             println("$(og.grid.name): not covered by the source, skipped")
             continue
         end
@@ -255,32 +308,99 @@ function remap_prepared(p::Prepared, grids::Vector{OutGrid}; name::AbstractStrin
                 varattrib["f_valid_$f"] = ["units" => "1", "long_name" => "area fraction covered by $f"]
             end
         end
-        attrib = vcat(p.attrib, ["remapped_from" => basename(p.path)])
+        how = method_description(method, sigma)
+        attrib = vcat(p.attrib, ["remapped_from" => basename(p.path), "remap_method" => how])
         isfile(joinpath(outdir(og), "$(og.grid.name)_grid.nc")) || write_grid_files(outdir(og), og.grid; dataset)
         write_fields(path, og.grid, fields; dataset, attrib, varattrib)
-        println("$(og.grid.name): $(basename(path)) ($(round(t; digits=1)) s)")
+        println("$(og.grid.name): $(basename(path)), $how ($(round(t; digits=1)) s)")
         push!(paths, path)
     end
     return paths
 end
 
+"Value of the option --smooth: \"auto\" or a standard deviation in km."
+function parse_smooth(s::AbstractString)
+    s == "auto" && return "auto"
+    v = tryparse(Float64, s)
+    (v === nothing || v < 0) && error("--smooth must be auto or a standard deviation in km (0: none), not $s")
+    return v
+end
+
 """
-    remap_command(args; vars=nothing, name=nothing, overwrite=false)
+    run_prepare(source)
+
+Run the preparation of a source, `<source>/prepare.jl` in its own environment (with its
+packages installed if needed).
+"""
+function run_prepare(source::AbstractString)
+    dir = joinpath(REPO_DIR, source)
+    script = joinpath(dir, "prepare.jl")
+    isfile(script) || error("no $script to prepare $source")
+    println("Preparing $source: julia --project=$source $source/prepare.jl")
+    run(`$(Base.julia_cmd()) --project=$dir -e "import Pkg; Pkg.instantiate()"`)
+    run(`$(Base.julia_cmd()) --project=$dir $script`)
+end
+
+"""
+    remap_dataset(dataset, args=String[]; overwrite=false) -> Vector{String}
+
+Remap the products of a thematic dataset (<Dataset>/remap.toml) onto the grids of
+their domains: all products, or those named in `args`, on all their grids, or on the
+domains and grids named in `args`. A prepared file that is missing is made first by
+the prepare.jl of its source. Every grid must be covered by the source.
+"""
+function remap_dataset(dataset::AbstractString, args=String[]; overwrite::Bool=false)
+    products = remap_products(dataset)
+    names = [p.name for p in products]
+    chosen = filter(in(names), args)
+    targets = setdiff(args, chosen)
+    selected = isempty(chosen) ? products : filter(p -> p.name in chosen, products)
+    only_grids = isempty(targets) ? nothing : Set(og.grid.name for og in select_grids(targets))
+    tag = remap_tag(dataset)
+    paths = String[]
+    for p in selected
+        grids = [og for key in domain_keys() for og in Domain(key).grids if og.folder in p.domains]
+        only_grids === nothing || filter!(og -> og.grid.name in only_grids, grids)
+        isempty(grids) && continue
+        isfile(prepared_file(p)) || run_prepare(p.source)
+        prep = read_prepared(prepared_file(p); vars=p.variables)
+        println("$(product_name(p)): $(join(sort(collect(keys(prep.fields))), ", ")) from $(p.source) " *
+                "onto $(length(grids)) grids")
+        append!(paths, remap_prepared(prep, grids; name=product_name(p), method=p.method, smooth=p.smooth,
+                                      dataset=tag, overwrite, strict=true))
+    end
+    isempty(chosen) && isempty(paths) && !isempty(targets) &&
+        println("No product of $dataset on $(join(targets, ", ")) (products: $(join(names, ", ")))")
+    return paths
+end
+
+"""
+    remap_command(args; vars=nothing, name=nothing, method=nothing, smooth=nothing, overwrite=false)
 
 `julia fesmdata.jl remap <file.nc> <Domain|GRID|all> ...`: remap the fields of a
 prepared file (or `vars`) onto the grids, as `<GRID>_<name>.nc` (`name` defaults to
-the file name).
+the file name), by `method` (default "con") and with smoothing `smooth` (default
+"auto"). `julia fesmdata.jl remap <Dataset> ...`: remap the products of a thematic
+dataset (see `remap_dataset`), whose options are defined in its remap.toml.
 """
-function remap_command(args; vars=nothing, name=nothing, overwrite::Bool=false)
-    isempty(args) && error("give a prepared NetCDF file and the target domains or grids")
+function remap_command(args; vars=nothing, name=nothing, method=nothing, smooth=nothing, overwrite::Bool=false)
+    isempty(args) && error("give a prepared NetCDF file or a thematic dataset")
+    if !isfile(args[1]) && is_remap_dataset(args[1])
+        given = [o for (o, v) in (("--vars", vars), ("--name", name), ("--method", method), ("--smooth", smooth))
+                 if v !== nothing]
+        isempty(given) || error("$(join(given, ", ")): defined in $(args[1])/remap.toml for a thematic dataset")
+        return remap_dataset(args[1], args[2:end]; overwrite)
+    end
     path = args[1]
-    isfile(path) || error("no file $path")
+    isfile(path) || error("no file or thematic dataset $path")
     grids = select_grids(args[2:end])
+    sm = parse_smooth(something(smooth, "auto"))
+    meth = something(method, "con")
     p = read_prepared(path; vars)
     nm = name === nothing ? splitext(basename(path))[1] : name
     println("$(basename(path)): $(join(sort(collect(keys(p.fields))), ", ")) on a $(_describe(p.grid))")
     println("Remapping onto $(length(grids)) grids as <GRID>_$(nm).nc")
-    return remap_prepared(p, grids; name=nm, overwrite)
+    return remap_prepared(p, grids; name=nm, method=meth, smooth=sm, overwrite)
 end
 
 _describe(g::LonLatGrid) = "$(join(size(g), "x")) lon-lat grid ($(g.dlon)° x $(g.dlat)°)"

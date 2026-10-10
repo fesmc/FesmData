@@ -9,15 +9,15 @@ function human_size(n::Integer)
     return "$(round(n / 1e9; digits=2)) GB"
 end
 
-"Resolution of a grid name in metres (ANT-4KM, GRL-PAL-500M), for sorting."
+"Resolution of a grid name in metres (ANT-4KM, GRL-PAL-500M, GLOBAL-0.5DEG), for sorting."
 function grid_resolution(grid::AbstractString)
-    m = match(r"-(\d+(?:\.\d+)?)(KM|M)$", grid)
+    m = match(r"-(\d+(?:\.\d+)?)(KM|M|DEG)$", grid)
     m === nothing && return Inf
-    return parse(Float64, m[1]) * (m[2] == "KM" ? 1000 : 1)
+    return parse(Float64, m[1]) * Dict("KM" => 1000, "M" => 1, "DEG" => 111195)[m[2]]
 end
 
 "Order of grids: by region (domain or crop), then from fine to coarse."
-grid_order(grid::AbstractString) = (replace(grid, r"-[\d.]+K?M$" => ""), grid_resolution(grid))
+grid_order(grid::AbstractString) = (replace(grid, r"-[\d.]+(K?M|DEG)$" => ""), grid_resolution(grid))
 
 "Order of the files of a grid: the grid description and grid file first."
 file_order(name::AbstractString) = (startswith(name, "grid_") ? 0 : endswith(name, "_grid.nc") ? 1 : 2, name)
