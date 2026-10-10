@@ -418,3 +418,21 @@ doi = "10.5194/cp-12-1519-2016"
 extract = true
 uri = "https://geology.er.usgs.gov/egpsc/prism/data/Modern_std.zip"
 
+# Geothermal heat flow (GHF thematic dataset, see GHF/remap.toml).
+# Davies (2013): the 2° lon-lat version of the map in the supporting information
+# (Wiley; blocks automated downloads). Manual download from the article page, or copy
+# from the old PIK archive (hpc:/data/sicopolis/data/GeothermalHeatFlux/Davies2013/).
+
+[davies2013_ghf]
+doi = "10.1002/ggge.20271"
+skip_download = true
+storage_path = "$datasets_dir/davies2013_ghf/ggge20271-sup-0003-Data_Table1_Eq_lon_lat_Global_HF.csv"
+uri = "https://agupubs.onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1002%2Fggge.20271&file=ggge20271-sup-0003-Data_Table1_Eq_lon_lat_Global_HF.csv"
+
+# Shapiro & Ritzwoller (2004): 1° global map. The authors' page (ciei.colorado.edu) is
+# gone; the Internet Archive copy is identical to the one in the old PIK archive.
+
+[shapiro2004_ghf]
+doi = "10.1016/j.epsl.2004.04.011"
+storage_path = "$datasets_dir/shapiro2004_ghf/hfmap.asc.gz"
+uri = "https://web.archive.org/web/20240806132053id_/http://ciei.colorado.edu/~nshapiro/MODEL/ASC_VERSION/hfmap.asc.gz"
