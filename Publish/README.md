@@ -35,14 +35,14 @@ storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_TOPO-Bedmap3.nc"
 
 ## Download
 
-Set `ICE_DATA` (e.g. `source shared/machines/<machine>.env`), then from the FesmData
+With Julia (it needs no packages) and `ICE_DATA` set (e.g. `source
+shared/machines/<machine>.env`), from the FesmData
 root:
 
 ```bash
-julia --project=Publish -e 'using Pkg; Pkg.instantiate()'
-julia --project=Publish Publish/scripts/fetch.jl                                  # list the records
-julia --project=Publish Publish/scripts/fetch.jl Antarctica Topo                  # all grids
-julia --project=Publish Publish/scripts/fetch.jl Antarctica Topo ANT-8KM ANT-16KM # some grids
+julia Publish/scripts/fetch.jl                                  # list the records
+julia Publish/scripts/fetch.jl Antarctica Topo                  # all grids
+julia Publish/scripts/fetch.jl Antarctica Topo ANT-8KM ANT-16KM # some grids
 ```
 
 Files already present are kept if their checksum matches the registry. A file that

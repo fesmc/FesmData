@@ -4,7 +4,8 @@
 # date, store), and, if the release is archived on Zenodo, its DOIs in a `[_ZENODO]`
 # table. The files are DataManifest.jl databases, with `$datasets_dir` = $ICE_DATA/v2.
 # Test releases (test packages, Zenodo sandbox) have their registry in
-# registry/_sandbox/, which is not tracked.
+# registry/_sandbox/, which is not tracked. Uses only the Julia standard library, so
+# that fetch.jl runs without a project.
 
 using Downloads
 using SHA

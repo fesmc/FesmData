@@ -1,9 +1,9 @@
 # Download published products into $ICE_DATA/v2/<Domain>/<GRID>/ and verify their
-# checksums.
+# checksums. Needs only the Julia standard library: no project, nothing to install.
 #
-#   julia --project=Publish Publish/scripts/fetch.jl                  # list the records
-#   julia --project=Publish Publish/scripts/fetch.jl Antarctica Topo  # all grids
-#   julia --project=Publish Publish/scripts/fetch.jl Antarctica Topo ANT-8KM ANT-16KM
+#   julia Publish/scripts/fetch.jl                  # list the records
+#   julia Publish/scripts/fetch.jl Antarctica Topo  # all grids
+#   julia Publish/scripts/fetch.jl Antarctica Topo ANT-8KM ANT-16KM
 #
 # With --overwrite, local files that differ from the registry are replaced; with
 # --sandbox, the records are the test releases (registry/_sandbox/).

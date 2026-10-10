@@ -65,7 +65,7 @@ function record_html(io::IO, domain::AbstractString, dataset::AbstractString)
     println(io, "<p>Version $(esc(release["version"])) ($(esc(release["date"])), ",
             "<a href=\"$(esc(release["store"]))\">packages</a>$archive). ",
             "$(length(files)) files, $(human_size(total)).</p>")
-    println(io, "<pre>julia --project=Publish Publish/scripts/fetch.jl $(esc(domain)) $(esc(dataset)) [GRID ...]</pre>")
+    println(io, "<pre>julia Publish/scripts/fetch.jl $(esc(domain)) $(esc(dataset)) [GRID ...]</pre>")
     for (grid, entries) in record_grids(files)
         size = sum(e -> get(e, "size", 0), last.(entries); init=0)
         println(io, "<details><summary><b>$(esc(grid))</b> <span class=\"muted\">",
@@ -105,9 +105,8 @@ function write_site(dir::AbstractString)
             description for cdo (<code>grid_&lt;GRID&gt;.txt</code>) and grid file
             (<code>&lt;GRID&gt;_grid.nc</code>). To download into <code>\$ICE_DATA/v2/&lt;Domain&gt;/&lt;GRID&gt;/</code>
             and verify the checksums, from a clone of FesmData:</p>
-            <pre>julia --project=Publish -e 'using Pkg; Pkg.instantiate()'
-            julia --project=Publish Publish/scripts/fetch.jl                  # list the records
-            julia --project=Publish Publish/scripts/fetch.jl Antarctica Topo ANT-8KM</pre>
+            <pre>julia Publish/scripts/fetch.jl                  # list the records
+            julia Publish/scripts/fetch.jl Antarctica Topo ANT-8KM</pre>
             <p>Coarser or other grids can be made from the base grids with the FesmData
             pipelines; see the README of each dataset.</p>""")
         for dataset in sort(filter(!startswith("_"), collect(keys(datasets))))
