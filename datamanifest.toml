@@ -258,3 +258,14 @@ uri = "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/M
 [iso3166_m49]
 storage_path = "$datasets_dir/iso3166_m49/all.csv"
 uri = "https://raw.githubusercontent.com/lukes/ISO-3166-Countries-with-Regional-Codes/145f1ad3caff212ed25f42b0ee2c8b92a75af895/all/all.csv"
+
+# ORAS5 ocean reanalysis (Zuo et al., 2019): monthly means 1979-2018 regridded by ECMWF
+# to 1°x1° (r1x1), ensemble members opa0-opa4, in the ICDC collection on the DKRZ pool.
+# Not downloaded: the absolute storage_path points into the pool (Levante only). The
+# public route is the Copernicus CDS (uri), see Zuo2019_oras5/README.md.
+
+[oras5_r1x1]
+doi = "10.5194/os-15-779-2019"
+skip_download = true
+storage_path = "/pool/data/ICDC/ocean_syntheses/oras5/r1x1"
+uri = "https://cds.climate.copernicus.eu/datasets/reanalysis-oras5"
