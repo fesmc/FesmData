@@ -330,3 +330,91 @@ key = "globsed_v3.zip"
 doi = "10.1594/PANGAEA.982339"
 extract = true
 uri = "https://download.pangaea.de/dataset/982339/files/GlobSed.zip"
+# Paleo ice sheets and topography (IceHistory). The server of Peltier's data
+# (www.atmosp.physics.utoronto.ca) does not send its intermediate TLS certificate:
+# prepare.jl downloads with JULIA_SSL_NO_VERIFY_HOSTS set to that host (or curl -k).
+# ICE-5G v1.2 (Peltier, 2004), 1°, 0-21 ka, 39 files in one archive.
+
+[ice5g_v1_2_1deg]
+key = "ice5g_v1_2_1deg.tar.gz"
+doi = "10.1146/annurev.earth.32.082503.144359"
+extract = true
+uri = "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice5G_1.2/ice5g_v1.2_0-21k_1deg.tar.gz"
+
+# ICE-6G_C (VM5a) (Peltier et al., 2015), 1°, 26-0 ka, one gzipped file per time slice.
+
+[ice6g_c_vm5a_1deg]
+doi = "10.1002/2014JB011176"
+storage_path = "$datasets_dir/ice6g_c_vm5a_1deg"
+uris = [
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.26.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.25.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.24.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.23.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.22.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.21.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.20.5.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.20.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.19.5.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.19.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.18.5.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.18.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.17.5.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.17.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.16.5.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.16.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.15.5.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.15.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.14.5.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.14.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.13.5.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.13.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.12.5.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.12.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.11.5.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.11.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.10.5.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.10.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.9.5.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.9.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.8.5.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.8.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.7.5.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.7.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.6.5.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.6.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.5.5.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.5.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.4.5.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.4.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.3.5.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.3.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.2.5.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.2.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.1.5.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.1.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.0.5.nc.gz",
+    "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.0.nc.gz",
+]
+
+# PRISM4 / PlioMIP2 boundary conditions (Dowsett et al., 2016), USGS: enhanced and
+# standard Pliocene, and modern (standard) for anomalies.
+
+[prism4_plio_enh]
+key = "prism4_plio_enh.zip"
+doi = "10.5194/cp-12-1519-2016"
+extract = true
+uri = "https://geology.er.usgs.gov/egpsc/prism/data/Plio_enh.zip"
+
+[prism4_plio_std]
+key = "prism4_plio_std.zip"
+doi = "10.5194/cp-12-1519-2016"
+extract = true
+uri = "https://geology.er.usgs.gov/egpsc/prism/data/Plio_std.zip"
+
+[prism4_modern_std]
+key = "prism4_modern_std.zip"
+doi = "10.5194/cp-12-1519-2016"
+extract = true
+uri = "https://geology.er.usgs.gov/egpsc/prism/data/Modern_std.zip"
+
