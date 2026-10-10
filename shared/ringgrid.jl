@@ -30,3 +30,7 @@ function ring_grid(lon, lat, cols; dlon)
             for (F, c) in zip(fields, cols)
                 F[i, j] = c[k[m]]
             end
+        end
+    end
+    return lons, collect(lats), fields
+end

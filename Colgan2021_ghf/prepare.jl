@@ -17,11 +17,6 @@ include(joinpath(@__DIR__, "..", "shared", "manifest.jl"))
 "Longitude spacing (degrees) of the regular grid the equal-area cells are put on."
 const DLON = 0.1
 
-        end
-    end
-    return lons, collect(lats), fields
-end
-
 # Columns: lon, lat, mean GHF (also offshore), minimum GHF, maximum GHF (onshore), in mW/m2
 input = download_dataset(manifest(), "colgan2021_ghf")
 data = readdlm(input; comments=true, comment_char='%')

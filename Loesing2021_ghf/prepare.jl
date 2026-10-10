@@ -17,11 +17,6 @@ include(joinpath(@__DIR__, "..", "shared", "manifest.jl"))
 "Longitude spacing (degrees) of the regular grid the equal-area cells are put on."
 const DLON = 0.1
 
-        end
-    end
-    return lons, collect(lats), fields
-end
-
 # Columns: Lon, Lat, HF, HF_min, HF_max, HF_max_abs (= HF_max - HF_min), in mW/m2
 input = download_dataset(manifest(), "loesing2021_ghf")
 data = readdlm(input, ','; skipstart=1)
