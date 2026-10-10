@@ -1,5 +1,9 @@
 # Publish: releases of the processed products
 
+All commands go through `fesmdata.jl` at the root of FesmData: `julia fesmdata.jl
+help` lists them. Finding and downloading (`list`, `fetch`) needs only Julia; the
+release commands install the packages of `Publish/` themselves when needed.
+
 The processed products of the v2 pipelines (Topo, Regions, ...) are released on the
 package registry of the GitLab project
 [fesmc/fesmdata-products](https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages)
@@ -40,9 +44,11 @@ shared/machines/<machine>.env`), from the FesmData
 root:
 
 ```bash
-julia Publish/scripts/fetch.jl                                  # list the records
-julia Publish/scripts/fetch.jl Antarctica Topo                  # all grids
-julia Publish/scripts/fetch.jl Antarctica Topo ANT-8KM ANT-16KM # some grids
+julia fesmdata.jl list                                     # all records
+julia fesmdata.jl list Topo                                # the records of a dataset (or a domain)
+julia fesmdata.jl list Antarctica Topo                     # a record: grids, files, sizes, local files
+julia fesmdata.jl fetch Antarctica Topo                    # download all grids
+julia fesmdata.jl fetch Antarctica Topo ANT-8KM ANT-16KM   # some grids
 ```
 
 Files already present are kept if their checksum matches the registry. A file that
@@ -85,12 +91,12 @@ for d in ANT GRL-PAL NH; do Topo/jobs/submit_domain.sh $d 1 all; done
 ```bash
 cd ../FesmData && git pull
 source shared/machines/levante.env
-julia Publish/scripts/gitlab.jl upload Topo --dry-run
-julia Publish/scripts/gitlab.jl upload Topo
+julia fesmdata.jl release Topo --dry-run
+julia fesmdata.jl release Topo
 ```
 
 The dry run checks every domain (all files present, all at the release tag) and lists
-the packages. `upload` then uploads the files of each grid to its package, checks
+the packages. `release` then uploads the files of each grid to its package, checks
 them (sha256), and writes the registry file of each domain. Requests that fail because
 the server is busy are tried again after a wait. If it still stops, run it again: files
 already uploaded are kept, and domains already released are skipped.
@@ -105,7 +111,7 @@ At any point, `status` shows each domain: its local files and their version, its
 packages on GitLab, and its registered release (and DOI):
 
 ```bash
-julia Publish/scripts/gitlab.jl status Topo
+julia fesmdata.jl status Topo
 ```
 
 All commands take domains after the dataset to work on some only (e.g. `upload Topo
@@ -118,8 +124,8 @@ the registry files go to `registry/_sandbox/`, which is not tracked (`fetch.jl
 --sandbox` downloads from them). Delete the test packages afterwards:
 
 ```bash
-julia Publish/scripts/gitlab.jl upload Topo Eurasia --sandbox --allow-untagged
-julia Publish/scripts/gitlab.jl delete Topo <version> Eurasia --sandbox
+julia fesmdata.jl release Topo Eurasia --sandbox --allow-untagged
+julia fesmdata.jl delete Topo <version> Eurasia --sandbox
 ```
 
 ## Archive on Zenodo (optional)
@@ -128,18 +134,19 @@ A release on GitLab (with its registry) can be archived on Zenodo for a DOI, wit
 same local files, after step 3:
 
 ```bash
-julia Publish/scripts/zenodo.jl upload Topo
-julia Publish/scripts/zenodo.jl publish Topo
+julia fesmdata.jl archive upload Topo
+julia fesmdata.jl archive publish Topo
 git add registry && git commit -m "registry: Topo v2.0.1 on Zenodo" && git push
 ```
 
-`upload` puts the files of each domain into a draft of the next version of its Zenodo
+`archive upload` puts the files of each domain into a draft of the next version of its Zenodo
 record (a new record the first time); running it again continues the drafts.
-`publish` checks the drafts, lists them, publishes them after one confirmation
+`archive publish` checks the drafts, lists them, publishes them after one confirmation
 (publishing cannot be undone), and adds their DOIs to the registry. Drafts published
-on the Zenodo website instead are added with `register Topo`. `status Topo` shows the
-drafts and archived versions; `discard Topo` deletes the unpublished drafts of a
-dataset, `drafts` lists all unpublished drafts of your account, and `discard <id> ...`
+on the Zenodo website instead are added with `archive register Topo`. `archive status
+Topo` shows the drafts and archived versions; `archive discard Topo` deletes the
+unpublished drafts of a dataset, `archive drafts` lists all unpublished drafts of your
+account, and `archive discard <id> ...`
 deletes drafts by id. The drafts are recorded in `registry/_drafts/` (not tracked).
 With `--sandbox`, the [Zenodo sandbox](https://sandbox.zenodo.org) archives the test
 releases (`registry/_sandbox/`).
@@ -179,5 +186,5 @@ grids and files of the registry, with download links. It is built by
 Publish. To build it locally:
 
 ```bash
-julia Publish/scripts/site.jl _site
+julia fesmdata.jl site _site
 ```

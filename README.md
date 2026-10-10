@@ -17,7 +17,7 @@ Some resources are used across datasets, in particular grid definitions that may
 
 Every NetCDF file written by a v2 pipeline has the global attributes `source` (this repository), `fesmdata_version` (`git describe` against the release tags of the dataset, e.g. `topo-v2.0.0`, with `-dirty` for uncommitted changes), `fesmdata_commit` and `history` (time, script and arguments).
 
-`Publish` : the released products are stored on [GitLab (DKRZ)](https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages), one package per domain, dataset and grid, optionally archived on [Zenodo](https://zenodo.org/communities/fesmc) for a DOI, and listed in `registry/` and on the [project website](https://fesmc.github.io/FesmData/); see `Publish/README.md` to download or release them.
+`Publish` : the released products are stored on [GitLab (DKRZ)](https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages), one package per domain, dataset and grid, optionally archived on [Zenodo](https://zenodo.org/communities/fesmc) for a DOI, and listed in `registry/` and on the [project website](https://fesmc.github.io/FesmData/); find, download and release them with `julia fesmdata.jl` (e.g. `julia fesmdata.jl list`, `julia fesmdata.jl fetch Antarctica Topo ANT-16KM`; `julia fesmdata.jl help` for all commands, `Publish/README.md` for details).
 
 Eventually we may include a `remapping` folder dedicated to taking processed datasets (on their own, or a convenient, resolution) and mapping them to become input datasets on a specific grid.
 

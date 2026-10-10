@@ -33,7 +33,7 @@ function record_metadata(domain::AbstractString, dataset::AbstractString,
         Each grid has its own files, named after the grid (e.g. <code>$(basename(first(data)))</code>),
         with the grid description for cdo (<code>grid_&lt;GRID&gt;.txt</code>) and the grid
         file (<code>&lt;GRID&gt;_grid.nc</code>). To download into the FesmData layout,
-        use <code>Publish/scripts/fetch.jl $domain $dataset</code>.</p>
+        use <code>julia fesmdata.jl fetch $domain $dataset</code>.</p>
         """
     related = Any[Dict("identifier" => "$REPO_URL/tree/$ref", "relation" => "isCompiledBy",
                        "resource_type" => "software")]
@@ -65,7 +65,7 @@ function released_files(domain::AbstractString, dataset::AbstractString; sandbox
     files = collect_files(domain, dataset)
     version = release_version(files, dataset; allow_untagged=allow_untagged, what="$domain/$dataset")
     reg = registry_file(domain, dataset; sandbox=sandbox)
-    isfile(reg) || error("$domain/$dataset is not released yet (gitlab.jl upload first)")
+    isfile(reg) || error("$domain/$dataset is not released yet (fesmdata.jl release first)")
     tables, entries = read_record(domain, dataset; sandbox=sandbox)
     tables["_RELEASE"]["git_tag"] == version ||
         error("$domain/$dataset: the local files ($version) are not the registered release " *
@@ -251,7 +251,7 @@ function upload(dataset::AbstractString, domains=String[]; sandbox::Bool=false,
     println("""
 
         Review the drafts on $(zenodo_url(sandbox))/me/uploads if needed, then publish them:
-            julia Publish/scripts/zenodo.jl publish $dataset$flags""")
+            julia fesmdata.jl archive publish $dataset$flags""")
 end
 
 "Recorded drafts of a dataset that are not published yet, as domain => draft."

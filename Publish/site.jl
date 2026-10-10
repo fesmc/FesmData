@@ -1,7 +1,7 @@
 # Static website of the published products (GitHub Pages), from the registry and
 # datasets.toml: one section per dataset, one table per record with its grids and files.
 
-include(joinpath(@__DIR__, "registry.jl"))
+include(joinpath(@__DIR__, "catalog.jl"))
 
 const SITE_CSS = """
 :root { --bg: #ffffff; --fg: #1d2329; --muted: #5d6873; --line: #dde3e8; --accent: #1f6f9f; --code: #f2f5f7; }
@@ -30,29 +30,6 @@ summary { cursor: pointer; }
 
 esc(s) = replace(string(s), "&" => "&amp;", "<" => "&lt;", ">" => "&gt;", "\"" => "&quot;")
 
-function human_size(n::Integer)
-    n < 1e6 && return "$(round(n / 1e3; digits=1)) kB"
-    n < 1e9 && return "$(round(n / 1e6; digits=1)) MB"
-    return "$(round(n / 1e9; digits=2)) GB"
-end
-
-"Resolution of a grid name in metres (ANT-4KM, GRL-PAL-500M), for sorting."
-function grid_resolution(grid::AbstractString)
-    m = match(r"-(\d+(?:\.\d+)?)(KM|M)$", grid)
-    m === nothing && return Inf
-    return parse(Float64, m[1]) * (m[2] == "KM" ? 1000 : 1)
-end
-
-"Grids of a record, by region prefix and then resolution, with their files."
-function record_grids(files::AbstractDict)
-    grids = Dict{String,Vector{Pair{String,Any}}}()
-    for (name, e) in files
-        push!(get!(grids, entry_grid(e), Pair{String,Any}[]), name => e)
-    end
-    order = sort(collect(keys(grids)); by=g -> (replace(g, r"-[\d.]+K?M$" => ""), grid_resolution(g)))
-    return [g => sort(grids[g]; by=first) for g in order]
-end
-
 function record_html(io::IO, domain::AbstractString, dataset::AbstractString)
     tables, files = read_record(domain, dataset)
     release, zenodo = tables["_RELEASE"], get(tables, "_ZENODO", nothing)
@@ -65,7 +42,7 @@ function record_html(io::IO, domain::AbstractString, dataset::AbstractString)
     println(io, "<p>Version $(esc(release["version"])) ($(esc(release["date"])), ",
             "<a href=\"$(esc(release["store"]))\">packages</a>$archive). ",
             "$(length(files)) files, $(human_size(total)).</p>")
-    println(io, "<pre>julia Publish/scripts/fetch.jl $(esc(domain)) $(esc(dataset)) [GRID ...]</pre>")
+    println(io, "<pre>julia fesmdata.jl fetch $(esc(domain)) $(esc(dataset)) [GRID ...]</pre>")
     for (grid, entries) in record_grids(files)
         size = sum(e -> get(e, "size", 0), last.(entries); init=0)
         println(io, "<details><summary><b>$(esc(grid))</b> <span class=\"muted\">",
@@ -105,8 +82,9 @@ function write_site(dir::AbstractString)
             description for cdo (<code>grid_&lt;GRID&gt;.txt</code>) and grid file
             (<code>&lt;GRID&gt;_grid.nc</code>). To download into <code>\$ICE_DATA/v2/&lt;Domain&gt;/&lt;GRID&gt;/</code>
             and verify the checksums, from a clone of FesmData:</p>
-            <pre>julia Publish/scripts/fetch.jl                  # list the records
-            julia Publish/scripts/fetch.jl Antarctica Topo ANT-8KM</pre>
+            <pre>julia fesmdata.jl list                            # all records
+            julia fesmdata.jl list Antarctica Topo            # grids and files of a record
+            julia fesmdata.jl fetch Antarctica Topo ANT-8KM   # download (and verify) a grid</pre>
             <p>Coarser or other grids can be made from the base grids with the FesmData
             pipelines; see the README of each dataset.</p>""")
         for dataset in sort(filter(!startswith("_"), collect(keys(datasets))))
