@@ -171,13 +171,23 @@ function read_prepared(path::AbstractString; vars=nothing)
 end
 
 # Extra dimension `name` of a prepared file, with the raw values and attributes of its
-# coordinate variable (indices 1:n if it has none).
+# coordinate variable (indices 1:n if it has none) and its bounds, if any.
 function _dim(ds, name)
     if haskey(ds, name) && dimnames(ds[name]) == (name,)
         v = ds[name]
-        return Dim(name, Array(v.var), [k => v.attrib[k] for k in keys(v.attrib)])
+        attrib = Pair{String,Any}[k => v.attrib[k] for k in keys(v.attrib)]
+        b = get(v.attrib, "bounds", nothing)
+        b !== nothing && !haskey(ds, b) && (filter!(p -> first(p) != "bounds", attrib); b = nothing)
+        bounds = b === nothing ? nothing : _bounds(ds[b], name)
+        return Dim(name, Array(v.var), attrib, bounds)
     end
     return Dim(name, collect(1:ds.dim[name]), Pair{String,Any}[])
+end
+
+# Bounds variable of dimension `name` as a 2 x n matrix (raw values)
+function _bounds(v, name)
+    B = Array(v.var)
+    return dimnames(v)[1] == name ? permutedims(B) : B
 end
 
 # Vector fields: pairs of fields with the standard names eastward_<x> and northward_<x>,
