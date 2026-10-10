@@ -581,3 +581,23 @@ uri = "https://zenodo.org/records/19255213/files/tas_monthlyA_ANT11_RACMO2.4p1_E
 doi = "10.5281/zenodo.19255213"
 storage_path = "$datasets_dir/racmo24p1_ant11/ts_monthlyA_ANT11_RACMO2.4p1_ERA5_197901_202512.nc"
 uri = "https://zenodo.org/records/19255213/files/ts_monthlyA_ANT11_RACMO2.4p1_ERA5_197901_202512.nc?download=1"
+# ERA5 (Hersbach et al., 2020), monthly means in the DKRZ ERA5 data pool on Levante
+# (GRIB, reduced Gaussian N320; /pool/data/ERA5/README_ERA5_POOL_DATA_*.txt), used in
+# place (not copied). Elsewhere: the CDS monthly-means datasets, see Hersbach2020_era5/README.md.
+
+[era5_dkrz_pool]
+doi = "10.24381/cds.143582cf"
+skip_download = true
+storage_path = "/pool/data/ERA5/E5"
+uri = "https://docs.dkrz.de/doc/dataservices/finding_and_accessing_data/era_data/index.html"
+
+# CERES EBAF Ed4.2.1 (Loeb et al., 2018), monthly 1° TOA and surface fluxes, in the ICDC
+# data pool on Levante (CERES_EBAF_Ed4.2.1_Subset_200003-202512.nc and
+# CERES_EBAF-TOA_Ed4.2.1_Subset_200003-202601.nc), used in place. Elsewhere: order the
+# same subsets from the CERES data page (uri), see Loeb2018_ceres/README.md.
+
+[ceres_ebaf_ed4_2_1]
+doi = "10.5067/TERRA-AQUA-NOAA20/CERES/EBAF_L3B004.2.1"
+skip_download = true
+storage_path = "/pool/data/ICDC/atmosphere/ceres_ebaf/DATA"
+uri = "https://ceres.larc.nasa.gov/data/"
