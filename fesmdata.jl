@@ -11,10 +11,14 @@ FesmData products (https://fesmc.github.io/FesmData/)
 
 Find and download:
   list [<Dataset>] [<Domain>]                  records, of a dataset and/or a domain
-  list <Domain> <Dataset> [<GRID> ...]         one record: grids, files, sizes, local files
-  fetch <Domain> <Dataset> [<GRID> ...]        download into \$ICE_DATA/v2/<Domain>/<GRID>/
+  list <Domain> <Dataset>                      a record in detail: grids, files, sizes,
+                                               files present in \$ICE_DATA
+  list [<Dataset>] <GRID> ...                  the records of grids in detail (a grid
+                                               implies its domain, e.g. ANT-32KM)
+  fetch <Dataset> <Domain> | <GRID> ...        download into \$ICE_DATA/v2/<Domain>/<GRID>/
                                                and verify (--overwrite: replace files
                                                that differ from the registry)
+  (arguments in any order)
 
 Release (maintainers, see Publish/README.md):
   release <Dataset> [<Domain> ...]             upload to the GitLab packages and write the
@@ -62,10 +66,8 @@ function main(argv)
         include(joinpath(PUBLISH_DIR, "catalog.jl"))
         call(:list, rest; sandbox=sandbox)
     elseif command == "fetch"
-        length(rest) >= 2 || usage("fetch: give a domain and a dataset")
-        include(joinpath(PUBLISH_DIR, "registry.jl"))
-        paths = call(:fetch_record, rest[1], rest[2]; grids=rest[3:end],
-                                  overwrite="--overwrite" in opts, sandbox=sandbox)
+        include(joinpath(PUBLISH_DIR, "catalog.jl"))
+        paths = call(:fetch_files, rest; overwrite="--overwrite" in opts, sandbox=sandbox)
         println("$(length(paths)) files in $(call(:products_dir))")
     elseif command == "site"
         include(joinpath(PUBLISH_DIR, "site.jl"))

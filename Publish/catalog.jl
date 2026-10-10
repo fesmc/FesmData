@@ -104,25 +104,71 @@ function record_detail(domain::AbstractString, dataset::AbstractString; grids=St
 end
 
 """
-    list(args; sandbox=false)
+    select_records(args; sandbox=false) -> (selected, detail)
 
-`fesmdata.jl list`: all records; the records of a dataset or a domain; or, with a
-domain and a dataset, the record in detail, for all grids or those given.
+Records named by the arguments of `list` and `fetch`, in any order: a dataset, a
+domain, and grids, which imply their domain (grid names are unique). Returns the
+(domain, dataset, grids) of each matching record, and whether a single record or grids
+were named (to show them in detail).
 """
-function list(args; sandbox::Bool=false)
+function select_records(args; sandbox::Bool=false)
     records = list_records(; sandbox=sandbox)
     datasets = Set(last.(records))
     domains = Set(first.(records))
+    grid_domain = Dict{String,String}()
+    for (d, s) in records, e in values(read_record(d, s; sandbox=sandbox)[2])
+        grid_domain[entry_grid(e)] = d
+    end
     domain = filter(in(domains), args)
     dataset = filter(in(datasets), args)
     grids = filter(a -> !(a in domains) && !(a in datasets), args)
-    (length(domain) > 1 || length(dataset) > 1) && error("list: give at most one domain and one dataset")
-    if length(domain) == 1 && length(dataset) == 1
-        record_detail(only(domain), only(dataset); grids=grids, sandbox=sandbox)
-    else
-        isempty(grids) || error("list: unknown $(join(grids, ", ")) (datasets: $(join(sort(collect(datasets)), ", ")); " *
-                                "domains: $(join(sort(collect(domains)), ", ")); grids need a domain and a dataset)")
-        list_records_table(filter(r -> (isempty(domain) || r[1] in domain) && (isempty(dataset) || r[2] in dataset), records);
-                           sandbox=sandbox)
+    unknown = filter(g -> !haskey(grid_domain, g), grids)
+    isempty(unknown) || error("unknown $(join(unknown, ", ")): not a dataset ($(join(sort(collect(datasets)), ", "))), " *
+                              "domain ($(join(sort(collect(domains)), ", "))) or grid (e.g. ANT-32KM)")
+    (length(domain) > 1 || length(dataset) > 1) && error("give at most one domain and one dataset")
+    grid_domains = unique(grid_domain[g] for g in grids)
+    isempty(domain) || all(==(only(domain)), grid_domains) ||
+        error("grids $(join(grids, ", ")) are not all on $(only(domain))")
+    selected = Tuple{String,String,Vector{String}}[]
+    for (d, s) in records
+        (isempty(domain) || d in domain) && (isempty(dataset) || s in dataset) || continue
+        isempty(grids) || d in grid_domains || continue
+        push!(selected, (d, s, filter(g -> grid_domain[g] == d, grids)))
     end
+    return selected, !isempty(grids) || (length(domain) == 1 && length(dataset) == 1)
+end
+
+"""
+    list(args; sandbox=false)
+
+`fesmdata.jl list`: all records, or those of a dataset and/or a domain; with a domain
+and a dataset, or with grids, the records in detail (for those grids).
+"""
+function list(args; sandbox::Bool=false)
+    selected, detail = select_records(args; sandbox=sandbox)
+    detail || return list_records_table([(d, s) for (d, s, _) in selected]; sandbox=sandbox)
+    isempty(selected) && (println("No records"); return)
+    for (k, (d, s, grids)) in enumerate(selected)
+        k > 1 && println("\n", "-"^60, "\n")
+        record_detail(d, s; grids=grids, sandbox=sandbox)
+    end
+end
+
+"""
+    fetch_files(args; overwrite=false, sandbox=false) -> Vector{String}
+
+`fesmdata.jl fetch`: download the files of a dataset on a domain, or on grids (which
+imply their domain). The dataset must be named, and a domain or grids.
+"""
+function fetch_files(args; overwrite::Bool=false, sandbox::Bool=false)
+    selected, _ = select_records(args; sandbox=sandbox)
+    datasets = unique(s for (_, s, _) in selected)
+    length(datasets) == 1 && only(datasets) in args || error("fetch: name the dataset (e.g. Topo)")
+    any(a -> a in first.(selected), args) || any(!isempty(g) for (_, _, g) in selected) ||
+        error("fetch: name a domain or grids (e.g. Antarctica, ANT-32KM)")
+    paths = String[]
+    for (d, s, grids) in selected
+        append!(paths, fetch_record(d, s; grids=grids, overwrite=overwrite, sandbox=sandbox))
+    end
+    return paths
 end

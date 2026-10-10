@@ -47,9 +47,14 @@ root:
 julia fesmdata.jl list                                     # all records
 julia fesmdata.jl list Topo                                # the records of a dataset (or a domain)
 julia fesmdata.jl list Antarctica Topo                     # a record: grids, files, sizes, local files
+julia fesmdata.jl list ANT-32KM                            # all records on a grid
 julia fesmdata.jl fetch Antarctica Topo                    # download all grids
-julia fesmdata.jl fetch Antarctica Topo ANT-8KM ANT-16KM   # some grids
+julia fesmdata.jl fetch Topo ANT-8KM ANT-16KM              # some grids
 ```
+
+The arguments can be given in any order. A grid name implies its domain (ANT-32KM is
+on Antarctica), so the domain can be left out when grids are given. `fetch` needs the
+dataset, and a domain or grids.
 
 Files already present are kept if their checksum matches the registry. A file that
 differs (another version, or changed locally) stops the download, unless
