@@ -44,6 +44,8 @@ NCDataset(path, "c") do ds
     ds.attrib["references"] = "Lucazeau, F.: Analysis and mapping of an updated terrestrial heat flow " *
                               "data set, Geochem. Geophys. Geosyst., 20, 4001-4024, 2019"
     ds.attrib["doi"] = "10.1029/2019GC008389"
+    ds.attrib["license"] = "Supporting information of an AGU article, under the Wiley standard terms " *
+                           "(no open licence): redistribution needs permission from AGU or the author"
     foreach(((k, v),) -> ds.attrib[k] = v, provenance_attrib("ghf"))
 end
 println("Wrote $path")

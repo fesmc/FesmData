@@ -17,6 +17,16 @@ source it is then smoothed with a Gaussian of half the source spacing (about 28 
 for 0.5°), so that its cells do not show as steps. The global attribute
 `remap_method` records what was done on each grid.
 
+## Licences
+
+| Source | Licence |
+|---|---|
+| Lucazeau (2019) | Wiley standard terms (no open licence): permission from AGU or the author is needed before release |
+
+The licence of each source is in its README and in the `license` attribute of its
+files. A source can be released under the FesmData licence (CC BY 4.0) only if its own
+licence allows it.
+
 ## Making the dataset
 
 ```bash

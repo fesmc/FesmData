@@ -7,6 +7,15 @@ Lucazeau, F.: Analysis and mapping of an updated terrestrial heat flow data set,
 Geochem. Geophys. Geosyst., 20, 4001-4024, 2019,
 [doi:10.1029/2019GC008389](https://doi.org/10.1029/2019GC008389).
 
+## Licence
+
+The article and its supporting information are published by AGU under the Wiley
+standard terms and conditions (Crossref licence: onlinelibrary.wiley.com/termsAndConditions),
+not under an open licence. The grid may be used for research, but redistributing it or
+products derived from it (e.g. a FesmData release) needs permission from AGU
+or the author. The heat flow observations it
+is fitted to are partly in PANGAEA under CC BY 3.0, which does not cover the grid.
+
 ## Original data
 
 The supplementary file `HFgrid14.csv` is kept in this folder

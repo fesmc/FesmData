@@ -25,7 +25,8 @@ then `julia fesmdata.jl remap GHF` makes all of it, and it is released like Topo
 Make a folder for the source, named after it (e.g. `Lucazeau2019_ghf/`), with:
 
 - `README.md`: what the data are, where they come from, how to cite them, and their
-  licence;
+  licence (check that it allows redistributing derived products before releasing
+  them);
 - `prepare.jl` (with its own `Project.toml`): get the original files and write the
   prepared file(s) to `$FESMDATA_WORK/prepared/<source folder>/` (in Julia:
   `prepared_dir("<source folder>")` from `shared/provenance.jl`).
@@ -40,8 +41,8 @@ A prepared file is a NetCDF file with:
     (`grid_mapping` attribute) that holds a PROJ string in `proj_params` or `proj4`;
 - **2D fields** on that grid, each with `units` and `long_name`, and missing values
   as `_FillValue` or NaN;
-- **global attributes** `title`, `references` and, where there is one, `doi` (copied
-  to the remapped files).
+- **global attributes** `title`, `references`, `license` and, where there is one,
+  `doi` (copied to the remapped files).
 
 Prepare the data at their own resolution: no smoothing or regridding, that is left to
 the remapping. Keep names and units simple (e.g. `ghf` in mW m-2).
