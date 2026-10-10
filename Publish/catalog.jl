@@ -172,3 +172,28 @@ function fetch_files(args; overwrite::Bool=false, sandbox::Bool=false)
     end
     return paths
 end
+
+"""
+    mirror(args; overwrite=false, sandbox=false, yes=false) -> Vector{String}
+
+`fesmdata.jl mirror`: download all records (or those of a dataset and/or a domain)
+into \$ICE_DATA/v2, after one confirmation (none with `yes`) showing the total size
+and what is already present. Present files are verified (checksums) and kept.
+"""
+function mirror(args; overwrite::Bool=false, sandbox::Bool=false, yes::Bool=false)
+    selected, _ = select_records(args; sandbox=sandbox)
+    isempty(selected) && (println("No records"); return String[])
+    entries = [e for (d, s, grids) in selected for e in values(read_record(d, s; sandbox=sandbox)[2])
+               if isempty(grids) || entry_grid(e) in grids]
+    todo = filter(e -> !isfile(local_path(e)) || filesize(local_path(e)) != e["size"], entries)
+    println("$(length(selected)) records, $(length(entries)) files, $(human_size(total_size(entries))) in total")
+    println("In $(products_dir()): $(length(entries) - length(todo)) files present, ",
+            "$(length(todo)) to download ($(human_size(total_size(todo))))")
+    yes || isempty(todo) || confirm("Download into $(products_dir())?") || (println("Nothing downloaded."); return String[])
+    paths = String[]
+    for (d, s, grids) in selected
+        println("\n$d/$s")
+        append!(paths, fetch_record(d, s; grids=grids, overwrite=overwrite, sandbox=sandbox))
+    end
+    return paths
+end

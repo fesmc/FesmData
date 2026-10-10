@@ -18,6 +18,9 @@ Find and download:
   fetch <Dataset> <Domain> | <GRID> ...        download into \$ICE_DATA/v2/<Domain>/<GRID>/
                                                and verify (--overwrite: replace files
                                                that differ from the registry)
+  mirror [<Dataset>] [<Domain>]                all records (or those of a dataset/domain),
+                                               after one confirmation with the size; run
+                                               again to update (--yes: no confirmation)
   (arguments in any order)
 
 Release (maintainers, see Publish/README.md):
@@ -31,7 +34,7 @@ Release (maintainers, see Publish/README.md):
   site [<dir>]                                 write the website (default _site)
 
 Options: --sandbox (test releases: registry/_sandbox/, test packages, Zenodo sandbox),
---allow-untagged (skip the release checks), --dry-run, --yes (archive publish),
+--allow-untagged (skip the release checks), --dry-run, --yes (mirror, archive publish),
 --overwrite (fetch).
 """
 
@@ -68,6 +71,10 @@ function main(argv)
     elseif command == "fetch"
         include(joinpath(PUBLISH_DIR, "catalog.jl"))
         paths = call(:fetch_files, rest; overwrite="--overwrite" in opts, sandbox=sandbox)
+        println("$(length(paths)) files in $(call(:products_dir))")
+    elseif command == "mirror"
+        include(joinpath(PUBLISH_DIR, "catalog.jl"))
+        paths = call(:mirror, rest; overwrite="--overwrite" in opts, sandbox=sandbox, yes="--yes" in opts)
         println("$(length(paths)) files in $(call(:products_dir))")
     elseif command == "site"
         include(joinpath(PUBLISH_DIR, "site.jl"))

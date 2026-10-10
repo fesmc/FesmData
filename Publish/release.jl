@@ -180,11 +180,6 @@ function registry_tables(domain::AbstractString, dataset::AbstractString; sandbo
     return read_record(domain, dataset; sandbox=sandbox)[1]
 end
 
-function confirm(question::AbstractString)
-    print(question, " [y/N] ")
-    return lowercase(strip(readline())) in ("y", "yes")
-end
-
 # ---------------------------------------------------------------------------
 # HTTP requests
 # ---------------------------------------------------------------------------

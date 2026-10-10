@@ -56,6 +56,18 @@ The arguments can be given in any order. A grid name implies its domain (ANT-32K
 on Antarctica), so the domain can be left out when grids are given. `fetch` needs the
 dataset, and a domain or grids.
 
+To mirror all products on a machine (or those of a dataset and/or a domain), with one
+confirmation that shows the total size and what is already present:
+
+```bash
+julia fesmdata.jl mirror           # everything
+julia fesmdata.jl mirror Topo      # one dataset
+```
+
+Run it again after new releases: present files are verified and kept, and only
+new or changed files are downloaded (`--overwrite` replaces files of an earlier
+version; `--yes` skips the confirmation, e.g. in a job).
+
 Files already present are kept if their checksum matches the registry. A file that
 differs (another version, or changed locally) stops the download, unless
 `--overwrite` is given. Single files can also be downloaded from the website or the

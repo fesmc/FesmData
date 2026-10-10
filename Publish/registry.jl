@@ -71,6 +71,11 @@ function write_registry(path::AbstractString, tables::AbstractDict, entries::Abs
     return path
 end
 
+function confirm(question::AbstractString)
+    print(question, " [y/N] ")
+    return lowercase(strip(readline())) in ("y", "yes")
+end
+
 "Local path of a registry entry, under \$ICE_DATA/v2."
 local_path(entry::AbstractDict) =
     replace(entry["storage_path"], r"^\$datasets_dir" => products_dir())
