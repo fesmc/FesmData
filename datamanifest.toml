@@ -533,3 +533,51 @@ doi = "10.5067/D7GK8F5J8M8R"
 skip_download = true
 storage_path = "$datasets_dir/nsidc0484_v2_antarctica_vel/antarctica_ice_velocity_450m_v2.nc"
 uri = "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/MEASURES/NSIDC-0484/2/1996/01/01/antarctica_ice_velocity_450m_v2.nc"
+# RACMO2.4p1 Antarctica (PXANT11, 11 km, ERA5-forced, 1979-2025; van Dalum et al., 2025):
+# the mask file and the monthly fields used by vanDalum2025_racmo24/prepare.jl, from
+# version 2 of the Zenodo record (concept DOI 10.5281/zenodo.14217231).
+
+[racmo24p1_ant11_masks]
+doi = "10.5281/zenodo.19255213"
+storage_path = "$datasets_dir/racmo24p1_ant11/ANT11_masks.nc"
+uri = "https://zenodo.org/records/19255213/files/ANT11_masks.nc?download=1"
+
+[racmo24p1_ant11_smbgl]
+doi = "10.5281/zenodo.19255213"
+storage_path = "$datasets_dir/racmo24p1_ant11/smbgl_monthlyS_ANT11_RACMO2.4p1_ERA5_197901_202512.nc"
+uri = "https://zenodo.org/records/19255213/files/smbgl_monthlyS_ANT11_RACMO2.4p1_ERA5_197901_202512.nc?download=1"
+
+[racmo24p1_ant11_pr]
+doi = "10.5281/zenodo.19255213"
+storage_path = "$datasets_dir/racmo24p1_ant11/pr_monthlyS_ANT11_RACMO2.4p1_ERA5_197901_202512.nc"
+uri = "https://zenodo.org/records/19255213/files/pr_monthlyS_ANT11_RACMO2.4p1_ERA5_197901_202512.nc?download=1"
+
+[racmo24p1_ant11_sf]
+doi = "10.5281/zenodo.19255213"
+storage_path = "$datasets_dir/racmo24p1_ant11/sf_monthlyS_ANT11_RACMO2.4p1_ERA5_197901_202512.nc"
+uri = "https://zenodo.org/records/19255213/files/sf_monthlyS_ANT11_RACMO2.4p1_ERA5_197901_202512.nc?download=1"
+
+[racmo24p1_ant11_totrunoff]
+doi = "10.5281/zenodo.19255213"
+storage_path = "$datasets_dir/racmo24p1_ant11/totrunoff_monthlyS_ANT11_RACMO2.4p1_ERA5_197901_202512.nc"
+uri = "https://zenodo.org/records/19255213/files/totrunoff_monthlyS_ANT11_RACMO2.4p1_ERA5_197901_202512.nc?download=1"
+
+[racmo24p1_ant11_mltgl]
+doi = "10.5281/zenodo.19255213"
+storage_path = "$datasets_dir/racmo24p1_ant11/mltgl_monthlyS_ANT11_RACMO2.4p1_ERA5_197901_202512.nc"
+uri = "https://zenodo.org/records/19255213/files/mltgl_monthlyS_ANT11_RACMO2.4p1_ERA5_197901_202512.nc?download=1"
+
+[racmo24p1_ant11_subltot]
+doi = "10.5281/zenodo.19255213"
+storage_path = "$datasets_dir/racmo24p1_ant11/subltot_monthlyS_ANT11_RACMO2.4p1_ERA5_197901_202512.nc"
+uri = "https://zenodo.org/records/19255213/files/subltot_monthlyS_ANT11_RACMO2.4p1_ERA5_197901_202512.nc?download=1"
+
+[racmo24p1_ant11_tas]
+doi = "10.5281/zenodo.19255213"
+storage_path = "$datasets_dir/racmo24p1_ant11/tas_monthlyA_ANT11_RACMO2.4p1_ERA5_197901_202512.nc"
+uri = "https://zenodo.org/records/19255213/files/tas_monthlyA_ANT11_RACMO2.4p1_ERA5_197901_202512.nc?download=1"
+
+[racmo24p1_ant11_ts]
+doi = "10.5281/zenodo.19255213"
+storage_path = "$datasets_dir/racmo24p1_ant11/ts_monthlyA_ANT11_RACMO2.4p1_ERA5_197901_202512.nc"
+uri = "https://zenodo.org/records/19255213/files/ts_monthlyA_ANT11_RACMO2.4p1_ERA5_197901_202512.nc?download=1"
