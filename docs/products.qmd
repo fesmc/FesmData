@@ -1,0 +1,6 @@
+---
+title: "Products"
+subtitle: "The released records, with their grids and files"
+---
+
+{{< include _products.md >}}

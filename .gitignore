@@ -15,3 +15,5 @@ Regions/*.png
 registry/_sandbox/
 registry/_drafts/
 _site/
+docs/.quarto/
+docs/_products.md

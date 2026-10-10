@@ -203,11 +203,15 @@ source shared/machines/levante.env && [ -n "$GITLAB_TOKEN" ] && echo "token set"
 
 ## Website
 
-The website (GitHub Pages) lists the datasets of `datasets.toml` and the records,
-grids and files of the registry, with download links. It is built by
-`.github/workflows/site.yml` on every push to main that changes the registry or
-Publish. To build it locally:
+The website (https://fesmc.github.io/FesmData/) is a [Quarto](https://quarto.org) site
+in `../docs/`. Its pages include the READMEs of the datasets (`../Topo/README.md`,
+`../Regions/README.md`), of the domains (`../shared/README.md`) and this one, so they
+are written once, next to the code. The products page is generated from the registry
+(`docs/_products.md`, by `julia fesmdata.jl docs`). `.github/workflows/publish-docs.yml`
+renders the site and publishes it to the `gh-pages` branch on every push to main that
+changes the docs, the READMEs, the registry or Publish. To preview it locally:
 
 ```bash
-julia fesmdata.jl site _site
+julia fesmdata.jl docs
+quarto preview docs
 ```

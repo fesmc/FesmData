@@ -1,0 +1,66 @@
+/*-- scss:defaults --*/
+$primary: #1f6feb;
+$body-color: #1c2126;
+$link-color: #1f6feb;
+$font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-monospace: "SFMono-Regular", "Menlo", "Consolas", monospace;
+$code-block-bg: #f6f8fa;
+$code-color: #b3005c;
+
+/*-- scss:rules --*/
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+h1.title {
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #57606a;
+  font-weight: 400;
+}
+
+// Tighter code blocks
+pre.sourceCode {
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+}
+
+// Records of the products page (generated, see Publish/site.jl)
+.muted {
+  color: #57606a;
+}
+
+.record details {
+  margin: 0.2rem 0;
+}
+
+.record summary {
+  cursor: pointer;
+}
+
+.record table {
+  width: 100%;
+  font-size: 0.9rem;
+  margin: 0.3rem 0 0.6rem;
+}
+
+.record td {
+  padding: 2px 8px 2px 0;
+  border-bottom: 1px solid #e1e4e8;
+}
+
+.record td.size {
+  text-align: right;
+  white-space: nowrap;
+  color: #57606a;
+}
+
+.record pre {
+  background: #f6f8fa;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+}

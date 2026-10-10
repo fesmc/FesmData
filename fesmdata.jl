@@ -31,7 +31,8 @@ Release (maintainers, see Publish/README.md):
   archive upload|publish|register|status|discard <Dataset> [<Domain> ...]
                                                archive releases on Zenodo, for a DOI
   archive discard <draft id> ...  |  archive drafts
-  site [<dir>]                                 write the website (default _site)
+  docs                                         write the generated pages of the website
+                                               (docs/_products.md; then quarto preview docs)
 
 Options: --sandbox (test releases: registry/_sandbox/, test packages, Zenodo sandbox),
 --allow-untagged (skip the release checks), --dry-run, --yes (mirror, archive publish),
@@ -76,9 +77,9 @@ function main(argv)
         include(joinpath(PUBLISH_DIR, "catalog.jl"))
         paths = call(:mirror, rest; overwrite="--overwrite" in opts, sandbox=sandbox, yes="--yes" in opts)
         println("$(length(paths)) files in $(call(:products_dir))")
-    elseif command == "site"
+    elseif command == "docs"
         include(joinpath(PUBLISH_DIR, "site.jl"))
-        println("Wrote ", call(:write_site, isempty(rest) ? "_site" : rest[1]))
+        println("Wrote ", call(:write_products, joinpath(@__DIR__, "docs", "_products.md")))
     elseif command in ("release", "status", "delete")
         isempty(rest) && usage("$command: give a dataset")
         publish_env()

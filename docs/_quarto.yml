@@ -1,0 +1,53 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - "index.qmd"
+    - "products.qmd"
+    - "domains.qmd"
+    - "datasets/*.qmd"
+    - "releasing.qmd"
+
+website:
+  title: "FesmData"
+  description: "Processed datasets for ice-sheet and Earth-system models, on the grids of each model domain."
+  site-url: "https://fesmc.github.io/FesmData/"
+  repo-url: "https://github.com/fesmc/FesmData"
+  repo-actions: [issue]
+  page-navigation: true
+  navbar:
+    background: primary
+    search: true
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Products"
+        href: products.qmd
+      - text: "Domains and grids"
+        href: domains.qmd
+      - text: "Datasets"
+        menu:
+          - text: "Topo — topography"
+            href: datasets/topo.qmd
+          - text: "Regions — regions and basins"
+            href: datasets/regions.qmd
+      - text: "Releasing"
+        href: releasing.qmd
+    right:
+      - icon: github
+        href: "https://github.com/fesmc/FesmData"
+        aria-label: GitHub
+  page-footer:
+    left: "FesmData · fesmc"
+    right: "Built with [Quarto](https://quarto.org)"
+
+format:
+  html:
+    theme:
+      light: [cosmo, styles.scss]
+    toc: true
+    toc-depth: 3
+    code-copy: true
+    code-overflow: wrap
+    anchor-sections: true
+    smooth-scroll: true
