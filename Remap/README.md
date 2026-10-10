@@ -39,8 +39,14 @@ A prepared file is a NetCDF file with:
     latitudes ascending or descending; or
   - `x`, `y` in m or km, with the fields pointing to a grid-mapping variable
     (`grid_mapping` attribute) that holds a PROJ string in `proj_params` or `proj4`;
-- **2D fields** on that grid, each with `units` and `long_name`, and missing values
-  as `_FillValue` or NaN;
+- **fields** on that grid, each with `units` and `long_name`, and missing values
+  as `_FillValue` or NaN. A field may have more dimensions than the grid (e.g.
+  `month`, `time`, `depth`), each with a 1D coordinate variable; they are kept as they
+  are. Integer fields (e.g. masks, classes) stay integer, with `flag_values` and
+  `flag_meanings` if they are classes. Vectors are given by their eastward and
+  northward components, marked by the standard names `eastward_<name>` and
+  `northward_<name>` (e.g. `eastward_land_ice_surface_velocity`), never by their
+  components along the axes of a projected source grid;
 - **global attributes** `title`, `references`, `license` and, where there is one,
   `doi` (copied to the remapped files).
 
@@ -56,7 +62,7 @@ julia fesmdata.jl remap <file.nc> <Domain> | <GRID> | all ... [options]
 - Targets are domains (e.g. `Antarctica`, all of its grids; `Global`, the global
   lon-lat grids), grids (e.g. `GRL-4KM`, `GLOBAL-0.5DEG`), or `all`. The names are
   listed under Domains and grids (`shared/README.md`).
-- `--vars=a,b` remaps only these fields (default: all 2D fields of the file).
+- `--vars=a,b` remaps only these fields (default: all fields of the file).
 - `--name=NAME` names the output `<GRID>_<NAME>.nc` (default: the file name). Use
   `<Dataset>-<Source>`, e.g. `GHF-Lucazeau2019`.
 - `--method=con|bilinear` (default `con`) and `--smooth=auto|<km>` (default `auto`), see
@@ -68,7 +74,12 @@ source over the cell: it keeps means and totals, and is right for any grid coars
 than the source. A source on the same projection as the grid, or a lon-lat source on
 a lon-lat grid, is remapped exactly; otherwise each cell is sampled at points spaced
 at most half the source spacing. `bilinear` interpolates the source at the cell
-centres.
+centres. Fields with more dimensions are remapped one 2D slice at a time. Integer
+fields are remapped as classes, whatever the method: each cell gets the class that
+covers most of it (from the conservatively remapped area fraction of each class), or
+is missing where the source has no data. Vectors are remapped component by
+component and then rotated to the axes of a projected grid (attribute
+`vector_component`); on lon-lat grids they stay eastward and northward.
 
 **Smoothing.** After remapping, the field can be smoothed with a Gaussian of standard
 deviation `--smooth` (km; `0` for none). With `auto` (the default), a source coarser
@@ -79,7 +90,9 @@ missing cells and does not spread data into them. The global attribute
 `remap_method` records what was done on each grid.
 
 Each output file also has `f_valid`, the fraction of each cell covered by source data
-(`f_valid_<field>` per field when the fields have different coverage). Cells without
+(`f_valid_<field>` per field when the fields have different coverage, with the extra
+dimensions of the field when its coverage differs between them, e.g. ocean data at
+depth). Cells without
 data are missing. Grids that the source does not cover at all are skipped, so a
 regional source (e.g. velocities of Greenland) can be remapped onto `all`. The grid
 files of each grid are written too if they are missing.
@@ -127,8 +140,6 @@ products share the same grids. Other domains, projected or lon-lat, can be added
 
 ## Not supported yet
 
-- Fields with more dimensions (e.g. time) and datasets split over several files.
-- Integer or flag fields (masks); these need fractions or the dominant class rather
-  than a mean.
+- Datasets split over several files (prepare them into one file, e.g. a climatology).
 - Projected grids described only by CF grid-mapping parameters or WKT (add a PROJ
   string as `proj_params`).

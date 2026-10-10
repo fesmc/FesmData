@@ -5,4 +5,4 @@ NCDatasets = "85f8d34a-cbdd-5861-8df4-14fed0d494ab"
 TOML = "fa267f1f-6049-4f14-aa54-33bafae1ed76"
 
 [sources]
-FesmUtils = {rev = "main", url = "https://github.com/fesmc/FesmUtils.jl"}
+FesmUtils = {rev = "remap-nd", url = "https://github.com/fesmc/FesmUtils.jl"}
