@@ -258,3 +258,12 @@ uri = "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/M
 [iso3166_m49]
 storage_path = "$datasets_dir/iso3166_m49/all.csv"
 uri = "https://raw.githubusercontent.com/lukes/ISO-3166-Countries-with-Regional-Codes/145f1ad3caff212ed25f42b0ee2c8b92a75af895/all/all.csv"
+
+# Hazzard & Richards (2024): Antarctic geothermal heat flow (OSF project 54zam,
+# HR24_grids.zip; no licence set on OSF).
+
+[hazzardrichards2024_ghf]
+key = "hazzardrichards2024_ghf.zip"
+doi = "10.1029/2023GL106274"
+extract = true
+uri = "https://osf.io/download/p678r/"
