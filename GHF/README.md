@@ -47,6 +47,8 @@ licence allows it.
 
 ```bash
 julia -t 8 fesmdata.jl remap GHF
+# on Levante, on a compute node:
+# sbatch --job-name=remap-GHF Remap/jobs/remap_dataset.sbatch GHF
 ```
 
 This makes all products on all their grids, after preparing the sources that are not
