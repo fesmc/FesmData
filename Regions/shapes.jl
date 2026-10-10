@@ -95,7 +95,7 @@ function project_rings(rings::AbstractVector, g::ProjGrid; maxseg::Real=0.1)
             lo, hi = extrema(first.(pts))
             for box in boxes, s in 360 .* (floor(Int, (lo - box[2]) / 360):ceil(Int, (hi - box[1]) / 360))
                 c = _clip(pts, (box[1] + s, box[2] + s, box[3], box[4]))
-                length(c) >= 3 && push!(out, [trans(p) for p in c])
+                length(c) >= 3 && push!(out, [trans(p) for p in _densify(c, maxseg; shortway=false)])
             end
         end
     end
@@ -148,7 +148,8 @@ end
 
 # Ring clipped to a lon/lat box (Sutherland-Hodgman, one side at a time). Edges are
 # straight in lon/lat, as after `_densify`; parts of the result along the sides of the
-# box, outside the grid, do not change which cells of the grid the ring covers.
+# box, outside the grid, do not change which cells of the grid the ring covers. These
+# can be long, and are densified again before projecting.
 function _clip(ring, box)
     lo, hi, latmin, latmax = box
     pts = ring
@@ -174,13 +175,15 @@ end
 # Edges are interpolated in lon/lat the short way round, so that rings around a pole
 # or across 180 degrees (outlines given as points) stay intact, except edges spanning
 # all longitudes (-180 to 180), which follow their parallel.
-function _densify(ring, maxseg)
+# With `shortway = false`, edges are straight in lon/lat as given (e.g. rings with
+# continuous longitudes, see `_unwrap`).
+function _densify(ring, maxseg; shortway::Bool=true)
     out = NTuple{2,Float64}[]
     n = length(ring)
     for k in 1:n
         a, b = ring[k], ring[k == n ? 1 : k + 1]
         dlon = b[1] - a[1]
-        if 180 < abs(dlon) < 360 - 1e-6
+        if shortway && 180 < abs(dlon) < 360 - 1e-6
             dlon -= sign(dlon) * 360
         end
         dlat = b[2] - a[2]
