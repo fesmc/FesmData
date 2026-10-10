@@ -259,6 +259,16 @@ uri = "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/M
 storage_path = "$datasets_dir/iso3166_m49/all.csv"
 uri = "https://raw.githubusercontent.com/lukes/ISO-3166-Countries-with-Regional-Codes/145f1ad3caff212ed25f42b0ee2c8b92a75af895/all/all.csv"
 
+# ERA5 (Hersbach et al., 2020), monthly means in the DKRZ ERA5 data pool on Levante
+# (GRIB, reduced Gaussian N320; /pool/data/ERA5/README_ERA5_POOL_DATA_*.txt), used in
+# place (not copied). Elsewhere: the CDS monthly-means datasets, see Hersbach2020_era5/README.md.
+
+[era5_dkrz_pool]
+doi = "10.24381/cds.143582cf"
+skip_download = true
+storage_path = "/pool/data/ERA5/E5"
+uri = "https://docs.dkrz.de/doc/dataservices/finding_and_accessing_data/era_data/index.html"
+
 # CERES EBAF Ed4.2.1 (Loeb et al., 2018), monthly 1° TOA and surface fluxes, in the ICDC
 # data pool on Levante (CERES_EBAF_Ed4.2.1_Subset_200003-202512.nc and
 # CERES_EBAF-TOA_Ed4.2.1_Subset_200003-202601.nc), used in place. Elsewhere: order the
