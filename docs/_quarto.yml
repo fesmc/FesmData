@@ -48,6 +48,8 @@ website:
             href: datasets/ocean.qmd
           - text: "SMB — surface mass balance"
             href: datasets/smb.qmd
+          - text: "Atmosphere — reanalysis and satellite"
+            href: datasets/atmosphere.qmd
       - text: "Your own data"
         href: remap.qmd
       - text: "Releasing"

@@ -1,0 +1,29 @@
+# Atmosphere: reanalysis and satellite climatologies (thematic dataset, see
+# ../Remap/README.md). Products are written as <GRID>_Atmosphere-<name>.nc on every grid
+# of their `domains`; see ../GHF/remap.toml for the options. The dataset and its release
+# tag are in ../Publish/datasets.toml.
+
+[products.ERA5-1981-2010]
+source = "Hersbach2020_era5"
+file = "Hersbach2020_ERA5_1981-2010.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+
+[products.ERA5-1991-2020]
+source = "Hersbach2020_era5"
+file = "Hersbach2020_ERA5_1991-2020.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+
+[products.ERA5-plev-1981-2010]
+source = "Hersbach2020_era5"
+file = "Hersbach2020_ERA5-plev_1981-2010.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+
+[products.ERA5-plev-1991-2020]
+source = "Hersbach2020_era5"
+file = "Hersbach2020_ERA5-plev_1991-2020.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+
+[products.CERES-2001-2020]
+source = "Loeb2018_ceres"
+file = "Loeb2018_CERES-EBAF_2001-2020.nc"
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]

@@ -120,3 +120,14 @@ description = """
 Surface mass balance and surface climate of the ice sheets from regional climate models
 (RACMO, MAR), remapped conservatively onto the grids of a model domain.
 """
+
+[Atmosphere]
+tag = "atmosphere"
+title = "atmospheric climatologies"
+readme = "Atmosphere/README.md"
+keywords = ["reanalysis", "ERA5", "CERES", "climatology", "model input", "model validation"]
+description = """
+Monthly climatologies of the atmosphere from reanalysis (ERA5) and satellite (CERES)
+data, remapped conservatively onto the grids of a model domain, or onto global lon-lat
+grids.
+"""
