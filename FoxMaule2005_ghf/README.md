@@ -46,7 +46,7 @@ julia fesmdata.jl remap $FESMDATA_WORK/prepared/FoxMaule2005_ghf/FoxMaule2005_GH
 
 `prepare.jl` writes `ghf` (mW m-2) and `h_mag` (magnetic crustal thickness, km, north
 of 55°N only) to `$FESMDATA_WORK/prepared/FoxMaule2005_ghf/FoxMaule2005_GHF.nc` (see
-`Remap/README.md`).
+`Remap/README.md`). The GHF product remaps only `ghf`.
 
 The data are points of an equal-area grid: rings 1.5° apart in latitude (about
 170 km), with points about as far apart in longitude. They are put on a regular

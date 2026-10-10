@@ -75,7 +75,7 @@ min_spacing_km = 4
 [products.FoxMaule2005]
 source = "FoxMaule2005_ghf"
 file = "FoxMaule2005_GHF.nc"
-variables = ["ghf", "h_mag"]
+variables = ["ghf"]
 domains = ["Antarctica", "GreenlandPaleo", "Greenland"]
 min_spacing_km = 4
 
