@@ -116,7 +116,7 @@ version = "0.1.6"
 
 [[deps.FesmUtils]]
 deps = ["NCDatasets", "Proj"]
-git-tree-sha1 = "15cf28237289f7e2be5781a6a505eff64e70edeb"
+git-tree-sha1 = "0b77c068cb5a03088908636a1de190d7bdc41ebf"
 repo-rev = "remap-nd"
 repo-url = "https://github.com/fesmc/FesmUtils.jl"
 uuid = "87fa8290-809d-4b2a-a2bb-fb70d9529671"

@@ -60,6 +60,24 @@ function _uniform(c::AbstractVector, name)
     return c[1] .+ d .* (0:length(c)-1)
 end
 
+# Latitudes (ascending): rebuilt as a uniform axis when they are uniformly spaced up to
+# rounding, kept as they are otherwise (e.g. a Gaussian grid).
+function _latitudes(c::AbstractVector)
+    d = (c[end] - c[1]) / (length(c) - 1)
+    uniform = all(k -> isapprox(c[k] - c[k-1], d; rtol=1e-3), 2:length(c))
+    return uniform ? _uniform(c, "lat") : Float64.(c)
+end
+
+# Latitude edges from the bounds variable of the latitudes (CF `bounds`, e.g. lat_bnds),
+# in the order `iy`; nothing if there is none (edges halfway between the latitudes).
+function _lat_edges(ds, ydim, iy)
+    haskey(ds[ydim].attrib, "bounds") || return nothing
+    b = Float64.(Array(ds[ds[ydim].attrib["bounds"]]))[:, iy]       # (2, nlat)
+    lo, hi = vec(minimum(b; dims=1)), vec(maximum(b; dims=1))
+    all(k -> isapprox(hi[k], lo[k+1]; atol=1e-6), 1:length(lo)-1) || return nothing
+    return clamp.(vcat(lo, hi[end]), -90.0, 90.0)
+end
+
 # Order of the longitudes `lon` (any range, e.g. -180:180 or 0:360, in any order)
 # that makes them ascending, and the ascending longitudes, starting in [-180, 180).
 # A regional grid across the 180° meridian keeps its cells together (e.g. 170:190).
@@ -82,7 +100,9 @@ end
 Read the fields of a prepared file: all fields on the grid of the file, or the fields
 `vars`. The grid is given by 1D coordinate variables, lon and lat (degrees, -180:180
 or 0:360, in any order) or x and y (m or km) with a `grid_mapping` variable holding a
-PROJ string (`proj_params` or `proj4`). Latitudes and y may be descending. Fields may
+PROJ string (`proj_params` or `proj4`). Latitudes and y may be descending, and
+latitudes may be unevenly spaced (e.g. a Gaussian grid; their cell edges are taken
+from a CF `bounds` variable if there is one). Fields may
 have extra dimensions (with or without coordinate variables), and may be integer.
 Vector fields are pairs with the standard names `eastward_*` and `northward_*`.
 Missing values (_FillValue, NaN) become NaN, or `missing` in integer fields.
@@ -122,7 +142,7 @@ function read_prepared(path::AbstractString; vars=nothing)
         iy = sortperm(yr)
         if haskey(coords, :lon) && xdim == coords[:lon]
             ix, lon = _lon_order(xr)
-            grid = LonLatGrid(_uniform(lon, "lon"), _uniform(yr[iy], "lat"))
+            grid = LonLatGrid(_uniform(lon, "lon"), _latitudes(yr[iy]); latedges=_lat_edges(ds, ydim, iy))
         else
             ix = sortperm(xr)
             grid = ProjGrid(splitext(basename(path))[1], _km(ds[xdim], xr[ix], xdim),
@@ -373,11 +393,19 @@ end
 rotate_vectors!(out, varattrib, vectors, ::LonLatGrid) = nothing
 
 # Fraction covered by the source of a remapped field, without the extra dimensions
-# when it is the same for all of them.
+# along which it does not change (e.g. month, for ocean data at depth); returns it and
+# the extra dimensions kept (indices into the extra dimensions of the field).
 function _collapse(fv::AbstractArray)
-    ndims(fv) == 2 && return fv
-    fv1 = fv[:, :, ntuple(_ -> 1, ndims(fv) - 2)...]
-    return all(I -> view(fv, :, :, I) == fv1, CartesianIndices(size(fv)[3:end])) ? fv1 : fv
+    kept = collect(1:ndims(fv)-2)
+    for k in reverse(kept)
+        d = k + 2
+        first_ = selectdim(fv, d, 1:1)
+        if all(i -> selectdim(fv, d, i:i) == first_, axes(fv, d))
+            fv = dropdims(first_; dims=d)
+            deleteat!(kept, k)
+        end
+    end
+    return fv, kept
 end
 
 "Description of a remapping for the global attribute `remap_method`."
@@ -428,13 +456,14 @@ function remap_prepared(p::Prepared, grids::Vector{OutGrid}; name::AbstractStrin
         fields = Dict{String,Array}(f => out[f][1] for f in names)
         dims = copy(p.dims)
         fvs = Dict(f => _collapse(out[f][2]) for f in names)
-        if allequal(fvs[f] for f in names)
-            fields["f_valid"] = fvs[names[1]]
-            dims["f_valid"] = ndims(fvs[names[1]]) > 2 ? p.dims[names[1]] : Dim[]
+        fvdims(f) = p.dims[f][fvs[f][2]]
+        if allequal(fvs[f][1] for f in names) && allequal([d.name for d in fvdims(f)] for f in names)
+            fields["f_valid"] = fvs[names[1]][1]
+            dims["f_valid"] = fvdims(names[1])
         else
             for f in names
-                fields["f_valid_$f"] = fvs[f]
-                dims["f_valid_$f"] = ndims(fvs[f]) > 2 ? p.dims[f] : Dim[]
+                fields["f_valid_$f"] = fvs[f][1]
+                dims["f_valid_$f"] = fvdims(f)
                 varattrib["f_valid_$f"] = ["units" => "1", "long_name" => "area fraction covered by $f"]
             end
         end
@@ -533,5 +562,6 @@ function remap_command(args; vars=nothing, name=nothing, method=nothing, smooth=
     return remap_prepared(p, grids; name=nm, method=meth, smooth=sm, overwrite)
 end
 
-_describe(g::LonLatGrid) = "$(join(size(g), "x")) lon-lat grid ($(g.dlon)° x $(g.dlat)°)"
+_describe(g::LonLatGrid) = "$(join(size(g), "x")) lon-lat grid ($(g.dlon)° x $(round(g.dlat; digits=4))°" *
+                           (uniform_lat(g) ? ")" : " on average, uneven latitudes)")
 _describe(g::ProjGrid) = "$(join(size(g), "x")) projected grid ($(spacing(g)[1]) km)"
