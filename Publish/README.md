@@ -52,9 +52,21 @@ default and variants; `regions_release_files` in `../Regions/files.jl`), and mus
 present. A release of a dataset on a domain:
 
 1. Tag the release, e.g. `topo-v2.0.0`, and push the tag.
-2. Run the pipeline at the tag (clean checkout), so that every file has
-   `fesmdata_version = "topo-v2.0.0"`.
-3. Upload the files to a Zenodo draft (on Levante, where the files are):
+2. Run the pipeline at the tag, in a clean checkout of it, so that every file has
+   `fesmdata_version = "topo-v2.0.0"` (changes in another checkout would make them
+   `-dirty`):
+
+   ```bash
+   git fetch origin --tags
+   git worktree add ../FesmData-topo-v2.0.0 topo-v2.0.0
+   cd ../FesmData-topo-v2.0.0
+   source shared/machines/levante.env
+   julia --project=Topo -e 'using Pkg; Pkg.instantiate()'
+   for d in ANT GRL-PAL NH; do Topo/jobs/submit_domain.sh $d 1 all; done
+   ```
+
+3. From the usual checkout on main, upload the files to a Zenodo draft (on Levante,
+   where the files are):
 
    ```bash
    julia --project=Publish Publish/scripts/zenodo.jl upload Antarctica Topo --dry-run
@@ -64,7 +76,8 @@ present. A release of a dataset on a domain:
    The first release creates the record, later ones a new version of the record in
    the registry. Files that are unchanged on Zenodo are kept, the others uploaded.
 4. Review the draft on Zenodo and publish it there. Publishing cannot be undone.
-5. Register the published record and commit the registry file:
+5. Register the published record, then commit and push the registry file (the website
+   is then updated):
 
    ```bash
    julia --project=Publish Publish/scripts/zenodo.jl register Antarctica Topo <record id>
@@ -77,11 +90,33 @@ present. A release of a dataset on a domain:
 release tag, and that the grid files were made at a commit. `--allow-untagged` skips
 these checks (e.g. for a test). `--draft=<id>` continues an existing draft.
 
-The token is read from `ZENODO_TOKEN` (scopes `deposit:write` and `deposit:actions`),
-which the machine environments set from `~/.zenodo_token`. To test, use
-[the sandbox](https://sandbox.zenodo.org) with `--sandbox` (token in
-`~/.zenodo_sandbox_token`); its registry files go to `registry/_sandbox/`, which is not
-tracked, and `fetch.jl --sandbox` downloads from them.
+## Zenodo access
+
+Uploads need a Zenodo account and a personal token: on Zenodo, Account > Applications >
+Personal access tokens > New token, with the scopes `deposit:write` and
+`deposit:actions`. Store it in `~/.zenodo_token` on the machine with the files (it is
+read without being shown or kept in the shell history):
+
+```bash
+read -s -p "Zenodo token: " t && printf '%s' "$t" > ~/.zenodo_token && chmod 600 ~/.zenodo_token && unset t && echo
+```
+
+The machine environments (`../shared/machines/*.env`) set `ZENODO_TOKEN` from this
+file; a new machine needs the same two lines as there. Check with:
+
+```bash
+source shared/machines/levante.env && [ -n "$ZENODO_TOKEN" ] && echo "token set"
+```
+
+A new version of a record can only be made by the owner of the record, or by those the
+owner gives access to it (on Zenodo, the record > Share > "Can manage"). To publish an
+update of a dataset, ask the owner of its record (see the registry) for this access.
+New records are owned by whoever uploads them and join the `fesmc` community.
+
+To test, use [the sandbox](https://sandbox.zenodo.org) with `--sandbox`: it has its own
+accounts and tokens (stored in `~/.zenodo_sandbox_token` the same way). Its registry
+files go to `registry/_sandbox/`, which is not tracked, and `fetch.jl --sandbox`
+downloads from them.
 
 ## Website
 
