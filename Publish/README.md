@@ -39,39 +39,45 @@ storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_TOPO-Bedmap3.nc"
 
 ## Download
 
-With Julia (it needs no packages) and `ICE_DATA` set (e.g. `source
-shared/machines/<machine>.env`), from the FesmData
-root:
+The [website](https://fesmc.github.io/FesmData/) has a step-by-step guide. In short:
 
-```bash
-julia fesmdata.jl list                                     # all records
-julia fesmdata.jl list Topo                                # the records of a dataset (or a domain)
-julia fesmdata.jl list Antarctica Topo                     # a record: grids, files, sizes, local files
-julia fesmdata.jl list ANT-32KM                            # all records on a grid
-julia fesmdata.jl fetch Antarctica Topo                    # download all grids
-julia fesmdata.jl fetch Topo ANT-8KM ANT-16KM              # some grids
-```
+1. Install [Julia](https://julialang.org/downloads/) (no packages needed) and clone
+   FesmData; all commands are run from its folder.
+2. Set `ICE_DATA` to the folder for the data (e.g. `export ICE_DATA=/path/to/ice_data`,
+   or `source shared/machines/<machine>.env`). Every file goes to
+   `$ICE_DATA/v2/<Domain>/<GRID>/`: one folder per domain, and in it one folder per grid
+   with all datasets on that grid, e.g.
+
+   ```
+   $ICE_DATA/v2/Antarctica/ANT-8KM/
+       grid_ANT-8KM.txt                 grid description (cdo)
+       ANT-8KM_grid.nc                  lon, lat and area of the cells
+       ANT-8KM_TOPO-BedMachine-v4.nc    products of the dataset Topo
+       ...
+   ```
+
+3. Find and download:
+
+   ```bash
+   julia fesmdata.jl list                          # all records
+   julia fesmdata.jl list Topo                     # the records of a dataset (or a domain)
+   julia fesmdata.jl list Antarctica Topo          # a record: grids, files, sizes, local files
+   julia fesmdata.jl list ANT-32KM                 # all records on a grid
+   julia fesmdata.jl fetch Topo ANT-8KM ANT-16KM   # some grids
+   julia fesmdata.jl fetch Antarctica Topo         # all grids of a domain
+   julia fesmdata.jl mirror                        # everything (asks once, with the size)
+   ```
 
 The arguments can be given in any order. A grid name implies its domain (ANT-32KM is
 on Antarctica), so the domain can be left out when grids are given. `fetch` needs the
 dataset, and a domain or grids.
 
-To mirror all products on a machine (or those of a dataset and/or a domain), with one
-confirmation that shows the total size and what is already present:
-
-```bash
-julia fesmdata.jl mirror           # everything
-julia fesmdata.jl mirror Topo      # one dataset
-```
-
-Run it again after new releases: present files are verified and kept, and only
-new or changed files are downloaded (`--overwrite` replaces files of an earlier
-version; `--yes` skips the confirmation, e.g. in a job).
-
-Files already present are kept if their checksum matches the registry. A file that
-differs (another version, or changed locally) stops the download, unless
-`--overwrite` is given. Single files can also be downloaded from the website or the
-packages page, without a token.
+Every file is checked against its checksum. Files already present are kept; a file that
+differs (another version, or changed locally) stops the download, unless `--overwrite`
+is given. `mirror` (also `mirror Topo`, `mirror Antarctica`) shows the total size and
+what is already present, and asks once; run it again after new releases to update the
+copy (`--yes` skips the question, e.g. in a job). Single files can also be downloaded
+from the website or the packages page, without the tool.
 
 ## Release
 
