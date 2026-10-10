@@ -241,6 +241,17 @@ skip_download = true
 storage_path = "$datasets_dir/nsidc0709_v2_basins"
 uri = "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/MEASURES/NSIDC-0709/2/1992/02/07/"
 
+# MEaSUREs Multi-year Greenland Ice Sheet Velocity Mosaic v1 (NSIDC-0670; Joughin et al.,
+# 2018), 250 m: the surface velocity of the NEGIS basins (Regions/basins.toml). Manual
+# download (NASA Earthdata login), greenland_vel_mosaic250_vx_v1.tif and
+# greenland_vel_mosaic250_vy_v1.tif into the folder, from the uri below.
+
+[nsidc0670_v1_greenland_vel]
+doi = "10.5067/QUA5Q9SVMSJG"
+skip_download = true
+storage_path = "$datasets_dir/nsidc0670_v1_greenland_vel"
+uri = "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/MEASURES/NSIDC-0670/1/1995/12/01/"
+
 # ISO 3166 countries with their UN M49 regions (lukes/ISO-3166-Countries-with-Regional-
 # Codes, pinned commit), to group the territories of the EEZ-land union by continent.
 
