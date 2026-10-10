@@ -383,9 +383,13 @@ function rotate_vectors!(out, varattrib, vectors, g::ProjGrid)
         for I in CartesianIndices(size(ue)[3:end])
             ue[:, :, I], vn[:, :, I] = rotate_to_grid(α, ue[:, :, I], vn[:, :, I])
         end
-        for (name, axis) in ((e, "x"), (n, "y"))
-            varattrib[name] = vcat(filter(p -> first(p) != "standard_name", varattrib[name]),
-                                   ["vector_component" => "along the $axis axis of the grid"])
+        for (name, axis, dir) in ((e, "x", "eastward"), (n, "y", "northward"))
+            atts = Dict(varattrib[name])
+            ln = string(get(atts, "long_name", name))
+            ln = occursin(Regex("\\b$dir\\b", "i"), ln) ? replace(ln, Regex("\\b$dir\\b", "i") => "grid $axis") :
+                 "$ln (along the grid $axis axis)"
+            varattrib[name] = vcat(filter(p -> !(first(p) in ("standard_name", "long_name")), varattrib[name]),
+                                   ["long_name" => ln, "vector_component" => "along the $axis axis of the grid"])
         end
     end
 end
