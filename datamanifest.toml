@@ -258,3 +258,14 @@ uri = "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/M
 [iso3166_m49]
 storage_path = "$datasets_dir/iso3166_m49/all.csv"
 uri = "https://raw.githubusercontent.com/lukes/ISO-3166-Countries-with-Regional-Codes/145f1ad3caff212ed25f42b0ee2c8b92a75af895/all/all.csv"
+
+# CERES EBAF Ed4.2.1 (Loeb et al., 2018), monthly 1° TOA and surface fluxes, in the ICDC
+# data pool on Levante (CERES_EBAF_Ed4.2.1_Subset_200003-202512.nc and
+# CERES_EBAF-TOA_Ed4.2.1_Subset_200003-202601.nc), used in place. Elsewhere: order the
+# same subsets from the CERES data page (uri), see Loeb2018_ceres/README.md.
+
+[ceres_ebaf_ed4_2_1]
+doi = "10.5067/TERRA-AQUA-NOAA20/CERES/EBAF_L3B004.2.1"
+skip_download = true
+storage_path = "/pool/data/ICDC/atmosphere/ceres_ebaf/DATA"
+uri = "https://ceres.larc.nasa.gov/data/"
