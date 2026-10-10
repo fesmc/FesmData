@@ -27,7 +27,7 @@ const PS_SOUTH = polar_stereographic_proj(lat_0=-90, lat_ts=-71, lon_0=0, a=6378
 
 Read source `name` (an entry of datamanifest.toml, or `bedmap2` for its entries
 `bedmap2_*`) for domain `dom`. Lon-lat sources are read only over the latitudes
-covered by its base grid.
+covered by its base grid, and glacier tiles only within these latitudes.
 """
 function read_source(name::AbstractString, dom::Domain)
     db = manifest()
@@ -42,7 +42,7 @@ function read_source(name::AbstractString, dom::Domain)
     elseif startswith(name, "gebco")
         return read_gebco(_nc_file(get_dataset_path(db, name)), dom)
     elseif name == "iceboost_v2"
-        return read_iceboost(db)
+        return read_iceboost(db, dom)
     end
     error("unknown source $name")
 end
@@ -147,15 +147,22 @@ function _read_tif(path)
 end
 
 # Cell centres (km, ascending) and projection (km) of a north-up GeoTIFF in metres
-function _tif_axes(ds, path)
+_tif_axes(ds, path) = _tif_axes(_tif_header(ds, path))
+
+function _tif_axes(h::NamedTuple)
+    xc = (h.x0 .+ h.dx .* ((1:h.nx) .- 0.5)) ./ 1000
+    yc = reverse(h.y0 .+ h.dy .* ((1:h.ny) .- 0.5)) ./ 1000
+    return xc, yc, h.proj
+end
+
+# Origin and spacing (m), size, and projection (km) of a north-up GeoTIFF in metres
+function _tif_header(ds, path)
     x0, dx, rx, y0, ry, dy = AG.getgeotransform(ds)
     (rx == 0 && ry == 0 && dy < 0) || error("$path: not a north-up grid")
     proj = AG.toPROJ4(AG.importWKT(AG.getproj(ds)))
     occursin("+units=m ", proj * " ") || error("$path: projection not in metres: $proj")
-    proj = strip(replace(proj * " ", "+units=m " => "+units=km "))
-    xc = (x0 .+ dx .* ((1:AG.width(ds)) .- 0.5)) ./ 1000
-    yc = reverse(y0 .+ dy .* ((1:AG.height(ds)) .- 0.5)) ./ 1000
-    return xc, yc, proj
+    proj = String(strip(replace(proj * " ", "+units=m " => "+units=km ")))
+    return (x0=x0, dx=dx, y0=y0, dy=dy, nx=AG.width(ds), ny=AG.height(ds), proj=proj)
 end
 
 """
@@ -179,16 +186,18 @@ function read_gebco(path, dom::Domain)
 end
 
 """
-    GlacierTiles(files)
+    GlacierTiles(files, grids)
 
-Glacier ice thickness as one GeoTIFF per glacier, each on its own projected grid,
-with the thickness (m) in band 1, NaN outside the glacier, and the area (km2) and
-volume (km3) of the glacier in the metadata items `area` and `volume`. The pixels
-touched by the outline count as glacier, so neighbouring tiles overlap along their
-shared boundaries. Read one tile with `read_tile`.
+Glacier ice thickness as one GeoTIFF per glacier, each on its own projected grid
+(`grids`, from the file headers), with the thickness (m) in band 1, NaN outside the
+glacier, and the area (km2) and volume (km3) of the glacier in the metadata items
+`area` and `volume`. The pixels touched by the outline count as glacier, so
+neighbouring tiles overlap along their shared boundaries. Read one tile with
+`read_tile`.
 """
 struct GlacierTiles
     files::Vector{String}
+    grids::Vector{ProjGrid}
 end
 
 """
@@ -196,17 +205,97 @@ IceBoost v2.0 (Maffezzoli et al.) glacier ice thickness for RGI 7.0 outlines:
 one GeoTIFF per glacier, 100 m (finer for small glaciers), in UTM. Uses the regions
 listed in datamanifest.toml (`iceboost_v2_rgiNN`), which cover the NH domain except
 Greenland (region 05), where BedMachine includes the peripheral glaciers (also from
-IceBoost), and the PYR and SRG domains. Tiles outside a domain are skipped.
+IceBoost), and the PYR and SRG domains. Only the tiles within the latitudes of the
+base grid of `dom` are kept (from the tile index, see `tile_index`), without reading
+the tiles.
 """
-function read_iceboost(db)
-    files = String[]
+function read_iceboost(db, dom::Domain)
+    latmin, latmax = lat_bounds(dom.base)
+    files, grids, ntiles = String[], ProjGrid[], 0
     for key in sort(filter(startswith("iceboost_v2_rgi"), collect(keys(db.datasets))))
-        for (root, _, fs) in walkdir(get_dataset_path(db, key))
-            append!(files, joinpath.(root, filter(endswith(".tif"), fs)))
+        for t in tile_index(key, get_dataset_path(db, key))
+            ntiles += 1
+            (t.lat[1] <= latmax && t.lat[2] >= latmin) || continue
+            push!(files, t.file)
+            push!(grids, t.grid)
         end
     end
-    isempty(files) && error("no IceBoost tiles found (run 00_sources.jl --download)")
-    return GlacierTiles(sort(files))
+    ntiles > 0 || error("no IceBoost tiles found (run 00_sources.jl --download)")
+    println("$(length(files)) of $ntiles IceBoost tiles within latitudes ",
+            "$(round(latmin; digits=1)) to $(round(latmax; digits=1))")
+    p = sortperm(files)
+    return GlacierTiles(files[p], grids[p])
+end
+
+"""
+    tile_index(key, dir) -> Vector{(file, grid, lat)}
+
+Path, grid (see `read_tile`) and latitude range (see `lat_bounds`) of each glacier
+tile in folder `dir` of dataset `key`, sorted by path. The index is kept in
+\$FESMDATA_WORK/topo/tiles/<key>.tsv, and built from the file headers when it is
+missing or lists other files than those in `dir`.
+"""
+function tile_index(key::AbstractString, dir::AbstractString)
+    files = String[]
+    for (root, _, fs) in walkdir(dir)
+        append!(files, relpath.(joinpath.(root, filter(endswith(".tif"), fs)), dir))
+    end
+    sort!(files)
+    path = joinpath(workdir(), "tiles", "$key.tsv")
+    rows = isfile(path) ? _read_tile_index(path) : nothing
+    if rows === nothing || first.(rows) != files
+        rows = _tile_index_rows(dir, files)
+        _write_tile_index(path, rows)
+    end
+    return [(file=joinpath(dir, f), grid=_tile_grid(basename(f), h), lat=lat) for (f, h, lat) in rows]
+end
+
+# (file, header, latitude range) of each tile, from its header (threaded); the
+# latitude ranges on one thread (Proj transformations are not thread-safe)
+function _tile_index_rows(dir, files)
+    t0 = time()
+    hdrs = Vector{Any}(undef, length(files))
+    Threads.@threads :dynamic for k in eachindex(files)
+        path = joinpath(dir, files[k])
+        hdrs[k] = AG.read(ds -> _tif_header(ds, path), path)
+    end
+    lats = [lat_bounds(_tile_grid(basename(f), h)) for (f, h) in zip(files, hdrs)]
+    println("Indexed $(length(files)) tiles in $dir: $(round(time() - t0; digits=1)) s")
+    return [(f, h, lat) for (f, h, lat) in zip(files, hdrs, lats)]
+end
+
+const _TILE_INDEX_HEADER = "file\tx0\tdx\ty0\tdy\tnx\tny\tlatmin\tlatmax\tproj"
+
+function _write_tile_index(path, rows)
+    mkpath(dirname(path))
+    tmp = "$path.$(getpid())"
+    open(tmp, "w") do io
+        println(io, _TILE_INDEX_HEADER)
+        for (f, h, lat) in rows
+            println(io, join((f, h.x0, h.dx, h.y0, h.dy, h.nx, h.ny, lat..., h.proj), '\t'))
+        end
+    end
+    mv(tmp, path; force=true)  # atomic: jobs may build the same index at once
+end
+
+function _read_tile_index(path)
+    lines = readlines(path)
+    (isempty(lines) || lines[1] != _TILE_INDEX_HEADER) && return nothing
+    return map(lines[2:end]) do line
+        c = split(line, '\t')
+        x0, dx, y0, dy, latmin, latmax = parse.(Float64, c[[2, 3, 4, 5, 8, 9]])
+        h = (x0=x0, dx=dx, y0=y0, dy=dy, nx=parse(Int, c[6]), ny=parse(Int, c[7]), proj=String(c[10]))
+        (String(c[1]), h, (latmin, latmax))
+    end
+end
+
+# Grid of a glacier tile from its header. A grid needs two cells along each axis:
+# single-cell axes get a second cell (NaN in `read_tile`).
+function _tile_grid(name, h)
+    xc, yc, proj = _tif_axes(h)
+    h.nx == 1 && (xc = [xc[1], xc[1] + h.dx / 1000])
+    h.ny == 1 && (yc = [yc[1], yc[1] - h.dy / 1000])
+    return ProjGrid(name, xc, yc, proj)
 end
 
 """
@@ -218,21 +307,13 @@ metres.
 """
 function read_tile(path::AbstractString)
     AG.read(path) do ds
-        xc, yc, proj = _tif_axes(ds, path)
-        dx, dy = AG.getgeotransform(ds)[[2, 6]]
-        nx, ny = length(xc), length(yc)
+        h = _tif_header(ds, path)
         H = reverse(AG.read(AG.getband(ds, 1)); dims=2)
         meta = Dict(Pair(split(m, "="; limit=2)...) for m in AG.metadata(ds))
         area, volume = parse(Float64, meta["area"]), parse(Float64, meta["volume"])
-        # A grid needs two cells along each axis: pad single-cell tiles with NaN
-        if nx == 1
-            xc = [xc[1], xc[1] + dx / 1000]
-            H = vcat(H, fill(eltype(H)(NaN), 1, size(H, 2)))
-        end
-        if ny == 1
-            yc = [yc[1], yc[1] - dy / 1000]
-            H = hcat(H, fill(eltype(H)(NaN), size(H, 1), 1))
-        end
-        return ProjGrid(basename(path), xc, yc, proj), H, area, volume
+        # Pad single-cell axes with NaN (see `_tile_grid`)
+        h.nx == 1 && (H = vcat(H, fill(eltype(H)(NaN), 1, size(H, 2))))
+        h.ny == 1 && (H = hcat(H, fill(eltype(H)(NaN), size(H, 1), 1)))
+        return _tile_grid(basename(path), h), H, area, volume
     end
 end
