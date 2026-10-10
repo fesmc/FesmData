@@ -26,6 +26,3 @@ julia fesmdata.jl remap $FESMDATA_WORK/prepared/Lucazeau2019_ghf/Lucazeau2019_GH
 
 `prepare.jl` writes `ghf` and `ghf_sd` (mW m-2) to
 `$FESMDATA_WORK/prepared/Lucazeau2019_ghf/Lucazeau2019_GHF.nc` (see `Remap/README.md`).
-
-The older `map-lucazeau-ghf.jl`, `define_latlon_grid.sh` and `Lucazeau2019_GHF.nc` are
-for the v1 maps.
