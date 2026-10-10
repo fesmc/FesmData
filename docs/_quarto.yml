@@ -42,6 +42,8 @@ website:
             href: datasets/stratigraphy.qmd
           - text: "BasalMelt — ice-shelf melt"
             href: datasets/basalmelt.qmd
+          - text: "Ocean — temperature and salinity"
+            href: datasets/ocean.qmd
       - text: "Your own data"
         href: remap.qmd
       - text: "Releasing"

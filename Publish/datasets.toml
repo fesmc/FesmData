@@ -90,3 +90,13 @@ description = """
 Basal melt rates of ice shelves from observations, remapped conservatively onto the
 grids of a model domain.
 """
+
+[Ocean]
+tag = "ocean"
+title = "ocean temperature and salinity"
+readme = "Ocean/README.md"
+keywords = ["ocean temperature", "salinity", "continental shelf", "model input"]
+description = """
+Ocean temperature and salinity from observations and reanalyses, remapped
+conservatively onto the grids of a model domain, or onto global lon-lat grids.
+"""
