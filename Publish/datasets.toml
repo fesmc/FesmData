@@ -60,3 +60,13 @@ description = """
 Sediment thickness from global maps, remapped conservatively onto the grids of a model
 domain (and smoothed on grids finer than the map), or onto global lon-lat grids.
 """
+
+[IceHistory]
+tag = "icehistory"
+title = "paleo ice sheets and topography"
+readme = "IceHistory/README.md"
+keywords = ["ice sheet reconstruction", "paleotopography", "glacial cycles", "Pliocene", "model input"]
+description = """
+Reconstructions of past ice sheets and topography (ICE-5G, ICE-6G_C, PRISM4), remapped
+conservatively onto the grids of a model domain, or onto global lon-lat grids.
+"""

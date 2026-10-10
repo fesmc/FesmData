@@ -36,6 +36,8 @@ website:
             href: datasets/ghf.qmd
           - text: "Sediment — sediment thickness"
             href: datasets/sediment.qmd
+          - text: "IceHistory — paleo ice sheets"
+            href: datasets/icehistory.qmd
       - text: "Your own data"
         href: remap.qmd
       - text: "Releasing"
