@@ -36,6 +36,8 @@ website:
             href: datasets/ghf.qmd
           - text: "Sediment — sediment thickness"
             href: datasets/sediment.qmd
+          - text: "Velocity — ice surface velocity"
+            href: datasets/velocity.qmd
           - text: "IceHistory — paleo ice sheets"
             href: datasets/icehistory.qmd
           - text: "Stratigraphy — age structure"

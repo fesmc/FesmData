@@ -100,3 +100,13 @@ description = """
 Ocean temperature and salinity from observations and reanalyses, remapped
 conservatively onto the grids of a model domain, or onto global lon-lat grids.
 """
+
+[Velocity]
+tag = "velocity"
+title = "ice surface velocity"
+readme = "Velocity/README.md"
+keywords = ["ice velocity", "ice sheet", "remote sensing", "model validation"]
+description = """
+Surface velocity of the ice sheets from satellite observations, remapped conservatively
+onto the grids of a model domain, with the components along the grid axes.
+"""

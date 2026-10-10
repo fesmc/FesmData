@@ -1,0 +1,15 @@
+# Ice surface velocity (thematic dataset, see ../Remap/README.md). Products are written
+# as <GRID>_Velocity-<name>.nc on every grid of their `domains`; see ../GHF/remap.toml
+# for the options. The dataset and its release tag are in ../Publish/datasets.toml.
+# The velocity components are prepared eastward and northward, and rotated to the axes
+# of the grids by remap.
+
+[products.Joughin2018]
+source = "Joughin2018"
+file = "Joughin2018_VEL.nc"
+domains = ["Greenland"]
+
+[products.Rignot2011]
+source = "Rignot2011_vel"
+file = "Rignot2011_VEL.nc"
+domains = ["Antarctica"]
