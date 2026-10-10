@@ -33,7 +33,7 @@ end
     manifest_keys(source) -> Vector{String}
 
 Entries of datamanifest.toml that a region or basin source is read from (none for
-"box").
+"box" and for "negis_v1", a file of the repository; "negis" also uses the topography).
 """
 function manifest_keys(source::AbstractString)
     source == "box" && return String[]
@@ -45,6 +45,8 @@ function manifest_keys(source::AbstractString)
     source in ("imbie", "imbie_refined") && return ["nsidc0709_v2_basins"]
     source == "mouginot2019" && return ["mouginot2019_greenland_basins"]
     source in ("zwally2012_antarctica", "zwally2012_greenland") && return [String(source)]
+    source == "negis" && return ["nsidc0670_v1_greenland_vel", "zwally2012_greenland"]
+    source == "negis_v1" && return String[]
     error("unknown source $source")
 end
 

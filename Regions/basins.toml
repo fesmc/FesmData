@@ -19,6 +19,10 @@
 #   no_extension - optional basins (values of id_field) that keep their original
 #                 extent but are not extended (e.g. islands in ice shelves, which
 #                 would otherwise take over the ice shelves around them)
+#
+# The NEGIS sets (sources "negis" and "negis_v1", see negis.jl) are rasters of three
+# parts, basin 1 2 3 = centre south north, not extended (basin_mask = basin != 0); they
+# have no id_field, and "negis" takes its parameters from the table [basins.negis].
 
 [[basins]]
 name = "Mouginot2019"
@@ -71,3 +75,39 @@ source = "iceboost_v2_rgi17"
 id_field = "rgi_id"
 features = ["RGI2000-v7.0-G-17-12835"]
 no_extension = ["RGI2000-v7.0-G-17-12835"]
+
+# Northeast Greenland Ice Stream in three parts (centre, south, north), to tune basal
+# friction by part in yelmox.
+#
+# NEGIS-v1: the v1 parts, drawn by hand by Ilaria Tabone (2024) on GRL-16KM
+# (sources/negis_v1_GRL-16KM.csv); each cell takes the part of the GRL-16KM cell
+# containing its centre, so GRL-16KM reproduces v1 exactly.
+[[basins]]
+name = "NEGIS-v1"
+domains = ["GRL-PAL"]
+region = "1.3"
+source = "negis_v1"
+
+# NEGIS: centre and south from the present-day surface speed (NSIDC-0670, Joughin et al.,
+# 2018), north from the v1 north part, a palaeo ice stream (Franke et al., 2022) that
+# today's velocities do not show. The stream is the cells of Zwally drainage system
+# `zwally_system` with grounded ice (topography of the zones) and speed of at least
+# `speed` (m/yr), or `speed_south` south of the cut, connected to the cell nearest to
+# `seed` (x, y in km; in the trunk of 79N); this leaves out the fast cells of
+# Storstrommen and L. Bistrup Brae. South is the stream south of the cut line
+# y = cut_y0 + cut_slope * x (km, GRL polar stereographic), centre the rest; the north
+# part replaces them where they overlap. The values give the best match of the v1 parts
+# on GRL-16KM (see README.md).
+[[basins]]
+name = "NEGIS"
+domains = ["GRL-PAL"]
+region = "1.3"
+source = "negis"
+
+[basins.negis]
+zwally_system = 2
+seed = [400.0, -1162.0]
+speed = 50.0
+speed_south = 30.0
+cut_y0 = -1140.0
+cut_slope = -0.3

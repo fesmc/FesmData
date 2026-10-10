@@ -19,13 +19,17 @@ _group_value(s::Shape, field) =
     field == "zwally_system" ? s.attrs["basin"] ÷ 10 : s.attrs[field]
 
 """
-    build_basins(g, set, region_codes, zone) -> (fields, varattrib)
+    build_basins(g, set, region_codes, zone; grounded=nothing) -> (fields, varattrib)
 
 Basins of `set` on grid `g`: `basin` (extended up to the shelf break within the region
 of the set), `basin_mask` (1 within the original basins) and, for sets with groups,
-`basin_group`. `region_codes` is the deepest level of region codes on `g`.
+`basin_group`. `region_codes` is the deepest level of region codes on `g`. The NEGIS
+sets (`is_negis_source`, see negis.jl) are not extended, and `negis` needs the grounded
+ice of the topography (`grounded`).
 """
-function build_basins(g::ProjGrid, set::BasinSet, region_codes::AbstractMatrix, zone::AbstractMatrix)
+function build_basins(g::ProjGrid, set::BasinSet, region_codes::AbstractMatrix, zone::AbstractMatrix;
+                      grounded=nothing)
+    is_negis_source(set.source) && return _negis_fields(g, set, region_codes, grounded)
     dx, dy = spacing(g)
     values, groups, add_cells! = _basin_features(g, set)
     ids, names = _ids(values)
@@ -65,6 +69,17 @@ function build_basins(g::ProjGrid, set::BasinSet, region_codes::AbstractMatrix, 
         varattrib["basin_group"] = region_flag_attrib(gpresent, [gnames[i] for i in gpresent])
     end
     return fields, varattrib
+end
+
+# Parts of a NEGIS set within its region, not extended (basin_mask = basin != 0)
+function _negis_fields(g::ProjGrid, set::BasinSet, region_codes::AbstractMatrix, grounded)
+    B = negis_basins(g, set, grounded)
+    B[.!in_region(region_codes, region_code(set.region))] .= 0
+    present = sort(filter(!=(0), unique(B)))
+    @info "$(set.name): cells by part $([count(==(k), B) for k in 1:length(NEGIS_PARTS)])"
+    return Dict{String,Any}("basin" => B, "basin_mask" => Int8.(B .!= 0)),
+           Dict{String,Vector{Pair{String,Any}}}("basin" => vcat(Pair{String,Any}["long_name" => NEGIS_LONG_NAME],
+                                                                  region_flag_attrib(present, NEGIS_PARTS[present])))
 end
 
 # Features of a basin set (only those in `features`, if given): their values of

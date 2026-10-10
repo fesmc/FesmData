@@ -12,6 +12,7 @@ include(joinpath(@__DIR__, "shapes.jl"))
 include(joinpath(@__DIR__, "sources.jl"))
 include(joinpath(@__DIR__, "tree.jl"))
 include(joinpath(@__DIR__, "zone.jl"))
+include(joinpath(@__DIR__, "negis.jl"))
 include(joinpath(@__DIR__, "basins.jl"))
 
 "Dataset name of the regions files (provenance attributes, release tags regions-v*)."
