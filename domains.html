@@ -155,6 +155,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="./datasets/regions.html">
  <span class="dropdown-text">Regions — regions and basins</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/ghf.html">
+ <span class="dropdown-text">GHF — geothermal heat flow</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item">
@@ -288,14 +292,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td></td>
 <td>UTM 18S</td>
 </tr>
+<tr class="even">
+<td>GLOBAL</td>
+<td>GLOBAL-0.1DEG</td>
+<td></td>
+<td>lon-lat</td>
+</tr>
 </tbody>
 </table>
-<p>Grids are named after their domain (or crop) and resolution: <code>ANT-8KM</code>, <code>GRL-500M</code>. Each domain and crop has an output <strong>folder</strong> under <code>$ICE_DATA/v2</code>, which is also its name in the released records (Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Eurasia, Pyrenees, SRG). Every grid has its own folder there, with all datasets on that grid:</p>
+<p>The <strong>GLOBAL</strong> domain has global lon-lat grids at 0.1°, 0.25°, 0.5°, 1°, 2° and 5°, each with cell edges at -180° and -90° (so they are not nested: 0.25° is not a multiple of 0.1°). Its data are made by remapping (see Bring your own data).</p>
+<p>Grids are named after their domain (or crop) and resolution: <code>ANT-8KM</code>, <code>GRL-500M</code>, <code>GLOBAL-0.5DEG</code>. Each domain and crop has an output <strong>folder</strong> under <code>$ICE_DATA/v2</code>, which is also its name in the released records (Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Eurasia, Pyrenees, SRG, Global). Every grid has its own folder there, with all datasets on that grid:</p>
 <pre><code>$ICE_DATA/v2/&lt;folder&gt;/&lt;GRID&gt;/
     grid_&lt;GRID&gt;.txt         grid description (cdo)
     &lt;GRID&gt;_grid.nc          x, y, lon, lat and area of the cells
-    &lt;GRID&gt;_TOPO-&lt;product&gt;.nc, &lt;GRID&gt;_REGIONS.nc, ...</code></pre>
-<p>The grid files are written by Topo step 1 (<code>Topo/scripts/01_grids.jl</code>).</p>
+    &lt;GRID&gt;_TOPO-&lt;product&gt;.nc, &lt;GRID&gt;_REGIONS.nc, &lt;GRID&gt;_GHF-&lt;source&gt;.nc, ...</code></pre>
+<p>The grid files are written by Topo step 1 (<code>Topo/scripts/01_grids.jl</code>), or by <code>fesmdata.jl remap</code> if they are missing.</p>
 </section>
 <section id="adding-a-domain-a-crop-or-a-resolution" class="level2">
 <h2 class="anchored" data-anchor-id="adding-a-domain-a-crop-or-a-resolution">Adding a domain, a crop or a resolution</h2>
@@ -312,34 +323,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Where a v1 grid exists in <code>../maps</code>, take its extent, so that the v1 grids are reproduced (Topo step 1 reports which grids match).</li>
 <li><code>folder</code> must be unique among all domains and crops.</li>
 </ul>
+<p>A lon-lat domain has <code>type = "lonlat"</code> and its resolutions in degrees, each dividing 180°; it needs no projection or extent:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">[GLOBAL]</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="dt">folder</span> <span class="op">=</span> <span class="st">"Global"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="dt">type</span> <span class="op">=</span> <span class="st">"lonlat"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="dt">resolutions</span> <span class="op">=</span> <span class="op">[</span><span class="fl">0.1</span><span class="op">,</span> <span class="fl">0.25</span><span class="op">,</span> <span class="fl">0.5</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">5</span><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>A crop is a table below its domain, with its own folder and extent (on the cell centres of the base grid):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">[NH.crops.LIS]</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="dt">folder</span> <span class="op">=</span> <span class="st">"Laurentide"</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="dt">xlim</span> <span class="op">=</span> <span class="op">[</span><span class="dv">-4900</span><span class="op">,</span> <span class="dv">-36</span><span class="op">]</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="dt">ylim</span> <span class="op">=</span> <span class="op">[</span><span class="dv">-5400</span><span class="op">,</span> <span class="dv">1576</span><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">[NH.crops.LIS]</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="dt">folder</span> <span class="op">=</span> <span class="st">"Laurentide"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="dt">xlim</span> <span class="op">=</span> <span class="op">[</span><span class="dv">-4900</span><span class="op">,</span> <span class="dv">-36</span><span class="op">]</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="dt">ylim</span> <span class="op">=</span> <span class="op">[</span><span class="dv">-5400</span><span class="op">,</span> <span class="dv">1576</span><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>A new resolution is a new entry in <code>resolutions</code>. Then, for each dataset:</p>
 <ul>
-<li><strong>Topo</strong>: add the products of the domain to <code>Topo/products.toml</code> (see the Topo README), and run its steps for the domain, from step 1 (the grid files).</li>
-<li><strong>Regions</strong>: add the topography product for the zones of the domain to <code>Regions/regions.toml</code> (<code>[zone] products</code>), and basin sets if any to <code>Regions/basins.toml</code> (see the Regions README), and run its steps.</li>
+<li><p><strong>Topo</strong>: add the products of the domain to <code>Topo/products.toml</code> (see the Topo README), and run its steps for the domain, from step 1 (the grid files).</p></li>
+<li><p><strong>Regions</strong>: add the topography product for the zones of the domain to <code>Regions/regions.toml</code> (<code>[zone] products</code>), and basin sets if any to <code>Regions/basins.toml</code> (see the Regions README), and run its steps.</p></li>
+<li><p><strong>Thematic datasets</strong> (e.g.&nbsp;GHF): add the domain to the <code>domains</code> of its products in <code>&lt;Dataset&gt;/remap.toml</code>, and run <code>julia fesmdata.jl remap &lt;Dataset&gt;</code>.</p></li>
 </ul>
 <p>The domain is released as a new record with the next release of each dataset.</p>
 </section>
 <section id="machines" class="level2">
 <h2 class="anchored" data-anchor-id="machines">Machines</h2>
 <p>Each machine has an environment file, sourced from the FesmData root before running anything:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> shared/machines/levante.env</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> shared/machines/levante.env</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>It sets <code>DATAMANIFEST_DATASETS_DIR</code> (the original datasets), <code>ICE_DATA</code> (the output), <code>FESMDATA_WORK</code> (intermediate files), the Julia version, and the tokens for releases. A new machine is a new file with the same variables.</p>
 </section>
 <section id="adding-a-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="adding-a-dataset">Adding a dataset</h2>
-<p>A new dataset (e.g.&nbsp;geothermal heat flux) is a new pipeline folder, built like Topo and Regions, so that it can be released in the same way:</p>
+<p>Most new datasets are fields from published maps (e.g.&nbsp;geothermal heat flow, surface velocity, basal melt): these are <strong>thematic datasets made by remapping</strong>, defined by a short <code>&lt;Dataset&gt;/remap.toml</code>, with one small <code>prepare.jl</code> per source (see Bring your own data, <code>Remap/README.md</code>, and the GHF dataset).</p>
+<p>A dataset that needs its own processing (merging sources, deriving fields) is a new pipeline folder, built like Topo and Regions, so that it can be released in the same way:</p>
 <ol type="1">
 <li><strong>Folder</strong> <code>&lt;Dataset&gt;/</code> with a <code>README.md</code> (what it is, its sources, the steps to produce it), <code>Project.toml</code>, <code>common.jl</code>, <code>scripts/</code> (numbered steps) and <code>jobs/</code>.</li>
 <li><strong>Original datasets</strong> in <code>../datamanifest.toml</code>, with their DOI (used in the records), read through <code>manifest()</code> (<code>manifest.jl</code>).</li>
 <li><strong><code>common.jl</code></strong> includes <code>../shared/io.jl</code> and <code>../shared/domains.jl</code>, and sets <code>const DATASET = "&lt;name&gt;"</code> (lower case), the name of its provenance attributes and release tags (<code>&lt;name&gt;-vX.Y.Z</code>).</li>
 <li><strong>Output</strong> with <code>write_fields(path, grid, fields; dataset=DATASET, ...)</code>, into <code>$ICE_DATA/v2/&lt;folder&gt;/&lt;GRID&gt;/&lt;GRID&gt;_&lt;NAME&gt;[-&lt;product&gt;].nc</code> on every grid of a domain (<code>outdir(og)</code> for each <code>og in dom.grids</code>). Add a <code>sources</code> attribute with the <code>datamanifest.toml</code> keys of the original datasets, so that the records cite them.</li>
 <li><strong><code>files.jl</code></strong> with the output file names and a function <code>&lt;name&gt;_release_files(dom, og)</code> giving the files of a release on a grid. It must need only <code>../shared/domains.jl</code> (no other packages), since Publish reads it.</li>
-<li><strong>Release</strong>: add the dataset to <code>Publish/datasets.toml</code> (tag, title, README, keywords, description) and its function to <code>RELEASE_FILES</code> in <code>Publish/release.jl</code> (and include its <code>files.jl</code> there). It can then be released with <code>julia fesmdata.jl release &lt;Dataset&gt;</code> (see <code>Publish/README.md</code>), and appears on the website.</li>
+<li><strong>Release</strong>: add the dataset to <code>Publish/datasets.toml</code> (tag, title, README, keywords, description) and its functions to <code>dataset_pipeline</code> in <code>Publish/release.jl</code> (and include its <code>files.jl</code> there). It can then be released with <code>julia fesmdata.jl release &lt;Dataset&gt;</code> (see <code>Publish/README.md</code>), and appears on the website.</li>
 <li><strong>Documentation</strong>: add its README to the website (<code>docs/datasets/</code>, see <code>docs/_quarto.yml</code>).</li>
 </ol>
 

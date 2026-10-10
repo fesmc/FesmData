@@ -155,6 +155,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="./datasets/regions.html">
  <span class="dropdown-text">Regions — regions and basins</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/ghf.html">
+ <span class="dropdown-text">GHF — geothermal heat flow</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item">
@@ -191,7 +195,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#bring-your-own-data" id="toc-bring-your-own-data" class="nav-link active" data-scroll-target="#bring-your-own-data">Bring your own data</a>
   <ul class="collapse">
   <li><a href="#prepare-a-source" id="toc-prepare-a-source" class="nav-link" data-scroll-target="#prepare-a-source">1. Prepare a source</a></li>
-  <li><a href="#remap" id="toc-remap" class="nav-link" data-scroll-target="#remap">2. Remap</a></li>
+  <li><a href="#remap-a-file" id="toc-remap-a-file" class="nav-link" data-scroll-target="#remap-a-file">2. Remap a file</a></li>
+  <li><a href="#make-a-thematic-dataset" id="toc-make-a-thematic-dataset" class="nav-link" data-scroll-target="#make-a-thematic-dataset">3. Make a thematic dataset</a></li>
+  <li><a href="#global-grids" id="toc-global-grids" class="nav-link" data-scroll-target="#global-grids">Global grids</a></li>
   <li><a href="#not-supported-yet" id="toc-not-supported-yet" class="nav-link" data-scroll-target="#not-supported-yet">Not supported yet</a></li>
   </ul></li>
   </ul>
@@ -208,11 +214,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Any gridded dataset (geothermal heat flow, basal melt, surface velocity, …) can be put on the FesmData grids in two steps:</p>
 <ol type="1">
 <li><strong>Prepare</strong>: write the data as a NetCDF file on its own (native) grid, in a simple standard form. This is specific to each source and lives in the source’s folder.</li>
-<li><strong>Remap</strong>: one command puts that file onto any domains and grids, in the usual layout <code>$ICE_DATA/v2/&lt;Domain&gt;/&lt;GRID&gt;/</code>.</li>
+<li><strong>Remap</strong>: one command puts that file onto any domains and grids, in the usual layout <code>$ICE_DATA/v2/&lt;Domain&gt;/&lt;GRID&gt;/</code>, including global lon-lat grids.</li>
 </ol>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> <span class="at">--project</span><span class="op">=</span>Lucazeau2019_ghf Lucazeau2019_ghf/prepare.jl</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> fesmdata.jl remap <span class="va">$FESMDATA_WORK</span>/prepared/Lucazeau2019_ghf/Lucazeau2019_GHF.nc Antarctica Greenland <span class="at">--name</span><span class="op">=</span>GHF-Lucazeau2019</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This writes, e.g., <code>$ICE_DATA/v2/Antarctica/ANT-8KM/ANT-8KM_GHF-Lucazeau2019.nc</code> for every grid of Antarctica and Greenland.</p>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> fesmdata.jl remap <span class="va">$FESMDATA_WORK</span>/prepared/Lucazeau2019_ghf/Lucazeau2019_GHF.nc Antarctica Global <span class="at">--name</span><span class="op">=</span>GHF-Lucazeau2019</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This writes, e.g., <code>$ICE_DATA/v2/Antarctica/ANT-8KM/ANT-8KM_GHF-Lucazeau2019.nc</code> and <code>$ICE_DATA/v2/Global/GLOBAL-1DEG/GLOBAL-1DEG_GHF-Lucazeau2019.nc</code>, on every grid of Antarctica and of the global lon-lat grids.</p>
+<p>To publish the result, make it part of a <strong>thematic dataset</strong> (step 3), e.g.&nbsp;GHF: then <code>julia fesmdata.jl remap GHF</code> makes all of it, and it is released like Topo.</p>
 <section id="prepare-a-source" class="level2">
 <h2 class="anchored" data-anchor-id="prepare-a-source">1. Prepare a source</h2>
 <p>Make a folder for the source, named after it (e.g.&nbsp;<code>Lucazeau2019_ghf/</code>), with:</p>
@@ -230,20 +237,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>2D fields</strong> on that grid, each with <code>units</code> and <code>long_name</code>, and missing values as <code>_FillValue</code> or NaN;</li>
 <li><strong>global attributes</strong> <code>title</code>, <code>references</code> and, where there is one, <code>doi</code> (copied to the remapped files).</li>
 </ul>
-<p>Prepare the data at their own resolution: no smoothing or regridding, that is left to the remapping. Keep units and names close to the original (but in SI-like units with plain names, e.g.&nbsp;<code>ghf</code> in mW m-2).</p>
+<p>Prepare the data at their own resolution: no smoothing or regridding, that is left to the remapping. Keep names and units simple (e.g.&nbsp;<code>ghf</code> in mW m-2).</p>
 </section>
-<section id="remap" class="level2">
-<h2 class="anchored" data-anchor-id="remap">2. Remap</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> fesmdata.jl remap <span class="op">&lt;</span>file.nc<span class="op">&gt;</span> <span class="op">&lt;</span>Domain<span class="op">&gt;</span> <span class="kw">|</span> <span class="op">&lt;</span>GRID<span class="op">&gt;</span> <span class="kw">|</span> <span class="ex">all</span> ... <span class="pp">[--</span><span class="ss">vars=a,b</span><span class="pp">]</span> <span class="pp">[--</span><span class="ss">name=NAME</span><span class="pp">]</span> <span class="pp">[--</span><span class="ss">overwrite</span><span class="pp">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="remap-a-file" class="level2">
+<h2 class="anchored" data-anchor-id="remap-a-file">2. Remap a file</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> fesmdata.jl remap <span class="op">&lt;</span>file.nc<span class="op">&gt;</span> <span class="op">&lt;</span>Domain<span class="op">&gt;</span> <span class="kw">|</span> <span class="op">&lt;</span>GRID<span class="op">&gt;</span> <span class="kw">|</span> <span class="ex">all</span> ... <span class="pp">[</span><span class="ss">options</span><span class="pp">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
-<li>Targets are domains (e.g.&nbsp;<code>Antarctica</code>, all of its grids), grids (e.g.&nbsp;<code>GRL-4KM</code>), or <code>all</code>. The names are listed under Domains and grids (<code>shared/README.md</code>).</li>
+<li>Targets are domains (e.g.&nbsp;<code>Antarctica</code>, all of its grids; <code>Global</code>, the global lon-lat grids), grids (e.g.&nbsp;<code>GRL-4KM</code>, <code>GLOBAL-0.5DEG</code>), or <code>all</code>. The names are listed under Domains and grids (<code>shared/README.md</code>).</li>
 <li><code>--vars=a,b</code> remaps only these fields (default: all 2D fields of the file).</li>
-<li><code>--name=NAME</code> names the output <code>&lt;GRID&gt;_&lt;NAME&gt;.nc</code> (default: the file name). Use <code>&lt;THEME&gt;-&lt;Source&gt;</code>, e.g.&nbsp;<code>GHF-Lucazeau2019</code>, <code>VEL-Joughin2018</code>.</li>
+<li><code>--name=NAME</code> names the output <code>&lt;GRID&gt;_&lt;NAME&gt;.nc</code> (default: the file name). Use <code>&lt;Dataset&gt;-&lt;Source&gt;</code>, e.g.&nbsp;<code>GHF-Lucazeau2019</code>.</li>
+<li><code>--method=con|bilinear</code> (default <code>con</code>) and <code>--smooth=auto|&lt;km&gt;</code> (default <code>auto</code>), see below.</li>
 <li>Existing files are kept unless <code>--overwrite</code>.</li>
 </ul>
-<p>Each field is remapped <strong>conservatively</strong>: every cell gets the area-weighted mean of the source over the cell. A source on the same projection as the grid is remapped exactly; otherwise each cell is sampled at points spaced at most half the source spacing. A coarse source on a fine grid therefore keeps the blocky look of its cells (no interpolation).</p>
+<p><strong>Methods.</strong> <code>con</code> (conservative) gives every cell the area-weighted mean of the source over the cell: it keeps means and totals, and is right for any grid coarser than the source. A source on the same projection as the grid, or a lon-lat source on a lon-lat grid, is remapped exactly; otherwise each cell is sampled at points spaced at most half the source spacing. <code>bilinear</code> interpolates the source at the cell centres.</p>
+<p><strong>Smoothing.</strong> After remapping, the field can be smoothed with a Gaussian of standard deviation <code>--smooth</code> (km; <code>0</code> for none). With <code>auto</code> (the default), a source coarser than the grid that is remapped conservatively is smoothed with half the source spacing (e.g.&nbsp;about 28 km for a 0.5° source), the least that removes the steps between its cells; a source finer than the grid is not smoothed. Smoothing leaves out missing cells and does not spread data into them. The global attribute <code>remap_method</code> records what was done on each grid.</p>
 <p>Each output file also has <code>f_valid</code>, the fraction of each cell covered by source data (<code>f_valid_&lt;field&gt;</code> per field when the fields have different coverage). Cells without data are missing. Grids that the source does not cover at all are skipped, so a regional source (e.g.&nbsp;velocities of Greenland) can be remapped onto <code>all</code>. The grid files of each grid are written too if they are missing.</p>
 <p>Run with threads for large grids: <code>julia -t 8 fesmdata.jl remap ...</code> (or set <code>JULIA_NUM_THREADS</code>).</p>
+</section>
+<section id="make-a-thematic-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="make-a-thematic-dataset">3. Make a thematic dataset</h2>
+<p>A thematic dataset (e.g.&nbsp;GHF, geothermal heat flow) gathers the products of several sources on one theme, and is released like Topo, with its own versions (tags <code>ghf-vX.Y.Z</code>). It is defined by <code>&lt;Dataset&gt;/remap.toml</code>, one table per product:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">[products.Lucazeau2019]</span>                      <span class="co"># → &lt;GRID&gt;_GHF-Lucazeau2019.nc</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="dt">source</span> <span class="op">=</span> <span class="st">"Lucazeau2019_ghf"</span>                  <span class="co"># source folder, with prepare.jl</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="dt">file</span> <span class="op">=</span> <span class="st">"Lucazeau2019_GHF.nc"</span>                 <span class="co"># prepared file of the source</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="dt">variables</span> <span class="op">=</span> <span class="op">[</span><span class="st">"ghf"</span><span class="op">,</span> <span class="st">"ghf_sd"</span><span class="op">]</span>                <span class="co"># optional, default all</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="dt">domains</span> <span class="op">=</span> <span class="op">[</span><span class="st">"Antarctica"</span><span class="op">,</span> <span class="st">"Greenland"</span><span class="op">,</span> <span class="st">"Global"</span><span class="op">]</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># method = "con"                             # optional, default "con"</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># smooth = "auto"                            # optional, default "auto"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Domains are listed explicitly, so that the files of a release are fixed; each source must cover every grid of its domains. Then:</p>
+<ol type="1">
+<li><p>Add the dataset to <code>Publish/datasets.toml</code> (its release tag, title, README, keywords, description), and write <code>&lt;Dataset&gt;/README.md</code> (the products and their sources), which becomes its page on the website (<code>docs/datasets/</code>).</p></li>
+<li><p>Make it, after preparing the sources not prepared yet:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> <span class="at">-t</span> 8 fesmdata.jl remap GHF                          <span class="co"># all products, all grids</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> fesmdata.jl remap GHF Lucazeau2019 GLOBAL-0.5DEG    <span class="co"># one product, one grid</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Release it (see Releasing): tag <code>ghf-vX.Y.Z</code>, make it at the tag, and <code>julia fesmdata.jl release GHF</code>.</p></li>
+</ol>
+</section>
+<section id="global-grids" class="level2">
+<h2 class="anchored" data-anchor-id="global-grids">Global grids</h2>
+<p>The <code>Global</code> domain has global lon-lat grids at 0.1°, 0.25°, 0.5°, 1°, 2° and 5° (<code>GLOBAL-0.1DEG</code>, …), with cell edges at -180° and -90°. Global sources are best remapped onto these rather than released on their own grid, so that all global products share the same grids. Other domains, projected or lon-lat, can be added in <code>shared/domains.toml</code> (see Domains and grids).</p>
 </section>
 <section id="not-supported-yet" class="level2">
 <h2 class="anchored" data-anchor-id="not-supported-yet">Not supported yet</h2>
@@ -251,7 +283,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Fields with more dimensions (e.g.&nbsp;time) and datasets split over several files.</li>
 <li>Integer or flag fields (masks); these need fractions or the dominant class rather than a mean.</li>
 <li>Projected grids described only by CF grid-mapping parameters or WKT (add a PROJ string as <code>proj_params</code>).</li>
-<li>Global lon-lat target grids (a <code>GLOBAL</code> domain), and publishing remapped datasets (thematic datasets such as GHF, with a release like Topo).</li>
 </ul>
 
 
