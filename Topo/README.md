@@ -53,7 +53,7 @@ entry under `[<domain>.variants]` in `products.toml` (with its sources in
 |---|---|
 | `$DATAMANIFEST_DATASETS_DIR` | Original datasets (see `../datamanifest.toml`) |
 | `$ICE_DATA/v2/<Domain>/<GRID>/` | Output: `grid_<GRID>.txt`, `<GRID>_grid.nc`, `<GRID>_TOPO-<product>.nc` |
-| `$FESMDATA_WORK/topo/` | Intermediate files (sources on base grids) |
+| `$FESMDATA_WORK/topo/` | Intermediate files (sources on base grids, IceBoost tile index) |
 
 The environment variables are set per machine in `../shared/machines/<machine>.env`.
 
@@ -152,6 +152,13 @@ tile are scaled to the glacier volume and area given with it (the raw pixels giv
 where `f_ice` is limited to 1. The job log compares the glacier area and volume with
 those of the tiles.
 
+Only the tiles overlapping the base grid are read (threaded). Their grids and
+latitude ranges, from the file headers, are kept in an index per RGI region
+(`$FESMDATA_WORK/topo/tiles/iceboost_v2_rgiNN.tsv`), which the first IceBoost job
+builds in about 5 min, and rebuilds when the files of a region change. With the
+index, IceBoost takes under a minute for PYR and SRG and about 11 min for NH, mostly
+for sampling the 74,000 tiles that overlap NH-2KM.
+
 Source notes (see `sources.jl`):
 
 - Surface elevation is 0 over the ocean for all sources.
@@ -236,9 +243,7 @@ Topo/jobs/submit_domain.sh ANT 2 variants     # the variants, from step 2
 ```
 
 The third argument selects the products (as for steps 3-5), and step 2 then remaps
-only their sources. Step 2 for IceBoost opens every tile of all its RGI regions (111,045
-tiles), whatever the domain, which takes about an hour; the jobs of step 2 therefore
-have a time limit of 3 hours.
+only their sources.
 
 ## Glaciers in the NH product
 
@@ -254,9 +259,8 @@ IceBoost glaciers in the NH product (GEBCO 2026, run of 2026-10-09):
 | NH product ice, without glaciers | 1,865,112 | 3,007,068 |
 | NH product ice, with glaciers | 2,164,800 | 3,070,576 |
 
-Step 2 for IceBoost takes about 25 min on a Levante node. The GRL-PAL and ANT
-products are unchanged (bitwise identical before and after adding thickness
-sources).
+The GRL-PAL and ANT products are unchanged (bitwise identical before and after
+adding thickness sources).
 
 ## Glaciers in the PYR and SRG products
 

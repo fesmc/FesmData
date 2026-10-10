@@ -33,7 +33,7 @@ fi
 if [ "$first" -le 2 ]; then
     ids=()
     for s in $sources; do
-        ids+=("$(submit "src-$domain-$s" 03:00:00 02_regrid_source.jl "$domain" "$s")")
+        ids+=("$(submit "src-$domain-$s" 01:00:00 02_regrid_source.jl "$domain" "$s")")
     done
     dep="--dependency=afterok:$(IFS=:; echo "${ids[*]}")"
 fi
