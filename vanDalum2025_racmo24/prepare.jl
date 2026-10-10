@@ -40,9 +40,9 @@ const FIELDS = [
     "smb"   => (var="smbgl",     kind=:flux, glaciated=true,  long_name="surface mass balance"),
     "pr"    => (var="pr",        kind=:flux, glaciated=false, long_name="total precipitation"),
     "sf"    => (var="sf",        kind=:flux, glaciated=false, long_name="snowfall (solid precipitation)"),
-    "ru"    => (var="totrunoff", kind=:flux, glaciated=true,  long_name="meltwater runoff"),
-    "me"    => (var="mltgl",     kind=:flux, glaciated=true,  long_name="snow and ice melt"),
-    "su"    => (var="subltot",   kind=:flux, glaciated=true,
+    "runoff" => (var="totrunoff", kind=:flux, glaciated=true,  long_name="meltwater runoff"),
+    "melt"  => (var="mltgl",     kind=:flux, glaciated=true,  long_name="snow and ice melt"),
+    "subl"  => (var="subltot",   kind=:flux, glaciated=true,
                 long_name="sublimation (negative) and deposition (positive), including drifting snow"),
     "t2m"   => (var="tas",       kind=:mean, glaciated=false, long_name="near-surface (2 m) air temperature"),
     "T_srf" => (var="ts",        kind=:mean, glaciated=false, long_name="surface (skin) temperature"),
@@ -165,7 +165,7 @@ function write_common!(ds, title)
     ds.attrib["doi"] = "10.5281/zenodo.19255213"
     ds.attrib["license"] = "CC BY 4.0"
     ds.attrib["comment"] = "Fluxes in kg m-2 yr-1 (= mm w.e. yr-1; 1 yr = $DAYS_PER_YEAR d for monthly " *
-                           "rates); smb = pr + su - ru - drifting-snow erosion"
+                           "rates); smb = pr + subl - runoff - drifting-snow erosion"
     foreach(((k, v),) -> ds.attrib[k] = v, provenance_attrib("smb"))
 end
 

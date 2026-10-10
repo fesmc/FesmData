@@ -41,8 +41,8 @@ julia fesmdata.jl remap $FESMDATA_WORK/prepared/vanDalum2025_racmo24/RACMO2.4p1_
   (x, y, month);
 - `RACMO2.4p1_annual_1979-2023.nc`: annual values (x, y, time).
 
-Fields: `smb` (surface mass balance), `pr` (total precipitation), `sf` (snowfall), `ru`
-(meltwater runoff), `me` (melt), `su` (sublimation, negative, and deposition, positive,
+Fields: `smb` (surface mass balance), `pr` (total precipitation), `sf` (snowfall), `runoff`
+(meltwater runoff), `melt` (melt), `subl` (sublimation, negative, and deposition, positive,
 including drifting snow), all in kg m-2 yr-1 (= mm w.e. yr-1), and `t2m` (2 m air
 temperature) and `T_srf` (surface temperature) in K. Static fields in every file:
 `z_srf` (RACMO surface elevation, m), `f_ice` (glaciated fraction, grounded and floating
@@ -61,11 +61,11 @@ glaciers). RACMO2.4p1 has no grounded-ice mask.
   (kg m-2 yr-1), and averaged over the years for the climatologies; the annual values
   are the sums over the 12 months of each year. Temperatures are monthly means, and
   day-weighted annual means.
-- `smb`, `ru`, `me` and `su` are given by RACMO per unit glaciated area (IceMask ≥ 0.1)
+- `smb`, `runoff`, `melt` and `subl` are given by RACMO per unit glaciated area (IceMask ≥ 0.1)
   and are zero elsewhere; they are missing there in the prepared files. `pr`, `sf`,
   `t2m` and `T_srf` cover the whole domain (Antarctica, the Southern Ocean to about 40°S,
   and Patagonia).
-- Sign: `smb = pr + su - ru` minus drifting-snow erosion (not included here).
+- Sign: `smb = pr + subl - runoff` minus drifting-snow erosion (not included here).
 - Years: only 1979-2023 are used. The months 2024-2025 appended in version 2 of the
   record were not post-processed like the earlier ones: the glaciated-surface fields are
   nonzero where IceMask = 0, and `subltot` is missing in January 2024.

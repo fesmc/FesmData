@@ -49,14 +49,14 @@ julia fesmdata.jl remap $FESMDATA_WORK/prepared/Fettweis2017_mar314/MARv3.14_ERA
 
 | Field | MAR variable | Climatologies | Time series |
 |---|---|---|---|
-| `smb` surface mass balance | `SMBcorr` | kg m-2 d-1 | kg m-2 yr-1 |
-| `melt` | `MEcorr` | kg m-2 d-1 | kg m-2 yr-1 |
-| `runoff` | `RUcorr` | kg m-2 d-1 | kg m-2 yr-1 |
-| `sf` snowfall | `SF` | kg m-2 d-1 | kg m-2 yr-1 |
-| `rf` rainfall | `RF` | kg m-2 d-1 | kg m-2 yr-1 |
-| `pr` precipitation | `SF + RF` | kg m-2 d-1 | kg m-2 yr-1 |
-| `tas` 2 m air temperature | `T2Mcorr` | degC | degC |
-| `T_srf` surface temperature | `STcorr` | degC | degC |
+| `smb` surface mass balance | `SMBcorr` | kg m-2 yr-1 | kg m-2 yr-1 |
+| `melt` | `MEcorr` | kg m-2 yr-1 | kg m-2 yr-1 |
+| `runoff` | `RUcorr` | kg m-2 yr-1 | kg m-2 yr-1 |
+| `sf` snowfall | `SF` | kg m-2 yr-1 | kg m-2 yr-1 |
+| `rf` rainfall | `RF` | kg m-2 yr-1 | kg m-2 yr-1 |
+| `pr` precipitation | `SF + RF` | kg m-2 yr-1 | kg m-2 yr-1 |
+| `t2m` 2 m air temperature | `T2Mcorr` | K | K |
+| `T_srf` surface temperature | `STcorr` | K | K |
 | `z_srf` surface elevation | `SRF` | m | m |
 | `mask` land and ice mask | `MSK` | classes | classes |
 | `f_ice` ice-covered fraction | `MSK >= 2` | 1 | 1 |
@@ -65,11 +65,12 @@ All files have `z_srf`, `mask` and `f_ice` `(x, y)`.
 
 Notes:
 
-- Units. MAR gives the fluxes in mm water equivalent (= kg m-2) per month. The
-  climatologies are means of the daily rate (kg m-2 d-1 = mm w.e. per day, the
-  monthly total divided by the days of the month in each year), as in the v1 file; the
-  time series are annual totals (kg m-2 yr-1 = mm w.e. per year), and annual means of
-  the temperatures (weighted by the days of the months). Time is the middle of each
+- Units and names are those of the SMB dataset, the same as for RACMO
+  (`vanDalum2025_racmo24`). MAR gives the fluxes in mm water equivalent (= kg m-2) per
+  month. The climatologies are monthly means of the rate, in kg m-2 yr-1 (the monthly
+  total divided by the days of the month in each year, times 365.25); the time series
+  are annual totals (kg m-2 yr-1 = mm w.e. per year), and annual means of the
+  temperatures (weighted by the days of the months). Temperatures are in K. Time is the middle of each
   year (1 July).
 - The `*corr` variables of MAR are corrected for the difference between the 10 km MAR
   and the 1 km surface elevation (`SRF`); snowfall and rainfall are not corrected.

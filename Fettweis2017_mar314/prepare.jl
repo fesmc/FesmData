@@ -5,8 +5,8 @@
 #   MARv3.14_ERA5_1981-2010.nc, MARv3.14_ERA5_1991-2020.nc   monthly climatologies (x, y, month)
 #   MARv3.14_ERA5_annual_1940-2025.nc                        annual time series (x, y, time)
 #
-# with smb, melt, runoff, sf, rf, pr (kg m-2 d-1 in the climatologies, kg m-2 yr-1 in
-# the time series), tas, T_srf (degC), and z_srf, mask, f_ice.
+# with smb, melt, runoff, sf, rf, pr (kg m-2 yr-1), t2m, T_srf (K), and z_srf, mask, f_ice:
+# the names and units of the SMB dataset (as RACMO, vanDalum2025_racmo24).
 #
 # Usage:
 #     julia --project=Fettweis2017_mar314 Fettweis2017_mar314/prepare.jl download   # only download (107 GB)
@@ -35,7 +35,7 @@ const FLUXES = [("smb", "SMBcorr", "surface mass balance"),
                 ("sf", "SF", "snowfall"),
                 ("rf", "RF", "rainfall")]
 const PR = ("pr", "precipitation (snowfall + rainfall)")
-const TEMPS = [("tas", "T2Mcorr", "near-surface (2 m) air temperature"),
+const TEMPS = [("t2m", "T2Mcorr", "near-surface (2 m) air temperature"),
                ("T_srf", "STcorr", "surface temperature")]
 const NAMES = [first.(FLUXES); PR[1]; first.(TEMPS)]
 
@@ -77,7 +77,10 @@ function read_mar(ds, name)
     return A
 end
 
-"Monthly fields of one year: fluxes in kg m-2 d-1, temperatures in degC."
+# Days per year of the rates of the monthly climatologies (kg m-2 yr-1)
+const DAYS_PER_YEAR = 365.25
+
+"Monthly fields of one year: fluxes in kg m-2 d-1, temperatures in K."
 function read_year(path, year)
     NCDataset(path) do ds
         length(ds["time"]) == 12 || error("$path has $(length(ds["time"])) months")
@@ -91,7 +94,7 @@ function read_year(path, year)
         end
         F[PR[1]] = F["sf"] .+ F["rf"]
         for (name, var, _) in TEMPS
-            F[name] = read_mar(ds, var)
+            F[name] = read_mar(ds, var) .+ 273.15f0
         end
         return F
     end
@@ -131,17 +134,16 @@ function define_file(path, x, y, static, extra_dim, extra_values, extra_attrib, 
     defVar(ds, "f_ice", static.f_ice, ("x", "y"); deflatelevel=1,
            attrib=["units" => "1", "long_name" => "ice-covered fraction (ice sheet, glaciers and ice caps)", gm])
     nx, ny = length(x), length(y)
-    rate = extra_dim == "month" ? "kg m-2 d-1" : "kg m-2 yr-1"
     cm = extra_dim == "month" ? "time: mean within months time: mean over years" : "time: sum within years"
     for (name, long_name) in [[(n, l) for (n, _, l) in FLUXES]; PR]
         defVar(ds, name, Float32, ("x", "y", extra_dim); fillvalue=NaN32, deflatelevel=1, shuffle=true,
-               chunksizes=[nx, ny, 1], attrib=["units" => rate, "long_name" => long_name,
+               chunksizes=[nx, ny, 1], attrib=["units" => "kg m-2 yr-1", "long_name" => long_name,
                                                "cell_methods" => cm, gm])
     end
     cm = extra_dim == "month" ? "time: mean within months time: mean over years" : "time: mean within years"
     for (name, _, long_name) in TEMPS
         defVar(ds, name, Float32, ("x", "y", extra_dim); fillvalue=NaN32, deflatelevel=1, shuffle=true,
-               chunksizes=[nx, ny, 1], attrib=["units" => "degC", "long_name" => long_name,
+               chunksizes=[nx, ny, 1], attrib=["units" => "K", "long_name" => long_name,
                                                "cell_methods" => cm, gm])
     end
     ds.attrib["title"] = title
@@ -205,7 +207,11 @@ function prepare(paths)
                          ["units" => "1", "long_name" => "month of the year"],
                          "Greenland surface mass balance and surface climate, MAR v3.14 (ERA5), monthly climatology $label")
         ds.attrib["period"] = label
-        foreach(n -> ds[n][:, :, :] = Float32.(sums[p][n] ./ length(period)), NAMES)
+        # Monthly means: fluxes as rates in kg m-2 yr-1, temperatures as they are
+        for n in NAMES
+            f = n in first.(TEMPS) ? 1.0 : DAYS_PER_YEAR
+            ds[n][:, :, :] = Float32.(sums[p][n] .* (f / length(period)))
+        end
         close(ds)
         println("Wrote $path")
     end
