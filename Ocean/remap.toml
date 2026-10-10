@@ -23,3 +23,10 @@ file = "ORAS5_annual_1979-2018.nc"
 variables = ["to", "so"]
 domains = ["Antarctica", "Greenland", "GreenlandPaleo", "North", "Laurentide", "Eurasia", "Global"]
 min_spacing_km = 16
+
+[products.ISMIP7]
+source = "Zhou2026_ismip7ocean"
+file = "ISMIP7_OCEAN_1972-2024.nc"
+variables = ["to", "so", "tf", "basin"]
+domains = ["Antarctica"]
+min_spacing_km = 8

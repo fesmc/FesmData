@@ -1,5 +1,8 @@
 # ISMIP6 Antarctic ocean climatology (Jourdain et al., 2020)
 
+**Deprecated**: superseded by the ISMIP7 climatology, `Zhou2026_ismip7ocean/` (product
+`Ocean-ISMIP7`), and not prepared. Kept for reference to the v1 files.
+
 Observed climatology (1995-2017) of the ocean around Antarctica used by ISMIP6, on the
 ISMIP6 8 km polar stereographic grid with 60 m layers (30 levels, 30 to 1770 m depth):
 potential temperature, practical salinity and thermal forcing (in situ temperature minus

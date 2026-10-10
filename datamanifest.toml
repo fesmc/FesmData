@@ -732,3 +732,28 @@ uris = [
     "http://ftp.climato.be/fettweis/MARv3.14/Greenland/ERA5-1km-monthly/MARv3.14-monthly-ERA5-2024.nc",
     "http://ftp.climato.be/fettweis/MARv3.14/Greenland/ERA5-1km-monthly/MARv3.14-monthly-ERA5-2025.nc",
 ]
+
+# ISMIP7 Antarctic ocean climatology (Zhou et al., 2026; OCEAN ICE climatology, updated
+# "zhou_annual_06_nov", 1972-2024), extrapolated everywhere on the ISMIP7 8 km x 60 m
+# grid, and the IMBIE2 basins extended into the ocean: Zhou2026_ismip7ocean/. Public
+# HTTPS access to the ISMIP7 Globus endpoint (no login).
+
+[ismip7_ais_ocean_thetao]
+doi = "10.5194/essd-2025-727"
+storage_path = "$datasets_dir/ismip7_ais_ocean/thetao_AIS_obs_ocean_climatology_zhou_annual_06_nov_v4_1972-2024.nc"
+uri = "https://g-ab4495.8c185.08cc.data.globus.org/ISMIP7/AIS/obs/ocean/climatology/zhou_annual_06_nov/thetao/v4/thetao_AIS_obs_ocean_climatology_zhou_annual_06_nov_v4_1972-2024.nc"
+
+[ismip7_ais_ocean_so]
+doi = "10.5194/essd-2025-727"
+storage_path = "$datasets_dir/ismip7_ais_ocean/so_AIS_obs_ocean_climatology_zhou_annual_06_nov_v4_1972-2024.nc"
+uri = "https://g-ab4495.8c185.08cc.data.globus.org/ISMIP7/AIS/obs/ocean/climatology/zhou_annual_06_nov/so/v4/so_AIS_obs_ocean_climatology_zhou_annual_06_nov_v4_1972-2024.nc"
+
+[ismip7_ais_ocean_tf]
+doi = "10.5194/essd-2025-727"
+storage_path = "$datasets_dir/ismip7_ais_ocean/tf_AIS_obs_ocean_climatology_zhou_annual_06_nov_v3_1972-2024.nc"
+uri = "https://g-ab4495.8c185.08cc.data.globus.org/ISMIP7/AIS/obs/ocean/climatology/zhou_annual_06_nov/tf/v3/tf_AIS_obs_ocean_climatology_zhou_annual_06_nov_v3_1972-2024.nc"
+
+[ismip7_ais_imbie_basins]
+doi = "10.5194/egusphere-2026-5337"
+storage_path = "$datasets_dir/ismip7_ais_ocean/IMBIE-basins_AIS_obs_ocean_v3.nc"
+uri = "https://g-ab4495.8c185.08cc.data.globus.org/ISMIP7/AIS/obs/ocean/IMBIE-basins/v3/IMBIE-basins_AIS_obs_ocean_v3.nc"
