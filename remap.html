@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Domains and grids – FesmData</title>
+<title>Bring your own data – FesmData</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -139,7 +139,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Products</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./domains.html" aria-current="page"> 
+    <a class="nav-link" href="./domains.html"> 
 <span class="menu-text">Domains and grids</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -158,7 +158,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./remap.html"> 
+    <a class="nav-link active" href="./remap.html" aria-current="page"> 
 <span class="menu-text">Your own data</span></a>
   </li>  
   <li class="nav-item">
@@ -188,12 +188,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#domains-and-grids" id="toc-domains-and-grids" class="nav-link active" data-scroll-target="#domains-and-grids">Domains and grids</a>
+  <li><a href="#bring-your-own-data" id="toc-bring-your-own-data" class="nav-link active" data-scroll-target="#bring-your-own-data">Bring your own data</a>
   <ul class="collapse">
-  <li><a href="#domains" id="toc-domains" class="nav-link" data-scroll-target="#domains">Domains</a></li>
-  <li><a href="#adding-a-domain-a-crop-or-a-resolution" id="toc-adding-a-domain-a-crop-or-a-resolution" class="nav-link" data-scroll-target="#adding-a-domain-a-crop-or-a-resolution">Adding a domain, a crop or a resolution</a></li>
-  <li><a href="#machines" id="toc-machines" class="nav-link" data-scroll-target="#machines">Machines</a></li>
-  <li><a href="#adding-a-dataset" id="toc-adding-a-dataset" class="nav-link" data-scroll-target="#adding-a-dataset">Adding a dataset</a></li>
+  <li><a href="#prepare-a-source" id="toc-prepare-a-source" class="nav-link" data-scroll-target="#prepare-a-source">1. Prepare a source</a></li>
+  <li><a href="#remap" id="toc-remap" class="nav-link" data-scroll-target="#remap">2. Remap</a></li>
+  <li><a href="#not-supported-yet" id="toc-not-supported-yet" class="nav-link" data-scroll-target="#not-supported-yet">Not supported yet</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/fesmc/FesmData/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
@@ -204,144 +203,56 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="domains-and-grids" class="level1">
-<h1>Domains and grids</h1>
-<p>All v2 pipelines (Topo, Regions, …) produce their datasets on the same model domains and grids, defined in <code>domains.toml</code>, and share the code in this folder:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>File</th>
-<th>Contents</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>domains.toml</code></td>
-<td>The domains, their grids and output folders</td>
-</tr>
-<tr class="even">
-<td><code>domains.jl</code></td>
-<td><code>Domain(key)</code>: the base grid and all grids of a domain</td>
-</tr>
-<tr class="odd">
-<td><code>io.jl</code></td>
-<td>NetCDF output (<code>write_fields</code>, <code>write_grid_files</code>) with the provenance attributes</td>
-</tr>
-<tr class="even">
-<td><code>provenance.jl</code></td>
-<td>Repository paths, machine environment, provenance attributes</td>
-</tr>
-<tr class="odd">
-<td><code>manifest.jl</code></td>
-<td>The original datasets of all pipelines (<code>../datamanifest.toml</code>)</td>
-</tr>
-<tr class="even">
-<td><code>machines/&lt;machine&gt;.env</code></td>
-<td>Environment variables of each machine</td>
-</tr>
-</tbody>
-</table>
-<section id="domains" class="level2">
-<h2 class="anchored" data-anchor-id="domains">Domains</h2>
-<p>A domain is a region on a map projection (polar stereographic, or transverse Mercator such as UTM) with a <strong>base grid</strong>, its finest resolution. All other grids of the domain are derived from the base grid: coarser grids by merging whole cells, and <strong>crops</strong> (smaller regions inside the domain) by cutting it, at the same resolutions. All grids of a domain are therefore nested: every coarse cell is made of whole base cells, and the datasets on them are exact conservative means of the base grid.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Domain</th>
-<th>Base grid</th>
-<th>Crops</th>
-<th>Projection</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>ANT</td>
-<td>ANT-1KM</td>
-<td></td>
-<td>polar stereographic, south</td>
-</tr>
-<tr class="even">
-<td>GRL-PAL</td>
-<td>GRL-PAL-500M</td>
-<td>GRL</td>
-<td>polar stereographic, north</td>
-</tr>
-<tr class="odd">
-<td>NH</td>
-<td>NH-2KM</td>
-<td>LIS, EIS</td>
-<td>polar stereographic, north</td>
-</tr>
-<tr class="even">
-<td>PYR</td>
-<td>PYR-500M</td>
-<td></td>
-<td>UTM 31N</td>
-</tr>
-<tr class="odd">
-<td>SRG</td>
-<td>SRG-250M</td>
-<td></td>
-<td>UTM 18S</td>
-</tr>
-</tbody>
-</table>
-<p>Grids are named after their domain (or crop) and resolution: <code>ANT-8KM</code>, <code>GRL-500M</code>. Each domain and crop has an output <strong>folder</strong> under <code>$ICE_DATA/v2</code>, which is also its name in the released records (Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Eurasia, Pyrenees, SRG). Every grid has its own folder there, with all datasets on that grid:</p>
-<pre><code>$ICE_DATA/v2/&lt;folder&gt;/&lt;GRID&gt;/
-    grid_&lt;GRID&gt;.txt         grid description (cdo)
-    &lt;GRID&gt;_grid.nc          x, y, lon, lat and area of the cells
-    &lt;GRID&gt;_TOPO-&lt;product&gt;.nc, &lt;GRID&gt;_REGIONS.nc, ...</code></pre>
-<p>The grid files are written by Topo step 1 (<code>Topo/scripts/01_grids.jl</code>).</p>
-</section>
-<section id="adding-a-domain-a-crop-or-a-resolution" class="level2">
-<h2 class="anchored" data-anchor-id="adding-a-domain-a-crop-or-a-resolution">Adding a domain, a crop or a resolution</h2>
-<p>A domain is a table in <code>domains.toml</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">[PYR]</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="dt">folder</span> <span class="op">=</span> <span class="st">"Pyrenees"</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="dt">proj</span> <span class="op">=</span> <span class="st">"+proj=tmerc +lat_0=0 +lon_0=3 +k=0.9996 +x_0=500000 +y_0=0 +a=6378137 +rf=298.257223563 +units=km"</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="dt">xlim</span> <span class="op">=</span> <span class="op">[</span><span class="dv">80</span><span class="op">,</span> <span class="dv">560</span><span class="op">]</span>                       <span class="co"># first and last cell centres of the base grid (km)</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="dt">ylim</span> <span class="op">=</span> <span class="op">[</span><span class="dv">4620</span><span class="op">,</span> <span class="dv">4860</span><span class="op">]</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="dt">resolutions</span> <span class="op">=</span> <span class="op">[</span><span class="fl">0.5</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">8</span><span class="op">,</span> <span class="dv">16</span><span class="op">,</span> <span class="dv">32</span><span class="op">]</span>  <span class="co"># km; the first is the base grid</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ul>
-<li><code>proj</code> is a PROJ string with <code>+units=km</code> (false easting and northing in metres, as in PROJ).</li>
-<li>Every resolution must be a whole multiple of the base resolution, and the extent a whole number of cells of each resolution (e.g.&nbsp;a multiple of the coarsest resolution), so that the grids are nested. Coarse grids extend half a coarse cell beyond the base grid, where their cells are means over the part the base grid covers.</li>
-<li>Where a v1 grid exists in <code>../maps</code>, take its extent, so that the v1 grids are reproduced (Topo step 1 reports which grids match).</li>
-<li><code>folder</code> must be unique among all domains and crops.</li>
-</ul>
-<p>A crop is a table below its domain, with its own folder and extent (on the cell centres of the base grid):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">[NH.crops.LIS]</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="dt">folder</span> <span class="op">=</span> <span class="st">"Laurentide"</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="dt">xlim</span> <span class="op">=</span> <span class="op">[</span><span class="dv">-4900</span><span class="op">,</span> <span class="dv">-36</span><span class="op">]</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="dt">ylim</span> <span class="op">=</span> <span class="op">[</span><span class="dv">-5400</span><span class="op">,</span> <span class="dv">1576</span><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>A new resolution is a new entry in <code>resolutions</code>. Then, for each dataset:</p>
-<ul>
-<li><strong>Topo</strong>: add the products of the domain to <code>Topo/products.toml</code> (see the Topo README), and run its steps for the domain, from step 1 (the grid files).</li>
-<li><strong>Regions</strong>: add the topography product for the zones of the domain to <code>Regions/regions.toml</code> (<code>[zone] products</code>), and basin sets if any to <code>Regions/basins.toml</code> (see the Regions README), and run its steps.</li>
-</ul>
-<p>The domain is released as a new record with the next release of each dataset.</p>
-</section>
-<section id="machines" class="level2">
-<h2 class="anchored" data-anchor-id="machines">Machines</h2>
-<p>Each machine has an environment file, sourced from the FesmData root before running anything:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> shared/machines/levante.env</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>It sets <code>DATAMANIFEST_DATASETS_DIR</code> (the original datasets), <code>ICE_DATA</code> (the output), <code>FESMDATA_WORK</code> (intermediate files), the Julia version, and the tokens for releases. A new machine is a new file with the same variables.</p>
-</section>
-<section id="adding-a-dataset" class="level2">
-<h2 class="anchored" data-anchor-id="adding-a-dataset">Adding a dataset</h2>
-<p>A new dataset (e.g.&nbsp;geothermal heat flux) is a new pipeline folder, built like Topo and Regions, so that it can be released in the same way:</p>
+<section id="bring-your-own-data" class="level1">
+<h1>Bring your own data</h1>
+<p>Any gridded dataset (geothermal heat flow, basal melt, surface velocity, …) can be put on the FesmData grids in two steps:</p>
 <ol type="1">
-<li><strong>Folder</strong> <code>&lt;Dataset&gt;/</code> with a <code>README.md</code> (what it is, its sources, the steps to produce it), <code>Project.toml</code>, <code>common.jl</code>, <code>scripts/</code> (numbered steps) and <code>jobs/</code>.</li>
-<li><strong>Original datasets</strong> in <code>../datamanifest.toml</code>, with their DOI (used in the records), read through <code>manifest()</code> (<code>manifest.jl</code>).</li>
-<li><strong><code>common.jl</code></strong> includes <code>../shared/io.jl</code> and <code>../shared/domains.jl</code>, and sets <code>const DATASET = "&lt;name&gt;"</code> (lower case), the name of its provenance attributes and release tags (<code>&lt;name&gt;-vX.Y.Z</code>).</li>
-<li><strong>Output</strong> with <code>write_fields(path, grid, fields; dataset=DATASET, ...)</code>, into <code>$ICE_DATA/v2/&lt;folder&gt;/&lt;GRID&gt;/&lt;GRID&gt;_&lt;NAME&gt;[-&lt;product&gt;].nc</code> on every grid of a domain (<code>outdir(og)</code> for each <code>og in dom.grids</code>). Add a <code>sources</code> attribute with the <code>datamanifest.toml</code> keys of the original datasets, so that the records cite them.</li>
-<li><strong><code>files.jl</code></strong> with the output file names and a function <code>&lt;name&gt;_release_files(dom, og)</code> giving the files of a release on a grid. It must need only <code>../shared/domains.jl</code> (no other packages), since Publish reads it.</li>
-<li><strong>Release</strong>: add the dataset to <code>Publish/datasets.toml</code> (tag, title, README, keywords, description) and its function to <code>RELEASE_FILES</code> in <code>Publish/release.jl</code> (and include its <code>files.jl</code> there). It can then be released with <code>julia fesmdata.jl release &lt;Dataset&gt;</code> (see <code>Publish/README.md</code>), and appears on the website.</li>
-<li><strong>Documentation</strong>: add its README to the website (<code>docs/datasets/</code>, see <code>docs/_quarto.yml</code>).</li>
+<li><strong>Prepare</strong>: write the data as a NetCDF file on its own (native) grid, in a simple standard form. This is specific to each source and lives in the source’s folder.</li>
+<li><strong>Remap</strong>: one command puts that file onto any domains and grids, in the usual layout <code>$ICE_DATA/v2/&lt;Domain&gt;/&lt;GRID&gt;/</code>.</li>
 </ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> <span class="at">--project</span><span class="op">=</span>Lucazeau2019_ghf Lucazeau2019_ghf/prepare.jl</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> fesmdata.jl remap <span class="va">$FESMDATA_WORK</span>/prepared/Lucazeau2019_ghf/Lucazeau2019_GHF.nc Antarctica Greenland <span class="at">--name</span><span class="op">=</span>GHF-Lucazeau2019</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This writes, e.g., <code>$ICE_DATA/v2/Antarctica/ANT-8KM/ANT-8KM_GHF-Lucazeau2019.nc</code> for every grid of Antarctica and Greenland.</p>
+<section id="prepare-a-source" class="level2">
+<h2 class="anchored" data-anchor-id="prepare-a-source">1. Prepare a source</h2>
+<p>Make a folder for the source, named after it (e.g.&nbsp;<code>Lucazeau2019_ghf/</code>), with:</p>
+<ul>
+<li><code>README.md</code>: what the data are, where they come from, how to cite them, and their licence;</li>
+<li><code>prepare.jl</code> (with its own <code>Project.toml</code>): get the original files and write the prepared file(s) to <code>$FESMDATA_WORK/prepared/&lt;source folder&gt;/</code> (in Julia: <code>prepared_dir("&lt;source folder&gt;")</code> from <code>shared/provenance.jl</code>).</li>
+</ul>
+<p>A prepared file is a NetCDF file with:</p>
+<ul>
+<li><strong>a regular grid</strong>, given by 1D coordinate variables, either
+<ul>
+<li><code>lon</code>, <code>lat</code> in degrees (<code>units = "degrees_east"</code>, <code>"degrees_north"</code>): global or regional, with longitudes in -180:180 (preferred) or 0:360, in any order, and latitudes ascending or descending; or</li>
+<li><code>x</code>, <code>y</code> in m or km, with the fields pointing to a grid-mapping variable (<code>grid_mapping</code> attribute) that holds a PROJ string in <code>proj_params</code> or <code>proj4</code>;</li>
+</ul></li>
+<li><strong>2D fields</strong> on that grid, each with <code>units</code> and <code>long_name</code>, and missing values as <code>_FillValue</code> or NaN;</li>
+<li><strong>global attributes</strong> <code>title</code>, <code>references</code> and, where there is one, <code>doi</code> (copied to the remapped files).</li>
+</ul>
+<p>Prepare the data at their own resolution: no smoothing or regridding, that is left to the remapping. Keep units and names close to the original (but in SI-like units with plain names, e.g.&nbsp;<code>ghf</code> in mW m-2).</p>
+</section>
+<section id="remap" class="level2">
+<h2 class="anchored" data-anchor-id="remap">2. Remap</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> fesmdata.jl remap <span class="op">&lt;</span>file.nc<span class="op">&gt;</span> <span class="op">&lt;</span>Domain<span class="op">&gt;</span> <span class="kw">|</span> <span class="op">&lt;</span>GRID<span class="op">&gt;</span> <span class="kw">|</span> <span class="ex">all</span> ... <span class="pp">[--</span><span class="ss">vars=a,b</span><span class="pp">]</span> <span class="pp">[--</span><span class="ss">name=NAME</span><span class="pp">]</span> <span class="pp">[--</span><span class="ss">overwrite</span><span class="pp">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Targets are domains (e.g.&nbsp;<code>Antarctica</code>, all of its grids), grids (e.g.&nbsp;<code>GRL-4KM</code>), or <code>all</code>. The names are listed under Domains and grids (<code>shared/README.md</code>).</li>
+<li><code>--vars=a,b</code> remaps only these fields (default: all 2D fields of the file).</li>
+<li><code>--name=NAME</code> names the output <code>&lt;GRID&gt;_&lt;NAME&gt;.nc</code> (default: the file name). Use <code>&lt;THEME&gt;-&lt;Source&gt;</code>, e.g.&nbsp;<code>GHF-Lucazeau2019</code>, <code>VEL-Joughin2018</code>.</li>
+<li>Existing files are kept unless <code>--overwrite</code>.</li>
+</ul>
+<p>Each field is remapped <strong>conservatively</strong>: every cell gets the area-weighted mean of the source over the cell. A source on the same projection as the grid is remapped exactly; otherwise each cell is sampled at points spaced at most half the source spacing. A coarse source on a fine grid therefore keeps the blocky look of its cells (no interpolation).</p>
+<p>Each output file also has <code>f_valid</code>, the fraction of each cell covered by source data (<code>f_valid_&lt;field&gt;</code> per field when the fields have different coverage). Cells without data are missing. Grids that the source does not cover at all are skipped, so a regional source (e.g.&nbsp;velocities of Greenland) can be remapped onto <code>all</code>. The grid files of each grid are written too if they are missing.</p>
+<p>Run with threads for large grids: <code>julia -t 8 fesmdata.jl remap ...</code> (or set <code>JULIA_NUM_THREADS</code>).</p>
+</section>
+<section id="not-supported-yet" class="level2">
+<h2 class="anchored" data-anchor-id="not-supported-yet">Not supported yet</h2>
+<ul>
+<li>Fields with more dimensions (e.g.&nbsp;time) and datasets split over several files.</li>
+<li>Integer or flag fields (masks); these need fractions or the dominant class rather than a mean.</li>
+<li>Projected grids described only by CF grid-mapping parameters or WKT (add a PROJ string as <code>proj_params</code>).</li>
+<li>Global lon-lat target grids (a <code>GLOBAL</code> domain), and publishing remapped datasets (thematic datasets such as GHF, with a release like Topo).</li>
+</ul>
 
 
 </section>

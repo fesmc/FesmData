@@ -2,26 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://fesmc.github.io/FesmData/releasing.html</loc>
-    <lastmod>2026-10-10T11:59:50.630Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fesmc.github.io/FesmData/datasets/regions.html</loc>
-    <lastmod>2026-10-10T11:59:50.630Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fesmc.github.io/FesmData/products.html</loc>
-    <lastmod>2026-10-10T11:59:50.630Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fesmc.github.io/FesmData/index.html</loc>
-    <lastmod>2026-10-10T11:59:50.630Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fesmc.github.io/FesmData/domains.html</loc>
-    <lastmod>2026-10-10T11:59:50.630Z</lastmod>
+    <lastmod>2026-10-10T13:53:53.408Z</lastmod>
   </url>
   <url>
     <loc>https://fesmc.github.io/FesmData/datasets/topo.html</loc>
-    <lastmod>2026-10-10T11:59:50.630Z</lastmod>
+    <lastmod>2026-10-10T13:53:53.408Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fesmc.github.io/FesmData/domains.html</loc>
+    <lastmod>2026-10-10T13:53:53.408Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fesmc.github.io/FesmData/index.html</loc>
+    <lastmod>2026-10-10T13:53:53.408Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fesmc.github.io/FesmData/products.html</loc>
+    <lastmod>2026-10-10T13:53:53.408Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fesmc.github.io/FesmData/datasets/regions.html</loc>
+    <lastmod>2026-10-10T13:53:53.408Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fesmc.github.io/FesmData/remap.html</loc>
+    <lastmod>2026-10-10T13:53:53.408Z</lastmod>
   </url>
 </urlset>
