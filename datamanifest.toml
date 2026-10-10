@@ -281,3 +281,25 @@ uri = "https://store.pangaea.de/Publications/Martos-etal_2017/Curie_Depth.xyz"
 doi = "10.1594/PANGAEA.882503"
 storage_path = "$datasets_dir/martos2017/Curie_Depth_Uncertainty.xyz"
 uri = "https://store.pangaea.de/Publications/Martos-etal_2017/Curie_Depth_Uncertainty.xyz"
+# Martos et al. (2018): geothermal heat flux and Curie depth of Greenland and their
+# uncertainties, 15 km grid in UTM zone 23N (ASCII x y z), PANGAEA, CC BY 3.0.
+
+[martos2018_ghf]
+doi = "10.1594/PANGAEA.892973"
+storage_path = "$datasets_dir/martos2018/Geothermal_Heat_Flux_Greenland.xyz"
+uri = "https://store.pangaea.de/Publications/Martos-etal_2018/Geothermal_Heat_Flux_Greenland.xyz"
+
+[martos2018_ghf_uncertainty]
+doi = "10.1594/PANGAEA.892973"
+storage_path = "$datasets_dir/martos2018/Geothermal_Heat_Flux_Greenland_uncertainty.xyz"
+uri = "https://store.pangaea.de/Publications/Martos-etal_2018/Geothermal_Heat_Flux_Greenland_uncertainty.xyz"
+
+[martos2018_curie_depth]
+doi = "10.1594/PANGAEA.892973"
+storage_path = "$datasets_dir/martos2018/Curie_Depth_Greenland.xyz"
+uri = "https://store.pangaea.de/Publications/Martos-etal_2018/Curie_Depth_Greenland.xyz"
+
+[martos2018_curie_depth_uncertainty]
+doi = "10.1594/PANGAEA.892973"
+storage_path = "$datasets_dir/martos2018/Curie_Depth_Greenland_uncertainty.xyz"
+uri = "https://store.pangaea.de/Publications/Martos-etal_2018/Curie_Depth_Greenland_uncertainty.xyz"
