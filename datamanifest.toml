@@ -462,3 +462,25 @@ uri = "https://datadryad.org/dataset/doi:10.5061/dryad.5hqbzkhg2"
 doi = "10.1126/science.1256117"
 storage_path = "$datasets_dir/schmidtko2014_shelf/Antarctic_shelf_data.txt"
 uri = "https://www.geomar.de/fileadmin/personal/fb1/po/sschmidtko/Antarctic_shelf_data.txt"
+# Geothermal heat flow of Antarctica and Greenland (GHF products, see the source folders).
+# Lösing & Ebbing (2021): equal-area points (~55 km), the updated version with additional data.
+
+[loesing2021_ghf]
+doi = "10.1594/PANGAEA.930237"
+storage_path = "$datasets_dir/loesing2021_ghf/HF_Min_Max_MaxAbs-1.csv"
+uri = "https://download.pangaea.de/dataset/930237/files/HF_Min_Max_MaxAbs-1.csv"
+
+# Stål et al. (2021), Aq1: 20 km grid (EPSG:3031) with uncertainty.
+
+[staal2020_aq1]
+doi = "10.1594/PANGAEA.924857"
+storage_path = "$datasets_dir/staal2020_aq1/aq1_01_20.nc"
+uri = "https://download.pangaea.de/dataset/924857/files/aq1_01_20.nc"
+
+# Colgan & Wansing (2021): equal-area points (~55 km) with minimum and maximum, the
+# model without NGRIP (GEUS Dataverse file id 19155).
+
+[colgan2021_ghf]
+doi = "10.22008/FK2/F9P03L"
+storage_path = "$datasets_dir/colgan2021_ghf/geothermal_heat_flow_from_machinelearning.xyz"
+uri = "https://dataverse.geus.dk/api/access/datafile/19155"
