@@ -1,70 +1,65 @@
-# Northern Hemisphere ice masks
+# Northern Hemisphere ice-sheet extents through the Quaternary (Batchelor et al., 2019)
 
-The script(s) provided here will process the shapefiles
-into masks on regular grids and save the snapshots to
-a common NetCDF file.
+Best-estimate, minimum and maximum extents of the Northern Hemisphere ice sheets for 18
+time slices, from the Late Gauss Chron (about 3 Ma) to the Last Glacial Maximum, mapped
+from published evidence:
 
-## Source
+Batchelor, C. L., Margold, M., Krapp, M., Murton, D. K., Dalton, A. S., Gibbard, P. L.,
+Stokes, C. R., Murton, J. B. and Manica, A.: The configuration of Northern Hemisphere ice
+sheets through the Quaternary, Nat. Commun., 10, 3713, 2019,
+[doi:10.1038/s41467-019-11601-2](https://doi.org/10.1038/s41467-019-11601-2).
 
-Batchelor et al. (2019) produced ice-coverage masks
-for the Northern Hemisphere for various paleo time slices.
-These are originally provided in shapefiles here:
+## Licence
 
-[https://osf.io/7jen3/](https://osf.io/7jen3/)
+No licence is stated for the shapefiles on OSF (<https://osf.io/7jen3/>). The article is
+published under CC BY 4.0. We assume that derived products may be published with a
+citation of the article.
 
-Original reference:
-[https://www.nature.com/articles/s41467-019-11601-2](https://www.nature.com/articles/s41467-019-11601-2)
+## Original data
 
-Processing is split into two scripts: building the regular lon-lat dataset
-from the shapefiles, and resampling it onto a projected target grid. The
-lon-lat dataset is a prerequisite for the projected one.
+The OSF project <https://osf.io/7jen3/> (no login): for each time slice, a folder
+`hypothesised ice-sheet reconstructions` (`hypothesised ice-sheet reconstruction` for the
+LGM) with the shapefiles `<slice>_best_estimate.shp`, `<slice>_min.shp` and
+`<slice>_max.shp` (only `LGM_best_estimate.shp` for the LGM), on a north polar Lambert
+azimuthal equal-area projection (the LGM in lon-lat). The project, as one zip made by OSF,
+is `batchelor2019_nh_ice` in `datamanifest.toml`. OSF builds the zip slowly (30 min for
+250 MB, with long pauses), so that the automatic download fails: download it by hand,
 
-### Step 1: lon-lat dataset
+```bash
+curl -L -o batchelor2019_nh_ice.zip "https://files.osf.io/v1/resources/7jen3/providers/osfstorage/?zip="
+unzip -d $DATAMANIFEST_DATASETS_DIR/batchelor2019_nh_ice batchelor2019_nh_ice.zip
+```
 
-1. Download the shapefiles into the source directory (default:
-   `Batchelor2019_NHextent`). To change the directory or resolution, edit the
-   constants at the top of `build_lonlat_dataset.jl`.
-2. Run:
+## Prepare and remap
 
-        julia --project=. build_lonlat_dataset.jl
+```bash
+julia -t 16 --project=Batchelor2019_NHIceMasks Batchelor2019_NHIceMasks/prepare.jl
+julia fesmdata.jl remap $FESMDATA_WORK/prepared/Batchelor2019_NHIceMasks/Batchelor2019_NH_ICE.nc North --name=IceHistory-Batchelor2019
+```
 
-    This rasterizes the shapefiles onto a regular lon-lat grid (0.5deg by
-    default) and writes `Batchelor2019_ice_masks.nc`, which can be used
-    directly as an input dataset.
+`prepare.jl` (about 20 min and 10 GB on 16 cores) writes
+`$FESMDATA_WORK/prepared/Batchelor2019_NHIceMasks/Batchelor2019_NH_ICE.nc` (see
+`Remap/README.md`) with `f_ice_best`, `f_ice_min` and `f_ice_max` (1), the area fraction
+of each cell inside the best-estimate, minimum and maximum extents, on (x, y, time), and
+the stage name of each time slice in `label`.
 
-### Step 2: projected dataset
+- Grid: 1 km on the polar stereographic projection of the North domain (x -5131 to
+  4661 km, y -5421 to 4181 km, 9792 x 9602 cells), whose cell edges are on those of the
+  North grids, so that remapping onto them is exact. It covers all outlines and all grids
+  of the North, Laurentide, Eurasia, GreenlandPaleo and Greenland domains.
+- Fractions: from 4 x 4 samples per cell (250 m); a polygon covers a sample if its centre
+  is inside it (even-odd rule over the rings of each polygon, union of the polygons).
+- Time: `time` in years ago (before 1950 CE), the ages assigned to the time slices in
+  `time_slices.md`, oldest first. The paper lists the Early Matuyama Chron (2.2 Ma)
+  before the Late Gauss Chron (3.1 Ma); here they are in the order of their age.
+- The LGM has only a best estimate, which is also used as its minimum and maximum.
+- Some shapefiles also contain present-day glaciers of the whole globe (Natural Earth
+  glaciated areas). Those south of the equator, or entirely outside the grid (tropical
+  glaciers), are left out; those in the grid are kept, as in the original files.
 
-With `Batchelor2019_ice_masks.nc` in place, resample it onto a projected
-target grid:
+## Files of v1
 
-        julia --project=. build_projected_dataset.jl --grid LIS-32KM
-
-This writes e.g. `LIS-32KM_Batchelor2019_ice_masks.nc`. The target grid is
-described by `../maps/grid_<grid>.txt`, which must exist beforehand (generate
-with `cdo griddes`).
-
-Options:
-
-| Option | Default | Description |
-| --- | --- | --- |
-| `--grid NAME` | `NH-32KM` | Projected target grid, matching `../maps/grid_NAME.txt` |
-| `--lonlat-nc PATH` | `Batchelor2019_ice_masks.nc` | Source lon-lat NetCDF file |
-| `-h`, `--help` | | Show usage |
-
-### Step 3: last-glacial-cycle subset with a real time axis
-
-`Batchelor2019_ice_masks.nc` has an index time axis (1–18) because the source
-only gives stage names and age ranges. `time_slices.md` documents an assigned
-age for every slice. To write the MIS 6 – LGM subset on that time axis (years
-relative to present, negative = before present; LGM repeated at -21000 yr):
-
-        julia --project=. build_lgc_dataset.jl
-
-This writes `Batchelor2019_ice_masks_lgc.nc`, used by CLIMBER-X as the
-transient target extent of the synthetic ice-sheet geometry.
-
-## Notes
-
-- The dataset is supposed to be defined on a projected grid. And this is
-for true in all cases, except for the LGM, which is defined on a lon-lat grid.
-- In the original dataset, each snapshot has a subfolder "hypothesised ice-sheet reconstructions", except, again, in the case of LGM, the subfolder is "hypothesised ice-sheet reconstruction". This should be changed by hand to match the other subfolders, in order to make the script work properly.
+`Batchelor2019_ice_masks_lgc.nc`, the last-glacial-cycle masks used by CLIMBER-X, and
+`build_lgc_dataset.jl` are replaced by the hybrid last-glacial-cycle product (see
+`IceHistory/README.md`). The v1 lon-lat (0.5°) and NH-32KM masks and their scripts are
+replaced by `prepare.jl` and remapping.
