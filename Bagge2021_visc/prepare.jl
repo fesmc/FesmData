@@ -1,8 +1,8 @@
-# Prepare the 3D mantle viscosity of Bagge et al. (2021) for remapping: the Earth
-# structure v_1.0_s16 of the GFZ data publication (datamanifest key bagge2021_visc) on its
+# Prepare the 3D mantle viscosity of Bagge et al. (2021) for remapping: the 18 Earth
+# structures of the GFZ data publication (datamanifest key bagge2021_visc) on their
 # Gaussian grid (512 x 256) and 164 layers, as a prepared NetCDF file,
-# $FESMDATA_WORK/prepared/Bagge2021_visc/Bagge2021_visc.nc, with log10_visc (on depth),
-# the latitude bounds of the Gaussian grid and the depth bounds of the layers.
+# $FESMDATA_WORK/prepared/Bagge2021_visc/Bagge2021_visc.nc, with log10_visc (on depth and
+# structure), the latitude bounds of the Gaussian grid and the depth bounds of the layers.
 #
 # Usage:
 #     julia --project=Bagge2021_visc Bagge2021_visc/prepare.jl
@@ -44,32 +44,45 @@ function gaussian_latitudes(n)
 end
 
 const KEY = "bagge2021_visc"
-const STRUCTURE = "v_1.0_s16"   # reduction factor 1.0, radial viscosity profile s16
 const R_EARTH = 6371e3          # Earth radius of VILMA (m): depth = R_EARTH - radius
+
+# The 18 structures v_<r>_<RVP>: reduction factor r of the conversion from temperature
+# to viscosity, and radial viscosity profile RVP (Table 1 of the README of the data)
+const FACTORS = ["0.2857", "0.3", "0.4", "0.5", "0.75", "1.0"]
+const PROFILES = ["s16", "sc06", "sc06b"]
+const STRUCTURES = [(f, p) for f in FACTORS for p in PROFILES]
+names = ["v_$(f)_$(p)" for (f, p) in STRUCTURES]
 
 db = manifest()
 dir = get_dataset_path(db, KEY)
 isdir(dir) || (dir = download_dataset(db, KEY))
 
 # lgvisc (lon, lat, radius) in Julia order; lon 0:360/512:..., lat 89.46:-89.46
-# (Gaussian), radius ascending in m (the units attribute says km)
-lon0, lat0, r, V = NCDataset(joinpath(dir, "$STRUCTURE.nc")) do ds
-    Float64.(ds["lon"][:]), Float64.(ds["lat"][:]), Float64.(ds["radius"][:]),
-    Float64.(ds["lgvisc"].var[:, :, :])
+# (Gaussian), radius ascending in m (the units attribute says km); the same grid and
+# radii in all files
+read_structure(name) = NCDataset(joinpath(dir, "$name.nc")) do ds
+    Float64.(ds["lon"][:]), Float64.(ds["lat"][:]), Float64.(ds["radius"][:]), ds["lgvisc"].var[:, :, :]
 end
-maximum(r) < R_EARTH || error("radius of $STRUCTURE is not in m")
+lon0, lat0, r0, _ = read_structure(names[1])
+maximum(r0) < R_EARTH || error("radius of $(names[1]) is not in m")
 
 # Longitudes to -180:180, latitudes ascending, layers from the surface down
 lon = mod.(lon0 .+ 180, 360) .- 180
 ix = sortperm(lon)
 iy = sortperm(lat0)
-iz = sortperm(r; rev=true)
-lon, lat, r = lon[ix], lat0[iy], r[iz]
-log10_visc = Float32.(V[ix, iy, iz])
+iz = sortperm(r0; rev=true)
+lon, lat, r = lon[ix], lat0[iy], r0[iz]
+
+log10_visc = Array{Float32}(undef, length(lon), length(lat), length(r), length(names))
+for (k, name) in enumerate(names)
+    l, b, rr, V = read_structure(name)
+    (l == lon0 && b == lat0 && rr == r0) || error("$name.nc is not on the grid of $(names[1]).nc")
+    log10_visc[:, :, :, k] = Float32.(V[ix, iy, iz])
+end
 
 # Gaussian latitudes and their cell edges (sin of the edges = cumulated weights)
 lat_g, lat_edges = gaussian_latitudes(length(lat))
-maximum(abs.(lat_g .- lat)) < 1e-6 || error("latitudes of $STRUCTURE are not the Gaussian latitudes")
+maximum(abs.(lat_g .- lat)) < 1e-6 || error("latitudes are not the Gaussian latitudes")
 lat_bnds = permutedims(hcat(lat_edges[1:end-1], lat_edges[2:end]))       # (2, nlat)
 
 # Layers: the radii are the mid-points of layers (5 km thick at the top, 10 km below
@@ -92,10 +105,16 @@ NCDataset(path, "c") do ds
            attrib=["units" => "m", "standard_name" => "depth", "positive" => "down", "bounds" => "depth_bnds",
                    "long_name" => "depth below the surface of the layer mid-point (Earth radius 6371 km minus radius)"])
     defVar(ds, "depth_bnds", depth_bnds, ("nv", "depth"); attrib=["units" => "m"])
-    defVar(ds, "log10_visc", log10_visc, ("lon", "lat", "depth"); fillvalue=NaN32, deflatelevel=1,
-           attrib=["units" => "log10(Pa s)", "long_name" => "log10 of mantle viscosity in Pa s",
-                   "source_file" => "$STRUCTURE.nc"])
-    ds.attrib["title"] = "3D mantle viscosity $STRUCTURE (Bagge et al., 2021)"
+    defVar(ds, "structure", Int32.(1:length(names)), ("structure",);
+           attrib=["long_name" => "Earth structure v_<reduction_factor>_<radial_viscosity_profile>",
+                   "units" => "1",
+                   "structure_names" => join(names, " "),
+                   "reduction_factor" => [parse(Float64, f) for (f, _) in STRUCTURES],
+                   "radial_viscosity_profile" => join(last.(STRUCTURES), " ")])
+    defVar(ds, "log10_visc", log10_visc, ("lon", "lat", "depth", "structure");
+           fillvalue=NaN32, deflatelevel=1, chunksizes=[length(lon), length(lat), 1, 1],
+           attrib=["units" => "log10(Pa s)", "long_name" => "log10 of mantle viscosity in Pa s"])
+    ds.attrib["title"] = "3D mantle viscosity, 18 Earth structures (Bagge et al., 2021)"
     ds.attrib["references"] = "Bagge, M., Klemann, V., Steinberger, B., Latinovic, M. and Thomas, M.: " *
                               "Glacial-isostatic adjustment models using geodynamically constrained 3D " *
                               "Earth structures, Geochem. Geophys. Geosyst., 22, e2021GC009853, 2021, " *

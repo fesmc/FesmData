@@ -50,6 +50,14 @@ for (k, d) in enumerate(DEPTHS_KM), (A, s) in ((visc, "mean"), (visc_sd, "std"))
     A[:, :, k] = z
 end
 
+# The mean reaches 10^40 Pa s (at 75-200 km, where members of the ensemble are
+# lithosphere): capped at 10^30.7 Pa s, as in the isostasy_data files made from these
+# grids (ANT-*_GIA_HR24.nc). The standard deviation is kept as it is.
+const LOG10_VISC_MAX = 30.7f0
+println("log10_visc: maximum $(maximum(filter(isfinite, visc))), ",
+        "$(count(>(LOG10_VISC_MAX), filter(isfinite, visc))) values capped at $LOG10_VISC_MAX")
+visc .= ifelse.(visc .> LOG10_VISC_MAX, LOG10_VISC_MAX, visc)
+
 # Lithosphere thickness: depth of the 1200 °C isotherm (LAB, km), filtered, on lat
 # -90:0.5:-60, put on the viscosity grid (missing north of 60°S)
 z_litho = fill(NaN32, length(lon), length(lat))
@@ -71,7 +79,7 @@ NCDataset(path, "c") do ds
     defVar(ds, "depth", 1e3 .* collect(DEPTHS_KM), ("depth",);
            attrib=["units" => "m", "standard_name" => "depth", "positive" => "down",
                    "long_name" => "depth below sea level"])
-    for (name, A, long_name) in (("log10_visc", visc, "log10 of mantle viscosity in Pa s (mean of the posterior ensemble)"),
+    for (name, A, long_name) in (("log10_visc", visc, "log10 of mantle viscosity in Pa s (mean of the posterior ensemble, capped at 30.7)"),
                                  ("log10_visc_sd", visc_sd, "standard deviation of log10 of mantle viscosity"))
         defVar(ds, name, A, ("lon", "lat", "depth"); fillvalue=NaN32, deflatelevel=1,
                attrib=["units" => "log10(Pa s)", "long_name" => long_name])

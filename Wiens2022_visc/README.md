@@ -19,8 +19,10 @@ The maps are not published by the authors (both chapters are CC BY 4.0, but show
 viscosity only as figures, Ivins et al. at 150 and 300 km). The file was provided by
 D. A. Wiens to J. Swierczek-Jereczek (acknowledged in Swierczek-Jereczek et al., 2024)
 and is in the isostasy_data repository, archived on Zenodo under CC BY 4.0, a licence
-set by the archive, not by the authors. We assume that publishing derived products
-with the citations above is allowed; ask D. A. Wiens before a release.
+set by the archive, not by the authors. The product is made but not released
+(`release = false` in `SolidEarth/remap.toml`) until the authors agree to its
+redistribution (to be asked), although the isostasy_data archive already
+redistributes the file under CC BY 4.0.
 
 ## Original data
 

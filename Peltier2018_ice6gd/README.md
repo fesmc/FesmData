@@ -23,10 +23,11 @@ present-day rates (uplift, horizontal velocity), not the ice history. The ice hi
 is in the supporting information of Peltier et al. (2018): `ANT-32KM_ICE-6G_D.nc` of
 isostasy_data was made from its Data Set S5 (`jgrb52450-sup-0005-data_s5.nc`, cdo
 history), and has the same ice volume as `ICE6GD_IceT.nc` (within 0.03% on ANT-32KM).
-The article and its supporting information are published by AGU under the Wiley
-standard terms (no open licence): redistributing products derived from them (e.g. a
-FesmData release) needs permission from AGU or the authors. The isostasy_data archive
-is under CC BY 4.0, a licence set by the archive, not by the authors.
+We assume that the files of isostasy_data are the data of the supporting information,
+obtained here through the isostasy_data archive on Zenodo (CC BY 4.0, a licence set by
+the archive). The supporting information is published by AGU under the Wiley standard
+terms (no open licence); we assume that redistributing products derived from it, with
+the citations above, is allowed.
 
 ## Original data
 
