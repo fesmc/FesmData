@@ -49,7 +49,8 @@ is 2D, or has the extra dimensions `dims[name]` (a vector of `Dim`) after the gr
 dimensions. Float fields are written as Float32 with NaN as missing; integer fields
 (e.g. masks) are written as they are, with a fill value if they have missing values.
 `varattrib[name]` gives extra attributes of a variable (e.g. flag values), and
-replaces its default units or long name.
+replaces its default units or long name. The file is written as `<path>.part` and
+renamed when complete, so that an interrupted job leaves no partial file at `path`.
 """
 function write_fields(path::AbstractString, g::Union{ProjGrid,LonLatGrid}, fields::AbstractDict; dataset::AbstractString,
                       attrib=Pair{String,String}[], varattrib=Dict{String,Vector{Pair{String,Any}}}(),
@@ -62,7 +63,8 @@ function write_fields(path::AbstractString, g::Union{ProjGrid,LonLatGrid}, field
         extra[d.name] = d
     end
     mkpath(dirname(path))
-    NCDataset(path, "c") do ds
+    part = path * ".part"
+    NCDataset(part, "c") do ds
         init_grid_nc!(ds, g)
         foreach(((k, v),) -> ds.attrib[k] = v, gatts)
         for d in sort(collect(values(extra)); by=d -> d.name)
@@ -96,6 +98,7 @@ function write_fields(path::AbstractString, g::Union{ProjGrid,LonLatGrid}, field
             end
         end
     end
+    mv(part, path; force=true)
     return path
 end
 
