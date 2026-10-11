@@ -135,6 +135,8 @@ must cover every grid of its domains. Then:
    julia -t 8 fesmdata.jl remap GHF                          # all products, all grids
    julia fesmdata.jl remap GHF Lucazeau2019 GLOBAL-0.5DEG    # one product, one grid
    sbatch --job-name=remap-GHF Remap/jobs/remap_dataset.sbatch GHF   # Levante compute node
+   sbatch --job-name=remap-Sediment -p shared -c 64 --mem=58G -t 02:00:00 \
+       Remap/jobs/remap_dataset.sbatch Sediment                  # small dataset, shared partition
    ```
 3. Release it (see Releasing): tag `ghf-vX.Y.Z`, make it at the tag, and
    `julia fesmdata.jl release GHF`.
