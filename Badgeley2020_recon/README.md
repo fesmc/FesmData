@@ -52,7 +52,7 @@ julia fesmdata.jl remap $FESMDATA_WORK/prepared/Badgeley2020_recon/Badgeley2020.
 
 Notes:
 
-- `time` is the age in years BP (before 1950 CE), 20000 to 0 in steps of 50 years,
+- `time` is in years ago (before 1950 CE), 20000 to 0 in steps of 50 years,
   oldest first. The original files give its units as "ka", but the values are years.
 - Longitudes are converted from 0:360 to -180:180.
 - The latitudes are the Gaussian latitudes of T31, spaced 3.68° to 3.71° (not exactly

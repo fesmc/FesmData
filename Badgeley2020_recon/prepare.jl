@@ -53,7 +53,7 @@ NCDataset(path, "c") do ds
     defVar(ds, "lon", lon, ("lon",); attrib=["units" => "degrees_east", "standard_name" => "longitude"])
     defVar(ds, "lat", lat, ("lat",); attrib=["units" => "degrees_north", "standard_name" => "latitude",
                                              "comment" => "Gaussian latitudes of the T31 grid of TraCE-21ka"])
-    defVar(ds, "time", time, ("time",); attrib=["units" => "years BP", "long_name" => "age (years before present, 1950 CE)",
+    defVar(ds, "time", time, ("time",); attrib=["units" => "years ago", "long_name" => "time (years before 1950 CE)",
                                                 "comment" => "means over 50 years centred on the given time"])
     for (name, (key, units, long_name)) in FIELDS
         defVar(ds, name, read_field(key), ("lon", "lat", "time"); fillvalue=NaN32, deflatelevel=1,

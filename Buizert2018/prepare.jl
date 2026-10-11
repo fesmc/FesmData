@@ -85,7 +85,7 @@ rm(path; force=true)
 NCDataset(path, "c") do ds
     write_common(ds, "Greenland monthly surface air temperature and precipitation, 22 ka to present " *
                      "(Buizert et al., 2018)", recon)
-    defVar(ds, "time", time, ("time",); attrib=["units" => "years BP", "long_name" => "age (years before present, 1950 CE)",
+    defVar(ds, "time", time, ("time",); attrib=["units" => "years ago", "long_name" => "time (years before 1950 CE)",
                                                 "comment" => "decadal means centred on the given age"])
     tas = defVar(ds, "tas", Float32, ("lon", "lat", "month", "time"); fillvalue=NaN32, deflatelevel=1,
                  chunksizes=[nx, ny, 12, 1], attrib=attrib_tas)

@@ -42,7 +42,8 @@ julia fesmdata.jl remap $FESMDATA_WORK/prepared/Peltier2015_ice6g/Peltier2015_IC
 ```
 
 `prepare.jl` writes `$FESMDATA_WORK/prepared/Peltier2015_ice6g/Peltier2015_ICE6G_C.nc`
-(see `Remap/README.md`) with the dimension `time` (age in ka BP, oldest first) and
+(see `Remap/README.md`) with the dimension `time` (years ago, i.e. before 1950 CE, oldest first; the
+source gives ka) and
 
 - `z_topo` (m): topography (`Topo`), the ice or land surface on land and the sea floor
   in the ocean and under ice shelves;

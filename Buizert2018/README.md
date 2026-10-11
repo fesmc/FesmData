@@ -77,7 +77,7 @@ julia fesmdata.jl remap $FESMDATA_WORK/prepared/Buizert2018/Buizert2018_1981-201
 
 Notes:
 
-- `time` is the age in years BP (before 1950 CE), 22005 to -55 (2005 CE), oldest first,
+- `time` is in years ago (before 1950 CE), 22005 to -55 (2005 CE), oldest first,
   at the centres of decades. In the original file, `TIME` is in years relative to 1950,
   negative in the past (`YEAR_CE` = `TIME` + 1950), although the NCEI readme calls it
   years before present.

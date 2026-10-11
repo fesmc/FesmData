@@ -37,7 +37,8 @@ julia fesmdata.jl remap $FESMDATA_WORK/prepared/Peltier2004_ice5g/Peltier2004_IC
 ```
 
 `prepare.jl` writes `$FESMDATA_WORK/prepared/Peltier2004_ice5g/Peltier2004_ICE5G.nc`
-(see `Remap/README.md`) with the dimension `time` (age in ka BP, oldest first) and
+(see `Remap/README.md`) with the dimension `time` (years ago, i.e. before 1950 CE, oldest first; the
+source gives ka) and
 
 - `z_topo` (m): the source's surface altitude `orog`, which is the ice or land surface
   on land and the sea floor in the ocean (ETOPO2 at present);

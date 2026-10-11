@@ -63,8 +63,8 @@ rm(path; force=true)
 NCDataset(path, "c") do ds
     defVar(ds, "lon", lon, ("lon",); attrib=["units" => "degrees_east", "standard_name" => "longitude"])
     defVar(ds, "lat", lat, ("lat",); attrib=["units" => "degrees_north", "standard_name" => "latitude"])
-    defVar(ds, "time", ages, ("time",);
-           attrib=["units" => "ka BP", "long_name" => "age (thousands of years before present)"])
+    defVar(ds, "time", 1000 .* ages, ("time",);
+           attrib=["units" => "years ago", "long_name" => "time (years before 1950 CE)"])
     for (name, F, units, long_name) in
         (("z_topo", z_topo, "m", "topography (surface elevation, sea floor in the ocean)"),
          ("H_ice", H_ice, "m", "ice thickness"),
