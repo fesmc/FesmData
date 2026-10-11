@@ -88,6 +88,8 @@ end
 function value_label(ds, d, v)
     if is_years_ago(ds, d)
         return v >= 1000 ? "$(round(v / 1000; digits=1)) ka" : "$(round(Int, v)) years ago"
+    elseif d == "month" && 1 <= v <= 12
+        return Dates.monthname(Int(v))
     elseif d == "time" && haskey(ds, d)
         t = ds[d][argmin(abs.(coord_values(ds, d) .- v))]
         return t isa Dates.AbstractTime ? Dates.format(t, "yyyy-mm") : "time $v"
