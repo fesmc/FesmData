@@ -64,6 +64,25 @@ region = "2.1"
 source = "zwally2012_antarctica"
 id_field = "basin"
 
+# Regions to which the freshwater fluxes of the ice sheets are attributed in the protocol
+# of Schmidt et al. (2025): in Greenland the 7 Mouginot regions, in Antarctica the 18
+# IMBIE 2016 basins (and Islands, not named and so left out as in IMBIE2016). Basin ids
+# are the region numbers of their freshwater time series (names in alphabetical order).
+[[basins]]
+name = "Schmidt2025"
+domains = ["GRL-PAL", "NH"]
+region = "1.3"
+source = "schmidt2025_greenland"
+id_field = "label"
+
+[[basins]]
+name = "Schmidt2025"
+domains = ["ANT"]
+region = "2.1"
+source = "schmidt2025_antarctica"
+id_field = "NAME"
+group_field = "Regions"
+
 # San Rafael Glacier: the part of the SRG domain that evolves freely in yelmox, the rest
 # relaxing to the present-day state (v1: SRG-250M_REGIONS.nc, regions = 1). Its RGI 7.0
 # outline (684.6 km2); not extended.

@@ -78,6 +78,7 @@ variable).
 | Mouginot2019 | GRL-PAL, NH | Greenland glacier basins, 260 basins in 7 regions (Mouginot & Rignot, 2019) |
 | Zwally2012 | GRL-PAL, NH; ANT | GSFC drainage systems (Zwally et al., 2012); Greenland sub-systems 11 = 1.1 |
 | IMBIE2016, IMBIE2016-refined | ANT | IMBIE 2016 and refined basins (Mouginot et al., 2017, NSIDC-0709 v2) |
+| Schmidt2025 | GRL-PAL, NH; ANT | Regions of the freshwater fluxes of the ice sheets (Schmidt et al., 2025): 7 Mouginot regions of Greenland, 18 IMBIE 2016 basins of Antarctica |
 | SanRafael | SRG | San Rafael Glacier (RGI2000-v7.0-G-17-12835), its RGI 7.0 outline as the footprint of its IceBoost v2 tile |
 | NEGIS-v1 | GRL-PAL | Northeast Greenland Ice Stream in three parts, drawn by hand for yelmox v1 on GRL-16KM (Ilaria Tabone, 2024) |
 | NEGIS | GRL-PAL | Northeast Greenland Ice Stream in three parts: centre and south from the surface speed (Joughin et al., 2018), north from NEGIS-v1 |
@@ -91,6 +92,28 @@ SanRafael is a single basin (1), the cells at least half covered by the glacier,
 extended: the part of the SRG domain that evolves freely in yelmox, while the rest
 relaxes to the present-day state (in v1, `regions = 1` of SRG-250M_REGIONS.nc). PYR
 has no basins.
+
+### Schmidt2025
+
+The regions to which the freshwater fluxes of the ice sheets are attributed in the
+protocol of Schmidt et al. (2025) (`GL_regions_3413.gpkg`, `AQ_regions_3031.gpkg` of
+Zenodo record 17386710), so that their time series (see `../Schmidt2025_fwf`) can be
+mapped onto the grids. `basin` is the region number of the time series (names in
+alphabetical order): Greenland 1-7 = CE, CW, NE, NO, NW, SE, SW; Antarctica 1-18 =
+A-Ap, Ap-B, ..., K-A, grouped in `basin_group` by IMBIE region (East, Peninsula, West).
+
+The polygons cover the ice sheets only (and not the ocean). In Greenland they are the
+Mouginot (2019) regions without their peripheral ice caps (`ICE_CAPS_*`, 59 000 km2),
+which go to the nearest region in the extension: the set is the same region as the
+groups of Mouginot2019 on 99.99% of the cells of the polygons and 98% after the
+extension. In Antarctica they are the IMBIE 2016 basins of NSIDC-0709 v2 (identical
+geometry), so the set is identical to IMBIE2016.
+
+The basins are extended as the other sets (over land and shelf up to the shelf break),
+not as in the `*_regions_*_flood.nc` files of the record: these are the regions grown
+over the whole rectangle around the ice sheet at 1 km (GRASS `r.grow`, nearest region
+in straight line, over the open ocean and other land), and the Antarctic one is
+numbered in another order than the time series (A-Ap = 7, Ap-B = 11, ...).
 
 ### NEGIS
 
@@ -300,5 +323,9 @@ The v1 file is optional; with it, the script checks that NEGIS-v1 reproduces it.
   Sheet. Dryad. doi:10.7280/D1WT11
 - Mouginot, J., Scheuchl, B. and Rignot, E. (2017). MEaSUREs Antarctic Boundaries for
   IPY 2007-2009 from Satellite Radar, Version 2. NSIDC. doi:10.5067/AXE4121732AD
+- Schmidt, G. A., Mankoff, K. D., Bamber, J. L., et al. (2025). Datasets and protocols
+  for including anomalous freshwater from melting ice sheets in climate simulations.
+  Geoscientific Model Development, 18, 8333-8361. doi:10.5194/gmd-18-8333-2025 (data:
+  doi:10.5281/zenodo.17386710)
 - Zwally, H. J., Giovinetto, M. B., Beckley, M. A. and Saba, J. L. (2012). Antarctic
   and Greenland Drainage Systems. GSFC Cryospheric Sciences Laboratory.

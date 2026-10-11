@@ -21,6 +21,8 @@ The polygons of a region or basin source:
 - `mouginot2019`: Greenland basins of Mouginot & Rignot (2019)
 - `zwally2012_antarctica`, `zwally2012_greenland`: GSFC drainage systems, with the
   attribute `basin` (see `read_zwally`)
+- `schmidt2025_antarctica`, `schmidt2025_greenland`: regions of the freshwater fluxes
+  of Schmidt et al. (2025)
 """
 function source_shapes(source::AbstractString; level::Integer=0)
     return get!(_SHAPES, (String(source), Int(level))) do
@@ -45,6 +47,8 @@ function manifest_keys(source::AbstractString)
     source in ("imbie", "imbie_refined") && return ["nsidc0709_v2_basins"]
     source == "mouginot2019" && return ["mouginot2019_greenland_basins"]
     source in ("zwally2012_antarctica", "zwally2012_greenland") && return [String(source)]
+    source == "schmidt2025_antarctica" && return ["schmidt2025_regions_antarctica"]
+    source == "schmidt2025_greenland" && return ["schmidt2025_regions_greenland"]
     source == "negis" && return ["nsidc0670_v1_greenland_vel", "zwally2012_greenland"]
     source == "negis_v1" && return String[]
     error("unknown source $source")
@@ -78,6 +82,10 @@ function _read_source(source, level)
         return read_shapes(joinpath(path("mouginot2019_greenland_basins"), "Greenland_Basins_PS_v1.4.2.shp"))
     elseif source in ("zwally2012_antarctica", "zwally2012_greenland")
         return read_zwally(path(source))
+    elseif source == "schmidt2025_antarctica"
+        return read_shapes(path("schmidt2025_regions_antarctica"))
+    elseif source == "schmidt2025_greenland"
+        return read_shapes(path("schmidt2025_regions_greenland"))
     end
     error("unknown source $source")
 end

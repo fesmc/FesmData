@@ -247,6 +247,20 @@ skip_download = true
 storage_path = "$datasets_dir/nsidc0709_v2_basins"
 uri = "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/MEASURES/NSIDC-0709/2/1992/02/07/"
 
+# Schmidt et al. (2025): regions to which the freshwater fluxes of the ice sheets are
+# attributed (GeoPackage, polar stereographic): Greenland, the 7 Mouginot regions
+# (EPSG:3413); Antarctica, the IMBIE 2016 basins (EPSG:3031). Zenodo, CC BY 4.0.
+
+[schmidt2025_regions_greenland]
+doi = "10.5281/zenodo.17386710"
+storage_path = "$datasets_dir/schmidt2025_fwf/GL_regions_3413.gpkg"
+uri = "https://zenodo.org/records/17386710/files/GL_regions_3413.gpkg?download=1"
+
+[schmidt2025_regions_antarctica]
+doi = "10.5281/zenodo.17386710"
+storage_path = "$datasets_dir/schmidt2025_fwf/AQ_regions_3031.gpkg"
+uri = "https://zenodo.org/records/17386710/files/AQ_regions_3031.gpkg?download=1"
+
 # ISO 3166 countries with their UN M49 regions (lukes/ISO-3166-Countries-with-Regional-
 # Codes, pinned commit), to group the territories of the EEZ-land union by continent.
 
