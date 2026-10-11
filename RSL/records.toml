@@ -1,0 +1,6 @@
+# Products of the records dataset RSL (see ../Records/README.md):
+# $ICE_DATA/v2/Records/RSL/RSL-<product>.nc
+
+[products.GAPSLIP]
+source = "Gowan2023_GAPSLIP_GrIS"
+file = "GAPSLIP_Greenland.nc"
