@@ -1,0 +1,30 @@
+# Products of the records dataset Freshwater (see ../Records/README.md):
+# $ICE_DATA/v2/Records/Freshwater/Freshwater-<product>.nc
+
+[products.Schmidt2025_GL_discharge]
+source = "Schmidt2025_fwf"
+file = "Schmidt2025_GL_discharge.nc"
+
+[products.Schmidt2025_GL_runoff]
+source = "Schmidt2025_fwf"
+file = "Schmidt2025_GL_runoff.nc"
+
+[products.Schmidt2025_GL_mass_anomaly]
+source = "Schmidt2025_fwf"
+file = "Schmidt2025_GL_mass_anomaly.nc"
+
+[products.Schmidt2025_AQ_calving]
+source = "Schmidt2025_fwf"
+file = "Schmidt2025_AQ_calving.nc"
+
+[products.Schmidt2025_AQ_subshelf_melt]
+source = "Schmidt2025_fwf"
+file = "Schmidt2025_AQ_subshelf_melt.nc"
+
+[products.Schmidt2025_AQ_grounded_mass_change]
+source = "Schmidt2025_fwf"
+file = "Schmidt2025_AQ_grounded_mass_change.nc"
+
+[products.Schmidt2025_AQ_mass_anomaly]
+source = "Schmidt2025_fwf"
+file = "Schmidt2025_AQ_mass_anomaly.nc"
