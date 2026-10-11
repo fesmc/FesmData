@@ -526,6 +526,10 @@ uris = [
     "https://www.atmosp.physics.utoronto.ca/~peltier/datasets/Ice6G_C_VM5a/I6_C.VM5a_1deg.0.nc.gz",
 ]
 
+# ICE-6G_D (VM5a) (Peltier et al., 2018), Antarctica, 122.5 ka to present: the files of the
+# supporting information of the article, as copied in isostasy_data (key
+# isostasy_data_v0_2, Solid Earth section below; see Peltier2018_ice6gd/README.md).
+
 # PRISM4 / PlioMIP2 boundary conditions (Dowsett et al., 2016), USGS: enhanced and
 # standard Pliocene, and modern (standard) for anomalies.
 
@@ -920,3 +924,53 @@ uri = "https://arcticdata.io/metacat/d1/mn/v2/object/urn:uuid:64b58bc8-0cf6-4e6b
 doi = "10.18739/A2599Z26M"
 storage_path = "$datasets_dir/badgeley2020/pr_high_Badgeley_etal_2020.nc"
 uri = "https://arcticdata.io/metacat/d1/mn/v2/object/urn:uuid:c5e3fa59-7117-4fee-8163-07aae8519886"
+
+# ---------------------------------------------------------------------------
+# Solid Earth (SolidEarth/)
+# ---------------------------------------------------------------------------
+
+# Bagge et al. (2021): 18 global 3D viscosity structures for GIA models, Gaussian grid
+# 256x512, GFZ Data Services (CC BY 4.0). The zip (1.7 GB) holds one NetCDF file per
+# structure.
+
+[bagge2021_visc]
+key = "bagge2021_visc.zip"
+doi = "10.5880/GFZ.1.3.2020.004"
+extract = true
+uri = "https://datapub.gfz.de/download/10.5880.GFZ.1.3.2020.004niur/2020-004_Bagge_et-al_data.zip"
+
+# isostasy_data v0.2.0 (Swierczek-Jereczek, 2024): input data of FastIsostasy, archived on
+# Zenodo (the GitHub repository JanJereczek/isostasy_data at that version). It holds the
+# Earth structure of Pan et al. (2022) and the Antarctic viscosity of Wiens et al. (2022),
+# not public elsewhere (obtained by personal communication), and the ice history of
+# ICE-6G_D (Peltier et al., 2018) for Antarctica (Peltier2018_ice6gd, IceHistory), from the
+# supporting information of the article, which Wiley does not let us download
+# automatically. The zip extracts to JanJereczek-isostasy_data-<commit>/.
+
+[isostasy_data_v0_2]
+key = "isostasy_data_v0_2.zip"
+doi = "10.5281/zenodo.11175418"
+extract = true
+uri = "https://zenodo.org/records/11175418/files/JanJereczek/isostasy_data-v0.2.0.zip"
+
+# Lloyd et al. (2024): 3D mantle viscosity inferred from GLAD-M25, 0.5°, 201 depths, in
+# the supporting information of the article (CC BY 4.0). Manual download (Europe PMC
+# assembles the zip for minutes before sending it, longer than DataManifest waits): the
+# zip from the uri holds ggad455_supplemental_files.zip, to be put in the folder
+# (see Lloyd2024_visc/README.md); prepare.jl extracts 3D_visc_infer_GLAD-M25.nc from it.
+
+[lloyd2024_visc]
+doi = "10.1093/gji/ggad455"
+skip_download = true
+storage_path = "$datasets_dir/lloyd2024_visc"
+uri = "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10753356/supplementaryFiles"
+
+# Hazzard et al. (2023): Antarctic viscosity, temperature, density, LAB depth and heat
+# flow from ANT-20 (mean and standard deviation of the posterior ensemble), 0.5°
+# (OSF project f4ntr, summary_grids.zip; no licence set on OSF).
+
+[hazzard2023_visc]
+key = "hazzard2023_visc.zip"
+doi = "10.1029/2023JB026653"
+extract = true
+uri = "https://osf.io/download/j485x/"

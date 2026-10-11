@@ -1,0 +1,5 @@
+---
+pagetitle: "SolidEarth"
+---
+
+{{< include ../../SolidEarth/README.md >}}

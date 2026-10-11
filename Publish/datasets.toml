@@ -155,3 +155,14 @@ Climatologies of past climates from the PMIP3 and PMIP4 model intercomparisons, 
 reconstructions of the deglacial climate of Greenland, remapped conservatively onto the
 grids of a model domain, or onto global lon-lat grids.
 """
+
+[SolidEarth]
+tag = "solidearth"
+title = "solid Earth structure"
+readme = "SolidEarth/README.md"
+keywords = ["lithosphere thickness", "mantle viscosity", "glacial isostatic adjustment", "ice sheet", "model input"]
+description = """
+Lithosphere thickness and 3D mantle viscosity (log10, on depth) from published Earth
+structures for glacial isostatic adjustment, remapped conservatively onto the grids of
+a model domain, or onto global lon-lat grids.
+"""
