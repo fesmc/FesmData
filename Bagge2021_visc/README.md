@@ -16,9 +16,19 @@ structures for glacial-isostatic adjustment models, V. 1.0, GFZ Data Services, 2
 
 The data publication has 18 structures, `v_<r>_<RVP>`, differing in the reduction
 factor `r` of the conversion from temperature to viscosity (0.2857, 0.3, 0.4, 0.5, 0.75,
-1.0) and in the radial viscosity profile `RVP` (s16, sc06, sc06b). The one prepared here
-is `v_1.0_s16`, the structure in the isostasy_data repository (`bagge2021.nc`,
-identical to it).
+1.0) and in the radial viscosity profile `RVP` (s16, sc06, sc06b; see the article). All
+18 are prepared, along the dimension `structure` (1-18), in this order:
+
+| `structure` | `r` = 0.2857 | 0.3 | 0.4 | 0.5 | 0.75 | 1.0 |
+|---|---|---|---|---|---|---|
+| s16 | 1 | 4 | 7 | 10 | 13 | 16 |
+| sc06 | 2 | 5 | 8 | 11 | 14 | 17 |
+| sc06b | 3 | 6 | 9 | 12 | 15 | 18 |
+
+The coordinate variable `structure` has their names (`structure_names`), reduction
+factors (`reduction_factor`) and radial viscosity profiles
+(`radial_viscosity_profile`) as attributes. Structure 16, `v_1.0_s16`, is the one in the
+isostasy_data repository (`bagge2021.nc`, identical to it).
 
 ## Licence
 
@@ -42,10 +52,11 @@ julia fesmdata.jl remap SolidEarth Bagge2021
 ```
 
 `prepare.jl` writes `$FESMDATA_WORK/prepared/Bagge2021_visc/Bagge2021_visc.nc` (see
-`Remap/README.md`) with `log10_visc` (log10(Pa s)), log10 of the mantle viscosity, on
-lon -180:0.703125:179.3, the 256 Gaussian latitudes with their cell edges (`lat_bnds`,
-from the Gauss weights) and `depth` (m, positive down) with its bounds (`depth_bnds`).
-The radii are the mid-points of the layers of VILMA (5 km thick down to 420 km depth,
+`Remap/README.md`, 770 MB) with `log10_visc` (log10(Pa s)), log10 of the mantle
+viscosity, on lon -180:0.703125:179.3, the 256 Gaussian latitudes with their cell edges
+(`lat_bnds`, from the Gauss weights), `depth` (m, positive down) with its bounds
+(`depth_bnds`) and `structure` (1-18, see above); all structures are on the same grid
+and layers. The radii are the mid-points of the layers of VILMA (5 km thick down to 420 km depth,
 10 km to 670 km, about 40 km below), so the depth of a layer is 6371 km (the Earth
 radius of VILMA) minus its radius, and its bounds are halfway between the mid-points,
 from the surface to the core-mantle boundary (3480 km radius).

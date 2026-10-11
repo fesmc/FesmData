@@ -50,5 +50,8 @@ The column at 180° (the same meridian as -180°) is dropped; it differs from th
 at -180° at 15% of the points, by 0.003 on average.
 
 The files `ANT-16KM_Lloyd2024.nc` and `ANT-32KM_Lloyd2024.nc` of the isostasy_data
-repository (44 layers, with a lithosphere thickness) are not derived from this model:
-see `../SolidEarth/README.md`.
+repository (44 layers, with a lithosphere thickness) are not this model: their
+viscosity is that of `ANT-*_GIA_HR24.nc` (the viscosity of Hazzard et al., 2023, see
+`../Hazzard2023_visc/`) capped at 10^23 Pa s, with the same lithosphere thickness (on
+ANT-16KM identical to 0.001 at 100, 200 and 300 km). The model of Lloyd et al. (2024)
+differs from them (correlation 0.82-0.90 at 100-300 km).

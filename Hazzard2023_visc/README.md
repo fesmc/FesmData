@@ -49,13 +49,16 @@ julia fesmdata.jl remap SolidEarth Hazzard2023-litho
 `prepare.jl` writes `$FESMDATA_WORK/prepared/Hazzard2023_visc/Hazzard2023_visc.nc` (see
 `Remap/README.md`) on lon -180:0.5:179.5, lat -90:0.5:-45 with
 
-- `log10_visc`, `log10_visc_sd` (log10(Pa s)): log10 of the mantle viscosity (mean) and
-  its standard deviation, on `depth` (m, positive down, below sea level: 75-400 km every
+- `log10_visc`, `log10_visc_sd` (log10(Pa s)): log10 of the mantle viscosity (mean,
+  capped at 30.7, see below) and its standard deviation, on `depth` (m, positive down, below sea level: 75-400 km every
   25 km);
 - `z_litho`, `z_litho_sd` (m): lithosphere thickness (depth of the 1200 °C isotherm)
   and its standard deviation, converted from km, missing north of 60°S.
 
 The column at 360° repeats 0° and is dropped. As stated in the readme of the data, the
 viscosity grids are "raw": the shallow depths (to 75 km) are not corrected for crustal
-velocities bleeding downward, and the mean reaches 10^40 Pa s in places at 75-100 km,
-where members of the ensemble are lithosphere.
+velocities bleeding downward. The mean viscosity reaches 10^40 Pa s where members of
+the ensemble are lithosphere (above 10^30.7 Pa s at 32% of the grid at 75 km, 7% at 200
+km, a few points below 250 km, maximum 10^38 Pa s at 275-300 km). `log10_visc` is capped
+at 30.7, as in the isostasy_data files made from these grids (`ANT-*_GIA_HR24.nc`);
+`log10_visc_sd` is not changed.

@@ -16,8 +16,10 @@ repository). They were obtained by personal communication by J. Swierczek-Jerecz
 FastIsostasy (Swierczek-Jereczek et al., 2024, doi:10.5194/gmd-17-5263-2024), most
 likely from K. Latychev, coauthor of both papers, and are in the isostasy_data repository, archived on
 Zenodo under CC BY 4.0, a licence set by the archive, not by the authors. No licence
-is stated by the authors: cite Pan et al. (2022). We assume that publishing derived
-products with this citation is allowed; ask the authors before a release.
+is stated by the authors: cite Pan et al. (2022). The products are made but not
+released (`release = false` in `SolidEarth/remap.toml`) until the authors agree to their
+redistribution (to be asked), although the isostasy_data archive already
+redistributes the files under CC BY 4.0.
 
 ## Original data
 

@@ -7,6 +7,8 @@
 # ../GHF/remap.toml for the options. The dataset and its release tag are in
 # ../Publish/datasets.toml. Viscosity fields (on depth) are made down to 16 km only
 # (min_spacing_km = 16): their sources are coarse (0.5° or coarser) and the files large.
+# Pan2022 and Wiens2022 (personal communication) are made but not released
+# (release = false) until their authors agree.
 
 [products.Pan2022-litho]
 source = "Pan2022_litho"
@@ -14,6 +16,7 @@ file = "Pan2022_EarthStructure.nc"
 variables = ["z_litho"]
 domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
 min_spacing_km = 4
+release = false
 
 [products.Pan2022-visc]
 source = "Pan2022_litho"
@@ -21,6 +24,7 @@ file = "Pan2022_EarthStructure.nc"
 variables = ["log10_visc"]
 domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
 min_spacing_km = 16
+release = false
 
 [products.Bagge2021]
 source = "Bagge2021_visc"
@@ -42,6 +46,7 @@ file = "Wiens2022_visc.nc"
 variables = ["log10_visc"]
 domains = ["Antarctica"]
 min_spacing_km = 16
+release = false
 
 [products.Hazzard2023-litho]
 source = "Hazzard2023_visc"

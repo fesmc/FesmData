@@ -116,9 +116,10 @@ NCDataset(path, "c") do ds
                               "2015; files from isostasy_data v0.2.0 (Swierczek-Jereczek, 2024), " *
                               "doi:10.5281/zenodo.11175418"
     ds.attrib["doi"] = "10.1002/2016JB013844"
-    ds.attrib["license"] = "Supporting information of an AGU article, under the Wiley standard terms " *
-                           "(no open licence): redistribution needs permission from AGU or the authors; " *
-                           "cite Peltier et al. (2018), Argus et al. (2014) and Peltier et al. (2015)"
+    ds.attrib["license"] = "Supporting information of an AGU article (Wiley standard terms, no open " *
+                           "licence), obtained through the isostasy_data archive (CC BY 4.0); " *
+                           "redistribution assumed to be allowed; cite Peltier et al. (2018), Argus et " *
+                           "al. (2014) and Peltier et al. (2015)"
     foreach(((k, v),) -> ds.attrib[k] = v, provenance_attrib("icehistory"))
 end
 println("Wrote $path")
