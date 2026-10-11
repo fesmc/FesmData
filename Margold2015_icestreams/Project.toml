@@ -10,4 +10,4 @@ TOML = "fa267f1f-6049-4f14-aa54-33bafae1ed76"
 XLSX = "fdbf4ff8-1666-58a4-91e7-1b58723a45e0"
 
 [sources]
-FesmUtils = {rev = "remap-nd", url = "https://github.com/fesmc/FesmUtils.jl"}
+FesmUtils = {rev = "main", url = "https://github.com/fesmc/FesmUtils.jl"}
