@@ -77,17 +77,19 @@ end
 """
     grid_files(domain, names) -> Vector{ProductFile}
 
-Files of a release of a gridded dataset on a domain: on every grid of the domain, the
-grid files and the files `names(dom, og)` of the dataset on grid `og`.
+Files of a release of a gridded dataset on a domain: on every grid of the domain with
+files of the dataset, `names(dom, og)` on grid `og`, the grid files and those files.
 """
 function grid_files(domain::AbstractString, names)
     dom, grids = folder_grids(domain)
     files = ProductFile[]
     for og in grids
         g = og.grid.name
+        data = names(dom, og)
+        isempty(data) && continue
         push!(files, ProductFile(g, joinpath(outdir(og), "grid_$g.txt"), true),
                      ProductFile(g, joinpath(outdir(og), "$(g)_grid.nc"), true))
-        append!(files, [ProductFile(g, joinpath(outdir(og), name), false) for name in names(dom, og)])
+        append!(files, [ProductFile(g, joinpath(outdir(og), name), false) for name in data])
     end
     return files
 end
