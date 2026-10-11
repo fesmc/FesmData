@@ -42,6 +42,10 @@ Records, non-gridded data (see Records/README.md):
                                                \$ICE_DATA/v2/Records/<Dataset>/<Dataset>-<product>.nc,
                                                preparing missing sources first (--overwrite)
 
+Figures for the website (maintainers, see Figures/README.md):
+  figures <Dataset>                            maps of the products of a dataset and its
+                                               gallery page, docs/figures/<Dataset>/
+
 Release (maintainers, see Publish/README.md):
   release <Dataset> [<Domain> ...]             upload to the GitLab packages and write the
                                                registry (--dry-run: check and list only)
@@ -61,6 +65,7 @@ Options: --sandbox (test releases: registry/_sandbox/, test packages, Zenodo san
 const PUBLISH_DIR = joinpath(@__DIR__, "Publish")
 const REMAP_DIR = joinpath(@__DIR__, "Remap")
 const RECORDS_DIR = joinpath(@__DIR__, "Records")
+const FIGURES_DIR = joinpath(@__DIR__, "Figures")
 
 "Activate the environment in `dir`, with its packages installed if needed (fast if they are)."
 function activate_env(dir)
@@ -117,6 +122,11 @@ function main(argv)
         activate_env(RECORDS_DIR)
         include(joinpath(RECORDS_DIR, "records.jl"))
         paths = call(:record_command, rest; overwrite="--overwrite" in opts)
+        println("$(length(paths)) files written")
+    elseif command == "figures"
+        activate_env(FIGURES_DIR)
+        include(joinpath(FIGURES_DIR, "figures.jl"))
+        paths = call(:figures_command, rest)
         println("$(length(paths)) files written")
     elseif command == "docs"
         include(joinpath(PUBLISH_DIR, "site.jl"))

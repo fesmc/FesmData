@@ -24,6 +24,7 @@ struct RemapProduct
     method::String
     smooth::Union{String,Float64}
     release::Bool                   # part of the releases of the dataset
+    figure::Dict{String,Any}        # options of its figure on the website (see ../Figures)
 end
 
 "Domains (output folders) of a product."
@@ -92,7 +93,7 @@ function remap_products(dataset::AbstractString)
     folders = domain_folders()
     products = RemapProduct[]
     for (name, p) in spec["products"]
-        keys_ = setdiff(keys(p), ("source", "file", "variables", "grids", "method", "smooth", "release"))
+        keys_ = setdiff(keys(p), ("source", "file", "variables", "grids", "method", "smooth", "release", "figure"))
         isempty(keys_) || error("$dataset/$name: unknown keys $(join(keys_, ", "))")
         haskey(p, "grids") || error("$dataset/$name: no grids (a table by domain)")
         unknown = setdiff(keys(p["grids"]), folders)
@@ -102,7 +103,7 @@ function remap_products(dataset::AbstractString)
                                      haskey(p, "variables") ? Vector{String}(p["variables"]) : nothing,
                                      product_grid_spec(p["grids"], "$dataset/$name"), get(p, "method", "con"),
                                      smooth isa Real ? Float64(smooth) : String(smooth),
-                                     get(p, "release", true)))
+                                     get(p, "release", true), get(p, "figure", Dict{String,Any}())))
     end
     return sort(products; by=p -> p.name)
 end

@@ -15,6 +15,7 @@ struct RecordProduct
     name::String
     source::String                  # folder of the source, with prepare.jl
     file::String                    # prepared file, in $FESMDATA_WORK/prepared/<source>/
+    figure::Dict{String,Any}        # options of its figure on the website (see ../Figures)
 end
 
 "Path of the definition of a records dataset."
@@ -33,9 +34,9 @@ function records_products(dataset::AbstractString)
     spec = TOML.parsefile(records_spec_file(dataset))
     products = RecordProduct[]
     for (name, p) in spec["products"]
-        unknown = setdiff(keys(p), ("source", "file"))
-        isempty(unknown) || error("$dataset/$name: unknown keys $(join(unknown, ", ")) (source, file)")
-        push!(products, RecordProduct(dataset, name, p["source"], p["file"]))
+        unknown = setdiff(keys(p), ("source", "file", "figure"))
+        isempty(unknown) || error("$dataset/$name: unknown keys $(join(unknown, ", ")) (source, file, figure)")
+        push!(products, RecordProduct(dataset, name, p["source"], p["file"], get(p, "figure", Dict{String,Any}())))
     end
     return sort(products; by=p -> p.name)
 end
