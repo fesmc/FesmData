@@ -1,7 +1,6 @@
 # Sediment thickness (thematic dataset, see ../Remap/README.md).
 #
-# Each table of `products` is a product, written as <GRID>_Sediment-<name>.nc on every
-# grid of its `domains` (output folders), from the prepared file `file` of the source
+# Each table of `products` is a product, written as <GRID>_Sediment-<name>.nc on its `grids` (by domain), from the prepared file `file` of the source
 # `source` (made by <source>/prepare.jl in $FESMDATA_WORK/prepared/<source>/). See
 # ../GHF/remap.toml for the options. The dataset and its release tag are in
 # ../Publish/datasets.toml.
@@ -10,33 +9,28 @@
 source = "Laske2013_crust1"
 file = "Laske2013_CRUST1_sed.nc"
 variables = ["z_sed", "z_sed_upper", "z_sed_middle", "z_sed_lower"]
-domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
-min_spacing_km = 4
+grids = { Antarctica = 4, GreenlandPaleo = 4, Greenland = 4, North = 4, Laurentide = 4, Eurasia = 4, Global = 4 }
 
 [products.GlobSed]
 source = "Straume2019_globsed"
 file = "Straume2019_GlobSed.nc"
 variables = ["z_sed"]
-domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
-min_spacing_km = 4
+grids = { Antarctica = 4, GreenlandPaleo = 4, Greenland = 4, North = 4, Laurentide = 4, Eurasia = 4, Global = 4 }
 
 [products.ECM1]
 source = "Mooney2023_ecm1"
 file = "Mooney2023_ECM1_sed.nc"
 variables = ["z_sed", "z_sed_upper", "z_sed_middle", "z_sed_lower"]
-domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
-min_spacing_km = 4
+grids = { Antarctica = 4, GreenlandPaleo = 4, Greenland = 4, North = 4, Laurentide = 4, Eurasia = 4, Global = 4 }
 
 [products.ANTASed]
 source = "Baranov2021_sed"
 file = "Baranov2021_ANTASed.nc"
 variables = ["z_sed"]
-domains = ["Antarctica"]
-min_spacing_km = 4
+grids = { Antarctica = 4 }
 
 [products.Gowan2019]
 source = "Gowan2019_sed"
 file = "Gowan2019_sed.nc"
 variables = ["grain", "distribution", "composite"]
-domains = ["GreenlandPaleo", "Greenland", "Laurentide"]
-min_spacing_km = 4
+grids = { GreenlandPaleo = 4, Greenland = 4, Laurentide = 4 }

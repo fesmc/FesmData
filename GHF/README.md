@@ -72,6 +72,6 @@ Existing files are kept unless `--overwrite`.
 1. Make a folder for the source with a `prepare.jl` and a `README.md` (see Bring
    your own data), e.g. `Lucazeau2019_ghf/`.
 2. Add a table `[products.<Name>]` to `GHF/remap.toml` with `source`, `file`,
-   `variables` and `domains` (and `method` or `smooth` if the defaults do not fit).
+   `variables` and `grids` (and `method` or `smooth` if the defaults do not fit).
 3. Add it to the table of products above, and run `julia fesmdata.jl remap GHF <Name>`.
 4. Release a new version of GHF (see Releasing, `Publish/README.md`).

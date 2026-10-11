@@ -8,8 +8,11 @@ using TOML
     RemapProduct
 
 A product of a thematic dataset (a table of <Dataset>/remap.toml): the fields of a
-prepared file of a source, remapped onto the grids of some domains, as
-`<GRID>_<Dataset>-<name>.nc`.
+prepared file of a source, remapped onto grids of some domains, as
+`<GRID>_<Dataset>-<name>.nc`. `grids` gives them by domain (output folder): a minimum
+spacing in km (the standard grids of the domain not finer than this; 0: all), or the
+names of the grids (any grid of the domain, also those made on request, e.g. Gaussian
+grids). A product is not made on the domains not in `grids`.
 """
 struct RemapProduct
     dataset::String
@@ -17,34 +20,56 @@ struct RemapProduct
     source::String                  # folder of the source, with prepare.jl
     file::String                    # prepared file, in $FESMDATA_WORK/prepared/<source>/
     variables::Union{Nothing,Vector{String}}
-    domains::Vector{String}         # output folders (e.g. Greenland, Global)
+    grids::Dict{String,Union{Float64,Vector{String}}}   # by domain: minimum spacing (km) or grid names
     method::String
     smooth::Union{String,Float64}
-    min_spacing_km::Dict{String,Float64}   # per domain: grids finer than this are left out (0: none)
     release::Bool                   # part of the releases of the dataset
 end
+
+"Domains (output folders) of a product."
+product_domains(p::RemapProduct) = sort(collect(keys(p.grids)))
 
 "Spacing of a grid in km (of a lon-lat grid: its mean latitude spacing)."
 spacing_km(g::ProjGrid) = maximum(spacing(g))
 spacing_km(g::LonLatGrid) = 111.195 * g.dlat
 
-"Whether a product is made on grid `og`: a grid of its domains, not finer than its `min_spacing_km` there."
-on_grid(p::RemapProduct, og::OutGrid) =
-    og.folder in p.domains && spacing_km(og.grid) >= p.min_spacing_km[og.folder] - 1e-9
+"""
+    on_grid(p, og) -> Bool
+
+Whether a product is made on grid `og`: by the entry of its domain in `p.grids`, a
+standard grid not finer than the minimum spacing, or a grid named in the list.
+"""
+function on_grid(p::RemapProduct, og::OutGrid)
+    spec = get(p.grids, og.folder, nothing)
+    spec === nothing && return false
+    spec isa Vector && return og.grid.name in spec
+    return !og.on_request && spacing_km(og.grid) >= spec - 1e-9
+end
 
 """
-    min_spacing(spec, domains, what) -> Dict{String,Float64}
+    product_grid_spec(grids, what) -> Dict{String,Union{Float64,Vector{String}}}
 
-Minimum grid spacing (km) of a product on each of its domains, from `min_spacing_km` of
-remap.toml: a number for all domains, or a table by domain with an optional `default`
-(e.g. `{ default = 16, Global = 100 }`); 0 (no limit) where none is given.
+The `grids` table of a product in remap.toml, checked: domains (output folders) with a
+minimum spacing in km or a list of grid names of that domain.
 """
-function min_spacing(spec, domains, what)
-    spec isa Real && return Dict(d => Float64(spec) for d in domains)
-    spec isa AbstractDict || error("$what: min_spacing_km must be a number or a table by domain")
-    unknown = setdiff(keys(spec), ["default"; domains])
-    isempty(unknown) || error("$what: min_spacing_km for $(join(unknown, ", ")), not domains of the product")
-    return Dict(d => Float64(get(spec, d, get(spec, "default", 0))) for d in domains)
+function product_grid_spec(grids, what)
+    grids isa AbstractDict && !isempty(grids) ||
+        error("$what: grids must be a table by domain, e.g. { Antarctica = 4, Global = 4 }")
+    spec = Dict{String,Union{Float64,Vector{String}}}()
+    for (folder, v) in grids
+        names = [og.grid.name for og in folder_grids(folder)[2]]
+        if v isa Real
+            spec[folder] = Float64(v)
+        elseif v isa AbstractVector
+            unknown = setdiff(v, names)
+            isempty(unknown) || error("$what: grids $(join(unknown, ", ")) are not grids of $folder, " *
+                                      "available: $(join(names, ", "))")
+            spec[folder] = Vector{String}(v)
+        else
+            error("$what: grids.$folder must be a minimum spacing in km or a list of grid names")
+        end
+    end
+    return spec
 end
 
 "Grids of a product (see `on_grid`)."
@@ -67,16 +92,16 @@ function remap_products(dataset::AbstractString)
     folders = domain_folders()
     products = RemapProduct[]
     for (name, p) in spec["products"]
-        keys_ = setdiff(keys(p), ("source", "file", "variables", "domains", "method", "smooth", "min_spacing_km", "release"))
+        keys_ = setdiff(keys(p), ("source", "file", "variables", "grids", "method", "smooth", "release"))
         isempty(keys_) || error("$dataset/$name: unknown keys $(join(keys_, ", "))")
-        unknown = setdiff(p["domains"], folders)
+        haskey(p, "grids") || error("$dataset/$name: no grids (a table by domain)")
+        unknown = setdiff(keys(p["grids"]), folders)
         isempty(unknown) || error("$dataset/$name: unknown domains $(join(unknown, ", ")), available: $(join(folders, ", "))")
         smooth = get(p, "smooth", "auto")
         push!(products, RemapProduct(dataset, name, p["source"], p["file"],
                                      haskey(p, "variables") ? Vector{String}(p["variables"]) : nothing,
-                                     Vector{String}(p["domains"]), get(p, "method", "con"),
+                                     product_grid_spec(p["grids"], "$dataset/$name"), get(p, "method", "con"),
                                      smooth isa Real ? Float64(smooth) : String(smooth),
-                                     min_spacing(get(p, "min_spacing_km", 0), p["domains"], "$dataset/$name"),
                                      get(p, "release", true)))
     end
     return sort(products; by=p -> p.name)
@@ -90,7 +115,7 @@ prepared_file(p::RemapProduct) = joinpath(prepared_dir(p.source), p.file)
 
 "Domains (output folders) on which a thematic dataset is released."
 remap_domains(dataset::AbstractString) =
-    sort(unique(d for p in remap_products(dataset) if p.release for d in p.domains))
+    sort(unique(d for p in remap_products(dataset) if p.release for d in product_domains(p)))
 
 """
     remap_release_files(dataset, og) -> Vector{String}

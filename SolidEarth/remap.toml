@@ -1,12 +1,12 @@
 # Solid Earth structure for glacial isostatic adjustment: lithosphere thickness and
 # mantle viscosity (thematic dataset, see ../Remap/README.md).
 #
-# Each table of `products` is a product, written as <GRID>_SolidEarth-<name>.nc on every
-# grid of its `domains` (output folders), from the prepared file `file` of the source
+# Each table of `products` is a product, written as <GRID>_SolidEarth-<name>.nc on its `grids` (by domain), from the prepared file `file` of the source
 # `source` (made by <source>/prepare.jl in $FESMDATA_WORK/prepared/<source>/). See
 # ../GHF/remap.toml for the options. The dataset and its release tag are in
-# ../Publish/datasets.toml. Viscosity fields (on depth) are made down to 16 km only
-# (min_spacing_km = 16): their sources are coarse (0.5° or coarser) and the files large.
+# ../Publish/datasets.toml. Viscosity fields (on depth) are made down to 16 km only:
+# their sources are coarse (0.5° or coarser) and the files large. Bagge2021, on the T170
+# Gaussian grid, is made on GLOBAL-T170 instead of the regular global grids.
 # Pan2022 and Wiens2022 (personal communication) are made but not released
 # (release = false) until their authors agree.
 
@@ -14,50 +14,43 @@
 source = "Pan2022_litho"
 file = "Pan2022_EarthStructure.nc"
 variables = ["z_litho"]
-domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
-min_spacing_km = 4
+grids = { Antarctica = 4, GreenlandPaleo = 4, Greenland = 4, North = 4, Laurentide = 4, Eurasia = 4, Global = 4 }
 release = false
 
 [products.Pan2022-visc]
 source = "Pan2022_litho"
 file = "Pan2022_EarthStructure.nc"
 variables = ["log10_visc"]
-domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
-min_spacing_km = 16
+grids = { Antarctica = 16, GreenlandPaleo = 16, Greenland = 16, North = 16, Laurentide = 16, Eurasia = 16, Global = 16 }
 release = false
 
 [products.Bagge2021]
 source = "Bagge2021_visc"
 file = "Bagge2021_visc.nc"
 variables = ["log10_visc"]
-domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
-min_spacing_km = { default = 16, Global = 100 }   # source about 0.7° (78 km): global grids of 1° and coarser
+grids = { Antarctica = 16, GreenlandPaleo = 16, Greenland = 16, North = 16, Laurentide = 16, Eurasia = 16, Global = ["GLOBAL-T170"] }   # source on the T170 Gaussian grid (about 0.7°): GLOBAL-T170 only
 
 [products.Lloyd2024]
 source = "Lloyd2024_visc"
 file = "Lloyd2024_visc.nc"
 variables = ["log10_visc"]
-domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
-min_spacing_km = 16
+grids = { Antarctica = 16, GreenlandPaleo = 16, Greenland = 16, North = 16, Laurentide = 16, Eurasia = 16, Global = 16 }
 
 [products.Wiens2022]
 source = "Wiens2022_visc"
 file = "Wiens2022_visc.nc"
 variables = ["log10_visc"]
-domains = ["Antarctica"]
-min_spacing_km = 16
+grids = { Antarctica = 16 }
 release = false
 
 [products.Hazzard2023-litho]
 source = "Hazzard2023_visc"
 file = "Hazzard2023_visc.nc"
 variables = ["z_litho", "z_litho_sd"]
-domains = ["Antarctica"]
-min_spacing_km = 4
+grids = { Antarctica = 4 }
 
 [products.Hazzard2023-visc]
 source = "Hazzard2023_visc"
 file = "Hazzard2023_visc.nc"
 variables = ["log10_visc", "log10_visc_sd"]
-domains = ["Antarctica"]
-min_spacing_km = 16
+grids = { Antarctica = 16 }

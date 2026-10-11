@@ -6,12 +6,17 @@ using TOML
 """
     OutGrid
 
-A grid of a domain together with its output folder under \$ICE_DATA/v2.
+A grid of a domain together with its output folder under \$ICE_DATA/v2. A grid
+`on_request` (e.g. a Gaussian grid) is not one of the standard grids of the domain: it
+is made only for the products that name it.
 """
 struct OutGrid
     folder::String
     grid::Union{ProjGrid,LonLatGrid}
+    on_request::Bool
 end
+
+OutGrid(folder, grid) = OutGrid(folder, grid, false)
 
 """
     Domain
@@ -38,6 +43,9 @@ function Domain(key::AbstractString)
     res = Float64.(d["resolutions"])
     if get(d, "type", "projected") == "lonlat"
         grids = [OutGrid(d["folder"], LonLatGrid(grid_name(key, r; units="deg"), r)) for r in res]
+        for (t, nlat) in sort(collect(get(d, "gaussian", Dict())))
+            push!(grids, OutGrid(d["folder"], gaussian_grid(nlat; name="$key-$t"), true))
+        end
         return Domain(String(key), d["folder"], grids[1].grid, grids)
     end
     dx = res[1]

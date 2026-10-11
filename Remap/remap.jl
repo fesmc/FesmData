@@ -261,19 +261,21 @@ end
 """
     select_grids(args) -> Vector{OutGrid}
 
-Output grids named by `args`: domains (output folders, e.g. Antarctica), grids (e.g.
-ANT-8KM), or "all".
+Output grids named by `args`: domains (output folders, e.g. Antarctica, their standard
+grids), grids (e.g. ANT-8KM, or a grid made on request such as GLOBAL-T170), or "all"
+(the standard grids of all domains).
 """
 function select_grids(args)
     isempty(args) && error("give the target domains or grids (e.g. Antarctica ANT-8KM, or all)")
     grids = [og for key in domain_keys() for og in Domain(key).grids]
+    standard = filter(og -> !og.on_request, grids)
     folders = sort(unique(og.folder for og in grids))
     sel = OutGrid[]
     for a in args
         if a == "all"
-            append!(sel, grids)
+            append!(sel, standard)
         elseif a in folders
-            append!(sel, filter(og -> og.folder == a, grids))
+            append!(sel, filter(og -> og.folder == a, standard))
         else
             k = findfirst(og -> og.grid.name == a, grids)
             k === nothing && error("unknown domain or grid $a, domains: $(join(folders, ", "))")

@@ -1,5 +1,5 @@
 # Ocean temperature and salinity (thematic dataset, see ../Remap/README.md). Products
-# are written as <GRID>_Ocean-<name>.nc on every grid of their `domains`; see
+# are written as <GRID>_Ocean-<name>.nc on their `grids`; see
 # ../GHF/remap.toml for the options. The dataset and its release tag are in
 # ../Publish/datasets.toml.
 
@@ -7,26 +7,22 @@
 source = "Schmidtko2014_ocean"
 file = "Schmidtko2014_OCEAN.nc"
 variables = ["ct_bottom", "ct_bottom_std", "sa_bottom", "sa_bottom_std", "z_bottom"]
-domains = ["Antarctica"]
-min_spacing_km = 4
+grids = { Antarctica = 4 }
 
 [products.ORAS5-1981-2010]
 source = "Zuo2019_oras5"
 file = "ORAS5_1981-2010.nc"
 variables = ["to", "so"]
-domains = ["Antarctica", "Greenland", "GreenlandPaleo", "North", "Laurentide", "Eurasia", "Global"]
-min_spacing_km = 16
+grids = { Antarctica = 16, Greenland = 16, GreenlandPaleo = 16, North = 16, Laurentide = 16, Eurasia = 16, Global = 16 }
 
 [products.ORAS5-annual]
 source = "Zuo2019_oras5"
 file = "ORAS5_annual_1979-2018.nc"
 variables = ["to", "so"]
-domains = ["Antarctica", "Greenland", "GreenlandPaleo", "North", "Laurentide", "Eurasia", "Global"]
-min_spacing_km = 16
+grids = { Antarctica = 16, Greenland = 16, GreenlandPaleo = 16, North = 16, Laurentide = 16, Eurasia = 16, Global = 16 }
 
 [products.ISMIP7]
 source = "Zhou2026_ismip7ocean"
 file = "ISMIP7_OCEAN_1972-2024.nc"
 variables = ["to", "so", "tf", "basin"]
-domains = ["Antarctica"]
-min_spacing_km = 8
+grids = { Antarctica = 8 }

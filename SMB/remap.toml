@@ -1,40 +1,34 @@
 # Surface mass balance and surface climate from regional climate models (thematic
 # dataset, see ../Remap/README.md). Products are written as <GRID>_SMB-<name>.nc on
-# every grid of their `domains`; see ../GHF/remap.toml for the options. The dataset and
+# their `grids`; see ../GHF/remap.toml for the options. The dataset and
 # its release tag are in ../Publish/datasets.toml.
 
 [products."RACMO2.4p1-1981-2010"]
 source = "vanDalum2025_racmo24"
 file = "RACMO2.4p1_1981-2010.nc"
-domains = ["Antarctica"]
-min_spacing_km = 4
+grids = { Antarctica = 4 }
 
 [products."RACMO2.4p1-1991-2020"]
 source = "vanDalum2025_racmo24"
 file = "RACMO2.4p1_1991-2020.nc"
-domains = ["Antarctica"]
-min_spacing_km = 4
+grids = { Antarctica = 4 }
 
 [products."RACMO2.4p1-annual"]
 source = "vanDalum2025_racmo24"
 file = "RACMO2.4p1_annual_1979-2023.nc"
-domains = ["Antarctica"]
-min_spacing_km = 4
+grids = { Antarctica = 4 }
 
 [products."MARv3.14-1981-2010"]
 source = "Fettweis2017_mar314"
 file = "MARv3.14_ERA5_1981-2010.nc"
-domains = ["Greenland"]
-min_spacing_km = 1
+grids = { Greenland = 1 }
 
 [products."MARv3.14-1991-2020"]
 source = "Fettweis2017_mar314"
 file = "MARv3.14_ERA5_1991-2020.nc"
-domains = ["Greenland"]
-min_spacing_km = 1
+grids = { Greenland = 1 }
 
 [products."MARv3.14-annual"]
 source = "Fettweis2017_mar314"
 file = "MARv3.14_ERA5_annual_1940-2025.nc"
-domains = ["Greenland"]
-min_spacing_km = 8
+grids = { Greenland = 8 }

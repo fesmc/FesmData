@@ -113,26 +113,34 @@ sources on one theme, and is released like Topo, with its own versions (tags
 source = "Lucazeau2019_ghf"                  # source folder, with prepare.jl
 file = "Lucazeau2019_GHF.nc"                 # prepared file of the source
 variables = ["ghf", "ghf_sd"]                # optional, default all
-domains = ["Antarctica", "Greenland", "Global"]
+grids = { Antarctica = 4, Greenland = 4, Global = 4 }   # by domain, see below
 # method = "con"                             # optional, default "con"
 # smooth = "auto"                            # optional, default "auto"
-min_spacing_km = 4                           # optional: leave out finer grids
 # release = false                            # optional: made, but not released
 ```
 
-`min_spacing_km` leaves out the grids finer than this spacing (km; on lon-lat grids,
-111 km per degree of latitude), on which a coarse source adds no information and its
-files would only be large (e.g. 4 for most sources, 16 for 3D ocean data at 1°);
-models that need finer grids can remap online. It can differ by domain, as a table
-with an optional default, e.g. `min_spacing_km = { default = 16, Global = 100 }` (only
-the global grids of 1° and coarser).
+`grids` lists the domains (output folders) of the product, each with the grids it is
+made on; it is not made on other domains. For each domain:
+
+- a number: the minimum grid spacing in km, i.e. all standard grids of the domain not
+  finer than this (on lon-lat grids, 111 km per degree of latitude); 0 means all. Finer
+  grids are left out where a coarse source adds no information and its files would only
+  be large (e.g. 4 for most sources, 16 for 3D ocean data at 1°); models that need
+  finer grids can remap online.
+- a list of grid names: exactly these grids, e.g. `Global = ["GLOBAL-T170"]`. This also
+  gives the grids made only on request, which no number selects: the Gaussian grids of
+  the Global domain (`gaussian` in `../shared/domains.toml`, e.g. GLOBAL-T170, the T170
+  grid of 512 x 256 used by VILMA).
+
+For example, `grids = { Antarctica = 16, Global = ["GLOBAL-T170"] }` makes ANT-16KM,
+ANT-32KM and GLOBAL-T170.
 
 `release = false` makes a product locally but leaves it out of the releases, e.g. data
 obtained by personal communication whose redistribution the authors have not agreed to
 yet (say so in the README of the dataset).
 
 Domains are listed explicitly, so that the files of a release are fixed; each source
-must cover every grid of its domains. Then:
+must cover all its grids. Then:
 
 1. Add the dataset to `Publish/datasets.toml` (its release tag, title, README,
    keywords, description), and write `<Dataset>/README.md` (the products and their

@@ -1,95 +1,85 @@
 # Geothermal heat flow (thematic dataset, see ../Remap/README.md).
 #
-# Each table of `products` is a product, written as <GRID>_GHF-<name>.nc on every grid
-# of its `domains` (output folders), from the prepared file `file` of the source
+# Each table of `products` is a product, written as <GRID>_GHF-<name>.nc on its `grids` (by domain), from the prepared file `file` of the source
 # `source` (made by <source>/prepare.jl in $FESMDATA_WORK/prepared/<source>/).
 # `variables` are the fields remapped (default: all), `method` the remapping ("con" or
 # "bilinear", default "con"), `smooth` the Gaussian smoothing after it ("auto" or a
-# standard deviation in km, default "auto") and `min_spacing_km` the finest grid spacing
-# made (default 0: all grids). The dataset and its release tag are in
-# ../Publish/datasets.toml.
+# standard deviation in km, default "auto"). `grids` gives the grids by domain (output
+# folder): a minimum spacing in km (the standard grids of the domain not finer than
+# this, 0: all), or a list of grid names; the product is not made on domains not
+# listed. The dataset and its release tag are in ../Publish/datasets.toml.
 
 [products.Lucazeau2019]
 source = "Lucazeau2019_ghf"
 file = "Lucazeau2019_GHF.nc"
 variables = ["ghf", "ghf_sd"]
-domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
-min_spacing_km = 4
+grids = { Antarctica = 4, GreenlandPaleo = 4, Greenland = 4, North = 4, Laurentide = 4, Eurasia = 4, Global = 4 }
 
 [products.Martos2017]
 source = "Martos2017_ghf"
 file = "Martos2017_GHF.nc"
 variables = ["ghf", "ghf_sd", "depth_curie", "depth_curie_sd"]
-domains = ["Antarctica"]
-min_spacing_km = 4
+grids = { Antarctica = 4 }
 
 [products.Martos2018]
 source = "Martos2018_ghf"
 file = "Martos2018_GHF.nc"
 variables = ["ghf", "ghf_sd", "depth_curie", "depth_curie_sd"]
-domains = ["Greenland"]
-min_spacing_km = 4
+grids = { Greenland = 4 }
 
 [products.HazzardRichards2024]
 source = "HazzardRichards2024_ghf"
 file = "HazzardRichards2024_GHF.nc"
 variables = ["ghf", "ghf_sd"]
-domains = ["Antarctica"]
-min_spacing_km = 4
+grids = { Antarctica = 4 }
 
 [products.Davies2013]
 source = "Davies2013_ghf"
 file = "Davies2013_GHF.nc"
 variables = ["ghf", "ghf_median", "ghf_err"]
-domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
-min_spacing_km = 4
+grids = { Antarctica = 4, GreenlandPaleo = 4, Greenland = 4, North = 4, Laurentide = 4, Eurasia = 4, Global = 4 }
 
 [products.Shapiro2004]
 source = "Shapiro2004_ghf"
 file = "Shapiro2004_GHF.nc"
 variables = ["ghf", "ghf_sd"]
-domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
-min_spacing_km = 4
+grids = { Antarctica = 4, GreenlandPaleo = 4, Greenland = 4, North = 4, Laurentide = 4, Eurasia = 4, Global = 4 }
 
 [products.Loesing2021]
 source = "Loesing2021_ghf"
 file = "Loesing2021_GHF.nc"
 variables = ["ghf", "ghf_min", "ghf_max"]
-domains = ["Antarctica"]
-min_spacing_km = 4
+grids = { Antarctica = 4 }
 
 [products.Stal2020]
 source = "Stal2020_ghf"
 file = "Stal2020_GHF.nc"
 variables = ["ghf", "ghf_unc"]
-domains = ["Antarctica"]
-min_spacing_km = 4
+grids = { Antarctica = 4 }
 
 [products.Colgan2021]
 source = "Colgan2021_ghf"
 file = "Colgan2021_GHF.nc"
 variables = ["ghf", "ghf_min", "ghf_max"]
-domains = ["Greenland"]
-min_spacing_km = 4
+grids = { Greenland = 4 }
 
 [products.FoxMaule2005]
 source = "FoxMaule2005_ghf"
 file = "FoxMaule2005_GHF.nc"
 variables = ["ghf"]
-domains = ["Antarctica", "GreenlandPaleo", "Greenland"]
-min_spacing_km = 4
+grids = { Antarctica = 4, GreenlandPaleo = 4, Greenland = 4 }
 
-# Topographic correction factors (dimensionless, on the BedMachine grids): no
-# min_spacing_km, as the source is finer than all grids.
+# Topographic correction factors (dimensionless, on the BedMachine grids): all grids
+# (0), as the source is finer than all of them.
 
 [products.Colgan2021-topocorr-GRL]
 source = "Colgan2021_topocorr"
 file = "Colgan2021_topocorr_GRL.nc"
 variables = ["ghf_corr", "ghf_corr_unc"]
-domains = ["Greenland"]
+grids = { Greenland = 0 }
 
 [products.Colgan2021-topocorr-ANT]
 source = "Colgan2021_topocorr"
 file = "Colgan2021_topocorr_ANT.nc"
 variables = ["ghf_corr", "ghf_corr_unc"]
-domains = ["Antarctica"]
+grids = { Antarctica = 0 }

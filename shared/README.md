@@ -102,8 +102,8 @@ A new resolution is a new entry in `resolutions`. Then, for each dataset:
   `Regions/regions.toml` (`[zone] products`), and basin sets if any to
   `Regions/basins.toml` (see the Regions README), and run its steps.
 
-- **Thematic datasets** (e.g. GHF): add the domain to the `domains` of its products
-  in `<Dataset>/remap.toml`, and run `julia fesmdata.jl remap <Dataset>`.
+- **Thematic datasets** (e.g. GHF): add the domain to the `grids` of its products in
+  `<Dataset>/remap.toml`, and run `julia fesmdata.jl remap <Dataset>`.
 
 The domain is released as a new record with the next release of each dataset.
 

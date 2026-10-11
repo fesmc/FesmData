@@ -24,8 +24,10 @@ source gives radii, see the README of each source). Each file
 `<GRID>_SolidEarth-<Source>.nc` also has `f_valid`, the fraction of each cell covered by
 the source. Fields are remapped conservatively and, on grids finer than the source,
 smoothed with a Gaussian of half the source spacing. The viscosity products are made on
-grids of 16 km and coarser only (`min_spacing_km = 16`): their sources are 0.5° or
-coarser and the files are large; models on finer grids can remap them online.
+grids of 16 km and coarser only: their sources are 0.5° or coarser and the files are
+large; models on finer grids can remap them online. Bagge2021, on the T170 Gaussian grid
+of VILMA, is made on the Gaussian grid GLOBAL-T170 (the same grid, no interpolation)
+instead of the regular global lon-lat grids.
 
 **Not released yet**: the products of Pan et al. (2022) and Wiens et al. (2022), data
 obtained by personal communication, are made but left out of the releases
