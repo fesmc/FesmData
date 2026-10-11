@@ -34,6 +34,7 @@ struct Prepared
     vectors::Vector{Tuple{String,String}}   # (eastward, northward) components
     varattrib::Dict{String,Vector{Pair{String,Any}}}
     attrib::Vector{Pair{String,String}}
+    aux::Vector{AuxVar}                     # variables on extra dimensions only (e.g. labels)
 end
 
 const LON_UNITS = ("degrees_east", "degree_east", "degree_e", "degrees_e", "degreee", "degreese")
@@ -166,8 +167,23 @@ function read_prepared(path::AbstractString; vars=nothing)
             varattrib[name] = [k => v.attrib[k] for k in keys_ if haskey(v.attrib, k)]
         end
         attrib = [k => string(ds.attrib[k]) for k in COPIED_ATTRIB if haskey(ds.attrib, k)]
-        return Prepared(abspath(path), grid, fields, dims, _vectors(path, fields, dims, varattrib), varattrib, attrib)
+        return Prepared(abspath(path), grid, fields, dims, _vectors(path, fields, dims, varattrib), varattrib, attrib,
+                        _aux(ds, dims))
     end
+end
+
+# Variables on extra dimensions of the fields only (e.g. label(time)), other than the
+# coordinate and bounds variables of these dimensions, copied as they are.
+function _aux(ds, dims)
+    extra = Set(d.name for ds_ in values(dims) for d in ds_)
+    bounds = Set(v.attrib["bounds"] for (_, v) in ds if haskey(v.attrib, "bounds"))
+    aux = AuxVar[]
+    for (name, v) in ds
+        dn = collect(dimnames(v))
+        (isempty(dn) || !issubset(dn, extra) || dn == [name] || name in bounds) && continue
+        push!(aux, AuxVar(name, Array(v.var), dn, Pair{String,Any}[k => v.attrib[k] for k in keys(v.attrib)]))
+    end
+    return aux
 end
 
 # Extra dimension `name` of a prepared file, with the raw values and attributes of its
@@ -508,7 +524,7 @@ function remap_prepared(p::Prepared, grids::Vector{OutGrid}; name::AbstractStrin
         how = method_description(method, sigma; integers)
         attrib = vcat(p.attrib, ["remapped_from" => basename(p.path), "remap_method" => how])
         isfile(joinpath(outdir(og), "$(og.grid.name)_grid.nc")) || write_grid_files(outdir(og), og.grid; dataset)
-        write_fields(path, og.grid, fields; dataset, attrib, varattrib, dims)
+        write_fields(path, og.grid, fields; dataset, attrib, varattrib, dims, aux=p.aux)
         println("$(og.grid.name): $(basename(path)), $how ($(round(t; digits=1)) s)")
         push!(paths, path)
     end

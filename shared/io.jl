@@ -41,7 +41,21 @@ end
 Dim(name, values, attrib) = Dim(name, values, attrib, nothing)
 
 """
-    write_fields(path, g, fields; dataset, attrib=[], varattrib=Dict(), dims=Dict())
+    AuxVar(name, data, dims, attrib)
+
+A variable on extra dimensions only (e.g. the labels of time slices, `label(time)`),
+written as it is next to the fields, with its raw data, dimension names and
+attributes.
+"""
+struct AuxVar
+    name::String
+    data::Array
+    dims::Vector{String}
+    attrib::Vector{Pair{String,Any}}
+end
+
+"""
+    write_fields(path, g, fields; dataset, attrib=[], varattrib=Dict(), dims=Dict(), aux=[])
 
 Write the fields on grid `g` (projected or lon-lat) to a new NetCDF file of `dataset` (e.g. "topo"), with
 the provenance attributes of the dataset and the global attributes `attrib`. A field
@@ -49,12 +63,14 @@ is 2D, or has the extra dimensions `dims[name]` (a vector of `Dim`) after the gr
 dimensions. Float fields are written as Float32 with NaN as missing; integer fields
 (e.g. masks) are written as they are, with a fill value if they have missing values.
 `varattrib[name]` gives extra attributes of a variable (e.g. flag values), and
-replaces its default units or long name. The file is written as `<path>.part` and
-renamed when complete, so that an interrupted job leaves no partial file at `path`.
+replaces its default units or long name. `aux` are variables on extra dimensions only
+(`AuxVar`, e.g. labels of time slices), written as they are. The file is written as
+`<path>.part` and renamed when complete, so that an interrupted job leaves no partial
+file at `path`.
 """
 function write_fields(path::AbstractString, g::Union{ProjGrid,LonLatGrid}, fields::AbstractDict; dataset::AbstractString,
                       attrib=Pair{String,String}[], varattrib=Dict{String,Vector{Pair{String,Any}}}(),
-                      dims=Dict{String,Vector{Dim}}())
+                      dims=Dict{String,Vector{Dim}}(), aux=AuxVar[])
     gatts = global_attrib(dataset, attrib)
     mapping = g isa ProjGrid ? ["grid_mapping" => "crs"] : Pair{String,String}[]
     extra = Dict{String,Dim}()
@@ -73,6 +89,13 @@ function write_fields(path::AbstractString, g::Union{ProjGrid,LonLatGrid}, field
                 haskey(ds.dim, "bnds") || defDim(ds, "bnds", 2)
                 defVar(ds, Dict(d.attrib)["bounds"], d.bounds, ("bnds", d.name))
             end
+        end
+        for a in aux
+            unknown = setdiff(a.dims, keys(extra))
+            isempty(unknown) || error("$(a.name): dimensions $(join(unknown, ", ")) are not dimensions of the fields")
+            fill = [k => v for (k, v) in a.attrib if k == "_FillValue"]
+            atts = filter(p -> first(p) != "_FillValue", a.attrib)
+            defVar(ds, a.name, a.data, Tuple(a.dims); attrib=atts, (isempty(fill) ? () : (fillvalue=last(only(fill)),))...)
         end
         for name in sort(collect(keys(fields)))
             units, long_name = get(VARINFO, name, ("", name))
