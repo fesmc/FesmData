@@ -1,10 +1,10 @@
 # Prepare the GPS vertical velocities of Schumacher et al. (2018) as a record (see
 # Records/README.md): the uplift rates of all (about 4000) stations of the global data
 # set (PANGAEA, datamanifest key schumacher2018_gps), one value per station
-# (featureType point), $FESMDATA_WORK/prepared/Schumacher2018_GIA_GrIS/Schumacher2018_GPS.nc.
+# (featureType point), $FESMDATA_WORK/prepared/Schumacher2018_gps/Schumacher2018_GPS.nc.
 #
 # Usage:
-#     julia --project=Schumacher2018_GIA_GrIS Schumacher2018_GIA_GrIS/prepare.jl
+#     julia --project=Schumacher2018_gps Schumacher2018_gps/prepare.jl
 #     julia fesmdata.jl record GPS Schumacher2018
 
 using CSV
@@ -27,7 +27,7 @@ names(df) == ["Station", "Longitude", "Latitude", "V vert [mm/a]", "V vert std d
 any(ismissing, Matrix(df)) && error("$tab: missing values")
 n = nrow(df)
 
-path = joinpath(prepared_dir("Schumacher2018_GIA_GrIS"), "Schumacher2018_GPS.nc")
+path = joinpath(prepared_dir("Schumacher2018_gps"), "Schumacher2018_GPS.nc")
 mkpath(dirname(path))
 rm(path; force=true)
 NCDataset(path, "c") do ds

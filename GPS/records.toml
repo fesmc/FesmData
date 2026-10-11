@@ -2,5 +2,5 @@
 # $ICE_DATA/v2/Records/GPS/GPS-<product>.nc
 
 [products.Schumacher2018]
-source = "Schumacher2018_GIA_GrIS"
+source = "Schumacher2018_gps"
 file = "Schumacher2018_GPS.nc"

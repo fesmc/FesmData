@@ -45,7 +45,8 @@ and `AQ_regions_3031.gpkg` (datamanifest keys `schmidt2025_regions_greenland`,
 The record also has `GL_iceberg_melt.nc` and `AQ_iceberg_melt.nc`, normalised iceberg
 melt climatologies (12 months x region of calving on a 0.5° lon-lat grid), the regions
 in lon-lat (`*_regions_4326.gpkg`) and grown over the ocean (`*_regions_*_flood.nc`):
-these are gridded and not made as records. The v1 copies of all files that were kept in
+these are gridded and left out. The iceberg melt climatologies are for ocean models,
+which remap them onto their own grids. The v1 copies of all files that were kept in
 this folder are removed: they are on Zenodo.
 
 ## Prepare and record

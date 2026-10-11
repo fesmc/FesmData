@@ -26,12 +26,12 @@ vertical velocity and its standard deviation (mm/a).
 ## Prepare and record
 
 ```bash
-julia --project=Schumacher2018_GIA_GrIS Schumacher2018_GIA_GrIS/prepare.jl
+julia --project=Schumacher2018_gps Schumacher2018_gps/prepare.jl
 julia fesmdata.jl record GPS Schumacher2018
 ```
 
 `prepare.jl` writes
-`$FESMDATA_WORK/prepared/Schumacher2018_GIA_GrIS/Schumacher2018_GPS.nc` (see
+`$FESMDATA_WORK/prepared/Schumacher2018_gps/Schumacher2018_GPS.nc` (see
 `Records/README.md`), one value per station (featureType point, dimension `station`):
 `uplift_rate` and `uplift_rate_sd` (mm yr-1), `lat`, `lon` and `site_name`.
 

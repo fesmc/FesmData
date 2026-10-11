@@ -9,11 +9,11 @@ geometries, written to `$ICE_DATA/v2/Records/SMBObs/SMBObs-<product>.nc`.
 
 | Product | Source | Measurements | Variables |
 |---|---|---|---|
-| `SMBObs-SUMup2025` | SUMup 2025 (Vandecrux et al., 2025), [doi:10.18739/A2M61BR5M](https://doi.org/10.18739/A2M61BR5M) | 2.74 million in Greenland and Antarctica (cores, pits, stakes, radar, ...), 871-2025 CE | `smb`, `smb_sd` (kg m-2 yr-1, mean rate over the measurement interval `time_bnds`), `z_srf`, keys and tables of the name, method and reference |
+| `SMBObs-SUMup2025` | SUMup 2025 (Vandecrux et al., 2025), [doi:10.18739/A2M61BR5M](https://doi.org/10.18739/A2M61BR5M) | 2.74 million in Greenland and Antarctica (cores, pits, stakes, radar, ...), 871-2025 CE | `smb_total`, `smb_total_sd` (kg m-2, SMB of the measurement interval `time_bnds`), `smb`, `smb_sd` (kg m-2 yr-1, mean rate over the interval), `z_srf`, keys and tables of the name, method and reference |
 
 Each measurement is an observation (featureType point, dimension `obs`) with its `lat`,
 `lon` and `time` (days since 1900-01-01, the middle of the interval). SUMup gives the
-SMB accumulated over the interval; the SMB of the interval is `smb` × duration (see
+SMB accumulated over the interval (`smb_total`); `smb` is `smb_total` / duration (see
 `SUMup_smb/README.md`). The density and subsurface temperature data of SUMup are not
 included.
 

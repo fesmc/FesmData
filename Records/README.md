@@ -69,7 +69,7 @@ chapter 9), so that every record is read the same way:
 | IceCores | Kindler2014 (NGRIP temperature), Gkinis2020_NEEMwateriso (NEEM isotopes), Vinther2009_elevations (core site elevations) |
 | RSL | Gowan2023_GAPSLIP_GrIS (Greenland relative sea level) |
 | Boreholes | Lokkegaard2023_temp_profile (Greenland and Canadian Arctic ice temperatures) |
-| GPS | Schumacher2018_GIA_GrIS (Greenland GIA uplift rates) |
+| GPS | Schumacher2018_gps (GPS vertical velocities, GIA uplift rates) |
 | SMBObs | SUMup_smb (SUMup 2025) |
 | Freshwater | Schmidt2025_fwf (freshwater flux series of the CMIP protocol) |
 
