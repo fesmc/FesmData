@@ -39,11 +39,12 @@ julia --project=SUMup_smb SUMup_smb/prepare.jl
 julia fesmdata.jl record SMBObs SUMup2025
 ```
 
-`prepare.jl` writes `$FESMDATA_WORK/prepared/SUMup_smb/SUMup2025_SMB.nc` (40 MB, see
+`prepare.jl` writes `$FESMDATA_WORK/prepared/SUMup_smb/SUMup2025_SMB.nc` (about 50 MB, see
 `Records/README.md`), the measurements of both ice sheets, one per observation
 (featureType point, dimension `obs`): `lat`, `lon`, `z_srf` (m, mostly missing),
 `time` (days since 1900-01-01, the middle of the measurement interval) with
-`time_bnds`, `smb` and `smb_sd` (kg m-2 yr-1), and the keys `name_key`, `method_key`,
+`time_bnds`, `smb_total` and `smb_total_sd` (kg m-2, the SMB of the interval), `smb`
+and `smb_sd` (kg m-2 yr-1, the mean rate over the interval), and the keys `name_key`, `method_key`,
 `reference_key` into the tables `name`, `method`, `reference` and `reference_short`
 (along `name_table`, `method_table`, `reference_table`, with the keys
 `<table>_key`).
@@ -53,13 +54,14 @@ Notes:
 - SUMup gives the SMB accumulated over an interval (m w.e.), not a rate: from
   `start_date` to `end_date` where these are given, otherwise over the years
   `start_year` to `end_year`. The interval is written as `time_bnds` (from 1 January of
-  `start_year` to 1 January after `end_year` when there are no dates), and `smb` is the
-  mean rate over it, 1000 × SMB / duration (kg m-2 yr-1, with years of 365.25 days):
-  the SMB of the interval is `smb` × duration. The intervals range from one day
-  (daily ablation, 19681 measurements) to 197 years; the rates of the short ones are
-  large (down to -70 000 kg m-2 yr-1 for a day of melt).
-- `smb_sd` is the error of SUMup converted in the same way, as an absolute value (179
-  errors are negative in the source). It is missing for 60% of the measurements.
+  `start_year` to 1 January after `end_year` when there are no dates). `smb_total` is
+  the SMB of SUMup in kg m-2 (1000 × m w.e.), and `smb` the mean rate over the
+  interval, `smb_total` / duration (kg m-2 yr-1, with years of 365.25 days). The
+  intervals range from one day (daily ablation, 19681 measurements) to 197 years; the
+  rates of the short ones are large (down to -70 000 kg m-2 yr-1 for a day of melt).
+- `smb_total_sd` and `smb_sd` are the error of SUMup converted in the same way, as an
+  absolute value (179 errors are negative in the source). They are missing for 60% of
+  the measurements.
 - The 12 measurements over an interval of length zero (stake readings of 0 in
   Greenland) are left out.
 - The keys are those of SUMup; `method_key` is missing (-9999) for 16208 measurements
