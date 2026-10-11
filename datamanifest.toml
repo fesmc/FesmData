@@ -412,6 +412,34 @@ doi = "10.1594/PANGAEA.982339"
 extract = true
 uri = "https://download.pangaea.de/dataset/982339/files/GlobSed.zip"
 
+# ECM1 (Mooney et al., 2023): 1x1° global crustal model. ECM1_Sediments.zip ("Sediment
+# Model" on the web site) holds Sed_ECM1.txt, the total sediment thickness and the
+# thickness of its three layers.
+
+[ecm1_sediments]
+key = "ecm1_sediments.zip"
+doi = "10.1016/j.earscirev.2023.104493"
+extract = true
+uri = "https://www.earthcrustmodel1.com/_files/archives/b6b6a8_5c9fa52fcd5d40c6ad99d43e42187006.zip?dn=ECM1_Sediments.zip"
+
+# Gowan et al. (2019): geology of North America and Greenland for ice sheet models
+# (grain size, sediment distribution and their combination), 5 km, PANGAEA.
+
+[gowan2019_geology]
+key = "gowan2019_geology.zip"
+doi = "10.1594/PANGAEA.895889"
+extract = true
+uri = "https://hs.pangaea.de/Maps/NAGS/geology_for_ice_sheet_models.zip"
+
+# ANTASed (Baranov et al., 2021): sediment thickness of the Antarctic continent, 0.1°
+# grid of an azimuthal equidistant projection (IEPT RAS web site).
+
+[antased]
+key = "antased.zip"
+doi = "10.3389/feart.2021.722699"
+extract = true
+uri = "https://www.itpz-ran.ru/wp-content/uploads/2021/04/0.1_lim_b.dat_.zip"
+
 # ---------------------------------------------------------------------------
 # Ice sheets and topography of the past (IceHistory/)
 # ---------------------------------------------------------------------------

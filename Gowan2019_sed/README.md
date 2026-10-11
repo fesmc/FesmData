@@ -1,36 +1,54 @@
-# Geological sediment properties for North America
+# Sediment properties of North America and Greenland (Gowan et al., 2019)
 
-Source: [https://doi.pangaea.de/10.1594/PANGAEA.895889](https://doi.pangaea.de/10.1594/PANGAEA.895889)
-Citation: Dawson, E.J., Schroeder, D.M., Chu, W. et al.: Ice mass loss sensitivity to the Antarctic ice sheet basal thermal state, Nat Commun 13, 4957, doi:10.1038/s41467-022-32632-2 , 2022.
+Grain size and distribution of the surface sediments in the areas of the former North
+American ice sheets, Greenland and Iceland, as classes on a 5 km grid (Lambert
+conformal conic), from:
 
-## Steps
+Gowan, E. J., Niu, L., Knorr, G. and Lohmann, G.: Geology datasets in North America,
+Greenland and surrounding areas for use with ice sheet models, Earth Syst. Sci. Data,
+11, 375-391, 2019, [doi:10.5194/essd-11-375-2019](https://doi.org/10.5194/essd-11-375-2019).
 
-### Download data
+Data: Gowan, E. J., Niu, L., Knorr, G. and Lohmann, G.: Geology datasets in North
+America, Greenland and surrounding areas for use with ice sheet models, PANGAEA, 2019,
+[doi:10.1594/PANGAEA.895889](https://doi.org/10.1594/PANGAEA.895889).
 
-We only need the readme and initialization data file
+## Licence
 
-```bash
-wget "https://hs.pangaea.de/Maps/NAGS/geology_for_ice_sheet_models.zip"
-unzip geology_for_ice_sheet_models.zip
-rm geology_for_ice_sheet_models.zip
-```
+CC BY 4.0 (PANGAEA).
 
-You should now have a folder "data".
+## Original data
 
-### Process the data
+`geology_for_ice_sheet_models.zip` (224 MB, no login) from PANGAEA,
+<https://hs.pangaea.de/Maps/NAGS/geology_for_ice_sheet_models.zip>, of which
+`data/netcdf/grain_size.nc`, `distribution.nc` and `final_sed.nc` are used (see
+`data/readme.txt`). It is in `datamanifest.toml` (`gowan2019_geology`) and downloaded
+and extracted by `prepare.jl` if missing.
 
-Run `julia map_na-seds.jl`. This will produce a combined NetCDF file "Gowan2019_Sediments.nc" with the variables: `grain`, `distribution` and `composite`. The gridded data is at 5km resolution on the original projection used: Lambert conformal (EPSG:3979), which is also used for the Canadian Surficial  Materials Map.
-
-### Produce the corresponding grid description file
-
-```bash
-cdo griddes Gowan2019_Sediments.nc > ../maps/grid_Gowan2019_EPSG:3979.txt
-```
-
-### Map to grid as needed using CDO
-
-To map to the Laurentide 32KM grid, for example, run:
+## Prepare and remap
 
 ```bash
-./remap.sh LIS-32KM
+julia --project=Gowan2019_sed Gowan2019_sed/prepare.jl
+julia fesmdata.jl remap $FESMDATA_WORK/prepared/Gowan2019_sed/Gowan2019_sed.nc Laurentide --name=Sediment-Gowan2019
 ```
+
+`prepare.jl` writes three integer fields of classes (with `flag_values` and
+`flag_meanings`) to `$FESMDATA_WORK/prepared/Gowan2019_sed/Gowan2019_sed.nc` (see
+`Remap/README.md`), missing where there are no data (oceans, and land outside the areas
+of the former ice sheets):
+
+- `grain`: grain size, 1 clay, 2 sand, 3 silt (`grain_size.nc`);
+- `distribution`: sediment distribution, 1 blanket (continuous), 2 veneer
+  (discontinuous), 3 rock (mostly bare rock) (`distribution.nc`);
+- `composite`: both combined, 0-8 for blanket, veneer and rock with sand, silt and clay
+  (`final_sed.nc`, converted from the shapefile).
+
+`distribution.nc` has 2 for rock and 3 for veneer, the reverse of `data/readme.txt`:
+`composite` and the attributes of the shapefile (`sediment_properties/`) show that
+veneer covers about 3.7 times the area of rock. It is recoded to the classes of the
+readme, and set missing where it is 1 (blanket) only because there are no data. The
+v1 product SED-G19 used the codes of `distribution.nc` as they are, and filled the
+missing values with silt (`grain`) and blanket silt (`composite`).
+
+The grid is that of the files, a Lambert conformal conic projection on the Clarke 1866
+ellipsoid (as in their WKT; `data/readme.txt` calls it EPSG:3979, the same projection on
+GRS80). The bedrock geology (`geology.nc`, on another grid) is not used.
