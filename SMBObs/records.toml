@@ -1,0 +1,6 @@
+# Products of the records dataset SMBObs (see ../Records/README.md):
+# $ICE_DATA/v2/Records/SMBObs/SMBObs-<product>.nc
+
+[products.SUMup2025]
+source = "SUMup_smb"
+file = "SUMup2025_SMB.nc"
