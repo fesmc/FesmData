@@ -4,7 +4,8 @@ Basal temperature of the grounded Antarctic ice sheet from the thermal steady st
 the initialization of the Ice-sheet and Sea-level System Model (ISSM) by Dawson et al.
 (2022), on its triangular mesh (0.3-50 km, median edge 7.7 km), and the basal thermal
 state derived from it: frozen, thawable (frozen but within 2 K of the pressure melting
-point) and thawed. From:
+point) and thawed; also the basal melt rate of the thermal steady state and the basal
+friction coefficient inferred by the model. From:
 
 Dawson, E. J., Schroeder, D. M., Chu, W., Mantelli, E., and Seroussi, H.: Ice mass loss
 sensitivity to the Antarctic ice sheet basal thermal state, Nat. Commun., 13, 4957,
@@ -46,7 +47,21 @@ ice:
 - `basal_state` (integer classes): 1 frozen (`T_b_pmp` < -2.01 K), 2 thawable,
   3 thawed (`T_b_pmp` > -0.01 K), the thresholds of the scripts of the article and of
   its experiment 1 (thawable within 2 K of the pressure melting point; experiments 2-4
-  use 5, 8 and 12 K).
+  use 5, 8 and 12 K);
+- `bmelt_grnd` (m yr-1 ice equivalent, positive for melting, negative for refreezing):
+  the basal melt rate of the thermal steady state,
+  `md.results.ThermalSolution.BasalforcingsGroundediceMeltingRate` (ISSM results are
+  in m yr-1 of ice). Mostly 0 (frozen bed), up to a few m yr-1 near fast-flowing
+  outlets (single vertices up to 694 m yr-1, 25 m yr-1 on the 1 km grid); 21 Gt yr-1
+  over the grounded ice in total (on ANT-16KM);
+- `beta` (Pa yr m-1): the basal friction coefficient of a linear sliding law,
+  tau_b = `beta` u_b, with u_b the basal velocity in m yr-1. The model uses the ISSM
+  "Budd" friction law tau_b = C^2 N^(q/p) |u_b|^(1/p - 1) u_b with p = 1 and q = 0, i.e.
+  the linear law tau_b = C^2 u_b (the Weertman-type law of the article, with its
+  alpha = C), with C = `md.friction.coefficient` in (Pa s m-1)^(1/2) inferred by
+  inversion of the surface velocity. So `beta` = C^2 / yts, with yts = 31536000 s yr-1,
+  which is the `beta` of a linear law in Yelmo (Pa yr m-1). C is interpolated linearly
+  on the mesh (it is linear there) and squared on the grid.
 
 **Mesh to grid.** The fields of the model are linear on the triangles of its mesh,
 so they are interpolated linearly (barycentric coordinates) at the centres of the

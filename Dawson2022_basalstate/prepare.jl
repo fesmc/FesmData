@@ -3,8 +3,9 @@
 # Zenodo), interpolated linearly from the triangles of the model mesh (0.3-50 km)
 # onto a regular 1 km polar stereographic grid, as a prepared NetCDF file,
 # $FESMDATA_WORK/prepared/Dawson2022_basalstate/Dawson2022_BASALSTATE.nc, with the
-# basal temperature, the basal temperature relative to the pressure melting point and
-# the basal thermal state (frozen, thawable, thawed) of the grounded ice.
+# basal temperature, the basal temperature relative to the pressure melting point, the
+# basal thermal state (frozen, thawable, thawed), the basal melt rate and the basal
+# friction coefficient of the grounded ice.
 #
 # Usage:
 #     julia --project=Dawson2022_basalstate Dawson2022_basalstate/prepare.jl
@@ -75,13 +76,24 @@ HDF5.h5open(input) do file
     gl = vec(property(m, md, "mask", "groundedice_levelset"))[1:nv]   # > 0 grounded
     il = vec(property(m, md, "mask", "ice_levelset"))[1:nv]           # < 0 ice
     T_pa = T .+ beta .* p                             # pressure-adjusted temperature
+    # basal melt rate of grounded ice (m yr-1 ice equivalent in the results, positive
+    # for melting), and friction: md.friction is the Budd law with p = 1 and q = 0, i.e.
+    # the linear law tau_b = C^2 u_b (SI units, u_b in m s-1)
+    melt = vec(property(m, md, "results")["ThermalSolution"]["BasalforcingsGroundediceMeltingRate"])[1:nv]
+    fric = property(m, md, "friction")
+    all(==(1), property(m, fric, "p")) && all(==(0), property(m, fric, "q")) ||
+        error("friction law of $input is not Budd with p = 1, q = 0")
+    C = vec(property(m, fric, "coefficient"))[1:nv]
+    yts = only(property(m, md, "constants", "yts"))
 
     xg = collect(floor(minimum(xv) / DX) * DX + DX / 2 : DX : maximum(xv))
     yg = collect(floor(minimum(yv) / DX) * DX + DX / 2 : DX : maximum(yv))
-    Tg, Tpag, glg, ilg = interp_to_grid(xv, yv, tri, (T, T_pa, gl, il), xg, yg)
+    Tg, Tpag, meltg, Cg, glg, ilg = interp_to_grid(xv, yv, tri, (T, T_pa, melt, C, gl, il), xg, yg)
     grounded = (glg .> 0) .& (ilg .< 0)
-    Tg[.!grounded] .= NaN
-    Tpag[.!grounded] .= NaN
+    betag = Cg .^ 2 ./ yts                            # C linear on the mesh, beta = C^2 / yts
+    for A in (Tg, Tpag, meltg, betag)
+        A[.!grounded] .= NaN
+    end
     state = Int8[!g ? Int8(-1) : t < FROZEN ? Int8(1) : t > THAWED ? Int8(3) : Int8(2)
                  for (g, t) in zip(grounded, Tpag)]
 
@@ -104,6 +116,14 @@ HDF5.h5open(input) do file
                        "comment" => "From T_b_pmp: frozen below $(round(FROZEN - tmelt; digits=2)) K, thawed above " *
                                     "$(round(THAWED - tmelt; digits=2)) K, thawable between",
                        "grid_mapping" => "crs"])
+        defVar(ds, "bmelt_grnd", Float32.(meltg), ("x", "y"); fillvalue=NaN32, deflatelevel=1,
+               attrib=["units" => "m yr-1", "grid_mapping" => "crs",
+                       "long_name" => "basal melt rate of the grounded ice (positive for melting), ice equivalent"])
+        defVar(ds, "beta", Float32.(betag), ("x", "y"); fillvalue=NaN32, deflatelevel=1,
+               attrib=["units" => "Pa yr m-1", "grid_mapping" => "crs",
+                       "long_name" => "basal friction coefficient of the linear sliding law tau_b = beta u_b",
+                       "comment" => "beta = C^2 / yts, with C = md.friction.coefficient (ISSM Budd law with " *
+                                    "p = 1, q = 0: tau_b = C^2 u_b in SI units) and yts = $(yts) s yr-1"])
         ds.attrib["title"] = "Basal thermal state of the Antarctic ice sheet (Dawson et al., 2022)"
         ds.attrib["references"] = "Dawson, E. J., Schroeder, D. M., Chu, W., Mantelli, E., and Seroussi, H.: " *
                                   "Ice mass loss sensitivity to the Antarctic ice sheet basal thermal state, " *
@@ -113,7 +133,9 @@ HDF5.h5open(input) do file
         ds.attrib["license"] = "CC BY 4.0"
         ds.attrib["comment"] = "ISSM thermal steady state of Antarctica_Initialization.mat (md.results." *
                                "ThermalSolution.Temperature at the base, pressure-adjusted with " *
-                               "md.materials.beta and md.initialization.pressure), interpolated " *
+                               "md.materials.beta and md.initialization.pressure), basal melt rate " *
+                               "(md.results.ThermalSolution.BasalforcingsGroundediceMeltingRate) and " *
+                               "friction coefficient (md.friction.coefficient), interpolated " *
                                "linearly from the triangles of the mesh onto a $(Int(DX / 1000)) km grid; " *
                                "grounded ice from the interpolated level sets of md.mask"
         foreach(((k, v),) -> ds.attrib[k] = v, provenance_attrib("basalstate"))
