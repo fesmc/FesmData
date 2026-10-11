@@ -1,0 +1,265 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-11"
+git_tag = "icehistory-v2.0.0"
+store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=GreenlandPaleo_IceHistory"
+version = "2.0.0"
+
+["GRL-PAL-16KM_IceHistory-Batchelor2019.nc"]
+checksum = "sha256:17fd6332fa461edc819c35287262306e76965294ed90a4c139cbd381d8ffd10c"
+size = 412424
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_IceHistory-Batchelor2019.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_IceHistory-Batchelor2019.nc"
+
+["GRL-PAL-16KM_IceHistory-ICE5G.nc"]
+checksum = "sha256:894bd7b55a09aeb0e6ce1523deeb99668c75f232a78a6b89a87711a716624b0d"
+size = 6294610
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_IceHistory-ICE5G.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_IceHistory-ICE5G.nc"
+
+["GRL-PAL-16KM_IceHistory-ICE6G_C.nc"]
+checksum = "sha256:ce36e3ef08794d11f075049ab063b34525f95302d698c249b2640bac310fd4ab"
+size = 16881277
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_IceHistory-ICE6G_C.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_IceHistory-ICE6G_C.nc"
+
+["GRL-PAL-16KM_IceHistory-PRISM4.nc"]
+checksum = "sha256:4a28e40139d594559384b5d48dac04166b57730c0bbf1707081063791b6fa363"
+size = 275944
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_IceHistory-PRISM4.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_IceHistory-PRISM4.nc"
+
+["GRL-PAL-16KM_IceHistory-PaleoGrIS.nc"]
+checksum = "sha256:64706942f4ac099a5d81cd8e4b2c267fe3124577554461ea6ae866d902a7565f"
+size = 66548
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_IceHistory-PaleoGrIS.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_IceHistory-PaleoGrIS.nc"
+
+["GRL-PAL-16KM_IceHistory-PaleoMIST.nc"]
+checksum = "sha256:e1447d044c8a878db2695136d1a9ba89298e24169ea3398fc8da8d810011ede4"
+size = 10613593
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_IceHistory-PaleoMIST.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_IceHistory-PaleoMIST.nc"
+
+["GRL-PAL-16KM_IceHistory-PaleoMIST_max.nc"]
+checksum = "sha256:a70c9acd809766a3bc9e5ba3cb35625d305a2221488a854225f10113fd9d1c40"
+size = 10599982
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_IceHistory-PaleoMIST_max.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_IceHistory-PaleoMIST_max.nc"
+
+["GRL-PAL-16KM_grid.nc"]
+checksum = "sha256:641614ed64e7a6989a9b632764bc593855f65f70fc7a200f9a89263c0fee7f3e"
+size = 197958
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_grid.nc"
+
+["GRL-PAL-1KM_IceHistory-PaleoGrIS.nc"]
+checksum = "sha256:b50ee9ada9dd5a1a6b3feced8d0a98fa8f05912fd7bd2ec0fcaf436541576207"
+size = 1583979
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-1KM/GRL-PAL-1KM_IceHistory-PaleoGrIS.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-1KM/2.0.0/GRL-PAL-1KM_IceHistory-PaleoGrIS.nc"
+
+["GRL-PAL-1KM_grid.nc"]
+checksum = "sha256:051ad90e75b01946068ed84b3a3a0968ccd06820fa40c751454ad2e9e7f17eea"
+size = 26440010
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-1KM/GRL-PAL-1KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-1KM/2.0.0/GRL-PAL-1KM_grid.nc"
+
+["GRL-PAL-2KM_IceHistory-Batchelor2019.nc"]
+checksum = "sha256:51bec454f5ef4164cfc757da1d6f1a2d0d2950d5e4782f6921fa03b4d43f20d9"
+size = 5511444
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-2KM/GRL-PAL-2KM_IceHistory-Batchelor2019.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-2KM/2.0.0/GRL-PAL-2KM_IceHistory-Batchelor2019.nc"
+
+["GRL-PAL-2KM_IceHistory-PaleoGrIS.nc"]
+checksum = "sha256:a1bcb933be4dd4318bddb36f650f832bf9a5576665f3d8be017847cd306c669a"
+size = 720575
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-2KM/GRL-PAL-2KM_IceHistory-PaleoGrIS.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-2KM/2.0.0/GRL-PAL-2KM_IceHistory-PaleoGrIS.nc"
+
+["GRL-PAL-2KM_grid.nc"]
+checksum = "sha256:b8bc00290e86b21effb37f08445b745f46a9b507cf09422dcc0fa8e3784ed031"
+size = 7452261
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-2KM/GRL-PAL-2KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-2KM/2.0.0/GRL-PAL-2KM_grid.nc"
+
+["GRL-PAL-32KM_IceHistory-Batchelor2019.nc"]
+checksum = "sha256:e49e7a737d3e408a8f9c4d858a3c42d0d70f413211e533e6fae2db8de3ad7283"
+size = 169744
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_IceHistory-Batchelor2019.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_IceHistory-Batchelor2019.nc"
+
+["GRL-PAL-32KM_IceHistory-ICE5G.nc"]
+checksum = "sha256:2b1287c0310097ec9f20f1b1529c5d5ca07c0f5d684e13c6a3119b07c3090175"
+size = 1626492
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_IceHistory-ICE5G.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_IceHistory-ICE5G.nc"
+
+["GRL-PAL-32KM_IceHistory-ICE6G_C.nc"]
+checksum = "sha256:abfb895c016ff2208cd6bfa22d7302fdcda298fe1ccc761e7035e3399ec5be17"
+size = 4558451
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_IceHistory-ICE6G_C.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_IceHistory-ICE6G_C.nc"
+
+["GRL-PAL-32KM_IceHistory-PRISM4.nc"]
+checksum = "sha256:8a610a4412825051eb2e173c10e211c7b917a02a2840251a6dc73ad78957fdf8"
+size = 115135
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_IceHistory-PRISM4.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_IceHistory-PRISM4.nc"
+
+["GRL-PAL-32KM_IceHistory-PaleoGrIS.nc"]
+checksum = "sha256:9a068f67e16d2a755aaeeab8081f9b4551abf5dfe1f219151a021f822f72d0ed"
+size = 40126
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_IceHistory-PaleoGrIS.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_IceHistory-PaleoGrIS.nc"
+
+["GRL-PAL-32KM_IceHistory-PaleoMIST.nc"]
+checksum = "sha256:b4b4b9c71e8e40ffc2918054ad06348bd75eeab6b1bec334462de140fde683fc"
+size = 2661766
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_IceHistory-PaleoMIST.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_IceHistory-PaleoMIST.nc"
+
+["GRL-PAL-32KM_IceHistory-PaleoMIST_max.nc"]
+checksum = "sha256:c2b9dd2751f521e692db961e92638f5b8a3692759bdaf387dfef0c0286835c0c"
+size = 2657265
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_IceHistory-PaleoMIST_max.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_IceHistory-PaleoMIST_max.nc"
+
+["GRL-PAL-32KM_grid.nc"]
+checksum = "sha256:c94aeb9d12df68c5429b6e9ac944b6ed3328db1b3bcc9d10942a26343bde80f1"
+size = 70200
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_grid.nc"
+
+["GRL-PAL-4KM_IceHistory-Batchelor2019.nc"]
+checksum = "sha256:89cb8ae517ab6ae04325663cd3c38138a887967145d098483beded684d0f6b66"
+size = 2734921
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/GRL-PAL-4KM_IceHistory-Batchelor2019.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-4KM/2.0.0/GRL-PAL-4KM_IceHistory-Batchelor2019.nc"
+
+["GRL-PAL-4KM_IceHistory-ICE5G.nc"]
+checksum = "sha256:b32d972fa7dce3b2690f7547a04d5a6a1175978b0682bdab093105b6954f7ce3"
+size = 108918247
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/GRL-PAL-4KM_IceHistory-ICE5G.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-4KM/2.0.0/GRL-PAL-4KM_IceHistory-ICE5G.nc"
+
+["GRL-PAL-4KM_IceHistory-ICE6G_C.nc"]
+checksum = "sha256:abf40098ba2faab33dbef541e2eb77fa4734e139908cb87778e8ce8aae9f49e6"
+size = 279327269
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/GRL-PAL-4KM_IceHistory-ICE6G_C.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-4KM/2.0.0/GRL-PAL-4KM_IceHistory-ICE6G_C.nc"
+
+["GRL-PAL-4KM_IceHistory-PRISM4.nc"]
+checksum = "sha256:82b9e985771a63f7db5f0d86b3edbc72d512ed253fa3e68388a344b1c4ae7434"
+size = 2958561
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/GRL-PAL-4KM_IceHistory-PRISM4.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-4KM/2.0.0/GRL-PAL-4KM_IceHistory-PRISM4.nc"
+
+["GRL-PAL-4KM_IceHistory-PaleoGrIS.nc"]
+checksum = "sha256:4150b6aecc07d707dac11a1d7d8fe088c38f4919307b2ead07e9366c0322c281"
+size = 308072
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/GRL-PAL-4KM_IceHistory-PaleoGrIS.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-4KM/2.0.0/GRL-PAL-4KM_IceHistory-PaleoGrIS.nc"
+
+["GRL-PAL-4KM_IceHistory-PaleoMIST.nc"]
+checksum = "sha256:a94248150d717126a2dd3a04562f123d73aebc92cf0579819ad46b2a81689f04"
+size = 151776624
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/GRL-PAL-4KM_IceHistory-PaleoMIST.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-4KM/2.0.0/GRL-PAL-4KM_IceHistory-PaleoMIST.nc"
+
+["GRL-PAL-4KM_IceHistory-PaleoMIST_max.nc"]
+checksum = "sha256:4f8b1d790165ef8e304d4dd68d13367d427b77a7428e1965b012267dd5a1f49a"
+size = 151730926
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/GRL-PAL-4KM_IceHistory-PaleoMIST_max.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-4KM/2.0.0/GRL-PAL-4KM_IceHistory-PaleoMIST_max.nc"
+
+["GRL-PAL-4KM_grid.nc"]
+checksum = "sha256:69ea06b475ce4c286038e45b4e083ee61794c4e80053a4c21c0e088399a16270"
+size = 2137731
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/GRL-PAL-4KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-4KM/2.0.0/GRL-PAL-4KM_grid.nc"
+
+["GRL-PAL-8KM_IceHistory-Batchelor2019.nc"]
+checksum = "sha256:9a699bd0e233ea6cb0c36cffeefe2e3d502664a7a6a6dff6b2735520afdbf696"
+size = 1004522
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_IceHistory-Batchelor2019.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-8KM/2.0.0/GRL-PAL-8KM_IceHistory-Batchelor2019.nc"
+
+["GRL-PAL-8KM_IceHistory-ICE5G.nc"]
+checksum = "sha256:9f78aeafca86daf3928dd261efba58c2447ec1d0c32e733671363134b14662b1"
+size = 22915454
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_IceHistory-ICE5G.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-8KM/2.0.0/GRL-PAL-8KM_IceHistory-ICE5G.nc"
+
+["GRL-PAL-8KM_IceHistory-ICE6G_C.nc"]
+checksum = "sha256:23ccb0e402ff5d59c2a8c0d21eab060749eeff1480f7d65b92d77d6048f23b76"
+size = 64531365
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_IceHistory-ICE6G_C.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-8KM/2.0.0/GRL-PAL-8KM_IceHistory-ICE6G_C.nc"
+
+["GRL-PAL-8KM_IceHistory-PRISM4.nc"]
+checksum = "sha256:4e8b844cc5e60011d63f86af48052f7e635d951315ea1ca93aed36d5eddd32e1"
+size = 853834
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_IceHistory-PRISM4.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-8KM/2.0.0/GRL-PAL-8KM_IceHistory-PRISM4.nc"
+
+["GRL-PAL-8KM_IceHistory-PaleoGrIS.nc"]
+checksum = "sha256:25ffb94aae5168c7d9b4fe003ef37439953f2d268bf5803d9ac1bff2c2b7b128"
+size = 134205
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_IceHistory-PaleoGrIS.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-8KM/2.0.0/GRL-PAL-8KM_IceHistory-PaleoGrIS.nc"
+
+["GRL-PAL-8KM_IceHistory-PaleoMIST.nc"]
+checksum = "sha256:1e5b24138d478f78991a342b5001b83c82c516673c2dbe65abf4b02241978a7d"
+size = 39628065
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_IceHistory-PaleoMIST.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-8KM/2.0.0/GRL-PAL-8KM_IceHistory-PaleoMIST.nc"
+
+["GRL-PAL-8KM_IceHistory-PaleoMIST_max.nc"]
+checksum = "sha256:dc8e5f1dee02bcead717c4f5a376e7eefb93aa915019864e61a627570a15fb2a"
+size = 39582411
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_IceHistory-PaleoMIST_max.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-8KM/2.0.0/GRL-PAL-8KM_IceHistory-PaleoMIST_max.nc"
+
+["GRL-PAL-8KM_grid.nc"]
+checksum = "sha256:16aa24f1cb3018fd4813ef64d58bd23aac3af70ef50ee98296c75ddad16c6f0b"
+size = 631820
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-8KM/2.0.0/GRL-PAL-8KM_grid.nc"
+
+["grid_GRL-PAL-16KM.txt"]
+checksum = "sha256:1f2dd6b17cd99dee69b34afe4a7f49e087d4f935e01d862b2392ebebb071ea31"
+size = 466
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/grid_GRL-PAL-16KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-16KM/2.0.0/grid_GRL-PAL-16KM.txt"
+
+["grid_GRL-PAL-1KM.txt"]
+checksum = "sha256:2fc92ab8c6623174a42f3ce9eba446c9bae25d8e1a162e5afa009ed5e15cde74"
+size = 468
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-1KM/grid_GRL-PAL-1KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-1KM/2.0.0/grid_GRL-PAL-1KM.txt"
+
+["grid_GRL-PAL-2KM.txt"]
+checksum = "sha256:0b3a2eb4e99075435eb56acb2ded8b17cf553fce8a38af0feae840e8a1c4896e"
+size = 468
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-2KM/grid_GRL-PAL-2KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-2KM/2.0.0/grid_GRL-PAL-2KM.txt"
+
+["grid_GRL-PAL-32KM.txt"]
+checksum = "sha256:cf0d0b1b8155818d7b19aa0eb4ebc0539c6a7d4d2ed0ddca89822c5f697e6646"
+size = 463
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/grid_GRL-PAL-32KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-32KM/2.0.0/grid_GRL-PAL-32KM.txt"
+
+["grid_GRL-PAL-4KM.txt"]
+checksum = "sha256:3ef324e1bb441b7c2b48632ee65a337255fe992cdba249417f182c929089cf0f"
+size = 465
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/grid_GRL-PAL-4KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-4KM/2.0.0/grid_GRL-PAL-4KM.txt"
+
+["grid_GRL-PAL-8KM.txt"]
+checksum = "sha256:08c7a03da8b258951eebef55634ad60f44f0f7fe965aa38e7dd26e4ca287d743"
+size = 465
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/grid_GRL-PAL-8KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-8KM/2.0.0/grid_GRL-PAL-8KM.txt"

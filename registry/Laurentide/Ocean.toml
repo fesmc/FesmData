@@ -1,0 +1,55 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-11"
+git_tag = "ocean-v2.0.0"
+store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=Laurentide_Ocean"
+version = "2.0.0"
+
+["LIS-16KM_Ocean-ORAS5-1981-2010.nc"]
+checksum = "sha256:9d25c8443fb620f5aa7f9d1e2dce21a25d457a19d994c5f285351636ea36b945"
+size = 149075329
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Ocean-ORAS5-1981-2010.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Ocean_LIS-16KM/2.0.0/LIS-16KM_Ocean-ORAS5-1981-2010.nc"
+
+["LIS-16KM_Ocean-ORAS5-annual.nc"]
+checksum = "sha256:875a204bba678c7f5f8d6f1a017d5b58f5cc97655c39a67417c9947cd299c843"
+size = 524259446
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Ocean-ORAS5-annual.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Ocean_LIS-16KM/2.0.0/LIS-16KM_Ocean-ORAS5-annual.nc"
+
+["LIS-16KM_grid.nc"]
+checksum = "sha256:9d90be456f08f945c8b097fb0900ddcb853666ea15d98e038b850317967362a3"
+size = 772321
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Ocean_LIS-16KM/2.0.0/LIS-16KM_grid.nc"
+
+["LIS-32KM_Ocean-ORAS5-1981-2010.nc"]
+checksum = "sha256:5e2b2e083009e4cf110b7c1d42247ca05367a4add708cf56967ab45556e3d048"
+size = 43490543
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Ocean-ORAS5-1981-2010.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Ocean_LIS-32KM/2.0.0/LIS-32KM_Ocean-ORAS5-1981-2010.nc"
+
+["LIS-32KM_Ocean-ORAS5-annual.nc"]
+checksum = "sha256:4ac692d1ff4656422bd1518bc3ccb97e6b6657054208e4b42fe25e8fd095d806"
+size = 163017795
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Ocean-ORAS5-annual.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Ocean_LIS-32KM/2.0.0/LIS-32KM_Ocean-ORAS5-annual.nc"
+
+["LIS-32KM_grid.nc"]
+checksum = "sha256:a0c50b74b4a45787d5ad2c6183e5f1d339143079fd1302b0aad52cb13f8c5bbc"
+size = 249167
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Ocean_LIS-32KM/2.0.0/LIS-32KM_grid.nc"
+
+["grid_LIS-16KM.txt"]
+checksum = "sha256:4ff24933bce97627a1ffe6ec62ed994aabb15889197dda6597cc2ef85b623178"
+size = 467
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/grid_LIS-16KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Ocean_LIS-16KM/2.0.0/grid_LIS-16KM.txt"
+
+["grid_LIS-32KM.txt"]
+checksum = "sha256:0c5e99f11a025d656ee88fcbce389f89b815c0ca4c6a1dcf08868ffbafe0d09b"
+size = 466
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/grid_LIS-32KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Ocean_LIS-32KM/2.0.0/grid_LIS-32KM.txt"

@@ -1,0 +1,151 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-11"
+git_tag = "ghf-v2.0.0"
+store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=GreenlandPaleo_GHF"
+version = "2.0.0"
+
+["GRL-PAL-16KM_GHF-Davies2013.nc"]
+checksum = "sha256:db872d34183c133f0897f37dee087ff7b6d5ddb7fc3e155e269ec9d785c4ecec"
+size = 235504
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_GHF-Davies2013.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_GHF_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_GHF-Davies2013.nc"
+
+["GRL-PAL-16KM_GHF-FoxMaule2005.nc"]
+checksum = "sha256:b1c4ae447d5ca852f29ecc821d98d8f3bdb04aafae45d30c84ef05119b3b0cd3"
+size = 92671
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_GHF-FoxMaule2005.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_GHF_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_GHF-FoxMaule2005.nc"
+
+["GRL-PAL-16KM_GHF-Lucazeau2019.nc"]
+checksum = "sha256:6ce769a05fa2d4cb58d448fd40f981fed122d440fcd11cf1278736c706d0743f"
+size = 179327
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_GHF-Lucazeau2019.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_GHF_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_GHF-Lucazeau2019.nc"
+
+["GRL-PAL-16KM_GHF-Shapiro2004.nc"]
+checksum = "sha256:7471ac79cfb85372998136d6c763cc4d7b25d8f79780e28f9e91444891ee67d3"
+size = 166558
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_GHF-Shapiro2004.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_GHF_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_GHF-Shapiro2004.nc"
+
+["GRL-PAL-16KM_grid.nc"]
+checksum = "sha256:641614ed64e7a6989a9b632764bc593855f65f70fc7a200f9a89263c0fee7f3e"
+size = 197958
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_GHF_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_grid.nc"
+
+["GRL-PAL-32KM_GHF-Davies2013.nc"]
+checksum = "sha256:cff7c998c68d6780c7098214c3a66fe475c584846dc3fc418829898ad21598df"
+size = 84270
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_GHF-Davies2013.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_GHF_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_GHF-Davies2013.nc"
+
+["GRL-PAL-32KM_GHF-FoxMaule2005.nc"]
+checksum = "sha256:170107d2ca1f16dfcbe8425aa126d1ba10643842e2a076059a696605ad62da85"
+size = 42009
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_GHF-FoxMaule2005.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_GHF_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_GHF-FoxMaule2005.nc"
+
+["GRL-PAL-32KM_GHF-Lucazeau2019.nc"]
+checksum = "sha256:7a4f6d9b77823f520683723f28e81ebbc80ca76305ab516c0750a9b975e021a5"
+size = 65425
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_GHF-Lucazeau2019.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_GHF_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_GHF-Lucazeau2019.nc"
+
+["GRL-PAL-32KM_GHF-Shapiro2004.nc"]
+checksum = "sha256:c50f0f25c49f84fc1f9cd870dfaf7174eb57ab2167a3fe59beea6adf1ec507f5"
+size = 63884
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_GHF-Shapiro2004.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_GHF_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_GHF-Shapiro2004.nc"
+
+["GRL-PAL-32KM_grid.nc"]
+checksum = "sha256:c94aeb9d12df68c5429b6e9ac944b6ed3328db1b3bcc9d10942a26343bde80f1"
+size = 70200
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_GHF_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_grid.nc"
+
+["GRL-PAL-4KM_GHF-Davies2013.nc"]
+checksum = "sha256:2babc85cf2504e5201adfe6ca5eb4908ef11cedee6c897d37c60c8b73bf6fe09"
+size = 2834798
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/GRL-PAL-4KM_GHF-Davies2013.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_GHF_GRL-PAL-4KM/2.0.0/GRL-PAL-4KM_GHF-Davies2013.nc"
+
+["GRL-PAL-4KM_GHF-FoxMaule2005.nc"]
+checksum = "sha256:2053f696cfa1329e2560848893c75358eeab3d5dce01bb6bc419f8d66a088748"
+size = 865782
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/GRL-PAL-4KM_GHF-FoxMaule2005.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_GHF_GRL-PAL-4KM/2.0.0/GRL-PAL-4KM_GHF-FoxMaule2005.nc"
+
+["GRL-PAL-4KM_GHF-Lucazeau2019.nc"]
+checksum = "sha256:8faaf0f594162913dfdc2c298ef4ad94909c53547ff27eee5c41170a8e42ee74"
+size = 2128711
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/GRL-PAL-4KM_GHF-Lucazeau2019.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_GHF_GRL-PAL-4KM/2.0.0/GRL-PAL-4KM_GHF-Lucazeau2019.nc"
+
+["GRL-PAL-4KM_GHF-Shapiro2004.nc"]
+checksum = "sha256:86c0b5ec1f9b253685a6479a910ba8ce94c4b865260e2fbd4897de819e8439bf"
+size = 1947305
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/GRL-PAL-4KM_GHF-Shapiro2004.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_GHF_GRL-PAL-4KM/2.0.0/GRL-PAL-4KM_GHF-Shapiro2004.nc"
+
+["GRL-PAL-4KM_grid.nc"]
+checksum = "sha256:69ea06b475ce4c286038e45b4e083ee61794c4e80053a4c21c0e088399a16270"
+size = 2137731
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/GRL-PAL-4KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_GHF_GRL-PAL-4KM/2.0.0/GRL-PAL-4KM_grid.nc"
+
+["GRL-PAL-8KM_GHF-Davies2013.nc"]
+checksum = "sha256:effebfc3a7898e0cd3e5f4c23cbb0059e1894ec563314383b98ee41d9c208f7c"
+size = 785139
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_GHF-Davies2013.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_GHF_GRL-PAL-8KM/2.0.0/GRL-PAL-8KM_GHF-Davies2013.nc"
+
+["GRL-PAL-8KM_GHF-FoxMaule2005.nc"]
+checksum = "sha256:5eadf0cef138285aeb88fe6c152b552b50dc77c1a0e7acfbaccd8b13fa982eaa"
+size = 262760
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_GHF-FoxMaule2005.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_GHF_GRL-PAL-8KM/2.0.0/GRL-PAL-8KM_GHF-FoxMaule2005.nc"
+
+["GRL-PAL-8KM_GHF-Lucazeau2019.nc"]
+checksum = "sha256:493c8b75ca8006cce38e192cd94ba15044635aef7e2bd201595a60f024d50ee7"
+size = 590361
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_GHF-Lucazeau2019.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_GHF_GRL-PAL-8KM/2.0.0/GRL-PAL-8KM_GHF-Lucazeau2019.nc"
+
+["GRL-PAL-8KM_GHF-Shapiro2004.nc"]
+checksum = "sha256:ae692ac1cb1047a6b60c993b44c5356c5e79a9878917519792808cacd4463448"
+size = 539966
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_GHF-Shapiro2004.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_GHF_GRL-PAL-8KM/2.0.0/GRL-PAL-8KM_GHF-Shapiro2004.nc"
+
+["GRL-PAL-8KM_grid.nc"]
+checksum = "sha256:16aa24f1cb3018fd4813ef64d58bd23aac3af70ef50ee98296c75ddad16c6f0b"
+size = 631820
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_GHF_GRL-PAL-8KM/2.0.0/GRL-PAL-8KM_grid.nc"
+
+["grid_GRL-PAL-16KM.txt"]
+checksum = "sha256:1f2dd6b17cd99dee69b34afe4a7f49e087d4f935e01d862b2392ebebb071ea31"
+size = 466
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/grid_GRL-PAL-16KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_GHF_GRL-PAL-16KM/2.0.0/grid_GRL-PAL-16KM.txt"
+
+["grid_GRL-PAL-32KM.txt"]
+checksum = "sha256:cf0d0b1b8155818d7b19aa0eb4ebc0539c6a7d4d2ed0ddca89822c5f697e6646"
+size = 463
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/grid_GRL-PAL-32KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_GHF_GRL-PAL-32KM/2.0.0/grid_GRL-PAL-32KM.txt"
+
+["grid_GRL-PAL-4KM.txt"]
+checksum = "sha256:3ef324e1bb441b7c2b48632ee65a337255fe992cdba249417f182c929089cf0f"
+size = 465
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/grid_GRL-PAL-4KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_GHF_GRL-PAL-4KM/2.0.0/grid_GRL-PAL-4KM.txt"
+
+["grid_GRL-PAL-8KM.txt"]
+checksum = "sha256:08c7a03da8b258951eebef55634ad60f44f0f7fe965aa38e7dd26e4ca287d743"
+size = 465
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/grid_GRL-PAL-8KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_GHF_GRL-PAL-8KM/2.0.0/grid_GRL-PAL-8KM.txt"

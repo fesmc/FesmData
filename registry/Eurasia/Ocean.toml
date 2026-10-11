@@ -1,0 +1,55 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-11"
+git_tag = "ocean-v2.0.0"
+store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=Eurasia_Ocean"
+version = "2.0.0"
+
+["EIS-16KM_Ocean-ORAS5-1981-2010.nc"]
+checksum = "sha256:744566c5b0b8c1a671cb57cddf156ca4358881451ef6a1920e80764c4aef6d71"
+size = 141864212
+storage_path = "$datasets_dir/Eurasia/EIS-16KM/EIS-16KM_Ocean-ORAS5-1981-2010.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Eurasia_Ocean_EIS-16KM/2.0.0/EIS-16KM_Ocean-ORAS5-1981-2010.nc"
+
+["EIS-16KM_Ocean-ORAS5-annual.nc"]
+checksum = "sha256:92c76c9b26747c8fb26c27ac31c59633446c75984cd9717025e8f806b5b21afd"
+size = 492851859
+storage_path = "$datasets_dir/Eurasia/EIS-16KM/EIS-16KM_Ocean-ORAS5-annual.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Eurasia_Ocean_EIS-16KM/2.0.0/EIS-16KM_Ocean-ORAS5-annual.nc"
+
+["EIS-16KM_grid.nc"]
+checksum = "sha256:3ccbbbaff781920c19b763490d74854b90eb5c81a20c242e5969e11498bb2aaf"
+size = 536454
+storage_path = "$datasets_dir/Eurasia/EIS-16KM/EIS-16KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Eurasia_Ocean_EIS-16KM/2.0.0/EIS-16KM_grid.nc"
+
+["EIS-32KM_Ocean-ORAS5-1981-2010.nc"]
+checksum = "sha256:f7cd67e74cc3a071932b985602f930595e76f6660de53305e3ee9db575b628a5"
+size = 40644880
+storage_path = "$datasets_dir/Eurasia/EIS-32KM/EIS-32KM_Ocean-ORAS5-1981-2010.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Eurasia_Ocean_EIS-32KM/2.0.0/EIS-32KM_Ocean-ORAS5-1981-2010.nc"
+
+["EIS-32KM_Ocean-ORAS5-annual.nc"]
+checksum = "sha256:5a2c741f2908f52909435ea3ee1031490b1de25eb7c6b67fa880a8b36a24fd79"
+size = 148984140
+storage_path = "$datasets_dir/Eurasia/EIS-32KM/EIS-32KM_Ocean-ORAS5-annual.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Eurasia_Ocean_EIS-32KM/2.0.0/EIS-32KM_Ocean-ORAS5-annual.nc"
+
+["EIS-32KM_grid.nc"]
+checksum = "sha256:9e10ed988c345621993429a7fc642860b6592e15c52089fec9a2ed510dc4848d"
+size = 183729
+storage_path = "$datasets_dir/Eurasia/EIS-32KM/EIS-32KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Eurasia_Ocean_EIS-32KM/2.0.0/EIS-32KM_grid.nc"
+
+["grid_EIS-16KM.txt"]
+checksum = "sha256:f9dcc420be94b52e00da717a5a3cd27ae5ec77529c8270863e2c22037d5a2a57"
+size = 464
+storage_path = "$datasets_dir/Eurasia/EIS-16KM/grid_EIS-16KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Eurasia_Ocean_EIS-16KM/2.0.0/grid_EIS-16KM.txt"
+
+["grid_EIS-32KM.txt"]
+checksum = "sha256:584cc251e7f41da6803698d607738c531a0c41d306088e866eb3c4afa2d3c7f4"
+size = 464
+storage_path = "$datasets_dir/Eurasia/EIS-32KM/grid_EIS-32KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Eurasia_Ocean_EIS-32KM/2.0.0/grid_EIS-32KM.txt"

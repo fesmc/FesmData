@@ -1,0 +1,151 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-11"
+git_tag = "sediment-v2.0.0"
+store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=Antarctica_Sediment"
+version = "2.0.0"
+
+["ANT-16KM_Sediment-ANTASed.nc"]
+checksum = "sha256:bd9b82ef51b88d82a843e3a2a33d7c1122df67dd9e2d85429d5be9f9533d4e39"
+size = 123550
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_Sediment-ANTASed.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Sediment_ANT-16KM/2.0.0/ANT-16KM_Sediment-ANTASed.nc"
+
+["ANT-16KM_Sediment-CRUST1.nc"]
+checksum = "sha256:506c4821a95ea4bd0346456be0dc5d949d82eb9bcf9cbd7274d0565ba1cf7c3f"
+size = 1102110
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_Sediment-CRUST1.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Sediment_ANT-16KM/2.0.0/ANT-16KM_Sediment-CRUST1.nc"
+
+["ANT-16KM_Sediment-ECM1.nc"]
+checksum = "sha256:70131aa6b4b9f764e45ee6a02adc63c3cfc025e795b591825774aba53ab1bb84"
+size = 1213994
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_Sediment-ECM1.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Sediment_ANT-16KM/2.0.0/ANT-16KM_Sediment-ECM1.nc"
+
+["ANT-16KM_Sediment-GlobSed.nc"]
+checksum = "sha256:3b37575c1952f3dbdb0340e344088f0fb1e9388d41b2568758fd87b4d81dafef"
+size = 369996
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_Sediment-GlobSed.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Sediment_ANT-16KM/2.0.0/ANT-16KM_Sediment-GlobSed.nc"
+
+["ANT-16KM_grid.nc"]
+checksum = "sha256:dea44445828fdc3adbae04afc6662224e96a6838c8381f80a855659b3ad6460c"
+size = 892250
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Sediment_ANT-16KM/2.0.0/ANT-16KM_grid.nc"
+
+["ANT-32KM_Sediment-ANTASed.nc"]
+checksum = "sha256:eb34bb49791b9ed8322d9b6a4c0e29f2ed43e02aba2ff3b6967a27cf7c519475"
+size = 56195
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_Sediment-ANTASed.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Sediment_ANT-32KM/2.0.0/ANT-32KM_Sediment-ANTASed.nc"
+
+["ANT-32KM_Sediment-CRUST1.nc"]
+checksum = "sha256:482fcb4a025f8f2e10d460da525148fe1d6afc1f30bcab99c2a3e0ac9b8338af"
+size = 325875
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_Sediment-CRUST1.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Sediment_ANT-32KM/2.0.0/ANT-32KM_Sediment-CRUST1.nc"
+
+["ANT-32KM_Sediment-ECM1.nc"]
+checksum = "sha256:685ee8227afbb806f029d379a74bf9b6d47146f882737d95b5ff13b4b35cf36a"
+size = 356178
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_Sediment-ECM1.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Sediment_ANT-32KM/2.0.0/ANT-32KM_Sediment-ECM1.nc"
+
+["ANT-32KM_Sediment-GlobSed.nc"]
+checksum = "sha256:ddf2df7ba7895571bfe621a53bf53ed42c176520329b8ee4b9bc67baa412b905"
+size = 120729
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_Sediment-GlobSed.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Sediment_ANT-32KM/2.0.0/ANT-32KM_Sediment-GlobSed.nc"
+
+["ANT-32KM_grid.nc"]
+checksum = "sha256:66765d3512c62479e60ad1095a4ee84b38edb681fe816eddf9896c3a2799efd8"
+size = 212550
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Sediment_ANT-32KM/2.0.0/ANT-32KM_grid.nc"
+
+["ANT-4KM_Sediment-ANTASed.nc"]
+checksum = "sha256:cbcb0ac3f52d7b575cf0f33fd1664b3e2f75edefee87e37d0ca30be69fb75660"
+size = 1611571
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_Sediment-ANTASed.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Sediment_ANT-4KM/2.0.0/ANT-4KM_Sediment-ANTASed.nc"
+
+["ANT-4KM_Sediment-CRUST1.nc"]
+checksum = "sha256:dac9796f26f4585148059392b6525e01e89f41e6c43c9a052ffb7c0e431fba50"
+size = 14567645
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_Sediment-CRUST1.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Sediment_ANT-4KM/2.0.0/ANT-4KM_Sediment-CRUST1.nc"
+
+["ANT-4KM_Sediment-ECM1.nc"]
+checksum = "sha256:50013bbcd4db7293bf8521604a36805ec8c8ee001928993046fd6000be6369fb"
+size = 16004829
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_Sediment-ECM1.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Sediment_ANT-4KM/2.0.0/ANT-4KM_Sediment-ECM1.nc"
+
+["ANT-4KM_Sediment-GlobSed.nc"]
+checksum = "sha256:a911ff54a7d4460a96294e8230c15ca58b32a88309111a0e50a79eb17e0fa596"
+size = 4478497
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_Sediment-GlobSed.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Sediment_ANT-4KM/2.0.0/ANT-4KM_Sediment-GlobSed.nc"
+
+["ANT-4KM_grid.nc"]
+checksum = "sha256:b553afcb6273200e9cd436c4f3ba5f081c599c58237374342aade5c4588e879f"
+size = 11450508
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Sediment_ANT-4KM/2.0.0/ANT-4KM_grid.nc"
+
+["ANT-8KM_Sediment-ANTASed.nc"]
+checksum = "sha256:15a9781771222ca74babe6401dcd8de56dbd024f39abfe74ea63dd8a5d4ea4e8"
+size = 482774
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_Sediment-ANTASed.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Sediment_ANT-8KM/2.0.0/ANT-8KM_Sediment-ANTASed.nc"
+
+["ANT-8KM_Sediment-CRUST1.nc"]
+checksum = "sha256:08ce80585a0a0e2c72e74fe6c62dcbb326513eebf5e9675a63f4690287fbd75a"
+size = 3932602
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_Sediment-CRUST1.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Sediment_ANT-8KM/2.0.0/ANT-8KM_Sediment-CRUST1.nc"
+
+["ANT-8KM_Sediment-ECM1.nc"]
+checksum = "sha256:de05167046605a2f42cef07f59358acd9d4bb352e050a9906af62d9406370aa6"
+size = 4339392
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_Sediment-ECM1.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Sediment_ANT-8KM/2.0.0/ANT-8KM_Sediment-ECM1.nc"
+
+["ANT-8KM_Sediment-GlobSed.nc"]
+checksum = "sha256:c228036d3d0eb3edda1ac3cbde8851de159f9ca856908385ed38fb5aa071de54"
+size = 1263856
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_Sediment-GlobSed.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Sediment_ANT-8KM/2.0.0/ANT-8KM_Sediment-GlobSed.nc"
+
+["ANT-8KM_grid.nc"]
+checksum = "sha256:6d00ae1cafbf496c1375c74c9153d92c5e2aec79d8026f004ba0dc26d0c47ece"
+size = 3314952
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Sediment_ANT-8KM/2.0.0/ANT-8KM_grid.nc"
+
+["grid_ANT-16KM.txt"]
+checksum = "sha256:09d646757fe153b435cee10a90cf772b4626efbe2f187d410eab83876c8305cb"
+size = 467
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/grid_ANT-16KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Sediment_ANT-16KM/2.0.0/grid_ANT-16KM.txt"
+
+["grid_ANT-32KM.txt"]
+checksum = "sha256:619c2b14b9667a6ff1efe4de41f1b2bd0ddc8d3e10df6d5fd99222b80be20276"
+size = 466
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/grid_ANT-32KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Sediment_ANT-32KM/2.0.0/grid_ANT-32KM.txt"
+
+["grid_ANT-4KM.txt"]
+checksum = "sha256:dc549c434411d3f7ad5b46e4f954f9bb180d0d2e272e1942d97e7072ae8b711d"
+size = 468
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/grid_ANT-4KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Sediment_ANT-4KM/2.0.0/grid_ANT-4KM.txt"
+
+["grid_ANT-8KM.txt"]
+checksum = "sha256:66ff6285f42ec156b6c6a6c30fcb0d2e4c94e07d67512fb002cb0348b3420ce5"
+size = 465
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/grid_ANT-8KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Sediment_ANT-8KM/2.0.0/grid_ANT-8KM.txt"

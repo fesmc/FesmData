@@ -1,0 +1,115 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-11"
+git_tag = "atmosphere-v2.0.0"
+store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=GreenlandPaleo_Atmosphere"
+version = "2.0.0"
+
+["GRL-PAL-16KM_Atmosphere-CERES-2001-2020.nc"]
+checksum = "sha256:3eef24f9c5fc2cf8c2373689223aaaa9af809ff7a39424b0ae68d25dc9a6d11b"
+size = 24158757
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_Atmosphere-CERES-2001-2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_Atmosphere-CERES-2001-2020.nc"
+
+["GRL-PAL-16KM_Atmosphere-ERA5-1981-2010.nc"]
+checksum = "sha256:ddd3af12d605c55dbbd3bad883941bcb8f04d52816375b8889791d7f637f1af0"
+size = 11031737
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_Atmosphere-ERA5-1981-2010.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_Atmosphere-ERA5-1981-2010.nc"
+
+["GRL-PAL-16KM_Atmosphere-ERA5-1991-2020.nc"]
+checksum = "sha256:ae5769dbf48d6cd7b0dbe4e4c11e0708ebd3892cda2772e2e2a073a51b26c38f"
+size = 11037732
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_Atmosphere-ERA5-1991-2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_Atmosphere-ERA5-1991-2020.nc"
+
+["GRL-PAL-16KM_Atmosphere-ERA5-plev-1981-2010.nc"]
+checksum = "sha256:300b677f3992b9ff8a32ba311b6a50af99625679a6efccce21399ca5e5740d18"
+size = 45435468
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_Atmosphere-ERA5-plev-1981-2010.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_Atmosphere-ERA5-plev-1981-2010.nc"
+
+["GRL-PAL-16KM_Atmosphere-ERA5-plev-1991-2020.nc"]
+checksum = "sha256:8c3f8ef5f7b246c72f97829e85bc6d6cde1f2a6f489e64ac97a5bda8a85be9f4"
+size = 45468657
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_Atmosphere-ERA5-plev-1991-2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_Atmosphere-ERA5-plev-1991-2020.nc"
+
+["GRL-PAL-16KM_grid.nc"]
+checksum = "sha256:641614ed64e7a6989a9b632764bc593855f65f70fc7a200f9a89263c0fee7f3e"
+size = 197958
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_grid.nc"
+
+["GRL-PAL-32KM_Atmosphere-CERES-2001-2020.nc"]
+checksum = "sha256:dc21952685b7799fc7e194b119597751a7e52226c0a1e0bc464049dda7d70f08"
+size = 6630541
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_Atmosphere-CERES-2001-2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_Atmosphere-CERES-2001-2020.nc"
+
+["GRL-PAL-32KM_Atmosphere-ERA5-1981-2010.nc"]
+checksum = "sha256:37d0b6962fbf7e768d02ff8a42e490161fb247c097a0b092495d93b8aa16832f"
+size = 3035467
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_Atmosphere-ERA5-1981-2010.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_Atmosphere-ERA5-1981-2010.nc"
+
+["GRL-PAL-32KM_Atmosphere-ERA5-1991-2020.nc"]
+checksum = "sha256:26fdd4f1661450804a8240e594b607367858e497c927246f75c28cf69141a94f"
+size = 3036226
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_Atmosphere-ERA5-1991-2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_Atmosphere-ERA5-1991-2020.nc"
+
+["GRL-PAL-32KM_Atmosphere-ERA5-plev-1981-2010.nc"]
+checksum = "sha256:b3e8e0a74204ae4f3289672c448d5ce0cc569ab9a8095354bc1a18756516a026"
+size = 12174328
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_Atmosphere-ERA5-plev-1981-2010.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_Atmosphere-ERA5-plev-1981-2010.nc"
+
+["GRL-PAL-32KM_Atmosphere-ERA5-plev-1991-2020.nc"]
+checksum = "sha256:0b8c642efa8ac613f83ba35580e4f8334558510aed29c23adc66379d7d9fc087"
+size = 12178214
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_Atmosphere-ERA5-plev-1991-2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_Atmosphere-ERA5-plev-1991-2020.nc"
+
+["GRL-PAL-32KM_grid.nc"]
+checksum = "sha256:c94aeb9d12df68c5429b6e9ac944b6ed3328db1b3bcc9d10942a26343bde80f1"
+size = 70200
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_grid.nc"
+
+["GRL-PAL-8KM_Atmosphere-ERA5-1981-2010.nc"]
+checksum = "sha256:01cdac3aef9c301df5df65f477669c8b6e506a357ae97e9718894b426b88cb4f"
+size = 40733938
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_Atmosphere-ERA5-1981-2010.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-8KM/2.0.0/GRL-PAL-8KM_Atmosphere-ERA5-1981-2010.nc"
+
+["GRL-PAL-8KM_Atmosphere-ERA5-1991-2020.nc"]
+checksum = "sha256:ad34d5f4c304eec0d3f6ff278c4f042d4f85aa95c09e940be88c9a71543173f5"
+size = 40758434
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_Atmosphere-ERA5-1991-2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-8KM/2.0.0/GRL-PAL-8KM_Atmosphere-ERA5-1991-2020.nc"
+
+["GRL-PAL-8KM_grid.nc"]
+checksum = "sha256:16aa24f1cb3018fd4813ef64d58bd23aac3af70ef50ee98296c75ddad16c6f0b"
+size = 631820
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-8KM/2.0.0/GRL-PAL-8KM_grid.nc"
+
+["grid_GRL-PAL-16KM.txt"]
+checksum = "sha256:1f2dd6b17cd99dee69b34afe4a7f49e087d4f935e01d862b2392ebebb071ea31"
+size = 466
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/grid_GRL-PAL-16KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-16KM/2.0.0/grid_GRL-PAL-16KM.txt"
+
+["grid_GRL-PAL-32KM.txt"]
+checksum = "sha256:cf0d0b1b8155818d7b19aa0eb4ebc0539c6a7d4d2ed0ddca89822c5f697e6646"
+size = 463
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/grid_GRL-PAL-32KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-32KM/2.0.0/grid_GRL-PAL-32KM.txt"
+
+["grid_GRL-PAL-8KM.txt"]
+checksum = "sha256:08c7a03da8b258951eebef55634ad60f44f0f7fe965aa38e7dd26e4ca287d743"
+size = 465
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/grid_GRL-PAL-8KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-8KM/2.0.0/grid_GRL-PAL-8KM.txt"

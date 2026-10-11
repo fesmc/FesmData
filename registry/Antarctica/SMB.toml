@@ -1,0 +1,127 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-11"
+git_tag = "smb-v2.0.0"
+store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=Antarctica_SMB"
+version = "2.0.0"
+
+["ANT-16KM_SMB-RACMO2.4p1-1981-2010.nc"]
+checksum = "sha256:8e726679c6d442166cf6406cbe275a7d0669305ef6a27b8f6e0db90f97741ba2"
+size = 22310904
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_SMB-RACMO2.4p1-1981-2010.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_SMB_ANT-16KM/2.0.0/ANT-16KM_SMB-RACMO2.4p1-1981-2010.nc"
+
+["ANT-16KM_SMB-RACMO2.4p1-1991-2020.nc"]
+checksum = "sha256:6918e77809b6cdf18dfc75955bb89b648f6175e7fe5244bdec1d91de6ddc6fbd"
+size = 22296955
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_SMB-RACMO2.4p1-1991-2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_SMB_ANT-16KM/2.0.0/ANT-16KM_SMB-RACMO2.4p1-1991-2020.nc"
+
+["ANT-16KM_SMB-RACMO2.4p1-annual.nc"]
+checksum = "sha256:c5d8fafe5018c1039b6ed1d114070ae7ca99471ae557d314d8ac7f9f51c013f1"
+size = 84085326
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_SMB-RACMO2.4p1-annual.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_SMB_ANT-16KM/2.0.0/ANT-16KM_SMB-RACMO2.4p1-annual.nc"
+
+["ANT-16KM_grid.nc"]
+checksum = "sha256:dea44445828fdc3adbae04afc6662224e96a6838c8381f80a855659b3ad6460c"
+size = 892250
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_SMB_ANT-16KM/2.0.0/ANT-16KM_grid.nc"
+
+["ANT-32KM_SMB-RACMO2.4p1-1981-2010.nc"]
+checksum = "sha256:69fb992d459fede83e8acaef0fa46624ed5ebdaa40307793c80de4a80e6e1e08"
+size = 5983712
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_SMB-RACMO2.4p1-1981-2010.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_SMB_ANT-32KM/2.0.0/ANT-32KM_SMB-RACMO2.4p1-1981-2010.nc"
+
+["ANT-32KM_SMB-RACMO2.4p1-1991-2020.nc"]
+checksum = "sha256:86c4d3ee2feb2c9e7051cf6a598f92a59fd5764d1fba3abe97043c4c56153899"
+size = 5980429
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_SMB-RACMO2.4p1-1991-2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_SMB_ANT-32KM/2.0.0/ANT-32KM_SMB-RACMO2.4p1-1991-2020.nc"
+
+["ANT-32KM_SMB-RACMO2.4p1-annual.nc"]
+checksum = "sha256:d8dea502e099d789b6666f00001b02ef503adacfb5ccae4d326bd3bb6ca77e96"
+size = 22781534
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_SMB-RACMO2.4p1-annual.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_SMB_ANT-32KM/2.0.0/ANT-32KM_SMB-RACMO2.4p1-annual.nc"
+
+["ANT-32KM_grid.nc"]
+checksum = "sha256:66765d3512c62479e60ad1095a4ee84b38edb681fe816eddf9896c3a2799efd8"
+size = 212550
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_SMB_ANT-32KM/2.0.0/ANT-32KM_grid.nc"
+
+["ANT-4KM_SMB-RACMO2.4p1-1981-2010.nc"]
+checksum = "sha256:f5df874be8288888d5d6908d69e4087d647aad5d3efb46ca3399dab5aa6784a1"
+size = 299633620
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_SMB-RACMO2.4p1-1981-2010.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_SMB_ANT-4KM/2.0.0/ANT-4KM_SMB-RACMO2.4p1-1981-2010.nc"
+
+["ANT-4KM_SMB-RACMO2.4p1-1991-2020.nc"]
+checksum = "sha256:5a05b54e80b822fb5fd1bcc93f2d86bc8dee07cbe51ff3a348b5c4dc217230e8"
+size = 299483078
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_SMB-RACMO2.4p1-1991-2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_SMB_ANT-4KM/2.0.0/ANT-4KM_SMB-RACMO2.4p1-1991-2020.nc"
+
+["ANT-4KM_SMB-RACMO2.4p1-annual.nc"]
+checksum = "sha256:34ca4b3d09b5a4c0389634d2b7eb141c102694e78180ea81895e3199c77cb271"
+size = 1145480446
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_SMB-RACMO2.4p1-annual.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_SMB_ANT-4KM/2.0.0/ANT-4KM_SMB-RACMO2.4p1-annual.nc"
+
+["ANT-4KM_grid.nc"]
+checksum = "sha256:b553afcb6273200e9cd436c4f3ba5f081c599c58237374342aade5c4588e879f"
+size = 11450508
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_SMB_ANT-4KM/2.0.0/ANT-4KM_grid.nc"
+
+["ANT-8KM_SMB-RACMO2.4p1-1981-2010.nc"]
+checksum = "sha256:520ff9bbec5390bab88fef325e9ccc38b3ed94be227465cfb7a2e5def83c7b37"
+size = 81882009
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_SMB-RACMO2.4p1-1981-2010.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_SMB_ANT-8KM/2.0.0/ANT-8KM_SMB-RACMO2.4p1-1981-2010.nc"
+
+["ANT-8KM_SMB-RACMO2.4p1-1991-2020.nc"]
+checksum = "sha256:e7d4e431db08f375b5bdec8260dd7e53def3f614be0608f22e631fe5a83c29f4"
+size = 81839908
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_SMB-RACMO2.4p1-1991-2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_SMB_ANT-8KM/2.0.0/ANT-8KM_SMB-RACMO2.4p1-1991-2020.nc"
+
+["ANT-8KM_SMB-RACMO2.4p1-annual.nc"]
+checksum = "sha256:781a5b58cea4db51130fcd6c951fd0e5affb1ee383fb8c6b256e44edd463bd7d"
+size = 312798998
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_SMB-RACMO2.4p1-annual.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_SMB_ANT-8KM/2.0.0/ANT-8KM_SMB-RACMO2.4p1-annual.nc"
+
+["ANT-8KM_grid.nc"]
+checksum = "sha256:6d00ae1cafbf496c1375c74c9153d92c5e2aec79d8026f004ba0dc26d0c47ece"
+size = 3314952
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_SMB_ANT-8KM/2.0.0/ANT-8KM_grid.nc"
+
+["grid_ANT-16KM.txt"]
+checksum = "sha256:09d646757fe153b435cee10a90cf772b4626efbe2f187d410eab83876c8305cb"
+size = 467
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/grid_ANT-16KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_SMB_ANT-16KM/2.0.0/grid_ANT-16KM.txt"
+
+["grid_ANT-32KM.txt"]
+checksum = "sha256:619c2b14b9667a6ff1efe4de41f1b2bd0ddc8d3e10df6d5fd99222b80be20276"
+size = 466
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/grid_ANT-32KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_SMB_ANT-32KM/2.0.0/grid_ANT-32KM.txt"
+
+["grid_ANT-4KM.txt"]
+checksum = "sha256:dc549c434411d3f7ad5b46e4f954f9bb180d0d2e272e1942d97e7072ae8b711d"
+size = 468
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/grid_ANT-4KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_SMB_ANT-4KM/2.0.0/grid_ANT-4KM.txt"
+
+["grid_ANT-8KM.txt"]
+checksum = "sha256:66ff6285f42ec156b6c6a6c30fcb0d2e4c94e07d67512fb002cb0348b3420ce5"
+size = 465
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/grid_ANT-8KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_SMB_ANT-8KM/2.0.0/grid_ANT-8KM.txt"

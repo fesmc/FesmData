@@ -1,0 +1,151 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-11"
+git_tag = "sediment-v2.0.0"
+store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=Laurentide_Sediment"
+version = "2.0.0"
+
+["LIS-16KM_Sediment-CRUST1.nc"]
+checksum = "sha256:3f84290f6bd21f3c126d573d1bc2e75c2ea4dab48d1132a489335fba5c98a19c"
+size = 1315838
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Sediment-CRUST1.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Sediment_LIS-16KM/2.0.0/LIS-16KM_Sediment-CRUST1.nc"
+
+["LIS-16KM_Sediment-ECM1.nc"]
+checksum = "sha256:80963acee5c6d6c66376d354c9b4e450942f78f16db6569547a2e8eabb0be33e"
+size = 1226093
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Sediment-ECM1.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Sediment_LIS-16KM/2.0.0/LIS-16KM_Sediment-ECM1.nc"
+
+["LIS-16KM_Sediment-GlobSed.nc"]
+checksum = "sha256:391aaa6da4e987d8dbfcfb2d83e2a2f574cfd725f650b8f9f5e0fd593b335271"
+size = 292991
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Sediment-GlobSed.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Sediment_LIS-16KM/2.0.0/LIS-16KM_Sediment-GlobSed.nc"
+
+["LIS-16KM_Sediment-Gowan2019.nc"]
+checksum = "sha256:6b5abee3b4adfa666bf6fe3b13f947c064122bbaf034bc891366fd219043c472"
+size = 138757
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Sediment-Gowan2019.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Sediment_LIS-16KM/2.0.0/LIS-16KM_Sediment-Gowan2019.nc"
+
+["LIS-16KM_grid.nc"]
+checksum = "sha256:9d90be456f08f945c8b097fb0900ddcb853666ea15d98e038b850317967362a3"
+size = 772321
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Sediment_LIS-16KM/2.0.0/LIS-16KM_grid.nc"
+
+["LIS-32KM_Sediment-CRUST1.nc"]
+checksum = "sha256:52096fe83b928909be90921807f10708e2756df6da5653be75d8d0b17b25f09d"
+size = 379328
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Sediment-CRUST1.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Sediment_LIS-32KM/2.0.0/LIS-32KM_Sediment-CRUST1.nc"
+
+["LIS-32KM_Sediment-ECM1.nc"]
+checksum = "sha256:389797eab6d3c1fa5e34243730920b5fab5584482886f1edc560ebc7ab0dd1f8"
+size = 358405
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Sediment-ECM1.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Sediment_LIS-32KM/2.0.0/LIS-32KM_Sediment-ECM1.nc"
+
+["LIS-32KM_Sediment-GlobSed.nc"]
+checksum = "sha256:009fbf672ef0e0987515d9a4fcc4fc8ccee4ba0853d509700e65b12bce3e186a"
+size = 103475
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Sediment-GlobSed.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Sediment_LIS-32KM/2.0.0/LIS-32KM_Sediment-GlobSed.nc"
+
+["LIS-32KM_Sediment-Gowan2019.nc"]
+checksum = "sha256:447eb0cf21638fbfb41e90ed95d91af9408270aaabeb7b03c3c6ccbd1ee00efe"
+size = 69712
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Sediment-Gowan2019.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Sediment_LIS-32KM/2.0.0/LIS-32KM_Sediment-Gowan2019.nc"
+
+["LIS-32KM_grid.nc"]
+checksum = "sha256:a0c50b74b4a45787d5ad2c6183e5f1d339143079fd1302b0aad52cb13f8c5bbc"
+size = 249167
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Sediment_LIS-32KM/2.0.0/LIS-32KM_grid.nc"
+
+["LIS-4KM_Sediment-CRUST1.nc"]
+checksum = "sha256:b10e30c42e035290c4ce381aec490108707b4210f2ad43e3e4e5e7b499d15589"
+size = 17415316
+storage_path = "$datasets_dir/Laurentide/LIS-4KM/LIS-4KM_Sediment-CRUST1.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Sediment_LIS-4KM/2.0.0/LIS-4KM_Sediment-CRUST1.nc"
+
+["LIS-4KM_Sediment-ECM1.nc"]
+checksum = "sha256:359abc6c3a1b057219b2700df83af1a70236cc6f4adc8b2aea651a42d4f14ed4"
+size = 16114213
+storage_path = "$datasets_dir/Laurentide/LIS-4KM/LIS-4KM_Sediment-ECM1.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Sediment_LIS-4KM/2.0.0/LIS-4KM_Sediment-ECM1.nc"
+
+["LIS-4KM_Sediment-GlobSed.nc"]
+checksum = "sha256:eb196cd6eebbba035511f544843de02ca80ee37ca33d84ee7828f5c4b2c2f97e"
+size = 3178566
+storage_path = "$datasets_dir/Laurentide/LIS-4KM/LIS-4KM_Sediment-GlobSed.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Sediment_LIS-4KM/2.0.0/LIS-4KM_Sediment-GlobSed.nc"
+
+["LIS-4KM_Sediment-Gowan2019.nc"]
+checksum = "sha256:ec27b93578882cc5cec7c2cb285b883056db73c8787d1e4fc6e1d3154ac7932b"
+size = 946070
+storage_path = "$datasets_dir/Laurentide/LIS-4KM/LIS-4KM_Sediment-Gowan2019.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Sediment_LIS-4KM/2.0.0/LIS-4KM_Sediment-Gowan2019.nc"
+
+["LIS-4KM_grid.nc"]
+checksum = "sha256:3000d9a81efb07c8b6ca0c9adcdab153945f8954ed05ca5e1435767d38896d80"
+size = 9665107
+storage_path = "$datasets_dir/Laurentide/LIS-4KM/LIS-4KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Sediment_LIS-4KM/2.0.0/LIS-4KM_grid.nc"
+
+["LIS-8KM_Sediment-CRUST1.nc"]
+checksum = "sha256:1c3fb3280c03c10113ff742195b74de1d44abf3b498587047ab94f290b166c7d"
+size = 4743423
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Sediment-CRUST1.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Sediment_LIS-8KM/2.0.0/LIS-8KM_Sediment-CRUST1.nc"
+
+["LIS-8KM_Sediment-ECM1.nc"]
+checksum = "sha256:b26a8083f3d7db56edede8983944c5b4b17459a94142aa6dd3080a1cb83dd8ee"
+size = 4395688
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Sediment-ECM1.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Sediment_LIS-8KM/2.0.0/LIS-8KM_Sediment-ECM1.nc"
+
+["LIS-8KM_Sediment-GlobSed.nc"]
+checksum = "sha256:0a2869c4d42ceedfcdcded7fdf4b90a90b2c7c0d40f1d5a437a2732421f88e64"
+size = 946071
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Sediment-GlobSed.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Sediment_LIS-8KM/2.0.0/LIS-8KM_Sediment-GlobSed.nc"
+
+["LIS-8KM_Sediment-Gowan2019.nc"]
+checksum = "sha256:688b88ac6dabde8b22f92a4097ab7763e66fc5c629283b9578434cf6f6e6fb07"
+size = 319958
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Sediment-Gowan2019.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Sediment_LIS-8KM/2.0.0/LIS-8KM_Sediment-Gowan2019.nc"
+
+["LIS-8KM_grid.nc"]
+checksum = "sha256:39001f264d08010e472852f6861b6b6d6cdc15ffd7553d52b01acb51f22501ee"
+size = 2816888
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Sediment_LIS-8KM/2.0.0/LIS-8KM_grid.nc"
+
+["grid_LIS-16KM.txt"]
+checksum = "sha256:4ff24933bce97627a1ffe6ec62ed994aabb15889197dda6597cc2ef85b623178"
+size = 467
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/grid_LIS-16KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Sediment_LIS-16KM/2.0.0/grid_LIS-16KM.txt"
+
+["grid_LIS-32KM.txt"]
+checksum = "sha256:0c5e99f11a025d656ee88fcbce389f89b815c0ca4c6a1dcf08868ffbafe0d09b"
+size = 466
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/grid_LIS-32KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Sediment_LIS-32KM/2.0.0/grid_LIS-32KM.txt"
+
+["grid_LIS-4KM.txt"]
+checksum = "sha256:fe2c0508c9d2b2faa8ef7ac20d6c196e1e726d93c5ffbf7d4b59901783a837be"
+size = 468
+storage_path = "$datasets_dir/Laurentide/LIS-4KM/grid_LIS-4KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Sediment_LIS-4KM/2.0.0/grid_LIS-4KM.txt"
+
+["grid_LIS-8KM.txt"]
+checksum = "sha256:97811d3bbc0376118996535a4ec7c0209bf01f10bfb60bc738bb05b6eab6caa4"
+size = 465
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/grid_LIS-8KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Sediment_LIS-8KM/2.0.0/grid_LIS-8KM.txt"

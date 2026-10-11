@@ -1,0 +1,709 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-11"
+git_tag = "paleoclimate-v2.0.0"
+store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=Laurentide_Paleoclimate"
+version = "2.0.0"
+
+["LIS-16KM_Paleoclimate-PMIP3-CCSM4-lgm.nc"]
+checksum = "sha256:5999ea51ac7d4dc9e0f2e2a5f4e656f4b11bbc9fde3e492f5d5882ac026ddb95"
+size = 2347226
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Paleoclimate-PMIP3-CCSM4-lgm.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_Paleoclimate-PMIP3-CCSM4-lgm.nc"
+
+["LIS-16KM_Paleoclimate-PMIP3-CCSM4-midHolocene.nc"]
+checksum = "sha256:bff621c559cee28bb94ce06a90446dbfb934549e20b0b022598e3a6a6ae68db5"
+size = 2340409
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Paleoclimate-PMIP3-CCSM4-midHolocene.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_Paleoclimate-PMIP3-CCSM4-midHolocene.nc"
+
+["LIS-16KM_Paleoclimate-PMIP3-CCSM4-piControl.nc"]
+checksum = "sha256:9a10daf145cfb745b871433ff20b82c8912f63bbe77a8d931db951ccd0c151fe"
+size = 2335535
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Paleoclimate-PMIP3-CCSM4-piControl.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_Paleoclimate-PMIP3-CCSM4-piControl.nc"
+
+["LIS-16KM_Paleoclimate-PMIP3-CNRM-CM5-lgm.nc"]
+checksum = "sha256:c7080f393d68c3ebddbbd7fae5ae8bfc4b4ca2973385c20820ed85042a889ce0"
+size = 2428848
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Paleoclimate-PMIP3-CNRM-CM5-lgm.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_Paleoclimate-PMIP3-CNRM-CM5-lgm.nc"
+
+["LIS-16KM_Paleoclimate-PMIP3-CNRM-CM5-midHolocene.nc"]
+checksum = "sha256:f986bec3d93326c93e94d65fabbef5ee57aa38f4d2c57fbc9e937deba3f5e231"
+size = 2384921
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Paleoclimate-PMIP3-CNRM-CM5-midHolocene.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_Paleoclimate-PMIP3-CNRM-CM5-midHolocene.nc"
+
+["LIS-16KM_Paleoclimate-PMIP3-CNRM-CM5-piControl.nc"]
+checksum = "sha256:2794eadc1ad5b0d70b1566de38e985bcf41412f966475dcc6d56ad1a53df7b53"
+size = 2380487
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Paleoclimate-PMIP3-CNRM-CM5-piControl.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_Paleoclimate-PMIP3-CNRM-CM5-piControl.nc"
+
+["LIS-16KM_Paleoclimate-PMIP3-FGOALS-g2-lgm.nc"]
+checksum = "sha256:7d0e7d25964f737ee37ab2fab4919def053fe3e82dcd18da7113ff73656c01e7"
+size = 2249450
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Paleoclimate-PMIP3-FGOALS-g2-lgm.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_Paleoclimate-PMIP3-FGOALS-g2-lgm.nc"
+
+["LIS-16KM_Paleoclimate-PMIP3-FGOALS-g2-midHolocene.nc"]
+checksum = "sha256:62000e6540eb5c536e9a3f1a2ef0c2e7fe51c2b6fb7db5e38fce1653a0c72636"
+size = 2216514
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Paleoclimate-PMIP3-FGOALS-g2-midHolocene.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_Paleoclimate-PMIP3-FGOALS-g2-midHolocene.nc"
+
+["LIS-16KM_Paleoclimate-PMIP3-FGOALS-g2-piControl.nc"]
+checksum = "sha256:911d0edf3788453c493728781f2a4d47f17366502d0935e22b0181d258600223"
+size = 2215678
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Paleoclimate-PMIP3-FGOALS-g2-piControl.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_Paleoclimate-PMIP3-FGOALS-g2-piControl.nc"
+
+["LIS-16KM_Paleoclimate-PMIP3-GISS-E2-R-lgm.nc"]
+checksum = "sha256:ea5699570aa8497dc54a2b8ce4337a042980ada390f04fb26cbddae67432bcc9"
+size = 2337575
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Paleoclimate-PMIP3-GISS-E2-R-lgm.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_Paleoclimate-PMIP3-GISS-E2-R-lgm.nc"
+
+["LIS-16KM_Paleoclimate-PMIP3-GISS-E2-R-midHolocene.nc"]
+checksum = "sha256:ab18df82ca1f5ad3312083595283bf3cf75711691602c6cc7f80f69abf0fe525"
+size = 2299503
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Paleoclimate-PMIP3-GISS-E2-R-midHolocene.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_Paleoclimate-PMIP3-GISS-E2-R-midHolocene.nc"
+
+["LIS-16KM_Paleoclimate-PMIP3-GISS-E2-R-piControl.nc"]
+checksum = "sha256:353f1531f86125b57df5935840e92dc6d39967b1158d0a9480bf352160370dd9"
+size = 2091482
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Paleoclimate-PMIP3-GISS-E2-R-piControl.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_Paleoclimate-PMIP3-GISS-E2-R-piControl.nc"
+
+["LIS-16KM_Paleoclimate-PMIP3-IPSL-CM5A-LR-lgm.nc"]
+checksum = "sha256:8121b11cb1100bd0784f0ef059156160a79bf7cd08cf17b729ed260cd0f651bc"
+size = 2320456
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Paleoclimate-PMIP3-IPSL-CM5A-LR-lgm.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_Paleoclimate-PMIP3-IPSL-CM5A-LR-lgm.nc"
+
+["LIS-16KM_Paleoclimate-PMIP3-IPSL-CM5A-LR-midHolocene.nc"]
+checksum = "sha256:9e47d51a4e89e99cf4676a91267e18336228c2ff9039e56a64d68b691e886296"
+size = 2296521
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Paleoclimate-PMIP3-IPSL-CM5A-LR-midHolocene.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_Paleoclimate-PMIP3-IPSL-CM5A-LR-midHolocene.nc"
+
+["LIS-16KM_Paleoclimate-PMIP3-IPSL-CM5A-LR-piControl.nc"]
+checksum = "sha256:eb89cff2b4455c6527e04d217b65c11727ec8e6c02f09981da6be91ebe388737"
+size = 2294199
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Paleoclimate-PMIP3-IPSL-CM5A-LR-piControl.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_Paleoclimate-PMIP3-IPSL-CM5A-LR-piControl.nc"
+
+["LIS-16KM_Paleoclimate-PMIP3-MIROC-ESM-lgm.nc"]
+checksum = "sha256:9567c22963e4cc98c9e9c1187ca21ced505cdcecb6f3c7267ceabb5255bdc0a1"
+size = 2244028
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Paleoclimate-PMIP3-MIROC-ESM-lgm.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_Paleoclimate-PMIP3-MIROC-ESM-lgm.nc"
+
+["LIS-16KM_Paleoclimate-PMIP3-MIROC-ESM-midHolocene.nc"]
+checksum = "sha256:044e6673717dfc238cfe1bf6d0e8a6cb81f40a919298969d82a52a73b6cc9908"
+size = 2237504
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Paleoclimate-PMIP3-MIROC-ESM-midHolocene.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_Paleoclimate-PMIP3-MIROC-ESM-midHolocene.nc"
+
+["LIS-16KM_Paleoclimate-PMIP3-MIROC-ESM-piControl.nc"]
+checksum = "sha256:d1ba8128165260620db4299541f65c899cf6b06cc11794c060312da51c0fe86b"
+size = 2232633
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Paleoclimate-PMIP3-MIROC-ESM-piControl.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_Paleoclimate-PMIP3-MIROC-ESM-piControl.nc"
+
+["LIS-16KM_Paleoclimate-PMIP3-MPI-ESM-P-lgm.nc"]
+checksum = "sha256:54e304f2f9ffce6df9221db1db88a445189674da14d3059b769164d7486d87a8"
+size = 2324968
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Paleoclimate-PMIP3-MPI-ESM-P-lgm.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_Paleoclimate-PMIP3-MPI-ESM-P-lgm.nc"
+
+["LIS-16KM_Paleoclimate-PMIP3-MPI-ESM-P-midHolocene.nc"]
+checksum = "sha256:1dc498070aefcad7cbf125fdd6a32b5c9a4ff78faefa6faa1e37ce49aea05ba0"
+size = 2297308
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Paleoclimate-PMIP3-MPI-ESM-P-midHolocene.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_Paleoclimate-PMIP3-MPI-ESM-P-midHolocene.nc"
+
+["LIS-16KM_Paleoclimate-PMIP3-MPI-ESM-P-piControl.nc"]
+checksum = "sha256:c03e9f61e309198d2cac03a3e80d172568e441c15eb3848d9b53ed41e51822ae"
+size = 2294027
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Paleoclimate-PMIP3-MPI-ESM-P-piControl.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_Paleoclimate-PMIP3-MPI-ESM-P-piControl.nc"
+
+["LIS-16KM_Paleoclimate-PMIP3-MRI-CGCM3-lgm.nc"]
+checksum = "sha256:1b8e4bcada3c81876837809c39ba0b4d11b9fe428474a39611351d8e151599bf"
+size = 2367686
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Paleoclimate-PMIP3-MRI-CGCM3-lgm.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_Paleoclimate-PMIP3-MRI-CGCM3-lgm.nc"
+
+["LIS-16KM_Paleoclimate-PMIP3-MRI-CGCM3-midHolocene.nc"]
+checksum = "sha256:57c15f7f92f1a03f24d42a4c1ac30835c853a07a066bda63b316a7c6e86f1d38"
+size = 2333882
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Paleoclimate-PMIP3-MRI-CGCM3-midHolocene.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_Paleoclimate-PMIP3-MRI-CGCM3-midHolocene.nc"
+
+["LIS-16KM_Paleoclimate-PMIP3-MRI-CGCM3-piControl.nc"]
+checksum = "sha256:d513641e547240f4b2b08dd760e9152c14aa163fc59b877f7c341f77feb33bc4"
+size = 2330542
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Paleoclimate-PMIP3-MRI-CGCM3-piControl.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_Paleoclimate-PMIP3-MRI-CGCM3-piControl.nc"
+
+["LIS-16KM_Paleoclimate-PMIP3-lgm-boundary-conditions.nc"]
+checksum = "sha256:4fdefc5cd4e5439186ed0002582d30adc94c923325ffcf2f9b8e864e66c7961c"
+size = 618198
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Paleoclimate-PMIP3-lgm-boundary-conditions.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_Paleoclimate-PMIP3-lgm-boundary-conditions.nc"
+
+["LIS-16KM_Paleoclimate-PMIP4-AWI-ESM-1-1-LR-lgm.nc"]
+checksum = "sha256:b8efd39250f9571cf4d300b4f1fe13ccf55616f6579f49d46bad56c64c81aa31"
+size = 11325950
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Paleoclimate-PMIP4-AWI-ESM-1-1-LR-lgm.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_Paleoclimate-PMIP4-AWI-ESM-1-1-LR-lgm.nc"
+
+["LIS-16KM_Paleoclimate-PMIP4-AWI-ESM-1-1-LR-midHolocene.nc"]
+checksum = "sha256:66a6e75cc9d4f4cb4801393d054eaa16a1dd339a27773537e16262cf2732c49a"
+size = 11055480
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Paleoclimate-PMIP4-AWI-ESM-1-1-LR-midHolocene.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_Paleoclimate-PMIP4-AWI-ESM-1-1-LR-midHolocene.nc"
+
+["LIS-16KM_Paleoclimate-PMIP4-AWI-ESM-1-1-LR-piControl.nc"]
+checksum = "sha256:e981f2ab1c0f2f32d6749f45408f38a89dc12546afb4c9c5e750c1471ca6b000"
+size = 11039116
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Paleoclimate-PMIP4-AWI-ESM-1-1-LR-piControl.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_Paleoclimate-PMIP4-AWI-ESM-1-1-LR-piControl.nc"
+
+["LIS-16KM_Paleoclimate-PMIP4-INM-CM4-8-lgm.nc"]
+checksum = "sha256:35694dc3655fc827beb6e8a99a1dfbff24cd2723d528f04995005947c3b8426e"
+size = 11175902
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Paleoclimate-PMIP4-INM-CM4-8-lgm.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_Paleoclimate-PMIP4-INM-CM4-8-lgm.nc"
+
+["LIS-16KM_Paleoclimate-PMIP4-INM-CM4-8-midHolocene.nc"]
+checksum = "sha256:0eb9bff439c08e2f8190804e735043f7c5474d4481b99c97146db970faf7ada5"
+size = 10936956
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Paleoclimate-PMIP4-INM-CM4-8-midHolocene.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_Paleoclimate-PMIP4-INM-CM4-8-midHolocene.nc"
+
+["LIS-16KM_Paleoclimate-PMIP4-INM-CM4-8-piControl.nc"]
+checksum = "sha256:07bc7ec95142ab276bc570aaecc8741d09fd49d0d4668254b46b65d581084048"
+size = 10934877
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Paleoclimate-PMIP4-INM-CM4-8-piControl.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_Paleoclimate-PMIP4-INM-CM4-8-piControl.nc"
+
+["LIS-16KM_Paleoclimate-PMIP4-MIROC-ES2L-lgm.nc"]
+checksum = "sha256:c2501f0a607a79682d327c9d23486e6cdce81961d893d9495954a89cd0eccabc"
+size = 10995699
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Paleoclimate-PMIP4-MIROC-ES2L-lgm.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_Paleoclimate-PMIP4-MIROC-ES2L-lgm.nc"
+
+["LIS-16KM_Paleoclimate-PMIP4-MIROC-ES2L-midHolocene.nc"]
+checksum = "sha256:af37078fb04658e9afac0764af2e4325681ea998d23c55559a33d306722f3fa7"
+size = 10772068
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Paleoclimate-PMIP4-MIROC-ES2L-midHolocene.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_Paleoclimate-PMIP4-MIROC-ES2L-midHolocene.nc"
+
+["LIS-16KM_Paleoclimate-PMIP4-MIROC-ES2L-piControl.nc"]
+checksum = "sha256:5342aee5805372e26a28af57e65c390ed3584fa600e364040322e8094da49eb8"
+size = 10761520
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Paleoclimate-PMIP4-MIROC-ES2L-piControl.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_Paleoclimate-PMIP4-MIROC-ES2L-piControl.nc"
+
+["LIS-16KM_Paleoclimate-PMIP4-MPI-ESM1-2-LR-lgm.nc"]
+checksum = "sha256:5bc263296edb1dc0ebbfff7b8e75abda1e1a98df772afbff6c3318d0eeaae5e2"
+size = 11258297
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Paleoclimate-PMIP4-MPI-ESM1-2-LR-lgm.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_Paleoclimate-PMIP4-MPI-ESM1-2-LR-lgm.nc"
+
+["LIS-16KM_Paleoclimate-PMIP4-MPI-ESM1-2-LR-midHolocene.nc"]
+checksum = "sha256:51de38b2c9639fb96660cdb7e44d344488ca7d9560f3434909b6c6b3f6c1b053"
+size = 11014087
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Paleoclimate-PMIP4-MPI-ESM1-2-LR-midHolocene.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_Paleoclimate-PMIP4-MPI-ESM1-2-LR-midHolocene.nc"
+
+["LIS-16KM_Paleoclimate-PMIP4-MPI-ESM1-2-LR-piControl.nc"]
+checksum = "sha256:70708acb9717eda16430131205bbd308875c6e1ea5519b31b13c3d983e282865"
+size = 11003907
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Paleoclimate-PMIP4-MPI-ESM1-2-LR-piControl.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_Paleoclimate-PMIP4-MPI-ESM1-2-LR-piControl.nc"
+
+["LIS-16KM_grid.nc"]
+checksum = "sha256:9d90be456f08f945c8b097fb0900ddcb853666ea15d98e038b850317967362a3"
+size = 772321
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/LIS-16KM_grid.nc"
+
+["LIS-32KM_Paleoclimate-PMIP3-CCSM4-lgm.nc"]
+checksum = "sha256:bbb6d9e4f72eda15476fb16a397a306fd0ae9d32ade1b61182e6a27f9946e9d3"
+size = 694958
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Paleoclimate-PMIP3-CCSM4-lgm.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_Paleoclimate-PMIP3-CCSM4-lgm.nc"
+
+["LIS-32KM_Paleoclimate-PMIP3-CCSM4-midHolocene.nc"]
+checksum = "sha256:100dee0c39c1b03bfa33ed18e31dc1f119af542bf9912bd1e40efbc039a56c51"
+size = 691379
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Paleoclimate-PMIP3-CCSM4-midHolocene.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_Paleoclimate-PMIP3-CCSM4-midHolocene.nc"
+
+["LIS-32KM_Paleoclimate-PMIP3-CCSM4-piControl.nc"]
+checksum = "sha256:f98fe4ed50148e563e2d3a20eb69feb2415dc1eb6339c41de6e37a29eaa64f15"
+size = 690616
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Paleoclimate-PMIP3-CCSM4-piControl.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_Paleoclimate-PMIP3-CCSM4-piControl.nc"
+
+["LIS-32KM_Paleoclimate-PMIP3-CNRM-CM5-lgm.nc"]
+checksum = "sha256:df20c9581a340cb7752c97e35096edabd0c5fa34fa384509de6331fa33165164"
+size = 716029
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Paleoclimate-PMIP3-CNRM-CM5-lgm.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_Paleoclimate-PMIP3-CNRM-CM5-lgm.nc"
+
+["LIS-32KM_Paleoclimate-PMIP3-CNRM-CM5-midHolocene.nc"]
+checksum = "sha256:19466f38a8905fed42020b01948f7ddc30e8319638be7e1cee5b88605162e58f"
+size = 706899
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Paleoclimate-PMIP3-CNRM-CM5-midHolocene.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_Paleoclimate-PMIP3-CNRM-CM5-midHolocene.nc"
+
+["LIS-32KM_Paleoclimate-PMIP3-CNRM-CM5-piControl.nc"]
+checksum = "sha256:d460310090e0a48e0dfcfd88ef4b7fbeb3e577691a943eee00b7635e57947775"
+size = 705674
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Paleoclimate-PMIP3-CNRM-CM5-piControl.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_Paleoclimate-PMIP3-CNRM-CM5-piControl.nc"
+
+["LIS-32KM_Paleoclimate-PMIP3-FGOALS-g2-lgm.nc"]
+checksum = "sha256:e23582cbc406c5d9a195f64297fde19e4049bcd465065c607bae0a06f196876d"
+size = 670402
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Paleoclimate-PMIP3-FGOALS-g2-lgm.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_Paleoclimate-PMIP3-FGOALS-g2-lgm.nc"
+
+["LIS-32KM_Paleoclimate-PMIP3-FGOALS-g2-midHolocene.nc"]
+checksum = "sha256:37a58e8d3bde624536e172b09bbeef0729d944c86a253790e776e3c9226f7ce5"
+size = 658464
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Paleoclimate-PMIP3-FGOALS-g2-midHolocene.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_Paleoclimate-PMIP3-FGOALS-g2-midHolocene.nc"
+
+["LIS-32KM_Paleoclimate-PMIP3-FGOALS-g2-piControl.nc"]
+checksum = "sha256:e57fe5f11b7cce0e68b751cafc7c1a55e99bca18d4a39f36744b065bc4990202"
+size = 657828
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Paleoclimate-PMIP3-FGOALS-g2-piControl.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_Paleoclimate-PMIP3-FGOALS-g2-piControl.nc"
+
+["LIS-32KM_Paleoclimate-PMIP3-GISS-E2-R-lgm.nc"]
+checksum = "sha256:5377ff4324428396db3af09d1743600572e5c45a4b62bb20f5ca824a7bb72d28"
+size = 696075
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Paleoclimate-PMIP3-GISS-E2-R-lgm.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_Paleoclimate-PMIP3-GISS-E2-R-lgm.nc"
+
+["LIS-32KM_Paleoclimate-PMIP3-GISS-E2-R-midHolocene.nc"]
+checksum = "sha256:20fe4fb421a637cfe71fefc6a1e3b31aedaae5fc60adc5d60d73b64be547b02f"
+size = 682663
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Paleoclimate-PMIP3-GISS-E2-R-midHolocene.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_Paleoclimate-PMIP3-GISS-E2-R-midHolocene.nc"
+
+["LIS-32KM_Paleoclimate-PMIP3-GISS-E2-R-piControl.nc"]
+checksum = "sha256:ff822b068b37c2dbf16a9af315d73bb4bfec406994250675d41a1ba4ed3e3b7e"
+size = 599452
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Paleoclimate-PMIP3-GISS-E2-R-piControl.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_Paleoclimate-PMIP3-GISS-E2-R-piControl.nc"
+
+["LIS-32KM_Paleoclimate-PMIP3-IPSL-CM5A-LR-lgm.nc"]
+checksum = "sha256:1a34c404f3acfdc80039686eae535a9708e9a88689fc7bf52cfd42a1876de59d"
+size = 685053
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Paleoclimate-PMIP3-IPSL-CM5A-LR-lgm.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_Paleoclimate-PMIP3-IPSL-CM5A-LR-lgm.nc"
+
+["LIS-32KM_Paleoclimate-PMIP3-IPSL-CM5A-LR-midHolocene.nc"]
+checksum = "sha256:98d1c44891c52b69548b541b0034d6a7838ac5719520c1091a41412f0831bde2"
+size = 677534
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Paleoclimate-PMIP3-IPSL-CM5A-LR-midHolocene.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_Paleoclimate-PMIP3-IPSL-CM5A-LR-midHolocene.nc"
+
+["LIS-32KM_Paleoclimate-PMIP3-IPSL-CM5A-LR-piControl.nc"]
+checksum = "sha256:f6dc85925eb5ecb151abcbc4ea448b51e4b5188067b68275633cd367b209ca21"
+size = 676847
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Paleoclimate-PMIP3-IPSL-CM5A-LR-piControl.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_Paleoclimate-PMIP3-IPSL-CM5A-LR-piControl.nc"
+
+["LIS-32KM_Paleoclimate-PMIP3-MIROC-ESM-lgm.nc"]
+checksum = "sha256:ceb75361de0bd2644c34b22b207a75fe130f3fe96a3fab2c45317f2bbd1b5e43"
+size = 669252
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Paleoclimate-PMIP3-MIROC-ESM-lgm.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_Paleoclimate-PMIP3-MIROC-ESM-lgm.nc"
+
+["LIS-32KM_Paleoclimate-PMIP3-MIROC-ESM-midHolocene.nc"]
+checksum = "sha256:f4df370c0a55aca57a5a7a4ea53f032ce174236b5f9dd664879f2da098a59471"
+size = 666777
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Paleoclimate-PMIP3-MIROC-ESM-midHolocene.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_Paleoclimate-PMIP3-MIROC-ESM-midHolocene.nc"
+
+["LIS-32KM_Paleoclimate-PMIP3-MIROC-ESM-piControl.nc"]
+checksum = "sha256:d9c1736834a740459a54699935e1641a9ac8aeefbba15594aeffb2a17316affb"
+size = 665074
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Paleoclimate-PMIP3-MIROC-ESM-piControl.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_Paleoclimate-PMIP3-MIROC-ESM-piControl.nc"
+
+["LIS-32KM_Paleoclimate-PMIP3-MPI-ESM-P-lgm.nc"]
+checksum = "sha256:1cb3e88c7ef8cf5923826f85e3b5b4aedaef2d6cbe658ee5a1797cf1069c89ef"
+size = 686547
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Paleoclimate-PMIP3-MPI-ESM-P-lgm.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_Paleoclimate-PMIP3-MPI-ESM-P-lgm.nc"
+
+["LIS-32KM_Paleoclimate-PMIP3-MPI-ESM-P-midHolocene.nc"]
+checksum = "sha256:fad3d0c2697720f13805278daac00433f787c3878216b4973b04e660558b01f4"
+size = 678379
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Paleoclimate-PMIP3-MPI-ESM-P-midHolocene.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_Paleoclimate-PMIP3-MPI-ESM-P-midHolocene.nc"
+
+["LIS-32KM_Paleoclimate-PMIP3-MPI-ESM-P-piControl.nc"]
+checksum = "sha256:06ba2e23c8cabdad34cd980e5ae2e6d52f1f06909d5da1c2594d8d6f24b7fd44"
+size = 677228
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Paleoclimate-PMIP3-MPI-ESM-P-piControl.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_Paleoclimate-PMIP3-MPI-ESM-P-piControl.nc"
+
+["LIS-32KM_Paleoclimate-PMIP3-MRI-CGCM3-lgm.nc"]
+checksum = "sha256:f02b4508ea60bfda2fb0fdb9777e57953729368b6ad4415b662133a2ac87a256"
+size = 702273
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Paleoclimate-PMIP3-MRI-CGCM3-lgm.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_Paleoclimate-PMIP3-MRI-CGCM3-lgm.nc"
+
+["LIS-32KM_Paleoclimate-PMIP3-MRI-CGCM3-midHolocene.nc"]
+checksum = "sha256:71dbeb30b745339da055ba6426dd1ba105ab990db959cffab369e7cc46a0983b"
+size = 691626
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Paleoclimate-PMIP3-MRI-CGCM3-midHolocene.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_Paleoclimate-PMIP3-MRI-CGCM3-midHolocene.nc"
+
+["LIS-32KM_Paleoclimate-PMIP3-MRI-CGCM3-piControl.nc"]
+checksum = "sha256:7bd9836c41490a507af4487f669f4d4d8e1a60076fbb37c4ee5364ff0e58fbd1"
+size = 690747
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Paleoclimate-PMIP3-MRI-CGCM3-piControl.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_Paleoclimate-PMIP3-MRI-CGCM3-piControl.nc"
+
+["LIS-32KM_Paleoclimate-PMIP3-lgm-boundary-conditions.nc"]
+checksum = "sha256:4db6e396b14fa11297d15e2847e3f62d9b0c95d6230997ce62b207b4dcd352d9"
+size = 194117
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Paleoclimate-PMIP3-lgm-boundary-conditions.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_Paleoclimate-PMIP3-lgm-boundary-conditions.nc"
+
+["LIS-32KM_Paleoclimate-PMIP4-AWI-ESM-1-1-LR-lgm.nc"]
+checksum = "sha256:fb348af2913b9df5a0541187b6c632f53df47ca84abd7e29af88d84836a71900"
+size = 3103620
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Paleoclimate-PMIP4-AWI-ESM-1-1-LR-lgm.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_Paleoclimate-PMIP4-AWI-ESM-1-1-LR-lgm.nc"
+
+["LIS-32KM_Paleoclimate-PMIP4-AWI-ESM-1-1-LR-midHolocene.nc"]
+checksum = "sha256:cda5f5a979c179a25b5a491b6abc55f58ab789e2f72511fd366a9730186fd620"
+size = 3026823
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Paleoclimate-PMIP4-AWI-ESM-1-1-LR-midHolocene.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_Paleoclimate-PMIP4-AWI-ESM-1-1-LR-midHolocene.nc"
+
+["LIS-32KM_Paleoclimate-PMIP4-AWI-ESM-1-1-LR-piControl.nc"]
+checksum = "sha256:138f99c6e277f73bb5cbe1371d9e712f36e8d02a66ebafd7999c36041f0dc389"
+size = 3022346
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Paleoclimate-PMIP4-AWI-ESM-1-1-LR-piControl.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_Paleoclimate-PMIP4-AWI-ESM-1-1-LR-piControl.nc"
+
+["LIS-32KM_Paleoclimate-PMIP4-INM-CM4-8-lgm.nc"]
+checksum = "sha256:b81a275c4ad9208cfdecd18b45c65ba8b8583109c13d8a45d04e2ca22da42dae"
+size = 3061625
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Paleoclimate-PMIP4-INM-CM4-8-lgm.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_Paleoclimate-PMIP4-INM-CM4-8-lgm.nc"
+
+["LIS-32KM_Paleoclimate-PMIP4-INM-CM4-8-midHolocene.nc"]
+checksum = "sha256:001fc7a4b819e307bbecd0ee39cd0aab67852fc2e1a53d9b15eafc399ed51caf"
+size = 2997110
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Paleoclimate-PMIP4-INM-CM4-8-midHolocene.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_Paleoclimate-PMIP4-INM-CM4-8-midHolocene.nc"
+
+["LIS-32KM_Paleoclimate-PMIP4-INM-CM4-8-piControl.nc"]
+checksum = "sha256:22bf532fbc62005287418f12cb8637246fbda5ac5a2ceed8cd19d911ed189754"
+size = 2996062
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Paleoclimate-PMIP4-INM-CM4-8-piControl.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_Paleoclimate-PMIP4-INM-CM4-8-piControl.nc"
+
+["LIS-32KM_Paleoclimate-PMIP4-MIROC-ES2L-lgm.nc"]
+checksum = "sha256:d0fe6f9c1d34d092280680187a8e325e0cb69fbe78d71d72ec2ec246eaa904b7"
+size = 3014354
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Paleoclimate-PMIP4-MIROC-ES2L-lgm.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_Paleoclimate-PMIP4-MIROC-ES2L-lgm.nc"
+
+["LIS-32KM_Paleoclimate-PMIP4-MIROC-ES2L-midHolocene.nc"]
+checksum = "sha256:ddd5f379b83b4c89aff6818f03ed577ee14a05d5bcf38ea5a8d0689d8c39daea"
+size = 2951184
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Paleoclimate-PMIP4-MIROC-ES2L-midHolocene.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_Paleoclimate-PMIP4-MIROC-ES2L-midHolocene.nc"
+
+["LIS-32KM_Paleoclimate-PMIP4-MIROC-ES2L-piControl.nc"]
+checksum = "sha256:af9b8bbb860799e8c993284e8e7bdf0e687a92d1f7302fda34051c31e592acb7"
+size = 2946405
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Paleoclimate-PMIP4-MIROC-ES2L-piControl.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_Paleoclimate-PMIP4-MIROC-ES2L-piControl.nc"
+
+["LIS-32KM_Paleoclimate-PMIP4-MPI-ESM1-2-LR-lgm.nc"]
+checksum = "sha256:851b25ea73ccd7856a02f3c9497c148d107fa8bb26db82e2ff3c00668ec54f40"
+size = 3081390
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Paleoclimate-PMIP4-MPI-ESM1-2-LR-lgm.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_Paleoclimate-PMIP4-MPI-ESM1-2-LR-lgm.nc"
+
+["LIS-32KM_Paleoclimate-PMIP4-MPI-ESM1-2-LR-midHolocene.nc"]
+checksum = "sha256:ac541b8e7fa22b2433e177a308b6bac6e7bfaa39d6efd153842996be6efe4aa6"
+size = 3016490
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Paleoclimate-PMIP4-MPI-ESM1-2-LR-midHolocene.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_Paleoclimate-PMIP4-MPI-ESM1-2-LR-midHolocene.nc"
+
+["LIS-32KM_Paleoclimate-PMIP4-MPI-ESM1-2-LR-piControl.nc"]
+checksum = "sha256:96ccbfad01fb73f52fdb9175ab7b6b78482fb11a49c0d34049d110027ff72da1"
+size = 3012729
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Paleoclimate-PMIP4-MPI-ESM1-2-LR-piControl.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_Paleoclimate-PMIP4-MPI-ESM1-2-LR-piControl.nc"
+
+["LIS-32KM_grid.nc"]
+checksum = "sha256:a0c50b74b4a45787d5ad2c6183e5f1d339143079fd1302b0aad52cb13f8c5bbc"
+size = 249167
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/LIS-32KM_grid.nc"
+
+["LIS-8KM_Paleoclimate-PMIP3-CCSM4-lgm.nc"]
+checksum = "sha256:4577b6cdbfbd9fb8a969f94adb94b30de107357afea5bb448d7ee6debde92d1c"
+size = 8456317
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Paleoclimate-PMIP3-CCSM4-lgm.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_Paleoclimate-PMIP3-CCSM4-lgm.nc"
+
+["LIS-8KM_Paleoclimate-PMIP3-CCSM4-midHolocene.nc"]
+checksum = "sha256:0f037e031f061c7f786c25cb757b8f0280d6d1a6ee29b11a9441c496840daa7b"
+size = 8448289
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Paleoclimate-PMIP3-CCSM4-midHolocene.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_Paleoclimate-PMIP3-CCSM4-midHolocene.nc"
+
+["LIS-8KM_Paleoclimate-PMIP3-CCSM4-piControl.nc"]
+checksum = "sha256:ce08e47c0bca55547c915a70f3d7f923f6abd8b3f91a4b4486e18cce6276d451"
+size = 8431415
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Paleoclimate-PMIP3-CCSM4-piControl.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_Paleoclimate-PMIP3-CCSM4-piControl.nc"
+
+["LIS-8KM_Paleoclimate-PMIP3-CNRM-CM5-lgm.nc"]
+checksum = "sha256:79a2758891337182cb297922205e1a09c36f3e25a1358e6f44bec21174b526b6"
+size = 8750309
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Paleoclimate-PMIP3-CNRM-CM5-lgm.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_Paleoclimate-PMIP3-CNRM-CM5-lgm.nc"
+
+["LIS-8KM_Paleoclimate-PMIP3-CNRM-CM5-midHolocene.nc"]
+checksum = "sha256:5fb1e2519c11319db93542b699e380aef93ced816170294fe74778e7db540b85"
+size = 8601020
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Paleoclimate-PMIP3-CNRM-CM5-midHolocene.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_Paleoclimate-PMIP3-CNRM-CM5-midHolocene.nc"
+
+["LIS-8KM_Paleoclimate-PMIP3-CNRM-CM5-piControl.nc"]
+checksum = "sha256:23e4122fbc0bc562b901adf59c41470c3c8636924cd9c25a46ca4f0309f558d2"
+size = 8585045
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Paleoclimate-PMIP3-CNRM-CM5-piControl.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_Paleoclimate-PMIP3-CNRM-CM5-piControl.nc"
+
+["LIS-8KM_Paleoclimate-PMIP3-FGOALS-g2-lgm.nc"]
+checksum = "sha256:82b7fa5b29cff8751440f2805ac474f859e4aa1955b8e2cba6f43d9bb74c7a89"
+size = 8131230
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Paleoclimate-PMIP3-FGOALS-g2-lgm.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_Paleoclimate-PMIP3-FGOALS-g2-lgm.nc"
+
+["LIS-8KM_Paleoclimate-PMIP3-FGOALS-g2-midHolocene.nc"]
+checksum = "sha256:38ee0412345396ba685a48cbfdfcc0340e2fadb03ab2cd3690852bb149746fed"
+size = 8017842
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Paleoclimate-PMIP3-FGOALS-g2-midHolocene.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_Paleoclimate-PMIP3-FGOALS-g2-midHolocene.nc"
+
+["LIS-8KM_Paleoclimate-PMIP3-FGOALS-g2-piControl.nc"]
+checksum = "sha256:8a76f8de60d60ad7a961602b2b6a08349bc50c6bac8d0bcfcc75a16a49890eab"
+size = 8013770
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Paleoclimate-PMIP3-FGOALS-g2-piControl.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_Paleoclimate-PMIP3-FGOALS-g2-piControl.nc"
+
+["LIS-8KM_Paleoclimate-PMIP3-GISS-E2-R-lgm.nc"]
+checksum = "sha256:d4dfb8112f64fda4b06b84d7033f3ba0388c2445e90bc9a4a0b1f2ffc75cdee4"
+size = 8462214
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Paleoclimate-PMIP3-GISS-E2-R-lgm.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_Paleoclimate-PMIP3-GISS-E2-R-lgm.nc"
+
+["LIS-8KM_Paleoclimate-PMIP3-GISS-E2-R-midHolocene.nc"]
+checksum = "sha256:2fbd6f407acce8a7093c8dc5a6d14bd34b4c870a863f4bb5024d5320f512eab6"
+size = 8340841
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Paleoclimate-PMIP3-GISS-E2-R-midHolocene.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_Paleoclimate-PMIP3-GISS-E2-R-midHolocene.nc"
+
+["LIS-8KM_Paleoclimate-PMIP3-GISS-E2-R-piControl.nc"]
+checksum = "sha256:513601936732623840dcc2f26f61ebe7cb7ba6b92d6595df5b2dbdc015735fff"
+size = 7681517
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Paleoclimate-PMIP3-GISS-E2-R-piControl.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_Paleoclimate-PMIP3-GISS-E2-R-piControl.nc"
+
+["LIS-8KM_Paleoclimate-PMIP3-IPSL-CM5A-LR-lgm.nc"]
+checksum = "sha256:29eee1a15ef08f997f2b23595e68d900b3eb2b6973acd4ad9dcd36a6ed42b504"
+size = 8393500
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Paleoclimate-PMIP3-IPSL-CM5A-LR-lgm.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_Paleoclimate-PMIP3-IPSL-CM5A-LR-lgm.nc"
+
+["LIS-8KM_Paleoclimate-PMIP3-IPSL-CM5A-LR-midHolocene.nc"]
+checksum = "sha256:853a2f18a05a3ea0abd227783382bf0f257e8de75ffd27c42a8220c240933faf"
+size = 8336793
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Paleoclimate-PMIP3-IPSL-CM5A-LR-midHolocene.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_Paleoclimate-PMIP3-IPSL-CM5A-LR-midHolocene.nc"
+
+["LIS-8KM_Paleoclimate-PMIP3-IPSL-CM5A-LR-piControl.nc"]
+checksum = "sha256:fc53133f0ec69dab557f2719c29c476fba6276dee2497469b7eef53612f53195"
+size = 8325564
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Paleoclimate-PMIP3-IPSL-CM5A-LR-piControl.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_Paleoclimate-PMIP3-IPSL-CM5A-LR-piControl.nc"
+
+["LIS-8KM_Paleoclimate-PMIP3-MIROC-ESM-lgm.nc"]
+checksum = "sha256:149f8ac5c1d2d1f3a1117e6e64c0265eb002702758d0ab332e0c1f79ccf544e5"
+size = 8103193
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Paleoclimate-PMIP3-MIROC-ESM-lgm.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_Paleoclimate-PMIP3-MIROC-ESM-lgm.nc"
+
+["LIS-8KM_Paleoclimate-PMIP3-MIROC-ESM-midHolocene.nc"]
+checksum = "sha256:308dc764045617b4e30962c168c60d9f009a5ce5d16d571ad3bb8659d8697239"
+size = 8092813
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Paleoclimate-PMIP3-MIROC-ESM-midHolocene.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_Paleoclimate-PMIP3-MIROC-ESM-midHolocene.nc"
+
+["LIS-8KM_Paleoclimate-PMIP3-MIROC-ESM-piControl.nc"]
+checksum = "sha256:baf9086e89c0f62668aac83f63dc983aeb543d8da79c317f8da09bde51c529b4"
+size = 8077560
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Paleoclimate-PMIP3-MIROC-ESM-piControl.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_Paleoclimate-PMIP3-MIROC-ESM-piControl.nc"
+
+["LIS-8KM_Paleoclimate-PMIP3-MPI-ESM-P-lgm.nc"]
+checksum = "sha256:77d044fb338aa9cf31b8f1651d01d6364e570d280c8d9665e61a9fe65610ad92"
+size = 8411871
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Paleoclimate-PMIP3-MPI-ESM-P-lgm.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_Paleoclimate-PMIP3-MPI-ESM-P-lgm.nc"
+
+["LIS-8KM_Paleoclimate-PMIP3-MPI-ESM-P-midHolocene.nc"]
+checksum = "sha256:781bd5df5a11999deb0b4f694e9b0633169c47a020543011f4b71a65868de887"
+size = 8329748
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Paleoclimate-PMIP3-MPI-ESM-P-midHolocene.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_Paleoclimate-PMIP3-MPI-ESM-P-midHolocene.nc"
+
+["LIS-8KM_Paleoclimate-PMIP3-MPI-ESM-P-piControl.nc"]
+checksum = "sha256:297d0e8809bcb0f5c02355ac204ed28169dd88a9341490a64728f3eecf40f35d"
+size = 8322767
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Paleoclimate-PMIP3-MPI-ESM-P-piControl.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_Paleoclimate-PMIP3-MPI-ESM-P-piControl.nc"
+
+["LIS-8KM_Paleoclimate-PMIP3-MRI-CGCM3-lgm.nc"]
+checksum = "sha256:3ebe2708ecdb1ff71ddaa429e7d1ff200b635c698c8548111e3c99e898ee76fb"
+size = 8529309
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Paleoclimate-PMIP3-MRI-CGCM3-lgm.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_Paleoclimate-PMIP3-MRI-CGCM3-lgm.nc"
+
+["LIS-8KM_Paleoclimate-PMIP3-MRI-CGCM3-midHolocene.nc"]
+checksum = "sha256:7c5edf9405e29cd1856293d0e6bcaa3c24aeeef24ee8a4e824a079c24ee820bb"
+size = 8422626
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Paleoclimate-PMIP3-MRI-CGCM3-midHolocene.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_Paleoclimate-PMIP3-MRI-CGCM3-midHolocene.nc"
+
+["LIS-8KM_Paleoclimate-PMIP3-MRI-CGCM3-piControl.nc"]
+checksum = "sha256:eb09549c0fa4a18688ac57be919b7feb444b6eeb3d561939f716024e3c8fa719"
+size = 8407976
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Paleoclimate-PMIP3-MRI-CGCM3-piControl.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_Paleoclimate-PMIP3-MRI-CGCM3-piControl.nc"
+
+["LIS-8KM_Paleoclimate-PMIP3-lgm-boundary-conditions.nc"]
+checksum = "sha256:636284d0a8583b9fed0d3e87685aece5ef152e22d8765a8601f12720d786a058"
+size = 2152314
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Paleoclimate-PMIP3-lgm-boundary-conditions.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_Paleoclimate-PMIP3-lgm-boundary-conditions.nc"
+
+["LIS-8KM_Paleoclimate-PMIP4-AWI-ESM-1-1-LR-lgm.nc"]
+checksum = "sha256:683623b880232c821b99e25b770989ee476d1d8c9b6a55a6537c669bcf6683da"
+size = 41852067
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Paleoclimate-PMIP4-AWI-ESM-1-1-LR-lgm.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_Paleoclimate-PMIP4-AWI-ESM-1-1-LR-lgm.nc"
+
+["LIS-8KM_Paleoclimate-PMIP4-AWI-ESM-1-1-LR-midHolocene.nc"]
+checksum = "sha256:87ef16a7aae42a1490f51a92c2c6945e6df2993f9eef3058d87d88268fa13cc1"
+size = 40841335
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Paleoclimate-PMIP4-AWI-ESM-1-1-LR-midHolocene.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_Paleoclimate-PMIP4-AWI-ESM-1-1-LR-midHolocene.nc"
+
+["LIS-8KM_Paleoclimate-PMIP4-AWI-ESM-1-1-LR-piControl.nc"]
+checksum = "sha256:7ead28ef0c09bfaf1a4d122d11dd26158b156b46c4128f1d527b7cb6fed5c174"
+size = 40804040
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Paleoclimate-PMIP4-AWI-ESM-1-1-LR-piControl.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_Paleoclimate-PMIP4-AWI-ESM-1-1-LR-piControl.nc"
+
+["LIS-8KM_Paleoclimate-PMIP4-INM-CM4-8-lgm.nc"]
+checksum = "sha256:b4f91570c8bc5be440dbcea24d033e15d45fce055735d7774221091c1d983ac2"
+size = 41314468
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Paleoclimate-PMIP4-INM-CM4-8-lgm.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_Paleoclimate-PMIP4-INM-CM4-8-lgm.nc"
+
+["LIS-8KM_Paleoclimate-PMIP4-INM-CM4-8-midHolocene.nc"]
+checksum = "sha256:79624deebf0d11f394df738ea1d3b809162d1df78f7a5cd71e4af8c4ff1ab58d"
+size = 40460844
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Paleoclimate-PMIP4-INM-CM4-8-midHolocene.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_Paleoclimate-PMIP4-INM-CM4-8-midHolocene.nc"
+
+["LIS-8KM_Paleoclimate-PMIP4-INM-CM4-8-piControl.nc"]
+checksum = "sha256:c4a440be5db7949395318633f31fef0a7bc077b770fa6174d938895ce5e36927"
+size = 40457833
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Paleoclimate-PMIP4-INM-CM4-8-piControl.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_Paleoclimate-PMIP4-INM-CM4-8-piControl.nc"
+
+["LIS-8KM_Paleoclimate-PMIP4-MIROC-ES2L-lgm.nc"]
+checksum = "sha256:ae085d145ed9f567e63438df0f6738b2802cc5cb9d03900aeff27e08e4f78d75"
+size = 40561724
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Paleoclimate-PMIP4-MIROC-ES2L-lgm.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_Paleoclimate-PMIP4-MIROC-ES2L-lgm.nc"
+
+["LIS-8KM_Paleoclimate-PMIP4-MIROC-ES2L-midHolocene.nc"]
+checksum = "sha256:3e77f997b6ee4b2af61984c1009bd1723b20d221f2ccb1a86076590909afb1b1"
+size = 39797094
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Paleoclimate-PMIP4-MIROC-ES2L-midHolocene.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_Paleoclimate-PMIP4-MIROC-ES2L-midHolocene.nc"
+
+["LIS-8KM_Paleoclimate-PMIP4-MIROC-ES2L-piControl.nc"]
+checksum = "sha256:075b5c93cccd17c1e19b56fb20c9552d07f7ce0184ec64292f87d8d0b6bb44cb"
+size = 39761052
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Paleoclimate-PMIP4-MIROC-ES2L-piControl.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_Paleoclimate-PMIP4-MIROC-ES2L-piControl.nc"
+
+["LIS-8KM_Paleoclimate-PMIP4-MPI-ESM1-2-LR-lgm.nc"]
+checksum = "sha256:8d00ff82645f77003f55eec3fd72f3db9cb6cb6cbaf3f77a364cf4df6910715f"
+size = 41592806
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Paleoclimate-PMIP4-MPI-ESM1-2-LR-lgm.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_Paleoclimate-PMIP4-MPI-ESM1-2-LR-lgm.nc"
+
+["LIS-8KM_Paleoclimate-PMIP4-MPI-ESM1-2-LR-midHolocene.nc"]
+checksum = "sha256:612b62eed2b72f01f74d4fbbbfa64286b3c6713b9eaf2a3ff4c6066e62325a2f"
+size = 40721943
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Paleoclimate-PMIP4-MPI-ESM1-2-LR-midHolocene.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_Paleoclimate-PMIP4-MPI-ESM1-2-LR-midHolocene.nc"
+
+["LIS-8KM_Paleoclimate-PMIP4-MPI-ESM1-2-LR-piControl.nc"]
+checksum = "sha256:f95815288994ba54f37619ff60bb16c09acd653c6f5d742ae52a2966c0394cbc"
+size = 40701697
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Paleoclimate-PMIP4-MPI-ESM1-2-LR-piControl.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_Paleoclimate-PMIP4-MPI-ESM1-2-LR-piControl.nc"
+
+["LIS-8KM_grid.nc"]
+checksum = "sha256:39001f264d08010e472852f6861b6b6d6cdc15ffd7553d52b01acb51f22501ee"
+size = 2816888
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/LIS-8KM_grid.nc"
+
+["grid_LIS-16KM.txt"]
+checksum = "sha256:4ff24933bce97627a1ffe6ec62ed994aabb15889197dda6597cc2ef85b623178"
+size = 467
+storage_path = "$datasets_dir/Laurentide/LIS-16KM/grid_LIS-16KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-16KM/2.0.0/grid_LIS-16KM.txt"
+
+["grid_LIS-32KM.txt"]
+checksum = "sha256:0c5e99f11a025d656ee88fcbce389f89b815c0ca4c6a1dcf08868ffbafe0d09b"
+size = 466
+storage_path = "$datasets_dir/Laurentide/LIS-32KM/grid_LIS-32KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-32KM/2.0.0/grid_LIS-32KM.txt"
+
+["grid_LIS-8KM.txt"]
+checksum = "sha256:97811d3bbc0376118996535a4ec7c0209bf01f10bfb60bc738bb05b6eab6caa4"
+size = 465
+storage_path = "$datasets_dir/Laurentide/LIS-8KM/grid_LIS-8KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Paleoclimate_LIS-8KM/2.0.0/grid_LIS-8KM.txt"

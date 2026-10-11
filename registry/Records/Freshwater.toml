@@ -1,0 +1,49 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-11"
+git_tag = "freshwater-v2.0.0"
+store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=Records_Freshwater"
+version = "2.0.0"
+
+["Freshwater-Schmidt2025_AQ_calving.nc"]
+checksum = "sha256:756b7c93763f8a8c6604225f740ff3c792f39f5563831001a68ad94abb067150"
+size = 32150
+storage_path = "$datasets_dir/Records/Freshwater/Freshwater-Schmidt2025_AQ_calving.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Records_Freshwater/2.0.0/Freshwater-Schmidt2025_AQ_calving.nc"
+
+["Freshwater-Schmidt2025_AQ_grounded_mass_change.nc"]
+checksum = "sha256:a9992dc55e973a8a6a1a336f27bdae2312d27182e3cd4e6e9710585dfc9aee5d"
+size = 20790
+storage_path = "$datasets_dir/Records/Freshwater/Freshwater-Schmidt2025_AQ_grounded_mass_change.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Records_Freshwater/2.0.0/Freshwater-Schmidt2025_AQ_grounded_mass_change.nc"
+
+["Freshwater-Schmidt2025_AQ_mass_anomaly.nc"]
+checksum = "sha256:84df9de0b98dcd67988fd59320a2a4cf59be798274b79e3aa4fb5515343bbf57"
+size = 43442
+storage_path = "$datasets_dir/Records/Freshwater/Freshwater-Schmidt2025_AQ_mass_anomaly.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Records_Freshwater/2.0.0/Freshwater-Schmidt2025_AQ_mass_anomaly.nc"
+
+["Freshwater-Schmidt2025_AQ_subshelf_melt.nc"]
+checksum = "sha256:3e1092acd0ff8fc7fc80244ce39f98de6a0ce441f4e5b053752ceea3e9b01b25"
+size = 30657
+storage_path = "$datasets_dir/Records/Freshwater/Freshwater-Schmidt2025_AQ_subshelf_melt.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Records_Freshwater/2.0.0/Freshwater-Schmidt2025_AQ_subshelf_melt.nc"
+
+["Freshwater-Schmidt2025_GL_discharge.nc"]
+checksum = "sha256:0419b694b972d22c37c443264b8dad2ec095636bb2188d5b62188d873071a6bf"
+size = 44128
+storage_path = "$datasets_dir/Records/Freshwater/Freshwater-Schmidt2025_GL_discharge.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Records_Freshwater/2.0.0/Freshwater-Schmidt2025_GL_discharge.nc"
+
+["Freshwater-Schmidt2025_GL_mass_anomaly.nc"]
+checksum = "sha256:1d9c0d7a85373e491fcdb41aab6e46d18ad0d89b600c44e5b14591451687a7b6"
+size = 109824
+storage_path = "$datasets_dir/Records/Freshwater/Freshwater-Schmidt2025_GL_mass_anomaly.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Records_Freshwater/2.0.0/Freshwater-Schmidt2025_GL_mass_anomaly.nc"
+
+["Freshwater-Schmidt2025_GL_runoff.nc"]
+checksum = "sha256:a4cbd38d86bac49bde0795d07196edd15c65ef83f17292e126d6f804225d7922"
+size = 239777
+storage_path = "$datasets_dir/Records/Freshwater/Freshwater-Schmidt2025_GL_runoff.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Records_Freshwater/2.0.0/Freshwater-Schmidt2025_GL_runoff.nc"

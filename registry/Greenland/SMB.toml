@@ -1,0 +1,169 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-11"
+git_tag = "smb-v2.0.0"
+store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=Greenland_SMB"
+version = "2.0.0"
+
+["GRL-16KM_SMB-MARv3.14-1981-2010.nc"]
+checksum = "sha256:9a5693b913c8799776196981da30b6ecd8a230270c6e4147f720ae0d94ccf6d4"
+size = 2785473
+storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_SMB-MARv3.14-1981-2010.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_SMB_GRL-16KM/2.0.0/GRL-16KM_SMB-MARv3.14-1981-2010.nc"
+
+["GRL-16KM_SMB-MARv3.14-1991-2020.nc"]
+checksum = "sha256:ffb065c7bc293782f1c87dce4bf663b9d334db6ba618c8050ca6df8c489d2a57"
+size = 2802918
+storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_SMB-MARv3.14-1991-2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_SMB_GRL-16KM/2.0.0/GRL-16KM_SMB-MARv3.14-1991-2020.nc"
+
+["GRL-16KM_SMB-MARv3.14-annual.nc"]
+checksum = "sha256:bb3ea54ce09c83662b6779aa6ee5ec7d3f421d439984dabe88e43c6893b40b71"
+size = 21131044
+storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_SMB-MARv3.14-annual.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_SMB_GRL-16KM/2.0.0/GRL-16KM_SMB-MARv3.14-annual.nc"
+
+["GRL-16KM_grid.nc"]
+checksum = "sha256:e835518450bae0a863fdb7cd68adc7d4f59c48c790090d497939939518960d41"
+size = 150482
+storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_SMB_GRL-16KM/2.0.0/GRL-16KM_grid.nc"
+
+["GRL-1KM_SMB-MARv3.14-1981-2010.nc"]
+checksum = "sha256:94a5061b5e43edee44df50610572236029d4b26b92725208aa91d5cb96b84242"
+size = 497035550
+storage_path = "$datasets_dir/Greenland/GRL-1KM/GRL-1KM_SMB-MARv3.14-1981-2010.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_SMB_GRL-1KM/2.0.0/GRL-1KM_SMB-MARv3.14-1981-2010.nc"
+
+["GRL-1KM_SMB-MARv3.14-1991-2020.nc"]
+checksum = "sha256:33920218d46aef86b6993ca48dbf04b97ee576d5845b581bbd9e159647bdf34a"
+size = 500258324
+storage_path = "$datasets_dir/Greenland/GRL-1KM/GRL-1KM_SMB-MARv3.14-1991-2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_SMB_GRL-1KM/2.0.0/GRL-1KM_SMB-MARv3.14-1991-2020.nc"
+
+["GRL-1KM_grid.nc"]
+checksum = "sha256:04da63872f29f82b9a5ae9f8f3dbb0996e9b8a272f539629d1af272147c92f9b"
+size = 19073467
+storage_path = "$datasets_dir/Greenland/GRL-1KM/GRL-1KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_SMB_GRL-1KM/2.0.0/GRL-1KM_grid.nc"
+
+["GRL-2KM_SMB-MARv3.14-1981-2010.nc"]
+checksum = "sha256:eb85f2d713be347382e5ffce15e61a9c736c1eabfbe68ac903151abf2ca40fb6"
+size = 134175679
+storage_path = "$datasets_dir/Greenland/GRL-2KM/GRL-2KM_SMB-MARv3.14-1981-2010.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_SMB_GRL-2KM/2.0.0/GRL-2KM_SMB-MARv3.14-1981-2010.nc"
+
+["GRL-2KM_SMB-MARv3.14-1991-2020.nc"]
+checksum = "sha256:2b4879d2bd3f53de6a9c1468e2b66c9b252d2aa677b538a432289bf457f45f01"
+size = 135071425
+storage_path = "$datasets_dir/Greenland/GRL-2KM/GRL-2KM_SMB-MARv3.14-1991-2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_SMB_GRL-2KM/2.0.0/GRL-2KM_SMB-MARv3.14-1991-2020.nc"
+
+["GRL-2KM_grid.nc"]
+checksum = "sha256:f14a977d6e3a1f3163a45f02a604b05efc34d00a2f27fba14f8114ddf5725fc1"
+size = 5378392
+storage_path = "$datasets_dir/Greenland/GRL-2KM/GRL-2KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_SMB_GRL-2KM/2.0.0/GRL-2KM_grid.nc"
+
+["GRL-32KM_SMB-MARv3.14-1981-2010.nc"]
+checksum = "sha256:2f556c8bebb49e4fa5c950a5bc7abf9b4f52cd1b6eb0895b1965e4f5ef429e65"
+size = 873524
+storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_SMB-MARv3.14-1981-2010.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_SMB_GRL-32KM/2.0.0/GRL-32KM_SMB-MARv3.14-1981-2010.nc"
+
+["GRL-32KM_SMB-MARv3.14-1991-2020.nc"]
+checksum = "sha256:b9f691be51ee78591d10b115cbaa2573b0a79a16e57d2d84ebd7a290a6561129"
+size = 877166
+storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_SMB-MARv3.14-1991-2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_SMB_GRL-32KM/2.0.0/GRL-32KM_SMB-MARv3.14-1991-2020.nc"
+
+["GRL-32KM_SMB-MARv3.14-annual.nc"]
+checksum = "sha256:48e1b1924c118bef85d92077b0c0c1b3ff77f4e993a30fe976ba756b3a657793"
+size = 5771836
+storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_SMB-MARv3.14-annual.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_SMB_GRL-32KM/2.0.0/GRL-32KM_SMB-MARv3.14-annual.nc"
+
+["GRL-32KM_grid.nc"]
+checksum = "sha256:c922307bd72e9e5bd3d10d86b97e3c108dcd5a4264dd47b305b9c562ba81e775"
+size = 57245
+storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_SMB_GRL-32KM/2.0.0/GRL-32KM_grid.nc"
+
+["GRL-4KM_SMB-MARv3.14-1981-2010.nc"]
+checksum = "sha256:0f9891a15b72c45bf6a21a315399f53b3b81918d95d3c0c89752a1b0cd8e20a9"
+size = 36680550
+storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_SMB-MARv3.14-1981-2010.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_SMB_GRL-4KM/2.0.0/GRL-4KM_SMB-MARv3.14-1981-2010.nc"
+
+["GRL-4KM_SMB-MARv3.14-1991-2020.nc"]
+checksum = "sha256:8b2839c73c8cf15430d409f594046db2b5774f88efaa36a910df7cd111b6e202"
+size = 36909424
+storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_SMB-MARv3.14-1991-2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_SMB_GRL-4KM/2.0.0/GRL-4KM_SMB-MARv3.14-1991-2020.nc"
+
+["GRL-4KM_grid.nc"]
+checksum = "sha256:bfc44b679d56099bfb9306c3bfe8d74d1663a5b7168c2f18b404fdb3b6cabe4f"
+size = 1546343
+storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_SMB_GRL-4KM/2.0.0/GRL-4KM_grid.nc"
+
+["GRL-8KM_SMB-MARv3.14-1981-2010.nc"]
+checksum = "sha256:b86f6948cf6d04aeec38936b5d2fea2f65d9d21cdd5734a78e981b2e5680158a"
+size = 9746510
+storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_SMB-MARv3.14-1981-2010.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_SMB_GRL-8KM/2.0.0/GRL-8KM_SMB-MARv3.14-1981-2010.nc"
+
+["GRL-8KM_SMB-MARv3.14-1991-2020.nc"]
+checksum = "sha256:67d9b12638d3868b58f8043433df19449dd218893160e06e09951c3e3b063992"
+size = 9807512
+storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_SMB-MARv3.14-1991-2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_SMB_GRL-8KM/2.0.0/GRL-8KM_SMB-MARv3.14-1991-2020.nc"
+
+["GRL-8KM_SMB-MARv3.14-annual.nc"]
+checksum = "sha256:069c8794393ee6567ce5433dde01f23e2f515fccd0adad69b9a1d3058534af62"
+size = 76378589
+storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_SMB-MARv3.14-annual.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_SMB_GRL-8KM/2.0.0/GRL-8KM_SMB-MARv3.14-annual.nc"
+
+["GRL-8KM_grid.nc"]
+checksum = "sha256:a7c9769dfbac2eefa4f4a79985475995596d3035f3481009cfff72c2c45fb40e"
+size = 467101
+storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_SMB_GRL-8KM/2.0.0/GRL-8KM_grid.nc"
+
+["grid_GRL-16KM.txt"]
+checksum = "sha256:96d8ae58fe971c0fe4bcf3433b0f78c1c46af7104133c842859d47b655060cd6"
+size = 465
+storage_path = "$datasets_dir/Greenland/GRL-16KM/grid_GRL-16KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_SMB_GRL-16KM/2.0.0/grid_GRL-16KM.txt"
+
+["grid_GRL-1KM.txt"]
+checksum = "sha256:6c3c8dcbe453c0b9226de89c2c6349a5f1c8b9eb11b395fafcc03e514e756ae6"
+size = 467
+storage_path = "$datasets_dir/Greenland/GRL-1KM/grid_GRL-1KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_SMB_GRL-1KM/2.0.0/grid_GRL-1KM.txt"
+
+["grid_GRL-2KM.txt"]
+checksum = "sha256:d795d6d9de510cf0e66e83fb14a1a16680f9914baffb4e23fb521553bf0c47b3"
+size = 466
+storage_path = "$datasets_dir/Greenland/GRL-2KM/grid_GRL-2KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_SMB_GRL-2KM/2.0.0/grid_GRL-2KM.txt"
+
+["grid_GRL-32KM.txt"]
+checksum = "sha256:60caa1794ee7701429bc7ccece8aa52f1f4555ddc051c056409acb398cad52a0"
+size = 462
+storage_path = "$datasets_dir/Greenland/GRL-32KM/grid_GRL-32KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_SMB_GRL-32KM/2.0.0/grid_GRL-32KM.txt"
+
+["grid_GRL-4KM.txt"]
+checksum = "sha256:17883e1fab0cfa9f8b288bb7d2fb6fa27955ff3a437d06b0ec4d0fb1e358165f"
+size = 464
+storage_path = "$datasets_dir/Greenland/GRL-4KM/grid_GRL-4KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_SMB_GRL-4KM/2.0.0/grid_GRL-4KM.txt"
+
+["grid_GRL-8KM.txt"]
+checksum = "sha256:455c0a221c44c016c9129b7e1305cc2e1cf1f17be11aace7a68103e92f6c2c5c"
+size = 463
+storage_path = "$datasets_dir/Greenland/GRL-8KM/grid_GRL-8KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_SMB_GRL-8KM/2.0.0/grid_GRL-8KM.txt"

@@ -1,0 +1,199 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-11"
+git_tag = "icehistory-v2.0.0"
+store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=Antarctica_IceHistory"
+version = "2.0.0"
+
+["ANT-16KM_IceHistory-ICE5G.nc"]
+checksum = "sha256:ab9b81998094a3a3b50b2b4b494607e1a52740547bbbb7afd59e44b1a6b24610"
+size = 27910738
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_IceHistory-ICE5G.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_IceHistory_ANT-16KM/2.0.0/ANT-16KM_IceHistory-ICE5G.nc"
+
+["ANT-16KM_IceHistory-ICE6G_C.nc"]
+checksum = "sha256:b15e9a8d55ec7108a01e8648a58120c1ce7572871c28e9775208901fbd81914f"
+size = 73701390
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_IceHistory-ICE6G_C.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_IceHistory_ANT-16KM/2.0.0/ANT-16KM_IceHistory-ICE6G_C.nc"
+
+["ANT-16KM_IceHistory-ICE6G_D.nc"]
+checksum = "sha256:7005a03b20f3e142e94ca02e787711816150bd0738f1db38aec679128393981b"
+size = 73850076
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_IceHistory-ICE6G_D.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_IceHistory_ANT-16KM/2.0.0/ANT-16KM_IceHistory-ICE6G_D.nc"
+
+["ANT-16KM_IceHistory-PRISM4.nc"]
+checksum = "sha256:bdd109d6f08a2689cad88abf2ffc27c798d0e8f4798cb7cafb2ad9c736293ac0"
+size = 1037179
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_IceHistory-PRISM4.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_IceHistory_ANT-16KM/2.0.0/ANT-16KM_IceHistory-PRISM4.nc"
+
+["ANT-16KM_IceHistory-PaleoMIST.nc"]
+checksum = "sha256:ca89a87ac9e96c1828fa20f365ee439303816e27db912bd1a744fe0e86e5c02b"
+size = 48626974
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_IceHistory-PaleoMIST.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_IceHistory_ANT-16KM/2.0.0/ANT-16KM_IceHistory-PaleoMIST.nc"
+
+["ANT-16KM_IceHistory-PaleoMIST_max.nc"]
+checksum = "sha256:919050d1b6df1dee2c3a380ea4931671ac2f6c03ed46d706f10215179e399009"
+size = 48577194
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_IceHistory-PaleoMIST_max.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_IceHistory_ANT-16KM/2.0.0/ANT-16KM_IceHistory-PaleoMIST_max.nc"
+
+["ANT-16KM_grid.nc"]
+checksum = "sha256:dea44445828fdc3adbae04afc6662224e96a6838c8381f80a855659b3ad6460c"
+size = 892250
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_IceHistory_ANT-16KM/2.0.0/ANT-16KM_grid.nc"
+
+["ANT-32KM_IceHistory-ICE5G.nc"]
+checksum = "sha256:7216a83d7e7766737ff8858968ccdced560e54e275c9084a6526f97cc434b8d4"
+size = 5053538
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_IceHistory-ICE5G.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_IceHistory_ANT-32KM/2.0.0/ANT-32KM_IceHistory-ICE5G.nc"
+
+["ANT-32KM_IceHistory-ICE6G_C.nc"]
+checksum = "sha256:ccd5b0b121c2e51f4dd546ef95551032f67ac77a9e3cff1f87b9a0610bcd3dd4"
+size = 14829596
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_IceHistory-ICE6G_C.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_IceHistory_ANT-32KM/2.0.0/ANT-32KM_IceHistory-ICE6G_C.nc"
+
+["ANT-32KM_IceHistory-ICE6G_D.nc"]
+checksum = "sha256:6fcec3132776d8cc9c64a1b2abf828c4d5faa78f318be34a4ea6bb31f9a67081"
+size = 19544892
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_IceHistory-ICE6G_D.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_IceHistory_ANT-32KM/2.0.0/ANT-32KM_IceHistory-ICE6G_D.nc"
+
+["ANT-32KM_IceHistory-PRISM4.nc"]
+checksum = "sha256:1d04ff74f4ba2006c12f1e98edaaf47121435ee5e5859ae0d910cac4fd9781ab"
+size = 322853
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_IceHistory-PRISM4.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_IceHistory_ANT-32KM/2.0.0/ANT-32KM_IceHistory-PRISM4.nc"
+
+["ANT-32KM_IceHistory-PaleoMIST.nc"]
+checksum = "sha256:bc73397822c0f8ef956c2ef9c1f839ee8fdb6f0c0abffad7f9fceb57eb73131b"
+size = 12234010
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_IceHistory-PaleoMIST.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_IceHistory_ANT-32KM/2.0.0/ANT-32KM_IceHistory-PaleoMIST.nc"
+
+["ANT-32KM_IceHistory-PaleoMIST_max.nc"]
+checksum = "sha256:076f8b40df47e20f60d2c84735c4681fade690725d9ca0b58b5362086c27fa64"
+size = 12157971
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_IceHistory-PaleoMIST_max.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_IceHistory_ANT-32KM/2.0.0/ANT-32KM_IceHistory-PaleoMIST_max.nc"
+
+["ANT-32KM_grid.nc"]
+checksum = "sha256:66765d3512c62479e60ad1095a4ee84b38edb681fe816eddf9896c3a2799efd8"
+size = 212550
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_IceHistory_ANT-32KM/2.0.0/ANT-32KM_grid.nc"
+
+["ANT-4KM_IceHistory-ICE5G.nc"]
+checksum = "sha256:b90949227b3fd28ba063797f619ce1079f5ac780b80c768b2a3fcdf7213ec29e"
+size = 374002668
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_IceHistory-ICE5G.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_IceHistory_ANT-4KM/2.0.0/ANT-4KM_IceHistory-ICE5G.nc"
+
+["ANT-4KM_IceHistory-ICE6G_C.nc"]
+checksum = "sha256:b3189a8cfa3da6a1697a5a9805aa45342eace7213d6745c6ee1c342ac143d9c6"
+size = 984614508
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_IceHistory-ICE6G_C.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_IceHistory_ANT-4KM/2.0.0/ANT-4KM_IceHistory-ICE6G_C.nc"
+
+["ANT-4KM_IceHistory-ICE6G_D.nc"]
+checksum = "sha256:c23f518e3bac17a784e6168e3b6cffbe0a688a6c3602e1166e94d6ac77e647ec"
+size = 1356755350
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_IceHistory-ICE6G_D.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_IceHistory_ANT-4KM/2.0.0/ANT-4KM_IceHistory-ICE6G_D.nc"
+
+["ANT-4KM_IceHistory-PRISM4.nc"]
+checksum = "sha256:bc92226badecd14fba6895c27fa3aa6b35cb864ad3cabc4f7f5b2ec72531bba8"
+size = 13652211
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_IceHistory-PRISM4.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_IceHistory_ANT-4KM/2.0.0/ANT-4KM_IceHistory-PRISM4.nc"
+
+["ANT-4KM_IceHistory-PaleoMIST.nc"]
+checksum = "sha256:ebb6a8455846744772452eec5857be2c0e02d1c741d5bfee324b1527745294ba"
+size = 667884229
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_IceHistory-PaleoMIST.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_IceHistory_ANT-4KM/2.0.0/ANT-4KM_IceHistory-PaleoMIST.nc"
+
+["ANT-4KM_IceHistory-PaleoMIST_max.nc"]
+checksum = "sha256:58e6440ed1591b5d5a18876913a2ff846d6a6c45f8f5ece16b6190ab66fccac5"
+size = 667163554
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_IceHistory-PaleoMIST_max.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_IceHistory_ANT-4KM/2.0.0/ANT-4KM_IceHistory-PaleoMIST_max.nc"
+
+["ANT-4KM_grid.nc"]
+checksum = "sha256:b553afcb6273200e9cd436c4f3ba5f081c599c58237374342aade5c4588e879f"
+size = 11450508
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_IceHistory_ANT-4KM/2.0.0/ANT-4KM_grid.nc"
+
+["ANT-8KM_IceHistory-ICE5G.nc"]
+checksum = "sha256:a663ff8e4f44aa4a74aa263d30a05420d73a405b602e1f68733893f223e9c73c"
+size = 101526206
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_IceHistory-ICE5G.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_IceHistory_ANT-8KM/2.0.0/ANT-8KM_IceHistory-ICE5G.nc"
+
+["ANT-8KM_IceHistory-ICE6G_C.nc"]
+checksum = "sha256:52820436b83c91a52a867eb280305328c6974a95bc1067f093b8c09eebc70350"
+size = 268175425
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_IceHistory-ICE6G_C.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_IceHistory_ANT-8KM/2.0.0/ANT-8KM_IceHistory-ICE6G_C.nc"
+
+["ANT-8KM_IceHistory-ICE6G_D.nc"]
+checksum = "sha256:b1603ab127e0194f0ebc65d8f09fde2001d3c508bd6f3b7fc44663d50d33f60b"
+size = 283872169
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_IceHistory-ICE6G_D.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_IceHistory_ANT-8KM/2.0.0/ANT-8KM_IceHistory-ICE6G_D.nc"
+
+["ANT-8KM_IceHistory-PRISM4.nc"]
+checksum = "sha256:aeb9f1ceaad88d8c61d8ba519a9f64236aecbaef074d26131a1a24e1bff260d0"
+size = 3703435
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_IceHistory-PRISM4.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_IceHistory_ANT-8KM/2.0.0/ANT-8KM_IceHistory-PRISM4.nc"
+
+["ANT-8KM_IceHistory-PaleoMIST.nc"]
+checksum = "sha256:c67cae98ea54a9b06434bdf5f4be02d7500302f2a5b4f8bda1f76ce80d574c20"
+size = 180403340
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_IceHistory-PaleoMIST.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_IceHistory_ANT-8KM/2.0.0/ANT-8KM_IceHistory-PaleoMIST.nc"
+
+["ANT-8KM_IceHistory-PaleoMIST_max.nc"]
+checksum = "sha256:e3adc3aaede26ca80bdf8ae8bae76bf62a063532748dc362279f0f160a552610"
+size = 180198863
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_IceHistory-PaleoMIST_max.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_IceHistory_ANT-8KM/2.0.0/ANT-8KM_IceHistory-PaleoMIST_max.nc"
+
+["ANT-8KM_grid.nc"]
+checksum = "sha256:6d00ae1cafbf496c1375c74c9153d92c5e2aec79d8026f004ba0dc26d0c47ece"
+size = 3314952
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_IceHistory_ANT-8KM/2.0.0/ANT-8KM_grid.nc"
+
+["grid_ANT-16KM.txt"]
+checksum = "sha256:09d646757fe153b435cee10a90cf772b4626efbe2f187d410eab83876c8305cb"
+size = 467
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/grid_ANT-16KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_IceHistory_ANT-16KM/2.0.0/grid_ANT-16KM.txt"
+
+["grid_ANT-32KM.txt"]
+checksum = "sha256:619c2b14b9667a6ff1efe4de41f1b2bd0ddc8d3e10df6d5fd99222b80be20276"
+size = 466
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/grid_ANT-32KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_IceHistory_ANT-32KM/2.0.0/grid_ANT-32KM.txt"
+
+["grid_ANT-4KM.txt"]
+checksum = "sha256:dc549c434411d3f7ad5b46e4f954f9bb180d0d2e272e1942d97e7072ae8b711d"
+size = 468
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/grid_ANT-4KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_IceHistory_ANT-4KM/2.0.0/grid_ANT-4KM.txt"
+
+["grid_ANT-8KM.txt"]
+checksum = "sha256:66ff6285f42ec156b6c6a6c30fcb0d2e4c94e07d67512fb002cb0348b3420ce5"
+size = 465
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/grid_ANT-8KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_IceHistory_ANT-8KM/2.0.0/grid_ANT-8KM.txt"

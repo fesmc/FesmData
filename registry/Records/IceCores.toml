@@ -1,0 +1,25 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-11"
+git_tag = "icecores-v2.0.0"
+store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=Records_IceCores"
+version = "2.0.0"
+
+["IceCores-Gkinis2020.nc"]
+checksum = "sha256:712bb32c3daac6fe827a690d3eb63919ec2a57a9ef0243ee701be51c747c91e8"
+size = 695076
+storage_path = "$datasets_dir/Records/IceCores/IceCores-Gkinis2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Records_IceCores/2.0.0/IceCores-Gkinis2020.nc"
+
+["IceCores-Kindler2014.nc"]
+checksum = "sha256:977e53f63f472ef87066212095fba8ab379cbb0ac10cffbdc8b0346641815599"
+size = 192221
+storage_path = "$datasets_dir/Records/IceCores/IceCores-Kindler2014.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Records_IceCores/2.0.0/IceCores-Kindler2014.nc"
+
+["IceCores-Vinther2009.nc"]
+checksum = "sha256:13fa3e44cb4fbb78441970eaad9c6c6255d0c9f971f26911e41787f78e8f9029"
+size = 44283
+storage_path = "$datasets_dir/Records/IceCores/IceCores-Vinther2009.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Records_IceCores/2.0.0/IceCores-Vinther2009.nc"

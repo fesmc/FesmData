@@ -1,0 +1,241 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-11"
+git_tag = "atmosphere-v2.0.0"
+store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=Global_Atmosphere"
+version = "2.0.0"
+
+["GLOBAL-0.1DEG_Atmosphere-ERA5-1981-2010.nc"]
+checksum = "sha256:3572f67653275340bbd1294070ca4bbe03ed4deefe0d44fe427cbda9325aeaff"
+size = 2077869625
+storage_path = "$datasets_dir/Global/GLOBAL-0.1DEG/GLOBAL-0.1DEG_Atmosphere-ERA5-1981-2010.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-0.1DEG/2.0.0/GLOBAL-0.1DEG_Atmosphere-ERA5-1981-2010.nc"
+
+["GLOBAL-0.1DEG_Atmosphere-ERA5-1991-2020.nc"]
+checksum = "sha256:ed591640c078de62e638891ed31f675b9ef0c6d64050e487979e937a9a1f76ec"
+size = 2076229440
+storage_path = "$datasets_dir/Global/GLOBAL-0.1DEG/GLOBAL-0.1DEG_Atmosphere-ERA5-1991-2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-0.1DEG/2.0.0/GLOBAL-0.1DEG_Atmosphere-ERA5-1991-2020.nc"
+
+["GLOBAL-0.1DEG_grid.nc"]
+checksum = "sha256:a4e56f174dc574ee53539866c27d4c7f5e740742d1d16f8daa8cb96fac1fc5b8"
+size = 192057
+storage_path = "$datasets_dir/Global/GLOBAL-0.1DEG/GLOBAL-0.1DEG_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-0.1DEG/2.0.0/GLOBAL-0.1DEG_grid.nc"
+
+["GLOBAL-0.25DEG_Atmosphere-CERES-2001-2020.nc"]
+checksum = "sha256:b15e0b51fb7d06aa407440a31eb3fc030571df1f9abe9040f6c050a358e1c299"
+size = 846023452
+storage_path = "$datasets_dir/Global/GLOBAL-0.25DEG/GLOBAL-0.25DEG_Atmosphere-CERES-2001-2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-0.25DEG/2.0.0/GLOBAL-0.25DEG_Atmosphere-CERES-2001-2020.nc"
+
+["GLOBAL-0.25DEG_Atmosphere-ERA5-1981-2010.nc"]
+checksum = "sha256:d48db99e188f638ec0c9e77244b2b71bb04ebbae7d4e1fdef2dc94474fa9c98a"
+size = 365435859
+storage_path = "$datasets_dir/Global/GLOBAL-0.25DEG/GLOBAL-0.25DEG_Atmosphere-ERA5-1981-2010.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-0.25DEG/2.0.0/GLOBAL-0.25DEG_Atmosphere-ERA5-1981-2010.nc"
+
+["GLOBAL-0.25DEG_Atmosphere-ERA5-1991-2020.nc"]
+checksum = "sha256:8431f15f29aeb24190c3e9312dd4be0430e43a701ae7d57775ef5f1c13ca3eab"
+size = 365107325
+storage_path = "$datasets_dir/Global/GLOBAL-0.25DEG/GLOBAL-0.25DEG_Atmosphere-ERA5-1991-2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-0.25DEG/2.0.0/GLOBAL-0.25DEG_Atmosphere-ERA5-1991-2020.nc"
+
+["GLOBAL-0.25DEG_Atmosphere-ERA5-plev-1981-2010.nc"]
+checksum = "sha256:13b989123c02201f70c476e1eba50fdd28aed9a3b97c9e95de06cedcb7086e74"
+size = 1634958812
+storage_path = "$datasets_dir/Global/GLOBAL-0.25DEG/GLOBAL-0.25DEG_Atmosphere-ERA5-plev-1981-2010.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-0.25DEG/2.0.0/GLOBAL-0.25DEG_Atmosphere-ERA5-plev-1981-2010.nc"
+
+["GLOBAL-0.25DEG_Atmosphere-ERA5-plev-1991-2020.nc"]
+checksum = "sha256:6af0dd7cfbdf18f13d5743dcb156cd0076d02c4457b380fcf01200a7e71f1dbe"
+size = 1634882438
+storage_path = "$datasets_dir/Global/GLOBAL-0.25DEG/GLOBAL-0.25DEG_Atmosphere-ERA5-plev-1991-2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-0.25DEG/2.0.0/GLOBAL-0.25DEG_Atmosphere-ERA5-plev-1991-2020.nc"
+
+["GLOBAL-0.25DEG_grid.nc"]
+checksum = "sha256:5ff16fa62830a5bcf93baa975e7fbb6294ba9e94c9a4e30a1ecbec5fb2afbc42"
+size = 49586
+storage_path = "$datasets_dir/Global/GLOBAL-0.25DEG/GLOBAL-0.25DEG_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-0.25DEG/2.0.0/GLOBAL-0.25DEG_grid.nc"
+
+["GLOBAL-0.5DEG_Atmosphere-CERES-2001-2020.nc"]
+checksum = "sha256:254fd77e58b54ea5ad79dc5b6d3f6ad945db0c279dab2a007e2f6a7bc6526e7b"
+size = 226544650
+storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/GLOBAL-0.5DEG_Atmosphere-CERES-2001-2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-0.5DEG/2.0.0/GLOBAL-0.5DEG_Atmosphere-CERES-2001-2020.nc"
+
+["GLOBAL-0.5DEG_Atmosphere-ERA5-1981-2010.nc"]
+checksum = "sha256:2ad1c6ff6bb17021a7f3b0fd27d7b85aa6fff895fdf004a7b83ae9a9def5a124"
+size = 97500151
+storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/GLOBAL-0.5DEG_Atmosphere-ERA5-1981-2010.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-0.5DEG/2.0.0/GLOBAL-0.5DEG_Atmosphere-ERA5-1981-2010.nc"
+
+["GLOBAL-0.5DEG_Atmosphere-ERA5-1991-2020.nc"]
+checksum = "sha256:113e2d696b30e5a543759c23f6e93769cae3721819e156ee5db53ba193e519ab"
+size = 97406613
+storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/GLOBAL-0.5DEG_Atmosphere-ERA5-1991-2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-0.5DEG/2.0.0/GLOBAL-0.5DEG_Atmosphere-ERA5-1991-2020.nc"
+
+["GLOBAL-0.5DEG_Atmosphere-ERA5-plev-1981-2010.nc"]
+checksum = "sha256:3fccf87afdf8acf7640327a5577defb0e84da3943a6f0e1cbfe9139358235a19"
+size = 433141882
+storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/GLOBAL-0.5DEG_Atmosphere-ERA5-plev-1981-2010.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-0.5DEG/2.0.0/GLOBAL-0.5DEG_Atmosphere-ERA5-plev-1981-2010.nc"
+
+["GLOBAL-0.5DEG_Atmosphere-ERA5-plev-1991-2020.nc"]
+checksum = "sha256:65617a1d918b7ebbafefcd4dee7224bfe8414feba916b6d3714905fdc64285ee"
+size = 433121645
+storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/GLOBAL-0.5DEG_Atmosphere-ERA5-plev-1991-2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-0.5DEG/2.0.0/GLOBAL-0.5DEG_Atmosphere-ERA5-plev-1991-2020.nc"
+
+["GLOBAL-0.5DEG_grid.nc"]
+checksum = "sha256:43301e8a8f8a7d3a47e181cc3ba1b216c72fbca797d8ed8f8672b5da2c1a95de"
+size = 25589
+storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/GLOBAL-0.5DEG_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-0.5DEG/2.0.0/GLOBAL-0.5DEG_grid.nc"
+
+["GLOBAL-1DEG_Atmosphere-CERES-2001-2020.nc"]
+checksum = "sha256:e41d714bf23ae7dc20ff05dd6f1c9c2f967309316f37f8ebf25f1cc283eedd34"
+size = 54563494
+storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_Atmosphere-CERES-2001-2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-1DEG/2.0.0/GLOBAL-1DEG_Atmosphere-CERES-2001-2020.nc"
+
+["GLOBAL-1DEG_Atmosphere-ERA5-1981-2010.nc"]
+checksum = "sha256:e17b889a99248cd28d4327aa434d5b8965de38c514a043a72b38bcd1076da8c0"
+size = 25656440
+storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_Atmosphere-ERA5-1981-2010.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-1DEG/2.0.0/GLOBAL-1DEG_Atmosphere-ERA5-1981-2010.nc"
+
+["GLOBAL-1DEG_Atmosphere-ERA5-1991-2020.nc"]
+checksum = "sha256:d805875a404f5a4f61947b3646c83d4052befc1088ef7b6ce2caf92f3f784e60"
+size = 25647296
+storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_Atmosphere-ERA5-1991-2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-1DEG/2.0.0/GLOBAL-1DEG_Atmosphere-ERA5-1991-2020.nc"
+
+["GLOBAL-1DEG_Atmosphere-ERA5-plev-1981-2010.nc"]
+checksum = "sha256:0d788949c115c0be7095982ec6fdae7e9c2cc2e3d4b6986fc1bec366faa5ec82"
+size = 114082953
+storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_Atmosphere-ERA5-plev-1981-2010.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-1DEG/2.0.0/GLOBAL-1DEG_Atmosphere-ERA5-plev-1981-2010.nc"
+
+["GLOBAL-1DEG_Atmosphere-ERA5-plev-1991-2020.nc"]
+checksum = "sha256:b05bda0ea6babd07a3f86d6824abbeb6e351aea28d364589ec3a965bd30f536e"
+size = 114078764
+storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_Atmosphere-ERA5-plev-1991-2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-1DEG/2.0.0/GLOBAL-1DEG_Atmosphere-ERA5-plev-1991-2020.nc"
+
+["GLOBAL-1DEG_grid.nc"]
+checksum = "sha256:72658a61a9d89e56a88266b6a3168ba7ea4e18c4c8b0d2a904164c2c047e5d47"
+size = 17869
+storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-1DEG/2.0.0/GLOBAL-1DEG_grid.nc"
+
+["GLOBAL-2DEG_Atmosphere-CERES-2001-2020.nc"]
+checksum = "sha256:57ab53dba00b2d2b69b1c86ae4ac85998b723743669f2997d3aa801fd29c1608"
+size = 15616688
+storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_Atmosphere-CERES-2001-2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-2DEG/2.0.0/GLOBAL-2DEG_Atmosphere-CERES-2001-2020.nc"
+
+["GLOBAL-2DEG_Atmosphere-ERA5-1981-2010.nc"]
+checksum = "sha256:8de3e68c248aae7c82761d2732d6653bfd8763917f453d2ac43938841a457a91"
+size = 6816450
+storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_Atmosphere-ERA5-1981-2010.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-2DEG/2.0.0/GLOBAL-2DEG_Atmosphere-ERA5-1981-2010.nc"
+
+["GLOBAL-2DEG_Atmosphere-ERA5-1991-2020.nc"]
+checksum = "sha256:027202d71b92bccb3ca68f125ab1c65a01c8fa81502a524ed231da91fbdf253a"
+size = 6816420
+storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_Atmosphere-ERA5-1991-2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-2DEG/2.0.0/GLOBAL-2DEG_Atmosphere-ERA5-1991-2020.nc"
+
+["GLOBAL-2DEG_Atmosphere-ERA5-plev-1981-2010.nc"]
+checksum = "sha256:17def7772c1f0191ee5056b62ec77e44ed6c33aad1a7ad58c6793932a42fcf59"
+size = 29902762
+storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_Atmosphere-ERA5-plev-1981-2010.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-2DEG/2.0.0/GLOBAL-2DEG_Atmosphere-ERA5-plev-1981-2010.nc"
+
+["GLOBAL-2DEG_Atmosphere-ERA5-plev-1991-2020.nc"]
+checksum = "sha256:d6461fdb9963fe5d635e6f60e016ae144fe6c9d081981d04e3a6fc8f7942f8a8"
+size = 29906715
+storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_Atmosphere-ERA5-plev-1991-2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-2DEG/2.0.0/GLOBAL-2DEG_Atmosphere-ERA5-plev-1991-2020.nc"
+
+["GLOBAL-2DEG_grid.nc"]
+checksum = "sha256:5fa987a099ab7e60d3a4b22e7bb5bd00cadccc8581874b8d600a38f9a512f104"
+size = 14559
+storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-2DEG/2.0.0/GLOBAL-2DEG_grid.nc"
+
+["GLOBAL-5DEG_Atmosphere-CERES-2001-2020.nc"]
+checksum = "sha256:4a883f9aa493f232b7112862ba61a05a6f05a3c3fd6d857f524e6b5eecec225a"
+size = 2819695
+storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_Atmosphere-CERES-2001-2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-5DEG/2.0.0/GLOBAL-5DEG_Atmosphere-CERES-2001-2020.nc"
+
+["GLOBAL-5DEG_Atmosphere-ERA5-1981-2010.nc"]
+checksum = "sha256:3838ae661c285bd0999a8593265e319bc66441464a5b79301be401ffc9dbeece"
+size = 1272630
+storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_Atmosphere-ERA5-1981-2010.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-5DEG/2.0.0/GLOBAL-5DEG_Atmosphere-ERA5-1981-2010.nc"
+
+["GLOBAL-5DEG_Atmosphere-ERA5-1991-2020.nc"]
+checksum = "sha256:98aef21584015e1e20c362e00c217f193570d5412b37417ab2bca830a3595128"
+size = 1273060
+storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_Atmosphere-ERA5-1991-2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-5DEG/2.0.0/GLOBAL-5DEG_Atmosphere-ERA5-1991-2020.nc"
+
+["GLOBAL-5DEG_Atmosphere-ERA5-plev-1981-2010.nc"]
+checksum = "sha256:70a1484427bf1c8397f751d4ef6b56deb8d52df986e0006fd26dd7643091a986"
+size = 4998841
+storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_Atmosphere-ERA5-plev-1981-2010.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-5DEG/2.0.0/GLOBAL-5DEG_Atmosphere-ERA5-plev-1981-2010.nc"
+
+["GLOBAL-5DEG_Atmosphere-ERA5-plev-1991-2020.nc"]
+checksum = "sha256:c625580a2d79eab7efd706c5d3339ff9e9a4f41a381bb4d8bf001fc6f77276b3"
+size = 4999912
+storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_Atmosphere-ERA5-plev-1991-2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-5DEG/2.0.0/GLOBAL-5DEG_Atmosphere-ERA5-plev-1991-2020.nc"
+
+["GLOBAL-5DEG_grid.nc"]
+checksum = "sha256:55c037e0371c20123875dc16ddd01d1e864dd5b5b1b0cb29c9bfa3fd23f24cbf"
+size = 12511
+storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-5DEG/2.0.0/GLOBAL-5DEG_grid.nc"
+
+["grid_GLOBAL-0.1DEG.txt"]
+checksum = "sha256:5b3a831c01fa4276db84a6d54d7cb5d4da7ca2fbc859ab2a85080a431155e4e3"
+size = 215
+storage_path = "$datasets_dir/Global/GLOBAL-0.1DEG/grid_GLOBAL-0.1DEG.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-0.1DEG/2.0.0/grid_GLOBAL-0.1DEG.txt"
+
+["grid_GLOBAL-0.25DEG.txt"]
+checksum = "sha256:18ffa92b5b37bbafa504215d99896bfe5ed3d9cada9beed41bf6f79353279d7e"
+size = 218
+storage_path = "$datasets_dir/Global/GLOBAL-0.25DEG/grid_GLOBAL-0.25DEG.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-0.25DEG/2.0.0/grid_GLOBAL-0.25DEG.txt"
+
+["grid_GLOBAL-0.5DEG.txt"]
+checksum = "sha256:7d6ca9751973abeb4a15b25146d8c6601cd47bf9e2cbf62a9dce3e00519955cd"
+size = 212
+storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/grid_GLOBAL-0.5DEG.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-0.5DEG/2.0.0/grid_GLOBAL-0.5DEG.txt"
+
+["grid_GLOBAL-1DEG.txt"]
+checksum = "sha256:38acf47f98866cc1c0479566b51a3a3df28fb09aa295652f52f67fffb2c499fd"
+size = 209
+storage_path = "$datasets_dir/Global/GLOBAL-1DEG/grid_GLOBAL-1DEG.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-1DEG/2.0.0/grid_GLOBAL-1DEG.txt"
+
+["grid_GLOBAL-2DEG.txt"]
+checksum = "sha256:f09996b59b7b7cc91b348c53eec0a8cb246c5b293a890b4912278435d589fec6"
+size = 208
+storage_path = "$datasets_dir/Global/GLOBAL-2DEG/grid_GLOBAL-2DEG.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-2DEG/2.0.0/grid_GLOBAL-2DEG.txt"
+
+["grid_GLOBAL-5DEG.txt"]
+checksum = "sha256:647911a4f8fd1afecd212683255ca869a1f3b9bdcb3ae180e7a1415cea84d344"
+size = 206
+storage_path = "$datasets_dir/Global/GLOBAL-5DEG/grid_GLOBAL-5DEG.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Atmosphere_GLOBAL-5DEG/2.0.0/grid_GLOBAL-5DEG.txt"

@@ -1,0 +1,151 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-11"
+git_tag = "sediment-v2.0.0"
+store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=GreenlandPaleo_Sediment"
+version = "2.0.0"
+
+["GRL-PAL-16KM_Sediment-CRUST1.nc"]
+checksum = "sha256:d5662ccae9f8003477d93334f645742f763a04d6ffab98e246e2e82ca7032200"
+size = 295068
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_Sediment-CRUST1.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Sediment_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_Sediment-CRUST1.nc"
+
+["GRL-PAL-16KM_Sediment-ECM1.nc"]
+checksum = "sha256:6369e44ceaf453dee9c63dfc013ed70d13f992c9505887cff90af434e83c7f47"
+size = 280015
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_Sediment-ECM1.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Sediment_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_Sediment-ECM1.nc"
+
+["GRL-PAL-16KM_Sediment-GlobSed.nc"]
+checksum = "sha256:391ea1293a16e9b7035afcad94e48e979a2ba5c395743c9f95fc823851d0ee79"
+size = 108147
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_Sediment-GlobSed.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Sediment_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_Sediment-GlobSed.nc"
+
+["GRL-PAL-16KM_Sediment-Gowan2019.nc"]
+checksum = "sha256:2b6b1795b3f10d76bee5a930c8d97306c99d192073a8903ec3190f4117da3f80"
+size = 54932
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_Sediment-Gowan2019.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Sediment_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_Sediment-Gowan2019.nc"
+
+["GRL-PAL-16KM_grid.nc"]
+checksum = "sha256:641614ed64e7a6989a9b632764bc593855f65f70fc7a200f9a89263c0fee7f3e"
+size = 197958
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Sediment_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_grid.nc"
+
+["GRL-PAL-32KM_Sediment-CRUST1.nc"]
+checksum = "sha256:44aa5f765ea0165a6226ed050a33aefd6542e1810ad3e2d768da42e14cffed6b"
+size = 102883
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_Sediment-CRUST1.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Sediment_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_Sediment-CRUST1.nc"
+
+["GRL-PAL-32KM_Sediment-ECM1.nc"]
+checksum = "sha256:e39e33a888a5c6387944201830f0c2cb5ed13242ba65af8d210ea4b85773b636"
+size = 100374
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_Sediment-ECM1.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Sediment_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_Sediment-ECM1.nc"
+
+["GRL-PAL-32KM_Sediment-GlobSed.nc"]
+checksum = "sha256:e350d8f8a0050ce4f068cf88220ab8f95d5d609f585f7fb182bbca2837198cdd"
+size = 46172
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_Sediment-GlobSed.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Sediment_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_Sediment-GlobSed.nc"
+
+["GRL-PAL-32KM_Sediment-Gowan2019.nc"]
+checksum = "sha256:aa17ba55c867e4082f4b96ca32a06254ba25210bf19e6c1193534070e63c4e20"
+size = 39112
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_Sediment-Gowan2019.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Sediment_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_Sediment-Gowan2019.nc"
+
+["GRL-PAL-32KM_grid.nc"]
+checksum = "sha256:c94aeb9d12df68c5429b6e9ac944b6ed3328db1b3bcc9d10942a26343bde80f1"
+size = 70200
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Sediment_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_grid.nc"
+
+["GRL-PAL-4KM_Sediment-CRUST1.nc"]
+checksum = "sha256:b9785d2fba0de1f7c4129daf6dc49ffbc159a72977085398a33c6b099714f32f"
+size = 3559993
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/GRL-PAL-4KM_Sediment-CRUST1.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Sediment_GRL-PAL-4KM/2.0.0/GRL-PAL-4KM_Sediment-CRUST1.nc"
+
+["GRL-PAL-4KM_Sediment-ECM1.nc"]
+checksum = "sha256:76b2a690cb5b70347f9bee3282c855743afbeca17b67b980e91ba6ae28621f01"
+size = 3305940
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/GRL-PAL-4KM_Sediment-ECM1.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Sediment_GRL-PAL-4KM/2.0.0/GRL-PAL-4KM_Sediment-ECM1.nc"
+
+["GRL-PAL-4KM_Sediment-GlobSed.nc"]
+checksum = "sha256:f35d52348c58a68195f0fc583947079fe297cd55d13fa2fdf9ac816fc10f9889"
+size = 950767
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/GRL-PAL-4KM_Sediment-GlobSed.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Sediment_GRL-PAL-4KM/2.0.0/GRL-PAL-4KM_Sediment-GlobSed.nc"
+
+["GRL-PAL-4KM_Sediment-Gowan2019.nc"]
+checksum = "sha256:e06a0dc9f1314bf8ca320c4dffc756885bbc7e4c972883dd95200b5f0a600c2e"
+size = 201538
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/GRL-PAL-4KM_Sediment-Gowan2019.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Sediment_GRL-PAL-4KM/2.0.0/GRL-PAL-4KM_Sediment-Gowan2019.nc"
+
+["GRL-PAL-4KM_grid.nc"]
+checksum = "sha256:69ea06b475ce4c286038e45b4e083ee61794c4e80053a4c21c0e088399a16270"
+size = 2137731
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/GRL-PAL-4KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Sediment_GRL-PAL-4KM/2.0.0/GRL-PAL-4KM_grid.nc"
+
+["GRL-PAL-8KM_Sediment-CRUST1.nc"]
+checksum = "sha256:146b42bb97fa02af22e8ccc25fc6ff59ace6ae76b9ae30a9c9960413948ce762"
+size = 988665
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_Sediment-CRUST1.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Sediment_GRL-PAL-8KM/2.0.0/GRL-PAL-8KM_Sediment-CRUST1.nc"
+
+["GRL-PAL-8KM_Sediment-ECM1.nc"]
+checksum = "sha256:c936104ac56c8160a0152d7107de8ac0fa8a1da687a331323ba16fa7d2db12ce"
+size = 924470
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_Sediment-ECM1.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Sediment_GRL-PAL-8KM/2.0.0/GRL-PAL-8KM_Sediment-ECM1.nc"
+
+["GRL-PAL-8KM_Sediment-GlobSed.nc"]
+checksum = "sha256:922520397c27edcc595dfcceb92c95e52292fc74ddd7bcb7cb932cc375210224"
+size = 301597
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_Sediment-GlobSed.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Sediment_GRL-PAL-8KM/2.0.0/GRL-PAL-8KM_Sediment-GlobSed.nc"
+
+["GRL-PAL-8KM_Sediment-Gowan2019.nc"]
+checksum = "sha256:b3dd5a412b503e9652eeffe1d0ddb2d4cf7ef0f1b8d94d5bb92c08951e1ece1c"
+size = 92685
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_Sediment-Gowan2019.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Sediment_GRL-PAL-8KM/2.0.0/GRL-PAL-8KM_Sediment-Gowan2019.nc"
+
+["GRL-PAL-8KM_grid.nc"]
+checksum = "sha256:16aa24f1cb3018fd4813ef64d58bd23aac3af70ef50ee98296c75ddad16c6f0b"
+size = 631820
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Sediment_GRL-PAL-8KM/2.0.0/GRL-PAL-8KM_grid.nc"
+
+["grid_GRL-PAL-16KM.txt"]
+checksum = "sha256:1f2dd6b17cd99dee69b34afe4a7f49e087d4f935e01d862b2392ebebb071ea31"
+size = 466
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/grid_GRL-PAL-16KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Sediment_GRL-PAL-16KM/2.0.0/grid_GRL-PAL-16KM.txt"
+
+["grid_GRL-PAL-32KM.txt"]
+checksum = "sha256:cf0d0b1b8155818d7b19aa0eb4ebc0539c6a7d4d2ed0ddca89822c5f697e6646"
+size = 463
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/grid_GRL-PAL-32KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Sediment_GRL-PAL-32KM/2.0.0/grid_GRL-PAL-32KM.txt"
+
+["grid_GRL-PAL-4KM.txt"]
+checksum = "sha256:3ef324e1bb441b7c2b48632ee65a337255fe992cdba249417f182c929089cf0f"
+size = 465
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/grid_GRL-PAL-4KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Sediment_GRL-PAL-4KM/2.0.0/grid_GRL-PAL-4KM.txt"
+
+["grid_GRL-PAL-8KM.txt"]
+checksum = "sha256:08c7a03da8b258951eebef55634ad60f44f0f7fe965aa38e7dd26e4ca287d743"
+size = 465
+storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/grid_GRL-PAL-8KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Sediment_GRL-PAL-8KM/2.0.0/grid_GRL-PAL-8KM.txt"

@@ -1,0 +1,133 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-11"
+git_tag = "topo-v2.1.0"
+store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=Pyrenees_Topo"
+version = "2.1.0"
+
+["PYR-16KM_TOPO-GEBCO2026.nc"]
+checksum = "sha256:fd91c6b76e7412754cfa7ee6b856829fe993b8cd74c6ba37b8d4b4d42b91cf02"
+size = 54243
+storage_path = "$datasets_dir/Pyrenees/PYR-16KM/PYR-16KM_TOPO-GEBCO2026.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Pyrenees_Topo_PYR-16KM/2.1.0/PYR-16KM_TOPO-GEBCO2026.nc"
+
+["PYR-16KM_grid.nc"]
+checksum = "sha256:1970b129ffc2d64cebfd1e5c46ddc88fbe4e53fd8bfe8d8f2748fbaa58ad7f0e"
+size = 23562
+storage_path = "$datasets_dir/Pyrenees/PYR-16KM/PYR-16KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Pyrenees_Topo_PYR-16KM/2.1.0/PYR-16KM_grid.nc"
+
+["PYR-1KM_TOPO-GEBCO2026.nc"]
+checksum = "sha256:17e04641fa0d7aa758f839f30f2ad6ac5b1920adca7400cb480eb2b3d85a191f"
+size = 1045304
+storage_path = "$datasets_dir/Pyrenees/PYR-1KM/PYR-1KM_TOPO-GEBCO2026.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Pyrenees_Topo_PYR-1KM/2.1.0/PYR-1KM_TOPO-GEBCO2026.nc"
+
+["PYR-1KM_grid.nc"]
+checksum = "sha256:7db74080c3536f3eea4b318565d464df5d3e9a455b6034f456dc6879d4f2e91b"
+size = 415133
+storage_path = "$datasets_dir/Pyrenees/PYR-1KM/PYR-1KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Pyrenees_Topo_PYR-1KM/2.1.0/PYR-1KM_grid.nc"
+
+["PYR-2KM_TOPO-GEBCO2026.nc"]
+checksum = "sha256:fce78406ef806e4775de0b7547164f6176a9634bd11a18c6428237f0969d1f5e"
+size = 313728
+storage_path = "$datasets_dir/Pyrenees/PYR-2KM/PYR-2KM_TOPO-GEBCO2026.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Pyrenees_Topo_PYR-2KM/2.1.0/PYR-2KM_TOPO-GEBCO2026.nc"
+
+["PYR-2KM_grid.nc"]
+checksum = "sha256:02d80a754d9fd500540cfb6796be8ad88aefd7d6cf04ac3ac2b86c3bf831b25f"
+size = 140199
+storage_path = "$datasets_dir/Pyrenees/PYR-2KM/PYR-2KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Pyrenees_Topo_PYR-2KM/2.1.0/PYR-2KM_grid.nc"
+
+["PYR-32KM_TOPO-GEBCO2026.nc"]
+checksum = "sha256:ad699d3447ee227326bfa1e1231fd72112d77624ee6fba792771ca4d2ee837ec"
+size = 49187
+storage_path = "$datasets_dir/Pyrenees/PYR-32KM/PYR-32KM_TOPO-GEBCO2026.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Pyrenees_Topo_PYR-32KM/2.1.0/PYR-32KM_TOPO-GEBCO2026.nc"
+
+["PYR-32KM_grid.nc"]
+checksum = "sha256:5bc37b84ddf46e37ff86bddfd6b33c2b0cbc8d51749b2c922b6ddfeb08365c93"
+size = 20634
+storage_path = "$datasets_dir/Pyrenees/PYR-32KM/PYR-32KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Pyrenees_Topo_PYR-32KM/2.1.0/PYR-32KM_grid.nc"
+
+["PYR-4KM_TOPO-GEBCO2026.nc"]
+checksum = "sha256:92be78dda241af666b0f258561f8a647322f0f02f705d6298295ef6a1a250e89"
+size = 121928
+storage_path = "$datasets_dir/Pyrenees/PYR-4KM/PYR-4KM_TOPO-GEBCO2026.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Pyrenees_Topo_PYR-4KM/2.1.0/PYR-4KM_TOPO-GEBCO2026.nc"
+
+["PYR-4KM_grid.nc"]
+checksum = "sha256:ff862a485681fcfdc4a5bcae39bba3c1e8a579e07e586950fe04267a2b16bb97"
+size = 56156
+storage_path = "$datasets_dir/Pyrenees/PYR-4KM/PYR-4KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Pyrenees_Topo_PYR-4KM/2.1.0/PYR-4KM_grid.nc"
+
+["PYR-500M_TOPO-GEBCO2026.nc"]
+checksum = "sha256:8362ff1781b1cbb0301c8215c153bb46137353df58030006d69c8ef0cdfce447"
+size = 3580880
+storage_path = "$datasets_dir/Pyrenees/PYR-500M/PYR-500M_TOPO-GEBCO2026.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Pyrenees_Topo_PYR-500M/2.1.0/PYR-500M_TOPO-GEBCO2026.nc"
+
+["PYR-500M_grid.nc"]
+checksum = "sha256:e1171fb45db05153c818f693ebbc2637e9d501d150217e2a9dfbde2c94a98672"
+size = 1314876
+storage_path = "$datasets_dir/Pyrenees/PYR-500M/PYR-500M_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Pyrenees_Topo_PYR-500M/2.1.0/PYR-500M_grid.nc"
+
+["PYR-8KM_TOPO-GEBCO2026.nc"]
+checksum = "sha256:a1db4013e609e3ad02fe9752e623ad49f3669149f80ebe768c2c8c66dd97ff07"
+size = 68182
+storage_path = "$datasets_dir/Pyrenees/PYR-8KM/PYR-8KM_TOPO-GEBCO2026.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Pyrenees_Topo_PYR-8KM/2.1.0/PYR-8KM_TOPO-GEBCO2026.nc"
+
+["PYR-8KM_grid.nc"]
+checksum = "sha256:8eb974d0ce02365b677285419316e5a005cea408caf07126bd0039a175eeb9ce"
+size = 32310
+storage_path = "$datasets_dir/Pyrenees/PYR-8KM/PYR-8KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Pyrenees_Topo_PYR-8KM/2.1.0/PYR-8KM_grid.nc"
+
+["grid_PYR-16KM.txt"]
+checksum = "sha256:f2e756646de2fc08661ad9deac4b54c2fca57f05161bf78c72c575f58de6bfe1"
+size = 319
+storage_path = "$datasets_dir/Pyrenees/PYR-16KM/grid_PYR-16KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Pyrenees_Topo_PYR-16KM/2.1.0/grid_PYR-16KM.txt"
+
+["grid_PYR-1KM.txt"]
+checksum = "sha256:f12c47a62baddbaea4c10d7430ec1638503046e056aef074bb1a152288e84cca"
+size = 322
+storage_path = "$datasets_dir/Pyrenees/PYR-1KM/grid_PYR-1KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Pyrenees_Topo_PYR-1KM/2.1.0/grid_PYR-1KM.txt"
+
+["grid_PYR-2KM.txt"]
+checksum = "sha256:cace1dfc9f744dd1d56f0f4560598dd70aa72f1c7bf01cf033a25b04d480b03d"
+size = 321
+storage_path = "$datasets_dir/Pyrenees/PYR-2KM/grid_PYR-2KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Pyrenees_Topo_PYR-2KM/2.1.0/grid_PYR-2KM.txt"
+
+["grid_PYR-32KM.txt"]
+checksum = "sha256:fdef4df753330fcec8cab87fa55c1b0d9832d4dd0992b2da740a79e3d6c531e7"
+size = 318
+storage_path = "$datasets_dir/Pyrenees/PYR-32KM/grid_PYR-32KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Pyrenees_Topo_PYR-32KM/2.1.0/grid_PYR-32KM.txt"
+
+["grid_PYR-4KM.txt"]
+checksum = "sha256:472e29b62d38a58a512aa515c7929a2f287bfe4b6fecf25a85b51f9e4808f04f"
+size = 319
+storage_path = "$datasets_dir/Pyrenees/PYR-4KM/grid_PYR-4KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Pyrenees_Topo_PYR-4KM/2.1.0/grid_PYR-4KM.txt"
+
+["grid_PYR-500M.txt"]
+checksum = "sha256:6ca4be959f99fbb9e7c5dad28c9c9f51e63790182a9d04df077762534ad14598"
+size = 322
+storage_path = "$datasets_dir/Pyrenees/PYR-500M/grid_PYR-500M.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Pyrenees_Topo_PYR-500M/2.1.0/grid_PYR-500M.txt"
+
+["grid_PYR-8KM.txt"]
+checksum = "sha256:0de70d19e807586a4ab9af4311bc6f17c37dd1d04bf4d756fb0120ae006eefce"
+size = 318
+storage_path = "$datasets_dir/Pyrenees/PYR-8KM/grid_PYR-8KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Pyrenees_Topo_PYR-8KM/2.1.0/grid_PYR-8KM.txt"

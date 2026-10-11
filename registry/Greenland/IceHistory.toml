@@ -1,0 +1,265 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-11"
+git_tag = "icehistory-v2.0.0"
+store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=Greenland_IceHistory"
+version = "2.0.0"
+
+["GRL-16KM_IceHistory-Batchelor2019.nc"]
+checksum = "sha256:428347f8878408494eee894b11cb2802df3fc1605ddfe6c0f1620e2e817ab47f"
+size = 255239
+storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_IceHistory-Batchelor2019.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-16KM/2.0.0/GRL-16KM_IceHistory-Batchelor2019.nc"
+
+["GRL-16KM_IceHistory-ICE5G.nc"]
+checksum = "sha256:a9a34c4c53cefe8b63e80dc5a1b06387f6297570bbc532a636717ebecd73fa9a"
+size = 4578706
+storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_IceHistory-ICE5G.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-16KM/2.0.0/GRL-16KM_IceHistory-ICE5G.nc"
+
+["GRL-16KM_IceHistory-ICE6G_C.nc"]
+checksum = "sha256:e0a39d72fc29dc1734b4103525e073e95825891924225b5710e8800e610c8762"
+size = 12272587
+storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_IceHistory-ICE6G_C.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-16KM/2.0.0/GRL-16KM_IceHistory-ICE6G_C.nc"
+
+["GRL-16KM_IceHistory-PRISM4.nc"]
+checksum = "sha256:3376b1f36b35dceb34660c4bcf5c3ed53f55eaa708906277c0545b9f1c3f3c57"
+size = 209968
+storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_IceHistory-PRISM4.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-16KM/2.0.0/GRL-16KM_IceHistory-PRISM4.nc"
+
+["GRL-16KM_IceHistory-PaleoGrIS.nc"]
+checksum = "sha256:a0b3881e3cf996ca729347fbb0da2f436fed4a65d941e2bd0e4c6c3c1aab3a73"
+size = 65177
+storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_IceHistory-PaleoGrIS.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-16KM/2.0.0/GRL-16KM_IceHistory-PaleoGrIS.nc"
+
+["GRL-16KM_IceHistory-PaleoMIST.nc"]
+checksum = "sha256:ec0ad7e95fd7e6275089e032ddc9c4826778fd1824bb3dcaa5d3931738e5e078"
+size = 7554884
+storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_IceHistory-PaleoMIST.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-16KM/2.0.0/GRL-16KM_IceHistory-PaleoMIST.nc"
+
+["GRL-16KM_IceHistory-PaleoMIST_max.nc"]
+checksum = "sha256:2ca301af2f827226fd8e5e3503670c283c9dc770f181b1accad9d6aaac1932a1"
+size = 7545718
+storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_IceHistory-PaleoMIST_max.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-16KM/2.0.0/GRL-16KM_IceHistory-PaleoMIST_max.nc"
+
+["GRL-16KM_grid.nc"]
+checksum = "sha256:e835518450bae0a863fdb7cd68adc7d4f59c48c790090d497939939518960d41"
+size = 150482
+storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-16KM/2.0.0/GRL-16KM_grid.nc"
+
+["GRL-1KM_IceHistory-PaleoGrIS.nc"]
+checksum = "sha256:b2cb4435b8de70d14ee816fba8e1c0f1b38c477c1ae61f02cad1a58ca5ecff91"
+size = 1432075
+storage_path = "$datasets_dir/Greenland/GRL-1KM/GRL-1KM_IceHistory-PaleoGrIS.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-1KM/2.0.0/GRL-1KM_IceHistory-PaleoGrIS.nc"
+
+["GRL-1KM_grid.nc"]
+checksum = "sha256:04da63872f29f82b9a5ae9f8f3dbb0996e9b8a272f539629d1af272147c92f9b"
+size = 19073467
+storage_path = "$datasets_dir/Greenland/GRL-1KM/GRL-1KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-1KM/2.0.0/GRL-1KM_grid.nc"
+
+["GRL-2KM_IceHistory-Batchelor2019.nc"]
+checksum = "sha256:689f9f0fc91d6663f9b3addc074409d1150cc76d0a6ef2d5ee9216407ec9d7df"
+size = 3757130
+storage_path = "$datasets_dir/Greenland/GRL-2KM/GRL-2KM_IceHistory-Batchelor2019.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-2KM/2.0.0/GRL-2KM_IceHistory-Batchelor2019.nc"
+
+["GRL-2KM_IceHistory-PaleoGrIS.nc"]
+checksum = "sha256:4c178cc37670d304e878ece089874e0d0e3da98fc4e5e2302f6bbaaaa3b07f04"
+size = 675273
+storage_path = "$datasets_dir/Greenland/GRL-2KM/GRL-2KM_IceHistory-PaleoGrIS.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-2KM/2.0.0/GRL-2KM_IceHistory-PaleoGrIS.nc"
+
+["GRL-2KM_grid.nc"]
+checksum = "sha256:f14a977d6e3a1f3163a45f02a604b05efc34d00a2f27fba14f8114ddf5725fc1"
+size = 5378392
+storage_path = "$datasets_dir/Greenland/GRL-2KM/GRL-2KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-2KM/2.0.0/GRL-2KM_grid.nc"
+
+["GRL-32KM_IceHistory-Batchelor2019.nc"]
+checksum = "sha256:c4a52147db768d513d55ad482cb080c8f4feb9b09bd1b1a04dda6f652a857cfa"
+size = 101087
+storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_IceHistory-Batchelor2019.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-32KM/2.0.0/GRL-32KM_IceHistory-Batchelor2019.nc"
+
+["GRL-32KM_IceHistory-ICE5G.nc"]
+checksum = "sha256:a0dc2e472ad0701eebcf9d421aea1169b77e24d312d441aae06a0073b57d44cb"
+size = 1196030
+storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_IceHistory-ICE5G.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-32KM/2.0.0/GRL-32KM_IceHistory-ICE5G.nc"
+
+["GRL-32KM_IceHistory-ICE6G_C.nc"]
+checksum = "sha256:0885fddcf95660270220ea222d46c0ffa6348335cd0ba2f361fd5248dfc7901f"
+size = 3178056
+storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_IceHistory-ICE6G_C.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-32KM/2.0.0/GRL-32KM_IceHistory-ICE6G_C.nc"
+
+["GRL-32KM_IceHistory-PRISM4.nc"]
+checksum = "sha256:76529ea3d72c8df499edddb3e844caa39487c4c1fff84d3ca1e6055261cfa369"
+size = 95661
+storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_IceHistory-PRISM4.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-32KM/2.0.0/GRL-32KM_IceHistory-PRISM4.nc"
+
+["GRL-32KM_IceHistory-PaleoGrIS.nc"]
+checksum = "sha256:e1a79efb17bd9ad8ff72c6d0f85c409e58023c236410f2f8965b2eb7c66566ee"
+size = 39366
+storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_IceHistory-PaleoGrIS.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-32KM/2.0.0/GRL-32KM_IceHistory-PaleoGrIS.nc"
+
+["GRL-32KM_IceHistory-PaleoMIST.nc"]
+checksum = "sha256:e020e0a25ab3610201bf0952ef2d6b4e7103b832e7514dbf932e597742704e97"
+size = 1883587
+storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_IceHistory-PaleoMIST.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-32KM/2.0.0/GRL-32KM_IceHistory-PaleoMIST.nc"
+
+["GRL-32KM_IceHistory-PaleoMIST_max.nc"]
+checksum = "sha256:a13aeade7b58436c82c13677d8a41193ef41df7209688185af3019b326e2851e"
+size = 1882172
+storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_IceHistory-PaleoMIST_max.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-32KM/2.0.0/GRL-32KM_IceHistory-PaleoMIST_max.nc"
+
+["GRL-32KM_grid.nc"]
+checksum = "sha256:c922307bd72e9e5bd3d10d86b97e3c108dcd5a4264dd47b305b9c562ba81e775"
+size = 57245
+storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-32KM/2.0.0/GRL-32KM_grid.nc"
+
+["GRL-4KM_IceHistory-Batchelor2019.nc"]
+checksum = "sha256:a28074e1f2d02ad564b0c541c1ce926a6d4e8723435c96c4c85c152c9646626f"
+size = 1966723
+storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_IceHistory-Batchelor2019.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-4KM/2.0.0/GRL-4KM_IceHistory-Batchelor2019.nc"
+
+["GRL-4KM_IceHistory-ICE5G.nc"]
+checksum = "sha256:3ce958cb93b1bb53c15882a8548833f11473ea850e6ce2977aab2584062c077d"
+size = 76180104
+storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_IceHistory-ICE5G.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-4KM/2.0.0/GRL-4KM_IceHistory-ICE5G.nc"
+
+["GRL-4KM_IceHistory-ICE6G_C.nc"]
+checksum = "sha256:e21a2f5adc11243f487cd45221374edc9fad4129917dd3cd255df5051cf68fdc"
+size = 196491554
+storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_IceHistory-ICE6G_C.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-4KM/2.0.0/GRL-4KM_IceHistory-ICE6G_C.nc"
+
+["GRL-4KM_IceHistory-PRISM4.nc"]
+checksum = "sha256:9b00e01e941d2da1423b860f5738f4b358897d51b84422c4257197246bba1f3a"
+size = 2127777
+storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_IceHistory-PRISM4.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-4KM/2.0.0/GRL-4KM_IceHistory-PRISM4.nc"
+
+["GRL-4KM_IceHistory-PaleoGrIS.nc"]
+checksum = "sha256:17724db4eb682f6defbf8bd38e23c7b6f17113fc0689148627d9fc2b0ed3aeb3"
+size = 293107
+storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_IceHistory-PaleoGrIS.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-4KM/2.0.0/GRL-4KM_IceHistory-PaleoGrIS.nc"
+
+["GRL-4KM_IceHistory-PaleoMIST.nc"]
+checksum = "sha256:38404aba9ad37720535a92bf08f463a624c38228a55df9874ab6c8815d1b43a7"
+size = 108154861
+storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_IceHistory-PaleoMIST.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-4KM/2.0.0/GRL-4KM_IceHistory-PaleoMIST.nc"
+
+["GRL-4KM_IceHistory-PaleoMIST_max.nc"]
+checksum = "sha256:cf0877077be5a30ce466602d15c23a5554b4ef7b539428237e955380a34dd5e0"
+size = 108120133
+storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_IceHistory-PaleoMIST_max.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-4KM/2.0.0/GRL-4KM_IceHistory-PaleoMIST_max.nc"
+
+["GRL-4KM_grid.nc"]
+checksum = "sha256:bfc44b679d56099bfb9306c3bfe8d74d1663a5b7168c2f18b404fdb3b6cabe4f"
+size = 1546343
+storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-4KM/2.0.0/GRL-4KM_grid.nc"
+
+["GRL-8KM_IceHistory-Batchelor2019.nc"]
+checksum = "sha256:acdf7edcf6c2da34bfc37f3e1276065b37210cb4a175b5cb52b066b9f062ea5b"
+size = 683324
+storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_IceHistory-Batchelor2019.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-8KM/2.0.0/GRL-8KM_IceHistory-Batchelor2019.nc"
+
+["GRL-8KM_IceHistory-ICE5G.nc"]
+checksum = "sha256:62333400eced1156b9c024683f9399ef27e8a68108c745d88218cce2a97833fd"
+size = 16661814
+storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_IceHistory-ICE5G.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-8KM/2.0.0/GRL-8KM_IceHistory-ICE5G.nc"
+
+["GRL-8KM_IceHistory-ICE6G_C.nc"]
+checksum = "sha256:0a5ab14ab4346807c286cbbcdbcb599bb996480c0da63370cb30179dc7d95d16"
+size = 45070590
+storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_IceHistory-ICE6G_C.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-8KM/2.0.0/GRL-8KM_IceHistory-ICE6G_C.nc"
+
+["GRL-8KM_IceHistory-PRISM4.nc"]
+checksum = "sha256:d35b0afdc14175bd1c2067e7fc6dfe6d9ebee8cb804fce0eda76dad99cbf20ed"
+size = 622565
+storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_IceHistory-PRISM4.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-8KM/2.0.0/GRL-8KM_IceHistory-PRISM4.nc"
+
+["GRL-8KM_IceHistory-PaleoGrIS.nc"]
+checksum = "sha256:3380cd0d68485350e102f7d7e7ccf534d043795308162f6dff8324779369bb8e"
+size = 129184
+storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_IceHistory-PaleoGrIS.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-8KM/2.0.0/GRL-8KM_IceHistory-PaleoGrIS.nc"
+
+["GRL-8KM_IceHistory-PaleoMIST.nc"]
+checksum = "sha256:985e85f906bceba8b997a91c177d6597b15c2a1a86bb30c4d9548e2e7a468acb"
+size = 28329050
+storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_IceHistory-PaleoMIST.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-8KM/2.0.0/GRL-8KM_IceHistory-PaleoMIST.nc"
+
+["GRL-8KM_IceHistory-PaleoMIST_max.nc"]
+checksum = "sha256:a2893f0a150d6346a5706c050402e974508fd0a53e3fe60ceecb0e5257f6693b"
+size = 28303015
+storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_IceHistory-PaleoMIST_max.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-8KM/2.0.0/GRL-8KM_IceHistory-PaleoMIST_max.nc"
+
+["GRL-8KM_grid.nc"]
+checksum = "sha256:a7c9769dfbac2eefa4f4a79985475995596d3035f3481009cfff72c2c45fb40e"
+size = 467101
+storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-8KM/2.0.0/GRL-8KM_grid.nc"
+
+["grid_GRL-16KM.txt"]
+checksum = "sha256:96d8ae58fe971c0fe4bcf3433b0f78c1c46af7104133c842859d47b655060cd6"
+size = 465
+storage_path = "$datasets_dir/Greenland/GRL-16KM/grid_GRL-16KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-16KM/2.0.0/grid_GRL-16KM.txt"
+
+["grid_GRL-1KM.txt"]
+checksum = "sha256:6c3c8dcbe453c0b9226de89c2c6349a5f1c8b9eb11b395fafcc03e514e756ae6"
+size = 467
+storage_path = "$datasets_dir/Greenland/GRL-1KM/grid_GRL-1KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-1KM/2.0.0/grid_GRL-1KM.txt"
+
+["grid_GRL-2KM.txt"]
+checksum = "sha256:d795d6d9de510cf0e66e83fb14a1a16680f9914baffb4e23fb521553bf0c47b3"
+size = 466
+storage_path = "$datasets_dir/Greenland/GRL-2KM/grid_GRL-2KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-2KM/2.0.0/grid_GRL-2KM.txt"
+
+["grid_GRL-32KM.txt"]
+checksum = "sha256:60caa1794ee7701429bc7ccece8aa52f1f4555ddc051c056409acb398cad52a0"
+size = 462
+storage_path = "$datasets_dir/Greenland/GRL-32KM/grid_GRL-32KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-32KM/2.0.0/grid_GRL-32KM.txt"
+
+["grid_GRL-4KM.txt"]
+checksum = "sha256:17883e1fab0cfa9f8b288bb7d2fb6fa27955ff3a437d06b0ec4d0fb1e358165f"
+size = 464
+storage_path = "$datasets_dir/Greenland/GRL-4KM/grid_GRL-4KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-4KM/2.0.0/grid_GRL-4KM.txt"
+
+["grid_GRL-8KM.txt"]
+checksum = "sha256:455c0a221c44c016c9129b7e1305cc2e1cf1f17be11aace7a68103e92f6c2c5c"
+size = 463
+storage_path = "$datasets_dir/Greenland/GRL-8KM/grid_GRL-8KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_IceHistory_GRL-8KM/2.0.0/grid_GRL-8KM.txt"

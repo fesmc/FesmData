@@ -1,0 +1,307 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-11"
+git_tag = "ghf-v2.0.0"
+store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=Antarctica_GHF"
+version = "2.0.0"
+
+["ANT-16KM_GHF-Colgan2021-topocorr-ANT.nc"]
+checksum = "sha256:85e9e11ff65a57a27f015357ee5e615873b87f764e600252618ccb015b334191"
+size = 882982
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_GHF-Colgan2021-topocorr-ANT.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-16KM/2.0.0/ANT-16KM_GHF-Colgan2021-topocorr-ANT.nc"
+
+["ANT-16KM_GHF-Davies2013.nc"]
+checksum = "sha256:346e0f0d0f67fe4d882e2cdd4f6e38648d791155056bd27c79dfeecd3a4b68b5"
+size = 801857
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_GHF-Davies2013.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-16KM/2.0.0/ANT-16KM_GHF-Davies2013.nc"
+
+["ANT-16KM_GHF-FoxMaule2005.nc"]
+checksum = "sha256:4bfb96482ea80d3a23165f0261e95db93ff23e8c364ef37d1c5ce55adb2df688"
+size = 217253
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_GHF-FoxMaule2005.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-16KM/2.0.0/ANT-16KM_GHF-FoxMaule2005.nc"
+
+["ANT-16KM_GHF-HazzardRichards2024.nc"]
+checksum = "sha256:e741d3132857782d364dfc0cd427ce9d46208899c2bb79cb76ea5012606bc10e"
+size = 371285
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_GHF-HazzardRichards2024.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-16KM/2.0.0/ANT-16KM_GHF-HazzardRichards2024.nc"
+
+["ANT-16KM_GHF-Loesing2021.nc"]
+checksum = "sha256:844837827a1da7e1e85e37900f4792d6f916358c4fe4ffda514ce53d9b75cda7"
+size = 610355
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_GHF-Loesing2021.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-16KM/2.0.0/ANT-16KM_GHF-Loesing2021.nc"
+
+["ANT-16KM_GHF-Lucazeau2019.nc"]
+checksum = "sha256:2b3b4ad2d4d9d5794864d569d4d20c897cff19d22287c98879416384ee91f72d"
+size = 839807
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_GHF-Lucazeau2019.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-16KM/2.0.0/ANT-16KM_GHF-Lucazeau2019.nc"
+
+["ANT-16KM_GHF-Martos2017.nc"]
+checksum = "sha256:5c14fbeea6913044e3da8ad6c9e81c4e4a5d4a29a40a6917c420c2d6d7b7dc75"
+size = 666397
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_GHF-Martos2017.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-16KM/2.0.0/ANT-16KM_GHF-Martos2017.nc"
+
+["ANT-16KM_GHF-Shapiro2004.nc"]
+checksum = "sha256:263feb3c3751d3a13cfad4abc099399cdef8348bdf316b8d817bb972f93c728a"
+size = 761092
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_GHF-Shapiro2004.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-16KM/2.0.0/ANT-16KM_GHF-Shapiro2004.nc"
+
+["ANT-16KM_GHF-Stal2020.nc"]
+checksum = "sha256:5e32b032d36fad96f6d2d34f21ddbe59f7e9646b790b3b412beefdd412c30121"
+size = 386829
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_GHF-Stal2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-16KM/2.0.0/ANT-16KM_GHF-Stal2020.nc"
+
+["ANT-16KM_grid.nc"]
+checksum = "sha256:dea44445828fdc3adbae04afc6662224e96a6838c8381f80a855659b3ad6460c"
+size = 892250
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-16KM/2.0.0/ANT-16KM_grid.nc"
+
+["ANT-1KM_GHF-Colgan2021-topocorr-ANT.nc"]
+checksum = "sha256:a2ecd925b7318efba9dfc685a0b45201e9c2033212e24fd494a2b92fe0f045b3"
+size = 213081687
+storage_path = "$datasets_dir/Antarctica/ANT-1KM/ANT-1KM_GHF-Colgan2021-topocorr-ANT.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-1KM/2.0.0/ANT-1KM_GHF-Colgan2021-topocorr-ANT.nc"
+
+["ANT-1KM_grid.nc"]
+checksum = "sha256:1564185a4ce4e24d55ceaa7e6a6fc6170b28746fb5435d96af1ddb267a5da085"
+size = 142664883
+storage_path = "$datasets_dir/Antarctica/ANT-1KM/ANT-1KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-1KM/2.0.0/ANT-1KM_grid.nc"
+
+["ANT-2KM_GHF-Colgan2021-topocorr-ANT.nc"]
+checksum = "sha256:8e2ce139ab8a6f09057287f9b1a0295ac071719f14fc7667a31b7228e5834269"
+size = 54481852
+storage_path = "$datasets_dir/Antarctica/ANT-2KM/ANT-2KM_GHF-Colgan2021-topocorr-ANT.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-2KM/2.0.0/ANT-2KM_GHF-Colgan2021-topocorr-ANT.nc"
+
+["ANT-2KM_grid.nc"]
+checksum = "sha256:405a1131131ba119609bf7c4147b29477ab4801fd0221f56656ab6ff1abf8ffc"
+size = 40215317
+storage_path = "$datasets_dir/Antarctica/ANT-2KM/ANT-2KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-2KM/2.0.0/ANT-2KM_grid.nc"
+
+["ANT-32KM_GHF-Colgan2021-topocorr-ANT.nc"]
+checksum = "sha256:f58102d6450016f93b259f4cb98e8447bb22b21d88d594ccb5779a0e5d6a59b6"
+size = 238764
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_GHF-Colgan2021-topocorr-ANT.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-32KM/2.0.0/ANT-32KM_GHF-Colgan2021-topocorr-ANT.nc"
+
+["ANT-32KM_GHF-Davies2013.nc"]
+checksum = "sha256:a32d227c9503a2d8beae9f0e0c8ac5c5e74cf45ea4da9f25da8896fd3d22637c"
+size = 244438
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_GHF-Davies2013.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-32KM/2.0.0/ANT-32KM_GHF-Davies2013.nc"
+
+["ANT-32KM_GHF-FoxMaule2005.nc"]
+checksum = "sha256:5e2b43caa14efd516065466566eab8acabcc345374dd7929e348d0f4b1e129de"
+size = 79700
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_GHF-FoxMaule2005.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-32KM/2.0.0/ANT-32KM_GHF-FoxMaule2005.nc"
+
+["ANT-32KM_GHF-HazzardRichards2024.nc"]
+checksum = "sha256:95aa675bbd7a0a708ed3830764b1862955e12d66bcdc9e3356f83fb74b4d34da"
+size = 125859
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_GHF-HazzardRichards2024.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-32KM/2.0.0/ANT-32KM_GHF-HazzardRichards2024.nc"
+
+["ANT-32KM_GHF-Loesing2021.nc"]
+checksum = "sha256:fc801f5c487e7e82cca3342683c7fad4705193c856995e0579aaf9836b0f99b4"
+size = 194677
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_GHF-Loesing2021.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-32KM/2.0.0/ANT-32KM_GHF-Loesing2021.nc"
+
+["ANT-32KM_GHF-Lucazeau2019.nc"]
+checksum = "sha256:f8707f99fd5ded4b1dd7e182e970e88e46c81d5c3481e945bd88c47c7d1113c7"
+size = 243923
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_GHF-Lucazeau2019.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-32KM/2.0.0/ANT-32KM_GHF-Lucazeau2019.nc"
+
+["ANT-32KM_GHF-Martos2017.nc"]
+checksum = "sha256:7ab41d184038007fd802ab203970c4e28a7b9b22b858b6a5737bca5855034c58"
+size = 212475
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_GHF-Martos2017.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-32KM/2.0.0/ANT-32KM_GHF-Martos2017.nc"
+
+["ANT-32KM_GHF-Shapiro2004.nc"]
+checksum = "sha256:3248e70db4ef0a15d319ea390db58d061d5941a04c71d4ad6b357d29b9b8bc79"
+size = 226779
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_GHF-Shapiro2004.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-32KM/2.0.0/ANT-32KM_GHF-Shapiro2004.nc"
+
+["ANT-32KM_GHF-Stal2020.nc"]
+checksum = "sha256:fcfaafd61f84ac5aeb9825fa57c370cd32f9ae9cfb7c326916070758d3734a19"
+size = 129279
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_GHF-Stal2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-32KM/2.0.0/ANT-32KM_GHF-Stal2020.nc"
+
+["ANT-32KM_grid.nc"]
+checksum = "sha256:66765d3512c62479e60ad1095a4ee84b38edb681fe816eddf9896c3a2799efd8"
+size = 212550
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-32KM/2.0.0/ANT-32KM_grid.nc"
+
+["ANT-4KM_GHF-Colgan2021-topocorr-ANT.nc"]
+checksum = "sha256:c22e46fd214c4596a591b77ed17ad19d5ab7162ce57d9588f07844b079a5a2aa"
+size = 13834043
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_GHF-Colgan2021-topocorr-ANT.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-4KM/2.0.0/ANT-4KM_GHF-Colgan2021-topocorr-ANT.nc"
+
+["ANT-4KM_GHF-Davies2013.nc"]
+checksum = "sha256:eaab8eef9be5e5cc752836f2ab74bbff08e64bfa7d7915b67fe7513e5fb3df25"
+size = 10490568
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_GHF-Davies2013.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-4KM/2.0.0/ANT-4KM_GHF-Davies2013.nc"
+
+["ANT-4KM_GHF-FoxMaule2005.nc"]
+checksum = "sha256:b988667237bc544373debf401a50802928e0595871fb82eb290df442f49159cb"
+size = 2504263
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_GHF-FoxMaule2005.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-4KM/2.0.0/ANT-4KM_GHF-FoxMaule2005.nc"
+
+["ANT-4KM_GHF-HazzardRichards2024.nc"]
+checksum = "sha256:33c8e4a156c5ba570ae463b80ae68548e8e3d98ff7dbf6980189222e395d6f9f"
+size = 4408417
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_GHF-HazzardRichards2024.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-4KM/2.0.0/ANT-4KM_GHF-HazzardRichards2024.nc"
+
+["ANT-4KM_GHF-Loesing2021.nc"]
+checksum = "sha256:eac887844cd4d76b7b3f5aa11e814310bfc4ef9ae7d4f4ce3e84850b6ada856e"
+size = 7799072
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_GHF-Loesing2021.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-4KM/2.0.0/ANT-4KM_GHF-Loesing2021.nc"
+
+["ANT-4KM_GHF-Lucazeau2019.nc"]
+checksum = "sha256:b02be8d483dacaa490b22ddf2858373de2209f2b7eb3e14aa32219403d0dd48c"
+size = 11387941
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_GHF-Lucazeau2019.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-4KM/2.0.0/ANT-4KM_GHF-Lucazeau2019.nc"
+
+["ANT-4KM_GHF-Martos2017.nc"]
+checksum = "sha256:e3ea36167e70b2dd54673b57b821a38e43948a48ab6997d66a53e2fa7f3bc8a9"
+size = 8441034
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_GHF-Martos2017.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-4KM/2.0.0/ANT-4KM_GHF-Martos2017.nc"
+
+["ANT-4KM_GHF-Shapiro2004.nc"]
+checksum = "sha256:943e62a2390ade83bae994ff7dbd385091bec5a360b8b8fefe2f85d69e80bd8b"
+size = 10320386
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_GHF-Shapiro2004.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-4KM/2.0.0/ANT-4KM_GHF-Shapiro2004.nc"
+
+["ANT-4KM_GHF-Stal2020.nc"]
+checksum = "sha256:18644572409aa107dc7aa7c95859b99e8d2031794312bfc6d80c04bd393ca505"
+size = 4553957
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_GHF-Stal2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-4KM/2.0.0/ANT-4KM_GHF-Stal2020.nc"
+
+["ANT-4KM_grid.nc"]
+checksum = "sha256:b553afcb6273200e9cd436c4f3ba5f081c599c58237374342aade5c4588e879f"
+size = 11450508
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-4KM/2.0.0/ANT-4KM_grid.nc"
+
+["ANT-8KM_GHF-Colgan2021-topocorr-ANT.nc"]
+checksum = "sha256:365fc2e31da6954e8118a3b42f65ec31425ffae5b69039c75ec70a12655a3fdd"
+size = 3476174
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_GHF-Colgan2021-topocorr-ANT.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-8KM/2.0.0/ANT-8KM_GHF-Colgan2021-topocorr-ANT.nc"
+
+["ANT-8KM_GHF-Davies2013.nc"]
+checksum = "sha256:87c449034f49644f5616f4e00ed709180b56ecaae66aa4d8ec6e577da733843a"
+size = 2873964
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_GHF-Davies2013.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-8KM/2.0.0/ANT-8KM_GHF-Davies2013.nc"
+
+["ANT-8KM_GHF-FoxMaule2005.nc"]
+checksum = "sha256:9ed0db8bd242d9ac8e61d3b863cd0f5db9a0c408fd68046a51b36ed70b151bba"
+size = 706246
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_GHF-FoxMaule2005.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-8KM/2.0.0/ANT-8KM_GHF-FoxMaule2005.nc"
+
+["ANT-8KM_GHF-HazzardRichards2024.nc"]
+checksum = "sha256:22be693506d1a2a4b368873aae12f2ba51077219ccc3c1198f4e6272d445f1a7"
+size = 1224544
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_GHF-HazzardRichards2024.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-8KM/2.0.0/ANT-8KM_GHF-HazzardRichards2024.nc"
+
+["ANT-8KM_GHF-Loesing2021.nc"]
+checksum = "sha256:a91a6f74052ef641e044fe526b4e28c1ae22d7c0d308109c2f30a27ac2df5b28"
+size = 2113859
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_GHF-Loesing2021.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-8KM/2.0.0/ANT-8KM_GHF-Loesing2021.nc"
+
+["ANT-8KM_GHF-Lucazeau2019.nc"]
+checksum = "sha256:a25f9b24ca6387952bb7e3ec6c372812d9f5208baeff16eff76c26745967a064"
+size = 3051608
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_GHF-Lucazeau2019.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-8KM/2.0.0/ANT-8KM_GHF-Lucazeau2019.nc"
+
+["ANT-8KM_GHF-Martos2017.nc"]
+checksum = "sha256:ac9056592a7571791cec15237d65bc2956ba018fe2ac8d89453d9fda0755a0e6"
+size = 2297361
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_GHF-Martos2017.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-8KM/2.0.0/ANT-8KM_GHF-Martos2017.nc"
+
+["ANT-8KM_GHF-Shapiro2004.nc"]
+checksum = "sha256:d05e9affa04eb841ceadd97658f7612ec582421af681f59e0d33b3da76f31832"
+size = 2772522
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_GHF-Shapiro2004.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-8KM/2.0.0/ANT-8KM_GHF-Shapiro2004.nc"
+
+["ANT-8KM_GHF-Stal2020.nc"]
+checksum = "sha256:760d6a8afa329f4f54d4560568acc746cba7b8edace6d3d9bab811711591d8a6"
+size = 1289446
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_GHF-Stal2020.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-8KM/2.0.0/ANT-8KM_GHF-Stal2020.nc"
+
+["ANT-8KM_grid.nc"]
+checksum = "sha256:6d00ae1cafbf496c1375c74c9153d92c5e2aec79d8026f004ba0dc26d0c47ece"
+size = 3314952
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-8KM/2.0.0/ANT-8KM_grid.nc"
+
+["grid_ANT-16KM.txt"]
+checksum = "sha256:09d646757fe153b435cee10a90cf772b4626efbe2f187d410eab83876c8305cb"
+size = 467
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/grid_ANT-16KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-16KM/2.0.0/grid_ANT-16KM.txt"
+
+["grid_ANT-1KM.txt"]
+checksum = "sha256:d8e6029b241c90da5ba2b6f4aed5fc6736d2251dfbf96e1432952605eaf02d67"
+size = 469
+storage_path = "$datasets_dir/Antarctica/ANT-1KM/grid_ANT-1KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-1KM/2.0.0/grid_ANT-1KM.txt"
+
+["grid_ANT-2KM.txt"]
+checksum = "sha256:d02bf6fb1a40ffa3a09cad2982212ffa925a643e487b74b8c38af6cf773faff5"
+size = 468
+storage_path = "$datasets_dir/Antarctica/ANT-2KM/grid_ANT-2KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-2KM/2.0.0/grid_ANT-2KM.txt"
+
+["grid_ANT-32KM.txt"]
+checksum = "sha256:619c2b14b9667a6ff1efe4de41f1b2bd0ddc8d3e10df6d5fd99222b80be20276"
+size = 466
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/grid_ANT-32KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-32KM/2.0.0/grid_ANT-32KM.txt"
+
+["grid_ANT-4KM.txt"]
+checksum = "sha256:dc549c434411d3f7ad5b46e4f954f9bb180d0d2e272e1942d97e7072ae8b711d"
+size = 468
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/grid_ANT-4KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-4KM/2.0.0/grid_ANT-4KM.txt"
+
+["grid_ANT-8KM.txt"]
+checksum = "sha256:66ff6285f42ec156b6c6a6c30fcb0d2e4c94e07d67512fb002cb0348b3420ce5"
+size = 465
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/grid_ANT-8KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_GHF_ANT-8KM/2.0.0/grid_ANT-8KM.txt"
