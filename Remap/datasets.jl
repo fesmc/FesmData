@@ -20,7 +20,7 @@ struct RemapProduct
     domains::Vector{String}         # output folders (e.g. Greenland, Global)
     method::String
     smooth::Union{String,Float64}
-    min_spacing_km::Float64         # grids finer than this are left out (0: none)
+    min_spacing_km::Dict{String,Float64}   # per domain: grids finer than this are left out (0: none)
     release::Bool                   # part of the releases of the dataset
 end
 
@@ -28,8 +28,24 @@ end
 spacing_km(g::ProjGrid) = maximum(spacing(g))
 spacing_km(g::LonLatGrid) = 111.195 * g.dlat
 
-"Whether a product is made on grid `og`: a grid of its domains, not finer than its `min_spacing_km`."
-on_grid(p::RemapProduct, og::OutGrid) = og.folder in p.domains && spacing_km(og.grid) >= p.min_spacing_km - 1e-9
+"Whether a product is made on grid `og`: a grid of its domains, not finer than its `min_spacing_km` there."
+on_grid(p::RemapProduct, og::OutGrid) =
+    og.folder in p.domains && spacing_km(og.grid) >= p.min_spacing_km[og.folder] - 1e-9
+
+"""
+    min_spacing(spec, domains, what) -> Dict{String,Float64}
+
+Minimum grid spacing (km) of a product on each of its domains, from `min_spacing_km` of
+remap.toml: a number for all domains, or a table by domain with an optional `default`
+(e.g. `{ default = 16, Global = 100 }`); 0 (no limit) where none is given.
+"""
+function min_spacing(spec, domains, what)
+    spec isa Real && return Dict(d => Float64(spec) for d in domains)
+    spec isa AbstractDict || error("$what: min_spacing_km must be a number or a table by domain")
+    unknown = setdiff(keys(spec), ["default"; domains])
+    isempty(unknown) || error("$what: min_spacing_km for $(join(unknown, ", ")), not domains of the product")
+    return Dict(d => Float64(get(spec, d, get(spec, "default", 0))) for d in domains)
+end
 
 "Grids of a product (see `on_grid`)."
 product_grids(p::RemapProduct) = [og for key in domain_keys() for og in Domain(key).grids if on_grid(p, og)]
@@ -60,7 +76,8 @@ function remap_products(dataset::AbstractString)
                                      haskey(p, "variables") ? Vector{String}(p["variables"]) : nothing,
                                      Vector{String}(p["domains"]), get(p, "method", "con"),
                                      smooth isa Real ? Float64(smooth) : String(smooth),
-                                     Float64(get(p, "min_spacing_km", 0)), get(p, "release", true)))
+                                     min_spacing(get(p, "min_spacing_km", 0), p["domains"], "$dataset/$name"),
+                                     get(p, "release", true)))
     end
     return sort(products; by=p -> p.name)
 end

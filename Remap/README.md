@@ -123,7 +123,9 @@ min_spacing_km = 4                           # optional: leave out finer grids
 `min_spacing_km` leaves out the grids finer than this spacing (km; on lon-lat grids,
 111 km per degree of latitude), on which a coarse source adds no information and its
 files would only be large (e.g. 4 for most sources, 16 for 3D ocean data at 1°);
-models that need finer grids can remap online.
+models that need finer grids can remap online. It can differ by domain, as a table
+with an optional default, e.g. `min_spacing_km = { default = 16, Global = 100 }` (only
+the global grids of 1° and coarser).
 
 `release = false` makes a product locally but leaves it out of the releases, e.g. data
 obtained by personal communication whose redistribution the authors have not agreed to

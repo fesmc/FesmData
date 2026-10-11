@@ -31,7 +31,7 @@ source = "Bagge2021_visc"
 file = "Bagge2021_visc.nc"
 variables = ["log10_visc"]
 domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
-min_spacing_km = 16
+min_spacing_km = { default = 16, Global = 100 }   # source about 0.7° (78 km): global grids of 1° and coarser
 
 [products.Lloyd2024]
 source = "Lloyd2024_visc"
