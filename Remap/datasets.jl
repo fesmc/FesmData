@@ -21,6 +21,7 @@ struct RemapProduct
     method::String
     smooth::Union{String,Float64}
     min_spacing_km::Float64         # grids finer than this are left out (0: none)
+    release::Bool                   # part of the releases of the dataset
 end
 
 "Spacing of a grid in km (of a lon-lat grid: its mean latitude spacing)."
@@ -50,6 +51,8 @@ function remap_products(dataset::AbstractString)
     folders = domain_folders()
     products = RemapProduct[]
     for (name, p) in spec["products"]
+        keys_ = setdiff(keys(p), ("source", "file", "variables", "domains", "method", "smooth", "min_spacing_km", "release"))
+        isempty(keys_) || error("$dataset/$name: unknown keys $(join(keys_, ", "))")
         unknown = setdiff(p["domains"], folders)
         isempty(unknown) || error("$dataset/$name: unknown domains $(join(unknown, ", ")), available: $(join(folders, ", "))")
         smooth = get(p, "smooth", "auto")
@@ -57,7 +60,7 @@ function remap_products(dataset::AbstractString)
                                      haskey(p, "variables") ? Vector{String}(p["variables"]) : nothing,
                                      Vector{String}(p["domains"]), get(p, "method", "con"),
                                      smooth isa Real ? Float64(smooth) : String(smooth),
-                                     Float64(get(p, "min_spacing_km", 0))))
+                                     Float64(get(p, "min_spacing_km", 0)), get(p, "release", true)))
     end
     return sort(products; by=p -> p.name)
 end
@@ -68,14 +71,15 @@ product_name(p::RemapProduct) = "$(p.dataset)-$(p.name)"
 "Prepared file of a product."
 prepared_file(p::RemapProduct) = joinpath(prepared_dir(p.source), p.file)
 
-"Domains (output folders) of a thematic dataset."
-remap_domains(dataset::AbstractString) = sort(unique(d for p in remap_products(dataset) for d in p.domains))
+"Domains (output folders) on which a thematic dataset is released."
+remap_domains(dataset::AbstractString) =
+    sort(unique(d for p in remap_products(dataset) if p.release for d in p.domains))
 
 """
     remap_release_files(dataset, og) -> Vector{String}
 
-Files of a release of a thematic dataset on grid `og`: the products on its domain (see
-../Publish).
+Files of a release of a thematic dataset on grid `og`: the products on its domain,
+except those with `release = false` (see ../Publish).
 """
 remap_release_files(dataset::AbstractString, og::OutGrid) =
-    sort(["$(og.grid.name)_$(product_name(p)).nc" for p in remap_products(dataset) if on_grid(p, og)])
+    sort(["$(og.grid.name)_$(product_name(p)).nc" for p in remap_products(dataset) if p.release && on_grid(p, og)])

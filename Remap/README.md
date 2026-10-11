@@ -117,12 +117,17 @@ domains = ["Antarctica", "Greenland", "Global"]
 # method = "con"                             # optional, default "con"
 # smooth = "auto"                            # optional, default "auto"
 min_spacing_km = 4                           # optional: leave out finer grids
+# release = false                            # optional: made, but not released
 ```
 
 `min_spacing_km` leaves out the grids finer than this spacing (km; on lon-lat grids,
 111 km per degree of latitude), on which a coarse source adds no information and its
 files would only be large (e.g. 4 for most sources, 16 for 3D ocean data at 1°);
 models that need finer grids can remap online.
+
+`release = false` makes a product locally but leaves it out of the releases, e.g. data
+obtained by personal communication whose redistribution the authors have not agreed to
+yet (say so in the README of the dataset).
 
 Domains are listed explicitly, so that the files of a release are fixed; each source
 must cover every grid of its domains. Then:
