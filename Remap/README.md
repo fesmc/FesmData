@@ -157,8 +157,8 @@ must cover all its grids. Then:
 3. Make its figures for the website, `julia fesmdata.jl figures GHF` (see
    `../Figures/README.md`, also for the options of `figure`), and add its page
    `docs/datasets/ghf.qmd`, which includes the README and the figures.
-4. Release it (see Releasing): tag `ghf-vX.Y.Z`, make it at the tag, and
-   `julia fesmdata.jl release GHF`.
+4. Release it (see Releasing): tag `ghf-vX.Y.Z`, `julia fesmdata.jl stamp GHF` at the
+   tag, and `julia fesmdata.jl release GHF`.
 
 ## Global grids
 

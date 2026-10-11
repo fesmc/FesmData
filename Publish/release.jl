@@ -152,7 +152,7 @@ function release_version(files::Vector{ProductFile}, dataset::AbstractString; al
     version = only(found)
     occursin(Regex("^$(tag)-v\\d+\\.\\d+\\.\\d+\$"), version) ||
         error("files of $what have version $version, not a release tag $(tag)-vX.Y.Z " *
-              "(rerun the pipeline at the tag, or use --allow-untagged)")
+              "(stamp the files at the tag, `fesmdata.jl stamp`, or use --allow-untagged)")
     _git("tag", "--list", version) == version || error("tag $version does not exist in the repository")
     for f in filter(f -> f.is_grid && endswith(f.path, ".nc"), files)
         v = something(nc_attrib(f.path, "fesmdata_version"), "missing")
@@ -160,6 +160,40 @@ function release_version(files::Vector{ProductFile}, dataset::AbstractString; al
             error("grid file $(f.path) has version $v (rerun Topo step 1 at a commit)")
     end
     return version
+end
+
+"""
+    stamp(dataset, domains=String[])
+
+Set the version of the files of a release of a dataset on each domain (all domains with
+its files by default) to its release tag, in place: the tag `<tag>-vX.Y.Z` of the
+dataset on the checked-out commit, which must have no uncommitted changes. Only the
+global attributes of the data files change: `fesmdata_version` becomes the tag, and
+`history` records the stamp and the version the file was made at; `fesmdata_commit`
+stays the commit that made it. All files must be present (`collect_files`).
+"""
+function stamp(dataset::AbstractString, domains=String[])
+    tag = dataset_config(dataset)["tag"]
+    version = _git("describe", "--tags", "--exact-match", "--match", "$(tag)-v*", "--dirty")
+    occursin(Regex("^$(tag)-v\\d+\\.\\d+\\.\\d+\$"), version) ||
+        error("the checkout is not at a release tag $(tag)-vX.Y.Z of $dataset without uncommitted changes " *
+              "(git describe: $version); tag the release first (README.md, Release)")
+    time = Dates.format(now(), dateformat"yyyy-mm-ddTHH:MM:SS")
+    for domain in select_domains(dataset, domains)
+        files = filter(f -> !f.is_grid && endswith(f.path, ".nc"), collect_files(domain, dataset))
+        n = 0
+        for f in files
+            NCDataset(f.path, "a") do ds
+                made = get(ds.attrib, "fesmdata_version", "missing")
+                made == version && return
+                ds.attrib["fesmdata_version"] = version
+                ds.attrib["history"] = "$time: fesmdata.jl stamp $dataset, version $version (made at $made)\n" *
+                                       get(ds.attrib, "history", "")
+                n += 1
+            end
+        end
+        println("$domain/$dataset: $n of $(length(files)) files stamped $version")
+    end
 end
 
 """

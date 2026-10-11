@@ -47,6 +47,8 @@ Figures for the website (maintainers, see Figures/README.md):
                                                gallery page, docs/figures/<Dataset>/
 
 Release (maintainers, see Publish/README.md):
+  stamp <Dataset> [<Domain> ...]               set the version of the files to the release
+                                               tag on the checked-out commit (in place)
   release <Dataset> [<Domain> ...]             upload to the GitLab packages and write the
                                                registry (--dry-run: check and list only)
   status <Dataset> [<Domain> ...]              local files, packages, registered release
@@ -131,6 +133,11 @@ function main(argv)
     elseif command == "docs"
         include(joinpath(PUBLISH_DIR, "site.jl"))
         println("Wrote ", call(:write_products, joinpath(@__DIR__, "docs", "_products.md")))
+    elseif command == "stamp"
+        isempty(rest) && usage("stamp: give a dataset")
+        activate_env(PUBLISH_DIR)
+        include(joinpath(PUBLISH_DIR, "release.jl"))
+        call(:stamp, rest[1], rest[2:end])
     elseif command in ("release", "status", "delete")
         isempty(rest) && usage("$command: give a dataset")
         activate_env(PUBLISH_DIR)

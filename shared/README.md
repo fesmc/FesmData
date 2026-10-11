@@ -10,7 +10,7 @@ domains and grids, defined in `domains.toml`, and share the code in this folder:
 | `io.jl` | NetCDF output (`write_fields`, `write_grid_files`) with the provenance attributes |
 | `provenance.jl` | Repository paths, machine environment, provenance attributes |
 | `manifest.jl` | The original datasets of all pipelines (`../datamanifest.toml`) |
-| `machines/<machine>.env` | Environment variables of each machine |
+| `machines/<machine>.env` | Environment variables of each machine (levante, macbook; albedo for downloads only) |
 
 ## Domains
 

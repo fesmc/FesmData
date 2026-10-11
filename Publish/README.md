@@ -87,37 +87,42 @@ The datasets, the GitLab project and the Zenodo metadata (creators, licence,
 community) are set in `datasets.toml`. The files of a release on each grid are defined
 by the pipeline of the dataset (`topo_release_files` in `../Topo/files.jl`: all
 products of the domain, default and variants; `regions_release_files` in
-`../Regions/files.jl`), and must all be present. A release of a dataset (here Topo,
-version 2.0.1) on Levante, where the files are, needs a GitLab token (see Access
-below) and takes four steps.
+`../Regions/files.jl`), and must all be present. A release of a dataset (here GHF,
+version 2.0.0) is made on Levante, where the files are, from the files as they were
+made and checked, and needs a GitLab token (see Access below). It takes four steps.
 
 **1. Tag the release** (from any checkout, after the changes are on main):
 
 ```bash
 git fetch origin
-git tag -a topo-v2.0.1 -m "Topo v2.0.1" origin/main
-git push origin topo-v2.0.1
+git tag -a ghf-v2.0.0 -m "GHF v2.0.0" origin/main
+git push origin ghf-v2.0.0
 ```
 
-**2. Run the pipeline at the tag**, in a clean checkout of it next to the usual one, so
-that every file gets `fesmdata_version = "topo-v2.0.1"` (uncommitted changes would make
-it `-dirty`). For Topo, all steps and all products of the three domains:
-
-```bash
-git worktree add ../FesmData-topo-v2.0.1 topo-v2.0.1
-cd ../FesmData-topo-v2.0.1
-source shared/machines/levante.env
-julia --project=Topo -e 'using Pkg; Pkg.instantiate()'
-for d in ANT GRL-PAL NH; do Topo/jobs/submit_domain.sh $d 1 all; done
-```
-
-**3. Upload**, once the jobs have finished, from the usual checkout on main:
+**2. Stamp the files** with the tag, from the usual checkout at the tag (no
+uncommitted changes):
 
 ```bash
 cd ../FesmData && git pull
 source shared/machines/levante.env
-julia fesmdata.jl release Topo --dry-run
-julia fesmdata.jl release Topo
+julia fesmdata.jl stamp GHF
+```
+
+`stamp` sets `fesmdata_version` of every file of the release to the tag, in place
+(only the global attributes change). `fesmdata_commit` stays the commit that made the
+file, and `history` records the stamp and the version the file was made at, so that
+files made before the tag (whose code may differ in details from the tag) can be
+recognised. The files are not made again: a product is made and checked once, and
+released as it is. To make a release fully reproducible from its tag instead, make
+the files again in a clean checkout of the tag (e.g. `git worktree add
+../FesmData-ghf-v2.0.0 ghf-v2.0.0`, then the pipeline there with `--overwrite`); they
+then have the tag already.
+
+**3. Upload**:
+
+```bash
+julia fesmdata.jl release GHF --dry-run
+julia fesmdata.jl release GHF
 ```
 
 The dry run checks every domain (all files present, all at the release tag) and lists
@@ -129,7 +134,7 @@ already uploaded are kept, and domains already released are skipped.
 **4. Commit and push the registry**, which also updates the website:
 
 ```bash
-git add registry && git commit -m "registry: Topo v2.0.1" && git push
+git add registry && git commit -m "registry: GHF v2.0.0" && git push
 ```
 
 At any point, `status` shows each domain: its local files and their version, its
