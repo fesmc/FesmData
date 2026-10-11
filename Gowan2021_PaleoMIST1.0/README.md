@@ -27,18 +27,22 @@ CC BY 4.0 (PANGAEA).
   regional reconstructions (North_America, which includes Greenland, Eurasia, Patagonia
   and Antarctica; GMT grids on the projections of `projection_info.sh`).
 
-These are the minimal MIS 3 scenario for North America (an ice-free Hudson Bay at times);
-the files of the maximal scenario end in `a1` (not prepared).
+and the same files of the maximal MIS 3 scenario for North America, which end in `a1`
+(`reconstruction_a1_0.25_degree.nc`, `<region>_a1/`). The other files are the minimal
+scenario (an ice-free Hudson Bay at times).
 
 ## Prepare and remap
 
 ```bash
 julia --project=Gowan2021_PaleoMIST1.0 Gowan2021_PaleoMIST1.0/prepare.jl
 julia fesmdata.jl remap $FESMDATA_WORK/prepared/Gowan2021_PaleoMIST1.0/Gowan2021_PaleoMIST.nc all --name=IceHistory-PaleoMIST
+julia fesmdata.jl remap $FESMDATA_WORK/prepared/Gowan2021_PaleoMIST1.0/Gowan2021_PaleoMIST_max.nc all --name=IceHistory-PaleoMIST_max
 ```
 
-`prepare.jl` writes `$FESMDATA_WORK/prepared/Gowan2021_PaleoMIST1.0/Gowan2021_PaleoMIST.nc`
-(see `Remap/README.md`) on the 0.25° grid with the dimension `time` (years ago, before
+`prepare.jl` writes two files to `$FESMDATA_WORK/prepared/Gowan2021_PaleoMIST1.0/` (see
+`Remap/README.md`), `Gowan2021_PaleoMIST.nc` (minimal MIS 3 scenario, product
+`PaleoMIST`) and `Gowan2021_PaleoMIST_max.nc` (maximal scenario, `a1`, product
+`PaleoMIST_max`), each on the 0.25° grid with the dimension `time` (years ago, before
 1950 CE, 80000 to 0, oldest first) and
 
 - `z_topo` (m): topography (`paleo_topography`), the ice surface on the ice sheets and the

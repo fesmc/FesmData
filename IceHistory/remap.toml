@@ -38,6 +38,13 @@ variables = ["z_topo", "z_bed", "H_ice", "dz_sl", "f_ice"]
 domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
 min_spacing_km = 4
 
+[products.PaleoMIST_max]
+source = "Gowan2021_PaleoMIST1.0"
+file = "Gowan2021_PaleoMIST_max.nc"
+variables = ["z_topo", "z_bed", "H_ice", "dz_sl", "f_ice"]
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 4
+
 [products.PaleoGrIS]
 source = "Leger2024_PaleoGris"
 file = "Leger2024_PaleoGrIS.nc"
