@@ -19,3 +19,24 @@ file = "Straume2019_GlobSed.nc"
 variables = ["z_sed"]
 domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
 min_spacing_km = 4
+
+[products.ECM1]
+source = "Mooney2023_ecm1"
+file = "Mooney2023_ECM1_sed.nc"
+variables = ["z_sed", "z_sed_upper", "z_sed_middle", "z_sed_lower"]
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 4
+
+[products.ANTASed]
+source = "Baranov2021_sed"
+file = "Baranov2021_ANTASed.nc"
+variables = ["z_sed"]
+domains = ["Antarctica"]
+min_spacing_km = 4
+
+[products.Gowan2019]
+source = "Gowan2019_sed"
+file = "Gowan2019_sed.nc"
+variables = ["grain", "distribution", "composite"]
+domains = ["Laurentide"]
+min_spacing_km = 4
