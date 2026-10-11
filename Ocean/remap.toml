@@ -14,15 +14,18 @@ source = "Zuo2019_oras5"
 file = "ORAS5_1981-2010.nc"
 variables = ["to", "so"]
 grids = { Antarctica = 16, Greenland = 16, GreenlandPaleo = 16, North = 16, Laurentide = 16, Eurasia = 16, Global = 16 }
+figure = { select = { depth = 400 } }
 
 [products.ORAS5-annual]
 source = "Zuo2019_oras5"
 file = "ORAS5_annual_1979-2018.nc"
 variables = ["to", "so"]
 grids = { Antarctica = 16, Greenland = 16, GreenlandPaleo = 16, North = 16, Laurentide = 16, Eurasia = 16, Global = 16 }
+figure = { select = { depth = 400 } }
 
 [products.ISMIP7]
 source = "Zhou2026_ismip7ocean"
 file = "ISMIP7_OCEAN_1972-2024.nc"
 variables = ["to", "so", "tf", "basin"]
 grids = { Antarctica = 8 }
+figure = { variables = ["tf"], select = { z = -400 } }
