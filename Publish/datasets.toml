@@ -85,12 +85,13 @@ of isochrones), remapped conservatively onto the grids of a model domain.
 
 [BasalMelt]
 tag = "basalmelt"
-title = "ice-shelf basal melt rates"
+title = "ice-shelf basal melt rates and height changes"
 readme = "BasalMelt/README.md"
-keywords = ["basal melt", "ice shelves", "Antarctica", "model input", "model validation"]
+keywords = ["basal melt", "ice shelves", "height change", "Antarctica", "model input", "model validation"]
 description = """
-Basal melt rates of ice shelves from observations, remapped conservatively onto the
-grids of a model domain.
+Basal melt rates of ice shelves from observations, and the time series of ice-shelf
+height change from satellite altimetry they are derived from, remapped conservatively
+onto the grids of a model domain.
 """
 
 [BasalState]
