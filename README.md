@@ -61,7 +61,7 @@ Time series, site and profile data, in `$ICE_DATA/v2/Records/<Dataset>/` (see `R
 | IceCores     | Ice core records: temperature, accumulation, water isotopes, site elevations | Gkinis2020_NEEMwateriso, Kindler2014, Vinther2009_elevations |
 | RSL          | Relative sea level indicators | Gowan2023_GAPSLIP_GrIS |
 | Boreholes    | Ice temperature profiles | Lokkegaard2023_temp_profile |
-| GPS          | GPS vertical velocities, GIA uplift rates | Schumacher2018_GIA_GrIS |
+| GPS          | GPS vertical velocities, GIA uplift rates | Schumacher2018_gps |
 | SMBObs       | Surface mass balance measurements | SUMup_smb |
 | Freshwater   | Freshwater fluxes of the ice sheets by region | Schmidt2025_fwf |
 
@@ -121,7 +121,7 @@ Time series, site and profile data, in `$ICE_DATA/v2/Records/<Dataset>/` (see `R
 | topo     | RTOPO2                      | RTopo2 global topography data                    | Schaffer et al. (2016)         |
 | masks    | Schmidt2025_fwf             | Freshwater flux series of the ice sheets by region | Schmidt et al. (2025)        |
 | ocean    | Schmidtko2014_ocean         | Antarctic shelf bottom water                     | Schmidtko et al. (2014)        |
-| geo      | Schumacher2018_GIA_GrIS     | GPS vertical velocities (GIA uplift rates), global | Schumacher et al. (2018)     |
+| geo      | Schumacher2018_gps          | GPS vertical velocities (GIA uplift rates), global | Schumacher et al. (2018)     |
 | geo      | Shapiro2004_ghf             | Global geothermal heat flow                      | Shapiro & Ritzwoller (2004)    |
 | geo      | Stal2020_ghf                | Geothermal heat flow of Antarctica, Aq1          | Stål et al. (2021)             |
 | paleo    | Stokes2016_icestreams       | Laurentide ice sheet, ice-stream timing          | Stokes et al. (2016)           |
