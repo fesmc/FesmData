@@ -894,3 +894,135 @@ uri = "https://arcticdata.io/metacat/d1/mn/v2/object/urn:uuid:64b58bc8-0cf6-4e6b
 doi = "10.18739/A2599Z26M"
 storage_path = "$datasets_dir/badgeley2020/pr_high_Badgeley_etal_2020.nc"
 uri = "https://arcticdata.io/metacat/d1/mn/v2/object/urn:uuid:c5e3fa59-7117-4fee-8163-07aae8519886"
+
+# ---------------------------------------------------------------------------
+# Ice cores (IceCores/)
+# ---------------------------------------------------------------------------
+
+# Kindler et al. (2014): NGRIP temperature and accumulation reconstruction, 10-120 kyr
+# b2k, and d15N data (supplement of the Clim. Past article, one xlsx file).
+
+[kindler2014_ngrip]
+key = "kindler2014_ngrip.zip"
+doi = "10.5194/cp-10-887-2014"
+extract = true
+uri = "https://cp.copernicus.org/articles/10/887/2014/cp-10-887-2014-supplement.zip"
+
+# Gkinis et al. (2020): NEEM high-resolution (0.05 m) water isotopes, 8-129 ka b2k,
+# PANGAEA tab-delimited text (CC BY 4.0).
+
+[gkinis2020_neem]
+doi = "10.1594/PANGAEA.925552"
+storage_path = "$datasets_dir/gkinis2020_neem/NEEM_Gkinis2020.tab"
+uri = "https://doi.pangaea.de/10.1594/PANGAEA.925552?format=textfile"
+
+# Vinther et al. (2009): Greenland Holocene d18O, temperature and ice-core site
+# elevations (NOAA NCEI paleo archive, text version of the xls file).
+
+[vinther2009_greenland]
+doi = "10.1038/nature08355"
+storage_path = "$datasets_dir/vinther2009/vinther2009greenland.txt"
+uri = "https://www.ncei.noaa.gov/pub/data/paleo/icecore/greenland/vinther2009greenland.txt"
+
+# ---------------------------------------------------------------------------
+# Relative sea level (RSL/)
+# ---------------------------------------------------------------------------
+
+# GAPSLIP (Gowan, 2023): Global Archive of Paleo Sea Level Indicators and Proxies,
+# version 2.1 of the GitHub repository evangowan/paleo_sea_level archived on Zenodo.
+
+[gapslip_v2_1]
+key = "gapslip_v2_1.zip"
+doi = "10.5281/zenodo.10121689"
+extract = true
+uri = "https://zenodo.org/records/10121689/files/evangowan/paleo_sea_level-V2.1.zip?download=1"
+
+# ---------------------------------------------------------------------------
+# Boreholes (Boreholes/)
+# ---------------------------------------------------------------------------
+
+# Løkkegaard et al. (2023): Greenland and Canadian Arctic ice temperature profiles
+# database, version 4.1 (GEUS Dataverse, CC0): profiles on a 1 m depth axis and the
+# metadata of the boreholes.
+
+[lokkegaard2023_temperature]
+doi = "10.22008/FK2/3BVF9V"
+storage_path = "$datasets_dir/lokkegaard2023_boreholes/temperature.csv"
+uri = "https://dataverse.geus.dk/api/access/datafile/74938"
+
+[lokkegaard2023_meta]
+doi = "10.22008/FK2/3BVF9V"
+storage_path = "$datasets_dir/lokkegaard2023_boreholes/meta.csv"
+uri = "https://dataverse.geus.dk/api/access/datafile/84072"
+
+# ---------------------------------------------------------------------------
+# GPS (GPS/)
+# ---------------------------------------------------------------------------
+
+# Schumacher et al. (2018): global GPS vertical velocities for GIA (about 4000
+# stations), PANGAEA tab-delimited text (CC BY 3.0).
+
+[schumacher2018_gps]
+doi = "10.1594/PANGAEA.889923"
+storage_path = "$datasets_dir/schumacher2018_gps/Schumacher_etal_2018_GIA.tab"
+uri = "https://doi.pangaea.de/10.1594/PANGAEA.889923?format=textfile"
+
+# ---------------------------------------------------------------------------
+# SMB observations (SMBObs/)
+# ---------------------------------------------------------------------------
+
+# SUMup 2025 (Vandecrux et al., 2025): surface mass balance measurements of Greenland
+# and Antarctica (Arctic Data Center, CC0). The release also has density and
+# subsurface temperature files, not used.
+
+[sumup2025_smb_greenland]
+doi = "10.18739/A2M61BR5M"
+storage_path = "$datasets_dir/sumup2025/SUMup_2025_SMB_greenland.nc"
+uri = "https://arcticdata.io/metacat/d1/mn/v2/object/urn:uuid:226b0986-d137-4145-b1aa-6cb26f84f5eb"
+
+[sumup2025_smb_antarctica]
+doi = "10.18739/A2M61BR5M"
+storage_path = "$datasets_dir/sumup2025/SUMup_2025_SMB_antarctica.nc"
+uri = "https://arcticdata.io/metacat/d1/mn/v2/object/urn:uuid:c9115546-b513-4a47-adee-e42b45ba7466"
+
+# ---------------------------------------------------------------------------
+# Freshwater (Freshwater/)
+# ---------------------------------------------------------------------------
+
+# Schmidt et al. (2025): freshwater flux and mass anomaly series of the ice sheets by
+# region (Zenodo, CC BY 4.0); the regions are schmidt2025_regions_* (Regions section).
+
+[schmidt2025_gl_discharge]
+doi = "10.5281/zenodo.17386710"
+storage_path = "$datasets_dir/schmidt2025_fwf/GL_discharge.nc"
+uri = "https://zenodo.org/records/17386710/files/GL_discharge.nc?download=1"
+
+[schmidt2025_gl_runoff]
+doi = "10.5281/zenodo.17386710"
+storage_path = "$datasets_dir/schmidt2025_fwf/GL_runoff.nc"
+uri = "https://zenodo.org/records/17386710/files/GL_runoff.nc?download=1"
+
+[schmidt2025_gl_mass_anomaly]
+doi = "10.5281/zenodo.17386710"
+storage_path = "$datasets_dir/schmidt2025_fwf/GL_mass_anomaly.nc"
+uri = "https://zenodo.org/records/17386710/files/GL_mass_anomaly.nc?download=1"
+
+[schmidt2025_aq_calving]
+doi = "10.5281/zenodo.17386710"
+storage_path = "$datasets_dir/schmidt2025_fwf/AQ_calving.nc"
+uri = "https://zenodo.org/records/17386710/files/AQ_calving.nc?download=1"
+
+[schmidt2025_aq_subshelf_melt]
+doi = "10.5281/zenodo.17386710"
+storage_path = "$datasets_dir/schmidt2025_fwf/AQ_subshelf_melt.nc"
+uri = "https://zenodo.org/records/17386710/files/AQ_subshelf_melt.nc?download=1"
+
+[schmidt2025_aq_grounded_mass_change]
+doi = "10.5281/zenodo.17386710"
+storage_path = "$datasets_dir/schmidt2025_fwf/AQ_grounded_mass_change.nc"
+uri = "https://zenodo.org/records/17386710/files/AQ_grounded_mass_change.nc?download=1"
+
+[schmidt2025_aq_mass_anomaly]
+doi = "10.5281/zenodo.17386710"
+storage_path = "$datasets_dir/schmidt2025_fwf/AQ_mass_anomaly.nc"
+uri = "https://zenodo.org/records/17386710/files/AQ_mass_anomaly.nc?download=1"
