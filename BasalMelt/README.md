@@ -8,6 +8,7 @@ domains. BasalMelt is a thematic dataset made by remapping (see Bring your own d
 
 | Product | Source | Fields | Domains |
 |---|---|---|---|
+| `BasalMelt-Adusumilli2020` | Adusumilli et al. (2020): 500 m basal melt rates of the Antarctic ice shelves, mean 2010-2018, from CryoSat-2, [doi:10.6075/J04Q7SHT](https://doi.org/10.6075/J04Q7SHT) | `bmelt` (gaps filled with the mean rate at the same ice draft), `bmelt_cs2` (CryoSat-2 only), `bmelt_err` (uncertainty), m yr-1 ice equivalent, positive for melting | Antarctica |
 | `BasalMelt-Rignot2013` | Rignot et al. (2013): 1 km basal melt rates of the Antarctic ice shelves in 2007-2008, [doi:10.5061/dryad.5hqbzkhg2](https://doi.org/10.5061/dryad.5hqbzkhg2) | `bmelt` (actual), `bmelt_ss` (steady state), m yr-1 ice equivalent, positive for melting | Antarctica |
 
 Each file also has `f_valid`, the fraction of each cell covered by the source (the ice
@@ -17,6 +18,7 @@ shelves). Fields are remapped conservatively.
 
 | Source | Licence |
 |---|---|
+| Adusumilli et al. (2020) | CC BY 4.0 (UC San Diego Library) |
 | Rignot et al. (2013) | CC0 1.0 (Dryad) |
 
 ## Making the dataset
