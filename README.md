@@ -40,7 +40,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | Topo         | Bed topography, surface elevation, ice thickness, ice/ocean fractions, 0.5-32 km | GEBCO 2026, BedMachine, Bedmap3, IceBoost (see Topo/README.md) |
 | Regions      | Region tree, shelf zone, ice-sheet basins, 0.5-32 km | Marine Regions, HydroBASINS, Zwally, Mouginot, IMBIE (see Regions/README.md) |
 | GHF          | Geothermal heat flow (mW m-2), topographic correction | Colgan2021_ghf, Colgan2021_topocorr, Davies2013_ghf, FoxMaule2005_ghf, HazzardRichards2024_ghf, Loesing2021_ghf, Lucazeau2019_ghf, Martos2017_ghf, Martos2018_ghf, Shapiro2004_ghf, Stal2020_ghf |
-| Sediment     | Sediment thickness | Laske2013_crust1, Straume2019_globsed |
+| Sediment     | Sediment thickness and properties | Baranov2021_sed, Gowan2019_sed, Laske2013_crust1, Mooney2023_ecm1, Straume2019_globsed |
 | IceHistory   | Ice sheets and topography of the past | Dowsett2016_prism4, Peltier2004_ice5g, Peltier2015_ice6g |
 | Velocity     | Ice surface velocity | Joughin2018, Rignot2011_vel |
 | Stratigraphy | Age structure of the ice | MacGregor2025_strat |
@@ -55,6 +55,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | Category | Key | Description | Ref(s) |
 |----------|-----|-------------|--------|
 | paleo    | Badgeley2020_recon          | Greenland temperature and precipitation, 20 ka to present | Badgeley et al. (2020) |
+| geo      | Baranov2021_sed             | Antarctic sediment thickness, ANTASed            | Baranov et al. (2021)          |
 | topo     | Batchelor2019_NHIceMasks    | Northern Hemisphere ice extent masks             | Batchelor et al. (2019)        |
 | paleo    | Buizert2018                 | Greenland seasonal temperatures, 22 ka to present | Buizert et al. (2018)         |
 | climate  | CMIP                        | Working with CMIP data (CMIP5/CMIP6/etc)         | Unpublished                    |
@@ -63,13 +64,12 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | geo      | Davies2013_ghf              | Global geothermal heat flow                      | Davies (2013)                  |
 | ice      | Dawson2022_AntarcticaBasalState | Antarctic ice sheet basal thermal state      | Dawson et al. (2022)           |
 | paleo    | Dowsett2016_prism4          | PRISM4 Pliocene topography and ice sheets        | Dowsett et al. (2016)          |
-| geo      | ECM1_geo                    | Global sediment thickness data (ECM1)            | Mooney et al. (2023)           |
 | climate  | ERA5                        | Monthly ERA5 for radiation + moist-stack valid. (v1) | Hersbach et al. (2020)     |
 | smb      | Fettweis2017_mar314         | Greenland SMB and surface climate, MAR v3.14 (ERA5) | Fettweis et al. (2017)      |
 | geo      | FoxMaule2005_ghf            | Geothermal heat flow from satellite magnetic data | Fox Maule et al. (2005)       |
 | topo     | GEBCO2025                   | GEBCO 2025 global bath. and topo data            | GEBCO Compilation Group (2025) |
 | paleo    | Gkinis2020_NEEMwateriso     | NEEM ice core high-resolution water isotopes     | Gkinis et al. (2020)           |
-| geo      | Gowan2019_sed               | Geological sediment properties for North America | Gowan et al. (2019)            |
+| geo      | Gowan2019_sed               | Surface sediment properties of North America and Greenland | Gowan et al. (2019) |
 | paleo    | Gowan2021_PaleoMIST1.0      | PaleoMIST 1.0 global ice sheet reconstruction, 80 ka to present | Gowan et al. (2021) |
 | paleo    | Gowan2023_GAPSLIP_GrIS      | Relative sea level data for Greenland            | Gowan (2023)                   |
 | geo      | HazzardRichards2024_ghf     | Antarctic geothermal heat flow                   | Hazzard & Richards (2024)      |
@@ -88,6 +88,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | ice      | Margold2015_icestreams      | Ice stream outlines                              | Margold et al. (2015)          |
 | geo      | Martos2017_ghf              | Antarctic geothermal heat flow                   | Martos et al. (2017)           |
 | geo      | Martos2018_ghf              | Geothermal heat flux of Greenland                | Martos et al. (2018)           |
+| geo      | Mooney2023_ecm1             | Sediment thickness of ECM1                       | Mooney et al. (2023)           |
 | geo      | Pan2022_litho               | Global lithospheric thickness data               | Pan et al. (2022)              |
 | paleo    | Peltier2004_ice5g           | ICE-5G v1.2 ice-sheet reconstruction             | Peltier (2004)                 |
 | paleo    | Peltier2015_ice6g           | ICE-6G_C (VM5a) ice-sheet and topography reconstruction | Peltier et al. (2015)   |

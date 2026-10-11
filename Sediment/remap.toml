@@ -38,5 +38,5 @@ min_spacing_km = 4
 source = "Gowan2019_sed"
 file = "Gowan2019_sed.nc"
 variables = ["grain", "distribution", "composite"]
-domains = ["Laurentide"]
+domains = ["GreenlandPaleo", "Greenland", "Laurentide"]
 min_spacing_km = 4
