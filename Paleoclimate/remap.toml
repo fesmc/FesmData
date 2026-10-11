@@ -8,6 +8,7 @@
 source = "PMIP3_cvdp"
 file = "PMIP3_CCSM4_lgm.nc"
 grids = { Antarctica = 8, GreenlandPaleo = 8, Greenland = 8, North = 8, Laurentide = 8, Eurasia = 8, Global = 8 }
+figure = { variables = ["t2m_ann"] }
 
 [products.PMIP3-CCSM4-midHolocene]
 source = "PMIP3_cvdp"
@@ -25,6 +26,7 @@ figure = false
 source = "PMIP3_cvdp"
 file = "PMIP3_CNRM-CM5_lgm.nc"
 grids = { Antarctica = 8, GreenlandPaleo = 8, Greenland = 8, North = 8, Laurentide = 8, Eurasia = 8, Global = 8 }
+figure = { variables = ["t2m_ann"] }
 
 [products.PMIP3-CNRM-CM5-midHolocene]
 source = "PMIP3_cvdp"
@@ -42,6 +44,7 @@ figure = false
 source = "PMIP3_cvdp"
 file = "PMIP3_FGOALS-g2_lgm.nc"
 grids = { Antarctica = 8, GreenlandPaleo = 8, Greenland = 8, North = 8, Laurentide = 8, Eurasia = 8, Global = 8 }
+figure = { variables = ["t2m_ann"] }
 
 [products.PMIP3-FGOALS-g2-midHolocene]
 source = "PMIP3_cvdp"
@@ -59,6 +62,7 @@ figure = false
 source = "PMIP3_cvdp"
 file = "PMIP3_GISS-E2-R_lgm.nc"
 grids = { Antarctica = 8, GreenlandPaleo = 8, Greenland = 8, North = 8, Laurentide = 8, Eurasia = 8, Global = 8 }
+figure = { variables = ["t2m_ann"] }
 
 [products.PMIP3-GISS-E2-R-midHolocene]
 source = "PMIP3_cvdp"
@@ -76,6 +80,7 @@ figure = false
 source = "PMIP3_cvdp"
 file = "PMIP3_IPSL-CM5A-LR_lgm.nc"
 grids = { Antarctica = 8, GreenlandPaleo = 8, Greenland = 8, North = 8, Laurentide = 8, Eurasia = 8, Global = 8 }
+figure = { variables = ["t2m_ann"] }
 
 [products.PMIP3-IPSL-CM5A-LR-midHolocene]
 source = "PMIP3_cvdp"
@@ -93,6 +98,7 @@ figure = false
 source = "PMIP3_cvdp"
 file = "PMIP3_MIROC-ESM_lgm.nc"
 grids = { Antarctica = 8, GreenlandPaleo = 8, Greenland = 8, North = 8, Laurentide = 8, Eurasia = 8, Global = 8 }
+figure = { variables = ["t2m_ann"] }
 
 [products.PMIP3-MIROC-ESM-midHolocene]
 source = "PMIP3_cvdp"
@@ -110,6 +116,7 @@ figure = false
 source = "PMIP3_cvdp"
 file = "PMIP3_MPI-ESM-P_lgm.nc"
 grids = { Antarctica = 8, GreenlandPaleo = 8, Greenland = 8, North = 8, Laurentide = 8, Eurasia = 8, Global = 8 }
+figure = { variables = ["t2m_ann"] }
 
 [products.PMIP3-MPI-ESM-P-midHolocene]
 source = "PMIP3_cvdp"
@@ -127,6 +134,7 @@ figure = false
 source = "PMIP3_cvdp"
 file = "PMIP3_MRI-CGCM3_lgm.nc"
 grids = { Antarctica = 8, GreenlandPaleo = 8, Greenland = 8, North = 8, Laurentide = 8, Eurasia = 8, Global = 8 }
+figure = { variables = ["t2m_ann"] }
 
 [products.PMIP3-MRI-CGCM3-midHolocene]
 source = "PMIP3_cvdp"
@@ -149,6 +157,7 @@ grids = { Antarctica = 8, GreenlandPaleo = 8, Greenland = 8, North = 8, Laurenti
 source = "PMIP4_cmip6"
 file = "PMIP4_AWI-ESM-1-1-LR_lgm.nc"
 grids = { Antarctica = 8, GreenlandPaleo = 8, Greenland = 8, North = 8, Laurentide = 8, Eurasia = 8, Global = 8 }
+figure = { variables = ["t2m_ann"] }
 
 [products.PMIP4-AWI-ESM-1-1-LR-midHolocene]
 source = "PMIP4_cmip6"
@@ -166,6 +175,7 @@ figure = false
 source = "PMIP4_cmip6"
 file = "PMIP4_INM-CM4-8_lgm.nc"
 grids = { Antarctica = 8, GreenlandPaleo = 8, Greenland = 8, North = 8, Laurentide = 8, Eurasia = 8, Global = 8 }
+figure = { variables = ["t2m_ann"] }
 
 [products.PMIP4-INM-CM4-8-midHolocene]
 source = "PMIP4_cmip6"
@@ -183,6 +193,7 @@ figure = false
 source = "PMIP4_cmip6"
 file = "PMIP4_MIROC-ES2L_lgm.nc"
 grids = { Antarctica = 8, GreenlandPaleo = 8, Greenland = 8, North = 8, Laurentide = 8, Eurasia = 8, Global = 8 }
+figure = { variables = ["t2m_ann"] }
 
 [products.PMIP4-MIROC-ES2L-midHolocene]
 source = "PMIP4_cmip6"
@@ -200,6 +211,7 @@ figure = false
 source = "PMIP4_cmip6"
 file = "PMIP4_MPI-ESM1-2-LR_lgm.nc"
 grids = { Antarctica = 8, GreenlandPaleo = 8, Greenland = 8, North = 8, Laurentide = 8, Eurasia = 8, Global = 8 }
+figure = { variables = ["t2m_ann"] }
 
 [products.PMIP4-MPI-ESM1-2-LR-midHolocene]
 source = "PMIP4_cmip6"
@@ -218,6 +230,7 @@ source = "Buizert2018"
 file = "Buizert2018.nc"
 variables = ["tas", "pr", "z_srf"]
 grids = { Greenland = 16 }
+figure = { select = { month = 7 } }
 
 [products."Buizert2018-1981-2010"]
 source = "Buizert2018"
