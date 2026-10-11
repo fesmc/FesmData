@@ -88,6 +88,7 @@ format:
       light: [cosmo, styles.scss]
     toc: true
     toc-depth: 3
+    lightbox: true
     code-copy: true
     code-overflow: wrap
     anchor-sections: true
