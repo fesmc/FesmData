@@ -49,12 +49,14 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | Atmosphere   | Reanalysis and satellite climatologies | Hersbach2020_era5, Loeb2018_ceres |
 | SMB          | Surface mass balance and surface climate | Fettweis2017_mar314, vanDalum2025_racmo24 |
 | Paleoclimate | Simulations and reconstructions of past climates | Badgeley2020_recon, Buizert2018, PMIP3_cvdp, PMIP4_cmip6 |
+| SolidEarth   | Lithosphere thickness and mantle viscosity | Bagge2021_visc, Hazzard2023_visc, Lloyd2024_visc, Pan2022_litho, Wiens2022_visc |
 
 ## Source folders (alphabetical order)
 
 | Category | Key | Description | Ref(s) |
 |----------|-----|-------------|--------|
 | paleo    | Badgeley2020_recon          | Greenland temperature and precipitation, 20 ka to present | Badgeley et al. (2020) |
+| geo      | Bagge2021_visc              | Global 3D mantle viscosity                       | Bagge et al. (2021)            |
 | topo     | Batchelor2019_NHIceMasks    | Northern Hemisphere ice extent masks             | Batchelor et al. (2019)        |
 | paleo    | Buizert2018                 | Greenland seasonal temperatures, 22 ka to present | Buizert et al. (2018)         |
 | climate  | CMIP                        | Working with CMIP data (CMIP5/CMIP6/etc)         | Unpublished                    |
@@ -72,6 +74,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | geo      | Gowan2019_sed               | Geological sediment properties for North America | Gowan et al. (2019)            |
 | paleo    | Gowan2021_PaleoMIST1.0      | PaleoMIST 1.0 global ice sheet reconstruction, 80 ka to present | Gowan et al. (2021) |
 | paleo    | Gowan2023_GAPSLIP_GrIS      | Relative sea level data for Greenland            | Gowan (2023)                   |
+| geo      | Hazzard2023_visc            | Antarctic mantle viscosity and lithosphere thickness | Hazzard et al. (2023)      |
 | geo      | HazzardRichards2024_ghf     | Antarctic geothermal heat flow                   | Hazzard & Richards (2024)      |
 | climate  | Hersbach2020_era5           | ERA5 monthly climatologies                       | Hersbach et al. (2020)         |
 | climate  | Jackson2022                 | NAHosMIP freshwater hosing                       | Jackson et al. (2022)          |
@@ -80,6 +83,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | paleo    | Kindler2014                 | NGRIP temperature reconstruction, 10-120 kyr b2k | Kindler et al. (2014)          |
 | geo      | Laske2013_crust1            | Sediment thickness of CRUST1.0                   | Laske et al. (2013)            |
 | paleo    | Leger2024_PaleoGris         | Retreat chronology of the Greenland Ice Sheet    | Leger et al. (2024)            |
+| geo      | Lloyd2024_visc              | Global 3D mantle viscosity from GLAD-M25         | Lloyd et al. (2024)            |
 | climate  | Loeb2018_ceres              | CERES EBAF Ed4.2.1 radiative fluxes              | Loeb et al. (2018)             |
 | geo      | Loesing2021_ghf             | Geothermal heat flow of Antarctica               | Lösing & Ebbing (2021)         |
 | ice      | Lokkegaard2023_temp_profile | Greenland and Canadian Arctic ice temperature profiles | Løkkegaard et al. (2023) |
@@ -88,9 +92,10 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | ice      | Margold2015_icestreams      | Ice stream outlines                              | Margold et al. (2015)          |
 | geo      | Martos2017_ghf              | Antarctic geothermal heat flow                   | Martos et al. (2017)           |
 | geo      | Martos2018_ghf              | Geothermal heat flux of Greenland                | Martos et al. (2018)           |
-| geo      | Pan2022_litho               | Global lithospheric thickness data               | Pan et al. (2022)              |
+| geo      | Pan2022_litho               | Global lithosphere thickness and mantle viscosity | Pan et al. (2022)             |
 | paleo    | Peltier2004_ice5g           | ICE-5G v1.2 ice-sheet reconstruction             | Peltier (2004)                 |
 | paleo    | Peltier2015_ice6g           | ICE-6G_C (VM5a) ice-sheet and topography reconstruction | Peltier et al. (2015)   |
+| paleo    | Peltier2018_ice6gd          | ICE-6G_D (VM5a) ice thickness and topography of Antarctica | Peltier et al. (2018) |
 | paleo    | PMIP3_cvdp                  | PMIP3 climatologies (CMIP5 lgm, midHolocene, piControl) | Braconnot et al. (2012)  |
 | paleo    | PMIP4_cmip6                 | PMIP4 climatologies (CMIP6 lgm, midHolocene, piControl) | Kageyama et al. (2018)  |
 | masks    | Regions                     | Regions v2: region tree, shelf zone, ice-sheet basins, 0.5-32 km | Multiple (see Regions/README.md) |
@@ -110,5 +115,6 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | topo     | Topo                        | Topography v2: GEBCO2026 + BedMachine/Bedmap3, 0.5-32 km | Multiple (see Topo/README.md) |
 | smb      | vanDalum2025_racmo24        | Antarctic SMB and surface climate, RACMO2.4p1    | van Dalum et al. (2025)        |
 | paleo    | Vinther2009_elevations      | Elevations at the ice core locations             | Vinther et al. (2009)          |
+| geo      | Wiens2022_visc              | Antarctic upper-mantle viscosity                 | Wiens et al. (2022)            |
 | ocean    | Zhou2026_ismip7ocean        | ISMIP7 Antarctic ocean climatology               | Zhou et al. (2026)             |
 | ocean    | Zuo2019_oras5               | Ocean temperature and salinity from ORAS5        | Zuo et al. (2019)              |
