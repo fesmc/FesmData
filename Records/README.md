@@ -29,11 +29,14 @@ data are not included.
    [products.Kindler2014]
    source = "Kindler2014"            # source folder
    file = "Kindler2014_NGRIP.nc"     # prepared file
+   # figure = { variable = "acc" }   # optional: the variable of its figure on the website
    ```
    and `julia fesmdata.jl record <Dataset> [<product> ...]` prepares the missing
    sources, checks each prepared file against the form below and copies it to
    `$ICE_DATA/v2/Records/<Dataset>/<Dataset>-<Product>.nc` (`--overwrite` to replace).
-3. **Release**: a Records dataset is one record of `Publish` with the domain
+3. **Figures** for the website: `julia fesmdata.jl figures <Dataset>` (see
+   `../Figures/README.md`).
+4. **Release**: a Records dataset is one record of `Publish` with the domain
    `Records` (one package per dataset, `Records_<Dataset>`, and
    `registry/Records/<Dataset>.toml`); `fesmdata.jl list/fetch/release` work as for
    the gridded datasets.

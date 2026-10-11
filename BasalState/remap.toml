@@ -8,3 +8,4 @@ source = "Dawson2022_basalstate"
 file = "Dawson2022_BASALSTATE.nc"
 variables = ["T_b", "T_b_pmp", "basal_state", "bmelt_grnd", "beta"]
 grids = { Antarctica = 0 }
+figure = { variables = ["T_b_pmp", "basal_state"] }

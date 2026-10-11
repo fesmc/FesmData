@@ -117,6 +117,7 @@ grids = { Antarctica = 4, Greenland = 4, Global = 4 }   # by domain, see below
 # method = "con"                             # optional, default "con"
 # smooth = "auto"                            # optional, default "auto"
 # release = false                            # optional: made, but not released
+# figure = { variables = ["ghf"] }            # optional: its figure on the website
 ```
 
 `grids` lists the domains (output folders) of the product, each with the grids it is
@@ -153,7 +154,10 @@ must cover all its grids. Then:
    sbatch --job-name=remap-Sediment -p shared -c 64 --mem=58G -t 02:00:00 \
        Remap/jobs/remap_dataset.sbatch Sediment                  # small dataset, shared partition
    ```
-3. Release it (see Releasing): tag `ghf-vX.Y.Z`, make it at the tag, and
+3. Make its figures for the website, `julia fesmdata.jl figures GHF` (see
+   `../Figures/README.md`, also for the options of `figure`), and add its page
+   `docs/datasets/ghf.qmd`, which includes the README and the figures.
+4. Release it (see Releasing): tag `ghf-vX.Y.Z`, make it at the tag, and
    `julia fesmdata.jl release GHF`.
 
 ## Global grids

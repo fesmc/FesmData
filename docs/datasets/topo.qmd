@@ -3,3 +3,5 @@ pagetitle: "Topo"
 ---
 
 {{< include ../../Topo/README.md >}}
+
+{{< include ../figures/Topo/gallery.md >}}

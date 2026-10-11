@@ -92,12 +92,19 @@ function value_label(ds, d, v)
         t = ds[d][argmin(abs.(coord_values(ds, d) .- v))]
         return t isa Dates.AbstractTime ? Dates.format(t, "yyyy-mm") : "time $v"
     end
-    # A label variable on the dimension (e.g. label(structure)), else its value and units
+    i = argmin(abs.(coord_values(ds, d) .- v))
+    # A label variable on the dimension (e.g. label(structure)), or names in an attribute
+    # of its coordinate (e.g. structure_names), else its value and units
     for (name, var) in ds
-        dimnames(var) == (d,) && name != d && eltype(var) <: Union{Missing,AbstractString} &&
-            return "$d $(var[argmin(abs.(coord_values(ds, d) .- v))])"
+        dimnames(var) == (d,) && name != d && eltype(var) <: Union{Missing,AbstractString} && return "$d $(var[i])"
+    end
+    if haskey(ds, d)
+        for (k, names) in ds[d].attrib
+            endswith(k, "_names") && return "$d $(split(names)[i])"
+        end
     end
     units = haskey(ds, d) ? get(ds[d].attrib, "units", "") : ""
+    units == "m" && v >= 1000 && return "$d $(round(v / 1000; sigdigits=4)) km"
     return strip("$d $(round(v; sigdigits=4)) $units")
 end
 

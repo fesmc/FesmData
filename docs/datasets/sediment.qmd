@@ -3,3 +3,5 @@ pagetitle: "Sediment"
 ---
 
 {{< include ../../Sediment/README.md >}}
+
+{{< include ../figures/Sediment/gallery.md >}}

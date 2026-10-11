@@ -3,3 +3,5 @@ pagetitle: "GHF"
 ---
 
 {{< include ../../GHF/README.md >}}
+
+{{< include ../figures/GHF/gallery.md >}}

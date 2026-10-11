@@ -8,8 +8,10 @@
 source = "Joughin2018"
 file = "Joughin2018_VEL.nc"
 grids = { Greenland = 0 }
+figure = { variables = ["uxy_srf"], scale = "log10", colorrange = [1, 3000] }
 
 [products.Rignot2011]
 source = "Rignot2011_vel"
 file = "Rignot2011_VEL.nc"
 grids = { Antarctica = 0 }
+figure = { variables = ["uxy_srf"], scale = "log10", colorrange = [1, 3000] }

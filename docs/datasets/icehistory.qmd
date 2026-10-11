@@ -3,3 +3,5 @@ pagetitle: "IceHistory"
 ---
 
 {{< include ../../IceHistory/README.md >}}
+
+{{< include ../figures/IceHistory/gallery.md >}}

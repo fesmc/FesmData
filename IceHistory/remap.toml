@@ -7,12 +7,14 @@ source = "Peltier2004_ice5g"
 file = "Peltier2004_ICE5G.nc"
 variables = ["z_topo", "H_ice", "f_ice"]
 grids = { Antarctica = 4, GreenlandPaleo = 4, Greenland = 4, North = 4, Laurentide = 4, Eurasia = 4, Global = 4 }
+figure = { variables = ["H_ice"], hide = 0, colormap = "ice" }
 
 [products.ICE6G_C]
 source = "Peltier2015_ice6g"
 file = "Peltier2015_ICE6G_C.nc"
 variables = ["z_topo", "z_srf", "dz_topo", "H_ice", "f_ice", "f_land"]
 grids = { Antarctica = 4, GreenlandPaleo = 4, Greenland = 4, North = 4, Laurentide = 4, Eurasia = 4, Global = 4 }
+figure = { variables = ["H_ice"], hide = 0, colormap = "ice" }
 
 [products.PRISM4]
 source = "Dowsett2016_prism4"
@@ -31,12 +33,14 @@ source = "Gowan2021_PaleoMIST1.0"
 file = "Gowan2021_PaleoMIST.nc"
 variables = ["z_topo", "z_bed", "H_ice", "dz_sl", "f_ice"]
 grids = { Antarctica = 4, GreenlandPaleo = 4, Greenland = 4, North = 4, Laurentide = 4, Eurasia = 4, Global = 4 }
+figure = { variables = ["H_ice"], hide = 0, colormap = "ice" }
 
 [products.PaleoMIST_max]
 source = "Gowan2021_PaleoMIST1.0"
 file = "Gowan2021_PaleoMIST_max.nc"
 variables = ["z_topo", "z_bed", "H_ice", "dz_sl", "f_ice"]
 grids = { Antarctica = 4, GreenlandPaleo = 4, Greenland = 4, North = 4, Laurentide = 4, Eurasia = 4, Global = 4 }
+figure = { variables = ["H_ice"], hide = 0, colormap = "ice" }
 
 [products.PaleoGrIS]
 source = "Leger2024_PaleoGris"
@@ -61,3 +65,4 @@ source = "Peltier2018_ice6gd"
 file = "Peltier2018_ICE6G_D.nc"
 variables = ["H_ice", "H_ice_grounded", "z_topo"]
 grids = { Antarctica = 4 }
+figure = { variables = ["H_ice"], hide = 0, colormap = "ice" }

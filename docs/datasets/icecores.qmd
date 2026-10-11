@@ -3,3 +3,5 @@ pagetitle: "IceCores"
 ---
 
 {{< include ../../IceCores/README.md >}}
+
+{{< include ../figures/IceCores/gallery.md >}}

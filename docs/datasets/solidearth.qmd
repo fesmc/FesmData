@@ -3,3 +3,5 @@ pagetitle: "SolidEarth"
 ---
 
 {{< include ../../SolidEarth/README.md >}}
+
+{{< include ../figures/SolidEarth/gallery.md >}}

@@ -3,3 +3,5 @@ pagetitle: "SMBObs"
 ---
 
 {{< include ../../SMBObs/README.md >}}
+
+{{< include ../figures/SMBObs/gallery.md >}}

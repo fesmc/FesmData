@@ -3,3 +3,5 @@ pagetitle: "Velocity"
 ---
 
 {{< include ../../Velocity/README.md >}}
+
+{{< include ../figures/Velocity/gallery.md >}}

@@ -3,3 +3,5 @@ pagetitle: "BasalMelt"
 ---
 
 {{< include ../../BasalMelt/README.md >}}
+
+{{< include ../figures/BasalMelt/gallery.md >}}

@@ -209,7 +209,10 @@ The website (https://fesmc.github.io/FesmData/) is a [Quarto](https://quarto.org
 in `../docs/`. Its pages include the READMEs of the datasets (`../Topo/README.md`,
 `../Regions/README.md`), of the domains (`../shared/README.md`) and this one, so they
 are written once, next to the code. The products page is generated from the registry
-(`docs/_products.md`, by `julia fesmdata.jl docs`). `.github/workflows/publish-docs.yml`
+(`docs/_products.md`, by `julia fesmdata.jl docs`). Each dataset page ends with
+figures of its products, made from the released files on Levante and committed
+(`docs/figures/<Dataset>/`, by `julia fesmdata.jl figures <Dataset>`, see
+`../Figures/README.md`). `.github/workflows/publish-docs.yml`
 renders the site and publishes it to the `gh-pages` branch on every push to main that
 changes the docs, the READMEs, the registry or Publish. To preview it locally:
 

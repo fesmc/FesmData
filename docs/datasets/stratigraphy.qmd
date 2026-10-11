@@ -3,3 +3,5 @@ pagetitle: "Stratigraphy"
 ---
 
 {{< include ../../Stratigraphy/README.md >}}
+
+{{< include ../figures/Stratigraphy/gallery.md >}}

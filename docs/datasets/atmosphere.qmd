@@ -3,3 +3,5 @@ pagetitle: "Atmosphere"
 ---
 
 {{< include ../../Atmosphere/README.md >}}
+
+{{< include ../figures/Atmosphere/gallery.md >}}

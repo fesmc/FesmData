@@ -7,7 +7,9 @@
 # standard deviation in km, default "auto"). `grids` gives the grids by domain (output
 # folder): a minimum spacing in km (the standard grids of the domain not finer than
 # this, 0: all), or a list of grid names; the product is not made on domains not
-# listed. The dataset and its release tag are in ../Publish/datasets.toml.
+# listed. `release = false` leaves a product out of the releases, and `figure` sets its
+# figure on the website (see ../Figures/README.md). The dataset and its release tag are
+# in ../Publish/datasets.toml.
 
 [products.Lucazeau2019]
 source = "Lucazeau2019_ghf"

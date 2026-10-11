@@ -3,3 +3,5 @@ pagetitle: "SMB"
 ---
 
 {{< include ../../SMB/README.md >}}
+
+{{< include ../figures/SMB/gallery.md >}}
