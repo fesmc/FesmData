@@ -52,6 +52,19 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | Paleoclimate | Simulations and reconstructions of past climates | Badgeley2020_recon, Buizert2018, PMIP3_cvdp, PMIP4_cmip6 |
 | SolidEarth   | Lithosphere thickness and mantle viscosity | Bagge2021_visc, Hazzard2023_visc, Lloyd2024_visc, Pan2022_litho, Wiens2022_visc |
 
+## Records (non-gridded datasets)
+
+Time series, site and profile data, in `$ICE_DATA/v2/Records/<Dataset>/` (see `Records/README.md`).
+
+| Key | Contents | Sources |
+|-----|----------|---------|
+| IceCores     | Ice core records: temperature, accumulation, water isotopes, site elevations | Gkinis2020_NEEMwateriso, Kindler2014, Vinther2009_elevations |
+| RSL          | Relative sea level indicators | Gowan2023_GAPSLIP_GrIS |
+| Boreholes    | Ice temperature profiles | Lokkegaard2023_temp_profile |
+| GPS          | GPS vertical velocities, GIA uplift rates | Schumacher2018_GIA_GrIS |
+| SMBObs       | Surface mass balance measurements | SUMup_smb |
+| Freshwater   | Freshwater fluxes of the ice sheets by region | Schmidt2025_fwf |
+
 ## Source folders (alphabetical order)
 
 | Category | Key | Description | Ref(s) |
@@ -106,14 +119,14 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | ocean    | Rignot2013_bmelt            | Basal melt rates of Antarctic ice shelves        | Rignot et al. (2013)           |
 | paleo    | RSL_GrIS                    | Relative sea level reconstructions in Greenland  | Multiple                       |
 | topo     | RTOPO2                      | RTopo2 global topography data                    | Schaffer et al. (2016)         |
-| masks    | Schmidt2025_fwf             | Runoff basins GrIS and AIS, plus fwf time series | Schmidt et al. (2025)          |
+| masks    | Schmidt2025_fwf             | Freshwater flux series of the ice sheets by region | Schmidt et al. (2025)        |
 | ocean    | Schmidtko2014_ocean         | Antarctic shelf bottom water                     | Schmidtko et al. (2014)        |
-| geo      | Schumacher2018_GIA_GrIS     | GIA measurements in Greenland                    | Schumacher et al. (2018)       |
+| geo      | Schumacher2018_GIA_GrIS     | GPS vertical velocities (GIA uplift rates), global | Schumacher et al. (2018)     |
 | geo      | Shapiro2004_ghf             | Global geothermal heat flow                      | Shapiro & Ritzwoller (2004)    |
 | geo      | Stal2020_ghf                | Geothermal heat flow of Antarctica, Aq1          | Stål et al. (2021)             |
 | paleo    | Stokes2016_icestreams       | Laurentide ice sheet, ice-stream timing          | Stokes et al. (2016)           |
 | geo      | Straume2019_globsed         | Total sediment thickness of the oceans, GlobSed v3 | Straume et al. (2019)        |
-| smb      | SUMup_smb                   | Global SMB database                              | Vandecrux et al.               |
+| smb      | SUMup_smb                   | SMB measurements, SUMup 2025                     | Vandecrux et al. (2025)        |
 | topo     | Topo                        | Topography v2: GEBCO2026 + BedMachine/Bedmap3, 0.5-32 km | Multiple (see Topo/README.md) |
 | smb      | vanDalum2025_racmo24        | Antarctic SMB and surface climate, RACMO2.4p1    | van Dalum et al. (2025)        |
 | paleo    | Vinther2009_elevations      | Elevations at the ice core locations             | Vinther et al. (2009)          |
