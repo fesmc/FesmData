@@ -38,7 +38,7 @@ read_grid(baseline) == (lon, lat) || error("the grids of $recon and $baseline di
 nx, ny = length(lon), length(lat)
 
 # Time: TIME is in years relative to 1950 CE, negative in the past (-22005 to 55, so
-# YEAR_CE = TIME + 1950), at the centres of decades; written as age in years BP
+# YEAR_CE = TIME + 1950), at the centres of decades; written as years ago
 # (22005 to -55), oldest first as in the file.
 time = NCDataset(recon) do ds
     dimnames(ds["TS2"]) == ("r", "c", "month", "time") || error("$recon: unexpected dimensions of TS2")
