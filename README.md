@@ -70,7 +70,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | topo     | GEBCO2025                   | GEBCO 2025 global bath. and topo data            | GEBCO Compilation Group (2025) |
 | paleo    | Gkinis2020_NEEMwateriso     | NEEM ice core high-resolution water isotopes     | Gkinis et al. (2020)           |
 | geo      | Gowan2019_sed               | Geological sediment properties for North America | Gowan et al. (2019)            |
-| ice      | Gowan2021_PaleoMIST1.0      | PaleoMIST 1.0 global ice sheet reconstruction, 80 ka to present | Gowan et al. (2021) |
+| paleo    | Gowan2021_PaleoMIST1.0      | PaleoMIST 1.0 global ice sheet reconstruction, 80 ka to present | Gowan et al. (2021) |
 | paleo    | Gowan2023_GAPSLIP_GrIS      | Relative sea level data for Greenland            | Gowan (2023)                   |
 | geo      | HazzardRichards2024_ghf     | Antarctic geothermal heat flow                   | Hazzard & Richards (2024)      |
 | climate  | Hersbach2020_era5           | ERA5 monthly climatologies                       | Hersbach et al. (2020)         |
