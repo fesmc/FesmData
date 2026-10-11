@@ -40,13 +40,19 @@ ocean regions start at 51. Helpers for codes are in FesmUtils.jl (`region_code`,
 The rules of each region are documented in `regions.toml`. In short:
 
 - Continents are the countries and their EEZs grouped by UN M49 region; Greenland
-  and Iceland come first; oceans (GOaS) take the rest.
+  and Iceland come first; oceans (GOaS) take the rest. The high seas of the Davis
+  Strait, which GOaS puts in the Arctic Ocean, are in the North Atlantic, with the
+  rest of the high seas of the Labrador Sea.
 - Russia is split between Western Eurasia and Asia at the divide between the
   rivers draining to the Kara and Laptev seas (HydroBASINS), and at sea at the
-  boundary between the Kara and Laptev seas (IHO).
+  boundary between the Kara and Laptev seas (IHO). Its EEZ in the Baltic and Black
+  seas is in Western Eurasia.
 - The NA subregions follow HydroBASINS and IHO seas; Hudson Bay and Strait include
-  only the coastal basins draining into them, not the large rivers.
+  only the coastal basins draining into them, not the large rivers, and all their
+  islands. Cordillera and Alaska includes the EEZs of North America in the Pacific.
 - The Antarctic subregions are the IMBIE regions, extended to fill all of 2.1.
+- Cells of a region enclosed by its subregions but covered by none of them (where the
+  coastlines of the sources do not match) get the nearest subregion.
 
 The mountain domains lie within single regions of level 2: PYR in 1.2 Western
 Eurasia (land and EEZs of Spain, France and Andorra) and 1.52 North Atlantic Ocean
@@ -173,10 +179,12 @@ rules = [{ source = "eez_land", field = "territory1", values = ["Svalbard"] }]
 ```
 
 A region covers the union of its rules, within its parent; siblings are applied in the
-order of the file, so a cell taken by an earlier sibling stays with it. A rule selects
-features of a polygon source (`eez_land`, `iho`, `goas`, `hydrobasins`, `imbie`) by the
-`values` of a `field`, or a lon/lat `box`, and can be limited `within` or `without`
-other rules (see the header of `regions.toml`). A region with `fill = true` gives its
+order of the file, so a cell taken by an earlier sibling stays with it. Cells of a
+region that none of its subregions covers keep the code of the region, unless its
+subregions enclose them. A rule selects features of a polygon source (`eez_land`,
+`iho`, `goas`, `hydrobasins`, `imbie`) by the `values` of a `field`, or a lon/lat
+`box`, and can be limited `within` or `without` other rules (see the header of
+`regions.toml`). A region with `fill = true` gives its
 cells outside all its subregions to the nearest subregion. Ocean regions are numbered
 from 51. Changing the tree changes the codes of all domains, so it is a new release of
 Regions; then run steps 1 and 4 (and 5) for every domain.

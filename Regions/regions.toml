@@ -5,8 +5,10 @@
 # union of its rules, intersected with its parent region. Siblings are applied in the
 # order of this file: a cell already taken by an earlier sibling is not changed.
 # Cells of a region that none of its subregions covers keep the code of the region,
-# unless the region has `fill = true`: then they get the nearest subregion, along
-# paths within the region. Ocean regions are numbered from 51.
+# unless they are enclosed by its subregions (holes in their union, e.g. where the
+# coastlines of two sources do not match): these get the nearest subregion, along
+# paths through such cells. With `fill = true`, all cells of the region that none of
+# its subregions covers get the nearest subregion. Ocean regions are numbered from 51.
 #
 # A rule is a table with:
 #   source  - "eez_land", "iho", "goas", "hydrobasins" or "imbie" (see sources.jl);
@@ -81,7 +83,8 @@ rules = [{ source = "eez_land", field = "m49_subregion", values = ["Northern Ame
 
 # Europe; Russia draining to the Kara Sea or west of it (HydroBASINS Europe; Ob,
 # Yenisei and Taymyr west of the Khatanga; Severnaya Zemlya) and its EEZ north of the
-# Kara Sea; and the Barents, White and Kara seas.
+# Kara Sea and in the Baltic and Black seas (Kaliningrad, Gulf of Finland); and the
+# Barents, White and Kara seas.
 [[region]]
 path = "1.2"
 name = "Western Eurasia"
@@ -91,7 +94,9 @@ rules = [
     { source = "eez_land", field = "territory1", values = ["Russia"],
       within = [{ source = "hydrobasins", level = 4,
                   values = [2, 31, 32, 3311, 3312, 3313, 3314, 3315, 332] },
-                { source = "box", lon = [16, 100], lat = [79, 90] }] },
+                { source = "box", lon = [16, 100], lat = [79, 90] },
+                { source = "iho", field = "name",
+                  values = ["Baltic Sea", "Gulf of Finland", "Black Sea", "Sea of Azov"] }] },
     { source = "iho", field = "name", values = ["Barentsz Sea", "White Sea", "Kara Sea"] },
 ]
 
@@ -127,15 +132,22 @@ path = "1.8"
 name = "Oceania"
 rules = [{ source = "eez_land", field = "m49_region", values = ["Oceania"] }]
 
+# GOaS puts the Davis Strait (IHO) in the Arctic Ocean. Beyond the EEZs it is only the
+# northern tip of the high seas of the Labrador Sea, between the EEZs of Canada and
+# Greenland, so it goes to the North Atlantic.
 [[region]]
 path = "1.51"
 name = "Arctic Ocean"
-rules = [{ source = "goas", field = "name", values = ["Arctic Ocean"] }]
+rules = [{ source = "goas", field = "name", values = ["Arctic Ocean"],
+           without = [{ source = "iho", field = "name", values = ["Davis Strait"] }] }]
 
 [[region]]
 path = "1.52"
 name = "North Atlantic Ocean"
-rules = [{ source = "goas", field = "name", values = ["North Atlantic Ocean", "Baltic Sea", "Mediterranean Region"] }]
+rules = [
+    { source = "goas", field = "name", values = ["North Atlantic Ocean", "Baltic Sea", "Mediterranean Region"] },
+    { source = "iho", field = "name", values = ["Davis Strait"] },
+]
 
 [[region]]
 path = "1.53"
@@ -156,6 +168,23 @@ rules = [{ source = "goas", field = "name", values = ["South China and Easter Ar
 # Level 3, North America
 # ---------------------------------------------------------------------------
 
+# Hudson Bay and Hudson Strait with their islands, and the coastal basins draining
+# into them: the odd-numbered (inter-)basins of HydroBASINS level 4 along their
+# coasts, without the lower Nelson River (7121). Before the Canadian Arctic
+# Archipelago, so that the islands of Hudson Strait (HydroBASINS 85) are in Hudson
+# Strait; Southampton, Coats and Mansel islands (8330) lie on the northern limit of
+# Hudson Bay and are not enclosed by it.
+[[region]]
+path = "1.1.2"
+name = "Hudson Bay and Strait"
+rules = [
+    { source = "iho", field = "name", values = ["Hudson Bay", "Hudson Strait"], fill_holes = true },
+    { source = "hydrobasins", level = 4,
+      values = [7111, 7113, 7115, 7117, 7119, 7131, 7133, 7135, 7137, 7139,
+                7211, 7213, 7215, 7217, 7219, 7221, 7223, 7225, 7227, 7229,
+                8321, 8323, 8325, 8327, 8329, 8330] },
+]
+
 # Islands of the Canadian Arctic Archipelago (HydroBASINS 84-86) and its channels
 [[region]]
 path = "1.1.1"
@@ -166,28 +195,18 @@ rules = [
       fill_holes = true },
 ]
 
-# Hudson Bay and Hudson Strait with their islands, and the coastal basins draining
-# into them: the odd-numbered (inter-)basins of HydroBASINS level 4 along their
-# coasts, without the lower Nelson River (7121)
-[[region]]
-path = "1.1.2"
-name = "Hudson Bay and Strait"
-rules = [
-    { source = "iho", field = "name", values = ["Hudson Bay", "Hudson Strait"], fill_holes = true },
-    { source = "hydrobasins", level = 4,
-      values = [7111, 7113, 7115, 7117, 7119, 7131, 7133, 7135, 7137, 7139,
-                7211, 7213, 7215, 7217, 7219, 7221, 7223, 7225, 7227, 7229,
-                8321, 8323, 8325, 8327, 8329] },
-]
-
 # Pacific drainage of North America (HydroBASINS 78) and Alaska (81, and the Alaskan
-# land and EEZ)
+# land and EEZ), and the EEZs of North America in the North Pacific (GOaS) and west of
+# 160W (the US-Russia joint regime areas in the Bering and Chukchi seas)
 [[region]]
 path = "1.1.3"
 name = "Cordillera and Alaska"
 rules = [
     { source = "hydrobasins", level = 2, values = [78, 81] },
     { source = "eez_land", field = "territory1", values = ["Alaska"] },
+    { source = "eez_land", field = "m49_subregion", values = ["Northern America"],
+      within = [{ source = "goas", field = "name", values = ["North Pacific Ocean"] },
+                { source = "box", lon = [-180, -160] }] },
     { source = "iho", field = "name",
       values = ["Gulf of Alaska", "The Coastal Waters of Southeast Alaska and British Columbia"] },
 ]

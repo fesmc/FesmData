@@ -6,7 +6,8 @@ using TOML
     RegionDef
 
 A region of regions.toml: its path ("1.3.1"), code (10301), level, name, rules,
-and whether cells not covered by its subregions get the nearest subregion (`fill`).
+and whether all cells not covered by its subregions get the nearest subregion
+(`fill`), not only those enclosed by them (see `fill_gaps!`).
 """
 struct RegionDef
     path::String
@@ -133,18 +134,32 @@ function build_regions(g::ProjGrid; defs=read_regions())
                 free .&= .!m
                 @info "$(rpad(c.path, 7)) $(rpad(c.name, 42)) $(count(m)) cells"
             end
-            if p !== nothing && p.fill && any(free) && !isempty(children)
-                seeds = Matrix{Int32}(ifelse.(inparent .& .!free, L, Int32(0)))
-                E = extend_labels(seeds, free, dx, dy)
-                filled = free .& (E .!= 0)
-                L[filled] .= E[filled]
-                @info "$(rpad(p.path, 7)) $(count(filled)) cells filled with the nearest subregion, $(count(free .& .!filled)) unreached"
-            end
+            p === nothing || isempty(children) || fill_gaps!(L, p, inparent, free, dx, dy)
         end
         push!(levels, L)
         prev = L
     end
     return levels
+end
+
+"""
+    fill_gaps!(L, p, inparent, free, dx, dy)
+
+Give cells of region `p` that its subregions do not cover (`free`) the nearest
+subregion, along paths through these cells: all of them if `p.fill`, otherwise only
+those enclosed by the subregions (holes in their union, e.g. where the coastlines of
+the sources of neighbouring subregions do not match, or an island that no rule
+covers). The other cells keep the code of `p`.
+"""
+function fill_gaps!(L, p::RegionDef, inparent, free, dx, dy)
+    gaps = p.fill ? free : free .& fill_holes(inparent .& .!free)
+    any(gaps) || return L
+    seeds = Matrix{Int32}(ifelse.(inparent .& .!free, L, Int32(0)))
+    E = extend_labels(seeds, gaps, dx, dy)
+    filled = gaps .& (E .!= 0)
+    L[filled] .= E[filled]
+    @info "$(rpad(p.path, 7)) $(count(filled)) cells $(p.fill ? "" : "enclosed by its subregions ")filled with the nearest subregion, $(count(gaps .& .!filled)) unreached"
+    return L
 end
 
 "Flag attributes (codes and names) of the regions that occur in a field of codes."
