@@ -615,6 +615,18 @@ storage_path = "$datasets_dir/adusumilli2020/ANT_iceshelf_height_changes_RA_1994
 uri = "https://library.ucsd.edu/dc/object/bb0448974g/_2_1.h5/download"
 
 # ---------------------------------------------------------------------------
+# Basal state (BasalState/)
+# ---------------------------------------------------------------------------
+
+# Dawson et al. (2022): ISSM initialization of Antarctica (thermal steady state), a
+# MATLAB 7.3 file with the ISSM model `md` (158 MB), Zenodo (CC BY 4.0).
+
+[dawson2022_init]
+doi = "10.5281/zenodo.6870567"
+storage_path = "$datasets_dir/dawson2022/Antarctica_Initialization.mat"
+uri = "https://zenodo.org/records/6870567/files/Antarctica_Initialization.mat"
+
+# ---------------------------------------------------------------------------
 # Ocean (Ocean/)
 # ---------------------------------------------------------------------------
 
