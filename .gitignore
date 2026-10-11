@@ -2,14 +2,11 @@
 *.nc
 *.zip
 regions_legacy/*.nc
-Batchelor2019_NHIceMasks/Batchelor2019_NHextent
 regions_legacy/marineregions
 GEBCO2025/GEBCO_2025.nc
 GEBCO2025/*.zip
 *isostasy_data
 Pan2022_litho/*.nc
-Dawson2022_AntarcticaBasalState/readme.rtf
-Dawson2022_AntarcticaBasalState/Antarctica_Initialization.mat
 Regions/*.png
 registry/_sandbox/
 registry/_drafts/
