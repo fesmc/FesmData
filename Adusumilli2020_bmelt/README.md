@@ -70,12 +70,12 @@ so they are not converted.
 - `dh_firn` (m): `h_firn`, the change of the firn air content (GSFC-FDMv0), relative
   to 1994;
 - `smb_discharge` (m yr-1 ice equivalent): precipitation minus evaporation (MERRA-2),
-  plus the change of ice discharge for the Amundsen Sea ice shelves only;
-- `dh_alt_err`, `dh_firn_err` (2D): `uncert_alt` and `uncert_firn`, the uncertainties of
-  the height change from altimetry and from firn modelling at quarterly time scales.
-  In the file (version v0), `uncert_alt` is the same in every quarter and identical to
-  `uncert_firn`, and both have the units "m of ice equivalent per year"; they are
-  written as they are.
+  plus the change of ice discharge for the Amundsen Sea ice shelves only.
+
+The uncertainties of the file, `uncert_alt` (height change from altimetry) and
+`uncert_firn` (from firn modelling), are left out: in the file (version v0) they are
+identical to each other, `uncert_alt` is the same in every quarter, and both have the
+units of a rate ("m of ice equivalent per year") rather than of a height change.
 
 `time` is in days since 1992-01-01, from the decimal years of the file (the middle of
 each quarter), with bounds (`time_bnds`) halfway between them.

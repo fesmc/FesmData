@@ -11,6 +11,10 @@ remapping (see Bring your own data, `Remap/README.md`): its products are defined
 |---|---|---|---|
 | `BasalState-Dawson2022` | Dawson et al. (2022): thermal steady state of the ISSM initialization of Antarctica (mesh of 0.3-50 km, interpolated to 1 km), [doi:10.5281/zenodo.6870567](https://doi.org/10.5281/zenodo.6870567) | `T_b` (basal temperature, K), `T_b_pmp` (relative to the pressure melting point, K), `basal_state` (1 frozen, 2 thawable within 2 K of the pressure melting point, 3 thawed), `bmelt_grnd` (basal melt rate, m yr-1 ice equivalent), `beta` (friction coefficient of the linear sliding law tau_b = beta u_b, Pa yr m-1) | Antarctica |
 
+The basal melt rate `bmelt_grnd` of Dawson et al. (2022) is the model's own result:
+about 21 Gt yr-1 over the grounded ice of Antarctica in total, lower than published
+estimates of about 65 Gt yr-1.
+
 The fields cover the grounded ice. Continuous fields are remapped conservatively, the
 classes as the dominant class of each cell. Each file also has `f_valid`, the fraction
 of each cell covered by the source.
