@@ -2,342 +2,342 @@
 
 [_RELEASE]
 date = "2026-10-11"
-git_tag = "regions-v2.1.0"
+git_tag = "regions-v2.1.1"
 store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=Greenland_Regions"
-version = "2.1.0"
+version = "2.1.1"
 
 ["GRL-16KM_BASINS-Mouginot2019.nc"]
-checksum = "sha256:40fcbd9601f4403e8470220b7e870829f2804f5f3eb7cd26cfdd53a67ee06ecb"
-size = 37074
+checksum = "sha256:487cc3ce78eaa6fdc212cf005b50eaef66c0ea887455cfba903a9a92859aabfd"
+size = 37037
 storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_BASINS-Mouginot2019.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-16KM/2.1.0/GRL-16KM_BASINS-Mouginot2019.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-16KM/2.1.1/GRL-16KM_BASINS-Mouginot2019.nc"
 
 ["GRL-16KM_BASINS-NEGIS-v1.nc"]
-checksum = "sha256:efcc75b7464db3e4e809719dd56ec3826857be584f2aba9c51e1892e0cdddbff"
-size = 21545
+checksum = "sha256:4660ebdecf84566c0d9a981a42b0f3510cd1d5eab76817b97080f44b049e52b7"
+size = 21508
 storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_BASINS-NEGIS-v1.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-16KM/2.1.0/GRL-16KM_BASINS-NEGIS-v1.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-16KM/2.1.1/GRL-16KM_BASINS-NEGIS-v1.nc"
 
 ["GRL-16KM_BASINS-NEGIS.nc"]
-checksum = "sha256:8a88ae2ef0ff782403fd55b61e50633bb05f349d55213e998f0d4dba77cca9dd"
-size = 22638
+checksum = "sha256:16019636e034a8ba96b76d9a9b07ff6e889c71bf850f21b8396ff3a75dde87c6"
+size = 22591
 storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_BASINS-NEGIS.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-16KM/2.1.0/GRL-16KM_BASINS-NEGIS.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-16KM/2.1.1/GRL-16KM_BASINS-NEGIS.nc"
 
 ["GRL-16KM_BASINS-Schmidt2025.nc"]
-checksum = "sha256:b4422c9701fb770cc9b9bd61ddee72504a0cc04ea21f61569515007ce16b6562"
-size = 23119
+checksum = "sha256:5a2ffb4775e9d9e49a1c4c4c25b0bf975bc2ae28286932eaed79165c0f155a8c"
+size = 23095
 storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_BASINS-Schmidt2025.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-16KM/2.1.0/GRL-16KM_BASINS-Schmidt2025.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-16KM/2.1.1/GRL-16KM_BASINS-Schmidt2025.nc"
 
 ["GRL-16KM_BASINS-Zwally2012.nc"]
-checksum = "sha256:8c480b95f396ae88a97fd2d92612be55cc894b97c25a31cf2a329697ba06bcd0"
-size = 29902
+checksum = "sha256:d8a1026dee808a3ab01a1d27597fdcefbcf35e27178df4e1923d559785812406"
+size = 29865
 storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_BASINS-Zwally2012.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-16KM/2.1.0/GRL-16KM_BASINS-Zwally2012.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-16KM/2.1.1/GRL-16KM_BASINS-Zwally2012.nc"
 
 ["GRL-16KM_REGIONS.nc"]
-checksum = "sha256:09c70ba33adfea95e405af6e732b8abc9395313b663c70fd7a274e6ac50eca3a"
-size = 93647
+checksum = "sha256:9447b1bce04e53ed771e849015b3cf10e14942e749c6f4da7fc130fbcb980431"
+size = 93567
 storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_REGIONS.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-16KM/2.1.0/GRL-16KM_REGIONS.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-16KM/2.1.1/GRL-16KM_REGIONS.nc"
 
 ["GRL-16KM_grid.nc"]
 checksum = "sha256:e835518450bae0a863fdb7cd68adc7d4f59c48c790090d497939939518960d41"
 size = 150482
 storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-16KM/2.1.0/GRL-16KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-16KM/2.1.1/GRL-16KM_grid.nc"
 
 ["GRL-1KM_BASINS-Mouginot2019.nc"]
-checksum = "sha256:42fba20ee7a8741dc50bde30b071fb87673a2a6109eab1dd39caadd72f3cf824"
-size = 543382
+checksum = "sha256:26148615cf486e460d93c3ec8316bcd611160c77f69f8b0db01a33af24906397"
+size = 543345
 storage_path = "$datasets_dir/Greenland/GRL-1KM/GRL-1KM_BASINS-Mouginot2019.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-1KM/2.1.0/GRL-1KM_BASINS-Mouginot2019.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-1KM/2.1.1/GRL-1KM_BASINS-Mouginot2019.nc"
 
 ["GRL-1KM_BASINS-NEGIS-v1.nc"]
-checksum = "sha256:5235b2507a46efe28917afd623d1132b762c73e9c1dabc8193781f6573f8f271"
-size = 193913
+checksum = "sha256:11311cb0a066d46f6e2b41afd53e75e28b82ea79c3b4ca5c6eaea1e25e29b251"
+size = 193876
 storage_path = "$datasets_dir/Greenland/GRL-1KM/GRL-1KM_BASINS-NEGIS-v1.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-1KM/2.1.0/GRL-1KM_BASINS-NEGIS-v1.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-1KM/2.1.1/GRL-1KM_BASINS-NEGIS-v1.nc"
 
 ["GRL-1KM_BASINS-NEGIS.nc"]
-checksum = "sha256:dde87bc25f7b9fa62a709a65df02f5aea9854be57b3499b672354ce43781adf5"
-size = 197136
+checksum = "sha256:d4fa289a49e0b06e2502c5435a92a799c03431457633e9a281a3aca622810354"
+size = 197089
 storage_path = "$datasets_dir/Greenland/GRL-1KM/GRL-1KM_BASINS-NEGIS.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-1KM/2.1.0/GRL-1KM_BASINS-NEGIS.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-1KM/2.1.1/GRL-1KM_BASINS-NEGIS.nc"
 
 ["GRL-1KM_BASINS-Schmidt2025.nc"]
-checksum = "sha256:a0cb3eed03593351ac620752dfb9545d4f59ddbcb65582cc82cb4dbb2004b121"
-size = 277693
+checksum = "sha256:4833f18d6ffc3758f8be4b44d23b411ee8e24a5ba350530ac1023a575cba1af3"
+size = 277646
 storage_path = "$datasets_dir/Greenland/GRL-1KM/GRL-1KM_BASINS-Schmidt2025.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-1KM/2.1.0/GRL-1KM_BASINS-Schmidt2025.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-1KM/2.1.1/GRL-1KM_BASINS-Schmidt2025.nc"
 
 ["GRL-1KM_BASINS-Zwally2012.nc"]
-checksum = "sha256:e91697a156047830b126559cf773d91f739917e500f64793a8a858920e98653a"
-size = 435037
+checksum = "sha256:e8d5126d5df9d97e3de3258c34c21ab990504a4b0b508afefb1c30d0439686b9"
+size = 435000
 storage_path = "$datasets_dir/Greenland/GRL-1KM/GRL-1KM_BASINS-Zwally2012.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-1KM/2.1.0/GRL-1KM_BASINS-Zwally2012.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-1KM/2.1.1/GRL-1KM_BASINS-Zwally2012.nc"
 
 ["GRL-1KM_REGIONS.nc"]
-checksum = "sha256:b84e8678cb99313837fb34fc0422fff54352cd1dabdcf02755d81f300526f242"
-size = 9278522
+checksum = "sha256:624eff34abdf13cf995f2b115d84bab552182575379150ea7762e9e14250361c"
+size = 9277523
 storage_path = "$datasets_dir/Greenland/GRL-1KM/GRL-1KM_REGIONS.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-1KM/2.1.0/GRL-1KM_REGIONS.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-1KM/2.1.1/GRL-1KM_REGIONS.nc"
 
 ["GRL-1KM_grid.nc"]
 checksum = "sha256:04da63872f29f82b9a5ae9f8f3dbb0996e9b8a272f539629d1af272147c92f9b"
 size = 19073467
 storage_path = "$datasets_dir/Greenland/GRL-1KM/GRL-1KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-1KM/2.1.0/GRL-1KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-1KM/2.1.1/GRL-1KM_grid.nc"
 
 ["GRL-2KM_BASINS-Mouginot2019.nc"]
-checksum = "sha256:a3875917fc44c22eec2376f5bce7728676d0eec7d7e86875e716a6d45e083c4b"
-size = 201402
+checksum = "sha256:46f9c1e3d63a208e88f229df54835ca100716a9dc5a6cdbce3cda3dca46ce849"
+size = 201365
 storage_path = "$datasets_dir/Greenland/GRL-2KM/GRL-2KM_BASINS-Mouginot2019.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-2KM/2.1.0/GRL-2KM_BASINS-Mouginot2019.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-2KM/2.1.1/GRL-2KM_BASINS-Mouginot2019.nc"
 
 ["GRL-2KM_BASINS-NEGIS-v1.nc"]
-checksum = "sha256:319522039cbf42b4de0de527e507ae71c7a31b3a8884e8d7c23c509f8070d0c3"
-size = 75380
+checksum = "sha256:626c27b8b4fbacd5c183361a9da8c881daf6175c203f25bf1d2dc0da8afc7194"
+size = 75343
 storage_path = "$datasets_dir/Greenland/GRL-2KM/GRL-2KM_BASINS-NEGIS-v1.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-2KM/2.1.0/GRL-2KM_BASINS-NEGIS-v1.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-2KM/2.1.1/GRL-2KM_BASINS-NEGIS-v1.nc"
 
 ["GRL-2KM_BASINS-NEGIS.nc"]
-checksum = "sha256:873677117e1438890803d0b93db1a3956d12f7d8ac1422171281aa52d01476be"
-size = 75946
+checksum = "sha256:2886beda8fb3e4c117bf632e5aa9bf93063e7d2c0e126c838480cf9561ffc03a"
+size = 75899
 storage_path = "$datasets_dir/Greenland/GRL-2KM/GRL-2KM_BASINS-NEGIS.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-2KM/2.1.0/GRL-2KM_BASINS-NEGIS.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-2KM/2.1.1/GRL-2KM_BASINS-NEGIS.nc"
 
 ["GRL-2KM_BASINS-Schmidt2025.nc"]
-checksum = "sha256:8f04c3080135c41c8de5afe73531117c772ee17022c7117015d1d33c8623ae88"
-size = 102634
+checksum = "sha256:f74429b6c910dd12ed7a21940bd166351d5a15d79114b63da9dcd7cbe066043e"
+size = 102587
 storage_path = "$datasets_dir/Greenland/GRL-2KM/GRL-2KM_BASINS-Schmidt2025.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-2KM/2.1.0/GRL-2KM_BASINS-Schmidt2025.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-2KM/2.1.1/GRL-2KM_BASINS-Schmidt2025.nc"
 
 ["GRL-2KM_BASINS-Zwally2012.nc"]
-checksum = "sha256:0510eb849d867f0cdad10b740b3b0d2f3397de59d467b1283b8de7af36b8f642"
-size = 153208
+checksum = "sha256:94c022ed930686f643e1513a5b6de84eb510c6ea5a65915d2a34908637a25820"
+size = 153171
 storage_path = "$datasets_dir/Greenland/GRL-2KM/GRL-2KM_BASINS-Zwally2012.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-2KM/2.1.0/GRL-2KM_BASINS-Zwally2012.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-2KM/2.1.1/GRL-2KM_BASINS-Zwally2012.nc"
 
 ["GRL-2KM_REGIONS.nc"]
-checksum = "sha256:ea285dd3a8b8ef9ecffc23c98f8056bf5d9499aef5f5f0d91d17ac8d030cd7aa"
-size = 2795744
+checksum = "sha256:49f0c1d072e4f053c48287a28666979d65377aafca8d8e3ab2c38707b49a1b62"
+size = 2795078
 storage_path = "$datasets_dir/Greenland/GRL-2KM/GRL-2KM_REGIONS.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-2KM/2.1.0/GRL-2KM_REGIONS.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-2KM/2.1.1/GRL-2KM_REGIONS.nc"
 
 ["GRL-2KM_grid.nc"]
 checksum = "sha256:f14a977d6e3a1f3163a45f02a604b05efc34d00a2f27fba14f8114ddf5725fc1"
 size = 5378392
 storage_path = "$datasets_dir/Greenland/GRL-2KM/GRL-2KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-2KM/2.1.0/GRL-2KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-2KM/2.1.1/GRL-2KM_grid.nc"
 
 ["GRL-32KM_BASINS-Mouginot2019.nc"]
-checksum = "sha256:aa43eeebc9a3a0f816c6bf18d20bd3770f760e62fa04451e073f52650e826543"
-size = 29222
+checksum = "sha256:5254656848a1acfecf0762912c552fce0fddd9b3f2094434083982ad6cd5d4c4"
+size = 29185
 storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_BASINS-Mouginot2019.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-32KM/2.1.0/GRL-32KM_BASINS-Mouginot2019.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-32KM/2.1.1/GRL-32KM_BASINS-Mouginot2019.nc"
 
 ["GRL-32KM_BASINS-NEGIS-v1.nc"]
-checksum = "sha256:f9afbb92c9e652c53d187491ed310ced9ed7c29f43a82770d92dda2f5266e861"
-size = 19497
+checksum = "sha256:3f7e8b090cc70f17e4cb8c8bcf58ee7700979dfb7473a361f451d2d74a060373"
+size = 19460
 storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_BASINS-NEGIS-v1.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-32KM/2.1.0/GRL-32KM_BASINS-NEGIS-v1.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-32KM/2.1.1/GRL-32KM_BASINS-NEGIS-v1.nc"
 
 ["GRL-32KM_BASINS-NEGIS.nc"]
-checksum = "sha256:deaa31d22b2aed7d086590e9539dc23e2cd284e5e71102788f355fd0d0fcf646"
-size = 20590
+checksum = "sha256:91b033d3ae77197a1ea9b8b659db1c06374d629efbdef9f5bfc979c1e779b3dd"
+size = 20543
 storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_BASINS-NEGIS.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-32KM/2.1.0/GRL-32KM_BASINS-NEGIS.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-32KM/2.1.1/GRL-32KM_BASINS-NEGIS.nc"
 
 ["GRL-32KM_BASINS-Schmidt2025.nc"]
-checksum = "sha256:0554ba01a0b3617166e3d176e0ab82f19f7d9bcad91d9a61bcff63e80ccc42ea"
-size = 19880
+checksum = "sha256:5e50fb020fe31f35ab9dac5a33b568b7608c525363e97525736d744d4dcbf4c8"
+size = 19856
 storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_BASINS-Schmidt2025.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-32KM/2.1.0/GRL-32KM_BASINS-Schmidt2025.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-32KM/2.1.1/GRL-32KM_BASINS-Schmidt2025.nc"
 
 ["GRL-32KM_BASINS-Zwally2012.nc"]
-checksum = "sha256:51f188f97fa59a783dfaca4d2ee8f4a8464aa8e75e9aedacba27e2c0270862f5"
-size = 25368
+checksum = "sha256:b1fe6ba9d2ea47f07941ea3a5f9c337b87f909ae0b532d44035f6535063eefa4"
+size = 25331
 storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_BASINS-Zwally2012.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-32KM/2.1.0/GRL-32KM_BASINS-Zwally2012.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-32KM/2.1.1/GRL-32KM_BASINS-Zwally2012.nc"
 
 ["GRL-32KM_REGIONS.nc"]
-checksum = "sha256:9e168c0e9136f90fdde7b5c062260dd1421fef31e51a46e27a3c66db8456041f"
-size = 48332
+checksum = "sha256:8c7de5ef56b7230a7aa5edd9480e8d6bbbd817cd35d5e9c6736cb4dc72c223b1"
+size = 48258
 storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_REGIONS.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-32KM/2.1.0/GRL-32KM_REGIONS.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-32KM/2.1.1/GRL-32KM_REGIONS.nc"
 
 ["GRL-32KM_grid.nc"]
 checksum = "sha256:c922307bd72e9e5bd3d10d86b97e3c108dcd5a4264dd47b305b9c562ba81e775"
 size = 57245
 storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-32KM/2.1.0/GRL-32KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-32KM/2.1.1/GRL-32KM_grid.nc"
 
 ["GRL-4KM_BASINS-Mouginot2019.nc"]
-checksum = "sha256:4efd3e26d963af54220ed295fb483873f14f3beae71b280d9d5c97cc8177c497"
-size = 88059
+checksum = "sha256:cf6efbdb3b418d1b489ef55d25177af5f0d074b9631146a7b5327e2afb990054"
+size = 88022
 storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_BASINS-Mouginot2019.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-4KM/2.1.0/GRL-4KM_BASINS-Mouginot2019.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-4KM/2.1.1/GRL-4KM_BASINS-Mouginot2019.nc"
 
 ["GRL-4KM_BASINS-NEGIS-v1.nc"]
-checksum = "sha256:810d139510b8059c872c7fe984ef305ff59c8c110f065fa369056f432a913e8b"
-size = 38995
+checksum = "sha256:02a1d8962c0e9778cc47282a616bfb0bb2959d3f38d6d412b37efe61b70e26a1"
+size = 38958
 storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_BASINS-NEGIS-v1.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-4KM/2.1.0/GRL-4KM_BASINS-NEGIS-v1.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-4KM/2.1.1/GRL-4KM_BASINS-NEGIS-v1.nc"
 
 ["GRL-4KM_BASINS-NEGIS.nc"]
-checksum = "sha256:582e9326e616d4b6dda8849b96a0500302124dc2aaf2e2eebb1837537d7045af"
-size = 38638
+checksum = "sha256:e3927d791913efd7bd579155aac74688a3ddef0b16761b7048877cbc55e4266f"
+size = 38591
 storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_BASINS-NEGIS.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-4KM/2.1.0/GRL-4KM_BASINS-NEGIS.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-4KM/2.1.1/GRL-4KM_BASINS-NEGIS.nc"
 
 ["GRL-4KM_BASINS-Schmidt2025.nc"]
-checksum = "sha256:0f4ff412eae925057121a08aedaa0eaabb15670221f2a727d43f48f0d6d4d37d"
-size = 48451
+checksum = "sha256:e20d50db9f09473b37ce11dff32816406d0cd964fefa36f1ee4e7fd88ef61f7e"
+size = 48404
 storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_BASINS-Schmidt2025.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-4KM/2.1.0/GRL-4KM_BASINS-Schmidt2025.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-4KM/2.1.1/GRL-4KM_BASINS-Schmidt2025.nc"
 
 ["GRL-4KM_BASINS-Zwally2012.nc"]
-checksum = "sha256:f50ceffe96f640b0b8c700d2a9517c264ffa5c06c30e26219c1538186dbe94ad"
-size = 66601
+checksum = "sha256:d72b00fe78d9c7d68a94bcb46dfc162be7df76b0dba997a62b8282b031d92d92"
+size = 66564
 storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_BASINS-Zwally2012.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-4KM/2.1.0/GRL-4KM_BASINS-Zwally2012.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-4KM/2.1.1/GRL-4KM_BASINS-Zwally2012.nc"
 
 ["GRL-4KM_REGIONS.nc"]
-checksum = "sha256:3f49794c04e44cc8c18497b301d3700211f74818a3306bf5f5a65640196e2f76"
-size = 821713
+checksum = "sha256:95ce76394a5154d7730575fc5c6e2378b4e982915567c43a4c1b22371c273220"
+size = 821610
 storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_REGIONS.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-4KM/2.1.0/GRL-4KM_REGIONS.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-4KM/2.1.1/GRL-4KM_REGIONS.nc"
 
 ["GRL-4KM_grid.nc"]
 checksum = "sha256:bfc44b679d56099bfb9306c3bfe8d74d1663a5b7168c2f18b404fdb3b6cabe4f"
 size = 1546343
 storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-4KM/2.1.0/GRL-4KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-4KM/2.1.1/GRL-4KM_grid.nc"
 
 ["GRL-500M_BASINS-Mouginot2019.nc"]
-checksum = "sha256:3909eb3bebee28d1ef5d5435280a056538f3fe75ca1dcbf4a032b8564bcaf0e6"
-size = 1533161
+checksum = "sha256:1bd5ffe3e0150fb1e069f82d99ce378e131ec154f1b0caf8d58363de0dd0209e"
+size = 1533124
 storage_path = "$datasets_dir/Greenland/GRL-500M/GRL-500M_BASINS-Mouginot2019.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-500M/2.1.0/GRL-500M_BASINS-Mouginot2019.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-500M/2.1.1/GRL-500M_BASINS-Mouginot2019.nc"
 
 ["GRL-500M_BASINS-NEGIS-v1.nc"]
-checksum = "sha256:f44cbece65605c1e1a483f8d162fd2424b356fc638bd2e8b7be86f5fd779aa18"
-size = 583497
+checksum = "sha256:d2c0ea6e01c59377585a36e32b8c1d4dd1a68dbe95eb161164e9d26b7c3d6175"
+size = 583460
 storage_path = "$datasets_dir/Greenland/GRL-500M/GRL-500M_BASINS-NEGIS-v1.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-500M/2.1.0/GRL-500M_BASINS-NEGIS-v1.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-500M/2.1.1/GRL-500M_BASINS-NEGIS-v1.nc"
 
 ["GRL-500M_BASINS-NEGIS.nc"]
-checksum = "sha256:d48b842a58708ee4d3afe032c31c0018ffd3ed897e13bdde4aaee90ae3e8a36c"
-size = 588944
+checksum = "sha256:a9fd11766f8e1f82e361efbff679364c07169f384582149353228f3dd4579325"
+size = 588897
 storage_path = "$datasets_dir/Greenland/GRL-500M/GRL-500M_BASINS-NEGIS.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-500M/2.1.0/GRL-500M_BASINS-NEGIS.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-500M/2.1.1/GRL-500M_BASINS-NEGIS.nc"
 
 ["GRL-500M_BASINS-Schmidt2025.nc"]
-checksum = "sha256:4f7b9fc7185a3ead3f366643d7858c30620086dda0b194c328ffdb2f4701cf81"
-size = 770106
+checksum = "sha256:882dad5e71534e0b6bf0aaf0e0b430fa39687665cfdd66b31ec31d957c1dce57"
+size = 770059
 storage_path = "$datasets_dir/Greenland/GRL-500M/GRL-500M_BASINS-Schmidt2025.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-500M/2.1.0/GRL-500M_BASINS-Schmidt2025.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-500M/2.1.1/GRL-500M_BASINS-Schmidt2025.nc"
 
 ["GRL-500M_BASINS-Zwally2012.nc"]
-checksum = "sha256:e028330f0754c653fe1a3645177ba6cf985d9737d6801e55053ce979a86ecc9a"
-size = 1262118
+checksum = "sha256:ebe0b0c80af6baac7b60099429c451483ddb69dbf31037d645fe86ccd3113fc0"
+size = 1262081
 storage_path = "$datasets_dir/Greenland/GRL-500M/GRL-500M_BASINS-Zwally2012.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-500M/2.1.0/GRL-500M_BASINS-Zwally2012.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-500M/2.1.1/GRL-500M_BASINS-Zwally2012.nc"
 
 ["GRL-500M_REGIONS.nc"]
-checksum = "sha256:863026a185b1e8730c1d9e35684761b0839efabd1af8e94d861f192b67cb1e72"
-size = 27766672
+checksum = "sha256:3be7ff990839e1ce424d9158bf948199711de30c3a7d6955ff38db8cdbe8f8da"
+size = 27755357
 storage_path = "$datasets_dir/Greenland/GRL-500M/GRL-500M_REGIONS.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-500M/2.1.0/GRL-500M_REGIONS.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-500M/2.1.1/GRL-500M_REGIONS.nc"
 
 ["GRL-500M_grid.nc"]
 checksum = "sha256:b05848d86ae7e9cec6c530c7f2ea298350898c1410ce6d86fe6589ec20567045"
 size = 63040154
 storage_path = "$datasets_dir/Greenland/GRL-500M/GRL-500M_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-500M/2.1.0/GRL-500M_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-500M/2.1.1/GRL-500M_grid.nc"
 
 ["GRL-8KM_BASINS-Mouginot2019.nc"]
-checksum = "sha256:e04253e28c21f7235b021b91c6b5cec23fdac03b4a4333cae5df0bbf8f2ab1c8"
-size = 50286
+checksum = "sha256:4e005f5ef26c81f81b4fba22cd04bcfef6cdd8905bd7eeb9383ae2dd8ee46392"
+size = 50249
 storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_BASINS-Mouginot2019.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-8KM/2.1.0/GRL-8KM_BASINS-Mouginot2019.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-8KM/2.1.1/GRL-8KM_BASINS-Mouginot2019.nc"
 
 ["GRL-8KM_BASINS-NEGIS-v1.nc"]
-checksum = "sha256:30bb45451a7e057dedad6123a37bc57882cf6b1d178cdceab7b403afd7c8965f"
-size = 24898
+checksum = "sha256:1babe75a2060f4ada94124dafdddb66c503344dc1d6a15f9c6407de9cfabdf2c"
+size = 24861
 storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_BASINS-NEGIS-v1.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-8KM/2.1.0/GRL-8KM_BASINS-NEGIS-v1.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-8KM/2.1.1/GRL-8KM_BASINS-NEGIS-v1.nc"
 
 ["GRL-8KM_BASINS-NEGIS.nc"]
-checksum = "sha256:3ca5dbeca9ecdcbfe6db331163a4b3fc7156078ca04511f1e352239f14681336"
-size = 25993
+checksum = "sha256:c175129cdffa03997e98ce98d3c400cc3c4ec8746df9b73ce9ae0fdff6625f3c"
+size = 25946
 storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_BASINS-NEGIS.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-8KM/2.1.0/GRL-8KM_BASINS-NEGIS.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-8KM/2.1.1/GRL-8KM_BASINS-NEGIS.nc"
 
 ["GRL-8KM_BASINS-Schmidt2025.nc"]
-checksum = "sha256:89b94f2f0a8bc12d188d28df2440d460f3885050a421c184e71dd7f521ca3504"
-size = 29291
+checksum = "sha256:bc3e12273ac01c188b07c6051bdde61ed83e89b1494daaeb93d3f25b83377286"
+size = 29267
 storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_BASINS-Schmidt2025.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-8KM/2.1.0/GRL-8KM_BASINS-Schmidt2025.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-8KM/2.1.1/GRL-8KM_BASINS-Schmidt2025.nc"
 
 ["GRL-8KM_BASINS-Zwally2012.nc"]
-checksum = "sha256:9c8f0fabcefe244957a1ba5bf7eff6fe9177f86e94454f95603d1d44eb8e6de8"
-size = 39820
+checksum = "sha256:c5a59101fea8a99adc60beae294d03143cbf42e0acae36338d2720f1179661af"
+size = 39783
 storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_BASINS-Zwally2012.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-8KM/2.1.0/GRL-8KM_BASINS-Zwally2012.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-8KM/2.1.1/GRL-8KM_BASINS-Zwally2012.nc"
 
 ["GRL-8KM_REGIONS.nc"]
-checksum = "sha256:6a32e432b0b0690fbdb35ba018ee7210595a3bbd34904a3ebfe92ea9b09d9310"
-size = 253458
+checksum = "sha256:095ca9f894cc37773f0881eebfd63fbe5d0909cf18728777a3ec0205cb9ee1e8"
+size = 253331
 storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_REGIONS.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-8KM/2.1.0/GRL-8KM_REGIONS.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-8KM/2.1.1/GRL-8KM_REGIONS.nc"
 
 ["GRL-8KM_grid.nc"]
 checksum = "sha256:a7c9769dfbac2eefa4f4a79985475995596d3035f3481009cfff72c2c45fb40e"
 size = 467101
 storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-8KM/2.1.0/GRL-8KM_grid.nc"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-8KM/2.1.1/GRL-8KM_grid.nc"
 
 ["grid_GRL-16KM.txt"]
 checksum = "sha256:96d8ae58fe971c0fe4bcf3433b0f78c1c46af7104133c842859d47b655060cd6"
 size = 465
 storage_path = "$datasets_dir/Greenland/GRL-16KM/grid_GRL-16KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-16KM/2.1.0/grid_GRL-16KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-16KM/2.1.1/grid_GRL-16KM.txt"
 
 ["grid_GRL-1KM.txt"]
 checksum = "sha256:6c3c8dcbe453c0b9226de89c2c6349a5f1c8b9eb11b395fafcc03e514e756ae6"
 size = 467
 storage_path = "$datasets_dir/Greenland/GRL-1KM/grid_GRL-1KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-1KM/2.1.0/grid_GRL-1KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-1KM/2.1.1/grid_GRL-1KM.txt"
 
 ["grid_GRL-2KM.txt"]
 checksum = "sha256:d795d6d9de510cf0e66e83fb14a1a16680f9914baffb4e23fb521553bf0c47b3"
 size = 466
 storage_path = "$datasets_dir/Greenland/GRL-2KM/grid_GRL-2KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-2KM/2.1.0/grid_GRL-2KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-2KM/2.1.1/grid_GRL-2KM.txt"
 
 ["grid_GRL-32KM.txt"]
 checksum = "sha256:60caa1794ee7701429bc7ccece8aa52f1f4555ddc051c056409acb398cad52a0"
 size = 462
 storage_path = "$datasets_dir/Greenland/GRL-32KM/grid_GRL-32KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-32KM/2.1.0/grid_GRL-32KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-32KM/2.1.1/grid_GRL-32KM.txt"
 
 ["grid_GRL-4KM.txt"]
 checksum = "sha256:17883e1fab0cfa9f8b288bb7d2fb6fa27955ff3a437d06b0ec4d0fb1e358165f"
 size = 464
 storage_path = "$datasets_dir/Greenland/GRL-4KM/grid_GRL-4KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-4KM/2.1.0/grid_GRL-4KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-4KM/2.1.1/grid_GRL-4KM.txt"
 
 ["grid_GRL-500M.txt"]
 checksum = "sha256:7731e4372f47b90a680fc2a2a329da0988c1c8448eb6636894e6718e946c9d57"
 size = 468
 storage_path = "$datasets_dir/Greenland/GRL-500M/grid_GRL-500M.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-500M/2.1.0/grid_GRL-500M.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-500M/2.1.1/grid_GRL-500M.txt"
 
 ["grid_GRL-8KM.txt"]
 checksum = "sha256:455c0a221c44c016c9129b7e1305cc2e1cf1f17be11aace7a68103e92f6c2c5c"
 size = 463
 storage_path = "$datasets_dir/Greenland/GRL-8KM/grid_GRL-8KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-8KM/2.1.0/grid_GRL-8KM.txt"
+uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Regions_GRL-8KM/2.1.1/grid_GRL-8KM.txt"
