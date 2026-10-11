@@ -551,6 +551,45 @@ doi = "10.5194/cp-12-1519-2016"
 extract = true
 uri = "https://geology.er.usgs.gov/egpsc/prism/data/Modern_std.zip"
 
+# Northern Hemisphere ice-sheet extents through the Quaternary (Batchelor et al., 2019):
+# shapefiles of the best-estimate, minimum and maximum extents of 18 time slices. The
+# whole OSF project (osf.io/7jen3) as one zip, made by OSF on request (250 MB, 30 min),
+# which stalls too long for the automatic download: manual download and unzip into the
+# folder (see Batchelor2019_NHIceMasks/README.md).
+
+[batchelor2019_nh_ice]
+doi = "10.1038/s41467-019-11601-2"
+skip_download = true
+storage_path = "$datasets_dir/batchelor2019_nh_ice"
+uri = "https://files.osf.io/v1/resources/7jen3/providers/osfstorage/?zip="
+
+# PaleoMIST 1.0 (Gowan et al., 2021), PANGAEA: global ice thickness and topography,
+# 80-0 ka every 2.5 kyr (3.5 GB).
+
+[gowan2021_paleomist]
+key = "gowan2021_paleomist.zip"
+doi = "10.1594/PANGAEA.905800"
+extract = true
+uri = "https://hs.pangaea.de/Maps/Global_Ice_Sheets/Gowan_ice_reconstruction.zip"
+
+# PaleoGrIS 1.0 (Leger et al., 2024), Mendeley Data: the supplementary data in one zip
+# (2 GB), of which only the isochrone buffers (NetCDF) are used.
+
+[leger2024_paleogris]
+key = "leger2024_paleogris.zip"
+doi = "10.17632/nh57cz4gys.1"
+extract = true
+uri = "https://data.mendeley.com/public-files/datasets/nh57cz4gys/files/3d0fc171-6c82-4832-af18-81728fcea050/file_downloaded"
+
+# Laurentide ice-stream outlines (Margold et al., 2015), shapefiles of the supplement on
+# figshare (the figure page of the article at Taylor & Francis links to it).
+
+[margold2015_icestreams]
+key = "margold2015_icestreams.zip"
+doi = "10.6084/m9.figshare.1033955.v3"
+extract = true
+uri = "https://ndownloader.figshare.com/files/1507383"
+
 # ---------------------------------------------------------------------------
 # Surface velocity (Velocity/)
 # ---------------------------------------------------------------------------

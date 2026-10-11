@@ -23,3 +23,36 @@ file = "Dowsett2016_PRISM4.nc"
 variables = ["z_topo_enh", "z_topo_std", "z_topo_mod", "mask_enh", "mask_std"]
 domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
 min_spacing_km = 4
+
+[products.Batchelor2019]
+source = "Batchelor2019_NHIceMasks"
+file = "Batchelor2019_NH_ICE.nc"
+variables = ["f_ice_best", "f_ice_min", "f_ice_max"]
+domains = ["GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia"]
+min_spacing_km = 2
+
+[products.PaleoMIST]
+source = "Gowan2021_PaleoMIST1.0"
+file = "Gowan2021_PaleoMIST.nc"
+variables = ["z_topo", "z_bed", "H_ice", "dz_sl", "f_ice"]
+domains = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia", "Global"]
+min_spacing_km = 4
+
+[products.PaleoGrIS]
+source = "Leger2024_PaleoGris"
+file = "Leger2024_PaleoGrIS.nc"
+variables = ["age_deglac", "age_deglac_err"]
+domains = ["GreenlandPaleo", "Greenland"]
+min_spacing_km = 1
+
+[products.Margold2015]
+source = "Margold2015_icestreams"
+file = "Margold2015_ICESTREAMS.nc"
+variables = ["f_stream", "f_stream_lgm", "age_stream_start", "age_stream_end"]
+domains = ["North", "Laurentide"]
+
+[products.Batchelor2019_PaleoMIST_LGC]
+source = "Batchelor2019_PaleoMIST_lgc"
+file = "Batchelor2019_PaleoMIST_LGC.nc"
+variables = ["f_ice_best", "f_ice_min", "f_ice_max"]
+domains = ["Global"]
