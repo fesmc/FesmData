@@ -171,9 +171,9 @@ products share the same grids. Other domains, projected or lon-lat, can be added
 ## Not supported yet
 
 - Several files resulting in one product. Each file can be remapped on its own
-  (`remap <file> ... --name=<name>`, or one product per file in a thematic dataset),
-  which suits files that can be considered separate products, e.g. one per variable.
-  To make one product from files that are parts of it (e.g. a time series from yearly
+  (`remap <file> ... --name=<name>`, which will create one product per file in a
+  thematic dataset). This can work by having e.g. one product per variable. To make one
+  product from multiple files that are parts of it (e.g. a time series from yearly
   files, or a climatology), prepare them into one file first.
 - Projected grids described only by CF grid-mapping parameters or WKT (add a PROJ
   string as `proj_params`).
