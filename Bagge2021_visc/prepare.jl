@@ -1,4 +1,4 @@
-# Prepare the 3D mantle viscosity of Bagge et al. (2021) for remapping: the 18 Earth
+# Prepare the 3D mantle viscosity of Bagge et al. (2021) for remapping: 8 of the 18 Earth
 # structures of the GFZ data publication (datamanifest key bagge2021_visc) on their
 # Gaussian grid (512 x 256) and 164 layers, as a prepared NetCDF file,
 # $FESMDATA_WORK/prepared/Bagge2021_visc/Bagge2021_visc.nc, with log10_visc (on depth and
@@ -46,11 +46,13 @@ end
 const KEY = "bagge2021_visc"
 const R_EARTH = 6371e3          # Earth radius of VILMA (m): depth = R_EARTH - radius
 
-# The 18 structures v_<r>_<RVP>: reduction factor r of the conversion from temperature
-# to viscosity, and radial viscosity profile RVP (Table 1 of the README of the data)
-const FACTORS = ["0.2857", "0.3", "0.4", "0.5", "0.75", "1.0"]
-const PROFILES = ["s16", "sc06", "sc06b"]
-const STRUCTURES = [(f, p) for f in FACTORS for p in PROFILES]
+# Structures v_<r>_<RVP> (reduction factor r of the activation enthalpy, radial
+# viscosity profile RVP), in the order of the dimension `structure`: the 8 of the 18 that
+# Bagge et al. (2021) use with NAICE (Sect. 3, Table S1), all r with s16 and r = 0.4
+# (their reference value) with sc06 and sc06b. Add others (r = 0.2857, 0.3, 0.4, 0.5,
+# 0.75, 1.0 with RVP s16, sc06, sc06b) to this list to prepare them too.
+const STRUCTURES = [("0.2857", "s16"), ("0.3", "s16"), ("0.4", "s16"), ("0.5", "s16"),
+                    ("0.75", "s16"), ("1.0", "s16"), ("0.4", "sc06"), ("0.4", "sc06b")]
 names = ["v_$(f)_$(p)" for (f, p) in STRUCTURES]
 
 db = manifest()
@@ -114,7 +116,7 @@ NCDataset(path, "c") do ds
     defVar(ds, "log10_visc", log10_visc, ("lon", "lat", "depth", "structure");
            fillvalue=NaN32, deflatelevel=1, chunksizes=[length(lon), length(lat), 1, 1],
            attrib=["units" => "log10(Pa s)", "long_name" => "log10 of mantle viscosity in Pa s"])
-    ds.attrib["title"] = "3D mantle viscosity, 18 Earth structures (Bagge et al., 2021)"
+    ds.attrib["title"] = "3D mantle viscosity, 8 of the 18 Earth structures (Bagge et al., 2021)"
     ds.attrib["references"] = "Bagge, M., Klemann, V., Steinberger, B., Latinovic, M. and Thomas, M.: " *
                               "Glacial-isostatic adjustment models using geodynamically constrained 3D " *
                               "Earth structures, Geochem. Geophys. Geosyst., 22, e2021GC009853, 2021, " *

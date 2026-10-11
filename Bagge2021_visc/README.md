@@ -14,21 +14,33 @@ Bagge, M., Klemann, V., Steinberger, B., Latinović, M. and Thomas, M.: 3D Earth
 structures for glacial-isostatic adjustment models, V. 1.0, GFZ Data Services, 2020,
 [doi:10.5880/GFZ.1.3.2020.004](https://doi.org/10.5880/GFZ.1.3.2020.004).
 
-The data publication has 18 structures, `v_<r>_<RVP>`, differing in the reduction
-factor `r` of the conversion from temperature to viscosity (0.2857, 0.3, 0.4, 0.5, 0.75,
-1.0) and in the radial viscosity profile `RVP` (s16, sc06, sc06b; see the article). All
-18 are prepared, along the dimension `structure` (1-18), in this order:
+The data publication has 18 structures, `v_<r>_<RVP>`. The factor `r` (0.2857, 0.3,
+0.4, 0.5, 0.75, 1.0) multiplies the activation enthalpy of the conversion from
+temperature to viscosity: the higher `r`, the stronger the lateral variability. `r` =
+1 is diffusion creep; `r` = 0.3-0.5 imitates dislocation creep with a Newtonian flow
+(Christensen, 1983), and `r` = 0.4 is their reference value. The radial viscosity
+profile `RVP` sets the steps between upper mantle, transition zone and lower mantle:
+s16 has a viscosity increase at 410 km, sc06 a weaker transition zone (410-660 km), and
+sc06b no step at 410 km, like the GIA models VM2 and VM5a.
 
-| `structure` | `r` = 0.2857 | 0.3 | 0.4 | 0.5 | 0.75 | 1.0 |
-|---|---|---|---|---|---|---|
-| s16 | 1 | 4 | 7 | 10 | 13 | 16 |
-| sc06 | 2 | 5 | 8 | 11 | 14 | 17 |
-| sc06b | 3 | 6 | 9 | 12 | 15 | 18 |
+We prepare the 8 structures that Bagge et al. (2021) use themselves with the NAICE ice
+history (their Sect. 3 and Table S1): all six `r` with s16, and `r` = 0.4 with sc06 and
+sc06b. They are along the dimension `structure`, in this order:
 
-The coordinate variable `structure` has their names (`structure_names`), reduction
-factors (`reduction_factor`) and radial viscosity profiles
-(`radial_viscosity_profile`) as attributes. Structure 16, `v_1.0_s16`, is the one in the
-isostasy_data repository (`bagge2021.nc`, identical to it).
+| `structure` | Name | `r` | `RVP` |
+|---|---|---|---|
+| 1 | `v_0.2857_s16` | 0.2857 | s16 |
+| 2 | `v_0.3_s16` | 0.3 | s16 |
+| 3 | `v_0.4_s16` | 0.4 | s16 (reference structure of the article) |
+| 4 | `v_0.5_s16` | 0.5 | s16 |
+| 5 | `v_0.75_s16` | 0.75 | s16 |
+| 6 | `v_1.0_s16` | 1.0 | s16 (the structure of the isostasy_data repository, `bagge2021.nc`, identical) |
+| 7 | `v_0.4_sc06` | 0.4 | sc06 |
+| 8 | `v_0.4_sc06b` | 0.4 | sc06b |
+
+The coordinate variable `structure` has their names (`structure_names`), factors
+(`reduction_factor`) and profiles (`radial_viscosity_profile`) as attributes. The other
+10 structures can be added by adding them to the list `STRUCTURES` in `prepare.jl`.
 
 ## Licence
 
@@ -52,10 +64,10 @@ julia fesmdata.jl remap SolidEarth Bagge2021
 ```
 
 `prepare.jl` writes `$FESMDATA_WORK/prepared/Bagge2021_visc/Bagge2021_visc.nc` (see
-`Remap/README.md`, 770 MB) with `log10_visc` (log10(Pa s)), log10 of the mantle
+`Remap/README.md`, 340 MB) with `log10_visc` (log10(Pa s)), log10 of the mantle
 viscosity, on lon -180:0.703125:179.3, the 256 Gaussian latitudes with their cell edges
 (`lat_bnds`, from the Gauss weights), `depth` (m, positive down) with its bounds
-(`depth_bnds`) and `structure` (1-18, see above); all structures are on the same grid
+(`depth_bnds`) and `structure` (1-8, see above); all structures are on the same grid
 and layers. The radii are the mid-points of the layers of VILMA (5 km thick down to 420 km depth,
 10 km to 670 km, about 40 km below), so the depth of a layer is 6371 km (the Earth
 radius of VILMA) minus its radius, and its bounds are halfway between the mid-points,
