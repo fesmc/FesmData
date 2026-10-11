@@ -127,22 +127,14 @@ function prepare_heights()
             write_field(ds, "smb_discharge", read(src["smb_discharge"]), dims, "m yr-1",
                         "surface mass balance (precipitation minus evaporation, MERRA-2) plus the change " *
                         "of ice discharge (Amundsen Sea ice shelves only), ice equivalent")
-            # uncert_alt is the same in every quarter, and the same as uncert_firn (v0 file)
-            ua = read(src["uncert_alt"])
-            all(k -> isequal(ua[:, :, k], ua[:, :, 1]), axes(ua, 3)) || error("uncert_alt varies in time")
-            write_field(ds, "dh_alt_err", ua[:, :, 1], ("x", "y"), "m yr-1",
-                        "uncertainty of the height change from altimetry, quarterly time scales " *
-                        "(uncert_alt; the same in every quarter)")
-            write_field(ds, "dh_firn_err", read(src["uncert_firn"]), ("x", "y"), "m yr-1",
-                        "uncertainty of the height change from firn modelling: standard deviation of the " *
-                        "differences between GSFC-FDMv0 and IMAU-FDM at quarterly time scales (uncert_firn)")
+            # uncert_alt and uncert_firn are left out: in the v0 file they are identical,
+            # uncert_alt is the same in every quarter, and both have units of a rate
             global_attrib(ds, "Height changes of Antarctic ice shelves, quarterly 1992-2018 (Adusumilli et al., 2020)",
                           "From ANT_iceshelf_height_changes_RA_1994_2018_v0.h5 (version v0), as they are: " *
                           "height changes, not basal melt rates. dh_alt, dh_firn are h_alt, h_firn (0 in " *
-                          "1994.16); smb_discharge; dh_alt_err, dh_firn_err are uncert_alt (constant in " *
-                          "time in the file) and uncert_firn, which are identical in the file, with the " *
-                          "units of the file. Times are the decimal years of the file (every 0.25 yr), " *
-                          "bounds halfway between them.")
+                          "1994.16); smb_discharge. The uncertainties uncert_alt and uncert_firn are left " *
+                          "out (identical, constant in time and in units of a rate in the file). Times are " *
+                          "the decimal years of the file (every 0.25 yr), bounds halfway between them.")
         end
     end
     println("Wrote $path")

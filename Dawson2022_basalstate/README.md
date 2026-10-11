@@ -52,8 +52,9 @@ ice:
   the basal melt rate of the thermal steady state,
   `md.results.ThermalSolution.BasalforcingsGroundediceMeltingRate` (ISSM results are
   in m yr-1 of ice). Mostly 0 (frozen bed), up to a few m yr-1 near fast-flowing
-  outlets (single vertices up to 694 m yr-1, 25 m yr-1 on the 1 km grid); 21 Gt yr-1
-  over the grounded ice in total (on ANT-16KM);
+  outlets (single vertices up to 694 m yr-1, 25 m yr-1 on the 1 km grid). In total
+  about 21 Gt yr-1 over the grounded ice of Antarctica (on ANT-16KM), lower than
+  published estimates of about 65 Gt yr-1: it is the model's own result;
 - `beta` (Pa yr m-1): the basal friction coefficient of a linear sliding law,
   tau_b = `beta` u_b, with u_b the basal velocity in m yr-1. The model uses the ISSM
   "Budd" friction law tau_b = C^2 N^(q/p) |u_b|^(1/p - 1) u_b with p = 1 and q = 0, i.e.
