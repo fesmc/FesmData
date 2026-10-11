@@ -22,8 +22,12 @@ function record_html(io::IO, domain::AbstractString, dataset::AbstractString)
     println(io, "<p>Version $(esc(release["version"])) ($(esc(release["date"])), ",
             "<a href=\"$(esc(release["store"]))\">packages</a>$archive). ",
             "$(length(files)) files, $(human_size(total_size(values(files)))).</p>")
-    println(io, "<pre>julia fesmdata.jl fetch $(esc(dataset)) $(esc(domain))     # all grids\n",
-            "julia fesmdata.jl fetch $(esc(dataset)) $(esc(first(last(grids))))     # one grid</pre>")
+    if domain == RECORDS_FOLDER
+        println(io, "<pre>julia fesmdata.jl fetch $(esc(dataset)) $(esc(domain))</pre>")
+    else
+        println(io, "<pre>julia fesmdata.jl fetch $(esc(dataset)) $(esc(domain))     # all grids\n",
+                "julia fesmdata.jl fetch $(esc(dataset)) $(esc(first(last(grids))))     # one grid</pre>")
+    end
     for (grid, entries) in grids
         println(io, "<details><summary><b>$(esc(grid))</b> <span class=\"muted\">",
                 "$(length(entries)) files, $(human_size(total_size(last.(entries))))</span></summary><table>")

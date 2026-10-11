@@ -23,16 +23,20 @@ function record_metadata(domain::AbstractString, dataset::AbstractString,
     data = filter(f -> !f.is_grid && endswith(f.path, ".nc"), files)
     commit = something(nc_attrib(first(data).path, "fesmdata_commit"), "unknown")
     ref = _git("tag", "--list", version) == version ? version : commit == "unknown" ? "main" : commit
-    grids = unique(f.grid for f in files)
+    grids = filter(!isempty, unique(f.grid for f in files))
     readme = "$REPO_URL/blob/$ref/$(cfg["readme"])"
-    description = """
-        <p>$(strip(replace(cfg["description"], '\n' => ' ')))</p>
-        <p>Domain: $domain. Grids: $(join(grids, ", ")).</p>
-        <p>Produced with <a href="$REPO_URL">FesmData</a> version $version (commit
-        $commit); see the <a href="$readme">$dataset README</a> for the sources and methods.
+    layout = isempty(grids) ?
+        """Non-gridded data (time series, sites, profiles) as NetCDF files following the CF
+        conventions for discrete sampling geometries (e.g. <code>$(basename(first(data)))</code>).""" :
+        """<p>Domain: $domain. Grids: $(join(grids, ", ")).</p>
         Each grid has its own files, named after the grid (e.g. <code>$(basename(first(data)))</code>),
         with the grid description for cdo (<code>grid_&lt;GRID&gt;.txt</code>) and the grid
-        file (<code>&lt;GRID&gt;_grid.nc</code>). To download into the FesmData layout,
+        file (<code>&lt;GRID&gt;_grid.nc</code>)."""
+    description = """
+        <p>$(strip(replace(cfg["description"], '\n' => ' ')))</p>
+        <p>Produced with <a href="$REPO_URL">FesmData</a> version $version (commit
+        $commit); see the <a href="$readme">$dataset README</a> for the sources and methods.
+        $layout To download into the FesmData layout,
         use <code>julia fesmdata.jl fetch $domain $dataset</code>.</p>
         """
     related = Any[Dict("identifier" => "$REPO_URL/tree/$ref", "relation" => "isCompiledBy",

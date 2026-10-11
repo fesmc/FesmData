@@ -11,6 +11,7 @@ include(joinpath(REPO_DIR, "shared", "domains.jl"))
 include(joinpath(REPO_DIR, "Topo", "files.jl"))
 include(joinpath(REPO_DIR, "Regions", "files.jl"))
 include(joinpath(REPO_DIR, "Remap", "datasets.jl"))
+include(joinpath(REPO_DIR, "Records", "datasets.jl"))
 
 "Output folders of the domains `keys`, with their crops."
 key_folders(keys) = sort(unique(og.folder for key in keys for og in Domain(key).grids))
@@ -18,16 +19,19 @@ key_folders(keys) = sort(unique(og.folder for key in keys for og in Domain(key).
 """
     dataset_pipeline(dataset) -> (files, domains)
 
-What the pipeline of a dataset releases: `files(dom, og)`, the names of the files on
-grid `og` of domain `dom`, and `domains()`, the output folders of its domains. Topo and
-Regions have their own pipelines; thematic datasets (<Dataset>/remap.toml) are made by
-remapping.
+What the pipeline of a dataset releases: `files(domain)`, the files of a release on a
+domain (output folder, a `Vector{ProductFile}`, present or not), and `domains()`, the
+output folders of its domains. Topo and Regions have their own pipelines; thematic
+datasets (<Dataset>/remap.toml) are made by remapping, on grids; records datasets
+(<Dataset>/records.toml) are not gridded, and released on the domain `Records`.
 """
 function dataset_pipeline(dataset::AbstractString)
-    dataset == "Topo" && return (topo_release_files, () -> key_folders(topo_domains()))
-    dataset == "Regions" && return (regions_release_files, () -> key_folders(regions_domains()))
-    is_remap_dataset(dataset) && return ((dom, og) -> remap_release_files(dataset, og), () -> remap_domains(dataset))
-    error("dataset $dataset has no pipeline (no Topo, Regions or $dataset/remap.toml)")
+    dataset == "Topo" && return (d -> grid_files(d, topo_release_files), () -> key_folders(topo_domains()))
+    dataset == "Regions" && return (d -> grid_files(d, regions_release_files), () -> key_folders(regions_domains()))
+    is_remap_dataset(dataset) &&
+        return (d -> grid_files(d, (dom, og) -> remap_release_files(dataset, og)), () -> remap_domains(dataset))
+    is_records_dataset(dataset) && return (_ -> records_files(dataset), () -> [RECORDS_FOLDER])
+    error("dataset $dataset has no pipeline (no Topo, Regions, $dataset/remap.toml or $dataset/records.toml)")
 end
 
 function dataset_config(dataset::AbstractString)
@@ -45,7 +49,8 @@ end
 """
     ProductFile
 
-A file of a record: its grid, local path, and whether it is a grid file.
+A file of a record: its grid (empty for records, which are not gridded), local path,
+and whether it is a grid file.
 """
 struct ProductFile
     grid::String
@@ -61,23 +66,35 @@ release_domains(dataset::AbstractString) = dataset_pipeline(dataset)[2]()
 """
     release_files(domain, dataset) -> Vector{ProductFile}
 
-Files of a release of a dataset on a domain (its output folder, e.g. Greenland): on
-every grid of the domain, the grid files and the files the pipeline of the dataset
-defines (`dataset_pipeline`), present or not.
+Files of a release of a dataset on a domain (its output folder, e.g. Greenland), as the
+pipeline of the dataset defines them (`dataset_pipeline`), present or not.
 """
 function release_files(domain::AbstractString, dataset::AbstractString)
     dataset_config(dataset)
-    pipeline_files = dataset_pipeline(dataset)[1]
+    return dataset_pipeline(dataset)[1](domain)
+end
+
+"""
+    grid_files(domain, names) -> Vector{ProductFile}
+
+Files of a release of a gridded dataset on a domain: on every grid of the domain, the
+grid files and the files `names(dom, og)` of the dataset on grid `og`.
+"""
+function grid_files(domain::AbstractString, names)
     dom, grids = folder_grids(domain)
     files = ProductFile[]
     for og in grids
         g = og.grid.name
         push!(files, ProductFile(g, joinpath(outdir(og), "grid_$g.txt"), true),
                      ProductFile(g, joinpath(outdir(og), "$(g)_grid.nc"), true))
-        append!(files, [ProductFile(g, joinpath(outdir(og), name), false) for name in pipeline_files(dom, og)])
+        append!(files, [ProductFile(g, joinpath(outdir(og), name), false) for name in names(dom, og)])
     end
     return files
 end
+
+"Files of a release of a records dataset, in \$ICE_DATA/v2/Records/<Dataset>/ (no grids)."
+records_files(dataset::AbstractString) =
+    [ProductFile("", joinpath(records_dir(dataset), name), false) for name in records_release_files(dataset)]
 
 "Whether any file of the dataset itself (not a grid file) is present on a domain."
 has_files(domain::AbstractString, dataset::AbstractString) =

@@ -56,6 +56,20 @@ website:
             href: datasets/paleoclimate.qmd
           - text: "SolidEarth — lithosphere and mantle"
             href: datasets/solidearth.qmd
+      - text: "Records"
+        menu:
+          - text: "IceCores — ice core records"
+            href: datasets/icecores.qmd
+          - text: "RSL — relative sea level"
+            href: datasets/rsl.qmd
+          - text: "Boreholes — ice temperature profiles"
+            href: datasets/boreholes.qmd
+          - text: "GPS — vertical velocities"
+            href: datasets/gps.qmd
+          - text: "SMBObs — surface mass balance observations"
+            href: datasets/smbobs.qmd
+          - text: "Freshwater — ice sheet freshwater fluxes"
+            href: datasets/freshwater.qmd
       - text: "Your own data"
         href: remap.qmd
       - text: "Releasing"

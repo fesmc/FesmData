@@ -166,3 +166,67 @@ Lithosphere thickness and 3D mantle viscosity (log10, on depth) from published E
 structures for glacial isostatic adjustment, remapped conservatively onto the grids of
 a model domain, or onto global lon-lat grids.
 """
+
+# Records datasets (non-gridded, see Records/README.md): released on the domain Records
+
+[IceCores]
+tag = "icecores"
+title = "ice core records"
+readme = "IceCores/README.md"
+keywords = ["ice core", "paleoclimate", "Greenland", "temperature", "water isotopes", "surface elevation"]
+description = """
+Time series at Greenland ice core sites: NGRIP temperature and accumulation (Kindler et
+al., 2014), NEEM water isotopes (Gkinis et al., 2020) and Holocene surface elevation
+changes at four sites (Vinther et al., 2009), as CF discrete sampling geometry files.
+"""
+
+[RSL]
+tag = "rsl"
+title = "relative sea level indicators"
+readme = "RSL/README.md"
+keywords = ["relative sea level", "sea-level indicators", "glacial isostatic adjustment", "Greenland"]
+description = """
+Dated relative sea level indicators of Greenland (index points and limiting data) from
+GAPSLIP 2.1 (Gowan, 2023), one observation per sample.
+"""
+
+[Boreholes]
+tag = "boreholes"
+title = "ice temperature profiles"
+readme = "Boreholes/README.md"
+keywords = ["borehole", "ice temperature", "Greenland", "Canadian Arctic", "model evaluation"]
+description = """
+Temperature profiles of 95 boreholes in Greenland and the Canadian Arctic (Løkkegaard et
+al., 2023) on a common 1 m depth axis, with their metadata.
+"""
+
+[GPS]
+tag = "gps"
+title = "GPS vertical velocities"
+readme = "GPS/README.md"
+keywords = ["GPS", "vertical land motion", "glacial isostatic adjustment", "uplift rates"]
+description = """
+Vertical velocities of about 4000 GPS stations corrected for non-GIA effects, as
+observational estimates of GIA uplift rates (Schumacher et al., 2018).
+"""
+
+[SMBObs]
+tag = "smbobs"
+title = "surface mass balance observations"
+readme = "SMBObs/README.md"
+keywords = ["surface mass balance", "SUMup", "Greenland", "Antarctica", "model evaluation"]
+description = """
+Surface mass balance measurements of Greenland and Antarctica from SUMup 2025 (Vandecrux
+et al., 2025), as mean rates and totals over the measurement intervals.
+"""
+
+[Freshwater]
+tag = "freshwater"
+title = "freshwater fluxes of the ice sheets"
+readme = "Freshwater/README.md"
+keywords = ["freshwater", "discharge", "runoff", "calving", "ice shelf melt", "Greenland", "Antarctica"]
+description = """
+Freshwater flux and mass anomaly series of the Greenland and Antarctic ice sheets by
+region (Schmidt et al., 2025), with the regions as basin ids of the Regions basin set
+Schmidt2025.
+"""

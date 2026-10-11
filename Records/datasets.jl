@@ -4,9 +4,6 @@
 
 using TOML
 
-"Output folder of the records under \$ICE_DATA/v2, next to the domain folders."
-const RECORDS_FOLDER = "Records"
-
 """
     RecordProduct
 

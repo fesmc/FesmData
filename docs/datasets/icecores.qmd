@@ -1,0 +1,5 @@
+---
+pagetitle: "IceCores"
+---
+
+{{< include ../../IceCores/README.md >}}

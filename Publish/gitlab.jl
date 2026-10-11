@@ -1,6 +1,7 @@
 # Store of the released products (see README.md): the generic package registry of a
 # GitLab project ([_gitlab] in datasets.toml), with one package per domain, dataset and
-# grid (<Domain>_<Dataset>_<GRID>, e.g. Antarctica_Topo_ANT-32KM), versioned by the
+# grid (<Domain>_<Dataset>_<GRID>, e.g. Antarctica_Topo_ANT-32KM; one per records
+# dataset, Records_<Dataset>, e.g. Records_IceCores), versioned by the
 # release (2.0.0). Uploads need a token of the project with the scope api in
 # GITLAB_TOKEN; downloads need none (public project). Test releases (`sandbox`) go to
 # packages named test_<Domain>_<Dataset>_<GRID>, with their registry in
@@ -33,9 +34,9 @@ end
 packages_page(search::AbstractString) =
     "$(gitlab_config()["url"])/$(gitlab_config()["project"])/-/packages?search=$search"
 
-"Package of the files of a dataset on a grid of a domain."
+"Package of the files of a dataset on a grid of a domain (of a records dataset, no grid: Records_<Dataset>)."
 package_name(domain::AbstractString, dataset::AbstractString, grid::AbstractString; sandbox::Bool=false) =
-    (sandbox ? "test_" : "") * "$(domain)_$(dataset)_$(grid)"
+    (sandbox ? "test_" : "") * "$(domain)_$(dataset)" * (isempty(grid) ? "" : "_$(grid)")
 
 "Download URL of a file of a package (no token needed for a public project)."
 download_url(package::AbstractString, number::AbstractString, name::AbstractString) =
@@ -131,7 +132,7 @@ function upload(dataset::AbstractString, domains=String[]; sandbox::Bool=false,
             for f in gfiles
                 entries[basename(f)] = Dict("uri" => download_url(package, number, basename(f)),
                                             "checksum" => release_checksum(f.path), "size" => filesize(f.path),
-                                            "storage_path" => "\$datasets_dir/$domain/$(f.grid)/$(basename(f))")
+                                            "storage_path" => "\$datasets_dir/" * relpath(f.path, products_dir()))
             end
         end
         tables = registry_tables(domain, dataset; sandbox=sandbox)   # keeps an earlier _ZENODO
@@ -193,8 +194,8 @@ function delete_release(dataset::AbstractString, number::AbstractString, domains
         tables = registry_tables(domain, dataset; sandbox=sandbox)
         registered = get(get(tables, "_RELEASE", Dict()), "version", "") == number
         registered && !sandbox && (println("$domain/$dataset $number is registered, not deleted"); continue)
-        for og in folder_grids(domain)[2]
-            pkg = find_package(package_name(domain, dataset, og.grid.name; sandbox=sandbox), number)
+        for grid in unique(f.grid for f in release_files(domain, dataset))
+            pkg = find_package(package_name(domain, dataset, grid; sandbox=sandbox), number)
             pkg === nothing || push!(targets, (domain, pkg, registered))
         end
     end

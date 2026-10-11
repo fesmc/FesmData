@@ -8,6 +8,9 @@ using TOML
 const REPO_DIR = dirname(@__DIR__)
 const REPO_URL = "https://github.com/fesmc/FesmData"
 
+"Folder of the records (non-gridded data) under \$ICE_DATA/v2, next to the domain folders."
+const RECORDS_FOLDER = "Records"
+
 function _env(name)
     haskey(ENV, name) || error("environment variable $name is not set (source shared/machines/<machine>.env)")
     return ENV[name]
