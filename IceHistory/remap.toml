@@ -27,6 +27,7 @@ source = "Batchelor2019_NHIceMasks"
 file = "Batchelor2019_NH_ICE.nc"
 variables = ["f_ice_best", "f_ice_min", "f_ice_max"]
 grids = { GreenlandPaleo = 2, Greenland = 2, North = 2, Laurentide = 2, Eurasia = 2 }
+figure = { select = { time = [140000, 65000, 26500] } }   # MIS 6, MIS 4, LGM
 
 [products.PaleoMIST]
 source = "Gowan2021_PaleoMIST1.0"

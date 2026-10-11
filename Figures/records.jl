@@ -144,8 +144,14 @@ function data_panel!(pos, ds, v, inst, other, label, names, shown)
         t === nothing && return
         x, xlabel, rev = time_axis(ds, t)
         ax = Axis(pos; xlabel=xlabel, ylabel=label, xreversed=rev, width=2 * PANEL_HEIGHT)
-        scatter!(ax, x[shown], Float64.(coalesce.(v[:], NaN))[shown]; markersize=length(shown) > 1000 ? 2 : 5,
-                 color=(:black, 0.5))
+        y = Float64.(coalesce.(v[:], NaN))[shown]
+        scatter!(ax, x[shown], y; markersize=length(shown) > 1000 ? 2 : 5, color=(:black, 0.5))
+        # The bulk of the observations, without the outliers
+        ok = isfinite.(x[shown]) .& isfinite.(y)
+        if count(ok) > 100
+            xlims!(ax, quantile(x[shown][ok], (0.005, 0.995))...)
+            ylims!(ax, quantile(y[ok], (0.005, 0.995))...)
+        end
         return
     end
     d = only(other)

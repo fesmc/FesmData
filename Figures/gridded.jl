@@ -105,7 +105,7 @@ function value_label(ds, d, v)
     end
     units = haskey(ds, d) ? get(ds[d].attrib, "units", "") : ""
     units == "m" && v >= 1000 && return "$d $(round(v / 1000; sigdigits=4)) km"
-    return strip("$d $(round(v; sigdigits=4)) $units")
+    return strip("$d $(round(v; sigdigits=4)) $(units == "1" ? "" : units)")
 end
 
 "Data variables of a file: neither coordinates, bounds, `crs` nor fractions of valid data."
@@ -134,8 +134,8 @@ function figure_fields(path::AbstractString, variables, spec::AbstractDict)
             units = get(ds[v].attrib, "units", "")
             for combo in Iterators.product(choices...)
                 sel = [d => x for (d, x) in zip(extra, combo)]
-                label = join(["$v" * (isempty(units) || units == "1" ? "" : " ($units)");
-                              [value_label(ds, d, x) for (d, x) in sel]], ", ")
+                label = "$v" * (isempty(units) || units == "1" ? "" : " ($units)") *
+                        (isempty(sel) ? "" : "\n" * join([value_label(ds, d, x) for (d, x) in sel], ", "))
                 push!(fields, Field(v, sel, label))
             end
         end

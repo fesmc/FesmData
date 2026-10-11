@@ -6,8 +6,8 @@ const TOPO_FIGURE = Dict{String,Any}("variables" => ["z_bed", "H_ice"], "hide" =
                                      "colormap" => Dict("z_bed" => "oleron", "H_ice" => "ice"),
                                      "colorrange" => Dict("z_bed" => [-4000, 4000], "H_ice" => [0, 4000]))
 
-"Outlet glacier of the figure of the resolutions: Jakobshavn Isbræ, a window of 150 km on GRL-PAL."
-const TOPO_ZOOM = (key="GRL-PAL", product="BedMachine-v6", lon=-49.8, lat=69.17, half_km=75.0,
+"Outlet glacier of the figure of the resolutions: Jakobshavn Isbræ, a window of 300 km on GRL-PAL."
+const TOPO_ZOOM = (key="GRL-PAL", product="BedMachine-v6", lon=-49.0, lat=69.17, half_km=150.0,
                    resolutions=["GRL-PAL-1KM", "GRL-PAL-4KM", "GRL-PAL-16KM"])
 
 """
@@ -36,9 +36,9 @@ function topo_figures()
     file = "Topo-resolutions.png"
     plot_gridded(joinpath(figures_dir("Topo"), file), "Topo resolutions",
                  [Panel(grids[g], product_file(grids[g], z.product), g, window) for g in z.resolutions], String[],
-                 merge(TOPO_FIGURE, Dict("variables" => ["z_bed"])))
+                 merge(TOPO_FIGURE, Dict("variables" => ["z_bed"], "colorrange" => [-1500, 1500])))
     println("wrote $file")
     push!(items, GalleryItem("Resolutions", file,
-                             "Bed elevation of $(z.product) around Jakobshavn Isbræ (150 km × 150 km) on $(join(z.resolutions, ", "))."))
+                             "Bed elevation of $(z.product) around Jakobshavn Isbræ (300 km × 300 km) on $(join(z.resolutions, ", "))."))
     return items
 end

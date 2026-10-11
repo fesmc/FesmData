@@ -8,6 +8,7 @@ file = "Schmidt2025_GL_discharge.nc"
 [products.Schmidt2025_GL_runoff]
 source = "Schmidt2025_fwf"
 file = "Schmidt2025_GL_runoff.nc"
+figure = { variable = "surface_runoff_from_ice" }
 
 [products.Schmidt2025_GL_mass_anomaly]
 source = "Schmidt2025_fwf"
