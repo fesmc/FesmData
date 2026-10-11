@@ -21,7 +21,7 @@ redistribution. NSIDC asks to cite the data set and the article.
 
 NSIDC-0670 v1, https://nsidc.org/data/nsidc-0670/versions/1, needs a NASA Earthdata
 login. The four GeoTIFF files `greenland_vel_mosaic250_<c>_v1.tif`, `<c>` = `vx`, `vy`
-(velocity along the x and y axes of the grid, m/yr) and `ex`, `ey` (their errors), go to
+(velocity along the x and y axes of the grid, m yr-1) and `ex`, `ey` (their errors), go to
 `$DATAMANIFEST_DATASETS_DIR/nsidc0670_v1_greenland_vel/` (datamanifest key
 `nsidc0670_v1_greenland_vel`). With a `~/.netrc` for urs.earthdata.nasa.gov:
 
@@ -41,7 +41,7 @@ julia -t 8 fesmdata.jl remap $FESMDATA_WORK/prepared/Joughin2018/Joughin2018_VEL
 ```
 
 `prepare.jl` (2 min, 4 GB) writes `$FESMDATA_WORK/prepared/Joughin2018/Joughin2018_VEL.nc`
-on the 250 m grid of the mosaic, in m/yr:
+on the 250 m grid of the mosaic, in m yr-1:
 
 - `ux_srf`, `uy_srf`: eastward and northward surface velocity, rotated from `vx`, `vy`
   (remapping rotates them back to the axes of the target grid);

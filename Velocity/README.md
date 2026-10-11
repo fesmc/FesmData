@@ -8,8 +8,8 @@ data, `Remap/README.md`): its products are defined in `Velocity/remap.toml`.
 
 | Product | Source | Fields | Domains |
 |---|---|---|---|
-| `Velocity-Joughin2018` | Joughin et al. (2018): MEaSUREs multi-year Greenland velocity mosaic 1995-2015, 250 m (NSIDC-0670 v1), [doi:10.5067/QUA5Q9SVMSJG](https://doi.org/10.5067/QUA5Q9SVMSJG) | `ux_srf`, `uy_srf` (along the grid axes), `uxy_srf` (speed), `ux_srf_err`, `uy_srf_err` (m/yr) | Greenland |
-| `Velocity-Rignot2011` | Rignot et al. (2011): MEaSUREs InSAR-based Antarctic velocity 1995-2016, 450 m (NSIDC-0484 v2), [doi:10.5067/D7GK8F5J8M8R](https://doi.org/10.5067/D7GK8F5J8M8R) | `ux_srf`, `uy_srf` (along the grid axes), `uxy_srf` (speed), `ux_srf_err`, `uy_srf_err` (m/yr) | Antarctica |
+| `Velocity-Joughin2018` | Joughin et al. (2018): MEaSUREs multi-year Greenland velocity mosaic 1995-2015, 250 m (NSIDC-0670 v1), [doi:10.5067/QUA5Q9SVMSJG](https://doi.org/10.5067/QUA5Q9SVMSJG) | `ux_srf`, `uy_srf` (along the grid axes), `uxy_srf` (speed), `ux_srf_err`, `uy_srf_err` (m yr-1) | Greenland |
+| `Velocity-Rignot2011` | Rignot et al. (2011): MEaSUREs InSAR-based Antarctic velocity 1995-2016, 450 m (NSIDC-0484 v2), [doi:10.5067/D7GK8F5J8M8R](https://doi.org/10.5067/D7GK8F5J8M8R) | `ux_srf`, `uy_srf` (along the grid axes), `uxy_srf` (speed), `ux_srf_err`, `uy_srf_err` (m yr-1) | Antarctica |
 
 The velocity components are remapped conservatively as eastward and northward
 components and then rotated to the axes of each grid. The speed `uxy_srf` is the

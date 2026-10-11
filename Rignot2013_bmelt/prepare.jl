@@ -1,7 +1,7 @@
 # Prepare the Antarctic ice-shelf basal melt rates of Rignot et al. (2013) for remapping:
 # the 1 km grid of Ant_MeltingRate.v2.nc (Dryad) as a prepared NetCDF file,
 # $FESMDATA_WORK/prepared/Rignot2013_bmelt/Rignot2013_BMELT.nc, with the actual and
-# steady-state melt rates in m/yr ice equivalent (positive for melting).
+# steady-state melt rates in m yr-1 ice equivalent (positive for melting).
 #
 # Usage:
 #     julia --project=Rignot2013_bmelt Rignot2013_bmelt/prepare.jl
@@ -13,7 +13,7 @@ include(joinpath(@__DIR__, "..", "shared", "provenance.jl"))
 
 const PROJ = "+proj=stere +lat_0=-90 +lat_ts=-71 +lon_0=0 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"
 
-# The melt rates of the file are in m/yr water equivalent (see README): converted to
+# The melt rates of the file are in m yr-1 water equivalent (see README): converted to
 # ice equivalent with the densities used by Rignot et al. (2013)
 const RHO_W = 1000.0
 const RHO_I = 917.0

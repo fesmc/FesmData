@@ -64,7 +64,7 @@ NCDataset(path, "c") do ds
               ("ux_srf_err", ex, "error of the surface velocity along the x axis of EPSG:3413", ""),
               ("uy_srf_err", ey, "error of the surface velocity along the y axis of EPSG:3413", ""))
     for (name, F, long_name, std) in fields
-        attrib = ["units" => "m/yr", "long_name" => long_name, "grid_mapping" => "crs"]
+        attrib = ["units" => "m yr-1", "long_name" => long_name, "grid_mapping" => "crs"]
         isempty(std) || push!(attrib, "standard_name" => std)
         defVar(ds, name, Float32.(F), ("x", "y"); fillvalue=NaN32, deflatelevel=1, attrib)
     end

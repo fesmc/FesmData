@@ -44,7 +44,7 @@ julia -t 8 fesmdata.jl remap $FESMDATA_WORK/prepared/Rignot2011_vel/Rignot2011_V
 
 `prepare.jl` (4 min, 8 GB: use a compute node) writes
 `$FESMDATA_WORK/prepared/Rignot2011_vel/Rignot2011_VEL.nc` on the 450 m grid of the map,
-in m/yr:
+in m yr-1:
 
 - `ux_srf`, `uy_srf`: eastward and northward surface velocity, rotated from `VX`, `VY`
   (remapping rotates them back to the axes of the target grid);

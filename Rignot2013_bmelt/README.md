@@ -25,8 +25,8 @@ not allow scripted downloads) into `$DATAMANIFEST_DATASETS_DIR/rignot2013_melt_v
 The FesmData v1 product (`BMELT-R13`) was made from an earlier version of the file,
 `Ant_MeltingRate.nc` (version "1.0 (v8Apr2012)", same grid and fields, without `lat`,
 `lon`), kept in the old PIK archive (`hpc:/data/sicopolis/data/Antarctica/Ant_MeltingRate.nc`).
-Its melt rates range from -26 to 123 m/yr (actual) and -33 to 118 m/yr (steady state);
-those of version 2 from -10 to 158 m/yr and -9 to 153 m/yr (Dryad README).
+Its melt rates range from -26 to 123 m yr-1 (actual) and -33 to 118 m yr-1 (steady state);
+those of version 2 from -10 to 158 m yr-1 and -9 to 153 m yr-1 (Dryad README).
 
 ## Prepare and remap
 
@@ -35,14 +35,14 @@ julia --project=Rignot2013_bmelt Rignot2013_bmelt/prepare.jl
 julia fesmdata.jl remap $FESMDATA_WORK/prepared/Rignot2013_bmelt/Rignot2013_BMELT.nc Antarctica --name=BasalMelt-Rignot2013
 ```
 
-`prepare.jl` writes `bmelt` (actual) and `bmelt_ss` (steady state), in m/yr ice
+`prepare.jl` writes `bmelt` (actual) and `bmelt_ss` (steady state), in m yr-1 ice
 equivalent, positive for melting and negative for freezing, to
 `$FESMDATA_WORK/prepared/Rignot2013_bmelt/Rignot2013_BMELT.nc` (see `Remap/README.md`),
 on the original grid (y made ascending).
 
 - **Units.** The file gives "meter/year" without saying ice or water equivalent. We
   take it as water equivalent: the mean rates of the grid over the Pine Island and
-  Thwaites ice shelves (16.0 and 17.8 m/yr, in the earlier file) agree with the
+  Thwaites ice shelves (16.0 and 17.8 m yr-1, in the earlier file) agree with the
   shelf-mean rates of Table 1 of the article, which are its mass loss (Gt/yr) divided
   by the shelf area and the density of water. The rates are converted to ice
   equivalent with 1000/917.
