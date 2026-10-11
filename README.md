@@ -41,7 +41,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | Regions      | Region tree, shelf zone, ice-sheet basins, 0.5-32 km | Marine Regions, HydroBASINS, Zwally, Mouginot, IMBIE (see Regions/README.md) |
 | GHF          | Geothermal heat flow (mW m-2), topographic correction | Colgan2021_ghf, Colgan2021_topocorr, Davies2013_ghf, FoxMaule2005_ghf, HazzardRichards2024_ghf, Loesing2021_ghf, Lucazeau2019_ghf, Martos2017_ghf, Martos2018_ghf, Shapiro2004_ghf, Stal2020_ghf |
 | Sediment     | Sediment thickness and properties | Baranov2021_sed, Gowan2019_sed, Laske2013_crust1, Mooney2023_ecm1, Straume2019_globsed |
-| IceHistory   | Ice sheets and topography of the past | Dowsett2016_prism4, Peltier2004_ice5g, Peltier2015_ice6g |
+| IceHistory   | Ice sheets, extents and topography of the past | Batchelor2019_NHIceMasks, Batchelor2019_PaleoMIST_lgc, Dowsett2016_prism4, Gowan2021_PaleoMIST1.0, Leger2024_PaleoGris, Margold2015_icestreams, Peltier2004_ice5g, Peltier2015_ice6g, Peltier2018_ice6gd |
 | Velocity     | Ice surface velocity | Joughin2018, Rignot2011_vel |
 | Stratigraphy | Age structure of the ice | MacGregor2025_strat |
 | BasalMelt    | Ice-shelf basal melt rates | Rignot2013_bmelt |
@@ -72,7 +72,8 @@ Time series, site and profile data, in `$ICE_DATA/v2/Records/<Dataset>/` (see `R
 | paleo    | Badgeley2020_recon          | Greenland temperature and precipitation, 20 ka to present | Badgeley et al. (2020) |
 | geo      | Bagge2021_visc              | Global 3D mantle viscosity                       | Bagge et al. (2021)            |
 | geo      | Baranov2021_sed             | Antarctic sediment thickness, ANTASed            | Baranov et al. (2021)          |
-| topo     | Batchelor2019_NHIceMasks    | Northern Hemisphere ice extent masks             | Batchelor et al. (2019)        |
+| paleo    | Batchelor2019_NHIceMasks    | Northern Hemisphere ice extents, 18 time slices  | Batchelor et al. (2019)        |
+| paleo    | Batchelor2019_PaleoMIST_lgc | Global ice extents of the last glacial cycle (Batchelor north, PaleoMIST south) | Batchelor et al. (2019), Gowan et al. (2021) |
 | paleo    | Buizert2018                 | Greenland seasonal temperatures, 22 ka to present | Buizert et al. (2018)         |
 | climate  | CMIP                        | Working with CMIP data (CMIP5/CMIP6/etc)         | Unpublished                    |
 | geo      | Colgan2021_ghf              | Geothermal heat flow of Greenland                | Colgan & Wansing (2021)        |

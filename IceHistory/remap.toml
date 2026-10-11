@@ -56,3 +56,10 @@ source = "Batchelor2019_PaleoMIST_lgc"
 file = "Batchelor2019_PaleoMIST_LGC.nc"
 variables = ["f_ice_best", "f_ice_min", "f_ice_max"]
 domains = ["Global"]
+
+[products.ICE6G_D]
+source = "Peltier2018_ice6gd"
+file = "Peltier2018_ICE6G_D.nc"
+variables = ["H_ice", "H_ice_grounded", "z_topo"]
+domains = ["Antarctica"]
+min_spacing_km = 4

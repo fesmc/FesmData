@@ -11,6 +11,7 @@ are defined in `IceHistory/remap.toml`.
 |---|---|---|---|
 | `IceHistory-ICE5G` | Peltier (2004): ICE-5G v1.2, 1°, 21-0 ka, [doi:10.1146/annurev.earth.32.082503.144359](https://doi.org/10.1146/annurev.earth.32.082503.144359) | `z_topo` (topography incl. bathymetry), `H_ice`, `f_ice`, on `time` (years ago) | Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Eurasia, Global |
 | `IceHistory-ICE6G_C` | Peltier et al. (2015), Argus et al. (2014): ICE-6G_C (VM5a), 1°, 26-0 ka, [doi:10.1002/2014JB011176](https://doi.org/10.1002/2014JB011176) | `z_topo`, `z_srf`, `dz_topo`, `H_ice`, `f_ice`, `f_land`, on `time` (years ago) | Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Eurasia, Global |
+| `IceHistory-ICE6G_D` | Peltier et al. (2018): ICE-6G_D (VM5a), Antarctica south of 60°S, Gaussian grid about 0.35°, 122.5 ka to 0.25 ka after present, [doi:10.1002/2016JB013844](https://doi.org/10.1002/2016JB013844) | `H_ice`, `H_ice_grounded`, `z_topo`, on `time` (years ago) | Antarctica |
 | `IceHistory-PRISM4` | Dowsett et al. (2016): PRISM4 (PlioMIP2) boundary conditions, 1°, [doi:10.5194/cp-12-1519-2016](https://doi.org/10.5194/cp-12-1519-2016) | `z_topo_enh`, `z_topo_std`, `z_topo_mod` (enhanced, standard Pliocene, modern), `mask_enh`, `mask_std` (0 ocean, 1 land, 2 ice) | Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Eurasia, Global |
 | `IceHistory-Batchelor2019` | Batchelor et al. (2019): Northern Hemisphere ice-sheet extents, 18 time slices from 3.1 Ma to the LGM, rasterized at 1 km, [doi:10.1038/s41467-019-11601-2](https://doi.org/10.1038/s41467-019-11601-2) | `f_ice_best`, `f_ice_min`, `f_ice_max` (best-estimate, minimum and maximum extents), on `time` (years ago) | GreenlandPaleo, Greenland, North, Laurentide, Eurasia (grids of 2 km and coarser) |
 | `IceHistory-PaleoMIST` | Gowan et al. (2021): PaleoMIST 1.0, 0.25°, 80-0 ka every 2.5 kyr, [doi:10.1594/PANGAEA.905800](https://doi.org/10.1594/PANGAEA.905800) | `z_topo`, `z_bed`, `H_ice`, `dz_sl` (sea-level change), `f_ice` (from the 5 km regional reconstructions), on `time` (years ago) | Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Eurasia, Global |
@@ -31,6 +32,7 @@ each cell. The global attribute `remap_method` records what was done on each gri
 |---|---|
 | Peltier (2004), ICE-5G | None stated; cite Peltier (2004) |
 | Peltier et al. (2015), ICE-6G_C | None stated; cite Peltier et al. (2015) and Argus et al. (2014) |
+| Peltier et al. (2018), ICE-6G_D | Supporting information of the article (Wiley terms), assumed to be redistributable; obtained through the isostasy_data archive (Zenodo, doi:10.5281/zenodo.11175418); cite also Argus et al. (2014), Peltier et al. (2015) |
 | Dowsett et al. (2016), PRISM4 | Public domain (USGS); no licence in the files |
 | Batchelor et al. (2019) | No licence stated for the shapefiles (OSF); article CC BY 4.0; cite the article |
 | Gowan et al. (2021), PaleoMIST 1.0 | CC BY 4.0 (PANGAEA) |
