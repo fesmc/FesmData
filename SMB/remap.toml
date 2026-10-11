@@ -7,28 +7,34 @@
 source = "vanDalum2025_racmo24"
 file = "RACMO2.4p1_1981-2010.nc"
 grids = { Antarctica = 4 }
+figure = { variables = ["smb"] }
 
 [products."RACMO2.4p1-1991-2020"]
 source = "vanDalum2025_racmo24"
 file = "RACMO2.4p1_1991-2020.nc"
 grids = { Antarctica = 4 }
+figure = { variables = ["smb"] }
 
 [products."RACMO2.4p1-annual"]
 source = "vanDalum2025_racmo24"
 file = "RACMO2.4p1_annual_1979-2023.nc"
 grids = { Antarctica = 4 }
+figure = { variables = ["smb"] }
 
 [products."MARv3.14-1981-2010"]
 source = "Fettweis2017_mar314"
 file = "MARv3.14_ERA5_1981-2010.nc"
 grids = { Greenland = 1 }
+figure = { variables = ["smb"] }
 
 [products."MARv3.14-1991-2020"]
 source = "Fettweis2017_mar314"
 file = "MARv3.14_ERA5_1991-2020.nc"
 grids = { Greenland = 1 }
+figure = { variables = ["smb"] }
 
 [products."MARv3.14-annual"]
 source = "Fettweis2017_mar314"
 file = "MARv3.14_ERA5_annual_1940-2025.nc"
 grids = { Greenland = 8 }
+figure = { variables = ["smb"] }
