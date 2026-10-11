@@ -1,6 +1,6 @@
 # Prepare the Northern Hemisphere ice-sheet extents of Batchelor et al. (2019) for remapping:
 # the best-estimate, minimum and maximum extents of the 18 time slices, rasterized as ice
-# area fractions on a 1 km polar stereographic grid (the projection of the North domain)
+# area fractions on a 2 km polar stereographic grid (the projection of the North domain)
 # that covers all outlines, in one prepared NetCDF file,
 # $FESMDATA_WORK/prepared/Batchelor2019_NHIceMasks/Batchelor2019_NH_ICE.nc, with f_ice_best,
 # f_ice_min and f_ice_max on (x, y, time).
@@ -20,16 +20,16 @@ include(joinpath(@__DIR__, "..", "shared", "manifest.jl"))
 
 const KEY = "batchelor2019_nh_ice"
 
-# Grid: the projection of the North domain (shared/domains.toml), 1 km cells whose edges
-# are on the edges of the North grids (odd km), covering all outlines (x -5120 to 4649 km,
+# Grid: the projection of the North domain (shared/domains.toml), 2 km cells (as the
+# finest North grid) whose edges are on the edges of the North grids, covering all outlines (x -5120 to 4649 km,
 # y -5396 to 4170 km) and the grids of the North domain (whose first coarse cells reach
 # up to 15 km beyond the base grid).
 const PROJ = "+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +x_0=0 +y_0=0 +a=6378137 +rf=298.25722356 +units=km"
 const XEDGES = (-5131.0, 4661.0)
 const YEDGES = (-5421.0, 4181.0)
-const DX = 1.0
-const NSUB = 4                         # samples per cell side (250 m)
-const BAND = 500                       # rows of cells rasterized at once
+const DX = 2.0
+const NSUB = 8                         # samples per cell side (250 m)
+const BAND = 250                       # rows of cells rasterized at once
 
 # Time slices: folder of the OSF project, label, age (years before 1950) assigned in
 # time_slices.md. Oldest first; the order of the paper's first two slices (the Early

@@ -54,7 +54,7 @@ julia fesmdata.jl remap $FESMDATA_WORK/prepared/Batchelor2019_PaleoMIST_lgc/Batc
   ice-sheet ice near it (Batchelor's files contain present-day glaciers, which are left
   out south of the equator; PaleoMIST has no Northern Hemisphere ice outside the Batchelor
   area).
-- Northern Hemisphere: the 1 km Batchelor fractions remapped conservatively (5 x 5 samples
+- Northern Hemisphere: the 2 km Batchelor fractions remapped conservatively (5 x 5 samples
   per 0.1° cell); 0 outside the Batchelor grid (which covers all its outlines). Southern Hemisphere: the
   PaleoMIST `f_ice` (0.25°) remapped conservatively (exact).
 

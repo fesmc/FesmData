@@ -43,11 +43,11 @@ julia fesmdata.jl remap $FESMDATA_WORK/prepared/Batchelor2019_NHIceMasks/Batchel
 of each cell inside the best-estimate, minimum and maximum extents, on (x, y, time), and
 the stage name of each time slice in `label`.
 
-- Grid: 1 km on the polar stereographic projection of the North domain (x -5131 to
-  4661 km, y -5421 to 4181 km, 9792 x 9602 cells), whose cell edges are on those of the
-  North grids, so that remapping onto them is exact. It covers all outlines and all grids
+- Grid: 2 km, the spacing of the finest North grid, on the polar stereographic projection
+  of the North domain (x -5131 to 4661 km, y -5421 to 4181 km, 4896 x 4801 cells), whose
+  cell edges are on those of the North grids, so that remapping onto them is exact. It covers all outlines and all grids
   of the North, Laurentide, Eurasia, GreenlandPaleo and Greenland domains.
-- Fractions: from 4 x 4 samples per cell (250 m); a polygon covers a sample if its centre
+- Fractions: from 8 x 8 samples per cell (250 m); a polygon covers a sample if its centre
   is inside it (even-odd rule over the rings of each polygon, union of the polygons).
 - Time: `time` in years ago (before 1950 CE), the ages assigned to the time slices in
   `time_slices.md`, oldest first. The paper lists the Early Matuyama Chron (2.2 Ma)

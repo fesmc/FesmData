@@ -28,7 +28,7 @@ const SLICES = [("MIS 5a", 80_000), ("MIS 4", 65_000), ("45 ka", 45_000), ("40 k
 
 const FIELDS = ["f_ice_best", "f_ice_min", "f_ice_max"]
 const D = 0.1              # degrees
-const NSUB = 5             # samples per cell side from the 1 km Batchelor grid
+const NSUB = 5             # samples per cell side from the 2 km Batchelor grid
 
 "Prepared file of a source, prepared first if it is missing."
 function prepared(source, file)
