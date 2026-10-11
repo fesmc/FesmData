@@ -1,0 +1,10 @@
+# Basal thermal state of the ice sheets (thematic dataset, see ../Remap/README.md).
+# Products are written as <GRID>_BasalState-<name>.nc on every grid of their `domains`;
+# see ../GHF/remap.toml for the options. The dataset and its release tag are in
+# ../Publish/datasets.toml.
+
+[products.Dawson2022]
+source = "Dawson2022_basalstate"
+file = "Dawson2022_BASALSTATE.nc"
+variables = ["T_b", "T_b_pmp", "basal_state"]
+domains = ["Antarctica"]

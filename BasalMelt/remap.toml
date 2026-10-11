@@ -8,3 +8,9 @@ source = "Rignot2013_bmelt"
 file = "Rignot2013_BMELT.nc"
 variables = ["bmelt", "bmelt_ss"]
 domains = ["Antarctica"]
+
+[products.Adusumilli2020]
+source = "Adusumilli2020_bmelt"
+file = "Adusumilli2020_BMELT_2010-2018.nc"
+variables = ["bmelt", "bmelt_cs2", "bmelt_err"]
+domains = ["Antarctica"]

@@ -600,6 +600,32 @@ skip_download = true
 storage_path = "$datasets_dir/rignot2013_melt_v2/Ant_MeltingRate.v2.nc"
 uri = "https://datadryad.org/dataset/doi:10.5061/dryad.5hqbzkhg2"
 
+# Adusumilli et al. (2020): Antarctic ice-shelf basal melt rates, 2010-2018 mean on a
+# 500 m grid (2.5 GB), and height changes 1994-2018, quarterly on a 10 km grid (731 MB),
+# UC San Diego Library (CC BY 4.0).
+
+[adusumilli2020_melt]
+doi = "10.6075/J04Q7SHT"
+storage_path = "$datasets_dir/adusumilli2020/ANT_iceshelf_melt_rates_CS2_2010-2018_v0.h5"
+uri = "https://library.ucsd.edu/dc/object/bb0448974g/_3_1.h5/download"
+
+[adusumilli2020_height]
+doi = "10.6075/J04Q7SHT"
+storage_path = "$datasets_dir/adusumilli2020/ANT_iceshelf_height_changes_RA_1994_2018_v0.h5"
+uri = "https://library.ucsd.edu/dc/object/bb0448974g/_2_1.h5/download"
+
+# ---------------------------------------------------------------------------
+# Basal state (BasalState/)
+# ---------------------------------------------------------------------------
+
+# Dawson et al. (2022): ISSM initialization of Antarctica (thermal steady state), a
+# MATLAB 7.3 file with the ISSM model `md` (158 MB), Zenodo (CC BY 4.0).
+
+[dawson2022_init]
+doi = "10.5281/zenodo.6870567"
+storage_path = "$datasets_dir/dawson2022/Antarctica_Initialization.mat"
+uri = "https://zenodo.org/records/6870567/files/Antarctica_Initialization.mat"
+
 # ---------------------------------------------------------------------------
 # Ocean (Ocean/)
 # ---------------------------------------------------------------------------

@@ -93,6 +93,16 @@ Basal melt rates of ice shelves from observations, remapped conservatively onto 
 grids of a model domain.
 """
 
+[BasalState]
+tag = "basalstate"
+title = "basal thermal state of the ice sheets"
+readme = "BasalState/README.md"
+keywords = ["basal temperature", "basal thermal state", "frozen bed", "thawed bed", "Antarctica", "model validation"]
+description = """
+Basal temperature and basal thermal state (frozen, thawable, thawed) of the ice sheets
+from models, remapped onto the grids of a model domain.
+"""
+
 [Ocean]
 tag = "ocean"
 title = "ocean temperature and salinity"

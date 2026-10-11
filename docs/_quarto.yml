@@ -44,6 +44,8 @@ website:
             href: datasets/stratigraphy.qmd
           - text: "BasalMelt — ice-shelf melt"
             href: datasets/basalmelt.qmd
+          - text: "BasalState — basal thermal state"
+            href: datasets/basalstate.qmd
           - text: "Ocean — temperature and salinity"
             href: datasets/ocean.qmd
           - text: "SMB — surface mass balance"

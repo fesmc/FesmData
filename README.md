@@ -45,6 +45,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | Velocity     | Ice surface velocity | Joughin2018, Rignot2011_vel |
 | Stratigraphy | Age structure of the ice | MacGregor2025_strat |
 | BasalMelt    | Ice-shelf basal melt rates | Rignot2013_bmelt |
+| BasalState   | Basal temperature and thermal state | Dawson2022_basalstate |
 | Ocean        | Ocean temperature and salinity | Schmidtko2014_ocean, Zhou2026_ismip7ocean, Zuo2019_oras5 |
 | Atmosphere   | Reanalysis and satellite climatologies | Hersbach2020_era5, Loeb2018_ceres |
 | SMB          | Surface mass balance and surface climate | Fettweis2017_mar314, vanDalum2025_racmo24 |
@@ -62,7 +63,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | geo      | Colgan2021_ghf              | Geothermal heat flow of Greenland                | Colgan & Wansing (2021)        |
 | geo      | Colgan2021_topocorr         | Topographic correction of geothermal heat flow   | Colgan et al. (2021)           |
 | geo      | Davies2013_ghf              | Global geothermal heat flow                      | Davies (2013)                  |
-| ice      | Dawson2022_AntarcticaBasalState | Antarctic ice sheet basal thermal state      | Dawson et al. (2022)           |
+| ice      | Dawson2022_basalstate       | Antarctic ice sheet basal thermal state          | Dawson et al. (2022)           |
 | paleo    | Dowsett2016_prism4          | PRISM4 Pliocene topography and ice sheets        | Dowsett et al. (2016)          |
 | climate  | ERA5                        | Monthly ERA5 for radiation + moist-stack valid. (v1) | Hersbach et al. (2020)     |
 | smb      | Fettweis2017_mar314         | Greenland SMB and surface climate, MAR v3.14 (ERA5) | Fettweis et al. (2017)      |
