@@ -83,8 +83,11 @@ rules = [{ source = "eez_land", field = "m49_subregion", values = ["Northern Ame
 
 # Europe; Russia draining to the Kara Sea or west of it (HydroBASINS Europe; Ob,
 # Yenisei and Taymyr west of the Khatanga; Severnaya Zemlya) and its EEZ north of the
-# Kara Sea and in the Baltic and Black seas (Kaliningrad, Gulf of Finland); and the
-# Barents, White and Kara seas.
+# Kara Sea and in the Baltic and Black seas (Kaliningrad, Gulf of Finland); the
+# Barents, White and Kara seas; and the open sea of the Norwegian and Greenland seas
+# outside all EEZs, a pocket enclosed by the EEZs of Norway (with Jan Mayen and
+# Svalbard), the Faroe Islands, Iceland and Greenland, which GOaS puts in the Arctic
+# Ocean (the parts of these seas in the EEZs of Greenland and Iceland stay with them).
 [[region]]
 path = "1.2"
 name = "Western Eurasia"
@@ -98,6 +101,7 @@ rules = [
                 { source = "iho", field = "name",
                   values = ["Baltic Sea", "Gulf of Finland", "Black Sea", "Sea of Azov"] }] },
     { source = "iho", field = "name", values = ["Barentsz Sea", "White Sea", "Kara Sea"] },
+    { source = "iho", field = "name", values = ["Norwegian Sea", "Greenland Sea"] },
 ]
 
 # Asia, and the rest of Russia: Siberia and the Far East (HydroBASINS Siberia and

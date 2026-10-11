@@ -42,7 +42,9 @@ The rules of each region are documented in `regions.toml`. In short:
 - Continents are the countries and their EEZs grouped by UN M49 region; Greenland
   and Iceland come first; oceans (GOaS) take the rest. The high seas of the Davis
   Strait, which GOaS puts in the Arctic Ocean, are in the North Atlantic, with the
-  rest of the high seas of the Labrador Sea.
+  rest of the high seas of the Labrador Sea. The high seas of the Norwegian and
+  Greenland seas, a pocket enclosed by the EEZs of Norway, the Faroe Islands, Iceland
+  and Greenland that GOaS also puts in the Arctic Ocean, are in Western Eurasia.
 - Russia is split between Western Eurasia and Asia at the divide between the
   rivers draining to the Kara and Laptev seas (HydroBASINS), and at sea at the
   boundary between the Kara and Laptev seas (IHO). Its EEZ in the Baltic and Black
