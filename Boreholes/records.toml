@@ -1,0 +1,6 @@
+# Products of the records dataset Boreholes (see ../Records/README.md):
+# $ICE_DATA/v2/Records/Boreholes/Boreholes-<product>.nc
+
+[products.Lokkegaard2023]
+source = "Lokkegaard2023_temp_profile"
+file = "Lokkegaard2023_boreholes.nc"
