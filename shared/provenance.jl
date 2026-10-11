@@ -26,6 +26,19 @@ function dataset_tag(dataset::AbstractString)
     return all[dataset]["tag"]
 end
 
+"""
+    figure_spec(value, what) -> Union{Nothing,Dict{String,Any}}
+
+The `figure` entry of a product (remap.toml, records.toml): its options (a table, empty
+by default), or `nothing` for `figure = false`, a product without a figure on the
+website (see ../Figures).
+"""
+function figure_spec(value, what::AbstractString)
+    value === false && return nothing
+    value isa AbstractDict || error("$what: figure must be a table of options or false")
+    return Dict{String,Any}(value)
+end
+
 "Folder of the prepared files of a source (input to remapping or records): \$FESMDATA_WORK/prepared/<source>."
 prepared_dir(source::AbstractString) = joinpath(_env("FESMDATA_WORK"), "prepared", source)
 

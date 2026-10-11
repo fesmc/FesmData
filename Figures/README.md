@@ -68,6 +68,9 @@ figure = { select = { depth = [100, 300] }, colormap = "inferno" }
 `colormap`, `colorrange`, `scale` and `hide` can also be tables by variable, e.g.
 `colormap = { z_bed = "oleron", H_ice = "ice" }`.
 
+`figure = false` leaves a product without a figure, e.g. the products of a dataset
+with many similar ones (Paleoclimate shows the LGM of each model only).
+
 ## Records
 
 One figure per product: maps of the sites on the domains that contain them (GRL-PAL,

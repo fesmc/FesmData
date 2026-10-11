@@ -2,7 +2,7 @@
 # written with a gallery page to docs/figures/<Dataset>/, which the page of the dataset
 # includes at its end.
 #
-#     julia fesmdata.jl figures <Dataset> [<product> ...]
+#     julia fesmdata.jl figures <Dataset>
 
 using CairoMakie
 using Colors
@@ -66,7 +66,7 @@ end
 `julia fesmdata.jl figures <Dataset>`: the figures of the products of a dataset and its
 gallery page. Topo and Regions have their own figures; thematic datasets (remap.toml)
 and records datasets (records.toml) one figure per released product, with the options
-of its `figure` table.
+of its `figure` table (none for `figure = false`).
 """
 function figures_command(args::AbstractVector)
     length(args) == 1 || error("figures: give one dataset")
@@ -78,9 +78,10 @@ function figures_command(args::AbstractVector)
         return regions_figures()
     elseif is_remap_dataset(dataset)
         [product_figure(p, path -> plot_gridded(path, product_name(p), product_panels(p), something(p.variables, String[]), p.figure))
-         for p in remap_products(dataset) if p.release]
+         for p in remap_products(dataset) if p.release && p.figure !== nothing]
     elseif is_records_dataset(dataset)
-        [product_figure(p, path -> plot_record(path, record_path(p), p.figure)) for p in records_products(dataset)]
+        [product_figure(p, path -> plot_record(path, record_path(p), p.figure)) for p in records_products(dataset)
+         if p.figure !== nothing]
     else
         error("dataset $dataset has no figures (no Topo, Regions, $dataset/remap.toml or $dataset/records.toml)")
     end
