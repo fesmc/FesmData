@@ -1,21 +1,66 @@
-# Global SMB database
+# SUMup surface mass balance measurements (SUMup 2025)
 
-The SUMup collaborative database: Surface mass balance, subsurface temperature and density measurements from the Greenland and Antarctic ice sheets (2025 release)
+Surface mass balance measurements of the Greenland and Antarctic ice sheets and their
+peripheral glaciers (2.74 million measurements: ice cores, snow pits, stakes, surface
+height ranging, ground and airborne radar), from the 2025 release of:
 
-Source: https://arcticdata.io/catalog/view/doi:10.18739/A2M61BR5M
+Vandecrux, B., Amory, C., Ahlstrøm, A. P., et al.: The SUMup collaborative database:
+Surface mass balance, subsurface temperature and density measurements from the
+Greenland and Antarctic ice sheets (2025 release), Arctic Data Center, 2025,
+[doi:10.18739/A2M61BR5M](https://doi.org/10.18739/A2M61BR5M).
 
-Citation: Baptiste Vandecrux, Charles Amory, Andreas P. Ahlstrøm, Pete D. Akers, Mary Albert, Richard B. Alley, Marcela Alves de Castro, Laurent Arnaud, Hannah Bailey, Ian Baker, Roger Bales, Carl Benson, Jason E. Box, Ludovic Brucker, Christo Buizert, David Chandler, Charalampos Charalampidis, Clément Cherblanc, Nicole Clerx, William Colgan, Federico Covi, Marissa Dattler, Gilles Denis, Chris Derksen, Jack E. Dibb, Minghu Ding, Daniel Dixon, Olaf Eisen, Alexey Ekaykin, Dominik Fahrner, Robert Fausto, Vincent Favier, Francisco Fernandoy, Richard Forster, Johannes Freitag, Massimo Frezzotti, Sebastian Gerland, Joel Harper, Robert L. Hawley, Achim Heilig, Jasper Heuer, Regine Hock, Shugui Hou, Penelope How, Ian Howat, Neil Humphrey, Alun Hubbard, Bryn Hubbard, Yoshinori Iizuka, Elisabeth Isaksson, Surendra Jat, Takao Kameda, Nanna B. Karlsson, Kaoru Kawakami, Christoph Kittel, Helle Astrid Kjær, Karl Kreutz, Peter Kuipers Munneke, Matthew Lazzara, Emmanuel Lemeur, Jan T. M. Lenaerts, Gabriel Lewis, Filipe Gaudie Ley Lindau, Josephine Lindsey-Clark, Michael MacFerrin, Horst Machguth, Olivier Magand, Kenneth D. Mankoff, Luciano Marquetto, Patricia Martinerie, Paul A. Mayewski, Joseph R. McConnell, Brooke Medley, Clément Miège, Katie E. Miles, Olivia Miller, Heinrich Miller, Lynn Montgomery, Hameed Moqadam, Elizabeth Morris, Ellen Mosley-Thompson, Robert Mulvaney, Masashi Niwano, Hans Oerter, Erich Osterberg, Inès Otosaka, Ikumi Oyabu, Ghislain Picard, Chris Polashenski, Carleen Reijmer, Asa Rennermalm, Anja Rutishauser, Kirk Scanlan, Jefferson C Simoes, Sebastian B. Simonsen, Paul C.J.P. Smeets, Andrew Smith, Anne Solgaard, Matthew Spencer, Hans Christian Steen-Larsen, C. Max Stevens, Shin Sugiyama, Jonas Svensson, Marco Tedesco, Elizabeth Thomas, Megan Thompson-Munson, Shun Tsutaki, Dirk van As, Michiel R. Van den Broeke, Maurice van Tiggelen, Yetang Wang, Nander Wever, Frank Wilhelms, Mai Winstrup, V. Holly L Winton, Cunde Xiao, & Jing Xiao. (2025). The SUMup collaborative database: Surface mass balance, subsurface temperature and density measurements from the Greenland and Antarctic ice sheets (2025 release). Arctic Data Center. doi:10.18739/A2M61BR5M, version: urn:uuid:96e5fbe1-60be-45fc-aaab-01b2c31e5901.
+SUMup asks to cite also the original studies of the data used (the `reference` of each
+measurement).
 
-## Steps to get data
+## Licence
 
-1. Download the complete dataset.
+CC0 1.0 (Arctic Data Center).
 
-    ```
-    wget https://arcticdata.io/metacat/d1/mn/v2/packages/application%2Fbagit-1.0/resource_map_urn%3Auuid%3A512f939c-60b3-4607-b922-c6cab3d326f3
-    unzip resource_map_urn:uuid:512f939c-60b3-4607-b922-c6cab3d326f3
-    rm resource_map_urn:uuid:512f939c-60b3-4607-b922-c6cab3d326f3
-    rm *.txt
-    mv data/* ./
-    rm -r data
-    
-    ```
+## Original data
+
+Two NetCDF files of the release on the Arctic Data Center (no login), downloaded by
+`prepare.jl`:
+
+- `SUMup_2025_SMB_greenland.nc` (7 MB, datamanifest key `sumup2025_smb_greenland`);
+- `SUMup_2025_SMB_antarctica.nc` (1.4 MB, `sumup2025_smb_antarctica`).
+
+Each has a group `DATA` (one value per measurement: SMB and its error in m w.e., start
+and end dates or years, latitude, longitude, elevation, and the keys of the name,
+method and reference) and a group `METADATA` (the strings of the keys). The release
+also has the SMB as CSV, a ReadMe (`SUMup_2025_ReadMe.pdf`), and the density (firn
+and snow density by depth, 2.87 million measurements) and subsurface temperature
+(2.87 million measurements at stations and depths) data, not used here: they would be
+records of profiles (featureType profile or timeSeriesProfile).
+
+## Prepare and record
+
+```bash
+julia --project=SUMup_smb SUMup_smb/prepare.jl
+julia fesmdata.jl record SMBObs SUMup2025
+```
+
+`prepare.jl` writes `$FESMDATA_WORK/prepared/SUMup_smb/SUMup2025_SMB.nc` (40 MB, see
+`Records/README.md`), the measurements of both ice sheets, one per observation
+(featureType point, dimension `obs`): `lat`, `lon`, `z_srf` (m, mostly missing),
+`time` (days since 1900-01-01, the middle of the measurement interval) with
+`time_bnds`, `smb` and `smb_sd` (kg m-2 yr-1), and the keys `name_key`, `method_key`,
+`reference_key` into the tables `name`, `method`, `reference` and `reference_short`
+(along `name_table`, `method_table`, `reference_table`, with the keys
+`<table>_key`).
+
+Notes:
+
+- SUMup gives the SMB accumulated over an interval (m w.e.), not a rate: from
+  `start_date` to `end_date` where these are given, otherwise over the years
+  `start_year` to `end_year`. The interval is written as `time_bnds` (from 1 January of
+  `start_year` to 1 January after `end_year` when there are no dates), and `smb` is the
+  mean rate over it, 1000 × SMB / duration (kg m-2 yr-1, with years of 365.25 days):
+  the SMB of the interval is `smb` × duration. The intervals range from one day
+  (daily ablation, 19681 measurements) to 197 years; the rates of the short ones are
+  large (down to -70 000 kg m-2 yr-1 for a day of melt).
+- `smb_sd` is the error of SUMup converted in the same way, as an absolute value (179
+  errors are negative in the source). It is missing for 60% of the measurements.
+- The 12 measurements over an interval of length zero (stake readings of 0 in
+  Greenland) are left out.
+- The keys are those of SUMup; `method_key` is missing (-9999) for 16208 measurements
+  (method "NA").
