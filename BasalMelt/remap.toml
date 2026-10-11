@@ -14,3 +14,11 @@ source = "Adusumilli2020_bmelt"
 file = "Adusumilli2020_BMELT_2010-2018.nc"
 variables = ["bmelt", "bmelt_cs2", "bmelt_err"]
 domains = ["Antarctica"]
+
+# Height changes (not melt rates), quarterly 1992-2018 on a 10 km grid
+[products.Adusumilli2020-heights]
+source = "Adusumilli2020_bmelt"
+file = "Adusumilli2020_HEIGHTS_1992-2018.nc"
+variables = ["dh_alt", "dh_firn", "smb_discharge", "dh_alt_err", "dh_firn_err"]
+domains = ["Antarctica"]
+min_spacing_km = 8
