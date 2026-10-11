@@ -29,7 +29,8 @@ region. `time` is in days since 1800-01-01, the middle of each year or month, wi
 `time_bnds`.
 
 The normalised iceberg melt climatologies of the record (`GL_iceberg_melt.nc`,
-`AQ_iceberg_melt.nc`) are gridded (0.5° lon-lat) and not included.
+`AQ_iceberg_melt.nc`) are gridded (0.5° lon-lat) and left out: they are for ocean
+models, which remap them onto their own grids.
 
 ## Licences
 

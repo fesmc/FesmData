@@ -15,8 +15,9 @@ Data: Gowan, E. J.: evangowan/paleo_sea_level: Version 2.1, Zenodo, 2023,
 
 ## Licence
 
-CC BY-SA 4.0 (`LICENSE.txt` of the repository); the Zenodo record of version 2.1 states
-CC BY 4.0. Derived products may have to be shared under CC BY-SA 4.0.
+CC BY-SA 4.0 (`LICENSE.txt` of the repository), recorded here as the stricter of the
+two: the Zenodo record of version 2.1 states CC BY 4.0. Derived products are to be
+shared under CC BY-SA 4.0.
 
 ## Original data
 
