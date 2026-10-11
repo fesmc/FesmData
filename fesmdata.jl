@@ -36,6 +36,12 @@ Bring your own data (see Remap/README.md):
                                                GHF, defined in GHF/remap.toml), preparing
                                                missing sources first (--overwrite)
 
+Records, non-gridded data (see Records/README.md):
+  record <Dataset> [<product> ...]             make the products of a records dataset
+                                               (defined in <Dataset>/records.toml) as
+                                               \$ICE_DATA/v2/Records/<Dataset>/<Dataset>-<product>.nc,
+                                               preparing missing sources first (--overwrite)
+
 Release (maintainers, see Publish/README.md):
   release <Dataset> [<Domain> ...]             upload to the GitLab packages and write the
                                                registry (--dry-run: check and list only)
@@ -49,11 +55,12 @@ Release (maintainers, see Publish/README.md):
 
 Options: --sandbox (test releases: registry/_sandbox/, test packages, Zenodo sandbox),
 --allow-untagged (skip the release checks), --dry-run, --yes (mirror, archive publish),
---overwrite (fetch, remap).
+--overwrite (fetch, remap, record).
 """
 
 const PUBLISH_DIR = joinpath(@__DIR__, "Publish")
 const REMAP_DIR = joinpath(@__DIR__, "Remap")
+const RECORDS_DIR = joinpath(@__DIR__, "Records")
 
 "Activate the environment in `dir`, with its packages installed if needed (fast if they are)."
 function activate_env(dir)
@@ -105,6 +112,11 @@ function main(argv)
         paths = call(:remap_command, rest; vars, name=get(valued, "name", nothing),
                      method=get(valued, "method", nothing), smooth=get(valued, "smooth", nothing),
                      overwrite="--overwrite" in opts)
+        println("$(length(paths)) files written")
+    elseif command == "record"
+        activate_env(RECORDS_DIR)
+        include(joinpath(RECORDS_DIR, "records.jl"))
+        paths = call(:record_command, rest; overwrite="--overwrite" in opts)
         println("$(length(paths)) files written")
     elseif command == "docs"
         include(joinpath(PUBLISH_DIR, "site.jl"))
