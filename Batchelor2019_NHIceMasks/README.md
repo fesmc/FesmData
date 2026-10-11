@@ -37,7 +37,7 @@ julia -t 16 --project=Batchelor2019_NHIceMasks Batchelor2019_NHIceMasks/prepare.
 julia fesmdata.jl remap $FESMDATA_WORK/prepared/Batchelor2019_NHIceMasks/Batchelor2019_NH_ICE.nc North --name=IceHistory-Batchelor2019
 ```
 
-`prepare.jl` (about 20 min and 10 GB on 16 cores) writes
+`prepare.jl` (a few minutes on 16 cores) writes
 `$FESMDATA_WORK/prepared/Batchelor2019_NHIceMasks/Batchelor2019_NH_ICE.nc` (see
 `Remap/README.md`) with `f_ice_best`, `f_ice_min` and `f_ice_max` (1), the area fraction
 of each cell inside the best-estimate, minimum and maximum extents, on (x, y, time), and
