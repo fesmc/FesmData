@@ -39,13 +39,6 @@ remap_spec_file(dataset::AbstractString) = joinpath(REPO_DIR, dataset, "remap.to
 "Whether `dataset` is a thematic dataset made by remapping."
 is_remap_dataset(dataset::AbstractString) = isfile(remap_spec_file(dataset))
 
-"Release tag of a thematic dataset (provenance attributes, tags <tag>-vX.Y.Z), from Publish/datasets.toml."
-function remap_tag(dataset::AbstractString)
-    all = read_datasets()
-    haskey(all, dataset) || error("add $dataset to Publish/datasets.toml (tag, title, readme, keywords, description)")
-    return all[dataset]["tag"]
-end
-
 """
     remap_products(dataset) -> Vector{RemapProduct}
 

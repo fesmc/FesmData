@@ -524,21 +524,6 @@ function parse_smooth(s::AbstractString)
 end
 
 """
-    run_prepare(source)
-
-Run the preparation of a source, `<source>/prepare.jl` in its own environment (with its
-packages installed if needed).
-"""
-function run_prepare(source::AbstractString)
-    dir = joinpath(REPO_DIR, source)
-    script = joinpath(dir, "prepare.jl")
-    isfile(script) || error("no $script to prepare $source")
-    println("Preparing $source: julia --project=$source $source/prepare.jl")
-    run(`$(Base.julia_cmd()) --project=$dir -e "import Pkg; Pkg.instantiate()"`)
-    run(`$(Base.julia_cmd()) --project=$dir $script`)
-end
-
-"""
     remap_dataset(dataset, args=String[]; overwrite=false) -> Vector{String}
 
 Remap the products of a thematic dataset (<Dataset>/remap.toml) onto the grids of
@@ -553,7 +538,7 @@ function remap_dataset(dataset::AbstractString, args=String[]; overwrite::Bool=f
     targets = setdiff(args, chosen)
     selected = isempty(chosen) ? products : filter(p -> p.name in chosen, products)
     only_grids = isempty(targets) ? nothing : Set(og.grid.name for og in select_grids(targets))
-    tag = remap_tag(dataset)
+    tag = dataset_tag(dataset)
     paths = String[]
     for p in selected
         grids = product_grids(p)

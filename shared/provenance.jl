@@ -1,5 +1,6 @@
-# Repository paths, machine environment and the provenance attributes written to every
-# NetCDF file produced by FesmData. No package dependencies, so that Publish can use it.
+# Repository paths, machine environment, the preparation of sources and the provenance
+# attributes written to every NetCDF file produced by FesmData. No package dependencies,
+# so that Publish can use it.
 
 using Dates
 using TOML
@@ -15,8 +16,30 @@ end
 "Datasets released by Publish, with their release tags (Publish/datasets.toml)."
 read_datasets() = TOML.parsefile(joinpath(REPO_DIR, "Publish", "datasets.toml"))
 
-"Folder of the prepared files of a source (input to remapping): \$FESMDATA_WORK/prepared/<source>."
+"Release tag of a dataset (provenance attributes, tags <tag>-vX.Y.Z), from Publish/datasets.toml."
+function dataset_tag(dataset::AbstractString)
+    all = read_datasets()
+    haskey(all, dataset) || error("add $dataset to Publish/datasets.toml (tag, title, readme, keywords, description)")
+    return all[dataset]["tag"]
+end
+
+"Folder of the prepared files of a source (input to remapping or records): \$FESMDATA_WORK/prepared/<source>."
 prepared_dir(source::AbstractString) = joinpath(_env("FESMDATA_WORK"), "prepared", source)
+
+"""
+    run_prepare(source)
+
+Run the preparation of a source, `<source>/prepare.jl` in its own environment (with its
+packages installed if needed).
+"""
+function run_prepare(source::AbstractString)
+    dir = joinpath(REPO_DIR, source)
+    script = joinpath(dir, "prepare.jl")
+    isfile(script) || error("no $script to prepare $source")
+    println("Preparing $source: julia --project=$source $source/prepare.jl")
+    run(`$(Base.julia_cmd()) --project=$dir -e "import Pkg; Pkg.instantiate()"`)
+    run(`$(Base.julia_cmd()) --project=$dir $script`)
+end
 
 """
     git_version(dataset) -> String
