@@ -83,14 +83,17 @@ function write_fields(path::AbstractString, g::Union{ProjGrid,LonLatGrid}, field
             vdims = (grid_dims(g)..., (d.name for d in get(dims, name, Dim[]))...)
             F = fields[name]
             if nonmissingtype(eltype(F)) <: Integer
-                if any(ismissing, F)
-                    T = nonmissingtype(eltype(F))
-                    T = typemin(T) <= -9999 ? T : Int32
+                # Type written: that of the field, widened to Int32 if the fill value -9999
+                # does not fit; flag_values must have the same type (CF)
+                T = nonmissingtype(eltype(F))
+                fill = any(ismissing, F)
+                fill && typemin(T) > -9999 && (T = Int32)
+                atts = [k == "flag_values" ? k => T.(v) : k => v for (k, v) in atts]
+                if fill
                     defVar(ds, name, Array{Union{Missing,T}}(F), vdims; fillvalue=T(-9999), deflatelevel=1,
                            shuffle=true, attrib=atts)
                 else
-                    defVar(ds, name, Array{nonmissingtype(eltype(F))}(F), vdims; deflatelevel=1, shuffle=true,
-                           attrib=atts)
+                    defVar(ds, name, Array{T}(F), vdims; deflatelevel=1, shuffle=true, attrib=atts)
                 end
             else
                 defVar(ds, name, replace(Float32.(F), NaN32 => FILLVALUE), vdims;
