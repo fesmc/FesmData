@@ -1,0 +1,14 @@
+# Products of the records dataset IceCores (see ../Records/README.md):
+# $ICE_DATA/v2/Records/IceCores/IceCores-<product>.nc
+
+[products.Kindler2014]
+source = "Kindler2014"
+file = "Kindler2014_NGRIP.nc"
+
+[products.Gkinis2020]
+source = "Gkinis2020_NEEMwateriso"
+file = "Gkinis2020_NEEM.nc"
+
+[products.Vinther2009]
+source = "Vinther2009_elevations"
+file = "Vinther2009_elevations.nc"
