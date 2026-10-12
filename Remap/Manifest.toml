@@ -1,8 +1,8 @@
 # This file is machine-generated - editing it directly is not advised
 
-julia_version = "1.13.0"
+julia_version = "1.13.1"
 manifest_format = "2.1"
-project_hash = "38b3f00e9d48b5a2df82fd853720e04b2bb643dd"
+project_hash = "b99fc8a53ed61e05b9e912aa69e011c5ad0071df"
 
 [[deps.ArgTools]]
 uuid = "0dad84c5-d112-42e6-8d28-ef12dabb789f"
@@ -115,8 +115,8 @@ uuid = "411431e0-e8b7-467b-b5e0-f676ba4f2910"
 version = "0.1.6"
 
 [[deps.FesmUtils]]
-deps = ["NCDatasets", "Proj"]
-git-tree-sha1 = "87adcd3b3c5621e008a8dc6d2c1d575a3ceb1a45"
+deps = ["NCDatasets", "Proj", "SparseArrays"]
+git-tree-sha1 = "4cec8a48daaf5efa0411f27cc63f88eead0a4d71"
 repo-rev = "main"
 repo-url = "https://github.com/fesmc/FesmUtils.jl"
 uuid = "87fa8290-809d-4b2a-a2bb-fb70d9529671"
@@ -193,12 +193,10 @@ git-tree-sha1 = "5519b95a490ff5fe629c4a7aa3b3dfc9160498b3"
 registries = "General"
 uuid = "8ac3fa9e-de4c-5943-b1dc-09c6b5f20637"
 version = "1.6.2"
+weakdeps = ["Serialization"]
 
     [deps.LRUCache.extensions]
     SerializationExt = ["Serialization"]
-
-    [deps.LRUCache.weakdeps]
-    Serialization = "9e88b42a-f829-5b0c-bbe9-9e923198166b"
 
 [[deps.LazyArtifacts]]
 deps = ["Artifacts", "Pkg"]
@@ -228,7 +226,7 @@ version = "1.9.1+0"
 [[deps.LibSSH2_jll]]
 deps = ["Artifacts", "CompilerSupportLibraries_jll", "Libdl", "OpenSSL_jll", "Zlib_jll"]
 uuid = "29816b5a-b9ab-546f-933c-edad1886dfa8"
-version = "1.11.103+0"
+version = "1.11.104+0"
 
 [[deps.Libdl]]
 uuid = "8f399da3-3557-5675-b5ff-fb832c97cbdb"
@@ -436,6 +434,15 @@ registries = "General"
 uuid = "76ed43ae-9a5d-5a62-8c75-30186b810ce8"
 version = "3.53.4+0"
 
+[[deps.Serialization]]
+uuid = "9e88b42a-f829-5b0c-bbe9-9e923198166b"
+version = "1.11.0"
+
+[[deps.SparseArrays]]
+deps = ["Libdl", "LinearAlgebra", "Random", "Serialization", "SuiteSparse_jll"]
+uuid = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
+version = "1.13.0"
+
 [[deps.StaticArrays]]
 deps = ["LinearAlgebra", "PrecompileTools", "Random", "StaticArraysCore"]
 git-tree-sha1 = "39e70e0ab5d7f89833a62ab7c79df15d4fc417c1"
@@ -463,16 +470,19 @@ git-tree-sha1 = "e2b53ce13a53367e96601081e33d34746b571bad"
 registries = "General"
 uuid = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
 version = "1.11.5"
+weakdeps = ["SparseArrays"]
 
     [deps.Statistics.extensions]
     SparseArraysExt = ["SparseArrays"]
 
-    [deps.Statistics.weakdeps]
-    SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
-
 [[deps.StyledStrings]]
 uuid = "f489334b-da3d-4c2e-b8f0-e476e12c162b"
 version = "1.11.0"
+
+[[deps.SuiteSparse_jll]]
+deps = ["Artifacts", "CompilerSupportLibraries_jll", "Libdl", "libblastrampoline_jll"]
+uuid = "bea87d4a-7f5b-5778-9afe-8cc45184846c"
+version = "7.10.1+0"
 
 [[deps.TOML]]
 deps = ["Dates"]
