@@ -32,6 +32,7 @@ source = "Martos2018_ghf"
 file = "Martos2018_GHF.nc"
 variables = ["ghf", "ghf_sd", "depth_curie", "depth_curie_sd"]
 grids = { Greenland = 4 }
+fill = { variables = ["ghf", "ghf_sd"], mask = "all" }   # land only: ice margin, ocean, outer cells
 
 [products.HazzardRichards2024]
 source = "HazzardRichards2024_ghf"

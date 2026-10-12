@@ -34,6 +34,12 @@ source it is then smoothed with a Gaussian of half the source spacing (about 28 
 for 0.5°), so that its cells do not show as steps. The global attribute
 `remap_method` records what was done on each grid.
 
+`GHF-Martos2018` covers the land of Greenland only: `ghf` and `ghf_sd` are filled
+where there are no source data (cells at the ice margin, the ocean and the rest of the
+grid) by harmonic interpolation (`fill`, `mask = "all"`, marked by `mask_fill`; see
+`Remap/README.md`), so that they cover the whole grid. `depth_curie` and
+`depth_curie_sd` are not filled.
+
 ## Licences
 
 | Source | Licence |
