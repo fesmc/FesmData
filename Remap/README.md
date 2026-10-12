@@ -171,6 +171,27 @@ fields. The global attributes of the files are joined (their distinct values), a
 obtained by personal communication whose redistribution the authors have not agreed to
 yet (say so in the README of the dataset).
 
+An **ensemble product** is the mean or the standard deviation of other products of the
+dataset, its members, e.g. the models of a model intercomparison:
+
+```toml
+[products.PMIP3-lgm-mean]                    # → <GRID>_Paleoclimate-PMIP3-lgm-mean.nc
+ensemble = ["PMIP3-CCSM4-lgm", "PMIP3-CNRM-CM5-lgm", ...]   # member products of the dataset
+stat = "mean"                                # or "stdev"
+grids = { Antarctica = 8, Global = 8 }       # each member must be made on all of these
+# release = false, figure = { ... }          # optional, as above
+```
+
+It has no `source`, `file`, `variables`, `method`, `smooth` or `fill`: it is made on each
+grid from the files of its members on that grid (those missing are remapped first),
+after the other products. Each of its fields is a field of any member (not `f_valid`,
+`mask_fill` or integer fields), with the same name, units and extra dimensions, and
+`, ensemble mean` or `, ensemble standard deviation` appended to its long name: in each
+cell, the mean or the standard deviation (population, divided by n, as `cdo ensstd`) of
+the members with a value there. `n_<field>` (a byte field) is the number of these
+members, e.g. 0 for a sea surface temperature over land. The global attributes of the
+members are joined, and `ensemble_members` lists them.
+
 Domains are listed explicitly, so that the files of a release are fixed; each source
 must cover all its grids (one of its files, for a product of several files). Then:
 

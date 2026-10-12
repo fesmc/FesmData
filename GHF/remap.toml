@@ -10,8 +10,10 @@
 # this, 0: all), or a list of grid names; the product is not made on domains not
 # listed. `release = false` leaves a product out of the releases, `figure` sets its
 # figure on the website (see ../Figures/README.md), and `fill` fills the gaps over the
-# ice (see ../Remap/README.md). The dataset and its release tag are
-# in ../Publish/datasets.toml.
+# ice (see ../Remap/README.md). A product with `ensemble` (a list of products of the
+# dataset) and `stat` ("mean" or "stdev") instead of `source` and `file` is the
+# ensemble mean or standard deviation of these products (see ../Remap/README.md). The
+# dataset and its release tag are in ../Publish/datasets.toml.
 
 [products.Lucazeau2019]
 source = "Lucazeau2019_ghf"

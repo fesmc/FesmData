@@ -110,9 +110,13 @@ function value_label(ds, d, v)
     return strip("$d $(round(v; sigdigits=4)) $(units == "1" ? "" : units)")
 end
 
-"Data variables of a file: neither coordinates, bounds, `crs` nor fractions of valid data."
+"""
+Data variables of a file: neither coordinates, bounds, `crs`, fractions of valid data
+nor the member counts `n_<var>` of an ensemble product.
+"""
 data_variables(ds) = [k for k in keys(ds) if !(k in dimnames(ds)) && k != "crs" && !endswith(k, "_bnds") &&
-                                              !startswith(k, "f_valid") && length(dimnames(ds[k])) >= 2]
+                                              !startswith(k, "f_valid") && length(dimnames(ds[k])) >= 2 &&
+                                              !(startswith(k, "n_") && haskey(ds, k[3:end]))]
 
 """
     figure_fields(path, variables, spec) -> Vector{Field}

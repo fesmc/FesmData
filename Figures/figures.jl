@@ -83,7 +83,7 @@ function figures_command(args::AbstractVector)
         for p in products[.!made]
             println("$(product_name(p)): not made yet (no files), left out of the figures")
         end
-        [product_figure(p, path -> plot_gridded(path, product_name(p), product_panels(p), something(p.variables, String[]), p.figure))
+        [product_figure(p, path -> plot_gridded(path, product_name(p), product_panels(p), figure_variables(p), p.figure))
          for p in products[made]]
     elseif is_records_dataset(dataset)
         [product_figure(p, path -> plot_record(path, record_path(p), p.figure)) for p in records_products(dataset)
@@ -109,5 +109,9 @@ function product_figure(p, plot)
 end
 
 "Panels of the figure of a thematic product: one grid of each domain and its file."
-product_panels(p::RemapProduct) =
+product_panels(p::ThematicProduct) =
     [Panel(og, joinpath(outdir(og), "$(og.grid.name)_$(product_name(p)).nc")) for og in figure_grids(product_grids(p))]
+
+"Variables of a thematic product shown by default: the first of its `variables`, or of its files (empty)."
+figure_variables(p::RemapProduct) = something(p.variables, String[])
+figure_variables(::EnsembleProduct) = String[]

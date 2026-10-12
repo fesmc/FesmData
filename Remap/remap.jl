@@ -374,15 +374,22 @@ function combine_remapped(outs::AbstractVector, pf::PreparedFields)
     return out
 end
 
-"Global attributes of the prepared files of a product: of each, its distinct values joined."
-function merged_attrib(ps::AbstractVector{Prepared})
+"""
+Global attributes of several files (`attribs`, of each file): of each, its distinct
+values joined, by their parts separated by "; " (e.g. the references shared by files
+listed once).
+"""
+function merged_attrib(attribs::AbstractVector{<:AbstractVector{<:Pair}})
     attrib = Pair{String,String}[]
-    for k in unique(first(a) for p in ps for a in p.attrib)
-        vals = unique(Dict(p.attrib)[k] for p in ps if haskey(Dict(p.attrib), k))
+    for k in unique(first(a) for at in attribs for a in at)
+        vals = unique(part for at in attribs if haskey(Dict(at), k) for part in split(Dict(at)[k], "; "))
         push!(attrib, k => join(vals, "; "))
     end
     return attrib
 end
+
+"Global attributes of the prepared files of a product (see `merged_attrib`)."
+merged_attrib(ps::AbstractVector{Prepared}) = merged_attrib([p.attrib for p in ps])
 
 # ---------------------------------------------------------------------------
 # Target grids
@@ -806,14 +813,181 @@ function parse_smooth(s::AbstractString)
     return v
 end
 
+# ---------------------------------------------------------------------------
+# Ensembles
+# ---------------------------------------------------------------------------
+
+"Long names of the statistics of an ensemble product, appended to those of the fields."
+const STAT_NAMES = Dict("mean" => "ensemble mean", "stdev" => "ensemble standard deviation")
+
+"""
+    ensemble_stat(As, stat) -> (S, n)
+
+Statistic `stat` (see `ENSEMBLE_STATS`) of the arrays `As` (of the members, same size)
+in each cell, over the members with a finite value there: their mean, or their
+population standard deviation (divided by n); NaN where none has a value. `n` is the
+number of these members.
+"""
+function ensemble_stat(As::AbstractVector{<:AbstractArray{Float32}}, stat::AbstractString)
+    n = zeros(Int8, size(As[1]))
+    s = zeros(size(As[1]))
+    for A in As, i in eachindex(A)
+        isfinite(A[i]) || continue
+        n[i] += 1
+        s[i] += A[i]
+    end
+    m = map((s, n) -> n > 0 ? s / n : NaN, s, n)
+    stat == "mean" && return Float32.(m), n
+    ss = zeros(size(m))
+    for A in As, i in eachindex(A)
+        isfinite(A[i]) && (ss[i] += (A[i] - m[i])^2)
+    end
+    return Float32.(map((ss, n) -> n > 0 ? sqrt(ss / n) : NaN, ss, n)), n
+end
+
+"""
+    MemberFile
+
+The output file of a member of an ensemble product on a grid: its float fields (size
+`(nx, ny, extra...)`, NaN as missing), their extra dimensions and attributes, the
+variables on the extra dimensions only, and the global attributes copied from the
+prepared files (but the title).
+"""
+struct MemberFile
+    path::String
+    fields::Dict{String,Array{Float32}}
+    dims::Dict{String,Vector{Dim}}
+    varattrib::Dict{String,Vector{Pair{String,Any}}}
+    aux::Vector{AuxVar}
+    attrib::Vector{Pair{String,String}}
+end
+
+"Whether a field of an output file is data, not the area covered by the source or the gaps filled."
+is_data_field(name::AbstractString) = !startswith(name, "f_valid") && !startswith(name, "mask_fill")
+
+"""
+    read_member(path, og) -> MemberFile
+
+Read the output file of a member of an ensemble product on grid `og`: its float data
+fields (see `is_data_field`); integer fields (classes) have no ensemble statistics.
+"""
+function read_member(path::AbstractString, og::OutGrid)
+    gdims = grid_dims(og.grid)
+    NCDataset(path) do ds
+        fields = Dict{String,Array{Float32}}()
+        dims = Dict{String,Vector{Dim}}()
+        varattrib = Dict{String,Vector{Pair{String,Any}}}()
+        for (name, v) in ds
+            dn = dimnames(v)
+            (length(dn) >= 2 && dn[1:2] == gdims && is_data_field(name) && !_integer_field(v)) || continue
+            fields[name] = Float32.(nomissing(Array(v), NaN))
+            size(fields[name])[1:2] == size(og.grid) || error("$path: $name is not on $(og.grid.name)")
+            dims[name] = [_dim(ds, d) for d in dn[3:end]]
+            varattrib[name] = [k => v.attrib[k] for k in COPIED_VARATTRIB if haskey(v.attrib, k)]
+        end
+        isempty(fields) && error("$path: no float fields on $(og.grid.name)")
+        attrib = [k => string(ds.attrib[k]) for k in COPIED_ATTRIB if haskey(ds.attrib, k) && k != "title"]
+        return MemberFile(path, fields, dims, varattrib, _aux(ds, dims), attrib)
+    end
+end
+
+"""
+    ensemble_fields(ms, stat) -> (fields, dims, varattrib)
+
+The fields of an ensemble product on a grid from the files of its members `ms`: of
+each field of any member, the statistic `stat` over the members that have it (see
+`ensemble_stat`), with their units and extra dimensions, which must agree, and
+`n_<field>`, the number of members with a value in each cell.
+"""
+function ensemble_fields(ms::AbstractVector{MemberFile}, stat::AbstractString)
+    fields = Dict{String,Array}()
+    dims = Dict{String,Vector{Dim}}()
+    varattrib = Dict{String,Vector{Pair{String,Any}}}()
+    for f in sort(unique(f for m in ms for f in keys(m.fields)))
+        has = [m for m in ms if haskey(m.fields, f)]
+        m1 = has[1]
+        units(m) = get(Dict(m.varattrib[f]), "units", nothing)
+        shape(m) = [(d.name, d.values) for d in m.dims[f]]
+        for m in has[2:end]
+            what = "$f in $(basename(m1.path)) and $(basename(m.path))"
+            units(m) == units(m1) || error("$what: different units ($(units(m1)), $(units(m)))")
+            shape(m) == shape(m1) || error("$what: different extra dimensions")
+        end
+        fields[f], fields["n_$f"] = ensemble_stat([m.fields[f] for m in has], stat)
+        dims[f] = dims["n_$f"] = m1.dims[f]
+        atts = Dict(m1.varattrib[f])
+        # The standard name is that of the field, not of its standard deviation
+        keep = stat == "mean" ? ("units", "standard_name", "comment") : ("units", "comment")
+        varattrib[f] = vcat([k => atts[k] for k in keep if haskey(atts, k)],
+                            ["long_name" => "$(get(atts, "long_name", f)), $(STAT_NAMES[stat])"])
+        varattrib["n_$f"] = ["units" => "1", "long_name" => "number of ensemble members with $f"]
+    end
+    return fields, dims, varattrib
+end
+
+"""
+    make_product(p, grids; tag, overwrite=false) -> Vector{String}
+
+Make a product of a thematic dataset on `grids` (some of its grids), as
+`<GRID>_<Dataset>-<name>.nc` in their output folders, with the provenance attributes
+of the dataset `tag`. Existing files are kept unless `overwrite`. A remap product is
+remapped from its prepared files (see `remap_prepared`), made first by the prepare.jl
+of its source if missing; every grid must be covered by the source (by one of its
+files, for a product of several files).
+"""
+function make_product(p::RemapProduct, grids::Vector{OutGrid}; tag::AbstractString, overwrite::Bool=false)
+    files = prepared_files(p)
+    all(isfile, files) || run_prepare(p.source)
+    preps = read_prepared_files(files; vars=p.variables)
+    println("$(product_name(p)): $(join(PreparedFields(preps).names, ", ")) from $(p.source) " *
+            (length(files) > 1 ? "($(length(files)) files) " : "") * "onto $(length(grids)) grids")
+    return remap_prepared(preps, grids; name=product_name(p), method=p.method, smooth=p.smooth, dataset=tag,
+                          overwrite, strict=true, fill=p.fill)
+end
+
+"""
+An ensemble product is made on each grid from the files of its members (see
+`ensemble_fields`), with the global attributes of their prepared files joined (see
+`merged_attrib`); the files of the members missing on a grid are made first.
+"""
+function make_product(p::EnsembleProduct, grids::Vector{OutGrid}; tag::AbstractString, overwrite::Bool=false)
+    members = ensemble_members(p)
+    paths = String[]
+    for m in members
+        todo = filter(og -> !isfile(remap_file(og, product_name(m))), grids)
+        isempty(todo) || append!(paths, make_product(m, todo; tag))
+    end
+    println("$(product_name(p)): $(STAT_NAMES[p.stat]) of $(length(members)) products onto $(length(grids)) grids")
+    for og in grids
+        path = remap_file(og, product_name(p))
+        if isfile(path) && !overwrite
+            println("$(og.grid.name): exists, skipped (--overwrite to replace)")
+            continue
+        end
+        ms = [read_member(remap_file(og, product_name(m)), og) for m in members]
+        fields, dims, varattrib = ensemble_fields(ms, p.stat)
+        how = p.stat == "mean" ? "mean" : "standard deviation (population, divided by n)"
+        title = "$(uppercasefirst(STAT_NAMES[p.stat])) of $(length(members)) products of $(p.dataset)"
+        attrib = vcat(["title" => title,
+                       "ensemble_members" => join(product_name.(members), ", "),
+                       "ensemble_stat" => "$how over the members with a value in each cell (n_<field>)"],
+                      merged_attrib([m.attrib for m in ms]))
+        aux = unique(a -> a.name, [a for m in ms for a in m.aux])
+        isfile(joinpath(outdir(og), "$(og.grid.name)_grid.nc")) || write_grid_files(outdir(og), og.grid; dataset=tag)
+        write_fields(path, og.grid, fields; dataset=tag, attrib, varattrib, dims, aux)
+        println("$(og.grid.name): $(basename(path))")
+        push!(paths, path)
+    end
+    return paths
+end
+
 """
     remap_dataset(dataset, args=String[]; overwrite=false) -> Vector{String}
 
-Remap the products of a thematic dataset (<Dataset>/remap.toml) onto the grids of
-their domains: all products, or those named in `args`, on all their grids, or on the
-domains and grids named in `args`. A prepared file that is missing is made first by
-the prepare.jl of its source. Every grid must be covered by the source (by one of
-its files, for a product of several files).
+Make the products of a thematic dataset (<Dataset>/remap.toml) on the grids of their
+domains (see `make_product`): all products, or those named in `args`, on all their
+grids, or on the domains and grids named in `args`. Ensemble products are made after
+the remap products.
 """
 function remap_dataset(dataset::AbstractString, args=String[]; overwrite::Bool=false)
     products = remap_products(dataset)
@@ -821,6 +995,7 @@ function remap_dataset(dataset::AbstractString, args=String[]; overwrite::Bool=f
     chosen = filter(in(names), args)
     targets = setdiff(args, chosen)
     selected = isempty(chosen) ? products : filter(p -> p.name in chosen, products)
+    selected = vcat(filter(p -> p isa RemapProduct, selected), filter(p -> p isa EnsembleProduct, selected))
     only_grids = isempty(targets) ? nothing : Set(og.grid.name for og in select_grids(targets))
     tag = dataset_tag(dataset)
     paths = String[]
@@ -828,13 +1003,7 @@ function remap_dataset(dataset::AbstractString, args=String[]; overwrite::Bool=f
         grids = product_grids(p)
         only_grids === nothing || filter!(og -> og.grid.name in only_grids, grids)
         isempty(grids) && continue
-        files = prepared_files(p)
-        all(isfile, files) || run_prepare(p.source)
-        preps = read_prepared_files(files; vars=p.variables)
-        println("$(product_name(p)): $(join(PreparedFields(preps).names, ", ")) from $(p.source) " *
-                (length(files) > 1 ? "($(length(files)) files) " : "") * "onto $(length(grids)) grids")
-        append!(paths, remap_prepared(preps, grids; name=product_name(p), method=p.method, smooth=p.smooth,
-                                      dataset=tag, overwrite, strict=true, fill=p.fill))
+        append!(paths, make_product(p, grids; tag, overwrite))
     end
     isempty(chosen) && isempty(paths) && !isempty(targets) &&
         println("No product of $dataset on $(join(targets, ", ")) (products: $(join(names, ", ")))")
