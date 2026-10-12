@@ -33,8 +33,8 @@ const FIELDS = [
 # cells include those of the source grid
 const BASIN_SET = "Zwally2012"
 
-# Groups of Zwally2012 basins of bmelt_eq_reese: those of bm_eq_reese of the v1 product
-# (BMELT-R13), recovered from its values (see README)
+# Groups of Zwally2012 basins of bmelt_reese and bmelt_eq_reese: those of bm_ac_reese and
+# bm_eq_reese of the v1 product (BMELT-R13), recovered from its values (see README)
 const REESE_GROUPS = [[1, 2, 3], [4], [5], [6], [7, 8], [9, 10, 11], [12], [13], [14], [15, 16],
                       [17, 18, 19], [20], [21, 22], [23], [24], [25], [26], [27]]
 
@@ -48,6 +48,8 @@ const BASIN_FIELDS = [
      "basal melt rate of ice shelves, 2007-2008, mean over the ice shelves of each Zwally et al. (2012) basin (positive for melting)"),
     ("bmelt_eq_basin", "bmelt_ss", nothing,
      "steady-state basal melt rate of ice shelves, mean over the ice shelves of each Zwally et al. (2012) basin (positive for melting)"),
+    ("bmelt_reese", "bmelt", REESE_GROUPS,
+     "basal melt rate of ice shelves, 2007-2008, mean over the ice shelves of groups of Zwally et al. (2012) basins as bm_ac_reese of FesmData v1 (positive for melting)"),
     ("bmelt_eq_reese", "bmelt_ss", REESE_GROUPS,
      "steady-state basal melt rate of ice shelves, mean over the ice shelves of groups of Zwally et al. (2012) basins as bm_eq_reese of FesmData v1 (positive for melting)"),
 ]

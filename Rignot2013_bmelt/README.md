@@ -37,7 +37,7 @@ julia fesmdata.jl remap $FESMDATA_WORK/prepared/Rignot2013_bmelt/Rignot2013_BMEL
 
 `prepare.jl` writes `bmelt` (actual) and `bmelt_ss` (steady state), in m yr-1 ice
 equivalent, positive for melting and negative for freezing, and their basin means
-(`bmelt_basin`, `bmelt_eq_basin`, `bmelt_eq_reese`, see Basin means) to
+(`bmelt_basin`, `bmelt_eq_basin`, `bmelt_reese`, `bmelt_eq_reese`, see Basin means) to
 `$FESMDATA_WORK/prepared/Rignot2013_bmelt/Rignot2013_BMELT.nc` (see `Remap/README.md`),
 on the original grid (y made ascending). The basin means need the Regions basins on
 ANT-1KM (`ANT-1KM_BASINS-Zwally2012.nc`), so Regions must be made first.
@@ -58,7 +58,8 @@ take one melt rate per basin (e.g. as the reference of a melt parameterisation):
 
 - `bmelt_basin`, `bmelt_eq_basin`: mean of `bmelt`, `bmelt_ss` over each basin of the
   Regions basin set Zwally2012 (GSFC drainage systems 1-27, Zwally et al., 2012).
-- `bmelt_eq_reese`: mean of `bmelt_ss` over groups of these basins, those of
+- `bmelt_reese`, `bmelt_eq_reese`: mean of `bmelt`, `bmelt_ss` over groups of these
+  basins, those of `bm_ac_reese` and
   `bm_eq_reese` of the v1 product (see below).
 
 The means are taken on the source grid, over the ice-shelf cells of each basin (or
@@ -66,7 +67,7 @@ group), the cells with a melt rate (of equal area, 1 km): the basins of ANT-1KM 
 cells include those of the source grid) are extended over the open ocean to the nearest
 basin (FesmUtils `extend_labels`), so that every cell with a rate is in a basin. Basin
 25 (the northern Antarctic Peninsula) has no cell with a rate: it takes the mean over
-the ice shelves of its neighbours, basins 24 and 26 together (also in `bmelt_eq_reese`,
+the ice shelves of its neighbours, basins 24 and 26 together (also in `bmelt_reese` and `bmelt_eq_reese`,
 where it is a group of its own).
 
 The prepared file has one value per basin (fields on the dimension `basin`, with the
@@ -92,6 +93,14 @@ uses these groups, with the rates of version 2 and means on the source grid
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | `bm_eq_reese` (v1) | 0.251 | 0.279 | 0.564 | 0.605 | 2.502 | 0.604 | 1.367 | 4.800 | -0.136 | 1.130 | 0.077 | 2.042 | 7.650 | 2.699 | 2.630 | 2.437 | 0.157 | 0.516 |
 | `bmelt_eq_reese` | 0.239 | 0.412 | 0.431 | 0.562 | 3.851 | 0.496 | 1.335 | 5.758 | 1.028 | 1.190 | 0.071 | 2.139 | 12.155 | 2.066 | 2.341 | 1.195 (24 and 26) | 0.307 | 0.865 |
+| `bm_ac_reese` (v1) | 0.391 | 0.031 | 0.399 | 0.622 | 1.430 | 0.909 | 2.325 | 5.284 | -0.783 | 1.525 (15), 1.085 | 0.063 | 2.953 | 12.066 | 2.912 | 3.167 | -0.177 | 0.165 | -0.247 |
+| `bmelt_reese` | 0.387 | 0.211 | 0.275 | 0.527 | 2.919 | 0.882 | 2.414 | 6.836 | 0.372 | 1.346 | 0.070 | 3.347 | 17.469 | 2.229 | 2.927 | 1.432 (24 and 26) | 0.274 | 0.009 |
+
+The v1 groups are the regions `basin_reese` of the v1 basin file `BASINS-nasa` (19
+regions, values above on ANT-16KM), which follow the Zwally basins only roughly: region
+10 is basin 15, region 11 most of 16 (with parts of 14, 15 and 17), region 12 basins
+17-19 (with parts of 14 and 20), and region 1 also takes the edges of 4, 5 and 27. The
+groups of `bmelt_reese` and `bmelt_eq_reese` are whole Zwally basins (15-16 one group).
 
 The largest differences (Amundsen Sea, 21-22; 7-8; 14; 25) come from the rates of
 version 2 (up to 153 m yr-1 at steady state, 118 in the earlier file) and from the
