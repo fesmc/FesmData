@@ -14,6 +14,18 @@
 
 ![SMB-MARv3.14-annual on GRL-8KM: smb.](../figures/SMB/SMB-MARv3.14-annual.png)
 
+### RACMO2.3p2-1981-2010
+
+![SMB-RACMO2.3p2-1981-2010 on ANT-16KM: smb.](../figures/SMB/SMB-RACMO2.3p2-1981-2010.png)
+
+### RACMO2.3p2-1991-2020
+
+![SMB-RACMO2.3p2-1991-2020 on ANT-16KM: smb.](../figures/SMB/SMB-RACMO2.3p2-1991-2020.png)
+
+### RACMO2.3p2-annual
+
+![SMB-RACMO2.3p2-annual on ANT-16KM: smb.](../figures/SMB/SMB-RACMO2.3p2-annual.png)
+
 ### RACMO2.4p1-1981-2010
 
 ![SMB-RACMO2.4p1-1981-2010 on ANT-16KM: smb.](../figures/SMB/SMB-RACMO2.4p1-1981-2010.png)
