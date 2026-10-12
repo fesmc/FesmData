@@ -48,7 +48,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | BasalState   | Basal temperature and thermal state | Dawson2022_basalstate |
 | Ocean        | Ocean temperature and salinity | Schmidtko2014_ocean, Zhou2026_ismip7ocean, Zuo2019_oras5 |
 | Atmosphere   | Reanalysis and satellite climatologies | Hersbach2020_era5, Loeb2018_ceres |
-| SMB          | Surface mass balance and surface climate | Fettweis2017_mar314, vanDalum2025_racmo24 |
+| SMB          | Surface mass balance and surface climate | Fettweis2017_mar314, vanDalum2025_racmo24, vanWessem2023_racmo23 |
 | Paleoclimate | Simulations and reconstructions of past climates | Badgeley2020_recon, Buizert2018, PMIP3_cvdp, PMIP4_cmip6 |
 | SolidEarth   | Lithosphere thickness and mantle viscosity | Bagge2021_visc, Hazzard2023_visc, Lloyd2024_visc, Pan2022_litho, Wiens2022_visc |
 
@@ -130,6 +130,7 @@ Time series, site and profile data, in `$ICE_DATA/v2/Records/<Dataset>/` (see `R
 | smb      | SUMup_smb                   | SMB measurements, SUMup 2025                     | Vandecrux et al. (2025)        |
 | topo     | Topo                        | Topography v2: GEBCO2026 + BedMachine/Bedmap3, 0.5-32 km | Multiple (see Topo/README.md) |
 | smb      | vanDalum2025_racmo24        | Antarctic SMB and surface climate, RACMO2.4p1    | van Dalum et al. (2025)        |
+| smb      | vanWessem2023_racmo23       | Antarctic SMB and surface climate, RACMO2.3p2    | van Wessem et al. (2018, 2023) |
 | paleo    | Vinther2009_elevations      | Elevations at the ice core locations             | Vinther et al. (2009)          |
 | geo      | Wiens2022_visc              | Antarctic upper-mantle viscosity                 | Wiens et al. (2022)            |
 | ocean    | Zhou2026_ismip7ocean        | ISMIP7 Antarctic ocean climatology               | Zhou et al. (2026)             |

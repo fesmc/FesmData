@@ -75,10 +75,6 @@ glaciers). RACMO2.4p1 has no grounded-ice mask.
 
 ## Older version (v1)
 
-FesmData v1 used RACMO2.3p2 forced by ERA5 at 27 km (ANT27), 1979-2022 (an update of van Wessem
-et al., 2018, [doi:10.5194/tc-12-1479-2018](https://doi.org/10.5194/tc-12-1479-2018); Zenodo [doi:10.5281/zenodo.7760491](https://doi.org/10.5281/zenodo.7760491),
-CC BY 4.0), remapped to ANT-16KM and ANT-32KM as
-`$ICE_DATA/Antarctica/ANT-16KM/RACMO2.3/ANT-16KM_ERA5-3H_RACMO2.3p2_1979-2022_monthly.nc`
-(t2m, precip, z_srf) and the RACMO2.3 ERA-Interim climatology 1981-2010
-(`ANT-32KM_RACMO23-ERA-INTERIM_monthly_1981-2010.nc`, kg m-2 d-1). It is not prepared
-here; RACMO2.4p1 replaces it.
+FesmData v1 used RACMO2.3p2 forced by ERA5 at 27 km (ANT27), 1979-2022, and the RACMO2.3
+ERA-Interim climatology 1981-2010 (`ANT-32KM_RACMO23-ERA-INTERIM_monthly_1981-2010.nc`,
+kg m-2 d-1). RACMO2.3p2 is prepared from its data release in `vanWessem2023_racmo23`.
