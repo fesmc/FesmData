@@ -4,31 +4,66 @@
 
 using TOML
 
+"Methods of filling the gaps (see `GapFill`)."
+const FILL_METHODS = ("harmonic", "elevation_regression")
+
 """
     GapFill
 
-The gaps filled after remapping (`fill` of a product): the cells of the fields
-`variables` without source data, with ice (H_ice > 0) in the Topo product `mask` on the
-same grid (e.g. "TOPO-BedMachine-v4", the file `<GRID>_TOPO-BedMachine-v4.nc`), or all
-of them for `mask = "all"`.
+The gaps filled after remapping (a table of `fill` of a product): the cells of the
+fields `variables` without source data, with ice (H_ice > 0) in the Topo product `mask`
+on the same grid (e.g. "TOPO-BedMachine-v4", the file `<GRID>_TOPO-BedMachine-v4.nc`), or
+all of them for `mask = "all"`, filled by `method`: "harmonic" (Laplace) interpolation,
+or "elevation_regression", the linear regression of the field on the surface elevation
+(`z_srf` of the Topo product `elevation`) of the cells with data within `radius` km
+(grown until there are `min_points`), at the elevation of the cell; `cap` gives upper
+bounds of the filled values by field (in its units).
 """
 struct GapFill
+    method::String
     variables::Vector{String}
     mask::String
+    elevation::String
+    radius::Float64
+    min_points::Int
+    cap::Dict{String,Float64}
 end
 
-"`fill` of a product in remap.toml, checked (see `GapFill`)."
+"Keys of a table of `fill` by method (`variables` and `mask` are required)."
+const FILL_KEYS = Dict("harmonic" => ("method", "variables", "mask"),
+                       "elevation_regression" => ("method", "variables", "mask", "elevation", "radius",
+                                                  "min_points", "cap"))
+
+"""
+`fill` of a product in remap.toml, checked (see `GapFill`): a table or a list of tables,
+each variable in one table at most.
+"""
 function gap_fill_spec(value, what, variables)
-    value isa AbstractDict && haskey(value, "variables") && haskey(value, "mask") ||
-        error("$what: fill must be a table { variables = [...], mask = \"TOPO-<name>\" or \"all\" }")
-    unknown = setdiff(keys(value), ("variables", "mask"))
-    isempty(unknown) || error("$what: unknown keys of fill: $(join(unknown, ", "))")
-    vars = Vector{String}(value["variables"])
-    variables === nothing || isempty(setdiff(vars, variables)) ||
-        error("$what: fill.variables $(join(setdiff(vars, variables), ", ")) are not among the variables")
-    value["mask"] == "all" || startswith(value["mask"], "TOPO-") ||
-        error("$what: fill.mask must be a Topo product, e.g. TOPO-BedMachine-v4, or \"all\"")
-    return GapFill(vars, value["mask"])
+    tables = value isa AbstractDict ? [value] : value isa AbstractVector ? value : nothing
+    tables !== nothing && !isempty(tables) && all(t -> t isa AbstractDict, tables) ||
+        error("$what: fill must be a table { variables = [...], mask = \"TOPO-<name>\" or \"all\" }, or a list of them")
+    fills = GapFill[]
+    for t in tables
+        method = get(t, "method", "harmonic")
+        method in FILL_METHODS || error("$what: fill.method must be one of $(join(FILL_METHODS, ", "))")
+        unknown = setdiff(keys(t), FILL_KEYS[method])
+        isempty(unknown) || error("$what: unknown keys of fill ($method): $(join(unknown, ", "))")
+        haskey(t, "variables") && haskey(t, "mask") || error("$what: fill needs variables and mask")
+        vars = Vector{String}(t["variables"])
+        variables === nothing || isempty(setdiff(vars, variables)) ||
+            error("$what: fill.variables $(join(setdiff(vars, variables), ", ")) are not among the variables")
+        t["mask"] == "all" || startswith(t["mask"], "TOPO-") ||
+            error("$what: fill.mask must be a Topo product, e.g. TOPO-BedMachine-v4, or \"all\"")
+        elevation = String(get(t, "elevation", "TOPO-BedMachine-v4"))
+        startswith(elevation, "TOPO-") || error("$what: fill.elevation must be a Topo product, e.g. TOPO-BedMachine-v4")
+        radius, min_points = Float64(get(t, "radius", 150.0)), Int(get(t, "min_points", 20))
+        radius > 0 && min_points >= 2 || error("$what: fill.radius must be > 0 and fill.min_points >= 2")
+        cap = Dict{String,Float64}(k => Float64(v) for (k, v) in get(t, "cap", Dict{String,Any}()))
+        isempty(setdiff(keys(cap), vars)) || error("$what: fill.cap of fields not filled by it")
+        push!(fills, GapFill(method, vars, t["mask"], elevation, radius, min_points, cap))
+    end
+    allunique(f for g in fills for f in g.variables) || error("$what: a variable in several tables of fill")
+    return fills
 end
 
 """
@@ -48,7 +83,7 @@ abstract type ThematicProduct end
 
 A product of the fields of a prepared file of a source (or of several, combined),
 remapped onto its grids (see `ThematicProduct`). `fill` gives the gaps filled after
-remapping (see `GapFill`).
+remapping (see `GapFill`), by one or more methods.
 """
 struct RemapProduct <: ThematicProduct
     dataset::String
@@ -61,7 +96,7 @@ struct RemapProduct <: ThematicProduct
     smooth::Union{String,Float64}
     release::Bool                   # part of the releases of the dataset
     figure::Union{Nothing,Dict{String,Any}}   # options of its figure on the website, nothing: none
-    fill::Union{Nothing,GapFill}    # gaps filled, nothing: none
+    fill::Vector{GapFill}           # gaps filled (none: empty)
 end
 
 "Statistics of an ensemble product over its members."
@@ -182,7 +217,7 @@ function remap_product(dataset, name, p, grids, release, figure)
     isempty(unknown) || error("$what: unknown keys $(join(unknown, ", "))")
     smooth = get(p, "smooth", "auto")
     variables = haskey(p, "variables") ? Vector{String}(p["variables"]) : nothing
-    fill = haskey(p, "fill") ? gap_fill_spec(p["fill"], what, variables) : nothing
+    fill = haskey(p, "fill") ? gap_fill_spec(p["fill"], what, variables) : GapFill[]
     files = product_files(get(p, "file", nothing), what)
     return RemapProduct(dataset, name, p["source"], files, variables, grids, get(p, "method", "con"),
                         smooth isa Real ? Float64(smooth) : String(smooth), release, figure, fill)

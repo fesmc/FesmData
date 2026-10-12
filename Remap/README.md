@@ -129,7 +129,7 @@ grids = { Antarctica = 4, Greenland = 4, Global = 4 }   # by domain, see below
 # smooth = "auto"                            # optional, default "auto"
 # release = false                            # optional: made, but not released
 # figure = { variables = ["ghf"] }            # optional: its figure on the website
-# fill = { variables = ["ux_srf", "uy_srf"], mask = "TOPO-BedMachine-v4" }   # optional: gaps over the ice (or "all") filled
+# fill = { variables = ["ux_srf", "uy_srf"], mask = "TOPO-BedMachine-v4" }   # optional: gaps over the ice (or "all") filled, see below
 ```
 
 `grids` lists the domains (output folders) of the product, each with the grids it is
@@ -161,6 +161,31 @@ filled components there. Other fields (e.g. errors) stay missing in the gaps. Th
 has `mask_fill` (1: filled, 0: not; `mask_fill_<field>` when the fields differ) and the
 global attribute `gap_fill`. The Topo product must be made first (thematic datasets
 depend on Topo, and some on Regions).
+
+`fill` can also be a list of tables, each with its `method` (each field in one of them):
+`"harmonic"` (the default, as above) or `"elevation_regression"`, for fields that depend
+on the surface elevation (e.g. the surface mass balance or temperature of a regional
+climate model, outside its ice mask or domain):
+
+```toml
+fill = [{ variables = ["pr", "sf", "z_srf"], mask = "all" },
+        { method = "elevation_regression", variables = ["smb", "t2m", "T_srf"], mask = "all",
+          cap = { smb = -91.7 } }]       # optional: elevation, radius = 150.0, min_points = 20
+```
+
+Each gap gets the linear regression of the field on the surface elevation, fitted over
+the cells with source data (`f_valid > 0`) within `radius` km (a disk; grown by
+`radius / 2` until it holds at least `min_points` of them), at the elevation of the cell:
+`z_srf` of the Topo product `elevation` on the same grid (default
+`TOPO-BedMachine-v4`; 0 over the ocean), for the cells with data as for the gaps. Where
+the elevations of these cells hardly differ (variance below 1 m2), the gap gets their
+mean. Fields with extra dimensions are filled slice by slice (e.g. each month). `cap`
+gives upper bounds of the filled values, by field, in its units: of each value, or for a
+monthly field (extra dimension `month` of 12 only) of the annual mean, the months
+weighted by their mean length (February 28.25 days, as the `-annual-mean` products up to
+the leap days of their period), all months of a cell shifted down by the same amount, so
+that the seasonal cycle is kept. The log gives, for each field, the cells filled, the cell-slices whose radius was
+grown and the median slope. Vectors are filled by harmonic interpolation only.
 
 `file` can be a list of prepared files of the source, each on its own grid, combined
 into one product. The files are meant to cover separate areas, e.g. the grounded and the

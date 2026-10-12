@@ -711,6 +711,18 @@ region_attrib(r::RegionField) = vcat(filter(p -> first(p) != "comment", r.varatt
 "Where the gaps of `fill` are filled, for the descriptions in the files and the log."
 fill_where(fill::GapFill) = fill.mask == "all" ? "everywhere" : "over the ice (H_ice > 0 in $(fill.mask))"
 
+"How the gaps of `fill` are filled, for the descriptions in the files and the log."
+function fill_how(fill::GapFill)
+    fill.method == "harmonic" && return "harmonic (Laplace) interpolation from the cells around"
+    d = "linear regression on the surface elevation (z_srf of $(fill.elevation), 0 over the ocean) of the " *
+        "cells with data within $(fill.radius) km (grown by $(fill.radius / 2) km until there are at least " *
+        "$(fill.min_points)), at the elevation of the cell"
+    isempty(fill.cap) && return d
+    caps = join(("$f <= $c (of the annual mean for monthly fields, all months shifted by the same " *
+                 "amount)" for (f, c) in sort(collect(fill.cap))), ", ")
+    return "$d; at most $caps"
+end
+
 "Cells of grid `og` whose gaps `fill` fills: those with ice in its Topo product (`ice_mask`), or all."
 fill_mask(og::OutGrid, fill::GapFill) = fill.mask == "all" ? trues(size(og.grid)) : ice_mask(og, fill.mask)
 
@@ -741,67 +753,191 @@ function _speed_field(pf::PreparedFields, e)
     return k === nothing ? nothing : pf.names[k]
 end
 
-# The variables of `fill` among the fields `pf`, as floats, with both components of
-# each vector.
-function check_fill(pf::PreparedFields, fill::GapFill)
-    for f in fill.variables
+"""
+    topo_elevation(og, product) -> Matrix{Float64}
+
+Surface elevation `z_srf` (m) on grid `og` in the Topo product `product`, 0 over the
+ocean (and where it is missing or negative).
+"""
+function topo_elevation(og::OutGrid, product::AbstractString)
+    path = remap_file(og, product)
+    isfile(path) || error("$(og.grid.name): no $path, the elevations of the gap filling: make Topo first")
+    z = NCDataset(path) do ds
+        haskey(ds, "z_srf") || error("$path: no z_srf")
+        ds["z_srf"][:, :]
+    end
+    size(z) == size(og.grid) || error("$path: z_srf has size $(size(z)), not that of $(og.grid.name)")
+    return max.(Float64.(coalesce.(z, 0.0)), 0.0)
+end
+
+# The variables of the `fills` among the fields `pf`, as floats, with both components of
+# each vector in the same fill, by harmonic interpolation.
+function check_fill(pf::PreparedFields, fills::AbstractVector{GapFill})
+    for fill in fills, f in fill.variables
         f in pf.names || error("fill: no field $f, available: $(join(pf.names, ", "))")
         f in pf.integer && error("fill: $f is an integer field")
     end
-    for (e, n) in pf.vectors
+    for fill in fills, (e, n) in pf.vectors
         (e in fill.variables) == (n in fill.variables) || error("fill: give both components $e and $n of the vector")
+        e in fill.variables && fill.method != "harmonic" && error("fill: vectors are filled by harmonic interpolation")
     end
 end
 
 """
-    fill_gaps!(out, pf, og, fill) -> Dict{String,Array{Int8}}
+    regression_fill!(F, gaps, valid, z, dx, dy, gf) -> (nfilled, ngrown, slopes)
+
+Fill the cells `gaps` of the 2D field `F` by the linear regression of `F` on the
+elevation `z` over the cells `valid` within `gf.radius` km of the cell (a disk, cell
+spacing `dx`, `dy` in km), grown by `gf.radius / 2` until there are at least
+`gf.min_points`, at the elevation of the cell (the mean where the elevations of the
+points hardly differ). Cells with fewer points within the whole grid stay missing.
+Returns the cells filled, those whose radius was grown, and the slopes (per m).
+"""
+function regression_fill!(F::AbstractMatrix, gaps::AbstractMatrix{Bool}, valid::AbstractMatrix{Bool},
+                          z::AbstractMatrix, dx::Real, dy::Real, gf::GapFill)
+    nx, ny = size(F)
+    # Sums along x (prefix sums by row) of 1, z, z^2, F, z F over the valid cells
+    P = zeros(nx + 1, ny, 5)
+    for j in 1:ny, i in 1:nx
+        v = valid[i, j] && isfinite(F[i, j])
+        zi, f = z[i, j], v ? Float64(F[i, j]) : 0.0
+        q = v ? (1.0, zi, zi^2, f, zi * f) : (0.0, 0.0, 0.0, 0.0, 0.0)
+        for k in 1:5
+            P[i+1, j, k] = P[i, j, k] + q[k]
+        end
+    end
+    rmax = hypot(nx * dx, ny * dy)
+    cells = findall(gaps)
+    value = fill(NaN, length(cells))
+    slope = fill(NaN, length(cells))
+    grown = falses(length(cells))
+    Threads.@threads for c in eachindex(cells)
+        i, j = Tuple(cells[c])
+        R = gf.radius
+        S = zeros(5)
+        while true
+            S .= 0
+            nr = floor(Int, R / dy)
+            for dj in -nr:nr
+                jj = j + dj
+                1 <= jj <= ny || continue
+                ni = floor(Int, sqrt(max(R^2 - (dj * dy)^2, 0.0)) / dx)
+                lo, hi = max(i - ni, 1), min(i + ni, nx)
+                for k in 1:5
+                    S[k] += P[hi+1, jj, k] - P[lo, jj, k]
+                end
+            end
+            (S[1] >= gf.min_points || R >= rmax) && break
+            R += gf.radius / 2
+            grown[c] = true
+        end
+        n = S[1]
+        n >= gf.min_points || continue
+        zm, fm = S[2] / n, S[4] / n
+        var = S[3] / n - zm^2
+        b = var > 1.0 ? (S[5] / n - zm * fm) / var : 0.0       # 1 m2: elevations hardly differ
+        value[c] = fm + b * (z[i, j] - zm)
+        slope[c] = b
+    end
+    for (c, I) in enumerate(cells)
+        F[I] = value[c]
+    end
+    return count(isfinite, value), count(grown), filter(isfinite, slope)
+end
+
+"Mean lengths of the months (days), the weights of the annual mean of a monthly field."
+const MONTH_DAYS = [31, 28.25, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+# Upper bound `cap` of the filled values of field `Ft` (cells `filled`): for a monthly
+# field (extra dimension month of 12 only), of the annual mean (months weighted by their
+# mean length), all months of a cell shifted by the same amount; else of each value.
+function cap_filled!(Ft, filled, cap, monthly::Bool)
+    if !monthly
+        k = (filled .== 1) .& (Ft .> cap)
+        Ft[k] .= cap
+        return
+    end
+    size(Ft, 3) == 12 || error("fill: cap of a monthly field needs 12 months")
+    w = MONTH_DAYS ./ sum(MONTH_DAYS)
+    for j in axes(Ft, 2), i in axes(Ft, 1)
+        all(==(1), view(filled, i, j, :)) || continue
+        m = sum(w[k] * Ft[i, j, k] for k in 1:12)
+        m > cap && (Ft[i, j, :] .-= Float32(m - cap))
+    end
+end
+
+"""
+    fill_gaps!(out, pf, og, fills) -> Dict{String,Array{Int8}}
 
 Fill the gaps of the remapped fields `out` (field => (Ft, f_valid)) of `pf` on grid
-`og` (see `GapFill`): in each variable of `fill`, slice by slice, the cells of
+`og` (see `GapFill`): in each variable of each fill, slice by slice, the cells of
 `fill_mask` (with ice, or all) with no source data (f_valid = 0), by harmonic
-interpolation from the cells around them (`laplace_fill!`). Gaps not connected to data
-stay missing. The
-speed of a filled vector (see `_speed_field`) is the magnitude of the filled
+interpolation from the cells around them (`laplace_fill!`; gaps not connected to data
+stay missing), or by the regression on the elevation (`regression_fill!`, then `cap`).
+The speed of a filled vector (see `_speed_field`) is the magnitude of the filled
 components in the cells filled. Returns the cells filled (1) in each variable.
 """
-function fill_gaps!(out, pf::PreparedFields, og::OutGrid, fill::GapFill)
-    cells = fill_mask(og, fill)
+function fill_gaps!(out, pf::PreparedFields, og::OutGrid, fills::AbstractVector{GapFill})
     filled = Dict{String,Array{Int8}}()
-    counts = Tuple{Int,Int}[]               # cells filled and left missing, by variable
-    for f in fill.variables
-        Ft, fv = out[f]
-        filled[f] = zeros(Int8, size(Ft))
-        nleft = 0
-        for I in CartesianIndices(size(Ft)[3:end])
-            gaps = cells .& (view(fv, :, :, I) .== 0)
-            F = view(Ft, :, :, I)
-            nleft += laplace_fill!(F, gaps)
-            filled[f][:, :, I] .= gaps .& .!isnan.(F)
+    for fill in fills
+        cells = fill_mask(og, fill)
+        regression = fill.method == "elevation_regression"
+        if regression
+            og.grid isa ProjGrid || error("fill: elevation_regression needs a projected grid")
+            z = topo_elevation(og, fill.elevation)
+            dx, dy = spacing(og.grid)
         end
-        push!(counts, (count(==(1), filled[f]), nleft))
+        for f in fill.variables
+            Ft, fv = out[f]
+            filled[f] = zeros(Int8, size(Ft))
+            nleft, ngrown, slopes = 0, 0, Float64[]
+            for I in CartesianIndices(size(Ft)[3:end])
+                gaps = cells .& (view(fv, :, :, I) .== 0)
+                F = view(Ft, :, :, I)
+                if regression
+                    _, g, b = regression_fill!(F, gaps, view(fv, :, :, I) .> 0, z, dx, dy, fill)
+                    ngrown += g
+                    append!(slopes, b)
+                    nleft += count(gaps .& isnan.(F))
+                else
+                    nleft += laplace_fill!(F, gaps)
+                end
+                filled[f][:, :, I] .= gaps .& .!isnan.(F)
+            end
+            haskey(fill.cap, f) && cap_filled!(Ft, filled[f], fill.cap[f], [d.name for d in pf.dims[f]] == ["month"])
+            ncells = count(any(==(1), filled[f]; dims=3:max(ndims(Ft), 3)))
+            msg = "$(og.grid.name): gaps $(fill_where(fill)) of $f filled ($(fill.method)), " *
+                  "$ncells cells" * (nleft > 0 ? ", $nleft cell-slices left missing" : "")
+            if regression
+                msg *= "; radius grown for $ngrown cell-slices, median slope " *
+                       "$(isempty(slopes) ? NaN : round(1000 * sort(slopes)[cld(end, 2)]; sigdigits=3)) per 1000 m"
+            end
+            println(msg)
+        end
     end
     for (e, n) in pf.vectors
         s = _speed_field(pf, e)
-        (e in fill.variables && s !== nothing) || continue
+        (haskey(filled, e) && s !== nothing) || continue
         S, ue, vn = out[s][1], out[e][1], out[n][1]
         size(S) == size(ue) || error("fill: speed $s and $e differ in dimensions")
         k = (filled[e] .== 1) .& (filled[n] .== 1)
         S[k] .= hypot.(ue[k], vn[k])
     end
-    describe((n, left)) = "$n cells" * (left > 0 ? ", $left not connected to data left missing" : "")
-    println("$(og.grid.name): gaps $(fill_where(fill)) filled, " *
-            (allequal(counts) ? "$(join(fill.variables, ", ")): $(describe(counts[1]))" :
-             join(("$f: $(describe(c))" for (f, c) in zip(fill.variables, counts)), "; ")))
     return filled
 end
 
+"Description of the fills, for the global attribute `gap_fill` and `mask_fill`."
+fills_description(fills) = join(("$(join(fill.variables, ", ")): $(fill_how(fill)) $(fill_where(fill)) where there " *
+                                 "are no source data" for fill in fills), "; ")
+
 "Attributes of `mask_fill` (or `mask_fill_<f>` for field `f`)."
-mask_fill_attrib(fill::GapFill, f) = Pair{String,Any}[
+mask_fill_attrib(fills::AbstractVector{GapFill}, f) = Pair{String,Any}[
     "units" => "1",
     "long_name" => "gap filled" * (f === nothing ? "" : " in $f"),
     "flag_values" => Int8[0, 1], "flag_meanings" => "source filled",
-    "comment" => "1: no source data (f_valid = 0) $(fill_where(fill)), filled by " *
-                 "harmonic (Laplace) interpolation from the cells around"]
+    "comment" => "1: no source data (f_valid = 0), filled: " *
+                 (f === nothing ? fills_description(fills) :
+                  fills_description(filter(fill -> f in fill.variables, fills)))]
 
 "Description of a remapping for the global attribute `remap_method`."
 function method_description(method::AbstractString, sigma::Real; integers::Bool=false)
@@ -815,7 +951,7 @@ remap_file(og::OutGrid, name::AbstractString) = joinpath(outdir(og), "$(og.grid.
 
 """
     remap_prepared(ps, grids; name, method="con", smooth="auto", dataset="remap",
-                   overwrite=false, strict=false, fill=nothing) -> Vector{String}
+                   overwrite=false, strict=false, fill=GapFill[]) -> Vector{String}
 
 Remap the fields of the prepared files `ps` (one `Prepared` or several, each on its own
 grid) onto each grid (see `remap_array` and `smoothing_sigma`) and write them to
@@ -823,7 +959,7 @@ grid) onto each grid (see `remap_array` and `smoothing_sigma`) and write them to
 cell covered by source data (`f_valid_<field>` for each field when their coverage
 differs; with the extra dimensions when it differs between them). The fields of
 several files are combined on each grid (see `combine_remapped`). Vector fields are
-rotated to the axes of projected grids. With `fill` (a `GapFill`), the gaps are then
+rotated to the axes of projected grids. With `fill` (`GapFill`s), the gaps are then
 filled (see `fill_gaps!`), marked by `mask_fill`. Grids not covered by
 the sources are skipped (an error if `strict`). The grid files are written if missing.
 Existing files are kept unless `overwrite`. `dataset` is the dataset of the
@@ -831,10 +967,10 @@ provenance attributes.
 """
 function remap_prepared(ps::AbstractVector{Prepared}, grids::Vector{OutGrid}; name::AbstractString,
                         method::AbstractString="con", smooth="auto", dataset::AbstractString="remap",
-                        overwrite::Bool=false, strict::Bool=false, fill::Union{Nothing,GapFill}=nothing)
+                        overwrite::Bool=false, strict::Bool=false, fill::AbstractVector{GapFill}=GapFill[])
     method in METHODS || error("unknown method $method, available: $(join(METHODS, ", "))")
     pf = PreparedFields(ps)
-    fill === nothing || check_fill(pf, fill)
+    check_fill(pf, fill)
     regional = [r for p in ps for r in p.regional]
     allunique(r -> r.name, regional) && !any(r -> r.name in pf.names, regional) ||
         error("fields given by region in several files, or also on the grid")
@@ -869,7 +1005,7 @@ function remap_prepared(ps::AbstractVector{Prepared}, grids::Vector{OutGrid}; na
         end
         varattrib = copy(pf.varattrib)
         rotate_vectors!(out, varattrib, pf.vectors, og.grid)
-        filled = fill === nothing ? nothing : fill_gaps!(out, pf, og, fill)
+        filled = isempty(fill) ? nothing : fill_gaps!(out, pf, og, fill)
         fields = Dict{String,Array}(f => out[f][1] for f in names)
         dims = copy(pf.dims)
         _per_field!(fields, dims, varattrib, Dict(f => out[f][2] for f in names), pf.dims, "f_valid",
@@ -886,8 +1022,7 @@ function remap_prepared(ps::AbstractVector{Prepared}, grids::Vector{OutGrid}; na
         end
         if filled !== nothing
             _per_field!(fields, dims, varattrib, filled, pf.dims, "mask_fill", f -> mask_fill_attrib(fill, f))
-            push!(attrib, "gap_fill" => "$(join(fill.variables, ", ")): harmonic interpolation $(fill_where(fill)) " *
-                                        "where there are no source data (mask_fill)")
+            push!(attrib, "gap_fill" => fills_description(fill) * " (mask_fill)")
         end
         isfile(joinpath(outdir(og), "$(og.grid.name)_grid.nc")) || write_grid_files(outdir(og), og.grid; dataset)
         aux = unique(a -> a.name, [a for p in ps for a in p.aux])
