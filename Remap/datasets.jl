@@ -33,18 +33,18 @@ end
     RemapProduct
 
 A product of a thematic dataset (a table of <Dataset>/remap.toml): the fields of a
-prepared file of a source, remapped onto grids of some domains, as
-`<GRID>_<Dataset>-<name>.nc`. `grids` gives them by domain (output folder): a minimum
-spacing in km (the standard grids of the domain not finer than this; 0: all), or the
-names of the grids (any grid of the domain, also those made on request, e.g. Gaussian
-grids). A product is not made on the domains not in `grids`. `fill` gives the gaps
-over the ice filled after remapping (see `GapFill`).
+prepared file of a source (or of several, combined), remapped onto grids of some
+domains, as `<GRID>_<Dataset>-<name>.nc`. `grids` gives them by domain (output
+folder): a minimum spacing in km (the standard grids of the domain not finer than
+this; 0: all), or the names of the grids (any grid of the domain, also those made on
+request, e.g. Gaussian grids). A product is not made on the domains not in `grids`.
+`fill` gives the gaps over the ice filled after remapping (see `GapFill`).
 """
 struct RemapProduct
     dataset::String
     name::String
     source::String                  # folder of the source, with prepare.jl
-    file::String                    # prepared file, in $FESMDATA_WORK/prepared/<source>/
+    files::Vector{String}           # prepared files, in $FESMDATA_WORK/prepared/<source>/
     variables::Union{Nothing,Vector{String}}
     grids::Dict{String,Union{Float64,Vector{String}}}   # by domain: minimum spacing (km) or grid names
     method::String
@@ -109,6 +109,14 @@ remap_spec_file(dataset::AbstractString) = joinpath(REPO_DIR, dataset, "remap.to
 "Whether `dataset` is a thematic dataset made by remapping."
 is_remap_dataset(dataset::AbstractString) = isfile(remap_spec_file(dataset))
 
+"`file` of a product in remap.toml: a prepared file, or a list of them (combined)."
+function product_files(file, what)
+    file isa AbstractString && return [String(file)]
+    file isa AbstractVector && !isempty(file) && all(f -> f isa AbstractString, file) && allunique(file) &&
+        return Vector{String}(file)
+    error("$what: file must be a prepared file or a list of them")
+end
+
 """
     remap_products(dataset) -> Vector{RemapProduct}
 
@@ -129,7 +137,8 @@ function remap_products(dataset::AbstractString)
         smooth = get(p, "smooth", "auto")
         variables = haskey(p, "variables") ? Vector{String}(p["variables"]) : nothing
         fill = haskey(p, "fill") ? gap_fill_spec(p["fill"], "$dataset/$name", variables) : nothing
-        push!(products, RemapProduct(dataset, name, p["source"], p["file"], variables,
+        files = product_files(get(p, "file", nothing), "$dataset/$name")
+        push!(products, RemapProduct(dataset, name, p["source"], files, variables,
                                      product_grid_spec(p["grids"], "$dataset/$name"), get(p, "method", "con"),
                                      smooth isa Real ? Float64(smooth) : String(smooth),
                                      get(p, "release", true), figure_spec(get(p, "figure", Dict()), "$dataset/$name"),
@@ -141,8 +150,8 @@ end
 "Name of the output files of a product: <GRID>_<name>.nc."
 product_name(p::RemapProduct) = "$(p.dataset)-$(p.name)"
 
-"Prepared file of a product."
-prepared_file(p::RemapProduct) = joinpath(prepared_dir(p.source), p.file)
+"Prepared files of a product."
+prepared_files(p::RemapProduct) = [joinpath(prepared_dir(p.source), f) for f in p.files]
 
 "Domains (output folders) on which a thematic dataset is released."
 remap_domains(dataset::AbstractString) =

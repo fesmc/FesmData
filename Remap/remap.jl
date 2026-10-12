@@ -95,6 +95,35 @@ function _lon_order(lon::AbstractVector)
     return ix, s
 end
 
+# Grid of a prepared file: the names of its coordinate variables by kind (:lon, :lat,
+# :x, :y), its x and y dimensions, and the fields on the grid (variables with both).
+function _grid_vars(ds, path)
+    coords = Dict{Symbol,String}()
+    for name in keys(ds)
+        v = ds[name]
+        dimnames(v) == (name,) || continue
+        kind = _axis_kind(name, v)
+        kind === nothing || haskey(coords, kind) || (coords[kind] = name)
+    end
+    if haskey(coords, :lon) && haskey(coords, :lat)
+        xdim, ydim = coords[:lon], coords[:lat]
+    elseif haskey(coords, :x) && haskey(coords, :y)
+        xdim, ydim = coords[:x], coords[:y]
+    else
+        error("$path: no lon/lat or x/y coordinate variables found")
+    end
+    ongrid = String[]
+    for (name, v) in ds
+        name in (xdim, ydim) && continue
+        dn = dimnames(v)
+        xdim in dn && ydim in dn && push!(ongrid, name)
+    end
+    return coords, xdim, ydim, ongrid
+end
+
+"Names of the fields of a prepared file (the variables on its grid)."
+prepared_fields(path::AbstractString) = NCDataset(ds -> _grid_vars(ds, path)[4], path)
+
 """
     read_prepared(path; vars=nothing) -> Prepared
 
@@ -110,28 +139,7 @@ Missing values (_FillValue, NaN) become NaN, or `missing` in integer fields.
 """
 function read_prepared(path::AbstractString; vars=nothing)
     NCDataset(path) do ds
-        coords = Dict{Symbol,String}()
-        for name in keys(ds)
-            v = ds[name]
-            dimnames(v) == (name,) || continue
-            kind = _axis_kind(name, v)
-            kind === nothing || haskey(coords, kind) || (coords[kind] = name)
-        end
-        if haskey(coords, :lon) && haskey(coords, :lat)
-            xdim, ydim = coords[:lon], coords[:lat]
-        elseif haskey(coords, :x) && haskey(coords, :y)
-            xdim, ydim = coords[:x], coords[:y]
-        else
-            error("$path: no lon/lat or x/y coordinate variables found")
-        end
-
-        # Fields on the grid: variables with both grid dimensions
-        ongrid = String[]
-        for (name, v) in ds
-            name in (xdim, ydim) && continue
-            dn = dimnames(v)
-            xdim in dn && ydim in dn && push!(ongrid, name)
-        end
+        coords, xdim, ydim, ongrid = _grid_vars(ds, path)
         selected = vars === nothing ? ongrid : collect(String, vars)
         for name in selected
             name in ongrid || error("$path: no field $name on the grid, available: $(join(ongrid, ", "))")
@@ -255,6 +263,124 @@ function _proj(ds, name)
     p = gm[("proj_params", "proj4", "proj4text", "proj4_params")[key]]
     p = replace(p, r"\+units=\S+" => "")
     return strip(p) * " +units=km"
+end
+
+"""
+    read_prepared_files(paths; vars=nothing) -> Vector{Prepared}
+
+Read the prepared files of a product (see `read_prepared`): all their fields, or the
+fields `vars`, each from the files that have it. Every field of `vars` must be in one
+of the files, and every file must have one of them.
+"""
+function read_prepared_files(paths::AbstractVector{<:AbstractString}; vars=nothing)
+    vars === nothing && return [read_prepared(path) for path in paths]
+    available = Dict(path => prepared_fields(path) for path in paths)
+    nowhere = filter(v -> !any(path -> v in available[path], paths), vars)
+    isempty(nowhere) || error("no field $(join(nowhere, ", ")) in $(join(basename.(paths), ", "))")
+    ps = Prepared[]
+    for path in paths
+        sel = filter(in(available[path]), vars)
+        isempty(sel) && error("$path: none of the fields $(join(vars, ", "))")
+        push!(ps, read_prepared(path; vars=sel))
+    end
+    return ps
+end
+
+"""
+    PreparedFields
+
+The fields of one or more prepared files (`Prepared`) remapped together into one
+product: their names, the integer ones, their extra dimensions, the vector fields and
+their attributes (of the first file with the field). A field in several files must
+have the same units and extra dimensions, and be a vector component in all or none.
+"""
+struct PreparedFields
+    names::Vector{String}
+    integer::Set{String}
+    dims::Dict{String,Vector{Dim}}
+    vectors::Vector{Tuple{String,String}}
+    varattrib::Dict{String,Vector{Pair{String,Any}}}
+end
+
+function PreparedFields(ps::AbstractVector{Prepared})
+    names = sort(unique(f for p in ps for f in keys(p.fields)))
+    integer = Set{String}()
+    dims = Dict{String,Vector{Dim}}()
+    varattrib = Dict{String,Vector{Pair{String,Any}}}()
+    for f in names
+        has = [p for p in ps if haskey(p.fields, f)]
+        p1 = has[1]
+        isint(p) = nonmissingtype(eltype(p.fields[f])) <: Integer
+        units(p) = get(Dict(p.varattrib[f]), "units", nothing)
+        shape(p) = [(d.name, length(d.values)) for d in p.dims[f]]
+        for p in has[2:end]
+            what = "$f in $(basename(p1.path)) and $(basename(p.path))"
+            isint(p) == isint(p1) || error("$what: integer in one only")
+            units(p) == units(p1) || error("$what: different units ($(units(p1)), $(units(p)))")
+            shape(p) == shape(p1) || error("$what: different extra dimensions")
+        end
+        isint(p1) && push!(integer, f)
+        dims[f] = p1.dims[f]
+        varattrib[f] = p1.varattrib[f]
+    end
+    vectors = sort(unique(v for p in ps for v in p.vectors))
+    for (e, n) in vectors, p in ps
+        (haskey(p.fields, e) || haskey(p.fields, n)) && !((e, n) in p.vectors) &&
+            error("$(basename(p.path)): $e and $n are not a vector field, as in the other files")
+    end
+    return PreparedFields(names, integer, dims, vectors, varattrib)
+end
+
+"""
+    combine_remapped(outs, pf) -> Dict
+
+The fields of several prepared files remapped onto one grid (`outs`, by file: field =>
+(Ft, f_valid)) combined: a field in one file as it is; a field in several files as the
+mean of their values weighted by the fraction of each cell they cover (of integer
+fields, the class of the file covering most of the cell), with f_valid the sum of
+these fractions, at most 1. Files with separate coverage (e.g. the grounded and the
+floating ice of an ice sheet, on grids of their own) are thus merged as they are; where
+they overlap, their values are averaged.
+"""
+function combine_remapped(outs::AbstractVector, pf::PreparedFields)
+    length(outs) == 1 && return outs[1]
+    out = Dict{String,Tuple{Array,Array{Float32}}}()
+    for f in pf.names
+        parts = [o[f] for o in outs if haskey(o, f)]
+        if length(parts) == 1
+            out[f] = parts[1]
+            continue
+        end
+        fv = sum(last, parts)
+        if f in pf.integer
+            Ft, best = copy(parts[1][1]), copy(parts[1][2])
+            for (F, v) in parts[2:end]
+                k = v .> best
+                Ft[k] .= F[k]
+                best[k] .= v[k]
+            end
+        else
+            S, W = zeros(size(fv)), zeros(size(fv))
+            for (F, v) in parts, i in eachindex(F)
+                (v[i] > 0 && !isnan(F[i])) || continue
+                S[i] += v[i] * F[i]
+                W[i] += v[i]
+            end
+            Ft = map((s, w) -> w > 0 ? Float32(s / w) : NaN32, S, W)
+        end
+        out[f] = (Ft, min.(fv, 1.0f0))
+    end
+    return out
+end
+
+"Global attributes of the prepared files of a product: of each, its distinct values joined."
+function merged_attrib(ps::AbstractVector{Prepared})
+    attrib = Pair{String,String}[]
+    for k in unique(first(a) for p in ps for a in p.attrib)
+        vals = unique(Dict(p.attrib)[k] for p in ps if haskey(Dict(p.attrib), k))
+        push!(attrib, k => join(vals, "; "))
+    end
+    return attrib
 end
 
 # ---------------------------------------------------------------------------
@@ -508,35 +634,35 @@ end
 # Speed of the vector field with eastward component `e`: the field with the standard
 # name <x>_speed for eastward_<x>_velocity or eastward_<x> (e.g. land_ice_surface_speed,
 # wind_speed), nothing if there is none.
-function _speed_field(p::Prepared, e)
-    target = chopsuffix(chopprefix(_standard_name(p.varattrib, e), "eastward_"), "_velocity") * "_speed"
-    k = findfirst(f -> _standard_name(p.varattrib, f) == target, sort(collect(keys(p.fields))))
-    return k === nothing ? nothing : sort(collect(keys(p.fields)))[k]
+function _speed_field(pf::PreparedFields, e)
+    target = chopsuffix(chopprefix(_standard_name(pf.varattrib, e), "eastward_"), "_velocity") * "_speed"
+    k = findfirst(f -> _standard_name(pf.varattrib, f) == target, pf.names)
+    return k === nothing ? nothing : pf.names[k]
 end
 
-# The variables of `fill` among the fields of `p`, as floats, with both components of
+# The variables of `fill` among the fields `pf`, as floats, with both components of
 # each vector.
-function check_fill(p::Prepared, fill::GapFill)
+function check_fill(pf::PreparedFields, fill::GapFill)
     for f in fill.variables
-        haskey(p.fields, f) || error("fill: no field $f, available: $(join(sort(collect(keys(p.fields))), ", "))")
-        nonmissingtype(eltype(p.fields[f])) <: Integer && error("fill: $f is an integer field")
+        f in pf.names || error("fill: no field $f, available: $(join(pf.names, ", "))")
+        f in pf.integer && error("fill: $f is an integer field")
     end
-    for (e, n) in p.vectors
+    for (e, n) in pf.vectors
         (e in fill.variables) == (n in fill.variables) || error("fill: give both components $e and $n of the vector")
     end
 end
 
 """
-    fill_gaps!(out, p, og, fill) -> Dict{String,Array{Int8}}
+    fill_gaps!(out, pf, og, fill) -> Dict{String,Array{Int8}}
 
 Fill the gaps over the ice of the remapped fields `out` (field => (Ft, f_valid)) of
-`p` on grid `og` (see `GapFill`): in each variable of `fill`, slice by slice, the cells
+`pf` on grid `og` (see `GapFill`): in each variable of `fill`, slice by slice, the cells
 with ice (`ice_mask`) and no source data (f_valid = 0), by harmonic interpolation from
 the cells around them (`laplace_fill!`). Gaps not connected to data stay missing. The
 speed of a filled vector (see `_speed_field`) is the magnitude of the filled
 components in the cells filled. Returns the cells filled (1) in each variable.
 """
-function fill_gaps!(out, p::Prepared, og::OutGrid, fill::GapFill)
+function fill_gaps!(out, pf::PreparedFields, og::OutGrid, fill::GapFill)
     ice = ice_mask(og, fill.mask)
     filled = Dict{String,Array{Int8}}()
     counts = Tuple{Int,Int}[]               # cells filled and left missing, by variable
@@ -552,8 +678,8 @@ function fill_gaps!(out, p::Prepared, og::OutGrid, fill::GapFill)
         end
         push!(counts, (count(==(1), filled[f]), nleft))
     end
-    for (e, n) in p.vectors
-        s = _speed_field(p, e)
+    for (e, n) in pf.vectors
+        s = _speed_field(pf, e)
         (e in fill.variables && s !== nothing) || continue
         S, ue, vn = out[s][1], out[e][1], out[n][1]
         size(S) == size(ue) || error("fill: speed $s and $e differ in dimensions")
@@ -586,68 +712,82 @@ end
 remap_file(og::OutGrid, name::AbstractString) = joinpath(outdir(og), "$(og.grid.name)_$(name).nc")
 
 """
-    remap_prepared(p, grids; name, method="con", smooth="auto", dataset="remap",
+    remap_prepared(ps, grids; name, method="con", smooth="auto", dataset="remap",
                    overwrite=false, strict=false, fill=nothing) -> Vector{String}
 
-Remap the fields of `p` onto each grid (see `remap_array` and `smoothing_sigma`) and
-write them to `<GRID>_<name>.nc` in its output folder, with `f_valid`, the area
-fraction of each cell covered by source data (`f_valid_<field>` for each field when
-their coverage differs; with the extra dimensions when it differs between them).
-Vector fields are rotated to the axes of projected grids. With `fill` (a `GapFill`),
-the gaps over the ice are then filled (see `fill_gaps!`), marked by `mask_fill`. Grids
-not covered by the source are skipped (an error if `strict`). The grid files are written if missing.
+Remap the fields of the prepared files `ps` (one `Prepared` or several, each on its own
+grid) onto each grid (see `remap_array` and `smoothing_sigma`) and write them to
+`<GRID>_<name>.nc` in its output folder, with `f_valid`, the area fraction of each
+cell covered by source data (`f_valid_<field>` for each field when their coverage
+differs; with the extra dimensions when it differs between them). The fields of
+several files are combined on each grid (see `combine_remapped`). Vector fields are
+rotated to the axes of projected grids. With `fill` (a `GapFill`), the gaps over the
+ice are then filled (see `fill_gaps!`), marked by `mask_fill`. Grids not covered by
+the sources are skipped (an error if `strict`). The grid files are written if missing.
 Existing files are kept unless `overwrite`. `dataset` is the dataset of the
 provenance attributes.
 """
-function remap_prepared(p::Prepared, grids::Vector{OutGrid}; name::AbstractString, method::AbstractString="con",
-                        smooth="auto", dataset::AbstractString="remap", overwrite::Bool=false, strict::Bool=false,
-                        fill::Union{Nothing,GapFill}=nothing)
+function remap_prepared(ps::AbstractVector{Prepared}, grids::Vector{OutGrid}; name::AbstractString,
+                        method::AbstractString="con", smooth="auto", dataset::AbstractString="remap",
+                        overwrite::Bool=false, strict::Bool=false, fill::Union{Nothing,GapFill}=nothing)
     method in METHODS || error("unknown method $method, available: $(join(METHODS, ", "))")
-    fill === nothing || check_fill(p, fill)
+    pf = PreparedFields(ps)
+    fill === nothing || check_fill(pf, fill)
     paths = String[]
-    names = sort(collect(keys(p.fields)))
-    integers = any(f -> nonmissingtype(eltype(p.fields[f])) <: Integer, names)
+    names = pf.names
+    sources = join(basename.(getfield.(ps, :path)), ", ")
     for og in grids
         path = remap_file(og, name)
         if isfile(path) && !overwrite
             println("$(og.grid.name): exists, skipped (--overwrite to replace)")
             continue
         end
-        sigma = smoothing_sigma(method, smooth, og.grid, p.grid)
-        nsub = con_nsub(og.grid, p.grid)
-        t = @elapsed begin
+        outs = Dict[]
+        hows = String[]
+        t = @elapsed for p in ps
+            pnames = sort(collect(keys(p.fields)))
+            integers = any(in(pf.integer), pnames)
+            sigma = smoothing_sigma(method, smooth, og.grid, p.grid)
+            nsub = con_nsub(og.grid, p.grid)
             # The remapping is prepared once when it is used many times: integer fields
             # (one remapping per class), several fields or slices
-            reuse = integers || sum(f -> prod(size(p.fields[f])[3:end]; init=1), names) > 1
+            reuse = integers || sum(f -> prod(size(p.fields[f])[3:end]; init=1), pnames) > 1
             conmap = reuse ? con_map(og.grid, p.grid, nsub) : nothing
-            out = Dict(f => remap_array(og.grid, p.grid, p.fields[f]; method, sigma, nsub, conmap) for f in names)
+            push!(outs, Dict(f => remap_array(og.grid, p.grid, p.fields[f]; method, sigma, nsub, conmap) for f in pnames))
+            push!(hows, method_description(method, sigma; integers))
         end
+        out = combine_remapped(outs, pf)
         if all(f -> all(iszero, out[f][2]), names)
-            strict && error("$(og.grid.name) is not covered by $(basename(p.path))")
+            strict && error("$(og.grid.name) is not covered by $sources")
             println("$(og.grid.name): not covered by the source, skipped")
             continue
         end
-        varattrib = copy(p.varattrib)
-        rotate_vectors!(out, varattrib, p.vectors, og.grid)
-        filled = fill === nothing ? nothing : fill_gaps!(out, p, og, fill)
+        varattrib = copy(pf.varattrib)
+        rotate_vectors!(out, varattrib, pf.vectors, og.grid)
+        filled = fill === nothing ? nothing : fill_gaps!(out, pf, og, fill)
         fields = Dict{String,Array}(f => out[f][1] for f in names)
-        dims = copy(p.dims)
-        _per_field!(fields, dims, varattrib, Dict(f => out[f][2] for f in names), p.dims, "f_valid",
+        dims = copy(pf.dims)
+        _per_field!(fields, dims, varattrib, Dict(f => out[f][2] for f in names), pf.dims, "f_valid",
                     f -> f === nothing ? Pair{String,Any}[] : ["units" => "1", "long_name" => "area fraction covered by $f"])
-        how = method_description(method, sigma; integers)
-        attrib = vcat(p.attrib, ["remapped_from" => basename(p.path), "remap_method" => how])
+        how = allequal(hows) ? hows[1] : join(("$(basename(p.path)): $h" for (p, h) in zip(ps, hows)), "; ")
+        attrib = vcat(merged_attrib(ps), ["remapped_from" => sources, "remap_method" => how])
+        length(ps) > 1 && push!(attrib, "combined" => "fields of several files merged, weighted by the fraction " *
+                                                       "of each cell they cover (f_valid is the sum, at most 1)")
         if filled !== nothing
-            _per_field!(fields, dims, varattrib, filled, p.dims, "mask_fill", f -> mask_fill_attrib(fill, f))
+            _per_field!(fields, dims, varattrib, filled, pf.dims, "mask_fill", f -> mask_fill_attrib(fill, f))
             push!(attrib, "gap_fill" => "$(join(fill.variables, ", ")): harmonic interpolation over the ice " *
                                         "of $(fill.mask) where there are no source data (mask_fill)")
         end
         isfile(joinpath(outdir(og), "$(og.grid.name)_grid.nc")) || write_grid_files(outdir(og), og.grid; dataset)
-        write_fields(path, og.grid, fields; dataset, attrib, varattrib, dims, aux=p.aux)
+        aux = unique(a -> a.name, [a for p in ps for a in p.aux])
+        write_fields(path, og.grid, fields; dataset, attrib, varattrib, dims, aux)
         println("$(og.grid.name): $(basename(path)), $how ($(round(t; digits=1)) s)")
         push!(paths, path)
     end
     return paths
 end
+
+remap_prepared(p::Prepared, grids::Vector{OutGrid}; kwargs...) = remap_prepared([p], grids; kwargs...)
 
 "Value of the option --smooth: \"auto\" or a standard deviation in km."
 function parse_smooth(s::AbstractString)
@@ -663,7 +803,8 @@ end
 Remap the products of a thematic dataset (<Dataset>/remap.toml) onto the grids of
 their domains: all products, or those named in `args`, on all their grids, or on the
 domains and grids named in `args`. A prepared file that is missing is made first by
-the prepare.jl of its source. Every grid must be covered by the source.
+the prepare.jl of its source. Every grid must be covered by the source (by one of
+its files, for a product of several files).
 """
 function remap_dataset(dataset::AbstractString, args=String[]; overwrite::Bool=false)
     products = remap_products(dataset)
@@ -678,11 +819,12 @@ function remap_dataset(dataset::AbstractString, args=String[]; overwrite::Bool=f
         grids = product_grids(p)
         only_grids === nothing || filter!(og -> og.grid.name in only_grids, grids)
         isempty(grids) && continue
-        isfile(prepared_file(p)) || run_prepare(p.source)
-        prep = read_prepared(prepared_file(p); vars=p.variables)
-        println("$(product_name(p)): $(join(sort(collect(keys(prep.fields))), ", ")) from $(p.source) " *
-                "onto $(length(grids)) grids")
-        append!(paths, remap_prepared(prep, grids; name=product_name(p), method=p.method, smooth=p.smooth,
+        files = prepared_files(p)
+        all(isfile, files) || run_prepare(p.source)
+        preps = read_prepared_files(files; vars=p.variables)
+        println("$(product_name(p)): $(join(PreparedFields(preps).names, ", ")) from $(p.source) " *
+                (length(files) > 1 ? "($(length(files)) files) " : "") * "onto $(length(grids)) grids")
+        append!(paths, remap_prepared(preps, grids; name=product_name(p), method=p.method, smooth=p.smooth,
                                       dataset=tag, overwrite, strict=true, fill=p.fill))
     end
     isempty(chosen) && isempty(paths) && !isempty(targets) &&

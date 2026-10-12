@@ -111,7 +111,7 @@ sources on one theme, and is released like Topo, with its own versions (tags
 ```toml
 [products.Lucazeau2019]                      # → <GRID>_GHF-Lucazeau2019.nc
 source = "Lucazeau2019_ghf"                  # source folder, with prepare.jl
-file = "Lucazeau2019_GHF.nc"                 # prepared file of the source
+file = "Lucazeau2019_GHF.nc"                 # prepared file of the source (or a list, see below)
 variables = ["ghf", "ghf_sd"]                # optional, default all
 grids = { Antarctica = 4, Greenland = 4, Global = 4 }   # by domain, see below
 # method = "con"                             # optional, default "con"
@@ -149,12 +149,25 @@ has `mask_fill` (1: filled, 0: not; `mask_fill_<field>` when the fields differ) 
 global attribute `gap_fill`. The Topo product must be made first (thematic datasets
 depend on Topo, and some on Regions).
 
+`file` can be a list of prepared files of the source, each on its own grid, combined
+into one product, e.g. the grounded and the floating ice of Antarctica on grids of
+their own (`file = ["Smith2020_ANT.nc", "Smith2020_ANT_floating.nc"]` in
+`IceChange/remap.toml`). Each file is remapped onto each grid as above; a field in one
+file only is taken as it is, and a field in several files (with the same units and
+extra dimensions) is their mean weighted by the fraction of each cell each one covers,
+with `f_valid` the sum of these fractions, at most 1 (for integer fields, the class of
+the file covering most of the cell). Files with separate coverage are thus merged as
+they are; where they overlap, their values are averaged and `f_valid` is capped at 1.
+`variables` are taken from the files that have them, and `fill` applies to the combined
+fields. The global attributes of the files are joined (their distinct values), and
+`remapped_from` lists the files.
+
 `release = false` makes a product locally but leaves it out of the releases, e.g. data
 obtained by personal communication whose redistribution the authors have not agreed to
 yet (say so in the README of the dataset).
 
 Domains are listed explicitly, so that the files of a release are fixed; each source
-must cover all its grids. Then:
+must cover all its grids (one of its files, for a product of several files). Then:
 
 1. Add the dataset to `Publish/datasets.toml` (its release tag, title, README,
    keywords, description), and write `<Dataset>/README.md` (the products and their
@@ -183,10 +196,8 @@ products share the same grids. Other domains, projected or lon-lat, can be added
 
 ## Not supported yet
 
-- Several files resulting in one product. Each file can be remapped on its own
-  (`remap <file> ... --name=<name>`, which will create one product per file in a
-  thematic dataset). This can work by having e.g. one product per variable. To make one
-  product from multiple files that are parts of it (e.g. a time series from yearly
-  files, or a climatology), prepare them into one file first.
+- Files that are parts of one product along an extra dimension (e.g. a time series
+  from yearly files, or a climatology): prepare them into one file first. (Several
+  files of one product are combined in space only, see `file` above.)
 - Projected grids described only by CF grid-mapping parameters or WKT (add a PROJ
   string as `proj_params`).
