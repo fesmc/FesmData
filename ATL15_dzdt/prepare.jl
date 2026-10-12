@@ -57,8 +57,9 @@ function tile_trend(path, lat_ts, lon_0)
     NCDataset(path) do ds
         g = ds.group["delta_h"]
         check_projection(g, basename(path), lat_ts, lon_0)
-        x, y = Float64.(g["x"][:]), Float64.(g["y"][:])
-        days = Float64.(g["time"][:])
+        # Raw values: days since 2018-01-01 (not decoded to dates), coordinates in m
+        x, y = Float64.(g["x"].var[:]), Float64.(g["y"].var[:])
+        days = Float64.(g["time"].var[:])
         all(isfinite, days) && issorted(days) || error("$path: invalid times")
         dh, ia = g["delta_h"], g["ice_area"]
         dn = dimnames(dh)
