@@ -36,6 +36,10 @@ const FLUXES = [("smb", "SMBcorr", "surface mass balance"),
                 ("runoff", "RUcorr", "runoff"),
                 ("sf", "SF", "snowfall"),
                 ("rf", "RF", "rainfall")]
+# Fluxes meaningful on the ice only (MAR gives them on ice-free land and the coastal ocean
+# too): missing off the ice (f_ice = 0), so that remapped cells at the margin are means
+# over their ice, not mixed with tundra or ocean values
+const GLACIATED = ("smb", "melt", "runoff")
 const PR = ("pr", "precipitation (snowfall + rainfall)")
 const TEMPS = [("t2m", "T2Mcorr", "near-surface (2 m) air temperature"),
                ("T_srf", "STcorr", "surface temperature")]
@@ -152,7 +156,8 @@ function define_file(path, x, y, static, dim, cm, title)
     for (name, long_name) in [[(n, l) for (n, _, l) in FLUXES]; PR]
         defVar(ds, name, Float32, dims; fillvalue=NaN32, deflatelevel=1, shuffle=true,
                chunksizes=chunks, attrib=["units" => "kg m-2 yr-1", "long_name" => long_name,
-                                          "cell_methods" => cm[1], gm])
+                                          "cell_methods" => cm[1], gm,
+                                          (name in GLACIATED ? ["comment" => "ice only (mask >= 2), missing elsewhere"] : [])...])
     end
     for (name, _, long_name) in TEMPS
         defVar(ds, name, Float32, dims; fillvalue=NaN32, deflatelevel=1, shuffle=true,
@@ -183,6 +188,7 @@ function prepare(paths)
         z = ds["SRF"].var[:, :]
         x, y, (z_srf=z, mask=Int8.(msk), f_ice=Float32.(msk .>= 2))
     end
+    glaciated = static.f_ice .> 0
     dir = prepared_dir("Fettweis2017_mar314")
     mkpath(dir)
 
@@ -198,6 +204,7 @@ function prepare(paths)
     for (k, (year, file)) in enumerate(zip(YEARS, paths))
         t = @elapsed begin
             F = read_year(file, year)
+            foreach(n -> F[n][.!glaciated, :] .= NaN32, GLACIATED)
             for (name, _, _) in FLUXES
                 ts[name][:, :, k] = annual(F[name], year, true)
             end

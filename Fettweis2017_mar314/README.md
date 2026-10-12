@@ -79,7 +79,13 @@ Notes:
 - The `*corr` variables of MAR are corrected for the difference between the 10 km MAR
   and the 1 km surface elevation (`SRF`); snowfall and rainfall are not corrected.
 - The fields are defined on land, ice and a strip of ocean along the coast (the
-  extended mask `MSK2` of MAR), and missing (NaN) elsewhere.
+  extended mask `MSK2` of MAR), and missing (NaN) elsewhere. `smb`, `melt` and `runoff`
+  are kept on the ice only (`mask` >= 2, `f_ice` = 1) and missing elsewhere, as for
+  RACMO (`vanWessem2023_racmo23`): off the ice MAR gives strongly negative values (mean
+  `smb` about -1500 kg m-2 yr-1 on ice-free land and -1200 on the coastal ocean in
+  1981-2010), which mixed into the ice cells at the margin once remapped (on GRL-16KM, the
+  ice cells of BedMachine summed to -56 Gt yr-1, against +329 Gt yr-1 over the cells
+  with `f_ice` > 0.5). Remapped, they are the means over the ice of each cell.
 - `mask` (integer, `flag_values`) is the mask of MAR: 0 ocean, 1 ice-free land, 2 and
   3 glaciers and ice caps separate from the ice sheet (two classes that the files do not
   explain; MAR counts class 3 in its ice sheet totals, `MSK > 2.5`), 4 ice sheet.
