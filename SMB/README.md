@@ -27,6 +27,16 @@ and `smb`, `pr`, `sf`, `t2m`, `T_srf` and `z_srf` are filled outside the RACMO d
 (the corners of the grids) by harmonic interpolation (`fill`, `mask = "all"`, marked by
 `mask_fill`).
 
+`SMB-RACMO2.3p2-1981-2010` and `SMB-MARv3.14-1981-2010` (and their annual means) are
+filled in the same way for model forcing over the whole grid, but `smb` is filled
+harmonically also off the glaciated surfaces, where the source leaves it missing:
+`smb`, `pr`, `sf`, `t2m`, `T_srf` and `z_srf` (and `rf` for MAR, so that `pr = sf + rf`
+holds in the filled cells) are filled where there are no source data (`f_valid` = 0):
+off the ice (`smb`), outside the RCM domain (e.g. the ice caps of the Canadian Arctic on
+the GRL grids) and in the corners of the grids. `smb` of MAR is defined on the ice only
+(see `Fettweis2017_mar314/README.md`), so that the cells at the ice margin are not mixed
+with the strongly negative values of MAR off the ice.
+
 ## Licences
 
 | Source | Licence |

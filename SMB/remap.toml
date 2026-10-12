@@ -34,17 +34,21 @@ file = "RACMO2.4p1_annual_1979-2023.nc"
 grids = { Antarctica = 4 }
 figure = { variables = ["smb"] }
 
+# Filled outside the glaciated surfaces and the RACMO domain (harmonic interpolation), for
+# model forcing over the whole grid
 [products."RACMO2.3p2-1981-2010"]
 source = "vanWessem2023_racmo23"
 file = "RACMO2.3p2_1981-2010.nc"
 grids = { Antarctica = 4 }
 figure = { variables = ["smb"] }
+fill = { variables = ["smb", "pr", "sf", "t2m", "T_srf", "z_srf"], mask = "all" }
 
 [products."RACMO2.3p2-1981-2010-annual-mean"]
 source = "vanWessem2023_racmo23"
 file = "RACMO2.3p2_1981-2010_annual-mean.nc"
 grids = { Antarctica = 4 }
 figure = false
+fill = { variables = ["smb", "pr", "sf", "t2m", "T_srf", "z_srf"], mask = "all" }
 
 [products."RACMO2.3p2-1991-2020"]
 source = "vanWessem2023_racmo23"
@@ -92,17 +96,21 @@ file = "MARv3.14_ERA5_1961-1990_annual-mean.nc"
 grids = { Greenland = 1 }
 figure = false
 
+# Filled off the ice and outside the MAR domain (harmonic interpolation; smb is defined on
+# the ice only, see ../Fettweis2017_mar314/README.md), for model forcing over the whole grid
 [products."MARv3.14-1981-2010"]
 source = "Fettweis2017_mar314"
 file = "MARv3.14_ERA5_1981-2010.nc"
 grids = { Greenland = 1 }
 figure = { variables = ["smb"] }
+fill = { variables = ["smb", "pr", "sf", "rf", "t2m", "T_srf", "z_srf"], mask = "all" }
 
 [products."MARv3.14-1981-2010-annual-mean"]
 source = "Fettweis2017_mar314"
 file = "MARv3.14_ERA5_1981-2010_annual-mean.nc"
 grids = { Greenland = 1 }
 figure = false
+fill = { variables = ["smb", "pr", "sf", "rf", "t2m", "T_srf", "z_srf"], mask = "all" }
 
 [products."MARv3.14-1991-2020"]
 source = "Fettweis2017_mar314"
