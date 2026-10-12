@@ -1,0 +1,103 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-12"
+git_tag = "icechange-v2.0.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Greenland_IceChange"
+version = "2.0.0"
+
+["GRL-16KM_IceChange-ATL15-GRL.nc"]
+checksum = "sha256:e0781c1bda330c45128196f2a6da0fe5132efb5f20cc8ce264850ee13219fc48"
+size = 61504
+storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_IceChange-ATL15-GRL.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_IceChange_GRL-16KM/2.0.0/GRL-16KM_IceChange-ATL15-GRL.nc"
+
+["GRL-16KM_IceChange-Smith2020-GRL.nc"]
+checksum = "sha256:0462f7df01de6fb4067b41fe026732b8444966792b971379278b9a3a866a2eac"
+size = 57283
+storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_IceChange-Smith2020-GRL.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_IceChange_GRL-16KM/2.0.0/GRL-16KM_IceChange-Smith2020-GRL.nc"
+
+["GRL-16KM_grid.nc"]
+checksum = "sha256:e835518450bae0a863fdb7cd68adc7d4f59c48c790090d497939939518960d41"
+size = 150482
+storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_IceChange_GRL-16KM/2.0.0/GRL-16KM_grid.nc"
+
+["GRL-32KM_IceChange-ATL15-GRL.nc"]
+checksum = "sha256:fd166fc334b73a4dabfb797e5a2937fb383f98474b8a44986d0e1cdd3c123c49"
+size = 32416
+storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_IceChange-ATL15-GRL.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_IceChange_GRL-32KM/2.0.0/GRL-32KM_IceChange-ATL15-GRL.nc"
+
+["GRL-32KM_IceChange-Smith2020-GRL.nc"]
+checksum = "sha256:a7e25ae96411953c3194e0dc9e07ea1970dbd4c28f7a6cc08bdf3a33de609fa1"
+size = 31292
+storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_IceChange-Smith2020-GRL.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_IceChange_GRL-32KM/2.0.0/GRL-32KM_IceChange-Smith2020-GRL.nc"
+
+["GRL-32KM_grid.nc"]
+checksum = "sha256:c922307bd72e9e5bd3d10d86b97e3c108dcd5a4264dd47b305b9c562ba81e775"
+size = 57245
+storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_IceChange_GRL-32KM/2.0.0/GRL-32KM_grid.nc"
+
+["GRL-4KM_IceChange-ATL15-GRL.nc"]
+checksum = "sha256:e9c46ecf87432dae9b8a337bbffa59e8e898e71f90a175c979eaacc53aa9e167"
+size = 492897
+storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_IceChange-ATL15-GRL.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_IceChange_GRL-4KM/2.0.0/GRL-4KM_IceChange-ATL15-GRL.nc"
+
+["GRL-4KM_IceChange-Smith2020-GRL.nc"]
+checksum = "sha256:505b21436740c73ee55ccda4f79f24a44aba0518fa1f0be7c75217f68419a71b"
+size = 434580
+storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_IceChange-Smith2020-GRL.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_IceChange_GRL-4KM/2.0.0/GRL-4KM_IceChange-Smith2020-GRL.nc"
+
+["GRL-4KM_grid.nc"]
+checksum = "sha256:bfc44b679d56099bfb9306c3bfe8d74d1663a5b7168c2f18b404fdb3b6cabe4f"
+size = 1546343
+storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_IceChange_GRL-4KM/2.0.0/GRL-4KM_grid.nc"
+
+["GRL-8KM_IceChange-ATL15-GRL.nc"]
+checksum = "sha256:bec26a401bc3dc103130deb40e3dc4faa957dee0375300e1ce3106c38f35c494"
+size = 153960
+storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_IceChange-ATL15-GRL.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_IceChange_GRL-8KM/2.0.0/GRL-8KM_IceChange-ATL15-GRL.nc"
+
+["GRL-8KM_IceChange-Smith2020-GRL.nc"]
+checksum = "sha256:ea06e8bb08e30c1349a5433fc67285e28939ae70639f240c271cea4c0afa7441"
+size = 139310
+storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_IceChange-Smith2020-GRL.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_IceChange_GRL-8KM/2.0.0/GRL-8KM_IceChange-Smith2020-GRL.nc"
+
+["GRL-8KM_grid.nc"]
+checksum = "sha256:a7c9769dfbac2eefa4f4a79985475995596d3035f3481009cfff72c2c45fb40e"
+size = 467101
+storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_IceChange_GRL-8KM/2.0.0/GRL-8KM_grid.nc"
+
+["grid_GRL-16KM.txt"]
+checksum = "sha256:96d8ae58fe971c0fe4bcf3433b0f78c1c46af7104133c842859d47b655060cd6"
+size = 465
+storage_path = "$datasets_dir/Greenland/GRL-16KM/grid_GRL-16KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_IceChange_GRL-16KM/2.0.0/grid_GRL-16KM.txt"
+
+["grid_GRL-32KM.txt"]
+checksum = "sha256:60caa1794ee7701429bc7ccece8aa52f1f4555ddc051c056409acb398cad52a0"
+size = 462
+storage_path = "$datasets_dir/Greenland/GRL-32KM/grid_GRL-32KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_IceChange_GRL-32KM/2.0.0/grid_GRL-32KM.txt"
+
+["grid_GRL-4KM.txt"]
+checksum = "sha256:17883e1fab0cfa9f8b288bb7d2fb6fa27955ff3a437d06b0ec4d0fb1e358165f"
+size = 464
+storage_path = "$datasets_dir/Greenland/GRL-4KM/grid_GRL-4KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_IceChange_GRL-4KM/2.0.0/grid_GRL-4KM.txt"
+
+["grid_GRL-8KM.txt"]
+checksum = "sha256:455c0a221c44c016c9129b7e1305cc2e1cf1f17be11aace7a68103e92f6c2c5c"
+size = 463
+storage_path = "$datasets_dir/Greenland/GRL-8KM/grid_GRL-8KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_IceChange_GRL-8KM/2.0.0/grid_GRL-8KM.txt"
