@@ -177,23 +177,40 @@ end
     mirror(args; overwrite=false, sandbox=false, yes=false) -> Vector{String}
 
 `fesmdata.jl mirror`: download all records (or those of a dataset and/or a domain)
-into \$ICE_DATA/v2, after one confirmation (none with `yes`) showing the total size
-and what is already present. Present files are verified (checksums) and kept.
+into \$ICE_DATA/v2. The files present are checked first (checksums): files of the
+release are kept, files of an earlier release are updated, and files changed locally
+stop the mirror (replaced with `overwrite`). Then, after one confirmation (none with
+`yes`) showing what is to download, the missing and outdated files are downloaded.
 """
 function mirror(args; overwrite::Bool=false, sandbox::Bool=false, yes::Bool=false)
     selected, _ = select_records(args; sandbox=sandbox)
     isempty(selected) && (println("No records"); return String[])
-    entries = [e for (d, s, grids) in selected for e in values(read_record(d, s; sandbox=sandbox)[2])
-               if isempty(grids) || entry_grid(e) in grids]
-    todo = filter(e -> !isfile(local_path(e)) || filesize(local_path(e)) != e["size"], entries)
+    records = [(d, s, record_entries(d, s; grids=grids, sandbox=sandbox)) for (d, s, grids) in selected]
+    entries = [e for (_, _, es) in records for e in es]
     println("$(length(selected)) records, $(length(entries)) files, $(human_size(total_size(entries))) in total")
-    println("In $(products_dir()): $(length(entries) - length(todo)) files present, ",
-            "$(length(todo)) to download ($(human_size(total_size(todo))))")
-    yes || isempty(todo) || confirm("Download into $(products_dir())?") || (println("Nothing downloaded."); return String[])
+    println("Checking the files in $(products_dir()) (checksums)")
+    states = Dict(local_path(e) => local_state(e) for e in entries)
+    of_state(state) = filter(e -> states[local_path(e)] == state, entries)
+    missing_, older, changed = of_state(:missing), of_state(:older), of_state(:changed)
+    println("$(length(of_state(:current))) files present, $(length(missing_)) to download ",
+            "($(human_size(total_size(missing_)))), $(length(older)) of earlier releases to update ",
+            "($(human_size(total_size(older))))")
+    if !isempty(changed)
+        println("$(length(changed)) files changed locally (not of a release):")
+        foreach(e -> println("  ", local_path(e)), changed)
+        overwrite || error("files changed locally; use --overwrite to replace them")
+    end
+    todo = vcat(missing_, older, changed)
+    yes || isempty(todo) || confirm("Download $(length(todo)) files ($(human_size(total_size(todo)))) " *
+                                    "into $(products_dir())?") || (println("Nothing downloaded."); return String[])
     paths = String[]
-    for (d, s, grids) in selected
+    for (d, s, es) in records
         println("\n$d/$s")
-        append!(paths, fetch_record(d, s; grids=grids, overwrite=overwrite, sandbox=sandbox))
+        for e in es
+            path, status = fetch_file(e; overwrite=overwrite, state=states[local_path(e)])
+            println(rpad(string(status), 12), path)
+            push!(paths, path)
+        end
     end
     return paths
 end

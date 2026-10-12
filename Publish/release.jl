@@ -252,6 +252,12 @@ function registry_tables(domain::AbstractString, dataset::AbstractString; sandbo
     return read_record(domain, dataset; sandbox=sandbox)[1]
 end
 
+"File entries (name => entry) of a registered record (empty if none)."
+function registry_entries(domain::AbstractString, dataset::AbstractString; sandbox::Bool=false)
+    isfile(registry_file(domain, dataset; sandbox=sandbox)) || return Dict{String,Any}()
+    return read_record(domain, dataset; sandbox=sandbox)[2]
+end
+
 # ---------------------------------------------------------------------------
 # HTTP requests
 # ---------------------------------------------------------------------------

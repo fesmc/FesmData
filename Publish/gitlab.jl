@@ -125,6 +125,7 @@ function upload(dataset::AbstractString, domains=String[]; sandbox::Bool=false,
     end
     isempty(releases) || _env("GITLAB_TOKEN")   # needed to upload
     for (domain, files, version, number) in releases
+        old = registry_entries(domain, dataset; sandbox=sandbox)
         entries = Dict{String,Any}()
         for grid in unique(f.grid for f in files)
             package = package_name(domain, dataset, grid; sandbox=sandbox)
@@ -132,9 +133,13 @@ function upload(dataset::AbstractString, domains=String[]; sandbox::Bool=false,
             gfiles = filter(f -> f.grid == grid, files)
             sync_package!(package, number, gfiles)
             for f in gfiles
-                entries[basename(f)] = Dict("uri" => download_url(package, number, basename(f)),
-                                            "checksum" => release_checksum(f.path), "size" => filesize(f.path),
-                                            "storage_path" => "\$datasets_dir/" * relpath(f.path, products_dir()))
+                sha = release_checksum(f.path)
+                entry = Dict{String,Any}("uri" => download_url(package, number, basename(f)),
+                                         "checksum" => sha, "size" => filesize(f.path),
+                                         "storage_path" => "\$datasets_dir/" * relpath(f.path, products_dir()))
+                previous = previous_checksums(get(old, basename(f), nothing), sha)
+                isempty(previous) || (entry["previous_checksums"] = previous)
+                entries[basename(f)] = entry
             end
         end
         tables = registry_tables(domain, dataset; sandbox=sandbox)   # keeps an earlier _ZENODO

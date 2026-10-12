@@ -89,19 +89,46 @@ file_sha256(path::AbstractString) = open(io -> bytes2hex(sha256(io)), path)
 checksum(path::AbstractString) = "sha256:" * file_sha256(path)
 
 """
-    fetch_file(entry; overwrite=false) -> (path, status)
+    previous_checksums(old, checksum) -> Vector{String}
+
+Checksums of the earlier releases of a file, for its entry in a new release with
+`checksum`: those of its entry `old` in the previous registry (`nothing` for a new
+file), without `checksum`.
+"""
+previous_checksums(::Nothing, checksum::AbstractString) = String[]
+previous_checksums(old::AbstractDict, checksum::AbstractString) =
+    unique(filter(!=(checksum), vcat(get(old, "previous_checksums", String[]), old["checksum"])))
+
+"""
+    local_state(entry) -> Symbol
+
+State of the local file of a registry entry, by its checksum: :missing, :current (the
+release of the entry), :older (an earlier release of the file, `previous_checksums`)
+or :changed (changed locally, or not of a release).
+"""
+function local_state(entry::AbstractDict)
+    path = local_path(entry)
+    isfile(path) || return :missing
+    sum = checksum(path)
+    sum == entry["checksum"] && return :current
+    sum in get(entry, "previous_checksums", String[]) && return :older
+    return :changed
+end
+
+"""
+    fetch_file(entry; overwrite=false, state=local_state(entry)) -> (path, status)
 
 Download the file of a registry entry and verify its checksum. A file already present
-is kept if its checksum matches; otherwise it is an error, or it is replaced with
-`overwrite`. `status` is :present or :downloaded.
+is kept if it is of the release of the entry, and replaced if it is of an earlier
+release; a file changed locally is an error, or is replaced with `overwrite`. `status`
+is :present, :downloaded or :updated.
 """
-function fetch_file(entry::AbstractDict; overwrite::Bool=false)
+function fetch_file(entry::AbstractDict; overwrite::Bool=false, state::Symbol=local_state(entry))
     path = local_path(entry)
-    if isfile(path)
-        checksum(path) == entry["checksum"] && return path, :present
-        overwrite || error("$path exists and differs from the registry (another version, or " *
-                           "changed locally); use --overwrite to replace it")
-    end
+    state == :current && return path, :present
+    state == :changed && !overwrite &&
+        error("$path differs from the registry and from the earlier releases (changed locally); " *
+              "use --overwrite to replace it")
     mkpath(dirname(path))
     tmp = path * ".part"
     try
@@ -112,7 +139,20 @@ function fetch_file(entry::AbstractDict; overwrite::Bool=false)
     finally
         rm(tmp; force=true)
     end
-    return path, :downloaded
+    return path, state == :missing ? :downloaded : :updated
+end
+
+"""
+    record_entries(domain, dataset; grids=String[], sandbox=false) -> Vector
+
+File entries of a record, by name, only those of `grids` if given.
+"""
+function record_entries(domain::AbstractString, dataset::AbstractString; grids=String[], sandbox::Bool=false)
+    _, files = read_record(domain, dataset; sandbox=sandbox)
+    available = sort(unique(entry_grid(e) for e in values(files)))
+    unknown = setdiff(grids, available)
+    isempty(unknown) || error("$domain/$dataset: no grids $(join(unknown, ", ")), available: $(join(available, ", "))")
+    return [files[name] for name in sort(collect(keys(files))) if isempty(grids) || entry_grid(files[name]) in grids]
 end
 
 """
@@ -123,14 +163,8 @@ Download the files of a record into \$ICE_DATA/v2/<Domain>/<GRID>/, only those o
 """
 function fetch_record(domain::AbstractString, dataset::AbstractString; grids=String[],
                       overwrite::Bool=false, sandbox::Bool=false)
-    _, files = read_record(domain, dataset; sandbox=sandbox)
-    available = sort(unique(entry_grid(e) for e in values(files)))
-    unknown = setdiff(grids, available)
-    isempty(unknown) || error("$domain/$dataset: no grids $(join(unknown, ", ")), available: $(join(available, ", "))")
     paths = String[]
-    for name in sort(collect(keys(files)))
-        entry = files[name]
-        isempty(grids) || entry_grid(entry) in grids || continue
+    for entry in record_entries(domain, dataset; grids=grids, sandbox=sandbox)
         path, status = fetch_file(entry; overwrite=overwrite)
         println(rpad(string(status), 12), path)
         push!(paths, path)

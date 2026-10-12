@@ -37,7 +37,9 @@ storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_TOPO-Bedmap3.nc"
 ```
 
 `$datasets_dir` stands for `$ICE_DATA/v2`, so the files land in the usual layout,
-`$ICE_DATA/v2/<Domain>/<GRID>/`. The registry files are also
+`$ICE_DATA/v2/<Domain>/<GRID>/`. A file that changed since an earlier release (if
+only by the version stamped in it) also has `previous_checksums`, the checksums of
+its earlier releases, so that copies of those are updated. The registry files are also
 [DataManifest.jl](https://github.com/awi-esc/DataManifest.jl) databases.
 
 ## Download
@@ -75,10 +77,11 @@ The arguments can be given in any order. A grid name implies its domain (ANT-32K
 on Antarctica), so the domain can be left out when grids are given. `fetch` needs the
 dataset, and a domain or grids.
 
-Every file is checked against its checksum. Files already present are kept; a file that
-differs (another version, or changed locally) stops the download, unless `--overwrite`
-is given. `mirror` (also `mirror Topo`, `mirror Antarctica`) shows the total size and
-what is already present, and asks once; run it again after new releases to update the
+Every file is checked against its checksum. Files already present are kept if they are
+of the release, and replaced if they are of an earlier release; a file changed locally
+stops the download, unless `--overwrite` is given. `mirror` (also `mirror Topo`,
+`mirror Antarctica`) first checks the files present, shows what is to download or
+update and its size, and asks once; run it again after new releases to update the
 copy (`--yes` skips the question, e.g. in a job). Single files can also be downloaded
 from the website or the packages page, without the tool.
 
