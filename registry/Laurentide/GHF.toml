@@ -2,126 +2,138 @@
 
 [_RELEASE]
 date = "2026-10-12"
-git_tag = "ghf-v2.0.0"
+git_tag = "ghf-v2.1.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Laurentide_GHF"
-version = "2.0.0"
+version = "2.1.0"
 
 ["LIS-16KM_GHF-Davies2013.nc"]
-checksum = "sha256:2dd5ec1461028a16a18c1faddc3f10aa8218aefa71903cd97a744106a49e3eb1"
+checksum = "sha256:503d363e2fe8704c597f406587ed5f55f71224605623bc71b9a6b2ac12e57667"
+previous_checksums = ["sha256:2dd5ec1461028a16a18c1faddc3f10aa8218aefa71903cd97a744106a49e3eb1"]
 size = 1011789
 storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_GHF-Davies2013.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-16KM/2.0.0/LIS-16KM_GHF-Davies2013.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-16KM/2.1.0/LIS-16KM_GHF-Davies2013.nc"
 
 ["LIS-16KM_GHF-Lucazeau2019.nc"]
-checksum = "sha256:1487f994290c5849726d9648a5218d8071b7ebca097cd340a6cb9f2bcf201a6e"
+checksum = "sha256:fad18c0d993e6e46675b0309cb819563c0d34bf667b4e94005f2b76dbc874a74"
+previous_checksums = ["sha256:1487f994290c5849726d9648a5218d8071b7ebca097cd340a6cb9f2bcf201a6e"]
 size = 795126
 storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_GHF-Lucazeau2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-16KM/2.0.0/LIS-16KM_GHF-Lucazeau2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-16KM/2.1.0/LIS-16KM_GHF-Lucazeau2019.nc"
 
 ["LIS-16KM_GHF-Shapiro2004.nc"]
-checksum = "sha256:4def70a3e20cbf149c5aa999e80ca2d8cc04aa222b940ada0951b929cea882df"
+checksum = "sha256:0ae771801d142f59f0650408b49ed147d3d6f0287ef2d0326ee2fcd952af2888"
+previous_checksums = ["sha256:4def70a3e20cbf149c5aa999e80ca2d8cc04aa222b940ada0951b929cea882df"]
 size = 699854
 storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_GHF-Shapiro2004.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-16KM/2.0.0/LIS-16KM_GHF-Shapiro2004.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-16KM/2.1.0/LIS-16KM_GHF-Shapiro2004.nc"
 
 ["LIS-16KM_grid.nc"]
 checksum = "sha256:9d90be456f08f945c8b097fb0900ddcb853666ea15d98e038b850317967362a3"
 size = 772321
 storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-16KM/2.0.0/LIS-16KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-16KM/2.1.0/LIS-16KM_grid.nc"
 
 ["LIS-32KM_GHF-Davies2013.nc"]
-checksum = "sha256:2674812312fab099155f67d726160a2479d7ceb220fa9093978eba166fe8d265"
+checksum = "sha256:aa8eccd7837aae21f2a2d89458ffba4fbd0e080bfb8a8ea607ee5c11811a0dcc"
+previous_checksums = ["sha256:2674812312fab099155f67d726160a2479d7ceb220fa9093978eba166fe8d265"]
 size = 296584
 storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_GHF-Davies2013.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-32KM/2.0.0/LIS-32KM_GHF-Davies2013.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-32KM/2.1.0/LIS-32KM_GHF-Davies2013.nc"
 
 ["LIS-32KM_GHF-Lucazeau2019.nc"]
-checksum = "sha256:35adf9ef53b7ba164f182c9061bbd8ccdb116147e515ecb0ec9dc5099594369b"
+checksum = "sha256:2400579f314652416e4d2809d6533df274c27fd059becd3461b56887b34b4afa"
+previous_checksums = ["sha256:35adf9ef53b7ba164f182c9061bbd8ccdb116147e515ecb0ec9dc5099594369b"]
 size = 227912
 storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_GHF-Lucazeau2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-32KM/2.0.0/LIS-32KM_GHF-Lucazeau2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-32KM/2.1.0/LIS-32KM_GHF-Lucazeau2019.nc"
 
 ["LIS-32KM_GHF-Shapiro2004.nc"]
-checksum = "sha256:4d5b001fcf4ae923a43a79cbd01154135913c96f465dcbba62a717c72f168f6a"
+checksum = "sha256:f5e9ad9f2db523b34c8dc7be4c031af3753cf927323a77de0db564ca1f0c75fa"
+previous_checksums = ["sha256:4d5b001fcf4ae923a43a79cbd01154135913c96f465dcbba62a717c72f168f6a"]
 size = 208356
 storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_GHF-Shapiro2004.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-32KM/2.0.0/LIS-32KM_GHF-Shapiro2004.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-32KM/2.1.0/LIS-32KM_GHF-Shapiro2004.nc"
 
 ["LIS-32KM_grid.nc"]
 checksum = "sha256:a0c50b74b4a45787d5ad2c6183e5f1d339143079fd1302b0aad52cb13f8c5bbc"
 size = 249167
 storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-32KM/2.0.0/LIS-32KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-32KM/2.1.0/LIS-32KM_grid.nc"
 
 ["LIS-4KM_GHF-Davies2013.nc"]
-checksum = "sha256:9cd5853b4ee982f1cd28e2473878a910f1877bf05eee869f2eacfa63a8195964"
+checksum = "sha256:9933fe374ee107032b3caa2bddd368260044ef2186fad33ea6becd4c97415045"
+previous_checksums = ["sha256:9cd5853b4ee982f1cd28e2473878a910f1877bf05eee869f2eacfa63a8195964"]
 size = 13672731
 storage_path = "$datasets_dir/Laurentide/LIS-4KM/LIS-4KM_GHF-Davies2013.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-4KM/2.0.0/LIS-4KM_GHF-Davies2013.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-4KM/2.1.0/LIS-4KM_GHF-Davies2013.nc"
 
 ["LIS-4KM_GHF-Lucazeau2019.nc"]
-checksum = "sha256:402d5c1a11f6be128b7b786b3afcb302f108f9bbc01b6761e8cd6433194a46ae"
+checksum = "sha256:391a002a77ec1d6034ee3c4ac945f6931e152f233c5ecb87ef9a8bb1ca5008a4"
+previous_checksums = ["sha256:402d5c1a11f6be128b7b786b3afcb302f108f9bbc01b6761e8cd6433194a46ae"]
 size = 10757554
 storage_path = "$datasets_dir/Laurentide/LIS-4KM/LIS-4KM_GHF-Lucazeau2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-4KM/2.0.0/LIS-4KM_GHF-Lucazeau2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-4KM/2.1.0/LIS-4KM_GHF-Lucazeau2019.nc"
 
 ["LIS-4KM_GHF-Shapiro2004.nc"]
-checksum = "sha256:941dcabd57027ef7196df7a903df98fef9267eeb6b8f1e3172f9354939cc71f9"
+checksum = "sha256:b6380ced0e80aff2c2a06f46830bb0f9c1befca9f56743e5d8c85fdc2f6d445a"
+previous_checksums = ["sha256:941dcabd57027ef7196df7a903df98fef9267eeb6b8f1e3172f9354939cc71f9"]
 size = 9448136
 storage_path = "$datasets_dir/Laurentide/LIS-4KM/LIS-4KM_GHF-Shapiro2004.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-4KM/2.0.0/LIS-4KM_GHF-Shapiro2004.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-4KM/2.1.0/LIS-4KM_GHF-Shapiro2004.nc"
 
 ["LIS-4KM_grid.nc"]
 checksum = "sha256:3000d9a81efb07c8b6ca0c9adcdab153945f8954ed05ca5e1435767d38896d80"
 size = 9665107
 storage_path = "$datasets_dir/Laurentide/LIS-4KM/LIS-4KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-4KM/2.0.0/LIS-4KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-4KM/2.1.0/LIS-4KM_grid.nc"
 
 ["LIS-8KM_GHF-Davies2013.nc"]
-checksum = "sha256:7b4cb4649afd46fd4f99c8f4b9f6b5fef34fa1cafadda137d5abc47439faab59"
+checksum = "sha256:f8e6020572a57d4c3eda2618047b90b47c41bd85a61ae74f0036e158587de742"
+previous_checksums = ["sha256:7b4cb4649afd46fd4f99c8f4b9f6b5fef34fa1cafadda137d5abc47439faab59"]
 size = 3690249
 storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_GHF-Davies2013.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-8KM/2.0.0/LIS-8KM_GHF-Davies2013.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-8KM/2.1.0/LIS-8KM_GHF-Davies2013.nc"
 
 ["LIS-8KM_GHF-Lucazeau2019.nc"]
-checksum = "sha256:d8ac52811c530840ad67101006e5c352d5bc417a9c20f84a973bc14be63318eb"
+checksum = "sha256:a73770ca96f4838aaf30651bcaf4ab0ce802c9e90e7614f42ce02085d374a285"
+previous_checksums = ["sha256:d8ac52811c530840ad67101006e5c352d5bc417a9c20f84a973bc14be63318eb"]
 size = 2889180
 storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_GHF-Lucazeau2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-8KM/2.0.0/LIS-8KM_GHF-Lucazeau2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-8KM/2.1.0/LIS-8KM_GHF-Lucazeau2019.nc"
 
 ["LIS-8KM_GHF-Shapiro2004.nc"]
-checksum = "sha256:8674404a2f7ae9e4da294033cf771529a306c881242859b1572cbfe015db0816"
+checksum = "sha256:632fa30fd0be1535cecadfde103eef6d13fb6b17c8c54863495d9af9c33dd72a"
+previous_checksums = ["sha256:8674404a2f7ae9e4da294033cf771529a306c881242859b1572cbfe015db0816"]
 size = 2544039
 storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_GHF-Shapiro2004.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-8KM/2.0.0/LIS-8KM_GHF-Shapiro2004.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-8KM/2.1.0/LIS-8KM_GHF-Shapiro2004.nc"
 
 ["LIS-8KM_grid.nc"]
 checksum = "sha256:39001f264d08010e472852f6861b6b6d6cdc15ffd7553d52b01acb51f22501ee"
 size = 2816888
 storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-8KM/2.0.0/LIS-8KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-8KM/2.1.0/LIS-8KM_grid.nc"
 
 ["grid_LIS-16KM.txt"]
 checksum = "sha256:4ff24933bce97627a1ffe6ec62ed994aabb15889197dda6597cc2ef85b623178"
 size = 467
 storage_path = "$datasets_dir/Laurentide/LIS-16KM/grid_LIS-16KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-16KM/2.0.0/grid_LIS-16KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-16KM/2.1.0/grid_LIS-16KM.txt"
 
 ["grid_LIS-32KM.txt"]
 checksum = "sha256:0c5e99f11a025d656ee88fcbce389f89b815c0ca4c6a1dcf08868ffbafe0d09b"
 size = 466
 storage_path = "$datasets_dir/Laurentide/LIS-32KM/grid_LIS-32KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-32KM/2.0.0/grid_LIS-32KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-32KM/2.1.0/grid_LIS-32KM.txt"
 
 ["grid_LIS-4KM.txt"]
 checksum = "sha256:fe2c0508c9d2b2faa8ef7ac20d6c196e1e726d93c5ffbf7d4b59901783a837be"
 size = 468
 storage_path = "$datasets_dir/Laurentide/LIS-4KM/grid_LIS-4KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-4KM/2.0.0/grid_LIS-4KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-4KM/2.1.0/grid_LIS-4KM.txt"
 
 ["grid_LIS-8KM.txt"]
 checksum = "sha256:97811d3bbc0376118996535a4ec7c0209bf01f10bfb60bc738bb05b6eab6caa4"
 size = 465
 storage_path = "$datasets_dir/Laurentide/LIS-8KM/grid_LIS-8KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-8KM/2.0.0/grid_LIS-8KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_GHF_LIS-8KM/2.1.0/grid_LIS-8KM.txt"

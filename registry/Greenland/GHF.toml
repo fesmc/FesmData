@@ -2,276 +2,307 @@
 
 [_RELEASE]
 date = "2026-10-12"
-git_tag = "ghf-v2.0.0"
+git_tag = "ghf-v2.1.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Greenland_GHF"
-version = "2.0.0"
+version = "2.1.0"
 
 ["GRL-16KM_GHF-Colgan2021-topocorr-GRL.nc"]
-checksum = "sha256:1c4d6eca926c99ee778f8c6fd73e7b83aba94c3172889d5b97244fd710f5885b"
+checksum = "sha256:f0622df1d150e22d2ea4b15ab408e14bbb1c4c2ba7f5e58f80b1a5b54a29710b"
+previous_checksums = ["sha256:1c4d6eca926c99ee778f8c6fd73e7b83aba94c3172889d5b97244fd710f5885b"]
 size = 130284
 storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_GHF-Colgan2021-topocorr-GRL.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-16KM/2.0.0/GRL-16KM_GHF-Colgan2021-topocorr-GRL.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-16KM/2.1.0/GRL-16KM_GHF-Colgan2021-topocorr-GRL.nc"
 
 ["GRL-16KM_GHF-Colgan2021.nc"]
-checksum = "sha256:56becc3e17a5ac2bfd804789f4bda2bc6802d0ae823de5898cc661c58e1e4074"
+checksum = "sha256:c510f3bd2c8cc911c17b30eeb1bb815d14c9de6667afba918a630cb6c025433a"
+previous_checksums = ["sha256:56becc3e17a5ac2bfd804789f4bda2bc6802d0ae823de5898cc661c58e1e4074"]
 size = 195892
 storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_GHF-Colgan2021.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-16KM/2.0.0/GRL-16KM_GHF-Colgan2021.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-16KM/2.1.0/GRL-16KM_GHF-Colgan2021.nc"
 
 ["GRL-16KM_GHF-Davies2013.nc"]
-checksum = "sha256:41f58368cb8586ade06244c575be563b0e457556281b9fba73b776ba3a876410"
+checksum = "sha256:b400d90b7f42d6c3daaa26b75a1195a2fdca3bfe84c089a492dbe90e036aec84"
+previous_checksums = ["sha256:41f58368cb8586ade06244c575be563b0e457556281b9fba73b776ba3a876410"]
 size = 179953
 storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_GHF-Davies2013.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-16KM/2.0.0/GRL-16KM_GHF-Davies2013.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-16KM/2.1.0/GRL-16KM_GHF-Davies2013.nc"
 
 ["GRL-16KM_GHF-FoxMaule2005.nc"]
-checksum = "sha256:e7d08c33851d85dc2400d75b70a584e7edb627b0666169bc08dfdbeccce64019"
+checksum = "sha256:284c2c2de0210911c97ac1e316bb8b148e3485c86bdcaec03ab9d7508684e4da"
+previous_checksums = ["sha256:e7d08c33851d85dc2400d75b70a584e7edb627b0666169bc08dfdbeccce64019"]
 size = 71787
 storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_GHF-FoxMaule2005.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-16KM/2.0.0/GRL-16KM_GHF-FoxMaule2005.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-16KM/2.1.0/GRL-16KM_GHF-FoxMaule2005.nc"
 
 ["GRL-16KM_GHF-Lucazeau2019.nc"]
-checksum = "sha256:933e23f13e610ea357a43ade2310a2720d9479d2e280747644dfc9f407be4480"
+checksum = "sha256:58624e030b58f14527e1195b089ceb635f04fc763a68cdf76510ae0a23c0d43e"
+previous_checksums = ["sha256:933e23f13e610ea357a43ade2310a2720d9479d2e280747644dfc9f407be4480"]
 size = 138812
 storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_GHF-Lucazeau2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-16KM/2.0.0/GRL-16KM_GHF-Lucazeau2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-16KM/2.1.0/GRL-16KM_GHF-Lucazeau2019.nc"
 
 ["GRL-16KM_GHF-Martos2018.nc"]
-checksum = "sha256:d72d85997c837e2102518fefa74fc669c746b11d1d33131fc6b4e27e8fb00139"
-size = 152448
+checksum = "sha256:c1a5473778d9386738d643966d70da0193c5d1278664e9579963c92cc43bc94f"
+previous_checksums = ["sha256:d72d85997c837e2102518fefa74fc669c746b11d1d33131fc6b4e27e8fb00139"]
+size = 194961
 storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_GHF-Martos2018.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-16KM/2.0.0/GRL-16KM_GHF-Martos2018.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-16KM/2.1.0/GRL-16KM_GHF-Martos2018.nc"
 
 ["GRL-16KM_GHF-Shapiro2004.nc"]
-checksum = "sha256:339c7c51b42d651763deab56eb77d84f82ddaf213828d238c082c3f1304c21d6"
+checksum = "sha256:90c20b9b718291484f0af2c018931bad6059f323a45fecc37238e5ac7e0e5ad2"
+previous_checksums = ["sha256:339c7c51b42d651763deab56eb77d84f82ddaf213828d238c082c3f1304c21d6"]
 size = 129310
 storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_GHF-Shapiro2004.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-16KM/2.0.0/GRL-16KM_GHF-Shapiro2004.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-16KM/2.1.0/GRL-16KM_GHF-Shapiro2004.nc"
 
 ["GRL-16KM_grid.nc"]
 checksum = "sha256:e835518450bae0a863fdb7cd68adc7d4f59c48c790090d497939939518960d41"
 size = 150482
 storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-16KM/2.0.0/GRL-16KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-16KM/2.1.0/GRL-16KM_grid.nc"
 
 ["GRL-1KM_GHF-Colgan2021-topocorr-GRL.nc"]
-checksum = "sha256:09c0d6649b4ecb1a18af48ea843f8ef8e1dc5b3ae52d01311f230ada394d1d4d"
+checksum = "sha256:d51ad00eb2bb8aaf13f8a9e90b5ddd812c78788e3b1c6679f346e5a66d23b6c5"
+previous_checksums = ["sha256:09c0d6649b4ecb1a18af48ea843f8ef8e1dc5b3ae52d01311f230ada394d1d4d"]
 size = 25267678
 storage_path = "$datasets_dir/Greenland/GRL-1KM/GRL-1KM_GHF-Colgan2021-topocorr-GRL.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-1KM/2.0.0/GRL-1KM_GHF-Colgan2021-topocorr-GRL.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-1KM/2.1.0/GRL-1KM_GHF-Colgan2021-topocorr-GRL.nc"
 
 ["GRL-1KM_grid.nc"]
 checksum = "sha256:04da63872f29f82b9a5ae9f8f3dbb0996e9b8a272f539629d1af272147c92f9b"
 size = 19073467
 storage_path = "$datasets_dir/Greenland/GRL-1KM/GRL-1KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-1KM/2.0.0/GRL-1KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-1KM/2.1.0/GRL-1KM_grid.nc"
 
 ["GRL-2KM_GHF-Colgan2021-topocorr-GRL.nc"]
-checksum = "sha256:4a93172e8b530d9bac0c59fad87015b2ece1d4a015c9671476e1b545a151c300"
+checksum = "sha256:07684a4fc8d527b66f06898e7960973968fd40e1f2dad382c59e85d344611c44"
+previous_checksums = ["sha256:4a93172e8b530d9bac0c59fad87015b2ece1d4a015c9671476e1b545a151c300"]
 size = 6523051
 storage_path = "$datasets_dir/Greenland/GRL-2KM/GRL-2KM_GHF-Colgan2021-topocorr-GRL.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-2KM/2.0.0/GRL-2KM_GHF-Colgan2021-topocorr-GRL.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-2KM/2.1.0/GRL-2KM_GHF-Colgan2021-topocorr-GRL.nc"
 
 ["GRL-2KM_grid.nc"]
 checksum = "sha256:f14a977d6e3a1f3163a45f02a604b05efc34d00a2f27fba14f8114ddf5725fc1"
 size = 5378392
 storage_path = "$datasets_dir/Greenland/GRL-2KM/GRL-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-2KM/2.0.0/GRL-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-2KM/2.1.0/GRL-2KM_grid.nc"
 
 ["GRL-32KM_GHF-Colgan2021-topocorr-GRL.nc"]
-checksum = "sha256:9d59c4be9a8578eafb1959ab4bca8b12a04c020768f4b3cb47396fc94205483a"
+checksum = "sha256:65bd576a559db88db1c32f97e6879ef0b228ec9e333ab8756a1d084c5f013f7f"
+previous_checksums = ["sha256:9d59c4be9a8578eafb1959ab4bca8b12a04c020768f4b3cb47396fc94205483a"]
 size = 52274
 storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_GHF-Colgan2021-topocorr-GRL.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-32KM/2.0.0/GRL-32KM_GHF-Colgan2021-topocorr-GRL.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-32KM/2.1.0/GRL-32KM_GHF-Colgan2021-topocorr-GRL.nc"
 
 ["GRL-32KM_GHF-Colgan2021.nc"]
-checksum = "sha256:78bdc5f04122cb582c03de48634a289ea1ccc0e8d0f59af0dc140d96291e3803"
+checksum = "sha256:8942aaae15768b5ae97e000a969f36778a9d005415d8d24001a2b9317bdea7c2"
+previous_checksums = ["sha256:78bdc5f04122cb582c03de48634a289ea1ccc0e8d0f59af0dc140d96291e3803"]
 size = 82956
 storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_GHF-Colgan2021.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-32KM/2.0.0/GRL-32KM_GHF-Colgan2021.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-32KM/2.1.0/GRL-32KM_GHF-Colgan2021.nc"
 
 ["GRL-32KM_GHF-Davies2013.nc"]
-checksum = "sha256:022ca775b4d420a1d2e6d73caa92deb67afff6390d8851d8d4b2be8368d72271"
+checksum = "sha256:1142fa71add1cfba19a9f47319c1a62fe95e4f41dd4d61504e3dd27676556d01"
+previous_checksums = ["sha256:022ca775b4d420a1d2e6d73caa92deb67afff6390d8851d8d4b2be8368d72271"]
 size = 69040
 storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_GHF-Davies2013.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-32KM/2.0.0/GRL-32KM_GHF-Davies2013.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-32KM/2.1.0/GRL-32KM_GHF-Davies2013.nc"
 
 ["GRL-32KM_GHF-FoxMaule2005.nc"]
-checksum = "sha256:cfd799224c06e9a86bad5abfb4fe658db8ad9977ad48376ad60cfc02c8be65cb"
+checksum = "sha256:24f045d65d4aee49711c274ad8001a84e0985c637099da9bd8a56078c0c632ea"
+previous_checksums = ["sha256:cfd799224c06e9a86bad5abfb4fe658db8ad9977ad48376ad60cfc02c8be65cb"]
 size = 35750
 storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_GHF-FoxMaule2005.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-32KM/2.0.0/GRL-32KM_GHF-FoxMaule2005.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-32KM/2.1.0/GRL-32KM_GHF-FoxMaule2005.nc"
 
 ["GRL-32KM_GHF-Lucazeau2019.nc"]
-checksum = "sha256:c9f6b55d03205a628c35579834cbb6f65aa7c34111e75b16153574f729581757"
+checksum = "sha256:9cbef7625a4a519fc9889a0749fdef1de4dbc7faf253030707b74d7001839904"
+previous_checksums = ["sha256:c9f6b55d03205a628c35579834cbb6f65aa7c34111e75b16153574f729581757"]
 size = 54865
 storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_GHF-Lucazeau2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-32KM/2.0.0/GRL-32KM_GHF-Lucazeau2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-32KM/2.1.0/GRL-32KM_GHF-Lucazeau2019.nc"
 
 ["GRL-32KM_GHF-Martos2018.nc"]
-checksum = "sha256:11424d0c8670b4592fb15b9f0a95edf512deda161d7272deddf80b4dcc276f20"
-size = 69070
+checksum = "sha256:7fc17c90c11d03a1e5ccd66c6865507616f629a85cf5c553e6de87d9b2d4ee19"
+previous_checksums = ["sha256:11424d0c8670b4592fb15b9f0a95edf512deda161d7272deddf80b4dcc276f20"]
+size = 82551
 storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_GHF-Martos2018.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-32KM/2.0.0/GRL-32KM_GHF-Martos2018.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-32KM/2.1.0/GRL-32KM_GHF-Martos2018.nc"
 
 ["GRL-32KM_GHF-Shapiro2004.nc"]
-checksum = "sha256:8f33ef226912d08f7734fe9830cdfaacff6e272a99f23dc6667d946665db150a"
+checksum = "sha256:559f7b3ab7527f1d078c190ce152ab31cf76b02a1688f6c334735b20bbf7151f"
+previous_checksums = ["sha256:8f33ef226912d08f7734fe9830cdfaacff6e272a99f23dc6667d946665db150a"]
 size = 53683
 storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_GHF-Shapiro2004.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-32KM/2.0.0/GRL-32KM_GHF-Shapiro2004.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-32KM/2.1.0/GRL-32KM_GHF-Shapiro2004.nc"
 
 ["GRL-32KM_grid.nc"]
 checksum = "sha256:c922307bd72e9e5bd3d10d86b97e3c108dcd5a4264dd47b305b9c562ba81e775"
 size = 57245
 storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-32KM/2.0.0/GRL-32KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-32KM/2.1.0/GRL-32KM_grid.nc"
 
 ["GRL-4KM_GHF-Colgan2021-topocorr-GRL.nc"]
-checksum = "sha256:51e0eb21320724b5718ad3571114866023772b85b9c6030bdb0afb6236c615e2"
+checksum = "sha256:ecfd43aa229b18206b1756036146dca8ab0eb828558f6d2e105539e0730a5368"
+previous_checksums = ["sha256:51e0eb21320724b5718ad3571114866023772b85b9c6030bdb0afb6236c615e2"]
 size = 1662000
 storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_GHF-Colgan2021-topocorr-GRL.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-4KM/2.0.0/GRL-4KM_GHF-Colgan2021-topocorr-GRL.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-4KM/2.1.0/GRL-4KM_GHF-Colgan2021-topocorr-GRL.nc"
 
 ["GRL-4KM_GHF-Colgan2021.nc"]
-checksum = "sha256:54b32dba2e2b198211cc1b76892fabb767b859808856fef114a4c732cf5d76d4"
+checksum = "sha256:61679c2701ae5bcf3e3e2a5ac53206c872d9a7cc9816cb4e21a7af3743c8713a"
+previous_checksums = ["sha256:54b32dba2e2b198211cc1b76892fabb767b859808856fef114a4c732cf5d76d4"]
 size = 1995494
 storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_GHF-Colgan2021.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-4KM/2.0.0/GRL-4KM_GHF-Colgan2021.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-4KM/2.1.0/GRL-4KM_GHF-Colgan2021.nc"
 
 ["GRL-4KM_GHF-Davies2013.nc"]
-checksum = "sha256:09b3a4cc64afebcf71ff3cf923a084074dc6cbf39681426d244f569211a90c24"
+checksum = "sha256:47a7c4aaa2f1b69caccc80ff6069f8b23a152648cae198debd3cd9d005f857a9"
+previous_checksums = ["sha256:09b3a4cc64afebcf71ff3cf923a084074dc6cbf39681426d244f569211a90c24"]
 size = 2055226
 storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_GHF-Davies2013.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-4KM/2.0.0/GRL-4KM_GHF-Davies2013.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-4KM/2.1.0/GRL-4KM_GHF-Davies2013.nc"
 
 ["GRL-4KM_GHF-FoxMaule2005.nc"]
-checksum = "sha256:4c3f5db65b8a25d8beb30afad149ca0a8fa49f8a59994cc0b7d0075d970aad58"
+checksum = "sha256:53929a47b2ae424482575305856c8a3d99cc9f771ca5dbac98a7b8dd3c099438"
+previous_checksums = ["sha256:4c3f5db65b8a25d8beb30afad149ca0a8fa49f8a59994cc0b7d0075d970aad58"]
 size = 603608
 storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_GHF-FoxMaule2005.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-4KM/2.0.0/GRL-4KM_GHF-FoxMaule2005.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-4KM/2.1.0/GRL-4KM_GHF-FoxMaule2005.nc"
 
 ["GRL-4KM_GHF-Lucazeau2019.nc"]
-checksum = "sha256:005642bc88e54485b625ae3c2659f40cd8c4bab289047b861fbb88bf30b57d08"
+checksum = "sha256:01da62a1740082fe211a7a9f354cc0eaa26cd7b047eeab50a7674c36f548de74"
+previous_checksums = ["sha256:005642bc88e54485b625ae3c2659f40cd8c4bab289047b861fbb88bf30b57d08"]
 size = 1554723
 storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_GHF-Lucazeau2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-4KM/2.0.0/GRL-4KM_GHF-Lucazeau2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-4KM/2.1.0/GRL-4KM_GHF-Lucazeau2019.nc"
 
 ["GRL-4KM_GHF-Martos2018.nc"]
-checksum = "sha256:24970ed8fc3de4f17b510254fec730cb9632bd60dfa5b1801eda9cc207477528"
-size = 1479824
+checksum = "sha256:87c17a128ed0481af145814e71cbbbd1899d9d3d1d260974b89dd6b357516d5f"
+previous_checksums = ["sha256:24970ed8fc3de4f17b510254fec730cb9632bd60dfa5b1801eda9cc207477528"]
+size = 2035257
 storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_GHF-Martos2018.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-4KM/2.0.0/GRL-4KM_GHF-Martos2018.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-4KM/2.1.0/GRL-4KM_GHF-Martos2018.nc"
 
 ["GRL-4KM_GHF-Shapiro2004.nc"]
-checksum = "sha256:395c395da7d359c88407fba53572f37dcfafb71942dae85ce46dc088d5d5298a"
+checksum = "sha256:c813c683132b904f9bd3e81ae83f23b0e0e05698f5031e958614e0b16096ac5d"
+previous_checksums = ["sha256:395c395da7d359c88407fba53572f37dcfafb71942dae85ce46dc088d5d5298a"]
 size = 1418764
 storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_GHF-Shapiro2004.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-4KM/2.0.0/GRL-4KM_GHF-Shapiro2004.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-4KM/2.1.0/GRL-4KM_GHF-Shapiro2004.nc"
 
 ["GRL-4KM_grid.nc"]
 checksum = "sha256:bfc44b679d56099bfb9306c3bfe8d74d1663a5b7168c2f18b404fdb3b6cabe4f"
 size = 1546343
 storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-4KM/2.0.0/GRL-4KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-4KM/2.1.0/GRL-4KM_grid.nc"
 
 ["GRL-500M_GHF-Colgan2021-topocorr-GRL.nc"]
-checksum = "sha256:4054dcd05fbd3d541ca7977332217443f6043952f8b3f592b867878872864559"
+checksum = "sha256:038c15dc27e31c5dd234937acb26b96b901c062fe35484a7fb7397e711bc5a4e"
+previous_checksums = ["sha256:4054dcd05fbd3d541ca7977332217443f6043952f8b3f592b867878872864559"]
 size = 97744460
 storage_path = "$datasets_dir/Greenland/GRL-500M/GRL-500M_GHF-Colgan2021-topocorr-GRL.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-500M/2.0.0/GRL-500M_GHF-Colgan2021-topocorr-GRL.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-500M/2.1.0/GRL-500M_GHF-Colgan2021-topocorr-GRL.nc"
 
 ["GRL-500M_grid.nc"]
 checksum = "sha256:b05848d86ae7e9cec6c530c7f2ea298350898c1410ce6d86fe6589ec20567045"
 size = 63040154
 storage_path = "$datasets_dir/Greenland/GRL-500M/GRL-500M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-500M/2.0.0/GRL-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-500M/2.1.0/GRL-500M_grid.nc"
 
 ["GRL-8KM_GHF-Colgan2021-topocorr-GRL.nc"]
-checksum = "sha256:c27bcd68acb4483e5bee8d73ec279fd5bc083a94f0f194559215dcf8879e0b29"
+checksum = "sha256:80376a1a8982f69d440829d70b5ecf5f7aeb51921a6c75e5287cce20a21214b0"
+previous_checksums = ["sha256:c27bcd68acb4483e5bee8d73ec279fd5bc083a94f0f194559215dcf8879e0b29"]
 size = 434859
 storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_GHF-Colgan2021-topocorr-GRL.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-8KM/2.0.0/GRL-8KM_GHF-Colgan2021-topocorr-GRL.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-8KM/2.1.0/GRL-8KM_GHF-Colgan2021-topocorr-GRL.nc"
 
 ["GRL-8KM_GHF-Colgan2021.nc"]
-checksum = "sha256:626ab576451b0a51231f087134038c7fb909752b0ac8229f6c9267696a82d3e2"
+checksum = "sha256:ac6c3758966fe13ff8b6530a603259d330740482fdb42d5a1008808de43ef331"
+previous_checksums = ["sha256:626ab576451b0a51231f087134038c7fb909752b0ac8229f6c9267696a82d3e2"]
 size = 583783
 storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_GHF-Colgan2021.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-8KM/2.0.0/GRL-8KM_GHF-Colgan2021.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-8KM/2.1.0/GRL-8KM_GHF-Colgan2021.nc"
 
 ["GRL-8KM_GHF-Davies2013.nc"]
-checksum = "sha256:c17085bd1d10cd024ad7af6292bd55a42b34566694481be004e2245530da691a"
+checksum = "sha256:929de4083683f8c273f26ae834127007202a2fa4cfe61c706dfcf6ad484ed6c8"
+previous_checksums = ["sha256:c17085bd1d10cd024ad7af6292bd55a42b34566694481be004e2245530da691a"]
 size = 575544
 storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_GHF-Davies2013.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-8KM/2.0.0/GRL-8KM_GHF-Davies2013.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-8KM/2.1.0/GRL-8KM_GHF-Davies2013.nc"
 
 ["GRL-8KM_GHF-FoxMaule2005.nc"]
-checksum = "sha256:acbc5b7666bd4360a2acac7bff865b37ec346840580031763737ba7797c052c9"
+checksum = "sha256:b2e21f38d782a2efa7e89fd779acc7573b870b69180d2052e7cff6142e8faf80"
+previous_checksums = ["sha256:acbc5b7666bd4360a2acac7bff865b37ec346840580031763737ba7797c052c9"]
 size = 186573
 storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_GHF-FoxMaule2005.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-8KM/2.0.0/GRL-8KM_GHF-FoxMaule2005.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-8KM/2.1.0/GRL-8KM_GHF-FoxMaule2005.nc"
 
 ["GRL-8KM_GHF-Lucazeau2019.nc"]
-checksum = "sha256:bf81875b1b6b46f78f50a85aa3ef74548fbcb4776015a8fd828ed7af86f01588"
+checksum = "sha256:b98bbaff24a6fc0361bf6a933e0b6618d144cf7a43fefc6f426b617543121df6"
+previous_checksums = ["sha256:bf81875b1b6b46f78f50a85aa3ef74548fbcb4776015a8fd828ed7af86f01588"]
 size = 438377
 storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_GHF-Lucazeau2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-8KM/2.0.0/GRL-8KM_GHF-Lucazeau2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-8KM/2.1.0/GRL-8KM_GHF-Lucazeau2019.nc"
 
 ["GRL-8KM_GHF-Martos2018.nc"]
-checksum = "sha256:c5ff44ea410e56fec879d6f93f7ae56760a8f10d1817808fff30c779fec523ab"
-size = 446096
+checksum = "sha256:108f607aa543374842390975bb516d0cc1b1b9fe8a59953338c49e8631115576"
+previous_checksums = ["sha256:c5ff44ea410e56fec879d6f93f7ae56760a8f10d1817808fff30c779fec523ab"]
+size = 593880
 storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_GHF-Martos2018.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-8KM/2.0.0/GRL-8KM_GHF-Martos2018.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-8KM/2.1.0/GRL-8KM_GHF-Martos2018.nc"
 
 ["GRL-8KM_GHF-Shapiro2004.nc"]
-checksum = "sha256:f502fc708a601bf4dd31cb9d5cd76597c42aa687eb131c2e380442c138fca10b"
+checksum = "sha256:ef3576968db969c1969e1c30bbd02e69b25229dfe82a63c70e2593275f1f85db"
+previous_checksums = ["sha256:f502fc708a601bf4dd31cb9d5cd76597c42aa687eb131c2e380442c138fca10b"]
 size = 399277
 storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_GHF-Shapiro2004.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-8KM/2.0.0/GRL-8KM_GHF-Shapiro2004.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-8KM/2.1.0/GRL-8KM_GHF-Shapiro2004.nc"
 
 ["GRL-8KM_grid.nc"]
 checksum = "sha256:a7c9769dfbac2eefa4f4a79985475995596d3035f3481009cfff72c2c45fb40e"
 size = 467101
 storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-8KM/2.0.0/GRL-8KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-8KM/2.1.0/GRL-8KM_grid.nc"
 
 ["grid_GRL-16KM.txt"]
 checksum = "sha256:96d8ae58fe971c0fe4bcf3433b0f78c1c46af7104133c842859d47b655060cd6"
 size = 465
 storage_path = "$datasets_dir/Greenland/GRL-16KM/grid_GRL-16KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-16KM/2.0.0/grid_GRL-16KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-16KM/2.1.0/grid_GRL-16KM.txt"
 
 ["grid_GRL-1KM.txt"]
 checksum = "sha256:6c3c8dcbe453c0b9226de89c2c6349a5f1c8b9eb11b395fafcc03e514e756ae6"
 size = 467
 storage_path = "$datasets_dir/Greenland/GRL-1KM/grid_GRL-1KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-1KM/2.0.0/grid_GRL-1KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-1KM/2.1.0/grid_GRL-1KM.txt"
 
 ["grid_GRL-2KM.txt"]
 checksum = "sha256:d795d6d9de510cf0e66e83fb14a1a16680f9914baffb4e23fb521553bf0c47b3"
 size = 466
 storage_path = "$datasets_dir/Greenland/GRL-2KM/grid_GRL-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-2KM/2.0.0/grid_GRL-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-2KM/2.1.0/grid_GRL-2KM.txt"
 
 ["grid_GRL-32KM.txt"]
 checksum = "sha256:60caa1794ee7701429bc7ccece8aa52f1f4555ddc051c056409acb398cad52a0"
 size = 462
 storage_path = "$datasets_dir/Greenland/GRL-32KM/grid_GRL-32KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-32KM/2.0.0/grid_GRL-32KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-32KM/2.1.0/grid_GRL-32KM.txt"
 
 ["grid_GRL-4KM.txt"]
 checksum = "sha256:17883e1fab0cfa9f8b288bb7d2fb6fa27955ff3a437d06b0ec4d0fb1e358165f"
 size = 464
 storage_path = "$datasets_dir/Greenland/GRL-4KM/grid_GRL-4KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-4KM/2.0.0/grid_GRL-4KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-4KM/2.1.0/grid_GRL-4KM.txt"
 
 ["grid_GRL-500M.txt"]
 checksum = "sha256:7731e4372f47b90a680fc2a2a329da0988c1c8448eb6636894e6718e946c9d57"
 size = 468
 storage_path = "$datasets_dir/Greenland/GRL-500M/grid_GRL-500M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-500M/2.0.0/grid_GRL-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-500M/2.1.0/grid_GRL-500M.txt"
 
 ["grid_GRL-8KM.txt"]
 checksum = "sha256:455c0a221c44c016c9129b7e1305cc2e1cf1f17be11aace7a68103e92f6c2c5c"
 size = 463
 storage_path = "$datasets_dir/Greenland/GRL-8KM/grid_GRL-8KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-8KM/2.0.0/grid_GRL-8KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_GHF_GRL-8KM/2.1.0/grid_GRL-8KM.txt"

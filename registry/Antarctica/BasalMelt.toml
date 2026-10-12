@@ -2,183 +2,183 @@
 
 [_RELEASE]
 date = "2026-10-12"
-git_tag = "basalmelt-v2.1.0"
+git_tag = "basalmelt-v2.2.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Antarctica_BasalMelt"
-version = "2.1.0"
+version = "2.2.0"
 
 ["ANT-16KM_BasalMelt-Adusumilli2020-heights.nc"]
-checksum = "sha256:307f7a109a3166b4f8b3733cc5322032732cef57b211f03c4ebf134829774a0a"
-previous_checksums = ["sha256:f7a763859b4eb4b1e0c9873a594a4a0652d38093caa075624acf4c8ed9987ee3"]
+checksum = "sha256:20594a1a5abb2a3929b0dc0ad069b29b1ccbbdc6008f68150cd4987fbf40a9e6"
+previous_checksums = ["sha256:f7a763859b4eb4b1e0c9873a594a4a0652d38093caa075624acf4c8ed9987ee3", "sha256:307f7a109a3166b4f8b3733cc5322032732cef57b211f03c4ebf134829774a0a"]
 size = 10437622
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_BasalMelt-Adusumilli2020-heights.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-16KM/2.1.0/ANT-16KM_BasalMelt-Adusumilli2020-heights.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-16KM/2.2.0/ANT-16KM_BasalMelt-Adusumilli2020-heights.nc"
 
 ["ANT-16KM_BasalMelt-Adusumilli2020.nc"]
-checksum = "sha256:0dcbe5ab8331977c99da00cbc05162881f202b9e3e7c19fc3d6407017c796982"
-previous_checksums = ["sha256:24404cbdc0129ac8b9cd0244eb63484a926c3b5629293405b79149a3607e2537"]
+checksum = "sha256:9d8f731ce881cd2cf1c6909c2e613b0bacd87d97c7377bb043b8ad047943fd1a"
+previous_checksums = ["sha256:24404cbdc0129ac8b9cd0244eb63484a926c3b5629293405b79149a3607e2537", "sha256:0dcbe5ab8331977c99da00cbc05162881f202b9e3e7c19fc3d6407017c796982"]
 size = 210832
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_BasalMelt-Adusumilli2020.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-16KM/2.1.0/ANT-16KM_BasalMelt-Adusumilli2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-16KM/2.2.0/ANT-16KM_BasalMelt-Adusumilli2020.nc"
 
 ["ANT-16KM_BasalMelt-Rignot2013.nc"]
-checksum = "sha256:e8d80805a12454bcea2d75b62ed62c11a63c6de286ffc6c6d6f58d1fa3aa9620"
-previous_checksums = ["sha256:8b6320e74c47818a04f15c586d03c37549687a6e1abb6b354281ca0235e40b83"]
-size = 306135
+checksum = "sha256:81431ed587cb08857c79f31ecc6e746939225444cfdb77a5dae6a38cd6e99422"
+previous_checksums = ["sha256:8b6320e74c47818a04f15c586d03c37549687a6e1abb6b354281ca0235e40b83", "sha256:e8d80805a12454bcea2d75b62ed62c11a63c6de286ffc6c6d6f58d1fa3aa9620"]
+size = 245599
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_BasalMelt-Rignot2013.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-16KM/2.1.0/ANT-16KM_BasalMelt-Rignot2013.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-16KM/2.2.0/ANT-16KM_BasalMelt-Rignot2013.nc"
 
 ["ANT-16KM_grid.nc"]
 checksum = "sha256:dea44445828fdc3adbae04afc6662224e96a6838c8381f80a855659b3ad6460c"
 size = 892250
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-16KM/2.1.0/ANT-16KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-16KM/2.2.0/ANT-16KM_grid.nc"
 
 ["ANT-1KM_BasalMelt-Adusumilli2020.nc"]
-checksum = "sha256:55c07f6b63bf22f108607951128735977b0821e819d3f0c6f314450e8e577c53"
-previous_checksums = ["sha256:88f97322342d3aa08263275e64e5f47d01a58e82b657fc57fe288d365fec58e5"]
+checksum = "sha256:2a7e564a0ce06bf2b15a550c2f4457941770a4b69bee46114da3b929f048c91b"
+previous_checksums = ["sha256:88f97322342d3aa08263275e64e5f47d01a58e82b657fc57fe288d365fec58e5", "sha256:55c07f6b63bf22f108607951128735977b0821e819d3f0c6f314450e8e577c53"]
 size = 19824492
 storage_path = "$datasets_dir/Antarctica/ANT-1KM/ANT-1KM_BasalMelt-Adusumilli2020.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-1KM/2.1.0/ANT-1KM_BasalMelt-Adusumilli2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-1KM/2.2.0/ANT-1KM_BasalMelt-Adusumilli2020.nc"
 
 ["ANT-1KM_BasalMelt-Rignot2013.nc"]
-checksum = "sha256:180e60285a71c9fc533ccf1326b80379f918cfe22c15a6b55fe79f11da8dee64"
-previous_checksums = ["sha256:7025a43fb9da76579398eeb92392ea4e7fd98b576949d260c9a9624c024f03c3"]
-size = 20315371
+checksum = "sha256:00cc33cc234b88923caa85fda64600ff16eb56e998047d2c8a28cfc85bb93486"
+previous_checksums = ["sha256:7025a43fb9da76579398eeb92392ea4e7fd98b576949d260c9a9624c024f03c3", "sha256:180e60285a71c9fc533ccf1326b80379f918cfe22c15a6b55fe79f11da8dee64"]
+size = 18317750
 storage_path = "$datasets_dir/Antarctica/ANT-1KM/ANT-1KM_BasalMelt-Rignot2013.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-1KM/2.1.0/ANT-1KM_BasalMelt-Rignot2013.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-1KM/2.2.0/ANT-1KM_BasalMelt-Rignot2013.nc"
 
 ["ANT-1KM_grid.nc"]
 checksum = "sha256:1564185a4ce4e24d55ceaa7e6a6fc6170b28746fb5435d96af1ddb267a5da085"
 size = 142664883
 storage_path = "$datasets_dir/Antarctica/ANT-1KM/ANT-1KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-1KM/2.1.0/ANT-1KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-1KM/2.2.0/ANT-1KM_grid.nc"
 
 ["ANT-2KM_BasalMelt-Adusumilli2020.nc"]
-checksum = "sha256:70a857e1097b55504cc724423dcf828a469ab29fe5c0facff464566eb24d907c"
-previous_checksums = ["sha256:42df4ac3cbdae91bd65d6b21deba50fde87bb3f7bcec15311a11eb65d408ffa3"]
+checksum = "sha256:b815625eabe6abc83b11145c179f576e7777a4f940c0ec8850626150e2e44bef"
+previous_checksums = ["sha256:42df4ac3cbdae91bd65d6b21deba50fde87bb3f7bcec15311a11eb65d408ffa3", "sha256:70a857e1097b55504cc724423dcf828a469ab29fe5c0facff464566eb24d907c"]
 size = 5652301
 storage_path = "$datasets_dir/Antarctica/ANT-2KM/ANT-2KM_BasalMelt-Adusumilli2020.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-2KM/2.1.0/ANT-2KM_BasalMelt-Adusumilli2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-2KM/2.2.0/ANT-2KM_BasalMelt-Adusumilli2020.nc"
 
 ["ANT-2KM_BasalMelt-Rignot2013.nc"]
-checksum = "sha256:954f5ee7be59148849e5d1fcccec13729790a733d1bdaf5ad71c24ed6111d74d"
-previous_checksums = ["sha256:ff5399428b3ba079e5f0d8862e413205e13833f5d28928a79bb379341319281f"]
-size = 6320807
+checksum = "sha256:f531547da0cb07cc283d7ece23b8c034010b53dc152d89ada8035e916f4d8203"
+previous_checksums = ["sha256:ff5399428b3ba079e5f0d8862e413205e13833f5d28928a79bb379341319281f", "sha256:954f5ee7be59148849e5d1fcccec13729790a733d1bdaf5ad71c24ed6111d74d"]
+size = 5529195
 storage_path = "$datasets_dir/Antarctica/ANT-2KM/ANT-2KM_BasalMelt-Rignot2013.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-2KM/2.1.0/ANT-2KM_BasalMelt-Rignot2013.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-2KM/2.2.0/ANT-2KM_BasalMelt-Rignot2013.nc"
 
 ["ANT-2KM_grid.nc"]
 checksum = "sha256:405a1131131ba119609bf7c4147b29477ab4801fd0221f56656ab6ff1abf8ffc"
 size = 40215317
 storage_path = "$datasets_dir/Antarctica/ANT-2KM/ANT-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-2KM/2.1.0/ANT-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-2KM/2.2.0/ANT-2KM_grid.nc"
 
 ["ANT-32KM_BasalMelt-Adusumilli2020-heights.nc"]
-checksum = "sha256:ded6f6a5bd4fcbe3f1d9c7de831d347b6467bd50e3dcb532e6850e6cb257e041"
-previous_checksums = ["sha256:b98414e6f9e6c80c0f70d26ec4a7d371e5ad6d0b6aaf1b8408720d8185910308"]
+checksum = "sha256:010fcb8dad1214e4890864535d51fddb80dbff7b4e30bb8ea9089b48d46209f2"
+previous_checksums = ["sha256:b98414e6f9e6c80c0f70d26ec4a7d371e5ad6d0b6aaf1b8408720d8185910308", "sha256:ded6f6a5bd4fcbe3f1d9c7de831d347b6467bd50e3dcb532e6850e6cb257e041"]
 size = 3638790
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_BasalMelt-Adusumilli2020-heights.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-32KM/2.1.0/ANT-32KM_BasalMelt-Adusumilli2020-heights.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-32KM/2.2.0/ANT-32KM_BasalMelt-Adusumilli2020-heights.nc"
 
 ["ANT-32KM_BasalMelt-Adusumilli2020.nc"]
-checksum = "sha256:0adb6030564974025a25e5d9ec80e655406e9ef5355ea696b968ee83dd35943b"
-previous_checksums = ["sha256:729c0f2b35e2a09795f4e764d885b460750a8f2720b70a318d308f90ed87a3be"]
+checksum = "sha256:0cf8eaf110995f0ecf89a2ee9adb1a6f2725f81e54d29d2fe105890b6d090403"
+previous_checksums = ["sha256:729c0f2b35e2a09795f4e764d885b460750a8f2720b70a318d308f90ed87a3be", "sha256:0adb6030564974025a25e5d9ec80e655406e9ef5355ea696b968ee83dd35943b"]
 size = 98232
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_BasalMelt-Adusumilli2020.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-32KM/2.1.0/ANT-32KM_BasalMelt-Adusumilli2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-32KM/2.2.0/ANT-32KM_BasalMelt-Adusumilli2020.nc"
 
 ["ANT-32KM_BasalMelt-Rignot2013.nc"]
-checksum = "sha256:2dd3d71c406eef62a711c6ff90b9bc96eb3e7f67a3e4dfe936e47d0cb2d10672"
-previous_checksums = ["sha256:8fd54275e2bd41e1264500d3f585bd564c92fcfebc0016c6f4bea3b1d698e4b9"]
-size = 152119
+checksum = "sha256:fb6486e119b3a2dd6dcc004f7f65b9f5901e57081f38718f6301e8840cae7b12"
+previous_checksums = ["sha256:8fd54275e2bd41e1264500d3f585bd564c92fcfebc0016c6f4bea3b1d698e4b9", "sha256:2dd3d71c406eef62a711c6ff90b9bc96eb3e7f67a3e4dfe936e47d0cb2d10672"]
+size = 116911
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_BasalMelt-Rignot2013.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-32KM/2.1.0/ANT-32KM_BasalMelt-Rignot2013.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-32KM/2.2.0/ANT-32KM_BasalMelt-Rignot2013.nc"
 
 ["ANT-32KM_grid.nc"]
 checksum = "sha256:66765d3512c62479e60ad1095a4ee84b38edb681fe816eddf9896c3a2799efd8"
 size = 212550
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-32KM/2.1.0/ANT-32KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-32KM/2.2.0/ANT-32KM_grid.nc"
 
 ["ANT-4KM_BasalMelt-Adusumilli2020.nc"]
-checksum = "sha256:61802d2dd53b903e4a4ce1ac5f340a0d7178cd159befa74baf4e7d90c8dd0b41"
-previous_checksums = ["sha256:f6ce55825387e896ecb8efbca185542c946a424d08c533f4c4ad66d34b8eee24"]
+checksum = "sha256:9e1ad821174056aaf1e221f8ae3a1e67ea0f27f3297ed0c258d754a7747acda6"
+previous_checksums = ["sha256:f6ce55825387e896ecb8efbca185542c946a424d08c533f4c4ad66d34b8eee24", "sha256:61802d2dd53b903e4a4ce1ac5f340a0d7178cd159befa74baf4e7d90c8dd0b41"]
 size = 1722459
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_BasalMelt-Adusumilli2020.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-4KM/2.1.0/ANT-4KM_BasalMelt-Adusumilli2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-4KM/2.2.0/ANT-4KM_BasalMelt-Adusumilli2020.nc"
 
 ["ANT-4KM_BasalMelt-Rignot2013.nc"]
-checksum = "sha256:2ef46f82743307929a378683cfee30a79748d05a1328d38764c9243111503ede"
-previous_checksums = ["sha256:e8c688b83bd9c95308888fce9f933becbc78c16db8d91196287163554eb9a6db"]
-size = 2096718
+checksum = "sha256:9aec983e234cecd9aa3a7f5d41f0cf8285beb7b0ef5321ff5314d7a00b89c3fb"
+previous_checksums = ["sha256:e8c688b83bd9c95308888fce9f933becbc78c16db8d91196287163554eb9a6db", "sha256:2ef46f82743307929a378683cfee30a79748d05a1328d38764c9243111503ede"]
+size = 1759888
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_BasalMelt-Rignot2013.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-4KM/2.1.0/ANT-4KM_BasalMelt-Rignot2013.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-4KM/2.2.0/ANT-4KM_BasalMelt-Rignot2013.nc"
 
 ["ANT-4KM_grid.nc"]
 checksum = "sha256:b553afcb6273200e9cd436c4f3ba5f081c599c58237374342aade5c4588e879f"
 size = 11450508
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-4KM/2.1.0/ANT-4KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-4KM/2.2.0/ANT-4KM_grid.nc"
 
 ["ANT-8KM_BasalMelt-Adusumilli2020-heights.nc"]
-checksum = "sha256:ffe9e479b18ce0febcb425502fbd7db78f81c91558839d7fd9d7c349e66078e7"
-previous_checksums = ["sha256:bae2f33ac809ed5f85430fa78b591e14692d2076888b45e06a5c031f0eb7be8e"]
+checksum = "sha256:3b6eeda8addf36df3302f4a5fa4f097d1239b31dafb4f09bcc4adbb84beeef56"
+previous_checksums = ["sha256:bae2f33ac809ed5f85430fa78b591e14692d2076888b45e06a5c031f0eb7be8e", "sha256:ffe9e479b18ce0febcb425502fbd7db78f81c91558839d7fd9d7c349e66078e7"]
 size = 34990314
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_BasalMelt-Adusumilli2020-heights.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-8KM/2.1.0/ANT-8KM_BasalMelt-Adusumilli2020-heights.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-8KM/2.2.0/ANT-8KM_BasalMelt-Adusumilli2020-heights.nc"
 
 ["ANT-8KM_BasalMelt-Adusumilli2020.nc"]
-checksum = "sha256:2f5ee6e888a21b33617b0297ff900a78b75439075e8c08689b340b62e9c1a601"
-previous_checksums = ["sha256:94a17b6f3f795e8a32878afb956850d4b6b338b4629c486b0b10f348f2eb31cb"]
+checksum = "sha256:898321358c5684ea6627ed1464998549278e8bd1f53223d2b2e40fbece96bfc6"
+previous_checksums = ["sha256:94a17b6f3f795e8a32878afb956850d4b6b338b4629c486b0b10f348f2eb31cb", "sha256:2f5ee6e888a21b33617b0297ff900a78b75439075e8c08689b340b62e9c1a601"]
 size = 556596
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_BasalMelt-Adusumilli2020.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-8KM/2.1.0/ANT-8KM_BasalMelt-Adusumilli2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-8KM/2.2.0/ANT-8KM_BasalMelt-Adusumilli2020.nc"
 
 ["ANT-8KM_BasalMelt-Rignot2013.nc"]
-checksum = "sha256:eae5a919a8ec1bb127ebac24746a1f75a27993108396229a5dadcc89617158a9"
-previous_checksums = ["sha256:51ae79b0fbd11caba7bc51672b906a0a4b1f5ff9b2ec251115331c61b2caa72c"]
-size = 719353
+checksum = "sha256:acaf568d1e8d27cfafa8e374bca03018c9d62a7e7e09d147c49716389c26029b"
+previous_checksums = ["sha256:51ae79b0fbd11caba7bc51672b906a0a4b1f5ff9b2ec251115331c61b2caa72c", "sha256:eae5a919a8ec1bb127ebac24746a1f75a27993108396229a5dadcc89617158a9"]
+size = 606818
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_BasalMelt-Rignot2013.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-8KM/2.1.0/ANT-8KM_BasalMelt-Rignot2013.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-8KM/2.2.0/ANT-8KM_BasalMelt-Rignot2013.nc"
 
 ["ANT-8KM_grid.nc"]
 checksum = "sha256:6d00ae1cafbf496c1375c74c9153d92c5e2aec79d8026f004ba0dc26d0c47ece"
 size = 3314952
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-8KM/2.1.0/ANT-8KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-8KM/2.2.0/ANT-8KM_grid.nc"
 
 ["grid_ANT-16KM.txt"]
 checksum = "sha256:09d646757fe153b435cee10a90cf772b4626efbe2f187d410eab83876c8305cb"
 size = 467
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/grid_ANT-16KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-16KM/2.1.0/grid_ANT-16KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-16KM/2.2.0/grid_ANT-16KM.txt"
 
 ["grid_ANT-1KM.txt"]
 checksum = "sha256:d8e6029b241c90da5ba2b6f4aed5fc6736d2251dfbf96e1432952605eaf02d67"
 size = 469
 storage_path = "$datasets_dir/Antarctica/ANT-1KM/grid_ANT-1KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-1KM/2.1.0/grid_ANT-1KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-1KM/2.2.0/grid_ANT-1KM.txt"
 
 ["grid_ANT-2KM.txt"]
 checksum = "sha256:d02bf6fb1a40ffa3a09cad2982212ffa925a643e487b74b8c38af6cf773faff5"
 size = 468
 storage_path = "$datasets_dir/Antarctica/ANT-2KM/grid_ANT-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-2KM/2.1.0/grid_ANT-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-2KM/2.2.0/grid_ANT-2KM.txt"
 
 ["grid_ANT-32KM.txt"]
 checksum = "sha256:619c2b14b9667a6ff1efe4de41f1b2bd0ddc8d3e10df6d5fd99222b80be20276"
 size = 466
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/grid_ANT-32KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-32KM/2.1.0/grid_ANT-32KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-32KM/2.2.0/grid_ANT-32KM.txt"
 
 ["grid_ANT-4KM.txt"]
 checksum = "sha256:dc549c434411d3f7ad5b46e4f954f9bb180d0d2e272e1942d97e7072ae8b711d"
 size = 468
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/grid_ANT-4KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-4KM/2.1.0/grid_ANT-4KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-4KM/2.2.0/grid_ANT-4KM.txt"
 
 ["grid_ANT-8KM.txt"]
 checksum = "sha256:66ff6285f42ec156b6c6a6c30fcb0d2e4c94e07d67512fb002cb0348b3420ce5"
 size = 465
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/grid_ANT-8KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-8KM/2.1.0/grid_ANT-8KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalMelt_ANT-8KM/2.2.0/grid_ANT-8KM.txt"
