@@ -1,259 +1,259 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-11"
+date = "2026-10-12"
 git_tag = "regions-v2.1.0"
-store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=Antarctica_Regions"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Antarctica_Regions"
 version = "2.1.0"
 
 ["ANT-16KM_BASINS-IMBIE2016-refined.nc"]
 checksum = "sha256:3cc1e51fd5c2043b32bc24f3d03515401c5123bae124b2f7cd68a2e768aac60b"
 size = 55166
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_BASINS-IMBIE2016-refined.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-16KM/2.1.0/ANT-16KM_BASINS-IMBIE2016-refined.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-16KM/2.1.0/ANT-16KM_BASINS-IMBIE2016-refined.nc"
 
 ["ANT-16KM_BASINS-IMBIE2016.nc"]
 checksum = "sha256:a60aca568b350459db2c301516833c74ddb7099719e78c12ded7c29633b2ab3a"
 size = 45902
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_BASINS-IMBIE2016.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-16KM/2.1.0/ANT-16KM_BASINS-IMBIE2016.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-16KM/2.1.0/ANT-16KM_BASINS-IMBIE2016.nc"
 
 ["ANT-16KM_BASINS-Schmidt2025.nc"]
 checksum = "sha256:656e17016e22f8cec2bd7c080ae62b708fbe21a4f33a94f4de31b03d36ab4a5b"
 size = 46936
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_BASINS-Schmidt2025.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-16KM/2.1.0/ANT-16KM_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-16KM/2.1.0/ANT-16KM_BASINS-Schmidt2025.nc"
 
 ["ANT-16KM_BASINS-Zwally2012.nc"]
 checksum = "sha256:582dc08b745a58c72b285e78718ee21af9677f59380bedccc1759f4aa45b1119"
 size = 37192
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_BASINS-Zwally2012.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-16KM/2.1.0/ANT-16KM_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-16KM/2.1.0/ANT-16KM_BASINS-Zwally2012.nc"
 
 ["ANT-16KM_REGIONS.nc"]
 checksum = "sha256:ff715ca7bc21d7252828d14a0713effe7b96459c80a1c68a1f0ceede2f1415ff"
 size = 456593
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_REGIONS.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-16KM/2.1.0/ANT-16KM_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-16KM/2.1.0/ANT-16KM_REGIONS.nc"
 
 ["ANT-16KM_grid.nc"]
 checksum = "sha256:dea44445828fdc3adbae04afc6662224e96a6838c8381f80a855659b3ad6460c"
 size = 892250
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-16KM/2.1.0/ANT-16KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-16KM/2.1.0/ANT-16KM_grid.nc"
 
 ["ANT-1KM_BASINS-IMBIE2016-refined.nc"]
 checksum = "sha256:c7cddbcb00c474ffa53e277e69f05b67b903f34d4e07d6154ff699c467e23d6a"
 size = 2212259
 storage_path = "$datasets_dir/Antarctica/ANT-1KM/ANT-1KM_BASINS-IMBIE2016-refined.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-1KM/2.1.0/ANT-1KM_BASINS-IMBIE2016-refined.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-1KM/2.1.0/ANT-1KM_BASINS-IMBIE2016-refined.nc"
 
 ["ANT-1KM_BASINS-IMBIE2016.nc"]
 checksum = "sha256:091a94c0028d18342ecc9bdae6445a44114cbe3993d9b5ad85a8862195f938ae"
 size = 1982300
 storage_path = "$datasets_dir/Antarctica/ANT-1KM/ANT-1KM_BASINS-IMBIE2016.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-1KM/2.1.0/ANT-1KM_BASINS-IMBIE2016.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-1KM/2.1.0/ANT-1KM_BASINS-IMBIE2016.nc"
 
 ["ANT-1KM_BASINS-Schmidt2025.nc"]
 checksum = "sha256:370cb0bfa392b49e3c0e665fbfcd65e2fe2c6742f06636721b590c726e288a9f"
 size = 1983334
 storage_path = "$datasets_dir/Antarctica/ANT-1KM/ANT-1KM_BASINS-Schmidt2025.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-1KM/2.1.0/ANT-1KM_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-1KM/2.1.0/ANT-1KM_BASINS-Schmidt2025.nc"
 
 ["ANT-1KM_BASINS-Zwally2012.nc"]
 checksum = "sha256:d8cb6c84f3a305ad2ed7bd3f535359edc9fd5560e188f1f406e7b57ba461b37a"
 size = 1227586
 storage_path = "$datasets_dir/Antarctica/ANT-1KM/ANT-1KM_BASINS-Zwally2012.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-1KM/2.1.0/ANT-1KM_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-1KM/2.1.0/ANT-1KM_BASINS-Zwally2012.nc"
 
 ["ANT-1KM_REGIONS.nc"]
 checksum = "sha256:6350749c4cd18d1e3110cbdf1a8e87eec8eb9c8eef52ac6f617e9610ed6a857a"
 size = 60885522
 storage_path = "$datasets_dir/Antarctica/ANT-1KM/ANT-1KM_REGIONS.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-1KM/2.1.0/ANT-1KM_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-1KM/2.1.0/ANT-1KM_REGIONS.nc"
 
 ["ANT-1KM_grid.nc"]
 checksum = "sha256:1564185a4ce4e24d55ceaa7e6a6fc6170b28746fb5435d96af1ddb267a5da085"
 size = 142664883
 storage_path = "$datasets_dir/Antarctica/ANT-1KM/ANT-1KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-1KM/2.1.0/ANT-1KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-1KM/2.1.0/ANT-1KM_grid.nc"
 
 ["ANT-2KM_BASINS-IMBIE2016-refined.nc"]
 checksum = "sha256:d703c3aa1c39a873ea3ff24c27f10f430a42f4973553966794bdabe3f23cb6db"
 size = 717526
 storage_path = "$datasets_dir/Antarctica/ANT-2KM/ANT-2KM_BASINS-IMBIE2016-refined.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-2KM/2.1.0/ANT-2KM_BASINS-IMBIE2016-refined.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-2KM/2.1.0/ANT-2KM_BASINS-IMBIE2016-refined.nc"
 
 ["ANT-2KM_BASINS-IMBIE2016.nc"]
 checksum = "sha256:49d436907acc1d8ab428291a8216aba105ed03de8bea33b9ea9e250e2f443c34"
 size = 624078
 storage_path = "$datasets_dir/Antarctica/ANT-2KM/ANT-2KM_BASINS-IMBIE2016.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-2KM/2.1.0/ANT-2KM_BASINS-IMBIE2016.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-2KM/2.1.0/ANT-2KM_BASINS-IMBIE2016.nc"
 
 ["ANT-2KM_BASINS-Schmidt2025.nc"]
 checksum = "sha256:4c0779191c550600e74359572d611a8ee937389d3808741b5920e0c7af255545"
 size = 625112
 storage_path = "$datasets_dir/Antarctica/ANT-2KM/ANT-2KM_BASINS-Schmidt2025.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-2KM/2.1.0/ANT-2KM_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-2KM/2.1.0/ANT-2KM_BASINS-Schmidt2025.nc"
 
 ["ANT-2KM_BASINS-Zwally2012.nc"]
 checksum = "sha256:a3c0757abe2b1d42bc4a65a77fc3cfe7759365e2d15dbffb3e36ef0816eb6bf3"
 size = 406977
 storage_path = "$datasets_dir/Antarctica/ANT-2KM/ANT-2KM_BASINS-Zwally2012.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-2KM/2.1.0/ANT-2KM_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-2KM/2.1.0/ANT-2KM_BASINS-Zwally2012.nc"
 
 ["ANT-2KM_REGIONS.nc"]
 checksum = "sha256:d7d6de13728b9f659d27aa09f137c01ba2cb456758a9b03520427134d7c2c123"
 size = 19087106
 storage_path = "$datasets_dir/Antarctica/ANT-2KM/ANT-2KM_REGIONS.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-2KM/2.1.0/ANT-2KM_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-2KM/2.1.0/ANT-2KM_REGIONS.nc"
 
 ["ANT-2KM_grid.nc"]
 checksum = "sha256:405a1131131ba119609bf7c4147b29477ab4801fd0221f56656ab6ff1abf8ffc"
 size = 40215317
 storage_path = "$datasets_dir/Antarctica/ANT-2KM/ANT-2KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-2KM/2.1.0/ANT-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-2KM/2.1.0/ANT-2KM_grid.nc"
 
 ["ANT-32KM_BASINS-IMBIE2016-refined.nc"]
 checksum = "sha256:1d1f38d8e9d2b186e99032e09b05a5762124e46c47be504efbafb17564d7fc7c"
 size = 37383
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_BASINS-IMBIE2016-refined.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-32KM/2.1.0/ANT-32KM_BASINS-IMBIE2016-refined.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-32KM/2.1.0/ANT-32KM_BASINS-IMBIE2016-refined.nc"
 
 ["ANT-32KM_BASINS-IMBIE2016.nc"]
 checksum = "sha256:8a62439203927f21cbd2b17874bc813aeab78131f4a18efd3015a63794cc6c87"
 size = 32360
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_BASINS-IMBIE2016.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-32KM/2.1.0/ANT-32KM_BASINS-IMBIE2016.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-32KM/2.1.0/ANT-32KM_BASINS-IMBIE2016.nc"
 
 ["ANT-32KM_BASINS-Schmidt2025.nc"]
 checksum = "sha256:3ddde54217a1b69ab6f4f38eba5fdf05063738fc8a6be91c290df3b491f3c8a2"
 size = 32408
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_BASINS-Schmidt2025.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-32KM/2.1.0/ANT-32KM_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-32KM/2.1.0/ANT-32KM_BASINS-Schmidt2025.nc"
 
 ["ANT-32KM_BASINS-Zwally2012.nc"]
 checksum = "sha256:6056ceaec55096d9a6c2483c2e84fb85e94c340ce2c8c44bdd9870496a54a8e4"
 size = 25915
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_BASINS-Zwally2012.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-32KM/2.1.0/ANT-32KM_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-32KM/2.1.0/ANT-32KM_BASINS-Zwally2012.nc"
 
 ["ANT-32KM_REGIONS.nc"]
 checksum = "sha256:3632345d67799deec09f9daf9e06b729754e46db229ee4482389ffba244517e2"
 size = 149774
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_REGIONS.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-32KM/2.1.0/ANT-32KM_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-32KM/2.1.0/ANT-32KM_REGIONS.nc"
 
 ["ANT-32KM_grid.nc"]
 checksum = "sha256:66765d3512c62479e60ad1095a4ee84b38edb681fe816eddf9896c3a2799efd8"
 size = 212550
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-32KM/2.1.0/ANT-32KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-32KM/2.1.0/ANT-32KM_grid.nc"
 
 ["ANT-4KM_BASINS-IMBIE2016-refined.nc"]
 checksum = "sha256:9ebd58a854a5164001695b967f38d0ed6e33b44e28c45d1ecc6c9d6301063148"
 size = 261229
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_BASINS-IMBIE2016-refined.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-4KM/2.1.0/ANT-4KM_BASINS-IMBIE2016-refined.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-4KM/2.1.0/ANT-4KM_BASINS-IMBIE2016-refined.nc"
 
 ["ANT-4KM_BASINS-IMBIE2016.nc"]
 checksum = "sha256:f5c565b8dc959c956791162eee79c0317892330399df3fa4f1e81edf5248d007"
 size = 216654
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_BASINS-IMBIE2016.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-4KM/2.1.0/ANT-4KM_BASINS-IMBIE2016.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-4KM/2.1.0/ANT-4KM_BASINS-IMBIE2016.nc"
 
 ["ANT-4KM_BASINS-Schmidt2025.nc"]
 checksum = "sha256:6d3704246d303688fd658316f5206c58e339dc8827dd824e3e34ddf0db83a2db"
 size = 217688
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_BASINS-Schmidt2025.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-4KM/2.1.0/ANT-4KM_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-4KM/2.1.0/ANT-4KM_BASINS-Schmidt2025.nc"
 
 ["ANT-4KM_BASINS-Zwally2012.nc"]
 checksum = "sha256:dabe7233e9c89a32ba6f49c2ccc1884fb82343a81ef4115f064f01af4771df50"
 size = 148106
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_BASINS-Zwally2012.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-4KM/2.1.0/ANT-4KM_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-4KM/2.1.0/ANT-4KM_BASINS-Zwally2012.nc"
 
 ["ANT-4KM_REGIONS.nc"]
 checksum = "sha256:7e36697b9d2eb4be3f37e26152818d3c1a73fb5cbdda2a3883b511ac06bb0837"
 size = 5521650
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_REGIONS.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-4KM/2.1.0/ANT-4KM_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-4KM/2.1.0/ANT-4KM_REGIONS.nc"
 
 ["ANT-4KM_grid.nc"]
 checksum = "sha256:b553afcb6273200e9cd436c4f3ba5f081c599c58237374342aade5c4588e879f"
 size = 11450508
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-4KM/2.1.0/ANT-4KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-4KM/2.1.0/ANT-4KM_grid.nc"
 
 ["ANT-8KM_BASINS-IMBIE2016-refined.nc"]
 checksum = "sha256:3d3a3c539121a65fb07980fd6b15be370cbbf02b1420c544cc0848a287251811"
 size = 103601
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_BASINS-IMBIE2016-refined.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-8KM/2.1.0/ANT-8KM_BASINS-IMBIE2016-refined.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-8KM/2.1.0/ANT-8KM_BASINS-IMBIE2016-refined.nc"
 
 ["ANT-8KM_BASINS-IMBIE2016.nc"]
 checksum = "sha256:760f03222a934a3bcd785ecd7290375d815a398da61b90d99843f63ee539bf6f"
 size = 84135
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_BASINS-IMBIE2016.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-8KM/2.1.0/ANT-8KM_BASINS-IMBIE2016.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-8KM/2.1.0/ANT-8KM_BASINS-IMBIE2016.nc"
 
 ["ANT-8KM_BASINS-Schmidt2025.nc"]
 checksum = "sha256:c9167ae4528c530dced5b1d8e2166602f0fcb56090655d4ab5849b8e554ac6a9"
 size = 85169
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_BASINS-Schmidt2025.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-8KM/2.1.0/ANT-8KM_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-8KM/2.1.0/ANT-8KM_BASINS-Schmidt2025.nc"
 
 ["ANT-8KM_BASINS-Zwally2012.nc"]
 checksum = "sha256:51c79a174e40a35ce85ce06f11d682ba6f376dbf0031085624abf67082266a4d"
 size = 64879
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_BASINS-Zwally2012.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-8KM/2.1.0/ANT-8KM_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-8KM/2.1.0/ANT-8KM_BASINS-Zwally2012.nc"
 
 ["ANT-8KM_REGIONS.nc"]
 checksum = "sha256:a92929f47e7a9d0cae5e6000bd2d8aecca3b5e560de379cc95d55e6c0cfc914c"
 size = 1553342
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_REGIONS.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-8KM/2.1.0/ANT-8KM_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-8KM/2.1.0/ANT-8KM_REGIONS.nc"
 
 ["ANT-8KM_grid.nc"]
 checksum = "sha256:6d00ae1cafbf496c1375c74c9153d92c5e2aec79d8026f004ba0dc26d0c47ece"
 size = 3314952
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-8KM/2.1.0/ANT-8KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-8KM/2.1.0/ANT-8KM_grid.nc"
 
 ["grid_ANT-16KM.txt"]
 checksum = "sha256:09d646757fe153b435cee10a90cf772b4626efbe2f187d410eab83876c8305cb"
 size = 467
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/grid_ANT-16KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-16KM/2.1.0/grid_ANT-16KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-16KM/2.1.0/grid_ANT-16KM.txt"
 
 ["grid_ANT-1KM.txt"]
 checksum = "sha256:d8e6029b241c90da5ba2b6f4aed5fc6736d2251dfbf96e1432952605eaf02d67"
 size = 469
 storage_path = "$datasets_dir/Antarctica/ANT-1KM/grid_ANT-1KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-1KM/2.1.0/grid_ANT-1KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-1KM/2.1.0/grid_ANT-1KM.txt"
 
 ["grid_ANT-2KM.txt"]
 checksum = "sha256:d02bf6fb1a40ffa3a09cad2982212ffa925a643e487b74b8c38af6cf773faff5"
 size = 468
 storage_path = "$datasets_dir/Antarctica/ANT-2KM/grid_ANT-2KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-2KM/2.1.0/grid_ANT-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-2KM/2.1.0/grid_ANT-2KM.txt"
 
 ["grid_ANT-32KM.txt"]
 checksum = "sha256:619c2b14b9667a6ff1efe4de41f1b2bd0ddc8d3e10df6d5fd99222b80be20276"
 size = 466
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/grid_ANT-32KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-32KM/2.1.0/grid_ANT-32KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-32KM/2.1.0/grid_ANT-32KM.txt"
 
 ["grid_ANT-4KM.txt"]
 checksum = "sha256:dc549c434411d3f7ad5b46e4f954f9bb180d0d2e272e1942d97e7072ae8b711d"
 size = 468
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/grid_ANT-4KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-4KM/2.1.0/grid_ANT-4KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-4KM/2.1.0/grid_ANT-4KM.txt"
 
 ["grid_ANT-8KM.txt"]
 checksum = "sha256:66ff6285f42ec156b6c6a6c30fcb0d2e4c94e07d67512fb002cb0348b3420ce5"
 size = 465
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/grid_ANT-8KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Regions_ANT-8KM/2.1.0/grid_ANT-8KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-8KM/2.1.0/grid_ANT-8KM.txt"

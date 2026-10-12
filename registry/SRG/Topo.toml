@@ -1,133 +1,133 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-11"
+date = "2026-10-12"
 git_tag = "topo-v2.1.0"
-store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=SRG_Topo"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=SRG_Topo"
 version = "2.1.0"
 
 ["SRG-16KM_TOPO-GEBCO2026.nc"]
 checksum = "sha256:0f62af557f0c0619a500346a2ae08edd4fc2c06ef32aad4d13a30b5c7a3429c2"
 size = 48714
 storage_path = "$datasets_dir/SRG/SRG-16KM/SRG-16KM_TOPO-GEBCO2026.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/SRG_Topo_SRG-16KM/2.1.0/SRG-16KM_TOPO-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-16KM/2.1.0/SRG-16KM_TOPO-GEBCO2026.nc"
 
 ["SRG-16KM_grid.nc"]
 checksum = "sha256:79a3c7d16dc8d91787319428dc1dd603c70eb74524a0c3d72cebf77a046a0903"
 size = 20634
 storage_path = "$datasets_dir/SRG/SRG-16KM/SRG-16KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/SRG_Topo_SRG-16KM/2.1.0/SRG-16KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-16KM/2.1.0/SRG-16KM_grid.nc"
 
 ["SRG-1KM_TOPO-GEBCO2026.nc"]
 checksum = "sha256:4bcfb39ed71e207551883d80f865289aaa6d85bd81f034c1bfdf6505006c6a8f"
 size = 82959
 storage_path = "$datasets_dir/SRG/SRG-1KM/SRG-1KM_TOPO-GEBCO2026.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/SRG_Topo_SRG-1KM/2.1.0/SRG-1KM_TOPO-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-1KM/2.1.0/SRG-1KM_TOPO-GEBCO2026.nc"
 
 ["SRG-1KM_grid.nc"]
 checksum = "sha256:5638b03ce6c6c7c13f50ea394682f725dd14fc821e4c3d63a05c2c3e40740d4e"
 size = 27932
 storage_path = "$datasets_dir/SRG/SRG-1KM/SRG-1KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/SRG_Topo_SRG-1KM/2.1.0/SRG-1KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-1KM/2.1.0/SRG-1KM_grid.nc"
 
 ["SRG-250M_TOPO-GEBCO2026.nc"]
 checksum = "sha256:50565880e3754091c7b4067a735599ed43fb4fb470d09ce378c77c4f9599521d"
 size = 351071
 storage_path = "$datasets_dir/SRG/SRG-250M/SRG-250M_TOPO-GEBCO2026.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/SRG_Topo_SRG-250M/2.1.0/SRG-250M_TOPO-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-250M/2.1.0/SRG-250M_TOPO-GEBCO2026.nc"
 
 ["SRG-250M_grid.nc"]
 checksum = "sha256:a2f66927bd462ba52b12fea9dc3628beaad1ee31ae6531333d2e02c48ef4023c"
 size = 66886
 storage_path = "$datasets_dir/SRG/SRG-250M/SRG-250M_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/SRG_Topo_SRG-250M/2.1.0/SRG-250M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-250M/2.1.0/SRG-250M_grid.nc"
 
 ["SRG-2KM_TOPO-GEBCO2026.nc"]
 checksum = "sha256:eecc42df956ad3b16b510b960f9f398bb9b5095fea1e3a00847104f7523424f6"
 size = 59375
 storage_path = "$datasets_dir/SRG/SRG-2KM/SRG-2KM_TOPO-GEBCO2026.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/SRG_Topo_SRG-2KM/2.1.0/SRG-2KM_TOPO-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-2KM/2.1.0/SRG-2KM_TOPO-GEBCO2026.nc"
 
 ["SRG-2KM_grid.nc"]
 checksum = "sha256:7258693a721960448051a3941a65f4f8d52157d4102e655a90000fb3efe3703c"
 size = 23162
 storage_path = "$datasets_dir/SRG/SRG-2KM/SRG-2KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/SRG_Topo_SRG-2KM/2.1.0/SRG-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-2KM/2.1.0/SRG-2KM_grid.nc"
 
 ["SRG-4KM_TOPO-GEBCO2026.nc"]
 checksum = "sha256:70d29e05da72369b01d698af0bacd1eceae920091992f4444eff0b02e08fbac4"
 size = 50699
 storage_path = "$datasets_dir/SRG/SRG-4KM/SRG-4KM_TOPO-GEBCO2026.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/SRG_Topo_SRG-4KM/2.1.0/SRG-4KM_TOPO-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-4KM/2.1.0/SRG-4KM_TOPO-GEBCO2026.nc"
 
 ["SRG-4KM_grid.nc"]
 checksum = "sha256:c4d8d197372d47722836bc1d5447ad4d4de4aab9961c37609f7ef30d5c7b5e22"
 size = 20634
 storage_path = "$datasets_dir/SRG/SRG-4KM/SRG-4KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/SRG_Topo_SRG-4KM/2.1.0/SRG-4KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-4KM/2.1.0/SRG-4KM_grid.nc"
 
 ["SRG-500M_TOPO-GEBCO2026.nc"]
 checksum = "sha256:bd89b6e64ab961dc7aa606fb47891de3042cd78205ec6469ec441fbe2c9e8f37"
 size = 165503
 storage_path = "$datasets_dir/SRG/SRG-500M/SRG-500M_TOPO-GEBCO2026.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/SRG_Topo_SRG-500M/2.1.0/SRG-500M_TOPO-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-500M/2.1.0/SRG-500M_TOPO-GEBCO2026.nc"
 
 ["SRG-500M_grid.nc"]
 checksum = "sha256:e05c070b7d6a1d9c483ff5a15f98445cc6b724af78b7642c5bcc866c2c44b100"
 size = 38566
 storage_path = "$datasets_dir/SRG/SRG-500M/SRG-500M_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/SRG_Topo_SRG-500M/2.1.0/SRG-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-500M/2.1.0/SRG-500M_grid.nc"
 
 ["SRG-8KM_TOPO-GEBCO2026.nc"]
 checksum = "sha256:7a57c552ea970627d03ee5c66240e3e4326dd0968e8d24de9ca5cc772bc94b15"
 size = 48714
 storage_path = "$datasets_dir/SRG/SRG-8KM/SRG-8KM_TOPO-GEBCO2026.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/SRG_Topo_SRG-8KM/2.1.0/SRG-8KM_TOPO-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-8KM/2.1.0/SRG-8KM_TOPO-GEBCO2026.nc"
 
 ["SRG-8KM_grid.nc"]
 checksum = "sha256:33a1b33c9a2c95a06e4b4bf4397686a89074a5de2fd0242ff83e18d8a07a46a8"
 size = 20634
 storage_path = "$datasets_dir/SRG/SRG-8KM/SRG-8KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/SRG_Topo_SRG-8KM/2.1.0/SRG-8KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-8KM/2.1.0/SRG-8KM_grid.nc"
 
 ["grid_SRG-16KM.txt"]
 checksum = "sha256:d4cbd31fd9c0da3189ddcba9b4bb555c63ba5eb24660383bf10f00aeba075bc9"
 size = 340
 storage_path = "$datasets_dir/SRG/SRG-16KM/grid_SRG-16KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/SRG_Topo_SRG-16KM/2.1.0/grid_SRG-16KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-16KM/2.1.0/grid_SRG-16KM.txt"
 
 ["grid_SRG-1KM.txt"]
 checksum = "sha256:41b9ec86699ec061be8b0b8dd512fd487180b4aea6277faad59d282071b65396"
 size = 342
 storage_path = "$datasets_dir/SRG/SRG-1KM/grid_SRG-1KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/SRG_Topo_SRG-1KM/2.1.0/grid_SRG-1KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-1KM/2.1.0/grid_SRG-1KM.txt"
 
 ["grid_SRG-250M.txt"]
 checksum = "sha256:56d72b8d4956d6f26b75b8782dc7bd41a78ca77110be6b25a6d8161ba9068f38"
 size = 347
 storage_path = "$datasets_dir/SRG/SRG-250M/grid_SRG-250M.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/SRG_Topo_SRG-250M/2.1.0/grid_SRG-250M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-250M/2.1.0/grid_SRG-250M.txt"
 
 ["grid_SRG-2KM.txt"]
 checksum = "sha256:ffe553f18e8716493026cfe1e1c20359b2fdb14817b191de1bfabc4c59586b0e"
 size = 341
 storage_path = "$datasets_dir/SRG/SRG-2KM/grid_SRG-2KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/SRG_Topo_SRG-2KM/2.1.0/grid_SRG-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-2KM/2.1.0/grid_SRG-2KM.txt"
 
 ["grid_SRG-4KM.txt"]
 checksum = "sha256:4a7bccbfe54a7cfd6f52c447927ae4733082dd0979523f0014661e0d88410378"
 size = 340
 storage_path = "$datasets_dir/SRG/SRG-4KM/grid_SRG-4KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/SRG_Topo_SRG-4KM/2.1.0/grid_SRG-4KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-4KM/2.1.0/grid_SRG-4KM.txt"
 
 ["grid_SRG-500M.txt"]
 checksum = "sha256:ae23cc435cd0f27b7bfc11333e2ad2fced6a220956a4692f08d03260c4bbb67c"
 size = 343
 storage_path = "$datasets_dir/SRG/SRG-500M/grid_SRG-500M.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/SRG_Topo_SRG-500M/2.1.0/grid_SRG-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-500M/2.1.0/grid_SRG-500M.txt"
 
 ["grid_SRG-8KM.txt"]
 checksum = "sha256:3bb506ef1502c817411d9cf0a9f2a1171cca03e6528a799ec80eea7c1570d5ed"
 size = 338
 storage_path = "$datasets_dir/SRG/SRG-8KM/grid_SRG-8KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/SRG_Topo_SRG-8KM/2.1.0/grid_SRG-8KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-8KM/2.1.0/grid_SRG-8KM.txt"
