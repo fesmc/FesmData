@@ -28,14 +28,27 @@ and `smb`, `pr`, `sf`, `t2m`, `T_srf` and `z_srf` are filled outside the RACMO d
 `mask_fill`).
 
 `SMB-RACMO2.3p2-1981-2010` and `SMB-MARv3.14-1981-2010` (and their annual means) are
-filled in the same way for model forcing over the whole grid, but `smb` is filled
-harmonically also off the glaciated surfaces, where the source leaves it missing:
-`smb`, `pr`, `sf`, `t2m`, `T_srf` and `z_srf` (and `rf` for MAR, so that `pr = sf + rf`
-holds in the filled cells) are filled where there are no source data (`f_valid` = 0):
-off the ice (`smb`), outside the RCM domain (e.g. the ice caps of the Canadian Arctic on
-the GRL grids) and in the corners of the grids. `smb` of MAR is defined on the ice only
-(see `Fettweis2017_mar314/README.md`), so that the cells at the ice margin are not mixed
-with the strongly negative values of MAR off the ice.
+also defined on the whole grid, for model forcing, but filled where there are no source
+data (`f_valid` = 0, marked by `mask_fill_<field>`) as follows:
+
+- `smb` is defined on the ice only (RACMO: f_ice >= 0.1; MAR: its ice mask, see
+  `Fettweis2017_mar314/README.md`, so that the cells at the ice margin are not mixed with
+  the strongly negative values of MAR off the ice). Off the ice and outside the RCM domain
+  (e.g. the ice caps of the Canadian Arctic on the GRL grids), it is the linear regression
+  of `smb` on the surface elevation over the cells with data within 150 km (grown until
+  there are 20), at the elevation of the cell (`z_srf` of `TOPO-BedMachine-v4`, 0 over the
+  ocean), at most -91.7 kg m-2 yr-1 (-0.1 m yr-1 ice equivalent, with 917 kg m-3): a
+  small negative surface mass balance off the ice, on land and ocean. In the monthly
+  climatologies the bound applies to the annual mean (months weighted by their length),
+  all months shifted by the same amount (`fill`, `method = "elevation_regression"`, see `Remap/README.md`).
+- `t2m` and `T_srf`: the same regression on the elevation (a local lapse rate), without
+  bound. They are missing only outside the RCM domain (RACMO: the corners of the grids;
+  MAR: e.g. the Canadian Arctic), as the RCMs give them on land and ocean.
+- `pr`, `sf` (and `rf` for MAR, so that `pr = sf + rf` holds) and `z_srf` (the RCM
+  orography): harmonic interpolation. Off the ice, `smb` is not `pr` minus runoff or
+  sublimation (which stay missing there), but the bound above.
+
+`runoff`, `melt` and `subl` are not filled.
 
 ## Licences
 
