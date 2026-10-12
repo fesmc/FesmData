@@ -118,6 +118,7 @@ grids = { Antarctica = 4, Greenland = 4, Global = 4 }   # by domain, see below
 # smooth = "auto"                            # optional, default "auto"
 # release = false                            # optional: made, but not released
 # figure = { variables = ["ghf"] }            # optional: its figure on the website
+# fill = { variables = ["ux_srf", "uy_srf"], mask = "TOPO-BedMachine-v4" }   # optional: gaps over the ice filled
 ```
 
 `grids` lists the domains (output folders) of the product, each with the grids it is
@@ -135,6 +136,18 @@ made on; it is not made on other domains. For each domain:
 
 For example, `grids = { Antarctica = 16, Global = ["GLOBAL-T170"] }` makes ANT-16KM,
 ANT-32KM and GLOBAL-T170.
+
+`fill` fills the gaps of a source over the ice on each grid, after remapping (and the
+rotation of vectors): the cells of the fields `variables` with ice (`H_ice > 0`) in the
+Topo product `mask` on the same grid (`<GRID>_TOPO-BedMachine-v4.nc` in the same folder)
+but no source data (`f_valid = 0`) get the harmonic (Laplace) interpolation of the cells
+around them (`laplace_fill` of FesmUtils). Gaps not connected to any data stay missing.
+Both components of a vector must be filled; the speed of a filled vector (the field with
+the standard name `<x>_speed`, for `eastward_<x>_velocity`) is the magnitude of the
+filled components there. Other fields (e.g. errors) stay missing in the gaps. The file
+has `mask_fill` (1: filled, 0: not; `mask_fill_<field>` when the fields differ) and the
+global attribute `gap_fill`. The Topo product must be made first (thematic datasets
+depend on Topo, and some on Regions).
 
 `release = false` makes a product locally but leaves it out of the releases, e.g. data
 obtained by personal communication whose redistribution the authors have not agreed to

@@ -206,10 +206,13 @@ function _bounds(v, name)
     return dimnames(v)[1] == name ? permutedims(B) : B
 end
 
+# Standard name of field `name` ("" if none)
+_standard_name(varattrib, name) = string(get(Dict(varattrib[name]), "standard_name", ""))
+
 # Vector fields: pairs of fields with the standard names eastward_<x> and northward_<x>,
 # both read, on the same dimensions.
 function _vectors(path, fields, dims, varattrib)
-    std(name) = string(get(Dict(varattrib[name]), "standard_name", ""))
+    std(name) = _standard_name(varattrib, name)
     pairs = Tuple{String,String}[]
     for e in sort(collect(keys(fields)))
         startswith(std(e), "eastward_") || continue
@@ -458,6 +461,120 @@ function _collapse(fv::AbstractArray)
     return fv, kept
 end
 
+# Field `name` from the arrays `A` of each field (e.g. f_valid), without the extra
+# dimensions along which it does not change (`pdims`: the extra dimensions of each
+# field): one field if it is the same for all fields, else `<name>_<field>` for each.
+# `attrib(f)` gives the attributes of the field of `f` (nothing: the single field).
+function _per_field!(fields, dims, varattrib, A::AbstractDict, pdims, name, attrib)
+    names = sort(collect(keys(A)))
+    c = Dict(f => _collapse(A[f]) for f in names)
+    cdims(f) = pdims[f][c[f][2]]
+    if allequal(c[f][1] for f in names) && allequal([d.name for d in cdims(f)] for f in names)
+        fields[name] = c[names[1]][1]
+        dims[name] = cdims(names[1])
+        a = attrib(nothing)
+        isempty(a) || (varattrib[name] = a)
+    else
+        for f in names
+            fields["$(name)_$f"] = c[f][1]
+            dims["$(name)_$f"] = cdims(f)
+            varattrib["$(name)_$f"] = attrib(f)
+        end
+    end
+end
+
+# ---------------------------------------------------------------------------
+# Gaps over the ice
+# ---------------------------------------------------------------------------
+
+"""
+    ice_mask(og, product) -> BitMatrix
+
+Cells with ice (H_ice > 0) on grid `og` in the Topo product `product` (e.g.
+"TOPO-BedMachine-v4"), from `<GRID>_<product>.nc` in its output folder.
+"""
+function ice_mask(og::OutGrid, product::AbstractString)
+    path = remap_file(og, product)
+    isfile(path) || error("$(og.grid.name): no $path, the ice mask of the gap filling: make Topo first " *
+                          "(thematic datasets depend on Topo, and some on Regions)")
+    H = NCDataset(path) do ds
+        haskey(ds, "H_ice") || error("$path: no H_ice")
+        ds["H_ice"][:, :]
+    end
+    size(H) == size(og.grid) || error("$path: H_ice has size $(size(H)), not that of $(og.grid.name)")
+    return coalesce.(H .> 0, false)
+end
+
+# Speed of the vector field with eastward component `e`: the field with the standard
+# name <x>_speed for eastward_<x>_velocity or eastward_<x> (e.g. land_ice_surface_speed,
+# wind_speed), nothing if there is none.
+function _speed_field(p::Prepared, e)
+    target = chopsuffix(chopprefix(_standard_name(p.varattrib, e), "eastward_"), "_velocity") * "_speed"
+    k = findfirst(f -> _standard_name(p.varattrib, f) == target, sort(collect(keys(p.fields))))
+    return k === nothing ? nothing : sort(collect(keys(p.fields)))[k]
+end
+
+# The variables of `fill` among the fields of `p`, as floats, with both components of
+# each vector.
+function check_fill(p::Prepared, fill::GapFill)
+    for f in fill.variables
+        haskey(p.fields, f) || error("fill: no field $f, available: $(join(sort(collect(keys(p.fields))), ", "))")
+        nonmissingtype(eltype(p.fields[f])) <: Integer && error("fill: $f is an integer field")
+    end
+    for (e, n) in p.vectors
+        (e in fill.variables) == (n in fill.variables) || error("fill: give both components $e and $n of the vector")
+    end
+end
+
+"""
+    fill_gaps!(out, p, og, fill) -> Dict{String,Array{Int8}}
+
+Fill the gaps over the ice of the remapped fields `out` (field => (Ft, f_valid)) of
+`p` on grid `og` (see `GapFill`): in each variable of `fill`, slice by slice, the cells
+with ice (`ice_mask`) and no source data (f_valid = 0), by harmonic interpolation from
+the cells around them (`laplace_fill!`). Gaps not connected to data stay missing. The
+speed of a filled vector (see `_speed_field`) is the magnitude of the filled
+components in the cells filled. Returns the cells filled (1) in each variable.
+"""
+function fill_gaps!(out, p::Prepared, og::OutGrid, fill::GapFill)
+    ice = ice_mask(og, fill.mask)
+    filled = Dict{String,Array{Int8}}()
+    counts = Tuple{Int,Int}[]               # cells filled and left missing, by variable
+    for f in fill.variables
+        Ft, fv = out[f]
+        filled[f] = zeros(Int8, size(Ft))
+        nleft = 0
+        for I in CartesianIndices(size(Ft)[3:end])
+            gaps = ice .& (view(fv, :, :, I) .== 0)
+            F = view(Ft, :, :, I)
+            nleft += laplace_fill!(F, gaps)
+            filled[f][:, :, I] .= gaps .& .!isnan.(F)
+        end
+        push!(counts, (count(==(1), filled[f]), nleft))
+    end
+    for (e, n) in p.vectors
+        s = _speed_field(p, e)
+        (e in fill.variables && s !== nothing) || continue
+        S, ue, vn = out[s][1], out[e][1], out[n][1]
+        size(S) == size(ue) || error("fill: speed $s and $e differ in dimensions")
+        k = (filled[e] .== 1) .& (filled[n] .== 1)
+        S[k] .= hypot.(ue[k], vn[k])
+    end
+    describe((n, left)) = "$n cells" * (left > 0 ? ", $left not connected to data left missing" : "")
+    println("$(og.grid.name): gaps over the ice filled, " *
+            (allequal(counts) ? "$(join(fill.variables, ", ")): $(describe(counts[1]))" :
+             join(("$f: $(describe(c))" for (f, c) in zip(fill.variables, counts)), "; ")))
+    return filled
+end
+
+"Attributes of `mask_fill` (or `mask_fill_<f>` for field `f`)."
+mask_fill_attrib(fill::GapFill, f) = Pair{String,Any}[
+    "units" => "1",
+    "long_name" => "gap over the ice filled" * (f === nothing ? "" : " in $f"),
+    "flag_values" => Int8[0, 1], "flag_meanings" => "source filled",
+    "comment" => "1: no source data (f_valid = 0) over the ice (H_ice > 0 in $(fill.mask)), filled by " *
+                 "harmonic (Laplace) interpolation from the cells around"]
+
 "Description of a remapping for the global attribute `remap_method`."
 function method_description(method::AbstractString, sigma::Real; integers::Bool=false)
     d = method == "con" ? "conservative" : "bilinear"
@@ -470,20 +587,23 @@ remap_file(og::OutGrid, name::AbstractString) = joinpath(outdir(og), "$(og.grid.
 
 """
     remap_prepared(p, grids; name, method="con", smooth="auto", dataset="remap",
-                   overwrite=false, strict=false) -> Vector{String}
+                   overwrite=false, strict=false, fill=nothing) -> Vector{String}
 
 Remap the fields of `p` onto each grid (see `remap_array` and `smoothing_sigma`) and
 write them to `<GRID>_<name>.nc` in its output folder, with `f_valid`, the area
 fraction of each cell covered by source data (`f_valid_<field>` for each field when
 their coverage differs; with the extra dimensions when it differs between them).
-Vector fields are rotated to the axes of projected grids. Grids not covered by the
-source are skipped (an error if `strict`). The grid files are written if missing.
+Vector fields are rotated to the axes of projected grids. With `fill` (a `GapFill`),
+the gaps over the ice are then filled (see `fill_gaps!`), marked by `mask_fill`. Grids
+not covered by the source are skipped (an error if `strict`). The grid files are written if missing.
 Existing files are kept unless `overwrite`. `dataset` is the dataset of the
 provenance attributes.
 """
 function remap_prepared(p::Prepared, grids::Vector{OutGrid}; name::AbstractString, method::AbstractString="con",
-                        smooth="auto", dataset::AbstractString="remap", overwrite::Bool=false, strict::Bool=false)
+                        smooth="auto", dataset::AbstractString="remap", overwrite::Bool=false, strict::Bool=false,
+                        fill::Union{Nothing,GapFill}=nothing)
     method in METHODS || error("unknown method $method, available: $(join(METHODS, ", "))")
+    fill === nothing || check_fill(p, fill)
     paths = String[]
     names = sort(collect(keys(p.fields)))
     integers = any(f -> nonmissingtype(eltype(p.fields[f])) <: Integer, names)
@@ -509,22 +629,18 @@ function remap_prepared(p::Prepared, grids::Vector{OutGrid}; name::AbstractStrin
         end
         varattrib = copy(p.varattrib)
         rotate_vectors!(out, varattrib, p.vectors, og.grid)
+        filled = fill === nothing ? nothing : fill_gaps!(out, p, og, fill)
         fields = Dict{String,Array}(f => out[f][1] for f in names)
         dims = copy(p.dims)
-        fvs = Dict(f => _collapse(out[f][2]) for f in names)
-        fvdims(f) = p.dims[f][fvs[f][2]]
-        if allequal(fvs[f][1] for f in names) && allequal([d.name for d in fvdims(f)] for f in names)
-            fields["f_valid"] = fvs[names[1]][1]
-            dims["f_valid"] = fvdims(names[1])
-        else
-            for f in names
-                fields["f_valid_$f"] = fvs[f][1]
-                dims["f_valid_$f"] = fvdims(f)
-                varattrib["f_valid_$f"] = ["units" => "1", "long_name" => "area fraction covered by $f"]
-            end
-        end
+        _per_field!(fields, dims, varattrib, Dict(f => out[f][2] for f in names), p.dims, "f_valid",
+                    f -> f === nothing ? Pair{String,Any}[] : ["units" => "1", "long_name" => "area fraction covered by $f"])
         how = method_description(method, sigma; integers)
         attrib = vcat(p.attrib, ["remapped_from" => basename(p.path), "remap_method" => how])
+        if filled !== nothing
+            _per_field!(fields, dims, varattrib, filled, p.dims, "mask_fill", f -> mask_fill_attrib(fill, f))
+            push!(attrib, "gap_fill" => "$(join(fill.variables, ", ")): harmonic interpolation over the ice " *
+                                        "of $(fill.mask) where there are no source data (mask_fill)")
+        end
         isfile(joinpath(outdir(og), "$(og.grid.name)_grid.nc")) || write_grid_files(outdir(og), og.grid; dataset)
         write_fields(path, og.grid, fields; dataset, attrib, varattrib, dims, aux=p.aux)
         println("$(og.grid.name): $(basename(path)), $how ($(round(t; digits=1)) s)")
@@ -567,7 +683,7 @@ function remap_dataset(dataset::AbstractString, args=String[]; overwrite::Bool=f
         println("$(product_name(p)): $(join(sort(collect(keys(prep.fields))), ", ")) from $(p.source) " *
                 "onto $(length(grids)) grids")
         append!(paths, remap_prepared(prep, grids; name=product_name(p), method=p.method, smooth=p.smooth,
-                                      dataset=tag, overwrite, strict=true))
+                                      dataset=tag, overwrite, strict=true, fill=p.fill))
     end
     isempty(chosen) && isempty(paths) && !isempty(targets) &&
         println("No product of $dataset on $(join(targets, ", ")) (products: $(join(names, ", ")))")
