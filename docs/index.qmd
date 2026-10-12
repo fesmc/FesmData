@@ -6,7 +6,7 @@ subtitle: "Processed datasets for ice-sheet and Earth-system models, on the grid
 FesmData produces datasets for models, such as topography and region masks, on the
 grids of each model domain, from the base grid (0.5–2 km) to 32 km. The
 [products](products.qmd) are released on
-[GitLab (DKRZ)](https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages), one package
+[Helmholtz Codebase](https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages), one package
 per domain, dataset and grid, versioned by the release; releases can also be archived
 on [Zenodo](https://zenodo.org/communities/fesmc) with a DOI. The
 [datasets](datasets/topo.qmd) pages explain how each is made, and how to produce it
@@ -102,5 +102,5 @@ how it was made in its global attributes (`fesmdata_version`, `fesmdata_commit`,
 DOI of the release where there is one.
 
 Single files can also be downloaded directly from the [products](products.qmd) page or
-from [GitLab](https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages), without the
+from [Helmholtz Codebase](https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages), without the
 tool.

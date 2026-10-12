@@ -49,8 +49,9 @@ Figures for the website (maintainers, see Figures/README.md):
 Release (maintainers, see Publish/README.md):
   stamp <Dataset> [<Domain> ...]               set the version of the files to the release
                                                tag on the checked-out commit (in place)
-  release <Dataset> [<Domain> ...]             upload to the GitLab packages and write the
-                                               registry (--dry-run: check and list only)
+  release <Dataset> [<Domain> ...]             upload to the packages (Helmholtz Codebase)
+                                               and write the registry (--dry-run: check
+                                               and list only)
   status <Dataset> [<Domain> ...]              local files, packages, registered release
   delete <Dataset> <version> [<Domain> ...]    delete the packages of a version
   archive upload|publish|register|status|discard <Dataset> [<Domain> ...]

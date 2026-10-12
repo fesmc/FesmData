@@ -27,7 +27,7 @@ A **thematic dataset** (e.g. `GHF/`) groups the products of several sources in i
 
 Every NetCDF file written by a v2 pipeline has the global attributes `source` (this repository), `fesmdata_version` (`git describe` against the release tags of the dataset, e.g. `topo-v2.0.0`, with `-dirty` for uncommitted changes), `fesmdata_commit` and `history` (time, script and arguments).
 
-`Publish` : the released products are stored on [GitLab (DKRZ)](https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages), one package per domain, dataset and grid, optionally archived on [Zenodo](https://zenodo.org/communities/fesmc) for a DOI, and listed in `registry/` and on the [project website](https://fesmc.github.io/FesmData/); find, download and release them with `julia fesmdata.jl` (e.g. `julia fesmdata.jl list`, `julia fesmdata.jl fetch Antarctica Topo ANT-16KM`; `julia fesmdata.jl help` for all commands, `Publish/README.md` for details).
+`Publish` : the released products are stored on [Helmholtz Codebase](https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages), one package per domain, dataset and grid, optionally archived on [Zenodo](https://zenodo.org/communities/fesmc) for a DOI, and listed in `registry/` and on the [project website](https://fesmc.github.io/FesmData/); find, download and release them with `julia fesmdata.jl` (e.g. `julia fesmdata.jl list`, `julia fesmdata.jl fetch Antarctica Topo ANT-16KM`; `julia fesmdata.jl help` for all commands, `Publish/README.md` for details).
 
 ## Alternative and past approaches
 

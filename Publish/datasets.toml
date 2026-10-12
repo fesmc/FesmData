@@ -5,9 +5,9 @@
 # <Dataset>/remap.toml for a thematic dataset), with the grid files grid_<GRID>.txt and
 # <GRID>_grid.nc.
 
-# Store of the releases: the package registry of a GitLab project
+# Store of the releases: the package registry of a GitLab project (Helmholtz Codebase)
 [_gitlab]
-url = "https://gitlab.dkrz.de"
+url = "https://codebase.helmholtz.cloud"
 project = "fesmc/fesmdata-products"
 
 # Metadata of the records archived on Zenodo

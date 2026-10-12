@@ -95,7 +95,8 @@ Release a dataset on each domain (all domains with its files by default): upload
 files of each grid to its package, versioned by the release, and write the registry
 file of the domain. All domains are checked first (`collect_files`, `release_version`),
 so that nothing is uploaded if one of them is incomplete. Domains already released at
-this version are skipped; an interrupted upload is continued by running it again.
+this version on the current store are skipped; an interrupted upload is continued by
+running it again.
 """
 function upload(dataset::AbstractString, domains=String[]; sandbox::Bool=false,
                 allow_untagged::Bool=false, dry_run::Bool=false)
@@ -106,7 +107,8 @@ function upload(dataset::AbstractString, domains=String[]; sandbox::Bool=false,
         number = release_number(version, dataset)
         grids = unique(f.grid for f in files)
         total = sum(filesize(f.path) for f in files)
-        if get(get(registry_tables(domain, dataset; sandbox=sandbox), "_RELEASE", Dict()), "git_tag", "") == version
+        release = get(registry_tables(domain, dataset; sandbox=sandbox), "_RELEASE", Dict())
+        if get(release, "git_tag", "") == version && startswith(get(release, "store", ""), gitlab_config()["url"])
             println("$domain/$dataset $version: already released, skipped")
             continue
         end

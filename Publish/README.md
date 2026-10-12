@@ -6,11 +6,12 @@ release commands install the packages of `Publish/` themselves when needed.
 
 The processed products of the v2 pipelines (Topo, Regions, ...) are released on the
 package registry of the GitLab project
-[fesmc/fesmdata-products](https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages)
-(DKRZ), and listed on the [website](https://fesmc.github.io/FesmData/). A release of a
-dataset (tag `<dataset>-vX.Y.Z`, e.g. `topo-v2.0.0`) has one record per domain, and
-one package per domain, dataset and grid, e.g. `Antarctica_Topo_ANT-32KM` version
-`2.0.0`, with the files of that grid (grid description, grid file and products).
+[fesmc/fesmdata-products](https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages)
+(Helmholtz Codebase), and listed on the [website](https://fesmc.github.io/FesmData/). A
+release of a dataset (tag `<dataset>-vX.Y.Z`, e.g. `topo-v2.0.0`) has one record per
+domain, and one package per domain, dataset and grid, e.g. `Antarctica_Topo_ANT-32KM`
+version `2.0.0`, with the files of that grid (grid description, grid file and
+products).
 Domains are named by their output folder (`folder` in `../shared/domains.toml`):
 Antarctica, GreenlandPaleo (GRL-PAL), Greenland (GRL), North (NH), Laurentide (LIS),
 Eurasia (EIS). Records datasets (non-gridded data, `../Records/README.md`) have no
@@ -29,7 +30,7 @@ on Zenodo (`[_ZENODO]`), and one entry per file:
 
 ```toml
 ["ANT-4KM_TOPO-Bedmap3.nc"]
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Topo_ANT-4KM/2.0.0/ANT-4KM_TOPO-Bedmap3.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-4KM/2.0.0/ANT-4KM_TOPO-Bedmap3.nc"
 checksum = "sha256:<hex>"
 size = 123456789
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_TOPO-Bedmap3.nc"
@@ -183,9 +184,9 @@ releases (`registry/_sandbox/`).
 
 ## Access
 
-**GitLab:** uploads need a token of the project: on
-[fesmdata-products](https://gitlab.dkrz.de/fesmc/fesmdata-products), Settings > Access
-tokens > Add new token, with the role Developer and the scope `api` (or a personal
+**GitLab (Helmholtz Codebase):** uploads need a token of the project: on
+[fesmdata-products](https://codebase.helmholtz.cloud/fesmc/fesmdata-products),
+Settings > Access tokens > Add new token, with the role Developer and the scope `api` (or a personal
 token with the scope `api`, for a member of the project). SSH keys do not work for the
 package registry. Downloads need no token. Store the token in `~/.gitlab_token` on the
 machine with the files (read without being shown or kept in the shell history):
