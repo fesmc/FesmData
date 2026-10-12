@@ -154,20 +154,3 @@ function record_entries(domain::AbstractString, dataset::AbstractString; grids=S
     isempty(unknown) || error("$domain/$dataset: no grids $(join(unknown, ", ")), available: $(join(available, ", "))")
     return [files[name] for name in sort(collect(keys(files))) if isempty(grids) || entry_grid(files[name]) in grids]
 end
-
-"""
-    fetch_record(domain, dataset; grids=String[], overwrite=false, sandbox=false) -> Vector{String}
-
-Download the files of a record into \$ICE_DATA/v2/<Domain>/<GRID>/, only those of
-`grids` if given (see `fetch_file`). Returns the local paths.
-"""
-function fetch_record(domain::AbstractString, dataset::AbstractString; grids=String[],
-                      overwrite::Bool=false, sandbox::Bool=false)
-    paths = String[]
-    for entry in record_entries(domain, dataset; grids=grids, sandbox=sandbox)
-        path, status = fetch_file(entry; overwrite=overwrite)
-        println(rpad(string(status), 12), path)
-        push!(paths, path)
-    end
-    return paths
-end

@@ -155,10 +155,57 @@ function list(args; sandbox::Bool=false)
 end
 
 """
+    check_local(entries; overwrite=false) -> Dict
+
+States of the local files of `entries` (`local_state`, by local path), after checking
+their checksums: prints how many are present, to download and of earlier releases to
+update, and stops if files were changed locally, unless `overwrite`.
+"""
+function check_local(entries; overwrite::Bool=false)
+    println("Checking the files in $(products_dir()) (checksums)")
+    states = Dict(local_path(e) => local_state(e) for e in entries)
+    of_state(state) = filter(e -> states[local_path(e)] == state, entries)
+    missing_, older, changed = of_state(:missing), of_state(:older), of_state(:changed)
+    println("$(length(of_state(:current))) files present, $(length(missing_)) to download ",
+            "($(human_size(total_size(missing_)))), $(length(older)) of earlier releases to update ",
+            "($(human_size(total_size(older))))")
+    if !isempty(changed)
+        println("$(length(changed)) files changed locally (not of a release):")
+        foreach(e -> println("  ", local_path(e)), changed)
+        overwrite || error("files changed locally; use --overwrite to replace them")
+    end
+    return states
+end
+
+"""
+    download_records(records, states; overwrite=false) -> Vector{String}
+
+Download the files of `records`, (domain, dataset, entries), that are not present, with
+the `states` of `check_local` (see `fetch_file`). Returns the local paths.
+"""
+function download_records(records, states; overwrite::Bool=false)
+    paths = String[]
+    for (d, s, es) in records
+        println("\n$d/$s")
+        for e in es
+            path, status = fetch_file(e; overwrite=overwrite, state=states[local_path(e)])
+            println(rpad(string(status), 12), path)
+            push!(paths, path)
+        end
+    end
+    return paths
+end
+
+"Entries of the selected records, as (domain, dataset, entries)."
+selected_entries(selected; sandbox::Bool=false) =
+    [(d, s, record_entries(d, s; grids=grids, sandbox=sandbox)) for (d, s, grids) in selected]
+
+"""
     fetch_files(args; overwrite=false, sandbox=false) -> Vector{String}
 
 `fesmdata.jl fetch`: download the files of a dataset on a domain, or on grids (which
-imply their domain). The dataset must be named, and a domain or grids.
+imply their domain). The dataset must be named, and a domain or grids. The files
+present are checked first, as by `mirror`.
 """
 function fetch_files(args; overwrite::Bool=false, sandbox::Bool=false)
     selected, _ = select_records(args; sandbox=sandbox)
@@ -166,11 +213,9 @@ function fetch_files(args; overwrite::Bool=false, sandbox::Bool=false)
     length(datasets) == 1 && only(datasets) in args || error("fetch: name the dataset (e.g. Topo)")
     any(a -> a in first.(selected), args) || any(!isempty(g) for (_, _, g) in selected) ||
         error("fetch: name a domain or grids (e.g. Antarctica, ANT-32KM)")
-    paths = String[]
-    for (d, s, grids) in selected
-        append!(paths, fetch_record(d, s; grids=grids, overwrite=overwrite, sandbox=sandbox))
-    end
-    return paths
+    records = selected_entries(selected; sandbox=sandbox)
+    states = check_local([e for (_, _, es) in records for e in es]; overwrite=overwrite)
+    return download_records(records, states; overwrite=overwrite)
 end
 
 """
@@ -185,32 +230,12 @@ stop the mirror (replaced with `overwrite`). Then, after one confirmation (none 
 function mirror(args; overwrite::Bool=false, sandbox::Bool=false, yes::Bool=false)
     selected, _ = select_records(args; sandbox=sandbox)
     isempty(selected) && (println("No records"); return String[])
-    records = [(d, s, record_entries(d, s; grids=grids, sandbox=sandbox)) for (d, s, grids) in selected]
+    records = selected_entries(selected; sandbox=sandbox)
     entries = [e for (_, _, es) in records for e in es]
     println("$(length(selected)) records, $(length(entries)) files, $(human_size(total_size(entries))) in total")
-    println("Checking the files in $(products_dir()) (checksums)")
-    states = Dict(local_path(e) => local_state(e) for e in entries)
-    of_state(state) = filter(e -> states[local_path(e)] == state, entries)
-    missing_, older, changed = of_state(:missing), of_state(:older), of_state(:changed)
-    println("$(length(of_state(:current))) files present, $(length(missing_)) to download ",
-            "($(human_size(total_size(missing_)))), $(length(older)) of earlier releases to update ",
-            "($(human_size(total_size(older))))")
-    if !isempty(changed)
-        println("$(length(changed)) files changed locally (not of a release):")
-        foreach(e -> println("  ", local_path(e)), changed)
-        overwrite || error("files changed locally; use --overwrite to replace them")
-    end
-    todo = vcat(missing_, older, changed)
+    states = check_local(entries; overwrite=overwrite)
+    todo = filter(e -> states[local_path(e)] != :current, entries)
     yes || isempty(todo) || confirm("Download $(length(todo)) files ($(human_size(total_size(todo)))) " *
                                     "into $(products_dir())?") || (println("Nothing downloaded."); return String[])
-    paths = String[]
-    for (d, s, es) in records
-        println("\n$d/$s")
-        for e in es
-            path, status = fetch_file(e; overwrite=overwrite, state=states[local_path(e)])
-            println(rpad(string(status), 12), path)
-            push!(paths, path)
-        end
-    end
-    return paths
+    return download_records(records, states; overwrite=overwrite)
 end
