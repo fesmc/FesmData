@@ -64,8 +64,9 @@ take one melt rate per basin (e.g. as the reference of a melt parameterisation):
 The means are taken on the source grid, over the ice-shelf cells of each basin (or
 group), and set on all its cells: the basins of ANT-1KM (whose cells include those of
 the source grid) are extended over the open ocean to the nearest basin (FesmUtils
-`extend_labels`), so the fields cover the whole grid. A basin without ice-shelf cells
-is missing: basin 25 (no cell of the source rates lies in it).
+`extend_labels`), so the fields cover the whole source grid (x, y within 2800 km of
+the pole; the outer cells of the ANT grids, up to 3040 km, are missing). A basin without
+ice-shelf cells is missing: basin 25 (no cell of the source rates lies in it).
 
 **`bm_eq_reese` of v1.** The v1 product `BMELT-R13` was made with `gridding`
 (`src/Rignot13_BasalMelt.f90`), which writes `bm_actual_ave` and `bm_equil_ave`, the
