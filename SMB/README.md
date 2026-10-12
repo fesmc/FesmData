@@ -27,7 +27,8 @@ and `smb`, `pr`, `sf`, `t2m`, `T_srf` and `z_srf` are filled outside the RACMO d
 (the corners of the grids) by harmonic interpolation (`fill`, `mask = "all"`, marked by
 `mask_fill`).
 
-`SMB-RACMO2.3p2-1981-2010` and `SMB-MARv3.14-1981-2010` (and their annual means) are
+`SMB-RACMO2.3p2-1981-2010`, `SMB-MARv3.14-1961-1990` and `SMB-MARv3.14-1981-2010` (and
+their annual means) are
 also defined on the whole grid, for model forcing, but filled where there are no source
 data (`f_valid` = 0, marked by `mask_fill_<field>`) as follows:
 

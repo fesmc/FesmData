@@ -87,17 +87,22 @@ file = "RACMO2.3p2_annual_1979-2022.nc"
 grids = { Antarctica = 4 }
 figure = { variables = ["smb"] }
 
+# Filled as MARv3.14-1981-2010 (below)
 [products."MARv3.14-1961-1990"]
 source = "Fettweis2017_mar314"
 file = "MARv3.14_ERA5_1961-1990.nc"
 grids = { Greenland = 1 }
 figure = { variables = ["smb"] }
+fill = [{ variables = ["pr", "sf", "rf", "z_srf"], mask = "all" },
+        { method = "elevation_regression", variables = ["smb", "t2m", "T_srf"], mask = "all", cap = { smb = -91.7 } }]
 
 [products."MARv3.14-1961-1990-annual-mean"]
 source = "Fettweis2017_mar314"
 file = "MARv3.14_ERA5_1961-1990_annual-mean.nc"
 grids = { Greenland = 1 }
 figure = false
+fill = [{ variables = ["pr", "sf", "rf", "z_srf"], mask = "all" },
+        { method = "elevation_regression", variables = ["smb", "t2m", "T_srf"], mask = "all", cap = { smb = -91.7 } }]
 
 # Filled off the ice and outside the MAR domain (smb is defined on the ice only, see
 # ../Fettweis2017_mar314/README.md), for model forcing over the whole grid, as
