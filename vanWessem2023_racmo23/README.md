@@ -39,6 +39,9 @@ julia fesmdata.jl remap $FESMDATA_WORK/prepared/vanWessem2023_racmo23/RACMO2.3p2
 
 - `RACMO2.3p2_1981-2010.nc`, `RACMO2.3p2_1991-2020.nc`: monthly climatologies
   (x, y, month);
+- `RACMO2.3p2_1985-2014.nc`: the monthly climatology of the reference period of the
+  ISMIP7 experiments, a reference climate for model forcing, with `smb` complete (see
+  Notes);
 - `RACMO2.3p2_annual_1979-2022.nc`: annual values (x, y, time).
 
 Fields, with the names and units of the RACMO2.4p1 products (`vanDalum2025_racmo24`):
@@ -63,7 +66,10 @@ all cells with f_ice = 0 are ocean.
   day-weighted annual means.
 - `smb`, `runoff`, `melt` and `subl` are set missing where f_ice < 0.1 (RACMO2.3p2 gives
   smb near zero and `subl` as evaporation over the ocean there). `pr`, `sf`, `t2m` and
-  `T_srf` cover the whole domain.
+  `T_srf` cover the whole domain. In the reference climate 1985-2014, `smb` is
+  `pr + subl` where f_ice < 0.1 (the surface mass balance without runoff, which is
+  meaningful on glaciated surfaces only), so that it covers the whole domain as the
+  forcing of a model whose ice may advance onto the ocean or land.
 - Sign: `smb = pr + subl - runoff` minus drifting-snow erosion (not included here); `subl`
   is negative for sublimation, as in the source.
 

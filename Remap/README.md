@@ -118,7 +118,7 @@ grids = { Antarctica = 4, Greenland = 4, Global = 4 }   # by domain, see below
 # smooth = "auto"                            # optional, default "auto"
 # release = false                            # optional: made, but not released
 # figure = { variables = ["ghf"] }            # optional: its figure on the website
-# fill = { variables = ["ux_srf", "uy_srf"], mask = "TOPO-BedMachine-v4" }   # optional: gaps over the ice filled
+# fill = { variables = ["ux_srf", "uy_srf"], mask = "TOPO-BedMachine-v4" }   # optional: gaps over the ice (or "all") filled
 ```
 
 `grids` lists the domains (output folders) of the product, each with the grids it is
@@ -141,7 +141,9 @@ ANT-32KM and GLOBAL-T170.
 rotation of vectors): the cells of the fields `variables` with ice (`H_ice > 0`) in the
 Topo product `mask` on the same grid (`<GRID>_TOPO-BedMachine-v4.nc` in the same folder)
 but no source data (`f_valid = 0`) get the harmonic (Laplace) interpolation of the cells
-around them (`laplace_fill` of FesmUtils). Gaps not connected to any data stay missing.
+around them (`laplace_fill` of FesmUtils). With `mask = "all"`, all the cells without
+source data are filled, e.g. outside the domain of a regional climate model, for fields
+used as model forcing over the whole grid. Gaps not connected to any data stay missing.
 Both components of a vector must be filled; the speed of a filled vector (the field with
 the standard name `<x>_speed`, for `eastward_<x>_velocity`) is the magnitude of the
 filled components there. Other fields (e.g. errors) stay missing in the gaps. The file

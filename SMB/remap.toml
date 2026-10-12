@@ -33,6 +33,15 @@ file = "RACMO2.3p2_1991-2020.nc"
 grids = { Antarctica = 4 }
 figure = { variables = ["smb"] }
 
+# Reference climate of the ISMIP7 experiments: defined on the whole grid (smb complete in
+# the prepared file, the fields filled outside the RACMO domain)
+[products."RACMO2.3p2-1985-2014"]
+source = "vanWessem2023_racmo23"
+file = "RACMO2.3p2_1985-2014.nc"
+grids = { Antarctica = 4 }
+figure = { variables = ["smb"] }
+fill = { variables = ["smb", "pr", "sf", "t2m", "T_srf", "z_srf"], mask = "all" }
+
 [products."RACMO2.3p2-annual"]
 source = "vanWessem2023_racmo23"
 file = "RACMO2.3p2_annual_1979-2022.nc"

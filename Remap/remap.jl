@@ -611,8 +611,14 @@ function _per_field!(fields, dims, varattrib, A::AbstractDict, pdims, name, attr
 end
 
 # ---------------------------------------------------------------------------
-# Gaps over the ice
+# Gaps filled
 # ---------------------------------------------------------------------------
+
+"Where the gaps of `fill` are filled, for the descriptions in the files and the log."
+fill_where(fill::GapFill) = fill.mask == "all" ? "everywhere" : "over the ice (H_ice > 0 in $(fill.mask))"
+
+"Cells of grid `og` whose gaps `fill` fills: those with ice in its Topo product (`ice_mask`), or all."
+fill_mask(og::OutGrid, fill::GapFill) = fill.mask == "all" ? trues(size(og.grid)) : ice_mask(og, fill.mask)
 
 """
     ice_mask(og, product) -> BitMatrix
@@ -656,15 +662,16 @@ end
 """
     fill_gaps!(out, pf, og, fill) -> Dict{String,Array{Int8}}
 
-Fill the gaps over the ice of the remapped fields `out` (field => (Ft, f_valid)) of
-`pf` on grid `og` (see `GapFill`): in each variable of `fill`, slice by slice, the cells
-with ice (`ice_mask`) and no source data (f_valid = 0), by harmonic interpolation from
-the cells around them (`laplace_fill!`). Gaps not connected to data stay missing. The
+Fill the gaps of the remapped fields `out` (field => (Ft, f_valid)) of `pf` on grid
+`og` (see `GapFill`): in each variable of `fill`, slice by slice, the cells of
+`fill_mask` (with ice, or all) with no source data (f_valid = 0), by harmonic
+interpolation from the cells around them (`laplace_fill!`). Gaps not connected to data
+stay missing. The
 speed of a filled vector (see `_speed_field`) is the magnitude of the filled
 components in the cells filled. Returns the cells filled (1) in each variable.
 """
 function fill_gaps!(out, pf::PreparedFields, og::OutGrid, fill::GapFill)
-    ice = ice_mask(og, fill.mask)
+    cells = fill_mask(og, fill)
     filled = Dict{String,Array{Int8}}()
     counts = Tuple{Int,Int}[]               # cells filled and left missing, by variable
     for f in fill.variables
@@ -672,7 +679,7 @@ function fill_gaps!(out, pf::PreparedFields, og::OutGrid, fill::GapFill)
         filled[f] = zeros(Int8, size(Ft))
         nleft = 0
         for I in CartesianIndices(size(Ft)[3:end])
-            gaps = ice .& (view(fv, :, :, I) .== 0)
+            gaps = cells .& (view(fv, :, :, I) .== 0)
             F = view(Ft, :, :, I)
             nleft += laplace_fill!(F, gaps)
             filled[f][:, :, I] .= gaps .& .!isnan.(F)
@@ -688,7 +695,7 @@ function fill_gaps!(out, pf::PreparedFields, og::OutGrid, fill::GapFill)
         S[k] .= hypot.(ue[k], vn[k])
     end
     describe((n, left)) = "$n cells" * (left > 0 ? ", $left not connected to data left missing" : "")
-    println("$(og.grid.name): gaps over the ice filled, " *
+    println("$(og.grid.name): gaps $(fill_where(fill)) filled, " *
             (allequal(counts) ? "$(join(fill.variables, ", ")): $(describe(counts[1]))" :
              join(("$f: $(describe(c))" for (f, c) in zip(fill.variables, counts)), "; ")))
     return filled
@@ -697,9 +704,9 @@ end
 "Attributes of `mask_fill` (or `mask_fill_<f>` for field `f`)."
 mask_fill_attrib(fill::GapFill, f) = Pair{String,Any}[
     "units" => "1",
-    "long_name" => "gap over the ice filled" * (f === nothing ? "" : " in $f"),
+    "long_name" => "gap filled" * (f === nothing ? "" : " in $f"),
     "flag_values" => Int8[0, 1], "flag_meanings" => "source filled",
-    "comment" => "1: no source data (f_valid = 0) over the ice (H_ice > 0 in $(fill.mask)), filled by " *
+    "comment" => "1: no source data (f_valid = 0) $(fill_where(fill)), filled by " *
                  "harmonic (Laplace) interpolation from the cells around"]
 
 "Description of a remapping for the global attribute `remap_method`."
@@ -722,8 +729,8 @@ grid) onto each grid (see `remap_array` and `smoothing_sigma`) and write them to
 cell covered by source data (`f_valid_<field>` for each field when their coverage
 differs; with the extra dimensions when it differs between them). The fields of
 several files are combined on each grid (see `combine_remapped`). Vector fields are
-rotated to the axes of projected grids. With `fill` (a `GapFill`), the gaps over the
-ice are then filled (see `fill_gaps!`), marked by `mask_fill`. Grids not covered by
+rotated to the axes of projected grids. With `fill` (a `GapFill`), the gaps are then
+filled (see `fill_gaps!`), marked by `mask_fill`. Grids not covered by
 the sources are skipped (an error if `strict`). The grid files are written if missing.
 Existing files are kept unless `overwrite`. `dataset` is the dataset of the
 provenance attributes.
@@ -777,8 +784,8 @@ function remap_prepared(ps::AbstractVector{Prepared}, grids::Vector{OutGrid}; na
                                                        "f_valid the sum of the covered fractions, at most 1")
         if filled !== nothing
             _per_field!(fields, dims, varattrib, filled, pf.dims, "mask_fill", f -> mask_fill_attrib(fill, f))
-            push!(attrib, "gap_fill" => "$(join(fill.variables, ", ")): harmonic interpolation over the ice " *
-                                        "of $(fill.mask) where there are no source data (mask_fill)")
+            push!(attrib, "gap_fill" => "$(join(fill.variables, ", ")): harmonic interpolation $(fill_where(fill)) " *
+                                        "where there are no source data (mask_fill)")
         end
         isfile(joinpath(outdir(og), "$(og.grid.name)_grid.nc")) || write_grid_files(outdir(og), og.grid; dataset)
         aux = unique(a -> a.name, [a for p in ps for a in p.aux])

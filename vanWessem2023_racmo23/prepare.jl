@@ -1,8 +1,8 @@
 # Prepare the RACMO2.3p2 Antarctic surface mass balance and surface climate (van Wessem
 # et al., 2023 data release; monthly fields 1979-2022 on the 27 km rotated-pole grid
-# ANT27) for remapping: monthly climatologies 1981-2010 and 1991-2020 (x, y, month) and
-# annual values 1979-2022 (x, y, time), with the surface elevation and masks, in
-# $FESMDATA_WORK/prepared/vanWessem2023_racmo23/.
+# ANT27) for remapping: monthly climatologies 1981-2010, 1991-2020 and 1985-2014 (x, y,
+# month) and annual values 1979-2022 (x, y, time), with the surface elevation and masks,
+# in $FESMDATA_WORK/prepared/vanWessem2023_racmo23/.
 #
 # The rotated-pole grid is regular in rotated longitude and latitude (0.25°). It is
 # written as x, y = R * rotated lon, lat (radians), R = 6371229 m, i.e. an equidistant
@@ -21,7 +21,11 @@ include(joinpath(@__DIR__, "..", "shared", "manifest.jl"))
 
 const SOURCE = "vanWessem2023_racmo23"
 const YEARS = 1979:2022
-const PERIODS = (1981:2010, 1991:2020)
+const PERIODS = (1981:2010, 1991:2020, 1985:2014)
+
+# Periods of a reference climate for model forcing (1985-2014: the reference period of
+# the ISMIP7 experiments): smb is complete, pr + subl off the glaciated surfaces
+const REFERENCE_PERIODS = (1985:2014,)
 const DAYS_PER_YEAR = 365.25
 
 # Earth radius of RACMO (m) and the PROJ string of the grid (x, y in m)
@@ -102,13 +106,24 @@ annuals = Dict{String,Array{Float32,3}}()
 for (name, f) in FIELDS
     println("Reading $(f.var)")
     A = read_monthly(f)
-    f.glaciated && (A[.!glaciated, :, :] .= NaN)
     M = monthly(A, f.kind)
     for p in PERIODS
         k = findfirst(==(first(p)), YEARS):findfirst(==(last(p)), YEARS)
         climatology[p][name] = Float32.(dropdims(mean(M[:, :, :, k]; dims=4); dims=4))
     end
+    f.glaciated && (A[.!glaciated, :, :] .= NaN)
     annuals[name] = Float32.(annual(A, f.kind))
+end
+
+# Glaciated fields are missing off the glaciated surfaces, but smb of a reference period
+# is pr + subl there (that of RACMO without runoff, meaningful on glaciated surfaces only)
+for p in PERIODS
+    C = climatology[p]
+    smb_off = p in REFERENCE_PERIODS ? C["pr"][.!glaciated, :] .+ C["subl"][.!glaciated, :] : NaN32
+    for (name, f) in FIELDS
+        f.glaciated && (C[name][.!glaciated, :] .= NaN32)
+    end
+    C["smb"][.!glaciated, :] .= smb_off
 end
 
 # ---------------------------------------------------------------------------
@@ -117,10 +132,14 @@ end
 
 units(f) = f.kind == :flux ? FLUX_UNITS : "K"
 
-function comment(f)
+function comment(f; reference=false)
     c = f.kind == :flux ? "rate of the monthly sum of RACMO2.3p2 $(f.var) (kg m-2 = mm w.e.)" :
                           "mean of RACMO2.3p2 $(f.var)"
-    f.glaciated && (c *= "; glaciated surfaces only, missing where f_ice < $F_ICE_MIN")
+    if f.glaciated && reference && f.var == "smb"
+        c *= "; where f_ice < $F_ICE_MIN, pr + subl (no runoff off the glaciated surfaces)"
+    elseif f.glaciated
+        c *= "; glaciated surfaces only, missing where f_ice < $F_ICE_MIN"
+    end
     return c
 end
 
@@ -170,13 +189,14 @@ for p in PERIODS
     rm(path; force=true)
     NCDataset(path, "c") do ds
         write_common!(ds, "Antarctic surface mass balance and surface climate, RACMO2.3p2 (ERA5), " *
-                          "monthly climatology $(first(p))-$(last(p))")
+                          "monthly climatology $(first(p))-$(last(p))" *
+                          (p in REFERENCE_PERIODS ? " (reference climate, smb complete)" : ""))
         defVar(ds, "month", Int32.(1:12), ("month",); attrib=["units" => "1", "long_name" => "month of the year"])
         for (name, f) in FIELDS
             defVar(ds, name, climatology[p][name], ("x", "y", "month"); fillvalue=NaN32, deflatelevel=1,
                    attrib=["units" => units(f), "long_name" => f.long_name, "grid_mapping" => "crs",
                            "cell_methods" => "time: mean within months time: mean over years",
-                           "comment" => comment(f)])
+                           "comment" => comment(f; reference=p in REFERENCE_PERIODS)])
         end
     end
     println("Wrote $path")

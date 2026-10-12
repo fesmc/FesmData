@@ -7,9 +7,10 @@ using TOML
 """
     GapFill
 
-The gaps over the ice filled after remapping (`fill` of a product): the cells of the
-fields `variables` with ice (H_ice > 0) in the Topo product `mask` on the same grid
-(e.g. "TOPO-BedMachine-v4", the file `<GRID>_TOPO-BedMachine-v4.nc`) but no source data.
+The gaps filled after remapping (`fill` of a product): the cells of the fields
+`variables` without source data, with ice (H_ice > 0) in the Topo product `mask` on the
+same grid (e.g. "TOPO-BedMachine-v4", the file `<GRID>_TOPO-BedMachine-v4.nc`), or all
+of them for `mask = "all"`.
 """
 struct GapFill
     variables::Vector{String}
@@ -19,13 +20,14 @@ end
 "`fill` of a product in remap.toml, checked (see `GapFill`)."
 function gap_fill_spec(value, what, variables)
     value isa AbstractDict && haskey(value, "variables") && haskey(value, "mask") ||
-        error("$what: fill must be a table { variables = [...], mask = \"TOPO-<name>\" }")
+        error("$what: fill must be a table { variables = [...], mask = \"TOPO-<name>\" or \"all\" }")
     unknown = setdiff(keys(value), ("variables", "mask"))
     isempty(unknown) || error("$what: unknown keys of fill: $(join(unknown, ", "))")
     vars = Vector{String}(value["variables"])
     variables === nothing || isempty(setdiff(vars, variables)) ||
         error("$what: fill.variables $(join(setdiff(vars, variables), ", ")) are not among the variables")
-    startswith(value["mask"], "TOPO-") || error("$what: fill.mask must be a Topo product, e.g. TOPO-BedMachine-v4")
+    value["mask"] == "all" || startswith(value["mask"], "TOPO-") ||
+        error("$what: fill.mask must be a Topo product, e.g. TOPO-BedMachine-v4, or \"all\"")
     return GapFill(vars, value["mask"])
 end
 
@@ -38,7 +40,7 @@ domains, as `<GRID>_<Dataset>-<name>.nc`. `grids` gives them by domain (output
 folder): a minimum spacing in km (the standard grids of the domain not finer than
 this; 0: all), or the names of the grids (any grid of the domain, also those made on
 request, e.g. Gaussian grids). A product is not made on the domains not in `grids`.
-`fill` gives the gaps over the ice filled after remapping (see `GapFill`).
+`fill` gives the gaps filled after remapping (see `GapFill`).
 """
 struct RemapProduct
     dataset::String
@@ -51,7 +53,7 @@ struct RemapProduct
     smooth::Union{String,Float64}
     release::Bool                   # part of the releases of the dataset
     figure::Union{Nothing,Dict{String,Any}}   # options of its figure on the website, nothing: none
-    fill::Union{Nothing,GapFill}    # gaps over the ice filled, nothing: none
+    fill::Union{Nothing,GapFill}    # gaps filled, nothing: none
 end
 
 "Domains (output folders) of a product."
