@@ -1,13 +1,13 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-11"
+date = "2026-10-12"
 git_tag = "rsl-v2.0.0"
-store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=Records_RSL"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Records_RSL"
 version = "2.0.0"
 
 ["RSL-GAPSLIP.nc"]
 checksum = "sha256:44ae08e6c9555cae4fc0896e8e4ce86e4424b1ba695ba2bcb6757a985ce49c9f"
 size = 379546
 storage_path = "$datasets_dir/Records/RSL/RSL-GAPSLIP.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Records_RSL/2.0.0/RSL-GAPSLIP.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_RSL/2.0.0/RSL-GAPSLIP.nc"

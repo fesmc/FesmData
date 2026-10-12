@@ -1,13 +1,13 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-11"
+date = "2026-10-12"
 git_tag = "boreholes-v2.0.0"
-store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=Records_Boreholes"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Records_Boreholes"
 version = "2.0.0"
 
 ["Boreholes-Lokkegaard2023.nc"]
 checksum = "sha256:d6fa6945a2c551801e09b59d14b1c20d660dc9f63ab9541415f49e7639dae910"
 size = 294478
 storage_path = "$datasets_dir/Records/Boreholes/Boreholes-Lokkegaard2023.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Records_Boreholes/2.0.0/Boreholes-Lokkegaard2023.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_Boreholes/2.0.0/Boreholes-Lokkegaard2023.nc"

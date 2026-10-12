@@ -1,151 +1,151 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-11"
+date = "2026-10-12"
 git_tag = "sediment-v2.0.0"
-store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=Greenland_Sediment"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Greenland_Sediment"
 version = "2.0.0"
 
 ["GRL-16KM_Sediment-CRUST1.nc"]
 checksum = "sha256:ff53b118f482736d20f53c60d93475a1baf01e270565dea3ef097e86d4e5562f"
 size = 215931
 storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_Sediment-CRUST1.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Sediment_GRL-16KM/2.0.0/GRL-16KM_Sediment-CRUST1.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Sediment_GRL-16KM/2.0.0/GRL-16KM_Sediment-CRUST1.nc"
 
 ["GRL-16KM_Sediment-ECM1.nc"]
 checksum = "sha256:bb4e0861aae73da517f822adf87d194c573ea1d7cf6832abb522f63ae4270fde"
 size = 201874
 storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_Sediment-ECM1.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Sediment_GRL-16KM/2.0.0/GRL-16KM_Sediment-ECM1.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Sediment_GRL-16KM/2.0.0/GRL-16KM_Sediment-ECM1.nc"
 
 ["GRL-16KM_Sediment-GlobSed.nc"]
 checksum = "sha256:b3c03c73338f0313dfbbedfaa9fa0e967056e6048828e5eb3e7acd0400b0af65"
 size = 77325
 storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_Sediment-GlobSed.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Sediment_GRL-16KM/2.0.0/GRL-16KM_Sediment-GlobSed.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Sediment_GRL-16KM/2.0.0/GRL-16KM_Sediment-GlobSed.nc"
 
 ["GRL-16KM_Sediment-Gowan2019.nc"]
 checksum = "sha256:067c2058a29b4883b1fe0cce5178d7346ccf954824a433d64d9d0e262b693eab"
 size = 47429
 storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_Sediment-Gowan2019.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Sediment_GRL-16KM/2.0.0/GRL-16KM_Sediment-Gowan2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Sediment_GRL-16KM/2.0.0/GRL-16KM_Sediment-Gowan2019.nc"
 
 ["GRL-16KM_grid.nc"]
 checksum = "sha256:e835518450bae0a863fdb7cd68adc7d4f59c48c790090d497939939518960d41"
 size = 150482
 storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Sediment_GRL-16KM/2.0.0/GRL-16KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Sediment_GRL-16KM/2.0.0/GRL-16KM_grid.nc"
 
 ["GRL-32KM_Sediment-CRUST1.nc"]
 checksum = "sha256:9233cac25cc2832ce584f994d53b8d3bc6b55d31dfdf78862a1c8d9414e0de40"
 size = 81969
 storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_Sediment-CRUST1.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Sediment_GRL-32KM/2.0.0/GRL-32KM_Sediment-CRUST1.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Sediment_GRL-32KM/2.0.0/GRL-32KM_Sediment-CRUST1.nc"
 
 ["GRL-32KM_Sediment-ECM1.nc"]
 checksum = "sha256:54ad41210f521c1bb94b18ba4d012aeb19f608fe70f59c6e31d99169aeda2080"
 size = 79044
 storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_Sediment-ECM1.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Sediment_GRL-32KM/2.0.0/GRL-32KM_Sediment-ECM1.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Sediment_GRL-32KM/2.0.0/GRL-32KM_Sediment-ECM1.nc"
 
 ["GRL-32KM_Sediment-GlobSed.nc"]
 checksum = "sha256:a82e5ab286e5661f388ea97c8bbb33d4c07b18ffe0ee196cae58a83dfd85d6d9"
 size = 36882
 storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_Sediment-GlobSed.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Sediment_GRL-32KM/2.0.0/GRL-32KM_Sediment-GlobSed.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Sediment_GRL-32KM/2.0.0/GRL-32KM_Sediment-GlobSed.nc"
 
 ["GRL-32KM_Sediment-Gowan2019.nc"]
 checksum = "sha256:001fa39b1131aafb03e77286dd0b1a8361a2ac51625d48236ba8b3123a6197fc"
 size = 36737
 storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_Sediment-Gowan2019.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Sediment_GRL-32KM/2.0.0/GRL-32KM_Sediment-Gowan2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Sediment_GRL-32KM/2.0.0/GRL-32KM_Sediment-Gowan2019.nc"
 
 ["GRL-32KM_grid.nc"]
 checksum = "sha256:c922307bd72e9e5bd3d10d86b97e3c108dcd5a4264dd47b305b9c562ba81e775"
 size = 57245
 storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Sediment_GRL-32KM/2.0.0/GRL-32KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Sediment_GRL-32KM/2.0.0/GRL-32KM_grid.nc"
 
 ["GRL-4KM_Sediment-CRUST1.nc"]
 checksum = "sha256:0cd2631f2fb90b39cbd36ddf66fb8b162b3f5e7c6b7f132b5d7c61dfeb09d0b5"
 size = 2473707
 storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_Sediment-CRUST1.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Sediment_GRL-4KM/2.0.0/GRL-4KM_Sediment-CRUST1.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Sediment_GRL-4KM/2.0.0/GRL-4KM_Sediment-CRUST1.nc"
 
 ["GRL-4KM_Sediment-ECM1.nc"]
 checksum = "sha256:9d3310a82c64bca90ce0980f43b859acede9e912d72d90c45b1cc40c0ab6b657"
 size = 2228380
 storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_Sediment-ECM1.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Sediment_GRL-4KM/2.0.0/GRL-4KM_Sediment-ECM1.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Sediment_GRL-4KM/2.0.0/GRL-4KM_Sediment-ECM1.nc"
 
 ["GRL-4KM_Sediment-GlobSed.nc"]
 checksum = "sha256:c940ac3d640342046bc0ba0366d20fc13bdad759a4244f8664f193b1ffd26636"
 size = 644377
 storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_Sediment-GlobSed.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Sediment_GRL-4KM/2.0.0/GRL-4KM_Sediment-GlobSed.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Sediment_GRL-4KM/2.0.0/GRL-4KM_Sediment-GlobSed.nc"
 
 ["GRL-4KM_Sediment-Gowan2019.nc"]
 checksum = "sha256:5e9e1257437eb2ef39bdbc2cff5b8d48e460dbf3ba8a32b2d051202462ac349b"
 size = 142401
 storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_Sediment-Gowan2019.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Sediment_GRL-4KM/2.0.0/GRL-4KM_Sediment-Gowan2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Sediment_GRL-4KM/2.0.0/GRL-4KM_Sediment-Gowan2019.nc"
 
 ["GRL-4KM_grid.nc"]
 checksum = "sha256:bfc44b679d56099bfb9306c3bfe8d74d1663a5b7168c2f18b404fdb3b6cabe4f"
 size = 1546343
 storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Sediment_GRL-4KM/2.0.0/GRL-4KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Sediment_GRL-4KM/2.0.0/GRL-4KM_grid.nc"
 
 ["GRL-8KM_Sediment-CRUST1.nc"]
 checksum = "sha256:48eb6d4eb06280e7c2cd5b333d36b703fef0f3ef22e4f9d0d828d668d80d93f0"
 size = 696512
 storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_Sediment-CRUST1.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Sediment_GRL-8KM/2.0.0/GRL-8KM_Sediment-CRUST1.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Sediment_GRL-8KM/2.0.0/GRL-8KM_Sediment-CRUST1.nc"
 
 ["GRL-8KM_Sediment-ECM1.nc"]
 checksum = "sha256:e2e45882b9838629c20a9d7ad0d9db6ca067c663a05599a21a217a119453be5f"
 size = 635808
 storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_Sediment-ECM1.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Sediment_GRL-8KM/2.0.0/GRL-8KM_Sediment-ECM1.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Sediment_GRL-8KM/2.0.0/GRL-8KM_Sediment-ECM1.nc"
 
 ["GRL-8KM_Sediment-GlobSed.nc"]
 checksum = "sha256:31653fbc520bb97861ef919625e32aa2df86c2f81d3128e0aca7afa4788a2665"
 size = 203589
 storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_Sediment-GlobSed.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Sediment_GRL-8KM/2.0.0/GRL-8KM_Sediment-GlobSed.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Sediment_GRL-8KM/2.0.0/GRL-8KM_Sediment-GlobSed.nc"
 
 ["GRL-8KM_Sediment-Gowan2019.nc"]
 checksum = "sha256:ca902b15d412e3b74cac34e3c1c6698bf03eba159be539283b5883cce5167c48"
 size = 69843
 storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_Sediment-Gowan2019.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Sediment_GRL-8KM/2.0.0/GRL-8KM_Sediment-Gowan2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Sediment_GRL-8KM/2.0.0/GRL-8KM_Sediment-Gowan2019.nc"
 
 ["GRL-8KM_grid.nc"]
 checksum = "sha256:a7c9769dfbac2eefa4f4a79985475995596d3035f3481009cfff72c2c45fb40e"
 size = 467101
 storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Sediment_GRL-8KM/2.0.0/GRL-8KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Sediment_GRL-8KM/2.0.0/GRL-8KM_grid.nc"
 
 ["grid_GRL-16KM.txt"]
 checksum = "sha256:96d8ae58fe971c0fe4bcf3433b0f78c1c46af7104133c842859d47b655060cd6"
 size = 465
 storage_path = "$datasets_dir/Greenland/GRL-16KM/grid_GRL-16KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Sediment_GRL-16KM/2.0.0/grid_GRL-16KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Sediment_GRL-16KM/2.0.0/grid_GRL-16KM.txt"
 
 ["grid_GRL-32KM.txt"]
 checksum = "sha256:60caa1794ee7701429bc7ccece8aa52f1f4555ddc051c056409acb398cad52a0"
 size = 462
 storage_path = "$datasets_dir/Greenland/GRL-32KM/grid_GRL-32KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Sediment_GRL-32KM/2.0.0/grid_GRL-32KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Sediment_GRL-32KM/2.0.0/grid_GRL-32KM.txt"
 
 ["grid_GRL-4KM.txt"]
 checksum = "sha256:17883e1fab0cfa9f8b288bb7d2fb6fa27955ff3a437d06b0ec4d0fb1e358165f"
 size = 464
 storage_path = "$datasets_dir/Greenland/GRL-4KM/grid_GRL-4KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Sediment_GRL-4KM/2.0.0/grid_GRL-4KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Sediment_GRL-4KM/2.0.0/grid_GRL-4KM.txt"
 
 ["grid_GRL-8KM.txt"]
 checksum = "sha256:455c0a221c44c016c9129b7e1305cc2e1cf1f17be11aace7a68103e92f6c2c5c"
 size = 463
 storage_path = "$datasets_dir/Greenland/GRL-8KM/grid_GRL-8KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_Sediment_GRL-8KM/2.0.0/grid_GRL-8KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Sediment_GRL-8KM/2.0.0/grid_GRL-8KM.txt"

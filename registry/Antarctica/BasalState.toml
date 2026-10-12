@@ -1,115 +1,115 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-11"
+date = "2026-10-12"
 git_tag = "basalstate-v2.0.0"
-store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=Antarctica_BasalState"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Antarctica_BasalState"
 version = "2.0.0"
 
 ["ANT-16KM_BasalState-Dawson2022.nc"]
 checksum = "sha256:6183590041160844f912d9650870f3d476bdd86d0206e5fe91c2ef996e1e2dcb"
 size = 673457
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_BasalState-Dawson2022.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_BasalState_ANT-16KM/2.0.0/ANT-16KM_BasalState-Dawson2022.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalState_ANT-16KM/2.0.0/ANT-16KM_BasalState-Dawson2022.nc"
 
 ["ANT-16KM_grid.nc"]
 checksum = "sha256:dea44445828fdc3adbae04afc6662224e96a6838c8381f80a855659b3ad6460c"
 size = 892250
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_BasalState_ANT-16KM/2.0.0/ANT-16KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalState_ANT-16KM/2.0.0/ANT-16KM_grid.nc"
 
 ["ANT-1KM_BasalState-Dawson2022.nc"]
 checksum = "sha256:1f378b74dce6345a2509b0b8a51a6302d32871a587f27aab527a67d8eb17b955"
 size = 106182580
 storage_path = "$datasets_dir/Antarctica/ANT-1KM/ANT-1KM_BasalState-Dawson2022.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_BasalState_ANT-1KM/2.0.0/ANT-1KM_BasalState-Dawson2022.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalState_ANT-1KM/2.0.0/ANT-1KM_BasalState-Dawson2022.nc"
 
 ["ANT-1KM_grid.nc"]
 checksum = "sha256:1564185a4ce4e24d55ceaa7e6a6fc6170b28746fb5435d96af1ddb267a5da085"
 size = 142664883
 storage_path = "$datasets_dir/Antarctica/ANT-1KM/ANT-1KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_BasalState_ANT-1KM/2.0.0/ANT-1KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalState_ANT-1KM/2.0.0/ANT-1KM_grid.nc"
 
 ["ANT-2KM_BasalState-Dawson2022.nc"]
 checksum = "sha256:392a754f723c7170828ec53b4596a0fc1577e9adf2c19243321a5c97f301fd9b"
 size = 29715712
 storage_path = "$datasets_dir/Antarctica/ANT-2KM/ANT-2KM_BasalState-Dawson2022.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_BasalState_ANT-2KM/2.0.0/ANT-2KM_BasalState-Dawson2022.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalState_ANT-2KM/2.0.0/ANT-2KM_BasalState-Dawson2022.nc"
 
 ["ANT-2KM_grid.nc"]
 checksum = "sha256:405a1131131ba119609bf7c4147b29477ab4801fd0221f56656ab6ff1abf8ffc"
 size = 40215317
 storage_path = "$datasets_dir/Antarctica/ANT-2KM/ANT-2KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_BasalState_ANT-2KM/2.0.0/ANT-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalState_ANT-2KM/2.0.0/ANT-2KM_grid.nc"
 
 ["ANT-32KM_BasalState-Dawson2022.nc"]
 checksum = "sha256:3820da84fd5eb9221dad03499e1a8a0db6ea46bdf1cedb6f5ddffd793be037d7"
 size = 225029
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_BasalState-Dawson2022.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_BasalState_ANT-32KM/2.0.0/ANT-32KM_BasalState-Dawson2022.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalState_ANT-32KM/2.0.0/ANT-32KM_BasalState-Dawson2022.nc"
 
 ["ANT-32KM_grid.nc"]
 checksum = "sha256:66765d3512c62479e60ad1095a4ee84b38edb681fe816eddf9896c3a2799efd8"
 size = 212550
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_BasalState_ANT-32KM/2.0.0/ANT-32KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalState_ANT-32KM/2.0.0/ANT-32KM_grid.nc"
 
 ["ANT-4KM_BasalState-Dawson2022.nc"]
 checksum = "sha256:6a1fd301d746ee1667ba5faa8ac961d07a55d0163103d8820633f7c88828ac6a"
 size = 8288589
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_BasalState-Dawson2022.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_BasalState_ANT-4KM/2.0.0/ANT-4KM_BasalState-Dawson2022.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalState_ANT-4KM/2.0.0/ANT-4KM_BasalState-Dawson2022.nc"
 
 ["ANT-4KM_grid.nc"]
 checksum = "sha256:b553afcb6273200e9cd436c4f3ba5f081c599c58237374342aade5c4588e879f"
 size = 11450508
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_BasalState_ANT-4KM/2.0.0/ANT-4KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalState_ANT-4KM/2.0.0/ANT-4KM_grid.nc"
 
 ["ANT-8KM_BasalState-Dawson2022.nc"]
 checksum = "sha256:3a343c5b18193d8c9b7466ea710f4bd137e6205310b7088f553d183db2962a3f"
 size = 2294429
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_BasalState-Dawson2022.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_BasalState_ANT-8KM/2.0.0/ANT-8KM_BasalState-Dawson2022.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalState_ANT-8KM/2.0.0/ANT-8KM_BasalState-Dawson2022.nc"
 
 ["ANT-8KM_grid.nc"]
 checksum = "sha256:6d00ae1cafbf496c1375c74c9153d92c5e2aec79d8026f004ba0dc26d0c47ece"
 size = 3314952
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_BasalState_ANT-8KM/2.0.0/ANT-8KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalState_ANT-8KM/2.0.0/ANT-8KM_grid.nc"
 
 ["grid_ANT-16KM.txt"]
 checksum = "sha256:09d646757fe153b435cee10a90cf772b4626efbe2f187d410eab83876c8305cb"
 size = 467
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/grid_ANT-16KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_BasalState_ANT-16KM/2.0.0/grid_ANT-16KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalState_ANT-16KM/2.0.0/grid_ANT-16KM.txt"
 
 ["grid_ANT-1KM.txt"]
 checksum = "sha256:d8e6029b241c90da5ba2b6f4aed5fc6736d2251dfbf96e1432952605eaf02d67"
 size = 469
 storage_path = "$datasets_dir/Antarctica/ANT-1KM/grid_ANT-1KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_BasalState_ANT-1KM/2.0.0/grid_ANT-1KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalState_ANT-1KM/2.0.0/grid_ANT-1KM.txt"
 
 ["grid_ANT-2KM.txt"]
 checksum = "sha256:d02bf6fb1a40ffa3a09cad2982212ffa925a643e487b74b8c38af6cf773faff5"
 size = 468
 storage_path = "$datasets_dir/Antarctica/ANT-2KM/grid_ANT-2KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_BasalState_ANT-2KM/2.0.0/grid_ANT-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalState_ANT-2KM/2.0.0/grid_ANT-2KM.txt"
 
 ["grid_ANT-32KM.txt"]
 checksum = "sha256:619c2b14b9667a6ff1efe4de41f1b2bd0ddc8d3e10df6d5fd99222b80be20276"
 size = 466
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/grid_ANT-32KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_BasalState_ANT-32KM/2.0.0/grid_ANT-32KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalState_ANT-32KM/2.0.0/grid_ANT-32KM.txt"
 
 ["grid_ANT-4KM.txt"]
 checksum = "sha256:dc549c434411d3f7ad5b46e4f954f9bb180d0d2e272e1942d97e7072ae8b711d"
 size = 468
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/grid_ANT-4KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_BasalState_ANT-4KM/2.0.0/grid_ANT-4KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalState_ANT-4KM/2.0.0/grid_ANT-4KM.txt"
 
 ["grid_ANT-8KM.txt"]
 checksum = "sha256:66ff6285f42ec156b6c6a6c30fcb0d2e4c94e07d67512fb002cb0348b3420ce5"
 size = 465
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/grid_ANT-8KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_BasalState_ANT-8KM/2.0.0/grid_ANT-8KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_BasalState_ANT-8KM/2.0.0/grid_ANT-8KM.txt"

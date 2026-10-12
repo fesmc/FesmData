@@ -1,121 +1,121 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-11"
+date = "2026-10-12"
 git_tag = "ocean-v2.0.0"
-store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=Antarctica_Ocean"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Antarctica_Ocean"
 version = "2.0.0"
 
 ["ANT-16KM_Ocean-ISMIP7.nc"]
 checksum = "sha256:19c36fd99cddd06554e7cd2e5fead387af5c0e5d16258fc0a62f5dcb185feede"
 size = 28233742
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_Ocean-ISMIP7.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Ocean_ANT-16KM/2.0.0/ANT-16KM_Ocean-ISMIP7.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-16KM/2.0.0/ANT-16KM_Ocean-ISMIP7.nc"
 
 ["ANT-16KM_Ocean-ORAS5-1981-2010.nc"]
 checksum = "sha256:26264d21012cea18a14cc87469832d69c3bd0170604f33084a5ce3c609625ca5"
 size = 302931220
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_Ocean-ORAS5-1981-2010.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Ocean_ANT-16KM/2.0.0/ANT-16KM_Ocean-ORAS5-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-16KM/2.0.0/ANT-16KM_Ocean-ORAS5-1981-2010.nc"
 
 ["ANT-16KM_Ocean-ORAS5-annual.nc"]
 checksum = "sha256:89297390f2c76e9c9fa7b0e351cbba0199bb75b7ebeba63cd3bed1f455106add"
 size = 1045481402
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_Ocean-ORAS5-annual.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Ocean_ANT-16KM/2.0.0/ANT-16KM_Ocean-ORAS5-annual.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-16KM/2.0.0/ANT-16KM_Ocean-ORAS5-annual.nc"
 
 ["ANT-16KM_Ocean-Schmidtko2014.nc"]
 checksum = "sha256:8429b2a14d037b6e73350a14b7dd2aa3eeb0e71af3c7c253b14dbda63d811d3d"
 size = 327293
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_Ocean-Schmidtko2014.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Ocean_ANT-16KM/2.0.0/ANT-16KM_Ocean-Schmidtko2014.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-16KM/2.0.0/ANT-16KM_Ocean-Schmidtko2014.nc"
 
 ["ANT-16KM_grid.nc"]
 checksum = "sha256:dea44445828fdc3adbae04afc6662224e96a6838c8381f80a855659b3ad6460c"
 size = 892250
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Ocean_ANT-16KM/2.0.0/ANT-16KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-16KM/2.0.0/ANT-16KM_grid.nc"
 
 ["ANT-32KM_Ocean-ISMIP7.nc"]
 checksum = "sha256:dd71c4a9181a699021e7d2ada10262ee534d028788ed77e28b014116f31c9632"
 size = 6935589
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_Ocean-ISMIP7.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Ocean_ANT-32KM/2.0.0/ANT-32KM_Ocean-ISMIP7.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-32KM/2.0.0/ANT-32KM_Ocean-ISMIP7.nc"
 
 ["ANT-32KM_Ocean-ORAS5-1981-2010.nc"]
 checksum = "sha256:cf94342507d9f0f3bb33dc1c5fe1bd492e4d0237211204dfe8dd142ff067004e"
 size = 85650941
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_Ocean-ORAS5-1981-2010.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Ocean_ANT-32KM/2.0.0/ANT-32KM_Ocean-ORAS5-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-32KM/2.0.0/ANT-32KM_Ocean-ORAS5-1981-2010.nc"
 
 ["ANT-32KM_Ocean-ORAS5-annual.nc"]
 checksum = "sha256:450c4dfe0cf8bc91c21c8e6cab2351d58d8797c03efa3306756ec973e49691f0"
 size = 300609033
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_Ocean-ORAS5-annual.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Ocean_ANT-32KM/2.0.0/ANT-32KM_Ocean-ORAS5-annual.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-32KM/2.0.0/ANT-32KM_Ocean-ORAS5-annual.nc"
 
 ["ANT-32KM_Ocean-Schmidtko2014.nc"]
 checksum = "sha256:e3b98cd47ee175f07928c21feca4dd3f8af6383ee9c72b00bf4798d53f4c595c"
 size = 134104
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_Ocean-Schmidtko2014.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Ocean_ANT-32KM/2.0.0/ANT-32KM_Ocean-Schmidtko2014.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-32KM/2.0.0/ANT-32KM_Ocean-Schmidtko2014.nc"
 
 ["ANT-32KM_grid.nc"]
 checksum = "sha256:66765d3512c62479e60ad1095a4ee84b38edb681fe816eddf9896c3a2799efd8"
 size = 212550
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Ocean_ANT-32KM/2.0.0/ANT-32KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-32KM/2.0.0/ANT-32KM_grid.nc"
 
 ["ANT-4KM_Ocean-Schmidtko2014.nc"]
 checksum = "sha256:5244114b16d2632529b284b454d66273bcc49a136075d46355e5ce11f0a675fe"
 size = 3126096
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_Ocean-Schmidtko2014.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Ocean_ANT-4KM/2.0.0/ANT-4KM_Ocean-Schmidtko2014.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-4KM/2.0.0/ANT-4KM_Ocean-Schmidtko2014.nc"
 
 ["ANT-4KM_grid.nc"]
 checksum = "sha256:b553afcb6273200e9cd436c4f3ba5f081c599c58237374342aade5c4588e879f"
 size = 11450508
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Ocean_ANT-4KM/2.0.0/ANT-4KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-4KM/2.0.0/ANT-4KM_grid.nc"
 
 ["ANT-8KM_Ocean-ISMIP7.nc"]
 checksum = "sha256:81e84528c00c220bca657d886877887b0a09845f69590af3e5ac187d8b7cb85b"
 size = 98116350
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_Ocean-ISMIP7.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Ocean_ANT-8KM/2.0.0/ANT-8KM_Ocean-ISMIP7.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-8KM/2.0.0/ANT-8KM_Ocean-ISMIP7.nc"
 
 ["ANT-8KM_Ocean-Schmidtko2014.nc"]
 checksum = "sha256:b0ac5d67f6bcfc2001104dc12d2d4cce893ecb4e8d1c4901102e0785e760ed4a"
 size = 981076
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_Ocean-Schmidtko2014.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Ocean_ANT-8KM/2.0.0/ANT-8KM_Ocean-Schmidtko2014.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-8KM/2.0.0/ANT-8KM_Ocean-Schmidtko2014.nc"
 
 ["ANT-8KM_grid.nc"]
 checksum = "sha256:6d00ae1cafbf496c1375c74c9153d92c5e2aec79d8026f004ba0dc26d0c47ece"
 size = 3314952
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Ocean_ANT-8KM/2.0.0/ANT-8KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-8KM/2.0.0/ANT-8KM_grid.nc"
 
 ["grid_ANT-16KM.txt"]
 checksum = "sha256:09d646757fe153b435cee10a90cf772b4626efbe2f187d410eab83876c8305cb"
 size = 467
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/grid_ANT-16KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Ocean_ANT-16KM/2.0.0/grid_ANT-16KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-16KM/2.0.0/grid_ANT-16KM.txt"
 
 ["grid_ANT-32KM.txt"]
 checksum = "sha256:619c2b14b9667a6ff1efe4de41f1b2bd0ddc8d3e10df6d5fd99222b80be20276"
 size = 466
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/grid_ANT-32KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Ocean_ANT-32KM/2.0.0/grid_ANT-32KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-32KM/2.0.0/grid_ANT-32KM.txt"
 
 ["grid_ANT-4KM.txt"]
 checksum = "sha256:dc549c434411d3f7ad5b46e4f954f9bb180d0d2e272e1942d97e7072ae8b711d"
 size = 468
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/grid_ANT-4KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Ocean_ANT-4KM/2.0.0/grid_ANT-4KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-4KM/2.0.0/grid_ANT-4KM.txt"
 
 ["grid_ANT-8KM.txt"]
 checksum = "sha256:66ff6285f42ec156b6c6a6c30fcb0d2e4c94e07d67512fb002cb0348b3420ce5"
 size = 465
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/grid_ANT-8KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Antarctica_Ocean_ANT-8KM/2.0.0/grid_ANT-8KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-8KM/2.0.0/grid_ANT-8KM.txt"

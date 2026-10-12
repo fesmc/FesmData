@@ -1,55 +1,55 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-11"
+date = "2026-10-12"
 git_tag = "ocean-v2.0.0"
-store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=North_Ocean"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=North_Ocean"
 version = "2.0.0"
 
 ["NH-16KM_Ocean-ORAS5-1981-2010.nc"]
 checksum = "sha256:c649745a0f36d965061a436bfcb5a7e682d6ed88110baa2ec43cdb7c8079e5ec"
 size = 400448359
 storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_Ocean-ORAS5-1981-2010.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/North_Ocean_NH-16KM/2.0.0/NH-16KM_Ocean-ORAS5-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Ocean_NH-16KM/2.0.0/NH-16KM_Ocean-ORAS5-1981-2010.nc"
 
 ["NH-16KM_Ocean-ORAS5-annual.nc"]
 checksum = "sha256:fcfd9f0a5cdcdda3ddd98e05cf0c119f6da4a0801c042875cb90e7db0dbb028a"
 size = 1417348778
 storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_Ocean-ORAS5-annual.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/North_Ocean_NH-16KM/2.0.0/NH-16KM_Ocean-ORAS5-annual.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Ocean_NH-16KM/2.0.0/NH-16KM_Ocean-ORAS5-annual.nc"
 
 ["NH-16KM_grid.nc"]
 checksum = "sha256:5a64b9ab83264c23ca7c96aa0a1a1b02debcea94890fb2556039c205a148d957"
 size = 1877147
 storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/North_Ocean_NH-16KM/2.0.0/NH-16KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Ocean_NH-16KM/2.0.0/NH-16KM_grid.nc"
 
 ["NH-32KM_Ocean-ORAS5-1981-2010.nc"]
 checksum = "sha256:e481f655ff0510e754444b9aa7cbc20641c167128b4c340d4ee5e83f3ab0a775"
 size = 116846260
 storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_Ocean-ORAS5-1981-2010.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/North_Ocean_NH-32KM/2.0.0/NH-32KM_Ocean-ORAS5-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Ocean_NH-32KM/2.0.0/NH-32KM_Ocean-ORAS5-1981-2010.nc"
 
 ["NH-32KM_Ocean-ORAS5-annual.nc"]
 checksum = "sha256:097ea8441eb69c68b4d78437742fcefba7a845c6e498c2e671cc4b3dd430bbe1"
 size = 430838486
 storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_Ocean-ORAS5-annual.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/North_Ocean_NH-32KM/2.0.0/NH-32KM_Ocean-ORAS5-annual.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Ocean_NH-32KM/2.0.0/NH-32KM_Ocean-ORAS5-annual.nc"
 
 ["NH-32KM_grid.nc"]
 checksum = "sha256:3d48fc58818a8820d1c19088ab3ac0a0aa5f463ca080d4d5f8f60d0fc525894f"
 size = 543810
 storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/North_Ocean_NH-32KM/2.0.0/NH-32KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Ocean_NH-32KM/2.0.0/NH-32KM_grid.nc"
 
 ["grid_NH-16KM.txt"]
 checksum = "sha256:b784904b58207dc754c6dbb670f90ccd35dfccfadbd68bfea1c239abac6a7c89"
 size = 467
 storage_path = "$datasets_dir/North/NH-16KM/grid_NH-16KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/North_Ocean_NH-16KM/2.0.0/grid_NH-16KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Ocean_NH-16KM/2.0.0/grid_NH-16KM.txt"
 
 ["grid_NH-32KM.txt"]
 checksum = "sha256:6562aa2ab0d5e8ac51d50e7caac9b766095e22eb71e450ead46ce581543d44a4"
 size = 466
 storage_path = "$datasets_dir/North/NH-32KM/grid_NH-32KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/North_Ocean_NH-32KM/2.0.0/grid_NH-32KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Ocean_NH-32KM/2.0.0/grid_NH-32KM.txt"

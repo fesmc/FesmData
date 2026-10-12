@@ -1,79 +1,79 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-11"
+date = "2026-10-12"
 git_tag = "ocean-v2.0.0"
-store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=Global_Ocean"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Global_Ocean"
 version = "2.0.0"
 
 ["GLOBAL-1DEG_Ocean-ORAS5-1981-2010.nc"]
 checksum = "sha256:0294ad9fd0540839f0dd3ac01ef03b1d5bde930ef431b539543eb19ac78319ae"
 size = 158649300
 storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_Ocean-ORAS5-1981-2010.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Ocean_GLOBAL-1DEG/2.0.0/GLOBAL-1DEG_Ocean-ORAS5-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Ocean_GLOBAL-1DEG/2.0.0/GLOBAL-1DEG_Ocean-ORAS5-1981-2010.nc"
 
 ["GLOBAL-1DEG_Ocean-ORAS5-annual.nc"]
 checksum = "sha256:1c77d646c5a840fa92abfb835ff44619ecdd079f13806e4f670ea8303917890d"
 size = 559718114
 storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_Ocean-ORAS5-annual.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Ocean_GLOBAL-1DEG/2.0.0/GLOBAL-1DEG_Ocean-ORAS5-annual.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Ocean_GLOBAL-1DEG/2.0.0/GLOBAL-1DEG_Ocean-ORAS5-annual.nc"
 
 ["GLOBAL-1DEG_grid.nc"]
 checksum = "sha256:72658a61a9d89e56a88266b6a3168ba7ea4e18c4c8b0d2a904164c2c047e5d47"
 size = 17869
 storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Ocean_GLOBAL-1DEG/2.0.0/GLOBAL-1DEG_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Ocean_GLOBAL-1DEG/2.0.0/GLOBAL-1DEG_grid.nc"
 
 ["GLOBAL-2DEG_Ocean-ORAS5-1981-2010.nc"]
 checksum = "sha256:e2b4bba87d0ceee152b922abb70e89723a83945ab700c7dc2d3ed46e3d553875"
 size = 45648317
 storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_Ocean-ORAS5-1981-2010.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Ocean_GLOBAL-2DEG/2.0.0/GLOBAL-2DEG_Ocean-ORAS5-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Ocean_GLOBAL-2DEG/2.0.0/GLOBAL-2DEG_Ocean-ORAS5-1981-2010.nc"
 
 ["GLOBAL-2DEG_Ocean-ORAS5-annual.nc"]
 checksum = "sha256:b595e03cd24256915c8d2c0434f92d56ca24ffb2844b50dece30f80f710e1875"
 size = 168579032
 storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_Ocean-ORAS5-annual.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Ocean_GLOBAL-2DEG/2.0.0/GLOBAL-2DEG_Ocean-ORAS5-annual.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Ocean_GLOBAL-2DEG/2.0.0/GLOBAL-2DEG_Ocean-ORAS5-annual.nc"
 
 ["GLOBAL-2DEG_grid.nc"]
 checksum = "sha256:5fa987a099ab7e60d3a4b22e7bb5bd00cadccc8581874b8d600a38f9a512f104"
 size = 14559
 storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Ocean_GLOBAL-2DEG/2.0.0/GLOBAL-2DEG_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Ocean_GLOBAL-2DEG/2.0.0/GLOBAL-2DEG_grid.nc"
 
 ["GLOBAL-5DEG_Ocean-ORAS5-1981-2010.nc"]
 checksum = "sha256:ed3b6fc5540f3c2e0a668bca9f65f9f9a7d442d5fc62f8a71e707b50c961165e"
 size = 8451400
 storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_Ocean-ORAS5-1981-2010.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Ocean_GLOBAL-5DEG/2.0.0/GLOBAL-5DEG_Ocean-ORAS5-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Ocean_GLOBAL-5DEG/2.0.0/GLOBAL-5DEG_Ocean-ORAS5-1981-2010.nc"
 
 ["GLOBAL-5DEG_Ocean-ORAS5-annual.nc"]
 checksum = "sha256:48c609c95523350196e24a39e892fe98eaacb49c6fd0b84692a3ebafd0448f3f"
 size = 30990078
 storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_Ocean-ORAS5-annual.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Ocean_GLOBAL-5DEG/2.0.0/GLOBAL-5DEG_Ocean-ORAS5-annual.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Ocean_GLOBAL-5DEG/2.0.0/GLOBAL-5DEG_Ocean-ORAS5-annual.nc"
 
 ["GLOBAL-5DEG_grid.nc"]
 checksum = "sha256:55c037e0371c20123875dc16ddd01d1e864dd5b5b1b0cb29c9bfa3fd23f24cbf"
 size = 12511
 storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Ocean_GLOBAL-5DEG/2.0.0/GLOBAL-5DEG_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Ocean_GLOBAL-5DEG/2.0.0/GLOBAL-5DEG_grid.nc"
 
 ["grid_GLOBAL-1DEG.txt"]
 checksum = "sha256:38acf47f98866cc1c0479566b51a3a3df28fb09aa295652f52f67fffb2c499fd"
 size = 209
 storage_path = "$datasets_dir/Global/GLOBAL-1DEG/grid_GLOBAL-1DEG.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Ocean_GLOBAL-1DEG/2.0.0/grid_GLOBAL-1DEG.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Ocean_GLOBAL-1DEG/2.0.0/grid_GLOBAL-1DEG.txt"
 
 ["grid_GLOBAL-2DEG.txt"]
 checksum = "sha256:f09996b59b7b7cc91b348c53eec0a8cb246c5b293a890b4912278435d589fec6"
 size = 208
 storage_path = "$datasets_dir/Global/GLOBAL-2DEG/grid_GLOBAL-2DEG.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Ocean_GLOBAL-2DEG/2.0.0/grid_GLOBAL-2DEG.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Ocean_GLOBAL-2DEG/2.0.0/grid_GLOBAL-2DEG.txt"
 
 ["grid_GLOBAL-5DEG.txt"]
 checksum = "sha256:647911a4f8fd1afecd212683255ca869a1f3b9bdcb3ae180e7a1415cea84d344"
 size = 206
 storage_path = "$datasets_dir/Global/GLOBAL-5DEG/grid_GLOBAL-5DEG.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Global_Ocean_GLOBAL-5DEG/2.0.0/grid_GLOBAL-5DEG.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Ocean_GLOBAL-5DEG/2.0.0/grid_GLOBAL-5DEG.txt"

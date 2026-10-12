@@ -1,79 +1,79 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-11"
+date = "2026-10-12"
 git_tag = "stratigraphy-v2.0.0"
-store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=GreenlandPaleo_Stratigraphy"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=GreenlandPaleo_Stratigraphy"
 version = "2.0.0"
 
 ["GRL-PAL-16KM_Stratigraphy-MacGregor2025.nc"]
 checksum = "sha256:6d88343f529503393b03d5473dcc86035380438db460497a4a0cda5a8bb88aa5"
 size = 652142
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_Stratigraphy-MacGregor2025.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Stratigraphy_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_Stratigraphy-MacGregor2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Stratigraphy_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_Stratigraphy-MacGregor2025.nc"
 
 ["GRL-PAL-16KM_grid.nc"]
 checksum = "sha256:641614ed64e7a6989a9b632764bc593855f65f70fc7a200f9a89263c0fee7f3e"
 size = 197958
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Stratigraphy_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Stratigraphy_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_grid.nc"
 
 ["GRL-PAL-32KM_Stratigraphy-MacGregor2025.nc"]
 checksum = "sha256:0b5943a1f6ba8ab85a4e24cd2e6cb8a66507ec982c6c0777c450de20d35498f2"
 size = 239057
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_Stratigraphy-MacGregor2025.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Stratigraphy_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_Stratigraphy-MacGregor2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Stratigraphy_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_Stratigraphy-MacGregor2025.nc"
 
 ["GRL-PAL-32KM_grid.nc"]
 checksum = "sha256:c94aeb9d12df68c5429b6e9ac944b6ed3328db1b3bcc9d10942a26343bde80f1"
 size = 70200
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Stratigraphy_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Stratigraphy_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_grid.nc"
 
 ["GRL-PAL-4KM_Stratigraphy-MacGregor2025.nc"]
 checksum = "sha256:accce931ec45d2393279e0420c548a6f5d78cb306472d1ca77985bfb53b67e11"
 size = 7178302
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/GRL-PAL-4KM_Stratigraphy-MacGregor2025.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Stratigraphy_GRL-PAL-4KM/2.0.0/GRL-PAL-4KM_Stratigraphy-MacGregor2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Stratigraphy_GRL-PAL-4KM/2.0.0/GRL-PAL-4KM_Stratigraphy-MacGregor2025.nc"
 
 ["GRL-PAL-4KM_grid.nc"]
 checksum = "sha256:69ea06b475ce4c286038e45b4e083ee61794c4e80053a4c21c0e088399a16270"
 size = 2137731
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/GRL-PAL-4KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Stratigraphy_GRL-PAL-4KM/2.0.0/GRL-PAL-4KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Stratigraphy_GRL-PAL-4KM/2.0.0/GRL-PAL-4KM_grid.nc"
 
 ["GRL-PAL-8KM_Stratigraphy-MacGregor2025.nc"]
 checksum = "sha256:c1e8fbd0d12d65d590bb4fc3117825f9aac16fac2bbe966f6d45a1585409fbe9"
 size = 2073037
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_Stratigraphy-MacGregor2025.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Stratigraphy_GRL-PAL-8KM/2.0.0/GRL-PAL-8KM_Stratigraphy-MacGregor2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Stratigraphy_GRL-PAL-8KM/2.0.0/GRL-PAL-8KM_Stratigraphy-MacGregor2025.nc"
 
 ["GRL-PAL-8KM_grid.nc"]
 checksum = "sha256:16aa24f1cb3018fd4813ef64d58bd23aac3af70ef50ee98296c75ddad16c6f0b"
 size = 631820
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Stratigraphy_GRL-PAL-8KM/2.0.0/GRL-PAL-8KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Stratigraphy_GRL-PAL-8KM/2.0.0/GRL-PAL-8KM_grid.nc"
 
 ["grid_GRL-PAL-16KM.txt"]
 checksum = "sha256:1f2dd6b17cd99dee69b34afe4a7f49e087d4f935e01d862b2392ebebb071ea31"
 size = 466
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/grid_GRL-PAL-16KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Stratigraphy_GRL-PAL-16KM/2.0.0/grid_GRL-PAL-16KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Stratigraphy_GRL-PAL-16KM/2.0.0/grid_GRL-PAL-16KM.txt"
 
 ["grid_GRL-PAL-32KM.txt"]
 checksum = "sha256:cf0d0b1b8155818d7b19aa0eb4ebc0539c6a7d4d2ed0ddca89822c5f697e6646"
 size = 463
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/grid_GRL-PAL-32KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Stratigraphy_GRL-PAL-32KM/2.0.0/grid_GRL-PAL-32KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Stratigraphy_GRL-PAL-32KM/2.0.0/grid_GRL-PAL-32KM.txt"
 
 ["grid_GRL-PAL-4KM.txt"]
 checksum = "sha256:3ef324e1bb441b7c2b48632ee65a337255fe992cdba249417f182c929089cf0f"
 size = 465
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/grid_GRL-PAL-4KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Stratigraphy_GRL-PAL-4KM/2.0.0/grid_GRL-PAL-4KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Stratigraphy_GRL-PAL-4KM/2.0.0/grid_GRL-PAL-4KM.txt"
 
 ["grid_GRL-PAL-8KM.txt"]
 checksum = "sha256:08c7a03da8b258951eebef55634ad60f44f0f7fe965aa38e7dd26e4ca287d743"
 size = 465
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/grid_GRL-PAL-8KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Stratigraphy_GRL-PAL-8KM/2.0.0/grid_GRL-PAL-8KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Stratigraphy_GRL-PAL-8KM/2.0.0/grid_GRL-PAL-8KM.txt"

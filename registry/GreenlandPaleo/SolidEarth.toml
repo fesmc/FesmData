@@ -1,55 +1,55 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-11"
+date = "2026-10-12"
 git_tag = "solidearth-v2.0.0"
-store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=GreenlandPaleo_SolidEarth"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=GreenlandPaleo_SolidEarth"
 version = "2.0.0"
 
 ["GRL-PAL-16KM_SolidEarth-Bagge2021.nc"]
 checksum = "sha256:6d71c4ac0b83ef906bbdee1b498e199a0e4b8734695c04dd7b93ac8d8fe77108"
 size = 47365368
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_SolidEarth-Bagge2021.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_SolidEarth_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_SolidEarth-Bagge2021.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_SolidEarth_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_SolidEarth-Bagge2021.nc"
 
 ["GRL-PAL-16KM_SolidEarth-Lloyd2024.nc"]
 checksum = "sha256:8d6ad64e29356ae3bb9103b25d1488fe82c53933fa250c0f34f5405fe2935328"
 size = 9310385
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_SolidEarth-Lloyd2024.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_SolidEarth_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_SolidEarth-Lloyd2024.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_SolidEarth_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_SolidEarth-Lloyd2024.nc"
 
 ["GRL-PAL-16KM_grid.nc"]
 checksum = "sha256:641614ed64e7a6989a9b632764bc593855f65f70fc7a200f9a89263c0fee7f3e"
 size = 197958
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_SolidEarth_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_SolidEarth_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_grid.nc"
 
 ["GRL-PAL-32KM_SolidEarth-Bagge2021.nc"]
 checksum = "sha256:3e5dc2308cf751e485de3dfe8798147179ddf8dde4c1175db7f47d5292dd6181"
 size = 13068557
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_SolidEarth-Bagge2021.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_SolidEarth_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_SolidEarth-Bagge2021.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_SolidEarth_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_SolidEarth-Bagge2021.nc"
 
 ["GRL-PAL-32KM_SolidEarth-Lloyd2024.nc"]
 checksum = "sha256:f518e576db041098dd04b8c4adcc0ede1fdce9ec87b3262cb9bb8c1f940d1ed8"
 size = 2579139
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_SolidEarth-Lloyd2024.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_SolidEarth_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_SolidEarth-Lloyd2024.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_SolidEarth_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_SolidEarth-Lloyd2024.nc"
 
 ["GRL-PAL-32KM_grid.nc"]
 checksum = "sha256:c94aeb9d12df68c5429b6e9ac944b6ed3328db1b3bcc9d10942a26343bde80f1"
 size = 70200
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_SolidEarth_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_SolidEarth_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_grid.nc"
 
 ["grid_GRL-PAL-16KM.txt"]
 checksum = "sha256:1f2dd6b17cd99dee69b34afe4a7f49e087d4f935e01d862b2392ebebb071ea31"
 size = 466
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/grid_GRL-PAL-16KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_SolidEarth_GRL-PAL-16KM/2.0.0/grid_GRL-PAL-16KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_SolidEarth_GRL-PAL-16KM/2.0.0/grid_GRL-PAL-16KM.txt"
 
 ["grid_GRL-PAL-32KM.txt"]
 checksum = "sha256:cf0d0b1b8155818d7b19aa0eb4ebc0539c6a7d4d2ed0ddca89822c5f697e6646"
 size = 463
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/grid_GRL-PAL-32KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_SolidEarth_GRL-PAL-32KM/2.0.0/grid_GRL-PAL-32KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_SolidEarth_GRL-PAL-32KM/2.0.0/grid_GRL-PAL-32KM.txt"

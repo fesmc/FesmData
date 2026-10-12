@@ -1,13 +1,13 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-11"
+date = "2026-10-12"
 git_tag = "smbobs-v2.0.0"
-store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=Records_SMBObs"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Records_SMBObs"
 version = "2.0.0"
 
 ["SMBObs-SUMup2025.nc"]
 checksum = "sha256:151c26d6f068128f45b2fed5ae9907bccbd9a4901ece7238c60d4e3a998e5b41"
 size = 43362573
 storage_path = "$datasets_dir/Records/SMBObs/SMBObs-SUMup2025.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Records_SMBObs/2.0.0/SMBObs-SUMup2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SMBObs/2.0.0/SMBObs-SUMup2025.nc"

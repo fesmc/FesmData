@@ -1,115 +1,115 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-11"
+date = "2026-10-12"
 git_tag = "atmosphere-v2.0.0"
-store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=Laurentide_Atmosphere"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Laurentide_Atmosphere"
 version = "2.0.0"
 
 ["LIS-16KM_Atmosphere-CERES-2001-2020.nc"]
 checksum = "sha256:8e9c4401a5cc1c26623f38d3d56d77f550f3d06a4d0f95c31389d7ae1e994877"
 size = 117384388
 storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Atmosphere-CERES-2001-2020.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Atmosphere_LIS-16KM/2.0.0/LIS-16KM_Atmosphere-CERES-2001-2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Atmosphere_LIS-16KM/2.0.0/LIS-16KM_Atmosphere-CERES-2001-2020.nc"
 
 ["LIS-16KM_Atmosphere-ERA5-1981-2010.nc"]
 checksum = "sha256:10881eff7797aa7d73a52d5b9276ec47927621123b57f9e947e95d4cfc5774b7"
 size = 52735544
 storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Atmosphere-ERA5-1981-2010.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Atmosphere_LIS-16KM/2.0.0/LIS-16KM_Atmosphere-ERA5-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Atmosphere_LIS-16KM/2.0.0/LIS-16KM_Atmosphere-ERA5-1981-2010.nc"
 
 ["LIS-16KM_Atmosphere-ERA5-1991-2020.nc"]
 checksum = "sha256:f92576f2e7c7440cc3f7ab260e60bc6f03e9d7f8b4c583a25adf9ee8f829a5d7"
 size = 52756040
 storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Atmosphere-ERA5-1991-2020.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Atmosphere_LIS-16KM/2.0.0/LIS-16KM_Atmosphere-ERA5-1991-2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Atmosphere_LIS-16KM/2.0.0/LIS-16KM_Atmosphere-ERA5-1991-2020.nc"
 
 ["LIS-16KM_Atmosphere-ERA5-plev-1981-2010.nc"]
 checksum = "sha256:105732cf32639230b4f09b3e8e06db5c6d81e822ec3ca0678c5fac6e787da65f"
 size = 217584927
 storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Atmosphere-ERA5-plev-1981-2010.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Atmosphere_LIS-16KM/2.0.0/LIS-16KM_Atmosphere-ERA5-plev-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Atmosphere_LIS-16KM/2.0.0/LIS-16KM_Atmosphere-ERA5-plev-1981-2010.nc"
 
 ["LIS-16KM_Atmosphere-ERA5-plev-1991-2020.nc"]
 checksum = "sha256:b09ea9f4f6d694c0c70c6549d7a59cd975b5a142a8304de00f7c530043581b06"
 size = 217655507
 storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_Atmosphere-ERA5-plev-1991-2020.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Atmosphere_LIS-16KM/2.0.0/LIS-16KM_Atmosphere-ERA5-plev-1991-2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Atmosphere_LIS-16KM/2.0.0/LIS-16KM_Atmosphere-ERA5-plev-1991-2020.nc"
 
 ["LIS-16KM_grid.nc"]
 checksum = "sha256:9d90be456f08f945c8b097fb0900ddcb853666ea15d98e038b850317967362a3"
 size = 772321
 storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Atmosphere_LIS-16KM/2.0.0/LIS-16KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Atmosphere_LIS-16KM/2.0.0/LIS-16KM_grid.nc"
 
 ["LIS-32KM_Atmosphere-CERES-2001-2020.nc"]
 checksum = "sha256:e5438f8ea6ec26f711ccef9d91f8e2ae209aafd38df49c5f63b428ee12454b19"
 size = 31601230
 storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Atmosphere-CERES-2001-2020.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Atmosphere_LIS-32KM/2.0.0/LIS-32KM_Atmosphere-CERES-2001-2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Atmosphere_LIS-32KM/2.0.0/LIS-32KM_Atmosphere-CERES-2001-2020.nc"
 
 ["LIS-32KM_Atmosphere-ERA5-1981-2010.nc"]
 checksum = "sha256:ae18bbd1ed11444cee956977a500aed67f8f8523aaccc08d34c4eca167c0ffa8"
 size = 14196179
 storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Atmosphere-ERA5-1981-2010.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Atmosphere_LIS-32KM/2.0.0/LIS-32KM_Atmosphere-ERA5-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Atmosphere_LIS-32KM/2.0.0/LIS-32KM_Atmosphere-ERA5-1981-2010.nc"
 
 ["LIS-32KM_Atmosphere-ERA5-1991-2020.nc"]
 checksum = "sha256:d5fe210fcf99de0665c5447bb7e61e01d0b80751c3edf28420f252d54a874e47"
 size = 14200632
 storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Atmosphere-ERA5-1991-2020.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Atmosphere_LIS-32KM/2.0.0/LIS-32KM_Atmosphere-ERA5-1991-2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Atmosphere_LIS-32KM/2.0.0/LIS-32KM_Atmosphere-ERA5-1991-2020.nc"
 
 ["LIS-32KM_Atmosphere-ERA5-plev-1981-2010.nc"]
 checksum = "sha256:185151f0d861ef46853ba9bb6963aad6851fd2082ce9cb7a5e72e1b8a788cd76"
 size = 59398020
 storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Atmosphere-ERA5-plev-1981-2010.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Atmosphere_LIS-32KM/2.0.0/LIS-32KM_Atmosphere-ERA5-plev-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Atmosphere_LIS-32KM/2.0.0/LIS-32KM_Atmosphere-ERA5-plev-1981-2010.nc"
 
 ["LIS-32KM_Atmosphere-ERA5-plev-1991-2020.nc"]
 checksum = "sha256:317e5d8b165876340200defa82e40d51047e23f599461a50316e0c99299a48eb"
 size = 59411429
 storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_Atmosphere-ERA5-plev-1991-2020.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Atmosphere_LIS-32KM/2.0.0/LIS-32KM_Atmosphere-ERA5-plev-1991-2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Atmosphere_LIS-32KM/2.0.0/LIS-32KM_Atmosphere-ERA5-plev-1991-2020.nc"
 
 ["LIS-32KM_grid.nc"]
 checksum = "sha256:a0c50b74b4a45787d5ad2c6183e5f1d339143079fd1302b0aad52cb13f8c5bbc"
 size = 249167
 storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Atmosphere_LIS-32KM/2.0.0/LIS-32KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Atmosphere_LIS-32KM/2.0.0/LIS-32KM_grid.nc"
 
 ["LIS-8KM_Atmosphere-ERA5-1981-2010.nc"]
 checksum = "sha256:c3e47a03ecedd72d764532ec4996560202461dbe2017f113e2ffd43a83cbc59c"
 size = 195416639
 storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Atmosphere-ERA5-1981-2010.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Atmosphere_LIS-8KM/2.0.0/LIS-8KM_Atmosphere-ERA5-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Atmosphere_LIS-8KM/2.0.0/LIS-8KM_Atmosphere-ERA5-1981-2010.nc"
 
 ["LIS-8KM_Atmosphere-ERA5-1991-2020.nc"]
 checksum = "sha256:37bc7539905803dafcf44dabfdb8697f33bba4c1210faf10776eb7ec75946124"
 size = 195436063
 storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_Atmosphere-ERA5-1991-2020.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Atmosphere_LIS-8KM/2.0.0/LIS-8KM_Atmosphere-ERA5-1991-2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Atmosphere_LIS-8KM/2.0.0/LIS-8KM_Atmosphere-ERA5-1991-2020.nc"
 
 ["LIS-8KM_grid.nc"]
 checksum = "sha256:39001f264d08010e472852f6861b6b6d6cdc15ffd7553d52b01acb51f22501ee"
 size = 2816888
 storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Atmosphere_LIS-8KM/2.0.0/LIS-8KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Atmosphere_LIS-8KM/2.0.0/LIS-8KM_grid.nc"
 
 ["grid_LIS-16KM.txt"]
 checksum = "sha256:4ff24933bce97627a1ffe6ec62ed994aabb15889197dda6597cc2ef85b623178"
 size = 467
 storage_path = "$datasets_dir/Laurentide/LIS-16KM/grid_LIS-16KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Atmosphere_LIS-16KM/2.0.0/grid_LIS-16KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Atmosphere_LIS-16KM/2.0.0/grid_LIS-16KM.txt"
 
 ["grid_LIS-32KM.txt"]
 checksum = "sha256:0c5e99f11a025d656ee88fcbce389f89b815c0ca4c6a1dcf08868ffbafe0d09b"
 size = 466
 storage_path = "$datasets_dir/Laurentide/LIS-32KM/grid_LIS-32KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Atmosphere_LIS-32KM/2.0.0/grid_LIS-32KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Atmosphere_LIS-32KM/2.0.0/grid_LIS-32KM.txt"
 
 ["grid_LIS-8KM.txt"]
 checksum = "sha256:97811d3bbc0376118996535a4ec7c0209bf01f10bfb60bc738bb05b6eab6caa4"
 size = 465
 storage_path = "$datasets_dir/Laurentide/LIS-8KM/grid_LIS-8KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Laurentide_Atmosphere_LIS-8KM/2.0.0/grid_LIS-8KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Atmosphere_LIS-8KM/2.0.0/grid_LIS-8KM.txt"

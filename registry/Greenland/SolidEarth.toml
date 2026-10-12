@@ -1,55 +1,55 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-11"
+date = "2026-10-12"
 git_tag = "solidearth-v2.0.0"
-store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=Greenland_SolidEarth"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Greenland_SolidEarth"
 version = "2.0.0"
 
 ["GRL-16KM_SolidEarth-Bagge2021.nc"]
 checksum = "sha256:ef64e13f979994fb719801fcecf76177ad07525e8afdb5435a17776f517f158d"
 size = 35004267
 storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_SolidEarth-Bagge2021.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_SolidEarth_GRL-16KM/2.0.0/GRL-16KM_SolidEarth-Bagge2021.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_SolidEarth_GRL-16KM/2.0.0/GRL-16KM_SolidEarth-Bagge2021.nc"
 
 ["GRL-16KM_SolidEarth-Lloyd2024.nc"]
 checksum = "sha256:34041a0c573f2648f585ad0a839156802c225f5809f44bfd160b688a2b8488de"
 size = 7077778
 storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_SolidEarth-Lloyd2024.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_SolidEarth_GRL-16KM/2.0.0/GRL-16KM_SolidEarth-Lloyd2024.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_SolidEarth_GRL-16KM/2.0.0/GRL-16KM_SolidEarth-Lloyd2024.nc"
 
 ["GRL-16KM_grid.nc"]
 checksum = "sha256:e835518450bae0a863fdb7cd68adc7d4f59c48c790090d497939939518960d41"
 size = 150482
 storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_SolidEarth_GRL-16KM/2.0.0/GRL-16KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_SolidEarth_GRL-16KM/2.0.0/GRL-16KM_grid.nc"
 
 ["GRL-32KM_SolidEarth-Bagge2021.nc"]
 checksum = "sha256:b81ad886c32e5cd210b372eaf3d5fae4781495974f638f1f9ab0f44e25b221d9"
 size = 9655365
 storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_SolidEarth-Bagge2021.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_SolidEarth_GRL-32KM/2.0.0/GRL-32KM_SolidEarth-Bagge2021.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_SolidEarth_GRL-32KM/2.0.0/GRL-32KM_SolidEarth-Bagge2021.nc"
 
 ["GRL-32KM_SolidEarth-Lloyd2024.nc"]
 checksum = "sha256:ca4165444053eecb969548d125b3f0258dce9e6cda2701ac6ad06499f26eb165"
 size = 1933548
 storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_SolidEarth-Lloyd2024.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_SolidEarth_GRL-32KM/2.0.0/GRL-32KM_SolidEarth-Lloyd2024.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_SolidEarth_GRL-32KM/2.0.0/GRL-32KM_SolidEarth-Lloyd2024.nc"
 
 ["GRL-32KM_grid.nc"]
 checksum = "sha256:c922307bd72e9e5bd3d10d86b97e3c108dcd5a4264dd47b305b9c562ba81e775"
 size = 57245
 storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_SolidEarth_GRL-32KM/2.0.0/GRL-32KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_SolidEarth_GRL-32KM/2.0.0/GRL-32KM_grid.nc"
 
 ["grid_GRL-16KM.txt"]
 checksum = "sha256:96d8ae58fe971c0fe4bcf3433b0f78c1c46af7104133c842859d47b655060cd6"
 size = 465
 storage_path = "$datasets_dir/Greenland/GRL-16KM/grid_GRL-16KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_SolidEarth_GRL-16KM/2.0.0/grid_GRL-16KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_SolidEarth_GRL-16KM/2.0.0/grid_GRL-16KM.txt"
 
 ["grid_GRL-32KM.txt"]
 checksum = "sha256:60caa1794ee7701429bc7ccece8aa52f1f4555ddc051c056409acb398cad52a0"
 size = 462
 storage_path = "$datasets_dir/Greenland/GRL-32KM/grid_GRL-32KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/Greenland_SolidEarth_GRL-32KM/2.0.0/grid_GRL-32KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_SolidEarth_GRL-32KM/2.0.0/grid_GRL-32KM.txt"

@@ -1,55 +1,55 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-11"
+date = "2026-10-12"
 git_tag = "ocean-v2.0.0"
-store = "https://gitlab.dkrz.de/fesmc/fesmdata-products/-/packages?search=GreenlandPaleo_Ocean"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=GreenlandPaleo_Ocean"
 version = "2.0.0"
 
 ["GRL-PAL-16KM_Ocean-ORAS5-1981-2010.nc"]
 checksum = "sha256:51cbc99b6f0787f96a18b807d35e623f69214952b155b638f321f15a481918d5"
 size = 39771578
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_Ocean-ORAS5-1981-2010.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Ocean_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_Ocean-ORAS5-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Ocean_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_Ocean-ORAS5-1981-2010.nc"
 
 ["GRL-PAL-16KM_Ocean-ORAS5-annual.nc"]
 checksum = "sha256:cbfbdc790e1457cab70ee7fa2f82ab9112a3e4de3327986b42143ab3773f7af5"
 size = 142269714
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_Ocean-ORAS5-annual.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Ocean_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_Ocean-ORAS5-annual.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Ocean_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_Ocean-ORAS5-annual.nc"
 
 ["GRL-PAL-16KM_grid.nc"]
 checksum = "sha256:641614ed64e7a6989a9b632764bc593855f65f70fc7a200f9a89263c0fee7f3e"
 size = 197958
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Ocean_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Ocean_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_grid.nc"
 
 ["GRL-PAL-32KM_Ocean-ORAS5-1981-2010.nc"]
 checksum = "sha256:06191c8b388e950f43f1dae393bd2e260a3b3b1b9813dff40a6bbc9a16eb1e08"
 size = 12179201
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_Ocean-ORAS5-1981-2010.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Ocean_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_Ocean-ORAS5-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Ocean_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_Ocean-ORAS5-1981-2010.nc"
 
 ["GRL-PAL-32KM_Ocean-ORAS5-annual.nc"]
 checksum = "sha256:dc7674c15fec6b9dabdf1496f7f34ae0e17c2ebf5db7f011bc1605150e6af9a6"
 size = 43399021
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_Ocean-ORAS5-annual.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Ocean_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_Ocean-ORAS5-annual.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Ocean_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_Ocean-ORAS5-annual.nc"
 
 ["GRL-PAL-32KM_grid.nc"]
 checksum = "sha256:c94aeb9d12df68c5429b6e9ac944b6ed3328db1b3bcc9d10942a26343bde80f1"
 size = 70200
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_grid.nc"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Ocean_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Ocean_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_grid.nc"
 
 ["grid_GRL-PAL-16KM.txt"]
 checksum = "sha256:1f2dd6b17cd99dee69b34afe4a7f49e087d4f935e01d862b2392ebebb071ea31"
 size = 466
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/grid_GRL-PAL-16KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Ocean_GRL-PAL-16KM/2.0.0/grid_GRL-PAL-16KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Ocean_GRL-PAL-16KM/2.0.0/grid_GRL-PAL-16KM.txt"
 
 ["grid_GRL-PAL-32KM.txt"]
 checksum = "sha256:cf0d0b1b8155818d7b19aa0eb4ebc0539c6a7d4d2ed0ddca89822c5f697e6646"
 size = 463
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/grid_GRL-PAL-32KM.txt"
-uri = "https://gitlab.dkrz.de/api/v4/projects/142484/packages/generic/GreenlandPaleo_Ocean_GRL-PAL-32KM/2.0.0/grid_GRL-PAL-32KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Ocean_GRL-PAL-32KM/2.0.0/grid_GRL-PAL-32KM.txt"
