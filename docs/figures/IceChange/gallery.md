@@ -2,6 +2,14 @@
 
 ## Figures
 
+### ATL15-ANT
+
+![IceChange-ATL15-ANT on ANT-16KM: dzdt.](../figures/IceChange/IceChange-ATL15-ANT.png)
+
+### ATL15-GRL
+
+![IceChange-ATL15-GRL on GRL-8KM: dzdt.](../figures/IceChange/IceChange-ATL15-GRL.png)
+
 ### Smith2020-ANT
 
 ![IceChange-Smith2020-ANT on ANT-16KM: dzdt, dHdt.](../figures/IceChange/IceChange-Smith2020-ANT.png)

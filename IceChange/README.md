@@ -26,7 +26,11 @@ windows of up to 7 years); `dzdt` is the linear trend over the whole record in e
 1 km cell, the unweighted least-squares fit over the quarters with data and ice in the
 cell, and missing where fewer than 75% of the quarters have them (e.g. moving ice
 fronts). The period and the number of quarters are in the global attributes of the
-files. See `ATL15_dzdt/README.md`.
+files (2019-01-01 to 2026-04-02, 30 quarters, at least 23 valid). The trend agrees with
+the 7-year rates of ATL15 (`dhdt_084mo`; correlation 0.92-0.99 by quadrant). Integrated
+over the ice, `dzdt` is +107 km3 yr-1 in Antarctica (grounded and floating ice; East
+Antarctica rising, West Antarctica falling) and -206 km3 yr-1 in Greenland with its
+peripheral ice caps. There are no data south of about 88°S. See `ATL15_dzdt/README.md`.
 
 Smith et al. (2020) give over floating ice only thickness changes, so `dzdt` of
 `IceChange-Smith2020-ANT` covers the grounded ice only, and `dHdt` both the grounded and
