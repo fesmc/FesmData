@@ -24,7 +24,8 @@ Find and download:
                                                again to update (--yes: no confirmation)
   (arguments in any order; --dir=<folder>: list, fetch or mirror in <folder> instead of
   \$ICE_DATA/v2, e.g. to archive the releases there before updating: files already in
-  \$ICE_DATA/v2 are hard linked or copied, and the registry files go to <folder>/registry/)
+  \$ICE_DATA/v2 are hard linked (--copy: copied), and the registry files go to
+  <folder>/registry/)
 
 Bring your own data (see Remap/README.md):
   remap <file.nc> <Domain> | <GRID> | all ...  remap the fields of a prepared NetCDF file
@@ -88,7 +89,7 @@ call(name::Symbol, args...; kwargs...) =
 function main(argv)
     opts = filter(o -> startswith(o, "--") && !occursin('=', o), argv)
     args = filter(!startswith("--"), argv)
-    known = ("--sandbox", "--allow-untagged", "--dry-run", "--yes", "--overwrite")
+    known = ("--sandbox", "--allow-untagged", "--dry-run", "--yes", "--overwrite", "--copy")
     for o in opts
         o in known || error("unknown option $o\n\n$USAGE")
     end
@@ -111,12 +112,14 @@ function main(argv)
     elseif command == "fetch"
         include(joinpath(PUBLISH_DIR, "catalog.jl"))
         dir = get(valued, "dir", nothing)
-        paths = call(:fetch_files, rest; dir=dir, overwrite="--overwrite" in opts, sandbox=sandbox)
+        paths = call(:fetch_files, rest; dir=dir, copy="--copy" in opts, overwrite="--overwrite" in opts,
+                     sandbox=sandbox)
         println("$(length(paths)) files in $(call(:local_root, dir))")
     elseif command == "mirror"
         include(joinpath(PUBLISH_DIR, "catalog.jl"))
         dir = get(valued, "dir", nothing)
-        paths = call(:mirror, rest; dir=dir, overwrite="--overwrite" in opts, sandbox=sandbox, yes="--yes" in opts)
+        paths = call(:mirror, rest; dir=dir, copy="--copy" in opts, overwrite="--overwrite" in opts,
+                     sandbox=sandbox, yes="--yes" in opts)
         println("$(length(paths)) files in $(call(:local_root, dir))")
     elseif command == "remap"
         activate_env(REMAP_DIR)

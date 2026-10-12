@@ -96,11 +96,14 @@ julia fesmdata.jl mirror
 ```
 
 Files already in `$ICE_DATA/v2` at the same release (checksums) are hard linked from
-there (no extra space; copied on another file system), the others downloaded, and the
+there (no extra space; copied on another file system, or with `--copy`), the others
+downloaded, and the
 registry files of the records go to `<folder>/registry/`, as the record of what the
 folder holds. Updates of `$ICE_DATA/v2` write new files, so the hard links keep the
 archived ones; tools that change files in place (e.g. `stamp`, `ncatted`) would change
-both. Running `mirror --dir` again on an archive updates it to the latest releases.
+both: use `--copy` for an archive next to files that may be changed in place (e.g. on
+Levante, where `stamp` runs). Running `mirror --dir` again on an archive updates it to
+the latest releases.
 
 ## Release
 

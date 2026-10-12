@@ -203,24 +203,26 @@ function local_sources(entries, root::AbstractString, states::AbstractDict)
 end
 
 """
-    download_records(records, root, states; sources=Dict(), copy_registry=false,
+    download_records(records, root, states; sources=Dict(), copy=false, copy_registry=false,
                      overwrite=false, sandbox=false) -> Vector{String}
 
 Get the files of `records`, (domain, dataset, entries), that are not present under
-`root`, with the `states` of `check_local`: from `sources` (see `local_sources`), else
-downloaded (see `fetch_file`). With `copy_registry` (a copy in another folder than
-\$ICE_DATA/v2), the registry files of the records are copied to `root`/registry/, as a
-record of the releases it holds. Returns the local paths.
+`root`, with the `states` of `check_local`: from `sources` (see `local_sources`; hard
+linked, or copied with `copy`), else downloaded (see `fetch_file`). With
+`copy_registry` (a copy in another folder than \$ICE_DATA/v2), the registry files of
+the records are copied to `root`/registry/, as a record of the releases it holds.
+Returns the local paths.
 """
 function download_records(records, root::AbstractString, states::AbstractDict; sources::AbstractDict=Dict(),
-                          copy_registry::Bool=false, overwrite::Bool=false, sandbox::Bool=false)
+                          copy::Bool=false, copy_registry::Bool=false, overwrite::Bool=false,
+                          sandbox::Bool=false)
     paths = String[]
     for (d, s, es) in records
         println("\n$d/$s")
         for e in es
             target = local_path(e, root)
             path, status = fetch_file(e, root; overwrite=overwrite, state=states[target],
-                                      source=get(sources, target, nothing))
+                                      source=get(sources, target, nothing), copy=copy)
             println(rpad(string(status), 12), path)
             push!(paths, path)
         end
@@ -238,13 +240,14 @@ selected_entries(selected; sandbox::Bool=false) =
     [(d, s, record_entries(d, s; grids=grids, sandbox=sandbox)) for (d, s, grids) in selected]
 
 """
-    fetch_files(args; dir=nothing, overwrite=false, sandbox=false) -> Vector{String}
+    fetch_files(args; dir=nothing, copy=false, overwrite=false, sandbox=false) -> Vector{String}
 
 `fesmdata.jl fetch`: download the files of a dataset on a domain, or on grids (which
 imply their domain), into \$ICE_DATA/v2 or `dir`. The dataset must be named, and a
-domain or grids. The files present are checked first, as by `mirror`.
+domain or grids. The files present are checked first, as by `mirror`, and files in
+\$ICE_DATA/v2 are hard linked (or copied with `copy`) into `dir`, as by `mirror`.
 """
-function fetch_files(args; dir=nothing, overwrite::Bool=false, sandbox::Bool=false)
+function fetch_files(args; dir=nothing, copy::Bool=false, overwrite::Bool=false, sandbox::Bool=false)
     selected, _ = select_records(args; sandbox=sandbox)
     datasets = unique(s for (_, s, _) in selected)
     length(datasets) == 1 && only(datasets) in args || error("fetch: name the dataset (e.g. Topo)")
@@ -255,22 +258,22 @@ function fetch_files(args; dir=nothing, overwrite::Bool=false, sandbox::Bool=fal
     entries = [e for (_, _, es) in records for e in es]
     states = check_local(entries, root; overwrite=overwrite)
     sources = local_sources(entries, root, states)
-    return download_records(records, root, states; sources=sources, copy_registry=dir !== nothing,
+    return download_records(records, root, states; sources=sources, copy=copy, copy_registry=dir !== nothing,
                             overwrite=overwrite, sandbox=sandbox)
 end
 
 """
-    mirror(args; dir=nothing, overwrite=false, sandbox=false, yes=false) -> Vector{String}
+    mirror(args; dir=nothing, copy=false, overwrite=false, sandbox=false, yes=false) -> Vector{String}
 
 `fesmdata.jl mirror`: download all records (or those of a dataset and/or a domain)
 into \$ICE_DATA/v2, or `dir`. The files present are checked first (checksums): files
 of the release are kept, files of an earlier release are updated, and files changed
 locally stop the mirror (replaced with `overwrite`). Into `dir`, files of the release
-in \$ICE_DATA/v2 are hard linked or copied from there, e.g. to archive the releases
-there before updating it. Then, after one confirmation (none with `yes`) showing what
-is to get, the missing and outdated files are downloaded.
+in \$ICE_DATA/v2 are hard linked from there (copied with `copy`, or on another file
+system), e.g. to archive the releases there before updating it. Then, after one
+confirmation (none with `yes`) showing what is to get, the missing and outdated files are downloaded.
 """
-function mirror(args; dir=nothing, overwrite::Bool=false, sandbox::Bool=false, yes::Bool=false)
+function mirror(args; dir=nothing, copy::Bool=false, overwrite::Bool=false, sandbox::Bool=false, yes::Bool=false)
     selected, _ = select_records(args; sandbox=sandbox)
     isempty(selected) && (println("No records"); return String[])
     root = local_root(dir)
@@ -284,6 +287,6 @@ function mirror(args; dir=nothing, overwrite::Bool=false, sandbox::Bool=false, y
     yes || isempty(todo) || confirm("Get $(length(todo)) files into $root " *
                                     "($(human_size(total_size(to_download))) to download)?") ||
         (println("Nothing downloaded."); return String[])
-    return download_records(records, root, states; sources=sources, copy_registry=dir !== nothing,
+    return download_records(records, root, states; sources=sources, copy=copy, copy_registry=dir !== nothing,
                             overwrite=overwrite, sandbox=sandbox)
 end

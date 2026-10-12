@@ -120,12 +120,13 @@ function local_state(entry::AbstractDict, root::AbstractString=products_dir())
 end
 
 """
-    link_or_copy(src, dst) -> Symbol
+    link_or_copy(src, dst; copy=false) -> Symbol
 
 Hard link `src` at `dst` (no extra space), or copy it where a link is not possible (on
-another file system): :linked or :copied.
+another file system) or with `copy`: :linked or :copied.
 """
-function link_or_copy(src::AbstractString, dst::AbstractString)
+function link_or_copy(src::AbstractString, dst::AbstractString; copy::Bool=false)
+    copy && (cp(src, dst; force=true); return :copied)
     try
         hardlink(src, dst)
         return :linked
@@ -138,17 +139,18 @@ end
 
 """
     fetch_file(entry, root=products_dir(); overwrite=false, state=local_state(entry, root),
-               source=nothing) -> (path, status)
+               source=nothing, copy=false) -> (path, status)
 
 Get the file of a registry entry under `root`: download it and verify its checksum, or,
-with `source`, a local file of the same release (checksum verified), hard link or copy
-it. A file already present is kept if it is of the release of the entry, and replaced
+with `source`, a local file of the same release (checksum verified), hard link it, or
+copy it (with `copy`, or where a link is not possible). A file already present is kept if it is of the release of the entry, and replaced
 if it is of an earlier release; a file changed locally is an error, or is replaced with
 `overwrite`. The new file replaces the old one (a new file, so that hard links to the
 old one keep it). `status` is :present, :downloaded, :updated, :linked or :copied.
 """
 function fetch_file(entry::AbstractDict, root::AbstractString=products_dir(); overwrite::Bool=false,
-                    state::Symbol=local_state(entry, root), source::Union{Nothing,AbstractString}=nothing)
+                    state::Symbol=local_state(entry, root), source::Union{Nothing,AbstractString}=nothing,
+                    copy::Bool=false)
     path = local_path(entry, root)
     state == :current && return path, :present
     state == :changed && !overwrite &&
@@ -162,7 +164,7 @@ function fetch_file(entry::AbstractDict, root::AbstractString=products_dir(); ov
         if source === nothing
             Downloads.download(entry["uri"], tmp)
         else
-            status = link_or_copy(source, tmp)
+            status = link_or_copy(source, tmp; copy=copy)
         end
         if status != :linked
             sum = checksum(tmp)
