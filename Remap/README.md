@@ -150,14 +150,17 @@ global attribute `gap_fill`. The Topo product must be made first (thematic datas
 depend on Topo, and some on Regions).
 
 `file` can be a list of prepared files of the source, each on its own grid, combined
-into one product, e.g. the grounded and the floating ice of Antarctica on grids of
-their own (`file = ["Smith2020_ANT.nc", "Smith2020_ANT_floating.nc"]` in
-`IceChange/remap.toml`). Each file is remapped onto each grid as above; a field in one
-file only is taken as it is, and a field in several files (with the same units and
-extra dimensions) is their mean weighted by the fraction of each cell each one covers,
-with `f_valid` the sum of these fractions, at most 1 (for integer fields, the class of
-the file covering most of the cell). Files with separate coverage are thus merged as
-they are; where they overlap, their values are averaged and `f_valid` is capped at 1.
+into one product. The files are meant to cover separate areas, e.g. the grounded and the
+floating ice of Antarctica on grids of their own (`file = ["Smith2020_ANT.nc",
+"Smith2020_ANT_floating.nc"]` in `IceChange/remap.toml`); they are not suited to
+alternative sources of the same quantity over the same area. Each file is remapped onto
+each grid as above; a field in one file only is taken as it is, and a field in several
+files (with the same units and extra dimensions) is the sum of their contributions, the
+value of each times the fraction of the cell it covers, divided by the sum of these
+fractions, with `f_valid` that sum. Where their remapped coverage overlaps (e.g. source
+grids offset from each other at a boundary) and the fractions add up to more than 1,
+`f_valid` is 1 and the value is the sum of the contributions, so that the total of each
+file is kept (for integer fields, the class of the file covering most of the cell).
 `variables` are taken from the files that have them, and `fill` applies to the combined
 fields. The global attributes of the files are joined (their distinct values), and
 `remapped_from` lists the files.

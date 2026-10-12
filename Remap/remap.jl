@@ -335,12 +335,13 @@ end
     combine_remapped(outs, pf) -> Dict
 
 The fields of several prepared files remapped onto one grid (`outs`, by file: field =>
-(Ft, f_valid)) combined: a field in one file as it is; a field in several files as the
-mean of their values weighted by the fraction of each cell they cover (of integer
-fields, the class of the file covering most of the cell), with f_valid the sum of
-these fractions, at most 1. Files with separate coverage (e.g. the grounded and the
-floating ice of an ice sheet, on grids of their own) are thus merged as they are; where
-they overlap, their values are averaged.
+(Ft, f_valid)) combined, for files covering separate areas (e.g. the grounded and the
+floating ice of an ice sheet, on grids of their own): a field in one file as it is; a
+field in several files from the sum of their contributions, S = Σ v_i f_i, and of the
+fractions of the cell they cover, F = Σ f_i: f_valid = min(F, 1), and the value S / F,
+or S where F > 1 (where their remapped coverage overlaps, e.g. offset source grids at a
+boundary), so that value × f_valid = S and the total of each file is kept. Of integer
+fields, the class of the file covering most of the cell.
 """
 function combine_remapped(outs::AbstractVector, pf::PreparedFields)
     length(outs) == 1 && return outs[1]
@@ -366,7 +367,7 @@ function combine_remapped(outs::AbstractVector, pf::PreparedFields)
                 S[i] += v[i] * F[i]
                 W[i] += v[i]
             end
-            Ft = map((s, w) -> w > 0 ? Float32(s / w) : NaN32, S, W)
+            Ft = map((s, w) -> w > 1 ? Float32(s) : w > 0 ? Float32(s / w) : NaN32, S, W)
         end
         out[f] = (Ft, min.(fv, 1.0f0))
     end
@@ -771,8 +772,9 @@ function remap_prepared(ps::AbstractVector{Prepared}, grids::Vector{OutGrid}; na
                     f -> f === nothing ? Pair{String,Any}[] : ["units" => "1", "long_name" => "area fraction covered by $f"])
         how = allequal(hows) ? hows[1] : join(("$(basename(p.path)): $h" for (p, h) in zip(ps, hows)), "; ")
         attrib = vcat(merged_attrib(ps), ["remapped_from" => sources, "remap_method" => how])
-        length(ps) > 1 && push!(attrib, "combined" => "fields of several files merged, weighted by the fraction " *
-                                                       "of each cell they cover (f_valid is the sum, at most 1)")
+        length(ps) > 1 && push!(attrib, "combined" => "fields of several files covering separate areas merged: " *
+                                                       "their contributions (value x covered fraction) summed, " *
+                                                       "f_valid the sum of the covered fractions, at most 1")
         if filled !== nothing
             _per_field!(fields, dims, varattrib, filled, pf.dims, "mask_fill", f -> mask_fill_attrib(fill, f))
             push!(attrib, "gap_fill" => "$(join(fill.variables, ", ")): harmonic interpolation over the ice " *

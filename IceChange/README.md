@@ -31,8 +31,8 @@ files. See `ATL15_dzdt/README.md`.
 Smith et al. (2020) give over floating ice only thickness changes, so `dzdt` of
 `IceChange-Smith2020-ANT` covers the grounded ice only, and `dHdt` both the grounded and
 the floating ice, which are on 5 km grids of their own in the source and are combined on
-each grid (see `Remap/README.md`): where a cell has both, `dHdt` is their mean weighted
-by the area of each. Greenland has no `dHdt`, as Smith et al. (2020) have no firn
+each grid (see `Remap/README.md`): where a cell has both, their contributions add up,
+so that the totals of both are kept. Greenland has no `dHdt`, as Smith et al. (2020) have no firn
 correction there. There are no data south of about 86°S (not covered by ICESat).
 Integrated over the ice, the surface elevation change of the grounded ice of Antarctica
 is -130 km3 yr-1, its thickness change -127 km3 yr-1 (-116 Gt yr-1 of ice; Smith et al.,
