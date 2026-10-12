@@ -85,6 +85,23 @@ update and its size, and asks once; run it again after new releases to update th
 copy (`--yes` skips the question, e.g. in a job). Single files can also be downloaded
 from the website or the packages page, without the tool.
 
+**Other folders and archives.** `--dir=<folder>` lists, fetches or mirrors in
+`<folder>/<Domain>/<GRID>/` instead of `$ICE_DATA/v2` (`ICE_DATA` need not be set).
+Only the latest release of a dataset is kept on the packages page, so to keep the
+releases in use before updating, mirror them into a folder first:
+
+```bash
+julia fesmdata.jl mirror --dir=/work/ba1442/fesmdata/archive/2026-10-12
+julia fesmdata.jl mirror
+```
+
+Files already in `$ICE_DATA/v2` at the same release (checksums) are hard linked from
+there (no extra space; copied on another file system), the others downloaded, and the
+registry files of the records go to `<folder>/registry/`, as the record of what the
+folder holds. Updates of `$ICE_DATA/v2` write new files, so the hard links keep the
+archived ones; tools that change files in place (e.g. `stamp`, `ncatted`) would change
+both. Running `mirror --dir` again on an archive updates it to the latest releases.
+
 ## Release
 
 The datasets, the GitLab project and the Zenodo metadata (creators, licence,

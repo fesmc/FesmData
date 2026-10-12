@@ -16,12 +16,15 @@ Find and download:
   list [<Dataset>] <GRID> ...                  the records of grids in detail (a grid
                                                implies its domain, e.g. ANT-32KM)
   fetch <Dataset> <Domain> | <GRID> ...        download into \$ICE_DATA/v2/<Domain>/<GRID>/
-                                               and verify (--overwrite: replace files
-                                               that differ from the registry)
+                                               and verify; files of earlier releases are
+                                               updated (--overwrite: also replace files
+                                               changed locally)
   mirror [<Dataset>] [<Domain>]                all records (or those of a dataset/domain),
                                                after one confirmation with the size; run
                                                again to update (--yes: no confirmation)
-  (arguments in any order)
+  (arguments in any order; --dir=<folder>: list, fetch or mirror in <folder> instead of
+  \$ICE_DATA/v2, e.g. to archive the releases there before updating: files already in
+  \$ICE_DATA/v2 are hard linked or copied, and the registry files go to <folder>/registry/)
 
 Bring your own data (see Remap/README.md):
   remap <file.nc> <Domain> | <GRID> | all ...  remap the fields of a prepared NetCDF file
@@ -93,7 +96,7 @@ function main(argv)
     valued = Dict(String(k) => String(v) for (k, v) in
                   (split(o[3:end], '='; limit=2) for o in argv if startswith(o, "--") && occursin('=', o)))
     for k in keys(valued)
-        k in ("vars", "name", "method", "smooth") || error("unknown option --$k\n\n$USAGE")
+        k in ("vars", "name", "method", "smooth", "dir") || error("unknown option --$k\n\n$USAGE")
     end
     sandbox, allow_untagged, dry_run = "--sandbox" in opts, "--allow-untagged" in opts, "--dry-run" in opts
     command = isempty(args) ? "help" : args[1]
@@ -104,15 +107,17 @@ function main(argv)
         print(USAGE)
     elseif command == "list"
         include(joinpath(PUBLISH_DIR, "catalog.jl"))
-        call(:list, rest; sandbox=sandbox)
+        call(:list, rest; dir=get(valued, "dir", nothing), sandbox=sandbox)
     elseif command == "fetch"
         include(joinpath(PUBLISH_DIR, "catalog.jl"))
-        paths = call(:fetch_files, rest; overwrite="--overwrite" in opts, sandbox=sandbox)
-        println("$(length(paths)) files in $(call(:products_dir))")
+        dir = get(valued, "dir", nothing)
+        paths = call(:fetch_files, rest; dir=dir, overwrite="--overwrite" in opts, sandbox=sandbox)
+        println("$(length(paths)) files in $(call(:local_root, dir))")
     elseif command == "mirror"
         include(joinpath(PUBLISH_DIR, "catalog.jl"))
-        paths = call(:mirror, rest; overwrite="--overwrite" in opts, sandbox=sandbox, yes="--yes" in opts)
-        println("$(length(paths)) files in $(call(:products_dir))")
+        dir = get(valued, "dir", nothing)
+        paths = call(:mirror, rest; dir=dir, overwrite="--overwrite" in opts, sandbox=sandbox, yes="--yes" in opts)
+        println("$(length(paths)) files in $(call(:local_root, dir))")
     elseif command == "remap"
         activate_env(REMAP_DIR)
         include(joinpath(REMAP_DIR, "remap.jl"))

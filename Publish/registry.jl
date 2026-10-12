@@ -76,9 +76,13 @@ function confirm(question::AbstractString)
     return lowercase(strip(readline())) in ("y", "yes")
 end
 
-"Local path of a registry entry, under \$ICE_DATA/v2."
-local_path(entry::AbstractDict) =
-    replace(entry["storage_path"], r"^\$datasets_dir" => products_dir())
+"Root of the local files: `dir` if given (a folder for a copy, e.g. an archive), else \$ICE_DATA/v2."
+local_root(dir::Nothing=nothing) = products_dir()
+local_root(dir::AbstractString) = abspath(expanduser(dir))
+
+"Local path of a registry entry, under `root` (\$ICE_DATA/v2 by default)."
+local_path(entry::AbstractDict, root::AbstractString=products_dir()) =
+    replace(entry["storage_path"], r"^\$datasets_dir" => root)
 
 "Grid of a registry entry: the folder of its storage path, <Domain>/<GRID>/<file>."
 entry_grid(entry::AbstractDict) = basename(dirname(entry["storage_path"]))
@@ -100,14 +104,14 @@ previous_checksums(old::AbstractDict, checksum::AbstractString) =
     unique(filter(!=(checksum), vcat(get(old, "previous_checksums", String[]), old["checksum"])))
 
 """
-    local_state(entry) -> Symbol
+    local_state(entry, root=products_dir()) -> Symbol
 
-State of the local file of a registry entry, by its checksum: :missing, :current (the
-release of the entry), :older (an earlier release of the file, `previous_checksums`)
-or :changed (changed locally, or not of a release).
+State of the local file of a registry entry under `root`, by its checksum: :missing,
+:current (the release of the entry), :older (an earlier release of the file,
+`previous_checksums`) or :changed (changed locally, or not of a release).
 """
-function local_state(entry::AbstractDict)
-    path = local_path(entry)
+function local_state(entry::AbstractDict, root::AbstractString=products_dir())
+    path = local_path(entry, root)
     isfile(path) || return :missing
     sum = checksum(path)
     sum == entry["checksum"] && return :current
@@ -116,30 +120,60 @@ function local_state(entry::AbstractDict)
 end
 
 """
-    fetch_file(entry; overwrite=false, state=local_state(entry)) -> (path, status)
+    link_or_copy(src, dst) -> Symbol
 
-Download the file of a registry entry and verify its checksum. A file already present
-is kept if it is of the release of the entry, and replaced if it is of an earlier
-release; a file changed locally is an error, or is replaced with `overwrite`. `status`
-is :present, :downloaded or :updated.
+Hard link `src` at `dst` (no extra space), or copy it where a link is not possible (on
+another file system): :linked or :copied.
 """
-function fetch_file(entry::AbstractDict; overwrite::Bool=false, state::Symbol=local_state(entry))
-    path = local_path(entry)
+function link_or_copy(src::AbstractString, dst::AbstractString)
+    try
+        hardlink(src, dst)
+        return :linked
+    catch e
+        e isa Base.IOError || rethrow()
+        cp(src, dst; force=true)
+        return :copied
+    end
+end
+
+"""
+    fetch_file(entry, root=products_dir(); overwrite=false, state=local_state(entry, root),
+               source=nothing) -> (path, status)
+
+Get the file of a registry entry under `root`: download it and verify its checksum, or,
+with `source`, a local file of the same release (checksum verified), hard link or copy
+it. A file already present is kept if it is of the release of the entry, and replaced
+if it is of an earlier release; a file changed locally is an error, or is replaced with
+`overwrite`. The new file replaces the old one (a new file, so that hard links to the
+old one keep it). `status` is :present, :downloaded, :updated, :linked or :copied.
+"""
+function fetch_file(entry::AbstractDict, root::AbstractString=products_dir(); overwrite::Bool=false,
+                    state::Symbol=local_state(entry, root), source::Union{Nothing,AbstractString}=nothing)
+    path = local_path(entry, root)
     state == :current && return path, :present
     state == :changed && !overwrite &&
         error("$path differs from the registry and from the earlier releases (changed locally); " *
               "use --overwrite to replace it")
     mkpath(dirname(path))
     tmp = path * ".part"
+    rm(tmp; force=true)
+    status = state == :missing ? :downloaded : :updated
     try
-        Downloads.download(entry["uri"], tmp)
-        sum = checksum(tmp)
-        sum == entry["checksum"] || error("checksum of $(entry["uri"]) is $sum, expected $(entry["checksum"])")
+        if source === nothing
+            Downloads.download(entry["uri"], tmp)
+        else
+            status = link_or_copy(source, tmp)
+        end
+        if status != :linked
+            sum = checksum(tmp)
+            sum == entry["checksum"] || error("checksum of $(something(source, entry["uri"])) is $sum, " *
+                                              "expected $(entry["checksum"])")
+        end
         mv(tmp, path; force=true)
     finally
         rm(tmp; force=true)
     end
-    return path, state == :missing ? :downloaded : :updated
+    return path, status
 end
 
 """
