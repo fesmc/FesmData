@@ -42,6 +42,7 @@ julia fesmdata.jl remap $FESMDATA_WORK/prepared/vanWessem2023_racmo23/RACMO2.3p2
 - `RACMO2.3p2_1985-2014.nc`: the monthly climatology of the reference period of the
   ISMIP7 experiments, a reference climate for model forcing, with `smb` complete (see
   Notes);
+- `RACMO2.3p2_<period>_annual-mean.nc`: the annual means of these climatologies (x, y);
 - `RACMO2.3p2_annual_1979-2022.nc`: annual values (x, y, time).
 
 Fields, with the names and units of the RACMO2.4p1 products (`vanDalum2025_racmo24`):
@@ -63,13 +64,16 @@ all cells with f_ice = 0 are ocean.
 - Units: the monthly sums are converted to rates, sum / days of the month × 365.25
   (kg m-2 yr-1), and averaged over the years for the climatologies; the annual values
   are the sums over the 12 months of each year. Temperatures are monthly means, and
-  day-weighted annual means.
+  day-weighted annual means. The annual means of the climatologies are the means of the
+  12 months weighted by the mean length of each month over the period: up to the leap
+  days, the mean over the period of the annual values (for the fluxes, as a rate with
+  1 yr = 365.25 d).
 - `smb`, `runoff`, `melt` and `subl` are set missing where f_ice < 0.1 (RACMO2.3p2 gives
   smb near zero and `subl` as evaporation over the ocean there). `pr`, `sf`, `t2m` and
-  `T_srf` cover the whole domain. In the reference climate 1985-2014, `smb` is
-  `pr + subl` where f_ice < 0.1 (the surface mass balance without runoff, which is
-  meaningful on glaciated surfaces only), so that it covers the whole domain as the
-  forcing of a model whose ice may advance onto the ocean or land.
+  `T_srf` cover the whole domain. In the reference climate 1985-2014 (and its annual
+  mean), `smb` is `pr + subl` where f_ice < 0.1 (the surface mass balance without
+  runoff, which is meaningful on glaciated surfaces only), so that it covers the whole
+  domain as the forcing of a model whose ice may advance onto the ocean or land.
 - Sign: `smb = pr + subl - runoff` minus drifting-snow erosion (not included here); `subl`
   is negative for sublimation, as in the source.
 

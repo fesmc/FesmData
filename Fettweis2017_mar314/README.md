@@ -33,7 +33,7 @@ about 1.2 GB each, 107 GB for 1940-2025. They are listed in `datamanifest.toml`
 ## Prepare and remap
 
 Download first (`download` only downloads, e.g. on a login node; 2 hours or so), then
-prepare on a compute node (about 70 s per year, 1h45 in all, 15 GB memory):
+prepare on a compute node (about 70 s per year, 1h45 in all, about 20 GB memory):
 
 ```bash
 julia --project=Fettweis2017_mar314 Fettweis2017_mar314/prepare.jl download
@@ -43,8 +43,9 @@ julia fesmdata.jl remap $FESMDATA_WORK/prepared/Fettweis2017_mar314/MARv3.14_ERA
 
 `prepare.jl` writes to `$FESMDATA_WORK/prepared/Fettweis2017_mar314/`:
 
-- `MARv3.14_ERA5_1981-2010.nc`, `MARv3.14_ERA5_1991-2020.nc`: monthly climatologies,
-  fields `(x, y, month)`;
+- `MARv3.14_ERA5_1961-1990.nc`, `MARv3.14_ERA5_1981-2010.nc`,
+  `MARv3.14_ERA5_1991-2020.nc`: monthly climatologies, fields `(x, y, month)`;
+- `MARv3.14_ERA5_<period>_annual-mean.nc`: their annual means, fields `(x, y)`;
 - `MARv3.14_ERA5_annual_1940-2025.nc`: annual time series, fields `(x, y, time)`.
 
 | Field | MAR variable | Climatologies | Time series |
@@ -72,6 +73,9 @@ Notes:
   are annual totals (kg m-2 yr-1 = mm w.e. per year), and annual means of the
   temperatures (weighted by the days of the months). Temperatures are in K. Time is the middle of each
   year (1 July).
+- The annual means of the climatologies are the means of the 12 months weighted by the
+  mean length of each month over the period: up to the leap days, the mean over the
+  period of the annual time series (for the fluxes, as a rate with 1 yr = 365.25 d).
 - The `*corr` variables of MAR are corrected for the difference between the 10 km MAR
   and the 1 km surface elevation (`SRF`); snowfall and rainfall are not corrected.
 - The fields are defined on land, ice and a strip of ocean along the coast (the

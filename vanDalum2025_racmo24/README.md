@@ -39,6 +39,7 @@ julia fesmdata.jl remap $FESMDATA_WORK/prepared/vanDalum2025_racmo24/RACMO2.4p1_
 
 - `RACMO2.4p1_1981-2010.nc`, `RACMO2.4p1_1991-2020.nc`: monthly climatologies
   (x, y, month);
+- `RACMO2.4p1_<period>_annual-mean.nc`: the annual means of these climatologies (x, y);
 - `RACMO2.4p1_annual_1979-2023.nc`: annual values (x, y, time).
 
 Fields: `smb` (surface mass balance), `pr` (total precipitation), `sf` (snowfall), `runoff`
@@ -60,7 +61,10 @@ glaciers). RACMO2.4p1 has no grounded-ice mask.
 - Units: the monthly sums are converted to rates, sum / days of the month × 365.25
   (kg m-2 yr-1), and averaged over the years for the climatologies; the annual values
   are the sums over the 12 months of each year. Temperatures are monthly means, and
-  day-weighted annual means.
+  day-weighted annual means. The annual means of the climatologies are the means of the
+  12 months weighted by the mean length of each month over the period: up to the leap
+  days, the mean over the period of the annual values (for the fluxes, as a rate with
+  1 yr = 365.25 d).
 - `smb`, `runoff`, `melt` and `subl` are given by RACMO per unit glaciated area (IceMask ≥ 0.1)
   and are zero elsewhere; they are missing there in the prepared files. `pr`, `sf`,
   `t2m` and `T_srf` cover the whole domain (Antarctica, the Southern Ocean to about 40°S,

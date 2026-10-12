@@ -2,11 +2,13 @@
 # remapping: from the monthly outputs on the 1 km ISMIP6 grid (one file per year), write
 # to $FESMDATA_WORK/prepared/Fettweis2017_mar314/
 #
-#   MARv3.14_ERA5_1981-2010.nc, MARv3.14_ERA5_1991-2020.nc   monthly climatologies (x, y, month)
-#   MARv3.14_ERA5_annual_1940-2025.nc                        annual time series (x, y, time)
+#   MARv3.14_ERA5_<period>.nc               monthly climatologies (x, y, month)
+#   MARv3.14_ERA5_<period>_annual-mean.nc   their annual means (x, y)
+#   MARv3.14_ERA5_annual_1940-2025.nc       annual time series (x, y, time)
 #
-# with smb, melt, runoff, sf, rf, pr (kg m-2 yr-1), t2m, T_srf (K), and z_srf, mask, f_ice:
-# the names and units of the SMB dataset (as RACMO, vanDalum2025_racmo24).
+# for the periods 1961-1990, 1981-2010 and 1991-2020, with smb, melt, runoff, sf, rf, pr
+# (kg m-2 yr-1), t2m, T_srf (K), and z_srf, mask, f_ice: the names and units of the SMB
+# dataset (as RACMO, vanDalum2025_racmo24).
 #
 # Usage:
 #     julia --project=Fettweis2017_mar314 Fettweis2017_mar314/prepare.jl download   # only download (107 GB)
@@ -22,7 +24,7 @@ include(joinpath(@__DIR__, "..", "shared", "manifest.jl"))
 
 const KEY = "mar314_era5_1km_monthly"
 const YEARS = 1940:2025
-const PERIODS = (1981:2010, 1991:2020)
+const PERIODS = (1961:1990, 1981:2010, 1991:2020)
 
 # EPSG:3413 (WGS84 polar stereographic north, true scale at 70N, central meridian 45W)
 const PROJ = "+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +x_0=0 +y_0=0 +ellps=WGS84 +units=m"
@@ -109,17 +111,29 @@ function annual(A, year, total)
     return total ? S : S ./ daysinyear(year)
 end
 
+# Annual mean of a monthly climatology (x, y, month), weighted by the mean month lengths
+# of the period (as in vanWessem2023_racmo23, vanDalum2025_racmo24). Up to the leap days,
+# it is the mean over the period of the annual time series: for the fluxes, the mean
+# annual total, as a rate with 1 yr = 365.25 d; for the temperatures, the mean of the
+# day-weighted annual means
+function annual_mean(C, period)
+    w = [sum(daysinmonth(yr, m) for yr in period) / length(period) for m in 1:12]
+    return Float32.(dropdims(sum(C .* reshape(w, 1, 1, 12); dims=3); dims=3) ./ sum(w))
+end
+
 # ---------------------------------------------------------------------------
 # Prepared files
 # ---------------------------------------------------------------------------
 
-function define_file(path, x, y, static, extra_dim, extra_values, extra_attrib, title)
+# Fields on (x, y) or (x, y, dim), dim = (name, values, attributes); cm: cell_methods
+# of the fluxes and of the temperatures
+function define_file(path, x, y, static, dim, cm, title)
     ds = NCDataset(path, "c")
     defVar(ds, "x", x, ("x",); attrib=["units" => "m", "standard_name" => "projection_x_coordinate",
                                         "long_name" => "x"])
     defVar(ds, "y", y, ("y",); attrib=["units" => "m", "standard_name" => "projection_y_coordinate",
                                         "long_name" => "y"])
-    defVar(ds, extra_dim, extra_values, (extra_dim,); attrib=extra_attrib)
+    isnothing(dim) || defVar(ds, dim[1], dim[2], (dim[1],); attrib=dim[3])
     defVar(ds, "crs", Int32, (); attrib=[
         "grid_mapping_name" => "polar_stereographic", "proj_params" => PROJ,
         "straight_vertical_longitude_from_pole" => -45.0, "standard_parallel" => 70.0,
@@ -133,18 +147,17 @@ function define_file(path, x, y, static, extra_dim, extra_values, extra_attrib, 
                    "flag_values" => MASK_FLAGS, "flag_meanings" => MASK_MEANINGS, gm])
     defVar(ds, "f_ice", static.f_ice, ("x", "y"); deflatelevel=1,
            attrib=["units" => "1", "long_name" => "ice-covered fraction (ice sheet, glaciers and ice caps)", gm])
-    nx, ny = length(x), length(y)
-    cm = extra_dim == "month" ? "time: mean within months time: mean over years" : "time: sum within years"
+    dims, chunks = isnothing(dim) ? (("x", "y"), [length(x), length(y)]) :
+                                    (("x", "y", dim[1]), [length(x), length(y), 1])
     for (name, long_name) in [[(n, l) for (n, _, l) in FLUXES]; PR]
-        defVar(ds, name, Float32, ("x", "y", extra_dim); fillvalue=NaN32, deflatelevel=1, shuffle=true,
-               chunksizes=[nx, ny, 1], attrib=["units" => "kg m-2 yr-1", "long_name" => long_name,
-                                               "cell_methods" => cm, gm])
+        defVar(ds, name, Float32, dims; fillvalue=NaN32, deflatelevel=1, shuffle=true,
+               chunksizes=chunks, attrib=["units" => "kg m-2 yr-1", "long_name" => long_name,
+                                          "cell_methods" => cm[1], gm])
     end
-    cm = extra_dim == "month" ? "time: mean within months time: mean over years" : "time: mean within years"
     for (name, _, long_name) in TEMPS
-        defVar(ds, name, Float32, ("x", "y", extra_dim); fillvalue=NaN32, deflatelevel=1, shuffle=true,
-               chunksizes=[nx, ny, 1], attrib=["units" => "K", "long_name" => long_name,
-                                               "cell_methods" => cm, gm])
+        defVar(ds, name, Float32, dims; fillvalue=NaN32, deflatelevel=1, shuffle=true,
+               chunksizes=chunks, attrib=["units" => "K", "long_name" => long_name,
+                                          "cell_methods" => cm[2], gm])
     end
     ds.attrib["title"] = title
     ds.attrib["references"] =
@@ -174,9 +187,11 @@ function prepare(paths)
     mkpath(dir)
 
     path = joinpath(dir, "MARv3.14_ERA5_annual_$(first(YEARS))-$(last(YEARS)).nc")
-    ts = define_file(path, x, y, static, "time", [DateTime(yr, 7, 1) for yr in YEARS],
-                     ["units" => "days since 1940-01-01 00:00:00", "calendar" => "standard",
-                      "standard_name" => "time", "long_name" => "time (middle of the year)"],
+    ts = define_file(path, x, y, static,
+                     ("time", [DateTime(yr, 7, 1) for yr in YEARS],
+                      ["units" => "days since 1940-01-01 00:00:00", "calendar" => "standard",
+                       "standard_name" => "time", "long_name" => "time (middle of the year)"]),
+                     ("time: sum within years", "time: mean within years"),
                      "Greenland surface mass balance and surface climate, MAR v3.14 (ERA5), annual $(first(YEARS))-$(last(YEARS))")
     sums = [Dict(n => zeros(Float64, length(x), length(y), 12) for n in NAMES) for _ in PERIODS]
 
@@ -203,17 +218,27 @@ function prepare(paths)
     for (p, period) in enumerate(PERIODS)
         label = "$(first(period))-$(last(period))"
         path = joinpath(dir, "MARv3.14_ERA5_$label.nc")
-        ds = define_file(path, x, y, static, "month", Int32.(1:12),
-                         ["units" => "1", "long_name" => "month of the year"],
+        cm = "time: mean within months time: mean over years"
+        ds = define_file(path, x, y, static,
+                         ("month", Int32.(1:12), ["units" => "1", "long_name" => "month of the year"]), (cm, cm),
                          "Greenland surface mass balance and surface climate, MAR v3.14 (ERA5), monthly climatology $label")
-        ds.attrib["period"] = label
+        path_am = joinpath(dir, "MARv3.14_ERA5_$(label)_annual-mean.nc")
+        cm = "time: mean within years time: mean over years"
+        am = define_file(path_am, x, y, static, nothing, (cm, cm),
+                         "Greenland surface mass balance and surface climate, MAR v3.14 (ERA5), annual mean $label")
+        am.attrib["comment"] = "Annual mean of the monthly climatology $label, weighted by the mean month lengths " *
+                               "of the period; fluxes as rates with 1 yr = $DAYS_PER_YEAR d"
+        ds.attrib["period"] = am.attrib["period"] = label
         # Monthly means: fluxes as rates in kg m-2 yr-1, temperatures as they are
         for n in NAMES
             f = n in first.(TEMPS) ? 1.0 : DAYS_PER_YEAR
-            ds[n][:, :, :] = Float32.(sums[p][n] .* (f / length(period)))
+            C = Float32.(sums[p][n] .* (f / length(period)))
+            ds[n][:, :, :] = C
+            am[n][:, :] = annual_mean(C, period)
         end
         close(ds)
-        println("Wrote $path")
+        close(am)
+        println("Wrote $path, $path_am")
     end
 end
 

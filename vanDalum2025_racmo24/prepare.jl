@@ -1,8 +1,8 @@
 # Prepare the RACMO2.4p1 Antarctic surface mass balance and surface climate (van Dalum
 # et al., 2025; monthly fields 1979-2025 on the 11 km rotated-pole grid PXANT11) for
-# remapping: monthly climatologies 1981-2010 and 1991-2020 (x, y, month) and annual
-# values 1979-2023 (x, y, time), with the surface elevation and masks, in
-# $FESMDATA_WORK/prepared/vanDalum2025_racmo24/.
+# remapping: monthly climatologies 1981-2010 and 1991-2020 (x, y, month), their annual
+# means (x, y) and annual values 1979-2023 (x, y, time), with the surface elevation and
+# masks, in $FESMDATA_WORK/prepared/vanDalum2025_racmo24/.
 #
 # The rotated-pole grid is regular in rotated longitude and latitude (0.1°). It is
 # written as x, y = R * rotated lon, lat (radians), R = 6371229 m, i.e. an equidistant
@@ -117,6 +117,18 @@ for (name, f) in FIELDS
     annuals[name] = Float32.(annual(A, f.kind))
 end
 
+# Annual mean of a monthly climatology (x, y, month), weighted by the mean month lengths
+# of the period (as in Fettweis2017_mar314, vanWessem2023_racmo23). Up to the leap days,
+# it is the mean over the period of the annual values: for the fluxes, the mean annual
+# sum, as a rate with 1 yr = 365.25 d; for the temperatures, the mean of the day-weighted
+# annual means
+function annual_mean(C, p)
+    w = [mean(daysinmonth(yr, m) for yr in p) for m in 1:12]
+    return Float32.(dropdims(sum(C .* reshape(w, 1, 1, 12); dims=3); dims=3) ./ sum(w))
+end
+
+annual_means = Dict(p => Dict(name => annual_mean(C, p) for (name, C) in climatology[p]) for p in PERIODS)
+
 # ---------------------------------------------------------------------------
 # Prepared files
 # ---------------------------------------------------------------------------
@@ -172,18 +184,23 @@ end
 outdir = prepared_dir(SOURCE)
 mkpath(outdir)
 
-for p in PERIODS
-    path = joinpath(outdir, "RACMO2.4p1_$(first(p))-$(last(p)).nc")
+# Monthly climatologies and their annual means
+for p in PERIODS, amean in (false, true)
+    label = "$(first(p))-$(last(p))"
+    path = joinpath(outdir, "RACMO2.4p1_$label" * (amean ? "_annual-mean" : "") * ".nc")
     rm(path; force=true)
     NCDataset(path, "c") do ds
         write_common!(ds, "Antarctic surface mass balance and surface climate, RACMO2.4p1 (ERA5), " *
-                          "monthly climatology $(first(p))-$(last(p))")
-        defVar(ds, "month", Int32.(1:12), ("month",); attrib=["units" => "1", "long_name" => "month of the year"])
+                          (amean ? "annual mean $label" : "monthly climatology $label"))
+        amean || defVar(ds, "month", Int32.(1:12), ("month",); attrib=["units" => "1", "long_name" => "month of the year"])
         for (name, f) in FIELDS
-            defVar(ds, name, climatology[p][name], ("x", "y", "month"); fillvalue=NaN32, deflatelevel=1,
+            c = comment(f)
+            amean && (c *= "; annual mean of the monthly climatology, weighted by the mean month lengths of $label")
+            defVar(ds, name, amean ? annual_means[p][name] : climatology[p][name],
+                   amean ? ("x", "y") : ("x", "y", "month"); fillvalue=NaN32, deflatelevel=1,
                    attrib=["units" => units(f), "long_name" => f.long_name, "grid_mapping" => "crs",
-                           "cell_methods" => "time: mean within months time: mean over years",
-                           "comment" => comment(f)])
+                           "cell_methods" => "time: mean within $(amean ? "years" : "months") time: mean over years",
+                           "comment" => c])
         end
     end
     println("Wrote $path")
