@@ -1143,3 +1143,52 @@ uri = "https://zenodo.org/records/17386710/files/AQ_grounded_mass_change.nc?down
 doi = "10.5281/zenodo.17386710"
 storage_path = "$datasets_dir/schmidt2025_fwf/AQ_mass_anomaly.nc"
 uri = "https://zenodo.org/records/17386710/files/AQ_mass_anomaly.nc?download=1"
+
+# RACMO2.3p2 Antarctica (ANT27, 27 km, ERA5-forced, 1979-2022; van Wessem et al., 2023 data
+# release): the height and mask file and the monthly fields used by
+# vanWessem2023_racmo23/prepare.jl.
+
+[racmo23p2_ant27_height]
+doi = "10.5281/zenodo.7760491"
+storage_path = "$datasets_dir/racmo23p2_ant27/Height_latlon_ANT27.nc"
+uri = "https://zenodo.org/records/7760491/files/Height_latlon_ANT27.nc?download=1"
+
+[racmo23p2_ant27_smb]
+doi = "10.5281/zenodo.7760491"
+storage_path = "$datasets_dir/racmo23p2_ant27/smb_monthlyS_ANT27_ERA5-3H_RACMO2.3p2_197901_202212.nc"
+uri = "https://zenodo.org/records/7760491/files/smb_monthlyS_ANT27_ERA5-3H_RACMO2.3p2_197901_202212.nc?download=1"
+
+[racmo23p2_ant27_precip]
+doi = "10.5281/zenodo.7760491"
+storage_path = "$datasets_dir/racmo23p2_ant27/precip_monthlyS_ANT27_ERA5-3H_RACMO2.3p2_197901_202212.nc"
+uri = "https://zenodo.org/records/7760491/files/precip_monthlyS_ANT27_ERA5-3H_RACMO2.3p2_197901_202212.nc?download=1"
+
+[racmo23p2_ant27_snowfall]
+doi = "10.5281/zenodo.7760491"
+storage_path = "$datasets_dir/racmo23p2_ant27/snowfall_monthlyS_ANT27_ERA5-3H_RACMO2.3p2_197901_202212.nc"
+uri = "https://zenodo.org/records/7760491/files/snowfall_monthlyS_ANT27_ERA5-3H_RACMO2.3p2_197901_202212.nc?download=1"
+
+[racmo23p2_ant27_runoff]
+doi = "10.5281/zenodo.7760491"
+storage_path = "$datasets_dir/racmo23p2_ant27/runoff_monthlyS_ANT27_ERA5-3H_RACMO2.3p2_197901_202212.nc"
+uri = "https://zenodo.org/records/7760491/files/runoff_monthlyS_ANT27_ERA5-3H_RACMO2.3p2_197901_202212.nc?download=1"
+
+[racmo23p2_ant27_snowmelt]
+doi = "10.5281/zenodo.7760491"
+storage_path = "$datasets_dir/racmo23p2_ant27/snowmelt_monthlyS_ANT27_ERA5-3H_RACMO2.3p2_197901_202212.nc"
+uri = "https://zenodo.org/records/7760491/files/snowmelt_monthlyS_ANT27_ERA5-3H_RACMO2.3p2_197901_202212.nc?download=1"
+
+[racmo23p2_ant27_subl]
+doi = "10.5281/zenodo.7760491"
+storage_path = "$datasets_dir/racmo23p2_ant27/subl_monthlyS_ANT27_ERA5-3H_RACMO2.3p2_197901_202212.nc"
+uri = "https://zenodo.org/records/7760491/files/subl_monthlyS_ANT27_ERA5-3H_RACMO2.3p2_197901_202212.nc?download=1"
+
+[racmo23p2_ant27_t2m]
+doi = "10.5281/zenodo.7760491"
+storage_path = "$datasets_dir/racmo23p2_ant27/t2m_monthlyA_ANT27_ERA5-3H_RACMO2.3p2_197901_202212.nc"
+uri = "https://zenodo.org/records/7760491/files/t2m_monthlyA_ANT27_ERA5-3H_RACMO2.3p2_197901_202212.nc?download=1"
+
+[racmo23p2_ant27_tskin]
+doi = "10.5281/zenodo.7760491"
+storage_path = "$datasets_dir/racmo23p2_ant27/tskin_monthlyA_ANT27_ERA5-3H_RACMO2.3p2_197901_202212.nc"
+uri = "https://zenodo.org/records/7760491/files/tskin_monthlyA_ANT27_ERA5-3H_RACMO2.3p2_197901_202212.nc?download=1"
