@@ -50,6 +50,10 @@
 
 ![Paleoclimate-PMIP3-lgm-boundary-conditions on ANT-16KM, GRL-PAL-8KM, NH-32KM, GLOBAL-1DEG: dz_srf.](../figures/Paleoclimate/Paleoclimate-PMIP3-lgm-boundary-conditions.png)
 
+### PMIP3-lgm-mean
+
+![Paleoclimate-PMIP3-lgm-mean on ANT-16KM, GRL-PAL-8KM, NH-32KM, GLOBAL-1DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP3-lgm-mean.png)
+
 ### PMIP4-AWI-ESM-1-1-LR-lgm
 
 ![Paleoclimate-PMIP4-AWI-ESM-1-1-LR-lgm on ANT-16KM, GRL-PAL-8KM, NH-32KM, GLOBAL-1DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP4-AWI-ESM-1-1-LR-lgm.png)
@@ -65,4 +69,8 @@
 ### PMIP4-MPI-ESM1-2-LR-lgm
 
 ![Paleoclimate-PMIP4-MPI-ESM1-2-LR-lgm on ANT-16KM, GRL-PAL-8KM, NH-32KM, GLOBAL-1DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP4-MPI-ESM1-2-LR-lgm.png)
+
+### PMIP4-lgm-mean
+
+![Paleoclimate-PMIP4-lgm-mean on ANT-16KM, GRL-PAL-8KM, NH-32KM, GLOBAL-1DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP4-lgm-mean.png)
 
