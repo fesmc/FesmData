@@ -2,7 +2,8 @@
 # as <GRID>_Velocity-<name>.nc on their `grids`; see ../GHF/remap.toml
 # for the options. The dataset and its release tag are in ../Publish/datasets.toml.
 # The velocity components are prepared eastward and northward, and rotated to the axes
-# of the grids by remap.
+# of the grids by remap. Mouginot2019 has its few gaps over the ice (of BedMachine v4)
+# filled (`fill`, see ../Remap/README.md).
 
 [products.Joughin2018]
 source = "Joughin2018"
@@ -15,3 +16,10 @@ source = "Rignot2011_vel"
 file = "Rignot2011_VEL.nc"
 grids = { Antarctica = 0 }
 figure = { variables = ["uxy_srf"], scale = "log10", colorrange = [1, 3000] }
+
+[products.Mouginot2019]
+source = "Mouginot2019_vel"
+file = "Mouginot2019_VEL.nc"
+grids = { Antarctica = 0 }
+figure = { variables = ["uxy_srf"], scale = "log10", colorrange = [1, 3000] }
+fill = { variables = ["ux_srf", "uy_srf"], mask = "TOPO-BedMachine-v4" }

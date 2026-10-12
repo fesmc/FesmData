@@ -615,6 +615,16 @@ skip_download = true
 storage_path = "$datasets_dir/nsidc0484_v2_antarctica_vel/antarctica_ice_velocity_450m_v2.nc"
 uri = "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/MEASURES/NSIDC-0484/2/1996/01/01/antarctica_ice_velocity_450m_v2.nc"
 
+# MEaSUREs Phase-Based Antarctica Ice Velocity Map v1 (NSIDC-0754; Mouginot et al., 2019),
+# 450 m: Mouginot2019_vel/. Manual download (NASA Earthdata login, about 40 GB),
+# antarctic_ice_vel_phase_map_v01.nc into the folder, from the uri below.
+
+[nsidc0754_v1_antarctica_vel]
+doi = "10.5067/PZ3NJ5RXRH10"
+skip_download = true
+storage_path = "$datasets_dir/nsidc0754_v1_antarctica_vel/antarctic_ice_vel_phase_map_v01.nc"
+uri = "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/MEASURES/NSIDC-0754/1/1996/01/01/antarctic_ice_vel_phase_map_v01.nc"
+
 # ---------------------------------------------------------------------------
 # Stratigraphy (Stratigraphy/)
 # ---------------------------------------------------------------------------
