@@ -175,9 +175,11 @@ fill = [{ variables = ["pr", "sf", "z_srf"], mask = "all" },
 
 Each gap gets the linear regression of the field on the surface elevation, fitted over
 the cells with source data (`f_valid > 0`) within `radius` km (a disk; grown by
-`radius / 2` until it holds at least `min_points` of them), at the elevation of the cell:
-`z_srf` of the Topo product `elevation` on the same grid (default
-`TOPO-BedMachine-v4`; 0 over the ocean), for the cells with data as for the gaps. Where
+`radius / 2` until it holds at least `min_points` of them), at the elevation of the cell
+clamped to the range of the elevations of these cells (no extrapolation beyond the
+lowest and highest of them). The elevation, for the cells with data as for the gaps, is
+`max(z_srf, 0)` of the Topo product `elevation` on the same grid (default
+`TOPO-BedMachine-v4`): the surface elevation, never below sea level. Where
 the elevations of these cells hardly differ (variance below 1 m2), the gap gets their
 mean. Fields with extra dimensions are filled slice by slice (e.g. each month). `cap`
 gives upper bounds of the filled values, by field, in its units: of each value, or for a

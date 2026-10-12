@@ -716,7 +716,7 @@ function fill_how(fill::GapFill)
     fill.method == "harmonic" && return "harmonic (Laplace) interpolation from the cells around"
     d = "linear regression on the surface elevation (z_srf of $(fill.elevation), 0 over the ocean) of the " *
         "cells with data within $(fill.radius) km (grown by $(fill.radius / 2) km until there are at least " *
-        "$(fill.min_points)), at the elevation of the cell"
+        "$(fill.min_points)), at the elevation of the cell clamped to the range of their elevations"
     isempty(fill.cap) && return d
     caps = join(("$f <= $c (of the annual mean for monthly fields, all months shifted by the same " *
                  "amount)" for (f, c) in sort(collect(fill.cap))), ", ")
@@ -784,22 +784,61 @@ function check_fill(pf::PreparedFields, fills::AbstractVector{GapFill})
 end
 
 """
-    regression_fill!(F, gaps, valid, z, dx, dy, gf) -> (nfilled, ngrown, slopes)
+    RangeTable(z, valid)
+
+Minima and maxima of `z` over the cells `valid` of the ranges of each row (along x), in
+constant time (sparse tables of the ranges of 2^k cells).
+"""
+struct RangeTable
+    lo::Vector{Matrix{Float32}}
+    hi::Vector{Matrix{Float32}}
+end
+
+function RangeTable(z::AbstractMatrix, valid::AbstractMatrix{Bool})
+    nx, ny = size(z)
+    lo = [Float32[valid[i, j] ? z[i, j] : Inf32 for i in 1:nx, j in 1:ny]]
+    hi = [Float32[valid[i, j] ? z[i, j] : -Inf32 for i in 1:nx, j in 1:ny]]
+    w = 1
+    while 2w <= nx
+        a, b = lo[end], hi[end]
+        A, B = fill(Inf32, nx, ny), fill(-Inf32, nx, ny)
+        for j in 1:ny, i in 1:nx-2w+1
+            A[i, j] = min(a[i, j], a[i+w, j])
+            B[i, j] = max(b[i, j], b[i+w, j])
+        end
+        push!(lo, A)
+        push!(hi, B)
+        w *= 2
+    end
+    return RangeTable(lo, hi)
+end
+
+"Minimum and maximum of the valid elevations of cells `i1:i2` of row `j`."
+function range_extrema(t::RangeTable, i1::Int, i2::Int, j::Int)
+    k = floor(Int, log2(i2 - i1 + 1))
+    a, b = i1, i2 - (1 << k) + 1
+    return min(t.lo[k+1][a, j], t.lo[k+1][b, j]), max(t.hi[k+1][a, j], t.hi[k+1][b, j])
+end
+
+"""
+    regression_fill!(F, gaps, valid, z, dx, dy, gf, table) -> (nfilled, ngrown, slopes)
 
 Fill the cells `gaps` of the 2D field `F` by the linear regression of `F` on the
-elevation `z` over the cells `valid` within `gf.radius` km of the cell (a disk, cell
-spacing `dx`, `dy` in km), grown by `gf.radius / 2` until there are at least
-`gf.min_points`, at the elevation of the cell (the mean where the elevations of the
-points hardly differ). Cells with fewer points within the whole grid stay missing.
-Returns the cells filled, those whose radius was grown, and the slopes (per m).
+elevation `z` over the cells `valid` (with finite values) within `gf.radius` km of the
+cell (a disk, cell spacing `dx`, `dy` in km), grown by `gf.radius / 2` until there are at
+least `gf.min_points`, at the elevation of the cell clamped to the range of the
+elevations of these points (`table`, the `RangeTable` of `z` and `valid`), so that the
+regression is never extrapolated (the mean where the elevations of the points hardly
+differ). Cells with fewer points within the whole grid stay missing. Returns the cells
+filled, those whose radius was grown, and the slopes (per m).
 """
 function regression_fill!(F::AbstractMatrix, gaps::AbstractMatrix{Bool}, valid::AbstractMatrix{Bool},
-                          z::AbstractMatrix, dx::Real, dy::Real, gf::GapFill)
+                          z::AbstractMatrix, dx::Real, dy::Real, gf::GapFill, table::RangeTable)
     nx, ny = size(F)
     # Sums along x (prefix sums by row) of 1, z, z^2, F, z F over the valid cells
     P = zeros(nx + 1, ny, 5)
     for j in 1:ny, i in 1:nx
-        v = valid[i, j] && isfinite(F[i, j])
+        v = valid[i, j]
         zi, f = z[i, j], v ? Float64(F[i, j]) : 0.0
         q = v ? (1.0, zi, zi^2, f, zi * f) : (0.0, 0.0, 0.0, 0.0, 0.0)
         for k in 1:5
@@ -836,7 +875,17 @@ function regression_fill!(F::AbstractMatrix, gaps::AbstractMatrix{Bool}, valid::
         zm, fm = S[2] / n, S[4] / n
         var = S[3] / n - zm^2
         b = var > 1.0 ? (S[5] / n - zm * fm) / var : 0.0       # 1 m2: elevations hardly differ
-        value[c] = fm + b * (z[i, j] - zm)
+        # Range of the elevations of the points within R
+        zlo, zhi = Inf32, -Inf32
+        nr = floor(Int, R / dy)
+        for dj in -nr:nr
+            jj = j + dj
+            1 <= jj <= ny || continue
+            ni = floor(Int, sqrt(max(R^2 - (dj * dy)^2, 0.0)) / dx)
+            a, h = range_extrema(table, max(i - ni, 1), min(i + ni, nx), jj)
+            zlo, zhi = min(zlo, a), max(zhi, h)
+        end
+        value[c] = fm + b * (clamp(z[i, j], zlo, zhi) - zm)
         slope[c] = b
     end
     for (c, I) in enumerate(cells)
@@ -891,11 +940,14 @@ function fill_gaps!(out, pf::PreparedFields, og::OutGrid, fills::AbstractVector{
             Ft, fv = out[f]
             filled[f] = zeros(Int8, size(Ft))
             nleft, ngrown, slopes = 0, 0, Float64[]
+            valid0, table = nothing, nothing
             for I in CartesianIndices(size(Ft)[3:end])
                 gaps = cells .& (view(fv, :, :, I) .== 0)
                 F = view(Ft, :, :, I)
                 if regression
-                    _, g, b = regression_fill!(F, gaps, view(fv, :, :, I) .> 0, z, dx, dy, fill)
+                    valid = (view(fv, :, :, I) .> 0) .& isfinite.(F)
+                    valid == valid0 || ((valid0, table) = (valid, RangeTable(z, valid)))
+                    _, g, b = regression_fill!(F, gaps, valid, z, dx, dy, fill, table)
                     ngrown += g
                     append!(slopes, b)
                     nleft += count(gaps .& isnan.(F))

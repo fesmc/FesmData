@@ -37,8 +37,8 @@ data (`f_valid` = 0, marked by `mask_fill_<field>`) as follows:
   the strongly negative values of MAR off the ice). Off the ice and outside the RCM domain
   (e.g. the ice caps of the Canadian Arctic on the GRL grids), it is the linear regression
   of `smb` on the surface elevation over the cells with data within 150 km (grown until
-  there are 20), at the elevation of the cell (`z_srf` of `TOPO-BedMachine-v4`, 0 over the
-  ocean), at most -91.7 kg m-2 yr-1 (-0.1 m yr-1 ice equivalent, with 917 kg m-3): a
+  there are 20), at the elevation of the cell (`max(z_srf, 0)` of `TOPO-BedMachine-v4`)
+  clamped to the range of the elevations of these cells (no extrapolation), at most -91.7 kg m-2 yr-1 (-0.1 m yr-1 ice equivalent, with 917 kg m-3): a
   small negative surface mass balance off the ice, on land and ocean. In the monthly
   climatologies the bound applies to the annual mean (months weighted by their length),
   all months shifted by the same amount (`fill`, `method = "elevation_regression"`, see `Remap/README.md`).
