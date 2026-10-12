@@ -6,6 +6,10 @@
 
 ![Velocity-Joughin2018 on GRL-8KM: uxy_srf.](../figures/Velocity/Velocity-Joughin2018.png)
 
+### Mouginot2019
+
+![Velocity-Mouginot2019 on ANT-16KM: uxy_srf.](../figures/Velocity/Velocity-Mouginot2019.png)
+
 ### Rignot2011
 
 ![Velocity-Rignot2011 on ANT-16KM: uxy_srf.](../figures/Velocity/Velocity-Rignot2011.png)
