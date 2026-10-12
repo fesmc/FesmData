@@ -27,7 +27,9 @@ julia fesmdata.jl figures IceHistory
 ```
 
 A new dataset needs the include line in its page, and its figures before the site is
-published (the include fails without `gallery.md`).
+published (the include fails without `gallery.md`). Products not made yet (no file on
+any of their grids, e.g. a source still to be downloaded) are left out of the figures;
+run `figures` again once they are made.
 
 ## Gridded products
 
