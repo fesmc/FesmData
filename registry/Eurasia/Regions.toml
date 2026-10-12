@@ -8,24 +8,28 @@ version = "2.1.2"
 
 ["EIS-16KM_BASINS-Mouginot2019.nc"]
 checksum = "sha256:5f761f46798ed781452faf8e63742f9648d39f7eb5723cb5fbdb96e9fbab39b0"
+previous_checksums = ["sha256:baa563fd246f0765c1f4c6d0099ceeab433c3c0ca230caa186deb3422c820b03", "sha256:2ae0704c545c0067af55aaa5afd21f7d56a54704920bc312ac03d3397561dd14"]
 size = 35251
 storage_path = "$datasets_dir/Eurasia/EIS-16KM/EIS-16KM_BASINS-Mouginot2019.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Regions_EIS-16KM/2.1.2/EIS-16KM_BASINS-Mouginot2019.nc"
 
 ["EIS-16KM_BASINS-Schmidt2025.nc"]
 checksum = "sha256:78f7ef7c6f004a436c70d8d40dfdf9089f9dc1adde2a10e7eab2451d2341aedb"
+previous_checksums = ["sha256:71dc808afb45405f5361180457c51e2b981afb96555dffb9cb5e8709aba10200", "sha256:917fd760e542f876a5cfc0fc0e1ff7534ee78b5fe2a908d1ff818f48008b2138"]
 size = 25987
 storage_path = "$datasets_dir/Eurasia/EIS-16KM/EIS-16KM_BASINS-Schmidt2025.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Regions_EIS-16KM/2.1.2/EIS-16KM_BASINS-Schmidt2025.nc"
 
 ["EIS-16KM_BASINS-Zwally2012.nc"]
 checksum = "sha256:ae9c377b3fc506808734bcb4f9f6d9a84b7293b1d74209632df0ea63f68fe4be"
+previous_checksums = ["sha256:7ce0f15383c55f5f7ed5cb355f606242c157f614af98177c78a4584d406625a6", "sha256:7790a510e555e1c6d589528ff32d8ef024e349b35bc41552a278f581f9cbd04b"]
 size = 32940
 storage_path = "$datasets_dir/Eurasia/EIS-16KM/EIS-16KM_BASINS-Zwally2012.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Regions_EIS-16KM/2.1.2/EIS-16KM_BASINS-Zwally2012.nc"
 
 ["EIS-16KM_REGIONS.nc"]
 checksum = "sha256:52025e888d2e4da9fca0865690a6a2a5c99dd1cff012f5fe53f67831635d5d72"
+previous_checksums = ["sha256:a4e1521fd7538865c176fa70ce6ec3e598d9295a178c58d4470597dcb4aeae2e", "sha256:b959ebf14d8dcd832d19a3a3b7654534e06edf60882ca0533597a63c532b4f97"]
 size = 290448
 storage_path = "$datasets_dir/Eurasia/EIS-16KM/EIS-16KM_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Regions_EIS-16KM/2.1.2/EIS-16KM_REGIONS.nc"
@@ -38,24 +42,28 @@ uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/E
 
 ["EIS-2KM_BASINS-Mouginot2019.nc"]
 checksum = "sha256:ea57f0dc69cda03083e5eb5e7b0f0d35ad5dbc9714e0fd43260fbd92bdba8278"
+previous_checksums = ["sha256:920b5b04557207ccaa65b87b326d9a4b9c1d414a93d73f63e4f131dc5ffb75bc", "sha256:77f9aa1b17504d48f96b36c741fc8a18a7694fa1a513ba22233e51656e842642"]
 size = 332475
 storage_path = "$datasets_dir/Eurasia/EIS-2KM/EIS-2KM_BASINS-Mouginot2019.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Regions_EIS-2KM/2.1.2/EIS-2KM_BASINS-Mouginot2019.nc"
 
 ["EIS-2KM_BASINS-Schmidt2025.nc"]
 checksum = "sha256:d022c33869357afb8c984920fdaa370af9d41ff426ecb2a86fda93846c51da98"
+previous_checksums = ["sha256:2fa4183a3c00c49659cfb19b2b7d038b828e04b845dc711908e3d801bd178a49", "sha256:ee32b8dd78ae87838dcea3f25f9dbfaaacf24cac5755e674b6a57ef5f35e3cfc"]
 size = 205269
 storage_path = "$datasets_dir/Eurasia/EIS-2KM/EIS-2KM_BASINS-Schmidt2025.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Regions_EIS-2KM/2.1.2/EIS-2KM_BASINS-Schmidt2025.nc"
 
 ["EIS-2KM_BASINS-Zwally2012.nc"]
 checksum = "sha256:48943118e509e5f322eb5496485df2d866e7589aee1b73774794dca605efa6a3"
+previous_checksums = ["sha256:edb28416ef669ca26391e402257e73356683934572dd086c755fb27e3af78c12", "sha256:5583fb1db1f7712bc4eb605f27a21e190f113303b2bd7b5d5fb5853a3538a64e"]
 size = 315784
 storage_path = "$datasets_dir/Eurasia/EIS-2KM/EIS-2KM_BASINS-Zwally2012.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Regions_EIS-2KM/2.1.2/EIS-2KM_BASINS-Zwally2012.nc"
 
 ["EIS-2KM_REGIONS.nc"]
 checksum = "sha256:30fbd3b40c01e940a384265b4d43f34d173f72ef497c33ddd24f0d6ac0b90341"
+previous_checksums = ["sha256:31fadf725806afd0672b5a9d4bb13fce9d501303cc3c55d6055a6a6dcac0034a", "sha256:a0e64e0271cdaa7b41a08a3b070306973cafb148b06d060e46bf6b714f323889"]
 size = 8660169
 storage_path = "$datasets_dir/Eurasia/EIS-2KM/EIS-2KM_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Regions_EIS-2KM/2.1.2/EIS-2KM_REGIONS.nc"
@@ -68,24 +76,28 @@ uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/E
 
 ["EIS-32KM_BASINS-Mouginot2019.nc"]
 checksum = "sha256:a657ba72f0693ceb30b8c8e39a57c75ffcc308fd045f34350fefbad3cf9da7f0"
+previous_checksums = ["sha256:4a6b699ef21d2f45c21bd6dbb0964dd876d4c3bf21640b524eb5308f8c33f628", "sha256:1a7f1efb4c49f1b60839f00adb39622410723742d14fc87bbc52d6a86f07841d"]
 size = 28174
 storage_path = "$datasets_dir/Eurasia/EIS-32KM/EIS-32KM_BASINS-Mouginot2019.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Regions_EIS-32KM/2.1.2/EIS-32KM_BASINS-Mouginot2019.nc"
 
 ["EIS-32KM_BASINS-Schmidt2025.nc"]
 checksum = "sha256:d776b5f9c1fabc766718f2146d39f4e3093d88f714711303cd913fa9f6b65cad"
+previous_checksums = ["sha256:fa0fb31996fc05e7b2928e8a5e087b4f6378fd1d7fe5d3b95e1deff8657969e1", "sha256:9d30686da9125a49a2ae19288f7eb976279e6de524069d0ff640e065b525e697"]
 size = 21564
 storage_path = "$datasets_dir/Eurasia/EIS-32KM/EIS-32KM_BASINS-Schmidt2025.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Regions_EIS-32KM/2.1.2/EIS-32KM_BASINS-Schmidt2025.nc"
 
 ["EIS-32KM_BASINS-Zwally2012.nc"]
 checksum = "sha256:aeb2a7af8a4ca7ce072c3ec819a170495883197bb7b6876480f5ab0a5477c2e4"
+previous_checksums = ["sha256:cd9a26cdb737ea1823006ac2b5965b25100da09aa0cde7e4594419dffb4f7efc", "sha256:49c0cf499811815ca7ae1710e8e8319796a22a0c2555c6735d62f4fbe75859bb"]
 size = 27063
 storage_path = "$datasets_dir/Eurasia/EIS-32KM/EIS-32KM_BASINS-Zwally2012.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Regions_EIS-32KM/2.1.2/EIS-32KM_BASINS-Zwally2012.nc"
 
 ["EIS-32KM_REGIONS.nc"]
 checksum = "sha256:b2c43796d301f12761055fdff5c4124a9ad6b6a79990a656da2cc657cf663e53"
+previous_checksums = ["sha256:459cf25586f13ed920db8964c53da3cea8b1587bd41478f3a1e960099b940941", "sha256:da87e3a8a627b70fc86af6182999e8aeab445ef5e72af27393403b4c8e7d5ca9"]
 size = 106264
 storage_path = "$datasets_dir/Eurasia/EIS-32KM/EIS-32KM_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Regions_EIS-32KM/2.1.2/EIS-32KM_REGIONS.nc"
@@ -98,24 +110,28 @@ uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/E
 
 ["EIS-4KM_BASINS-Mouginot2019.nc"]
 checksum = "sha256:bc91fbcad2b2d54636c9cc7a8302f677265b0a9e09bfdfae71e22b585f8f8470"
+previous_checksums = ["sha256:c7138ef1bd66dee07c50aa7f5bf87f10d4b792c5bb54bb780c40b1736fc3fb84", "sha256:a5211013738dd4799af1d463107efe50cd2a2ba12c80df46c37701331a687c18"]
 size = 133946
 storage_path = "$datasets_dir/Eurasia/EIS-4KM/EIS-4KM_BASINS-Mouginot2019.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Regions_EIS-4KM/2.1.2/EIS-4KM_BASINS-Mouginot2019.nc"
 
 ["EIS-4KM_BASINS-Schmidt2025.nc"]
 checksum = "sha256:974e4e5f973be3b9ec301d43919418f5a25da5611149574b056082de87bfc4dc"
+previous_checksums = ["sha256:6f173024ef547c461756d5bf3659664b9eb35c875eab624caed5f5a6b40dfeaf", "sha256:0137b9c4b7c426c9a107171c5ec0f59e4fca354186025bd6bcc4815b1aa968b0"]
 size = 86558
 storage_path = "$datasets_dir/Eurasia/EIS-4KM/EIS-4KM_BASINS-Schmidt2025.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Regions_EIS-4KM/2.1.2/EIS-4KM_BASINS-Schmidt2025.nc"
 
 ["EIS-4KM_BASINS-Zwally2012.nc"]
 checksum = "sha256:9ee3e95cd11c7c12e293746fd4da18b11428fbc7ff359e79527c1afc139e5bc2"
+previous_checksums = ["sha256:24a56107b5e482b63b535f422dfd81309dcc6bca6006123cab94879e85959f35", "sha256:58bf12863103e55e7b1a63406f29b1797f28a12423f518740eae07f00e77aae7"]
 size = 126332
 storage_path = "$datasets_dir/Eurasia/EIS-4KM/EIS-4KM_BASINS-Zwally2012.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Regions_EIS-4KM/2.1.2/EIS-4KM_BASINS-Zwally2012.nc"
 
 ["EIS-4KM_REGIONS.nc"]
 checksum = "sha256:9733caa0cb1b5074499da66d802a868c1e233b28e43254a4d5f12205312e8411"
+previous_checksums = ["sha256:09c23da4d6dbdfa36fbfe1c3438813e2b95974266ff407e89f03da583e2d0fb1", "sha256:9bb999d17d5fa318e8624aadb976170890c86052d1f606e68cb64f75b5f4537f"]
 size = 2917242
 storage_path = "$datasets_dir/Eurasia/EIS-4KM/EIS-4KM_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Regions_EIS-4KM/2.1.2/EIS-4KM_REGIONS.nc"
@@ -128,24 +144,28 @@ uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/E
 
 ["EIS-8KM_BASINS-Mouginot2019.nc"]
 checksum = "sha256:09ce2bcd792e6fac50407798ceb7346ccddf8df2236d557af6ada0f9a01e193d"
+previous_checksums = ["sha256:ab940898c8293fd7421659defd3467430e11d1199fd857710be13d0f6e54f14a", "sha256:fa35e2ab6ce50b7ebc5ceed3cfd3eb364048a38c8c116b7740579adea8191e68"]
 size = 57406
 storage_path = "$datasets_dir/Eurasia/EIS-8KM/EIS-8KM_BASINS-Mouginot2019.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Regions_EIS-8KM/2.1.2/EIS-8KM_BASINS-Mouginot2019.nc"
 
 ["EIS-8KM_BASINS-Schmidt2025.nc"]
 checksum = "sha256:67f25b8b87a7021b7439cdb03b94d2b00764b25e287f8e89438657b57106c9b5"
+previous_checksums = ["sha256:ebb8a76ea795adafae732b484e191c957d28afe46b74616ac2a60558af9a7369", "sha256:5dd3900af44fd80ddccb0c6b56c3c8c324be3aed3c6486338313a8b1e125c6ec"]
 size = 42227
 storage_path = "$datasets_dir/Eurasia/EIS-8KM/EIS-8KM_BASINS-Schmidt2025.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Regions_EIS-8KM/2.1.2/EIS-8KM_BASINS-Schmidt2025.nc"
 
 ["EIS-8KM_BASINS-Zwally2012.nc"]
 checksum = "sha256:27ac0088e4b2f5d9f094d840d60bad4514c3d788a8485cce7ea740a2365d685f"
+previous_checksums = ["sha256:ad467f18a0ed975cbcaa89fb63f3fa855ce4e6f25ed93c2348236482af760e57", "sha256:1aff212b8475b6662e90599d6dae775083a7bac33323e8fbdb9eb22d3c5df595"]
 size = 52640
 storage_path = "$datasets_dir/Eurasia/EIS-8KM/EIS-8KM_BASINS-Zwally2012.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Regions_EIS-8KM/2.1.2/EIS-8KM_BASINS-Zwally2012.nc"
 
 ["EIS-8KM_REGIONS.nc"]
 checksum = "sha256:f1b21f8bea85724b282f37c5e17c2f87a71440ca893073257d4e325a6f340360"
+previous_checksums = ["sha256:e654cfb33fc811eb0ee661d0ed64312829eff779e1f7a49c4d6fd4085636e9d0", "sha256:dab17c36c58a3c30dbd0cf0dc439295ad689dfa98d38be72137ee3d0ea09eb01"]
 size = 930120
 storage_path = "$datasets_dir/Eurasia/EIS-8KM/EIS-8KM_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Regions_EIS-8KM/2.1.2/EIS-8KM_REGIONS.nc"

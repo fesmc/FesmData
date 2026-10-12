@@ -8,18 +8,21 @@ version = "2.1.0"
 
 ["GRL-16KM_SMB-MARv3.14-1981-2010.nc"]
 checksum = "sha256:ffcb7b796fd6c7c1241e0def1cdf20c0a847fe126def88b9940e736f2d4312cb"
+previous_checksums = ["sha256:9a5693b913c8799776196981da30b6ecd8a230270c6e4147f720ae0d94ccf6d4"]
 size = 2785473
 storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_SMB-MARv3.14-1981-2010.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_SMB_GRL-16KM/2.1.0/GRL-16KM_SMB-MARv3.14-1981-2010.nc"
 
 ["GRL-16KM_SMB-MARv3.14-1991-2020.nc"]
 checksum = "sha256:370f300ca9dfad9a6f952408df7cf3586a10147dbe0d395121b9131ba3912e88"
+previous_checksums = ["sha256:ffb065c7bc293782f1c87dce4bf663b9d334db6ba618c8050ca6df8c489d2a57"]
 size = 2802918
 storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_SMB-MARv3.14-1991-2020.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_SMB_GRL-16KM/2.1.0/GRL-16KM_SMB-MARv3.14-1991-2020.nc"
 
 ["GRL-16KM_SMB-MARv3.14-annual.nc"]
 checksum = "sha256:cfe5875baa980c2879dc66169d772180d55a03483bb660488dc15cc532c541d0"
+previous_checksums = ["sha256:bb3ea54ce09c83662b6779aa6ee5ec7d3f421d439984dabe88e43c6893b40b71"]
 size = 21131044
 storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_SMB-MARv3.14-annual.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_SMB_GRL-16KM/2.1.0/GRL-16KM_SMB-MARv3.14-annual.nc"
@@ -32,12 +35,14 @@ uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/G
 
 ["GRL-1KM_SMB-MARv3.14-1981-2010.nc"]
 checksum = "sha256:be6b085cc458716be57d2129a9f6f717db213d11bc5ce8287f124e0d701bffb9"
+previous_checksums = ["sha256:94a5061b5e43edee44df50610572236029d4b26b92725208aa91d5cb96b84242"]
 size = 497035550
 storage_path = "$datasets_dir/Greenland/GRL-1KM/GRL-1KM_SMB-MARv3.14-1981-2010.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_SMB_GRL-1KM/2.1.0/GRL-1KM_SMB-MARv3.14-1981-2010.nc"
 
 ["GRL-1KM_SMB-MARv3.14-1991-2020.nc"]
 checksum = "sha256:8c0dfa402f70eca4cfc69ed90c2f2cc8c3f10984db43c8a443bc3d823da21c30"
+previous_checksums = ["sha256:33920218d46aef86b6993ca48dbf04b97ee576d5845b581bbd9e159647bdf34a"]
 size = 500258324
 storage_path = "$datasets_dir/Greenland/GRL-1KM/GRL-1KM_SMB-MARv3.14-1991-2020.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_SMB_GRL-1KM/2.1.0/GRL-1KM_SMB-MARv3.14-1991-2020.nc"
@@ -50,12 +55,14 @@ uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/G
 
 ["GRL-2KM_SMB-MARv3.14-1981-2010.nc"]
 checksum = "sha256:dc71bfda24f32813808a7f7e9e7da7d776e72b34db9a9bffab34a68b26e357a1"
+previous_checksums = ["sha256:eb85f2d713be347382e5ffce15e61a9c736c1eabfbe68ac903151abf2ca40fb6"]
 size = 134175679
 storage_path = "$datasets_dir/Greenland/GRL-2KM/GRL-2KM_SMB-MARv3.14-1981-2010.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_SMB_GRL-2KM/2.1.0/GRL-2KM_SMB-MARv3.14-1981-2010.nc"
 
 ["GRL-2KM_SMB-MARv3.14-1991-2020.nc"]
 checksum = "sha256:3d67ebfc4276ecba42e7849d1125b6fe36addad3821798210f64280283aafca1"
+previous_checksums = ["sha256:2b4879d2bd3f53de6a9c1468e2b66c9b252d2aa677b538a432289bf457f45f01"]
 size = 135071425
 storage_path = "$datasets_dir/Greenland/GRL-2KM/GRL-2KM_SMB-MARv3.14-1991-2020.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_SMB_GRL-2KM/2.1.0/GRL-2KM_SMB-MARv3.14-1991-2020.nc"
@@ -68,18 +75,21 @@ uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/G
 
 ["GRL-32KM_SMB-MARv3.14-1981-2010.nc"]
 checksum = "sha256:de50afd7af040153d00b6a3d070631739be17e6b972ff3e27f508f54877a0c98"
+previous_checksums = ["sha256:2f556c8bebb49e4fa5c950a5bc7abf9b4f52cd1b6eb0895b1965e4f5ef429e65"]
 size = 873524
 storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_SMB-MARv3.14-1981-2010.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_SMB_GRL-32KM/2.1.0/GRL-32KM_SMB-MARv3.14-1981-2010.nc"
 
 ["GRL-32KM_SMB-MARv3.14-1991-2020.nc"]
 checksum = "sha256:ac645115a701fe29046604c0e0df5945f5f5457c018a97488a44ab4f169fd8f9"
+previous_checksums = ["sha256:b9f691be51ee78591d10b115cbaa2573b0a79a16e57d2d84ebd7a290a6561129"]
 size = 877166
 storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_SMB-MARv3.14-1991-2020.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_SMB_GRL-32KM/2.1.0/GRL-32KM_SMB-MARv3.14-1991-2020.nc"
 
 ["GRL-32KM_SMB-MARv3.14-annual.nc"]
 checksum = "sha256:dad9bc54d32cbf1969de3c30398322950210c6d3b9393e8272600aaee7dc0c4f"
+previous_checksums = ["sha256:48e1b1924c118bef85d92077b0c0c1b3ff77f4e993a30fe976ba756b3a657793"]
 size = 5771836
 storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_SMB-MARv3.14-annual.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_SMB_GRL-32KM/2.1.0/GRL-32KM_SMB-MARv3.14-annual.nc"
@@ -92,12 +102,14 @@ uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/G
 
 ["GRL-4KM_SMB-MARv3.14-1981-2010.nc"]
 checksum = "sha256:bc7599fac2fbc001443052b8c7f857b6295de38fd6e70947b9b3a6f704fa403d"
+previous_checksums = ["sha256:0f9891a15b72c45bf6a21a315399f53b3b81918d95d3c0c89752a1b0cd8e20a9"]
 size = 36680550
 storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_SMB-MARv3.14-1981-2010.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_SMB_GRL-4KM/2.1.0/GRL-4KM_SMB-MARv3.14-1981-2010.nc"
 
 ["GRL-4KM_SMB-MARv3.14-1991-2020.nc"]
 checksum = "sha256:ca30a3e672298648f552bec49f426c8a196836870da5cf9f91bf672f8ec6daa6"
+previous_checksums = ["sha256:8b2839c73c8cf15430d409f594046db2b5774f88efaa36a910df7cd111b6e202"]
 size = 36909424
 storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_SMB-MARv3.14-1991-2020.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_SMB_GRL-4KM/2.1.0/GRL-4KM_SMB-MARv3.14-1991-2020.nc"
@@ -110,18 +122,21 @@ uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/G
 
 ["GRL-8KM_SMB-MARv3.14-1981-2010.nc"]
 checksum = "sha256:aa3cebe80afab92e12720964fedabff25b776ccca361edf46c988a45ba66a496"
+previous_checksums = ["sha256:b86f6948cf6d04aeec38936b5d2fea2f65d9d21cdd5734a78e981b2e5680158a"]
 size = 9746510
 storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_SMB-MARv3.14-1981-2010.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_SMB_GRL-8KM/2.1.0/GRL-8KM_SMB-MARv3.14-1981-2010.nc"
 
 ["GRL-8KM_SMB-MARv3.14-1991-2020.nc"]
 checksum = "sha256:3f227977b30e5c9fe0825fffd542038cbf669e6a2456f00a619fc137ad4d0df7"
+previous_checksums = ["sha256:67d9b12638d3868b58f8043433df19449dd218893160e06e09951c3e3b063992"]
 size = 9807512
 storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_SMB-MARv3.14-1991-2020.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_SMB_GRL-8KM/2.1.0/GRL-8KM_SMB-MARv3.14-1991-2020.nc"
 
 ["GRL-8KM_SMB-MARv3.14-annual.nc"]
 checksum = "sha256:866c54e83ebee9c01e020904a603e0d68a3a8b99f3d474721858e016efe7c1bd"
+previous_checksums = ["sha256:069c8794393ee6567ce5433dde01f23e2f515fccd0adad69b9a1d3058534af62"]
 size = 76378589
 storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_SMB-MARv3.14-annual.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_SMB_GRL-8KM/2.1.0/GRL-8KM_SMB-MARv3.14-annual.nc"
