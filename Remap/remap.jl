@@ -19,12 +19,32 @@ const COPIED_ATTRIB = ("title", "references", "doi", "license", "institution", "
 const COPIED_VARATTRIB = ("units", "long_name", "standard_name", "comment")
 
 """
+    RegionField
+
+A field of a prepared file given by region rather than on the grid: one value per
+region of a Regions product (e.g. a mean over each drainage basin). In the file, a
+float variable on one dimension, whose coordinate variable holds the region numbers,
+with the attribute `regions`, the Regions product (e.g. "BASINS-Zwally2012"): on each
+grid, every cell gets the value of its region in `<GRID>_<regions>.nc`, the field of
+that file named as the dimension (e.g. `basin`), see `region_field`.
+"""
+struct RegionField
+    name::String
+    regions::String                         # Regions product, e.g. BASINS-Zwally2012
+    label::String                           # its field of region numbers, e.g. basin
+    ids::Vector{Int}
+    values::Vector{Float32}
+    varattrib::Vector{Pair{String,Any}}
+end
+
+"""
     Prepared
 
 The fields of a prepared file on their grid (`LonLatGrid` or `ProjGrid`), with their
 extra dimensions (e.g. month, depth), the vector fields among them, their attributes
 and the global attributes of the file. A field has size `(nx, ny, extra...)`: Float32
-with NaN as missing, or integer (with `missing`).
+with NaN as missing, or integer (with `missing`). The fields given by region instead
+(see `RegionField`) are apart.
 """
 struct Prepared
     path::String
@@ -35,6 +55,7 @@ struct Prepared
     varattrib::Dict{String,Vector{Pair{String,Any}}}
     attrib::Vector{Pair{String,String}}
     aux::Vector{AuxVar}                     # variables on extra dimensions only (e.g. labels)
+    regional::Vector{RegionField}           # fields given by region
 end
 
 const LON_UNITS = ("degrees_east", "degree_east", "degree_e", "degrees_e", "degreee", "degreese")
@@ -121,8 +142,22 @@ function _grid_vars(ds, path)
     return coords, xdim, ydim, ongrid
 end
 
-"Names of the fields of a prepared file (the variables on its grid)."
-prepared_fields(path::AbstractString) = NCDataset(ds -> _grid_vars(ds, path)[4], path)
+# Fields of a prepared file given by region (see `RegionField`): float variables on one
+# dimension with a coordinate variable, with the attribute `regions`.
+function _region_vars(ds)
+    names = String[]
+    for (name, v) in ds
+        dn = dimnames(v)
+        (length(dn) == 1 && dn[1] != name && haskey(v.attrib, "regions")) || continue
+        haskey(ds, dn[1]) && dimnames(ds[dn[1]]) == (dn[1],) ||
+            error("$name: its dimension $(dn[1]) has no coordinate variable (the region numbers)")
+        push!(names, name)
+    end
+    return names
+end
+
+"Names of the fields of a prepared file (the variables on its grid, and those given by region)."
+prepared_fields(path::AbstractString) = NCDataset(ds -> vcat(_grid_vars(ds, path)[4], _region_vars(ds)), path)
 
 """
     read_prepared(path; vars=nothing) -> Prepared
@@ -135,15 +170,20 @@ latitudes may be unevenly spaced (e.g. a Gaussian grid; their cell edges are tak
 from a CF `bounds` variable if there is one). Fields may
 have extra dimensions (with or without coordinate variables), and may be integer.
 Vector fields are pairs with the standard names `eastward_*` and `northward_*`.
-Missing values (_FillValue, NaN) become NaN, or `missing` in integer fields.
+Missing values (_FillValue, NaN) become NaN, or `missing` in integer fields. Fields
+given by region (see `RegionField`) are read too, but at least one field must be on the
+grid.
 """
 function read_prepared(path::AbstractString; vars=nothing)
     NCDataset(path) do ds
         coords, xdim, ydim, ongrid = _grid_vars(ds, path)
-        selected = vars === nothing ? ongrid : collect(String, vars)
-        for name in selected
-            name in ongrid || error("$path: no field $name on the grid, available: $(join(ongrid, ", "))")
+        byregion = _region_vars(ds)
+        chosen = vars === nothing ? vcat(ongrid, byregion) : collect(String, vars)
+        for name in chosen
+            name in ongrid || name in byregion ||
+                error("$path: no field $name, available: $(join(vcat(ongrid, byregion), ", "))")
         end
+        selected = filter(in(ongrid), chosen)
         isempty(selected) && error("$path: no fields on the grid")
 
         # Grid, and the reordering of the data to ascending axes
@@ -175,9 +215,21 @@ function read_prepared(path::AbstractString; vars=nothing)
             varattrib[name] = [k => v.attrib[k] for k in keys_ if haskey(v.attrib, k)]
         end
         attrib = [k => string(ds.attrib[k]) for k in COPIED_ATTRIB if haskey(ds.attrib, k)]
+        regional = [_region_field(ds, name) for name in filter(in(byregion), chosen)]
         return Prepared(abspath(path), grid, fields, dims, _vectors(path, fields, dims, varattrib), varattrib, attrib,
-                        _aux(ds, dims))
+                        _aux(ds, dims), regional)
     end
+end
+
+# Field `name` of a prepared file given by region (see `RegionField`)
+function _region_field(ds, name)
+    v = ds[name]
+    label = dimnames(v)[1]
+    nonmissingtype(eltype(v)) <: AbstractFloat || error("$name: a field given by region must be float")
+    ids = Int.(ds[label][:])
+    allunique(ids) || error("$name: the region numbers of $label are not unique")
+    return RegionField(name, string(v.attrib["regions"]), label, ids, Float32.(nomissing(v[:], NaN)),
+                       [k => v.attrib[k] for k in COPIED_VARATTRIB if haskey(v.attrib, k)])
 end
 
 # Variables on extra dimensions of the fields only (e.g. label(time)), other than the
@@ -618,6 +670,41 @@ function _per_field!(fields, dims, varattrib, A::AbstractDict, pdims, name, attr
 end
 
 # ---------------------------------------------------------------------------
+# Fields given by region
+# ---------------------------------------------------------------------------
+
+"""
+    region_field(og, r::RegionField) -> Matrix{Float32}
+
+Field `r` on grid `og`: each cell gets the value of its region, the field `r.label`
+(e.g. `basin`) of the Regions product `r.regions` on the grid (`<GRID>_<regions>.nc` in
+its output folder). Cells outside the regions (e.g. the open ocean, beyond the extent of
+the basins) get the nearest region (`extend_labels`, by distance along the grid), so that
+the field covers the whole grid; regions without a value in `r` are missing.
+"""
+function region_field(og::OutGrid, r::RegionField)
+    path = remap_file(og, r.regions)
+    isfile(path) || error("$(og.grid.name): no $path, the regions of $(r.name): make Regions first")
+    L = NCDataset(path) do ds
+        haskey(ds, r.label) || error("$path: no $(r.label)")
+        Int.(coalesce.(ds[r.label][:, :], 0))
+    end
+    size(L) == size(og.grid) || error("$path: $(r.label) has size $(size(L)), not that of $(og.grid.name)")
+    L[L .< 0] .= 0
+    dx, dy = og.grid isa ProjGrid ? spacing(og.grid) : (1.0, 1.0)
+    L = extend_labels(L, trues(size(L)), dx, dy)
+    value = Dict(zip(r.ids, r.values))
+    return map(l -> get(value, l, NaN32), L)
+end
+
+"Attributes of a field given by region on the grids."
+region_attrib(r::RegionField) = vcat(filter(p -> first(p) != "comment", r.varattrib), [
+    "regions" => r.regions,
+    "comment" => join(filter(!isempty, [string(get(Dict(r.varattrib), "comment", "")),
+        "one value per region: the value of the region ($(r.label) of $(r.regions)) of each cell; cells " *
+        "outside the regions get the nearest region"]), "; ")])
+
+# ---------------------------------------------------------------------------
 # Gaps filled
 # ---------------------------------------------------------------------------
 
@@ -748,6 +835,9 @@ function remap_prepared(ps::AbstractVector{Prepared}, grids::Vector{OutGrid}; na
     method in METHODS || error("unknown method $method, available: $(join(METHODS, ", "))")
     pf = PreparedFields(ps)
     fill === nothing || check_fill(pf, fill)
+    regional = [r for p in ps for r in p.regional]
+    allunique(r -> r.name, regional) && !any(r -> r.name in pf.names, regional) ||
+        error("fields given by region in several files, or also on the grid")
     paths = String[]
     names = pf.names
     sources = join(basename.(getfield.(ps, :path)), ", ")
@@ -789,6 +879,11 @@ function remap_prepared(ps::AbstractVector{Prepared}, grids::Vector{OutGrid}; na
         length(ps) > 1 && push!(attrib, "combined" => "fields of several files covering separate areas merged: " *
                                                        "their contributions (value x covered fraction) summed, " *
                                                        "f_valid the sum of the covered fractions, at most 1")
+        for r in regional
+            fields[r.name] = region_field(og, r)
+            dims[r.name] = Dim[]
+            varattrib[r.name] = region_attrib(r)
+        end
         if filled !== nothing
             _per_field!(fields, dims, varattrib, filled, pf.dims, "mask_fill", f -> mask_fill_attrib(fill, f))
             push!(attrib, "gap_fill" => "$(join(fill.variables, ", ")): harmonic interpolation $(fill_where(fill)) " *
@@ -939,7 +1034,8 @@ function make_product(p::RemapProduct, grids::Vector{OutGrid}; tag::AbstractStri
     files = prepared_files(p)
     all(isfile, files) || run_prepare(p.source)
     preps = read_prepared_files(files; vars=p.variables)
-    println("$(product_name(p)): $(join(PreparedFields(preps).names, ", ")) from $(p.source) " *
+    names = vcat(PreparedFields(preps).names, [r.name for q in preps for r in q.regional])
+    println("$(product_name(p)): $(join(names, ", ")) from $(p.source) " *
             (length(files) > 1 ? "($(length(files)) files) " : "") * "onto $(length(grids)) grids")
     return remap_prepared(preps, grids; name=product_name(p), method=p.method, smooth=p.smooth, dataset=tag,
                           overwrite, strict=true, fill=p.fill)
@@ -1034,7 +1130,8 @@ function remap_command(args; vars=nothing, name=nothing, method=nothing, smooth=
     meth = something(method, "con")
     p = read_prepared(path; vars)
     nm = name === nothing ? splitext(basename(path))[1] : name
-    println("$(basename(path)): $(join(sort(collect(keys(p.fields))), ", ")) on a $(_describe(p.grid))")
+    println("$(basename(path)): $(join(vcat(sort(collect(keys(p.fields))), [r.name for r in p.regional]), ", ")) " *
+            "on a $(_describe(p.grid))")
     println("Remapping onto $(length(grids)) grids as <GRID>_$(nm).nc")
     return remap_prepared(p, grids; name=nm, method=meth, smooth=sm, overwrite)
 end

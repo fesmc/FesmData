@@ -49,6 +49,17 @@ A prepared file is a NetCDF file with:
   northward components, marked by the standard names `eastward_<name>` and
   `northward_<name>` (e.g. `eastward_land_ice_surface_velocity`), never by their
   components along the axes of a projected source grid;
+- optionally, **fields given by region**, one value per region of a Regions product
+  (e.g. melt rates averaged over each drainage basin): a float variable on one
+  dimension whose coordinate variable holds the region numbers, with `units`,
+  `long_name` and the attribute `regions`, the Regions product (e.g.
+  `bmelt_basin(basin)`, `regions = "BASINS-Zwally2012"`, `basin` = 1, ..., 27). On each
+  grid, every cell gets the value of its region, the field named as the dimension
+  (`basin`) in `<GRID>_<regions>.nc` (Regions must be made first); the cells outside the
+  regions (e.g. the open ocean beyond the shelf break, where the basins end) get the
+  nearest region (FesmUtils `extend_labels`), so the field covers the whole grid and is
+  constant over each region. They have no `f_valid` and are not filled or smoothed. A
+  prepared file needs at least one field on its grid;
 - **global attributes** `title`, `references`, `license` and, where there is one,
   `doi` (copied to the remapped files).
 
