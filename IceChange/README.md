@@ -33,10 +33,11 @@ Smith et al. (2020) give over floating ice only thickness changes, so `dzdt` of
 the floating ice, which are on 5 km grids of their own in the source and are combined on
 each grid (see `Remap/README.md`): where a cell has both, `dHdt` is their mean weighted
 by the area of each. Greenland has no `dHdt`, as Smith et al. (2020) have no firn
-correction there. On the grids, the surface elevation change of the grounded ice of
-Antarctica adds up to -130 km3 yr-1 and its thickness change to -127 km3 yr-1 (-116 Gt yr-1
-of ice; Smith et al., 2020: -118 Gt yr-1), the surface elevation change of Greenland to
--250 km3 yr-1. See `Smith2020_dzdt/README.md`.
+correction there. There are no data south of about 86°S (not covered by ICESat).
+Integrated over the ice, the surface elevation change of the grounded ice of Antarctica
+is -130 km3 yr-1, its thickness change -127 km3 yr-1 (-116 Gt yr-1 of ice; Smith et al.,
+2020: -118 Gt yr-1) and that of the floating ice +16 km3 yr-1; the surface elevation
+change of Greenland is -250 km3 yr-1. See `Smith2020_dzdt/README.md`.
 
 Each file also has `f_valid`, the fraction of each cell covered by the source
 (`f_valid_<field>` where the fields differ). The fields are remapped conservatively,

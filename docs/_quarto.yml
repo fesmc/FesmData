@@ -38,6 +38,8 @@ website:
             href: datasets/sediment.qmd
           - text: "Velocity — ice surface velocity"
             href: datasets/velocity.qmd
+          - text: "IceChange — observed ice sheet change"
+            href: datasets/icechange.qmd
           - text: "IceHistory — paleo ice sheets"
             href: datasets/icehistory.qmd
           - text: "Stratigraphy — age structure"

@@ -24,7 +24,7 @@ source = "Smith2020_dzdt"
 file = ["Smith2020_ANT.nc", "Smith2020_ANT_floating.nc"]   # grounded, floating ice
 variables = ["dzdt", "dHdt"]
 grids = { Antarctica = 4 }
-figure = { colormap = "balance", colorrange = [-2, 2] }
+figure = { variables = ["dzdt", "dHdt"], colormap = "balance", colorrange = [-2, 2] }
 
 [products.Smith2020-GRL]
 source = "Smith2020_dzdt"
