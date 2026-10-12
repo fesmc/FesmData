@@ -8,9 +8,16 @@ model of Earth's crust, Geophys. Res. Abstr., 15, EGU2013-2658, 2013,
 <https://igppweb.ucsd.edu/~gabi/crust1.html>.
 
 CRUST1.0 has three sediment layers (upper, middle and lower sediments). Its sediments
-follow the global sediment map of Laske and Masters (1997), used for the v1 product
-SED-L97: on the 16 km grids of Antarctica, Greenland and the Laurentide domain the two
-agree closely (correlation 0.98-0.99, same mean).
+are the global sediment map of Laske and Masters (1997), used for the v1 product SED-L97:
+
+Laske, G. and Masters, G.: A Global Digital Map of Sediment Thickness, EOS Trans. AGU,
+78, F483, 1997, <https://igppweb.ucsd.edu/~gabi/sediment.html>.
+
+The original map (`sediment.tar.gz` from <http://igpppublic.ucsd.edu/~gabi/ftp/>, with
+the total thickness `sedmap.map` and the layers `map1.thk1-3` in km on the same 1x1°
+grid) agrees with `crust1.bnds` in every cell to within 0.01 km, the rounding of the
+stored values, for the total thickness and each layer (checked 2026-10-12). It is
+therefore not a separate source here: `Sediment-CRUST1` replaces SED-L97.
 
 ## Licence
 

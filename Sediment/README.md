@@ -9,7 +9,7 @@ grids. Sediment is a thematic dataset made by remapping (see Bring your own data
 
 | Product | Source | Fields | Domains |
 |---|---|---|---|
-| `Sediment-CRUST1` | Laske et al. (2013): CRUST1.0, 1° global crustal model, land and ocean ([igppweb.ucsd.edu/~gabi/crust1.html](https://igppweb.ucsd.edu/~gabi/crust1.html)); its sediments are essentially those of Laske and Masters (1997), the v1 product SED-L97 | `z_sed` (total), `z_sed_upper`, `z_sed_middle`, `z_sed_lower` (layers) | Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Eurasia, Global |
+| `Sediment-CRUST1` | Laske et al. (2013): CRUST1.0, 1° global crustal model, land and ocean ([igppweb.ucsd.edu/~gabi/crust1.html](https://igppweb.ucsd.edu/~gabi/crust1.html)); its sediments are those of Laske and Masters (1997), the global sediment map of the v1 product SED-L97, which it replaces | `z_sed` (total), `z_sed_upper`, `z_sed_middle`, `z_sed_lower` (layers) | Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Eurasia, Global |
 | `Sediment-GlobSed` | Straume et al. (2019): GlobSed v3, 5' total sediment thickness of the oceans (missing on land), [doi:10.1029/2018GC008115](https://doi.org/10.1029/2018GC008115) | `z_sed` | Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Eurasia, Global |
 | `Sediment-ECM1` | Mooney et al. (2023): ECM1, 1° global crustal model, land and ocean, [doi:10.1016/j.earscirev.2023.104493](https://doi.org/10.1016/j.earscirev.2023.104493); the v1 product SED-M23 | `z_sed` (total), `z_sed_upper`, `z_sed_middle`, `z_sed_lower` (layers) | Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Eurasia, Global |
 | `Sediment-ANTASed` | Baranov et al. (2021): ANTASed, 0.1° (11 km) map of the Antarctic continent (grounded ice and ice shelves, missing in the ocean), [doi:10.3389/feart.2021.722699](https://doi.org/10.3389/feart.2021.722699) | `z_sed` | Antarctica |
@@ -17,7 +17,12 @@ grids. Sediment is a thematic dataset made by remapping (see Bring your own data
 
 Each file `<GRID>_Sediment-<Source>.nc` also has `f_valid`, the fraction of each cell
 covered by the source. Each source is remapped conservatively; on grids finer than the
-source it is then smoothed with a Gaussian of half the source spacing. The classes of
+source it is then smoothed with a Gaussian of half the source spacing. CRUST1.0 contains the sediment map of Laske and Masters (1997) (A Global Digital Map of
+Sediment Thickness, EOS Trans. AGU, 78, F483;
+[igppweb.ucsd.edu/~gabi/sediment.html](https://igppweb.ucsd.edu/~gabi/sediment.html))
+unchanged: on its 1° grid, the total thickness and the three layers agree with the
+original files (`sedmap.map`, `map1.thk1-3`) to within 0.01 km, the rounding of the
+stored values. The classes of
 Gowan et al. (2019) are remapped as classes: each cell gets the class that covers most
 of it. The global attribute `remap_method` records what was done on each grid.
 
