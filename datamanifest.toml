@@ -626,6 +626,39 @@ storage_path = "$datasets_dir/nsidc0754_v1_antarctica_vel/antarctic_ice_vel_phas
 uri = "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/MEASURES/NSIDC-0754/1/1996/01/01/antarctic_ice_vel_phase_map_v01.nc"
 
 # ---------------------------------------------------------------------------
+# Ice sheet change (IceChange/)
+# ---------------------------------------------------------------------------
+
+# Smith et al. (2020): height and thickness change rates 2003-2019 from ICESat and
+# ICESat-2, GeoTIFFs at 5 km (updated archive of February 2021), UW ResearchWorks
+# (hdl.handle.net/1773/45388, CC BY 3.0 US). ResearchWorks now asks for a UW login, so
+# the archive is taken from the Internet Archive, identical to the original (sha256
+# 8d09ffcce4e84fba8cabbc85ee79fec4de36419f8b242ca1f95adacaa2f229e3).
+
+[smith2020_dhdt]
+key = "smith2020_dhdt.zip"
+doi = "10.1126/science.aaz5845"
+extract = true
+uri = "https://web.archive.org/web/20230905174517id_/https://digital.lib.washington.edu/researchworks/bitstream/handle/1773/45388/ICESat1_ICESat2_mass_change_updated_2_2021%20(1).zip;jsessionid=E3208CE7842844C33D4B315E68C336CE?sequence=4"
+
+# ICESat-2 ATL15 v6 (Smith et al., 2026): gridded land ice height change, quarterly at
+# 1 km, cycles 03-31 (2019 to April 2026): the four Antarctic quadrants (A1-A4) and
+# Greenland (GL), 13.3 GB. Manual download (NASA Earthdata login), the files below into
+# the folder.
+
+[atl15_v006]
+doi = "10.5067/ATLAS/ATL15.006"
+skip_download = true
+storage_path = "$datasets_dir/atl15_v006"
+uris = [
+    "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/ATLAS/ATL15/006/2019/01/01/ATL15_A1_0331_3mo_1km_006_02.nc",
+    "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/ATLAS/ATL15/006/2019/01/01/ATL15_A2_0331_3mo_1km_006_02.nc",
+    "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/ATLAS/ATL15/006/2019/01/01/ATL15_A3_0331_3mo_1km_006_02.nc",
+    "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/ATLAS/ATL15/006/2019/01/01/ATL15_A4_0331_3mo_1km_006_02.nc",
+    "https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/ATLAS/ATL15/006/2019/01/01/ATL15_GL_0331_3mo_1km_006_01.nc",
+]
+
+# ---------------------------------------------------------------------------
 # Stratigraphy (Stratigraphy/)
 # ---------------------------------------------------------------------------
 

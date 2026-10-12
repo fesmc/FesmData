@@ -1,0 +1,34 @@
+# Observed recent change of the ice sheets (thematic dataset, see ../Remap/README.md).
+# Products are written as <GRID>_IceChange-<name>.nc on their `grids`; see
+# ../GHF/remap.toml for the options. The dataset and its release tag are in
+# ../Publish/datasets.toml. The products are by ice sheet (-ANT, -GRL), each source
+# having its own grid for each. Smith2020-ANT combines the grounded and floating ice,
+# on grids of their own: dzdt of the grounded ice, dHdt of both.
+
+[products.ATL15-ANT]
+source = "ATL15_dzdt"
+file = "ATL15_ANT.nc"
+variables = ["dzdt"]
+grids = { Antarctica = 4 }
+figure = { colormap = "balance", colorrange = [-2, 2] }
+
+[products.ATL15-GRL]
+source = "ATL15_dzdt"
+file = "ATL15_GRL.nc"
+variables = ["dzdt"]
+grids = { Greenland = 4 }
+figure = { colormap = "balance", colorrange = [-2, 2] }
+
+[products.Smith2020-ANT]
+source = "Smith2020_dzdt"
+file = ["Smith2020_ANT.nc", "Smith2020_ANT_floating.nc"]   # grounded, floating ice
+variables = ["dzdt", "dHdt"]
+grids = { Antarctica = 4 }
+figure = { colormap = "balance", colorrange = [-2, 2] }
+
+[products.Smith2020-GRL]
+source = "Smith2020_dzdt"
+file = "Smith2020_GRL.nc"
+variables = ["dzdt"]
+grids = { Greenland = 4 }
+figure = { colormap = "balance", colorrange = [-2, 2] }

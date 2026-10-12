@@ -127,6 +127,17 @@ Surface velocity of the ice sheets from satellite observations, remapped conserv
 onto the grids of a model domain, with the components along the grid axes.
 """
 
+[IceChange]
+tag = "icechange"
+title = "observed recent change of the ice sheets"
+readme = "IceChange/README.md"
+keywords = ["elevation change", "thickness change", "ICESat-2", "altimetry", "ice sheet", "model validation"]
+description = """
+Observed recent change of the ice sheets of Antarctica and Greenland: surface elevation
+and ice thickness change rates from satellite laser altimetry (ICESat-2, and ICESat to
+ICESat-2), remapped conservatively onto the grids of a model domain.
+"""
+
 [SMB]
 tag = "smb"
 title = "surface mass balance and surface climate"

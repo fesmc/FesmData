@@ -43,6 +43,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | Sediment     | Sediment thickness and properties | Baranov2021_sed, Gowan2019_sed, Laske2013_crust1, Mooney2023_ecm1, Straume2019_globsed |
 | IceHistory   | Ice sheets, extents and topography of the past | Batchelor2019_NHIceMasks, Batchelor2019_PaleoMIST_lgc, Dowsett2016_prism4, Gowan2021_PaleoMIST1.0, Leger2024_PaleoGris, Margold2015_icestreams, Peltier2004_ice5g, Peltier2015_ice6g, Peltier2018_ice6gd |
 | Velocity     | Ice surface velocity | Joughin2018, Rignot2011_vel |
+| IceChange    | Observed ice sheet change: surface elevation and thickness change rates | ATL15_dzdt, Smith2020_dzdt |
 | Stratigraphy | Age structure of the ice | MacGregor2025_strat |
 | BasalMelt    | Ice-shelf basal melt rates | Rignot2013_bmelt |
 | BasalState   | Basal temperature and thermal state | Dawson2022_basalstate |
@@ -69,6 +70,7 @@ Time series, site and profile data, in `$ICE_DATA/v2/Records/<Dataset>/` (see `R
 
 | Category | Key | Description | Ref(s) |
 |----------|-----|-------------|--------|
+| ice      | ATL15_dzdt                  | Surface elevation change rate, ICESat-2 ATL15 v6 | Smith et al. (2026)            |
 | paleo    | Badgeley2020_recon          | Greenland temperature and precipitation, 20 ka to present | Badgeley et al. (2020) |
 | geo      | Bagge2021_visc              | Global 3D mantle viscosity                       | Bagge et al. (2021)            |
 | geo      | Baranov2021_sed             | Antarctic sediment thickness, ANTASed            | Baranov et al. (2021)          |
@@ -124,6 +126,7 @@ Time series, site and profile data, in `$ICE_DATA/v2/Records/<Dataset>/` (see `R
 | ocean    | Schmidtko2014_ocean         | Antarctic shelf bottom water                     | Schmidtko et al. (2014)        |
 | geo      | Schumacher2018_gps          | GPS vertical velocities (GIA uplift rates), global | Schumacher et al. (2018)     |
 | geo      | Shapiro2004_ghf             | Global geothermal heat flow                      | Shapiro & Ritzwoller (2004)    |
+| ice      | Smith2020_dzdt              | Elevation and thickness change rates, ICESat to ICESat-2 | Smith et al. (2020)    |
 | geo      | Stal2020_ghf                | Geothermal heat flow of Antarctica, Aq1          | Stål et al. (2021)             |
 | paleo    | Stokes2016_icestreams       | Laurentide ice sheet, ice-stream timing          | Stokes et al. (2016)           |
 | geo      | Straume2019_globsed         | Total sediment thickness of the oceans, GlobSed v3 | Straume et al. (2019)        |
