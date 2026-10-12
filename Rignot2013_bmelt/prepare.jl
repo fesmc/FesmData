@@ -3,7 +3,8 @@
 # $FESMDATA_WORK/prepared/Rignot2013_bmelt/Rignot2013_BMELT.nc, with the actual and
 # steady-state melt rates in m yr-1 ice equivalent (positive for melting), and their
 # means over the drainage basins (Regions basin set Zwally2012 on ANT-1KM, which must
-# be made first).
+# be made first), one value per basin, set on the grids by the basins of each grid
+# (see RegionField in ../Remap/remap.jl).
 #
 # Usage:
 #     julia --project=Rignot2013_bmelt Rignot2013_bmelt/prepare.jl
@@ -37,6 +38,10 @@ const BASIN_SET = "Zwally2012"
 const REESE_GROUPS = [[1, 2, 3], [4], [5], [6], [7, 8], [9, 10, 11], [12], [13], [14], [15, 16],
                       [17, 18, 19], [20], [21, 22], [23], [24], [25], [26], [27]]
 
+# Basins without ice-shelf cells of the source (basin 25, the northern Antarctic
+# Peninsula): their mean is taken over the ice shelves of these basins instead
+const NO_DATA_BASINS = Dict(25 => [24, 26])
+
 # Basin means: name, field averaged, groups (nothing: each basin), long name
 const BASIN_FIELDS = [
     ("bmelt_basin", "bmelt", nothing,
@@ -67,19 +72,24 @@ function source_basins(x, y)
 end
 
 """
-    basin_mean(F, B, groups) -> M
+    basin_mean(F, B, basins, groups) -> Vector{Float32}
 
-Mean of `F` (NaN outside the ice shelves) over the cells of each group of basins of `B`,
-on all cells of the group (NaN for a group without ice shelves).
+Mean of `F` (NaN outside the ice shelves) over the cells of each group of basins of `B`
+(cells of equal area), for each of `basins`: the mean of its group. A group without
+ice-shelf cells takes the mean over the basins of `NO_DATA_BASINS` instead.
 """
-function basin_mean(F, B, groups)
-    M = fill(NaN32, size(F))
+function basin_mean(F, B, basins, groups)
+    mean_over(g) = (v = F[in.(B, Ref(Set(g))) .& isfinite.(F)]; isempty(v) ? NaN : sum(Float64, v) / length(v))
+    M = Dict{Int,Float32}()
     for g in groups
-        mask = in.(B, Ref(Set(g)))
-        v = F[mask .& isfinite.(F)]
-        isempty(v) || (M[mask] .= Float32(sum(Float64, v) / length(v)))
+        m = mean_over(g)
+        if isnan(m)
+            all(in(keys(NO_DATA_BASINS)), g) || error("basins $g have no ice-shelf cells")
+            m = mean_over(unique(vcat((NO_DATA_BASINS[b] for b in g)...)))
+        end
+        foreach(b -> M[b] = Float32(m), g)
     end
-    return M
+    return [M[b] for b in basins]
 end
 
 input = get_dataset_path(manifest(), "rignot2013_melt_v2")
@@ -99,20 +109,28 @@ NCDataset(input) do src
     end
 
     B = source_basins(x[ix], y[jy])
-    basins = [[b] for b in sort(unique(B)) if b != 0]
-    for (name, field, groups, _) in BASIN_FIELDS
-        F[name] = basin_mean(F[field], B, something(groups, basins))
-    end
+    basins = [b for b in sort(unique(B)) if b != 0]
+    sort(vcat(REESE_GROUPS...)) == basins || error("the groups of bmelt_eq_reese are not the basins $basins")
+    M = Dict(name => basin_mean(F[field], B, basins, something(groups, [[b] for b in basins]))
+             for (name, field, groups, _) in BASIN_FIELDS)
 
     NCDataset(path, "c") do ds
         defVar(ds, "x", x[ix], ("x",); attrib=["units" => "m", "standard_name" => "projection_x_coordinate"])
         defVar(ds, "y", y[jy], ("y",); attrib=["units" => "m", "standard_name" => "projection_y_coordinate"])
         defVar(ds, "crs", Int32(0), (); attrib=["grid_mapping_name" => "polar_stereographic",
                                                  "proj_params" => PROJ, "epsg_code" => "EPSG:3031"])
-        for (name, long_name) in [[(n, l) for (n, _, l) in FIELDS]; [(n, l) for (n, _, _, l) in BASIN_FIELDS]]
+        for (name, _, long_name) in FIELDS
             defVar(ds, name, F[name], ("x", "y"); fillvalue=NaN32, deflatelevel=1,
                    attrib=["units" => "m yr-1", "long_name" => long_name * ", ice equivalent",
                            "grid_mapping" => "crs"])
+        end
+        # Basin means: one value per basin, set on the grids by their basins (Remap)
+        defVar(ds, "basin", Int32.(basins), ("basin",);
+               attrib=["units" => "1", "long_name" => "basin number of the Regions basin set $BASIN_SET"])
+        for (name, _, _, long_name) in BASIN_FIELDS
+            defVar(ds, name, M[name], ("basin",);
+                   attrib=["units" => "m yr-1", "long_name" => long_name * ", ice equivalent",
+                           "regions" => "BASINS-$BASIN_SET"])
         end
         ds.attrib["title"] = "Basal melt rates of Antarctic ice shelves (Rignot et al., 2013)"
         ds.attrib["references"] = "Rignot, E., Jacobs, S., Mouginot, J., and Scheuchl, B.: Ice-shelf melting " *
@@ -122,10 +140,12 @@ NCDataset(input) do src
         ds.attrib["license"] = "CC0 1.0"
         ds.attrib["comment"] = "Melt rates converted from water to ice equivalent (x $RHO_W / $RHO_I); " *
                                "cells with 0 in the original file (outside the ice shelves) are missing. " *
-                               "Basin means (*_basin, *_reese) over the ice-shelf cells of the basins of the " *
-                               "Regions basin set $BASIN_SET (ANT-1KM), extended to the nearest basin over the " *
-                               "open ocean; *_reese over the groups of basins of bm_eq_reese of FesmData v1: " *
-                               join(join.(REESE_GROUPS, "+"), ", ")
+                               "Basin means (*_basin, *_reese, one value per basin) over the ice-shelf cells " *
+                               "of the basins of the Regions basin set $BASIN_SET (ANT-1KM, extended to the " *
+                               "nearest basin over the open ocean); *_reese over the groups of basins of " *
+                               "bm_eq_reese of FesmData v1: " * join(join.(REESE_GROUPS, "+"), ", ") *
+                               "; basins without ice-shelf cells: " *
+                               join(("$b over the ice shelves of basins $(join(g, "+"))" for (b, g) in NO_DATA_BASINS), ", ")
         foreach(((k, v),) -> ds.attrib[k] = v, provenance_attrib("basalmelt"))
     end
 end

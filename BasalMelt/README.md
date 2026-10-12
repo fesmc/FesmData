@@ -13,7 +13,11 @@ domains. BasalMelt is a thematic dataset made by remapping (see Bring your own d
 | `BasalMelt-Rignot2013` | Rignot et al. (2013): 1 km basal melt rates of the Antarctic ice shelves in 2007-2008, [doi:10.5061/dryad.5hqbzkhg2](https://doi.org/10.5061/dryad.5hqbzkhg2) | `bmelt` (actual), `bmelt_ss` (steady state), m yr-1 ice equivalent, positive for melting; their means over the drainage basins (Zwally et al., 2012) `bmelt_basin`, `bmelt_eq_basin`, and `bmelt_eq_reese` over groups of them (as `bm_eq_reese` of v1) | Antarctica |
 
 Each file also has `f_valid`, the fraction of each cell covered by the source (the ice
-shelves). Fields are remapped conservatively.
+shelves). Fields are remapped conservatively. The basin means of `BasalMelt-Rignot2013`
+are one value per basin, taken on the source grid over the ice shelves of the basin
+(basin 25, without data, over those of basins 24 and 26), and set on every cell of the
+basin on each grid, the cells outside the basins (open ocean, outer cells) taking the
+nearest basin: they cover the whole grid (see `Rignot2013_bmelt/README.md`).
 
 `BasalMelt-Adusumilli2020-heights` has the height changes from which Adusumilli et al.
 (2020) derive time series of melt rates (relative to the 2010-2018 mean, their Eq. S7),

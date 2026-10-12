@@ -62,11 +62,19 @@ take one melt rate per basin (e.g. as the reference of a melt parameterisation):
   `bm_eq_reese` of the v1 product (see below).
 
 The means are taken on the source grid, over the ice-shelf cells of each basin (or
-group), and set on all its cells: the basins of ANT-1KM (whose cells include those of
-the source grid) are extended over the open ocean to the nearest basin (FesmUtils
-`extend_labels`), so the fields cover the whole source grid (x, y within 2800 km of
-the pole; the outer cells of the ANT grids, up to 3040 km, are missing). A basin without
-ice-shelf cells is missing: basin 25 (no cell of the source rates lies in it).
+group), the cells with a melt rate (of equal area, 1 km): the basins of ANT-1KM (whose
+cells include those of the source grid) are extended over the open ocean to the nearest
+basin (FesmUtils `extend_labels`), so that every cell with a rate is in a basin. Basin
+25 (the northern Antarctic Peninsula) has no cell with a rate: it takes the mean over
+the ice shelves of its neighbours, basins 24 and 26 together (also in `bmelt_eq_reese`,
+where it is a group of its own).
+
+The prepared file has one value per basin (fields on the dimension `basin`, with the
+attribute `regions = "BASINS-Zwally2012"`), and the remapping sets on each grid every
+cell to the value of its basin in `<GRID>_BASINS-Zwally2012.nc`, the cells outside the
+basins (the open ocean beyond the shelf break, the outer cells of the grid) to that of
+the nearest basin (see `Remap/README.md`): the fields are constant over each basin, the
+same 27 values on all grids, and cover the whole grid (no `f_valid`).
 
 **`bm_eq_reese` of v1.** The v1 product `BMELT-R13` was made with `gridding`
 (`src/Rignot13_BasalMelt.f90`), which writes `bm_actual_ave` and `bm_equil_ave`, the
@@ -75,7 +83,7 @@ on the target grid. `bm_eq_reese` and `bm_ac_reese` ("basin average") were added
 the files later, by an undocumented step. On ANT-16KM, `bm_eq_reese` is constant over
 groups of Zwally basins, 1-3, 7-8, 9-11, 15-16, 17-19 and 21-22 (the others alone),
 with values (rounded to 0.001) equal to `bm_equil_ave` in the basins that are not
-grouped: the v1 basin means of `bm_equil` over merged basins, presumably those of the
+grouped (`bm_ac_reese` is constant over the same groups, a mean of `bm_actual`): the v1 basin means of `bm_equil` over merged basins, presumably those of the
 basins of PICO (Reese et al., 2018), which merges Zwally basins. `bmelt_eq_reese`
 uses these groups, with the rates of version 2 and means on the source grid
 (m yr-1):
@@ -83,7 +91,7 @@ uses these groups, with the rates of version 2 and means on the source grid
 | Zwally basins | 1-3 | 4 | 5 | 6 | 7-8 | 9-11 | 12 | 13 | 14 | 15-16 | 17-19 | 20 | 21-22 | 23 | 24 | 25 | 26 | 27 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | `bm_eq_reese` (v1) | 0.251 | 0.279 | 0.564 | 0.605 | 2.502 | 0.604 | 1.367 | 4.800 | -0.136 | 1.130 | 0.077 | 2.042 | 7.650 | 2.699 | 2.630 | 2.437 | 0.157 | 0.516 |
-| `bmelt_eq_reese` | 0.239 | 0.412 | 0.431 | 0.562 | 3.851 | 0.496 | 1.335 | 5.758 | 1.028 | 1.190 | 0.071 | 2.139 | 12.155 | 2.066 | 2.341 | - | 0.307 | 0.865 |
+| `bmelt_eq_reese` | 0.239 | 0.412 | 0.431 | 0.562 | 3.851 | 0.496 | 1.335 | 5.758 | 1.028 | 1.190 | 0.071 | 2.139 | 12.155 | 2.066 | 2.341 | 1.195 (24 and 26) | 0.307 | 0.865 |
 
 The largest differences (Amundsen Sea, 21-22; 7-8; 14; 25) come from the rates of
 version 2 (up to 153 m yr-1 at steady state, 118 in the earlier file) and from the
