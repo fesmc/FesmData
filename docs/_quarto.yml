@@ -5,17 +5,18 @@ project:
     - "index.qmd"
     - "download.qmd"
     - "products.qmd"
-    - "datasets.qmd"
-    - "records_overview.qmd"
     - "domains.qmd"
+    - "datasets.qmd"
     - "precision.qmd"
     - "datasets/*.qmd"
+    - "records_overview.qmd"
     - "remap.qmd"
     - "records.qmd"
     - "developers.qmd"
     - "machines.qmd"
     - "adding.qmd"
     - "releasing.qmd"
+    - "website.qmd"
 
 website:
   title: "FesmData"
@@ -30,22 +31,26 @@ website:
     left:
       - text: "Home"
         href: index.qmd
+      - text: "Download"
+        href: download.qmd
       - text: "Products"
         href: products.qmd
-      - text: "Domains and grids"
+      - text: "Domains"
         href: domains.qmd
-      - text: "Precision"
-        href: precision.qmd
       - text: "Datasets"
         menu:
+          - text: "Overview"
+            href: datasets.qmd
+          - text: "Precision and file sizes"
+            href: precision.qmd
+          - text: "---"
+          - text: "Topography and masks"
           - text: "Topo — topography"
             href: datasets/topo.qmd
           - text: "Regions — regions and basins"
             href: datasets/regions.qmd
-          - text: "GHF — geothermal heat flow"
-            href: datasets/ghf.qmd
-          - text: "Sediment — sediment thickness"
-            href: datasets/sediment.qmd
+          - text: "---"
+          - text: "Ice"
           - text: "Velocity — ice surface velocity"
             href: datasets/velocity.qmd
           - text: "IceChange — observed ice sheet change"
@@ -58,6 +63,16 @@ website:
             href: datasets/basalmelt.qmd
           - text: "BasalState — basal thermal state"
             href: datasets/basalstate.qmd
+          - text: "---"
+          - text: "Solid Earth"
+          - text: "GHF — geothermal heat flow"
+            href: datasets/ghf.qmd
+          - text: "Sediment — sediment thickness"
+            href: datasets/sediment.qmd
+          - text: "SolidEarth — lithosphere and mantle"
+            href: datasets/solidearth.qmd
+          - text: "---"
+          - text: "Ocean and climate"
           - text: "Ocean — temperature and salinity"
             href: datasets/ocean.qmd
           - text: "SMB — surface mass balance"
@@ -66,10 +81,11 @@ website:
             href: datasets/atmosphere.qmd
           - text: "Paleoclimate — past climates"
             href: datasets/paleoclimate.qmd
-          - text: "SolidEarth — lithosphere and mantle"
-            href: datasets/solidearth.qmd
       - text: "Records"
         menu:
+          - text: "Overview"
+            href: records_overview.qmd
+          - text: "---"
           - text: "IceCores — ice core records"
             href: datasets/icecores.qmd
           - text: "RSL — relative sea level"
@@ -86,10 +102,20 @@ website:
         menu:
           - text: "Gridded data"
             href: remap.qmd
-          - text: "Records"
+          - text: "Records format"
             href: records.qmd
-      - text: "Releasing"
-        href: releasing.qmd
+      - text: "Developers"
+        menu:
+          - text: "Overview and code"
+            href: developers.qmd
+          - text: "Machines and storage"
+            href: machines.qmd
+          - text: "Adding a dataset"
+            href: adding.qmd
+          - text: "Releasing"
+            href: releasing.qmd
+          - text: "Website and figures"
+            href: website.qmd
     right:
       - icon: github
         href: "https://github.com/fesmc/FesmData"
