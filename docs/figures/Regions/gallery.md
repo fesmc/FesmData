@@ -36,7 +36,7 @@ println(region_names[region_code("1.1.2")])
 Hudson_Bay_and_Strait
 ```
 
-![The three levels of the regions on NH-16KM, labelled by path and name.](../figures/Regions/Regions-example-2.png)
+![The three levels of the regions on NH-16KM, labelled by path and name.](../figures/Regions/Regions-example-2.png){width=1022px}
 
 ### Codes and paths
 
@@ -70,7 +70,7 @@ north_america = in_region(region_3, region_code("1.1"))   # with 1.1.1, 1.1.2, 1
 rest = region_3 .== region_code("1.1")                    # only the cells in none of them
 ```
 
-![North America selected with in_region (left) and with == (right) on NH-16KM.](../figures/Regions/Regions-example-4.png)
+![North America selected with in_region (left) and with == (right) on NH-16KM.](../figures/Regions/Regions-example-4.png){width=673px}
 
 ### Zones and the shelf break
 
@@ -88,7 +88,7 @@ shelf = in_region(region_3, region_code("1.2")) .& (zone .== 2)   # shelf of Wes
 band = 0 .< dist .< 200                                           # open ocean within 200 km
 ```
 
-![Zones, distance to the shelf break and their combinations on NH-16KM.](../figures/Regions/Regions-example-5.png)
+![Zones, distance to the shelf break and their combinations on NH-16KM.](../figures/Regions/Regions-example-5.png){width=1500px}
 
 ### Basins
 
@@ -105,7 +105,7 @@ group = bs["basin_group"][:, :]
 original = ifelse.(bs["basin_mask"][:, :] .== 1, basin, missing)   # before the extension
 ```
 
-![The Zwally2012 basins of Greenland on GRL-PAL-16KM: basins, their groups (major drainage systems) and their original extent.](../figures/Regions/Regions-example-6.png)
+![The Zwally2012 basins of Greenland on GRL-PAL-16KM: basins, their groups (major drainage systems) and their original extent.](../figures/Regions/Regions-example-6.png){width=839px}
 
 ### The same region on every domain
 
@@ -118,5 +118,31 @@ greenland = map(["North/NH-16KM", "GreenlandPaleo/GRL-PAL-16KM"]) do g
 end
 ```
 
-![Region 1.3 Greenland (its land and EEZ) on NH-16KM and GRL-PAL-16KM.](../figures/Regions/Regions-example-7.png)
+![Region 1.3 Greenland (its land and EEZ) on NH-16KM and GRL-PAL-16KM.](../figures/Regions/Regions-example-7.png){width=612px}
+
+### Antarctica: the tree, level by level
+
+The same files on Antarctica: the levels of the tree of the ice sheet, its ice
+shelves and the Southern Ocean.
+
+```julia
+ant = joinpath(ENV["FESMDATA"], "products", "Antarctica", "ANT-16KM")
+da = NCDataset(joinpath(ant, "ANT-16KM_REGIONS.nc"))
+ant_regions = [da["region_$l"][:, :] for l in 1:3]
+```
+
+![The three levels of the regions on ANT-16KM, labelled by path and name.](../figures/Regions/Regions-example-8.png){width=1022px}
+
+### Antarctica: zones and basins
+
+The zones of Antarctica and one of its basin sets, IMBIE2016 (the others are
+IMBIE2016-refined, Zwally2012 and Schmidt2025).
+
+```julia
+ant_zone = da["zone"][:, :]
+ab = NCDataset(joinpath(ant, "ANT-16KM_BASINS-IMBIE2016.nc"))
+ant_basin = ab["basin"][:, :]
+```
+
+![Zones and the IMBIE2016 basins on ANT-16KM.](../figures/Regions/Regions-example-9.png){width=760px}
 

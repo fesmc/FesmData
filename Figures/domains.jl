@@ -11,6 +11,9 @@ const OVERVIEW_PANEL_HEIGHT = 420
 "Maps per row of an overview figure."
 const OVERVIEW_COLUMNS = 3
 
+"Most classes of a map of an overview figure with a colour bar (more, e.g. the basins of a fine basin set: none)."
+const MAX_LEGEND_CLASSES = 30
+
 "Overview figure of a Topo product of a domain: Domains/<folder>_TOPO-<product>.png."
 overview_file(dom::Domain, product::AbstractString) = "$(dom.folder)_TOPO-$product.png"
 
@@ -41,9 +44,10 @@ end
     domain_overview(path, dom, og, product)
 
 The overview figure of Topo `product` of domain `dom` on grid `og`: bed and surface
-elevation and ice thickness (colours as the figures of Topo, `topo_colors`), the three
-levels of the regions labelled by path and name, the zones, and the basins of each
-basin set of the domain (those made on the grid).
+elevation (above sea level) and ice thickness (colours as the figures of Topo,
+`topo_colors`), the three levels of the regions labelled by path and name, the zones,
+and the basins of each basin set of the domain (those made on the grid; blank outside
+the basins).
 """
 function domain_overview(path::AbstractString, dom::Domain, og::OutGrid, product::AbstractString)
     panels = Tuple{String,Matrix{Float32},ColorScale,Dict{Int,String}}[]
@@ -52,7 +56,8 @@ function domain_overview(path::AbstractString, dom::Domain, og::OutGrid, product
         z_bed, z_srf, H_ice = (Float32.(coalesce.(ds[v][:, :], NaN)) for v in ("z_bed", "z_srf", "H_ice"))
         zmap, zrange, hrange = topo_colors(z_bed, H_ice)
         zscale = continuous_scale(Float32[]; colormap=Symbol(zmap), colorrange=zrange)
-        push!(panels, ("z_bed (m)", z_bed, zscale, nolabels), ("z_srf (m)", z_srf, zscale, nolabels),
+        push!(panels, ("z_bed (m)", z_bed, zscale, nolabels),
+              ("z_srf (m)", map(x -> x > 0 ? x : NaN32, z_srf), zscale, nolabels),
               ("H_ice (m)", replace(H_ice, 0.0f0 => NaN32),
                continuous_scale(Float32[]; colormap=:ice, colorrange=hrange), nolabels))
     end
@@ -69,7 +74,7 @@ function domain_overview(path::AbstractString, dom::Domain, og::OutGrid, product
     for set in basin_sets(dom)
         isfile(basins_file(og, set)) || continue
         NCDataset(basins_file(og, set)) do ds
-            basin = Float32.(coalesce.(ds["basin"][:, :], NaN))
+            basin = map(x -> x > 0 ? x : NaN32, Float32.(coalesce.(ds["basin"][:, :], NaN)))
             push!(panels, ("basins $(set.name)", basin, class_scale(basin, flag_names(ds["basin"].attrib)), nolabels))
         end
     end
@@ -82,7 +87,7 @@ function domain_overview(path::AbstractString, dom::Domain, og::OutGrid, product
         r, c = fldmod1(k, OVERVIEW_COLUMNS)
         ax = map_axis(fig[r, 2c-1], og; title=title)
         hm = field!(ax, og, data, scale)
-        scale_bar(fig[r, 2c], hm, scale)
+        length(scale.classes) <= MAX_LEGEND_CLASSES && scale_bar(fig[r, 2c], hm, scale)
         x, y = map_coords(og.grid)
         for (code, label) in labels
             cells = findall(==(code), data)
