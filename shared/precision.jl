@@ -41,7 +41,7 @@ const DEFAULT_ELEVATION_PRECISION = 0.01
 
 """
 Default precision of the float fields by kind, the first that matches (`default_precision`).
-Documented in docs/data_volume.qmd.
+Documented in docs/precision.qmd.
 """
 const PRECISION_CLASSES = [
     PrecisionClass("longitude, latitude", r"^(lon|lat)(2D)?$", nothing, LOSSLESS),

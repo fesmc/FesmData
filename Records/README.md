@@ -1,9 +1,11 @@
-# Records: non-gridded data
+# Records format
 
 Time series, site and profile data (ice cores, relative sea level, boreholes, GPS,
 point SMB, freshwater fluxes, ...) are made like the gridded datasets, from the
 original sources with a documented `prepare.jl`, but they are not remapped: the
-prepared file is the product. They go to
+prepared file is the product (see
+[Records](https://fesmc.github.io/FesmData/records_overview.html) for the released
+ones). They go to
 
 ```
 $FESMDATA_PRODUCTS/Records/<Dataset>/<Dataset>-<Product>.nc
@@ -11,45 +13,17 @@ $FESMDATA_PRODUCTS/Records/<Dataset>/<Dataset>-<Product>.nc
 
 next to the domain folders of the gridded data, e.g.
 `Records/IceCores/IceCores-Kindler2014.nc` or `Records/RSL/RSL-GAPSLIP.nc`.
-Records are not split by domain: a model reads the record and selects its sites.
+They are not split by domain: a model reads the file and selects its sites.
 
 Inputs derived for one model (e.g. a hosing mask on the grid of one ocean model, or a
 series rescaled for one model) stay in the repositories of those models. Unpublished
-data are not included.
-
-## Steps
-
-1. **Prepare**, as for a gridded source (see Bring your own data): the source folder
-   `<Author><Year>_<topic>/` has `README.md` (data, reference, licence, original data)
-   and `prepare.jl`, which gets the originals through `datamanifest.toml` and writes
-   `$FESMDATA_PREPARED/<Source>/<file>.nc` in the form below, with
-   `provenance_attrib(<tag>)`.
-2. **Record**: `<Dataset>/records.toml` lists the products,
-   ```toml
-   [products.Kindler2014]            # → IceCores-Kindler2014.nc
-   source = "Kindler2014"            # source folder
-   file = "Kindler2014_NGRIP.nc"     # prepared file
-   # figure = { variable = "acc" }   # optional: the variable of its figure on the website
-   ```
-   and
-   ```bash
-   julia fesmdata.jl record IceCores                 # all products
-   julia fesmdata.jl record IceCores Kindler2014     # one product
-   ```
-   prepares the missing sources, checks each prepared file against the form below and
-   copies it to `$FESMDATA_PRODUCTS/Records/<Dataset>/<Dataset>-<Product>.nc` (`--overwrite`
-   to replace).
-3. **Publish**, as for a thematic dataset: add the dataset to `Publish/datasets.toml`,
-   write `<Dataset>/README.md`, make its figures (`julia fesmdata.jl figures
-   <Dataset>`, see `Figures/README.md`) and add its page in `docs/datasets/`.
-4. **Release** (see Releasing): a records dataset is released on the domain `Records`
-   (one package per dataset, `Records_<Dataset>`, and `registry/Records/<Dataset>.toml`);
-   `fesmdata.jl list/fetch/release` work as for the gridded datasets.
+data are not included. Making a records dataset from prepared files is described under
+[Adding a dataset](https://fesmc.github.io/FesmData/adding.html#records-datasets).
 
 ## File form
 
 NetCDF following the CF conventions for discrete sampling geometries (CF 1.11,
-chapter 9), so that every record is read the same way:
+chapter 9), so that every file is read the same way:
 
 | Data | `featureType` | Example |
 |---|---|---|

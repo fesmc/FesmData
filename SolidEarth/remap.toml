@@ -1,5 +1,5 @@
 # Solid Earth structure for glacial isostatic adjustment: lithosphere thickness and
-# mantle viscosity (thematic dataset, see ../Remap/README.md).
+# mantle viscosity (thematic dataset, see ../Remap/DATASETS.md).
 #
 # Each table of `products` is a product, written as <GRID>_SolidEarth-<name>.nc on its `grids` (by domain), from the prepared file `file` of the source
 # `source` (made by <source>/prepare.jl in $FESMDATA_PREPARED/<source>/). See

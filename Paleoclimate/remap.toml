@@ -1,5 +1,5 @@
 # Paleoclimate: climate model simulations and reconstructions of past climates
-# (thematic dataset, see ../Remap/README.md). Products are written as
+# (thematic dataset, see ../Remap/DATASETS.md). Products are written as
 # <GRID>_Paleoclimate-<name>.nc on their `grids`; see ../GHF/remap.toml
 # for the options. The dataset and its release tag are in ../Publish/datasets.toml.
 # The ensemble products (`ensemble`) are the mean and standard deviation of the models

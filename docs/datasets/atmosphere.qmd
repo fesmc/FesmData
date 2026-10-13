@@ -4,4 +4,6 @@ pagetitle: "Atmosphere"
 
 {{< include ../../Atmosphere/README.md >}}
 
+{{< include ../_downloads/Atmosphere.md >}}
+
 {{< include ../figures/Atmosphere/gallery.md >}}

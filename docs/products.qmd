@@ -1,6 +1,13 @@
 ---
 title: "Products"
-subtitle: "The released records, with their grids and files"
+subtitle: "The released datasets on each domain, with their versions"
 ---
+
+Each dataset is released on the domains below, one package per domain, dataset and grid
+on [Helmholtz Codebase](https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages).
+The files of each grid are listed at the end of the page of each dataset, under
+Downloads; download them with `fesmdata.jl` (see [Download](download.qmd)) or one by one.
+What each dataset contains is under [Datasets](datasets.qmd), the domains and their grids
+under [Domains](domains.qmd).
 
 {{< include _products.md >}}

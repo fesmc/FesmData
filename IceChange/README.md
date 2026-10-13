@@ -1,11 +1,12 @@
 # IceChange: observed recent change of the ice sheets
 
-Observed recent change of the Antarctic and Greenland ice sheets, remapped onto the grids
-of the domains: for now, rates of surface elevation change and ice thickness change from
-satellite laser altimetry; later possibly mass change, and changes of the grounding line
-and the ice front. IceChange is a thematic dataset made by remapping (see Bring your own
-data, `Remap/README.md`): its products are defined in `IceChange/remap.toml`. Each
-source has a product per ice sheet (`-ANT`, `-GRL`), on the grids of 4 km and coarser.
+Observed recent change of the Antarctic and Greenland ice sheets, remapped onto the
+grids of the domains: for now, rates of surface elevation change and ice thickness
+change from satellite laser altimetry; later possibly mass change, and changes of the
+grounding line and the ice front. IceChange is a thematic dataset made by remapping (see
+[Gridded data](https://fesmc.github.io/FesmData/remap.html)): its products are defined
+in `IceChange/remap.toml`. Each source has a product per ice sheet (`-ANT`, `-GRL`), on
+the grids of 4 km and coarser.
 
 ## Products
 
@@ -22,26 +23,29 @@ elevation change corrected for changes in firn air content and, over floating ic
 converted from elevation change by hydrostatic equilibrium.
 
 ATL15 gives the height change of each quarter relative to 2020 (and rates over moving
-windows of up to 7 years); `dzdt` is the linear trend over the whole record in each
-1 km cell, the unweighted least-squares fit over the quarters with data and ice in the
-cell, and missing where fewer than 75% of the quarters have them (e.g. moving ice
-fronts). The period and the number of quarters are in the global attributes of the
-files (2019-01-01 to 2026-04-02, 30 quarters, at least 23 valid). The trend agrees with
-the 7-year rates of ATL15 (`dhdt_084mo`; correlation 0.92-0.99 by quadrant). Integrated
-over the ice, `dzdt` is +107 km3 yr-1 in Antarctica (grounded and floating ice; East
-Antarctica rising, West Antarctica falling) and -206 km3 yr-1 in Greenland with its
-peripheral ice caps. There are no data south of about 88°S. See `ATL15_dzdt/README.md`.
+windows of up to 7 years); `dzdt` is the linear trend over the whole record in each 1 km
+cell, the unweighted least-squares fit over the quarters with data and ice in the cell,
+and missing where fewer than 75% of the quarters have them (e.g. moving ice fronts). The
+period and the number of quarters are in the global attributes of the files (2019-01-01
+to 2026-04-02, 30 quarters, at least 23 valid). The trend agrees with the 7-year rates
+of ATL15 (`dhdt_084mo`; correlation 0.92-0.99 by quadrant). Integrated over the ice,
+`dzdt` is +107 km3 yr-1 in Antarctica (grounded and floating ice; East Antarctica
+rising, West Antarctica falling) and -206 km3 yr-1 in Greenland with its peripheral ice
+caps. There are no data south of about 88°S. See
+[ATL15_dzdt](https://github.com/fesmc/FesmData/blob/main/ATL15_dzdt/README.md).
 
 Smith et al. (2020) give over floating ice only thickness changes, so `dzdt` of
 `IceChange-Smith2020-ANT` covers the grounded ice only, and `dHdt` both the grounded and
 the floating ice, which are on 5 km grids of their own in the source and are combined on
-each grid (see `Remap/README.md`): where a cell has both, their contributions add up,
-so that the totals of both are kept. Greenland has no `dHdt`, as Smith et al. (2020) have no firn
-correction there. There are no data south of about 86°S (not covered by ICESat).
-Integrated over the ice, the surface elevation change of the grounded ice of Antarctica
-is -130 km3 yr-1, its thickness change -127 km3 yr-1 (-116 Gt yr-1 of ice; Smith et al.,
-2020: -118 Gt yr-1) and that of the floating ice +16 km3 yr-1; the surface elevation
-change of Greenland is -250 km3 yr-1. See `Smith2020_dzdt/README.md`.
+each grid (see [Several
+files](https://fesmc.github.io/FesmData/adding.html#several-files)): where a cell has
+both, their contributions add up, so that the totals of both are kept. Greenland has no
+`dHdt`, as Smith et al. (2020) have no firn correction there. There are no data south of
+about 86°S (not covered by ICESat). Integrated over the ice, the surface elevation
+change of the grounded ice of Antarctica is -130 km3 yr-1, its thickness change -127 km3
+yr-1 (-116 Gt yr-1 of ice; Smith et al., 2020: -118 Gt yr-1) and that of the floating
+ice +16 km3 yr-1; the surface elevation change of Greenland is -250 km3 yr-1. See
+[Smith2020_dzdt](https://github.com/fesmc/FesmData/blob/main/Smith2020_dzdt/README.md).
 
 Each file also has `f_valid`, the fraction of each cell covered by the source
 (`f_valid_<field>` where the fields differ). The fields are remapped conservatively,
@@ -50,8 +54,8 @@ al., 2020).
 
 ## Precision
 
-The float fields are rounded on output to a tolerance by kind (see [Data volume and
-precision](https://fesmc.github.io/FesmData/data_volume.html)): `dzdt` and `dHdt` to 1%;
+The float fields are rounded on output to a tolerance by kind (see [Precision and file
+sizes](https://fesmc.github.io/FesmData/precision.html)): `dzdt` and `dHdt` to 1%;
 `f_valid` to 0.001.
 
 ## Licences
@@ -68,6 +72,7 @@ julia -t 8 fesmdata.jl remap IceChange
 julia -t 8 fesmdata.jl remap IceChange Smith2020-ANT Smith2020-GRL   # some products
 ```
 
-This prepares the sources not prepared yet (`<source>/prepare.jl`). ATL15 needs a
-manual download first (NASA Earthdata login, 13 GB, see `ATL15_dzdt/README.md`), and
-its preparation reads all of it (about 2 GB of memory per quadrant).
+This prepares the sources not prepared yet (`<source>/prepare.jl`). ATL15 needs a manual
+download first (NASA Earthdata login, 13 GB, see
+[ATL15_dzdt](https://github.com/fesmc/FesmData/blob/main/ATL15_dzdt/README.md)), and its
+preparation reads all of it (about 2 GB of memory per quadrant).

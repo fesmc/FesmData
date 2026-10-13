@@ -1,0 +1,191 @@
+---
+title: "Download"
+subtitle: "Find and download the products with fesmdata.jl"
+---
+
+The products are downloaded with `fesmdata.jl`, a Julia script of FesmData, which puts
+every file in a fixed layout and checks it against its checksum. Single files can also be
+downloaded without it (see [Single files](#single-files)).
+
+## Get the tool
+
+You need [Julia](https://julialang.org/downloads/) (a recent version; no packages to
+install) and a copy of FesmData. All commands are run from its folder.
+
+```bash
+git clone https://github.com/fesmc/FesmData.git
+cd FesmData
+julia fesmdata.jl help
+```
+
+`git pull` updates it, and with it the list of the released products.
+
+## Where the data go
+
+The environment variable `FESMDATA` sets the folder for the data, e.g. in your
+`~/.bashrc`:
+
+```bash
+export FESMDATA=/path/to/fesmdata
+```
+
+The products go to `$FESMDATA/products` (or to `$FESMDATA_PRODUCTS`, if set). On
+Levante and Albedo, `source shared/machines/<machine>.env` sets it to the shared folder
+of the project, where the products usually are already (see
+[Machines and storage](machines.qmd)). On macOS or Windows, do not put it next to the
+FesmData folder as `fesmdata`: on a case-insensitive file system, that is FesmData
+itself.
+
+Every file goes to `$FESMDATA_PRODUCTS/<Domain>/<GRID>/`: one folder per domain, and in
+it one folder per grid with all datasets on that grid. A grid folder thus holds
+everything a model needs on that grid, and can be copied as a whole:
+
+```
+$FESMDATA_PRODUCTS/
+  Antarctica/
+    ANT-8KM/
+      grid_ANT-8KM.txt                 grid description (cdo)
+      ANT-8KM_grid.nc                  x, y, lon, lat and area of the cells
+      ANT-8KM_TOPO-BedMachine-v4.nc    a product of the dataset Topo
+      ANT-8KM_TOPO-Bedmap3.nc
+      ANT-8KM_GHF-Lucazeau2019.nc      a product of the dataset GHF
+      ...
+    ANT-16KM/
+  Greenland/
+    GRL-4KM/
+  ...
+  Records/
+    IceCores/
+      IceCores-Kindler2014.nc          a product of the records dataset IceCores
+```
+
+Domains are named after their folder (Antarctica, Greenland, Thwaites, Patagonia, ...),
+grids after the key of their domain and their resolution (ANT-8KM, GRL-500M, DDG-25M);
+a grid name thus also gives its domain. See [Domains](domains.qmd) for all domains and
+grids, and [Products](products.qmd) for what is released on each.
+
+## Find what is there
+
+```bash
+julia fesmdata.jl list                     # all released datasets on all domains
+julia fesmdata.jl list Topo                # a dataset on all its domains (or a domain)
+julia fesmdata.jl list Antarctica Topo     # a dataset on a domain: its grids and
+                                           # files, their sizes, and which are here
+julia fesmdata.jl list ANT-8KM             # everything on a grid
+```
+
+The arguments can be given in any order. `list` also shows the products that nests and
+crops get by cropping (see [Nests and crops](#nests-and-crops)).
+
+## Download what you need
+
+```bash
+julia fesmdata.jl fetch Topo ANT-8KM            # one grid
+julia fesmdata.jl fetch Topo ANT-8KM ANT-16KM   # several grids
+julia fesmdata.jl fetch Antarctica Topo         # all grids of a domain
+julia fesmdata.jl fetch IceCores Records        # a records dataset
+```
+
+`fetch` needs the dataset, and a domain or grids (in any order). A grid name implies its
+domain, so the domain can be left out when grids are given.
+
+## Nests and crops
+
+The thematic datasets (those made by remapping: GHF, Velocity, SMB, Atmosphere, ...)
+are released once, on the domain or crop that has them, and not again on the nests and
+crops inside it (e.g. Thwaites, a nest of Antarctica, or Jakobshavn, a nest of
+GreenlandPaleo inside its crop Greenland); a nest or crop is released with its own
+products only (e.g. Topo, Regions). `fetch` makes the others there on demand, by cropping
+them:
+
+```bash
+julia fesmdata.jl list Jakobshavn          # its datasets, and those by cropping
+julia fesmdata.jl list Jakobshavn SMB      # the grids and files that fetch makes
+julia fesmdata.jl fetch SMB Jakobshavn     # all grids
+julia fesmdata.jl fetch SMB JAK-4KM        # one grid
+```
+
+A nest or crop gets, for each thematic dataset, its own products; those of its parent
+domain that it does not have; and those of the crops of its parent domain that contain
+it (e.g. Greenland for the nests of GreenlandPaleo: MAR, Joughin2018, ...) that neither
+has (`list` shows where each comes from). `fetch` downloads the files of these products
+(e.g. Greenland/SMB, to `$FESMDATA_PRODUCTS/Greenland/`), and cuts each to the nest or
+crop, as `$FESMDATA_PRODUCTS/<Domain>/<GRID>/<GRID>_<NAME>.nc` with the grid files:
+
+- at a resolution of the nest or crop, on its own grid (e.g. JAK-1KM, next to its Topo
+  and Regions, whose grid files it takes);
+- at the other resolutions, on the cells of the domain grids that overlap the nest or
+  crop (e.g. JAK-4KM, the same cells from the parent and from a crop, which lie on the
+  parent grids).
+
+A grid of a crop that does not cover the nest or crop is skipped, with a message (no
+partial crops). The crops are exact subsets of the files they are cut from (all
+variables, attributes and compression as they are), and record that file and its cells
+in their global attributes (`cropped_from`, `cropped_from_checksum`,
+`cropped_from_release`, `cropped_index_xc` and `cropped_index_yc`, 1-based). Running
+`fetch` again keeps the crops of the current files, and makes them again after a new
+release. A grid of the nest or crop whose released files are on another grid than in
+`shared/domains.toml` (a release made before the grid changed) stops the cropping, until
+it is released again. Cropping needs a few Julia packages (NCDatasets, FesmUtils), which
+`fetch` installs on first use.
+
+## Mirror everything
+
+To keep a copy of all products on a machine (or of a dataset or a domain):
+
+```bash
+julia fesmdata.jl mirror                # everything
+julia fesmdata.jl mirror Topo           # one dataset
+julia fesmdata.jl mirror Antarctica     # one domain
+```
+
+It first checks the files present, shows what is to download or update and its size,
+and asks once. Run it again after new releases to update the copy: only new and changed
+files are downloaded (`--yes` skips the question, e.g. in a job). `mirror` gets the
+released files only, not the products of nests and crops by cropping (use `fetch` for
+those).
+
+## Archives and other folders
+
+`--dir=<folder>` lists, fetches or mirrors in `<folder>/<Domain>/<GRID>/` instead of
+`$FESMDATA_PRODUCTS` (`FESMDATA` need not be set); `fetch --dir` writes the crops there
+too. Only the latest release of each dataset is kept on Helmholtz Codebase, so to keep
+the releases in use before updating, mirror them into a folder first:
+
+```bash
+julia fesmdata.jl mirror --dir=/work/ba1442/fesmdata/archive/2026-10-12
+julia fesmdata.jl mirror
+```
+
+Files already in `$FESMDATA_PRODUCTS` at the same release (checksums) are hard linked
+from there (no extra space; copied on another file system, or with `--copy`), the others
+downloaded, and the registry files of the released datasets go to `<folder>/registry/`,
+as the list of what the folder holds. Updates of `$FESMDATA_PRODUCTS` write new files,
+so the hard links keep the archived ones; tools that change files in place (e.g.
+`ncatted`) would change both: use `--copy` for an archive next to files that may be
+changed in place. Running `mirror --dir` again on an archive updates it to the latest
+releases. Earlier releases still in use are kept in such archives on the HPC systems.
+
+## Checksums and updates
+
+Every file is checked against its checksum (sha256) after download. Files already
+present are kept if they are of the release, and replaced if they are of an earlier
+release (`fetch` and `mirror` update them); a file changed locally (not of a release)
+stops the download, unless `--overwrite` is given.
+
+## Versions and citation
+
+Each release of a dataset has a version (e.g. Topo 2.2.0, tag `topo-v2.2.0` of
+FesmData), shown on the [Products](products.qmd) page and by `list`. Every file records
+how it was made in its global attributes (`fesmdata_version`, `fesmdata_commit`,
+`history`), and the sources it was made from. Please cite the original datasets (see the
+page of each dataset), and the DOI of the release where there is one (releases can be
+archived on [Zenodo](https://zenodo.org/communities/fesmc)).
+
+## Single files {#single-files}
+
+Single files can also be downloaded without the tool, from the end of the page of each
+dataset (Downloads) or from
+[Helmholtz Codebase](https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages),
+one package per domain, dataset and grid. Download the grid files of the grid too
+(`grid_<GRID>.txt`, `<GRID>_grid.nc`).

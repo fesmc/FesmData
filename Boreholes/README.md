@@ -1,9 +1,11 @@
 # Boreholes: ice temperature profiles
 
-Temperature profiles measured in boreholes through ice sheets and ice caps. Boreholes
-is a records dataset (non-gridded data, see `Records/README.md`): its products, defined
-in `Boreholes/records.toml`, are prepared files in the form of the CF discrete sampling
-geometries, written to `$FESMDATA_PRODUCTS/Records/Boreholes/Boreholes-<product>.nc`.
+Temperature profiles measured in boreholes through ice sheets and ice caps. Boreholes is
+a records dataset (non-gridded data, see
+[Records](https://fesmc.github.io/FesmData/records_overview.html)): its products,
+defined in `Boreholes/records.toml`, are prepared files in the form of the CF discrete
+sampling geometries, written to
+`$FESMDATA_PRODUCTS/Records/Boreholes/Boreholes-<product>.nc`.
 
 ## Products
 

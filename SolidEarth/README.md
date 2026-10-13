@@ -3,8 +3,9 @@
 Lithosphere thickness (m) and mantle viscosity (log10 of the viscosity in Pa s, on
 depth) from published Earth structures for glacial isostatic adjustment (GIA) models,
 remapped onto the grids of the domains and onto global lon-lat grids. SolidEarth is a
-thematic dataset made by remapping (see Bring your own data, `Remap/README.md`): its
-products are defined in `SolidEarth/remap.toml`.
+thematic dataset made by remapping (see [Gridded
+data](https://fesmc.github.io/FesmData/remap.html)): its products are defined in
+`SolidEarth/remap.toml`.
 
 ## Products
 
@@ -12,7 +13,7 @@ products are defined in `SolidEarth/remap.toml`.
 |---|---|---|---|
 | `SolidEarth-Pan2022-litho` (not released) | Pan et al. (2022): 0.5° global Earth structure of the GIA model Seakon, [doi:10.1016/j.quascirev.2022.107644](https://doi.org/10.1016/j.quascirev.2022.107644) | `z_litho` | Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Eurasia, Global |
 | `SolidEarth-Pan2022-visc` (not released) | Pan et al. (2022), as above | `log10_visc` on `depth` (64 levels, 24-2841 km) | Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Eurasia, Global (16 km and coarser) |
-| `SolidEarth-Bagge2021` | Bagge et al. (2021): 8 of the 18 global 3D viscosity structures for VILMA (those the article uses with NAICE: all reduction factors with profile s16, and the reference factor 0.4 with sc06 and sc06b; reference structure `v_0.4_s16`), Gaussian grid about 0.7°, [doi:10.5880/GFZ.1.3.2020.004](https://doi.org/10.5880/GFZ.1.3.2020.004) | `log10_visc` on `depth` (164 layers, with bounds, to the core-mantle boundary) and `structure` (1-8, see `Bagge2021_visc/README.md`) | Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Eurasia, Global (16 km and coarser) |
+| `SolidEarth-Bagge2021` | Bagge et al. (2021): 8 of the 18 global 3D viscosity structures for VILMA (those the article uses with NAICE: all reduction factors with profile s16, and the reference factor 0.4 with sc06 and sc06b; reference structure `v_0.4_s16`), Gaussian grid about 0.7°, [doi:10.5880/GFZ.1.3.2020.004](https://doi.org/10.5880/GFZ.1.3.2020.004) | `log10_visc` on `depth` (164 layers, with bounds, to the core-mantle boundary) and `structure` (1-8, see [Bagge2021_visc](https://github.com/fesmc/FesmData/blob/main/Bagge2021_visc/README.md)) | Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Eurasia, Global (16 km and coarser) |
 | `SolidEarth-Lloyd2024` | Lloyd et al. (2024): global 3D viscosity inferred from GLAD-M25, 0.5°, [doi:10.1093/gji/ggad455](https://doi.org/10.1093/gji/ggad455) | `log10_visc` on `depth` (201 levels, 0-2891 km) | Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Eurasia, Global (16 km and coarser) |
 | `SolidEarth-Wiens2022` (not released) | Wiens et al. (2022), Ivins et al. (2022): Antarctic upper-mantle viscosity from ANT-20, 40 km, [doi:10.1144/M56-2020-18](https://doi.org/10.1144/M56-2020-18) | `log10_visc` on `depth` (100, 200, 300 km) | Antarctica (16 km and coarser) |
 | `SolidEarth-Hazzard2023-litho` | Hazzard et al. (2023): Antarctic lithosphere from ANT-20 (1200 °C isotherm), 0.5°, south of 60°S, [doi:10.1029/2023JB026653](https://doi.org/10.1029/2023JB026653) | `z_litho`, `z_litho_sd` (standard deviation) | Antarctica |
@@ -50,8 +51,8 @@ original files where they are published:
 
 ## Precision
 
-The float fields are rounded on output to a tolerance by kind (see [Data volume and
-precision](https://fesmc.github.io/FesmData/data_volume.html)): `z_litho` and
+The float fields are rounded on output to a tolerance by kind (see [Precision and file
+sizes](https://fesmc.github.io/FesmData/precision.html)): `z_litho` and
 `z_litho_sd` to 0.01 m; `log10_visc` and `log10_visc_sd` to 3 significant digits (about
 0.01, 2% in viscosity); `f_valid` to 0.001.
 
@@ -83,4 +84,5 @@ its README). To make one product, or some domains or grids, name them, e.g.
 `julia fesmdata.jl remap SolidEarth Bagge2021 Antarctica GLOBAL-1DEG`. Existing files
 are kept unless `--overwrite`.
 
-See `GHF/README.md` for adding a source.
+See [GHF](https://fesmc.github.io/FesmData/datasets/ghf.html#adding-a-source) for adding
+a source.

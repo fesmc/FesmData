@@ -1,9 +1,9 @@
 # SMB: surface mass balance and surface climate
 
-Surface mass balance and surface climate of the ice sheets from regional climate
-models, remapped onto the grids of the domains. SMB is a thematic dataset made by
-remapping (see Bring your own data, `Remap/README.md`): its products are defined in
-`SMB/remap.toml`.
+Surface mass balance and surface climate of the ice sheets from regional climate models,
+remapped onto the grids of the domains. SMB is a thematic dataset made by remapping (see
+[Gridded data](https://fesmc.github.io/FesmData/remap.html)): its products are defined
+in `SMB/remap.toml`.
 
 ## Products
 
@@ -22,7 +22,8 @@ smoothed on grids finer than the source; the masks are remapped as classes.
 
 `SMB-RACMO2.3p2-1985-2014` (and its annual mean) is a reference climate for model
 forcing (the reference period of the ISMIP7 experiments), defined on the whole grid:
-`smb` is `pr + subl` off the glaciated surfaces (see `vanWessem2023_racmo23/README.md`),
+`smb` is `pr + subl` off the glaciated surfaces (see
+[vanWessem2023_racmo23](https://github.com/fesmc/FesmData/blob/main/vanWessem2023_racmo23/README.md)),
 and `smb`, `pr`, `sf`, `t2m`, `T_srf` and `z_srf` are filled outside the RACMO domain
 (the corners of the grids) by harmonic interpolation (`fill`, `mask = "all"`, marked by
 `mask_fill`).
@@ -33,15 +34,18 @@ also defined on the whole grid, for model forcing, but filled where there are no
 data (`f_valid` = 0, marked by `mask_fill_<field>`) as follows:
 
 - `smb` is defined on the ice only (RACMO: f_ice >= 0.1; MAR: its ice mask, see
-  `Fettweis2017_mar314/README.md`, so that the cells at the ice margin are not mixed with
-  the strongly negative values of MAR off the ice). Off the ice and outside the RCM domain
-  (e.g. the ice caps of the Canadian Arctic on the GRL grids), it is the linear regression
-  of `smb` on the surface elevation over the cells with data within 150 km (grown until
-  there are 20), at the elevation of the cell (`max(z_srf, 0)` of `TOPO-BedMachine-v4`)
-  clamped to the range of the elevations of these cells (no extrapolation), at most -91.7 kg m-2 yr-1 (-0.1 m yr-1 ice equivalent, with 917 kg m-3): a
-  small negative surface mass balance off the ice, on land and ocean. In the monthly
-  climatologies the bound applies to the annual mean (months weighted by their length),
-  all months shifted by the same amount (`fill`, `method = "elevation_regression"`, see `Remap/README.md`).
+  [Fettweis2017_mar314](https://github.com/fesmc/FesmData/blob/main/Fettweis2017_mar314/README.md),
+  so that the cells at the ice margin are not mixed with the strongly negative values of
+  MAR off the ice). Off the ice and outside the RCM domain (e.g. the ice caps of the
+  Canadian Arctic on the GRL grids), it is the linear regression of `smb` on the surface
+  elevation over the cells with data within 150 km (grown until there are 20), at the
+  elevation of the cell (`max(z_srf, 0)` of `TOPO-BedMachine-v4`) clamped to the range
+  of the elevations of these cells (no extrapolation), at most -91.7 kg m-2 yr-1 (-0.1 m
+  yr-1 ice equivalent, with 917 kg m-3): a small negative surface mass balance off the
+  ice, on land and ocean. In the monthly climatologies the bound applies to the annual
+  mean (months weighted by their length), all months shifted by the same amount (`fill`,
+  `method = "elevation_regression"`, see [Gap
+  filling](https://fesmc.github.io/FesmData/adding.html#gap-filling)).
 - `t2m` and `T_srf`: the same regression on the elevation (a local lapse rate), without
   bound. They are missing only outside the RCM domain (RACMO: the corners of the grids;
   MAR: e.g. the Canadian Arctic), as the RCMs give them on land and ocean.
@@ -59,8 +63,8 @@ data (`f_valid` = 0, marked by `mask_fill_<field>`) as follows:
 
 ## Precision
 
-The float fields are rounded on output to a tolerance by kind (see [Data volume and
-precision](https://fesmc.github.io/FesmData/data_volume.html)): `smb`, `pr`, `sf`, `rf`,
+The float fields are rounded on output to a tolerance by kind (see [Precision and file
+sizes](https://fesmc.github.io/FesmData/precision.html)): `smb`, `pr`, `sf`, `rf`,
 `runoff`, `melt` and `subl` to 1%; `t2m` and `T_srf` to 0.01 K; `z_srf` to 0.01 m;
 `f_ice` and `f_valid` to 0.001. The masks are exact.
 

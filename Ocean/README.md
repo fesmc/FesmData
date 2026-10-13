@@ -1,8 +1,9 @@
 # Ocean: ocean temperature and salinity
 
-Ocean temperature and salinity from observations and reanalyses, remapped onto the
-grids of the domains. Ocean is a thematic dataset made by remapping (see Bring your own
-data, `Remap/README.md`): its products are defined in `Ocean/remap.toml`.
+Ocean temperature and salinity from observations and reanalyses, remapped onto the grids
+of the domains. Ocean is a thematic dataset made by remapping (see [Gridded
+data](https://fesmc.github.io/FesmData/remap.html)): its products are defined in
+`Ocean/remap.toml`.
 
 ## Products
 
@@ -18,8 +19,8 @@ Fields are remapped conservatively and smoothed on grids finer than the source.
 
 ## Precision
 
-The float fields are rounded on output to a tolerance by kind (see [Data volume and
-precision](https://fesmc.github.io/FesmData/data_volume.html)): temperatures (`to`,
+The float fields are rounded on output to a tolerance by kind (see [Precision and file
+sizes](https://fesmc.github.io/FesmData/precision.html)): temperatures (`to`,
 `tf`, `ct_bottom`) to 0.01 K; `z_bottom` to 0.01 m; salinity (`so`, `sa_bottom`) to 3
 significant digits (about 0.02 at 35); `f_valid` to 0.001. `basin` is exact.
 
@@ -34,7 +35,8 @@ significant digits (about 0.02 at 35); `f_valid` to 0.001. `basin` is exact.
 ## Superseded
 
 The ISMIP6 ocean climatology of Jourdain et al. (2020) is superseded by the ISMIP7
-climatology (`Ocean-ISMIP7`) and not included: see `Jourdain2020_ismip6/README.md`.
+climatology (`Ocean-ISMIP7`) and not included: see
+[Jourdain2020_ismip6](https://github.com/fesmc/FesmData/blob/main/Jourdain2020_ismip6/README.md).
 
 ## Making the dataset
 

@@ -1,0 +1,23 @@
+---
+title: "Records"
+subtitle: "Non-gridded data: time series, sites and profiles"
+---
+
+The Records datasets hold data that are not on a grid: ice core series, relative sea
+level indicators, borehole temperature profiles, GPS uplift rates, point measurements of
+the surface mass balance, and freshwater fluxes by region. They are made from the
+original sources, like the gridded datasets, but not remapped: each product is one
+NetCDF file following the CF conventions for discrete sampling geometries (see
+[Records format](records.qmd)), with the sites, their coordinates and the data. They
+are not split by domain: a model reads a file and selects its sites.
+
+Records are released on the domain `Records`, one package per dataset, and go to
+`$FESMDATA_PRODUCTS/Records/<Dataset>/<Dataset>-<Product>.nc` (see
+[Download](download.qmd)):
+
+```bash
+julia fesmdata.jl list Records              # the records datasets
+julia fesmdata.jl fetch IceCores Records    # one of them
+```
+
+{{< include _records.md >}}

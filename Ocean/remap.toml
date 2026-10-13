@@ -1,4 +1,4 @@
-# Ocean temperature and salinity (thematic dataset, see ../Remap/README.md). Products
+# Ocean temperature and salinity (thematic dataset, see ../Remap/DATASETS.md). Products
 # are written as <GRID>_Ocean-<name>.nc on their `grids`; see
 # ../GHF/remap.toml for the options. The dataset and its release tag are in
 # ../Publish/datasets.toml.

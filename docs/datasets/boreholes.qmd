@@ -4,4 +4,6 @@ pagetitle: "Boreholes"
 
 {{< include ../../Boreholes/README.md >}}
 
+{{< include ../_downloads/Boreholes.md >}}
+
 {{< include ../figures/Boreholes/gallery.md >}}

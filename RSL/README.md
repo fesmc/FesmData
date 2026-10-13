@@ -1,9 +1,10 @@
 # RSL: relative sea level indicators
 
 Dated relative sea level indicators (index points and limiting data). RSL is a records
-dataset (non-gridded data, see `Records/README.md`): its products, defined in
-`RSL/records.toml`, are prepared files in the form of the CF discrete sampling
-geometries, written to `$FESMDATA_PRODUCTS/Records/RSL/RSL-<product>.nc`.
+dataset (non-gridded data, see
+[Records](https://fesmc.github.io/FesmData/records_overview.html)): its products,
+defined in `RSL/records.toml`, are prepared files in the form of the CF discrete
+sampling geometries, written to `$FESMDATA_PRODUCTS/Records/RSL/RSL-<product>.nc`.
 
 ## Products
 

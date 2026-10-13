@@ -28,7 +28,20 @@ pre.sourceCode {
   border-radius: 6px;
 }
 
-// Records of the products page (generated, see Publish/site.jl)
+// Wide generated tables (products, domains; see Publish/site.jl): scroll sideways
+.wide-table {
+  overflow-x: auto;
+}
+
+.wide-table table {
+  font-size: 0.85rem;
+}
+
+.wide-table td:first-child {
+  white-space: nowrap;
+}
+
+// Downloads of the dataset pages (generated, see Publish/site.jl)
 .muted {
   color: #57606a;
 }

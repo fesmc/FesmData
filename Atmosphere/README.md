@@ -2,8 +2,9 @@
 
 Monthly climatologies of the atmosphere from reanalysis and satellite data, remapped
 onto the grids of the domains and onto global lon-lat grids. Atmosphere is a thematic
-dataset made by remapping (see Bring your own data, `Remap/README.md`): its products are
-defined in `Atmosphere/remap.toml`.
+dataset made by remapping (see [Gridded
+data](https://fesmc.github.io/FesmData/remap.html)): its products are defined in
+`Atmosphere/remap.toml`.
 
 ## Products
 
@@ -19,8 +20,8 @@ conservatively and smoothed on grids finer than the source.
 
 ## Precision
 
-The float fields are rounded on output to a tolerance by kind (see [Data volume and
-precision](https://fesmc.github.io/FesmData/data_volume.html)): temperatures (`t2m`,
+The float fields are rounded on output to a tolerance by kind (see [Precision and file
+sizes](https://fesmc.github.io/FesmData/precision.html)): temperatures (`t2m`,
 `sst`, `t`) to 0.01 K; the elevation `zs` and the geopotential height `z` to 0.01 m;
 fractions (`lsm`, `tcc`, `al`, `f_valid`) to 0.001; precipitation, snowfall, winds, `w`
 and the radiative fluxes to 1%; `sp`, `tcw`, `tclw` and `tciw` to 3 significant digits.

@@ -1,9 +1,9 @@
 # GHF: geothermal heat flow
 
 Geothermal heat flow (mW m-2) from published maps, remapped onto the grids of the
-domains and onto global lon-lat grids. GHF is a thematic dataset made by remapping
-(see Bring your own data, `Remap/README.md`): its products are defined in
-`GHF/remap.toml`.
+domains and onto global lon-lat grids. GHF is a thematic dataset made by remapping (see
+[Gridded data](https://fesmc.github.io/FesmData/remap.html)): its products are defined
+in `GHF/remap.toml`.
 
 ## Products
 
@@ -34,16 +34,16 @@ source it is then smoothed with a Gaussian of half the source spacing (about 28 
 for 0.5°), so that its cells do not show as steps. The global attribute
 `remap_method` records what was done on each grid.
 
-`GHF-Martos2018` covers the land of Greenland only: `ghf` and `ghf_sd` are filled
-where there are no source data (cells at the ice margin, the ocean and the rest of the
-grid) by harmonic interpolation (`fill`, `mask = "all"`, marked by `mask_fill`; see
-`Remap/README.md`), so that they cover the whole grid. `depth_curie` and
-`depth_curie_sd` are not filled.
+`GHF-Martos2018` covers the land of Greenland only: `ghf` and `ghf_sd` are filled where
+there are no source data (cells at the ice margin, the ocean and the rest of the grid)
+by harmonic interpolation (`fill`, `mask = "all"`, marked by `mask_fill`; see [Gap
+filling](https://fesmc.github.io/FesmData/adding.html#gap-filling)), so that they cover
+the whole grid. `depth_curie` and `depth_curie_sd` are not filled.
 
 ## Precision
 
-The float fields are rounded on output to a tolerance by kind (see [Data volume and
-precision](https://fesmc.github.io/FesmData/data_volume.html)): the heat flow and its
+The float fields are rounded on output to a tolerance by kind (see [Precision and file
+sizes](https://fesmc.github.io/FesmData/precision.html)): the heat flow and its
 uncertainties and ranges (mW m-2) to 1%; `depth_curie` and `depth_curie_sd` (km) to 3
 significant digits; `ghf_corr`, `ghf_corr_unc` (dimensionless) and `f_valid` to 0.001.
 
@@ -82,9 +82,11 @@ Existing files are kept unless `--overwrite`.
 
 ## Adding a source
 
-1. Make a folder for the source with a `prepare.jl` and a `README.md` (see Bring
-   your own data), e.g. `Lucazeau2019_ghf/`.
+1. Make a folder for the source with a `prepare.jl` and a `README.md` (see
+   [Sources](https://fesmc.github.io/FesmData/adding.html#sources)), e.g.
+   `Lucazeau2019_ghf/`.
 2. Add a table `[products.<Name>]` to `GHF/remap.toml` with `source`, `file`,
    `variables` and `grids` (and `method` or `smooth` if the defaults do not fit).
 3. Add it to the table of products above, and run `julia fesmdata.jl remap GHF <Name>`.
-4. Release a new version of GHF (see Releasing, `Publish/README.md`).
+4. Release a new version of GHF (see
+   [Releasing](https://fesmc.github.io/FesmData/releasing.html)).

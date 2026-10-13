@@ -2,9 +2,9 @@
 
 Vertical velocities of GPS stations as observational estimates of glacial isostatic
 adjustment (GIA) uplift rates. GPS is a records dataset (non-gridded data, see
-`Records/README.md`): its products, defined in `GPS/records.toml`, are prepared files in
-the form of the CF discrete sampling geometries, written to
-`$FESMDATA_PRODUCTS/Records/GPS/GPS-<product>.nc`.
+[Records](https://fesmc.github.io/FesmData/records_overview.html)): its products,
+defined in `GPS/records.toml`, are prepared files in the form of the CF discrete
+sampling geometries, written to `$FESMDATA_PRODUCTS/Records/GPS/GPS-<product>.nc`.
 
 ## Products
 

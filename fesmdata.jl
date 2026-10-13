@@ -9,32 +9,34 @@
 
 const USAGE = """
 FesmData products (https://fesmc.github.io/FesmData/), in \$FESMDATA_PRODUCTS (default
-\$FESMDATA/products, see shared/README.md)
+\$FESMDATA/products, see https://fesmc.github.io/FesmData/download.html)
 
 Find and download:
-  list [<Dataset>] [<Domain>]                  records, of a dataset and/or a domain, and
-                                               datasets by cropping on nests and crops
-  list <Domain> <Dataset>                      a record in detail: grids, files, sizes,
-                                               files present in \$FESMDATA_PRODUCTS
-  list [<Dataset>] <GRID> ...                  the records of grids in detail (a grid
+  list [<Dataset>] [<Domain>]                  the released datasets on each domain (of a
+                                               dataset and/or a domain), and the datasets
+                                               by cropping on nests and crops
+  list <Domain> <Dataset>                      a dataset on a domain in detail: grids,
+                                               files, sizes, files present in
+                                               \$FESMDATA_PRODUCTS
+  list [<Dataset>] <GRID> ...                  the datasets on grids in detail (a grid
                                                implies its domain, e.g. ANT-32KM)
   fetch <Dataset> <Domain> | <GRID> ...        download into \$FESMDATA_PRODUCTS/<Domain>/<GRID>/
                                                and verify; files of earlier releases are
                                                updated (--overwrite: also replace files
                                                changed locally). On a nest or crop: also
-                                               the products it has no record of, from its
+                                               the products it has no release of, from its
                                                parent domain or a crop containing it, cut
                                                to it (installs the Publish packages once)
-  mirror [<Dataset>] [<Domain>]                all records (or those of a dataset/domain),
-                                               after one confirmation with the size; run
-                                               again to update (--yes: no confirmation);
-                                               records only, not datasets by cropping
+  mirror [<Dataset>] [<Domain>]                all released datasets on all domains (or
+                                               of a dataset/domain), after one confirmation
+                                               with the size; run again to update (--yes:
+                                               no confirmation); not datasets by cropping
   (arguments in any order; --dir=<folder>: list, fetch or mirror in <folder> instead of
   \$FESMDATA_PRODUCTS, e.g. to archive the releases there before updating: files already in
   \$FESMDATA_PRODUCTS are hard linked (--copy: copied), and the registry files go to
   <folder>/registry/; fetch by cropping writes the crops there too)
 
-Bring your own data (see Remap/README.md):
+Your own data (see Remap/README.md):
   remap <file.nc> <Domain> | <GRID> | all ...  remap the fields of a prepared NetCDF file
                                                (lon-lat or projected grid) onto the grids,
                                                as \$FESMDATA_PRODUCTS/<Domain>/<GRID>/<GRID>_<name>.nc
@@ -47,7 +49,7 @@ Bring your own data (see Remap/README.md):
                                                GHF, defined in GHF/remap.toml), preparing
                                                missing sources first (--overwrite)
 
-Records, non-gridded data (see Records/README.md):
+Records datasets, non-gridded data (maintainers, see Remap/DATASETS.md):
   record <Dataset> [<product> ...]             make the products of a records dataset
                                                (defined in <Dataset>/records.toml) as
                                                \$FESMDATA_PRODUCTS/Records/<Dataset>/<Dataset>-<product>.nc,
@@ -69,7 +71,8 @@ Release (maintainers, see Publish/README.md):
                                                archive releases on Zenodo, for a DOI
   archive discard <draft id> ...  |  archive drafts
   docs                                         write the generated pages of the website
-                                               (docs/_products.md; then quarto preview docs)
+                                               (docs/_*.md, docs/_downloads/; then quarto
+                                               preview docs)
 
 Options: --sandbox (test releases: registry/_sandbox/, test packages, Zenodo sandbox),
 --allow-untagged (skip the release checks), --dry-run, --yes (mirror, archive publish),
@@ -154,7 +157,8 @@ function main(argv)
         println("$(length(paths)) files written")
     elseif command == "docs"
         include(joinpath(PUBLISH_DIR, "site.jl"))
-        println("Wrote ", call(:write_products, joinpath(@__DIR__, "docs", "_products.md")))
+        paths = call(:write_site, joinpath(@__DIR__, "docs"))
+        println("$(length(paths)) files written in docs/")
     elseif command == "stamp"
         isempty(rest) && usage("stamp: give a dataset")
         activate_env(PUBLISH_DIR)

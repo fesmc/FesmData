@@ -1,4 +1,4 @@
-# Observed recent change of the ice sheets (thematic dataset, see ../Remap/README.md).
+# Observed recent change of the ice sheets (thematic dataset, see ../Remap/DATASETS.md).
 # Products are written as <GRID>_IceChange-<name>.nc on their `grids`; see
 # ../GHF/remap.toml for the options. The dataset and its release tag are in
 # ../Publish/datasets.toml. The products are by ice sheet (-ANT, -GRL), each source

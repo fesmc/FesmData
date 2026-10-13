@@ -1,8 +1,9 @@
 # Stratigraphy: age structure of the ice
 
 The age structure of the ice from radar stratigraphy, remapped onto the grids of the
-domains. Stratigraphy is a thematic dataset made by remapping (see Bring your own data,
-`Remap/README.md`): its products are defined in `Stratigraphy/remap.toml`.
+domains. Stratigraphy is a thematic dataset made by remapping (see [Gridded
+data](https://fesmc.github.io/FesmData/remap.html)): its products are defined in
+`Stratigraphy/remap.toml`.
 
 ## Products
 
@@ -16,8 +17,8 @@ conservatively, level by level, and smoothed on grids finer than the source.
 
 ## Precision
 
-The float fields are rounded on output to a tolerance by kind (see [Data volume and
-precision](https://fesmc.github.io/FesmData/data_volume.html)): `depth_iso` and
+The float fields are rounded on output to a tolerance by kind (see [Precision and file
+sizes](https://fesmc.github.io/FesmData/precision.html)): `depth_iso` and
 `depth_iso_sd` to 0.01 m; `ice_age` and `ice_age_sd` (ka) to 3 significant digits;
 `f_valid` to 0.001.
 

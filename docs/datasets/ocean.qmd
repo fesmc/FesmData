@@ -4,4 +4,6 @@ pagetitle: "Ocean"
 
 {{< include ../../Ocean/README.md >}}
 
+{{< include ../_downloads/Ocean.md >}}
+
 {{< include ../figures/Ocean/gallery.md >}}

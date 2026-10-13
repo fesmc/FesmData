@@ -1,8 +1,9 @@
 # Velocity: ice surface velocity
 
 Surface velocity of the ice sheets from satellite observations, remapped onto the grids
-of the domains. Velocity is a thematic dataset made by remapping (see Bring your own
-data, `Remap/README.md`): its products are defined in `Velocity/remap.toml`.
+of the domains. Velocity is a thematic dataset made by remapping (see [Gridded
+data](https://fesmc.github.io/FesmData/remap.html)): its products are defined in
+`Velocity/remap.toml`.
 
 ## Products
 
@@ -27,8 +28,8 @@ the cells with ice in `TOPO-BedMachine-v4` (`H_ice > 0`) but no data (`f_valid =
 
 ## Precision
 
-The float fields are rounded on output to a tolerance by kind (see [Data volume and
-precision](https://fesmc.github.io/FesmData/data_volume.html)): the velocities and their
+The float fields are rounded on output to a tolerance by kind (see [Precision and file
+sizes](https://fesmc.github.io/FesmData/precision.html)): the velocities and their
 errors to 1% or 1 m yr-1, the larger; `f_valid` to 0.001. `mask_fill` is exact.
 
 ## Licences

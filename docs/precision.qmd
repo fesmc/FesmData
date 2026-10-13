@@ -1,0 +1,81 @@
+---
+title: "Precision and file sizes"
+subtitle: "How the files are kept small, and what that means for the values in them"
+aliases:
+  - data_volume.html
+---
+
+FesmData puts many datasets on many grids, from 25 m to 5°. To keep the releases small
+enough to download and store, the files are made only on the grids that need them, and
+their values are rounded to a precision well below the uncertainty of the data. None of
+this changes how the files are read: they are ordinary NetCDF-4 files with Float32 and
+integer variables.
+
+## Resolution
+
+A thematic dataset (GHF, SMB, Velocity, ...) is made only on grids that add information:
+as a rule, no grid is finer than about a quarter of the spacing of its source, e.g. 16 km
+and 0.5° for sources at 1-2°, 8 km and 0.25° for sources at 0.25-0.5°, 4 km for most
+others. A finer grid of a coarse source would only be large; a model that needs it can
+remap online. Topo and Regions, made from high-resolution sources, are on all grids. The
+nests and crops of a domain get the thematic datasets by cropping those of the domain
+(see [Domains](domains.qmd#which-datasets-are-on-which-grids)).
+
+## Precision
+
+Each float field is rounded on output to a tolerance that depends on its kind, well
+below the uncertainty of the data: the mantissa bits of each value that are not needed
+for that tolerance are set to zero (bit rounding), which compresses much better. The
+values stay Float32, and missing values are kept.
+
+| Kind of field | Recognised by | Tolerance |
+|---|---|---|
+| Longitude, latitude (`lon2D`, `lat2D`) | name, or units `degrees_east`, `degrees_north` | lossless |
+| Cell area (`area`) | name | 1e-5 relative (0.001%) |
+| Fractions (`f_ice`, `f_valid`, cloud cover, albedo, ...) | name `f_*`, or units `1` | 0.001 |
+| Ice velocities (`ux_srf`, `uy_srf`, `uxy_srf` and their errors) | name `ux`, `uy`, `uz`, `uxy`, and units `m yr-1` | 1% or 1 m yr-1, the larger |
+| Rates (`smb`, `pr`, `sf`, `rf`, `melt`, `runoff`, `subl`, `bmelt`, ...) | name | 1% |
+| Elevations, thicknesses, depths (`z_*`, `H_*`, their `*_sd`, ...) | units `m` | 0.01 m |
+| Temperatures | units `K`, `degC` | 0.01 K |
+| Other rates and fluxes (`dzdt`, winds, `ghf`, radiation, ...) | units per time (`yr-1`, `s-1`, `d-1`), or `W m-2` | 1% |
+| Everything else (salinity, viscosity, ages, distances in km, ...) | | 3 significant digits (0.05%) |
+
+The first row that matches a field applies. Integer fields (masks, classes, region
+numbers) are never rounded. A relative tolerance holds for each value; for an absolute
+tolerance, the bits kept are set by the largest magnitude of the field, so that every
+value is within it; most errors are well below the tolerance. The coarser Topo grids and
+the ensemble products are made from rounded files and rounded again, so their error can
+exceed the tolerance slightly. The page of each dataset gives the precision of its
+fields.
+
+## Attributes
+
+The precision of each field is in its attributes:
+
+```
+float z_bed(yc, xc) ;
+        z_bed:units = "m" ;
+        z_bed:precision = "0.01 m" ;
+        z_bed:bitround_keepbits = 15 ;
+```
+
+`precision` is the tolerance (`"0.01 m"`, `"1%"`, `"1% or 1 m yr-1"`, `"lossless"`),
+`bitround_keepbits` the mantissa bits kept (of 23; 23 is lossless).
+
+## Compression
+
+With the rounding, the fields are compressed with deflate level 4 (with shuffle). The
+files are 1.4-1.5 times smaller than lossless files for Topo, and 2.4-4.6 times for
+Regions and the thematic datasets (e.g. 3.3 for Velocity, 3.9 for SMB).
+
+If a field needs a finer precision for your use, open an
+[issue](https://github.com/fesmc/FesmData/issues).
+
+## For maintainers
+
+The tolerances are set in `shared/precision.jl`. A field that needs a finer precision (or
+allows a coarser one) gets an exception in its product: `precision` in
+`<Dataset>/remap.toml`, e.g. `precision = { ghf = 0.1, smb = "1%", lat = "lossless" }`
+(see [Adding a dataset](adding.qmd#precision)). A domain may set another tolerance of
+elevations and thicknesses (`elevation_precision` in `shared/domains.toml`); none does.
+Intermediate files of the pipelines are not rounded.

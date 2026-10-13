@@ -4,4 +4,6 @@ pagetitle: "SMB"
 
 {{< include ../../SMB/README.md >}}
 
+{{< include ../_downloads/SMB.md >}}
+
 {{< include ../figures/SMB/gallery.md >}}

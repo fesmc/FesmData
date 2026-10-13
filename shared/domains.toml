@@ -31,7 +31,7 @@
 # A domain with `type = "lonlat"` has global lon-lat grids instead, one per resolution
 # (degrees), independent of each other (GLOBAL-0.5DEG, ...). `gaussian` adds Gaussian
 # grids by spectral truncation and number of latitudes (GLOBAL-T170, 512 x 256), which
-# are made only for the products that name them (see ../Remap/README.md).
+# are made only for the products that name them (see ../Remap/DATASETS.md).
 
 [GLOBAL]
 folder = "Global"

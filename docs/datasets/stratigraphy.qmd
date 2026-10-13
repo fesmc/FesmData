@@ -4,4 +4,6 @@ pagetitle: "Stratigraphy"
 
 {{< include ../../Stratigraphy/README.md >}}
 
+{{< include ../_downloads/Stratigraphy.md >}}
+
 {{< include ../figures/Stratigraphy/gallery.md >}}
