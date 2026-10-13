@@ -9,8 +9,9 @@ const TOPO_FIGURE = Dict{String,Any}("variables" => ["z_bed", "H_ice"], "hide" =
 
 Options of a figure of the topography (`TOPO_FIGURE`) with colours from the data of its
 panels (0.5-99.5%): the bed centred on sea level and symmetric (oleron) where it reaches
-below sea level, as on the ice sheets, otherwise over the range of the land elevations
-(batlow), as on the mountain-glacier domains; the ice thickness from 0 (ice).
+below sea level, as on the ice sheets, up to the land elevations (deeper ocean
+saturates), otherwise over the range of the land elevations (batlow), as on the
+mountain-glacier domains; the ice thickness from 0 (ice).
 """
 function topo_figure(panels::Vector{Panel})
     z, h = Float64[], Float64[]
@@ -22,7 +23,7 @@ function topo_figure(panels::Vector{Panel})
     end
     lo, hi = quantile(z, (0.005, 0.995))
     if lo < 0
-        r = round_up(max(-lo, hi))
+        r = round_up(max(hi, 1.0))
         zmap, zrange = "oleron", [-r, r]
     else
         step = round_up((hi - lo) / 10)
@@ -33,10 +34,10 @@ function topo_figure(panels::Vector{Panel})
                                                "colorrange" => Dict("z_bed" => zrange, "H_ice" => [0, hmax])))
 end
 
-"`v` rounded up to 1, 2, 2.5 or 5 times a power of 10."
+"`v` rounded up to a multiple of half its power of 10 (e.g. 3800 to 4000, 420 to 450)."
 function round_up(v::Real)
-    p = 10.0^floor(log10(v))
-    return p * first(filter(m -> m >= v / p - 1e-9, (1, 2, 2.5, 5, 10)))
+    s = 10.0^floor(log10(v)) / 2
+    return ceil(v / s - 1e-9) * s
 end
 
 "Outlet glacier of the figure of the resolutions: Jakobshavn Isbræ, a window of 300 km on GRL-PAL."
