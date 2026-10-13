@@ -19,20 +19,20 @@ library only), and not tracked:
 | `docs/_downloads/<Dataset>.md` | The files of each grid of a dataset, with their links (Downloads, at the end of its page) | `registry/` |
 | `docs/_datasets.md`, `docs/_records.md` | The overview of the datasets by topic, and of the records | `Publish/datasets.toml` (`[_site] topics`), `registry/` |
 | `docs/_domains.md` | The table of the domains (Domains) | `shared/domains.toml`, `Topo/products.toml` |
-| `docs/_figures.md` | The README of the figures, with its include line escaped, for this page | `Figures/README.md` |
 
 Each dataset page ends with figures of its products, made from the released files on
-Levante and committed (`docs/figures/<Dataset>/`, by `julia fesmdata.jl figures
-<Dataset>`, see below). The overview figures of the domains linked from the table of the
-domains are `docs/figures/Domains/<folder>_TOPO-<product>.png`.
+Levante (`docs/figures/<Dataset>/`, by `julia fesmdata.jl figures <Dataset>`, see
+below); only their galleries are committed, the figures are kept on `gh-pages`. The
+overview figures of the domains linked from the table of the domains are
+`figures/Domains/<folder>_TOPO-<product>.png` (`julia fesmdata.jl figures Domains`).
 
 `.github/workflows/publish-docs.yml` renders the site and publishes it to the `gh-pages`
-branch on every push to main that changes the docs, the READMEs, the registry or
-Publish. To preview it locally:
+branch (a single commit, with the figures taken from there) on every push to main that
+changes the docs, the READMEs, the registry, Publish or the definitions of the domains. To preview it locally:
 
 ```bash
 julia fesmdata.jl docs
 quarto preview docs
 ```
 
-{{< include _figures.md >}}
+{{< include ../Figures/README.md >}}

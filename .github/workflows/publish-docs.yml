@@ -14,8 +14,10 @@ on:
       - "docs/**"
       - "registry/**"
       - "Publish/**"
-      - "shared/README.md"
-      - "*/README.md"
+      - "**/README.md"
+      - "Remap/DATASETS.md"
+      - "shared/domains.toml"
+      - "Topo/products.toml"
       - "fesmdata.jl"
       - ".github/workflows/publish-docs.yml"
   workflow_dispatch:

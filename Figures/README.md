@@ -9,11 +9,8 @@ julia fesmdata.jl figures <Dataset>
 ```
 
 writes a PNG per product and the section, `gallery.md`, to `docs/figures/<Dataset>/`,
-which the page of the dataset (`docs/datasets/<name>.qmd`) includes at its end:
-
-```
-{{< include ../figures/<Dataset>/gallery.md >}}
-```
+which the page of the dataset (`docs/datasets/<name>.qmd`) includes at its end (Quarto
+`include` of `../figures/<Dataset>/gallery.md`).
 
 The figures (PNG at 2 pixels per unit of their layout, mostly under 1 MB each) are made
 again when a dataset is released. They need all files of the products, so they are

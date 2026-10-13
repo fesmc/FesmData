@@ -382,12 +382,12 @@ function write_products(path::AbstractString, cat::Catalog)
             the dataset. *cut*: a nest or crop gets the products of the dataset by cropping
             those of the domain (or crop) that contains it (see
             [Nests and crops](download.qmd#nests-and-crops)). Nests and crops are indented
-            below their domain (see [Domains](domains.qmd)).
+            below their domain; inactive domains are left out (see [Domains](domains.qmd)).
             """)
         println(io, "::: {.wide-table}\n")
         println(io, "| Domain | ", join(("[$s]($(dataset_page(s))#downloads)" for s in gridded), " | "), " |")
         println(io, "|---|", repeat("---|", length(gridded)))
-        for folder in filter(!=(RECORDS_FOLDER), cat.domains)
+        for folder in filter(f -> f != RECORDS_FOLDER && rows[f].active, cat.domains)
             indent = rows[folder].kind == "domain" ? "" : "&emsp;"
             cells = map(gridded) do s
                 page = dataset_page(s)
@@ -409,33 +409,18 @@ function write_products(path::AbstractString, cat::Catalog)
 end
 
 """
-    write_escaped(src, path)
-
-Write the Markdown file `src` to `path` with its Quarto shortcodes escaped
-(`{{< x >}}` as `{{{< x >}}}`), so that a page can include it while it shows
-shortcodes as text, e.g. the include line in ../Figures/README.md.
-"""
-function write_escaped(src::AbstractString, path::AbstractString)
-    mkpath(dirname(path))
-    write(path, GENERATED * "\n\n" * replace(read(src, String), r"\{\{<(.*?)>\}\}" => s"{{{<\1>}}}"))
-    return path
-end
-
-"""
     write_site(docs)
 
 Write the generated pages of the website into the folder `docs`: `_products.md`,
-`_datasets.md`, `_records.md`, `_domains.md`, `_downloads/<Dataset>.md`, and
-`_figures.md` (../Figures/README.md for the page Website and figures). Returns their
-paths.
+`_datasets.md`, `_records.md`, `_domains.md` and `_downloads/<Dataset>.md`. Returns
+their paths.
 """
 function write_site(docs::AbstractString)
     cat = Catalog()
     paths = [write_products(joinpath(docs, "_products.md"), cat),
              write_datasets(joinpath(docs, "_datasets.md"), cat),
              write_datasets(joinpath(docs, "_records.md"), cat; records=true),
-             write_domains(joinpath(docs, "_domains.md")),
-             write_escaped(joinpath(REPO_DIR, "Figures", "README.md"), joinpath(docs, "_figures.md"))]
+             write_domains(joinpath(docs, "_domains.md"))]
     for s in sort(collect(keys(read_site_datasets())))
         push!(paths, write_downloads(joinpath(docs, "_downloads", "$s.md"), cat, s))
     end
