@@ -1,5 +1,125 @@
 ---
-pagetitle: "Domains and grids"
+title: "Domains"
+subtitle: "The model domains and their grids"
 ---
 
-{{< include ../shared/README.md >}}
+All datasets are made on the same model domains and grids, defined in
+[`shared/domains.toml`](https://github.com/fesmc/FesmData/blob/main/shared/domains.toml).
+
+## Concepts
+
+A **domain** is a region on a map projection (polar stereographic, transverse Mercator
+such as UTM, or Albers equal-area) with a **base grid**, its finest resolution, e.g.
+ANT-1KM for Antarctica. The **coarser grids** of the domain are made from the base grid
+by merging whole cells, e.g. ANT-2KM to ANT-32KM. All grids of a domain are therefore
+nested: every coarse cell is made of whole base cells, and the datasets on them are
+exact conservative means of the base grid.
+
+A **crop** is a smaller region inside a domain, cut from its grids, at the same
+resolutions or some of them, e.g. Greenland, a crop of GreenlandPaleo. Its cells are
+cells of the domain grids.
+
+A **nest** is a smaller domain inside a domain, on the same projection, with a finer
+base grid of its own, made from the sources like any domain, e.g. Thwaites (500 m) in
+Antarctica (1 km). At the resolutions it shares with its parent, its grids lie on those
+of the parent: same cell centres, so that its 1 km grid is a part of ANT-1KM.
+
+A domain is **active** if its products are made and released. An inactive domain is
+defined, but left out of the releases (see [Inactive domains](#inactive-domains)).
+
+Each domain, crop and nest has an output **folder** under `$FESMDATA_PRODUCTS`, which is
+also its name in `fesmdata.jl` and on the website (e.g. Antarctica, Thwaites), and a
+**key**, the prefix of the names of its grids (e.g. ANT, THW).
+
+## Domains, crops and nests
+
+The **Overview** column links to a map of the Topo products of each domain (of its
+parent, for a crop).
+
+{{< include _domains.md >}}
+
+## Ice-sheet domains and nests
+
+Antarctica (ANT, 1-32 km), GreenlandPaleo (GRL-PAL, 500 m to 32 km; Greenland and the
+surrounding ocean and land, for glacial cycles) and North (NH, 2-32 km; the Northern
+Hemisphere ice sheets) are on polar stereographic projections. Greenland (GRL) is a crop
+of GreenlandPaleo, Laurentide (LIS) and Eurasia (EIS) are crops of North, and Amundsen
+(ASE) is the Amundsen Sea Embayment at 1 km, a crop of Antarctica.
+
+The nests of the ice sheets cover single drainage basins, with their ice shelves or
+fjords and 50 km around them: in Antarctica the Thwaites (THW) and Pine Island (PIG)
+glaciers, and, inactive, the Filchner-Ronne (FRIS), Ross (ROSS) and Amery (AMY) ice
+shelves with the grounded ice within 300 km upstream of them, and the Wilkes
+Subglacial Basin (WSB), all at 500 m and 1 km; in Greenland Jakobshavn Isbrae (JAK), the
+Northeast Greenland Ice Stream (NEGIS), and, inactive, the Petermann (PET) and Helheim
+(HEL) glaciers, at 250 m, 500 m and 1 km.
+
+## Mountain-glacier domains
+
+The mountain-glacier domains cover the extent of their glaciers at the Last Glacial
+Maximum, each on the projection used for glacier modelling in its region, with base
+grids of 250 m (500 m for Svalbard) and a 2 km grid:
+
+- **Pyrenees** (PYR, UTM 31N).
+- **Patagonia** (PAT, UTM 18S), from 38°S to Cape Horn, with crops of the Northern and
+  Southern Patagonian Icefields (NPI, SPI, 250 m), and nests of single icefields at 50,
+  100 and 250 m: the San Rafael Glacier (SRG, whose 250 m grid is the v1 SRG-250M grid),
+  Gran Campo Nevado (GCN) and the Cordillera Darwin Icefield (CDI).
+- **Himalaya** (HIM, Albers equal-area of High Mountain Asia), the Himalaya, Karakoram
+  and Hindu Kush, with a nest of the Drang Drung Glacier (DDG, Zanskar) at 25, 50, 100
+  and 250 m.
+- Inactive: the **Alps** (ALP, UTM 32N), **Svalbard** (SVB, UTM 33N) and **New
+  Zealand** (NZ, NZTM2000).
+
+## Global grids
+
+The Global domain (GLOBAL) has global lon-lat grids at 0.1°, 0.25°, 0.5°, 1°, 2° and 5°
+(GLOBAL-0.1DEG, ..., GLOBAL-5DEG), each with cell edges at -180° and -90°. They are not
+nested (0.25° is not a multiple of 0.1°). It also has Gaussian grids, named by their
+spectral truncation, e.g. GLOBAL-T170 (512 x 256, as used by VILMA), made only for the
+products that need them. Global sources are remapped onto these grids, so that all
+global products share them.
+
+## Grid names and grid files
+
+Grids are named after the key of their domain (or crop, or nest) and their resolution:
+`ANT-8KM`, `GRL-PAL-500M`, `DDG-25M`, `GLOBAL-0.5DEG`. A grid name thus also gives its
+domain. Every grid has its own folder, with its grid files and all datasets on that
+grid:
+
+```
+$FESMDATA_PRODUCTS/<folder>/<GRID>/
+    grid_<GRID>.txt         grid description (cdo)
+    <GRID>_grid.nc          x, y, lon, lat and area of the cells
+    <GRID>_TOPO-<product>.nc, <GRID>_REGIONS.nc, <GRID>_GHF-<source>.nc, ...
+```
+
+The grid files come with every dataset on the grid.
+
+## Which datasets are on which grids
+
+Topo and Regions are made on every grid of every active domain, crop and nest, from
+the high-resolution sources.
+
+The thematic datasets (GHF, Velocity, SMB, ...) are made by remapping published maps,
+which are much coarser than the base grids. They are made only on the grids that add
+information: as a rule, no grid is finer than about a quarter of the spacing of the
+source, e.g. 16 km and 0.5° for sources at 1-2°, 8 km and 0.25° for sources at
+0.25-0.5°, 4 km for most others, and the 2 km grids of the mountain-glacier domains. A
+model that needs a finer grid can remap online.
+
+They are released on the domains, and on the crops that a product lists (e.g.
+Greenland, Laurentide and Eurasia, or a Greenland-only source on Greenland). The other
+crops and the nests lie on the grids of their domain, so they get the thematic datasets
+by cropping those of their domain (or of a crop that contains them, e.g. Greenland for
+Jakobshavn), on demand, when they are downloaded (see
+[Nests and crops](download.qmd#nests-and-crops)). [Products](products.qmd) shows which
+dataset is on which domain.
+
+## Inactive domains
+
+Domains that are defined but not used yet (the Alps, Svalbard, New Zealand, and the
+nests FilchnerRonne, Ross, Amery, WilkesBasin, Petermann and Helheim) are inactive:
+their grids and products are made only on request, and they are left out of the
+releases and figures. To have one made and released, open an
+[issue](https://github.com/fesmc/FesmData/issues).
