@@ -15,15 +15,28 @@ which the page of the dataset (`docs/datasets/<name>.qmd`) includes at its end:
 {{< include ../figures/<Dataset>/gallery.md >}}
 ```
 
-The figures are committed (at 2 pixels per unit of their layout, mostly under 1 MB each) and made again when a dataset is
-released. They need all files of the products, so they are made on Levante, on a
-login node (a few minutes; Bagge2021 and the global 0.1° files are read one field at
-a time):
+The figures (PNG at 2 pixels per unit of their layout, mostly under 1 MB each) are made
+again when a dataset is released. They need all files of the products, so they are
+made on Levante, on a login node (a few minutes; Bagge2021 and the global 0.1° files
+are read one field at a time):
 
 ```bash
 source shared/machines/levante.env
 julia --project=Figures -e 'using Pkg; Pkg.instantiate()'   # once
 julia fesmdata.jl figures IceHistory
+```
+
+Only the galleries are committed to main; the figures are kept on the site branch
+`gh-pages` alone, which has a single commit, so that they are not versioned. The docs
+workflow takes them from there to build the site and publishes it again as a single
+commit. To put new figures on the site, copy them to a checkout that can push to
+GitHub, run `Figures/publish_figures.sh`, and then push the galleries (not while the
+docs workflow deploys, which would replace gh-pages without them):
+
+```bash
+rsync -a levante:/work/ba1442/robinson/models/FesmData/docs/figures/IceHistory/ docs/figures/IceHistory/
+Figures/publish_figures.sh IceHistory
+git add docs/figures/IceHistory/gallery.md && git commit -m "Figures: IceHistory" && git push
 ```
 
 A new dataset needs the include line in its page, and its figures before the site is

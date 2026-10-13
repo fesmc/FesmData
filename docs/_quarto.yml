@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: _site
+  resources:
+    - "figures/**/*.png"   # all figures, also those only linked (e.g. figures/Domains)
   render:
     - "index.qmd"
     - "products.qmd"
