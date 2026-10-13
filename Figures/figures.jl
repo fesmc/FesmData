@@ -55,7 +55,8 @@ function write_gallery(dataset::AbstractString, items::Vector{GalleryItem}; intr
         isempty(intro) || println(io, intro, "\n")
         for it in items
             println(io, "### ", it.heading, "\n")
-            println(io, "![", it.caption, "](../figures/$dataset/$(it.file))\n")
+            println(io, figure_markdown(it.caption, "../figures/$dataset/$(it.file)",
+                                        joinpath(figures_dir(dataset), it.file)), "\n")
         end
     end
     return gallery_file(dataset)

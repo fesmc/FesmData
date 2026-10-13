@@ -5,8 +5,26 @@ import GeoInterface
 import NaturalEarth
 import Proj
 
-"Height of a map panel (px); its width follows the aspect of the grid."
+"Height of a map panel (units of the layout); its width follows the aspect of the grid."
 const PANEL_HEIGHT = 240
+
+"Pixels per unit of the layout of the saved figures: sharp on high-density screens, and showing grids of up to `MAX_SHOWN_CELLS` cells."
+const PX_PER_UNIT = 2
+
+"Save figure `fig` to `path` (PNG) at `PX_PER_UNIT`."
+save_figure(path::AbstractString, fig) = save(path, fig; px_per_unit=PX_PER_UNIT)
+
+"""
+    figure_markdown(caption, href, path) -> String
+
+Markdown of the figure `path` (PNG, at `href` from the page) in a gallery, shown at the
+size of its layout: its width in pixels divided by `PX_PER_UNIT` (narrower on small
+screens).
+"""
+function figure_markdown(caption::AbstractString, href::AbstractString, path::AbstractString)
+    w = open(io -> (seek(io, 16); Int(ntoh(read(io, UInt32)))), path)   # PNG IHDR width
+    return "![$caption]($href){width=$(div(w, PX_PER_UNIT))px}"
+end
 
 "Colour of the cells without data."
 const NODATA_COLOR = RGBf(0.9, 0.9, 0.9)

@@ -79,7 +79,7 @@ function plot_maps(path::AbstractString, panels::Vector{MapPanel})
     end
     rowsize!(fig.layout, 1, Fixed(round(Int, 1.3 * PANEL_HEIGHT)))
     resize_to_layout!(fig)
-    save(path, fig; px_per_unit=1)
+    save_figure(path, fig)
 end
 
 "The examples of the gallery of Regions."
@@ -216,7 +216,7 @@ function regions_figures()
             plot_maps(joinpath(dir, file), Base.invokelatest(ex.maps, m))
             println("wrote $file")
             push!(paths, joinpath(dir, file))
-            println(io, "![", ex.caption, "](../figures/Regions/$file)\n")
+            println(io, figure_markdown(ex.caption, "../figures/Regions/$file", joinpath(dir, file)), "\n")
         end
     end
     return [paths; gallery_file("Regions")]

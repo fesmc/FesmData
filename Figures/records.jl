@@ -124,7 +124,7 @@ function plot_record(path::AbstractString, file::AbstractString, spec::AbstractD
         data_panel!(fig[1, length(panels)+2], ds, v, inst, other, label, names, shown)
         rowsize!(fig.layout, 1, Fixed(PANEL_HEIGHT))
         resize_to_layout!(fig)
-        save(path, fig; px_per_unit=1)
+        save_figure(path, fig)
         caption = "$(basename(file)): $(length(unique(names === nothing ? (1:n) : names))) " *
                   "$(names === nothing ? "observations" : inst == "region" ? "regions" : "sites"), $var"
         return caption * (outside > 0 ? " ($outside outside the maps)." : ".")

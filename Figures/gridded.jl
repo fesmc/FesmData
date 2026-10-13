@@ -1,8 +1,8 @@
 # Figures of gridded products: a row per field (a variable at selected values of its
 # other dimensions, e.g. time slices), a column per domain, on one grid of each.
 
-"Cells along the longer side of the grids shown, about (as the panels have pixels)."
-const SHOWN_CELLS = 300
+"Most cells along the longer side of the grids shown (see `PX_PER_UNIT`)."
+const MAX_SHOWN_CELLS = 800
 
 "Order of the domains (output folders) in the figures."
 const FOLDER_ORDER = ["Antarctica", "Amundsen", "Thwaites", "PineIsland", "FilchnerRonne", "Ross", "Amery",
@@ -17,15 +17,20 @@ const FIGURE_KEYS = ("variables", "select", "colormap", "colorrange", "scale", "
 """
     figure_grids(grids) -> Vector{OutGrid}
 
-The grids shown of a product made on `grids`: of each domain (output folder) the grid
-with about 300 cells along its longer side (e.g. ANT-16KM, GRL-PAL-8KM, GLOBAL-1DEG),
-except the crops of a domain that is shown itself.
+The grids shown of a product made on `grids`: of each domain (output folder) the finest
+grid with at most `MAX_SHOWN_CELLS` cells along its longer side (e.g. ANT-8KM,
+GRL-PAL-4KM, GLOBAL-0.5DEG; the coarsest if all have more), except the crops of a domain
+that is shown itself.
 """
 function figure_grids(grids::Vector{OutGrid})
     folders = unique(og.folder for og in grids)
     parent(f) = folder_grids(f)[1].folder
     shown = filter(f -> parent(f) == f || !(parent(f) in folders), folders)
-    pick(f) = argmin(og -> abs(log(maximum(size(og.grid)) / SHOWN_CELLS)), filter(og -> og.folder == f, grids))
+    function pick(f)
+        gs = filter(og -> og.folder == f, grids)
+        small = filter(og -> maximum(size(og.grid)) <= MAX_SHOWN_CELLS, gs)
+        return isempty(small) ? argmin(og -> length(og.grid), gs) : argmax(og -> length(og.grid), small)
+    end
     return [pick(f) for f in sort(shown; by=f -> something(findfirst(==(f), FOLDER_ORDER), length(FOLDER_ORDER) + 1))]
 end
 
@@ -229,7 +234,7 @@ function plot_gridded(path::AbstractString, title::AbstractString, panels::Vecto
     end
     foreach(i -> rowsize!(fig.layout, i, Fixed(PANEL_HEIGHT)), 1:length(fields))
     resize_to_layout!(fig)
-    save(path, fig; px_per_unit=1)
+    save_figure(path, fig)
     return "$title on $(join(unique(p.og.grid.name for p in panels), ", ")): $(join(unique(f.var for f in fields), ", "))."
 end
 

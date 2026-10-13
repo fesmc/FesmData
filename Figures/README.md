@@ -15,7 +15,7 @@ which the page of the dataset (`docs/datasets/<name>.qmd`) includes at its end:
 {{< include ../figures/<Dataset>/gallery.md >}}
 ```
 
-The figures are committed (about 100-300 kB each) and made again when a dataset is
+The figures are committed (at 2 pixels per unit of their layout, mostly under 1 MB each) and made again when a dataset is
 released. They need all files of the products, so they are made on Levante, on a
 login node (a few minutes; Bagge2021 and the global 0.1° files are read one field at
 a time):
@@ -33,9 +33,9 @@ run `figures` again once they are made.
 
 ## Gridded products
 
-One figure per released product: a column per domain, on the grid with about 300
-cells along its longer side (e.g. ANT-16KM, GRL-PAL-8KM, NH-32KM, GLOBAL-1DEG), and
-a row per field, with a colour bar per row. The crops of a domain (Greenland,
+One figure per released product: a column per domain, on the finest grid with at
+most 800 cells along its longer side (e.g. ANT-8KM, GRL-PAL-4KM, NH-16KM, GLOBAL-0.5DEG),
+and a row per field, with a colour bar per row. The crops of a domain (Greenland,
 Laurentide, Eurasia) are shown only if the domain itself is not. Coastlines are the
 ice-free ocean margin of the topography of the domain on the same grid (the Topo
 product of the zones of Regions), and the Natural Earth coastline on global grids.
