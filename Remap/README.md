@@ -20,6 +20,8 @@ Antarctica and of the global lon-lat grids.
 To publish the result, make it part of a **thematic dataset** (step 3), e.g. GHF:
 then `julia fesmdata.jl remap GHF` makes all of it, and it is released like Topo.
 
+Non-gridded data (time series, sites, profiles) are not remapped: see Records.
+
 ## 1. Prepare a source
 
 Make a folder for the source, named after it (e.g. `Lucazeau2019_ghf/`), with:

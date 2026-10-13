@@ -7,6 +7,7 @@ project:
     - "domains.qmd"
     - "datasets/*.qmd"
     - "remap.qmd"
+    - "records.qmd"
     - "releasing.qmd"
 
 website:
@@ -73,7 +74,11 @@ website:
           - text: "Freshwater — ice sheet freshwater fluxes"
             href: datasets/freshwater.qmd
       - text: "Your own data"
-        href: remap.qmd
+        menu:
+          - text: "Gridded data"
+            href: remap.qmd
+          - text: "Records"
+            href: records.qmd
       - text: "Releasing"
         href: releasing.qmd
     right:

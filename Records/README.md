@@ -19,27 +19,32 @@ data are not included.
 
 ## Steps
 
-1. **Prepare** (source folder, as for gridded data, see `../Remap/README.md`): the
-   source folder `<Author><Year>_<topic>/` has `README.md` (data, reference, licence,
-   original data) and `prepare.jl`, which gets the originals through
-   `../datamanifest.toml` and writes `$FESMDATA_WORK/prepared/<Source>/<file>.nc` in
-   the form below, with `provenance_attrib(<tag>)`.
-2. **Record** (thematic folder): `<Dataset>/records.toml` lists the products,
+1. **Prepare**, as for a gridded source (see Bring your own data): the source folder
+   `<Author><Year>_<topic>/` has `README.md` (data, reference, licence, original data)
+   and `prepare.jl`, which gets the originals through `datamanifest.toml` and writes
+   `$FESMDATA_WORK/prepared/<Source>/<file>.nc` in the form below, with
+   `provenance_attrib(<tag>)`.
+2. **Record**: `<Dataset>/records.toml` lists the products,
    ```toml
-   [products.Kindler2014]
+   [products.Kindler2014]            # → IceCores-Kindler2014.nc
    source = "Kindler2014"            # source folder
    file = "Kindler2014_NGRIP.nc"     # prepared file
    # figure = { variable = "acc" }   # optional: the variable of its figure on the website
    ```
-   and `julia fesmdata.jl record <Dataset> [<product> ...]` prepares the missing
-   sources, checks each prepared file against the form below and copies it to
-   `$ICE_DATA/v2/Records/<Dataset>/<Dataset>-<Product>.nc` (`--overwrite` to replace).
-3. **Figures** for the website: `julia fesmdata.jl figures <Dataset>` (see
-   `../Figures/README.md`).
-4. **Release**: a Records dataset is one record of `Publish` with the domain
-   `Records` (one package per dataset, `Records_<Dataset>`, and
-   `registry/Records/<Dataset>.toml`); `fesmdata.jl list/fetch/release` work as for
-   the gridded datasets.
+   and
+   ```bash
+   julia fesmdata.jl record IceCores                 # all products
+   julia fesmdata.jl record IceCores Kindler2014     # one product
+   ```
+   prepares the missing sources, checks each prepared file against the form below and
+   copies it to `$ICE_DATA/v2/Records/<Dataset>/<Dataset>-<Product>.nc` (`--overwrite`
+   to replace).
+3. **Publish**, as for a thematic dataset: add the dataset to `Publish/datasets.toml`,
+   write `<Dataset>/README.md`, make its figures (`julia fesmdata.jl figures
+   <Dataset>`, see `Figures/README.md`) and add its page in `docs/datasets/`.
+4. **Release** (see Releasing): a records dataset is released on the domain `Records`
+   (one package per dataset, `Records_<Dataset>`, and `registry/Records/<Dataset>.toml`);
+   `fesmdata.jl list/fetch/release` work as for the gridded datasets.
 
 ## File form
 
@@ -64,18 +69,3 @@ chapter 9), so that every record is read the same way:
   kg m-2 yr-1, temperatures K).
 - Global attributes as for prepared gridded files: `title`, `references`, `doi`,
   `license`, `featureType`, plus the provenance attributes.
-
-## First datasets
-
-| Dataset | Sources (existing folders) |
-|---|---|
-| IceCores | Kindler2014 (NGRIP temperature), Gkinis2020_NEEMwateriso (NEEM isotopes), Vinther2009_elevations (core site elevations) |
-| RSL | Gowan2023_GAPSLIP_GrIS (Greenland relative sea level) |
-| Boreholes | Lokkegaard2023_temp_profile (Greenland and Canadian Arctic ice temperatures) |
-| GPS | Schumacher2018_gps (GPS vertical velocities, GIA uplift rates) |
-| SMBObs | SUMup_smb (SUMup 2025) |
-| Freshwater | Schmidt2025_fwf (freshwater flux series of the CMIP protocol) |
-
-Not included: RSL_GrIS (preliminary compilation), PaleoIndex_ts (not in the
-repository), the GIA benchmarks and test data of `isostasy_data` (kept with
-FastIsostasy).
