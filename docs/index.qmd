@@ -4,7 +4,8 @@ subtitle: "Processed datasets for ice-sheet and Earth-system models, on the grid
 ---
 
 FesmData produces datasets for models, such as topography and region masks, on the
-grids of each model domain, from the base grid (0.5–2 km) to 32 km. The
+grids of each model domain, from the base grid (25 m to 2 km) to 32 km, and on global
+lon-lat grids. The
 [products](products.qmd) are released on
 [Helmholtz Codebase](https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages), one package
 per domain, dataset and grid, versioned by the release; releases can also be archived

@@ -66,7 +66,7 @@ and the Cordillera Darwin Icefield (CDI). HIM has a nest of the Drang Drung Glac
 
 An **inactive** domain (`active = false`) is defined, but left out of the releases, the
 website figures and the products made for all domains. Its grids and products are made
-when it is named (e.g. `Topo/jobs/submit_domain.sh HIM`); set it active to release it.
+when it is named (e.g. `Topo/jobs/submit_domain.sh ALP`); set it active to release it.
 
 The **GLOBAL** domain has global lon-lat grids at 0.1°, 0.25°, 0.5°, 1°, 2° and 5°,
 each with cell edges at -180° and -90° (so they are not nested: 0.25° is not a

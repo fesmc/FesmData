@@ -12,9 +12,9 @@ release of a dataset (tag `<dataset>-vX.Y.Z`, e.g. `topo-v2.0.0`) has one record
 domain, and one package per domain, dataset and grid, e.g. `Antarctica_Topo_ANT-32KM`
 version `2.0.0`, with the files of that grid (grid description, grid file and
 products).
-Domains are named by their output folder (`folder` in `../shared/domains.toml`):
-Antarctica, GreenlandPaleo (GRL-PAL), Greenland (GRL), North (NH), Laurentide (LIS),
-Eurasia (EIS). Records datasets (non-gridded data, `../Records/README.md`) have no
+Domains are named by their output folder (`folder` in `../shared/domains.toml`, e.g.
+Antarctica, Greenland, Patagonia; all are listed on the
+[Domains](https://fesmc.github.io/FesmData/domains.html) page). Records datasets (non-gridded data, `../Records/README.md`) have no
 grids: one record on the domain `Records`, and one package per dataset, e.g.
 `Records_IceCores`, with its files in `$FESMDATA_PRODUCTS/Records/<Dataset>/`.
 

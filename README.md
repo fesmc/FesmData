@@ -33,38 +33,16 @@ Every NetCDF file written by a v2 pipeline has the global attributes `source` (t
 
 In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding](https://github.com/alex-robinson/gridding)) program to handle remapping (and preprocessing) of a wide variety of datasets that were relevant for ice-sheet modeling. This was how the original `ice_data` repository of gridded datasets was populated. It worked well, but was difficult to modify for new datasets, since it is entirely in Fortran, and requires configuration and compilation. For this reason, remapping via conservative interpolation using `cdo` became the favored approach for individual datasets. What was not included then was the preprocessing steps needed before applying interpolation. The v2 method above reproduces the `ice_data` datasets from their original sources, with each step documented.
 
-## v2 datasets
+## Datasets
 
-| Key | Contents | Sources |
-|-----|----------|---------|
-| Topo         | Bed topography, surface elevation, ice thickness, ice/ocean fractions, 0.5-32 km | GEBCO 2026, BedMachine, Bedmap3, IceBoost (see Topo/README.md) |
-| Regions      | Region tree, shelf zone, ice-sheet basins, 0.5-32 km | Marine Regions, HydroBASINS, Zwally, Mouginot, IMBIE (see Regions/README.md) |
-| GHF          | Geothermal heat flow (mW m-2), topographic correction | Colgan2021_ghf, Colgan2021_topocorr, Davies2013_ghf, FoxMaule2005_ghf, HazzardRichards2024_ghf, Loesing2021_ghf, Lucazeau2019_ghf, Martos2017_ghf, Martos2018_ghf, Shapiro2004_ghf, Stal2020_ghf |
-| Sediment     | Sediment thickness and properties | Baranov2021_sed, Gowan2019_sed, Laske2013_crust1, Mooney2023_ecm1, Straume2019_globsed |
-| IceHistory   | Ice sheets, extents and topography of the past | Batchelor2019_NHIceMasks, Batchelor2019_PaleoMIST_lgc, Dowsett2016_prism4, Gowan2021_PaleoMIST1.0, Leger2024_PaleoGris, Margold2015_icestreams, Peltier2004_ice5g, Peltier2015_ice6g, Peltier2018_ice6gd |
-| Velocity     | Ice surface velocity | Joughin2018, Rignot2011_vel |
-| IceChange    | Observed ice sheet change: surface elevation and thickness change rates | ATL15_dzdt, Smith2020_dzdt |
-| Stratigraphy | Age structure of the ice | MacGregor2025_strat |
-| BasalMelt    | Ice-shelf basal melt rates | Rignot2013_bmelt |
-| BasalState   | Basal temperature and thermal state | Dawson2022_basalstate |
-| Ocean        | Ocean temperature and salinity | Schmidtko2014_ocean, Zhou2026_ismip7ocean, Zuo2019_oras5 |
-| Atmosphere   | Reanalysis and satellite climatologies | Hersbach2020_era5, Loeb2018_ceres |
-| SMB          | Surface mass balance and surface climate | Fettweis2017_mar314, vanDalum2025_racmo24, vanWessem2023_racmo23 |
-| Paleoclimate | Simulations and reconstructions of past climates | Badgeley2020_recon, Buizert2018, PMIP3_cvdp, PMIP4_cmip6 |
-| SolidEarth   | Lithosphere thickness and mantle viscosity | Bagge2021_visc, Hazzard2023_visc, Lloyd2024_visc, Pan2022_litho, Wiens2022_visc |
-
-## Records (non-gridded datasets)
-
-Time series, site and profile data, in `$FESMDATA_PRODUCTS/Records/<Dataset>/` (see `Records/README.md`).
-
-| Key | Contents | Sources |
-|-----|----------|---------|
-| IceCores     | Ice core records: temperature, accumulation, water isotopes, site elevations | Gkinis2020_NEEMwateriso, Kindler2014, Vinther2009_elevations |
-| RSL          | Relative sea level indicators | Gowan2023_GAPSLIP_GrIS |
-| Boreholes    | Ice temperature profiles | Lokkegaard2023_temp_profile |
-| GPS          | GPS vertical velocities, GIA uplift rates | Schumacher2018_gps |
-| SMBObs       | Surface mass balance measurements | SUMup_smb |
-| Freshwater   | Freshwater fluxes of the ice sheets by region | Schmidt2025_fwf |
+The v2 datasets (Topo, Regions, and the thematic datasets GHF, Velocity, SMB, ...) are
+released on the grids of the model domains, from the base grid of each domain (25 m to
+2 km) to 32 km, and on global lon-lat grids; the Records datasets (IceCores, RSL, ...)
+hold non-gridded data. The [website](https://fesmc.github.io/FesmData/) lists them
+([datasets](https://fesmc.github.io/FesmData/datasets.html),
+[products](https://fesmc.github.io/FesmData/products.html),
+[domains](https://fesmc.github.io/FesmData/domains.html)) and explains how to
+[download](https://fesmc.github.io/FesmData/download.html) them.
 
 ## Source folders (alphabetical order)
 
@@ -86,7 +64,7 @@ Time series, site and profile data, in `$FESMDATA_PRODUCTS/Records/<Dataset>/` (
 | climate  | ERA5                        | Monthly ERA5 for radiation + moist-stack valid. (v1) | Hersbach et al. (2020)     |
 | smb      | Fettweis2017_mar314         | Greenland SMB and surface climate, MAR v3.14 (ERA5) | Fettweis et al. (2017)      |
 | geo      | FoxMaule2005_ghf            | Geothermal heat flow from satellite magnetic data | Fox Maule et al. (2005)       |
-| topo     | GEBCO2025                   | GEBCO 2025 global bath. and topo data            | GEBCO Compilation Group (2025) |
+| topo     | GEBCO2025                   | GEBCO 2025 global bath. and topo data (v1)       | GEBCO Compilation Group (2025) |
 | paleo    | Gkinis2020_NEEMwateriso     | NEEM ice core high-resolution water isotopes     | Gkinis et al. (2020)           |
 | geo      | Gowan2019_sed               | Surface sediment properties of North America and Greenland | Gowan et al. (2019) |
 | paleo    | Gowan2021_PaleoMIST1.0      | PaleoMIST 1.0 global ice sheet reconstruction, 80 ka to present | Gowan et al. (2021) |
@@ -116,7 +94,7 @@ Time series, site and profile data, in `$FESMDATA_PRODUCTS/Records/<Dataset>/` (
 | paleo    | Peltier2018_ice6gd          | ICE-6G_D (VM5a) ice thickness and topography of Antarctica | Peltier et al. (2018) |
 | paleo    | PMIP3_cvdp                  | PMIP3 climatologies (CMIP5 lgm, midHolocene, piControl) | Braconnot et al. (2012)  |
 | paleo    | PMIP4_cmip6                 | PMIP4 climatologies (CMIP6 lgm, midHolocene, piControl) | Kageyama et al. (2018)  |
-| masks    | Regions                     | Regions v2: region tree, shelf zone, ice-sheet basins, 0.5-32 km | Multiple (see Regions/README.md) |
+| masks    | Regions                     | Regions v2: region tree, shelf zone, ice-sheet basins, 25 m-32 km | Multiple (see Regions/README.md) |
 | masks    | regions_legacy              | Ice relevant regions (v1, deprecated)            | Robinson et al.  - no ref      |
 | ice      | Rignot2011_vel              | Antarctic ice surface velocity                   | Rignot et al. (2011)           |
 | ocean    | Rignot2013_bmelt            | Basal melt rates of Antarctic ice shelves        | Rignot et al. (2013)           |
@@ -131,7 +109,7 @@ Time series, site and profile data, in `$FESMDATA_PRODUCTS/Records/<Dataset>/` (
 | paleo    | Stokes2016_icestreams       | Laurentide ice sheet, ice-stream timing          | Stokes et al. (2016)           |
 | geo      | Straume2019_globsed         | Total sediment thickness of the oceans, GlobSed v3 | Straume et al. (2019)        |
 | smb      | SUMup_smb                   | SMB measurements, SUMup 2025                     | Vandecrux et al. (2025)        |
-| topo     | Topo                        | Topography v2: GEBCO2026 + BedMachine/Bedmap3, 0.5-32 km | Multiple (see Topo/README.md) |
+| topo     | Topo                        | Topography v2: GEBCO2026 + BedMachine/Bedmap3, 25 m-32 km | Multiple (see Topo/README.md) |
 | smb      | vanDalum2025_racmo24        | Antarctic SMB and surface climate, RACMO2.4p1    | van Dalum et al. (2025)        |
 | smb      | vanWessem2023_racmo23       | Antarctic SMB and surface climate, RACMO2.3p2    | van Wessem et al. (2018, 2023) |
 | paleo    | Vinther2009_elevations      | Elevations at the ice core locations             | Vinther et al. (2009)          |

@@ -3,7 +3,7 @@ title: "Data volume and precision"
 subtitle: "How the files are kept small, and what that means for the values in them"
 ---
 
-FesmData puts many datasets on many grids, from a few hundred metres to 5°. To keep the
+FesmData puts many datasets on many grids, from 25 m to 5°. To keep the
 releases small enough to download and store, every file is made with the measures below.
 None of them changes how the files are read: they are ordinary NetCDF-4 files with
 Float32 and integer variables.
@@ -90,7 +90,8 @@ issue.
 
 ## Inactive domains
 
-Domains that are defined but not used yet (e.g. Alps, Himalaya, Svalbard, New Zealand)
+Domains that are defined but not used yet (e.g. Alps, Svalbard, New Zealand, and some
+nests of the ice sheets)
 are inactive: their grids and products are made only on request, and they are left out
 of the releases (see [Domains and grids](domains.qmd#domains)).
 
