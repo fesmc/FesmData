@@ -13,6 +13,7 @@ using TOML
 
 include(joinpath(@__DIR__, "..", "shared", "provenance.jl"))
 include(joinpath(@__DIR__, "..", "shared", "domains.jl"))
+include(joinpath(@__DIR__, "..", "shared", "precision.jl"))
 include(joinpath(@__DIR__, "..", "Topo", "files.jl"))
 include(joinpath(@__DIR__, "..", "Regions", "files.jl"))
 include(joinpath(@__DIR__, "..", "Remap", "datasets.jl"))

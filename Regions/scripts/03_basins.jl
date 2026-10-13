@@ -36,6 +36,6 @@ for set in sets
     set.source == "negis" && push!(attrib, "topography" => topography)
     is_negis_source(set.source) && push!(attrib, "comment" => negis_comment(set))
     path = write_fields(regions_work_file(dom, "basins-$(set.name)"), dom.base, fields; dataset=DATASET,
-                        attrib=attrib, varattrib=varattrib)
+                        attrib=attrib, varattrib=varattrib, lossless=true)
     @info "wrote $path"
 end

@@ -1,6 +1,6 @@
 # Thematic datasets made by remapping (e.g. GHF): their products, defined in
 # <Dataset>/remap.toml, and the output files, also read by ../Publish. Needs only
-# ../shared/domains.jl.
+# ../shared/domains.jl and ../shared/precision.jl.
 
 using TOML
 
@@ -83,7 +83,8 @@ A product of a thematic dataset (a table of <Dataset>/remap.toml), written as
 `EnsembleProduct`. `grids` gives them by domain (output folder): a minimum spacing in
 km (the standard grids of the domain not finer than this; 0: all), or the names of
 the grids (any grid of the domain, also those made on request, e.g. Gaussian grids).
-A product is not made on the domains not in `grids`.
+A product is not made on the domains not in `grids`. `precision` gives the precision of
+some of its float fields instead of their default (see `parse_precision`).
 """
 abstract type ThematicProduct end
 
@@ -105,6 +106,7 @@ struct RemapProduct <: ThematicProduct
     smooth::Union{String,Float64}
     release::Bool                   # part of the releases of the dataset
     figure::Union{Nothing,Dict{String,Any}}   # options of its figure on the website, nothing: none
+    precision::Dict{String,Precision}         # by field, instead of the default
     fill::Vector{GapFill}           # gaps filled (none: empty)
 end
 
@@ -126,6 +128,7 @@ struct EnsembleProduct <: ThematicProduct
     grids::Dict{String,Union{Float64,Vector{String}}}
     release::Bool
     figure::Union{Nothing,Dict{String,Any}}
+    precision::Dict{String,Precision}
 end
 
 "Domains (output folders) of a product."
@@ -192,7 +195,13 @@ function product_files(file, what)
 end
 
 "Keys of a product in remap.toml common to remap and ensemble products."
-const PRODUCT_KEYS = ("grids", "release", "figure")
+const PRODUCT_KEYS = ("grids", "release", "figure", "precision")
+
+"`precision` of a product in remap.toml: a table by field (see `parse_precision`)."
+function product_precision(value, what)
+    value isa AbstractDict || error("$what: precision must be a table by field, e.g. { ghf = 0.1, smb = \"1%\" }")
+    return Dict{String,Precision}(k => parse_precision(v, "$what: precision.$k") for (k, v) in value)
+end
 
 """
     remap_products(dataset) -> Vector{ThematicProduct}
@@ -212,15 +221,16 @@ function remap_products(dataset::AbstractString)
         isempty(unknown) || error("$what: unknown domains $(join(unknown, ", ")), available: $(join(folders, ", "))")
         grids = product_grid_spec(p["grids"], what)
         release, figure = get(p, "release", true), figure_spec(get(p, "figure", Dict()), what)
-        push!(products, haskey(p, "ensemble") ? ensemble_product(dataset, name, p, grids, release, figure) :
-                                                remap_product(dataset, name, p, grids, release, figure))
+        precision = product_precision(get(p, "precision", Dict()), what)
+        push!(products, haskey(p, "ensemble") ? ensemble_product(dataset, name, p, grids, release, figure, precision) :
+                                                remap_product(dataset, name, p, grids, release, figure, precision))
     end
     check_ensembles(products)
     return sort(products; by=p -> p.name)
 end
 
-"A remap product from its table `p` in remap.toml (`grids`, `release` and `figure` parsed)."
-function remap_product(dataset, name, p, grids, release, figure)
+"A remap product from its table `p` in remap.toml (`grids`, `release`, `figure` and `precision` parsed)."
+function remap_product(dataset, name, p, grids, release, figure, precision)
     what = "$dataset/$name"
     unknown = setdiff(keys(p), (PRODUCT_KEYS..., "source", "file", "variables", "method", "smooth", "fill"))
     isempty(unknown) || error("$what: unknown keys $(join(unknown, ", "))")
@@ -229,11 +239,11 @@ function remap_product(dataset, name, p, grids, release, figure)
     fill = haskey(p, "fill") ? gap_fill_spec(p["fill"], what, variables) : GapFill[]
     files = product_files(get(p, "file", nothing), what)
     return RemapProduct(dataset, name, p["source"], files, variables, grids, get(p, "method", "con"),
-                        smooth isa Real ? Float64(smooth) : String(smooth), release, figure, fill)
+                        smooth isa Real ? Float64(smooth) : String(smooth), release, figure, precision, fill)
 end
 
-"An ensemble product from its table `p` in remap.toml (`grids`, `release` and `figure` parsed)."
-function ensemble_product(dataset, name, p, grids, release, figure)
+"An ensemble product from its table `p` in remap.toml (`grids`, `release`, `figure` and `precision` parsed)."
+function ensemble_product(dataset, name, p, grids, release, figure, precision)
     what = "$dataset/$name"
     given = intersect(keys(p), ("source", "file"))
     isempty(given) || error("$what: ensemble and $(join(given, ", ")) exclude each other " *
@@ -245,7 +255,7 @@ function ensemble_product(dataset, name, p, grids, release, figure)
         allunique(members) || error("$what: ensemble must be a list of 2 to $(typemax(Int8)) products of $dataset")
     stat = get(p, "stat", nothing)
     stat in ENSEMBLE_STATS || error("$what: stat must be one of $(join(ENSEMBLE_STATS, ", "))")
-    return EnsembleProduct(dataset, name, Vector{String}(members), stat, grids, release, figure)
+    return EnsembleProduct(dataset, name, Vector{String}(members), stat, grids, release, figure, precision)
 end
 
 "Check the members of the ensemble products: remap products made on every grid of the ensemble."

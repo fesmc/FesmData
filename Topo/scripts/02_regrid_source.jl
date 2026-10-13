@@ -208,5 +208,5 @@ fields = regrid(src)
 println("Remapped onto $(base.name): $(round(time() - t0; digits=1)) s, threads=$(Threads.nthreads())")
 
 path = write_fields(source_file(dom, source), base, fields; dataset=DATASET,
-                    attrib=["source_dataset" => source])
+                    attrib=["source_dataset" => source], lossless=true)
 println("Wrote $path")

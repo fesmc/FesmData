@@ -8,6 +8,7 @@ using NCDatasets
 
 include(joinpath(@__DIR__, "registry.jl"))
 include(joinpath(REPO_DIR, "shared", "domains.jl"))
+include(joinpath(REPO_DIR, "shared", "precision.jl"))
 include(joinpath(REPO_DIR, "Topo", "files.jl"))
 include(joinpath(REPO_DIR, "Regions", "files.jl"))
 include(joinpath(REPO_DIR, "Remap", "datasets.jl"))

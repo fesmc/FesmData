@@ -8,6 +8,7 @@ domains and grids, defined in `domains.toml`, and share the code in this folder:
 | `domains.toml` | The domains, their grids and output folders |
 | `domains.jl` | `Domain(key)`: the base grid and all grids of a domain |
 | `io.jl` | NetCDF output (`write_fields`, `write_grid_files`) with the provenance attributes |
+| `precision.jl` | Default precision of the float fields by kind, and their bit rounding (see Data volume and precision on the website) |
 | `provenance.jl` | Repository paths, machine environment, provenance attributes |
 | `manifest.jl` | The original datasets of all pipelines (`../datamanifest.toml`) |
 | `machines/<machine>.env` | Environment variables of each machine (levante, macbook; albedo for downloads only) |

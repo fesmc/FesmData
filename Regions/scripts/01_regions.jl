@@ -18,5 +18,6 @@ levels = @time build_regions(dom.base; defs)
 fields = Dict("region_$n" => L for (n, L) in enumerate(levels))
 varattrib = Dict("region_$n" => region_attrib(L, defs) for (n, L) in enumerate(levels))
 path = write_fields(regions_work_file(dom, "regions"), dom.base, fields; dataset=DATASET,
-                    attrib=["title" => "Region codes (FesmData/Regions, regions.toml)"], varattrib=varattrib)
+                    attrib=["title" => "Region codes (FesmData/Regions, regions.toml)"], varattrib=varattrib,
+                    lossless=true)
 @info "wrote $path"
