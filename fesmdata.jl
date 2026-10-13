@@ -20,10 +20,10 @@ Find and download:
   fetch <Dataset> <Domain> | <GRID> ...        download into \$ICE_DATA/v2/<Domain>/<GRID>/
                                                and verify; files of earlier releases are
                                                updated (--overwrite: also replace files
-                                               changed locally). On a nest or crop without
-                                               a record of the dataset: download that of
-                                               its parent domain and cut it to the nest or
-                                               crop (installs the Publish packages once)
+                                               changed locally). On a nest or crop: also
+                                               the products it has no record of, from its
+                                               parent domain or a crop containing it, cut
+                                               to it (installs the Publish packages once)
   mirror [<Dataset>] [<Domain>]                all records (or those of a dataset/domain),
                                                after one confirmation with the size; run
                                                again to update (--yes: no confirmation);
@@ -121,7 +121,7 @@ function main(argv)
         paths, cropped = call(:fetch_files, rest; dir=dir, copy="--copy" in opts, overwrite="--overwrite" in opts,
                               sandbox=sandbox)
         if !isempty(cropped)
-            # Datasets by cropping, on a nest or crop: cut from the parent files just downloaded
+            # Products by cropping, on a nest or crop: cut from the files just downloaded
             activate_env(PUBLISH_DIR)
             include(joinpath(PUBLISH_DIR, "crop.jl"))
             append!(paths, call(:crop_files, cropped, call(:local_root, dir); sandbox=sandbox))

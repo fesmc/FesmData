@@ -31,9 +31,9 @@ that its coarsest grid is a part of the parent grid at that resolution.
 Topo and Regions are made on every domain, nest and crop. The products of the thematic
 datasets (GHF, Velocity, SMB, ...) are made and released on the domains only, and on
 nests and crops only if their domain does not have them (e.g. a Greenland-only source
-on Greenland): nests and crops get the products of their domain by cropping, made on
-demand by `julia fesmdata.jl fetch <Dataset> <folder>` from the files of their parent
-domain (see Nests and crops in `Publish/README.md`).
+on Greenland): nests and crops get the products of their domain, and of the crops of
+their domain that contain them, by cropping, made on demand by `julia fesmdata.jl fetch
+<Dataset> <folder>` (see Nests and crops in `Publish/README.md`).
 
 | Domain | Base grid | Other grids | Crops | Nests | Projection | Active |
 |---|---|---|---|---|---|---|
