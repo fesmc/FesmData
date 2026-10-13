@@ -26,7 +26,9 @@ Domains and resolutions are defined in `../shared/domains.toml` (shared with the
 other pipelines), and the products of each domain in `products.toml`. Grid extents
 follow the v1 grids in `../maps`, so the v1 grids at 4-32 km are reproduced, except
 GRL-32KM, which has 53 instead of 54 columns so that its extent matches the finer
-GRL grids, and the 250 m grid of the SRG nest reproduces the v1 SRG-250M grid. The
+GRL grids, and the EIS grids, which are shifted by 16 km in y and extended so that they
+lie on the NH grids at all resolutions (crops are cut from them on demand); the 250 m
+grid of the SRG nest reproduces the v1 SRG-250M grid. The
 ice-sheet domains are on polar stereographic projections, the mountain-glacier domains
 on the projection used for glacier modelling in each region (UTM, NZTM2000, and the
 Albers equal-area projection of High Mountain Asia).

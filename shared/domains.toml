@@ -67,7 +67,7 @@ ylim = [-5400, 1576]
 [NH.crops.EIS]
 folder = "Eurasia"
 xlim = [380, 3900]
-ylim = [-5000, 1400]
+ylim = [-5016, 1416]
 
 # ---------------------------------------------------------------------------
 # Mountain glaciers: base grids of 250 m (500 m for Svalbard), and 50 m for the nests

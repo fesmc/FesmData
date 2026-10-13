@@ -14,14 +14,14 @@
 source = "Pan2022_litho"
 file = "Pan2022_EarthStructure.nc"
 variables = ["z_litho"]
-grids = { Antarctica = 4, GreenlandPaleo = 4, Greenland = 4, North = 4, Laurentide = 4, Eurasia = 4, Global = 4 }
+grids = { Antarctica = 4, GreenlandPaleo = 4, North = 4, Global = 4 }
 release = false
 
 [products.Pan2022-visc]
 source = "Pan2022_litho"
 file = "Pan2022_EarthStructure.nc"
 variables = ["log10_visc"]
-grids = { Antarctica = 16, GreenlandPaleo = 16, Greenland = 16, North = 16, Laurentide = 16, Eurasia = 16, Global = 16 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 16 }
 release = false
 figure = { select = { depth = 200000 } }
 
@@ -29,14 +29,14 @@ figure = { select = { depth = 200000 } }
 source = "Bagge2021_visc"
 file = "Bagge2021_visc.nc"
 variables = ["log10_visc"]
-grids = { Antarctica = 16, GreenlandPaleo = 16, Greenland = 16, North = 16, Laurentide = 16, Eurasia = 16, Global = ["GLOBAL-T170"] }   # source on the T170 Gaussian grid (about 0.7°): GLOBAL-T170 only
+grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = ["GLOBAL-T170"] }   # source on the T170 Gaussian grid (about 0.7°): GLOBAL-T170 only
 figure = { select = { depth = 200000, structure = 3 } }   # 200 km, the reference structure v_0.4_s16
 
 [products.Lloyd2024]
 source = "Lloyd2024_visc"
 file = "Lloyd2024_visc.nc"
 variables = ["log10_visc"]
-grids = { Antarctica = 16, GreenlandPaleo = 16, Greenland = 16, North = 16, Laurentide = 16, Eurasia = 16, Global = 16 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 16 }
 figure = { select = { depth = 200000 } }
 
 [products.Wiens2022]

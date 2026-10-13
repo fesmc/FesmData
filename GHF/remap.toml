@@ -19,7 +19,7 @@
 source = "Lucazeau2019_ghf"
 file = "Lucazeau2019_GHF.nc"
 variables = ["ghf", "ghf_sd"]
-grids = { Antarctica = 4, GreenlandPaleo = 4, Greenland = 4, North = 4, Laurentide = 4, Eurasia = 4, Global = 4 }
+grids = { Antarctica = 4, GreenlandPaleo = 4, North = 4, Global = 4 }
 
 [products.Martos2017]
 source = "Martos2017_ghf"
@@ -44,13 +44,13 @@ grids = { Antarctica = 4 }
 source = "Davies2013_ghf"
 file = "Davies2013_GHF.nc"
 variables = ["ghf", "ghf_median", "ghf_err"]
-grids = { Antarctica = 4, GreenlandPaleo = 4, Greenland = 4, North = 4, Laurentide = 4, Eurasia = 4, Global = 4 }
+grids = { Antarctica = 4, GreenlandPaleo = 4, North = 4, Global = 4 }
 
 [products.Shapiro2004]
 source = "Shapiro2004_ghf"
 file = "Shapiro2004_GHF.nc"
 variables = ["ghf", "ghf_sd"]
-grids = { Antarctica = 4, GreenlandPaleo = 4, Greenland = 4, North = 4, Laurentide = 4, Eurasia = 4, Global = 4 }
+grids = { Antarctica = 4, GreenlandPaleo = 4, North = 4, Global = 4 }
 
 [products.Loesing2021]
 source = "Loesing2021_ghf"
@@ -74,7 +74,7 @@ grids = { Greenland = 4 }
 source = "FoxMaule2005_ghf"
 file = "FoxMaule2005_GHF.nc"
 variables = ["ghf"]
-grids = { Antarctica = 4, GreenlandPaleo = 4, Greenland = 4 }
+grids = { Antarctica = 4, GreenlandPaleo = 4 }
 
 # Topographic correction factors (dimensionless, on the BedMachine grids): all grids
 # (0), as the source is finer than all of them.

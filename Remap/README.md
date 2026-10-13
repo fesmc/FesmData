@@ -140,8 +140,10 @@ made on; it is not made on other domains. For each domain:
 - a number: the minimum grid spacing in km, i.e. all standard grids of the domain not
   finer than this (on lon-lat grids, 111 km per degree of latitude); 0 means all. Finer
   grids are left out where a coarse source adds no information and its files would only
-  be large (e.g. 4 for most sources, 16 for 3D ocean data at 1°); models that need
-  finer grids can remap online.
+  be large; models that need finer grids can remap online. As a rule, no grid is finer
+  than about a quarter of the source spacing: 16 km and 0.5° (`Global = 50`) for
+  sources at 1-2°, 8 km and 0.25° (`Global = 25`) for sources at 0.25-0.5°, 4 km for
+  most others.
 - a list of grid names: exactly these grids, e.g. `Global = ["GLOBAL-T170"]`. This also
   gives the grids made only on request, which no number selects: the Gaussian grids of
   the Global domain (`gaussian` in `../shared/domains.toml`, e.g. GLOBAL-T170, the T170
@@ -149,6 +151,11 @@ made on; it is not made on other domains. For each domain:
 
 For example, `grids = { Antarctica = 16, Global = ["GLOBAL-T170"] }` makes ANT-16KM,
 ANT-32KM and GLOBAL-T170.
+
+Crops (Greenland, Laurentide, Eurasia, ...) and nests are listed only for products their
+parent domain does not have (e.g. a Greenland-only source on Greenland): their grids lie
+on those of the parent, so `fetch` cuts a product of the parent to them on demand (see
+`../Publish/README.md`), and it is stored once.
 
 `fill` fills the gaps of a source over the ice on each grid, after remapping (and the
 rotation of vectors): the cells of the fields `variables` with ice (`H_ice > 0`) in the
