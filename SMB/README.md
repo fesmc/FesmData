@@ -45,9 +45,15 @@ data (`f_valid` = 0, marked by `mask_fill_<field>`) as follows:
 - `t2m` and `T_srf`: the same regression on the elevation (a local lapse rate), without
   bound. They are missing only outside the RCM domain (RACMO: the corners of the grids;
   MAR: e.g. the Canadian Arctic), as the RCMs give them on land and ocean.
-- `pr`, `sf` (and `rf` for MAR, so that `pr = sf + rf` holds) and `z_srf` (the RCM
-  orography): harmonic interpolation. Off the ice, `smb` is not `pr` minus runoff or
-  sublimation (which stay missing there), but the bound above.
+- `z_srf` (the RCM orography): the elevation of the regression, `max(z_srf, 0)` of
+  `TOPO-BedMachine-v4`, in every cell where `smb` is filled (`method = "elevation"`,
+  `gaps_of = "smb"`), also where the RCM has an orography of its own (e.g. 0 over the
+  ocean of MAR, in the Canadian Arctic), so that it is the reference elevation of the
+  filled `smb` (e.g. for an elevation correction in a model). Elsewhere it is the RCM
+  orography, the elevation of the RCM `t2m` and `T_srf` where only `smb` is filled.
+- `pr`, `sf` (and `rf` for MAR, so that `pr = sf + rf` holds): harmonic interpolation.
+  Off the ice, `smb` is not `pr` minus runoff or sublimation (which stay missing there),
+  but the bound above.
 
 `runoff`, `melt` and `subl` are not filled.
 

@@ -5,7 +5,7 @@
 using TOML
 
 "Methods of filling the gaps (see `GapFill`)."
-const FILL_METHODS = ("harmonic", "elevation_regression")
+const FILL_METHODS = ("harmonic", "elevation_regression", "elevation")
 
 """
     GapFill
@@ -14,10 +14,14 @@ The gaps filled after remapping (a table of `fill` of a product): the cells of t
 fields `variables` without source data, with ice (H_ice > 0) in the Topo product `mask`
 on the same grid (e.g. "TOPO-BedMachine-v4", the file `<GRID>_TOPO-BedMachine-v4.nc`), or
 all of them for `mask = "all"`, filled by `method`: "harmonic" (Laplace) interpolation,
-or "elevation_regression", the linear regression of the field on the surface elevation
-(`z_srf` of the Topo product `elevation`) of the cells with data within `radius` km
-(grown until there are `min_points`), at the elevation of the cell; `cap` gives upper
-bounds of the filled values by field (in its units).
+"elevation_regression", the linear regression of the field on the surface elevation
+(`z_srf` of the Topo product `elevation`, 0 over the ocean) of the cells with data within `radius` km
+(grown until there are `min_points`), at the elevation of the cell, or "elevation", that
+surface elevation itself (e.g. for the orography of a field filled by the regression);
+`cap` gives upper bounds of the filled values by field (in its units). `gaps_of`
+("elevation" only, "" for none) names the field whose gaps (no source data in any of its
+slices, in `mask`) are filled instead of those of each variable, e.g. the orography
+where the surface mass balance is filled.
 """
 struct GapFill
     method::String
@@ -27,12 +31,14 @@ struct GapFill
     radius::Float64
     min_points::Int
     cap::Dict{String,Float64}
+    gaps_of::String
 end
 
 "Keys of a table of `fill` by method (`variables` and `mask` are required)."
 const FILL_KEYS = Dict("harmonic" => ("method", "variables", "mask"),
                        "elevation_regression" => ("method", "variables", "mask", "elevation", "radius",
-                                                  "min_points", "cap"))
+                                                  "min_points", "cap"),
+                       "elevation" => ("method", "variables", "mask", "elevation", "gaps_of"))
 
 """
 `fill` of a product in remap.toml, checked (see `GapFill`): a table or a list of tables,
@@ -60,7 +66,10 @@ function gap_fill_spec(value, what, variables)
         radius > 0 && min_points >= 2 || error("$what: fill.radius must be > 0 and fill.min_points >= 2")
         cap = Dict{String,Float64}(k => Float64(v) for (k, v) in get(t, "cap", Dict{String,Any}()))
         isempty(setdiff(keys(cap), vars)) || error("$what: fill.cap of fields not filled by it")
-        push!(fills, GapFill(method, vars, t["mask"], elevation, radius, min_points, cap))
+        gaps_of = String(get(t, "gaps_of", ""))
+        variables === nothing || isempty(gaps_of) || gaps_of in variables ||
+            error("$what: fill.gaps_of $gaps_of is not among the variables")
+        push!(fills, GapFill(method, vars, t["mask"], elevation, radius, min_points, cap, gaps_of))
     end
     allunique(f for g in fills for f in g.variables) || error("$what: a variable in several tables of fill")
     return fills

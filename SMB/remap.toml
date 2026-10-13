@@ -36,22 +36,26 @@ figure = { variables = ["smb"] }
 
 # Filled outside the glaciated surfaces and the RACMO domain, for model forcing over the
 # whole grid: smb, t2m, T_srf by the regression on the elevation, smb at most -91.7 kg m-2
-# yr-1 (-0.1 m yr-1 ice equivalent), the others by harmonic interpolation (README.md)
+# yr-1 (-0.1 m yr-1 ice equivalent), z_srf by that elevation (max(z_srf, 0) of
+# TOPO-BedMachine-v4) wherever smb is filled, so that it is the elevation of the filled
+# smb, the others by harmonic interpolation (README.md)
 [products."RACMO2.3p2-1981-2010"]
 source = "vanWessem2023_racmo23"
 file = "RACMO2.3p2_1981-2010.nc"
 grids = { Antarctica = 4 }
 figure = { variables = ["smb"] }
-fill = [{ variables = ["pr", "sf", "z_srf"], mask = "all" },
-        { method = "elevation_regression", variables = ["smb", "t2m", "T_srf"], mask = "all", cap = { smb = -91.7 } }]
+fill = [{ variables = ["pr", "sf"], mask = "all" },
+        { method = "elevation_regression", variables = ["smb", "t2m", "T_srf"], mask = "all", cap = { smb = -91.7 } },
+        { method = "elevation", variables = ["z_srf"], mask = "all", gaps_of = "smb" }]
 
 [products."RACMO2.3p2-1981-2010-annual-mean"]
 source = "vanWessem2023_racmo23"
 file = "RACMO2.3p2_1981-2010_annual-mean.nc"
 grids = { Antarctica = 4 }
 figure = false
-fill = [{ variables = ["pr", "sf", "z_srf"], mask = "all" },
-        { method = "elevation_regression", variables = ["smb", "t2m", "T_srf"], mask = "all", cap = { smb = -91.7 } }]
+fill = [{ variables = ["pr", "sf"], mask = "all" },
+        { method = "elevation_regression", variables = ["smb", "t2m", "T_srf"], mask = "all", cap = { smb = -91.7 } },
+        { method = "elevation", variables = ["z_srf"], mask = "all", gaps_of = "smb" }]
 
 [products."RACMO2.3p2-1991-2020"]
 source = "vanWessem2023_racmo23"
@@ -93,16 +97,18 @@ source = "Fettweis2017_mar314"
 file = "MARv3.14_ERA5_1961-1990.nc"
 grids = { Greenland = 1 }
 figure = { variables = ["smb"] }
-fill = [{ variables = ["pr", "sf", "rf", "z_srf"], mask = "all" },
-        { method = "elevation_regression", variables = ["smb", "t2m", "T_srf"], mask = "all", cap = { smb = -91.7 } }]
+fill = [{ variables = ["pr", "sf", "rf"], mask = "all" },
+        { method = "elevation_regression", variables = ["smb", "t2m", "T_srf"], mask = "all", cap = { smb = -91.7 } },
+        { method = "elevation", variables = ["z_srf"], mask = "all", gaps_of = "smb" }]
 
 [products."MARv3.14-1961-1990-annual-mean"]
 source = "Fettweis2017_mar314"
 file = "MARv3.14_ERA5_1961-1990_annual-mean.nc"
 grids = { Greenland = 1 }
 figure = false
-fill = [{ variables = ["pr", "sf", "rf", "z_srf"], mask = "all" },
-        { method = "elevation_regression", variables = ["smb", "t2m", "T_srf"], mask = "all", cap = { smb = -91.7 } }]
+fill = [{ variables = ["pr", "sf", "rf"], mask = "all" },
+        { method = "elevation_regression", variables = ["smb", "t2m", "T_srf"], mask = "all", cap = { smb = -91.7 } },
+        { method = "elevation", variables = ["z_srf"], mask = "all", gaps_of = "smb" }]
 
 # Filled off the ice and outside the MAR domain (smb is defined on the ice only, see
 # ../Fettweis2017_mar314/README.md), for model forcing over the whole grid, as
@@ -112,16 +118,18 @@ source = "Fettweis2017_mar314"
 file = "MARv3.14_ERA5_1981-2010.nc"
 grids = { Greenland = 1 }
 figure = { variables = ["smb"] }
-fill = [{ variables = ["pr", "sf", "rf", "z_srf"], mask = "all" },
-        { method = "elevation_regression", variables = ["smb", "t2m", "T_srf"], mask = "all", cap = { smb = -91.7 } }]
+fill = [{ variables = ["pr", "sf", "rf"], mask = "all" },
+        { method = "elevation_regression", variables = ["smb", "t2m", "T_srf"], mask = "all", cap = { smb = -91.7 } },
+        { method = "elevation", variables = ["z_srf"], mask = "all", gaps_of = "smb" }]
 
 [products."MARv3.14-1981-2010-annual-mean"]
 source = "Fettweis2017_mar314"
 file = "MARv3.14_ERA5_1981-2010_annual-mean.nc"
 grids = { Greenland = 1 }
 figure = false
-fill = [{ variables = ["pr", "sf", "rf", "z_srf"], mask = "all" },
-        { method = "elevation_regression", variables = ["smb", "t2m", "T_srf"], mask = "all", cap = { smb = -91.7 } }]
+fill = [{ variables = ["pr", "sf", "rf"], mask = "all" },
+        { method = "elevation_regression", variables = ["smb", "t2m", "T_srf"], mask = "all", cap = { smb = -91.7 } },
+        { method = "elevation", variables = ["z_srf"], mask = "all", gaps_of = "smb" }]
 
 [products."MARv3.14-1991-2020"]
 source = "Fettweis2017_mar314"

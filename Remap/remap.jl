@@ -714,6 +714,7 @@ fill_where(fill::GapFill) = fill.mask == "all" ? "everywhere" : "over the ice (H
 "How the gaps of `fill` are filled, for the descriptions in the files and the log."
 function fill_how(fill::GapFill)
     fill.method == "harmonic" && return "harmonic (Laplace) interpolation from the cells around"
+    fill.method == "elevation" && return "the surface elevation (z_srf of $(fill.elevation), 0 over the ocean)"
     d = "linear regression on the surface elevation (z_srf of $(fill.elevation), 0 over the ocean) of the " *
         "cells with data within $(fill.radius) km (grown by $(fill.radius / 2) km until there are at least " *
         "$(fill.min_points)), at the elevation of the cell clamped to the range of their elevations"
@@ -771,11 +772,14 @@ function topo_elevation(og::OutGrid, product::AbstractString)
 end
 
 # The variables of the `fills` among the fields `pf`, as floats, with both components of
-# each vector in the same fill, by harmonic interpolation.
+# each vector in the same fill, by harmonic interpolation; the field `gaps_of` among them.
 function check_fill(pf::PreparedFields, fills::AbstractVector{GapFill})
     for fill in fills, f in fill.variables
         f in pf.names || error("fill: no field $f, available: $(join(pf.names, ", "))")
         f in pf.integer && error("fill: $f is an integer field")
+    end
+    for fill in fills
+        isempty(fill.gaps_of) || fill.gaps_of in pf.names || error("fill: no field $(fill.gaps_of) (gaps_of)")
     end
     for fill in fills, (e, n) in pf.vectors
         (e in fill.variables) == (n in fill.variables) || error("fill: give both components $e and $n of the vector")
@@ -922,7 +926,9 @@ Fill the gaps of the remapped fields `out` (field => (Ft, f_valid)) of `pf` on g
 `og` (see `GapFill`): in each variable of each fill, slice by slice, the cells of
 `fill_mask` (with ice, or all) with no source data (f_valid = 0), by harmonic
 interpolation from the cells around them (`laplace_fill!`; gaps not connected to data
-stay missing), or by the regression on the elevation (`regression_fill!`, then `cap`).
+stay missing), by the regression on the elevation (`regression_fill!`, then `cap`), or by
+the elevation itself (`topo_elevation`; with `gaps_of`, in the cells of `fill_mask` where
+that field has no source data in any slice, instead of the gaps of the variable).
 The speed of a filled vector (see `_speed_field`) is the magnitude of the filled
 components in the cells filled. Returns the cells filled (1) in each variable.
 """
@@ -931,9 +937,13 @@ function fill_gaps!(out, pf::PreparedFields, og::OutGrid, fills::AbstractVector{
     for fill in fills
         cells = fill_mask(og, fill)
         regression = fill.method == "elevation_regression"
+        fill.method == "harmonic" || (z = topo_elevation(og, fill.elevation))
+        if !isempty(fill.gaps_of)
+            fv_of = out[fill.gaps_of][2]
+            cells = cells .& reshape(any(==(0), fv_of; dims=3:max(ndims(fv_of), 3)), size(cells))
+        end
         if regression
             og.grid isa ProjGrid || error("fill: elevation_regression needs a projected grid")
-            z = topo_elevation(og, fill.elevation)
             dx, dy = spacing(og.grid)
         end
         for f in fill.variables
@@ -942,7 +952,7 @@ function fill_gaps!(out, pf::PreparedFields, og::OutGrid, fills::AbstractVector{
             nleft, ngrown, slopes = 0, 0, Float64[]
             valid0, table = nothing, nothing
             for I in CartesianIndices(size(Ft)[3:end])
-                gaps = cells .& (view(fv, :, :, I) .== 0)
+                gaps = isempty(fill.gaps_of) ? cells .& (view(fv, :, :, I) .== 0) : cells
                 F = view(Ft, :, :, I)
                 if regression
                     valid = (view(fv, :, :, I) .> 0) .& isfinite.(F)
@@ -951,6 +961,8 @@ function fill_gaps!(out, pf::PreparedFields, og::OutGrid, fills::AbstractVector{
                     ngrown += g
                     append!(slopes, b)
                     nleft += count(gaps .& isnan.(F))
+                elseif fill.method == "elevation"
+                    F[gaps] .= z[gaps]
                 else
                     nleft += laplace_fill!(F, gaps)
                 end
@@ -958,7 +970,8 @@ function fill_gaps!(out, pf::PreparedFields, og::OutGrid, fills::AbstractVector{
             end
             haskey(fill.cap, f) && cap_filled!(Ft, filled[f], fill.cap[f], [d.name for d in pf.dims[f]] == ["month"])
             ncells = count(any(==(1), filled[f]; dims=3:max(ndims(Ft), 3)))
-            msg = "$(og.grid.name): gaps $(fill_where(fill)) of $f filled ($(fill.method)), " *
+            msg = "$(og.grid.name): gaps $(fill_where(fill)) of $(isempty(fill.gaps_of) ? f : fill.gaps_of) " *
+                  "filled in $f ($(fill.method)), " *
                   "$ncells cells" * (nleft > 0 ? ", $nleft cell-slices left missing" : "")
             if regression
                 msg *= "; radius grown for $ngrown cell-slices, median slope " *
@@ -979,17 +992,20 @@ function fill_gaps!(out, pf::PreparedFields, og::OutGrid, fills::AbstractVector{
 end
 
 "Description of the fills, for the global attribute `gap_fill` and `mask_fill`."
-fills_description(fills) = join(("$(join(fill.variables, ", ")): $(fill_how(fill)) $(fill_where(fill)) where there " *
-                                 "are no source data" for fill in fills), "; ")
+fills_description(fills) = join(("$(join(fill.variables, ", ")): $(fill_how(fill)) $(fill_where(fill)) " *
+                                 (isempty(fill.gaps_of) ? "where there are no source data" :
+                                  "where $(fill.gaps_of) has no source data") for fill in fills), "; ")
 
 "Attributes of `mask_fill` (or `mask_fill_<f>` for field `f`)."
-mask_fill_attrib(fills::AbstractVector{GapFill}, f) = Pair{String,Any}[
-    "units" => "1",
-    "long_name" => "gap filled" * (f === nothing ? "" : " in $f"),
-    "flag_values" => Int8[0, 1], "flag_meanings" => "source filled",
-    "comment" => "1: no source data (f_valid = 0), filled: " *
-                 (f === nothing ? fills_description(fills) :
-                  fills_description(filter(fill -> f in fill.variables, fills)))]
+function mask_fill_attrib(fills::AbstractVector{GapFill}, f)
+    fs = f === nothing ? fills : filter(fill -> f in fill.variables, fills)
+    return Pair{String,Any}[
+        "units" => "1",
+        "long_name" => "gap filled" * (f === nothing ? "" : " in $f"),
+        "flag_values" => Int8[0, 1], "flag_meanings" => "source filled",
+        "comment" => (all(fill -> isempty(fill.gaps_of), fs) ? "1: no source data (f_valid = 0), filled: " :
+                      "1: filled: ") * fills_description(fs)]
+end
 
 "Description of a remapping for the global attribute `remap_method`."
 function method_description(method::AbstractString, sigma::Real; integers::Bool=false)

@@ -163,14 +163,16 @@ global attribute `gap_fill`. The Topo product must be made first (thematic datas
 depend on Topo, and some on Regions).
 
 `fill` can also be a list of tables, each with its `method` (each field in one of them):
-`"harmonic"` (the default, as above) or `"elevation_regression"`, for fields that depend
+`"harmonic"` (the default, as above), `"elevation_regression"`, for fields that depend
 on the surface elevation (e.g. the surface mass balance or temperature of a regional
-climate model, outside its ice mask or domain):
+climate model, outside its ice mask or domain), or `"elevation"`, for the surface
+elevation of the source itself (e.g. the orography of the regional climate model):
 
 ```toml
-fill = [{ variables = ["pr", "sf", "z_srf"], mask = "all" },
+fill = [{ variables = ["pr", "sf"], mask = "all" },
         { method = "elevation_regression", variables = ["smb", "t2m", "T_srf"], mask = "all",
-          cap = { smb = -91.7 } }]       # optional: elevation, radius = 150.0, min_points = 20
+          cap = { smb = -91.7 } },       # optional: elevation, radius = 150.0, min_points = 20
+        { method = "elevation", variables = ["z_srf"], mask = "all", gaps_of = "smb" }]   # optional: elevation, gaps_of
 ```
 
 Each gap gets the linear regression of the field on the surface elevation, fitted over
@@ -188,6 +190,16 @@ weighted by their mean length (February 28.25 days, as the `-annual-mean` produc
 the leap days of their period), all months of a cell shifted down by the same amount, so
 that the seasonal cycle is kept. The log gives, for each field, the cells filled, the cell-slices whose radius was
 grown and the median slope. Vectors are filled by harmonic interpolation only.
+
+`"elevation"` fills the gaps with the elevation of the regression itself, `max(z_srf,
+0)` of the Topo product `elevation` (default `TOPO-BedMachine-v4`), not clamped (the
+clamp applies only within the regression). With `gaps_of`, it fills the cells (of
+`mask`) where that field has no source data, in any of its slices (e.g. any month),
+instead of the gaps of the variables themselves, and so also replaces source data there
+(marked by `mask_fill`). Filling the orography of the source where the surface mass
+balance is filled keeps it the reference elevation of the filled values, e.g. for an
+elevation correction of the surface mass balance in a model, also where the source has
+an orography of its own (e.g. 0 over its ocean).
 
 `file` can be a list of prepared files of the source, each on its own grid, combined
 into one product. The files are meant to cover separate areas, e.g. the grounded and the
