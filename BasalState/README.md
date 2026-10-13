@@ -21,8 +21,8 @@ of each cell covered by the source.
 
 ## Precision
 
-The float fields are rounded on output to a tolerance by kind (see [Data volume and
-precision](https://fesmc.github.io/FesmData/data_volume.html)): `T_b` and `T_b_pmp` to
+The float fields are rounded on output to a tolerance by kind (see [Precision and file
+sizes](https://fesmc.github.io/FesmData/precision.html)): `T_b` and `T_b_pmp` to
 0.01 K; `bmelt_grnd` to 1%; `beta` to 3 significant digits; `f_valid` to 0.001.
 `basal_state` (classes) is exact.
 

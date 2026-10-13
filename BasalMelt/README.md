@@ -25,8 +25,8 @@ not melt rates: see `Adusumilli2020_bmelt/README.md`.
 
 ## Precision
 
-The float fields are rounded on output to a tolerance by kind (see [Data volume and
-precision](https://fesmc.github.io/FesmData/data_volume.html)): melt rates (`bmelt*`,
+The float fields are rounded on output to a tolerance by kind (see [Precision and file
+sizes](https://fesmc.github.io/FesmData/precision.html)): melt rates (`bmelt*`,
 `smb_discharge`) to 1%; the height changes `dh_alt` and `dh_firn` to 0.01 m; `f_valid` to
 0.001.
 

@@ -42,8 +42,8 @@ grid) by harmonic interpolation (`fill`, `mask = "all"`, marked by `mask_fill`; 
 
 ## Precision
 
-The float fields are rounded on output to a tolerance by kind (see [Data volume and
-precision](https://fesmc.github.io/FesmData/data_volume.html)): the heat flow and its
+The float fields are rounded on output to a tolerance by kind (see [Precision and file
+sizes](https://fesmc.github.io/FesmData/precision.html)): the heat flow and its
 uncertainties and ranges (mW m-2) to 1%; `depth_curie` and `depth_curie_sd` (km) to 3
 significant digits; `ghf_corr`, `ghf_corr_unc` (dimensionless) and `f_valid` to 0.001.
 

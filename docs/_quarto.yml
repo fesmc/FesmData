@@ -8,7 +8,7 @@ project:
     - "datasets.qmd"
     - "records_overview.qmd"
     - "domains.qmd"
-    - "data_volume.qmd"
+    - "precision.qmd"
     - "datasets/*.qmd"
     - "remap.qmd"
     - "records.qmd"
@@ -34,8 +34,8 @@ website:
         href: products.qmd
       - text: "Domains and grids"
         href: domains.qmd
-      - text: "Data volume"
-        href: data_volume.qmd
+      - text: "Precision"
+        href: precision.qmd
       - text: "Datasets"
         menu:
           - text: "Topo — topography"

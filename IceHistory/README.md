@@ -29,8 +29,8 @@ each cell. The global attribute `remap_method` records what was done on each gri
 
 ## Precision
 
-The float fields are rounded on output to a tolerance by kind (see [Data volume and
-precision](https://fesmc.github.io/FesmData/data_volume.html)): elevations and
+The float fields are rounded on output to a tolerance by kind (see [Precision and file
+sizes](https://fesmc.github.io/FesmData/precision.html)): elevations and
 thicknesses (`z_*`, `dz_*`, `H_ice*`) to 0.01 m; fractions (`f_*`) to 0.001; ages
 (`age_*`) to 3 significant digits. The masks of PRISM4 are exact.
 

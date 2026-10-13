@@ -28,8 +28,8 @@ of it. The global attribute `remap_method` records what was done on each grid.
 
 ## Precision
 
-The float fields are rounded on output to a tolerance by kind (see [Data volume and
-precision](https://fesmc.github.io/FesmData/data_volume.html)): the thicknesses
+The float fields are rounded on output to a tolerance by kind (see [Precision and file
+sizes](https://fesmc.github.io/FesmData/precision.html)): the thicknesses
 (`z_sed*`) to 0.01 m; `f_valid` to 0.001. The classes of Gowan2019 are exact.
 
 ## Licences

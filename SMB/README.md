@@ -59,8 +59,8 @@ data (`f_valid` = 0, marked by `mask_fill_<field>`) as follows:
 
 ## Precision
 
-The float fields are rounded on output to a tolerance by kind (see [Data volume and
-precision](https://fesmc.github.io/FesmData/data_volume.html)): `smb`, `pr`, `sf`, `rf`,
+The float fields are rounded on output to a tolerance by kind (see [Precision and file
+sizes](https://fesmc.github.io/FesmData/precision.html)): `smb`, `pr`, `sf`, `rf`,
 `runoff`, `melt` and `subl` to 1%; `t2m` and `T_srf` to 0.01 K; `z_srf` to 0.01 m;
 `f_ice` and `f_valid` to 0.001. The masks are exact.
 

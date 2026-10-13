@@ -50,8 +50,8 @@ original files where they are published:
 
 ## Precision
 
-The float fields are rounded on output to a tolerance by kind (see [Data volume and
-precision](https://fesmc.github.io/FesmData/data_volume.html)): `z_litho` and
+The float fields are rounded on output to a tolerance by kind (see [Precision and file
+sizes](https://fesmc.github.io/FesmData/precision.html)): `z_litho` and
 `z_litho_sd` to 0.01 m; `log10_visc` and `log10_visc_sd` to 3 significant digits (about
 0.01, 2% in viscosity); `f_valid` to 0.001.
 

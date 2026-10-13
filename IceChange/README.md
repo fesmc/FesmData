@@ -50,8 +50,8 @@ al., 2020).
 
 ## Precision
 
-The float fields are rounded on output to a tolerance by kind (see [Data volume and
-precision](https://fesmc.github.io/FesmData/data_volume.html)): `dzdt` and `dHdt` to 1%;
+The float fields are rounded on output to a tolerance by kind (see [Precision and file
+sizes](https://fesmc.github.io/FesmData/precision.html)): `dzdt` and `dHdt` to 1%;
 `f_valid` to 0.001.
 
 ## Licences
