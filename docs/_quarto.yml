@@ -11,6 +11,8 @@ project:
     - "datasets/*.qmd"
     - "remap.qmd"
     - "records.qmd"
+    - "developers.qmd"
+    - "machines.qmd"
     - "releasing.qmd"
 
 website:

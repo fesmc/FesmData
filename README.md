@@ -7,32 +7,6 @@ Repository to manage data processing strategies to provide input to FESMs or for
 
 The data itself most often should not be stored in this repository itself. In fact, it is preferred if the first step of the instructions provided explain how to obtain the original data. As a rule of thumb, if the original dataset is < 10 Mb, consider including it directly within the repository for convenience, but please still document how it can be obtained. This will ensure the processed data can be recreated in the most reliable way possible. See Lucazeau2019_ghf as an example.
 
-## v2 method
-
-In v2, every dataset is made in two steps (see `Remap/README.md`):
-
-1. **Prepare**: the source folder (e.g. `Lucazeau2019_ghf/`) has a `prepare.jl` that gets the original files (listed in `datamanifest.toml`) and writes them as a NetCDF file on their own grid, in a simple standard form, to `$FESMDATA_PREPARED/<Key>/`.
-2. **Remap**: `julia fesmdata.jl remap <file>` puts a prepared file onto the grids of the model domains, in `$FESMDATA_PRODUCTS/<Domain>/<GRID>/<GRID>_<Dataset>-<Product>.nc`. Remapping is conservative (with smoothing where the target grid is coarser), and handles extra dimensions (month, time, depth, ...), integer fields (dominant class) and vectors (rotated to the grid axes).
-
-A **thematic dataset** (e.g. `GHF/`) groups the products of several sources in its `remap.toml`: `julia fesmdata.jl remap GHF` makes all of them, and they are released together.
-
-## Shared resources
-
-`shared` : code and settings shared by the v2 pipelines: the model domains and their grids (`domains.toml`), the machine environments (`machines/<machine>.env`), the NetCDF output (`io.jl`), the original datasets (`manifest.jl`, with `datamanifest.toml`), the provenance attributes (`provenance.jl`) and the gridding of equal-area points (`ringgrid.jl`).
-
-`Remap` : the generic remapping of prepared files and thematic datasets (`julia fesmdata.jl remap`), with the jobs to run it on Levante.
-
-`maps` : predefined grid description files following the `cdo` conventions (v1).
-`grid` : tools to generate files corresponding to specific grid definitions as in `maps` (v1).
-
-Every NetCDF file written by a v2 pipeline has the global attributes `source` (this repository), `fesmdata_version` (`git describe` against the release tags of the dataset, e.g. `topo-v2.0.0`, with `-dirty` for uncommitted changes), `fesmdata_commit` and `history` (time, script and arguments).
-
-`Publish` : the released products are stored on [Helmholtz Codebase](https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages), one package per domain, dataset and grid, optionally archived on [Zenodo](https://zenodo.org/communities/fesmc) for a DOI, and listed in `registry/` and on the [project website](https://fesmc.github.io/FesmData/); find, download and release them with `julia fesmdata.jl` (e.g. `julia fesmdata.jl list`, `julia fesmdata.jl fetch Antarctica Topo ANT-16KM`; `julia fesmdata.jl help` for all commands, `Publish/README.md` for details).
-
-## Alternative and past approaches
-
-In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding](https://github.com/alex-robinson/gridding)) program to handle remapping (and preprocessing) of a wide variety of datasets that were relevant for ice-sheet modeling. This was how the original `ice_data` repository of gridded datasets was populated. It worked well, but was difficult to modify for new datasets, since it is entirely in Fortran, and requires configuration and compilation. For this reason, remapping via conservative interpolation using `cdo` became the favored approach for individual datasets. What was not included then was the preprocessing steps needed before applying interpolation. The v2 method above reproduces the `ice_data` datasets from their original sources, with each step documented.
-
 ## Datasets
 
 The v2 datasets (Topo, Regions, and the thematic datasets GHF, Velocity, SMB, ...) are
@@ -43,6 +17,22 @@ hold non-gridded data. The [website](https://fesmc.github.io/FesmData/) lists th
 [products](https://fesmc.github.io/FesmData/products.html),
 [domains](https://fesmc.github.io/FesmData/domains.html)) and explains how to
 [download](https://fesmc.github.io/FesmData/download.html) them.
+
+## Code
+
+In v2, every dataset is made from the original sources: a `prepare.jl` per source writes
+its data in a simple standard form, which is then remapped onto the grids of the model
+domains (thematic datasets such as GHF, defined by a `remap.toml`), merged by a pipeline
+of its own (Topo, Regions), or copied as it is (Records). All commands go through
+`julia fesmdata.jl` (`julia fesmdata.jl help`). The developer pages of the website
+describe the [method and the code](https://fesmc.github.io/FesmData/developers.html), the
+[machines and storage](https://fesmc.github.io/FesmData/machines.html),
+[adding a dataset](https://fesmc.github.io/FesmData/adding.html) and
+[releasing](https://fesmc.github.io/FesmData/releasing.html).
+
+## Alternative and past approaches
+
+In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding](https://github.com/alex-robinson/gridding)) program to handle remapping (and preprocessing) of a wide variety of datasets that were relevant for ice-sheet modeling. This was how the original `ice_data` repository of gridded datasets was populated. It worked well, but was difficult to modify for new datasets, since it is entirely in Fortran, and requires configuration and compilation. For this reason, remapping via conservative interpolation using `cdo` became the favored approach for individual datasets. What was not included then was the preprocessing steps needed before applying interpolation. The v2 method reproduces the `ice_data` datasets from their original sources, with each step documented.
 
 ## Source folders (alphabetical order)
 

@@ -1,0 +1,5 @@
+---
+pagetitle: "Machines and storage"
+---
+
+{{< include ../shared/machines/README.md >}}
