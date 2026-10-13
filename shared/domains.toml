@@ -184,7 +184,7 @@ ylim = [-5016, 1416]
 
 # ---------------------------------------------------------------------------
 # Mountain glaciers: base grids of 250 m (500 m for Svalbard), and 50 m for the nests
-# of single icefields. Each domain is on the projection used for glacier modelling in
+# of single icefields (25 m for the Drang Drung Glacier). Each domain is on the projection used for glacier modelling in
 # its region, and covers the extent of its glaciers at the Last Glacial Maximum. The 2
 # km grid of each domain is the grid of the thematic datasets (climate, geothermal heat
 # flow, ...), whose sources are coarser; their nests take these by cropping.
@@ -261,8 +261,8 @@ resolutions = [0.25, 0.5, 2]
 elevation_precision = 0.01
 
 # Himalaya, Karakoram and Hindu Kush: Albers equal-area conic of the High Mountain Asia
-# glacier products (Shean et al., 2020), 68-99E, 25.5-38.5N. Nest (50, 100 and 250 m):
-# the Drang Drung Glacier (Zanskar).
+# glacier products (Shean et al., 2020), 68-99E, 25.5-38.5N. Nest (25, 50, 100 and
+# 250 m): the Drang Drung Glacier (Zanskar).
 [HIM]
 folder = "Himalaya"
 proj = "+proj=aea +lat_1=25 +lat_2=47 +lat_0=36 +lon_0=85 +x_0=0 +y_0=0 +a=6378137 +rf=298.257223563 +units=km"
@@ -272,12 +272,12 @@ resolutions = [0.25, 0.5, 2]
 elevation_precision = 0.01
 
 # 33.6-33.9N, 76.2-76.45E: the outline of the ISSM domain of Sommers (2025, DD.exp)
-# with a margin of 5 km
+# with a margin of 5 km (841 x 1201 cells at 25 m)
 [HIM.nests.DDG]
 folder = "DrangDrung"
 xlim = [-800, -779]
 ylim = [-234, -204]
-resolutions = [0.05, 0.1, 0.25]
+resolutions = [0.025, 0.05, 0.1, 0.25]
 
 # Svalbard: UTM zone 33N (EPSG:32633), as the Norwegian Polar Institute, 5-35E,
 # 74-81.5N (the archipelago and its shelf).

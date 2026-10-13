@@ -178,6 +178,11 @@ rho_sw = 1028.0
 [DDG.products]
 "GLO90-GEBCO2026" = ["iceboost_v2", "copernicus_glo90", "gebco2026"]
 
+# The surface DEM and ice thickness of the ISSM setup of Sommers (2025) within their
+# box, with the IceBoost glaciers outside it
+[DDG.variants]
+"Sommers2025" = ["sommers2025_drangdrung", "iceboost_v2", "copernicus_glo90", "gebco2026"]
+
 [SVB]
 rho_ice = 917.0
 rho_sw = 1028.0
