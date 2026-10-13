@@ -1,247 +1,371 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-12"
-git_tag = "smb-v2.2.0"
+date = "2026-10-13"
+git_tag = "smb-v2.3.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Antarctica_SMB"
-version = "2.2.0"
+version = "2.3.0"
+
+["ANT-16KM_SMB-RACMO2.3p2-1981-2010-annual-mean.nc"]
+checksum = "sha256:88523d328f9d0171e081992c0cfe8823c625bf3fb59969cbb80ff3d566a50ce4"
+size = 2306531
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_SMB-RACMO2.3p2-1981-2010-annual-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-16KM/2.3.0/ANT-16KM_SMB-RACMO2.3p2-1981-2010-annual-mean.nc"
 
 ["ANT-16KM_SMB-RACMO2.3p2-1981-2010.nc"]
-checksum = "sha256:44da47603a43fad567fd812bfafa50b2bbc508fbea3b217fb9576ee91f3c20af"
-previous_checksums = ["sha256:e7d3bba4afb3cf8fdaca4153d261cfb3ee3c34bc23eba57e2146c83ee4390e79"]
-size = 22551484
+checksum = "sha256:9c25a9f2bb9f0259b714998d61a8d2d743c223ad558bc7acea5f9326c39fff50"
+previous_checksums = ["sha256:e7d3bba4afb3cf8fdaca4153d261cfb3ee3c34bc23eba57e2146c83ee4390e79", "sha256:44da47603a43fad567fd812bfafa50b2bbc508fbea3b217fb9576ee91f3c20af"]
+size = 25386892
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_SMB-RACMO2.3p2-1981-2010.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-16KM/2.2.0/ANT-16KM_SMB-RACMO2.3p2-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-16KM/2.3.0/ANT-16KM_SMB-RACMO2.3p2-1981-2010.nc"
+
+["ANT-16KM_SMB-RACMO2.3p2-1985-2014-annual-mean.nc"]
+checksum = "sha256:57201b7e2c181b668b5faab8b1c9991eebc7e689a68fc5e710767cb10c963fa1"
+size = 2496299
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_SMB-RACMO2.3p2-1985-2014-annual-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-16KM/2.3.0/ANT-16KM_SMB-RACMO2.3p2-1985-2014-annual-mean.nc"
 
 ["ANT-16KM_SMB-RACMO2.3p2-1985-2014.nc"]
-checksum = "sha256:97e9a34043f543496b42e5e6c59ba39f80bb06b319d2487c39548b0b079698d5"
+checksum = "sha256:72ee16d47a234e4b6646f36e3b10e1582ab207a23c817e587a3eece16a8f06da"
+previous_checksums = ["sha256:97e9a34043f543496b42e5e6c59ba39f80bb06b319d2487c39548b0b079698d5"]
 size = 25220351
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_SMB-RACMO2.3p2-1985-2014.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-16KM/2.2.0/ANT-16KM_SMB-RACMO2.3p2-1985-2014.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-16KM/2.3.0/ANT-16KM_SMB-RACMO2.3p2-1985-2014.nc"
+
+["ANT-16KM_SMB-RACMO2.3p2-1991-2020-annual-mean.nc"]
+checksum = "sha256:6fb54f2901ddf8523d07b1043a29d29fb99277393af05ae5c46ab3eabb2267c0"
+size = 2275808
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_SMB-RACMO2.3p2-1991-2020-annual-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-16KM/2.3.0/ANT-16KM_SMB-RACMO2.3p2-1991-2020-annual-mean.nc"
 
 ["ANT-16KM_SMB-RACMO2.3p2-1991-2020.nc"]
-checksum = "sha256:ec4723849c4e6a28a18112a6025ea087decdf0942e5a4de430da1a287e47846a"
-previous_checksums = ["sha256:a9606c0581fc701596e008ed2c5c61268c308b6be41d5d1862cc126e9a741155"]
-size = 22506259
+checksum = "sha256:b3474d67fc5bd890b711bb3908d8963b004300549588790ec8c0d9dbce0bbfe0"
+previous_checksums = ["sha256:a9606c0581fc701596e008ed2c5c61268c308b6be41d5d1862cc126e9a741155", "sha256:ec4723849c4e6a28a18112a6025ea087decdf0942e5a4de430da1a287e47846a"]
+size = 22505143
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_SMB-RACMO2.3p2-1991-2020.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-16KM/2.2.0/ANT-16KM_SMB-RACMO2.3p2-1991-2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-16KM/2.3.0/ANT-16KM_SMB-RACMO2.3p2-1991-2020.nc"
 
 ["ANT-16KM_SMB-RACMO2.3p2-annual.nc"]
-checksum = "sha256:5e1f8f42d07575b418409e2f020a35199071ad0b4704219fd21f8fc94cb1668c"
-previous_checksums = ["sha256:d7e529973c9e78a85a079b12909398d0da7038926762b6d3743f2bcb59c55623"]
-size = 83206346
+checksum = "sha256:9ed8b6c6ccab90d38689c5cd54b227967ade1345505a6d4d2a56a5b6da78465a"
+previous_checksums = ["sha256:d7e529973c9e78a85a079b12909398d0da7038926762b6d3743f2bcb59c55623", "sha256:5e1f8f42d07575b418409e2f020a35199071ad0b4704219fd21f8fc94cb1668c"]
+size = 83205312
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_SMB-RACMO2.3p2-annual.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-16KM/2.2.0/ANT-16KM_SMB-RACMO2.3p2-annual.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-16KM/2.3.0/ANT-16KM_SMB-RACMO2.3p2-annual.nc"
+
+["ANT-16KM_SMB-RACMO2.4p1-1981-2010-annual-mean.nc"]
+checksum = "sha256:610df0933f4bfdb9d1c1d504976591bcb65fa3e60c298cd0559eaf07ac1c9d5c"
+size = 2281286
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_SMB-RACMO2.4p1-1981-2010-annual-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-16KM/2.3.0/ANT-16KM_SMB-RACMO2.4p1-1981-2010-annual-mean.nc"
 
 ["ANT-16KM_SMB-RACMO2.4p1-1981-2010.nc"]
-checksum = "sha256:48281605067bb3bd3deeef522ca05ced4a8d853cd20c13bcdd2a1a86d78defd5"
-previous_checksums = ["sha256:8e726679c6d442166cf6406cbe275a7d0669305ef6a27b8f6e0db90f97741ba2", "sha256:8e2cb884d8b71d991cd11ef7e21c0b3097971e80cf2650484346bd24aa698335"]
-size = 22310904
+checksum = "sha256:6d790ee6af47a5c7ae72b3352034010c46093326cbc3703d18dde26a062abe5e"
+previous_checksums = ["sha256:8e726679c6d442166cf6406cbe275a7d0669305ef6a27b8f6e0db90f97741ba2", "sha256:8e2cb884d8b71d991cd11ef7e21c0b3097971e80cf2650484346bd24aa698335", "sha256:48281605067bb3bd3deeef522ca05ced4a8d853cd20c13bcdd2a1a86d78defd5"]
+size = 22310900
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_SMB-RACMO2.4p1-1981-2010.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-16KM/2.2.0/ANT-16KM_SMB-RACMO2.4p1-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-16KM/2.3.0/ANT-16KM_SMB-RACMO2.4p1-1981-2010.nc"
+
+["ANT-16KM_SMB-RACMO2.4p1-1991-2020-annual-mean.nc"]
+checksum = "sha256:401b00c0724438b57629e13da5ef8a6af4c866a9c00d36ab8fb36c1ee840f82f"
+size = 2280231
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_SMB-RACMO2.4p1-1991-2020-annual-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-16KM/2.3.0/ANT-16KM_SMB-RACMO2.4p1-1991-2020-annual-mean.nc"
 
 ["ANT-16KM_SMB-RACMO2.4p1-1991-2020.nc"]
-checksum = "sha256:f85d79ba083281f65b3ae47852e062969ef7957fcbac36ca624b33c3bb55e7a7"
-previous_checksums = ["sha256:6918e77809b6cdf18dfc75955bb89b648f6175e7fe5244bdec1d91de6ddc6fbd", "sha256:c0e0d2188f41a5791ece2867fb2f402766b2be8a315d686d89c5116e410bb122"]
-size = 22296955
+checksum = "sha256:cfc6fcffaa6391be9760584465846ad8f06512f510cc8b7222ea94c6cfa752b7"
+previous_checksums = ["sha256:6918e77809b6cdf18dfc75955bb89b648f6175e7fe5244bdec1d91de6ddc6fbd", "sha256:c0e0d2188f41a5791ece2867fb2f402766b2be8a315d686d89c5116e410bb122", "sha256:f85d79ba083281f65b3ae47852e062969ef7957fcbac36ca624b33c3bb55e7a7"]
+size = 22296951
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_SMB-RACMO2.4p1-1991-2020.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-16KM/2.2.0/ANT-16KM_SMB-RACMO2.4p1-1991-2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-16KM/2.3.0/ANT-16KM_SMB-RACMO2.4p1-1991-2020.nc"
 
 ["ANT-16KM_SMB-RACMO2.4p1-annual.nc"]
-checksum = "sha256:c368ed2c0995a6e7b0d0d1a16f317059f2a1175f9be582de1815660a8fc92a7d"
-previous_checksums = ["sha256:c5d8fafe5018c1039b6ed1d114070ae7ca99471ae557d314d8ac7f9f51c013f1", "sha256:ecdd42215542f8fb2c4a9e8903e0833cec33f4ee1ca57865d8089453d6cb535a"]
-size = 84085326
+checksum = "sha256:d7ccd0cdc286b8773dd837df35d831d601a80ac37028b94824a389059f8cda11"
+previous_checksums = ["sha256:c5d8fafe5018c1039b6ed1d114070ae7ca99471ae557d314d8ac7f9f51c013f1", "sha256:ecdd42215542f8fb2c4a9e8903e0833cec33f4ee1ca57865d8089453d6cb535a", "sha256:c368ed2c0995a6e7b0d0d1a16f317059f2a1175f9be582de1815660a8fc92a7d"]
+size = 84085134
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_SMB-RACMO2.4p1-annual.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-16KM/2.2.0/ANT-16KM_SMB-RACMO2.4p1-annual.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-16KM/2.3.0/ANT-16KM_SMB-RACMO2.4p1-annual.nc"
 
 ["ANT-16KM_grid.nc"]
 checksum = "sha256:dea44445828fdc3adbae04afc6662224e96a6838c8381f80a855659b3ad6460c"
 size = 892250
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-16KM/2.2.0/ANT-16KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-16KM/2.3.0/ANT-16KM_grid.nc"
+
+["ANT-32KM_SMB-RACMO2.3p2-1981-2010-annual-mean.nc"]
+checksum = "sha256:a049cc443e16c06b59c80779884477166018222b467a8c0a43e1599ddb0acc9f"
+size = 721265
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_SMB-RACMO2.3p2-1981-2010-annual-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-32KM/2.3.0/ANT-32KM_SMB-RACMO2.3p2-1981-2010-annual-mean.nc"
 
 ["ANT-32KM_SMB-RACMO2.3p2-1981-2010.nc"]
-checksum = "sha256:bdc3a58f6ae3515ed185a47c7ae6b58fc882b3b1dbd9dd4c0bb5a089aeb384f8"
-previous_checksums = ["sha256:fadf56c5446f3dab97683b3fc1f110033636e75b318c530a2c5e4686fa0e0679"]
-size = 6116972
+checksum = "sha256:2a1c20d6598ea463cf58cbe9b0a02ea782d1ddb1d9c4f12ba1f8f7b3d95e65bb"
+previous_checksums = ["sha256:fadf56c5446f3dab97683b3fc1f110033636e75b318c530a2c5e4686fa0e0679", "sha256:bdc3a58f6ae3515ed185a47c7ae6b58fc882b3b1dbd9dd4c0bb5a089aeb384f8"]
+size = 6904336
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_SMB-RACMO2.3p2-1981-2010.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-32KM/2.2.0/ANT-32KM_SMB-RACMO2.3p2-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-32KM/2.3.0/ANT-32KM_SMB-RACMO2.3p2-1981-2010.nc"
+
+["ANT-32KM_SMB-RACMO2.3p2-1985-2014-annual-mean.nc"]
+checksum = "sha256:3f8c41473a48acec879f00aa9e2e3769ce3916ef9eec1c46b75e61e994efe6f1"
+size = 755881
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_SMB-RACMO2.3p2-1985-2014-annual-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-32KM/2.3.0/ANT-32KM_SMB-RACMO2.3p2-1985-2014-annual-mean.nc"
 
 ["ANT-32KM_SMB-RACMO2.3p2-1985-2014.nc"]
-checksum = "sha256:951db44a5fe8a7ed3a5dc918450a7e71e927e2a884eb51fc8da2f844392d3e29"
+checksum = "sha256:1911c4556428d1c0b115324cdd2352a73c6d470139c3abf47565d52b0d224388"
+previous_checksums = ["sha256:951db44a5fe8a7ed3a5dc918450a7e71e927e2a884eb51fc8da2f844392d3e29"]
 size = 6826507
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_SMB-RACMO2.3p2-1985-2014.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-32KM/2.2.0/ANT-32KM_SMB-RACMO2.3p2-1985-2014.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-32KM/2.3.0/ANT-32KM_SMB-RACMO2.3p2-1985-2014.nc"
+
+["ANT-32KM_SMB-RACMO2.3p2-1991-2020-annual-mean.nc"]
+checksum = "sha256:596486e8840862bd2cb3516c0a8f9dc3b515ffa23960a59f50212c89f4e107fe"
+size = 696690
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_SMB-RACMO2.3p2-1991-2020-annual-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-32KM/2.3.0/ANT-32KM_SMB-RACMO2.3p2-1991-2020-annual-mean.nc"
 
 ["ANT-32KM_SMB-RACMO2.3p2-1991-2020.nc"]
-checksum = "sha256:2ab04825983b42599ed3c607c483fa4932f7e39c448af7d5dfd9f4ca3539eae5"
-previous_checksums = ["sha256:a87403903641c72a89ed731b77d9eed8c2737e834bada8453f57a2308d1fdb71"]
-size = 6101369
+checksum = "sha256:5b480d72b6ad3ba00db81064719e380f65f77a963ce73e235683268bfdb4c8c9"
+previous_checksums = ["sha256:a87403903641c72a89ed731b77d9eed8c2737e834bada8453f57a2308d1fdb71", "sha256:2ab04825983b42599ed3c607c483fa4932f7e39c448af7d5dfd9f4ca3539eae5"]
+size = 6103379
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_SMB-RACMO2.3p2-1991-2020.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-32KM/2.2.0/ANT-32KM_SMB-RACMO2.3p2-1991-2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-32KM/2.3.0/ANT-32KM_SMB-RACMO2.3p2-1991-2020.nc"
 
 ["ANT-32KM_SMB-RACMO2.3p2-annual.nc"]
-checksum = "sha256:63ad6443afae7e2ca83c70d69a8e780f8c68a7b5e3bfca6d63f75514be07d267"
-previous_checksums = ["sha256:93027eba62f0652ec3c3f6186fc428afeb982809c894d18efb47b0ab366d7935"]
-size = 22508239
+checksum = "sha256:65c76e34cc2e5d604993ec2fc1ae44d3341a73ecf7de79f2cbe43da6f0add82a"
+previous_checksums = ["sha256:93027eba62f0652ec3c3f6186fc428afeb982809c894d18efb47b0ab366d7935", "sha256:63ad6443afae7e2ca83c70d69a8e780f8c68a7b5e3bfca6d63f75514be07d267"]
+size = 22508282
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_SMB-RACMO2.3p2-annual.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-32KM/2.2.0/ANT-32KM_SMB-RACMO2.3p2-annual.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-32KM/2.3.0/ANT-32KM_SMB-RACMO2.3p2-annual.nc"
+
+["ANT-32KM_SMB-RACMO2.4p1-1981-2010-annual-mean.nc"]
+checksum = "sha256:391ede84eeb0d787401a6758215e012082f9724a6bb9ce514f6920d0bbb217d3"
+size = 711986
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_SMB-RACMO2.4p1-1981-2010-annual-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-32KM/2.3.0/ANT-32KM_SMB-RACMO2.4p1-1981-2010-annual-mean.nc"
 
 ["ANT-32KM_SMB-RACMO2.4p1-1981-2010.nc"]
-checksum = "sha256:adbf5d7ea4967fe354d6aa65c1555ec7a8e3f5b5ef5d390765efb6db3b38521a"
-previous_checksums = ["sha256:69fb992d459fede83e8acaef0fa46624ed5ebdaa40307793c80de4a80e6e1e08", "sha256:c96e301ce5a8764ab14bb2ea690179c82d42f1a87b37bdf5f8e6df6eba6c8840"]
-size = 5983712
+checksum = "sha256:5c3a54681df2f602e7cec13398c205a99f127dba436e60d9358c093a6ce8230a"
+previous_checksums = ["sha256:69fb992d459fede83e8acaef0fa46624ed5ebdaa40307793c80de4a80e6e1e08", "sha256:c96e301ce5a8764ab14bb2ea690179c82d42f1a87b37bdf5f8e6df6eba6c8840", "sha256:adbf5d7ea4967fe354d6aa65c1555ec7a8e3f5b5ef5d390765efb6db3b38521a"]
+size = 5983708
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_SMB-RACMO2.4p1-1981-2010.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-32KM/2.2.0/ANT-32KM_SMB-RACMO2.4p1-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-32KM/2.3.0/ANT-32KM_SMB-RACMO2.4p1-1981-2010.nc"
+
+["ANT-32KM_SMB-RACMO2.4p1-1991-2020-annual-mean.nc"]
+checksum = "sha256:ebc531075909d8e98919269f490dc14ebec08adee36b0065376176f5ec9945f0"
+size = 711599
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_SMB-RACMO2.4p1-1991-2020-annual-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-32KM/2.3.0/ANT-32KM_SMB-RACMO2.4p1-1991-2020-annual-mean.nc"
 
 ["ANT-32KM_SMB-RACMO2.4p1-1991-2020.nc"]
-checksum = "sha256:e94a7b3ea67cc56224201dde23279a758b754601fa85de979f97370cd34f5d02"
-previous_checksums = ["sha256:86c4d3ee2feb2c9e7051cf6a598f92a59fd5764d1fba3abe97043c4c56153899", "sha256:e24a55ab66df115ca51ba65cfa1eb07c9b8fb07698e25b550042df765a1177e5"]
-size = 5980429
+checksum = "sha256:383651aa3c9c435dcabfd373a8917acdf1efd3c0451dde642de8ecf6d16b6e78"
+previous_checksums = ["sha256:86c4d3ee2feb2c9e7051cf6a598f92a59fd5764d1fba3abe97043c4c56153899", "sha256:e24a55ab66df115ca51ba65cfa1eb07c9b8fb07698e25b550042df765a1177e5", "sha256:e94a7b3ea67cc56224201dde23279a758b754601fa85de979f97370cd34f5d02"]
+size = 5980425
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_SMB-RACMO2.4p1-1991-2020.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-32KM/2.2.0/ANT-32KM_SMB-RACMO2.4p1-1991-2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-32KM/2.3.0/ANT-32KM_SMB-RACMO2.4p1-1991-2020.nc"
 
 ["ANT-32KM_SMB-RACMO2.4p1-annual.nc"]
-checksum = "sha256:f75af6858b6735e8f9d1cf2668fa679e499ec4511bc3fee31ba8d87ec8a418a4"
-previous_checksums = ["sha256:d8dea502e099d789b6666f00001b02ef503adacfb5ccae4d326bd3bb6ca77e96", "sha256:e3d0e4efc18282defd7ba07f1e1ec826e15da6741d79ff39639c1ef5cf94d636"]
-size = 22781534
+checksum = "sha256:108f07c8f6e5b627310011e2c9b27f7bc02e0a147e70d4d7605638a3c4f24fc0"
+previous_checksums = ["sha256:d8dea502e099d789b6666f00001b02ef503adacfb5ccae4d326bd3bb6ca77e96", "sha256:e3d0e4efc18282defd7ba07f1e1ec826e15da6741d79ff39639c1ef5cf94d636", "sha256:f75af6858b6735e8f9d1cf2668fa679e499ec4511bc3fee31ba8d87ec8a418a4"]
+size = 22781428
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_SMB-RACMO2.4p1-annual.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-32KM/2.2.0/ANT-32KM_SMB-RACMO2.4p1-annual.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-32KM/2.3.0/ANT-32KM_SMB-RACMO2.4p1-annual.nc"
 
 ["ANT-32KM_grid.nc"]
 checksum = "sha256:66765d3512c62479e60ad1095a4ee84b38edb681fe816eddf9896c3a2799efd8"
 size = 212550
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-32KM/2.2.0/ANT-32KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-32KM/2.3.0/ANT-32KM_grid.nc"
+
+["ANT-4KM_SMB-RACMO2.3p2-1981-2010-annual-mean.nc"]
+checksum = "sha256:0fd5c5f1e9fc9a96b1f5e8ef2900ad850de6dbfc14842456fc48873d61d13367"
+size = 29736199
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_SMB-RACMO2.3p2-1981-2010-annual-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-4KM/2.3.0/ANT-4KM_SMB-RACMO2.3p2-1981-2010-annual-mean.nc"
 
 ["ANT-4KM_SMB-RACMO2.3p2-1981-2010.nc"]
-checksum = "sha256:6e2f2b828ff1e33c94088411e3a8c0195bfa2bc598ef277237b60eedf563ee95"
-previous_checksums = ["sha256:bbe7e9feb111bd78886c846975ee3c361f1b861c3d3471bbe27ceb64e463bda6"]
-size = 300163337
+checksum = "sha256:3b63766d85d986baf2fe6c4a5c1b39a796ccf1edeef2a432ddae0f0dd3d35c22"
+previous_checksums = ["sha256:bbe7e9feb111bd78886c846975ee3c361f1b861c3d3471bbe27ceb64e463bda6", "sha256:6e2f2b828ff1e33c94088411e3a8c0195bfa2bc598ef277237b60eedf563ee95"]
+size = 336336054
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_SMB-RACMO2.3p2-1981-2010.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-4KM/2.2.0/ANT-4KM_SMB-RACMO2.3p2-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-4KM/2.3.0/ANT-4KM_SMB-RACMO2.3p2-1981-2010.nc"
+
+["ANT-4KM_SMB-RACMO2.3p2-1985-2014-annual-mean.nc"]
+checksum = "sha256:9504652e50c3c22c1e0dfc4ed93341fdc95438860d80e37f770dcfc7f4824c47"
+size = 32750718
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_SMB-RACMO2.3p2-1985-2014-annual-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-4KM/2.3.0/ANT-4KM_SMB-RACMO2.3p2-1985-2014-annual-mean.nc"
 
 ["ANT-4KM_SMB-RACMO2.3p2-1985-2014.nc"]
-checksum = "sha256:ecb1601ccc4345ab15cd2ee80e3f30dc1dcc9a50a8dc4bdeb3236cb1fb7def5d"
+checksum = "sha256:8660821eaaa9c7b0fc461c705ec1ba91692af056e9bdbc5b7ac43349d245a4ce"
+previous_checksums = ["sha256:ecb1601ccc4345ab15cd2ee80e3f30dc1dcc9a50a8dc4bdeb3236cb1fb7def5d"]
 size = 338939373
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_SMB-RACMO2.3p2-1985-2014.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-4KM/2.2.0/ANT-4KM_SMB-RACMO2.3p2-1985-2014.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-4KM/2.3.0/ANT-4KM_SMB-RACMO2.3p2-1985-2014.nc"
+
+["ANT-4KM_SMB-RACMO2.3p2-1991-2020-annual-mean.nc"]
+checksum = "sha256:4047bbab7f7ce241adb4568de0f86e2ac685ae0b603146f6ed78c79eb6ed0f5e"
+size = 29554406
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_SMB-RACMO2.3p2-1991-2020-annual-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-4KM/2.3.0/ANT-4KM_SMB-RACMO2.3p2-1991-2020-annual-mean.nc"
 
 ["ANT-4KM_SMB-RACMO2.3p2-1991-2020.nc"]
-checksum = "sha256:1a249a44a462e2bf8b1e5ca1cfc19a88588865e229ce3196681c419df0263f6d"
-previous_checksums = ["sha256:37eb7734329661c0a2afa0cc4604255e5885caf413f49d1e4463e4b4f068943c"]
-size = 299548991
+checksum = "sha256:b1cfa9b6e683930177dd0112fe55a6e6bc3509f9c35a8529ebea11cf3aef2769"
+previous_checksums = ["sha256:37eb7734329661c0a2afa0cc4604255e5885caf413f49d1e4463e4b4f068943c", "sha256:1a249a44a462e2bf8b1e5ca1cfc19a88588865e229ce3196681c419df0263f6d"]
+size = 299547875
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_SMB-RACMO2.3p2-1991-2020.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-4KM/2.2.0/ANT-4KM_SMB-RACMO2.3p2-1991-2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-4KM/2.3.0/ANT-4KM_SMB-RACMO2.3p2-1991-2020.nc"
 
 ["ANT-4KM_SMB-RACMO2.3p2-annual.nc"]
-checksum = "sha256:9883fdc93c9e59d8255807964fefc85ed9e2ed04602154fc2a80a3e5a6364fdd"
-previous_checksums = ["sha256:cdfeb1aa02bc4c8a63a12ac02841337a88255961701d56098cd9a7d50a3f9077"]
-size = 1112745629
+checksum = "sha256:c5839c7f5c95f53725513d495292d3b124a41436e6e844a4d25f6654da06dcfa"
+previous_checksums = ["sha256:cdfeb1aa02bc4c8a63a12ac02841337a88255961701d56098cd9a7d50a3f9077", "sha256:9883fdc93c9e59d8255807964fefc85ed9e2ed04602154fc2a80a3e5a6364fdd"]
+size = 1112744595
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_SMB-RACMO2.3p2-annual.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-4KM/2.2.0/ANT-4KM_SMB-RACMO2.3p2-annual.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-4KM/2.3.0/ANT-4KM_SMB-RACMO2.3p2-annual.nc"
+
+["ANT-4KM_SMB-RACMO2.4p1-1981-2010-annual-mean.nc"]
+checksum = "sha256:e992e907a1d9fea895dca5be9808ced5b1a759eaa46b0223349703a48449ce4f"
+size = 29818829
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_SMB-RACMO2.4p1-1981-2010-annual-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-4KM/2.3.0/ANT-4KM_SMB-RACMO2.4p1-1981-2010-annual-mean.nc"
 
 ["ANT-4KM_SMB-RACMO2.4p1-1981-2010.nc"]
-checksum = "sha256:19b39ddd70233800a0c9056de3ac20097bcc7e8c23bb6e163841c852a3f97aa0"
-previous_checksums = ["sha256:f5df874be8288888d5d6908d69e4087d647aad5d3efb46ca3399dab5aa6784a1", "sha256:4d84f0209f420314705d5f2cf1f2ae432a7ebca8fd9b6b54eca9b97414753ee1"]
+checksum = "sha256:bc472c0ea5d27645f101c1cedb2f08686a47fc6de23ae9693874a918f2ce11e4"
+previous_checksums = ["sha256:f5df874be8288888d5d6908d69e4087d647aad5d3efb46ca3399dab5aa6784a1", "sha256:4d84f0209f420314705d5f2cf1f2ae432a7ebca8fd9b6b54eca9b97414753ee1", "sha256:19b39ddd70233800a0c9056de3ac20097bcc7e8c23bb6e163841c852a3f97aa0"]
 size = 299633620
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_SMB-RACMO2.4p1-1981-2010.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-4KM/2.2.0/ANT-4KM_SMB-RACMO2.4p1-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-4KM/2.3.0/ANT-4KM_SMB-RACMO2.4p1-1981-2010.nc"
+
+["ANT-4KM_SMB-RACMO2.4p1-1991-2020-annual-mean.nc"]
+checksum = "sha256:b0cff4e0c44cebf12eca2997750c7dd6e914eff4862af62046b37ca5643bbc18"
+size = 29813622
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_SMB-RACMO2.4p1-1991-2020-annual-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-4KM/2.3.0/ANT-4KM_SMB-RACMO2.4p1-1991-2020-annual-mean.nc"
 
 ["ANT-4KM_SMB-RACMO2.4p1-1991-2020.nc"]
-checksum = "sha256:288a92e735dd20d2e2e200be27cf2e8c835eef204a2a171897f0796b67d189c1"
-previous_checksums = ["sha256:5a05b54e80b822fb5fd1bcc93f2d86bc8dee07cbe51ff3a348b5c4dc217230e8", "sha256:d03ab8d4f3def1b59458d6763ea4cf5ce1800cf1a12f921129cd1e402ff2c1bd"]
+checksum = "sha256:f27470e09d384a6b7a33389bf8ff534fa3505c5accad186abec44eb6b628a7db"
+previous_checksums = ["sha256:5a05b54e80b822fb5fd1bcc93f2d86bc8dee07cbe51ff3a348b5c4dc217230e8", "sha256:d03ab8d4f3def1b59458d6763ea4cf5ce1800cf1a12f921129cd1e402ff2c1bd", "sha256:288a92e735dd20d2e2e200be27cf2e8c835eef204a2a171897f0796b67d189c1"]
 size = 299483078
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_SMB-RACMO2.4p1-1991-2020.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-4KM/2.2.0/ANT-4KM_SMB-RACMO2.4p1-1991-2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-4KM/2.3.0/ANT-4KM_SMB-RACMO2.4p1-1991-2020.nc"
 
 ["ANT-4KM_SMB-RACMO2.4p1-annual.nc"]
-checksum = "sha256:572841566f3c5a6562cc8601e16241f394f1fd9b8fe10c39fbfabbc54d1be92d"
-previous_checksums = ["sha256:34ca4b3d09b5a4c0389634d2b7eb141c102694e78180ea81895e3199c77cb271", "sha256:901610db1d889acbff0fd47544a9fff000bd566ef1fcd8a9420463a6537282ee"]
-size = 1145480446
+checksum = "sha256:f9b654aa4f2f96ba18dfd37cb61199a3855d93bc005f2c0a373ffd1ca409e74f"
+previous_checksums = ["sha256:34ca4b3d09b5a4c0389634d2b7eb141c102694e78180ea81895e3199c77cb271", "sha256:901610db1d889acbff0fd47544a9fff000bd566ef1fcd8a9420463a6537282ee", "sha256:572841566f3c5a6562cc8601e16241f394f1fd9b8fe10c39fbfabbc54d1be92d"]
+size = 1145480688
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_SMB-RACMO2.4p1-annual.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-4KM/2.2.0/ANT-4KM_SMB-RACMO2.4p1-annual.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-4KM/2.3.0/ANT-4KM_SMB-RACMO2.4p1-annual.nc"
 
 ["ANT-4KM_grid.nc"]
 checksum = "sha256:b553afcb6273200e9cd436c4f3ba5f081c599c58237374342aade5c4588e879f"
 size = 11450508
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-4KM/2.2.0/ANT-4KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-4KM/2.3.0/ANT-4KM_grid.nc"
+
+["ANT-8KM_SMB-RACMO2.3p2-1981-2010-annual-mean.nc"]
+checksum = "sha256:20f13a3f7325ac404cbb9950e3b95552e437572191ab6db1b224bd7db5bd66b1"
+size = 8120895
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_SMB-RACMO2.3p2-1981-2010-annual-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-8KM/2.3.0/ANT-8KM_SMB-RACMO2.3p2-1981-2010-annual-mean.nc"
 
 ["ANT-8KM_SMB-RACMO2.3p2-1981-2010.nc"]
-checksum = "sha256:8101a42920460b3e4acee6cb70f48a6d43beb538abae6542316be68b5fa461a2"
-previous_checksums = ["sha256:c359aefc76c9260390c4cc4e0989f78663fcc9b7535b9ccb81f2596c0e264bf3"]
-size = 81998880
+checksum = "sha256:6830b455d87e83c87e11db328f6f9d4f5a77d0f3376fdbcb5fab9277a80b96d0"
+previous_checksums = ["sha256:c359aefc76c9260390c4cc4e0989f78663fcc9b7535b9ccb81f2596c0e264bf3", "sha256:8101a42920460b3e4acee6cb70f48a6d43beb538abae6542316be68b5fa461a2"]
+size = 92058330
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_SMB-RACMO2.3p2-1981-2010.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-8KM/2.2.0/ANT-8KM_SMB-RACMO2.3p2-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-8KM/2.3.0/ANT-8KM_SMB-RACMO2.3p2-1981-2010.nc"
+
+["ANT-8KM_SMB-RACMO2.3p2-1985-2014-annual-mean.nc"]
+checksum = "sha256:d94f9fd0843de527ae628ba5a27a0fb862acaaac23b54a7f5ed8051692ff3d97"
+size = 8905820
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_SMB-RACMO2.3p2-1985-2014-annual-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-8KM/2.3.0/ANT-8KM_SMB-RACMO2.3p2-1985-2014-annual-mean.nc"
 
 ["ANT-8KM_SMB-RACMO2.3p2-1985-2014.nc"]
-checksum = "sha256:208881c0b46afaaf63690d7908bb1825b59259a36e3817453dc9b5efbed818aa"
+checksum = "sha256:90af1908f1bd7bac458f37cc9d17db98f52fed4f1edabc172ce5602217ae4a1d"
+previous_checksums = ["sha256:208881c0b46afaaf63690d7908bb1825b59259a36e3817453dc9b5efbed818aa"]
 size = 92195693
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_SMB-RACMO2.3p2-1985-2014.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-8KM/2.2.0/ANT-8KM_SMB-RACMO2.3p2-1985-2014.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-8KM/2.3.0/ANT-8KM_SMB-RACMO2.3p2-1985-2014.nc"
+
+["ANT-8KM_SMB-RACMO2.3p2-1991-2020-annual-mean.nc"]
+checksum = "sha256:378a0b36afc50ae2d6d1fba512b31e8a033ad5d57c504fb687a0312c5959c516"
+size = 8060052
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_SMB-RACMO2.3p2-1991-2020-annual-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-8KM/2.3.0/ANT-8KM_SMB-RACMO2.3p2-1991-2020-annual-mean.nc"
 
 ["ANT-8KM_SMB-RACMO2.3p2-1991-2020.nc"]
-checksum = "sha256:135ff00e350d4405b97720622b54b586e67b1b733cc87c04d9005626bfd932ea"
-previous_checksums = ["sha256:aa3772a92cd2d0f5fe6dcc0b6b590f7f8beccc1605c494668746016b01a4aaca"]
-size = 81825384
+checksum = "sha256:887a33c85941bd91b3bb1d7de04bce68332059d95ae70e0482e9a422459a4a88"
+previous_checksums = ["sha256:aa3772a92cd2d0f5fe6dcc0b6b590f7f8beccc1605c494668746016b01a4aaca", "sha256:135ff00e350d4405b97720622b54b586e67b1b733cc87c04d9005626bfd932ea"]
+size = 81824268
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_SMB-RACMO2.3p2-1991-2020.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-8KM/2.2.0/ANT-8KM_SMB-RACMO2.3p2-1991-2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-8KM/2.3.0/ANT-8KM_SMB-RACMO2.3p2-1991-2020.nc"
 
 ["ANT-8KM_SMB-RACMO2.3p2-annual.nc"]
-checksum = "sha256:f9613acd3b3b164b2d7e034c5e0432d0eb0103adbdc5c7c7edf205d2dfa46133"
-previous_checksums = ["sha256:2e58abc53283d7aeeac9ac6ca41f4837584e7b022209df7ff34bfa9314e1eef3"]
-size = 302867013
+checksum = "sha256:5b82fdef66c828b4df47b71f348af3ba9e4234e65b447ed4d90d30be9c91adbb"
+previous_checksums = ["sha256:2e58abc53283d7aeeac9ac6ca41f4837584e7b022209df7ff34bfa9314e1eef3", "sha256:f9613acd3b3b164b2d7e034c5e0432d0eb0103adbdc5c7c7edf205d2dfa46133"]
+size = 302865979
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_SMB-RACMO2.3p2-annual.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-8KM/2.2.0/ANT-8KM_SMB-RACMO2.3p2-annual.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-8KM/2.3.0/ANT-8KM_SMB-RACMO2.3p2-annual.nc"
+
+["ANT-8KM_SMB-RACMO2.4p1-1981-2010-annual-mean.nc"]
+checksum = "sha256:5bc186818b529a3be33087a756600b706e9e493034d43deab7d0972f1306f312"
+size = 8145512
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_SMB-RACMO2.4p1-1981-2010-annual-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-8KM/2.3.0/ANT-8KM_SMB-RACMO2.4p1-1981-2010-annual-mean.nc"
 
 ["ANT-8KM_SMB-RACMO2.4p1-1981-2010.nc"]
-checksum = "sha256:aa8135fdf33347eab8d31f39be52c875e4c1d2aa15cd4601a42f055ac221720c"
-previous_checksums = ["sha256:520ff9bbec5390bab88fef325e9ccc38b3ed94be227465cfb7a2e5def83c7b37", "sha256:4f9c44bb5f6467ef3a445a99cd28dfba22e5d217dcac84c8f8047acccce61f31"]
+checksum = "sha256:0a233369155138456427bfd9f2bc0cf4d24f3caec82a8c53e201b363822cfe96"
+previous_checksums = ["sha256:520ff9bbec5390bab88fef325e9ccc38b3ed94be227465cfb7a2e5def83c7b37", "sha256:4f9c44bb5f6467ef3a445a99cd28dfba22e5d217dcac84c8f8047acccce61f31", "sha256:aa8135fdf33347eab8d31f39be52c875e4c1d2aa15cd4601a42f055ac221720c"]
 size = 81882009
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_SMB-RACMO2.4p1-1981-2010.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-8KM/2.2.0/ANT-8KM_SMB-RACMO2.4p1-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-8KM/2.3.0/ANT-8KM_SMB-RACMO2.4p1-1981-2010.nc"
+
+["ANT-8KM_SMB-RACMO2.4p1-1991-2020-annual-mean.nc"]
+checksum = "sha256:e0ebf8f56dc5e18e7a91f412cb1aa68880425225bb192f234353926418c79dd3"
+size = 8144645
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_SMB-RACMO2.4p1-1991-2020-annual-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-8KM/2.3.0/ANT-8KM_SMB-RACMO2.4p1-1991-2020-annual-mean.nc"
 
 ["ANT-8KM_SMB-RACMO2.4p1-1991-2020.nc"]
-checksum = "sha256:192ca4f03b8adf91a2a287490562b7a7258bf87c3db250778e228b9a40b92cd3"
-previous_checksums = ["sha256:e7d4e431db08f375b5bdec8260dd7e53def3f614be0608f22e631fe5a83c29f4", "sha256:a8c3a028f4fb8a441f7c786f8a291cb042f289b9936d9776f8f8a7b5e645a2a9"]
+checksum = "sha256:ca007a677295606292931df35805d28664c8e4dda62889f627996b38a65c9777"
+previous_checksums = ["sha256:e7d4e431db08f375b5bdec8260dd7e53def3f614be0608f22e631fe5a83c29f4", "sha256:a8c3a028f4fb8a441f7c786f8a291cb042f289b9936d9776f8f8a7b5e645a2a9", "sha256:192ca4f03b8adf91a2a287490562b7a7258bf87c3db250778e228b9a40b92cd3"]
 size = 81839908
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_SMB-RACMO2.4p1-1991-2020.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-8KM/2.2.0/ANT-8KM_SMB-RACMO2.4p1-1991-2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-8KM/2.3.0/ANT-8KM_SMB-RACMO2.4p1-1991-2020.nc"
 
 ["ANT-8KM_SMB-RACMO2.4p1-annual.nc"]
-checksum = "sha256:f497ccdcdf720df8620790a62d343ba6fe139a4094f39b56ff54f8ce343da8e6"
-previous_checksums = ["sha256:781a5b58cea4db51130fcd6c951fd0e5affb1ee383fb8c6b256e44edd463bd7d", "sha256:95ca44c179ea656dabf442588d23d9e690d1522499a3b2ef6b1d897a0a42bfc6"]
-size = 312798998
+checksum = "sha256:db3fe6bf57f67550adc406df38ec74e17ee612bdf202e6cb3a51d60920cf9bff"
+previous_checksums = ["sha256:781a5b58cea4db51130fcd6c951fd0e5affb1ee383fb8c6b256e44edd463bd7d", "sha256:95ca44c179ea656dabf442588d23d9e690d1522499a3b2ef6b1d897a0a42bfc6", "sha256:f497ccdcdf720df8620790a62d343ba6fe139a4094f39b56ff54f8ce343da8e6"]
+size = 312799240
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_SMB-RACMO2.4p1-annual.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-8KM/2.2.0/ANT-8KM_SMB-RACMO2.4p1-annual.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-8KM/2.3.0/ANT-8KM_SMB-RACMO2.4p1-annual.nc"
 
 ["ANT-8KM_grid.nc"]
 checksum = "sha256:6d00ae1cafbf496c1375c74c9153d92c5e2aec79d8026f004ba0dc26d0c47ece"
 size = 3314952
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-8KM/2.2.0/ANT-8KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-8KM/2.3.0/ANT-8KM_grid.nc"
 
 ["grid_ANT-16KM.txt"]
 checksum = "sha256:09d646757fe153b435cee10a90cf772b4626efbe2f187d410eab83876c8305cb"
 size = 467
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/grid_ANT-16KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-16KM/2.2.0/grid_ANT-16KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-16KM/2.3.0/grid_ANT-16KM.txt"
 
 ["grid_ANT-32KM.txt"]
 checksum = "sha256:619c2b14b9667a6ff1efe4de41f1b2bd0ddc8d3e10df6d5fd99222b80be20276"
 size = 466
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/grid_ANT-32KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-32KM/2.2.0/grid_ANT-32KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-32KM/2.3.0/grid_ANT-32KM.txt"
 
 ["grid_ANT-4KM.txt"]
 checksum = "sha256:dc549c434411d3f7ad5b46e4f954f9bb180d0d2e272e1942d97e7072ae8b711d"
 size = 468
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/grid_ANT-4KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-4KM/2.2.0/grid_ANT-4KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-4KM/2.3.0/grid_ANT-4KM.txt"
 
 ["grid_ANT-8KM.txt"]
 checksum = "sha256:66ff6285f42ec156b6c6a6c30fcb0d2e4c94e07d67512fb002cb0348b3420ce5"
 size = 465
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/grid_ANT-8KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-8KM/2.2.0/grid_ANT-8KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SMB_ANT-8KM/2.3.0/grid_ANT-8KM.txt"
