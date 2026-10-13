@@ -132,6 +132,7 @@ grids = { Antarctica = 4, Greenland = 4, Global = 4 }   # by domain, see below
 # release = false                            # optional: made, but not released
 # figure = { variables = ["ghf"] }            # optional: its figure on the website
 # fill = { variables = ["ux_srf", "uy_srf"], mask = "TOPO-BedMachine-v4" }   # optional: gaps over the ice (or "all") filled, see below
+# precision = { ghf = 0.1 }                  # optional: precision of fields instead of the default, see below
 ```
 
 `grids` lists the domains (output folders) of the product, each with the grids it is
@@ -230,6 +231,13 @@ fields. The global attributes of the files are joined (their distinct values), a
 obtained by personal communication whose redistribution the authors have not agreed to
 yet (say so in the README of the dataset).
 
+`precision` sets the precision of some float fields instead of the default of their kind
+(see [Data volume and precision](https://fesmc.github.io/FesmData/data_volume.html);
+`shared/precision.jl`), for fields that need more (or allow less): by field, an absolute
+tolerance in the units of the field (a number), a relative one (`"x%"`) or `"lossless"`,
+e.g. `precision = { ghf = 0.1, smb = "1%", lat = "lossless" }`. Each float field records
+its precision in the attributes `precision` and `bitround_keepbits`.
+
 An **ensemble product** is the mean or the standard deviation of other products of the
 dataset, its members, e.g. the models of a model intercomparison:
 
@@ -238,7 +246,7 @@ dataset, its members, e.g. the models of a model intercomparison:
 ensemble = ["PMIP3-CCSM4-lgm", "PMIP3-CNRM-CM5-lgm", ...]   # member products of the dataset
 stat = "mean"                                # or "stdev"
 grids = { Antarctica = 8, Global = 8 }       # each member must be made on all of these
-# release = false, figure = { ... }          # optional, as above
+# release = false, figure = { ... }, precision = { ... }   # optional, as above
 ```
 
 It has no `source`, `file`, `variables`, `method`, `smooth` or `fill`: it is made on each

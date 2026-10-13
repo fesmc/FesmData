@@ -1,12 +1,16 @@
 # NetCDF output shared by all pipelines: fields on a grid, grid files, and the
-# provenance attributes of every file.
+# provenance attributes and precision of every file.
 
 using FesmUtils
 using NCDatasets
 
 include(joinpath(@__DIR__, "provenance.jl"))
+include(joinpath(@__DIR__, "precision.jl"))
 
 const FILLVALUE = -9999f0
+
+"Deflate level of all fields (with shuffle): smaller files than level 1, as fast to write and read."
+const DEFLATE_LEVEL = 4
 
 "Units and long names of the fields written by the pipeline."
 const VARINFO = Dict(
@@ -22,6 +26,9 @@ const VARINFO = Dict(
     "f_valid"  => ("1", "area fraction covered by source data"),
     "mask"     => ("1", "dominant surface type"),
     "src_id"   => ("1", "source with the largest weight"),
+    "lon2D"    => ("degrees_east", "longitude of the cell centre"),
+    "lat2D"    => ("degrees_north", "latitude of the cell centre"),
+    "area"     => ("m^2", "area of the cell"),
 )
 
 """
@@ -55,22 +62,30 @@ struct AuxVar
 end
 
 """
-    write_fields(path, g, fields; dataset, attrib=[], varattrib=Dict(), dims=Dict(), aux=[])
+    write_fields(path, g, fields; dataset, attrib=[], varattrib=Dict(), dims=Dict(), aux=[],
+                 precision=Dict(), lossless=false)
 
 Write the fields on grid `g` (projected or lon-lat) to a new NetCDF file of `dataset` (e.g. "topo"), with
 the provenance attributes of the dataset and the global attributes `attrib`. A field
 is 2D, or has the extra dimensions `dims[name]` (a vector of `Dim`) after the grid
-dimensions. Float fields are written as Float32 with NaN as missing; integer fields
-(e.g. masks) are written as they are, with a fill value if they have missing values.
-`varattrib[name]` gives extra attributes of a variable (e.g. flag values), and
-replaces its default units or long name. `aux` are variables on extra dimensions only
-(`AuxVar`, e.g. labels of time slices), written as they are. The file is written as
-`<path>.part` and renamed when complete, so that an interrupted job leaves no partial
-file at `path`.
+dimensions. Float fields are written as Float32 with NaN as missing, rounded to the
+default precision of their kind (`default_precision`, by name and units) or to
+`precision[name]` (a `Precision`), recorded in their attributes (see `round_field!`);
+with `lossless`, they are not rounded (intermediate files read again by a pipeline).
+Integer fields (e.g. masks) are written as they are, with a fill value if they have
+missing values. `varattrib[name]` gives extra attributes of a variable (e.g. flag
+values), and replaces its default units or long name. `aux` are variables on extra
+dimensions only (`AuxVar`, e.g. labels of time slices), written as they are. The file
+is written as `<path>.part` and renamed when complete, so that an interrupted job
+leaves no partial file at `path`.
 """
 function write_fields(path::AbstractString, g::Union{ProjGrid,LonLatGrid}, fields::AbstractDict; dataset::AbstractString,
                       attrib=Pair{String,String}[], varattrib=Dict{String,Vector{Pair{String,Any}}}(),
-                      dims=Dict{String,Vector{Dim}}(), aux=AuxVar[])
+                      dims=Dict{String,Vector{Dim}}(), aux=AuxVar[], precision=Dict{String,Precision}(),
+                      lossless::Bool=false)
+    floats = [name for (name, F) in fields if !(nonmissingtype(eltype(F)) <: Integer)]
+    unknown = setdiff(keys(precision), floats)
+    isempty(unknown) || error("precision of $(join(unknown, ", ")): not float fields of $(basename(path))")
     gatts = global_attrib(dataset, attrib)
     mapping = g isa ProjGrid ? ["grid_mapping" => "crs"] : Pair{String,String}[]
     extra = Dict{String,Dim}()
@@ -113,14 +128,20 @@ function write_fields(path::AbstractString, g::Union{ProjGrid,LonLatGrid}, field
                 fill && typemin(T) > -9999 && (T = Int32)
                 atts = [k == "flag_values" ? k => T.(v) : k => v for (k, v) in atts]
                 if fill
-                    defVar(ds, name, Array{Union{Missing,T}}(F), vdims; fillvalue=T(-9999), deflatelevel=1,
-                           shuffle=true, attrib=atts)
+                    defVar(ds, name, Array{Union{Missing,T}}(F), vdims; fillvalue=T(-9999),
+                           deflatelevel=DEFLATE_LEVEL, shuffle=true, attrib=atts)
                 else
-                    defVar(ds, name, Array{T}(F), vdims; deflatelevel=1, shuffle=true, attrib=atts)
+                    defVar(ds, name, Array{T}(F), vdims; deflatelevel=DEFLATE_LEVEL, shuffle=true, attrib=atts)
                 end
             else
-                defVar(ds, name, replace(Float32.(F), NaN32 => FILLVALUE), vdims;
-                       fillvalue=FILLVALUE, deflatelevel=1, shuffle=true, attrib=atts)
+                A = Float32.(F)
+                if !lossless
+                    units = string(Dict(atts)["units"])
+                    p = get(() -> default_precision(name, units), precision, name)
+                    atts = vcat(atts, round_field!(A, p, units))
+                end
+                defVar(ds, name, replace!(A, NaN32 => FILLVALUE), vdims;
+                       fillvalue=FILLVALUE, deflatelevel=DEFLATE_LEVEL, shuffle=true, attrib=atts)
             end
         end
     end
@@ -150,17 +171,29 @@ end
     write_grid_files(dir, g; dataset)
 
 Write the grid description file (grid_<GRID>.txt, cdo format) and the grid file
-(<GRID>_grid.nc, with the provenance attributes of `dataset`) of grid `g` to `dir`.
+(<GRID>_grid.nc, the fields of `grid_fields`, with the provenance attributes of
+`dataset`) of grid `g` to `dir`.
 """
 function write_grid_files(dir::AbstractString, g::Union{ProjGrid,LonLatGrid}; dataset::AbstractString)
     mkpath(dir)
     write_griddes(joinpath(dir, "grid_$(g.name).txt"), g)
-    path = write_grid_nc(joinpath(dir, "$(g.name)_grid.nc"), g)
-    NCDataset(path, "a") do ds
-        foreach(((k, v),) -> ds.attrib[k] = v, global_attrib(dataset))
-    end
+    write_fields(joinpath(dir, "$(g.name)_grid.nc"), g, grid_fields(g); dataset)
     return dir
 end
+
+"""
+    grid_fields(g) -> Dict
+
+Fields of the grid file of `g`: the longitude `lon2D` and latitude `lat2D` of the cell
+centres of a projected grid (those of a lon-lat grid are its axes), and the area of the
+cells `area` (m²), as FesmUtils `write_grid_nc`.
+"""
+function grid_fields(g::ProjGrid)
+    lon, lat = lonlat(g)
+    return Dict{String,Matrix}("lon2D" => lon, "lat2D" => lat, "area" => cell_area(g, lon, lat))
+end
+
+grid_fields(g::LonLatGrid) = Dict{String,Matrix}("area" => cell_area(g))
 
 "Global attributes of a file of `dataset`: its provenance attributes, then `attrib`."
 function global_attrib(dataset::AbstractString, attrib=Pair{String,String}[])

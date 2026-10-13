@@ -23,6 +23,13 @@ nearest basin: they cover the whole grid (see `Rignot2013_bmelt/README.md`).
 (2020) derive time series of melt rates (relative to the 2010-2018 mean, their Eq. S7),
 not melt rates: see `Adusumilli2020_bmelt/README.md`.
 
+## Precision
+
+The float fields are rounded on output to a tolerance by kind (see [Data volume and
+precision](https://fesmc.github.io/FesmData/data_volume.html)): melt rates (`bmelt*`,
+`smb_discharge`) to 1%; the height changes `dh_alt` and `dh_firn` to 0.1 m; `f_valid` to
+0.001.
+
 ## Licences
 
 | Source | Licence |

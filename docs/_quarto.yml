@@ -5,6 +5,7 @@ project:
     - "index.qmd"
     - "products.qmd"
     - "domains.qmd"
+    - "data_volume.qmd"
     - "datasets/*.qmd"
     - "remap.qmd"
     - "records.qmd"
@@ -27,6 +28,8 @@ website:
         href: products.qmd
       - text: "Domains and grids"
         href: domains.qmd
+      - text: "Data volume"
+        href: data_volume.qmd
       - text: "Datasets"
         menu:
           - text: "Topo — topography"

@@ -1020,7 +1020,7 @@ remap_file(og::OutGrid, name::AbstractString) = joinpath(outdir(og), "$(og.grid.
 
 """
     remap_prepared(ps, grids; name, method="con", smooth="auto", dataset="remap",
-                   overwrite=false, strict=false, fill=GapFill[]) -> Vector{String}
+                   overwrite=false, strict=false, fill=GapFill[], precision=Dict()) -> Vector{String}
 
 Remap the fields of the prepared files `ps` (one `Prepared` or several, each on its own
 grid) onto each grid (see `remap_array` and `smoothing_sigma`) and write them to
@@ -1032,11 +1032,13 @@ rotated to the axes of projected grids. With `fill` (`GapFill`s), the gaps are t
 filled (see `fill_gaps!`), marked by `mask_fill`. Grids not covered by
 the sources are skipped (an error if `strict`). The grid files are written if missing.
 Existing files are kept unless `overwrite`. `dataset` is the dataset of the
-provenance attributes.
+provenance attributes. `precision` gives the precision of some float fields instead of
+their default (see `write_fields`).
 """
 function remap_prepared(ps::AbstractVector{Prepared}, grids::Vector{OutGrid}; name::AbstractString,
                         method::AbstractString="con", smooth="auto", dataset::AbstractString="remap",
-                        overwrite::Bool=false, strict::Bool=false, fill::AbstractVector{GapFill}=GapFill[])
+                        overwrite::Bool=false, strict::Bool=false, fill::AbstractVector{GapFill}=GapFill[],
+                        precision::AbstractDict{String,Precision}=Dict{String,Precision}())
     method in METHODS || error("unknown method $method, available: $(join(METHODS, ", "))")
     pf = PreparedFields(ps)
     check_fill(pf, fill)
@@ -1095,7 +1097,7 @@ function remap_prepared(ps::AbstractVector{Prepared}, grids::Vector{OutGrid}; na
         end
         isfile(joinpath(outdir(og), "$(og.grid.name)_grid.nc")) || write_grid_files(outdir(og), og.grid; dataset)
         aux = unique(a -> a.name, [a for p in ps for a in p.aux])
-        write_fields(path, og.grid, fields; dataset, attrib, varattrib, dims, aux)
+        write_fields(path, og.grid, fields; dataset, attrib, varattrib, dims, aux, precision)
         println("$(og.grid.name): $(basename(path)), $how ($(round(t; digits=1)) s)")
         push!(paths, path)
     end
@@ -1242,7 +1244,7 @@ function make_product(p::RemapProduct, grids::Vector{OutGrid}; tag::AbstractStri
     println("$(product_name(p)): $(join(names, ", ")) from $(p.source) " *
             (length(files) > 1 ? "($(length(files)) files) " : "") * "onto $(length(grids)) grids")
     return remap_prepared(preps, grids; name=product_name(p), method=p.method, smooth=p.smooth, dataset=tag,
-                          overwrite, strict=true, fill=p.fill)
+                          overwrite, strict=true, fill=p.fill, p.precision)
 end
 
 """
@@ -1274,7 +1276,7 @@ function make_product(p::EnsembleProduct, grids::Vector{OutGrid}; tag::AbstractS
                       merged_attrib([m.attrib for m in ms]))
         aux = unique(a -> a.name, [a for m in ms for a in m.aux])
         isfile(joinpath(outdir(og), "$(og.grid.name)_grid.nc")) || write_grid_files(outdir(og), og.grid; dataset=tag)
-        write_fields(path, og.grid, fields; dataset=tag, attrib, varattrib, dims, aux)
+        write_fields(path, og.grid, fields; dataset=tag, attrib, varattrib, dims, aux, p.precision)
         println("$(og.grid.name): $(basename(path))")
         push!(paths, path)
     end

@@ -19,6 +19,13 @@ The fields cover the grounded ice. Continuous fields are remapped conservatively
 classes as the dominant class of each cell. Each file also has `f_valid`, the fraction
 of each cell covered by the source.
 
+## Precision
+
+The float fields are rounded on output to a tolerance by kind (see [Data volume and
+precision](https://fesmc.github.io/FesmData/data_volume.html)): `T_b` and `T_b_pmp` to
+0.01 K; `bmelt_grnd` to 1%; `beta` to 3 significant digits; `f_valid` to 0.001.
+`basal_state` (classes) is exact.
+
 ## Licences
 
 | Source | Licence |

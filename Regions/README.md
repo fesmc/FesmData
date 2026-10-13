@@ -169,6 +169,13 @@ of the line gives IoU 0.74 (centre) and 0.79 (south), and a cut at a distance al
 stream from the grounding line of 79N (200 km) 0.68 and 0.63. The Mouginot basins of
 79N, Zachariae Isstrom and Storstrommen are far broader than the stream (IoU 0.23).
 
+## Precision
+
+Region codes, zones and basins are integers and exact. `dist_shelfbreak` (km) is rounded
+on output to 3 significant digits (see [Data volume and
+precision](https://fesmc.github.io/FesmData/data_volume.html)); the intermediate files on
+the base grid (steps 1-3) are not rounded.
+
 ## Adding a region, a basin set or a domain
 
 **A region** is an entry of `regions.toml`, with its path, name and rules:
