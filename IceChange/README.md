@@ -48,6 +48,12 @@ Each file also has `f_valid`, the fraction of each cell covered by the source
 and smoothed on the grids finer than the source (4 km, for the 5 km grids of Smith et
 al., 2020).
 
+## Precision
+
+The float fields are rounded on output to a tolerance by kind (see [Data volume and
+precision](https://fesmc.github.io/FesmData/data_volume.html)): `dzdt` and `dHdt` to 1%;
+`f_valid` to 0.001.
+
 ## Licences
 
 | Source | Licence |

@@ -17,6 +17,14 @@ Winds are remapped as vectors and rotated to the axes of projected grids. Each f
 has `f_valid`, the fraction of each cell covered by the source. Fields are remapped
 conservatively and smoothed on grids finer than the source.
 
+## Precision
+
+The float fields are rounded on output to a tolerance by kind (see [Data volume and
+precision](https://fesmc.github.io/FesmData/data_volume.html)): temperatures (`t2m`,
+`sst`, `t`) to 0.01 K; the elevation `zs` and the geopotential height `z` to 0.1 m;
+fractions (`lsm`, `tcc`, `al`, `f_valid`) to 0.001; precipitation, snowfall, winds, `w`
+and the radiative fluxes to 1%; `sp`, `tcw`, `tclw` and `tciw` to 3 significant digits.
+
 ## Licences
 
 | Source | Licence |

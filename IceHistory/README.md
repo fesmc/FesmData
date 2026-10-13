@@ -27,6 +27,13 @@ classes (the class covering most of each cell). Ice extents from outlines (Batch
 Margold) are rasterized as area fractions at 2 km and 1 km, so that remapping gives the fraction of
 each cell. The global attribute `remap_method` records what was done on each grid.
 
+## Precision
+
+The float fields are rounded on output to a tolerance by kind (see [Data volume and
+precision](https://fesmc.github.io/FesmData/data_volume.html)): elevations and
+thicknesses (`z_*`, `dz_*`, `H_ice*`) to 0.1 m; fractions (`f_*`) to 0.001; ages
+(`age_*`) to 3 significant digits. The masks of PRISM4 are exact.
+
 ## Licences
 
 | Source | Licence |

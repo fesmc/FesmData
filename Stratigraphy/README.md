@@ -14,6 +14,13 @@ Each file also has `f_valid` (with the extra dimension where the coverage differ
 between levels), the fraction of each cell covered by the source. Fields are remapped
 conservatively, level by level, and smoothed on grids finer than the source.
 
+## Precision
+
+The float fields are rounded on output to a tolerance by kind (see [Data volume and
+precision](https://fesmc.github.io/FesmData/data_volume.html)): `depth_iso` and
+`depth_iso_sd` to 0.1 m; `ice_age` and `ice_age_sd` (ka) to 3 significant digits;
+`f_valid` to 0.001.
+
 ## Licences
 
 | Source | Licence |

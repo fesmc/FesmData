@@ -25,6 +25,12 @@ the cells with ice in `TOPO-BedMachine-v4` (`H_ice > 0`) but no data (`f_valid =
 `uxy_srf` is their magnitude there; the errors stay missing. These cells have
 `mask_fill = 1`.
 
+## Precision
+
+The float fields are rounded on output to a tolerance by kind (see [Data volume and
+precision](https://fesmc.github.io/FesmData/data_volume.html)): the velocities and their
+errors to 1% or 1 m yr-1, the larger; `f_valid` to 0.001. `mask_fill` is exact.
+
 ## Licences
 
 | Source | Licence |

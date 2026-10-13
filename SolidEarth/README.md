@@ -48,6 +48,13 @@ original files where they are published:
 | `yelmo/ANT-*_GIA_HR24.nc`, `yelmo/ANT-*_stdvisc_Hazzard2024.nc` | `Hazzard2023_visc` (the published grids: the standard deviations are the same; the mean viscosity of `GIA_HR24` is the published mean capped at 10^30.7 Pa s (as here) on 44 GIA layers, and its lithosphere is about 11% thicker than the published 1200 °C isotherm) |
 | `yelmo/ANT-*_Lloyd2024.nc` | none: it is the viscosity of `GIA_HR24` capped at 10^23 Pa s, not the published model of Lloyd et al. (2024), which is `Lloyd2024_visc` |
 
+## Precision
+
+The float fields are rounded on output to a tolerance by kind (see [Data volume and
+precision](https://fesmc.github.io/FesmData/data_volume.html)): `z_litho` and
+`z_litho_sd` to 0.1 m; `log10_visc` and `log10_visc_sd` to 3 significant digits (about
+0.01, 2% in viscosity); `f_valid` to 0.001.
+
 ## Licences
 
 | Source | Licence |
