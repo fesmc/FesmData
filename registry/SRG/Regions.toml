@@ -1,175 +1,83 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-12"
-git_tag = "regions-v2.1.0"
+date = "2026-10-13"
+git_tag = "regions-v2.2.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=SRG_Regions"
-version = "2.1.0"
+version = "2.2.0"
 
-["SRG-16KM_BASINS-SanRafael.nc"]
-checksum = "sha256:9d8d77415b9dcbf76a77f4ad5e85222a56d7aa33b61a870b9022f67dac88d184"
-size = 19560
-storage_path = "$datasets_dir/SRG/SRG-16KM/SRG-16KM_BASINS-SanRafael.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-16KM/2.1.0/SRG-16KM_BASINS-SanRafael.nc"
+["SRG-100M_BASINS-SanRafael.nc"]
+checksum = "sha256:6d47d27b9ba2a8729838d17105fc47201e4638d82c378a919ca0805596467f24"
+size = 34428
+storage_path = "$datasets_dir/SRG/SRG-100M/SRG-100M_BASINS-SanRafael.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-100M/2.2.0/SRG-100M_BASINS-SanRafael.nc"
 
-["SRG-16KM_REGIONS.nc"]
-checksum = "sha256:f725e30c79654ba1e6e21cfe10bb0af66dd2d37ba6f1688941a727f8de822976"
-size = 30330
-storage_path = "$datasets_dir/SRG/SRG-16KM/SRG-16KM_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-16KM/2.1.0/SRG-16KM_REGIONS.nc"
+["SRG-100M_REGIONS.nc"]
+checksum = "sha256:4d85eabb1a45258c65565ddfe2896a19d8deefdb932e19338bea9b9dc740246c"
+size = 41491
+storage_path = "$datasets_dir/SRG/SRG-100M/SRG-100M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-100M/2.2.0/SRG-100M_REGIONS.nc"
 
-["SRG-16KM_grid.nc"]
-checksum = "sha256:79a3c7d16dc8d91787319428dc1dd603c70eb74524a0c3d72cebf77a046a0903"
-size = 20634
-storage_path = "$datasets_dir/SRG/SRG-16KM/SRG-16KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-16KM/2.1.0/SRG-16KM_grid.nc"
-
-["SRG-1KM_BASINS-SanRafael.nc"]
-checksum = "sha256:c90a8e158729b516ea7435176ec73d914a7654e1cd67389047eaa9de358c04b0"
-size = 19560
-storage_path = "$datasets_dir/SRG/SRG-1KM/SRG-1KM_BASINS-SanRafael.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-1KM/2.1.0/SRG-1KM_BASINS-SanRafael.nc"
-
-["SRG-1KM_REGIONS.nc"]
-checksum = "sha256:57ecdac7b68e5205c57b87be8f4662cade28e1abc6b1b4a3ed55a89b5b1fd5fc"
-size = 30330
-storage_path = "$datasets_dir/SRG/SRG-1KM/SRG-1KM_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-1KM/2.1.0/SRG-1KM_REGIONS.nc"
-
-["SRG-1KM_grid.nc"]
-checksum = "sha256:5638b03ce6c6c7c13f50ea394682f725dd14fc821e4c3d63a05c2c3e40740d4e"
-size = 27932
-storage_path = "$datasets_dir/SRG/SRG-1KM/SRG-1KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-1KM/2.1.0/SRG-1KM_grid.nc"
+["SRG-100M_grid.nc"]
+checksum = "sha256:b6f4582fd3bf4c3239b93fdab15e2c2c9471993e341da13618400b117f2b61b7"
+size = 131780
+storage_path = "$datasets_dir/SRG/SRG-100M/SRG-100M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-100M/2.2.0/SRG-100M_grid.nc"
 
 ["SRG-250M_BASINS-SanRafael.nc"]
-checksum = "sha256:2a9ea69a2d449c64ffe391891ff3eb27ace0e97f08f00b40c2620da121e5eacb"
-size = 24809
+checksum = "sha256:6ac3b630ccd05d39bfdb898d06d723c0b595307b3ecfa8a6ee1f81997c9fadf0"
+previous_checksums = ["sha256:2a9ea69a2d449c64ffe391891ff3eb27ace0e97f08f00b40c2620da121e5eacb"]
+size = 22556
 storage_path = "$datasets_dir/SRG/SRG-250M/SRG-250M_BASINS-SanRafael.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-250M/2.1.0/SRG-250M_BASINS-SanRafael.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-250M/2.2.0/SRG-250M_BASINS-SanRafael.nc"
 
 ["SRG-250M_REGIONS.nc"]
-checksum = "sha256:28e17071a7e92e808ff736543734f18fc554117fe730c1bd4d53cdda6ba8a658"
-size = 36145
+checksum = "sha256:5b78f67c71b8c52a0c4bfd21556cc957b0a846bc5d7dd9b7e7bd0022b7875093"
+previous_checksums = ["sha256:28e17071a7e92e808ff736543734f18fc554117fe730c1bd4d53cdda6ba8a658"]
+size = 34434
 storage_path = "$datasets_dir/SRG/SRG-250M/SRG-250M_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-250M/2.1.0/SRG-250M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-250M/2.2.0/SRG-250M_REGIONS.nc"
 
 ["SRG-250M_grid.nc"]
-checksum = "sha256:a2f66927bd462ba52b12fea9dc3628beaad1ee31ae6531333d2e02c48ef4023c"
-size = 66886
+checksum = "sha256:8f83717a4b91db1d906621a54b64880a4951f8a0c7360533dd453dd579e92a0b"
+previous_checksums = ["sha256:a2f66927bd462ba52b12fea9dc3628beaad1ee31ae6531333d2e02c48ef4023c"]
+size = 51488
 storage_path = "$datasets_dir/SRG/SRG-250M/SRG-250M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-250M/2.1.0/SRG-250M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-250M/2.2.0/SRG-250M_grid.nc"
 
-["SRG-2KM_BASINS-SanRafael.nc"]
-checksum = "sha256:646ea5529c045a9443e8d7c89071aa97412126d4ef996eb8617bf26b7eb61972"
-size = 19560
-storage_path = "$datasets_dir/SRG/SRG-2KM/SRG-2KM_BASINS-SanRafael.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-2KM/2.1.0/SRG-2KM_BASINS-SanRafael.nc"
+["SRG-50M_BASINS-SanRafael.nc"]
+checksum = "sha256:a2d17cdd9d9463157fb209a8376a4415112f193a91e55c947ecdb3293055694f"
+size = 50544
+storage_path = "$datasets_dir/SRG/SRG-50M/SRG-50M_BASINS-SanRafael.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-50M/2.2.0/SRG-50M_BASINS-SanRafael.nc"
 
-["SRG-2KM_REGIONS.nc"]
-checksum = "sha256:6b90434424f63aa15cd3439f0710900652e0e10617cdf446eaa3b7e4659ac7f7"
-size = 30330
-storage_path = "$datasets_dir/SRG/SRG-2KM/SRG-2KM_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-2KM/2.1.0/SRG-2KM_REGIONS.nc"
+["SRG-50M_REGIONS.nc"]
+checksum = "sha256:a426bb694ef9030a78dc6fae8820d48b03d28202567f96e553dbe73579e6a87e"
+size = 59422
+storage_path = "$datasets_dir/SRG/SRG-50M/SRG-50M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-50M/2.2.0/SRG-50M_REGIONS.nc"
 
-["SRG-2KM_grid.nc"]
-checksum = "sha256:7258693a721960448051a3941a65f4f8d52157d4102e655a90000fb3efe3703c"
-size = 23162
-storage_path = "$datasets_dir/SRG/SRG-2KM/SRG-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-2KM/2.1.0/SRG-2KM_grid.nc"
+["SRG-50M_grid.nc"]
+checksum = "sha256:69d33da0b995b9a0e9123d0bafd516e037596c2d8e1b62b73a0e1c5889f2bb0a"
+size = 322209
+storage_path = "$datasets_dir/SRG/SRG-50M/SRG-50M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-50M/2.2.0/SRG-50M_grid.nc"
 
-["SRG-4KM_BASINS-SanRafael.nc"]
-checksum = "sha256:cb8bc2c24d0250109b1168e2bb521c41089c3c4da01647aa572f879cdf314ea2"
-size = 19560
-storage_path = "$datasets_dir/SRG/SRG-4KM/SRG-4KM_BASINS-SanRafael.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-4KM/2.1.0/SRG-4KM_BASINS-SanRafael.nc"
-
-["SRG-4KM_REGIONS.nc"]
-checksum = "sha256:d49ea4319686deb4c42d222830d99f513e6673367c727eeabadfe59717d6909d"
-size = 30330
-storage_path = "$datasets_dir/SRG/SRG-4KM/SRG-4KM_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-4KM/2.1.0/SRG-4KM_REGIONS.nc"
-
-["SRG-4KM_grid.nc"]
-checksum = "sha256:c4d8d197372d47722836bc1d5447ad4d4de4aab9961c37609f7ef30d5c7b5e22"
-size = 20634
-storage_path = "$datasets_dir/SRG/SRG-4KM/SRG-4KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-4KM/2.1.0/SRG-4KM_grid.nc"
-
-["SRG-500M_BASINS-SanRafael.nc"]
-checksum = "sha256:2fb0b6ca5fdfa98c1afc40c168e853a65feb96112773ec50477c5c44150d6c04"
-size = 20746
-storage_path = "$datasets_dir/SRG/SRG-500M/SRG-500M_BASINS-SanRafael.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-500M/2.1.0/SRG-500M_BASINS-SanRafael.nc"
-
-["SRG-500M_REGIONS.nc"]
-checksum = "sha256:b308bdb23f0f43d4a106eb94909a5347f479fca437c93a1452ea8548fa3808db"
-size = 31204
-storage_path = "$datasets_dir/SRG/SRG-500M/SRG-500M_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-500M/2.1.0/SRG-500M_REGIONS.nc"
-
-["SRG-500M_grid.nc"]
-checksum = "sha256:e05c070b7d6a1d9c483ff5a15f98445cc6b724af78b7642c5bcc866c2c44b100"
-size = 38566
-storage_path = "$datasets_dir/SRG/SRG-500M/SRG-500M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-500M/2.1.0/SRG-500M_grid.nc"
-
-["SRG-8KM_BASINS-SanRafael.nc"]
-checksum = "sha256:b52c5b2203609cff5a1eb91ac96342076b9fe709a2c7939e002afccbe619d376"
-size = 19560
-storage_path = "$datasets_dir/SRG/SRG-8KM/SRG-8KM_BASINS-SanRafael.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-8KM/2.1.0/SRG-8KM_BASINS-SanRafael.nc"
-
-["SRG-8KM_REGIONS.nc"]
-checksum = "sha256:c882de9a5c7464a468cde702b749217d69b21bc4cdec72bf17ceeb606f36883b"
-size = 30330
-storage_path = "$datasets_dir/SRG/SRG-8KM/SRG-8KM_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-8KM/2.1.0/SRG-8KM_REGIONS.nc"
-
-["SRG-8KM_grid.nc"]
-checksum = "sha256:33a1b33c9a2c95a06e4b4bf4397686a89074a5de2fd0242ff83e18d8a07a46a8"
-size = 20634
-storage_path = "$datasets_dir/SRG/SRG-8KM/SRG-8KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-8KM/2.1.0/SRG-8KM_grid.nc"
-
-["grid_SRG-16KM.txt"]
-checksum = "sha256:d4cbd31fd9c0da3189ddcba9b4bb555c63ba5eb24660383bf10f00aeba075bc9"
-size = 340
-storage_path = "$datasets_dir/SRG/SRG-16KM/grid_SRG-16KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-16KM/2.1.0/grid_SRG-16KM.txt"
-
-["grid_SRG-1KM.txt"]
-checksum = "sha256:41b9ec86699ec061be8b0b8dd512fd487180b4aea6277faad59d282071b65396"
-size = 342
-storage_path = "$datasets_dir/SRG/SRG-1KM/grid_SRG-1KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-1KM/2.1.0/grid_SRG-1KM.txt"
+["grid_SRG-100M.txt"]
+checksum = "sha256:77478ffd3bd4f790374da770035187ecf091d83c93fb3f1bdd2e0150b6626ccb"
+size = 346
+storage_path = "$datasets_dir/SRG/SRG-100M/grid_SRG-100M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-100M/2.2.0/grid_SRG-100M.txt"
 
 ["grid_SRG-250M.txt"]
-checksum = "sha256:56d72b8d4956d6f26b75b8782dc7bd41a78ca77110be6b25a6d8161ba9068f38"
+checksum = "sha256:ed1764d95bdeb2c3760adf4fa4c84691f2adb72c830c07822af5e2a10439f773"
+previous_checksums = ["sha256:56d72b8d4956d6f26b75b8782dc7bd41a78ca77110be6b25a6d8161ba9068f38"]
 size = 347
 storage_path = "$datasets_dir/SRG/SRG-250M/grid_SRG-250M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-250M/2.1.0/grid_SRG-250M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-250M/2.2.0/grid_SRG-250M.txt"
 
-["grid_SRG-2KM.txt"]
-checksum = "sha256:ffe553f18e8716493026cfe1e1c20359b2fdb14817b191de1bfabc4c59586b0e"
-size = 341
-storage_path = "$datasets_dir/SRG/SRG-2KM/grid_SRG-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-2KM/2.1.0/grid_SRG-2KM.txt"
-
-["grid_SRG-4KM.txt"]
-checksum = "sha256:4a7bccbfe54a7cfd6f52c447927ae4733082dd0979523f0014661e0d88410378"
-size = 340
-storage_path = "$datasets_dir/SRG/SRG-4KM/grid_SRG-4KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-4KM/2.1.0/grid_SRG-4KM.txt"
-
-["grid_SRG-500M.txt"]
-checksum = "sha256:ae23cc435cd0f27b7bfc11333e2ad2fced6a220956a4692f08d03260c4bbb67c"
-size = 343
-storage_path = "$datasets_dir/SRG/SRG-500M/grid_SRG-500M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-500M/2.1.0/grid_SRG-500M.txt"
-
-["grid_SRG-8KM.txt"]
-checksum = "sha256:3bb506ef1502c817411d9cf0a9f2a1171cca03e6528a799ec80eea7c1570d5ed"
-size = 338
-storage_path = "$datasets_dir/SRG/SRG-8KM/grid_SRG-8KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-8KM/2.1.0/grid_SRG-8KM.txt"
+["grid_SRG-50M.txt"]
+checksum = "sha256:8847356d899ce03a11186c0f290e27752d812d60af0b1f05be560b20fdbe77c1"
+size = 349
+storage_path = "$datasets_dir/SRG/SRG-50M/grid_SRG-50M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Regions_SRG-50M/2.2.0/grid_SRG-50M.txt"

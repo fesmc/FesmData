@@ -1,133 +1,67 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-12"
-git_tag = "regions-v2.1.0"
+date = "2026-10-13"
+git_tag = "regions-v2.2.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Pyrenees_Regions"
-version = "2.1.0"
+version = "2.2.0"
 
-["PYR-16KM_REGIONS.nc"]
-checksum = "sha256:b9ba8939dda3c0c712d7438599c9f2fbee49bfaf6ca6d948dfeb5ea18368d497"
-size = 30298
-storage_path = "$datasets_dir/Pyrenees/PYR-16KM/PYR-16KM_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-16KM/2.1.0/PYR-16KM_REGIONS.nc"
+["PYR-250M_REGIONS.nc"]
+checksum = "sha256:65ce56ffb469e457545206db3b5d5238c6c4f893cc07fabe62160ea018013283"
+size = 67923
+storage_path = "$datasets_dir/Pyrenees/PYR-250M/PYR-250M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-250M/2.2.0/PYR-250M_REGIONS.nc"
 
-["PYR-16KM_grid.nc"]
-checksum = "sha256:1970b129ffc2d64cebfd1e5c46ddc88fbe4e53fd8bfe8d8f2748fbaa58ad7f0e"
-size = 23562
-storage_path = "$datasets_dir/Pyrenees/PYR-16KM/PYR-16KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-16KM/2.1.0/PYR-16KM_grid.nc"
-
-["PYR-1KM_REGIONS.nc"]
-checksum = "sha256:c0c2f09f0f5218c458c93b9cc3b1639c5a1209207c215a0a8027cb0f7f69d2fc"
-size = 45838
-storage_path = "$datasets_dir/Pyrenees/PYR-1KM/PYR-1KM_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-1KM/2.1.0/PYR-1KM_REGIONS.nc"
-
-["PYR-1KM_grid.nc"]
-checksum = "sha256:7db74080c3536f3eea4b318565d464df5d3e9a455b6034f456dc6879d4f2e91b"
-size = 415133
-storage_path = "$datasets_dir/Pyrenees/PYR-1KM/PYR-1KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-1KM/2.1.0/PYR-1KM_grid.nc"
+["PYR-250M_grid.nc"]
+checksum = "sha256:3e0709b31b6cd203060fca5f2475acd3966154dc51f263cbdee01334c452df92"
+size = 2204528
+storage_path = "$datasets_dir/Pyrenees/PYR-250M/PYR-250M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-250M/2.2.0/PYR-250M_grid.nc"
 
 ["PYR-2KM_REGIONS.nc"]
-checksum = "sha256:56569a628e869203fd426f710b00bed57070665941fa58fb3e8613011fcb79cc"
-size = 34525
+checksum = "sha256:98f71bb2003455529192b81c9d2268a558df94d0fe4751365f96cb2a0f07eb14"
+previous_checksums = ["sha256:56569a628e869203fd426f710b00bed57070665941fa58fb3e8613011fcb79cc"]
+size = 34395
 storage_path = "$datasets_dir/Pyrenees/PYR-2KM/PYR-2KM_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-2KM/2.1.0/PYR-2KM_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-2KM/2.2.0/PYR-2KM_REGIONS.nc"
 
 ["PYR-2KM_grid.nc"]
-checksum = "sha256:02d80a754d9fd500540cfb6796be8ad88aefd7d6cf04ac3ac2b86c3bf831b25f"
-size = 140199
+checksum = "sha256:20d63f5741b04cbdfbfe1bf5885e4a73a58a3d4fd9db5cd561dd531d0a3ffde9"
+previous_checksums = ["sha256:02d80a754d9fd500540cfb6796be8ad88aefd7d6cf04ac3ac2b86c3bf831b25f"]
+size = 86648
 storage_path = "$datasets_dir/Pyrenees/PYR-2KM/PYR-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-2KM/2.1.0/PYR-2KM_grid.nc"
-
-["PYR-32KM_REGIONS.nc"]
-checksum = "sha256:c3ffd58db8bee7a55cfd52afb518d431a7cc617fba2b23a6928527217fd761cb"
-size = 30298
-storage_path = "$datasets_dir/Pyrenees/PYR-32KM/PYR-32KM_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-32KM/2.1.0/PYR-32KM_REGIONS.nc"
-
-["PYR-32KM_grid.nc"]
-checksum = "sha256:5bc37b84ddf46e37ff86bddfd6b33c2b0cbc8d51749b2c922b6ddfeb08365c93"
-size = 20634
-storage_path = "$datasets_dir/Pyrenees/PYR-32KM/PYR-32KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-32KM/2.1.0/PYR-32KM_grid.nc"
-
-["PYR-4KM_REGIONS.nc"]
-checksum = "sha256:dbf1862540e94d344e5e936c3b33d69a191c9dcaea7c6cf67ee25658125489e8"
-size = 31866
-storage_path = "$datasets_dir/Pyrenees/PYR-4KM/PYR-4KM_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-4KM/2.1.0/PYR-4KM_REGIONS.nc"
-
-["PYR-4KM_grid.nc"]
-checksum = "sha256:ff862a485681fcfdc4a5bcae39bba3c1e8a579e07e586950fe04267a2b16bb97"
-size = 56156
-storage_path = "$datasets_dir/Pyrenees/PYR-4KM/PYR-4KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-4KM/2.1.0/PYR-4KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-2KM/2.2.0/PYR-2KM_grid.nc"
 
 ["PYR-500M_REGIONS.nc"]
-checksum = "sha256:c9ce9a2f672fc4c888d59ecfcbd9cbf22ebf2031784d7e194e3f1f1a028af5e6"
-size = 80908
+checksum = "sha256:b98d20b71e8536e72b8fc897b087da92c71e087402a7117d4c1018f609e058c7"
+previous_checksums = ["sha256:c9ce9a2f672fc4c888d59ecfcbd9cbf22ebf2031784d7e194e3f1f1a028af5e6"]
+size = 45889
 storage_path = "$datasets_dir/Pyrenees/PYR-500M/PYR-500M_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-500M/2.1.0/PYR-500M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-500M/2.2.0/PYR-500M_REGIONS.nc"
 
 ["PYR-500M_grid.nc"]
-checksum = "sha256:e1171fb45db05153c818f693ebbc2637e9d501d150217e2a9dfbde2c94a98672"
-size = 1314876
+checksum = "sha256:ac2f0c297dbceae9d9454ff7938f9a7e57624f06a50836c5e410ff011fb490b5"
+previous_checksums = ["sha256:e1171fb45db05153c818f693ebbc2637e9d501d150217e2a9dfbde2c94a98672"]
+size = 696990
 storage_path = "$datasets_dir/Pyrenees/PYR-500M/PYR-500M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-500M/2.1.0/PYR-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-500M/2.2.0/PYR-500M_grid.nc"
 
-["PYR-8KM_REGIONS.nc"]
-checksum = "sha256:e75cc2934c202fb88dab7a822488d460392faa9fb1c45d4d6bbe2f198142e1e0"
-size = 30298
-storage_path = "$datasets_dir/Pyrenees/PYR-8KM/PYR-8KM_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-8KM/2.1.0/PYR-8KM_REGIONS.nc"
-
-["PYR-8KM_grid.nc"]
-checksum = "sha256:8eb974d0ce02365b677285419316e5a005cea408caf07126bd0039a175eeb9ce"
-size = 32310
-storage_path = "$datasets_dir/Pyrenees/PYR-8KM/PYR-8KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-8KM/2.1.0/PYR-8KM_grid.nc"
-
-["grid_PYR-16KM.txt"]
-checksum = "sha256:f2e756646de2fc08661ad9deac4b54c2fca57f05161bf78c72c575f58de6bfe1"
-size = 319
-storage_path = "$datasets_dir/Pyrenees/PYR-16KM/grid_PYR-16KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-16KM/2.1.0/grid_PYR-16KM.txt"
-
-["grid_PYR-1KM.txt"]
-checksum = "sha256:f12c47a62baddbaea4c10d7430ec1638503046e056aef074bb1a152288e84cca"
-size = 322
-storage_path = "$datasets_dir/Pyrenees/PYR-1KM/grid_PYR-1KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-1KM/2.1.0/grid_PYR-1KM.txt"
+["grid_PYR-250M.txt"]
+checksum = "sha256:2cc0852b3af380633a652ae3ce0bd044899edbc75eadbb6ca64ecc92923f8221"
+size = 331
+storage_path = "$datasets_dir/Pyrenees/PYR-250M/grid_PYR-250M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-250M/2.2.0/grid_PYR-250M.txt"
 
 ["grid_PYR-2KM.txt"]
-checksum = "sha256:cace1dfc9f744dd1d56f0f4560598dd70aa72f1c7bf01cf033a25b04d480b03d"
-size = 321
+checksum = "sha256:8a8de7189e5797f759a3a8df305e651006339b630895a4b3da06e4c00098e192"
+previous_checksums = ["sha256:cace1dfc9f744dd1d56f0f4560598dd70aa72f1c7bf01cf033a25b04d480b03d"]
+size = 325
 storage_path = "$datasets_dir/Pyrenees/PYR-2KM/grid_PYR-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-2KM/2.1.0/grid_PYR-2KM.txt"
-
-["grid_PYR-32KM.txt"]
-checksum = "sha256:fdef4df753330fcec8cab87fa55c1b0d9832d4dd0992b2da740a79e3d6c531e7"
-size = 318
-storage_path = "$datasets_dir/Pyrenees/PYR-32KM/grid_PYR-32KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-32KM/2.1.0/grid_PYR-32KM.txt"
-
-["grid_PYR-4KM.txt"]
-checksum = "sha256:472e29b62d38a58a512aa515c7929a2f287bfe4b6fecf25a85b51f9e4808f04f"
-size = 319
-storage_path = "$datasets_dir/Pyrenees/PYR-4KM/grid_PYR-4KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-4KM/2.1.0/grid_PYR-4KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-2KM/2.2.0/grid_PYR-2KM.txt"
 
 ["grid_PYR-500M.txt"]
-checksum = "sha256:6ca4be959f99fbb9e7c5dad28c9c9f51e63790182a9d04df077762534ad14598"
-size = 322
+checksum = "sha256:f5c3250096ab76fd6c156518227640019fc7938ab600ad440afafc62f241a757"
+previous_checksums = ["sha256:6ca4be959f99fbb9e7c5dad28c9c9f51e63790182a9d04df077762534ad14598"]
+size = 327
 storage_path = "$datasets_dir/Pyrenees/PYR-500M/grid_PYR-500M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-500M/2.1.0/grid_PYR-500M.txt"
-
-["grid_PYR-8KM.txt"]
-checksum = "sha256:0de70d19e807586a4ab9af4311bc6f17c37dd1d04bf4d756fb0120ae006eefce"
-size = 318
-storage_path = "$datasets_dir/Pyrenees/PYR-8KM/grid_PYR-8KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-8KM/2.1.0/grid_PYR-8KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-500M/2.2.0/grid_PYR-500M.txt"

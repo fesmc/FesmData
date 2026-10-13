@@ -1,259 +1,295 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-12"
-git_tag = "topo-v2.0.0"
+date = "2026-10-13"
+git_tag = "topo-v2.2.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Antarctica_Topo"
-version = "2.0.0"
+version = "2.2.0"
 
 ["ANT-16KM_TOPO-BedMachine-v2.nc"]
-checksum = "sha256:bd3aba14aef8aced7778f389a8252f580ea3098bbc9ab33affc13be70c521a24"
-size = 1419559
+checksum = "sha256:daf98bbcf0662d2c44ac188c293c282dfc7bebdc770d10fdfd08d756f1410d28"
+previous_checksums = ["sha256:bd3aba14aef8aced7778f389a8252f580ea3098bbc9ab33affc13be70c521a24"]
+size = 1167835
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_TOPO-BedMachine-v2.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-16KM/2.0.0/ANT-16KM_TOPO-BedMachine-v2.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-16KM/2.2.0/ANT-16KM_TOPO-BedMachine-v2.nc"
 
 ["ANT-16KM_TOPO-BedMachine-v3.nc"]
-checksum = "sha256:4238429bbc401ea2f5abf3155e0c2c9747f5e3f11d55bb7708bdadd64a05d7cf"
-size = 1417933
+checksum = "sha256:14291868485ce66fb674bfc8d6a51528920c6c959fdaa5054dd755950596f79d"
+previous_checksums = ["sha256:4238429bbc401ea2f5abf3155e0c2c9747f5e3f11d55bb7708bdadd64a05d7cf"]
+size = 1166902
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_TOPO-BedMachine-v3.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-16KM/2.0.0/ANT-16KM_TOPO-BedMachine-v3.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-16KM/2.2.0/ANT-16KM_TOPO-BedMachine-v3.nc"
 
 ["ANT-16KM_TOPO-BedMachine-v4.nc"]
-checksum = "sha256:7e010aad77353c4039a2584f64f398dc3efa6b1ee8b47240877e4fc70a21b753"
-size = 1419610
+checksum = "sha256:545195a0a00446126a072bf4e18d5ab869263ce2bc6760a325d22a2c2857fc34"
+previous_checksums = ["sha256:7e010aad77353c4039a2584f64f398dc3efa6b1ee8b47240877e4fc70a21b753"]
+size = 1168065
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_TOPO-BedMachine-v4.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-16KM/2.0.0/ANT-16KM_TOPO-BedMachine-v4.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-16KM/2.2.0/ANT-16KM_TOPO-BedMachine-v4.nc"
 
 ["ANT-16KM_TOPO-Bedmap2.nc"]
-checksum = "sha256:19d92ee575ad888a447c8ab81b8cacb80ff77352d291df352e9fa3c9e09ef2eb"
-size = 1340063
+checksum = "sha256:36303270ec5f5d264f5d9d3318643587ef59f615e7c31e88e821375eed93be6f"
+previous_checksums = ["sha256:19d92ee575ad888a447c8ab81b8cacb80ff77352d291df352e9fa3c9e09ef2eb"]
+size = 1149301
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_TOPO-Bedmap2.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-16KM/2.0.0/ANT-16KM_TOPO-Bedmap2.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-16KM/2.2.0/ANT-16KM_TOPO-Bedmap2.nc"
 
 ["ANT-16KM_TOPO-Bedmap3.nc"]
-checksum = "sha256:179451e554674e815e88e43ec50c3a448d17b3a16613b3d2ea2189b08aa008ba"
-size = 1398249
+checksum = "sha256:754992498952a36017ba09356cff45e3aa935765b01e521d3d1de2a11388158f"
+previous_checksums = ["sha256:179451e554674e815e88e43ec50c3a448d17b3a16613b3d2ea2189b08aa008ba"]
+size = 1164204
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_TOPO-Bedmap3.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-16KM/2.0.0/ANT-16KM_TOPO-Bedmap3.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-16KM/2.2.0/ANT-16KM_TOPO-Bedmap3.nc"
 
 ["ANT-16KM_grid.nc"]
-checksum = "sha256:dea44445828fdc3adbae04afc6662224e96a6838c8381f80a855659b3ad6460c"
-size = 892250
+checksum = "sha256:0c9b8e003b33ca4188cc54c9d7dbe4932f742ee4f6ac9431d8d38e33fa5af978"
+previous_checksums = ["sha256:dea44445828fdc3adbae04afc6662224e96a6838c8381f80a855659b3ad6460c"]
+size = 766020
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-16KM/2.0.0/ANT-16KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-16KM/2.2.0/ANT-16KM_grid.nc"
 
 ["ANT-1KM_TOPO-BedMachine-v2.nc"]
-checksum = "sha256:5cfc7d5b7325e2de87cf535a404c5f70c52fce67cb6016e5946545301f16f78c"
-size = 290842562
+checksum = "sha256:bf89872f1c69a5f549ea49b7061d24cbc402d806306244e8d96fa478403a40f8"
+previous_checksums = ["sha256:5cfc7d5b7325e2de87cf535a404c5f70c52fce67cb6016e5946545301f16f78c"]
+size = 227706731
 storage_path = "$datasets_dir/Antarctica/ANT-1KM/ANT-1KM_TOPO-BedMachine-v2.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-1KM/2.0.0/ANT-1KM_TOPO-BedMachine-v2.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-1KM/2.2.0/ANT-1KM_TOPO-BedMachine-v2.nc"
 
 ["ANT-1KM_TOPO-BedMachine-v3.nc"]
-checksum = "sha256:e4eeede3c1ef28becc067ccd18dcb6f98ce65aa39640c2c298d8ae0a72f156c5"
-size = 290703288
+checksum = "sha256:f7c05477467073e1845e9858745af2b5f57859538512571594510f01db5a0091"
+previous_checksums = ["sha256:e4eeede3c1ef28becc067ccd18dcb6f98ce65aa39640c2c298d8ae0a72f156c5"]
+size = 227677519
 storage_path = "$datasets_dir/Antarctica/ANT-1KM/ANT-1KM_TOPO-BedMachine-v3.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-1KM/2.0.0/ANT-1KM_TOPO-BedMachine-v3.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-1KM/2.2.0/ANT-1KM_TOPO-BedMachine-v3.nc"
 
 ["ANT-1KM_TOPO-BedMachine-v4.nc"]
-checksum = "sha256:e507f888397535c228f6863ac49fcd0a0a6f3642915631eb7e27c2319a53dc8d"
-size = 293960887
+checksum = "sha256:f7d970473ef9b52c2caa0af4ceaa46ca83f4c5533f3c5683da3cd591cbd99cdd"
+previous_checksums = ["sha256:e507f888397535c228f6863ac49fcd0a0a6f3642915631eb7e27c2319a53dc8d"]
+size = 231193301
 storage_path = "$datasets_dir/Antarctica/ANT-1KM/ANT-1KM_TOPO-BedMachine-v4.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-1KM/2.0.0/ANT-1KM_TOPO-BedMachine-v4.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-1KM/2.2.0/ANT-1KM_TOPO-BedMachine-v4.nc"
 
 ["ANT-1KM_TOPO-Bedmap2.nc"]
-checksum = "sha256:35d7556559a5fc00ad1d8eb955a8c2d83fc0b59d8f71178024fc077bf8bd1a17"
-size = 91647648
+checksum = "sha256:254b9ecfc5daf1db446d93faa8888d006e5573f61a66cfd2f35d81e968ba8f24"
+previous_checksums = ["sha256:35d7556559a5fc00ad1d8eb955a8c2d83fc0b59d8f71178024fc077bf8bd1a17"]
+size = 79501667
 storage_path = "$datasets_dir/Antarctica/ANT-1KM/ANT-1KM_TOPO-Bedmap2.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-1KM/2.0.0/ANT-1KM_TOPO-Bedmap2.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-1KM/2.2.0/ANT-1KM_TOPO-Bedmap2.nc"
 
 ["ANT-1KM_TOPO-Bedmap3.nc"]
-checksum = "sha256:b84f3b6cbabf2981cc191e07aceacddb0b43a4dc0b2351130a9626ec53871261"
-size = 198072346
+checksum = "sha256:5f74b494d4c56e1b2f71f95b5df1b874bd2e7bd60c125317e2a88cb19c2118d0"
+previous_checksums = ["sha256:b84f3b6cbabf2981cc191e07aceacddb0b43a4dc0b2351130a9626ec53871261"]
+size = 163987000
 storage_path = "$datasets_dir/Antarctica/ANT-1KM/ANT-1KM_TOPO-Bedmap3.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-1KM/2.0.0/ANT-1KM_TOPO-Bedmap3.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-1KM/2.2.0/ANT-1KM_TOPO-Bedmap3.nc"
 
 ["ANT-1KM_grid.nc"]
-checksum = "sha256:1564185a4ce4e24d55ceaa7e6a6fc6170b28746fb5435d96af1ddb267a5da085"
-size = 142664883
+checksum = "sha256:138b7ff212af93d6d11244da889fcead9cb4956bb787fa135b9161f680a970c3"
+previous_checksums = ["sha256:1564185a4ce4e24d55ceaa7e6a6fc6170b28746fb5435d96af1ddb267a5da085"]
+size = 101715868
 storage_path = "$datasets_dir/Antarctica/ANT-1KM/ANT-1KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-1KM/2.0.0/ANT-1KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-1KM/2.2.0/ANT-1KM_grid.nc"
 
 ["ANT-2KM_TOPO-BedMachine-v2.nc"]
-checksum = "sha256:a724ffbc7708da75f5f989f614c1e7c8c15436f16eeb6108943298fee8c29ad0"
-size = 76305716
+checksum = "sha256:32ac4c709f107dbecd135405338a5576e37542c8b9d559f2d42a3cebf83475bd"
+previous_checksums = ["sha256:a724ffbc7708da75f5f989f614c1e7c8c15436f16eeb6108943298fee8c29ad0"]
+size = 60339219
 storage_path = "$datasets_dir/Antarctica/ANT-2KM/ANT-2KM_TOPO-BedMachine-v2.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-2KM/2.0.0/ANT-2KM_TOPO-BedMachine-v2.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-2KM/2.2.0/ANT-2KM_TOPO-BedMachine-v2.nc"
 
 ["ANT-2KM_TOPO-BedMachine-v3.nc"]
-checksum = "sha256:414300bf7c4ef6ece7957c6def1c44bf5a60eb6b77cc0c878358ebc97eed76fb"
-size = 76298151
+checksum = "sha256:3a9fe8614cd313e80b601ddb36e84a5d651d33b9b235bdefb9aa749b592e6f25"
+previous_checksums = ["sha256:414300bf7c4ef6ece7957c6def1c44bf5a60eb6b77cc0c878358ebc97eed76fb"]
+size = 60337683
 storage_path = "$datasets_dir/Antarctica/ANT-2KM/ANT-2KM_TOPO-BedMachine-v3.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-2KM/2.0.0/ANT-2KM_TOPO-BedMachine-v3.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-2KM/2.2.0/ANT-2KM_TOPO-BedMachine-v3.nc"
 
 ["ANT-2KM_TOPO-BedMachine-v4.nc"]
-checksum = "sha256:53bde2c7040d3b42d13f1794198dc1104331001c8a59b0dcef4dcc11aa65feab"
-size = 76905446
+checksum = "sha256:47ddc425b548fe2e1804e91536c3665289f64185fda0e00e4d1f45bc4e697fca"
+previous_checksums = ["sha256:53bde2c7040d3b42d13f1794198dc1104331001c8a59b0dcef4dcc11aa65feab"]
+size = 60971807
 storage_path = "$datasets_dir/Antarctica/ANT-2KM/ANT-2KM_TOPO-BedMachine-v4.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-2KM/2.0.0/ANT-2KM_TOPO-BedMachine-v4.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-2KM/2.2.0/ANT-2KM_TOPO-BedMachine-v4.nc"
 
 ["ANT-2KM_TOPO-Bedmap2.nc"]
-checksum = "sha256:a54adda1d328cd0e0c7ede117b5c267f2e073b04993323e3bdadc225c12829d5"
-size = 59547461
+checksum = "sha256:00fc6f7d4db8ba636f9a3e422d482009ae015d285babb7903363d88a5500ebdc"
+previous_checksums = ["sha256:a54adda1d328cd0e0c7ede117b5c267f2e073b04993323e3bdadc225c12829d5"]
+size = 49655866
 storage_path = "$datasets_dir/Antarctica/ANT-2KM/ANT-2KM_TOPO-Bedmap2.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-2KM/2.0.0/ANT-2KM_TOPO-Bedmap2.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-2KM/2.2.0/ANT-2KM_TOPO-Bedmap2.nc"
 
 ["ANT-2KM_TOPO-Bedmap3.nc"]
-checksum = "sha256:88509c87f61ba66790fccba3bceda06362a48edb19b29d648abd22c42022cdcd"
-size = 64872416
+checksum = "sha256:e940118e3296fdf1a09c86afa5443eca282357ab0cf7a457b1263a893cb5e390"
+previous_checksums = ["sha256:88509c87f61ba66790fccba3bceda06362a48edb19b29d648abd22c42022cdcd"]
+size = 54886718
 storage_path = "$datasets_dir/Antarctica/ANT-2KM/ANT-2KM_TOPO-Bedmap3.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-2KM/2.0.0/ANT-2KM_TOPO-Bedmap3.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-2KM/2.2.0/ANT-2KM_TOPO-Bedmap3.nc"
 
 ["ANT-2KM_grid.nc"]
-checksum = "sha256:405a1131131ba119609bf7c4147b29477ab4801fd0221f56656ab6ff1abf8ffc"
-size = 40215317
+checksum = "sha256:b6ac983d1cadde8def80249d1304d0cf5eae0defdf320a7dae437d825e55ab11"
+previous_checksums = ["sha256:405a1131131ba119609bf7c4147b29477ab4801fd0221f56656ab6ff1abf8ffc"]
+size = 30598617
 storage_path = "$datasets_dir/Antarctica/ANT-2KM/ANT-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-2KM/2.0.0/ANT-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-2KM/2.2.0/ANT-2KM_grid.nc"
 
 ["ANT-32KM_TOPO-BedMachine-v2.nc"]
-checksum = "sha256:c06bd291907a890c713fa30ad644eca4fd7ccd55fa6b3ed9b12646c749de0eb8"
-size = 418141
+checksum = "sha256:4d4c29c10cd9135139718374cabf173c85a62b14b302847796a6e356ee7c9afa"
+previous_checksums = ["sha256:c06bd291907a890c713fa30ad644eca4fd7ccd55fa6b3ed9b12646c749de0eb8"]
+size = 354749
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_TOPO-BedMachine-v2.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-32KM/2.0.0/ANT-32KM_TOPO-BedMachine-v2.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-32KM/2.2.0/ANT-32KM_TOPO-BedMachine-v2.nc"
 
 ["ANT-32KM_TOPO-BedMachine-v3.nc"]
-checksum = "sha256:2bbb27783e7319fa45558ec08e80ac8c71938eee597f7e3c08e9c24f6b701389"
-size = 418130
+checksum = "sha256:f381e92c62c6442ff8f8db46a3da0f45d12f37d5ae3e86d713890d1065ad3205"
+previous_checksums = ["sha256:2bbb27783e7319fa45558ec08e80ac8c71938eee597f7e3c08e9c24f6b701389"]
+size = 354411
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_TOPO-BedMachine-v3.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-32KM/2.0.0/ANT-32KM_TOPO-BedMachine-v3.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-32KM/2.2.0/ANT-32KM_TOPO-BedMachine-v3.nc"
 
 ["ANT-32KM_TOPO-BedMachine-v4.nc"]
-checksum = "sha256:ae6ea84a04433de4a6291dcc02f666a7f1ebf5d977fdb8bb080ce5eff21cbc89"
-size = 418641
+checksum = "sha256:324650646631e20e16f615a04b624794957533769038be7190c662ed9a87acc5"
+previous_checksums = ["sha256:ae6ea84a04433de4a6291dcc02f666a7f1ebf5d977fdb8bb080ce5eff21cbc89"]
+size = 354928
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_TOPO-BedMachine-v4.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-32KM/2.0.0/ANT-32KM_TOPO-BedMachine-v4.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-32KM/2.2.0/ANT-32KM_TOPO-BedMachine-v4.nc"
 
 ["ANT-32KM_TOPO-Bedmap2.nc"]
-checksum = "sha256:6c7ab10bace59ae9c558d045cf9b1cbcfb048f797511d25c7a763efa99d86761"
-size = 408761
+checksum = "sha256:01f7db99a24752e92f8a44067e4677b94eff0ddeab166a525583db7189aeeeaa"
+previous_checksums = ["sha256:6c7ab10bace59ae9c558d045cf9b1cbcfb048f797511d25c7a763efa99d86761"]
+size = 352408
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_TOPO-Bedmap2.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-32KM/2.0.0/ANT-32KM_TOPO-Bedmap2.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-32KM/2.2.0/ANT-32KM_TOPO-Bedmap2.nc"
 
 ["ANT-32KM_TOPO-Bedmap3.nc"]
-checksum = "sha256:8495de1b355bdbf549d975f52dc46b455bcfebf274eabf0d6f2100384c10a18e"
-size = 415787
+checksum = "sha256:963f3f82df90f23cfd24abf1fa55aae583f56075b5005f4cf1033634d36e1178"
+previous_checksums = ["sha256:8495de1b355bdbf549d975f52dc46b455bcfebf274eabf0d6f2100384c10a18e"]
+size = 355662
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_TOPO-Bedmap3.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-32KM/2.0.0/ANT-32KM_TOPO-Bedmap3.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-32KM/2.2.0/ANT-32KM_TOPO-Bedmap3.nc"
 
 ["ANT-32KM_grid.nc"]
-checksum = "sha256:66765d3512c62479e60ad1095a4ee84b38edb681fe816eddf9896c3a2799efd8"
-size = 212550
+checksum = "sha256:49cf80092bf11538d76d480dea852afea71c414565d6123fb01ff4e7e853bee1"
+previous_checksums = ["sha256:66765d3512c62479e60ad1095a4ee84b38edb681fe816eddf9896c3a2799efd8"]
+size = 190659
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-32KM/2.0.0/ANT-32KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-32KM/2.2.0/ANT-32KM_grid.nc"
 
 ["ANT-4KM_TOPO-BedMachine-v2.nc"]
-checksum = "sha256:6f9da94332be9f139a195a148694b94c669646a9ec82724c0bf47fa2982d036e"
-size = 20027410
+checksum = "sha256:d51734ce5b76727c6d54b2928e3938705b43520597dfbdd62ba53c3b6eda80cf"
+previous_checksums = ["sha256:6f9da94332be9f139a195a148694b94c669646a9ec82724c0bf47fa2982d036e"]
+size = 16063619
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_TOPO-BedMachine-v2.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-4KM/2.0.0/ANT-4KM_TOPO-BedMachine-v2.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-4KM/2.2.0/ANT-4KM_TOPO-BedMachine-v2.nc"
 
 ["ANT-4KM_TOPO-BedMachine-v3.nc"]
-checksum = "sha256:37392c6d5f2c10b1febc6804ee2b7e29c270888b5d00b665102432beb478bb59"
-size = 20018264
+checksum = "sha256:b7de5a0377cf761238002b9dda5116a91582eab62ae27ff71570067d730f82f7"
+previous_checksums = ["sha256:37392c6d5f2c10b1febc6804ee2b7e29c270888b5d00b665102432beb478bb59"]
+size = 16049741
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_TOPO-BedMachine-v3.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-4KM/2.0.0/ANT-4KM_TOPO-BedMachine-v3.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-4KM/2.2.0/ANT-4KM_TOPO-BedMachine-v3.nc"
 
 ["ANT-4KM_TOPO-BedMachine-v4.nc"]
-checksum = "sha256:f1a3b797dc1cb1d5b07f3007a86a5ba111996e1455d415f86703f87e4728bf6d"
-size = 20108722
+checksum = "sha256:beef91e2d119de3809e73785ea477a795cb50d03d61ff395fc5e4eda3b91cff3"
+previous_checksums = ["sha256:f1a3b797dc1cb1d5b07f3007a86a5ba111996e1455d415f86703f87e4728bf6d"]
+size = 16148496
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_TOPO-BedMachine-v4.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-4KM/2.0.0/ANT-4KM_TOPO-BedMachine-v4.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-4KM/2.2.0/ANT-4KM_TOPO-BedMachine-v4.nc"
 
 ["ANT-4KM_TOPO-Bedmap2.nc"]
-checksum = "sha256:8ee56288c18864c4967841f769bbf49c41a4bf46f3d3e2e790dca7761a8d9603"
-size = 16975103
+checksum = "sha256:020161e3bc5139a0b3bfb2a071b8f2f11ddaff234b5c93f1153b723e3a492020"
+previous_checksums = ["sha256:8ee56288c18864c4967841f769bbf49c41a4bf46f3d3e2e790dca7761a8d9603"]
+size = 14740656
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_TOPO-Bedmap2.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-4KM/2.0.0/ANT-4KM_TOPO-Bedmap2.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-4KM/2.2.0/ANT-4KM_TOPO-Bedmap2.nc"
 
 ["ANT-4KM_TOPO-Bedmap3.nc"]
-checksum = "sha256:86d1d620a5cfd645edd70eb321404e73a6f1add02c033d5ddcbd366b95e5de27"
-size = 18211173
+checksum = "sha256:eac94b601ee76b1faa97e720840b10179a3c6fc6a504c80ed7b95ddc28082e60"
+previous_checksums = ["sha256:86d1d620a5cfd645edd70eb321404e73a6f1add02c033d5ddcbd366b95e5de27"]
+size = 15705241
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_TOPO-Bedmap3.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-4KM/2.0.0/ANT-4KM_TOPO-Bedmap3.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-4KM/2.2.0/ANT-4KM_TOPO-Bedmap3.nc"
 
 ["ANT-4KM_grid.nc"]
-checksum = "sha256:b553afcb6273200e9cd436c4f3ba5f081c599c58237374342aade5c4588e879f"
-size = 11450508
+checksum = "sha256:fb6604c91ce17a3978a380d4e7d8b641d2f57eea5da4c37e0f46189faa07884f"
+previous_checksums = ["sha256:b553afcb6273200e9cd436c4f3ba5f081c599c58237374342aade5c4588e879f"]
+size = 9192910
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-4KM/2.0.0/ANT-4KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-4KM/2.2.0/ANT-4KM_grid.nc"
 
 ["ANT-8KM_TOPO-BedMachine-v2.nc"]
-checksum = "sha256:c31d8589adee470941397404a2aa5ebab5d38e46f28b0f9a13cf1af6af83cdec"
-size = 5236927
+checksum = "sha256:61cd21e417e76897bd988a4ed37fd437487d5a5d6d50611b452623d9000d069d"
+previous_checksums = ["sha256:c31d8589adee470941397404a2aa5ebab5d38e46f28b0f9a13cf1af6af83cdec"]
+size = 4243166
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_TOPO-BedMachine-v2.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-8KM/2.0.0/ANT-8KM_TOPO-BedMachine-v2.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-8KM/2.2.0/ANT-8KM_TOPO-BedMachine-v2.nc"
 
 ["ANT-8KM_TOPO-BedMachine-v3.nc"]
-checksum = "sha256:426c918dd0c160d288a4b9a90483a612fe75a8f954d71fd940251f402a635c55"
-size = 5232229
+checksum = "sha256:61ca6cac75d8b2dcb8b4c0cb3dc59b23fce058b537129894ddb2f635159eccf4"
+previous_checksums = ["sha256:426c918dd0c160d288a4b9a90483a612fe75a8f954d71fd940251f402a635c55"]
+size = 4236043
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_TOPO-BedMachine-v3.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-8KM/2.0.0/ANT-8KM_TOPO-BedMachine-v3.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-8KM/2.2.0/ANT-8KM_TOPO-BedMachine-v3.nc"
 
 ["ANT-8KM_TOPO-BedMachine-v4.nc"]
-checksum = "sha256:c9e8fc9ec70084902e3ab5a8557be8ccd9296a96af8908039b27c14db646dfdd"
-size = 5244661
+checksum = "sha256:e7bbaed4bc3192bcc5896e0e1d048d4d68f1fd822b11cfeda2963a3992af709e"
+previous_checksums = ["sha256:c9e8fc9ec70084902e3ab5a8557be8ccd9296a96af8908039b27c14db646dfdd"]
+size = 4246574
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_TOPO-BedMachine-v4.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-8KM/2.0.0/ANT-8KM_TOPO-BedMachine-v4.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-8KM/2.2.0/ANT-8KM_TOPO-BedMachine-v4.nc"
 
 ["ANT-8KM_TOPO-Bedmap2.nc"]
-checksum = "sha256:ce72711c1e38d56b1892667dc1ff72483fccab17b459fb4334a59427d6df4bbe"
-size = 4731539
+checksum = "sha256:2600f8ae1f8c47aa994bf69151ab60cb4252b4f2c67d44a559bf19796fc02329"
+previous_checksums = ["sha256:ce72711c1e38d56b1892667dc1ff72483fccab17b459fb4334a59427d6df4bbe"]
+size = 4100202
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_TOPO-Bedmap2.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-8KM/2.0.0/ANT-8KM_TOPO-Bedmap2.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-8KM/2.2.0/ANT-8KM_TOPO-Bedmap2.nc"
 
 ["ANT-8KM_TOPO-Bedmap3.nc"]
-checksum = "sha256:69fff797e984cd7cc879a65bb3332758fbfd25a2f225ae99049e6be673f01554"
-size = 4987165
+checksum = "sha256:e15da66339f4231420e781e2e1fb3db7338be2fda013afad622a34bd4a85be0d"
+previous_checksums = ["sha256:69fff797e984cd7cc879a65bb3332758fbfd25a2f225ae99049e6be673f01554"]
+size = 4213004
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_TOPO-Bedmap3.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-8KM/2.0.0/ANT-8KM_TOPO-Bedmap3.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-8KM/2.2.0/ANT-8KM_TOPO-Bedmap3.nc"
 
 ["ANT-8KM_grid.nc"]
-checksum = "sha256:6d00ae1cafbf496c1375c74c9153d92c5e2aec79d8026f004ba0dc26d0c47ece"
-size = 3314952
+checksum = "sha256:27b6ffe5af1932ac7e1fcf32b8e8219420fe82be6287f09f931efbebed8ec93d"
+previous_checksums = ["sha256:6d00ae1cafbf496c1375c74c9153d92c5e2aec79d8026f004ba0dc26d0c47ece"]
+size = 2776497
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-8KM/2.0.0/ANT-8KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-8KM/2.2.0/ANT-8KM_grid.nc"
 
 ["grid_ANT-16KM.txt"]
 checksum = "sha256:09d646757fe153b435cee10a90cf772b4626efbe2f187d410eab83876c8305cb"
 size = 467
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/grid_ANT-16KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-16KM/2.0.0/grid_ANT-16KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-16KM/2.2.0/grid_ANT-16KM.txt"
 
 ["grid_ANT-1KM.txt"]
 checksum = "sha256:d8e6029b241c90da5ba2b6f4aed5fc6736d2251dfbf96e1432952605eaf02d67"
 size = 469
 storage_path = "$datasets_dir/Antarctica/ANT-1KM/grid_ANT-1KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-1KM/2.0.0/grid_ANT-1KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-1KM/2.2.0/grid_ANT-1KM.txt"
 
 ["grid_ANT-2KM.txt"]
 checksum = "sha256:d02bf6fb1a40ffa3a09cad2982212ffa925a643e487b74b8c38af6cf773faff5"
 size = 468
 storage_path = "$datasets_dir/Antarctica/ANT-2KM/grid_ANT-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-2KM/2.0.0/grid_ANT-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-2KM/2.2.0/grid_ANT-2KM.txt"
 
 ["grid_ANT-32KM.txt"]
 checksum = "sha256:619c2b14b9667a6ff1efe4de41f1b2bd0ddc8d3e10df6d5fd99222b80be20276"
 size = 466
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/grid_ANT-32KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-32KM/2.0.0/grid_ANT-32KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-32KM/2.2.0/grid_ANT-32KM.txt"
 
 ["grid_ANT-4KM.txt"]
 checksum = "sha256:dc549c434411d3f7ad5b46e4f954f9bb180d0d2e272e1942d97e7072ae8b711d"
 size = 468
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/grid_ANT-4KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-4KM/2.0.0/grid_ANT-4KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-4KM/2.2.0/grid_ANT-4KM.txt"
 
 ["grid_ANT-8KM.txt"]
 checksum = "sha256:66ff6285f42ec156b6c6a6c30fcb0d2e4c94e07d67512fb002cb0348b3420ce5"
 size = 465
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/grid_ANT-8KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-8KM/2.0.0/grid_ANT-8KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-8KM/2.2.0/grid_ANT-8KM.txt"

@@ -1,0 +1,61 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-13"
+git_tag = "regions-v2.2.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=CordilleraDarwin_Regions"
+version = "2.2.0"
+
+["CDI-100M_REGIONS.nc"]
+checksum = "sha256:72df52590479f7a6fff53d54f4c514e34cbb92efdd963af758d834153d2d1e27"
+size = 132284
+storage_path = "$datasets_dir/CordilleraDarwin/CDI-100M/CDI-100M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Regions_CDI-100M/2.2.0/CDI-100M_REGIONS.nc"
+
+["CDI-100M_grid.nc"]
+checksum = "sha256:d41df55f93c43ddce877f1f32f2262b037fab306ab9db2e91db2430285411f3d"
+size = 1312140
+storage_path = "$datasets_dir/CordilleraDarwin/CDI-100M/CDI-100M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Regions_CDI-100M/2.2.0/CDI-100M_grid.nc"
+
+["CDI-250M_REGIONS.nc"]
+checksum = "sha256:39c38b5ad0b8c98a15e4f3069db11e655eb513f98cfe2cabd532679ab8097c68"
+size = 60107
+storage_path = "$datasets_dir/CordilleraDarwin/CDI-250M/CDI-250M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Regions_CDI-250M/2.2.0/CDI-250M_REGIONS.nc"
+
+["CDI-250M_grid.nc"]
+checksum = "sha256:26b5750d8f6d797030f4db2396a7c6f578629a79ee978b3008e0880f8943f6df"
+size = 341882
+storage_path = "$datasets_dir/CordilleraDarwin/CDI-250M/CDI-250M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Regions_CDI-250M/2.2.0/CDI-250M_grid.nc"
+
+["CDI-50M_REGIONS.nc"]
+checksum = "sha256:8d9afc02a82a5720c3823b8ac4605a08e2d3fc8494a05a9a8094d9fc3d6f35be"
+size = 358585
+storage_path = "$datasets_dir/CordilleraDarwin/CDI-50M/CDI-50M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Regions_CDI-50M/2.2.0/CDI-50M_REGIONS.nc"
+
+["CDI-50M_grid.nc"]
+checksum = "sha256:6965d6ba5732ec1028b621de7c75a46eb52abb71c4271fe5d5795f31789101bb"
+size = 4673811
+storage_path = "$datasets_dir/CordilleraDarwin/CDI-50M/CDI-50M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Regions_CDI-50M/2.2.0/CDI-50M_grid.nc"
+
+["grid_CDI-100M.txt"]
+checksum = "sha256:e1d96a1e1ea9dfe99d10892e1144a9a641b5e38525accb0638836f18fbc30de6"
+size = 349
+storage_path = "$datasets_dir/CordilleraDarwin/CDI-100M/grid_CDI-100M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Regions_CDI-100M/2.2.0/grid_CDI-100M.txt"
+
+["grid_CDI-250M.txt"]
+checksum = "sha256:a14cd02e43ff4ff83090dc2dd37bce8fb2ce2039bae2640013e2f781f7b99da6"
+size = 348
+storage_path = "$datasets_dir/CordilleraDarwin/CDI-250M/grid_CDI-250M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Regions_CDI-250M/2.2.0/grid_CDI-250M.txt"
+
+["grid_CDI-50M.txt"]
+checksum = "sha256:ec2c7f2e092ca5bda36190f2f19957361554d597c3c37c9dea3a35488b4cbbfb"
+size = 351
+storage_path = "$datasets_dir/CordilleraDarwin/CDI-50M/grid_CDI-50M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Regions_CDI-50M/2.2.0/grid_CDI-50M.txt"

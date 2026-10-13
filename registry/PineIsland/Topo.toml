@@ -1,0 +1,55 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-13"
+git_tag = "topo-v2.2.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=PineIsland_Topo"
+version = "2.2.0"
+
+["PIG-1KM_TOPO-BedMachine-v4.nc"]
+checksum = "sha256:bfd7d330e7dbf2bf3da93a3fc72de47f8164b73342d5057aad0f07b460690f54"
+size = 4576521
+storage_path = "$datasets_dir/PineIsland/PIG-1KM/PIG-1KM_TOPO-BedMachine-v4.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Topo_PIG-1KM/2.2.0/PIG-1KM_TOPO-BedMachine-v4.nc"
+
+["PIG-1KM_TOPO-Bedmap3.nc"]
+checksum = "sha256:d7536002314b7f1482da0e82455c7a989e29d703b3770c95fa8b6db22d72a865"
+size = 4038388
+storage_path = "$datasets_dir/PineIsland/PIG-1KM/PIG-1KM_TOPO-Bedmap3.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Topo_PIG-1KM/2.2.0/PIG-1KM_TOPO-Bedmap3.nc"
+
+["PIG-1KM_grid.nc"]
+checksum = "sha256:fce70b563deef10cf46e31b799f055f199c817aa46a838bc3e176595228c6b6d"
+size = 1126631
+storage_path = "$datasets_dir/PineIsland/PIG-1KM/PIG-1KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Topo_PIG-1KM/2.2.0/PIG-1KM_grid.nc"
+
+["PIG-500M_TOPO-BedMachine-v4.nc"]
+checksum = "sha256:95a0c3c4882cf9f7179dd9035fc49e9449d5b541f2d008912749db0f59afdb4e"
+size = 12328566
+storage_path = "$datasets_dir/PineIsland/PIG-500M/PIG-500M_TOPO-BedMachine-v4.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Topo_PIG-500M/2.2.0/PIG-500M_TOPO-BedMachine-v4.nc"
+
+["PIG-500M_TOPO-Bedmap3.nc"]
+checksum = "sha256:827d53a9070f0baf4826b70f8d7aa073e87ab501eb92a130796804ddee8a80b1"
+size = 11636815
+storage_path = "$datasets_dir/PineIsland/PIG-500M/PIG-500M_TOPO-Bedmap3.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Topo_PIG-500M/2.2.0/PIG-500M_TOPO-Bedmap3.nc"
+
+["PIG-500M_grid.nc"]
+checksum = "sha256:1e53111452d054b459eb49969ced8a9d1d5b0e80440c12188a1137a3dc1e59a6"
+size = 3462929
+storage_path = "$datasets_dir/PineIsland/PIG-500M/PIG-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Topo_PIG-500M/2.2.0/PIG-500M_grid.nc"
+
+["grid_PIG-1KM.txt"]
+checksum = "sha256:014b20f47c3e7e7056576a6de9495351e521d772c62376743fea17f68d079e8c"
+size = 464
+storage_path = "$datasets_dir/PineIsland/PIG-1KM/grid_PIG-1KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Topo_PIG-1KM/2.2.0/grid_PIG-1KM.txt"
+
+["grid_PIG-500M.txt"]
+checksum = "sha256:1385ab1af18969ce4d10acbb2fe96e50184add87c15e703af45c125820389d5b"
+size = 467
+storage_path = "$datasets_dir/PineIsland/PIG-500M/grid_PIG-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Topo_PIG-500M/2.2.0/grid_PIG-500M.txt"

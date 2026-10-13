@@ -1,0 +1,61 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-13"
+git_tag = "regions-v2.2.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Patagonia_Regions"
+version = "2.2.0"
+
+["PAT-250M_REGIONS.nc"]
+checksum = "sha256:07713903181bbf22114a19c8f1d08d99adc1e0095987664aba5f7501303dd48f"
+size = 7265043
+storage_path = "$datasets_dir/Patagonia/PAT-250M/PAT-250M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Regions_PAT-250M/2.2.0/PAT-250M_REGIONS.nc"
+
+["PAT-250M_grid.nc"]
+checksum = "sha256:80af98d3aa692e30c8eed5986a5c0db295b62bd46ed0a8f844d2b9bfdc55c6d9"
+size = 36181275
+storage_path = "$datasets_dir/Patagonia/PAT-250M/PAT-250M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Regions_PAT-250M/2.2.0/PAT-250M_grid.nc"
+
+["PAT-2KM_REGIONS.nc"]
+checksum = "sha256:1d7370a319b49d5bb8153fe91c2f28d09f4877e831ab279806609b7deab6d950"
+size = 365962
+storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Regions_PAT-2KM/2.2.0/PAT-2KM_REGIONS.nc"
+
+["PAT-2KM_grid.nc"]
+checksum = "sha256:3b66736031d52fec9da8230693887255b90f7b276619eba31266bf950f5eb9e7"
+size = 1440853
+storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Regions_PAT-2KM/2.2.0/PAT-2KM_grid.nc"
+
+["PAT-500M_REGIONS.nc"]
+checksum = "sha256:ee30c5ec372de15cb41bf85626a6eeef7d07d09f476163a139d5f9ba4414692a"
+size = 2659334
+storage_path = "$datasets_dir/Patagonia/PAT-500M/PAT-500M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Regions_PAT-500M/2.2.0/PAT-500M_REGIONS.nc"
+
+["PAT-500M_grid.nc"]
+checksum = "sha256:a92f99c506891258edbbd082a3a8df8c49ccfba7ba45a29f2f35a627b6d7a7ac"
+size = 13985267
+storage_path = "$datasets_dir/Patagonia/PAT-500M/PAT-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Regions_PAT-500M/2.2.0/PAT-500M_grid.nc"
+
+["grid_PAT-250M.txt"]
+checksum = "sha256:0ba7b6207968bb0efc50fdb0dbd5869d3ce8b3fd8578ea3e5cc7f3071d0e0b2f"
+size = 352
+storage_path = "$datasets_dir/Patagonia/PAT-250M/grid_PAT-250M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Regions_PAT-250M/2.2.0/grid_PAT-250M.txt"
+
+["grid_PAT-2KM.txt"]
+checksum = "sha256:f30d2390e6c54f2628d81d4a3439a6b55b95c9e997754fcaa01ac160f60591bd"
+size = 347
+storage_path = "$datasets_dir/Patagonia/PAT-2KM/grid_PAT-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Regions_PAT-2KM/2.2.0/grid_PAT-2KM.txt"
+
+["grid_PAT-500M.txt"]
+checksum = "sha256:a50298f18a79d068e1b0cd798ba8753adc208e7ac09a8f9ecfa0b76c3d067ded"
+size = 349
+storage_path = "$datasets_dir/Patagonia/PAT-500M/grid_PAT-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Regions_PAT-500M/2.2.0/grid_PAT-500M.txt"
