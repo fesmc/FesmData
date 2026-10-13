@@ -1,0 +1,37 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-13"
+git_tag = "ghf-v2.2.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Pyrenees_GHF"
+version = "2.2.0"
+
+["PYR-2KM_GHF-Davies2013.nc"]
+checksum = "sha256:315b75a0261bc7bf1fcd0002cc4f4079c3c2add141d01d185299b6c4cb3e536d"
+size = 33725
+storage_path = "$datasets_dir/Pyrenees/PYR-2KM/PYR-2KM_GHF-Davies2013.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_GHF_PYR-2KM/2.2.0/PYR-2KM_GHF-Davies2013.nc"
+
+["PYR-2KM_GHF-Lucazeau2019.nc"]
+checksum = "sha256:2e4b6d1c3c0e780e5240144ee3c363a73b8dc6158b99ecde893db0a22dc9d092"
+size = 38721
+storage_path = "$datasets_dir/Pyrenees/PYR-2KM/PYR-2KM_GHF-Lucazeau2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_GHF_PYR-2KM/2.2.0/PYR-2KM_GHF-Lucazeau2019.nc"
+
+["PYR-2KM_GHF-Shapiro2004.nc"]
+checksum = "sha256:3b51b0a633f0ead15f0c70eed779e59348d8fa7f10d7e39b60bf072e9c5ab149"
+size = 27712
+storage_path = "$datasets_dir/Pyrenees/PYR-2KM/PYR-2KM_GHF-Shapiro2004.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_GHF_PYR-2KM/2.2.0/PYR-2KM_GHF-Shapiro2004.nc"
+
+["PYR-2KM_grid.nc"]
+checksum = "sha256:20d63f5741b04cbdfbfe1bf5885e4a73a58a3d4fd9db5cd561dd531d0a3ffde9"
+size = 86648
+storage_path = "$datasets_dir/Pyrenees/PYR-2KM/PYR-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_GHF_PYR-2KM/2.2.0/PYR-2KM_grid.nc"
+
+["grid_PYR-2KM.txt"]
+checksum = "sha256:8a8de7189e5797f759a3a8df305e651006339b630895a4b3da06e4c00098e192"
+size = 325
+storage_path = "$datasets_dir/Pyrenees/PYR-2KM/grid_PYR-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_GHF_PYR-2KM/2.2.0/grid_PYR-2KM.txt"

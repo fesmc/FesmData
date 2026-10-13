@@ -1,167 +1,171 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-12"
-git_tag = "ghf-v2.1.0"
+date = "2026-10-13"
+git_tag = "ghf-v2.2.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=GreenlandPaleo_GHF"
-version = "2.1.0"
+version = "2.2.0"
 
 ["GRL-PAL-16KM_GHF-Davies2013.nc"]
-checksum = "sha256:3ea7c8cecd84a594877cf3f62e9e2c963643dde808177e93dd77079dcc49b9c8"
-previous_checksums = ["sha256:db872d34183c133f0897f37dee087ff7b6d5ddb7fc3e155e269ec9d785c4ecec"]
-size = 235504
+checksum = "sha256:5edd8e82ebbf78a99f64df20eda3b6292d9ae9d3bcd8eff2208bc35bdaffd5b5"
+previous_checksums = ["sha256:db872d34183c133f0897f37dee087ff7b6d5ddb7fc3e155e269ec9d785c4ecec", "sha256:3ea7c8cecd84a594877cf3f62e9e2c963643dde808177e93dd77079dcc49b9c8"]
+size = 61733
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_GHF-Davies2013.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-16KM/2.1.0/GRL-PAL-16KM_GHF-Davies2013.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-16KM/2.2.0/GRL-PAL-16KM_GHF-Davies2013.nc"
 
 ["GRL-PAL-16KM_GHF-FoxMaule2005.nc"]
-checksum = "sha256:5e105ac32cb0b0aa6127fd25e73e672434caa4f49e3b4f9922227633b6a7852d"
-previous_checksums = ["sha256:b1c4ae447d5ca852f29ecc821d98d8f3bdb04aafae45d30c84ef05119b3b0cd3"]
-size = 92671
+checksum = "sha256:07cf1ca4ed6cd56b8bc8c8224091c19c6ab76ad5a0e3ab94096bce8a3d30362c"
+previous_checksums = ["sha256:b1c4ae447d5ca852f29ecc821d98d8f3bdb04aafae45d30c84ef05119b3b0cd3", "sha256:5e105ac32cb0b0aa6127fd25e73e672434caa4f49e3b4f9922227633b6a7852d"]
+size = 40328
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_GHF-FoxMaule2005.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-16KM/2.1.0/GRL-PAL-16KM_GHF-FoxMaule2005.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-16KM/2.2.0/GRL-PAL-16KM_GHF-FoxMaule2005.nc"
 
 ["GRL-PAL-16KM_GHF-Lucazeau2019.nc"]
-checksum = "sha256:4fb47ac03716f758b148e9b2501ae19b23111586380c741b86d6a04e4e3f3569"
-previous_checksums = ["sha256:6ce769a05fa2d4cb58d448fd40f981fed122d440fcd11cf1278736c706d0743f"]
-size = 179327
+checksum = "sha256:2c098cdae42ded6fe7dab93a1b4249ef0f116420b82641e42bc47a3c70083a27"
+previous_checksums = ["sha256:6ce769a05fa2d4cb58d448fd40f981fed122d440fcd11cf1278736c706d0743f", "sha256:4fb47ac03716f758b148e9b2501ae19b23111586380c741b86d6a04e4e3f3569"]
+size = 63001
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_GHF-Lucazeau2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-16KM/2.1.0/GRL-PAL-16KM_GHF-Lucazeau2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-16KM/2.2.0/GRL-PAL-16KM_GHF-Lucazeau2019.nc"
 
 ["GRL-PAL-16KM_GHF-Shapiro2004.nc"]
-checksum = "sha256:514eb13d295ee3fc06f4dc124bf87fed7f263f196c707cc5d7e5642eb9a57461"
-previous_checksums = ["sha256:7471ac79cfb85372998136d6c763cc4d7b25d8f79780e28f9e91444891ee67d3"]
-size = 166558
+checksum = "sha256:dff626f918f85e07c4bf95e4089865299cde15f0577b4100a28021174290ffbe"
+previous_checksums = ["sha256:7471ac79cfb85372998136d6c763cc4d7b25d8f79780e28f9e91444891ee67d3", "sha256:514eb13d295ee3fc06f4dc124bf87fed7f263f196c707cc5d7e5642eb9a57461"]
+size = 49108
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_GHF-Shapiro2004.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-16KM/2.1.0/GRL-PAL-16KM_GHF-Shapiro2004.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-16KM/2.2.0/GRL-PAL-16KM_GHF-Shapiro2004.nc"
 
 ["GRL-PAL-16KM_grid.nc"]
-checksum = "sha256:641614ed64e7a6989a9b632764bc593855f65f70fc7a200f9a89263c0fee7f3e"
-size = 197958
+checksum = "sha256:8cf34c50e47c103a6c0620dff139413344ec28730e2096923d51f9164a183a42"
+previous_checksums = ["sha256:641614ed64e7a6989a9b632764bc593855f65f70fc7a200f9a89263c0fee7f3e"]
+size = 172428
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-16KM/2.1.0/GRL-PAL-16KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-16KM/2.2.0/GRL-PAL-16KM_grid.nc"
 
 ["GRL-PAL-32KM_GHF-Davies2013.nc"]
-checksum = "sha256:20471538bffd32d78821fe0cd3fc827dd303049944c4b7fba5588d694997f812"
-previous_checksums = ["sha256:cff7c998c68d6780c7098214c3a66fe475c584846dc3fc418829898ad21598df"]
-size = 84270
+checksum = "sha256:52b80fa8bb6e75258eb7eb33090d7c060937d6fd2d683593ef645eb4284baa9f"
+previous_checksums = ["sha256:cff7c998c68d6780c7098214c3a66fe475c584846dc3fc418829898ad21598df", "sha256:20471538bffd32d78821fe0cd3fc827dd303049944c4b7fba5588d694997f812"]
+size = 39979
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_GHF-Davies2013.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-32KM/2.1.0/GRL-PAL-32KM_GHF-Davies2013.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-32KM/2.2.0/GRL-PAL-32KM_GHF-Davies2013.nc"
 
 ["GRL-PAL-32KM_GHF-FoxMaule2005.nc"]
-checksum = "sha256:8f09608eecc781aac9ce4c6d3cb596150fcf76a0b3f91c2ef0549970993934a9"
-previous_checksums = ["sha256:170107d2ca1f16dfcbe8425aa126d1ba10643842e2a076059a696605ad62da85"]
-size = 42009
+checksum = "sha256:7f5c82eaf37e63beaaac7cec78d4f816040a6efd123b4d323bf12f97b0676668"
+previous_checksums = ["sha256:170107d2ca1f16dfcbe8425aa126d1ba10643842e2a076059a696605ad62da85", "sha256:8f09608eecc781aac9ce4c6d3cb596150fcf76a0b3f91c2ef0549970993934a9"]
+size = 28061
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_GHF-FoxMaule2005.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-32KM/2.1.0/GRL-PAL-32KM_GHF-FoxMaule2005.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-32KM/2.2.0/GRL-PAL-32KM_GHF-FoxMaule2005.nc"
 
 ["GRL-PAL-32KM_GHF-Lucazeau2019.nc"]
-checksum = "sha256:5b825cca09991b35328f3d07e360fabf2841849561fbca7da3bcc7802ea02c73"
-previous_checksums = ["sha256:7a4f6d9b77823f520683723f28e81ebbc80ca76305ab516c0750a9b975e021a5"]
-size = 65425
+checksum = "sha256:e1f5f5db0b4db3ca08dc95e77e1dd954aa70d0d671cfcd044e9ed9a94a518260"
+previous_checksums = ["sha256:7a4f6d9b77823f520683723f28e81ebbc80ca76305ab516c0750a9b975e021a5", "sha256:5b825cca09991b35328f3d07e360fabf2841849561fbca7da3bcc7802ea02c73"]
+size = 36745
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_GHF-Lucazeau2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-32KM/2.1.0/GRL-PAL-32KM_GHF-Lucazeau2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-32KM/2.2.0/GRL-PAL-32KM_GHF-Lucazeau2019.nc"
 
 ["GRL-PAL-32KM_GHF-Shapiro2004.nc"]
-checksum = "sha256:4aff1ceed15ddb3f0e945f54d8f60f73c8c1bed34c5d0d4a0584939adda4f0a6"
-previous_checksums = ["sha256:c50f0f25c49f84fc1f9cd870dfaf7174eb57ab2167a3fe59beea6adf1ec507f5"]
-size = 63884
+checksum = "sha256:134d653c85458925c54f4cbb7715a48443693b0917639dc3b43464e573cbdb47"
+previous_checksums = ["sha256:c50f0f25c49f84fc1f9cd870dfaf7174eb57ab2167a3fe59beea6adf1ec507f5", "sha256:4aff1ceed15ddb3f0e945f54d8f60f73c8c1bed34c5d0d4a0584939adda4f0a6"]
+size = 34282
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_GHF-Shapiro2004.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-32KM/2.1.0/GRL-PAL-32KM_GHF-Shapiro2004.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-32KM/2.2.0/GRL-PAL-32KM_GHF-Shapiro2004.nc"
 
 ["GRL-PAL-32KM_grid.nc"]
-checksum = "sha256:c94aeb9d12df68c5429b6e9ac944b6ed3328db1b3bcc9d10942a26343bde80f1"
-size = 70200
+checksum = "sha256:570fe99dfc077c00e8b1c79d102e5450df2b4cba1c8327043fff59056121b883"
+previous_checksums = ["sha256:c94aeb9d12df68c5429b6e9ac944b6ed3328db1b3bcc9d10942a26343bde80f1"]
+size = 63330
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-32KM/2.1.0/GRL-PAL-32KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-32KM/2.2.0/GRL-PAL-32KM_grid.nc"
 
 ["GRL-PAL-4KM_GHF-Davies2013.nc"]
-checksum = "sha256:d247c0a7681771b2541a7678af42100c3239547970d237462d00a14a65eb4c9d"
-previous_checksums = ["sha256:2babc85cf2504e5201adfe6ca5eb4908ef11cedee6c897d37c60c8b73bf6fe09"]
-size = 2834798
+checksum = "sha256:fbc02e1989046b0054a61440befc31fabdee123b15dd18b28956bab01503a880"
+previous_checksums = ["sha256:2babc85cf2504e5201adfe6ca5eb4908ef11cedee6c897d37c60c8b73bf6fe09", "sha256:d247c0a7681771b2541a7678af42100c3239547970d237462d00a14a65eb4c9d"]
+size = 227672
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/GRL-PAL-4KM_GHF-Davies2013.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-4KM/2.1.0/GRL-PAL-4KM_GHF-Davies2013.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-4KM/2.2.0/GRL-PAL-4KM_GHF-Davies2013.nc"
 
 ["GRL-PAL-4KM_GHF-FoxMaule2005.nc"]
-checksum = "sha256:e9dff6610e48f74fc626e7afe43be6d6ba883101ea75e8654c481eda68e5179c"
-previous_checksums = ["sha256:2053f696cfa1329e2560848893c75358eeab3d5dce01bb6bc419f8d66a088748"]
-size = 865782
+checksum = "sha256:b30424dd44be854085adc267ecc6fd390fd6365d213f965c25eb42f7d7343c5d"
+previous_checksums = ["sha256:2053f696cfa1329e2560848893c75358eeab3d5dce01bb6bc419f8d66a088748", "sha256:e9dff6610e48f74fc626e7afe43be6d6ba883101ea75e8654c481eda68e5179c"]
+size = 123232
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/GRL-PAL-4KM_GHF-FoxMaule2005.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-4KM/2.1.0/GRL-PAL-4KM_GHF-FoxMaule2005.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-4KM/2.2.0/GRL-PAL-4KM_GHF-FoxMaule2005.nc"
 
 ["GRL-PAL-4KM_GHF-Lucazeau2019.nc"]
-checksum = "sha256:889f9a07080158de2804ff1449401dce6b0905d0915907203f68b5b5d76d7a29"
-previous_checksums = ["sha256:8faaf0f594162913dfdc2c298ef4ad94909c53547ff27eee5c41170a8e42ee74"]
-size = 2128711
+checksum = "sha256:47424f5da90d5cc9d4dcad985206f29439a48693e7eb4734550ec1a3ff758cbd"
+previous_checksums = ["sha256:8faaf0f594162913dfdc2c298ef4ad94909c53547ff27eee5c41170a8e42ee74", "sha256:889f9a07080158de2804ff1449401dce6b0905d0915907203f68b5b5d76d7a29"]
+size = 290907
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/GRL-PAL-4KM_GHF-Lucazeau2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-4KM/2.1.0/GRL-PAL-4KM_GHF-Lucazeau2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-4KM/2.2.0/GRL-PAL-4KM_GHF-Lucazeau2019.nc"
 
 ["GRL-PAL-4KM_GHF-Shapiro2004.nc"]
-checksum = "sha256:6b512cb4f3d887570e9efc96cab0684fc3d55a0a503562964193cec814d8eedd"
-previous_checksums = ["sha256:86c0b5ec1f9b253685a6479a910ba8ce94c4b865260e2fbd4897de819e8439bf"]
-size = 1947305
+checksum = "sha256:2bf6eb57689baa64c4766a6908189f48e1fd75fd2c157842595623010bbd7ff7"
+previous_checksums = ["sha256:86c0b5ec1f9b253685a6479a910ba8ce94c4b865260e2fbd4897de819e8439bf", "sha256:6b512cb4f3d887570e9efc96cab0684fc3d55a0a503562964193cec814d8eedd"]
+size = 161588
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/GRL-PAL-4KM_GHF-Shapiro2004.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-4KM/2.1.0/GRL-PAL-4KM_GHF-Shapiro2004.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-4KM/2.2.0/GRL-PAL-4KM_GHF-Shapiro2004.nc"
 
 ["GRL-PAL-4KM_grid.nc"]
-checksum = "sha256:69ea06b475ce4c286038e45b4e083ee61794c4e80053a4c21c0e088399a16270"
-size = 2137731
+checksum = "sha256:95b399fce2abcd42a143714214882b4a1fcc011e2eb05508913abb71649cc0c2"
+previous_checksums = ["sha256:69ea06b475ce4c286038e45b4e083ee61794c4e80053a4c21c0e088399a16270"]
+size = 1734747
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/GRL-PAL-4KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-4KM/2.1.0/GRL-PAL-4KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-4KM/2.2.0/GRL-PAL-4KM_grid.nc"
 
 ["GRL-PAL-8KM_GHF-Davies2013.nc"]
-checksum = "sha256:0938426ddd6753fb2857f75a87a02983e44ab4636ca5fa5c0d4d5b2f477433c6"
-previous_checksums = ["sha256:effebfc3a7898e0cd3e5f4c23cbb0059e1894ec563314383b98ee41d9c208f7c"]
-size = 785139
+checksum = "sha256:931b18bed3cd936c2c50e65bc72870a6a646f04d49bfbc439c52ddbc1f95b0e8"
+previous_checksums = ["sha256:effebfc3a7898e0cd3e5f4c23cbb0059e1894ec563314383b98ee41d9c208f7c", "sha256:0938426ddd6753fb2857f75a87a02983e44ab4636ca5fa5c0d4d5b2f477433c6"]
+size = 107927
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_GHF-Davies2013.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-8KM/2.1.0/GRL-PAL-8KM_GHF-Davies2013.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-8KM/2.2.0/GRL-PAL-8KM_GHF-Davies2013.nc"
 
 ["GRL-PAL-8KM_GHF-FoxMaule2005.nc"]
-checksum = "sha256:1a6a5890d261d7f122cfda5de8ccf81ffa2fb8262dad84d14fdbd09e0f37332d"
-previous_checksums = ["sha256:5eadf0cef138285aeb88fe6c152b552b50dc77c1a0e7acfbaccd8b13fa982eaa"]
-size = 262760
+checksum = "sha256:cdb2f4483156daa625d10e4335025748d0459acb6e20b8f94dbd4ac34c9a09d0"
+previous_checksums = ["sha256:5eadf0cef138285aeb88fe6c152b552b50dc77c1a0e7acfbaccd8b13fa982eaa", "sha256:1a6a5890d261d7f122cfda5de8ccf81ffa2fb8262dad84d14fdbd09e0f37332d"]
+size = 66495
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_GHF-FoxMaule2005.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-8KM/2.1.0/GRL-PAL-8KM_GHF-FoxMaule2005.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-8KM/2.2.0/GRL-PAL-8KM_GHF-FoxMaule2005.nc"
 
 ["GRL-PAL-8KM_GHF-Lucazeau2019.nc"]
-checksum = "sha256:b4f70dc4cefc11e8f5fdb94e79b6a1ccf69c86bc7bde9b4760166a70f35e6b65"
-previous_checksums = ["sha256:493c8b75ca8006cce38e192cd94ba15044635aef7e2bd201595a60f024d50ee7"]
-size = 590361
+checksum = "sha256:e5aa04b5d2b4229b21a11d54e0197bc70b7f4e2a6e052591b03c6968b9718855"
+previous_checksums = ["sha256:493c8b75ca8006cce38e192cd94ba15044635aef7e2bd201595a60f024d50ee7", "sha256:b4f70dc4cefc11e8f5fdb94e79b6a1ccf69c86bc7bde9b4760166a70f35e6b65"]
+size = 128170
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_GHF-Lucazeau2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-8KM/2.1.0/GRL-PAL-8KM_GHF-Lucazeau2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-8KM/2.2.0/GRL-PAL-8KM_GHF-Lucazeau2019.nc"
 
 ["GRL-PAL-8KM_GHF-Shapiro2004.nc"]
-checksum = "sha256:78f808258a3892d8e2e7b85f410614263d575b74da2bb8ae87f1c6af6dcd30fa"
-previous_checksums = ["sha256:ae692ac1cb1047a6b60c993b44c5356c5e79a9878917519792808cacd4463448"]
-size = 539966
+checksum = "sha256:2511b90620d72aa1167534e40cd918254a57d9d7e0515a79a07da9d3554a8aff"
+previous_checksums = ["sha256:ae692ac1cb1047a6b60c993b44c5356c5e79a9878917519792808cacd4463448", "sha256:78f808258a3892d8e2e7b85f410614263d575b74da2bb8ae87f1c6af6dcd30fa"]
+size = 81824
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_GHF-Shapiro2004.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-8KM/2.1.0/GRL-PAL-8KM_GHF-Shapiro2004.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-8KM/2.2.0/GRL-PAL-8KM_GHF-Shapiro2004.nc"
 
 ["GRL-PAL-8KM_grid.nc"]
-checksum = "sha256:16aa24f1cb3018fd4813ef64d58bd23aac3af70ef50ee98296c75ddad16c6f0b"
-size = 631820
+checksum = "sha256:4a64d43b061dd24979cac1a79798a17260084c1099d2fa47246b4af42cee24b5"
+previous_checksums = ["sha256:16aa24f1cb3018fd4813ef64d58bd23aac3af70ef50ee98296c75ddad16c6f0b"]
+size = 533422
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-8KM/2.1.0/GRL-PAL-8KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-8KM/2.2.0/GRL-PAL-8KM_grid.nc"
 
 ["grid_GRL-PAL-16KM.txt"]
 checksum = "sha256:1f2dd6b17cd99dee69b34afe4a7f49e087d4f935e01d862b2392ebebb071ea31"
 size = 466
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/grid_GRL-PAL-16KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-16KM/2.1.0/grid_GRL-PAL-16KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-16KM/2.2.0/grid_GRL-PAL-16KM.txt"
 
 ["grid_GRL-PAL-32KM.txt"]
 checksum = "sha256:cf0d0b1b8155818d7b19aa0eb4ebc0539c6a7d4d2ed0ddca89822c5f697e6646"
 size = 463
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/grid_GRL-PAL-32KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-32KM/2.1.0/grid_GRL-PAL-32KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-32KM/2.2.0/grid_GRL-PAL-32KM.txt"
 
 ["grid_GRL-PAL-4KM.txt"]
 checksum = "sha256:3ef324e1bb441b7c2b48632ee65a337255fe992cdba249417f182c929089cf0f"
 size = 465
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/grid_GRL-PAL-4KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-4KM/2.1.0/grid_GRL-PAL-4KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-4KM/2.2.0/grid_GRL-PAL-4KM.txt"
 
 ["grid_GRL-PAL-8KM.txt"]
 checksum = "sha256:08c7a03da8b258951eebef55634ad60f44f0f7fe965aa38e7dd26e4ca287d743"
 size = 465
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/grid_GRL-PAL-8KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-8KM/2.1.0/grid_GRL-PAL-8KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_GHF_GRL-PAL-8KM/2.2.0/grid_GRL-PAL-8KM.txt"

@@ -1,115 +1,129 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-12"
-git_tag = "solidearth-v2.0.0"
+date = "2026-10-13"
+git_tag = "solidearth-v2.1.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Antarctica_SolidEarth"
-version = "2.0.0"
+version = "2.1.0"
 
 ["ANT-16KM_SolidEarth-Bagge2021.nc"]
-checksum = "sha256:cee8838e040bcbb93771d2b0f2b75ed8538c744461760f4107025d2d1df4998e"
-size = 251174336
+checksum = "sha256:ce35eef0e27a7a7a39a23322c9cd9657be497154763420c5bb3cb0b83e8cd385"
+previous_checksums = ["sha256:cee8838e040bcbb93771d2b0f2b75ed8538c744461760f4107025d2d1df4998e"]
+size = 38771653
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_SolidEarth-Bagge2021.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SolidEarth_ANT-16KM/2.0.0/ANT-16KM_SolidEarth-Bagge2021.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SolidEarth_ANT-16KM/2.1.0/ANT-16KM_SolidEarth-Bagge2021.nc"
 
 ["ANT-16KM_SolidEarth-Hazzard2023-litho.nc"]
-checksum = "sha256:e5db6b5a5ead4a1c6503637d9b33a9828f9b15adcf94b53630560085afc0d936"
-size = 738335
+checksum = "sha256:963afa6d2e87b0f2432dd9a669a3b392183c5d47bce524225e9ade9ba77686fa"
+previous_checksums = ["sha256:e5db6b5a5ead4a1c6503637d9b33a9828f9b15adcf94b53630560085afc0d936"]
+size = 707074
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_SolidEarth-Hazzard2023-litho.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SolidEarth_ANT-16KM/2.0.0/ANT-16KM_SolidEarth-Hazzard2023-litho.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SolidEarth_ANT-16KM/2.1.0/ANT-16KM_SolidEarth-Hazzard2023-litho.nc"
 
 ["ANT-16KM_SolidEarth-Hazzard2023-visc.nc"]
-checksum = "sha256:a06b139daa86cb409a57eb3eec89a2dab92dcee25d54b6bf5d075417823f42c4"
-size = 9751686
+checksum = "sha256:94028a7c67eaa9fc03237a967d2e475fcb52210ab2bad3298827cb59767abb2b"
+previous_checksums = ["sha256:a06b139daa86cb409a57eb3eec89a2dab92dcee25d54b6bf5d075417823f42c4"]
+size = 3165780
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_SolidEarth-Hazzard2023-visc.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SolidEarth_ANT-16KM/2.0.0/ANT-16KM_SolidEarth-Hazzard2023-visc.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SolidEarth_ANT-16KM/2.1.0/ANT-16KM_SolidEarth-Hazzard2023-visc.nc"
 
 ["ANT-16KM_SolidEarth-Lloyd2024.nc"]
-checksum = "sha256:c1f917f98781888ca3de31dfa89c8c9c6aaab5ae11b7087e5ffa5dd444a3f09c"
-size = 54206431
+checksum = "sha256:5171111f784c83eda33769f5dd1935cd9ee97d7ca505dd55f7bf8c6156d6e609"
+previous_checksums = ["sha256:c1f917f98781888ca3de31dfa89c8c9c6aaab5ae11b7087e5ffa5dd444a3f09c"]
+size = 9668486
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_SolidEarth-Lloyd2024.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SolidEarth_ANT-16KM/2.0.0/ANT-16KM_SolidEarth-Lloyd2024.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SolidEarth_ANT-16KM/2.1.0/ANT-16KM_SolidEarth-Lloyd2024.nc"
 
 ["ANT-16KM_grid.nc"]
-checksum = "sha256:dea44445828fdc3adbae04afc6662224e96a6838c8381f80a855659b3ad6460c"
-size = 892250
+checksum = "sha256:0c9b8e003b33ca4188cc54c9d7dbe4932f742ee4f6ac9431d8d38e33fa5af978"
+previous_checksums = ["sha256:dea44445828fdc3adbae04afc6662224e96a6838c8381f80a855659b3ad6460c"]
+size = 766020
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SolidEarth_ANT-16KM/2.0.0/ANT-16KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SolidEarth_ANT-16KM/2.1.0/ANT-16KM_grid.nc"
 
 ["ANT-32KM_SolidEarth-Bagge2021.nc"]
-checksum = "sha256:23602dce89cc74ee02b468882f296ecab839cd74184940d7d580c19d32e255a1"
-size = 69269738
+checksum = "sha256:a703cd6d46b4f8370f7f4ddd5cb42d09b1c511438cd3c9738e140d2605bbe619"
+previous_checksums = ["sha256:23602dce89cc74ee02b468882f296ecab839cd74184940d7d580c19d32e255a1"]
+size = 14141666
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_SolidEarth-Bagge2021.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SolidEarth_ANT-32KM/2.0.0/ANT-32KM_SolidEarth-Bagge2021.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SolidEarth_ANT-32KM/2.1.0/ANT-32KM_SolidEarth-Bagge2021.nc"
 
 ["ANT-32KM_SolidEarth-Hazzard2023-litho.nc"]
-checksum = "sha256:8351868eb0253ea9181e6d6a513a6004b63acb37d833fc7eda8ed9bf5c5c6d2f"
-size = 224519
+checksum = "sha256:a0aa10a3a64554ee3e971a9df94722b0d923a9ece7a72930334e6f54760ee7c6"
+previous_checksums = ["sha256:8351868eb0253ea9181e6d6a513a6004b63acb37d833fc7eda8ed9bf5c5c6d2f"]
+size = 217361
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_SolidEarth-Hazzard2023-litho.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SolidEarth_ANT-32KM/2.0.0/ANT-32KM_SolidEarth-Hazzard2023-litho.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SolidEarth_ANT-32KM/2.1.0/ANT-32KM_SolidEarth-Hazzard2023-litho.nc"
 
 ["ANT-32KM_SolidEarth-Hazzard2023-visc.nc"]
-checksum = "sha256:dd98d08483a7a98db54da44146e0dc28eb7faf1280d6c7fce5ffdcd3958c6d2a"
-size = 2603140
+checksum = "sha256:c9772ed4e7f6a926f8e86945b72fc0ee3154fa29ea75e0defbcf5719e66dc0c3"
+previous_checksums = ["sha256:dd98d08483a7a98db54da44146e0dc28eb7faf1280d6c7fce5ffdcd3958c6d2a"]
+size = 1004154
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_SolidEarth-Hazzard2023-visc.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SolidEarth_ANT-32KM/2.0.0/ANT-32KM_SolidEarth-Hazzard2023-visc.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SolidEarth_ANT-32KM/2.1.0/ANT-32KM_SolidEarth-Hazzard2023-visc.nc"
 
 ["ANT-32KM_SolidEarth-Lloyd2024.nc"]
-checksum = "sha256:26009bed1b361248fcad3e6aefa6b09b3844d513df445e6bc9de1fadfd443c3c"
-size = 14753019
+checksum = "sha256:25e16719a0a57fd43e0aa134c82a4deab63de91831ff2ad9618b99f976e95f69"
+previous_checksums = ["sha256:26009bed1b361248fcad3e6aefa6b09b3844d513df445e6bc9de1fadfd443c3c"]
+size = 3473962
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_SolidEarth-Lloyd2024.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SolidEarth_ANT-32KM/2.0.0/ANT-32KM_SolidEarth-Lloyd2024.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SolidEarth_ANT-32KM/2.1.0/ANT-32KM_SolidEarth-Lloyd2024.nc"
 
 ["ANT-32KM_grid.nc"]
-checksum = "sha256:66765d3512c62479e60ad1095a4ee84b38edb681fe816eddf9896c3a2799efd8"
-size = 212550
+checksum = "sha256:49cf80092bf11538d76d480dea852afea71c414565d6123fb01ff4e7e853bee1"
+previous_checksums = ["sha256:66765d3512c62479e60ad1095a4ee84b38edb681fe816eddf9896c3a2799efd8"]
+size = 190659
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SolidEarth_ANT-32KM/2.0.0/ANT-32KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SolidEarth_ANT-32KM/2.1.0/ANT-32KM_grid.nc"
 
 ["ANT-4KM_SolidEarth-Hazzard2023-litho.nc"]
-checksum = "sha256:8f5a1f813fa414f2d92618e7fe0b4bcf16f5a37f8b3b3a3a557c7af7f33c899b"
-size = 9793689
+checksum = "sha256:82617015168d5be34f8678bf56d84273ad5b587fa241ac7037e89340a3f7be9d"
+previous_checksums = ["sha256:8f5a1f813fa414f2d92618e7fe0b4bcf16f5a37f8b3b3a3a557c7af7f33c899b"]
+size = 9116980
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_SolidEarth-Hazzard2023-litho.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SolidEarth_ANT-4KM/2.0.0/ANT-4KM_SolidEarth-Hazzard2023-litho.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SolidEarth_ANT-4KM/2.1.0/ANT-4KM_SolidEarth-Hazzard2023-litho.nc"
 
 ["ANT-4KM_grid.nc"]
-checksum = "sha256:b553afcb6273200e9cd436c4f3ba5f081c599c58237374342aade5c4588e879f"
-size = 11450508
+checksum = "sha256:fb6604c91ce17a3978a380d4e7d8b641d2f57eea5da4c37e0f46189faa07884f"
+previous_checksums = ["sha256:b553afcb6273200e9cd436c4f3ba5f081c599c58237374342aade5c4588e879f"]
+size = 9192910
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SolidEarth_ANT-4KM/2.0.0/ANT-4KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SolidEarth_ANT-4KM/2.1.0/ANT-4KM_grid.nc"
 
 ["ANT-8KM_SolidEarth-Hazzard2023-litho.nc"]
-checksum = "sha256:14a573f2989671851ecd5388981cd7139224422204c8a5335202c203a7a3411e"
-size = 2635175
+checksum = "sha256:8351838c38da0f8c13779673b00bb49ef100d2cce857c84f9da4274cb438a527"
+previous_checksums = ["sha256:14a573f2989671851ecd5388981cd7139224422204c8a5335202c203a7a3411e"]
+size = 2478501
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_SolidEarth-Hazzard2023-litho.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SolidEarth_ANT-8KM/2.0.0/ANT-8KM_SolidEarth-Hazzard2023-litho.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SolidEarth_ANT-8KM/2.1.0/ANT-8KM_SolidEarth-Hazzard2023-litho.nc"
 
 ["ANT-8KM_grid.nc"]
-checksum = "sha256:6d00ae1cafbf496c1375c74c9153d92c5e2aec79d8026f004ba0dc26d0c47ece"
-size = 3314952
+checksum = "sha256:27b6ffe5af1932ac7e1fcf32b8e8219420fe82be6287f09f931efbebed8ec93d"
+previous_checksums = ["sha256:6d00ae1cafbf496c1375c74c9153d92c5e2aec79d8026f004ba0dc26d0c47ece"]
+size = 2776497
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SolidEarth_ANT-8KM/2.0.0/ANT-8KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SolidEarth_ANT-8KM/2.1.0/ANT-8KM_grid.nc"
 
 ["grid_ANT-16KM.txt"]
 checksum = "sha256:09d646757fe153b435cee10a90cf772b4626efbe2f187d410eab83876c8305cb"
 size = 467
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/grid_ANT-16KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SolidEarth_ANT-16KM/2.0.0/grid_ANT-16KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SolidEarth_ANT-16KM/2.1.0/grid_ANT-16KM.txt"
 
 ["grid_ANT-32KM.txt"]
 checksum = "sha256:619c2b14b9667a6ff1efe4de41f1b2bd0ddc8d3e10df6d5fd99222b80be20276"
 size = 466
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/grid_ANT-32KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SolidEarth_ANT-32KM/2.0.0/grid_ANT-32KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SolidEarth_ANT-32KM/2.1.0/grid_ANT-32KM.txt"
 
 ["grid_ANT-4KM.txt"]
 checksum = "sha256:dc549c434411d3f7ad5b46e4f954f9bb180d0d2e272e1942d97e7072ae8b711d"
 size = 468
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/grid_ANT-4KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SolidEarth_ANT-4KM/2.0.0/grid_ANT-4KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SolidEarth_ANT-4KM/2.1.0/grid_ANT-4KM.txt"
 
 ["grid_ANT-8KM.txt"]
 checksum = "sha256:66ff6285f42ec156b6c6a6c30fcb0d2e4c94e07d67512fb002cb0348b3420ce5"
 size = 465
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/grid_ANT-8KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SolidEarth_ANT-8KM/2.0.0/grid_ANT-8KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_SolidEarth_ANT-8KM/2.1.0/grid_ANT-8KM.txt"

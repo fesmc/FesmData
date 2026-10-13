@@ -1,55 +1,61 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-12"
-git_tag = "solidearth-v2.0.0"
+date = "2026-10-13"
+git_tag = "solidearth-v2.1.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=North_SolidEarth"
-version = "2.0.0"
+version = "2.1.0"
 
 ["NH-16KM_SolidEarth-Bagge2021.nc"]
-checksum = "sha256:c45e253c70293bb8f3ca2f01fbb74777cacc52c400b4ea1bc6e66c15bd9e4250"
-size = 524564365
+checksum = "sha256:855602383c2657161b05799730c54a9290de03d033a4acf423dd2e988ff89800"
+previous_checksums = ["sha256:c45e253c70293bb8f3ca2f01fbb74777cacc52c400b4ea1bc6e66c15bd9e4250"]
+size = 83481365
 storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_SolidEarth-Bagge2021.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_SolidEarth_NH-16KM/2.0.0/NH-16KM_SolidEarth-Bagge2021.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_SolidEarth_NH-16KM/2.1.0/NH-16KM_SolidEarth-Bagge2021.nc"
 
 ["NH-16KM_SolidEarth-Lloyd2024.nc"]
-checksum = "sha256:6d43f11c335edfb41750ee6afafea5a1f6d1f472cae88f871313ae553880dbde"
-size = 106890493
+checksum = "sha256:6c67bd40b06d93c4bc330d2c01ff0b8e2b8293570f9baca3953d7b61f3fb0454"
+previous_checksums = ["sha256:6d43f11c335edfb41750ee6afafea5a1f6d1f472cae88f871313ae553880dbde"]
+size = 20219592
 storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_SolidEarth-Lloyd2024.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_SolidEarth_NH-16KM/2.0.0/NH-16KM_SolidEarth-Lloyd2024.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_SolidEarth_NH-16KM/2.1.0/NH-16KM_SolidEarth-Lloyd2024.nc"
 
 ["NH-16KM_grid.nc"]
-checksum = "sha256:5a64b9ab83264c23ca7c96aa0a1a1b02debcea94890fb2556039c205a148d957"
-size = 1877147
+checksum = "sha256:854570fc78e4fbb918d307c80874ceeb85265df6ab6b76393344a98e4a874abc"
+previous_checksums = ["sha256:5a64b9ab83264c23ca7c96aa0a1a1b02debcea94890fb2556039c205a148d957"]
+size = 1592909
 storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_SolidEarth_NH-16KM/2.0.0/NH-16KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_SolidEarth_NH-16KM/2.1.0/NH-16KM_grid.nc"
 
 ["NH-32KM_SolidEarth-Bagge2021.nc"]
-checksum = "sha256:32281493bf717f7f3bf476aed9f1ddc03b00626eb768c168386998d3106ecb09"
-size = 142689161
+checksum = "sha256:fbbf700ccd5414827614bb55cf816869d5098fb53001a5a57e2c9963afbdae7a"
+previous_checksums = ["sha256:32281493bf717f7f3bf476aed9f1ddc03b00626eb768c168386998d3106ecb09"]
+size = 29744696
 storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_SolidEarth-Bagge2021.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_SolidEarth_NH-32KM/2.0.0/NH-32KM_SolidEarth-Bagge2021.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_SolidEarth_NH-32KM/2.1.0/NH-32KM_SolidEarth-Bagge2021.nc"
 
 ["NH-32KM_SolidEarth-Lloyd2024.nc"]
-checksum = "sha256:0233edd0557726343aa1e301038b31d07091f16d003a1b907180cc0eae27f3e3"
-size = 28742631
+checksum = "sha256:b8a84fe220778829cdc5a98c2a210acdf4d6abdfea364a0e318886942bf3d600"
+previous_checksums = ["sha256:0233edd0557726343aa1e301038b31d07091f16d003a1b907180cc0eae27f3e3"]
+size = 7048546
 storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_SolidEarth-Lloyd2024.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_SolidEarth_NH-32KM/2.0.0/NH-32KM_SolidEarth-Lloyd2024.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_SolidEarth_NH-32KM/2.1.0/NH-32KM_SolidEarth-Lloyd2024.nc"
 
 ["NH-32KM_grid.nc"]
-checksum = "sha256:3d48fc58818a8820d1c19088ab3ac0a0aa5f463ca080d4d5f8f60d0fc525894f"
-size = 543810
+checksum = "sha256:5acfb784cc05a51351ad8cbfb8d51d8256e96833d9b17acecf39a43c92196c63"
+previous_checksums = ["sha256:3d48fc58818a8820d1c19088ab3ac0a0aa5f463ca080d4d5f8f60d0fc525894f"]
+size = 464986
 storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_SolidEarth_NH-32KM/2.0.0/NH-32KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_SolidEarth_NH-32KM/2.1.0/NH-32KM_grid.nc"
 
 ["grid_NH-16KM.txt"]
 checksum = "sha256:b784904b58207dc754c6dbb670f90ccd35dfccfadbd68bfea1c239abac6a7c89"
 size = 467
 storage_path = "$datasets_dir/North/NH-16KM/grid_NH-16KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_SolidEarth_NH-16KM/2.0.0/grid_NH-16KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_SolidEarth_NH-16KM/2.1.0/grid_NH-16KM.txt"
 
 ["grid_NH-32KM.txt"]
 checksum = "sha256:6562aa2ab0d5e8ac51d50e7caac9b766095e22eb71e450ead46ce581543d44a4"
 size = 466
 storage_path = "$datasets_dir/North/NH-32KM/grid_NH-32KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_SolidEarth_NH-32KM/2.0.0/grid_NH-32KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_SolidEarth_NH-32KM/2.1.0/grid_NH-32KM.txt"

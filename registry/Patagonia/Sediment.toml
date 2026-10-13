@@ -1,0 +1,37 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-13"
+git_tag = "sediment-v2.1.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Patagonia_Sediment"
+version = "2.1.0"
+
+["PAT-2KM_Sediment-CRUST1.nc"]
+checksum = "sha256:f82e3783b350821da66f41572a7e152a9568cd7e373560b953fb19e7472b4871"
+size = 3219231
+storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_Sediment-CRUST1.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Sediment_PAT-2KM/2.1.0/PAT-2KM_Sediment-CRUST1.nc"
+
+["PAT-2KM_Sediment-ECM1.nc"]
+checksum = "sha256:f8b7c3bd38e21eb2172f203a15134b9964679a1bfc0fd9e7fba4b6f4fec42105"
+size = 2946012
+storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_Sediment-ECM1.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Sediment_PAT-2KM/2.1.0/PAT-2KM_Sediment-ECM1.nc"
+
+["PAT-2KM_Sediment-GlobSed.nc"]
+checksum = "sha256:5ac96c554b15575bc1f2c87f8098fef85638140a45ba050052133bf51dce640b"
+size = 670846
+storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_Sediment-GlobSed.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Sediment_PAT-2KM/2.1.0/PAT-2KM_Sediment-GlobSed.nc"
+
+["PAT-2KM_grid.nc"]
+checksum = "sha256:3b66736031d52fec9da8230693887255b90f7b276619eba31266bf950f5eb9e7"
+size = 1440853
+storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Sediment_PAT-2KM/2.1.0/PAT-2KM_grid.nc"
+
+["grid_PAT-2KM.txt"]
+checksum = "sha256:f30d2390e6c54f2628d81d4a3439a6b55b95c9e997754fcaa01ac160f60591bd"
+size = 347
+storage_path = "$datasets_dir/Patagonia/PAT-2KM/grid_PAT-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Sediment_PAT-2KM/2.1.0/grid_PAT-2KM.txt"

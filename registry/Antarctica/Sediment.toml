@@ -1,151 +1,171 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-12"
-git_tag = "sediment-v2.0.0"
+date = "2026-10-13"
+git_tag = "sediment-v2.1.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Antarctica_Sediment"
-version = "2.0.0"
+version = "2.1.0"
 
 ["ANT-16KM_Sediment-ANTASed.nc"]
-checksum = "sha256:bd9b82ef51b88d82a843e3a2a33d7c1122df67dd9e2d85429d5be9f9533d4e39"
-size = 123550
+checksum = "sha256:68b4a9983a88a2e2ee6139fb32584f345a206e5d0e4a95f609835d07297ac23f"
+previous_checksums = ["sha256:bd9b82ef51b88d82a843e3a2a33d7c1122df67dd9e2d85429d5be9f9533d4e39"]
+size = 114143
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_Sediment-ANTASed.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-16KM/2.0.0/ANT-16KM_Sediment-ANTASed.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-16KM/2.1.0/ANT-16KM_Sediment-ANTASed.nc"
 
 ["ANT-16KM_Sediment-CRUST1.nc"]
-checksum = "sha256:506c4821a95ea4bd0346456be0dc5d949d82eb9bcf9cbd7274d0565ba1cf7c3f"
-size = 1102110
+checksum = "sha256:779ccaf275f0fb6055a0f5e8bc1b6a5c33489b2a9989e61de545b3bf3c6e0674"
+previous_checksums = ["sha256:506c4821a95ea4bd0346456be0dc5d949d82eb9bcf9cbd7274d0565ba1cf7c3f"]
+size = 899294
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_Sediment-CRUST1.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-16KM/2.0.0/ANT-16KM_Sediment-CRUST1.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-16KM/2.1.0/ANT-16KM_Sediment-CRUST1.nc"
 
 ["ANT-16KM_Sediment-ECM1.nc"]
-checksum = "sha256:70131aa6b4b9f764e45ee6a02adc63c3cfc025e795b591825774aba53ab1bb84"
-size = 1213994
+checksum = "sha256:1fda122c96ac5af288a2389b134a03ccf96f1c5fde95faf06d0f2f127c901279"
+previous_checksums = ["sha256:70131aa6b4b9f764e45ee6a02adc63c3cfc025e795b591825774aba53ab1bb84"]
+size = 1005361
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_Sediment-ECM1.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-16KM/2.0.0/ANT-16KM_Sediment-ECM1.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-16KM/2.1.0/ANT-16KM_Sediment-ECM1.nc"
 
 ["ANT-16KM_Sediment-GlobSed.nc"]
-checksum = "sha256:3b37575c1952f3dbdb0340e344088f0fb1e9388d41b2568758fd87b4d81dafef"
-size = 369996
+checksum = "sha256:db1b8c86adaaadd831bf21e6b3bfbe11a47b53dfab8f203d32de779f2b53b1a3"
+previous_checksums = ["sha256:3b37575c1952f3dbdb0340e344088f0fb1e9388d41b2568758fd87b4d81dafef"]
+size = 323614
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_Sediment-GlobSed.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-16KM/2.0.0/ANT-16KM_Sediment-GlobSed.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-16KM/2.1.0/ANT-16KM_Sediment-GlobSed.nc"
 
 ["ANT-16KM_grid.nc"]
-checksum = "sha256:dea44445828fdc3adbae04afc6662224e96a6838c8381f80a855659b3ad6460c"
-size = 892250
+checksum = "sha256:0c9b8e003b33ca4188cc54c9d7dbe4932f742ee4f6ac9431d8d38e33fa5af978"
+previous_checksums = ["sha256:dea44445828fdc3adbae04afc6662224e96a6838c8381f80a855659b3ad6460c"]
+size = 766020
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-16KM/2.0.0/ANT-16KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-16KM/2.1.0/ANT-16KM_grid.nc"
 
 ["ANT-32KM_Sediment-ANTASed.nc"]
-checksum = "sha256:eb34bb49791b9ed8322d9b6a4c0e29f2ed43e02aba2ff3b6967a27cf7c519475"
-size = 56195
+checksum = "sha256:7624debb1da67da2560aa6ec6e055a93b63d1a5126b9c7e444caec86aba5bc71"
+previous_checksums = ["sha256:eb34bb49791b9ed8322d9b6a4c0e29f2ed43e02aba2ff3b6967a27cf7c519475"]
+size = 54520
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_Sediment-ANTASed.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-32KM/2.0.0/ANT-32KM_Sediment-ANTASed.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-32KM/2.1.0/ANT-32KM_Sediment-ANTASed.nc"
 
 ["ANT-32KM_Sediment-CRUST1.nc"]
-checksum = "sha256:482fcb4a025f8f2e10d460da525148fe1d6afc1f30bcab99c2a3e0ac9b8338af"
-size = 325875
+checksum = "sha256:a7c40a0638a6aa3b4ab5d981c28a5ceb97d14e22e01fb4ddd0c1c782b92a2c80"
+previous_checksums = ["sha256:482fcb4a025f8f2e10d460da525148fe1d6afc1f30bcab99c2a3e0ac9b8338af"]
+size = 272753
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_Sediment-CRUST1.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-32KM/2.0.0/ANT-32KM_Sediment-CRUST1.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-32KM/2.1.0/ANT-32KM_Sediment-CRUST1.nc"
 
 ["ANT-32KM_Sediment-ECM1.nc"]
-checksum = "sha256:685ee8227afbb806f029d379a74bf9b6d47146f882737d95b5ff13b4b35cf36a"
-size = 356178
+checksum = "sha256:adfd17046cf54c504e5c820a473a46f88f5843f6bf32beee012fb11fc1eb996a"
+previous_checksums = ["sha256:685ee8227afbb806f029d379a74bf9b6d47146f882737d95b5ff13b4b35cf36a"]
+size = 307690
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_Sediment-ECM1.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-32KM/2.0.0/ANT-32KM_Sediment-ECM1.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-32KM/2.1.0/ANT-32KM_Sediment-ECM1.nc"
 
 ["ANT-32KM_Sediment-GlobSed.nc"]
-checksum = "sha256:ddf2df7ba7895571bfe621a53bf53ed42c176520329b8ee4b9bc67baa412b905"
-size = 120729
+checksum = "sha256:5d92706105d3d2f4fa4e1a4950e05217636caf36ce9d9cac330683870185d6d6"
+previous_checksums = ["sha256:ddf2df7ba7895571bfe621a53bf53ed42c176520329b8ee4b9bc67baa412b905"]
+size = 109160
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_Sediment-GlobSed.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-32KM/2.0.0/ANT-32KM_Sediment-GlobSed.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-32KM/2.1.0/ANT-32KM_Sediment-GlobSed.nc"
 
 ["ANT-32KM_grid.nc"]
-checksum = "sha256:66765d3512c62479e60ad1095a4ee84b38edb681fe816eddf9896c3a2799efd8"
-size = 212550
+checksum = "sha256:49cf80092bf11538d76d480dea852afea71c414565d6123fb01ff4e7e853bee1"
+previous_checksums = ["sha256:66765d3512c62479e60ad1095a4ee84b38edb681fe816eddf9896c3a2799efd8"]
+size = 190659
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-32KM/2.0.0/ANT-32KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-32KM/2.1.0/ANT-32KM_grid.nc"
 
 ["ANT-4KM_Sediment-ANTASed.nc"]
-checksum = "sha256:cbcb0ac3f52d7b575cf0f33fd1664b3e2f75edefee87e37d0ca30be69fb75660"
-size = 1611571
+checksum = "sha256:955e45f165cdf2f3d8113c8dfd403f2f1190dd931b7089c5721a49397e6367c7"
+previous_checksums = ["sha256:cbcb0ac3f52d7b575cf0f33fd1664b3e2f75edefee87e37d0ca30be69fb75660"]
+size = 1367895
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_Sediment-ANTASed.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-4KM/2.0.0/ANT-4KM_Sediment-ANTASed.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-4KM/2.1.0/ANT-4KM_Sediment-ANTASed.nc"
 
 ["ANT-4KM_Sediment-CRUST1.nc"]
-checksum = "sha256:dac9796f26f4585148059392b6525e01e89f41e6c43c9a052ffb7c0e431fba50"
-size = 14567645
+checksum = "sha256:6a5e12dd91b56f9d00b61ff37ad778ce6da69ec6ccd74c4440cffa0613bd83f0"
+previous_checksums = ["sha256:dac9796f26f4585148059392b6525e01e89f41e6c43c9a052ffb7c0e431fba50"]
+size = 11003591
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_Sediment-CRUST1.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-4KM/2.0.0/ANT-4KM_Sediment-CRUST1.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-4KM/2.1.0/ANT-4KM_Sediment-CRUST1.nc"
 
 ["ANT-4KM_Sediment-ECM1.nc"]
-checksum = "sha256:50013bbcd4db7293bf8521604a36805ec8c8ee001928993046fd6000be6369fb"
-size = 16004829
+checksum = "sha256:43328c203cdd630de672341651216dbf3993664776218c3765427672547afea5"
+previous_checksums = ["sha256:50013bbcd4db7293bf8521604a36805ec8c8ee001928993046fd6000be6369fb"]
+size = 12627857
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_Sediment-ECM1.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-4KM/2.0.0/ANT-4KM_Sediment-ECM1.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-4KM/2.1.0/ANT-4KM_Sediment-ECM1.nc"
 
 ["ANT-4KM_Sediment-GlobSed.nc"]
-checksum = "sha256:a911ff54a7d4460a96294e8230c15ca58b32a88309111a0e50a79eb17e0fa596"
-size = 4478497
+checksum = "sha256:b3e67e2e4d5503eca2d0367e1289215841ae5a647421e4d7336adf3350a6bb6f"
+previous_checksums = ["sha256:a911ff54a7d4460a96294e8230c15ca58b32a88309111a0e50a79eb17e0fa596"]
+size = 3751777
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_Sediment-GlobSed.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-4KM/2.0.0/ANT-4KM_Sediment-GlobSed.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-4KM/2.1.0/ANT-4KM_Sediment-GlobSed.nc"
 
 ["ANT-4KM_grid.nc"]
-checksum = "sha256:b553afcb6273200e9cd436c4f3ba5f081c599c58237374342aade5c4588e879f"
-size = 11450508
+checksum = "sha256:fb6604c91ce17a3978a380d4e7d8b641d2f57eea5da4c37e0f46189faa07884f"
+previous_checksums = ["sha256:b553afcb6273200e9cd436c4f3ba5f081c599c58237374342aade5c4588e879f"]
+size = 9192910
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-4KM/2.0.0/ANT-4KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-4KM/2.1.0/ANT-4KM_grid.nc"
 
 ["ANT-8KM_Sediment-ANTASed.nc"]
-checksum = "sha256:15a9781771222ca74babe6401dcd8de56dbd024f39abfe74ea63dd8a5d4ea4e8"
-size = 482774
+checksum = "sha256:5f4b377d25dd3b6cf69b3192e167fd46c38534d412b2cb50ad29d736a74ac9dc"
+previous_checksums = ["sha256:15a9781771222ca74babe6401dcd8de56dbd024f39abfe74ea63dd8a5d4ea4e8"]
+size = 419271
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_Sediment-ANTASed.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-8KM/2.0.0/ANT-8KM_Sediment-ANTASed.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-8KM/2.1.0/ANT-8KM_Sediment-ANTASed.nc"
 
 ["ANT-8KM_Sediment-CRUST1.nc"]
-checksum = "sha256:08ce80585a0a0e2c72e74fe6c62dcbb326513eebf5e9675a63f4690287fbd75a"
-size = 3932602
+checksum = "sha256:27a16bcab59c67d72e7151a3df80fe12e1e605fb30f0daa13ca4a7b6692cebcf"
+previous_checksums = ["sha256:08ce80585a0a0e2c72e74fe6c62dcbb326513eebf5e9675a63f4690287fbd75a"]
+size = 3084536
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_Sediment-CRUST1.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-8KM/2.0.0/ANT-8KM_Sediment-CRUST1.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-8KM/2.1.0/ANT-8KM_Sediment-CRUST1.nc"
 
 ["ANT-8KM_Sediment-ECM1.nc"]
-checksum = "sha256:de05167046605a2f42cef07f59358acd9d4bb352e050a9906af62d9406370aa6"
-size = 4339392
+checksum = "sha256:6d8586c242daaec998b999957910ca237e011dcbf06ec3088bdd38c44dd62810"
+previous_checksums = ["sha256:de05167046605a2f42cef07f59358acd9d4bb352e050a9906af62d9406370aa6"]
+size = 3508404
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_Sediment-ECM1.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-8KM/2.0.0/ANT-8KM_Sediment-ECM1.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-8KM/2.1.0/ANT-8KM_Sediment-ECM1.nc"
 
 ["ANT-8KM_Sediment-GlobSed.nc"]
-checksum = "sha256:c228036d3d0eb3edda1ac3cbde8851de159f9ca856908385ed38fb5aa071de54"
-size = 1263856
+checksum = "sha256:a52c71a27411069b33223c6926e11b0f8d84b112e8d12f25f3a8039303472e9c"
+previous_checksums = ["sha256:c228036d3d0eb3edda1ac3cbde8851de159f9ca856908385ed38fb5aa071de54"]
+size = 1081990
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_Sediment-GlobSed.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-8KM/2.0.0/ANT-8KM_Sediment-GlobSed.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-8KM/2.1.0/ANT-8KM_Sediment-GlobSed.nc"
 
 ["ANT-8KM_grid.nc"]
-checksum = "sha256:6d00ae1cafbf496c1375c74c9153d92c5e2aec79d8026f004ba0dc26d0c47ece"
-size = 3314952
+checksum = "sha256:27b6ffe5af1932ac7e1fcf32b8e8219420fe82be6287f09f931efbebed8ec93d"
+previous_checksums = ["sha256:6d00ae1cafbf496c1375c74c9153d92c5e2aec79d8026f004ba0dc26d0c47ece"]
+size = 2776497
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-8KM/2.0.0/ANT-8KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-8KM/2.1.0/ANT-8KM_grid.nc"
 
 ["grid_ANT-16KM.txt"]
 checksum = "sha256:09d646757fe153b435cee10a90cf772b4626efbe2f187d410eab83876c8305cb"
 size = 467
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/grid_ANT-16KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-16KM/2.0.0/grid_ANT-16KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-16KM/2.1.0/grid_ANT-16KM.txt"
 
 ["grid_ANT-32KM.txt"]
 checksum = "sha256:619c2b14b9667a6ff1efe4de41f1b2bd0ddc8d3e10df6d5fd99222b80be20276"
 size = 466
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/grid_ANT-32KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-32KM/2.0.0/grid_ANT-32KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-32KM/2.1.0/grid_ANT-32KM.txt"
 
 ["grid_ANT-4KM.txt"]
 checksum = "sha256:dc549c434411d3f7ad5b46e4f954f9bb180d0d2e272e1942d97e7072ae8b711d"
 size = 468
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/grid_ANT-4KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-4KM/2.0.0/grid_ANT-4KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-4KM/2.1.0/grid_ANT-4KM.txt"
 
 ["grid_ANT-8KM.txt"]
 checksum = "sha256:66ff6285f42ec156b6c6a6c30fcb0d2e4c94e07d67512fb002cb0348b3420ce5"
 size = 465
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/grid_ANT-8KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-8KM/2.0.0/grid_ANT-8KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Sediment_ANT-8KM/2.1.0/grid_ANT-8KM.txt"

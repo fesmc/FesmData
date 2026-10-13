@@ -1,0 +1,37 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-13"
+git_tag = "ghf-v2.2.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Himalaya_GHF"
+version = "2.2.0"
+
+["HIM-2KM_GHF-Davies2013.nc"]
+checksum = "sha256:8c8b905e223559efceb33c1e7fb07528f59f295eaf3ef87e7dddf3978fb4878a"
+size = 336146
+storage_path = "$datasets_dir/Himalaya/HIM-2KM/HIM-2KM_GHF-Davies2013.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_GHF_HIM-2KM/2.2.0/HIM-2KM_GHF-Davies2013.nc"
+
+["HIM-2KM_GHF-Lucazeau2019.nc"]
+checksum = "sha256:948a7bd71f6a67f465d72259e50ecb62dfe6f007b835dc4bbc5d63db961c5631"
+size = 652524
+storage_path = "$datasets_dir/Himalaya/HIM-2KM/HIM-2KM_GHF-Lucazeau2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_GHF_HIM-2KM/2.2.0/HIM-2KM_GHF-Lucazeau2019.nc"
+
+["HIM-2KM_GHF-Shapiro2004.nc"]
+checksum = "sha256:e147016642d80240ac3a95aa8087a12108ddf177d506d86390ddfbeeec601952"
+size = 367647
+storage_path = "$datasets_dir/Himalaya/HIM-2KM/HIM-2KM_GHF-Shapiro2004.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_GHF_HIM-2KM/2.2.0/HIM-2KM_GHF-Shapiro2004.nc"
+
+["HIM-2KM_grid.nc"]
+checksum = "sha256:c80460c96b66ee86b7f0ad0ba2095ab24de793493dda2a341dfa36b5a715a209"
+size = 2883062
+storage_path = "$datasets_dir/Himalaya/HIM-2KM/HIM-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_GHF_HIM-2KM/2.2.0/HIM-2KM_grid.nc"
+
+["grid_HIM-2KM.txt"]
+checksum = "sha256:534cff6d3562a47b21187e2279ce0b3a848e720b093bc7ae578073c24219bdcf"
+size = 333
+storage_path = "$datasets_dir/Himalaya/HIM-2KM/grid_HIM-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_GHF_HIM-2KM/2.2.0/grid_HIM-2KM.txt"
