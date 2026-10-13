@@ -46,7 +46,7 @@ products = { "ANT" = "BedMachine-v4", "GRL-PAL" = "BedMachine-v6", "NH" = "GEBCO
              "HEL" = "BedMachine-v6",
              "PYR" = "GLO90-GEBCO2026", "PAT" = "GLO90-GEBCO2026", "SRG" = "GLO90-GEBCO2026",
              "GCN" = "GLO90-GEBCO2026", "CDI" = "GLO90-GEBCO2026", "ALP" = "GLO90-GEBCO2026",
-             "HIM" = "GLO90-GEBCO2026", "SVB" = "GLO90-GEBCO2026", "NZ" = "GLO90-GEBCO2026" }
+             "HIM" = "GLO90-GEBCO2026", "DDG" = "GLO90-GEBCO2026", "SVB" = "GLO90-GEBCO2026", "NZ" = "GLO90-GEBCO2026" }
 z_break = { "1" = -500.0, "2" = -500.0, "2.1" = -1000.0 }
 z_abyss = -2000.0
 r_open = 50.0

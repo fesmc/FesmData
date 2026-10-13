@@ -171,6 +171,13 @@ rho_sw = 1028.0
 [HIM.products]
 "GLO90-GEBCO2026" = ["iceboost_v2", "copernicus_glo90", "gebco2026"]
 
+[DDG]
+rho_ice = 917.0
+rho_sw = 1028.0
+
+[DDG.products]
+"GLO90-GEBCO2026" = ["iceboost_v2", "copernicus_glo90", "gebco2026"]
+
 [SVB]
 rho_ice = 917.0
 rho_sw = 1028.0

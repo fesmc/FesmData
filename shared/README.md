@@ -43,7 +43,7 @@ their domain that contain them, by cropping, made on demand by `julia fesmdata.j
 | PYR | PYR-250M | 500 m, 2 km | | | UTM 31N | yes |
 | PAT | PAT-250M | 500 m, 2 km | NPI, SPI (250 m) | SRG, GCN, CDI (50, 100, 250 m) | UTM 18S | yes |
 | ALP | ALP-250M | 500 m, 2 km | | | UTM 32N | no |
-| HIM | HIM-250M | 500 m, 2 km | | | Albers equal-area (High Mountain Asia) | no |
+| HIM | HIM-250M | 500 m, 2 km | | DDG (50, 100, 250 m; active) | Albers equal-area (High Mountain Asia) | no |
 | SVB | SVB-500M | 1 km, 2 km | | | UTM 33N | no |
 | NZ | NZ-250M | 500 m, 2 km | | | NZTM2000 | no |
 | GLOBAL | GLOBAL-0.1DEG | 0.25-5° | | | lon-lat | yes |
@@ -61,7 +61,8 @@ Glacial Maximum, each on the projection used for glacier modelling in its region
 `domains.toml`). PAT covers Patagonia from 38°S to Cape Horn, with crops of the Northern
 and Southern Patagonian Icefields (NPI, SPI), and nests of single icefields: the San
 Rafael Glacier (SRG, whose 250 m grid is the v1 SRG-250M grid), Gran Campo Nevado (GCN)
-and the Cordillera Darwin Icefield (CDI).
+and the Cordillera Darwin Icefield (CDI). HIM has a nest of the Drang Drung Glacier
+(DDG, Zanskar), which is active although HIM is not.
 
 An **inactive** domain (`active = false`) is defined, but left out of the releases, the
 website figures and the products made for all domains. Its grids and products are made
@@ -77,7 +78,8 @@ which is also its name in the released records (Antarctica, Amundsen, Thwaites,
 PineIsland, FilchnerRonne, Ross, Amery, WilkesBasin, GreenlandPaleo, Greenland,
 Jakobshavn, NEGIS, Petermann, Helheim, North, Laurentide, Eurasia, Pyrenees, Patagonia,
 NorthPatagonianIcefield, SouthPatagonianIcefield, SRG, GranCampoNevado, CordilleraDarwin,
-Alps, Himalaya, Svalbard, NewZealand, Global). Every grid has its own folder there, with all datasets on that grid:
+Alps, Himalaya, DrangDrung, Svalbard, NewZealand, Global). Every grid has its own folder
+there, with all datasets on that grid:
 
 ```
 $ICE_DATA/v2/<folder>/<GRID>/
