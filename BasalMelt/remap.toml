@@ -22,5 +22,4 @@ figure = { colormap = "balance", colorrange = [-10, 10] }
 source = "Adusumilli2020_bmelt"
 file = "Adusumilli2020_HEIGHTS_1992-2018.nc"
 variables = ["dh_alt", "dh_firn", "smb_discharge"]
-precision = { dh_alt = 0.01, dh_firn = 0.01 }
 grids = { Antarctica = 8 }

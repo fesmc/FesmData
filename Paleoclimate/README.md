@@ -29,7 +29,7 @@ cell, the mean or the standard deviation (population) of the models with a value
 
 The float fields are rounded on output to a tolerance by kind (see [Data volume and
 precision](https://fesmc.github.io/FesmData/data_volume.html)): temperatures to 0.01 K;
-precipitation to 1%; `z_srf` and `dz_srf` to 0.05 m (0.01 m on the ice-sheet and mountain-glacier domains); fractions (`f_*`, `pr_frac*`) to
+precipitation to 1%; `z_srf` and `dz_srf` to 0.01 m; fractions (`f_*`, `pr_frac*`) to
 0.001. The ensemble products are computed from the rounded products of their members and
 rounded again.
 

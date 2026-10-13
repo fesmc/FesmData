@@ -20,10 +20,9 @@
 # that of the parent, made from the sources: at the resolutions it shares with its
 # parent, its grids lie on those of the parent (same cell centres).
 #
-# `elevation_precision` is the absolute tolerance (m) of the elevations and thicknesses
-# written on the grids of a domain (default 0.05 m, see precision.jl): 0.01 m on the
-# ice-sheet and mountain-glacier domains, where high-resolution data exist (nests: as
-# their parent, unless set).
+# `elevation_precision` (optional) is the absolute tolerance (m) of the elevations and
+# thicknesses written on the grids of a domain, if not the default 0.01 m (see
+# precision.jl; nests: as their parent, unless set).
 #
 # A domain with `active = false` (nests: as their parent, unless set) is defined but
 # left out of the releases, figures and the products made for all domains; its grids
@@ -46,7 +45,6 @@ proj = "+proj=stere +lat_0=-90 +lat_ts=-71 +lon_0=0 +x_0=0 +y_0=0 +a=6378137 +rf
 xlim = [-3040, 3040]
 ylim = [-3040, 3040]
 resolutions = [1, 2, 4, 8, 16, 32]
-elevation_precision = 0.01
 
 # Ice-sheet basins (crop ASE at 1 km, nests at 500 m and 1 km, the 1 km grids on
 # ANT-1KM): bounding box of the drainage basins (Basins_Antarctica_v02 of NSIDC-0709,
@@ -121,7 +119,6 @@ proj = "+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +x_0=0 +y_0=0 +a=6378137 +rf
 xlim = [-1360, 960]
 ylim = [-3450, -570]
 resolutions = [0.5, 1, 2, 4, 8, 16, 32]
-elevation_precision = 0.01
 
 [GRL-PAL.crops.GRL]
 folder = "Greenland"
@@ -200,7 +197,6 @@ proj = "+proj=tmerc +lat_0=0 +lon_0=3 +k=0.9996 +x_0=500000 +y_0=0 +a=6378137 +r
 xlim = [107.875, 487.625]
 ylim = [4639.875, 4811.625]
 resolutions = [0.25, 0.5, 2]
-elevation_precision = 0.01
 
 # Patagonia: UTM zone 18S (EPSG:32718), as the v1 SRG grids, from 38S to Cape Horn
 # (56.5S) and from 77W to 65W (the Patagonian Ice Sheet), with the cell centres of the
@@ -214,7 +210,6 @@ proj = "+proj=tmerc +lat_0=0 +lon_0=-75 +k=0.9996 +x_0=500000 +y_0=10000000 +a=6
 xlim = [324.087171469987, 1379.087171469987]
 ylim = [3693.102314639904, 5794.602314639904]
 resolutions = [0.25, 0.5, 2]
-elevation_precision = 0.01
 
 # 46.3-47.8S, 74.2-72.7W
 [PAT.crops.NPI]
@@ -259,7 +254,6 @@ proj = "+proj=tmerc +lat_0=0 +lon_0=9 +k=0.9996 +x_0=500000 +y_0=0 +a=6378137 +r
 xlim = [92, 1193]
 ylim = [4760, 5441]
 resolutions = [0.25, 0.5, 2]
-elevation_precision = 0.01
 
 # Himalaya, Karakoram and Hindu Kush: Albers equal-area conic of the High Mountain Asia
 # glacier products (Shean et al., 2020), 68-99E, 25.5-38.5N. Nest (25, 50, 100 and
@@ -270,7 +264,6 @@ proj = "+proj=aea +lat_1=25 +lat_2=47 +lat_0=36 +lon_0=85 +x_0=0 +y_0=0 +a=63781
 xlim = [-1699, 1401]
 ylim = [-1179, 407]
 resolutions = [0.25, 0.5, 2]
-elevation_precision = 0.01
 
 # 33.6-33.9N, 76.2-76.45E: the outline of the ISSM domain of Sommers (2025, DD.exp)
 # with a margin of 5 km (841 x 1201 cells at 25 m)
@@ -289,7 +282,6 @@ proj = "+proj=tmerc +lat_0=0 +lon_0=15 +k=0.9996 +x_0=500000 +y_0=0 +a=6378137 +
 xlim = [193, 1105]
 ylim = [8212, 9106]
 resolutions = [0.5, 1, 2]
-elevation_precision = 0.01
 
 # New Zealand: New Zealand Transverse Mercator 2000 (EPSG:2193, GRS80), 166-175E,
 # 40-47.5S (the South Island and its shelf).
@@ -300,4 +292,3 @@ proj = "+proj=tmerc +lat_0=0 +lon_0=173 +k=0.9996 +x_0=1600000 +y_0=10000000 +a=
 xlim = [1002, 1771]
 ylim = [4715, 5573]
 resolutions = [0.25, 0.5, 2]
-elevation_precision = 0.01

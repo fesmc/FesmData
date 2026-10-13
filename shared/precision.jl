@@ -35,10 +35,9 @@ const ELEVATION = "elevation, thickness"
 
 """
 Absolute tolerance (m) of elevations and thicknesses, unless their domain sets another
-(`elevation_precision` in ../shared/domains.toml, e.g. 0.01 m where high-resolution data
-exist).
+(`elevation_precision` in ../shared/domains.toml).
 """
-const DEFAULT_ELEVATION_PRECISION = 0.05
+const DEFAULT_ELEVATION_PRECISION = 0.01
 
 """
 Default precision of the float fields by kind, the first that matches (`default_precision`).

@@ -20,7 +20,7 @@ Fields are remapped conservatively and smoothed on grids finer than the source.
 
 The float fields are rounded on output to a tolerance by kind (see [Data volume and
 precision](https://fesmc.github.io/FesmData/data_volume.html)): temperatures (`to`,
-`tf`, `ct_bottom`) to 0.01 K; `z_bottom` to 0.05 m (0.01 m on the ice-sheet and mountain-glacier domains); salinity (`so`, `sa_bottom`) to 3
+`tf`, `ct_bottom`) to 0.01 K; `z_bottom` to 0.01 m; salinity (`so`, `sa_bottom`) to 3
 significant digits (about 0.02 at 35); `f_valid` to 0.001. `basin` is exact.
 
 ## Licences

@@ -61,7 +61,7 @@ entry under `[<domain>.variants]` in `products.toml` (with its sources in
 
 The float fields are rounded on output to a tolerance by kind (see [Data volume and
 precision](https://fesmc.github.io/FesmData/data_volume.html)): `z_bed`, `z_srf`, `H_ice`
-and `z_bed_sd` to 0.01 m (0.05 m on NH and its crops), the area fractions (`f_*`) to 0.001. `mask` and `src_id` are
+and `z_bed_sd` to 0.01 m, the area fractions (`f_*`) to 0.001. `mask` and `src_id` are
 exact. The coarser grids are remapped from the rounded base grid and rounded again. The
 sources on the base grid (step 2) are intermediate files and are not rounded.
 
