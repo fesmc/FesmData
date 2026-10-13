@@ -60,6 +60,9 @@ end
 file_grid(path::AbstractString, name::AbstractString) =
     NCDataset(ds -> ProjGrid(name, ds["xc"][:], ds["yc"][:], ds["crs"].attrib["proj_params"]), path)
 
+"Whether grid `a` has the cell centres of grid `b`."
+on_grid(a::ProjGrid, b::ProjGrid) = size(a) == size(b) && isapprox(a.xc, b.xc) && isapprox(a.yc, b.yc)
+
 "Whether `path` is the crop of the parent file with `checksum` on the cells `ix`, `iy` (by its attributes)."
 is_crop_of(path::AbstractString, checksum::AbstractString, ix, iy) =
     isfile(path) && NCDataset(path) do ds
@@ -145,6 +148,10 @@ function crop_files(cropped, root::AbstractString; sandbox::Bool=false)
             dir = joinpath(root, c.folder, g.name)
             gridfiles = [joinpath(dir, "grid_$(g.name).txt"), joinpath(dir, "$(g.name)_grid.nc")]
             status = all(isfile, gridfiles) ? :present : (write_grid_files(dir, g; dataset=tag); :written)
+            # The files there (e.g. of an earlier release) must be on the same grid as the crops
+            on_grid(file_grid(gridfiles[2], g.name), g) ||
+                error("$(gridfiles[2]) is not grid $(g.name) of ../shared/domains.toml (of a release made before " *
+                      "the grid changed?): cannot add crops on this grid until its records are released again")
             foreach(p -> println(rpad(string(status), 12), p), gridfiles)
             append!(paths, gridfiles)
             for (e, dst) in targets

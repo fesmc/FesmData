@@ -77,11 +77,12 @@ The arguments can be given in any order. A grid name implies its domain (ANT-32K
 on Antarctica), so the domain can be left out when grids are given. `fetch` needs the
 dataset, and a domain or grids.
 
-**Nests and crops.** The thematic datasets (those made by remapping: GHF, Velocity,
-SMB, Atmosphere, ...) are released on the domains, and not again on their nests and
-crops (e.g. Thwaites, a nest of Antarctica), except for crops with records of their own
-(e.g. Greenland). `fetch` makes them there on demand, by cropping the record of the
-parent domain:
+**Nests and crops.** The products of the thematic datasets (those made by remapping:
+GHF, Velocity, SMB, Atmosphere, ...) are released on the domains, and not again on their
+nests and crops (e.g. Thwaites, a nest of Antarctica); a nest or crop has a record of
+its own only for products its domain does not have (e.g. GHF Colgan2021-topocorr-GRL
+on Greenland). `fetch` makes the products of the domain there on demand, by cropping
+them, next to the files of the record of the nest or crop, if it has one:
 
 ```bash
 julia fesmdata.jl list Thwaites            # its records, and the datasets by cropping
@@ -90,8 +91,9 @@ julia fesmdata.jl fetch GHF Thwaites       # all grids
 julia fesmdata.jl fetch GHF THW-4KM        # one grid
 ```
 
-`fetch` downloads the files of the parent record (here Antarctica/GHF, to
-`$ICE_DATA/v2/Antarctica/`), and cuts each to the nest or crop, as
+`fetch` downloads the files of these products in the parent record (here Antarctica/GHF,
+to `$ICE_DATA/v2/Antarctica/`; all products that the record of the nest or crop does
+not have), and cuts each to the nest or crop, as
 `$ICE_DATA/v2/<Domain>/<GRID>/<GRID>_<NAME>.nc` with the grid files: at a resolution of
 the nest or crop, on its own grid (e.g. THW-1KM, next to its Topo and Regions, whose
 grid files it takes); at the other resolutions of the parent, on the cells of the
@@ -100,7 +102,10 @@ of the parent files (all variables, attributes and compression as they are), and
 record the parent file and its cells in their global attributes (`cropped_from`,
 `cropped_from_checksum`, `cropped_from_release`, `cropped_index_xc` and
 `cropped_index_yc`, 1-based). Running `fetch` again keeps the crops of the current
-parent files, and makes them again after a new release. Cropping needs the packages of
+parent files, and makes them again after a new release. A grid of the nest or crop
+whose released files are on another grid than in `shared/domains.toml` (a release made
+before the grid changed) stops the cropping, until its records are released again.
+Cropping needs the packages of
 `Publish/` (NCDatasets, FesmUtils), which `fetch` installs on first use. `mirror` gets
 the records only; `fetch --dir` writes the crops to the folder too.
 

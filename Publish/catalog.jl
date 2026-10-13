@@ -117,12 +117,15 @@ end
 """
     CropRecord
 
-A thematic dataset (made by remapping, e.g. GHF) on a nest or crop (output folder
-`folder`, grids named after `key`) without a record of its own, whose parent domain
-(folder `parent`, grids named after `parent_key`) has one: `fetch` makes it from the
-files of the parent record, cut to the nest or crop on each of its grids (see crop.jl),
-so that thematic datasets need not be made and released on nests and crops. (Topo and
-Regions are made on every domain from the sources, nests included.)
+The products of a thematic dataset (made by remapping, e.g. GHF) on a nest or crop
+(output folder `folder`, grids named after `key`) that are in the record of its parent
+domain (folder `parent`, grids named after `parent_key`) and not in a record of its own:
+`fetch` makes them from the files of the parent record, cut to the nest or crop on each
+of its grids (see crop.jl), so that thematic products are released once, on the parent
+domain. A nest or crop may have a record of its own with other products (e.g. a
+Greenland-only source on Greenland). `products` are the names of the products (files
+without the grid, `product_name`). (Topo and Regions are made on every domain from the
+sources, nests included.)
 """
 struct CropRecord
     folder::String
@@ -130,6 +133,7 @@ struct CropRecord
     key::String
     parent::String
     parent_key::String
+    products::Vector{String}
 end
 
 """
@@ -153,23 +157,45 @@ function sub_domains()
 end
 
 """
-    crop_records(records) -> Vector{CropRecord}
+    crop_records(files_of) -> Vector{CropRecord}
 
-The records by cropping, for the records of the registry ((domain, dataset) pairs):
-each thematic dataset with a record on a domain, on each of its nests and crops without
-a record of that dataset.
+The records by cropping, for the records of the registry (their files by (domain,
+dataset), see `read_record`): for each thematic dataset with a record on a domain, on
+each of its nests and crops, the products of that record that their own record of the
+dataset (if any) does not have.
 """
-function crop_records(records)
-    have = Set(records)
-    return [CropRecord(folder, s, key, parent, pkey)
-            for (folder, (key, pkey, parent)) in sort(collect(sub_domains()))
-            for (d, s) in records if d == parent && is_remap_dataset(s) && !((folder, s) in have)]
+function crop_records(files_of::AbstractDict)
+    crops = CropRecord[]
+    for (folder, (key, pkey, parent)) in sort(collect(sub_domains())), (d, s) in sort(collect(keys(files_of)))
+        d == parent && is_remap_dataset(s) || continue
+        products = setdiff(product_names(files_of[(d, s)]), product_names(get(files_of, (folder, s), Dict())))
+        isempty(products) || push!(crops, CropRecord(folder, s, key, parent, pkey, products))
+    end
+    return crops
 end
 
-function _chop_key(name::AbstractString, key::AbstractString)
-    startswith(name, key * "-") || error("$name is not named after $key")
-    return name[ncodeunits(key)+1:end]
+function _chop_prefix(name::AbstractString, prefix::AbstractString)
+    startswith(name, prefix) || error("$name does not start with $prefix")
+    return name[ncodeunits(prefix)+1:end]
 end
+
+_chop_key(name::AbstractString, key::AbstractString) = "-" * _chop_prefix(name, key * "-")
+
+"Product of a data file of a record: its name without the grid (ANT-4KM_GHF-Davies2013.nc -> GHF-Davies2013.nc)."
+product_name(e::AbstractDict) = _chop_prefix(basename(e["storage_path"]), entry_grid(e) * "_")
+
+"Whether a registry entry is of a data file (not a grid file)."
+is_data_file(e::AbstractDict) = !is_grid_file(basename(e["storage_path"]))
+
+"Products of a record (files by name), sorted."
+product_names(files::AbstractDict) = sort(unique(product_name(e) for e in values(files) if is_data_file(e)))
+
+"Whether a registry entry of the parent record of `c` is of one of its products."
+is_crop_product(c, e::AbstractDict) = is_data_file(e) && product_name(e) in c.products
+
+"Grids of a record by cropping, from the files of its parent record (fine to coarse)."
+crop_grids(c, pfiles::AbstractDict) =
+    [crop_grid_name(c, g) for (g, es) in record_grids(pfiles) if any(p -> is_crop_product(c, last(p)), es)]
 
 "Grid of a record by cropping for a grid of its parent record: ANT-4KM -> THW-4KM."
 crop_grid_name(c::CropRecord, grid::AbstractString) = c.key * _chop_key(grid, c.parent_key)
@@ -184,14 +210,13 @@ crop_file_name(c::CropRecord, name::AbstractString) = c.key * _chop_key(name, c.
     crop_data_files(c, entries, root) -> Vector
 
 The files of record by cropping `c` for `entries` of its parent record, under `root`:
-parent entry => local path of each data file, not of the grid files (written for each
-grid, see crop.jl).
+parent entry => local path of the file of each of its products (the grid files are
+written for each grid, see crop.jl).
 """
 function crop_data_files(c::CropRecord, entries, root::AbstractString)
     files = Pair{Any,String}[]
-    for e in entries
+    for e in filter(e -> is_crop_product(c, e), entries)
         name = basename(e["storage_path"])
-        is_grid_file(name) && continue
         push!(files, e => joinpath(root, c.folder, crop_grid_name(c, entry_grid(e)), crop_file_name(c, name)))
     end
     return files
@@ -201,29 +226,45 @@ end
     crop_sources(cropped; sandbox=false) -> Vector
 
 What `fetch` downloads for records by cropping, `cropped` ((record, grids) of
-`select_records`), as (domain, dataset, entries): the files of their parent records on
-these grids (all if none are named), and the grid files that the records of the nest or
-crop (e.g. Topo) have on these grids, i.e. on the grids of the nest or crop itself, so
-that these are the released files rather than files written again.
+`select_records`), as (domain, dataset, entries): the files of their products in their
+parent records on these grids (all if none are named; not the grid files of the parent,
+which cropping does not need), and the grid files that the records of the nest or crop
+(e.g. Topo) have on these grids, i.e. on the grids of the nest or crop itself, so that
+these are the released files rather than files written again. A file may be in several
+of these (see `unique_files`).
 """
 function crop_sources(cropped; sandbox::Bool=false)
     sources = Tuple{String,String,Vector}[]
     for (c, grids) in cropped
-        pentries = record_entries(c.parent, c.dataset; grids=[parent_grid_name(c, g) for g in grids], sandbox=sandbox)
+        pentries = filter(e -> is_crop_product(c, e),
+                          record_entries(c.parent, c.dataset; grids=[parent_grid_name(c, g) for g in grids], sandbox=sandbox))
         push!(sources, (c.parent, c.dataset, pentries))
         targets = Set(crop_grid_name(c, entry_grid(e)) for e in pentries)
-        have = Set{String}()
         for (d, s) in list_records(; sandbox=sandbox)
             d == c.folder || continue
-            es = [e for e in record_entries(d, s; sandbox=sandbox)
-                  if entry_grid(e) in targets && is_grid_file(basename(e["storage_path"])) &&
-                     !(e["storage_path"] in have)]
-            isempty(es) && continue
-            union!(have, e["storage_path"] for e in es)
-            push!(sources, (d, s, es))
+            es = filter(e -> entry_grid(e) in targets && !is_data_file(e), record_entries(d, s; sandbox=sandbox))
+            isempty(es) || push!(sources, (d, s, es))
         end
     end
     return sources
+end
+
+"""
+    unique_files(records) -> Vector
+
+Records (domain, dataset, entries) with each local file once, in the first record that
+has it (e.g. the grid files of a grid, which all records on it have); records left
+without files are dropped.
+"""
+function unique_files(records)
+    seen = Set{String}()
+    unique = Tuple{String,String,Vector}[]
+    for (d, s, es) in records
+        es = filter(e -> !(e["storage_path"] in seen), es)
+        union!(seen, e["storage_path"] for e in es)
+        isempty(es) || push!(unique, (d, s, es))
+    end
+    return unique
 end
 
 """
@@ -236,7 +277,7 @@ function list_crops_table(crops)
     folders = unique(c.folder for c in crops)
     w = maximum(length, folders) + 2
     wp = maximum(c -> length(c.parent), crops) + 2
-    println("By cropping (no record of their own: fetch cuts the files of the parent domain):")
+    println("By cropping (products of the parent domain without a record on the nest or crop, cut by fetch):")
     println(rpad("Domain", w), rpad("From", wp), "Datasets")
     for f in folders
         cs = filter(c -> c.folder == f, crops)
@@ -257,7 +298,8 @@ function crop_detail(c::CropRecord; grids=String[], dir=nothing, sandbox::Bool=f
     release = tables["_RELEASE"]
     println("$(c.folder)/$(c.dataset), by cropping $(c.parent)/$(c.dataset), version $(release["version"]) ",
             "($(release["git_tag"])), released $(release["date"])")
-    println("No record of its own: fetch downloads the files of $(c.parent) and cuts them to $(c.folder)")
+    println("$(length(c.products)) products without a record on $(c.folder): fetch downloads them on $(c.parent) ",
+            "and cuts them to $(c.folder)")
     have_local = dir !== nothing || haskey(ENV, "ICE_DATA")
     have_local || println("(ICE_DATA is not set: local files not checked)")
     where = dir === nothing ? "\$ICE_DATA" : local_root(dir)
@@ -268,10 +310,11 @@ function crop_detail(c::CropRecord; grids=String[], dir=nothing, sandbox::Bool=f
         grid = crop_grid_name(c, pgrid)
         isempty(grids) || grid in grids || continue
         targets = crop_data_files(c, last.(entries), root)
+        isempty(targets) && continue
         n += length(targets)
-        size += total_size(last.(entries))
+        size += total_size(first.(targets))
         println("\n", rpad(grid, 16), length(targets), " files, cut from $pgrid (",
-                human_size(total_size(last.(entries))), ")")
+                human_size(total_size(first.(targets))), ")")
         for (_, path) in targets
             state = ""
             if have_local
@@ -301,9 +344,10 @@ has, and whether a single record or grids were named (to show them in detail).
 """
 function select_records(args; sandbox::Bool=false)
     records = list_records(; sandbox=sandbox)
-    crops = crop_records(records)
-    grids_of = Dict(r => unique(entry_grid(e) for e in values(read_record(r...; sandbox=sandbox)[2])) for r in records)
-    crop_grids_of = Dict(c => [crop_grid_name(c, g) for g in grids_of[(c.parent, c.dataset)]] for c in crops)
+    files_of = Dict(r => read_record(r...; sandbox=sandbox)[2] for r in records)
+    crops = crop_records(files_of)
+    grids_of = Dict(r => unique(entry_grid(e) for e in values(files_of[r])) for r in records)
+    crop_grids_of = Dict(c => crop_grids(c, files_of[(c.parent, c.dataset)]) for c in crops)
     datasets = Set(last.(records))
     domains = union(Set(first.(records)), (c.folder for c in crops))
     grid_domain = Dict{String,String}()
@@ -453,7 +497,7 @@ function fetch_files(args; dir=nothing, copy::Bool=false, overwrite::Bool=false,
     length(datasets) == 1 && only(datasets) in args || error("fetch: name the dataset (e.g. Topo)")
     detail || error("fetch: name a domain or grids (e.g. Antarctica, ANT-32KM)")
     root = local_root(dir)
-    records = [selected_entries(selected; sandbox=sandbox); crop_sources(cropped; sandbox=sandbox)]
+    records = unique_files([selected_entries(selected; sandbox=sandbox); crop_sources(cropped; sandbox=sandbox)])
     entries = [e for (_, _, es) in records for e in es]
     states = check_local(entries, root; overwrite=overwrite)
     sources = local_sources(entries, root, states)
