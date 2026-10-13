@@ -51,7 +51,7 @@ Print a table of records ((domain, dataset) pairs): version, release date, size,
 (if any record has one) and grids from fine to coarse.
 """
 function list_records_table(records; sandbox::Bool=false)
-    isempty(records) && (println("No records"); return)
+    isempty(records) && (println("Nothing released"); return)
     rows = []
     for (domain, dataset) in records
         tables, files = read_record(domain, dataset; sandbox=sandbox)
@@ -61,7 +61,7 @@ function list_records_table(records; sandbox::Bool=false)
     end
     with_doi = any(r -> !isempty(r[5]), rows)
     w = maximum(length(r[1]) for r in rows) + 2
-    println(rpad("Record", w), rpad("Version", 9), rpad("Released", 12), rpad("Size", 10),
+    println(rpad("Domain/Dataset", w), rpad("Version", 9), rpad("Released", 12), rpad("Size", 10),
             with_doi ? rpad("DOI", 26) : "", "Grids (fine to coarse)")
     for r in rows
         println(rpad(r[1], w), rpad(r[2], 9), rpad(r[3], 12), rpad(r[4], 10), with_doi ? rpad(r[5], 26) : "", r[6])
@@ -310,7 +310,7 @@ function list_crops_table(crops)
     from = Dict(f => join(unique(c.source for c in crops if c.folder == f), ", ") for f in folders)
     w = maximum(length, folders) + 2
     wf = maximum(length, values(from)) + 2
-    println("By cropping (products of other domains without a record on the nest or crop, cut by fetch):")
+    println("By cropping (products of other domains not released on the nest or crop, cut by fetch):")
     println(rpad("Domain", w), rpad("From", wf), "Datasets")
     for f in folders
         println(rpad(f, w), rpad(from[f], wf), join(unique(c.dataset for c in crops if c.folder == f), " "))
@@ -330,7 +330,7 @@ function crop_detail(c::CropRecord; grids=String[], dir=nothing, sandbox::Bool=f
     release = tables["_RELEASE"]
     println("$(c.folder)/$(c.dataset), by cropping $(c.source)/$(c.dataset), version $(release["version"]) ",
             "($(release["git_tag"])), released $(release["date"])")
-    println("$(length(c.products)) products without a record on $(c.folder): fetch downloads them on $(c.source) ",
+    println("$(length(c.products)) products not released on $(c.folder): fetch downloads them on $(c.source) ",
             "and cuts them to $(c.folder)")
     have_local = dir !== nothing || has_fesmdata_dir("products")
     have_local || println("(FESMDATA is not set: local files not checked)")
@@ -400,7 +400,7 @@ function select_records(args; sandbox::Bool=false)
     selected = [(d, s, filter(in(grids_of[(d, s)]), grids)) for (d, s) in records if matches(d, s, grids_of[(d, s)])]
     cropped = [(c, filter(in(crop_grids_of[c]), grids)) for c in crops if matches(c.folder, c.dataset, crop_grids_of[c])]
     absent = setdiff(grids, (g for (_, _, gs) in selected for g in gs), (g for (_, gs) in cropped for g in gs))
-    isempty(absent) || error("no record$(isempty(dataset) ? "" : " of " * only(dataset)) on $(join(absent, ", "))")
+    isempty(absent) || error("nothing released$(isempty(dataset) ? "" : " of " * only(dataset)) on $(join(absent, ", "))")
     return selected, cropped, !isempty(grids) || (length(domain) == 1 && length(dataset) == 1)
 end
 
@@ -413,7 +413,7 @@ in detail (for those grids), with the local files in \$FESMDATA_PRODUCTS or `dir
 """
 function list(args; dir=nothing, sandbox::Bool=false)
     selected, cropped, detail = select_records(args; sandbox=sandbox)
-    isempty(selected) && isempty(cropped) && (println("No records"); return)
+    isempty(selected) && isempty(cropped) && (println("Nothing released"); return)
     if !detail
         isempty(selected) || list_records_table([(d, s) for (d, s, _) in selected]; sandbox=sandbox)
         isempty(selected) || isempty(cropped) || println()
@@ -524,7 +524,7 @@ downloaded files, and `cropped`.
 """
 function fetch_files(args; dir=nothing, copy::Bool=false, overwrite::Bool=false, sandbox::Bool=false)
     selected, cropped, detail = select_records(args; sandbox=sandbox)
-    isempty(selected) && isempty(cropped) && error("fetch: no record of $(join(args, ", "))")
+    isempty(selected) && isempty(cropped) && error("fetch: nothing released of $(join(args, ", "))")
     datasets = unique([[s for (_, s, _) in selected]; [c.dataset for (c, _) in cropped]])
     length(datasets) == 1 && only(datasets) in args || error("fetch: name the dataset (e.g. Topo)")
     detail || error("fetch: name a domain or grids (e.g. Antarctica, ANT-32KM)")
@@ -552,12 +552,12 @@ confirmation (none with `yes`) showing what is to get, the missing and outdated 
 """
 function mirror(args; dir=nothing, copy::Bool=false, overwrite::Bool=false, sandbox::Bool=false, yes::Bool=false)
     selected, cropped, _ = select_records(args; sandbox=sandbox)
-    isempty(cropped) || println("Not mirrored: $(length(cropped)) records by cropping, on nests and crops (made by fetch)")
-    isempty(selected) && (println("No records"); return String[])
+    isempty(cropped) || println("Not mirrored: $(length(cropped)) datasets by cropping, on nests and crops (made by fetch)")
+    isempty(selected) && (println("Nothing released"); return String[])
     root = local_root(dir)
     records = selected_entries(selected; sandbox=sandbox)
     entries = [e for (_, _, es) in records for e in es]
-    println("$(length(selected)) records, $(length(entries)) files, $(human_size(total_size(entries))) in total")
+    println("$(length(selected)) datasets on domains, $(length(entries)) files, $(human_size(total_size(entries))) in total")
     states = check_local(entries, root; overwrite=overwrite)
     sources = local_sources(entries, root, states)
     todo = filter(e -> states[local_path(e, root)] != :current, entries)

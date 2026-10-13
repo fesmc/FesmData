@@ -56,7 +56,7 @@ All data lives in one folder, `$FESMDATA` (`fesmdata_dir` in `../provenance.jl`)
 | Folder | Variable | Contents |
 |---|---|---|
 | `$FESMDATA/sources` | `FESMDATA_SOURCES` | Original datasets (`$datasets_dir` of `../../datamanifest.toml`) |
-| `$FESMDATA/prepared` | `FESMDATA_PREPARED` | Prepared sources (`<source>/prepare.jl`), input of remapping and records |
+| `$FESMDATA/prepared` | `FESMDATA_PREPARED` | Prepared sources (`<source>/prepare.jl`), input of remapping and of the records datasets |
 | `$FESMDATA/products` | `FESMDATA_PRODUCTS` | Products, as released: `<folder>/<GRID>/`, `Records/<Dataset>/` |
 | `$FESMDATA/work` | `FESMDATA_WORK` | Intermediate files (Topo, Regions, ensemble members of Remap, plots) |
 

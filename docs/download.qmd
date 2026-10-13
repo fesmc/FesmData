@@ -160,7 +160,7 @@ julia fesmdata.jl mirror
 Files already in `$FESMDATA_PRODUCTS` at the same release (checksums) are hard linked
 from there (no extra space; copied on another file system, or with `--copy`), the others
 downloaded, and the registry files of the released datasets go to `<folder>/registry/`,
-as the record of what the folder holds. Updates of `$FESMDATA_PRODUCTS` write new files,
+as the list of what the folder holds. Updates of `$FESMDATA_PRODUCTS` write new files,
 so the hard links keep the archived ones; tools that change files in place (e.g.
 `ncatted`) would change both: use `--copy` for an archive next to files that may be
 changed in place. Running `mirror --dir` again on an archive updates it to the latest
