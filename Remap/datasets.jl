@@ -253,17 +253,17 @@ function ensemble_product(dataset, name, p, grids, release, figure, precision)
     return EnsembleProduct(dataset, name, Vector{String}(members), stat, grids, release, figure, precision)
 end
 
-"Check the members of the ensemble products: remap products made on every grid of the ensemble."
+"""
+Check the members of the ensemble products: remap products of the dataset (made as
+intermediate files on the grids of the ensemble that are not theirs, see `make_product`).
+"""
 function check_ensembles(products::AbstractVector{ThematicProduct})
     byname = Dict(p.name => p for p in products)
     for e in filter(p -> p isa EnsembleProduct, products)
-        grids = product_grids(e)
         for m in e.members
             what = "$(e.dataset)/$(e.name): member $m"
             haskey(byname, m) || error("$what is not a product of $(e.dataset)")
             byname[m] isa RemapProduct || error("$what is an ensemble product (members must be remap products)")
-            missing_ = [og.grid.name for og in grids if !on_grid(byname[m], og)]
-            isempty(missing_) || error("$what is not made on $(join(missing_, ", ")), grids of the ensemble")
         end
     end
 end

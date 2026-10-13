@@ -19,7 +19,7 @@
 source = "Lucazeau2019_ghf"
 file = "Lucazeau2019_GHF.nc"
 variables = ["ghf", "ghf_sd"]
-grids = { Antarctica = 4, GreenlandPaleo = 4, North = 4, Global = 4 }
+grids = { Antarctica = 4, GreenlandPaleo = 4, North = 4, Global = 4, Pyrenees = 2, Patagonia = 2, Himalaya = 2, Alps = 2, Svalbard = 2, NewZealand = 2 }
 
 [products.Martos2017]
 source = "Martos2017_ghf"
@@ -44,13 +44,13 @@ grids = { Antarctica = 4 }
 source = "Davies2013_ghf"
 file = "Davies2013_GHF.nc"
 variables = ["ghf", "ghf_median", "ghf_err"]
-grids = { Antarctica = 4, GreenlandPaleo = 4, North = 4, Global = 4 }
+grids = { Antarctica = 4, GreenlandPaleo = 4, North = 4, Global = 4, Pyrenees = 2, Patagonia = 2, Himalaya = 2, Alps = 2, Svalbard = 2, NewZealand = 2 }
 
 [products.Shapiro2004]
 source = "Shapiro2004_ghf"
 file = "Shapiro2004_GHF.nc"
 variables = ["ghf", "ghf_sd"]
-grids = { Antarctica = 4, GreenlandPaleo = 4, North = 4, Global = 4 }
+grids = { Antarctica = 4, GreenlandPaleo = 4, North = 4, Global = 4, Pyrenees = 2, Patagonia = 2, Himalaya = 2, Alps = 2, Svalbard = 2, NewZealand = 2 }
 
 [products.Loesing2021]
 source = "Loesing2021_ghf"

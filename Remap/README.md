@@ -245,13 +245,16 @@ dataset, its members, e.g. the models of a model intercomparison:
 [products.PMIP3-lgm-mean]                    # → <GRID>_Paleoclimate-PMIP3-lgm-mean.nc
 ensemble = ["PMIP3-CCSM4-lgm", "PMIP3-CNRM-CM5-lgm", ...]   # member products of the dataset
 stat = "mean"                                # or "stdev"
-grids = { Antarctica = 8, Global = 8 }       # each member must be made on all of these
+grids = { Antarctica = 8, Global = 8 }       # members not made on some of these: intermediate there
 # release = false, figure = { ... }, precision = { ... }   # optional, as above
 ```
 
 It has no `source`, `file`, `variables`, `method`, `smooth` or `fill`: it is made on each
 grid from the files of its members on that grid (those missing are remapped first),
-after the other products. Each of its fields is a field of any member (not `f_valid`,
+after the other products. On a grid that is not one of a member's own `grids`, the
+member is remapped as an intermediate file (`$FESMDATA_WORK/remap/members/`, full
+precision, not released), so that the statistics can be released on grids where the
+members are not, e.g. the 2 km grids of the mountain-glacier domains. Each of its fields is a field of any member (not `f_valid`,
 `mask_fill` or integer fields), with the same name, units and extra dimensions, and
 `, ensemble mean` or `, ensemble standard deviation` appended to its long name: in each
 cell, the mean or the standard deviation (population, divided by n, as `cdo ensstd`) of

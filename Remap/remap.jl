@@ -1019,8 +1019,17 @@ end
 remap_file(og::OutGrid, name::AbstractString) = joinpath(outdir(og), "$(og.grid.name)_$(name).nc")
 
 """
+Intermediate file of the remapped fields `name` on a grid that is not one of their
+own, e.g. a member of an ensemble product on a grid of the ensemble only:
+\$FESMDATA_WORK/remap/members/<GRID>/<GRID>_<name>.nc (not released).
+"""
+member_work_file(og::OutGrid, name::AbstractString) =
+    joinpath(_env("FESMDATA_WORK"), "remap", "members", og.grid.name, "$(og.grid.name)_$(name).nc")
+
+"""
     remap_prepared(ps, grids; name, method="con", smooth="auto", dataset="remap",
-                   overwrite=false, strict=false, fill=GapFill[], precision=Dict()) -> Vector{String}
+                   overwrite=false, strict=false, fill=GapFill[], precision=Dict(),
+                   intermediate=false) -> Vector{String}
 
 Remap the fields of the prepared files `ps` (one `Prepared` or several, each on its own
 grid) onto each grid (see `remap_array` and `smoothing_sigma`) and write them to
@@ -1033,12 +1042,14 @@ filled (see `fill_gaps!`), marked by `mask_fill`. Grids not covered by
 the sources are skipped (an error if `strict`). The grid files are written if missing.
 Existing files are kept unless `overwrite`. `dataset` is the dataset of the
 provenance attributes. `precision` gives the precision of some float fields instead of
-their default (see `write_fields`).
+their default (see `write_fields`). With `intermediate`, the files are intermediate
+files instead (`member_work_file`), not rounded, without grid files.
 """
 function remap_prepared(ps::AbstractVector{Prepared}, grids::Vector{OutGrid}; name::AbstractString,
                         method::AbstractString="con", smooth="auto", dataset::AbstractString="remap",
                         overwrite::Bool=false, strict::Bool=false, fill::AbstractVector{GapFill}=GapFill[],
-                        precision::AbstractDict{String,Precision}=Dict{String,Precision}())
+                        precision::AbstractDict{String,Precision}=Dict{String,Precision}(),
+                        intermediate::Bool=false)
     method in METHODS || error("unknown method $method, available: $(join(METHODS, ", "))")
     pf = PreparedFields(ps)
     check_fill(pf, fill)
@@ -1049,7 +1060,7 @@ function remap_prepared(ps::AbstractVector{Prepared}, grids::Vector{OutGrid}; na
     names = pf.names
     sources = join(basename.(getfield.(ps, :path)), ", ")
     for og in grids
-        path = remap_file(og, name)
+        path = intermediate ? member_work_file(og, name) : remap_file(og, name)
         if isfile(path) && !overwrite
             println("$(og.grid.name): exists, skipped (--overwrite to replace)")
             continue
@@ -1095,9 +1106,11 @@ function remap_prepared(ps::AbstractVector{Prepared}, grids::Vector{OutGrid}; na
             _per_field!(fields, dims, varattrib, filled, pf.dims, "mask_fill", f -> mask_fill_attrib(fill, f))
             push!(attrib, "gap_fill" => fills_description(fill) * " (mask_fill)")
         end
-        isfile(joinpath(outdir(og), "$(og.grid.name)_grid.nc")) || write_grid_files(outdir(og), og.grid; dataset)
+        intermediate || isfile(joinpath(outdir(og), "$(og.grid.name)_grid.nc")) ||
+            write_grid_files(outdir(og), og.grid; dataset)
         aux = unique(a -> a.name, [a for p in ps for a in p.aux])
-        write_fields(path, og.grid, fields; dataset, attrib, varattrib, dims, aux, precision, og.elevation)
+        write_fields(path, og.grid, fields; dataset, attrib, varattrib, dims, aux, precision, og.elevation,
+                     lossless=intermediate)
         println("$(og.grid.name): $(basename(path)), $how ($(round(t; digits=1)) s)")
         push!(paths, path)
     end
@@ -1236,7 +1249,8 @@ remapped from its prepared files (see `remap_prepared`), made first by the prepa
 of its source if missing; every grid must be covered by the source (by one of its
 files, for a product of several files).
 """
-function make_product(p::RemapProduct, grids::Vector{OutGrid}; tag::AbstractString, overwrite::Bool=false)
+function make_product(p::RemapProduct, grids::Vector{OutGrid}; tag::AbstractString, overwrite::Bool=false,
+                      intermediate::Bool=false)
     files = prepared_files(p)
     all(isfile, files) || run_prepare(p.source)
     preps = read_prepared_files(files; vars=p.variables)
@@ -1244,20 +1258,25 @@ function make_product(p::RemapProduct, grids::Vector{OutGrid}; tag::AbstractStri
     println("$(product_name(p)): $(join(names, ", ")) from $(p.source) " *
             (length(files) > 1 ? "($(length(files)) files) " : "") * "onto $(length(grids)) grids")
     return remap_prepared(preps, grids; name=product_name(p), method=p.method, smooth=p.smooth, dataset=tag,
-                          overwrite, strict=true, fill=p.fill, p.precision)
+                          overwrite, strict=true, fill=p.fill, p.precision, intermediate)
 end
 
 """
 An ensemble product is made on each grid from the files of its members (see
 `ensemble_fields`), with the global attributes of their prepared files joined (see
-`merged_attrib`); the files of the members missing on a grid are made first.
+`merged_attrib`); the files of the members missing on a grid are made first: their
+products on the grids of their own, intermediate files (`member_work_file`) on the other
+grids of the ensemble (e.g. the 2 km grids of the mountain-glacier domains, where only
+the ensemble statistics are released).
 """
 function make_product(p::EnsembleProduct, grids::Vector{OutGrid}; tag::AbstractString, overwrite::Bool=false)
     members = ensemble_members(p)
     paths = String[]
     for m in members
-        todo = filter(og -> !isfile(remap_file(og, product_name(m))), grids)
+        todo = filter(og -> on_grid(m, og) && !isfile(remap_file(og, product_name(m))), grids)
         isempty(todo) || append!(paths, make_product(m, todo; tag))
+        todo = filter(og -> !on_grid(m, og) && !isfile(member_work_file(og, product_name(m))), grids)
+        isempty(todo) || make_product(m, todo; tag, intermediate=true)
     end
     println("$(product_name(p)): $(STAT_NAMES[p.stat]) of $(length(members)) products onto $(length(grids)) grids")
     for og in grids
@@ -1266,7 +1285,8 @@ function make_product(p::EnsembleProduct, grids::Vector{OutGrid}; tag::AbstractS
             println("$(og.grid.name): exists, skipped (--overwrite to replace)")
             continue
         end
-        ms = [read_member(remap_file(og, product_name(m)), og) for m in members]
+        ms = [read_member((on_grid(m, og) ? remap_file : member_work_file)(og, product_name(m)), og)
+              for m in members]
         fields, dims, varattrib = ensemble_fields(ms, p.stat)
         how = p.stat == "mean" ? "mean" : "standard deviation (population, divided by n)"
         title = "$(uppercasefirst(STAT_NAMES[p.stat])) of $(length(members)) products of $(p.dataset)"

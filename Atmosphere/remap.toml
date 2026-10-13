@@ -5,13 +5,13 @@
 [products.ERA5-1981-2010]
 source = "Hersbach2020_era5"
 file = "Hersbach2020_ERA5_1981-2010.nc"
-grids = { Antarctica = 8, GreenlandPaleo = 8, North = 8, Global = 8 }
+grids = { Antarctica = 8, GreenlandPaleo = 8, North = 8, Global = 8, Pyrenees = 2, Patagonia = 2, Himalaya = 2, Alps = 2, Svalbard = 2, NewZealand = 2 }
 figure = { variables = ["t2m"] }
 
 [products.ERA5-1991-2020]
 source = "Hersbach2020_era5"
 file = "Hersbach2020_ERA5_1991-2020.nc"
-grids = { Antarctica = 8, GreenlandPaleo = 8, North = 8, Global = 8 }
+grids = { Antarctica = 8, GreenlandPaleo = 8, North = 8, Global = 8, Pyrenees = 2, Patagonia = 2, Himalaya = 2, Alps = 2, Svalbard = 2, NewZealand = 2 }
 figure = { variables = ["t2m"] }
 
 [products.ERA5-plev-1981-2010]
