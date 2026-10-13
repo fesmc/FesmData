@@ -384,13 +384,13 @@ function write_products(path::AbstractString, cat::Catalog)
         println(io, "## Gridded datasets\n")
         println(io, """
             The version of each dataset on each domain, linking to its files on the page of
-            the dataset. *cut*: a nest or crop gets the products of the dataset by cropping
+            the dataset (the name of a dataset links to its page). *cut*: a nest or crop gets the products of the dataset by cropping
             those of the domain (or crop) that contains it (see
             [Nests and crops](download.qmd#nests-and-crops)). Nests and crops are indented
             below their domain; inactive domains are left out (see [Domains](domains.qmd)).
             """)
         println(io, "::: {.wide-table .column-screen-inset}\n")
-        println(io, "| Domain | ", join(("[$s]($(dataset_page(s))#downloads)" for s in gridded), " | "), " |")
+        println(io, "| Domain | ", join(("[$s]($(dataset_page(s)))" for s in gridded), " | "), " |")
         println(io, "|---|", repeat("---|", length(gridded)))
         for folder in filter(f -> f != RECORDS_FOLDER && rows[f].active, cat.domains)
             indent = rows[folder].kind == "domain" ? "" : "&emsp;"
