@@ -71,6 +71,26 @@ function _cover(c, lim)
 end
 
 """
+    regrid_glacier_tile(path, ix, iy) -> (H, f, (area, volume, area_pix, volume_pix)) or nothing
+
+Thickness times glacier fraction and glacier fraction of the glacier tile `path` on the
+base cells `ix`, `iy` covering it, scaled to the glacier area and volume given with the
+tile, and these, given and from the pixels (nothing for a tile without glacier pixels).
+"""
+function regrid_glacier_tile(path, ix, iy)
+    g, H, area, volume = read_tile(path)
+    dx, dy = spacing(g)
+    a = count(!isnan, H) * dx * dy
+    v = sum(h -> isnan(h) ? 0.0 : Float64(h), H) / 1000 * dx * dy
+    a > 0 || return nothing
+    sa, sv = Float32(area / a), Float32(v > 0 ? volume / v : 1.0)
+    sub = ProjGrid("sub", base.xc[ix], base.yc[iy], base.proj)
+    n = max(1, ceil(Int, 2 * spacing(base)[1] / spacing(g)[1]))
+    Ht, fv = remap(sub, g, H; nsub=n)
+    return (map((h, f) -> f > 0 ? sv * h * f : 0f0, Ht, fv), sa .* fv, (area, volume, a, v))
+end
+
+"""
     regrid(src::GlacierTiles) -> fields
 
 Cell-mean ice thickness `H_ice` (0 off the glaciers) and glacier area fraction
@@ -95,18 +115,7 @@ function regrid(src::GlacierTiles)
     # for tiles without glacier pixels)
     parts = Vector{Union{Nothing,Tuple{Matrix{Float32},Matrix{Float32},NTuple{4,Float64}}}}(nothing, length(sel))
     Threads.@threads :dynamic for k in eachindex(sel)
-        ix, iy = cover[sel[k]]
-        g, H, area, volume = read_tile(src.files[sel[k]])
-        dx, dy = spacing(g)
-        a = count(!isnan, H) * dx * dy
-        v = sum(h -> isnan(h) ? 0.0 : Float64(h), H) / 1000 * dx * dy
-        if a > 0
-            sa, sv = Float32(area / a), Float32(v > 0 ? volume / v : 1.0)
-            sub = ProjGrid("sub", base.xc[ix], base.yc[iy], base.proj)
-            n = max(1, ceil(Int, 2 * spacing(base)[1] / spacing(g)[1]))
-            Ht, fv = remap(sub, g, H; nsub=n)
-            parts[k] = (map((h, f) -> f > 0 ? sv * h * f : 0f0, Ht, fv), sa .* fv, (area, volume, a, v))
-        end
+        parts[k] = regrid_glacier_tile(src.files[sel[k]], cover[sel[k]]...)
     end
 
     # Sum the tiles in a fixed order (reproducible)
@@ -148,6 +157,25 @@ function _tile_cover(g::LonLatGrid, trans; npts::Integer=50)
 end
 
 """
+    regrid_dem_tile(path, ix, iy) -> (sz, sz2, f_land, f_valid)
+
+Sums of the DEM tile `path` on the base cells `ix`, `iy` covering it: land elevation and
+its square times the land fraction, land fraction, and coverage.
+"""
+function regrid_dem_tile(path, ix, iy)
+    g, z = read_dem_tile(path)
+    sub = ProjGrid("sub", base.xc[ix], base.yc[iy], base.proj)
+    m = SampledMap(sub, g, max(1, ceil(Int, 2 * spacing(base)[1] / (g.dlat * 111.195))))
+    land = map(v -> v > 0 ? Float64(v) : NaN, z)
+    zl, fl = remap(m, land)
+    z2, _ = remap(m, land .^ 2)
+    _, fc = remap(m, ones(Float32, size(z)))
+    sz = map((v, f) -> f > 0 ? v * f : 0.0, zl, fl)
+    sz2 = map((v, f) -> f > 0 ? v * f : 0.0, z2, fl)
+    return (sz, sz2, Float64.(fl), Float64.(fc))
+end
+
+"""
     regrid(src::DEMTiles) -> fields
 
 Mean and standard deviation of the land elevation (`z_land`, `z_land_sd`, NaN where
@@ -162,21 +190,10 @@ function regrid(src::DEMTiles)
     cover = map(g -> _tile_cover(g, trans), src.grids)
     sel = findall(c -> !(isempty(c[1]) || isempty(c[2])), cover)
 
-    # Sums of each tile on the cells it covers: land elevation and its square times
-    # the land fraction, land fraction, and coverage
+    # Sums of each tile on the cells it covers (see `regrid_dem_tile`)
     parts = Vector{NTuple{4,Matrix{Float64}}}(undef, length(sel))
     Threads.@threads :dynamic for k in eachindex(sel)
-        ix, iy = cover[sel[k]]
-        g, z = read_dem_tile(src.files[sel[k]])
-        sub = ProjGrid("sub", base.xc[ix], base.yc[iy], base.proj)
-        m = SampledMap(sub, g, max(1, ceil(Int, 2 * spacing(base)[1] / (g.dlat * 111.195))))
-        land = map(v -> v > 0 ? Float64(v) : NaN, z)
-        zl, fl = remap(m, land)
-        z2, _ = remap(m, land .^ 2)
-        _, fc = remap(m, ones(Float32, size(z)))
-        sz = map((v, f) -> f > 0 ? v * f : 0.0, zl, fl)
-        sz2 = map((v, f) -> f > 0 ? v * f : 0.0, z2, fl)
-        parts[k] = (sz, sz2, Float64.(fl), Float64.(fc))
+        parts[k] = regrid_dem_tile(src.files[sel[k]], cover[sel[k]]...)
     end
 
     # Sum the tiles in a fixed order (reproducible)

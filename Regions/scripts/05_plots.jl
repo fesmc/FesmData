@@ -1,6 +1,6 @@
 #
-# Check plots of the regions, zones and basins of a domain, on its first grid with a
-# resolution of at least 8 km (default) or on GRID. Needs step 4.
+# Check plots of the regions, zones and basins of a domain, on its grid closest to 1000
+# cells across (default) or on GRID. Needs step 4.
 #
 # Usage:
 #     julia --project=Regions -t 8 Regions/scripts/05_plots.jl DOMAIN [GRID]
@@ -13,8 +13,9 @@ using Random
 
 1 <= length(ARGS) <= 2 || error("usage: 05_plots.jl DOMAIN [GRID]")
 dom = Domain(ARGS[1])
+# The grid named, or the grid of the domain closest to 1000 cells across
 og = length(ARGS) == 2 ? only(filter(o -> o.grid.name == ARGS[2], dom.grids)) :
-     first(filter(o -> spacing(o.grid)[1] >= 8, dom.grids))
+     argmin(o -> abs(log(maximum(size(o.grid)) / 1000)), filter(o -> o.folder == dom.folder, dom.grids))
 g = og.grid
 plotdir = mkpath(joinpath(regions_workdir(), "plots"))
 
