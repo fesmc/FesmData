@@ -27,6 +27,12 @@ base grid of its own (made from the sources, like any domain). At the resolution
 shares with its parent, its grids lie on those of the parent: same cell centres, so
 that its coarsest grid is a part of the parent grid at that resolution.
 
+Topo and Regions are made on every domain, nest and crop. The thematic datasets (GHF,
+Velocity, SMB, ...) are made and released on the domains only (and on crops with
+records of their own, e.g. Greenland): nests and crops get them by cropping, made on
+demand by `julia fesmdata.jl fetch <Dataset> <folder>` from the files of their parent
+domain (see Nests and crops in `Publish/README.md`).
+
 | Domain | Base grid | Other grids | Crops | Nests | Projection | Active |
 |---|---|---|---|---|---|---|
 | ANT | ANT-1KM | 2-32 km | | | polar stereographic, south | yes |
@@ -146,7 +152,8 @@ A new resolution is a new entry in `resolutions`. Then, for each dataset:
   `Regions/basins.toml` (see the Regions README), and run its steps.
 
 - **Thematic datasets** (e.g. GHF): add the domain to the `grids` of its products in
-  `<Dataset>/remap.toml`, and run `julia fesmdata.jl remap <Dataset>`.
+  `<Dataset>/remap.toml`, and run `julia fesmdata.jl remap <Dataset>`. A nest or crop
+  needs none: `fetch` crops those of its domain.
 
 The domain is released as a new record with the next release of each dataset.
 
