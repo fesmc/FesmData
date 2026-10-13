@@ -32,12 +32,12 @@ that its coarsest grid is a part of the parent grid at that resolution.
 | ANT | ANT-1KM | 2-32 km | | | polar stereographic, south | yes |
 | GRL-PAL | GRL-PAL-500M | 1-32 km | GRL | | polar stereographic, north | yes |
 | NH | NH-2KM | 4-32 km | LIS, EIS | | polar stereographic, north | yes |
-| PYR | PYR-250M | 500 m | | | UTM 31N | yes |
-| PAT | PAT-250M | 500 m | NPI, SPI (250 m) | SRG, GCN, CDI (50, 100, 250 m) | UTM 18S | yes |
-| ALP | ALP-250M | 500 m | | | UTM 32N | no |
-| HIM | HIM-250M | 500 m | | | Albers equal-area (High Mountain Asia) | no |
-| SVB | SVB-500M | 1 km | | | UTM 33N | no |
-| NZ | NZ-250M | 500 m | | | NZTM2000 | no |
+| PYR | PYR-250M | 500 m, 2 km | | | UTM 31N | yes |
+| PAT | PAT-250M | 500 m, 2 km | NPI, SPI (250 m) | SRG, GCN, CDI (50, 100, 250 m) | UTM 18S | yes |
+| ALP | ALP-250M | 500 m, 2 km | | | UTM 32N | no |
+| HIM | HIM-250M | 500 m, 2 km | | | Albers equal-area (High Mountain Asia) | no |
+| SVB | SVB-500M | 1 km, 2 km | | | UTM 33N | no |
+| NZ | NZ-250M | 500 m, 2 km | | | NZTM2000 | no |
 | GLOBAL | GLOBAL-0.1DEG | 0.25-5° | | | lon-lat | yes |
 
 The mountain-glacier domains (PYR to NZ) cover the extent of their glaciers at the Last

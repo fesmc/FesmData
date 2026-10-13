@@ -72,7 +72,9 @@ ylim = [-5000, 1400]
 # ---------------------------------------------------------------------------
 # Mountain glaciers: base grids of 250 m (500 m for Svalbard), and 50 m for the nests
 # of single icefields. Each domain is on the projection used for glacier modelling in
-# its region, and covers the extent of its glaciers at the Last Glacial Maximum.
+# its region, and covers the extent of its glaciers at the Last Glacial Maximum. The 2
+# km grid of each domain is the grid of the thematic datasets (climate, geothermal heat
+# flow, ...), whose sources are coarser; their nests take these by cropping.
 # ---------------------------------------------------------------------------
 
 # Pyrenees (no v1 grid): UTM zone 31N (EPSG:32631), 1.8W-2.85E, 41.8-43.45N (1520 x
@@ -83,7 +85,7 @@ folder = "Pyrenees"
 proj = "+proj=tmerc +lat_0=0 +lon_0=3 +k=0.9996 +x_0=500000 +y_0=0 +a=6378137 +rf=298.257223563 +units=km"
 xlim = [107.875, 487.625]
 ylim = [4639.875, 4811.625]
-resolutions = [0.25, 0.5]
+resolutions = [0.25, 0.5, 2]
 
 # Patagonia: UTM zone 18S (EPSG:32718), as the v1 SRG grids, from 38S to Cape Horn
 # (56.5S) and from 77W to 65W (the Patagonian Ice Sheet), with the cell centres of the
@@ -96,7 +98,7 @@ folder = "Patagonia"
 proj = "+proj=tmerc +lat_0=0 +lon_0=-75 +k=0.9996 +x_0=500000 +y_0=10000000 +a=6378137 +rf=298.257223563 +units=km"
 xlim = [324.087171469987, 1379.087171469987]
 ylim = [3693.102314639904, 5794.602314639904]
-resolutions = [0.25, 0.5]
+resolutions = [0.25, 0.5, 2]
 
 # 46.3-47.8S, 74.2-72.7W
 [PAT.crops.NPI]
@@ -140,7 +142,7 @@ active = false
 proj = "+proj=tmerc +lat_0=0 +lon_0=9 +k=0.9996 +x_0=500000 +y_0=0 +a=6378137 +rf=298.257223563 +units=km"
 xlim = [92, 1193]
 ylim = [4760, 5441]
-resolutions = [0.25, 0.5]
+resolutions = [0.25, 0.5, 2]
 
 # Himalaya, Karakoram and Hindu Kush: Albers equal-area conic of the High Mountain Asia
 # glacier products (Shean et al., 2020), 68-99E, 25.5-38.5N.
@@ -150,7 +152,7 @@ active = false
 proj = "+proj=aea +lat_1=25 +lat_2=47 +lat_0=36 +lon_0=85 +x_0=0 +y_0=0 +a=6378137 +rf=298.257223563 +units=km"
 xlim = [-1699, 1401]
 ylim = [-1179, 407]
-resolutions = [0.25, 0.5]
+resolutions = [0.25, 0.5, 2]
 
 # Svalbard: UTM zone 33N (EPSG:32633), as the Norwegian Polar Institute, 5-35E,
 # 74-81.5N (the archipelago and its shelf).
@@ -160,7 +162,7 @@ active = false
 proj = "+proj=tmerc +lat_0=0 +lon_0=15 +k=0.9996 +x_0=500000 +y_0=0 +a=6378137 +rf=298.257223563 +units=km"
 xlim = [193, 1105]
 ylim = [8212, 9106]
-resolutions = [0.5, 1]
+resolutions = [0.5, 1, 2]
 
 # New Zealand: New Zealand Transverse Mercator 2000 (EPSG:2193, GRS80), 166-175E,
 # 40-47.5S (the South Island and its shelf).
@@ -170,4 +172,4 @@ active = false
 proj = "+proj=tmerc +lat_0=0 +lon_0=173 +k=0.9996 +x_0=1600000 +y_0=10000000 +a=6378137 +rf=298.257222101 +units=km"
 xlim = [1002, 1771]
 ylim = [4715, 5573]
-resolutions = [0.25, 0.5]
+resolutions = [0.25, 0.5, 2]
