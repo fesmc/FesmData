@@ -4,4 +4,6 @@ pagetitle: "BasalMelt"
 
 {{< include ../../BasalMelt/README.md >}}
 
+{{< include ../_downloads/BasalMelt.md >}}
+
 {{< include ../figures/BasalMelt/gallery.md >}}

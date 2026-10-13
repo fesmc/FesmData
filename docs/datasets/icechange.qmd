@@ -4,4 +4,6 @@ pagetitle: "IceChange"
 
 {{< include ../../IceChange/README.md >}}
 
+{{< include ../_downloads/IceChange.md >}}
+
 {{< include ../figures/IceChange/gallery.md >}}

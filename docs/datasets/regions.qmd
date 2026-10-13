@@ -4,4 +4,6 @@ pagetitle: "Regions"
 
 {{< include ../../Regions/README.md >}}
 
+{{< include ../_downloads/Regions.md >}}
+
 {{< include ../figures/Regions/gallery.md >}}

@@ -4,4 +4,6 @@ pagetitle: "GPS"
 
 {{< include ../../GPS/README.md >}}
 
+{{< include ../_downloads/GPS.md >}}
+
 {{< include ../figures/GPS/gallery.md >}}

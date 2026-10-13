@@ -1,0 +1,16 @@
+---
+title: "Datasets"
+subtitle: "What is released, by topic"
+---
+
+Each dataset gathers products on one theme, e.g. the geothermal heat flow maps of
+several sources (GHF), on the grids of the domains where they apply. Topo and Regions
+are made by their own pipelines on every domain, from the base grid to the coarsest
+grid; the other gridded datasets are made by remapping published maps, on the grids
+that their sources resolve (see [Precision and file sizes](precision.qmd)). The
+[Records](records_overview.qmd) are non-gridded data (time series, sites, profiles).
+The page of each dataset describes its products, their sources and licences, and lists
+its files under Downloads; [Products](products.qmd) shows which dataset is on which
+domain.
+
+{{< include _datasets.md >}}

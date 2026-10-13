@@ -69,7 +69,8 @@ Release (maintainers, see Publish/README.md):
                                                archive releases on Zenodo, for a DOI
   archive discard <draft id> ...  |  archive drafts
   docs                                         write the generated pages of the website
-                                               (docs/_products.md; then quarto preview docs)
+                                               (docs/_*.md, docs/_downloads/; then quarto
+                                               preview docs)
 
 Options: --sandbox (test releases: registry/_sandbox/, test packages, Zenodo sandbox),
 --allow-untagged (skip the release checks), --dry-run, --yes (mirror, archive publish),
@@ -154,7 +155,8 @@ function main(argv)
         println("$(length(paths)) files written")
     elseif command == "docs"
         include(joinpath(PUBLISH_DIR, "site.jl"))
-        println("Wrote ", call(:write_products, joinpath(@__DIR__, "docs", "_products.md")))
+        paths = call(:write_site, joinpath(@__DIR__, "docs"))
+        println("$(length(paths)) files written in docs/")
     elseif command == "stamp"
         isempty(rest) && usage("stamp: give a dataset")
         activate_env(PUBLISH_DIR)

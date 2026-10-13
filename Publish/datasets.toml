@@ -18,6 +18,16 @@ creators = [
     { name = "Robinson, Alexander", affiliation = "Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research", orcid = "0000-0003-3519-5293" },
 ]
 
+# Topics of the datasets on the website (overview pages and products page), in order
+[_site]
+topics = [
+    { name = "Topography and masks", datasets = ["Topo", "Regions"] },
+    { name = "Ice", datasets = ["Velocity", "IceChange", "IceHistory", "Stratigraphy", "BasalMelt", "BasalState"] },
+    { name = "Solid Earth", datasets = ["GHF", "Sediment", "SolidEarth"] },
+    { name = "Ocean and climate", datasets = ["Ocean", "SMB", "Atmosphere", "Paleoclimate"] },
+    { name = "Records", datasets = ["IceCores", "RSL", "Boreholes", "GPS", "SMBObs", "Freshwater"] },
+]
+
 [Topo]
 tag = "topo"
 title = "high-resolution topography"

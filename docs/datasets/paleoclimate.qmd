@@ -4,4 +4,6 @@ pagetitle: "Paleoclimate"
 
 {{< include ../../Paleoclimate/README.md >}}
 
+{{< include ../_downloads/Paleoclimate.md >}}
+
 {{< include ../figures/Paleoclimate/gallery.md >}}

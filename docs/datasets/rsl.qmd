@@ -4,4 +4,6 @@ pagetitle: "RSL"
 
 {{< include ../../RSL/README.md >}}
 
+{{< include ../_downloads/RSL.md >}}
+
 {{< include ../figures/RSL/gallery.md >}}

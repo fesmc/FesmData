@@ -4,4 +4,6 @@ pagetitle: "BasalState"
 
 {{< include ../../BasalState/README.md >}}
 
+{{< include ../_downloads/BasalState.md >}}
+
 {{< include ../figures/BasalState/gallery.md >}}

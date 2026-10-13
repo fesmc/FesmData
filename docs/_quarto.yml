@@ -4,6 +4,8 @@ project:
   render:
     - "index.qmd"
     - "products.qmd"
+    - "datasets.qmd"
+    - "records_overview.qmd"
     - "domains.qmd"
     - "data_volume.qmd"
     - "datasets/*.qmd"

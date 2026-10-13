@@ -4,4 +4,6 @@ pagetitle: "Topo"
 
 {{< include ../../Topo/README.md >}}
 
+{{< include ../_downloads/Topo.md >}}
+
 {{< include ../figures/Topo/gallery.md >}}

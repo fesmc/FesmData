@@ -4,4 +4,6 @@ pagetitle: "Freshwater"
 
 {{< include ../../Freshwater/README.md >}}
 
+{{< include ../_downloads/Freshwater.md >}}
+
 {{< include ../figures/Freshwater/gallery.md >}}
