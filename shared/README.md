@@ -29,8 +29,8 @@ that its coarsest grid is a part of the parent grid at that resolution.
 
 | Domain | Base grid | Other grids | Crops | Nests | Projection | Active |
 |---|---|---|---|---|---|---|
-| ANT | ANT-1KM | 2-32 km | | | polar stereographic, south | yes |
-| GRL-PAL | GRL-PAL-500M | 1-32 km | GRL | | polar stereographic, north | yes |
+| ANT | ANT-1KM | 2-32 km | ASE (1 km) | THW, PIG; FRIS, ROSS, AMY, WSB inactive (500 m, 1 km) | polar stereographic, south | yes |
+| GRL-PAL | GRL-PAL-500M | 1-32 km | GRL | JAK, NEGIS; PET, HEL inactive (250 m, 500 m, 1 km) | polar stereographic, north | yes |
 | NH | NH-2KM | 4-32 km | LIS, EIS | | polar stereographic, north | yes |
 | PYR | PYR-250M | 500 m, 2 km | | | UTM 31N | yes |
 | PAT | PAT-250M | 500 m, 2 km | NPI, SPI (250 m) | SRG, GCN, CDI (50, 100, 250 m) | UTM 18S | yes |
@@ -39,6 +39,14 @@ that its coarsest grid is a part of the parent grid at that resolution.
 | SVB | SVB-500M | 1 km, 2 km | | | UTM 33N | no |
 | NZ | NZ-250M | 500 m, 2 km | | | NZTM2000 | no |
 | GLOBAL | GLOBAL-0.1DEG | 0.25-5° | | | lon-lat | yes |
+
+The nests of the ice sheets cover single drainage basins, with their ice shelves or
+fjords and 50 km around them (see `domains.toml`): in Antarctica the Thwaites (THW) and
+Pine Island (PIG) glaciers, and, inactive, the Filchner-Ronne (FRIS), Ross (ROSS) and
+Amery (AMY) ice shelves with the grounded ice within 300 km upstream of them, and the
+Wilkes Subglacial Basin (WSB); in Greenland Jakobshavn Isbrae (JAK), the Northeast
+Greenland Ice Stream (NEGIS), and, inactive, the Petermann (PET) and Helheim (HEL)
+glaciers. The crop ASE of ANT is the Amundsen Sea Embayment at 1 km.
 
 The mountain-glacier domains (PYR to NZ) cover the extent of their glaciers at the Last
 Glacial Maximum, each on the projection used for glacier modelling in its region (see
@@ -57,10 +65,11 @@ multiple of 0.1°). Its data are made by remapping (see Bring your own data).
 
 Grids are named after their domain (or crop) and resolution: `ANT-8KM`, `GRL-500M`,
 `GLOBAL-0.5DEG`. Each domain and crop has an output **folder** under `$ICE_DATA/v2`,
-which is also its name in the released records (Antarctica, GreenlandPaleo, Greenland,
-North, Laurentide, Eurasia, Pyrenees, Patagonia, NorthPatagonianIcefield,
-SouthPatagonianIcefield, SRG, GranCampoNevado, CordilleraDarwin, Alps, Himalaya, Svalbard,
-NewZealand, Global). Every grid has its own folder there, with all datasets on that grid:
+which is also its name in the released records (Antarctica, Amundsen, Thwaites,
+PineIsland, FilchnerRonne, Ross, Amery, WilkesBasin, GreenlandPaleo, Greenland,
+Jakobshavn, NEGIS, Petermann, Helheim, North, Laurentide, Eurasia, Pyrenees, Patagonia,
+NorthPatagonianIcefield, SouthPatagonianIcefield, SRG, GranCampoNevado, CordilleraDarwin,
+Alps, Himalaya, Svalbard, NewZealand, Global). Every grid has its own folder there, with all datasets on that grid:
 
 ```
 $ICE_DATA/v2/<folder>/<GRID>/

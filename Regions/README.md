@@ -83,13 +83,13 @@ variable).
 
 | Set | Domains | Source |
 |---|---|---|
-| Mouginot2019 | GRL-PAL, NH | Greenland glacier basins, 260 basins in 7 regions (Mouginot & Rignot, 2019) |
-| Zwally2012 | GRL-PAL, NH; ANT | GSFC drainage systems (Zwally et al., 2012); Greenland sub-systems 11 = 1.1 |
-| IMBIE2016, IMBIE2016-refined | ANT | IMBIE 2016 and refined basins (Mouginot et al., 2017, NSIDC-0709 v2) |
-| Schmidt2025 | GRL-PAL, NH; ANT | Regions of the freshwater fluxes of the ice sheets (Schmidt et al., 2025): 7 Mouginot regions of Greenland, 18 IMBIE 2016 basins of Antarctica |
+| Mouginot2019 | GRL-PAL (and nests), NH | Greenland glacier basins, 260 basins in 7 regions (Mouginot & Rignot, 2019) |
+| Zwally2012 | GRL-PAL (and nests), NH; ANT (and nests) | GSFC drainage systems (Zwally et al., 2012); Greenland sub-systems 11 = 1.1 |
+| IMBIE2016, IMBIE2016-refined | ANT (and nests) | IMBIE 2016 and refined basins (Mouginot et al., 2017, NSIDC-0709 v2) |
+| Schmidt2025 | GRL-PAL (and nests), NH; ANT (and nests) | Regions of the freshwater fluxes of the ice sheets (Schmidt et al., 2025): 7 Mouginot regions of Greenland, 18 IMBIE 2016 basins of Antarctica |
 | SanRafael | SRG | San Rafael Glacier (RGI2000-v7.0-G-17-12835), its RGI 7.0 outline as the footprint of its IceBoost v2 tile |
-| NEGIS-v1 | GRL-PAL | Northeast Greenland Ice Stream in three parts, drawn by hand for yelmox v1 on GRL-16KM (Ilaria Tabone, 2024) |
-| NEGIS | GRL-PAL | Northeast Greenland Ice Stream in three parts: centre and south from the surface speed (Joughin et al., 2018), north from NEGIS-v1 |
+| NEGIS-v1 | GRL-PAL, NEGIS | Northeast Greenland Ice Stream in three parts, drawn by hand for yelmox v1 on GRL-16KM (Ilaria Tabone, 2024) |
+| NEGIS | GRL-PAL, NEGIS | Northeast Greenland Ice Stream in three parts: centre and south from the surface speed (Joughin et al., 2018), north from NEGIS-v1 |
 
 Each file has `basin`, `basin_mask` (1 within the original basins) and, for sets
 with groups (e.g. Mouginot regions, IMBIE regions, Zwally systems), `basin_group`. The

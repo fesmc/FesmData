@@ -2,10 +2,11 @@
 
 Bed topography, surface elevation, ice thickness and ice/ocean fractions for each
 model domain, from the best available sources, at resolutions from the base grid
-down to 32 km for the ice sheets. The domains are the ice sheets (ANT, GRL-PAL, NH)
-and the mountain-glacier domains at 50-500 m: the Pyrenees (PYR), Patagonia (PAT) with
-its icefields (crops NPI, SPI; nests SRG, GCN, CDI), and, inactive until needed, the
-Alps (ALP), the Himalaya (HIM), Svalbard (SVB) and New Zealand (NZ) (see
+down to 32 km for the ice sheets. The domains are the ice sheets (ANT, GRL-PAL, NH),
+nests of single basins and ice shelves in ANT (500 m) and GRL-PAL (250 m), and the
+mountain-glacier domains at 50-500 m: the Pyrenees (PYR), Patagonia (PAT) with its
+icefields (crops NPI, SPI; nests SRG, GCN, CDI), and, inactive until needed, the Alps
+(ALP), the Himalaya (HIM), Svalbard (SVB) and New Zealand (NZ) (see
 `../shared/README.md`).
 
 The processing has two stages:
@@ -39,7 +40,9 @@ earlier versions of the ice-sheet datasets, made on request:
 | Domain | Default products | Variants |
 |---|---|---|
 | ANT | BedMachine-v4, Bedmap3 | BedMachine-v3, BedMachine-v2, Bedmap2 |
+| THW, PIG, FRIS, ROSS, AMY, WSB (nests of ANT) | BedMachine-v4, Bedmap3 | |
 | GRL-PAL | BedMachine-v6 | BedMachine-v5, BedMachine-v4 |
+| JAK, NEGIS, PET, HEL (nests of GRL-PAL) | BedMachine-v6 | |
 | NH | GEBCO2026 | |
 | PYR, PAT, SRG, GCN, CDI, ALP, HIM, SVB, NZ | GLO90-GEBCO2026 | |
 
