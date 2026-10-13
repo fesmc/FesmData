@@ -19,12 +19,13 @@ const KEY = "nsidc0754_v1_antarctica_vel"
 const PROJ = "+proj=stere +lat_0=-90 +lat_ts=-71 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"
 
 # Field `name` (y, x in the file) as (x, y) with ascending y, Float32 with NaN for no data
-# (the _FillValue of the file, or NaN).
+# (the _FillValue of the file, NaN, or Inf: ERRX and ERRY are Inf at about 1500 points
+# where the velocity is given).
 function read_field(ds, name, iy)
     v = ds[name]
     fill = get(v.attrib, "_FillValue", NaN32)
     A = v.var[:, :]                         # raw values; NCDatasets gives (x, y)
-    return map(a -> a == fill || isnan(a) ? NaN32 : Float32(a), view(A, :, iy))
+    return map(a -> a == fill || !isfinite(a) ? NaN32 : Float32(a), view(A, :, iy))
 end
 
 src = download_dataset(manifest(), KEY)

@@ -26,7 +26,7 @@
 
 [[basins]]
 name = "Mouginot2019"
-domains = ["GRL-PAL", "NH"]
+domains = ["GRL-PAL", "JAK", "NEGIS", "PET", "HEL", "NH"]
 region = "1.3"
 source = "mouginot2019"
 id_field = "NAME"
@@ -34,7 +34,7 @@ group_field = "SUBREGION1"
 
 [[basins]]
 name = "Zwally2012"
-domains = ["GRL-PAL", "NH"]
+domains = ["GRL-PAL", "JAK", "NEGIS", "PET", "HEL", "NH"]
 region = "1.3"
 source = "zwally2012_greenland"
 id_field = "basin"
@@ -42,7 +42,7 @@ group_field = "zwally_system"
 
 [[basins]]
 name = "IMBIE2016"
-domains = ["ANT"]
+domains = ["ANT", "THW", "PIG", "FRIS", "ROSS", "AMY", "WSB"]
 region = "2.1"
 source = "imbie"
 id_field = "NAME"
@@ -50,7 +50,7 @@ group_field = "Regions"
 
 [[basins]]
 name = "IMBIE2016-refined"
-domains = ["ANT"]
+domains = ["ANT", "THW", "PIG", "FRIS", "ROSS", "AMY", "WSB"]
 region = "2.1"
 source = "imbie_refined"
 id_field = "NAME"
@@ -59,7 +59,7 @@ no_extension = ["Islands"]
 
 [[basins]]
 name = "Zwally2012"
-domains = ["ANT"]
+domains = ["ANT", "THW", "PIG", "FRIS", "ROSS", "AMY", "WSB"]
 region = "2.1"
 source = "zwally2012_antarctica"
 id_field = "basin"
@@ -70,14 +70,14 @@ id_field = "basin"
 # are the region numbers of their freshwater time series (names in alphabetical order).
 [[basins]]
 name = "Schmidt2025"
-domains = ["GRL-PAL", "NH"]
+domains = ["GRL-PAL", "JAK", "NEGIS", "PET", "HEL", "NH"]
 region = "1.3"
 source = "schmidt2025_greenland"
 id_field = "label"
 
 [[basins]]
 name = "Schmidt2025"
-domains = ["ANT"]
+domains = ["ANT", "THW", "PIG", "FRIS", "ROSS", "AMY", "WSB"]
 region = "2.1"
 source = "schmidt2025_antarctica"
 id_field = "NAME"
@@ -103,7 +103,7 @@ no_extension = ["RGI2000-v7.0-G-17-12835"]
 # containing its centre, so GRL-16KM reproduces v1 exactly.
 [[basins]]
 name = "NEGIS-v1"
-domains = ["GRL-PAL"]
+domains = ["GRL-PAL", "NEGIS"]
 region = "1.3"
 source = "negis_v1"
 
@@ -119,7 +119,7 @@ source = "negis_v1"
 # on GRL-16KM (see README.md).
 [[basins]]
 name = "NEGIS"
-domains = ["GRL-PAL"]
+domains = ["GRL-PAL", "NEGIS"]
 region = "1.3"
 source = "negis"
 

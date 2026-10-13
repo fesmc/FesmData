@@ -2,10 +2,11 @@
 
 Bed topography, surface elevation, ice thickness and ice/ocean fractions for each
 model domain, from the best available sources, at resolutions from the base grid
-down to 32 km for the ice sheets. The domains are the ice sheets (ANT, GRL-PAL, NH)
-and the mountain-glacier domains at 50-500 m: the Pyrenees (PYR), Patagonia (PAT) with
-its icefields (crops NPI, SPI; nests SRG, GCN, CDI), and, inactive until needed, the
-Alps (ALP), the Himalaya (HIM), Svalbard (SVB) and New Zealand (NZ) (see
+down to 32 km for the ice sheets. The domains are the ice sheets (ANT, GRL-PAL, NH),
+nests of single basins and ice shelves in ANT (500 m) and GRL-PAL (250 m), and the
+mountain-glacier domains at 50-500 m: the Pyrenees (PYR), Patagonia (PAT) with its
+icefields (crops NPI, SPI; nests SRG, GCN, CDI), and, inactive until needed, the Alps
+(ALP), the Himalaya (HIM), Svalbard (SVB) and New Zealand (NZ) (see
 `../shared/README.md`).
 
 The processing has two stages:
@@ -26,7 +27,9 @@ Domains and resolutions are defined in `../shared/domains.toml` (shared with the
 other pipelines), and the products of each domain in `products.toml`. Grid extents
 follow the v1 grids in `../maps`, so the v1 grids at 4-32 km are reproduced, except
 GRL-32KM, which has 53 instead of 54 columns so that its extent matches the finer
-GRL grids, and the 250 m grid of the SRG nest reproduces the v1 SRG-250M grid. The
+GRL grids, and the EIS grids, which are shifted by 16 km in y and extended so that they
+lie on the NH grids at all resolutions (crops are cut from them on demand); the 250 m
+grid of the SRG nest reproduces the v1 SRG-250M grid. The
 ice-sheet domains are on polar stereographic projections, the mountain-glacier domains
 on the projection used for glacier modelling in each region (UTM, NZTM2000, and the
 Albers equal-area projection of High Mountain Asia).
@@ -37,7 +40,9 @@ earlier versions of the ice-sheet datasets, made on request:
 | Domain | Default products | Variants |
 |---|---|---|
 | ANT | BedMachine-v4, Bedmap3 | BedMachine-v3, BedMachine-v2, Bedmap2 |
+| THW, PIG, FRIS, ROSS, AMY, WSB (nests of ANT) | BedMachine-v4, Bedmap3 | |
 | GRL-PAL | BedMachine-v6 | BedMachine-v5, BedMachine-v4 |
+| JAK, NEGIS, PET, HEL (nests of GRL-PAL) | BedMachine-v6 | |
 | NH | GEBCO2026 | |
 | PYR, PAT, SRG, GCN, CDI, ALP, HIM, SVB, NZ | GLO90-GEBCO2026 | |
 

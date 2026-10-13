@@ -40,6 +40,73 @@ xlim = [-3040, 3040]
 ylim = [-3040, 3040]
 resolutions = [1, 2, 4, 8, 16, 32]
 
+# Ice-sheet basins (crop ASE at 1 km, nests at 500 m and 1 km, the 1 km grids on
+# ANT-1KM): bounding box of the drainage basins (Basins_Antarctica_v02 of NSIDC-0709,
+# as IMBIE2016-refined) and their ice shelves (floating ice of BedMachine v4 in their
+# extended basins), plus 50 km, snapped outward to whole km.
+
+# Amundsen Sea Embayment, 133.8-80.9W, 81.3-71.1S: the basins of system G-H (Pine
+# Island, Lucchitta-Velasco, Thwaites, Haynes, Pope, Smith, Kohler, Philbin, Cosgrove,
+# Walgreen Coast; not King, which drains to Abbot) and their ice shelves.
+[ANT.crops.ASE]
+folder = "Amundsen"
+xlim = [-1865, -948]
+ylim = [-908, 152]
+resolutions = [1]
+
+# Thwaites Glacier, 133.8-93.3W, 81.3-72.8S: its basin and ice shelf (tongue, eastern
+# shelf).
+[ANT.nests.THW]
+folder = "Thwaites"
+xlim = [-1650, -948]
+ylim = [-908, -96]
+resolutions = [0.5, 1]
+
+# Pine Island Glacier, 114.4-80.9W, 81.3-73.0S: its basin (and Lucchitta-Velasco) and
+# ice shelf.
+[ANT.nests.PIG]
+folder = "PineIsland"
+xlim = [-1805, -950]
+ylim = [-430, 152]
+resolutions = [0.5, 1]
+
+# Filchner-Ronne Ice Shelf, 130.7-7.5W, 88.4-70.0S: the shelf and the grounded ice of
+# the basins draining into it (Asso_Shelf Filchner, Ronne_Ice) within 300 km of it.
+[ANT.nests.FRIS]
+folder = "FilchnerRonne"
+active = false
+xlim = [-1732, -178]
+ylim = [-153, 1357]
+resolutions = [0.5, 1]
+
+# Ross Ice Shelf, 96.5E-95.2W, 89.2-74.5S: the shelf and the grounded ice of the
+# basins draining into it (Asso_Shelf Ross_West, Ross_East) within 300 km of it.
+[ANT.nests.ROSS]
+folder = "Ross"
+active = false
+xlim = [-943, 745]
+ylim = [-1402, -85]
+resolutions = [0.5, 1]
+
+# Amery Ice Shelf, 49.2-82.8E, 77.5-66.7S: the shelf and the grounded ice of the basins
+# draining into it (Lambert, Mellor, Fisher, American Highland, MacRobertson Land)
+# within 300 km of it.
+[ANT.nests.AMY]
+folder = "Amery"
+active = false
+xlim = [1331, 2291]
+ylim = [291, 1148]
+resolutions = [0.5, 1]
+
+# Wilkes Subglacial Basin, 117.8-163.8E, 80.2-65.3S: the basins of Cook, Ninnis and
+# Mertz glaciers and their ice shelves and tongues.
+[ANT.nests.WSB]
+folder = "WilkesBasin"
+active = false
+xlim = [633, 1635]
+ylim = [-2184, -863]
+resolutions = [0.5, 1]
+
 [GRL-PAL]
 folder = "GreenlandPaleo"
 proj = "+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +x_0=0 +y_0=0 +a=6378137 +rf=298.25722356 +units=km"
@@ -51,6 +118,43 @@ resolutions = [0.5, 1, 2, 4, 8, 16, 32]
 folder = "Greenland"
 xlim = [-720, 960]
 ylim = [-3450, -570]
+
+# Ice-sheet basins (nests at 250 m, 500 m and 1 km, the 1 km grids on GRL-PAL-1KM):
+# bounding box of the drainage basins (Mouginot et al., 2019), their floating ice
+# (BedMachine v6) and fjord mouth, plus 50 km, snapped outward to whole km.
+
+# Jakobshavn Isbrae, 53.6-35.3W, 68.1-71.9N: its basin and Ilulissat Icefjord.
+[GRL-PAL.nests.JAK]
+folder = "Jakobshavn"
+xlim = [-297, 337]
+ylim = [-2382, -1975]
+resolutions = [0.25, 0.5, 1]
+
+# Northeast Greenland Ice Stream, 47.3-14.3W, 71.5-80.9N: the basins of
+# Nioghalvfjerdsfjorden (79N) and Zachariae Isstrom up to the divide, their floating
+# tongues and the coast in front of them.
+[GRL-PAL.nests.NEGIS]
+folder = "NEGIS"
+xlim = [-40, 587]
+ylim = [-1937, -990]
+resolutions = [0.25, 0.5, 1]
+
+# Petermann Glacier, 66.3-39.8W, 75.3-82.1N: its basin, ice tongue and fjord (to Hall
+# Basin).
+[GRL-PAL.nests.PET]
+folder = "Petermann"
+active = false
+xlim = [-336, 79]
+ylim = [-1567, -861]
+resolutions = [0.25, 0.5, 1]
+
+# Helheim Glacier, 43.9-34.0W, 65.0-69.9N: its basin and Sermilik Fjord.
+[GRL-PAL.nests.HEL]
+folder = "Helheim"
+active = false
+xlim = [51, 426]
+ylim = [-2718, -2198]
+resolutions = [0.25, 0.5, 1]
 
 [NH]
 folder = "North"
@@ -67,7 +171,7 @@ ylim = [-5400, 1576]
 [NH.crops.EIS]
 folder = "Eurasia"
 xlim = [380, 3900]
-ylim = [-5000, 1400]
+ylim = [-5016, 1416]
 
 # ---------------------------------------------------------------------------
 # Mountain glaciers: base grids of 250 m (500 m for Svalbard), and 50 m for the nests
