@@ -373,8 +373,23 @@ adding thickness sources).
 ## Glaciers in the mountain-glacier products
 
 The glacier area and volume of each mountain-glacier product, against those of the
-IceBoost tiles, are printed by step 2 (IceBoost) and step 5 in the job logs; a table
-follows with the first runs of the GLO90-GEBCO2026 products.
+IceBoost tiles, are printed by step 2 (IceBoost) and step 5 in the job logs. GLO90-GEBCO2026
+products (run of 2026-10-13), area (km²) / volume (km³):
+
+| Domain | Tiles overlapping the base grid (incl. parts outside) | On the base grid, summed | On the base grid, overlaps shared | Product, base grid | Product, coarsest grid |
+|---|---:|---:|---:|---:|---:|
+| PYR (250 m / 2 km) | 4 / 0.08 | 4 / 0.08 | 4 / 0.08 | 4 / 0 | 4 / 0 |
+| PAT (250 m / 2 km) | 25,846 / 6,676 | 25,851 / 6,679 | 25,492 / 6,604 | 25,481 / 6,602 | 25,480 / 6,602 |
+| NPI (250 m) | | | | 4,744 / 1,624 | |
+| SPI (250 m) | | | | 13,353 / 4,227 | |
+| SRG (50 / 250 m) | 2,036 / 855 | 1,112 / 429 | 1,097 / 424 | 1,097 / 424 | 1,107 / 428 |
+| GCN (50 / 250 m) | 366 / 38 | 346 / 36 | 333 / 35 | 332 / 35 | 334 / 35 |
+| CDI (50 / 250 m) | 2,785 / 338 | 2,711 / 329 | 2,621 / 320 | 2,613 / 319 | 2,615 / 319 |
+| HIM (250 m / 2 km) | 81,866 / 7,386 | 81,650 / 7,361 | 80,966 / 7,304 | 80,965 / 7,304 | 81,029 / 7,310 |
+
+Sharing the cells of overlapping tiles removes 1-4% of the glacier area and volume
+(where the summed glacier fraction reaches 2-3.5); the products keep it within 0.5%
+across their grids.
 
 On DDG-25M (run of 2026-10-13), the Sommers2025 variant against the default product:
 
