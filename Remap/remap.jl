@@ -452,17 +452,18 @@ merged_attrib(ps::AbstractVector{Prepared}) = merged_attrib([p.attrib for p in p
 
 Output grids named by `args`: domains (output folders, e.g. Antarctica, their standard
 grids), grids (e.g. ANT-8KM, or a grid made on request such as GLOBAL-T170), or "all"
-(the standard grids of all domains).
+(the standard grids of all active domains).
 """
 function select_grids(args)
     isempty(args) && error("give the target domains or grids (e.g. Antarctica ANT-8KM, or all)")
-    grids = [og for key in domain_keys() for og in Domain(key).grids]
+    grids = [og for key in domain_keys(; inactive=true) for og in Domain(key).grids]
+    active = Set(og.folder for key in domain_keys() for og in Domain(key).grids)
     standard = filter(og -> !og.on_request, grids)
     folders = sort(unique(og.folder for og in grids))
     sel = OutGrid[]
     for a in args
         if a == "all"
-            append!(sel, standard)
+            append!(sel, filter(og -> og.folder in active, standard))
         elseif a in folders
             append!(sel, filter(og -> og.folder == a, standard))
         else

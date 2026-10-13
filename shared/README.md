@@ -14,21 +14,42 @@ domains and grids, defined in `domains.toml`, and share the code in this folder:
 
 ## Domains
 
-A domain is a region on a map projection (polar stereographic, or transverse Mercator
-such as UTM) with a **base grid**, its finest resolution. All other grids of the domain
-are derived from the base grid: coarser grids by merging whole cells, and **crops**
-(smaller regions inside the domain) by cutting it, at the same resolutions. All grids
-of a domain are therefore nested: every coarse cell is made of whole base cells, and
-the datasets on them are exact conservative means of the base grid.
+A domain is a region on a map projection (polar stereographic, transverse Mercator
+such as UTM, or Albers equal-area) with a **base grid**, its finest resolution. All
+other grids of the domain are derived from the base grid: coarser grids by merging whole
+cells, and **crops** (smaller regions inside the domain) by cutting it, at the same
+resolutions or some of them. All grids of a domain are therefore nested: every coarse
+cell is made of whole base cells, and the datasets on them are exact conservative means
+of the base grid.
 
-| Domain | Base grid | Crops | Projection |
-|---|---|---|---|
-| ANT | ANT-1KM | | polar stereographic, south |
-| GRL-PAL | GRL-PAL-500M | GRL | polar stereographic, north |
-| NH | NH-2KM | LIS, EIS | polar stereographic, north |
-| PYR | PYR-500M | | UTM 31N |
-| SRG | SRG-250M | | UTM 18S |
-| GLOBAL | GLOBAL-0.1DEG | | lon-lat |
+A **nest** is a smaller domain inside a domain, on the same projection, with a finer
+base grid of its own (made from the sources, like any domain). At the resolutions it
+shares with its parent, its grids lie on those of the parent: same cell centres, so
+that its coarsest grid is a part of the parent grid at that resolution.
+
+| Domain | Base grid | Other grids | Crops | Nests | Projection | Active |
+|---|---|---|---|---|---|---|
+| ANT | ANT-1KM | 2-32 km | | | polar stereographic, south | yes |
+| GRL-PAL | GRL-PAL-500M | 1-32 km | GRL | | polar stereographic, north | yes |
+| NH | NH-2KM | 4-32 km | LIS, EIS | | polar stereographic, north | yes |
+| PYR | PYR-250M | 500 m | | | UTM 31N | yes |
+| PAT | PAT-250M | 500 m | NPI, SPI (250 m) | SRG, GCN, CDI (50, 100, 250 m) | UTM 18S | yes |
+| ALP | ALP-250M | 500 m | | | UTM 32N | no |
+| HIM | HIM-250M | 500 m | | | Albers equal-area (High Mountain Asia) | no |
+| SVB | SVB-500M | 1 km | | | UTM 33N | no |
+| NZ | NZ-250M | 500 m | | | NZTM2000 | no |
+| GLOBAL | GLOBAL-0.1DEG | 0.25-5° | | | lon-lat | yes |
+
+The mountain-glacier domains (PYR to NZ) cover the extent of their glaciers at the Last
+Glacial Maximum, each on the projection used for glacier modelling in its region (see
+`domains.toml`). PAT covers Patagonia from 38°S to Cape Horn, with crops of the Northern
+and Southern Patagonian Icefields (NPI, SPI), and nests of single icefields: the San
+Rafael Glacier (SRG, whose 250 m grid is the v1 SRG-250M grid), Gran Campo Nevado (GCN)
+and the Cordillera Darwin Icefield (CDI).
+
+An **inactive** domain (`active = false`) is defined, but left out of the releases, the
+website figures and the products made for all domains. Its grids and products are made
+when it is named (e.g. `Topo/jobs/submit_domain.sh HIM`); set it active to release it.
 
 The **GLOBAL** domain has global lon-lat grids at 0.1°, 0.25°, 0.5°, 1°, 2° and 5°,
 each with cell edges at -180° and -90° (so they are not nested: 0.25° is not a
@@ -37,8 +58,9 @@ multiple of 0.1°). Its data are made by remapping (see Bring your own data).
 Grids are named after their domain (or crop) and resolution: `ANT-8KM`, `GRL-500M`,
 `GLOBAL-0.5DEG`. Each domain and crop has an output **folder** under `$ICE_DATA/v2`,
 which is also its name in the released records (Antarctica, GreenlandPaleo, Greenland,
-North, Laurentide, Eurasia, Pyrenees, SRG, Global). Every grid has its own folder there, with all
-datasets on that grid:
+North, Laurentide, Eurasia, Pyrenees, Patagonia, NorthPatagonianIcefield,
+SouthPatagonianIcefield, SRG, GranCampoNevado, CordilleraDarwin, Alps, Himalaya, Svalbard,
+NewZealand, Global). Every grid has its own folder there, with all datasets on that grid:
 
 ```
 $ICE_DATA/v2/<folder>/<GRID>/
@@ -50,7 +72,7 @@ $ICE_DATA/v2/<folder>/<GRID>/
 The grid files are written by Topo step 1 (`Topo/scripts/01_grids.jl`), or by
 `fesmdata.jl remap` if they are missing.
 
-## Adding a domain, a crop or a resolution
+## Adding a domain, a crop, a nest or a resolution
 
 A domain is a table in `domains.toml`:
 
@@ -58,9 +80,10 @@ A domain is a table in `domains.toml`:
 [PYR]
 folder = "Pyrenees"
 proj = "+proj=tmerc +lat_0=0 +lon_0=3 +k=0.9996 +x_0=500000 +y_0=0 +a=6378137 +rf=298.257223563 +units=km"
-xlim = [80, 560]                       # first and last cell centres of the base grid (km)
+xlim = [80, 560]              # first and last cell centres of the base grid (km)
 ylim = [4620, 4860]
-resolutions = [0.5, 1, 2, 4, 8, 16, 32]  # km; the first is the base grid
+resolutions = [0.25, 0.5]     # km; the first is the base grid
+active = true                 # the default; false to leave it out of the releases
 ```
 
 - `proj` is a PROJ string with `+units=km` (false easting and northing in metres, as
@@ -85,13 +108,33 @@ resolutions = [0.1, 0.25, 0.5, 1, 2, 5]
 ```
 
 A crop is a table below its domain, with its own folder and extent (on the cell
-centres of the base grid):
+centres of the base grid), and optionally only some of the resolutions of its domain:
 
 ```toml
 [NH.crops.LIS]
 folder = "Laurentide"
 xlim = [-4900, -36]
 ylim = [-5400, 1576]
+
+[PAT.crops.NPI]
+folder = "NorthPatagonianIcefield"
+xlim = [559.837171469987, 677.337171469987]
+ylim = [4703.352314639904, 4872.352314639904]
+resolutions = [0.25]
+```
+
+A nest is a table below its domain, with its own folder, extent and resolutions, on the
+projection of its domain (and active if its domain is, unless set). Its first and last
+cell centres at the resolutions it shares with its domain must be cell centres of the
+domain grids at these resolutions (checked when the domain is read); in the pipelines
+it is a domain like any other, named by its key (here SRG):
+
+```toml
+[PAT.nests.SRG]
+folder = "SRG"
+xlim = [583.087171469987, 634.837171469987]
+ylim = [4811.102314639904, 4840.852314639904]
+resolutions = [0.05, 0.1, 0.25]
 ```
 
 A new resolution is a new entry in `resolutions`. Then, for each dataset:

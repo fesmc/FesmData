@@ -12,6 +12,16 @@
 # `folder` is the output folder under $ICE_DATA/v2, and the name of the domain (or
 # crop) in published records, unique to each.
 #
+# A crop (`[<KEY>.crops.<CROP>]`) is a part of the grids of its domain, at all its
+# resolutions or at those in its own `resolutions`. A nest (`[<KEY>.nests.<NEST>]`) is
+# a domain of its own on the projection of its parent, with a base grid finer than
+# that of the parent, made from the sources: at the resolutions it shares with its
+# parent, its grids lie on those of the parent (same cell centres).
+#
+# A domain with `active = false` (nests: as their parent, unless set) is defined but
+# left out of the releases, figures and the products made for all domains; its grids
+# and products are made only when it is named.
+#
 # A domain with `type = "lonlat"` has global lon-lat grids instead, one per resolution
 # (degrees), independent of each other (GLOBAL-0.5DEG, ...). `gaussian` adds Gaussian
 # grids by spectral truncation and number of latitudes (GLOBAL-T170, 512 x 256), which
@@ -59,24 +69,106 @@ folder = "Eurasia"
 xlim = [380, 3900]
 ylim = [-5000, 1400]
 
+# ---------------------------------------------------------------------------
+# Mountain glaciers: base grids of 250 m (500 m for Svalbard), and 50 m for the nests
+# of single icefields. Each domain is on the projection used for glacier modelling in
+# its region, and covers the extent of its glaciers at the Last Glacial Maximum.
+# ---------------------------------------------------------------------------
+
 # Pyrenees (no v1 grid): UTM zone 31N (EPSG:32631), the whole range from the Bay of
 # Biscay (2W) to Cap de Creus (3.3E) with some 20-30 km of foreland on each side
 # (2.2W-3.7E, 41.6-43.9N), so it includes a corner of the Bay of Biscay and of the
-# Gulf of Lion. The extent is a multiple of 32 km.
+# Gulf of Lion.
 [PYR]
 folder = "Pyrenees"
 proj = "+proj=tmerc +lat_0=0 +lon_0=3 +k=0.9996 +x_0=500000 +y_0=0 +a=6378137 +rf=298.257223563 +units=km"
 xlim = [80, 560]
 ylim = [4620, 4860]
-resolutions = [0.5, 1, 2, 4, 8, 16, 32]
+resolutions = [0.25, 0.5]
 
-# San Rafael Glacier, Northern Patagonian Icefield: UTM zone 18S (EPSG:32718), as the
-# v1 grids. The extent is that of the v1 SRG-16KM grid (5 x 3 cells), whose cell
-# centres it reproduces. The v1 SRG-250M grid covers a smaller area, with cell
-# centres offset by half a cell (125 m) in x and y from those of SRG-250M here.
-[SRG]
-folder = "SRG"
+# Patagonia: UTM zone 18S (EPSG:32718), as the v1 SRG grids, from 38S to Cape Horn
+# (56.5S) and from 77W to 65W (the Patagonian Ice Sheet), with the cell centres of the
+# v1 SRG-250M grid. Crops: the Northern and Southern Patagonian Icefields. Nests (50,
+# 100 and 250 m): the San Rafael Glacier (SRG, the extent of the v1 SRG-250M grid,
+# which its 250 m grid reproduces), Gran Campo Nevado and the Cordillera Darwin
+# Icefield.
+[PAT]
+folder = "Patagonia"
 proj = "+proj=tmerc +lat_0=0 +lon_0=-75 +k=0.9996 +x_0=500000 +y_0=10000000 +a=6378137 +rf=298.257223563 +units=km"
-xlim = [576.962171469987, 640.962171469987]
-ylim = [4809.977314639904, 4841.977314639904]
-resolutions = [0.25, 0.5, 1, 2, 4, 8, 16]
+xlim = [324.087171469987, 1379.087171469987]
+ylim = [3693.102314639904, 5794.602314639904]
+resolutions = [0.25, 0.5]
+
+# 46.3-47.8S, 74.2-72.7W
+[PAT.crops.NPI]
+folder = "NorthPatagonianIcefield"
+xlim = [559.837171469987, 677.337171469987]
+ylim = [4703.352314639904, 4872.352314639904]
+resolutions = [0.25]
+
+# 48.2-51.7S, 74.7-72.6W
+[PAT.crops.SPI]
+folder = "SouthPatagonianIcefield"
+xlim = [520.587171469987, 678.337171469987]
+ylim = [4269.352314639904, 4661.602314639904]
+resolutions = [0.25]
+
+[PAT.nests.SRG]
+folder = "SRG"
+xlim = [583.087171469987, 634.837171469987]
+ylim = [4811.102314639904, 4840.852314639904]
+resolutions = [0.05, 0.1, 0.25]
+
+# 52.55-53.05S, 73.55-72.65W
+[PAT.nests.GCN]
+folder = "GranCampoNevado"
+xlim = [597.087171469987, 659.587171469987]
+ylim = [4119.102314639904, 4177.102314639904]
+resolutions = [0.05, 0.1, 0.25]
+
+# 54.25-55.05S, 71.3-68.7W
+[PAT.nests.CDI]
+folder = "CordilleraDarwin"
+xlim = [736.087171469987, 910.587171469987]
+ylim = [3881.102314639904, 3982.602314639904]
+resolutions = [0.05, 0.1, 0.25]
+
+# Alps: UTM zone 32N (EPSG:32632), as the glacial-cycle simulations of Seguinot et al.
+# (2018), 4-17.5E, 43-48.8N (the Lyon lobe in the west, the Po plain in the south).
+[ALP]
+folder = "Alps"
+active = false
+proj = "+proj=tmerc +lat_0=0 +lon_0=9 +k=0.9996 +x_0=500000 +y_0=0 +a=6378137 +rf=298.257223563 +units=km"
+xlim = [92, 1193]
+ylim = [4760, 5441]
+resolutions = [0.25, 0.5]
+
+# Himalaya, Karakoram and Hindu Kush: Albers equal-area conic of the High Mountain Asia
+# glacier products (Shean et al., 2020), 68-99E, 25.5-38.5N.
+[HIM]
+folder = "Himalaya"
+active = false
+proj = "+proj=aea +lat_1=25 +lat_2=47 +lat_0=36 +lon_0=85 +x_0=0 +y_0=0 +a=6378137 +rf=298.257223563 +units=km"
+xlim = [-1699, 1401]
+ylim = [-1179, 407]
+resolutions = [0.25, 0.5]
+
+# Svalbard: UTM zone 33N (EPSG:32633), as the Norwegian Polar Institute, 5-35E,
+# 74-81.5N (the archipelago and its shelf).
+[SVB]
+folder = "Svalbard"
+active = false
+proj = "+proj=tmerc +lat_0=0 +lon_0=15 +k=0.9996 +x_0=500000 +y_0=0 +a=6378137 +rf=298.257223563 +units=km"
+xlim = [193, 1105]
+ylim = [8212, 9106]
+resolutions = [0.5, 1]
+
+# New Zealand: New Zealand Transverse Mercator 2000 (EPSG:2193, GRS80), 166-175E,
+# 40-47.5S (the South Island and its shelf).
+[NZ]
+folder = "NewZealand"
+active = false
+proj = "+proj=tmerc +lat_0=0 +lon_0=173 +k=0.9996 +x_0=1600000 +y_0=10000000 +a=6378137 +rf=298.257222101 +units=km"
+xlim = [1002, 1771]
+ylim = [4715, 5573]
+resolutions = [0.25, 0.5]

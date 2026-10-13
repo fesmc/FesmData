@@ -1,8 +1,8 @@
 # This file is machine-generated - editing it directly is not advised
 
-julia_version = "1.13.1"
+julia_version = "1.13.0"
 manifest_format = "2.1"
-project_hash = "4900672e99d6f292b51a619205db665442ba0c76"
+project_hash = "00a9bbb2cfcc0a5cb12bbaea39b30a22f124ed46"
 
 [[deps.ArgTools]]
 uuid = "0dad84c5-d112-42e6-8d28-ef12dabb789f"
@@ -123,7 +123,7 @@ version = "0.1.6"
 
 [[deps.FesmUtils]]
 deps = ["NCDatasets", "Proj", "SparseArrays"]
-git-tree-sha1 = "4cec8a48daaf5efa0411f27cc63f88eead0a4d71"
+git-tree-sha1 = "69b929808e6c310bc01f1587b717a71e8aed3380"
 repo-rev = "main"
 repo-url = "https://github.com/fesmc/FesmUtils.jl"
 uuid = "87fa8290-809d-4b2a-a2bb-fb70d9529671"
@@ -238,7 +238,7 @@ version = "1.9.1+0"
 [[deps.LibSSH2_jll]]
 deps = ["Artifacts", "CompilerSupportLibraries_jll", "Libdl", "OpenSSL_jll", "Zlib_jll"]
 uuid = "29816b5a-b9ab-546f-933c-edad1886dfa8"
-version = "1.11.104+0"
+version = "1.11.103+0"
 
 [[deps.Libdl]]
 uuid = "8f399da3-3557-5675-b5ff-fb832c97cbdb"

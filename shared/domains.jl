@@ -32,9 +32,34 @@ struct Domain
     grids::Vector{OutGrid}        # all output grids, base first
 end
 
-read_domains() = TOML.parsefile(joinpath(@__DIR__, "domains.toml"))
+"""
+    read_domains() -> Dict
 
-domain_keys() = collect(keys(read_domains()))
+The domains of domains.toml by key, with the nests of each domain
+(`[<KEY>.nests.<NEST>]`) as domains of their own, on the projection of their parent
+(recorded as `parent`), and active if their parent is, unless set.
+"""
+function read_domains()
+    all = TOML.parsefile(joinpath(@__DIR__, "domains.toml"))
+    for (key, d) in collect(all)
+        for (nkey, n) in get(d, "nests", Dict())
+            haskey(all, nkey) && error("nest $nkey of $key has the key of another domain")
+            all[nkey] = merge(n, Dict("proj" => d["proj"], "parent" => key,
+                                      "active" => get(n, "active", get(d, "active", true))))
+        end
+    end
+    return all
+end
+
+"""
+    domain_keys(; inactive=false)
+
+Keys of the active domains, nests included, or of all domains with `inactive=true`.
+An inactive domain (`active = false`) is left out of the releases, figures and the
+products made for all domains, but its grids and products are made when it is named.
+"""
+domain_keys(; inactive::Bool=false) =
+    sort([k for (k, d) in read_domains() if inactive || get(d, "active", true)])
 
 function Domain(key::AbstractString)
     all = read_domains()
@@ -57,11 +82,32 @@ function Domain(key::AbstractString)
     end
     for (ckey, c) in get(d, "crops", Dict())
         cbase = crop(base, Tuple(c["xlim"]), Tuple(c["ylim"]); name=grid_name(ckey, dx))
-        for r in res
+        cres = Float64.(get(c, "resolutions", res))
+        issubset(cres, res) || error("resolutions of crop $ckey must be resolutions of $key")
+        for r in cres
             push!(grids, OutGrid(c["folder"], _derived(cbase, r / dx, grid_name(ckey, r))))
         end
     end
+    haskey(d, "parent") && _check_nest(key, grids, Domain(d["parent"]))
     return Domain(String(key), d["folder"], base, grids)
+end
+
+# A nest shares at least one resolution with its parent, and its grids at these
+# resolutions lie on the grids of its parent: same cell centres, inside its extent.
+function _check_nest(key, grids::Vector{OutGrid}, parent::Domain)
+    pgrids = [og.grid for og in parent.grids if og.folder == parent.folder]
+    same(g) = findfirst(pg -> isapprox(spacing(pg)[1], spacing(g)[1]; rtol=1e-6), pgrids)
+    shared = filter(og -> same(og.grid) !== nothing, grids)
+    isempty(shared) && error("nest $key shares no resolution with its parent $(parent.key)")
+    for og in shared
+        g, pg = og.grid, pgrids[same(og.grid)]
+        r = spacing(pg)[1]
+        on(c, pc) = isapprox((c - pc[1]) / r, round((c - pc[1]) / r); atol=1e-6) &&
+                    pc[1] - 1e-6r <= c && c <= pc[end] + 1e-6r
+        (on(g.xc[1], pg.xc) && on(g.yc[1], pg.yc) && on(g.xc[end], pg.xc) && on(g.yc[end], pg.yc)) ||
+            error("grid $(g.name) of nest $key is not on grid $(pg.name) of its parent $(parent.key)")
+    end
+    return nothing
 end
 
 function _derived(g::ProjGrid, factor::Real, name::String)
@@ -76,7 +122,7 @@ Domain whose grids (the domain or one of its crops) are in output folder `folder
 those grids.
 """
 function folder_grids(folder::AbstractString)
-    doms = Domain.(domain_keys())
+    doms = Domain.(domain_keys(; inactive=true))
     found = [(dom, filter(og -> og.folder == folder, dom.grids)) for dom in doms]
     filter!(x -> !isempty(x[2]), found)
     folders = sort(unique(og.folder for dom in doms for og in dom.grids))
@@ -85,8 +131,8 @@ function folder_grids(folder::AbstractString)
     return only(found)
 end
 
-"Output folders of all domains and crops, i.e. the names of the domains in published records."
-domain_folders() = sort(unique(og.folder for key in domain_keys() for og in Domain(key).grids))
+"Output folders of all domains and crops (also inactive), i.e. the names of the domains in published records."
+domain_folders() = sort(unique(og.folder for key in domain_keys(; inactive=true) for og in Domain(key).grids))
 
 "Output folder of a grid: \$ICE_DATA/v2/<folder>/<grid name>."
 outdir(og::OutGrid) = joinpath(_env("ICE_DATA"), "v2", og.folder, og.grid.name)
