@@ -2,14 +2,14 @@
 # surface air temperature and precipitation of the gridded reconstruction, 22 ka to
 # present in decadal steps, and its 1981-2010 baseline climatology (NOAA NCEI,
 # datamanifest keys buizert2018_recon and buizert2018_baseline), on their native
-# 0.5° x 0.25° lon-lat grid, as two prepared files in $FESMDATA_WORK/prepared/Buizert2018/:
+# 0.5° x 0.25° lon-lat grid, as two prepared files in $FESMDATA_PREPARED/Buizert2018/:
 #
 #   Buizert2018.nc            tas, pr (lon, lat, month, time), z_srf (lon, lat)
 #   Buizert2018_1981-2010.nc  tas, pr (lon, lat, month), z_srf (lon, lat)
 #
 # Usage:
 #     julia --project=Buizert2018 Buizert2018/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/Buizert2018/Buizert2018.nc GRL-32KM
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/Buizert2018/Buizert2018.nc GRL-32KM
 
 using NCDatasets
 

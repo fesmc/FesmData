@@ -28,7 +28,7 @@ http://ftp.climato.be/fettweis/MARv3.14/Greenland/ERA5-1km-monthly/ (no login; t
 port may time out, HTTP works): one file per year, `MARv3.14-monthly-ERA5-<year>.nc`,
 about 1.2 GB each, 107 GB for 1940-2025. They are listed in `datamanifest.toml`
 (`mar314_era5_1km_monthly`), and `prepare.jl` downloads the missing ones into
-`$DATAMANIFEST_DATASETS_DIR/mar314_era5_1km_monthly/` (about 1.5 minutes per file).
+`$FESMDATA_SOURCES/mar314_era5_1km_monthly/` (about 1.5 minutes per file).
 
 ## Prepare and remap
 
@@ -38,10 +38,10 @@ prepare on a compute node (about 70 s per year, 1h45 in all, about 20 GB memory)
 ```bash
 julia --project=Fettweis2017_mar314 Fettweis2017_mar314/prepare.jl download
 srun -A ba1442 -p compute -t 03:00:00 --mem=32G julia --project=Fettweis2017_mar314 Fettweis2017_mar314/prepare.jl
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/Fettweis2017_mar314/MARv3.14_ERA5_1991-2020.nc Greenland --name=SMB-MARv3.14-1991-2020
+julia fesmdata.jl remap $FESMDATA_PREPARED/Fettweis2017_mar314/MARv3.14_ERA5_1991-2020.nc Greenland --name=SMB-MARv3.14-1991-2020
 ```
 
-`prepare.jl` writes to `$FESMDATA_WORK/prepared/Fettweis2017_mar314/`:
+`prepare.jl` writes to `$FESMDATA_PREPARED/Fettweis2017_mar314/`:
 
 - `MARv3.14_ERA5_1961-1990.nc`, `MARv3.14_ERA5_1981-2010.nc`,
   `MARv3.14_ERA5_1991-2020.nc`: monthly climatologies, fields `(x, y, month)`;

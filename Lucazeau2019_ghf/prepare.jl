@@ -1,10 +1,10 @@
 # Prepare the Lucazeau (2019) geothermal heat flow for remapping: the 0.5° grid of
 # the supplementary data (HFgrid14.csv, in this folder) as a prepared NetCDF file,
-# $FESMDATA_WORK/prepared/Lucazeau2019_ghf/Lucazeau2019_GHF.nc, with ghf and ghf_sd.
+# $FESMDATA_PREPARED/Lucazeau2019_ghf/Lucazeau2019_GHF.nc, with ghf and ghf_sd.
 #
 # Usage:
 #     julia --project=Lucazeau2019_ghf Lucazeau2019_ghf/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/Lucazeau2019_ghf/Lucazeau2019_GHF.nc all
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/Lucazeau2019_ghf/Lucazeau2019_GHF.nc all
 
 using CSV
 using DataFrames

@@ -15,7 +15,7 @@ db = manifest()
 download = "--download" in ARGS
 named = filter(!=("--download"), ARGS)
 
-println("Datasets folder: ", get(ENV, "DATAMANIFEST_DATASETS_DIR", "(DataManifest default)"))
+println("Datasets folder: ", fesmdata_dir("sources"))
 for key in sort(collect(keys(db.datasets)))
     entry = db.datasets[key]
     path = get_dataset_path(db, key)

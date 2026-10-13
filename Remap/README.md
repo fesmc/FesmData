@@ -6,15 +6,15 @@ put on the FesmData grids in two steps:
 1. **Prepare**: write the data as a NetCDF file on its own (native) grid, in a simple
    standard form. This is specific to each source and lives in the source's folder.
 2. **Remap**: one command puts that file onto any domains and grids, in the usual
-   layout `$ICE_DATA/v2/<Domain>/<GRID>/`, including global lon-lat grids.
+   layout `$FESMDATA_PRODUCTS/<Domain>/<GRID>/`, including global lon-lat grids.
 
 ```bash
 julia --project=Lucazeau2019_ghf Lucazeau2019_ghf/prepare.jl
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/Lucazeau2019_ghf/Lucazeau2019_GHF.nc Antarctica Global --name=GHF-Lucazeau2019
+julia fesmdata.jl remap $FESMDATA_PREPARED/Lucazeau2019_ghf/Lucazeau2019_GHF.nc Antarctica Global --name=GHF-Lucazeau2019
 ```
 
-This writes, e.g., `$ICE_DATA/v2/Antarctica/ANT-8KM/ANT-8KM_GHF-Lucazeau2019.nc` and
-`$ICE_DATA/v2/Global/GLOBAL-1DEG/GLOBAL-1DEG_GHF-Lucazeau2019.nc`, on every grid of
+This writes, e.g., `$FESMDATA_PRODUCTS/Antarctica/ANT-8KM/ANT-8KM_GHF-Lucazeau2019.nc` and
+`$FESMDATA_PRODUCTS/Global/GLOBAL-1DEG/GLOBAL-1DEG_GHF-Lucazeau2019.nc`, on every grid of
 Antarctica and of the global lon-lat grids.
 
 To publish the result, make it part of a **thematic dataset** (step 3), e.g. GHF:
@@ -30,7 +30,7 @@ Make a folder for the source, named after it (e.g. `Lucazeau2019_ghf/`), with:
   licence (check that it allows redistributing derived products before releasing
   them);
 - `prepare.jl` (with its own `Project.toml`): get the original files and write the
-  prepared file(s) to `$FESMDATA_WORK/prepared/<source folder>/` (in Julia:
+  prepared file(s) to `$FESMDATA_PREPARED/<source folder>/` (in Julia:
   `prepared_dir("<source folder>")` from `shared/provenance.jl`).
 
 A prepared file is a NetCDF file with:

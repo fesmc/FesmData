@@ -64,11 +64,11 @@ The same series are in `buizert2018.xlsx`, `buizert2018cores.txt` and
 
 ```bash
 julia --project=Buizert2018 Buizert2018/prepare.jl
-julia -t 16 fesmdata.jl remap $FESMDATA_WORK/prepared/Buizert2018/Buizert2018.nc GRL-16KM GRL-32KM --name=Paleoclimate-Buizert2018
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/Buizert2018/Buizert2018_1981-2010.nc Greenland --name=Paleoclimate-Buizert2018_1981-2010
+julia -t 16 fesmdata.jl remap $FESMDATA_PREPARED/Buizert2018/Buizert2018.nc GRL-16KM GRL-32KM --name=Paleoclimate-Buizert2018
+julia fesmdata.jl remap $FESMDATA_PREPARED/Buizert2018/Buizert2018_1981-2010.nc Greenland --name=Paleoclimate-Buizert2018_1981-2010
 ```
 
-`prepare.jl` writes to `$FESMDATA_WORK/prepared/Buizert2018/` (see `Remap/README.md`):
+`prepare.jl` writes to `$FESMDATA_PREPARED/Buizert2018/` (see `Remap/README.md`):
 
 - `Buizert2018.nc`: `tas` (K) and `pr` (kg m-2 s-1) on (lon, lat, month, time), and
   `z_srf` (m), 3.7 GB;

@@ -26,7 +26,7 @@ from them, with citation, is allowed.
 `summary_grids.zip` (57 MB, no login) from the OSF project "Antarctica Thermomechanical
 Structure", https://osf.io/f4ntr, entry `hazzard2023_visc` of `../datamanifest.toml`,
 downloaded and extracted by `prepare.jl` to
-`$DATAMANIFEST_DATASETS_DIR/hazzard2023_visc/summary_grids/` (with `readme.pdf`). GMT
+`$FESMDATA_SOURCES/hazzard2023_visc/summary_grids/` (with `readme.pdf`). GMT
 grids (NetCDF) on lon 0:0.5:360:
 
 - `viscosity_grids/<d>_viscosity_<mean|std>.grd`, d = 75, 100, ..., 400 km, lat
@@ -46,7 +46,7 @@ julia fesmdata.jl remap SolidEarth Hazzard2023-visc
 julia fesmdata.jl remap SolidEarth Hazzard2023-litho
 ```
 
-`prepare.jl` writes `$FESMDATA_WORK/prepared/Hazzard2023_visc/Hazzard2023_visc.nc` (see
+`prepare.jl` writes `$FESMDATA_PREPARED/Hazzard2023_visc/Hazzard2023_visc.nc` (see
 `Remap/README.md`) on lon -180:0.5:179.5, lat -90:0.5:-45 with
 
 - `log10_visc`, `log10_visc_sd` (log10(Pa s)): log10 of the mantle viscosity (mean,

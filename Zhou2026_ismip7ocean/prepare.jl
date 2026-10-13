@@ -2,11 +2,11 @@
 # practical salinity and thermal forcing of the observational climatology of Zhou et al.
 # (OCEAN ICE, "zhou_annual_06_nov", 1972-2024), extrapolated everywhere by ISMIP7, and
 # the IMBIE2 basins extended into the ocean, on the ISMIP7 8 km grid (EPSG:3031) with
-# 30 layers of 60 m, as $FESMDATA_WORK/prepared/Zhou2026_ismip7ocean/ISMIP7_OCEAN_1972-2024.nc.
+# 30 layers of 60 m, as $FESMDATA_PREPARED/Zhou2026_ismip7ocean/ISMIP7_OCEAN_1972-2024.nc.
 #
 # Usage:
 #     julia --project=Zhou2026_ismip7ocean Zhou2026_ismip7ocean/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/Zhou2026_ismip7ocean/ISMIP7_OCEAN_1972-2024.nc Antarctica
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/Zhou2026_ismip7ocean/ISMIP7_OCEAN_1972-2024.nc Antarctica
 
 using NCDatasets
 

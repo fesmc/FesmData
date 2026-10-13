@@ -29,7 +29,7 @@ julia --project=Kindler2014 Kindler2014/prepare.jl
 julia fesmdata.jl record IceCores Kindler2014
 ```
 
-`prepare.jl` writes `$FESMDATA_WORK/prepared/Kindler2014/Kindler2014_NGRIP.nc` (see
+`prepare.jl` writes `$FESMDATA_PREPARED/Kindler2014/Kindler2014_NGRIP.nc` (see
 `Records/README.md`), a time series at one station (featureType timeSeries):
 
 - `tas` (K): surface temperature, from °C (+ 273.15); the article gives an

@@ -26,12 +26,12 @@ of which `ECM1_Sediments/Sed_ECM1.txt` is used. It is in `datamanifest.toml`
 
 ```bash
 julia --project=Mooney2023_ecm1 Mooney2023_ecm1/prepare.jl
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/Mooney2023_ecm1/Mooney2023_ECM1_sed.nc all --name=Sediment-ECM1
+julia fesmdata.jl remap $FESMDATA_PREPARED/Mooney2023_ecm1/Mooney2023_ECM1_sed.nc all --name=Sediment-ECM1
 ```
 
 `prepare.jl` writes `z_sed`, the total sediment thickness, and the thickness of each
 sediment layer, `z_sed_upper`, `z_sed_middle` and `z_sed_lower` (m), to
-`$FESMDATA_WORK/prepared/Mooney2023_ecm1/Mooney2023_ECM1_sed.nc` (see `Remap/README.md`).
+`$FESMDATA_PREPARED/Mooney2023_ecm1/Mooney2023_ECM1_sed.nc` (see `Remap/README.md`).
 They are the columns `Sed` and `SedT1`-`SedT3` of `Sed_ECM1.txt` (m; `Sed` is the sum
 of the layers). The total sediment thickness is also in `ECM1.txt` of the crystalline
 crust model (`Sed`, km), used by the v1 product SED-M23 (`ECM1_geo/`).

@@ -2,7 +2,7 @@
 # Vinther et al. (2009) as a record (see Records/README.md): section 3 of the NOAA NCEI
 # text file (datamanifest key vinther2009_greenland), 20-year values from 11.7 ka b2k to
 # present, as time series at Camp Century, NGRIP, GRIP and DYE-3 (featureType
-# timeSeries), $FESMDATA_WORK/prepared/Vinther2009_elevations/Vinther2009_elevations.nc.
+# timeSeries), $FESMDATA_PREPARED/Vinther2009_elevations/Vinther2009_elevations.nc.
 #
 # Usage:
 #     julia --project=Vinther2009_elevations Vinther2009_elevations/prepare.jl

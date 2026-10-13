@@ -22,11 +22,11 @@ redistribution. NSIDC asks to cite the data set and the article.
 NSIDC-0670 v1, https://nsidc.org/data/nsidc-0670/versions/1, needs a NASA Earthdata
 login. The four GeoTIFF files `greenland_vel_mosaic250_<c>_v1.tif`, `<c>` = `vx`, `vy`
 (velocity along the x and y axes of the grid, m yr-1) and `ex`, `ey` (their errors), go to
-`$DATAMANIFEST_DATASETS_DIR/nsidc0670_v1_greenland_vel/` (datamanifest key
+`$FESMDATA_SOURCES/nsidc0670_v1_greenland_vel/` (datamanifest key
 `nsidc0670_v1_greenland_vel`). With a `~/.netrc` for urs.earthdata.nasa.gov:
 
 ```bash
-cd $DATAMANIFEST_DATASETS_DIR/nsidc0670_v1_greenland_vel
+cd $FESMDATA_SOURCES/nsidc0670_v1_greenland_vel
 for c in vx vy ex ey; do
     curl -n -L -c ~/.urs_cookies -b ~/.urs_cookies -O \
         https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/MEASURES/NSIDC-0670/1/1995/12/01/greenland_vel_mosaic250_${c}_v1.tif
@@ -37,10 +37,10 @@ done
 
 ```bash
 julia -t 8 --project=Joughin2018 Joughin2018/prepare.jl
-julia -t 8 fesmdata.jl remap $FESMDATA_WORK/prepared/Joughin2018/Joughin2018_VEL.nc Greenland --name=VEL-Joughin2018
+julia -t 8 fesmdata.jl remap $FESMDATA_PREPARED/Joughin2018/Joughin2018_VEL.nc Greenland --name=VEL-Joughin2018
 ```
 
-`prepare.jl` (2 min, 4 GB) writes `$FESMDATA_WORK/prepared/Joughin2018/Joughin2018_VEL.nc`
+`prepare.jl` (2 min, 4 GB) writes `$FESMDATA_PREPARED/Joughin2018/Joughin2018_VEL.nc`
 on the 250 m grid of the mosaic, in m yr-1:
 
 - `ux_srf`, `uy_srf`: eastward and northward surface velocity, rotated from `vx`, `vy`

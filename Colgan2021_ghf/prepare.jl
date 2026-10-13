@@ -1,11 +1,11 @@
 # Prepare the Colgan & Wansing (2021) geothermal heat flow of Greenland for remapping:
 # the equal-area points of geothermal_heat_flow_from_machinelearning.xyz (GEUS
 # Dataverse, datamanifest key colgan2021_ghf) on a regular lon-lat grid, written to
-# $FESMDATA_WORK/prepared/Colgan2021_ghf/Colgan2021_GHF.nc with ghf, ghf_min, ghf_max.
+# $FESMDATA_PREPARED/Colgan2021_ghf/Colgan2021_GHF.nc with ghf, ghf_min, ghf_max.
 #
 # Usage:
 #     julia --project=Colgan2021_ghf Colgan2021_ghf/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/Colgan2021_ghf/Colgan2021_GHF.nc Greenland
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/Colgan2021_ghf/Colgan2021_GHF.nc Greenland
 
 using DelimitedFiles
 using NCDatasets

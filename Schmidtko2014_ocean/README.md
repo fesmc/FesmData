@@ -30,13 +30,13 @@ of the sea floor (m, negative), conservative temperature and its standard deviat
 
 ```bash
 julia --project=Schmidtko2014_ocean Schmidtko2014_ocean/prepare.jl
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/Schmidtko2014_ocean/Schmidtko2014_OCEAN.nc Antarctica --name=OCEAN-Schmidtko2014
+julia fesmdata.jl remap $FESMDATA_PREPARED/Schmidtko2014_ocean/Schmidtko2014_OCEAN.nc Antarctica --name=OCEAN-Schmidtko2014
 ```
 
 `prepare.jl` puts the cells on their lon-lat grid (longitudes -180 to 180, latitudes
 -79.875 to -60), missing off the shelf, and writes `ct_bottom`, `ct_bottom_std` (°C),
 `sa_bottom`, `sa_bottom_std` (g kg-1) and `z_bottom` (m) to
-`$FESMDATA_WORK/prepared/Schmidtko2014_ocean/Schmidtko2014_OCEAN.nc` (see
+`$FESMDATA_PREPARED/Schmidtko2014_ocean/Schmidtko2014_OCEAN.nc` (see
 `Remap/README.md`). The values are not converted (conservative temperature and absolute
 salinity, not potential temperature and practical salinity).
 

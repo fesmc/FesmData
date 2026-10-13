@@ -1,12 +1,12 @@
 # Prepare the MEaSUREs multi-year Greenland ice velocity mosaic (NSIDC-0670 v1, 250 m;
-# Joughin et al., 2018) for remapping: $FESMDATA_WORK/prepared/Joughin2018/Joughin2018_VEL.nc,
+# Joughin et al., 2018) for remapping: $FESMDATA_PREPARED/Joughin2018/Joughin2018_VEL.nc,
 # on the 250 m grid of the mosaic (EPSG:3413), with the eastward and northward surface
 # velocity (rotated from the components along the x and y axes of the grid), the speed and
 # the errors along the grid axes.
 #
 # Usage:
 #     julia -t 8 --project=Joughin2018 Joughin2018/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/Joughin2018/Joughin2018_VEL.nc Greenland --name=VEL-Joughin2018
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/Joughin2018/Joughin2018_VEL.nc Greenland --name=VEL-Joughin2018
 
 using FesmUtils
 using NCDatasets

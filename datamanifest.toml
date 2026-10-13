@@ -1,7 +1,7 @@
 # Original datasets used by FesmData workflows (read with DataManifest.jl).
 #
 # The data are stored outside the repository, under the folder given by the
-# environment variable DATAMANIFEST_DATASETS_DIR (set per machine, see
+# environment variable FESMDATA_SOURCES (set per machine, see
 # shared/machines/*.env). Entries with `skip_download = true` need a manual download
 # (e.g. a NASA Earthdata login) into their `storage_path`.
 

@@ -1,10 +1,10 @@
 # Prepare GlobSed v3 (Straume et al., 2019), the total sediment thickness of the
 # oceans, for remapping: the 5 arc-min grid of GlobSed-v3.nc as a prepared NetCDF file,
-# $FESMDATA_WORK/prepared/Straume2019_globsed/Straume2019_GlobSed.nc, with z_sed.
+# $FESMDATA_PREPARED/Straume2019_globsed/Straume2019_GlobSed.nc, with z_sed.
 #
 # Usage:
 #     julia --project=Straume2019_globsed Straume2019_globsed/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/Straume2019_globsed/Straume2019_GlobSed.nc all
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/Straume2019_globsed/Straume2019_GlobSed.nc all
 
 using NCDatasets
 

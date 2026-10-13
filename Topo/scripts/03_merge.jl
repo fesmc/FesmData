@@ -1,6 +1,6 @@
 #
 # Merge the sources of each product of a domain on its base grid (output of step 2),
-# and write <BASE>_TOPO-<product>.nc to $ICE_DATA/v2/<folder>/<BASE>/.
+# and write <BASE>_TOPO-<product>.nc to $FESMDATA_PRODUCTS/<folder>/<BASE>/.
 #
 # Sources are blended in order of increasing priority. A source replaces the fields
 # below it where it fully covers a cell, with a weight that increases linearly from 0

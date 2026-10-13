@@ -8,16 +8,17 @@
 # installs its packages if needed.
 
 const USAGE = """
-FesmData products (https://fesmc.github.io/FesmData/)
+FesmData products (https://fesmc.github.io/FesmData/), in \$FESMDATA_PRODUCTS (default
+\$FESMDATA/products, see shared/README.md)
 
 Find and download:
   list [<Dataset>] [<Domain>]                  records, of a dataset and/or a domain, and
                                                datasets by cropping on nests and crops
   list <Domain> <Dataset>                      a record in detail: grids, files, sizes,
-                                               files present in \$ICE_DATA
+                                               files present in \$FESMDATA_PRODUCTS
   list [<Dataset>] <GRID> ...                  the records of grids in detail (a grid
                                                implies its domain, e.g. ANT-32KM)
-  fetch <Dataset> <Domain> | <GRID> ...        download into \$ICE_DATA/v2/<Domain>/<GRID>/
+  fetch <Dataset> <Domain> | <GRID> ...        download into \$FESMDATA_PRODUCTS/<Domain>/<GRID>/
                                                and verify; files of earlier releases are
                                                updated (--overwrite: also replace files
                                                changed locally). On a nest or crop: also
@@ -29,14 +30,14 @@ Find and download:
                                                again to update (--yes: no confirmation);
                                                records only, not datasets by cropping
   (arguments in any order; --dir=<folder>: list, fetch or mirror in <folder> instead of
-  \$ICE_DATA/v2, e.g. to archive the releases there before updating: files already in
-  \$ICE_DATA/v2 are hard linked (--copy: copied), and the registry files go to
+  \$FESMDATA_PRODUCTS, e.g. to archive the releases there before updating: files already in
+  \$FESMDATA_PRODUCTS are hard linked (--copy: copied), and the registry files go to
   <folder>/registry/; fetch by cropping writes the crops there too)
 
 Bring your own data (see Remap/README.md):
   remap <file.nc> <Domain> | <GRID> | all ...  remap the fields of a prepared NetCDF file
                                                (lon-lat or projected grid) onto the grids,
-                                               as \$ICE_DATA/v2/<Domain>/<GRID>/<GRID>_<name>.nc
+                                               as \$FESMDATA_PRODUCTS/<Domain>/<GRID>/<GRID>_<name>.nc
                                                (--vars=a,b: only these fields; --name=NAME:
                                                default the file name; --method=con|bilinear;
                                                --smooth=auto|<km>: Gaussian smoothing after,
@@ -49,7 +50,7 @@ Bring your own data (see Remap/README.md):
 Records, non-gridded data (see Records/README.md):
   record <Dataset> [<product> ...]             make the products of a records dataset
                                                (defined in <Dataset>/records.toml) as
-                                               \$ICE_DATA/v2/Records/<Dataset>/<Dataset>-<product>.nc,
+                                               \$FESMDATA_PRODUCTS/Records/<Dataset>/<Dataset>-<product>.nc,
                                                preparing missing sources first (--overwrite)
 
 Figures for the website (maintainers, see Figures/README.md):

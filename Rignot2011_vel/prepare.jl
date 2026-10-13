@@ -1,13 +1,13 @@
 # Prepare the MEaSUREs InSAR-based Antarctica ice velocity map (NSIDC-0484 v2, 450 m;
 # Rignot et al., 2011; Mouginot et al., 2012, 2017) for remapping:
-# $FESMDATA_WORK/prepared/Rignot2011_vel/Rignot2011_VEL.nc, on the 450 m grid of the map
+# $FESMDATA_PREPARED/Rignot2011_vel/Rignot2011_VEL.nc, on the 450 m grid of the map
 # (EPSG:3031), with the eastward and northward surface velocity (rotated from the
 # components along the x and y axes of the grid), the speed and the errors along the
 # grid axes.
 #
 # Usage:
 #     julia -t 8 --project=Rignot2011_vel Rignot2011_vel/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/Rignot2011_vel/Rignot2011_VEL.nc Antarctica --name=VEL-Rignot2011
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/Rignot2011_vel/Rignot2011_VEL.nc Antarctica --name=VEL-Rignot2011
 
 using FesmUtils
 using NCDatasets

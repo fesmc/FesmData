@@ -6,7 +6,7 @@ original sources with a documented `prepare.jl`, but they are not remapped: the
 prepared file is the product. They go to
 
 ```
-$ICE_DATA/v2/Records/<Dataset>/<Dataset>-<Product>.nc
+$FESMDATA_PRODUCTS/Records/<Dataset>/<Dataset>-<Product>.nc
 ```
 
 next to the domain folders of the gridded data, e.g.
@@ -22,7 +22,7 @@ data are not included.
 1. **Prepare**, as for a gridded source (see Bring your own data): the source folder
    `<Author><Year>_<topic>/` has `README.md` (data, reference, licence, original data)
    and `prepare.jl`, which gets the originals through `datamanifest.toml` and writes
-   `$FESMDATA_WORK/prepared/<Source>/<file>.nc` in the form below, with
+   `$FESMDATA_PREPARED/<Source>/<file>.nc` in the form below, with
    `provenance_attrib(<tag>)`.
 2. **Record**: `<Dataset>/records.toml` lists the products,
    ```toml
@@ -37,7 +37,7 @@ data are not included.
    julia fesmdata.jl record IceCores Kindler2014     # one product
    ```
    prepares the missing sources, checks each prepared file against the form below and
-   copies it to `$ICE_DATA/v2/Records/<Dataset>/<Dataset>-<Product>.nc` (`--overwrite`
+   copies it to `$FESMDATA_PRODUCTS/Records/<Dataset>/<Dataset>-<Product>.nc` (`--overwrite`
    to replace).
 3. **Publish**, as for a thematic dataset: add the dataset to `Publish/datasets.toml`,
    write `<Dataset>/README.md`, make its figures (`julia fesmdata.jl figures

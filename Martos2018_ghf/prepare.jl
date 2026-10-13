@@ -1,11 +1,11 @@
 # Prepare the Martos et al. (2018) geothermal heat flux of Greenland for remapping: the
 # 15 km grid (UTM zone 23N) of the PANGAEA ASCII files (x y z, land points only) as a
-# prepared NetCDF file, $FESMDATA_WORK/prepared/Martos2018_ghf/Martos2018_GHF.nc, with
+# prepared NetCDF file, $FESMDATA_PREPARED/Martos2018_ghf/Martos2018_GHF.nc, with
 # ghf, ghf_sd, depth_curie and depth_curie_sd.
 #
 # Usage:
 #     julia --project=Martos2018_ghf Martos2018_ghf/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/Martos2018_ghf/Martos2018_GHF.nc Greenland
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/Martos2018_ghf/Martos2018_GHF.nc Greenland
 
 using DelimitedFiles
 using NCDatasets

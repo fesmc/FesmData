@@ -1,12 +1,12 @@
 # Prepare the 3D mantle viscosity of Bagge et al. (2021) for remapping: 8 of the 18 Earth
 # structures of the GFZ data publication (datamanifest key bagge2021_visc) on their
 # Gaussian grid (512 x 256) and 164 layers, as a prepared NetCDF file,
-# $FESMDATA_WORK/prepared/Bagge2021_visc/Bagge2021_visc.nc, with log10_visc (on depth and
+# $FESMDATA_PREPARED/Bagge2021_visc/Bagge2021_visc.nc, with log10_visc (on depth and
 # structure), the latitude bounds of the Gaussian grid and the depth bounds of the layers.
 #
 # Usage:
 #     julia --project=Bagge2021_visc Bagge2021_visc/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/Bagge2021_visc/Bagge2021_visc.nc Antarctica
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/Bagge2021_visc/Bagge2021_visc.nc Antarctica
 
 using NCDatasets
 

@@ -20,7 +20,7 @@ CC BY 3.0 (Creative Commons Attribution 3.0 Unported), as stated on PANGAEA.
 
 Four ASCII files (`x y z`, no header) from
 https://store.pangaea.de/Publications/Martos-etal_2018/, downloaded by `prepare.jl`
-(`datamanifest.toml`, keys `martos2018_*`) to `$DATAMANIFEST_DATASETS_DIR/martos2018/`:
+(`datamanifest.toml`, keys `martos2018_*`) to `$FESMDATA_SOURCES/martos2018/`:
 
 - `Geothermal_Heat_Flux_Greenland.xyz`: heat flux (mW m-2)
 - `Geothermal_Heat_Flux_Greenland_uncertainty.xyz`: its uncertainty (mW m-2)
@@ -34,11 +34,11 @@ The files are identical to the copies in the old PIK archive
 
 ```bash
 julia --project=Martos2018_ghf Martos2018_ghf/prepare.jl
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/Martos2018_ghf/Martos2018_GHF.nc Greenland --name=GHF-Martos2018
+julia fesmdata.jl remap $FESMDATA_PREPARED/Martos2018_ghf/Martos2018_GHF.nc Greenland --name=GHF-Martos2018
 ```
 
 `prepare.jl` writes `ghf`, `ghf_sd` (mW m-2), `depth_curie` and `depth_curie_sd` (km) to
-`$FESMDATA_WORK/prepared/Martos2018_ghf/Martos2018_GHF.nc` (see `Remap/README.md`).
+`$FESMDATA_PREPARED/Martos2018_ghf/Martos2018_GHF.nc` (see `Remap/README.md`).
 
 The coordinates are x, y in m in UTM zone 23N (WGS84), as stated on PANGAEA ("X and Y
 geographic coordinates are in UTM23N projection"); the points lie on a regular 15 km

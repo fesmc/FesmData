@@ -27,18 +27,18 @@ PaleoMIST 1.0: CC BY 4.0. See the READMEs of the two sources.
 ## Original data
 
 The prepared files of the two sources, which are prepared first if they are missing:
-`$FESMDATA_WORK/prepared/Batchelor2019_NHIceMasks/Batchelor2019_NH_ICE.nc` and
-`$FESMDATA_WORK/prepared/Gowan2021_PaleoMIST1.0/Gowan2021_PaleoMIST.nc`.
+`$FESMDATA_PREPARED/Batchelor2019_NHIceMasks/Batchelor2019_NH_ICE.nc` and
+`$FESMDATA_PREPARED/Gowan2021_PaleoMIST1.0/Gowan2021_PaleoMIST.nc`.
 
 ## Prepare and remap
 
 ```bash
 julia -t 16 --project=Batchelor2019_PaleoMIST_lgc Batchelor2019_PaleoMIST_lgc/prepare.jl
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/Batchelor2019_PaleoMIST_lgc/Batchelor2019_PaleoMIST_LGC.nc Global --name=IceHistory-Batchelor2019_PaleoMIST_LGC
+julia fesmdata.jl remap $FESMDATA_PREPARED/Batchelor2019_PaleoMIST_lgc/Batchelor2019_PaleoMIST_LGC.nc Global --name=IceHistory-Batchelor2019_PaleoMIST_LGC
 ```
 
 `prepare.jl` writes
-`$FESMDATA_WORK/prepared/Batchelor2019_PaleoMIST_lgc/Batchelor2019_PaleoMIST_LGC.nc` (see
+`$FESMDATA_PREPARED/Batchelor2019_PaleoMIST_lgc/Batchelor2019_PaleoMIST_LGC.nc` (see
 `Remap/README.md`) on a global 0.1° lon-lat grid (that of `GLOBAL-0.1DEG`) with
 `f_ice_best`, `f_ice_min` and `f_ice_max` (1) on (lon, lat, time), and per time slice its
 `label` and `time_paleomist`, the time of PaleoMIST used in the Southern Hemisphere.

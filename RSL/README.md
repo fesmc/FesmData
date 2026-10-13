@@ -3,7 +3,7 @@
 Dated relative sea level indicators (index points and limiting data). RSL is a records
 dataset (non-gridded data, see `Records/README.md`): its products, defined in
 `RSL/records.toml`, are prepared files in the form of the CF discrete sampling
-geometries, written to `$ICE_DATA/v2/Records/RSL/RSL-<product>.nc`.
+geometries, written to `$FESMDATA_PRODUCTS/Records/RSL/RSL-<product>.nc`.
 
 ## Products
 
@@ -27,4 +27,4 @@ julia fesmdata.jl record RSL
 ```
 
 prepares the missing sources (`<Source>/prepare.jl`), checks the prepared files and
-copies them to `$ICE_DATA/v2/Records/RSL/` (`--overwrite` to replace them).
+copies them to `$FESMDATA_PRODUCTS/Records/RSL/` (`--overwrite` to replace them).

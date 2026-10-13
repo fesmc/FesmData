@@ -27,7 +27,7 @@ cited (nsidc.org/about/data-use-and-copyright).
 ## Original data
 
 `RRRAG4_Greenland_1993_2019_02_age_grid.nc` (44 MB), downloaded by hand (NASA Earthdata
-login) into `$DATAMANIFEST_DATASETS_DIR/rrrag4_v2/` (datamanifest key `rrrag4_v2`):
+login) into `$FESMDATA_SOURCES/rrrag4_v2/` (datamanifest key `rrrag4_v2`):
 
 ```bash
 curl -n -L -c ~/.urs_cookies -b ~/.urs_cookies -O https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/ICEBRIDGE-Related/RRRAG4/2/1993/06/24/RRRAG4_Greenland_1993_2019_02_age_grid.nc
@@ -41,10 +41,10 @@ The same grid (identical values) is in the Zenodo record of the article,
 
 ```bash
 julia --project=MacGregor2025_strat MacGregor2025_strat/prepare.jl
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/MacGregor2025_strat/MacGregor2025_STRAT.nc Greenland GreenlandPaleo --name=Stratigraphy-MacGregor2025
+julia fesmdata.jl remap $FESMDATA_PREPARED/MacGregor2025_strat/MacGregor2025_STRAT.nc Greenland GreenlandPaleo --name=Stratigraphy-MacGregor2025
 ```
 
-`prepare.jl` writes to `$FESMDATA_WORK/prepared/MacGregor2025_strat/MacGregor2025_STRAT.nc`
+`prepare.jl` writes to `$FESMDATA_PREPARED/MacGregor2025_strat/MacGregor2025_STRAT.nc`
 (see `Remap/README.md`), on the original grid (y made ascending):
 
 - `ice_age`, `ice_age_sd` (ka): age of the ice and its uncertainty at `depth_norm`

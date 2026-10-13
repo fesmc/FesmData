@@ -22,7 +22,7 @@ CC BY 4.0 (Zenodo record and article).
 ## Original data
 
 Zenodo record 19255213 (no login), downloaded by `prepare.jl` (DataManifest keys
-`racmo24p1_ant11_*` in `datamanifest.toml`) to `$DATAMANIFEST_DATASETS_DIR/racmo24p1_ant11/`
+`racmo24p1_ant11_*` in `datamanifest.toml`) to `$FESMDATA_SOURCES/racmo24p1_ant11/`
 (3.1 GB): `ANT11_masks.nc` and the monthly files
 `<var>_monthly{S,A}_ANT11_RACMO2.4p1_ERA5_197901_202512.nc` of `smbgl`, `pr`, `sf`,
 `totrunoff`, `mltgl`, `subltot` (monthly sums, kg m-2) and `tas`, `ts` (monthly means, K).
@@ -31,11 +31,11 @@ Zenodo record 19255213 (no login), downloaded by `prepare.jl` (DataManifest keys
 
 ```bash
 julia --project=vanDalum2025_racmo24 vanDalum2025_racmo24/prepare.jl
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/vanDalum2025_racmo24/RACMO2.4p1_1991-2020.nc Antarctica --name=SMB-RACMO2.4p1-1991-2020
+julia fesmdata.jl remap $FESMDATA_PREPARED/vanDalum2025_racmo24/RACMO2.4p1_1991-2020.nc Antarctica --name=SMB-RACMO2.4p1-1991-2020
 ```
 
 `prepare.jl` (3 min, 6 GB memory: run it on a compute node) writes to
-`$FESMDATA_WORK/prepared/vanDalum2025_racmo24/`:
+`$FESMDATA_PREPARED/vanDalum2025_racmo24/`:
 
 - `RACMO2.4p1_1981-2010.nc`, `RACMO2.4p1_1991-2020.nc`: monthly climatologies
   (x, y, month);

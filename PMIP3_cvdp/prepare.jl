@@ -1,12 +1,12 @@
 # Prepare the PMIP3 (CMIP5) lgm, midHolocene and piControl climatologies for remapping:
 # the annual and seasonal means of the CVDP output (cvdp_data files, see README.md), one
 # file per model and experiment on the model's own lon-lat grid,
-# $FESMDATA_WORK/prepared/PMIP3_cvdp/PMIP3_<model>_<experiment>.nc, and the PMIP3 LGM
+# $FESMDATA_PREPARED/PMIP3_cvdp/PMIP3_<model>_<experiment>.nc, and the PMIP3 LGM
 # boundary conditions, PMIP3_lgm_boundary_conditions.nc.
 #
 # Usage:
 #     julia --project=PMIP3_cvdp PMIP3_cvdp/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/PMIP3_cvdp/PMIP3_CCSM4_lgm.nc all --name=PMIP3-CCSM4-lgm
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/PMIP3_cvdp/PMIP3_CCSM4_lgm.nc all --name=PMIP3-CCSM4-lgm
 
 using NCDatasets
 

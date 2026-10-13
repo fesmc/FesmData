@@ -37,7 +37,7 @@ julia fesmdata.jl record IceCores Vinther2009
 ```
 
 `prepare.jl` writes
-`$FESMDATA_WORK/prepared/Vinther2009_elevations/Vinther2009_elevations.nc` (see
+`$FESMDATA_PREPARED/Vinther2009_elevations/Vinther2009_elevations.nc` (see
 `Records/README.md`), time series at four stations (featureType timeSeries):
 
 - `dz_srf` (m): surface elevation change relative to the present (the interval 20-40

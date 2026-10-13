@@ -40,7 +40,7 @@ julia --project=Wiens2022_visc Wiens2022_visc/prepare.jl
 julia fesmdata.jl remap SolidEarth Wiens2022
 ```
 
-`prepare.jl` writes `$FESMDATA_WORK/prepared/Wiens2022_visc/Wiens2022_visc.nc` (see
+`prepare.jl` writes `$FESMDATA_PREPARED/Wiens2022_visc/Wiens2022_visc.nc` (see
 `Remap/README.md`) with `log10_visc` (log10(Pa s)), log10 of the upper-mantle viscosity,
 on x, y and `depth` (m, positive down: 100, 200, 300 km).
 

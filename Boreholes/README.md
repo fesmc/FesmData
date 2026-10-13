@@ -3,7 +3,7 @@
 Temperature profiles measured in boreholes through ice sheets and ice caps. Boreholes
 is a records dataset (non-gridded data, see `Records/README.md`): its products, defined
 in `Boreholes/records.toml`, are prepared files in the form of the CF discrete sampling
-geometries, written to `$ICE_DATA/v2/Records/Boreholes/Boreholes-<product>.nc`.
+geometries, written to `$FESMDATA_PRODUCTS/Records/Boreholes/Boreholes-<product>.nc`.
 
 ## Products
 
@@ -27,4 +27,4 @@ julia fesmdata.jl record Boreholes
 ```
 
 prepares the missing sources (`<Source>/prepare.jl`), checks the prepared files and
-copies them to `$ICE_DATA/v2/Records/Boreholes/` (`--overwrite` to replace them).
+copies them to `$FESMDATA_PRODUCTS/Records/Boreholes/` (`--overwrite` to replace them).

@@ -11,8 +11,8 @@ The data itself most often should not be stored in this repository itself. In fa
 
 In v2, every dataset is made in two steps (see `Remap/README.md`):
 
-1. **Prepare**: the source folder (e.g. `Lucazeau2019_ghf/`) has a `prepare.jl` that gets the original files (listed in `datamanifest.toml`) and writes them as a NetCDF file on their own grid, in a simple standard form, to `$FESMDATA_WORK/prepared/<Key>/`.
-2. **Remap**: `julia fesmdata.jl remap <file>` puts a prepared file onto the grids of the model domains, in `$ICE_DATA/v2/<Domain>/<GRID>/<GRID>_<Dataset>-<Product>.nc`. Remapping is conservative (with smoothing where the target grid is coarser), and handles extra dimensions (month, time, depth, ...), integer fields (dominant class) and vectors (rotated to the grid axes).
+1. **Prepare**: the source folder (e.g. `Lucazeau2019_ghf/`) has a `prepare.jl` that gets the original files (listed in `datamanifest.toml`) and writes them as a NetCDF file on their own grid, in a simple standard form, to `$FESMDATA_PREPARED/<Key>/`.
+2. **Remap**: `julia fesmdata.jl remap <file>` puts a prepared file onto the grids of the model domains, in `$FESMDATA_PRODUCTS/<Domain>/<GRID>/<GRID>_<Dataset>-<Product>.nc`. Remapping is conservative (with smoothing where the target grid is coarser), and handles extra dimensions (month, time, depth, ...), integer fields (dominant class) and vectors (rotated to the grid axes).
 
 A **thematic dataset** (e.g. `GHF/`) groups the products of several sources in its `remap.toml`: `julia fesmdata.jl remap GHF` makes all of them, and they are released together.
 
@@ -55,7 +55,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 
 ## Records (non-gridded datasets)
 
-Time series, site and profile data, in `$ICE_DATA/v2/Records/<Dataset>/` (see `Records/README.md`).
+Time series, site and profile data, in `$FESMDATA_PRODUCTS/Records/<Dataset>/` (see `Records/README.md`).
 
 | Key | Contents | Sources |
 |-----|----------|---------|

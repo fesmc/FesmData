@@ -1,5 +1,5 @@
 # Records (see README.md): check the prepared files of non-gridded data and copy them to
-# $ICE_DATA/v2/Records/<Dataset>/ (`julia fesmdata.jl record`).
+# $FESMDATA_PRODUCTS/Records/<Dataset>/ (`julia fesmdata.jl record`).
 
 using NCDatasets
 
@@ -64,7 +64,7 @@ end
 
 Make the products of a records dataset (<Dataset>/records.toml): all, or those named in
 `args`. A prepared file that is missing is made first by the prepare.jl of its source;
-each is checked (`check_record`) and copied to `\$ICE_DATA/v2/Records/<Dataset>/`.
+each is checked (`check_record`) and copied to `\$FESMDATA_PRODUCTS/Records/<Dataset>/`.
 """
 function record_dataset(dataset::AbstractString, args=String[]; overwrite::Bool=false)
     products = records_products(dataset)

@@ -3,7 +3,7 @@
 Point measurements of the surface mass balance of the ice sheets. SMBObs is a records
 dataset (non-gridded data, see `Records/README.md`): its products, defined in
 `SMBObs/records.toml`, are prepared files in the form of the CF discrete sampling
-geometries, written to `$ICE_DATA/v2/Records/SMBObs/SMBObs-<product>.nc`.
+geometries, written to `$FESMDATA_PRODUCTS/Records/SMBObs/SMBObs-<product>.nc`.
 
 ## Products
 
@@ -30,4 +30,4 @@ julia fesmdata.jl record SMBObs
 ```
 
 prepares the missing sources (`<Source>/prepare.jl`), checks the prepared files and
-copies them to `$ICE_DATA/v2/Records/SMBObs/` (`--overwrite` to replace them).
+copies them to `$FESMDATA_PRODUCTS/Records/SMBObs/` (`--overwrite` to replace them).

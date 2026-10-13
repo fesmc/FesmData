@@ -2,7 +2,7 @@
 # et al., 2023 data release; monthly fields 1979-2022 on the 27 km rotated-pole grid
 # ANT27) for remapping: monthly climatologies 1981-2010, 1991-2020 and 1985-2014 (x, y,
 # month), their annual means (x, y) and annual values 1979-2022 (x, y, time), with the
-# surface elevation and masks, in $FESMDATA_WORK/prepared/vanWessem2023_racmo23/.
+# surface elevation and masks, in $FESMDATA_PREPARED/vanWessem2023_racmo23/.
 #
 # The rotated-pole grid is regular in rotated longitude and latitude (0.25°). It is
 # written as x, y = R * rotated lon, lat (radians), R = 6371229 m, i.e. an equidistant

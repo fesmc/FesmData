@@ -30,7 +30,7 @@ CC BY 4.0 (UC San Diego Library).
 ## Original data
 
 From the UC San Diego Library (no login), downloaded by `prepare.jl` into
-`$DATAMANIFEST_DATASETS_DIR/adusumilli2020/`:
+`$FESMDATA_SOURCES/adusumilli2020/`:
 
 - `ANT_iceshelf_melt_rates_CS2_2010-2018_v0.h5` (2.5 GB, datamanifest key
   `adusumilli2020_melt`): `w_b`, the 2010-2018 mean melt rate where there are
@@ -45,11 +45,11 @@ From the UC San Diego Library (no login), downloaded by `prepare.jl` into
 
 ```bash
 julia --project=Adusumilli2020_bmelt Adusumilli2020_bmelt/prepare.jl
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/Adusumilli2020_bmelt/Adusumilli2020_BMELT_2010-2018.nc Antarctica --name=BasalMelt-Adusumilli2020
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/Adusumilli2020_bmelt/Adusumilli2020_HEIGHTS_1992-2018.nc Antarctica --name=BasalMelt-Adusumilli2020-heights
+julia fesmdata.jl remap $FESMDATA_PREPARED/Adusumilli2020_bmelt/Adusumilli2020_BMELT_2010-2018.nc Antarctica --name=BasalMelt-Adusumilli2020
+julia fesmdata.jl remap $FESMDATA_PREPARED/Adusumilli2020_bmelt/Adusumilli2020_HEIGHTS_1992-2018.nc Antarctica --name=BasalMelt-Adusumilli2020-heights
 ```
 
-`prepare.jl` writes two files to `$FESMDATA_WORK/prepared/Adusumilli2020_bmelt/` (see
+`prepare.jl` writes two files to `$FESMDATA_PREPARED/Adusumilli2020_bmelt/` (see
 `Remap/README.md`), on the original grids.
 
 `Adusumilli2020_BMELT_2010-2018.nc`, in m yr-1 ice equivalent, positive for melting:

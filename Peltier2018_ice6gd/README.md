@@ -53,7 +53,7 @@ julia --project=Peltier2018_ice6gd Peltier2018_ice6gd/prepare.jl
 julia fesmdata.jl remap IceHistory ICE6G_D
 ```
 
-`prepare.jl` writes `$FESMDATA_WORK/prepared/Peltier2018_ice6gd/Peltier2018_ICE6G_D.nc`
+`prepare.jl` writes `$FESMDATA_PREPARED/Peltier2018_ice6gd/Peltier2018_ICE6G_D.nc`
 (see `Remap/README.md`) with the dimension `time` (years ago, i.e. before 1950 CE,
 oldest first; the source gives ka BP) and
 

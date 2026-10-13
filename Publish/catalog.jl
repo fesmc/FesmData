@@ -72,7 +72,7 @@ end
     record_detail(domain, dataset; grids=String[], dir=nothing, sandbox=false)
 
 Print a record: its release, and the files of each grid (all grids, or those of
-`grids`) with their sizes and whether they are in \$ICE_DATA, or in `dir` (by size;
+`grids`) with their sizes and whether they are in \$FESMDATA_PRODUCTS, or in `dir` (by size;
 `fetch` checks the checksums).
 """
 function record_detail(domain::AbstractString, dataset::AbstractString; grids=String[], dir=nothing,
@@ -87,9 +87,9 @@ function record_detail(domain::AbstractString, dataset::AbstractString; grids=St
     println("Packages: $(release["store"])")
     doi = record_doi(tables)
     isempty(doi) || println("DOI: https://doi.org/$doi")
-    have_local = dir !== nothing || haskey(ENV, "ICE_DATA")
-    have_local || println("(ICE_DATA is not set: local files not checked)")
-    where = dir === nothing ? "\$ICE_DATA" : local_root(dir)
+    have_local = dir !== nothing || has_fesmdata_dir("products")
+    have_local || println("(FESMDATA is not set: local files not checked)")
+    where = dir === nothing ? products_dir() : local_root(dir)
     counts = Dict("present" => 0, "missing" => 0, "differs" => 0)
     for (grid, entries) in selected
         println("\n", rpad(grid, 16), length(entries), " files, ", human_size(total_size(last.(entries))))
@@ -322,7 +322,7 @@ end
 
 Print a record by cropping: the release of its source record, and for each grid (all,
 or those of `grids`) the source grid, its download size, and the files to crop, with
-whether they are in \$ICE_DATA, or in `dir` (`fetch` checks that they are the crops of
+whether they are in \$FESMDATA_PRODUCTS, or in `dir` (`fetch` checks that they are the crops of
 the current source files).
 """
 function crop_detail(c::CropRecord; grids=String[], dir=nothing, sandbox::Bool=false)
@@ -332,9 +332,9 @@ function crop_detail(c::CropRecord; grids=String[], dir=nothing, sandbox::Bool=f
             "($(release["git_tag"])), released $(release["date"])")
     println("$(length(c.products)) products without a record on $(c.folder): fetch downloads them on $(c.source) ",
             "and cuts them to $(c.folder)")
-    have_local = dir !== nothing || haskey(ENV, "ICE_DATA")
-    have_local || println("(ICE_DATA is not set: local files not checked)")
-    where = dir === nothing ? "\$ICE_DATA" : local_root(dir)
+    have_local = dir !== nothing || has_fesmdata_dir("products")
+    have_local || println("(FESMDATA is not set: local files not checked)")
+    where = dir === nothing ? products_dir() : local_root(dir)
     root = have_local ? local_root(dir) : ""
     counts = Dict("present" => 0, "missing" => 0)
     n, size = 0, 0
@@ -409,7 +409,7 @@ end
 
 `fesmdata.jl list`: all records, or those of a dataset and/or a domain, and the records
 by cropping on nests and crops; with a domain and a dataset, or with grids, the records
-in detail (for those grids), with the local files in \$ICE_DATA/v2 or `dir`.
+in detail (for those grids), with the local files in \$FESMDATA_PRODUCTS or `dir`.
 """
 function list(args; dir=nothing, sandbox::Bool=false)
     selected, cropped, detail = select_records(args; sandbox=sandbox)
@@ -455,13 +455,13 @@ end
 """
     local_sources(entries, root, states) -> Dict
 
-For a copy in another folder than \$ICE_DATA/v2 (`root`): the files of `entries` to get
-that are in \$ICE_DATA/v2 at the same release (checksums), to hard link or copy from
-there instead of downloading them (local path under `root` => path in \$ICE_DATA/v2).
+For a copy in another folder than \$FESMDATA_PRODUCTS (`root`): the files of `entries` to get
+that are in \$FESMDATA_PRODUCTS at the same release (checksums), to hard link or copy from
+there instead of downloading them (local path under `root` => path in \$FESMDATA_PRODUCTS).
 """
 function local_sources(entries, root::AbstractString, states::AbstractDict)
     sources = Dict{String,String}()
-    haskey(ENV, "ICE_DATA") && root != products_dir() || return sources
+    has_fesmdata_dir("products") && root != products_dir() || return sources
     todo = filter(e -> states[local_path(e, root)] != :current, entries)
     isempty(todo) && return sources
     println("Checking the same files in $(products_dir()) (checksums)")
@@ -480,7 +480,7 @@ end
 Get the files of `records`, (domain, dataset, entries), that are not present under
 `root`, with the `states` of `check_local`: from `sources` (see `local_sources`; hard
 linked, or copied with `copy`), else downloaded (see `fetch_file`). With
-`copy_registry` (a copy in another folder than \$ICE_DATA/v2), the registry files of
+`copy_registry` (a copy in another folder than \$FESMDATA_PRODUCTS), the registry files of
 the records are copied to `root`/registry/, as a record of the releases it holds.
 Returns the local paths.
 """
@@ -514,9 +514,9 @@ selected_entries(selected; sandbox::Bool=false) =
     fetch_files(args; dir=nothing, copy=false, overwrite=false, sandbox=false) -> (paths, cropped)
 
 `fesmdata.jl fetch`: download the files of a dataset on a domain, or on grids (which
-imply their domain), into \$ICE_DATA/v2 or `dir`. The dataset must be named, and a
+imply their domain), into \$FESMDATA_PRODUCTS or `dir`. The dataset must be named, and a
 domain or grids. The files present are checked first, as by `mirror`, and files in
-\$ICE_DATA/v2 are hard linked (or copied with `copy`) into `dir`, as by `mirror`. On a
+\$FESMDATA_PRODUCTS are hard linked (or copied with `copy`) into `dir`, as by `mirror`. On a
 nest or crop, the files of the products it gets by cropping are downloaded on their
 source domains (`crop_downloads`), and the records by cropping, `cropped`, are left for
 `crop_files` (crop.jl, in the Publish environment). Returns the local paths of the
@@ -542,11 +542,11 @@ end
     mirror(args; dir=nothing, copy=false, overwrite=false, sandbox=false, yes=false) -> Vector{String}
 
 `fesmdata.jl mirror`: download all records (or those of a dataset and/or a domain)
-into \$ICE_DATA/v2, or `dir`; the records of the registry only (the records by
+into \$FESMDATA_PRODUCTS, or `dir`; the records of the registry only (the records by
 cropping are made by `fetch`). The files present are checked first (checksums): files
 of the release are kept, files of an earlier release are updated, and files changed
 locally stop the mirror (replaced with `overwrite`). Into `dir`, files of the release
-in \$ICE_DATA/v2 are hard linked from there (copied with `copy`, or on another file
+in \$FESMDATA_PRODUCTS are hard linked from there (copied with `copy`, or on another file
 system), e.g. to archive the releases there before updating it. Then, after one
 confirmation (none with `yes`) showing what is to get, the missing and outdated files are downloaded.
 """

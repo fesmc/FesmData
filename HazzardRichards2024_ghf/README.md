@@ -20,7 +20,7 @@ from them, with citation, is allowed.
 
 `HR24_grids.zip` (8.7 MB) from the OSF project https://osf.io/54zam (no login), entry
 `hazzardrichards2024_ghf` of `../datamanifest.toml`, downloaded and extracted by
-`prepare.jl` to `$DATAMANIFEST_DATASETS_DIR/hazzardrichards2024_ghf/`. It holds GMT
+`prepare.jl` to `$FESMDATA_SOURCES/hazzardrichards2024_ghf/`. It holds GMT
 grids (NetCDF) in `model_output/`: `HR24_<field>_<mean|std>.grd` on lon 0:0.5:360,
 lat -90:0.5:-60, and the same projected to 5 km polar stereographic (`*_PS.grd`, not
 used), for `GHF` (mW m-2), `k` and `h`.
@@ -29,11 +29,11 @@ used), for `GHF` (mW m-2), `k` and `h`.
 
 ```bash
 julia --project=HazzardRichards2024_ghf HazzardRichards2024_ghf/prepare.jl
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/HazzardRichards2024_ghf/HazzardRichards2024_GHF.nc Antarctica --name=GHF-HazzardRichards2024
+julia fesmdata.jl remap $FESMDATA_PREPARED/HazzardRichards2024_ghf/HazzardRichards2024_GHF.nc Antarctica --name=GHF-HazzardRichards2024
 ```
 
 `prepare.jl` writes, from the lon-lat grids,
-`$FESMDATA_WORK/prepared/HazzardRichards2024_ghf/HazzardRichards2024_GHF.nc` with
+`$FESMDATA_PREPARED/HazzardRichards2024_ghf/HazzardRichards2024_GHF.nc` with
 (see `Remap/README.md`):
 
 - `ghf`, `ghf_sd`: geothermal heat flow and its standard deviation (mW m-2);

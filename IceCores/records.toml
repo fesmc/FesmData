@@ -1,5 +1,5 @@
 # Products of the records dataset IceCores (see ../Records/README.md):
-# $ICE_DATA/v2/Records/IceCores/IceCores-<product>.nc
+# $FESMDATA_PRODUCTS/Records/IceCores/IceCores-<product>.nc
 
 [products.Kindler2014]
 source = "Kindler2014"

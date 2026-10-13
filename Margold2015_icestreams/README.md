@@ -34,10 +34,10 @@ licence stated); we assume that derived products may be published with a citatio
 
 ```bash
 julia -t 8 --project=Margold2015_icestreams Margold2015_icestreams/prepare.jl
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/Margold2015_icestreams/Margold2015_ICESTREAMS.nc Laurentide North --name=IceHistory-Margold2015
+julia fesmdata.jl remap $FESMDATA_PREPARED/Margold2015_icestreams/Margold2015_ICESTREAMS.nc Laurentide North --name=IceHistory-Margold2015
 ```
 
-`prepare.jl` writes `$FESMDATA_WORK/prepared/Margold2015_icestreams/Margold2015_ICESTREAMS.nc`
+`prepare.jl` writes `$FESMDATA_PREPARED/Margold2015_icestreams/Margold2015_ICESTREAMS.nc`
 (see `Remap/README.md`) on a 1 km grid on the polar stereographic projection of the North
 domain, covering all its grids (x -4917 to 3901 km, y -5417 to 3401 km), with
 

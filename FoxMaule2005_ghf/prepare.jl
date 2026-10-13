@@ -2,12 +2,12 @@
 # magnetic field model) for remapping: the equal-area points of Antarctica
 # (heatflux_mf7_foxmaule05.txt, south of 60°S) and of the land north of 55°N
 # (heatflux_mf7_foxmaule05_npolar.txt, mct_mf7_foxmaule05_npolar.txt) on one regular
-# lon-lat grid, written to $FESMDATA_WORK/prepared/FoxMaule2005_ghf/FoxMaule2005_GHF.nc
+# lon-lat grid, written to $FESMDATA_PREPARED/FoxMaule2005_ghf/FoxMaule2005_GHF.nc
 # with ghf and h_mag (magnetic crustal thickness, north only).
 #
 # Usage:
 #     julia --project=FoxMaule2005_ghf FoxMaule2005_ghf/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/FoxMaule2005_ghf/FoxMaule2005_GHF.nc Antarctica Greenland
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/FoxMaule2005_ghf/FoxMaule2005_GHF.nc Antarctica Greenland
 
 using DelimitedFiles
 using NCDatasets

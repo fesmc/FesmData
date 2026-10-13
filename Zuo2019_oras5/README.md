@@ -37,11 +37,11 @@ regridded before `prepare.jl` (not done here).
 
 ```bash
 julia --project=Zuo2019_oras5 Zuo2019_oras5/prepare.jl
-julia -t 16 fesmdata.jl remap $FESMDATA_WORK/prepared/Zuo2019_oras5/ORAS5_1981-2010.nc Greenland --name=Ocean-ORAS5-1981-2010
+julia -t 16 fesmdata.jl remap $FESMDATA_PREPARED/Zuo2019_oras5/ORAS5_1981-2010.nc Greenland --name=Ocean-ORAS5-1981-2010
 ```
 
 `prepare.jl` reads each monthly file once (about 20 GB, a few minutes; run it on a
-compute node) and writes to `$FESMDATA_WORK/prepared/Zuo2019_oras5/`:
+compute node) and writes to `$FESMDATA_PREPARED/Zuo2019_oras5/`:
 
 - `ORAS5_1981-2010.nc`: monthly climatology 1981-2010, `to` (degC) and `so` (PSU),
   dimensions `(lon, lat, depth, month)`;

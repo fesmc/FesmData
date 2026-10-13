@@ -39,7 +39,7 @@ julia --project=SUMup_smb SUMup_smb/prepare.jl
 julia fesmdata.jl record SMBObs SUMup2025
 ```
 
-`prepare.jl` writes `$FESMDATA_WORK/prepared/SUMup_smb/SUMup2025_SMB.nc` (about 50 MB, see
+`prepare.jl` writes `$FESMDATA_PREPARED/SUMup_smb/SUMup2025_SMB.nc` (about 50 MB, see
 `Records/README.md`), the measurements of both ice sheets, one per observation
 (featureType point, dimension `obs`): `lat`, `lon`, `z_srf` (m, mostly missing),
 `time` (days since 1900-01-01, the middle of the measurement interval) with

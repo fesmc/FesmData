@@ -14,7 +14,7 @@ struct RecordProduct
     dataset::String
     name::String
     source::String                  # folder of the source, with prepare.jl
-    file::String                    # prepared file, in $FESMDATA_WORK/prepared/<source>/
+    file::String                    # prepared file, in $FESMDATA_PREPARED/<source>/
     figure::Union{Nothing,Dict{String,Any}}   # options of its figure on the website, nothing: none
 end
 
@@ -47,8 +47,8 @@ product_name(p::RecordProduct) = "$(p.dataset)-$(p.name)"
 "Prepared file of a product."
 prepared_file(p::RecordProduct) = joinpath(prepared_dir(p.source), p.file)
 
-"Folder of the records of a dataset: \$ICE_DATA/v2/$RECORDS_FOLDER/<Dataset>."
-records_dir(dataset::AbstractString) = joinpath(_env("ICE_DATA"), "v2", RECORDS_FOLDER, dataset)
+"Folder of the records of a dataset: \$FESMDATA_PRODUCTS/$RECORDS_FOLDER/<Dataset>."
+records_dir(dataset::AbstractString) = joinpath(fesmdata_dir("products"), RECORDS_FOLDER, dataset)
 
 "Output file of a product."
 record_path(p::RecordProduct) = joinpath(records_dir(p.dataset), product_name(p) * ".nc")

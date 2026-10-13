@@ -42,7 +42,7 @@ julia fesmdata.jl record Boreholes Lokkegaard2023
 ```
 
 `prepare.jl` writes
-`$FESMDATA_WORK/prepared/Lokkegaard2023_temp_profile/Lokkegaard2023_boreholes.nc` (see
+`$FESMDATA_PREPARED/Lokkegaard2023_temp_profile/Lokkegaard2023_boreholes.nc` (see
 `Records/README.md`), one profile per borehole (featureType profile): `T_ice` (K) on
 (`depth`, `station`), and by station `lat`, `lon`, `site_name` (borehole id), `H_ice`,
 `depth_top`, `depth_bottom` (m), `coverage` (%), and the strings `date`, `place_name`,

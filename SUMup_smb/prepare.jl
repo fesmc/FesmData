@@ -3,7 +3,7 @@
 # (Arctic Data Center, datamanifest keys sumup2025_smb_greenland and
 # sumup2025_smb_antarctica), one observation per measurement (featureType point), as
 # the mean SMB rate over the measurement interval and the SMB of the interval,
-# $FESMDATA_WORK/prepared/SUMup_smb/SUMup2025_SMB.nc.
+# $FESMDATA_PREPARED/SUMup_smb/SUMup2025_SMB.nc.
 #
 # Usage:
 #     julia --project=SUMup_smb SUMup_smb/prepare.jl

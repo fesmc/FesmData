@@ -11,7 +11,7 @@ to make their maps.
 ```julia
 using NCDatasets, FesmUtils
 
-dir = joinpath(ENV["ICE_DATA"], "v2", "North", "NH-16KM")
+dir = joinpath(ENV["FESMDATA"], "products", "North", "NH-16KM")
 ds = NCDataset(joinpath(dir, "NH-16KM_REGIONS.nc"))
 ```
 
@@ -97,7 +97,7 @@ region up to the shelf break, their groups (`basin_group`, if the set has them)
 and the original extent of the basins (`basin_mask`).
 
 ```julia
-grl = joinpath(ENV["ICE_DATA"], "v2", "GreenlandPaleo", "GRL-PAL-16KM")
+grl = joinpath(ENV["FESMDATA"], "products", "GreenlandPaleo", "GRL-PAL-16KM")
 bs = NCDataset(joinpath(grl, "GRL-PAL-16KM_BASINS-Zwally2012.nc"))
 
 basin = bs["basin"][:, :]
@@ -113,7 +113,7 @@ The tree is global, so a region has the same code on all domains and grids.
 
 ```julia
 greenland = map(["North/NH-16KM", "GreenlandPaleo/GRL-PAL-16KM"]) do g
-    file = joinpath(ENV["ICE_DATA"], "v2", g, basename(g) * "_REGIONS.nc")
+    file = joinpath(ENV["FESMDATA"], "products", g, basename(g) * "_REGIONS.nc")
     NCDataset(d -> in_region(d["region_2"][:, :], region_code("1.3")), file)
 end
 ```

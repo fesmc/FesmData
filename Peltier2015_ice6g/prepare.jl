@@ -1,11 +1,11 @@
 # Prepare ICE-6G_C (VM5a) (Peltier et al., 2015) for remapping: the 48 time slices 26-0 ka
 # on the 1° grid (one gzipped file each) as one prepared NetCDF file with a time dimension,
-# $FESMDATA_WORK/prepared/Peltier2015_ice6g/Peltier2015_ICE6G_C.nc, with z_topo, z_srf,
+# $FESMDATA_PREPARED/Peltier2015_ice6g/Peltier2015_ICE6G_C.nc, with z_topo, z_srf,
 # dz_topo, H_ice, f_ice and f_land.
 #
 # Usage:
 #     julia --project=Peltier2015_ice6g Peltier2015_ice6g/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/Peltier2015_ice6g/Peltier2015_ICE6G_C.nc all
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/Peltier2015_ice6g/Peltier2015_ICE6G_C.nc all
 
 using CodecZlib
 using NCDatasets

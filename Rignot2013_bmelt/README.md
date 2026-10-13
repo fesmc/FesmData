@@ -19,7 +19,7 @@ CC0 1.0 (Dryad).
 ## Original data
 
 `Ant_MeltingRate.v2.nc` (502 MB) from Dryad, downloaded by hand in a browser (Dryad does
-not allow scripted downloads) into `$DATAMANIFEST_DATASETS_DIR/rignot2013_melt_v2/`
+not allow scripted downloads) into `$FESMDATA_SOURCES/rignot2013_melt_v2/`
 (datamanifest key `rignot2013_melt_v2`).
 
 The FesmData v1 product (`BMELT-R13`) was made from an earlier version of the file,
@@ -32,13 +32,13 @@ those of version 2 from -10 to 158 m yr-1 and -9 to 153 m yr-1 (Dryad README).
 
 ```bash
 julia --project=Rignot2013_bmelt Rignot2013_bmelt/prepare.jl
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/Rignot2013_bmelt/Rignot2013_BMELT.nc Antarctica --name=BasalMelt-Rignot2013
+julia fesmdata.jl remap $FESMDATA_PREPARED/Rignot2013_bmelt/Rignot2013_BMELT.nc Antarctica --name=BasalMelt-Rignot2013
 ```
 
 `prepare.jl` writes `bmelt` (actual) and `bmelt_ss` (steady state), in m yr-1 ice
 equivalent, positive for melting and negative for freezing, and their basin means
 (`bmelt_basin`, `bmelt_eq_basin`, `bmelt_reese`, `bmelt_eq_reese`, see Basin means) to
-`$FESMDATA_WORK/prepared/Rignot2013_bmelt/Rignot2013_BMELT.nc` (see `Remap/README.md`),
+`$FESMDATA_PREPARED/Rignot2013_bmelt/Rignot2013_BMELT.nc` (see `Remap/README.md`),
 on the original grid (y made ascending). The basin means need the Regions basins on
 ANT-1KM (`ANT-1KM_BASINS-Zwally2012.nc`), so Regions must be made first.
 

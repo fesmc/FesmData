@@ -27,19 +27,23 @@ julia fesmdata.jl help
 
 ### 2. Choose where the data go
 
-The environment variable `ICE_DATA` sets the folder for the data, e.g. in your
+The environment variable `FESMDATA` sets the folder for the data, e.g. in your
 `~/.bashrc`:
 
 ```bash
-export ICE_DATA=/path/to/ice_data
+export FESMDATA=/path/to/fesmdata
 ```
 
-Every file goes to `$ICE_DATA/v2/<Domain>/<GRID>/`: one folder per domain, and in it
+The products go to `$FESMDATA/products` (or to `$FESMDATA_PRODUCTS`, if set). On
+Levante and Albedo, `source shared/machines/<machine>.env` sets it to the shared
+folder of the project, where the products usually are already.
+
+Every file goes to `$FESMDATA_PRODUCTS/<Domain>/<GRID>/`: one folder per domain, and in it
 one folder per grid with all datasets on that grid. A grid folder thus holds everything
 a model needs on that grid, and can be copied as a whole:
 
 ```
-$ICE_DATA/v2/
+$FESMDATA_PRODUCTS/
   Antarctica/
     ANT-8KM/
       grid_ANT-8KM.txt                 grid description (cdo)
@@ -64,7 +68,7 @@ GRL-500M); a grid name thus also gives its domain. See
 julia fesmdata.jl list                     # all records (dataset on a domain)
 julia fesmdata.jl list Topo                # the records of a dataset (or of a domain)
 julia fesmdata.jl list Antarctica Topo     # one record: its grids and files, their
-                                           # sizes, and which are already in $ICE_DATA
+                                           # sizes, and which are already there
 julia fesmdata.jl list ANT-8KM             # everything on a grid
 ```
 

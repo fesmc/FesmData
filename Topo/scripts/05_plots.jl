@@ -20,7 +20,8 @@ using CairoMakie
 using Printf
 using Statistics: quantile
 
-# v1 product to compare with: (domain, product) => (grid, file under $ICE_DATA)
+# v1 product to compare with, if FESMDATA_V1 (the folder of the v1 products) is set:
+# (domain, product) => (grid, file under $FESMDATA_V1)
 const V1 = Dict(
     ("ANT", "BedMachine-v4")     => ("ANT-16KM", "Antarctica/ANT-16KM/ANT-16KM_TOPO-BedMachine.nc"),
     ("ANT", "Bedmap3")           => ("ANT-16KM", "Antarctica/ANT-16KM/ANT-16KM_TOPO-Bedmap3.nc"),
@@ -166,9 +167,9 @@ for product in products
     save(joinpath(plotdir, "$(dom.key)_TOPO-$(product)_grids.png"), fig)
 
     # Comparison with v1, and of a variant with its default product
-    if haskey(V1, (dom.key, product))
+    if haskey(V1, (dom.key, product)) && haskey(ENV, "FESMDATA_V1")
         gname, v1file = V1[(dom.key, product)]
-        v1path = joinpath(ENV["ICE_DATA"], v1file)
+        v1path = joinpath(ENV["FESMDATA_V1"], v1file)
         if isfile(v1path)
             f1 = NCDataset(v1path) do ds
                 Dict(k => Float32.(coalesce.(ds[k][:, :], NaN32)) for k in ("z_bed", "z_srf", "H_ice") if haskey(ds, k))

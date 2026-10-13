@@ -2,7 +2,7 @@
 # basal temperature of the ISSM thermal steady state (Antarctica_Initialization.mat,
 # Zenodo), interpolated linearly from the triangles of the model mesh (0.3-50 km)
 # onto a regular 1 km polar stereographic grid, as a prepared NetCDF file,
-# $FESMDATA_WORK/prepared/Dawson2022_basalstate/Dawson2022_BASALSTATE.nc, with the
+# $FESMDATA_PREPARED/Dawson2022_basalstate/Dawson2022_BASALSTATE.nc, with the
 # basal temperature, the basal temperature relative to the pressure melting point, the
 # basal thermal state (frozen, thawable, thawed), the basal melt rate and the basal
 # friction coefficient of the grounded ice.

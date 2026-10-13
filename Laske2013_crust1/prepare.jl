@@ -1,10 +1,10 @@
 # Prepare the sediment thickness of CRUST1.0 (Laske et al., 2013) for remapping: the
 # thickness of its three sediment layers and their sum on the 1x1° grid of the model,
-# as a prepared NetCDF file, $FESMDATA_WORK/prepared/Laske2013_crust1/Laske2013_CRUST1_sed.nc.
+# as a prepared NetCDF file, $FESMDATA_PREPARED/Laske2013_crust1/Laske2013_CRUST1_sed.nc.
 #
 # Usage:
 #     julia --project=Laske2013_crust1 Laske2013_crust1/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/Laske2013_crust1/Laske2013_CRUST1_sed.nc all
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/Laske2013_crust1/Laske2013_CRUST1_sed.nc all
 
 using DelimitedFiles
 using NCDatasets

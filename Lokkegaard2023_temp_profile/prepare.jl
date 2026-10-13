@@ -3,7 +3,7 @@
 # of 95 boreholes on a common 1 m depth axis and their metadata (GEUS Dataverse,
 # datamanifest keys lokkegaard2023_temperature and lokkegaard2023_meta), one profile per
 # borehole (featureType profile),
-# $FESMDATA_WORK/prepared/Lokkegaard2023_temp_profile/Lokkegaard2023_boreholes.nc.
+# $FESMDATA_PREPARED/Lokkegaard2023_temp_profile/Lokkegaard2023_boreholes.nc.
 #
 # Usage:
 #     julia --project=Lokkegaard2023_temp_profile Lokkegaard2023_temp_profile/prepare.jl

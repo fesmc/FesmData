@@ -31,11 +31,11 @@ CC BY 4.0 (PANGAEA).
 
 ```bash
 julia --project=Stal2020_ghf Stal2020_ghf/prepare.jl
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/Stal2020_ghf/Stal2020_GHF.nc Antarctica --name=GHF-Stal2020
+julia fesmdata.jl remap $FESMDATA_PREPARED/Stal2020_ghf/Stal2020_GHF.nc Antarctica --name=GHF-Stal2020
 ```
 
 `prepare.jl` writes `ghf` (`Q` of Aq1) and `ghf_unc` (its uncertainty `U`), converted
-from W m-2 to mW m-2, to `$FESMDATA_WORK/prepared/Stal2020_ghf/Stal2020_GHF.nc` (see
+from W m-2 to mW m-2, to `$FESMDATA_PREPARED/Stal2020_ghf/Stal2020_GHF.nc` (see
 `Remap/README.md`). The grid has 280 x 280 points from -2800 to 2800 km (spacing
 20.07 km). The map ends at the coast. The other fields of the file (`N`, sum of
 similarity; `H`, information entropy) are not used.

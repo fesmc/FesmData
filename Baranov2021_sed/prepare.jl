@@ -1,10 +1,10 @@
 # Prepare ANTASed (Baranov et al., 2021), the sediment thickness of Antarctica, for
 # remapping: its 0.1° grid of an azimuthal equidistant projection centred on the South
-# Pole as a prepared NetCDF file, $FESMDATA_WORK/prepared/Baranov2021_sed/Baranov2021_ANTASed.nc.
+# Pole as a prepared NetCDF file, $FESMDATA_PREPARED/Baranov2021_sed/Baranov2021_ANTASed.nc.
 #
 # Usage:
 #     julia --project=Baranov2021_sed Baranov2021_sed/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/Baranov2021_sed/Baranov2021_ANTASed.nc Antarctica
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/Baranov2021_sed/Baranov2021_ANTASed.nc Antarctica
 
 using DelimitedFiles
 using NCDatasets

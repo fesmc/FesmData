@@ -1024,7 +1024,7 @@ own, e.g. a member of an ensemble product on a grid of the ensemble only:
 \$FESMDATA_WORK/remap/members/<GRID>/<GRID>_<name>.nc (not released).
 """
 member_work_file(og::OutGrid, name::AbstractString) =
-    joinpath(_env("FESMDATA_WORK"), "remap", "members", og.grid.name, "$(og.grid.name)_$(name).nc")
+    joinpath(fesmdata_dir("work"), "remap", "members", og.grid.name, "$(og.grid.name)_$(name).nc")
 
 """
     remap_prepared(ps, grids; name, method="con", smooth="auto", dataset="remap",

@@ -1,11 +1,11 @@
 # Prepare the sediment properties of North America and Greenland of Gowan et al. (2019)
 # for remapping: grain size, sediment distribution and their combination (classes) on
 # the 5 km Lambert conformal conic grid of the data, as a prepared NetCDF file,
-# $FESMDATA_WORK/prepared/Gowan2019_sed/Gowan2019_sed.nc.
+# $FESMDATA_PREPARED/Gowan2019_sed/Gowan2019_sed.nc.
 #
 # Usage:
 #     julia --project=Gowan2019_sed Gowan2019_sed/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/Gowan2019_sed/Gowan2019_sed.nc Laurentide
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/Gowan2019_sed/Gowan2019_sed.nc Laurentide
 
 using NCDatasets
 

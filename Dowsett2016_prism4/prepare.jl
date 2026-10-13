@@ -1,11 +1,11 @@
 # Prepare the PRISM4 / PlioMIP2 boundary conditions (Dowsett et al., 2016) for remapping:
 # the Pliocene topography and ice mask of the enhanced and standard experiments and the
 # modern topography (for anomalies), on their 1° grid, as one prepared NetCDF file,
-# $FESMDATA_WORK/prepared/Dowsett2016_prism4/Dowsett2016_PRISM4.nc.
+# $FESMDATA_PREPARED/Dowsett2016_prism4/Dowsett2016_PRISM4.nc.
 #
 # Usage:
 #     julia --project=Dowsett2016_prism4 Dowsett2016_prism4/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/Dowsett2016_prism4/Dowsett2016_PRISM4.nc all
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/Dowsett2016_prism4/Dowsett2016_PRISM4.nc all
 
 using NCDatasets
 

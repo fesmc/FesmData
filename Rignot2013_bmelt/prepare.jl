@@ -1,6 +1,6 @@
 # Prepare the Antarctic ice-shelf basal melt rates of Rignot et al. (2013) for remapping:
 # the 1 km grid of Ant_MeltingRate.v2.nc (Dryad) as a prepared NetCDF file,
-# $FESMDATA_WORK/prepared/Rignot2013_bmelt/Rignot2013_BMELT.nc, with the actual and
+# $FESMDATA_PREPARED/Rignot2013_bmelt/Rignot2013_BMELT.nc, with the actual and
 # steady-state melt rates in m yr-1 ice equivalent (positive for melting), and their
 # means over the drainage basins (Regions basin set Zwally2012 on ANT-1KM, which must
 # be made first), one value per basin, set on the grids by the basins of each grid

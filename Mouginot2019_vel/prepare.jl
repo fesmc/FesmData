@@ -1,6 +1,6 @@
 # Prepare the MEaSUREs Phase-Based Antarctica Ice Velocity Map (NSIDC-0754 v1, 450 m;
 # Mouginot et al., 2019) for remapping:
-# $FESMDATA_WORK/prepared/Mouginot2019_vel/Mouginot2019_VEL.nc, on the 450 m grid of the
+# $FESMDATA_PREPARED/Mouginot2019_vel/Mouginot2019_VEL.nc, on the 450 m grid of the
 # map (EPSG:3031), with the eastward and northward surface velocity (rotated from the
 # components along the x and y axes of the grid), the speed and the errors along the
 # grid axes.

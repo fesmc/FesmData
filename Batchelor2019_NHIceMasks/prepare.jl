@@ -2,12 +2,12 @@
 # the best-estimate, minimum and maximum extents of the 18 time slices, rasterized as ice
 # area fractions on a 2 km polar stereographic grid (the projection of the North domain)
 # that covers all outlines, in one prepared NetCDF file,
-# $FESMDATA_WORK/prepared/Batchelor2019_NHIceMasks/Batchelor2019_NH_ICE.nc, with f_ice_best,
+# $FESMDATA_PREPARED/Batchelor2019_NHIceMasks/Batchelor2019_NH_ICE.nc, with f_ice_best,
 # f_ice_min and f_ice_max on (x, y, time).
 #
 # Usage:
 #     julia -t 16 --project=Batchelor2019_NHIceMasks Batchelor2019_NHIceMasks/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/Batchelor2019_NHIceMasks/Batchelor2019_NH_ICE.nc North
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/Batchelor2019_NHIceMasks/Batchelor2019_NH_ICE.nc North
 
 using FesmUtils
 using NCDatasets

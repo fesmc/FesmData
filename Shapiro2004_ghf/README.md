@@ -19,7 +19,7 @@ citation of the article.
 The map was published as `hfmap.asc.gz` (with `README_heat_flow`) on the authors' page,
 http://ciei.colorado.edu/~nshapiro/MODEL/ASC_VERSION/, which is no longer online. It is
 downloaded from the copy in the Internet Archive (datamanifest key `shapiro2004_ghf`,
-into `$DATAMANIFEST_DATASETS_DIR/shapiro2004_ghf/`):
+into `$FESMDATA_SOURCES/shapiro2004_ghf/`):
 
 ```
 https://web.archive.org/web/20240806132053id_/http://ciei.colorado.edu/~nshapiro/MODEL/ASC_VERSION/hfmap.asc.gz
@@ -32,11 +32,11 @@ This copy is identical to the one in the old PIK archive
 
 ```bash
 julia --project=Shapiro2004_ghf Shapiro2004_ghf/prepare.jl
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/Shapiro2004_ghf/Shapiro2004_GHF.nc all --name=GHF-Shapiro2004
+julia fesmdata.jl remap $FESMDATA_PREPARED/Shapiro2004_ghf/Shapiro2004_GHF.nc all --name=GHF-Shapiro2004
 ```
 
 `prepare.jl` downloads the file if missing and writes `ghf` and `ghf_sd` (standard
-deviation), in mW m-2, to `$FESMDATA_WORK/prepared/Shapiro2004_ghf/Shapiro2004_GHF.nc`
+deviation), in mW m-2, to `$FESMDATA_PREPARED/Shapiro2004_ghf/Shapiro2004_GHF.nc`
 (see `Remap/README.md`). The file gives the values at the points of a 1° grid
 (longitudes 0-359°, latitudes -90-90°, including the poles); they are written
 unchanged as cells centred on these points, with longitudes shifted to -180-179°.

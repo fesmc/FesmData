@@ -23,11 +23,11 @@ redistribution. NSIDC asks to cite the data set and the article.
 
 NSIDC-0754 v1, https://nsidc.org/data/nsidc-0754/versions/1, needs a NASA Earthdata
 login. The file `antarctic_ice_vel_phase_map_v01.nc` (about 40 GB) goes to
-`$DATAMANIFEST_DATASETS_DIR/nsidc0754_v1_antarctica_vel/` (datamanifest key
+`$FESMDATA_SOURCES/nsidc0754_v1_antarctica_vel/` (datamanifest key
 `nsidc0754_v1_antarctica_vel`). With a `~/.netrc` for urs.earthdata.nasa.gov:
 
 ```bash
-cd $DATAMANIFEST_DATASETS_DIR/nsidc0754_v1_antarctica_vel
+cd $FESMDATA_SOURCES/nsidc0754_v1_antarctica_vel
 curl -n -L -c ~/.urs_cookies -b ~/.urs_cookies -O \
     https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/MEASURES/NSIDC-0754/1/1996/01/01/antarctic_ice_vel_phase_map_v01.nc
 ```
@@ -40,7 +40,7 @@ julia -t 8 fesmdata.jl remap Velocity Mouginot2019
 ```
 
 `prepare.jl` (use a compute node) writes
-`$FESMDATA_WORK/prepared/Mouginot2019_vel/Mouginot2019_VEL.nc` on the 450 m grid of the
+`$FESMDATA_PREPARED/Mouginot2019_vel/Mouginot2019_VEL.nc` on the 450 m grid of the
 map, in m yr-1:
 
 - `ux_srf`, `uy_srf`: eastward and northward surface velocity, rotated from `VX`, `VY`

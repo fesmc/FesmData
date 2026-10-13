@@ -1,5 +1,5 @@
 # Products of the records dataset Freshwater (see ../Records/README.md):
-# $ICE_DATA/v2/Records/Freshwater/Freshwater-<product>.nc
+# $FESMDATA_PRODUCTS/Records/Freshwater/Freshwater-<product>.nc
 
 [products.Schmidt2025_GL_discharge]
 source = "Schmidt2025_fwf"

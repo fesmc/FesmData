@@ -1,12 +1,12 @@
 # Prepare the ice streams of the Laurentide Ice Sheet (Margold et al., 2015) with the timing
 # of their activity (Stokes et al., 2016) for remapping: the stream outlines rasterized on a
 # 1 km polar stereographic grid (the projection and extent of the North domain), in one
-# prepared NetCDF file, $FESMDATA_WORK/prepared/Margold2015_icestreams/Margold2015_ICESTREAMS.nc,
+# prepared NetCDF file, $FESMDATA_PREPARED/Margold2015_icestreams/Margold2015_ICESTREAMS.nc,
 # with f_stream, f_stream_lgm, age_stream_start and age_stream_end.
 #
 # Usage:
 #     julia -t 8 --project=Margold2015_icestreams Margold2015_icestreams/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/Margold2015_icestreams/Margold2015_ICESTREAMS.nc Laurentide
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/Margold2015_icestreams/Margold2015_ICESTREAMS.nc Laurentide
 
 using FesmUtils
 using NCDatasets

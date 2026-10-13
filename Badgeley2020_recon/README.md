@@ -40,10 +40,10 @@ and the prior. The package also has four temperature sensitivity experiments
 
 ```bash
 julia --project=Badgeley2020_recon Badgeley2020_recon/prepare.jl
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/Badgeley2020_recon/Badgeley2020.nc GRL-8KM GRL-16KM GRL-32KM --name=Paleoclimate-Badgeley2020
+julia fesmdata.jl remap $FESMDATA_PREPARED/Badgeley2020_recon/Badgeley2020.nc GRL-8KM GRL-16KM GRL-32KM --name=Paleoclimate-Badgeley2020
 ```
 
-`prepare.jl` writes `$FESMDATA_WORK/prepared/Badgeley2020_recon/Badgeley2020.nc` (see
+`prepare.jl` writes `$FESMDATA_PREPARED/Badgeley2020_recon/Badgeley2020.nc` (see
 `Remap/README.md`) with the posterior means on (lon, lat, time):
 
 - `tas_anom` (K): temperature anomaly relative to 1850-2000 CE;

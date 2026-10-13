@@ -42,7 +42,7 @@ julia fesmdata.jl remap SolidEarth Pan2022-litho
 julia fesmdata.jl remap SolidEarth Pan2022-visc
 ```
 
-`prepare.jl` writes `$FESMDATA_WORK/prepared/Pan2022_litho/Pan2022_EarthStructure.nc`
+`prepare.jl` writes `$FESMDATA_PREPARED/Pan2022_litho/Pan2022_EarthStructure.nc`
 (see `Remap/README.md`) on lon -180:0.5:179.5, lat -90:0.5:90 with
 
 - `z_litho` (m): lithosphere thickness (converted from km);

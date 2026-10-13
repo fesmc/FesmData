@@ -30,7 +30,7 @@ julia --project=Gkinis2020_NEEMwateriso Gkinis2020_NEEMwateriso/prepare.jl
 julia fesmdata.jl record IceCores Gkinis2020
 ```
 
-`prepare.jl` writes `$FESMDATA_WORK/prepared/Gkinis2020_NEEMwateriso/Gkinis2020_NEEM.nc`
+`prepare.jl` writes `$FESMDATA_PREPARED/Gkinis2020_NEEMwateriso/Gkinis2020_NEEM.nc`
 (see `Records/README.md`), a time series at one station (featureType timeSeries) along
 the dimension `sample`: `d18O`, `dD`, their precision `d18O_sd`, `dD_sd`, the offsets
 `d18O_offset`, `dD_offset` (units 1e-3, i.e. per mil), `depth` (m) and `mce` (yr).

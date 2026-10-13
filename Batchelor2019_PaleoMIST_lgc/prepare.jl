@@ -2,7 +2,7 @@
 # fractions of Batchelor et al. (2019) in the Northern Hemisphere and of PaleoMIST 1.0
 # (Gowan et al., 2021) in the Southern Hemisphere, for the Batchelor time slices from
 # MIS 5a (80 ka) to the LGM, on a global 0.1° lon-lat grid, in one prepared NetCDF file,
-# $FESMDATA_WORK/prepared/Batchelor2019_PaleoMIST_lgc/Batchelor2019_PaleoMIST_LGC.nc, with
+# $FESMDATA_PREPARED/Batchelor2019_PaleoMIST_lgc/Batchelor2019_PaleoMIST_LGC.nc, with
 # f_ice_best, f_ice_min and f_ice_max on (lon, lat, time). It replaces
 # Batchelor2019_ice_masks_lgc.nc (v1, Batchelor2019_NHIceMasks/build_lgc_dataset.jl).
 #
@@ -11,7 +11,7 @@
 #
 # Usage:
 #     julia -t 16 --project=Batchelor2019_PaleoMIST_lgc Batchelor2019_PaleoMIST_lgc/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/Batchelor2019_PaleoMIST_lgc/Batchelor2019_PaleoMIST_LGC.nc Global
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/Batchelor2019_PaleoMIST_lgc/Batchelor2019_PaleoMIST_LGC.nc Global
 
 using FesmUtils
 using NCDatasets

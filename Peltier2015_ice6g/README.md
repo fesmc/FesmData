@@ -38,10 +38,10 @@ old PIK archive, `hpc:/data/sicopolis/data/ICE-6G_C/`.
 
 ```bash
 julia --project=Peltier2015_ice6g Peltier2015_ice6g/prepare.jl
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/Peltier2015_ice6g/Peltier2015_ICE6G_C.nc all --name=ICEHISTORY-ICE6G_C
+julia fesmdata.jl remap $FESMDATA_PREPARED/Peltier2015_ice6g/Peltier2015_ICE6G_C.nc all --name=ICEHISTORY-ICE6G_C
 ```
 
-`prepare.jl` writes `$FESMDATA_WORK/prepared/Peltier2015_ice6g/Peltier2015_ICE6G_C.nc`
+`prepare.jl` writes `$FESMDATA_PREPARED/Peltier2015_ice6g/Peltier2015_ICE6G_C.nc`
 (see `Remap/README.md`) with the dimension `time` (years ago, i.e. before 1950 CE, oldest first; the
 source gives ka) and
 

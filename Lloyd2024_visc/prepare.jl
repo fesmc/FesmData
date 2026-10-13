@@ -2,11 +2,11 @@
 # inferred from the shear-wave speeds of GLAD-M25, global on a 0.5° grid at 201 depths
 # (0-2891 km), from the supporting information of the article (datamanifest key
 # lloyd2024_visc), as a prepared NetCDF file,
-# $FESMDATA_WORK/prepared/Lloyd2024_visc/Lloyd2024_visc.nc, with log10_visc (on depth).
+# $FESMDATA_PREPARED/Lloyd2024_visc/Lloyd2024_visc.nc, with log10_visc (on depth).
 #
 # Usage:
 #     julia --project=Lloyd2024_visc Lloyd2024_visc/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/Lloyd2024_visc/Lloyd2024_visc.nc Antarctica
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/Lloyd2024_visc/Lloyd2024_visc.nc Antarctica
 
 using NCDatasets
 

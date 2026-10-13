@@ -37,7 +37,7 @@ julia --project=Gowan2023_GAPSLIP_GrIS Gowan2023_GAPSLIP_GrIS/prepare.jl
 julia fesmdata.jl record RSL GAPSLIP
 ```
 
-`prepare.jl` writes `$FESMDATA_WORK/prepared/Gowan2023_GAPSLIP_GrIS/GAPSLIP_Greenland.nc`
+`prepare.jl` writes `$FESMDATA_PREPARED/Gowan2023_GAPSLIP_GrIS/GAPSLIP_Greenland.nc`
 (see `Records/README.md`), one observation per sample (featureType point, dimension
 `obs`): `lat`, `lon`, `time` (years before 1950 CE) with `time_min`, `time_max` (2σ
 range), `rsl` with `rsl_min`, `rsl_max` (m, 2σ range), `type` (-1 marine limiting: sea

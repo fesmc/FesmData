@@ -21,7 +21,7 @@ CC BY 3.0 US (ResearchWorks). Cite the article.
 ## Original data
 
 The archive `ICESat1_ICESat2_mass_change_updated_2_2021.zip` (12 MB), datamanifest key
-`smith2020_dhdt`, downloaded by `prepare.jl` to `$DATAMANIFEST_DATASETS_DIR/smith2020_dhdt.zip`
+`smith2020_dhdt`, downloaded by `prepare.jl` to `$FESMDATA_SOURCES/smith2020_dhdt.zip`
 and extracted next to it. ResearchWorks now redirects to a UW login, so the archive is
 taken from the Internet Archive (capture of 2023-09-05); it is identical to the original
 (sha256 `8d09ffcce4e84fba8cabbc85ee79fec4de36419f8b242ca1f95adacaa2f229e3`, the checksum
@@ -46,7 +46,7 @@ julia --project=Smith2020_dzdt Smith2020_dzdt/prepare.jl
 ```
 
 `prepare.jl` (a few seconds) writes the unfiltered grids on their own grids to
-`$FESMDATA_WORK/prepared/Smith2020_dzdt/`, in m yr-1:
+`$FESMDATA_PREPARED/Smith2020_dzdt/`, in m yr-1:
 
 | File | Fields | Grid |
 |---|---|---|

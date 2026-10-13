@@ -1,6 +1,6 @@
 # Prepare the radiostratigraphy of the Greenland Ice Sheet (RRRAG4 v2, MacGregor et al.)
 # for remapping: the 5 km grid of the original file as a prepared NetCDF file,
-# $FESMDATA_WORK/prepared/MacGregor2025_strat/MacGregor2025_STRAT.nc, with the age of
+# $FESMDATA_PREPARED/MacGregor2025_strat/MacGregor2025_STRAT.nc, with the age of
 # the ice at normalized depths (x, y, depth_norm) and the depth of isochrones (x, y, age),
 # and their uncertainties.
 #

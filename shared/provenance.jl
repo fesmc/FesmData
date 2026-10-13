@@ -8,13 +8,36 @@ using TOML
 const REPO_DIR = dirname(@__DIR__)
 const REPO_URL = "https://github.com/fesmc/FesmData"
 
-"Folder of the records (non-gridded data) under \$ICE_DATA/v2, next to the domain folders."
+"Folder of the records (non-gridded data) under the products folder, next to the domain folders."
 const RECORDS_FOLDER = "Records"
 
 function _env(name)
     haskey(ENV, name) || error("environment variable $name is not set (source shared/machines/<machine>.env)")
     return ENV[name]
 end
+
+"Storage folders of FesmData (see `fesmdata_dir`)."
+const STORAGE_FOLDERS = ("sources", "prepared", "products", "work")
+
+"""
+    fesmdata_dir(kind) -> String
+
+Storage folder `kind` of FesmData: `sources` (the original datasets, `\$datasets_dir` of
+datamanifest.toml), `prepared` (the prepared sources, input of remapping and records),
+`products` (the products and records, as released) or `work` (intermediate files). It
+is `\$FESMDATA_<KIND>` if set (e.g. `FESMDATA_WORK` on a scratch file system), else
+`\$FESMDATA/<kind>`.
+"""
+function fesmdata_dir(kind::AbstractString)
+    kind in STORAGE_FOLDERS || error("unknown storage folder $kind, available: $(join(STORAGE_FOLDERS, ", "))")
+    var = "FESMDATA_" * uppercase(kind)
+    haskey(ENV, var) && return ENV[var]
+    haskey(ENV, "FESMDATA") && return joinpath(ENV["FESMDATA"], kind)
+    error("neither $var nor FESMDATA is set (source shared/machines/<machine>.env)")
+end
+
+"Whether storage folder `kind` is set (`FESMDATA_<KIND>` or `FESMDATA`, see `fesmdata_dir`)."
+has_fesmdata_dir(kind::AbstractString) = haskey(ENV, "FESMDATA_" * uppercase(kind)) || haskey(ENV, "FESMDATA")
 
 "Datasets released by Publish, with their release tags (Publish/datasets.toml)."
 read_datasets() = TOML.parsefile(joinpath(REPO_DIR, "Publish", "datasets.toml"))
@@ -51,8 +74,8 @@ function figure_spec(value, what::AbstractString)
     return Dict{String,Any}(value)
 end
 
-"Folder of the prepared files of a source (input to remapping or records): \$FESMDATA_WORK/prepared/<source>."
-prepared_dir(source::AbstractString) = joinpath(_env("FESMDATA_WORK"), "prepared", source)
+"Folder of the prepared files of a source (input to remapping or records): <prepared>/<source> (see `fesmdata_dir`)."
+prepared_dir(source::AbstractString) = joinpath(fesmdata_dir("prepared"), source)
 
 """
     run_prepare(source)

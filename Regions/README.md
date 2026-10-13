@@ -220,8 +220,8 @@ new regions.
 
 | Location | Contents |
 |---|---|
-| `$DATAMANIFEST_DATASETS_DIR` | Original datasets (see `../datamanifest.toml`) |
-| `$ICE_DATA/v2/<Domain>/<GRID>/` | Output: `<GRID>_REGIONS.nc`, `<GRID>_BASINS-<set>.nc` |
+| `$FESMDATA_SOURCES` | Original datasets (see `../datamanifest.toml`) |
+| `$FESMDATA_PRODUCTS/<Domain>/<GRID>/` | Output: `<GRID>_REGIONS.nc`, `<GRID>_BASINS-<set>.nc` |
 | `$FESMDATA_WORK/regions/` | Intermediate files (base grids) and check plots |
 
 The machine environments are in `../shared/machines`, and the Julia setup is that of

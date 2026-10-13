@@ -29,11 +29,11 @@ and extracted by `prepare.jl` if missing.
 
 ```bash
 julia --project=Baranov2021_sed Baranov2021_sed/prepare.jl
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/Baranov2021_sed/Baranov2021_ANTASed.nc Antarctica --name=Sediment-ANTASed
+julia fesmdata.jl remap $FESMDATA_PREPARED/Baranov2021_sed/Baranov2021_ANTASed.nc Antarctica --name=Sediment-ANTASed
 ```
 
 `prepare.jl` writes `z_sed` (m) to
-`$FESMDATA_WORK/prepared/Baranov2021_sed/Baranov2021_ANTASed.nc` (see `Remap/README.md`),
+`$FESMDATA_PREPARED/Baranov2021_sed/Baranov2021_ANTASed.nc` (see `Remap/README.md`),
 missing outside the continent.
 
 `0.1_lim_b.dat` has three columns, x, y and the sediment thickness (km), for the points

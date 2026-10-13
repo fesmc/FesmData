@@ -1,12 +1,12 @@
 # Prepare the Hazzard & Richards (2024) Antarctic geothermal heat flow for remapping:
 # the 0.5° lon-lat grids of HR24_grids.zip (OSF, datamanifest key hazzardrichards2024_ghf)
-# as a prepared NetCDF file, $FESMDATA_WORK/prepared/HazzardRichards2024_ghf/HazzardRichards2024_GHF.nc,
+# as a prepared NetCDF file, $FESMDATA_PREPARED/HazzardRichards2024_ghf/HazzardRichards2024_GHF.nc,
 # with the mean and standard deviation of the heat flow, the crustal thermal
 # conductivity and the upper-crustal heat production.
 #
 # Usage:
 #     julia --project=HazzardRichards2024_ghf HazzardRichards2024_ghf/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/HazzardRichards2024_ghf/HazzardRichards2024_GHF.nc Antarctica
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/HazzardRichards2024_ghf/HazzardRichards2024_GHF.nc Antarctica
 
 using NCDatasets
 

@@ -1,7 +1,7 @@
 # Prepare the relative sea level indicators of Greenland in GAPSLIP (Gowan, 2023) as a
 # record (see Records/README.md): the calibrated data of all Greenland locations of
 # version 2.1 (datamanifest key gapslip_v2_1), one observation per dated sample
-# (featureType point), $FESMDATA_WORK/prepared/Gowan2023_GAPSLIP_GrIS/GAPSLIP_Greenland.nc.
+# (featureType point), $FESMDATA_PREPARED/Gowan2023_GAPSLIP_GrIS/GAPSLIP_Greenland.nc.
 #
 # Usage:
 #     julia --project=Gowan2023_GAPSLIP_GrIS Gowan2023_GAPSLIP_GrIS/prepare.jl

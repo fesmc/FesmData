@@ -1,10 +1,10 @@
 # Prepare the sediment thickness of ECM1 (Mooney et al., 2023) for remapping: the total
 # thickness and the thickness of its three sediment layers on the 1x1° grid of the model,
-# as a prepared NetCDF file, $FESMDATA_WORK/prepared/Mooney2023_ecm1/Mooney2023_ECM1_sed.nc.
+# as a prepared NetCDF file, $FESMDATA_PREPARED/Mooney2023_ecm1/Mooney2023_ECM1_sed.nc.
 #
 # Usage:
 #     julia --project=Mooney2023_ecm1 Mooney2023_ecm1/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/Mooney2023_ecm1/Mooney2023_ECM1_sed.nc all
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/Mooney2023_ecm1/Mooney2023_ECM1_sed.nc all
 
 using DelimitedFiles
 using NCDatasets

@@ -1,11 +1,11 @@
 # Prepare the Davies (2013) geothermal heat flow for remapping: the 2° lon-lat version of
 # the map in the supporting information (Data_Table1_Eq_lon_lat_Global_HF.csv, datamanifest
 # key davies2013_ghf) as a prepared NetCDF file,
-# $FESMDATA_WORK/prepared/Davies2013_ghf/Davies2013_GHF.nc, with ghf, ghf_median and ghf_err.
+# $FESMDATA_PREPARED/Davies2013_ghf/Davies2013_GHF.nc, with ghf, ghf_median and ghf_err.
 #
 # Usage:
 #     julia --project=Davies2013_ghf Davies2013_ghf/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/Davies2013_ghf/Davies2013_GHF.nc all
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/Davies2013_ghf/Davies2013_GHF.nc all
 
 using CSV
 using DataFrames

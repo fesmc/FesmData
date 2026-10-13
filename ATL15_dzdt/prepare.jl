@@ -2,7 +2,7 @@
 # (quarterly height changes at 1 km, cycles 03-31, 2019 to April 2026; datamanifest key
 # atl15_v006) for remapping: the linear trend of the height change `delta_h` over the
 # whole record in each cell, as `dzdt` (m yr-1), on the 1 km grids of the product, to
-# $FESMDATA_WORK/prepared/ATL15_dzdt/:
+# $FESMDATA_PREPARED/ATL15_dzdt/:
 #
 #   ATL15_ANT.nc   Antarctica, the four quadrants A1-A4 merged (EPSG:3031)
 #   ATL15_GRL.nc   Greenland and its peripheral ice caps, GL (EPSG:3413)

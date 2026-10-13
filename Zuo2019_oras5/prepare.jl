@@ -1,7 +1,7 @@
 # Prepare the ORAS5 ocean reanalysis (Zuo et al., 2019) for remapping: potential
 # temperature `to` and salinity `so` on depth levels, from the monthly means regridded
 # to 1°x1° (r1x1) on the DKRZ pool (ensemble member opa0), as prepared NetCDF files in
-# $FESMDATA_WORK/prepared/Zuo2019_oras5/:
+# $FESMDATA_PREPARED/Zuo2019_oras5/:
 #
 #     ORAS5_<y0>-<y1>.nc         monthly climatology, (lon, lat, depth, month)
 #     ORAS5_annual_<y0>-<y1>.nc  annual means, (lon, lat, depth, time)

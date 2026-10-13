@@ -16,7 +16,7 @@ Domains are named by their output folder (`folder` in `../shared/domains.toml`):
 Antarctica, GreenlandPaleo (GRL-PAL), Greenland (GRL), North (NH), Laurentide (LIS),
 Eurasia (EIS). Records datasets (non-gridded data, `../Records/README.md`) have no
 grids: one record on the domain `Records`, and one package per dataset, e.g.
-`Records_IceCores`, with its files in `$ICE_DATA/v2/Records/<Dataset>/`.
+`Records_IceCores`, with its files in `$FESMDATA_PRODUCTS/Records/<Dataset>/`.
 
 A release can also be archived on [Zenodo](https://zenodo.org/communities/fesmc), in
 the `fesmc` community, for a DOI: one Zenodo record per dataset and domain, with a DOI
@@ -36,8 +36,8 @@ size = 123456789
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_TOPO-Bedmap3.nc"
 ```
 
-`$datasets_dir` stands for `$ICE_DATA/v2`, so the files land in the usual layout,
-`$ICE_DATA/v2/<Domain>/<GRID>/`. A file that changed since an earlier release (if
+`$datasets_dir` stands for `$FESMDATA_PRODUCTS`, so the files land in the usual layout,
+`$FESMDATA_PRODUCTS/<Domain>/<GRID>/`. A file that changed since an earlier release (if
 only by the version stamped in it) also has `previous_checksums`, the checksums of
 its earlier releases, so that copies of those are updated. The registry files are also
 [DataManifest.jl](https://github.com/awi-esc/DataManifest.jl) databases.
@@ -48,13 +48,14 @@ The [website](https://fesmc.github.io/FesmData/) has a step-by-step guide. In sh
 
 1. Install [Julia](https://julialang.org/downloads/) (no packages needed) and clone
    FesmData; all commands are run from its folder.
-2. Set `ICE_DATA` to the folder for the data (e.g. `export ICE_DATA=/path/to/ice_data`,
-   or `source shared/machines/<machine>.env`). Every file goes to
-   `$ICE_DATA/v2/<Domain>/<GRID>/`: one folder per domain, and in it one folder per grid
+2. Set `FESMDATA` to the folder for the data (e.g. `export FESMDATA=/path/to/fesmdata`,
+   or `source shared/machines/<machine>.env`); the products go to
+   `$FESMDATA_PRODUCTS`, by default `$FESMDATA/products`. Every file goes to
+   `$FESMDATA_PRODUCTS/<Domain>/<GRID>/`: one folder per domain, and in it one folder per grid
    with all datasets on that grid, e.g.
 
    ```
-   $ICE_DATA/v2/Antarctica/ANT-8KM/
+   $FESMDATA_PRODUCTS/Antarctica/ANT-8KM/
        grid_ANT-8KM.txt                 grid description (cdo)
        ANT-8KM_grid.nc                  lon, lat and area of the cells
        ANT-8KM_TOPO-BedMachine-v4.nc    products of the dataset Topo
@@ -97,8 +98,8 @@ of the record of its parent domain that its own record does not have; and those 
 crops of its parent domain that contain it (e.g. Greenland for the nests of
 GreenlandPaleo: MAR, Joughin2018, ...) that neither has (`list` shows where each comes
 from). `fetch` downloads the files of these products (e.g. Greenland/SMB, to
-`$ICE_DATA/v2/Greenland/`), and cuts each to the nest or crop, as
-`$ICE_DATA/v2/<Domain>/<GRID>/<GRID>_<NAME>.nc` with the grid files: at a resolution of
+`$FESMDATA_PRODUCTS/Greenland/`), and cuts each to the nest or crop, as
+`$FESMDATA_PRODUCTS/<Domain>/<GRID>/<GRID>_<NAME>.nc` with the grid files: at a resolution of
 the nest or crop, on its own grid (e.g. JAK-1KM, next to its Topo and Regions, whose
 grid files it takes); at the other resolutions, on the cells of the domain grids that
 overlap the nest or crop (e.g. JAK-4KM, the same cells from the parent and from a crop,
@@ -124,7 +125,7 @@ copy (`--yes` skips the question, e.g. in a job). Single files can also be downl
 from the website or the packages page, without the tool.
 
 **Other folders and archives.** `--dir=<folder>` lists, fetches or mirrors in
-`<folder>/<Domain>/<GRID>/` instead of `$ICE_DATA/v2` (`ICE_DATA` need not be set).
+`<folder>/<Domain>/<GRID>/` instead of `$FESMDATA_PRODUCTS` (`FESMDATA` need not be set).
 Only the latest release of a dataset is kept on the packages page, so to keep the
 releases in use before updating, mirror them into a folder first:
 
@@ -133,11 +134,11 @@ julia fesmdata.jl mirror --dir=/work/ba1442/fesmdata/archive/2026-10-12
 julia fesmdata.jl mirror
 ```
 
-Files already in `$ICE_DATA/v2` at the same release (checksums) are hard linked from
+Files already in `$FESMDATA_PRODUCTS` at the same release (checksums) are hard linked from
 there (no extra space; copied on another file system, or with `--copy`), the others
 downloaded, and the
 registry files of the records go to `<folder>/registry/`, as the record of what the
-folder holds. Updates of `$ICE_DATA/v2` write new files, so the hard links keep the
+folder holds. Updates of `$FESMDATA_PRODUCTS` write new files, so the hard links keep the
 archived ones; tools that change files in place (e.g. `stamp`, `ncatted`) would change
 both: use `--copy` for an archive next to files that may be changed in place (e.g. on
 Levante, where `stamp` runs). Running `mirror --dir` again on an archive updates it to

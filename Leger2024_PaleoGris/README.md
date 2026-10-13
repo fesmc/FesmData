@@ -27,10 +27,10 @@ CC BY 4.0 (Mendeley Data).
 
 ```bash
 julia --project=Leger2024_PaleoGris Leger2024_PaleoGris/prepare.jl
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/Leger2024_PaleoGris/Leger2024_PaleoGrIS.nc Greenland GreenlandPaleo --name=IceHistory-PaleoGrIS
+julia fesmdata.jl remap $FESMDATA_PREPARED/Leger2024_PaleoGris/Leger2024_PaleoGrIS.nc Greenland GreenlandPaleo --name=IceHistory-PaleoGrIS
 ```
 
-`prepare.jl` writes `$FESMDATA_WORK/prepared/Leger2024_PaleoGris/Leger2024_PaleoGrIS.nc`
+`prepare.jl` writes `$FESMDATA_PREPARED/Leger2024_PaleoGris/Leger2024_PaleoGrIS.nc`
 (see `Remap/README.md`) on the 1 km grid of the buffers with
 
 - `age_deglac` (years ago, before 1950 CE): time of deglaciation, 13000 to 7000 (13000,

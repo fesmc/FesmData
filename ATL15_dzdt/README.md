@@ -20,12 +20,12 @@ redistribution. NSIDC asks to cite the data set.
 ATL15 v6, https://nsidc.org/data/atl15/versions/6, needs a NASA Earthdata login. The
 quarterly 1 km files of the four Antarctic quadrants (A1-A4, split along the 90°
 meridians) and of Greenland (GL), 13.3 GB in all, go to
-`$DATAMANIFEST_DATASETS_DIR/atl15_v006/` (datamanifest key `atl15_v006`). With a
+`$FESMDATA_SOURCES/atl15_v006/` (datamanifest key `atl15_v006`). With a
 `~/.netrc` for urs.earthdata.nasa.gov:
 
 ```bash
-mkdir -p $DATAMANIFEST_DATASETS_DIR/atl15_v006
-cd $DATAMANIFEST_DATASETS_DIR/atl15_v006
+mkdir -p $FESMDATA_SOURCES/atl15_v006
+cd $FESMDATA_SOURCES/atl15_v006
 for f in ATL15_A1_0331_3mo_1km_006_02.nc ATL15_A2_0331_3mo_1km_006_02.nc \
          ATL15_A3_0331_3mo_1km_006_02.nc ATL15_A4_0331_3mo_1km_006_02.nc \
          ATL15_GL_0331_3mo_1km_006_01.nc; do
@@ -47,7 +47,7 @@ julia --project=ATL15_dzdt ATL15_dzdt/prepare.jl
 ```
 
 `prepare.jl` writes `dzdt`, the surface elevation change rate (m yr-1) over the whole
-record, on the 1 km grid of the product to `$FESMDATA_WORK/prepared/ATL15_dzdt/`:
+record, on the 1 km grid of the product to `$FESMDATA_PREPARED/ATL15_dzdt/`:
 `ATL15_ANT.nc` (the four quadrants merged on their common grid, the mean where they
 overlap) and `ATL15_GRL.nc` (Greenland and its peripheral ice caps).
 

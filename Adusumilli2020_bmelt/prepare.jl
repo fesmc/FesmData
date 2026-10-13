@@ -1,5 +1,5 @@
 # Prepare the Antarctic ice-shelf data of Adusumilli et al. (2020) for remapping, as
-# prepared NetCDF files in $FESMDATA_WORK/prepared/Adusumilli2020_bmelt/, on their
+# prepared NetCDF files in $FESMDATA_PREPARED/Adusumilli2020_bmelt/, on their
 # original polar stereographic grids:
 #
 #     Adusumilli2020_BMELT_2010-2018.nc    basal melt rates, mean 2010-2018 (500 m), and

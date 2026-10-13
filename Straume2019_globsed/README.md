@@ -29,11 +29,11 @@ NOAA NCEI distributed GlobSed until it retired the page on 2025-05-12. `GlobSed.
 
 ```bash
 julia --project=Straume2019_globsed Straume2019_globsed/prepare.jl
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/Straume2019_globsed/Straume2019_GlobSed.nc all --name=Sediment-GlobSed
+julia fesmdata.jl remap $FESMDATA_PREPARED/Straume2019_globsed/Straume2019_GlobSed.nc all --name=Sediment-GlobSed
 ```
 
 `prepare.jl` writes `z_sed` (m) to
-`$FESMDATA_WORK/prepared/Straume2019_globsed/Straume2019_GlobSed.nc` (see `Remap/README.md`).
+`$FESMDATA_PREPARED/Straume2019_globsed/Straume2019_GlobSed.nc` (see `Remap/README.md`).
 `GlobSed-v3.nc` is gridline registered, with nodes from -180° to 180° and -90° to 90°:
 the column at 180°, which repeats the one at -180°, is dropped, and the nodes are taken
 as the centres of the cells.

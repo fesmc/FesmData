@@ -41,7 +41,7 @@ densities(dom::Domain) = (Float64(_products(dom)["rho_ice"]), Float64(_products(
 # ---------------------------------------------------------------------------
 
 "Folder for intermediate files: \$FESMDATA_WORK/topo."
-workdir() = joinpath(_env("FESMDATA_WORK"), "topo")
+workdir() = joinpath(fesmdata_dir("work"), "topo")
 
 "Intermediate file of a source remapped onto the base grid of a domain."
 source_file(dom::Domain, source::AbstractString) =

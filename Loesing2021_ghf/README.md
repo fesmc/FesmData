@@ -32,11 +32,11 @@ CC BY 4.0 (PANGAEA).
 
 ```bash
 julia --project=Loesing2021_ghf Loesing2021_ghf/prepare.jl
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/Loesing2021_ghf/Loesing2021_GHF.nc Antarctica --name=GHF-Loesing2021
+julia fesmdata.jl remap $FESMDATA_PREPARED/Loesing2021_ghf/Loesing2021_GHF.nc Antarctica --name=GHF-Loesing2021
 ```
 
 `prepare.jl` writes `ghf`, `ghf_min` and `ghf_max` (mW m-2) to
-`$FESMDATA_WORK/prepared/Loesing2021_ghf/Loesing2021_GHF.nc` (see `Remap/README.md`).
+`$FESMDATA_PREPARED/Loesing2021_ghf/Loesing2021_GHF.nc` (see `Remap/README.md`).
 
 The data are points of an equal-area grid: rings 0.5° apart in latitude, with points
 about 0.5°/cos(latitude) apart in longitude (about 55 km). They are put on a regular

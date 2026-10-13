@@ -69,10 +69,10 @@ sources on the base grid (step 2) are intermediate files and are not rounded.
 
 | Location | Contents |
 |---|---|
-| `$DATAMANIFEST_DATASETS_DIR` | Original datasets (see `../datamanifest.toml`) |
-| `$ICE_DATA/v2/<Domain>/<GRID>/` | Output: `grid_<GRID>.txt`, `<GRID>_grid.nc`, `<GRID>_TOPO-<product>.nc` |
+| `$FESMDATA_SOURCES` | Original datasets (see `../datamanifest.toml`) |
+| `$FESMDATA_PRODUCTS/<Domain>/<GRID>/` | Output: `grid_<GRID>.txt`, `<GRID>_grid.nc`, `<GRID>_TOPO-<product>.nc` |
 | `$FESMDATA_WORK/topo/` | Intermediate files (sources on base grids, IceBoost tile index) |
-| `$DATAMANIFEST_DATASETS_DIR/copernicus_glo90/` | Copernicus DEM GLO-90 tiles of the domains that use them |
+| `$FESMDATA_SOURCES/copernicus_glo90/` | Copernicus DEM GLO-90 tiles of the domains that use them |
 
 The environment variables are set per machine in `../shared/machines/<machine>.env`.
 
@@ -246,7 +246,7 @@ sbatch --job-name=merge-ANT Topo/jobs/run_step.sbatch 03_merge.jl ANT [PRODUCTS]
 `PRODUCTS` is `default` (the default products, if omitted), `variants`, `all`, or
 the name of one product; the same holds for steps 4 and 5.
 
-This writes `$ICE_DATA/v2/<folder>/<BASE>/<BASE>_TOPO-<product>.nc`. Sources are
+This writes `$FESMDATA_PRODUCTS/<folder>/<BASE>/<BASE>_TOPO-<product>.nc`. Sources are
 blended in order of increasing priority: a source replaces the fields below it where
 it fully covers a cell, with a weight rising linearly from 0 at the edge of its
 coverage to 1 at a taper width inside it, a property of the source (`taper_km` in
@@ -281,7 +281,7 @@ the crops (GRL from GRL-PAL, LIS and EIS from NH):
 sbatch --job-name=grids-all-ANT Topo/jobs/run_step.sbatch 04_grids.jl ANT [PRODUCTS]
 ```
 
-This writes `$ICE_DATA/v2/<folder>/<GRID>/<GRID>_TOPO-<product>.nc`. Fields and
+This writes `$FESMDATA_PRODUCTS/<folder>/<GRID>/<GRID>_TOPO-<product>.nc`. Fields and
 fractions are conservative cell means, `z_bed_sd` combines the sub-cell variance of
 the base grid with the variance of the base-grid means, `mask` is the dominant
 surface type (ice where the ice fraction is at least one half), and `src_id` the

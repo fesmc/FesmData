@@ -35,11 +35,11 @@ have only the mean.
 
 ```bash
 julia --project=Colgan2021_ghf Colgan2021_ghf/prepare.jl
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/Colgan2021_ghf/Colgan2021_GHF.nc Greenland --name=GHF-Colgan2021
+julia fesmdata.jl remap $FESMDATA_PREPARED/Colgan2021_ghf/Colgan2021_GHF.nc Greenland --name=GHF-Colgan2021
 ```
 
 `prepare.jl` writes `ghf`, `ghf_min` and `ghf_max` (mW m-2) to
-`$FESMDATA_WORK/prepared/Colgan2021_ghf/Colgan2021_GHF.nc` (see `Remap/README.md`).
+`$FESMDATA_PREPARED/Colgan2021_ghf/Colgan2021_GHF.nc` (see `Remap/README.md`).
 `ghf` covers land and ocean, `ghf_min` and `ghf_max` only part of it (mostly onshore).
 
 The data are points of an equal-area grid: rings 0.5° apart in latitude (57-85°N),

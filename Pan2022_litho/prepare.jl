@@ -1,12 +1,12 @@
 # Prepare the Earth structure of Pan et al. (2022) for remapping: the lithosphere
 # thickness (pan2022.llz) and the 3D mantle viscosity (pan2022.nc) on their global 0.5°
 # grid, from the isostasy_data archive (datamanifest key isostasy_data_v0_2), as one
-# prepared NetCDF file, $FESMDATA_WORK/prepared/Pan2022_litho/Pan2022_EarthStructure.nc,
+# prepared NetCDF file, $FESMDATA_PREPARED/Pan2022_litho/Pan2022_EarthStructure.nc,
 # with z_litho and log10_visc (on depth).
 #
 # Usage:
 #     julia --project=Pan2022_litho Pan2022_litho/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/Pan2022_litho/Pan2022_EarthStructure.nc Antarctica
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/Pan2022_litho/Pan2022_EarthStructure.nc Antarctica
 
 using DelimitedFiles
 using NCDatasets

@@ -1,7 +1,7 @@
 # Prepare the NEEM high-resolution water isotopes of Gkinis et al. (2020) as a record (see
 # Records/README.md): d18O and dD of 0.05 m samples (PANGAEA, datamanifest key
 # gkinis2020_neem) as a time series at NEEM (featureType timeSeries),
-# $FESMDATA_WORK/prepared/Gkinis2020_NEEMwateriso/Gkinis2020_NEEM.nc.
+# $FESMDATA_PREPARED/Gkinis2020_NEEMwateriso/Gkinis2020_NEEM.nc.
 #
 # Usage:
 #     julia --project=Gkinis2020_NEEMwateriso Gkinis2020_NEEMwateriso/prepare.jl

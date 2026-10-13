@@ -2,12 +2,12 @@
 # remapping: the dimensionless relative correction and its uncertainty on the BedMachine grids
 # (TopoHeat_<Region>_20210224.nc, GEUS Dataverse, datamanifest keys
 # colgan2021_topocorr_antarctica and colgan2021_topocorr_greenland), at their own
-# resolution, written to $FESMDATA_WORK/prepared/Colgan2021_topocorr/Colgan2021_topocorr_<ANT|GRL>.nc
+# resolution, written to $FESMDATA_PREPARED/Colgan2021_topocorr/Colgan2021_topocorr_<ANT|GRL>.nc
 # with ghf_corr and ghf_corr_unc.
 #
 # Usage (about 4 GB of memory):
 #     julia --project=Colgan2021_topocorr Colgan2021_topocorr/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/Colgan2021_topocorr/Colgan2021_topocorr_GRL.nc Greenland
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/Colgan2021_topocorr/Colgan2021_topocorr_GRL.nc Greenland
 
 using NCDatasets
 

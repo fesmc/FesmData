@@ -1,11 +1,11 @@
 # Prepare the Schmidtko et al. (2014) Antarctic shelf bottom water for remapping: the
 # list of 0.25° x 0.125° shelf cells of Antarctic_shelf_data.txt (datamanifest key
 # schmidtko2014_shelf) on its lon-lat grid, missing off the shelf, as
-# $FESMDATA_WORK/prepared/Schmidtko2014_ocean/Schmidtko2014_OCEAN.nc.
+# $FESMDATA_PREPARED/Schmidtko2014_ocean/Schmidtko2014_OCEAN.nc.
 #
 # Usage:
 #     julia --project=Schmidtko2014_ocean Schmidtko2014_ocean/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/Schmidtko2014_ocean/Schmidtko2014_OCEAN.nc Antarctica
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/Schmidtko2014_ocean/Schmidtko2014_OCEAN.nc Antarctica
 
 using DelimitedFiles
 using NCDatasets

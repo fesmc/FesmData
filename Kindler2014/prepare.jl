@@ -2,7 +2,7 @@
 # Records/README.md): the modelled data of the supplement (datamanifest key
 # kindler2014_ngrip), surface temperature and accumulation rate every 20 years from 10 to
 # 123 kyr b2k, as a time series at NGRIP (featureType timeSeries),
-# $FESMDATA_WORK/prepared/Kindler2014/Kindler2014_NGRIP.nc.
+# $FESMDATA_PREPARED/Kindler2014/Kindler2014_NGRIP.nc.
 #
 # Usage:
 #     julia --project=Kindler2014 Kindler2014/prepare.jl

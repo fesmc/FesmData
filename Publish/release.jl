@@ -95,7 +95,7 @@ function grid_files(domain::AbstractString, names)
     return files
 end
 
-"Files of a release of a records dataset, in \$ICE_DATA/v2/Records/<Dataset>/ (no grids)."
+"Files of a release of a records dataset, in \$FESMDATA_PRODUCTS/Records/<Dataset>/ (no grids)."
 records_files(dataset::AbstractString) =
     [ProductFile("", joinpath(records_dir(dataset), name), false) for name in records_release_files(dataset)]
 

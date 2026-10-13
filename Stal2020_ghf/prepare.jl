@@ -1,11 +1,11 @@
 # Prepare the Aq1 geothermal heat flow of Antarctica (Stål et al., 2021) for remapping:
 # the 20 km grid of aq1_01_20.nc (PANGAEA, datamanifest key staal2020_aq1, polar
-# stereographic EPSG:3031) written to $FESMDATA_WORK/prepared/Stal2020_ghf/Stal2020_GHF.nc
+# stereographic EPSG:3031) written to $FESMDATA_PREPARED/Stal2020_ghf/Stal2020_GHF.nc
 # with ghf and ghf_unc in mW m-2.
 #
 # Usage:
 #     julia --project=Stal2020_ghf Stal2020_ghf/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/Stal2020_ghf/Stal2020_GHF.nc Antarctica
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/Stal2020_ghf/Stal2020_GHF.nc Antarctica
 
 using NCDatasets
 

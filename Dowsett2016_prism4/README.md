@@ -39,10 +39,10 @@ masks, and for the modern state the cells with positive topography.
 
 ```bash
 julia --project=Dowsett2016_prism4 Dowsett2016_prism4/prepare.jl
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/Dowsett2016_prism4/Dowsett2016_PRISM4.nc all --name=ICEHISTORY-PRISM4
+julia fesmdata.jl remap $FESMDATA_PREPARED/Dowsett2016_prism4/Dowsett2016_PRISM4.nc all --name=ICEHISTORY-PRISM4
 ```
 
-`prepare.jl` writes `$FESMDATA_WORK/prepared/Dowsett2016_prism4/Dowsett2016_PRISM4.nc`
+`prepare.jl` writes `$FESMDATA_PREPARED/Dowsett2016_prism4/Dowsett2016_PRISM4.nc`
 (see `Remap/README.md`) with
 
 - `z_topo_enh`, `z_topo_std`, `z_topo_mod` (m): topography (surface on land and ice,

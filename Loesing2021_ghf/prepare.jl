@@ -1,11 +1,11 @@
 # Prepare the Lösing & Ebbing (2021) geothermal heat flow of Antarctica for remapping:
 # the equal-area points of HF_Min_Max_MaxAbs-1.csv (PANGAEA, datamanifest key
 # loesing2021_ghf) on a regular lon-lat grid, written to
-# $FESMDATA_WORK/prepared/Loesing2021_ghf/Loesing2021_GHF.nc with ghf, ghf_min, ghf_max.
+# $FESMDATA_PREPARED/Loesing2021_ghf/Loesing2021_GHF.nc with ghf, ghf_min, ghf_max.
 #
 # Usage:
 #     julia --project=Loesing2021_ghf Loesing2021_ghf/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/Loesing2021_ghf/Loesing2021_GHF.nc Antarctica
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/Loesing2021_ghf/Loesing2021_GHF.nc Antarctica
 
 using DelimitedFiles
 using NCDatasets

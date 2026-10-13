@@ -1,8 +1,8 @@
 # Prepare ERA5 (Hersbach et al., 2020) monthly climatologies for remapping, from the
 # monthly means of the DKRZ ERA5 pool (GRIB, reduced Gaussian N320): for 1981-2010 and
 # 1991-2020, surface fields and fields on pressure levels, as
-#     $FESMDATA_WORK/prepared/Hersbach2020_era5/Hersbach2020_ERA5_<period>.nc
-#     $FESMDATA_WORK/prepared/Hersbach2020_era5/Hersbach2020_ERA5-plev_<period>.nc
+#     $FESMDATA_PREPARED/Hersbach2020_era5/Hersbach2020_ERA5_<period>.nc
+#     $FESMDATA_PREPARED/Hersbach2020_era5/Hersbach2020_ERA5-plev_<period>.nc
 # cdo makes the climatology of each field on the regular Gaussian grid (intermediate
 # files in $FESMDATA_WORK/era5/), which is converted here to the prepared files.
 # Needs cdo (module load cdo) and about 150 GB of reading: run on a compute node,
@@ -10,7 +10,7 @@
 #
 # Usage:
 #     julia --project=Hersbach2020_era5 Hersbach2020_era5/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/Hersbach2020_era5/Hersbach2020_ERA5_1991-2020.nc all
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/Hersbach2020_era5/Hersbach2020_ERA5_1991-2020.nc all
 
 using NCDatasets
 
@@ -54,7 +54,7 @@ const PLEV = [
     "w" => ("pl/an", "135", 1, "Pa s-1", "vertical velocity (pressure tendency)", "lagrangian_tendency_of_air_pressure"),
 ]
 
-workdir() = joinpath(_env("FESMDATA_WORK"), "era5")
+workdir() = joinpath(fesmdata_dir("work"), "era5")
 
 # Monthly files of a field for the years y0:y1, e.g. sf/an/1M/134/E5sf00_1M_1981_134.grb
 function monthly_files(pool, dir, param, y0, y1)

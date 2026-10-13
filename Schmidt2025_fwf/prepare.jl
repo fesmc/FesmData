@@ -3,7 +3,7 @@
 # Zenodo record (datamanifest keys schmidt2025_<file>) as time series by region
 # (featureType timeSeries), with the regions of the Regions basin set Schmidt2025
 # (datamanifest keys schmidt2025_regions_greenland and schmidt2025_regions_antarctica),
-# located at their centroids, $FESMDATA_WORK/prepared/Schmidt2025_fwf/Schmidt2025_<file>.nc.
+# located at their centroids, $FESMDATA_PREPARED/Schmidt2025_fwf/Schmidt2025_<file>.nc.
 #
 # Usage:
 #     julia --project=Schmidt2025_fwf Schmidt2025_fwf/prepare.jl

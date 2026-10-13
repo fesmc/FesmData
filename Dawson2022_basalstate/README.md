@@ -21,7 +21,7 @@ CC BY 4.0 (Zenodo).
 ## Original data
 
 `Antarctica_Initialization.mat` (158 MB) from Zenodo (no login), downloaded by
-`prepare.jl` into `$DATAMANIFEST_DATASETS_DIR/dawson2022/` (datamanifest key
+`prepare.jl` into `$FESMDATA_SOURCES/dawson2022/` (datamanifest key
 `dawson2022_init`). It is a MATLAB 7.3 (HDF5) file with the ISSM model `md`, a MATLAB
 object, read without MATLAB or ISSM by `issm_mat.jl`. The other files of the record
 (the 100-year thaw experiments, 2.9 GB each, and the scripts of the figures) are not
@@ -31,10 +31,10 @@ used.
 
 ```bash
 julia --project=Dawson2022_basalstate Dawson2022_basalstate/prepare.jl
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/Dawson2022_basalstate/Dawson2022_BASALSTATE.nc Antarctica --name=BasalState-Dawson2022
+julia fesmdata.jl remap $FESMDATA_PREPARED/Dawson2022_basalstate/Dawson2022_BASALSTATE.nc Antarctica --name=BasalState-Dawson2022
 ```
 
-`prepare.jl` writes `$FESMDATA_WORK/prepared/Dawson2022_basalstate/Dawson2022_BASALSTATE.nc`
+`prepare.jl` writes `$FESMDATA_PREPARED/Dawson2022_basalstate/Dawson2022_BASALSTATE.nc`
 (see `Remap/README.md`) on a 1 km polar stereographic grid (EPSG:3031), on the grounded
 ice:
 

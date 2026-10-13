@@ -26,11 +26,11 @@ the data set and the articles.
 
 NSIDC-0484 v2, https://nsidc.org/data/nsidc-0484/versions/2, needs a NASA Earthdata
 login. The file `antarctica_ice_velocity_450m_v2.nc` (6.8 GB) goes to
-`$DATAMANIFEST_DATASETS_DIR/nsidc0484_v2_antarctica_vel/` (datamanifest key
+`$FESMDATA_SOURCES/nsidc0484_v2_antarctica_vel/` (datamanifest key
 `nsidc0484_v2_antarctica_vel`). With a `~/.netrc` for urs.earthdata.nasa.gov:
 
 ```bash
-cd $DATAMANIFEST_DATASETS_DIR/nsidc0484_v2_antarctica_vel
+cd $FESMDATA_SOURCES/nsidc0484_v2_antarctica_vel
 curl -n -L -c ~/.urs_cookies -b ~/.urs_cookies -O \
     https://data.nsidc.earthdatacloud.nasa.gov/nsidc-cumulus-prod-protected/MEASURES/NSIDC-0484/2/1996/01/01/antarctica_ice_velocity_450m_v2.nc
 ```
@@ -39,11 +39,11 @@ curl -n -L -c ~/.urs_cookies -b ~/.urs_cookies -O \
 
 ```bash
 julia -t 8 --project=Rignot2011_vel Rignot2011_vel/prepare.jl
-julia -t 8 fesmdata.jl remap $FESMDATA_WORK/prepared/Rignot2011_vel/Rignot2011_VEL.nc Antarctica --name=VEL-Rignot2011
+julia -t 8 fesmdata.jl remap $FESMDATA_PREPARED/Rignot2011_vel/Rignot2011_VEL.nc Antarctica --name=VEL-Rignot2011
 ```
 
 `prepare.jl` (4 min, 8 GB: use a compute node) writes
-`$FESMDATA_WORK/prepared/Rignot2011_vel/Rignot2011_VEL.nc` on the 450 m grid of the map,
+`$FESMDATA_PREPARED/Rignot2011_vel/Rignot2011_VEL.nc` on the 450 m grid of the map,
 in m yr-1:
 
 - `ux_srf`, `uy_srf`: eastward and northward surface velocity, rotated from `VX`, `VY`

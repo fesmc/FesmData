@@ -57,7 +57,7 @@ function write_products(path::AbstractString)
             The released records of each dataset, one per domain. Each grid has its own
             files: its grid description for cdo (`grid_<GRID>.txt`), its grid file
             (`<GRID>_grid.nc`) and the products. Download them with `fesmdata.jl` into
-            `\$ICE_DATA/v2/<Domain>/<GRID>/` (see [Getting started](index.qmd)), or file by
+            `\$FESMDATA_PRODUCTS/<Domain>/<GRID>/` (see [Getting started](index.qmd)), or file by
             file from the links below. On the nests and crops of a domain without a record
             of their own, `fetch` makes the thematic datasets by cropping those of the
             domain (see [Releasing](releasing.qmd#download)).

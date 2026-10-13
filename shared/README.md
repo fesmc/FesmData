@@ -73,7 +73,7 @@ each with cell edges at -180° and -90° (so they are not nested: 0.25° is not 
 multiple of 0.1°). Its data are made by remapping (see Bring your own data).
 
 Grids are named after their domain (or crop) and resolution: `ANT-8KM`, `GRL-500M`,
-`GLOBAL-0.5DEG`. Each domain and crop has an output **folder** under `$ICE_DATA/v2`,
+`GLOBAL-0.5DEG`. Each domain and crop has an output **folder** under `$FESMDATA_PRODUCTS`,
 which is also its name in the released records (Antarctica, Amundsen, Thwaites,
 PineIsland, FilchnerRonne, Ross, Amery, WilkesBasin, GreenlandPaleo, Greenland,
 Jakobshavn, NEGIS, Petermann, Helheim, North, Laurentide, Eurasia, Pyrenees, Patagonia,
@@ -82,7 +82,7 @@ Alps, Himalaya, DrangDrung, Svalbard, NewZealand, Global). Every grid has its ow
 there, with all datasets on that grid:
 
 ```
-$ICE_DATA/v2/<folder>/<GRID>/
+$FESMDATA_PRODUCTS/<folder>/<GRID>/
     grid_<GRID>.txt         grid description (cdo)
     <GRID>_grid.nc          x, y, lon, lat and area of the cells
     <GRID>_TOPO-<product>.nc, <GRID>_REGIONS.nc, <GRID>_GHF-<source>.nc, ...
@@ -182,9 +182,44 @@ anything:
 source shared/machines/levante.env
 ```
 
-It sets `DATAMANIFEST_DATASETS_DIR` (the original datasets), `ICE_DATA` (the output),
-`FESMDATA_WORK` (intermediate files), the Julia version, and the tokens for releases.
-A new machine is a new file with the same variables.
+It sets the storage folders, the Julia version, the Slurm account and partition of
+the jobs (`SBATCH_ACCOUNT`, `SBATCH_PARTITION`; the job scripts source the file
+again, by `FESMDATA_MACHINE`), and the tokens for releases. A new machine is a new
+file with the same variables.
+
+### Storage
+
+All data lives in one folder, `$FESMDATA` (`fesmdata_dir` in `provenance.jl`):
+
+| Folder | Variable | Contents |
+|---|---|---|
+| `$FESMDATA/sources` | `FESMDATA_SOURCES` | Original datasets (`$datasets_dir` of `../datamanifest.toml`) |
+| `$FESMDATA/prepared` | `FESMDATA_PREPARED` | Prepared sources (`<source>/prepare.jl`), input of remapping and records |
+| `$FESMDATA/products` | `FESMDATA_PRODUCTS` | Products and records, as released: `<folder>/<GRID>/`, `Records/<Dataset>/` |
+| `$FESMDATA/work` | `FESMDATA_WORK` | Intermediate files (Topo, Regions, ensemble members of Remap, plots) |
+
+Each variable, if set, replaces the default folder; a user who only downloads
+products sets `FESMDATA`. On a case-insensitive file system (macOS, Windows), a folder
+`fesmdata` next to the FesmData checkout is the checkout itself: choose another place. On the HPC machines the project folder is shared by the
+group and the intermediate files are per user on scratch, where they are deleted
+after a while without access (pipelines make them again):
+
+| Machine | `FESMDATA` | `FESMDATA_WORK` |
+|---|---|---|
+| Levante | `/work/ba1442/fesmdata` | `/scratch/<u>/$USER/fesmdata` (14 days) |
+| Albedo | `$FORCLIMA/fesmdata` | `/albedo/scratch/user/$USER/fesmdata` |
+
+The shared folders are writable by the group of the project through default ACLs,
+which the files created in them inherit whatever the `umask`. To set them up on a
+new machine, or to change who may write later (e.g. read-only products):
+
+```bash
+chmod -R g+w $FESMDATA && find $FESMDATA -type d -exec chmod g+s {} +
+setfacl -R -m g::rwX -d -m g::rwX $FESMDATA
+```
+
+`FESMDATA_V1` (optional) is the folder of the v1 products, which Topo step 5 compares
+with.
 
 ## Adding a dataset
 
@@ -205,7 +240,7 @@ way:
    `const DATASET = "<name>"` (lower case), the name of its provenance attributes and
    release tags (`<name>-vX.Y.Z`).
 4. **Output** with `write_fields(path, grid, fields; dataset=DATASET, ...)`, into
-   `$ICE_DATA/v2/<folder>/<GRID>/<GRID>_<NAME>[-<product>].nc` on every grid of a
+   `$FESMDATA_PRODUCTS/<folder>/<GRID>/<GRID>_<NAME>[-<product>].nc` on every grid of a
    domain (`outdir(og)` for each `og in dom.grids`). Add a `sources` attribute with the
    `datamanifest.toml` keys of the original datasets, so that the records cite them.
 5. **`files.jl`** with the output file names and a function

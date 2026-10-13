@@ -1,10 +1,10 @@
 # Prepare ICE-5G v1.2 (Peltier, 2004) for remapping: the 39 time slices 21-0 ka on the
 # 1° grid as one prepared NetCDF file with a time dimension,
-# $FESMDATA_WORK/prepared/Peltier2004_ice5g/Peltier2004_ICE5G.nc, with z_topo, H_ice and f_ice.
+# $FESMDATA_PREPARED/Peltier2004_ice5g/Peltier2004_ICE5G.nc, with z_topo, H_ice and f_ice.
 #
 # Usage:
 #     julia --project=Peltier2004_ice5g Peltier2004_ice5g/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/Peltier2004_ice5g/Peltier2004_ICE5G.nc all
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/Peltier2004_ice5g/Peltier2004_ICE5G.nc all
 
 using NCDatasets
 

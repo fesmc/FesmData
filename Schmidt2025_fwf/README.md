@@ -56,7 +56,7 @@ julia --project=Schmidt2025_fwf Schmidt2025_fwf/prepare.jl
 julia fesmdata.jl record Freshwater
 ```
 
-`prepare.jl` writes `$FESMDATA_WORK/prepared/Schmidt2025_fwf/Schmidt2025_<file>.nc` for
+`prepare.jl` writes `$FESMDATA_PREPARED/Schmidt2025_fwf/Schmidt2025_<file>.nc` for
 the seven series files (see `Records/README.md`): time series by region (featureType
 timeSeries, dimensions `time` and `region`), with the variables of the source (names and
 attributes, oriented (time, region)) and `region` (number), `region_name`, `lat` and

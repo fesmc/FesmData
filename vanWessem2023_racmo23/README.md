@@ -22,7 +22,7 @@ CC BY 4.0 (Zenodo record).
 ## Original data
 
 Zenodo record 7760491 (no login), downloaded by `prepare.jl` (DataManifest keys
-`racmo23p2_ant27_*` in `datamanifest.toml`) to `$DATAMANIFEST_DATASETS_DIR/racmo23p2_ant27/`
+`racmo23p2_ant27_*` in `datamanifest.toml`) to `$FESMDATA_SOURCES/racmo23p2_ant27/`
 (0.4 GB): `Height_latlon_ANT27.nc` (orography, ice and grounded-ice masks) and the monthly
 files `<var>_monthly{S,A}_ANT27_ERA5-3H_RACMO2.3p2_197901_202212.nc` of `smb`, `precip`,
 `snowfall`, `runoff`, `snowmelt`, `subl` (monthly sums, kg m-2) and `t2m`, `tskin`
@@ -32,10 +32,10 @@ files `<var>_monthly{S,A}_ANT27_ERA5-3H_RACMO2.3p2_197901_202212.nc` of `smb`, `
 
 ```bash
 julia --project=vanWessem2023_racmo23 vanWessem2023_racmo23/prepare.jl
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/vanWessem2023_racmo23/RACMO2.3p2_1991-2020.nc Antarctica --name=SMB-RACMO2.3p2-1991-2020
+julia fesmdata.jl remap $FESMDATA_PREPARED/vanWessem2023_racmo23/RACMO2.3p2_1991-2020.nc Antarctica --name=SMB-RACMO2.3p2-1991-2020
 ```
 
-`prepare.jl` writes to `$FESMDATA_WORK/prepared/vanWessem2023_racmo23/`:
+`prepare.jl` writes to `$FESMDATA_PREPARED/vanWessem2023_racmo23/`:
 
 - `RACMO2.3p2_1981-2010.nc`, `RACMO2.3p2_1991-2020.nc`: monthly climatologies
   (x, y, month);

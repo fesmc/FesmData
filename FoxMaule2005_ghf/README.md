@@ -41,11 +41,11 @@ so only its Antarctic points are used.
 
 ```bash
 julia --project=FoxMaule2005_ghf FoxMaule2005_ghf/prepare.jl
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/FoxMaule2005_ghf/FoxMaule2005_GHF.nc Antarctica Greenland --name=GHF-FoxMaule2005
+julia fesmdata.jl remap $FESMDATA_PREPARED/FoxMaule2005_ghf/FoxMaule2005_GHF.nc Antarctica Greenland --name=GHF-FoxMaule2005
 ```
 
 `prepare.jl` writes `ghf` (mW m-2) and `h_mag` (magnetic crustal thickness, km, north
-of 55°N only) to `$FESMDATA_WORK/prepared/FoxMaule2005_ghf/FoxMaule2005_GHF.nc` (see
+of 55°N only) to `$FESMDATA_PREPARED/FoxMaule2005_ghf/FoxMaule2005_GHF.nc` (see
 `Remap/README.md`). The GHF product remaps only `ghf`.
 
 The data are points of an equal-area grid: rings 1.5° apart in latitude (about

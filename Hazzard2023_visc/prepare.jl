@@ -2,12 +2,12 @@
 # (2023) for remapping: the mean and standard deviation of the posterior ensemble
 # inferred from ANT-20 (summary_grids.zip of OSF project f4ntr, datamanifest key
 # hazzard2023_visc) on its 0.5° lon-lat grid, as a prepared NetCDF file,
-# $FESMDATA_WORK/prepared/Hazzard2023_visc/Hazzard2023_visc.nc, with log10_visc and
+# $FESMDATA_PREPARED/Hazzard2023_visc/Hazzard2023_visc.nc, with log10_visc and
 # log10_visc_sd (on depth, 75-400 km) and z_litho and z_litho_sd.
 #
 # Usage:
 #     julia --project=Hazzard2023_visc Hazzard2023_visc/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/Hazzard2023_visc/Hazzard2023_visc.nc Antarctica
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/Hazzard2023_visc/Hazzard2023_visc.nc Antarctica
 
 using NCDatasets
 

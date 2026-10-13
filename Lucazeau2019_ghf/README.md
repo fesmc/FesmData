@@ -30,8 +30,8 @@ unzip sup.zip && rm sup.zip
 
 ```bash
 julia --project=Lucazeau2019_ghf Lucazeau2019_ghf/prepare.jl
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/Lucazeau2019_ghf/Lucazeau2019_GHF.nc all --name=GHF-Lucazeau2019
+julia fesmdata.jl remap $FESMDATA_PREPARED/Lucazeau2019_ghf/Lucazeau2019_GHF.nc all --name=GHF-Lucazeau2019
 ```
 
 `prepare.jl` writes `ghf` and `ghf_sd` (mW m-2) to
-`$FESMDATA_WORK/prepared/Lucazeau2019_ghf/Lucazeau2019_GHF.nc` (see `Remap/README.md`).
+`$FESMDATA_PREPARED/Lucazeau2019_ghf/Lucazeau2019_GHF.nc` (see `Remap/README.md`).

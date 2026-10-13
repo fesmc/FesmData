@@ -1,6 +1,6 @@
 # Prepare the MAR v3.14 (ERA5) surface mass balance and surface climate of Greenland for
 # remapping: from the monthly outputs on the 1 km ISMIP6 grid (one file per year), write
-# to $FESMDATA_WORK/prepared/Fettweis2017_mar314/
+# to $FESMDATA_PREPARED/Fettweis2017_mar314/
 #
 #   MARv3.14_ERA5_<period>.nc               monthly climatologies (x, y, month)
 #   MARv3.14_ERA5_<period>_annual-mean.nc   their annual means (x, y)

@@ -1,7 +1,7 @@
 # Prepare the GPS vertical velocities of Schumacher et al. (2018) as a record (see
 # Records/README.md): the uplift rates of all (about 4000) stations of the global data
 # set (PANGAEA, datamanifest key schumacher2018_gps), one value per station
-# (featureType point), $FESMDATA_WORK/prepared/Schumacher2018_gps/Schumacher2018_GPS.nc.
+# (featureType point), $FESMDATA_PREPARED/Schumacher2018_gps/Schumacher2018_GPS.nc.
 #
 # Usage:
 #     julia --project=Schumacher2018_gps Schumacher2018_gps/prepare.jl

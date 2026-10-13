@@ -6,7 +6,7 @@ using TOML
 """
     OutGrid
 
-A grid of a domain together with its output folder under \$ICE_DATA/v2. A grid
+A grid of a domain together with its output folder under the products folder. A grid
 `on_request` (e.g. a Gaussian grid) is not one of the standard grids of the domain: it
 is made only for the products that name it. `elevation` is the absolute tolerance (m)
 of the elevations and thicknesses written on it (`elevation_precision` of its domain),
@@ -167,5 +167,5 @@ end
 "Output folders of all domains and crops (also inactive), i.e. the names of the domains in published records."
 domain_folders() = sort(unique(og.folder for key in domain_keys(; inactive=true) for og in Domain(key).grids))
 
-"Output folder of a grid: \$ICE_DATA/v2/<folder>/<grid name>."
-outdir(og::OutGrid) = joinpath(_env("ICE_DATA"), "v2", og.folder, og.grid.name)
+"Output folder of a grid: <products>/<folder>/<grid name> (see `fesmdata_dir`)."
+outdir(og::OutGrid) = joinpath(fesmdata_dir("products"), og.folder, og.grid.name)

@@ -35,11 +35,11 @@ scenario (an ice-free Hudson Bay at times).
 
 ```bash
 julia --project=Gowan2021_PaleoMIST1.0 Gowan2021_PaleoMIST1.0/prepare.jl
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/Gowan2021_PaleoMIST1.0/Gowan2021_PaleoMIST.nc all --name=IceHistory-PaleoMIST
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/Gowan2021_PaleoMIST1.0/Gowan2021_PaleoMIST_max.nc all --name=IceHistory-PaleoMIST_max
+julia fesmdata.jl remap $FESMDATA_PREPARED/Gowan2021_PaleoMIST1.0/Gowan2021_PaleoMIST.nc all --name=IceHistory-PaleoMIST
+julia fesmdata.jl remap $FESMDATA_PREPARED/Gowan2021_PaleoMIST1.0/Gowan2021_PaleoMIST_max.nc all --name=IceHistory-PaleoMIST_max
 ```
 
-`prepare.jl` writes two files to `$FESMDATA_WORK/prepared/Gowan2021_PaleoMIST1.0/` (see
+`prepare.jl` writes two files to `$FESMDATA_PREPARED/Gowan2021_PaleoMIST1.0/` (see
 `Remap/README.md`), `Gowan2021_PaleoMIST.nc` (minimal MIS 3 scenario, product
 `PaleoMIST`) and `Gowan2021_PaleoMIST_max.nc` (maximal scenario, `a1`, product
 `PaleoMIST_max`), each on the 0.25° grid with the dimension `time` (years ago, before

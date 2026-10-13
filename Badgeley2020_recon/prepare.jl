@@ -1,13 +1,13 @@
 # Prepare the Badgeley et al. (2020) Greenland reconstructions for remapping: the
 # posterior mean of the main temperature reconstruction and of the main, low and high
 # precipitation reconstructions (Arctic Data Center, datamanifest keys badgeley2020_*),
-# as one prepared file, $FESMDATA_WORK/prepared/Badgeley2020_recon/Badgeley2020.nc,
+# as one prepared file, $FESMDATA_PREPARED/Badgeley2020_recon/Badgeley2020.nc,
 # with tas_anom, pr_frac, pr_frac_low and pr_frac_high on the native T31 grid of
 # TraCE-21ka, 20 ka to 0 BP.
 #
 # Usage:
 #     julia --project=Badgeley2020_recon Badgeley2020_recon/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/Badgeley2020_recon/Badgeley2020.nc Greenland
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/Badgeley2020_recon/Badgeley2020.nc Greenland
 
 using NCDatasets
 

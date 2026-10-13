@@ -1,6 +1,6 @@
 # Prepare the ICESat to ICESat-2 height and thickness change rates 2003-2019 of Smith et
 # al. (2020) for remapping (GeoTIFFs at 5 km, datamanifest key smith2020_dhdt), on their
-# own grids, to $FESMDATA_WORK/prepared/Smith2020_dzdt/:
+# own grids, to $FESMDATA_PREPARED/Smith2020_dzdt/:
 #
 #   Smith2020_GRL.nc           dzdt of the grounded ice of Greenland (EPSG:3413)
 #   Smith2020_ANT.nc           dzdt and dHdt of the grounded ice of Antarctica (EPSG:3031)

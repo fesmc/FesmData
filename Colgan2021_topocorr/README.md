@@ -37,12 +37,12 @@ each), downloaded by `prepare.jl` (datamanifest keys `colgan2021_topocorr_antarc
 
 ```bash
 julia --project=Colgan2021_topocorr Colgan2021_topocorr/prepare.jl   # about 4 GB of memory, 2 min
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/Colgan2021_topocorr/Colgan2021_topocorr_GRL.nc Greenland --name=GHF-Colgan2021-topocorr-GRL
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/Colgan2021_topocorr/Colgan2021_topocorr_ANT.nc Antarctica --name=GHF-Colgan2021-topocorr-ANT
+julia fesmdata.jl remap $FESMDATA_PREPARED/Colgan2021_topocorr/Colgan2021_topocorr_GRL.nc Greenland --name=GHF-Colgan2021-topocorr-GRL
+julia fesmdata.jl remap $FESMDATA_PREPARED/Colgan2021_topocorr/Colgan2021_topocorr_ANT.nc Antarctica --name=GHF-Colgan2021-topocorr-ANT
 ```
 
 `prepare.jl` writes `ghf_corr` and `ghf_corr_unc` (dimensionless) on the original
-grids to `$FESMDATA_WORK/prepared/Colgan2021_topocorr/Colgan2021_topocorr_<ANT|GRL>.nc`
+grids to `$FESMDATA_PREPARED/Colgan2021_topocorr/Colgan2021_topocorr_<ANT|GRL>.nc`
 (see `Remap/README.md`). The fields are those of the original files (`correction`,
 `correction_uncertainty`), renamed. The coordinates, stored as 32-bit floats in the
 original files, are rebuilt as exact regular axes. The original files give their

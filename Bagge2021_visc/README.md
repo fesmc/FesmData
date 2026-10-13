@@ -51,7 +51,7 @@ CC BY 4.0 (GFZ Data Services). Cite the data publication and the article.
 `2020-004_Bagge_et-al_data.zip` (1.7 GB, no login) from
 https://datapub.gfz.de/download/10.5880.GFZ.1.3.2020.004niur/, entry `bagge2021_visc`
 of `../datamanifest.toml`, downloaded and extracted by `prepare.jl` to
-`$DATAMANIFEST_DATASETS_DIR/bagge2021_visc/`: one NetCDF file per structure, with
+`$FESMDATA_SOURCES/bagge2021_visc/`: one NetCDF file per structure, with
 `lgvisc`, log10 of the viscosity in Pa s, on lon, lat (Gaussian) and `radius` (in m,
 although its units attribute says km). The README of the data publication is
 `2020-004_Bagge-et-al_README.pdf` in the same folder of the server.
@@ -63,7 +63,7 @@ julia --project=Bagge2021_visc Bagge2021_visc/prepare.jl
 julia fesmdata.jl remap SolidEarth Bagge2021
 ```
 
-`prepare.jl` writes `$FESMDATA_WORK/prepared/Bagge2021_visc/Bagge2021_visc.nc` (see
+`prepare.jl` writes `$FESMDATA_PREPARED/Bagge2021_visc/Bagge2021_visc.nc` (see
 `Remap/README.md`, 340 MB) with `log10_visc` (log10(Pa s)), log10 of the mantle
 viscosity, on lon -180:0.703125:179.3, the 256 Gaussian latitudes with their cell edges
 (`lat_bnds`, from the Gauss weights), `depth` (m, positive down) with its bounds

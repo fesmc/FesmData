@@ -33,10 +33,10 @@ to that host. The same files are in the old PIK archive,
 
 ```bash
 julia --project=Peltier2004_ice5g Peltier2004_ice5g/prepare.jl
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/Peltier2004_ice5g/Peltier2004_ICE5G.nc all --name=ICEHISTORY-ICE5G
+julia fesmdata.jl remap $FESMDATA_PREPARED/Peltier2004_ice5g/Peltier2004_ICE5G.nc all --name=ICEHISTORY-ICE5G
 ```
 
-`prepare.jl` writes `$FESMDATA_WORK/prepared/Peltier2004_ice5g/Peltier2004_ICE5G.nc`
+`prepare.jl` writes `$FESMDATA_PREPARED/Peltier2004_ice5g/Peltier2004_ICE5G.nc`
 (see `Remap/README.md`) with the dimension `time` (years ago, i.e. before 1950 CE, oldest first; the
 source gives ka) and
 

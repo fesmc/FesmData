@@ -4,7 +4,7 @@ Time series at Greenland ice core sites: temperature, accumulation, water isotop
 surface elevation. IceCores is a records dataset (non-gridded data, see
 `Records/README.md`): its products, defined in `IceCores/records.toml`, are prepared
 files in the form of the CF discrete sampling geometries, written to
-`$ICE_DATA/v2/Records/IceCores/IceCores-<product>.nc`.
+`$FESMDATA_PRODUCTS/Records/IceCores/IceCores-<product>.nc`.
 
 ## Products
 
@@ -34,4 +34,4 @@ julia fesmdata.jl record IceCores
 ```
 
 prepares the missing sources (`<Source>/prepare.jl`), checks the prepared files and
-copies them to `$ICE_DATA/v2/Records/IceCores/` (`--overwrite` to replace them).
+copies them to `$FESMDATA_PRODUCTS/Records/IceCores/` (`--overwrite` to replace them).

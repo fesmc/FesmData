@@ -1,11 +1,11 @@
 # Prepare CERES EBAF Ed4.2.1 (Loeb et al., 2018) for remapping: the monthly climatology
 # 2001-2020 of the TOA and surface radiative fluxes on the 1° grid, from the monthly means
 # in the ICDC data pool on Levante, as
-#     $FESMDATA_WORK/prepared/Loeb2018_ceres/Loeb2018_CERES-EBAF_2001-2020.nc
+#     $FESMDATA_PREPARED/Loeb2018_ceres/Loeb2018_CERES-EBAF_2001-2020.nc
 #
 # Usage:
 #     julia --project=Loeb2018_ceres Loeb2018_ceres/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/Loeb2018_ceres/Loeb2018_CERES-EBAF_2001-2020.nc all
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/Loeb2018_ceres/Loeb2018_CERES-EBAF_2001-2020.nc all
 
 using NCDatasets
 

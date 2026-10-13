@@ -3,7 +3,7 @@
 Freshwater flux and mass anomaly series of the ice sheets by region. Freshwater is a
 records dataset (non-gridded data, see `Records/README.md`): its products, defined in
 `Freshwater/records.toml`, are prepared files in the form of the CF discrete sampling
-geometries, written to `$ICE_DATA/v2/Records/Freshwater/Freshwater-<product>.nc`.
+geometries, written to `$FESMDATA_PRODUCTS/Records/Freshwater/Freshwater-<product>.nc`.
 
 ## Products
 
@@ -45,4 +45,4 @@ julia fesmdata.jl record Freshwater
 ```
 
 prepares the missing sources (`<Source>/prepare.jl`), checks the prepared files and
-copies them to `$ICE_DATA/v2/Records/Freshwater/` (`--overwrite` to replace them).
+copies them to `$FESMDATA_PRODUCTS/Records/Freshwater/` (`--overwrite` to replace them).

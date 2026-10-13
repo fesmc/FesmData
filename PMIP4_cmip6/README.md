@@ -37,7 +37,7 @@ The CMIP6 data in the DKRZ pool on Levante (no download):
 
 ```bash
 julia --project=PMIP4_cmip6 PMIP4_cmip6/prepare.jl
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/PMIP4_cmip6/PMIP4_INM-CM4-8_lgm.nc all --name=PMIP4-INM-CM4-8-lgm
+julia fesmdata.jl remap $FESMDATA_PREPARED/PMIP4_cmip6/PMIP4_INM-CM4-8_lgm.nc all --name=PMIP4-INM-CM4-8-lgm
 ```
 
 `prepare.jl` writes one file per model and experiment, `PMIP4_<model>_<experiment>.nc`,

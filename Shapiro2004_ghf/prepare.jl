@@ -1,10 +1,10 @@
 # Prepare the Shapiro and Ritzwoller (2004) geothermal heat flow for remapping: the 1°
 # global map hfmap.asc (datamanifest key shapiro2004_ghf, gzipped) as a prepared NetCDF
-# file, $FESMDATA_WORK/prepared/Shapiro2004_ghf/Shapiro2004_GHF.nc, with ghf and ghf_sd.
+# file, $FESMDATA_PREPARED/Shapiro2004_ghf/Shapiro2004_GHF.nc, with ghf and ghf_sd.
 #
 # Usage:
 #     julia --project=Shapiro2004_ghf Shapiro2004_ghf/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/Shapiro2004_ghf/Shapiro2004_GHF.nc all
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/Shapiro2004_ghf/Shapiro2004_GHF.nc all
 
 using CodecZlib
 using DelimitedFiles

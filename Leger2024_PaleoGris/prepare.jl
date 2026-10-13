@@ -1,11 +1,11 @@
 # Prepare the PaleoGrIS 1.0 isochrone buffers (Leger et al., 2024) for remapping: the age of
 # deglaciation and its uncertainty on the 1 km grid of the buffer products (EPSG:3413) as
-# one prepared NetCDF file, $FESMDATA_WORK/prepared/Leger2024_PaleoGris/Leger2024_PaleoGrIS.nc,
+# one prepared NetCDF file, $FESMDATA_PREPARED/Leger2024_PaleoGris/Leger2024_PaleoGrIS.nc,
 # with age_deglac and age_deglac_err.
 #
 # Usage:
 #     julia --project=Leger2024_PaleoGris Leger2024_PaleoGris/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/Leger2024_PaleoGris/Leger2024_PaleoGrIS.nc Greenland
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/Leger2024_PaleoGris/Leger2024_PaleoGrIS.nc Greenland
 
 using NCDatasets
 import Proj

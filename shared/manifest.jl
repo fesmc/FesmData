@@ -2,5 +2,8 @@
 
 using DataManifest
 
-"DataManifest database of the original datasets."
-manifest() = read_dataset(joinpath(dirname(@__DIR__), "datamanifest.toml"); persist=false)
+include(joinpath(@__DIR__, "provenance.jl"))
+
+"DataManifest database of the original datasets, with `\$datasets_dir` the sources folder (see `fesmdata_dir`)."
+manifest() = read_dataset(joinpath(dirname(@__DIR__), "datamanifest.toml"); persist=false,
+                          storage_config=Dict("datasets_dir" => fesmdata_dir("sources")))

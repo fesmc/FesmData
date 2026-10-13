@@ -25,7 +25,7 @@ assembles the zip (which holds `ggad455_supplemental_files.zip` and the figures 
 article) for several minutes before sending it, longer than DataManifest waits:
 
 ```bash
-mkdir -p $DATAMANIFEST_DATASETS_DIR/lloyd2024_visc && cd $DATAMANIFEST_DATASETS_DIR/lloyd2024_visc
+mkdir -p $FESMDATA_SOURCES/lloyd2024_visc && cd $FESMDATA_SOURCES/lloyd2024_visc
 curl -L -o supp.zip "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10753356/supplementaryFiles"
 unzip supp.zip ggad455_supplemental_files.zip && rm supp.zip
 ```
@@ -41,7 +41,7 @@ julia --project=Lloyd2024_visc Lloyd2024_visc/prepare.jl
 julia fesmdata.jl remap SolidEarth Lloyd2024
 ```
 
-`prepare.jl` writes `$FESMDATA_WORK/prepared/Lloyd2024_visc/Lloyd2024_visc.nc` (see
+`prepare.jl` writes `$FESMDATA_PREPARED/Lloyd2024_visc/Lloyd2024_visc.nc` (see
 `Remap/README.md`) with `log10_visc` (log10(Pa s)), log10 of the mantle viscosity, on
 lon -180:0.5:179.5, lat -90:0.5:90 and `depth` (m, positive down, 201 levels, 1 km
 apart near the surface). The top 10 km have a uniform viscosity (10^26.2 Pa s).

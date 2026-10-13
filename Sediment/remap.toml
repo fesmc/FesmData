@@ -1,7 +1,7 @@
 # Sediment thickness (thematic dataset, see ../Remap/README.md).
 #
 # Each table of `products` is a product, written as <GRID>_Sediment-<name>.nc on its `grids` (by domain), from the prepared file `file` of the source
-# `source` (made by <source>/prepare.jl in $FESMDATA_WORK/prepared/<source>/). See
+# `source` (made by <source>/prepare.jl in $FESMDATA_PREPARED/<source>/). See
 # ../GHF/remap.toml for the options. The dataset and its release tag are in
 # ../Publish/datasets.toml.
 

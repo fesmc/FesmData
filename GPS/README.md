@@ -4,7 +4,7 @@ Vertical velocities of GPS stations as observational estimates of glacial isosta
 adjustment (GIA) uplift rates. GPS is a records dataset (non-gridded data, see
 `Records/README.md`): its products, defined in `GPS/records.toml`, are prepared files in
 the form of the CF discrete sampling geometries, written to
-`$ICE_DATA/v2/Records/GPS/GPS-<product>.nc`.
+`$FESMDATA_PRODUCTS/Records/GPS/GPS-<product>.nc`.
 
 ## Products
 
@@ -28,4 +28,4 @@ julia fesmdata.jl record GPS
 ```
 
 prepares the missing sources (`<Source>/prepare.jl`), checks the prepared files and
-copies them to `$ICE_DATA/v2/Records/GPS/` (`--overwrite` to replace them).
+copies them to `$FESMDATA_PRODUCTS/Records/GPS/` (`--overwrite` to replace them).

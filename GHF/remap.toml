@@ -2,7 +2,7 @@
 #
 # Each table of `products` is a product, written as <GRID>_GHF-<name>.nc on its `grids`
 # (by domain), from the prepared file `file` of the source `source` (made by
-# <source>/prepare.jl in $FESMDATA_WORK/prepared/<source>/), or several combined (a list).
+# <source>/prepare.jl in $FESMDATA_PREPARED/<source>/), or several combined (a list).
 # `variables` are the fields remapped (default: all), `method` the remapping ("con" or
 # "bilinear", default "con"), `smooth` the Gaussian smoothing after it ("auto" or a
 # standard deviation in km, default "auto"). `grids` gives the grids by domain (output

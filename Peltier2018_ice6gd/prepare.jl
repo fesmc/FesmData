@@ -2,12 +2,12 @@
 # ice thickness and topography of Antarctica (south of 60°S) from 122.5 ka to 0.25 ka
 # after present on the Gaussian grid of the model (1024 x 512, the 86 southernmost
 # latitudes), from the isostasy_data archive (datamanifest key isostasy_data_v0_2), as
-# one prepared NetCDF file with a time dimension, $FESMDATA_WORK/prepared/Peltier2018_ice6gd/Peltier2018_ICE6G_D.nc,
+# one prepared NetCDF file with a time dimension, $FESMDATA_PREPARED/Peltier2018_ice6gd/Peltier2018_ICE6G_D.nc,
 # with H_ice, H_ice_grounded and z_topo and the latitude bounds of the Gaussian grid.
 #
 # Usage:
 #     julia --project=Peltier2018_ice6gd Peltier2018_ice6gd/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/Peltier2018_ice6gd/Peltier2018_ICE6G_D.nc Antarctica
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/Peltier2018_ice6gd/Peltier2018_ICE6G_D.nc Antarctica
 
 using NCDatasets
 

@@ -2,7 +2,7 @@
 # et al., 2025; monthly fields 1979-2025 on the 11 km rotated-pole grid PXANT11) for
 # remapping: monthly climatologies 1981-2010 and 1991-2020 (x, y, month), their annual
 # means (x, y) and annual values 1979-2023 (x, y, time), with the surface elevation and
-# masks, in $FESMDATA_WORK/prepared/vanDalum2025_racmo24/.
+# masks, in $FESMDATA_PREPARED/vanDalum2025_racmo24/.
 #
 # The rotated-pole grid is regular in rotated longitude and latitude (0.1°). It is
 # written as x, y = R * rotated lon, lat (radians), R = 6371229 m, i.e. an equidistant

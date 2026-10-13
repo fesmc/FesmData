@@ -1,11 +1,11 @@
 # Prepare the Antarctic upper-mantle viscosity of Wiens et al. (2022) for remapping: the
 # viscosity at 100, 200 and 300 km depth on its 40 km polar stereographic grid, from the
 # isostasy_data archive (datamanifest key isostasy_data_v0_2), as a prepared NetCDF file,
-# $FESMDATA_WORK/prepared/Wiens2022_visc/Wiens2022_visc.nc, with log10_visc (on depth).
+# $FESMDATA_PREPARED/Wiens2022_visc/Wiens2022_visc.nc, with log10_visc (on depth).
 #
 # Usage:
 #     julia --project=Wiens2022_visc Wiens2022_visc/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/Wiens2022_visc/Wiens2022_visc.nc Antarctica
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/Wiens2022_visc/Wiens2022_visc.nc Antarctica
 
 using NCDatasets
 

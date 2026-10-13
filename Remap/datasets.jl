@@ -100,7 +100,7 @@ struct RemapProduct <: ThematicProduct
     dataset::String
     name::String
     source::String                  # folder of the source, with prepare.jl
-    files::Vector{String}           # prepared files, in $FESMDATA_WORK/prepared/<source>/
+    files::Vector{String}           # prepared files, in $FESMDATA_PREPARED/<source>/
     variables::Union{Nothing,Vector{String}}
     grids::Dict{String,Union{Float64,Vector{String}}}   # by domain: minimum spacing (km) or grid names
     method::String

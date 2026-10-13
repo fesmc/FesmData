@@ -51,10 +51,10 @@ On Levante (cdo reads about 150 GB of GRIB; 5 minutes on 16 cores of the shared 
 ```bash
 source shared/machines/levante.env
 sbatch Hersbach2020_era5/prepare.sbatch       # runs prepare.jl with cdo
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/Hersbach2020_era5/Hersbach2020_ERA5_1991-2020.nc all --name=Atmosphere-ERA5-1991-2020
+julia fesmdata.jl remap $FESMDATA_PREPARED/Hersbach2020_era5/Hersbach2020_ERA5_1991-2020.nc all --name=Atmosphere-ERA5-1991-2020
 ```
 
-`prepare.jl` writes to `$FESMDATA_WORK/prepared/Hersbach2020_era5/`, for each period
+`prepare.jl` writes to `$FESMDATA_PREPARED/Hersbach2020_era5/`, for each period
 1981-2010 and 1991-2020:
 
 - `Hersbach2020_ERA5_<period>.nc`: `zs` (m, surface geopotential / g) and `lsm` (land

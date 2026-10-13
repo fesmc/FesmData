@@ -42,7 +42,7 @@ Public HTTPS access to the ISMIP7 Globus endpoint (no login), base
 These are the latest versions found (there is no listing; `thetao` and `so` v3 and `tf`
 v4 do not exist). They are the datamanifest entries `ismip7_ais_ocean_{thetao,so,tf}`
 and `ismip7_ais_imbie_basins`, downloaded by `prepare.jl` to
-`$DATAMANIFEST_DATASETS_DIR/ismip7_ais_ocean/`. The `thetao` and `so` files are identical to
+`$FESMDATA_SOURCES/ismip7_ais_ocean/`. The `thetao` and `so` files are identical to
 `ANT-8KM/meltMIP/ANT-8KM_OI_Climatology_{thetao,so}_extrap.nc` in
 `/work/ba1442/ice_data/ISMIP7/Antarctica/`; the files named `thetao` and `so` under
 `raw_data/obs/ocean/climatology/` there are copies of the `tf` file.
@@ -51,10 +51,10 @@ and `ismip7_ais_imbie_basins`, downloaded by `prepare.jl` to
 
 ```bash
 julia --project=Zhou2026_ismip7ocean Zhou2026_ismip7ocean/prepare.jl
-julia -t 8 fesmdata.jl remap $FESMDATA_WORK/prepared/Zhou2026_ismip7ocean/ISMIP7_OCEAN_1972-2024.nc Antarctica --name=Ocean-ISMIP7
+julia -t 8 fesmdata.jl remap $FESMDATA_PREPARED/Zhou2026_ismip7ocean/ISMIP7_OCEAN_1972-2024.nc Antarctica --name=Ocean-ISMIP7
 ```
 
-`prepare.jl` writes `$FESMDATA_WORK/prepared/Zhou2026_ismip7ocean/ISMIP7_OCEAN_1972-2024.nc`
+`prepare.jl` writes `$FESMDATA_PREPARED/Zhou2026_ismip7ocean/ISMIP7_OCEAN_1972-2024.nc`
 (130 MB) with `to` (potential temperature, degC), `so` (practical salinity, PSU) and
 `tf` (thermal forcing, degC) on `(x, y, z)`, and `basin` (integer, 0-15, names in
 `flag_meanings`) on `(x, y)`.

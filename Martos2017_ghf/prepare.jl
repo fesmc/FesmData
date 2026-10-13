@@ -1,12 +1,12 @@
 # Prepare the Martos et al. (2017) Antarctic geothermal heat flow for remapping: the
 # 15 km polar stereographic grid of the PANGAEA files (x, y, z ASCII, grid points over
 # the continent only) as a prepared NetCDF file,
-# $FESMDATA_WORK/prepared/Martos2017_ghf/Martos2017_GHF.nc, with ghf, ghf_sd,
+# $FESMDATA_PREPARED/Martos2017_ghf/Martos2017_GHF.nc, with ghf, ghf_sd,
 # depth_curie and depth_curie_sd.
 #
 # Usage:
 #     julia --project=Martos2017_ghf Martos2017_ghf/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/Martos2017_ghf/Martos2017_GHF.nc Antarctica
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/Martos2017_ghf/Martos2017_GHF.nc Antarctica
 
 using DelimitedFiles
 using NCDatasets

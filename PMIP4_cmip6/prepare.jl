@@ -2,11 +2,11 @@
 # monthly, annual, DJF and JJA means of tas and pr over the last 100 years of each run
 # (Amon, DKRZ CMIP6 pool), with the orography and the land and ice fractions (fx) of the
 # experiment, one file per model and experiment on the model's own lon-lat grid,
-# $FESMDATA_WORK/prepared/PMIP4_cmip6/PMIP4_<model>_<experiment>.nc.
+# $FESMDATA_PREPARED/PMIP4_cmip6/PMIP4_<model>_<experiment>.nc.
 #
 # Usage (on Levante, where the CMIP6 data are in /pool/data/CMIP6/data):
 #     julia --project=PMIP4_cmip6 PMIP4_cmip6/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/PMIP4_cmip6/PMIP4_INM-CM4-8_lgm.nc all --name=PMIP4-INM-CM4-8-lgm
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/PMIP4_cmip6/PMIP4_INM-CM4-8_lgm.nc all --name=PMIP4-INM-CM4-8-lgm
 
 using Dates
 using NCDatasets

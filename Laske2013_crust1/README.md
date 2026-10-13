@@ -35,11 +35,11 @@ extracted by `prepare.jl` if missing.
 
 ```bash
 julia --project=Laske2013_crust1 Laske2013_crust1/prepare.jl
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/Laske2013_crust1/Laske2013_CRUST1_sed.nc all --name=Sediment-CRUST1
+julia fesmdata.jl remap $FESMDATA_PREPARED/Laske2013_crust1/Laske2013_CRUST1_sed.nc all --name=Sediment-CRUST1
 ```
 
 `prepare.jl` writes `z_sed`, the total sediment thickness, and the thickness of each
 sediment layer, `z_sed_upper`, `z_sed_middle` and `z_sed_lower` (m), to
-`$FESMDATA_WORK/prepared/Laske2013_crust1/Laske2013_CRUST1_sed.nc` (see `Remap/README.md`).
+`$FESMDATA_PREPARED/Laske2013_crust1/Laske2013_CRUST1_sed.nc` (see `Remap/README.md`).
 The thickness of a layer is the difference between its top and the top of the next
 layer in `crust1.bnds` (km, converted to m), as in `getCN1maps.f` of CRUST1.0.

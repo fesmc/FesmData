@@ -30,7 +30,7 @@ merge!(VARINFO, Dict(
 ))
 
 "Folder for intermediate files: \$FESMDATA_WORK/regions."
-regions_workdir() = joinpath(_env("FESMDATA_WORK"), "regions")
+regions_workdir() = joinpath(fesmdata_dir("work"), "regions")
 
 "Intermediate file of a field set (e.g. \"regions\", \"zone\") on the base grid of a domain."
 regions_work_file(dom::Domain, what::AbstractString) =

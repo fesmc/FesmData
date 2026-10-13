@@ -33,11 +33,11 @@ The same files are in the old PIK archive, `hpc:/data/sicopolis/data/GeothermalH
 
 ```bash
 julia --project=Martos2017_ghf Martos2017_ghf/prepare.jl
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/Martos2017_ghf/Martos2017_GHF.nc Antarctica --name=GHF-Martos2017
+julia fesmdata.jl remap $FESMDATA_PREPARED/Martos2017_ghf/Martos2017_GHF.nc Antarctica --name=GHF-Martos2017
 ```
 
 `prepare.jl` writes `ghf`, `ghf_sd` (mW m-2), `depth_curie` and `depth_curie_sd` (km)
-to `$FESMDATA_WORK/prepared/Martos2017_ghf/Martos2017_GHF.nc` (see `Remap/README.md`).
+to `$FESMDATA_PREPARED/Martos2017_ghf/Martos2017_GHF.nc` (see `Remap/README.md`).
 The points of the files lie on a regular 15 km grid in polar stereographic coordinates
 with true scale at 71°S on WGS84 (EPSG:3031, the projection of ADMAP-2); grid points
 missing from the files (ocean) are missing values. `ghf_sd` and `depth_curie_sd` are

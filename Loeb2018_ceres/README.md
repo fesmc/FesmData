@@ -42,10 +42,10 @@ given as `storage_path` of `ceres_ebaf_ed4_2_1` in `datamanifest.toml`.
 
 ```bash
 julia --project=Loeb2018_ceres Loeb2018_ceres/prepare.jl
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/Loeb2018_ceres/Loeb2018_CERES-EBAF_2001-2020.nc all --name=Atmosphere-CERES-2001-2020
+julia fesmdata.jl remap $FESMDATA_PREPARED/Loeb2018_ceres/Loeb2018_CERES-EBAF_2001-2020.nc all --name=Atmosphere-CERES-2001-2020
 ```
 
-`prepare.jl` writes `$FESMDATA_WORK/prepared/Loeb2018_ceres/Loeb2018_CERES-EBAF_2001-2020.nc`
+`prepare.jl` writes `$FESMDATA_PREPARED/Loeb2018_ceres/Loeb2018_CERES-EBAF_2001-2020.nc`
 with 30 fields (lon, lat, month), all in W m-2 (CERES names without `_mon`):
 
 - TOA: `solar` (incoming), `toa_sw_*` and `toa_lw_*` (outgoing), `toa_net_*` (net

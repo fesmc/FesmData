@@ -28,11 +28,11 @@ and extracted by `prepare.jl` if missing.
 
 ```bash
 julia --project=Gowan2019_sed Gowan2019_sed/prepare.jl
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/Gowan2019_sed/Gowan2019_sed.nc Laurentide --name=Sediment-Gowan2019
+julia fesmdata.jl remap $FESMDATA_PREPARED/Gowan2019_sed/Gowan2019_sed.nc Laurentide --name=Sediment-Gowan2019
 ```
 
 `prepare.jl` writes three integer fields of classes (with `flag_values` and
-`flag_meanings`) to `$FESMDATA_WORK/prepared/Gowan2019_sed/Gowan2019_sed.nc` (see
+`flag_meanings`) to `$FESMDATA_PREPARED/Gowan2019_sed/Gowan2019_sed.nc` (see
 `Remap/README.md`), missing where there are no data (oceans, and land outside the areas
 of the former ice sheets):
 

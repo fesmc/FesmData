@@ -55,7 +55,7 @@ licence.
 
 ```bash
 julia --project=PMIP3_cvdp PMIP3_cvdp/prepare.jl
-julia fesmdata.jl remap $FESMDATA_WORK/prepared/PMIP3_cvdp/PMIP3_CCSM4_lgm.nc all --name=PMIP3-CCSM4-lgm
+julia fesmdata.jl remap $FESMDATA_PREPARED/PMIP3_cvdp/PMIP3_CCSM4_lgm.nc all --name=PMIP3-CCSM4-lgm
 ```
 
 `prepare.jl` writes one file per model and experiment, `PMIP3_<model>_<experiment>.nc`,

@@ -1,6 +1,6 @@
 # Prepare PaleoMIST 1.0 (Gowan et al., 2021) for remapping: the global 0.25° grids of the
 # reconstruction (80-0 ka every 2.5 kyr), one prepared NetCDF file per scenario of the
-# North American ice sheet in MIS 3, in $FESMDATA_WORK/prepared/Gowan2021_PaleoMIST1.0/:
+# North American ice sheet in MIS 3, in $FESMDATA_PREPARED/Gowan2021_PaleoMIST1.0/:
 # Gowan2021_PaleoMIST.nc (minimal scenario) and Gowan2021_PaleoMIST_max.nc (maximal
 # scenario, "a1"), with z_topo, z_bed, H_ice, dz_sl and f_ice. f_ice, the ice area fraction
 # of each 0.25° cell, is derived from the ice thickness of the 5 km regional
@@ -8,7 +8,7 @@
 #
 # Usage:
 #     julia --project=Gowan2021_PaleoMIST1.0 Gowan2021_PaleoMIST1.0/prepare.jl
-#     julia fesmdata.jl remap $FESMDATA_WORK/prepared/Gowan2021_PaleoMIST1.0/Gowan2021_PaleoMIST.nc all
+#     julia fesmdata.jl remap $FESMDATA_PREPARED/Gowan2021_PaleoMIST1.0/Gowan2021_PaleoMIST.nc all
 
 using NCDatasets
 import Proj
