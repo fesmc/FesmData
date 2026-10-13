@@ -1,9 +1,10 @@
 # SMBObs: surface mass balance observations
 
 Point measurements of the surface mass balance of the ice sheets. SMBObs is a records
-dataset (non-gridded data, see `Records/README.md`): its products, defined in
-`SMBObs/records.toml`, are prepared files in the form of the CF discrete sampling
-geometries, written to `$FESMDATA_PRODUCTS/Records/SMBObs/SMBObs-<product>.nc`.
+dataset (non-gridded data, see
+[Records](https://fesmc.github.io/FesmData/records_overview.html)): its products,
+defined in `SMBObs/records.toml`, are prepared files in the form of the CF discrete
+sampling geometries, written to `$FESMDATA_PRODUCTS/Records/SMBObs/SMBObs-<product>.nc`.
 
 ## Products
 
@@ -14,8 +15,8 @@ geometries, written to `$FESMDATA_PRODUCTS/Records/SMBObs/SMBObs-<product>.nc`.
 Each measurement is an observation (featureType point, dimension `obs`) with its `lat`,
 `lon` and `time` (days since 1900-01-01, the middle of the interval). SUMup gives the
 SMB accumulated over the interval (`smb_total`); `smb` is `smb_total` / duration (see
-`SUMup_smb/README.md`). The density and subsurface temperature data of SUMup are not
-included.
+[SUMup_smb](https://github.com/fesmc/FesmData/blob/main/SUMup_smb/README.md)). The
+density and subsurface temperature data of SUMup are not included.
 
 ## Licences
 

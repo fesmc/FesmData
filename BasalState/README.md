@@ -2,8 +2,8 @@
 
 Basal temperature and basal thermal state (frozen, thawable, thawed) of the ice sheets,
 remapped onto the grids of the domains. BasalState is a thematic dataset made by
-remapping (see Bring your own data, `Remap/README.md`): its products are defined in
-`BasalState/remap.toml`.
+remapping (see [Gridded data](https://fesmc.github.io/FesmData/remap.html)): its
+products are defined in `BasalState/remap.toml`.
 
 ## Products
 

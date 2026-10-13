@@ -2,8 +2,9 @@
 
 Climatologies of past climates from the PMIP model intercomparisons, and gridded
 reconstructions of the deglacial climate of Greenland, remapped onto the grids of the
-domains. Paleoclimate is a thematic dataset made by remapping (see Bring your own data,
-`Remap/README.md`): its products are defined in `Paleoclimate/remap.toml`.
+domains. Paleoclimate is a thematic dataset made by remapping (see [Gridded
+data](https://fesmc.github.io/FesmData/remap.html)): its products are defined in
+`Paleoclimate/remap.toml`.
 
 ## Products
 

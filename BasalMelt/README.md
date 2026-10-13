@@ -1,8 +1,9 @@
 # BasalMelt: ice-shelf basal melt rates
 
 Basal melt rates of ice shelves from observations, remapped onto the grids of the
-domains. BasalMelt is a thematic dataset made by remapping (see Bring your own data,
-`Remap/README.md`): its products are defined in `BasalMelt/remap.toml`.
+domains. BasalMelt is a thematic dataset made by remapping (see [Gridded
+data](https://fesmc.github.io/FesmData/remap.html)): its products are defined in
+`BasalMelt/remap.toml`.
 
 ## Products
 
@@ -17,11 +18,13 @@ shelves). Fields are remapped conservatively. The basin means of `BasalMelt-Rign
 are one value per basin, taken on the source grid over the ice shelves of the basin
 (basin 25, without data, over those of basins 24 and 26), and set on every cell of the
 basin on each grid, the cells outside the basins (open ocean, outer cells) taking the
-nearest basin: they cover the whole grid (see `Rignot2013_bmelt/README.md`).
+nearest basin: they cover the whole grid (see
+[Rignot2013_bmelt](https://github.com/fesmc/FesmData/blob/main/Rignot2013_bmelt/README.md)).
 
 `BasalMelt-Adusumilli2020-heights` has the height changes from which Adusumilli et al.
 (2020) derive time series of melt rates (relative to the 2010-2018 mean, their Eq. S7),
-not melt rates: see `Adusumilli2020_bmelt/README.md`.
+not melt rates: see
+[Adusumilli2020_bmelt](https://github.com/fesmc/FesmData/blob/main/Adusumilli2020_bmelt/README.md).
 
 ## Precision
 

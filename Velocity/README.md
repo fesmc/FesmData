@@ -1,8 +1,9 @@
 # Velocity: ice surface velocity
 
 Surface velocity of the ice sheets from satellite observations, remapped onto the grids
-of the domains. Velocity is a thematic dataset made by remapping (see Bring your own
-data, `Remap/README.md`): its products are defined in `Velocity/remap.toml`.
+of the domains. Velocity is a thematic dataset made by remapping (see [Gridded
+data](https://fesmc.github.io/FesmData/remap.html)): its products are defined in
+`Velocity/remap.toml`.
 
 ## Products
 

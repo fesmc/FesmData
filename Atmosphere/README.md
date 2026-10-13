@@ -2,8 +2,9 @@
 
 Monthly climatologies of the atmosphere from reanalysis and satellite data, remapped
 onto the grids of the domains and onto global lon-lat grids. Atmosphere is a thematic
-dataset made by remapping (see Bring your own data, `Remap/README.md`): its products are
-defined in `Atmosphere/remap.toml`.
+dataset made by remapping (see [Gridded
+data](https://fesmc.github.io/FesmData/remap.html)): its products are defined in
+`Atmosphere/remap.toml`.
 
 ## Products
 

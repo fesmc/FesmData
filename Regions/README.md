@@ -115,10 +115,11 @@ has no basins.
 
 The regions to which the freshwater fluxes of the ice sheets are attributed in the
 protocol of Schmidt et al. (2025) (`GL_regions_3413.gpkg`, `AQ_regions_3031.gpkg` of
-Zenodo record 17386710), so that their time series (see `../Schmidt2025_fwf`) can be
-mapped onto the grids. `basin` is the region number of the time series (names in
-alphabetical order): Greenland 1-7 = CE, CW, NE, NO, NW, SE, SW; Antarctica 1-18 =
-A-Ap, Ap-B, ..., K-A, grouped in `basin_group` by IMBIE region (East, Peninsula, West).
+Zenodo record 17386710), so that their time series (see
+[Schmidt2025_fwf](https://github.com/fesmc/FesmData/blob/main/Schmidt2025_fwf/README.md))
+can be mapped onto the grids. `basin` is the region number of the time series (names in
+alphabetical order): Greenland 1-7 = CE, CW, NE, NO, NW, SE, SW; Antarctica 1-18 = A-Ap,
+Ap-B, ..., K-A, grouped in `basin_group` by IMBIE region (East, Peninsula, West).
 
 The polygons cover the ice sheets only (and not the ocean). In Greenland they are the
 Mouginot (2019) regions without their peripheral ice caps (`ICE_CAPS_*`, 59 000 km2),
@@ -268,9 +269,9 @@ table directly. Two need a manual download into the folder printed by the script
 - **Mouginot & Rignot (2019)** basins: the `Greenland_Basins_PS_v1.4.2.*` files from
   [Dryad](https://doi.org/10.7280/D1WT11).
 - **NSIDC-0709 v2** (NASA Earthdata login, see
-  [Topo](https://fesmc.github.io/FesmData/datasets/topo.html#original-datasets)): the `.shp`, `.shx`, `.dbf` and
-  `.prj` files of `Basins_IMBIE_Antarctica_v02` and `Basins_Antarctica_v02`, from the
-  `uri` in `../datamanifest.toml`.
+  [Topo](https://fesmc.github.io/FesmData/datasets/topo.html#original-datasets)): the
+  `.shp`, `.shx`, `.dbf` and `.prj` files of `Basins_IMBIE_Antarctica_v02` and
+  `Basins_Antarctica_v02`, from the `uri` in `../datamanifest.toml`.
 - **NSIDC-0670 v1** (NASA Earthdata login): `greenland_vel_mosaic250_vx_v1.tif` and
   `greenland_vel_mosaic250_vy_v1.tif` (NEGIS), from the `uri` in `../datamanifest.toml`.
 

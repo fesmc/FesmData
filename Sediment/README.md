@@ -2,8 +2,9 @@
 
 Sediment thickness (m) from global and regional maps, and sediment properties of North
 America and Greenland, remapped onto the grids of the domains and onto global lon-lat
-grids. Sediment is a thematic dataset made by remapping (see Bring your own data,
-`Remap/README.md`): its products are defined in `Sediment/remap.toml`.
+grids. Sediment is a thematic dataset made by remapping (see [Gridded
+data](https://fesmc.github.io/FesmData/remap.html)): its products are defined in
+`Sediment/remap.toml`.
 
 ## Products
 
@@ -48,4 +49,5 @@ sizes](https://fesmc.github.io/FesmData/precision.html)): the thicknesses
 julia -t 8 fesmdata.jl remap Sediment
 ```
 
-See `GHF/README.md` for making single products and adding a source.
+See [GHF](https://fesmc.github.io/FesmData/datasets/ghf.html#making-the-dataset) for
+making single products and adding a source.

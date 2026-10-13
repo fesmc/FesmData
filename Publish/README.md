@@ -10,13 +10,14 @@ package registry of the GitLab project
 (Helmholtz Codebase), and listed on the [website](https://fesmc.github.io/FesmData/). A
 release of a dataset (tag `<dataset>-vX.Y.Z`, e.g. `topo-v2.0.0`) has one record per
 domain, and one package per domain, dataset and grid, e.g. `Antarctica_Topo_ANT-32KM`
-version `2.0.0`, with the files of that grid (grid description, grid file and
-products).
+version `2.0.0`, with the files of that grid (grid description, grid file and products).
 Domains are named by their output folder (`folder` in `../shared/domains.toml`, e.g.
 Antarctica, Greenland, Patagonia; all are listed on the
-[Domains](https://fesmc.github.io/FesmData/domains.html) page). Records datasets (non-gridded data, `../Records/README.md`) have no
-grids: one record on the domain `Records`, and one package per dataset, e.g.
-`Records_IceCores`, with its files in `$FESMDATA_PRODUCTS/Records/<Dataset>/`.
+[Domains](https://fesmc.github.io/FesmData/domains.html) page). Records datasets
+(non-gridded data, see
+[Records](https://fesmc.github.io/FesmData/records_overview.html)) have no grids: one
+record on the domain `Records`, and one package per dataset, e.g. `Records_IceCores`,
+with its files in `$FESMDATA_PRODUCTS/Records/<Dataset>/`.
 
 A release can also be archived on [Zenodo](https://zenodo.org/communities/fesmc), in
 the `fesmc` community, for a DOI: one Zenodo record per dataset and domain, with a DOI

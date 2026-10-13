@@ -2,8 +2,9 @@
 
 Reconstructions of past ice sheets and topography (glacial cycles, Pliocene), remapped
 onto the grids of the domains and onto global lon-lat grids. IceHistory is a thematic
-dataset made by remapping (see Bring your own data, `Remap/README.md`): its products
-are defined in `IceHistory/remap.toml`.
+dataset made by remapping (see [Gridded
+data](https://fesmc.github.io/FesmData/remap.html)): its products are defined in
+`IceHistory/remap.toml`.
 
 ## Products
 
@@ -53,4 +54,5 @@ thicknesses (`z_*`, `dz_*`, `H_ice*`) to 0.01 m; fractions (`f_*`) to 0.001; age
 julia -t 8 fesmdata.jl remap IceHistory
 ```
 
-See `GHF/README.md` for making single products and adding a source.
+See [GHF](https://fesmc.github.io/FesmData/datasets/ghf.html#making-the-dataset) for
+making single products and adding a source.
