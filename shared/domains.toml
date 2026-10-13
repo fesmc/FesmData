@@ -184,10 +184,11 @@ ylim = [-5016, 1416]
 
 # ---------------------------------------------------------------------------
 # Mountain glaciers: base grids of 250 m (500 m for Svalbard), and 50 m for the nests
-# of single icefields (25 m for the Drang Drung Glacier). Each domain is on the projection used for glacier modelling in
-# its region, and covers the extent of its glaciers at the Last Glacial Maximum. The 2
-# km grid of each domain is the grid of the thematic datasets (climate, geothermal heat
-# flow, ...), whose sources are coarser; their nests take these by cropping.
+# of single icefields (25 m for the Drang Drung Glacier). Each domain is on the
+# projection used for glacier modelling in its region, and covers the extent of its
+# glaciers at the Last Glacial Maximum. The 2 km grid of each domain is the grid of the
+# thematic datasets (climate, geothermal heat flow, ...), whose sources are coarser;
+# their nests take these by cropping.
 # ---------------------------------------------------------------------------
 
 # Pyrenees (no v1 grid): UTM zone 31N (EPSG:32631), 1.8W-2.85E, 41.8-43.45N (1520 x
