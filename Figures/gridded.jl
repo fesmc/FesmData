@@ -7,7 +7,7 @@ const SHOWN_CELLS = 300
 "Order of the domains (output folders) in the figures."
 const FOLDER_ORDER = ["Antarctica", "GreenlandPaleo", "Greenland", "North", "Laurentide", "Eurasia",
                       "Pyrenees", "Alps", "Patagonia", "NorthPatagonianIcefield", "SouthPatagonianIcefield",
-                      "SRG", "GranCampoNevado", "CordilleraDarwin", "Himalaya", "Svalbard", "NewZealand", "Global"]
+                      "SRG", "GranCampoNevado", "CordilleraDarwin", "Himalaya", "DrangDrung", "Svalbard", "NewZealand", "Global"]
 
 "Options of the `figure` table of a product."
 const FIGURE_KEYS = ("variables", "select", "colormap", "colorrange", "scale", "hide")

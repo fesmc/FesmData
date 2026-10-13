@@ -145,7 +145,8 @@ ylim = [4760, 5441]
 resolutions = [0.25, 0.5, 2]
 
 # Himalaya, Karakoram and Hindu Kush: Albers equal-area conic of the High Mountain Asia
-# glacier products (Shean et al., 2020), 68-99E, 25.5-38.5N.
+# glacier products (Shean et al., 2020), 68-99E, 25.5-38.5N. Nest (50, 100 and 250 m,
+# active): the Drang Drung Glacier (Zanskar).
 [HIM]
 folder = "Himalaya"
 active = false
@@ -153,6 +154,15 @@ proj = "+proj=aea +lat_1=25 +lat_2=47 +lat_0=36 +lon_0=85 +x_0=0 +y_0=0 +a=63781
 xlim = [-1699, 1401]
 ylim = [-1179, 407]
 resolutions = [0.25, 0.5, 2]
+
+# 33.6-33.9N, 76.2-76.45E: the outline of the ISSM domain of Sommers (2025, DD.exp)
+# with a margin of 5 km
+[HIM.nests.DDG]
+folder = "DrangDrung"
+active = true
+xlim = [-800, -779]
+ylim = [-234, -204]
+resolutions = [0.05, 0.1, 0.25]
 
 # Svalbard: UTM zone 33N (EPSG:32633), as the Norwegian Polar Institute, 5-35E,
 # 74-81.5N (the archipelago and its shelf).

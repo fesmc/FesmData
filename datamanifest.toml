@@ -192,6 +192,25 @@ skip_download = true
 storage_path = "$datasets_dir/copernicus_glo90"
 uri = "https://copernicus-dem-90m.s3.amazonaws.com"
 
+# Drang Drung Glacier (Sommers, 2025, ISSM setup, CC BY 4.0): outline of the model
+# domain, surface DEM (LEGOS and OMP, 2025; 2 m) and ice thickness (Millan et al.,
+# 2022; 50 m), as MATLAB v5 files with x, y in UTM zone 43N (EPSG:32643).
+
+[sommers2025_drangdrung_outline]
+doi = "10.5281/zenodo.17593643"
+storage_path = "$datasets_dir/sommers2025_drangdrung/DD.exp"
+uri = "https://zenodo.org/records/17593643/files/DD.exp?download=1"
+
+[sommers2025_drangdrung_dem]
+doi = "10.5281/zenodo.17593643"
+storage_path = "$datasets_dir/sommers2025_drangdrung/DD_DEM.mat"
+uri = "https://zenodo.org/records/17593643/files/DD_DEM.mat?download=1"
+
+[sommers2025_drangdrung_thickness]
+doi = "10.5281/zenodo.17593643"
+storage_path = "$datasets_dir/sommers2025_drangdrung/DD_thickness.mat"
+uri = "https://zenodo.org/records/17593643/files/DD_thickness.mat?download=1"
+
 # ---------------------------------------------------------------------------
 # Regions and basins (Regions/)
 # ---------------------------------------------------------------------------
