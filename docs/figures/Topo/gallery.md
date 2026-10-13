@@ -6,9 +6,25 @@
 
 ![Topo of Antarctica on ANT-16KM: z_bed, H_ice.](../figures/Topo/Topo-Antarctica.png)
 
+### Thwaites
+
+![Topo of Thwaites on THW-1KM: z_bed, H_ice.](../figures/Topo/Topo-Thwaites.png)
+
+### PineIsland
+
+![Topo of PineIsland on PIG-1KM: z_bed, H_ice.](../figures/Topo/Topo-PineIsland.png)
+
 ### GreenlandPaleo
 
 ![Topo of GreenlandPaleo on GRL-PAL-8KM: z_bed, H_ice.](../figures/Topo/Topo-GreenlandPaleo.png)
+
+### Jakobshavn
+
+![Topo of Jakobshavn on JAK-1KM: z_bed, H_ice.](../figures/Topo/Topo-Jakobshavn.png)
+
+### NEGIS
+
+![Topo of NEGIS on NEGIS-1KM: z_bed, H_ice.](../figures/Topo/Topo-NEGIS.png)
 
 ### North
 
@@ -18,9 +34,29 @@
 
 ![Topo of Pyrenees on PYR-2KM: z_bed, H_ice.](../figures/Topo/Topo-Pyrenees.png)
 
+### Patagonia
+
+![Topo of Patagonia on PAT-2KM: z_bed, H_ice.](../figures/Topo/Topo-Patagonia.png)
+
 ### SRG
 
 ![Topo of SRG on SRG-250M: z_bed, H_ice.](../figures/Topo/Topo-SRG.png)
+
+### GranCampoNevado
+
+![Topo of GranCampoNevado on GCN-250M: z_bed, H_ice.](../figures/Topo/Topo-GranCampoNevado.png)
+
+### CordilleraDarwin
+
+![Topo of CordilleraDarwin on CDI-250M: z_bed, H_ice.](../figures/Topo/Topo-CordilleraDarwin.png)
+
+### Himalaya
+
+![Topo of Himalaya on HIM-2KM: z_bed, H_ice.](../figures/Topo/Topo-Himalaya.png)
+
+### DrangDrung
+
+![Topo of DrangDrung on DDG-100M: z_bed, H_ice.](../figures/Topo/Topo-DrangDrung.png)
 
 ### Resolutions
 
