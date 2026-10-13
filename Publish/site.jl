@@ -159,7 +159,7 @@ domain_figure(folder::AbstractString, product::AbstractString) = "figures/Domain
 Write the table of the domains (Markdown) to `path`: for each domain, crop and nest of
 ../shared/domains.toml, its folder, grid prefix, kind, resolutions, projection, whether
 it is active, and links to the overview figures of its Topo products (of its parent,
-for a crop).
+for a crop; active domains only).
 """
 function write_domains(path::AbstractString)
     rows = domain_rows()
@@ -167,20 +167,25 @@ function write_domains(path::AbstractString)
     mkpath(dirname(path))
     open(path, "w") do io
         println(io, GENERATED, "\n")
-        println(io, "::: {.wide-table}\n")
-        println(io, "| Folder | Grid prefix | Kind | Grids | Projection | Active | Overview |")
+        println(io, "::: {.wide-table .column-screen-inset}\n")
+        println(io, "| Folder | Overview figures (Topo products) | Grid prefix | Kind | Grids | Projection | Active |")
         println(io, "|---|---|---|---|---|---|---|")
         for r in rows
             kind = r.kind == "domain" ? "domain" : "$(r.kind) of $(r.parent)"
-            figures = if r.kind == "crop"
+            # Figures of the Topo products of the domain (of its parent, for a crop), made
+            # for active domains only
+            figures = if !r.active
+                ""
+            elseif r.kind == "crop"
                 p = by_folder[r.parent]
-                join(("[$x]($(domain_figure(p.folder, x)))" for x in p.products), ", ") *
-                    (isempty(p.products) ? "" : " (of $(p.folder))")
+                products = [p.products; p.variants]
+                join(("[$x]($(domain_figure(p.folder, x)))" for x in products), ", ") *
+                    (isempty(products) ? "" : " (of $(p.folder))")
             else
                 join(["[$x]($(domain_figure(r.folder, x)))" for x in [r.products; r.variants]], ", ")
             end
-            println(io, "| $(r.folder) | `$(r.key)` | $kind | $(resolutions_text(r)) | ",
-                    "$(projection_text(r.proj)) | $(r.active ? "yes" : "no") | $figures |")
+            println(io, "| $(r.folder) | $figures | `$(r.key)` | $kind | $(resolutions_text(r)) | ",
+                    "$(projection_text(r.proj)) | $(r.active ? "yes" : "no") |")
         end
         println(io, "\n:::")
     end

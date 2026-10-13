@@ -33,8 +33,10 @@ also its name in `fesmdata.jl` and on the website (e.g. Antarctica, Thwaites), a
 
 ## Domains, crops and nests
 
-The **Overview** column links to a map of the Topo products of each domain (of its
-parent, for a crop).
+The **overview figures** show, for each Topo product of a domain (default products,
+then variants; of its parent, for a crop), its bed, surface and ice thickness together
+with the regions, zones and basins of the domain, on one of its finer grids. They are
+large and open on their own. Inactive domains have none yet.
 
 {{< include _domains.md >}}
 
