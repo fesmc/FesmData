@@ -80,8 +80,8 @@ A domain is a table in `domains.toml`:
 [PYR]
 folder = "Pyrenees"
 proj = "+proj=tmerc +lat_0=0 +lon_0=3 +k=0.9996 +x_0=500000 +y_0=0 +a=6378137 +rf=298.257223563 +units=km"
-xlim = [80, 560]              # first and last cell centres of the base grid (km)
-ylim = [4620, 4860]
+xlim = [107.875, 487.625]     # first and last cell centres of the base grid (km)
+ylim = [4639.875, 4811.625]
 resolutions = [0.25, 0.5]     # km; the first is the base grid
 active = true                 # the default; false to leave it out of the releases
 ```

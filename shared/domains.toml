@@ -75,15 +75,14 @@ ylim = [-5000, 1400]
 # its region, and covers the extent of its glaciers at the Last Glacial Maximum.
 # ---------------------------------------------------------------------------
 
-# Pyrenees (no v1 grid): UTM zone 31N (EPSG:32631), the whole range from the Bay of
-# Biscay (2W) to Cap de Creus (3.3E) with some 20-30 km of foreland on each side
-# (2.2W-3.7E, 41.6-43.9N), so it includes a corner of the Bay of Biscay and of the
-# Gulf of Lion.
+# Pyrenees (no v1 grid): UTM zone 31N (EPSG:32631), 1.8W-2.85E, 41.8-43.45N (1520 x
+# 688 cells at 250 m): the range and its glaciers, without the coastal ends (Bay of
+# Biscay, Cap de Creus).
 [PYR]
 folder = "Pyrenees"
 proj = "+proj=tmerc +lat_0=0 +lon_0=3 +k=0.9996 +x_0=500000 +y_0=0 +a=6378137 +rf=298.257223563 +units=km"
-xlim = [80, 560]
-ylim = [4620, 4860]
+xlim = [107.875, 487.625]
+ylim = [4639.875, 4811.625]
 resolutions = [0.25, 0.5]
 
 # Patagonia: UTM zone 18S (EPSG:32718), as the v1 SRG grids, from 38S to Cape Horn
