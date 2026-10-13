@@ -4,13 +4,13 @@
 
 ### Adusumilli2020
 
-![BasalMelt-Adusumilli2020 on ANT-16KM: bmelt.](../figures/BasalMelt/BasalMelt-Adusumilli2020.png)
+![BasalMelt-Adusumilli2020 on ANT-8KM: bmelt.](../figures/BasalMelt/BasalMelt-Adusumilli2020.png){width=320px}
 
 ### Adusumilli2020-heights
 
-![BasalMelt-Adusumilli2020-heights on ANT-16KM: dh_alt.](../figures/BasalMelt/BasalMelt-Adusumilli2020-heights.png)
+![BasalMelt-Adusumilli2020-heights on ANT-8KM: dh_alt.](../figures/BasalMelt/BasalMelt-Adusumilli2020-heights.png){width=327px}
 
 ### Rignot2013
 
-![BasalMelt-Rignot2013 on ANT-16KM: bmelt.](../figures/BasalMelt/BasalMelt-Rignot2013.png)
+![BasalMelt-Rignot2013 on ANT-8KM: bmelt.](../figures/BasalMelt/BasalMelt-Rignot2013.png){width=320px}
 

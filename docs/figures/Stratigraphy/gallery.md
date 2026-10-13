@@ -4,5 +4,5 @@
 
 ### MacGregor2025
 
-![Stratigraphy-MacGregor2025 on GRL-PAL-8KM: ice_age.](../figures/Stratigraphy/Stratigraphy-MacGregor2025.png)
+![Stratigraphy-MacGregor2025 on GRL-PAL-4KM: ice_age.](../figures/Stratigraphy/Stratigraphy-MacGregor2025.png){width=282px}
 

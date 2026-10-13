@@ -4,17 +4,17 @@
 
 ### Bagge2021
 
-![SolidEarth-Bagge2021 on ANT-16KM, GRL-PAL-16KM, NH-32KM, GLOBAL-T170: log10_visc.](../figures/SolidEarth/SolidEarth-Bagge2021.png)
+![SolidEarth-Bagge2021 on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-T170: log10_visc.](../figures/SolidEarth/SolidEarth-Bagge2021.png){width=1301px}
 
 ### Hazzard2023-litho
 
-![SolidEarth-Hazzard2023-litho on ANT-16KM: z_litho.](../figures/SolidEarth/SolidEarth-Hazzard2023-litho.png)
+![SolidEarth-Hazzard2023-litho on ANT-8KM: z_litho.](../figures/SolidEarth/SolidEarth-Hazzard2023-litho.png){width=336px}
 
 ### Hazzard2023-visc
 
-![SolidEarth-Hazzard2023-visc on ANT-16KM: log10_visc.](../figures/SolidEarth/SolidEarth-Hazzard2023-visc.png)
+![SolidEarth-Hazzard2023-visc on ANT-16KM: log10_visc.](../figures/SolidEarth/SolidEarth-Hazzard2023-visc.png){width=326px}
 
 ### Lloyd2024
 
-![SolidEarth-Lloyd2024 on ANT-16KM, GRL-PAL-16KM, NH-32KM, GLOBAL-1DEG: log10_visc.](../figures/SolidEarth/SolidEarth-Lloyd2024.png)
+![SolidEarth-Lloyd2024 on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: log10_visc.](../figures/SolidEarth/SolidEarth-Lloyd2024.png){width=1293px}
 

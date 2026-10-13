@@ -4,17 +4,17 @@
 
 ### ATL15-ANT
 
-![IceChange-ATL15-ANT on ANT-16KM: dzdt.](../figures/IceChange/IceChange-ATL15-ANT.png)
+![IceChange-ATL15-ANT on ANT-8KM: dzdt.](../figures/IceChange/IceChange-ATL15-ANT.png){width=315px}
 
 ### ATL15-GRL
 
-![IceChange-ATL15-GRL on GRL-8KM: dzdt.](../figures/IceChange/IceChange-ATL15-GRL.png)
+![IceChange-ATL15-GRL on GRL-4KM: dzdt.](../figures/IceChange/IceChange-ATL15-GRL.png){width=215px}
 
 ### Smith2020-ANT
 
-![IceChange-Smith2020-ANT on ANT-16KM: dzdt, dHdt.](../figures/IceChange/IceChange-Smith2020-ANT.png)
+![IceChange-Smith2020-ANT on ANT-8KM: dzdt, dHdt.](../figures/IceChange/IceChange-Smith2020-ANT.png){width=315px}
 
 ### Smith2020-GRL
 
-![IceChange-Smith2020-GRL on GRL-8KM: dzdt.](../figures/IceChange/IceChange-Smith2020-GRL.png)
+![IceChange-Smith2020-GRL on GRL-4KM: dzdt.](../figures/IceChange/IceChange-Smith2020-GRL.png){width=215px}
 

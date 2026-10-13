@@ -4,5 +4,5 @@
 
 ### Dawson2022
 
-![BasalState-Dawson2022 on ANT-16KM: T_b_pmp, basal_state.](../figures/BasalState/BasalState-Dawson2022.png)
+![BasalState-Dawson2022 on ANT-8KM: T_b_pmp, basal_state.](../figures/BasalState/BasalState-Dawson2022.png){width=341px}
 

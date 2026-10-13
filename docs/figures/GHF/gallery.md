@@ -4,49 +4,49 @@
 
 ### Colgan2021
 
-![GHF-Colgan2021 on GRL-8KM: ghf.](../figures/GHF/GHF-Colgan2021.png)
+![GHF-Colgan2021 on GRL-4KM: ghf.](../figures/GHF/GHF-Colgan2021.png){width=220px}
 
 ### Colgan2021-topocorr-ANT
 
-![GHF-Colgan2021-topocorr-ANT on ANT-16KM: ghf_corr.](../figures/GHF/GHF-Colgan2021-topocorr-ANT.png)
+![GHF-Colgan2021-topocorr-ANT on ANT-8KM: ghf_corr.](../figures/GHF/GHF-Colgan2021-topocorr-ANT.png){width=327px}
 
 ### Colgan2021-topocorr-GRL
 
-![GHF-Colgan2021-topocorr-GRL on GRL-8KM: ghf_corr.](../figures/GHF/GHF-Colgan2021-topocorr-GRL.png)
+![GHF-Colgan2021-topocorr-GRL on GRL-4KM: ghf_corr.](../figures/GHF/GHF-Colgan2021-topocorr-GRL.png){width=227px}
 
 ### Davies2013
 
-![GHF-Davies2013 on ANT-16KM, GRL-PAL-8KM, NH-32KM, GLOBAL-1DEG: ghf.](../figures/GHF/GHF-Davies2013.png)
+![GHF-Davies2013 on ANT-8KM, GRL-PAL-4KM, NH-16KM, PYR-2KM, PAT-2KM, HIM-2KM, GLOBAL-0.5DEG: ghf.](../figures/GHF/GHF-Davies2013.png){width=2464px}
 
 ### FoxMaule2005
 
-![GHF-FoxMaule2005 on ANT-16KM, GRL-PAL-8KM: ghf.](../figures/GHF/GHF-FoxMaule2005.png)
+![GHF-FoxMaule2005 on ANT-8KM, GRL-PAL-4KM: ghf.](../figures/GHF/GHF-FoxMaule2005.png){width=531px}
 
 ### HazzardRichards2024
 
-![GHF-HazzardRichards2024 on ANT-16KM: ghf.](../figures/GHF/GHF-HazzardRichards2024.png)
+![GHF-HazzardRichards2024 on ANT-8KM: ghf.](../figures/GHF/GHF-HazzardRichards2024.png){width=320px}
 
 ### Loesing2021
 
-![GHF-Loesing2021 on ANT-16KM: ghf.](../figures/GHF/GHF-Loesing2021.png)
+![GHF-Loesing2021 on ANT-8KM: ghf.](../figures/GHF/GHF-Loesing2021.png){width=315px}
 
 ### Lucazeau2019
 
-![GHF-Lucazeau2019 on ANT-16KM, GRL-PAL-8KM, NH-32KM, GLOBAL-1DEG: ghf.](../figures/GHF/GHF-Lucazeau2019.png)
+![GHF-Lucazeau2019 on ANT-8KM, GRL-PAL-4KM, NH-16KM, PYR-2KM, PAT-2KM, HIM-2KM, GLOBAL-0.5DEG: ghf.](../figures/GHF/GHF-Lucazeau2019.png){width=2464px}
 
 ### Martos2017
 
-![GHF-Martos2017 on ANT-16KM: ghf.](../figures/GHF/GHF-Martos2017.png)
+![GHF-Martos2017 on ANT-8KM: ghf.](../figures/GHF/GHF-Martos2017.png){width=320px}
 
 ### Martos2018
 
-![GHF-Martos2018 on GRL-8KM: ghf.](../figures/GHF/GHF-Martos2018.png)
+![GHF-Martos2018 on GRL-4KM: ghf.](../figures/GHF/GHF-Martos2018.png){width=215px}
 
 ### Shapiro2004
 
-![GHF-Shapiro2004 on ANT-16KM, GRL-PAL-8KM, NH-32KM, GLOBAL-1DEG: ghf.](../figures/GHF/GHF-Shapiro2004.png)
+![GHF-Shapiro2004 on ANT-8KM, GRL-PAL-4KM, NH-16KM, PYR-2KM, PAT-2KM, HIM-2KM, GLOBAL-0.5DEG: ghf.](../figures/GHF/GHF-Shapiro2004.png){width=2464px}
 
 ### Stal2020
 
-![GHF-Stal2020 on ANT-16KM: ghf.](../figures/GHF/GHF-Stal2020.png)
+![GHF-Stal2020 on ANT-8KM: ghf.](../figures/GHF/GHF-Stal2020.png){width=320px}
 

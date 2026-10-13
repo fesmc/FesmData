@@ -4,21 +4,21 @@
 
 ### ANTASed
 
-![Sediment-ANTASed on ANT-16KM: z_sed.](../figures/Sediment/Sediment-ANTASed.png)
+![Sediment-ANTASed on ANT-8KM: z_sed.](../figures/Sediment/Sediment-ANTASed.png){width=325px}
 
 ### CRUST1
 
-![Sediment-CRUST1 on ANT-16KM, GRL-PAL-8KM, NH-32KM, GLOBAL-1DEG: z_sed.](../figures/Sediment/Sediment-CRUST1.png)
+![Sediment-CRUST1 on ANT-8KM, GRL-PAL-4KM, NH-16KM, PYR-2KM, PAT-2KM, HIM-2KM, GLOBAL-0.5DEG: z_sed.](../figures/Sediment/Sediment-CRUST1.png){width=2469px}
 
 ### ECM1
 
-![Sediment-ECM1 on ANT-16KM, GRL-PAL-8KM, NH-32KM, GLOBAL-1DEG: z_sed.](../figures/Sediment/Sediment-ECM1.png)
+![Sediment-ECM1 on ANT-8KM, GRL-PAL-4KM, NH-16KM, PYR-2KM, PAT-2KM, HIM-2KM, GLOBAL-0.5DEG: z_sed.](../figures/Sediment/Sediment-ECM1.png){width=2469px}
 
 ### GlobSed
 
-![Sediment-GlobSed on ANT-16KM, GRL-PAL-8KM, NH-32KM, GLOBAL-1DEG: z_sed.](../figures/Sediment/Sediment-GlobSed.png)
+![Sediment-GlobSed on ANT-8KM, GRL-PAL-4KM, NH-16KM, PAT-2KM, GLOBAL-0.5DEG: z_sed.](../figures/Sediment/Sediment-GlobSed.png){width=1430px}
 
 ### Gowan2019
 
-![Sediment-Gowan2019 on GRL-PAL-8KM, LIS-32KM: grain.](../figures/Sediment/Sediment-Gowan2019.png)
+![Sediment-Gowan2019 on GRL-PAL-4KM, LIS-16KM: grain.](../figures/Sediment/Sediment-Gowan2019.png){width=462px}
 
