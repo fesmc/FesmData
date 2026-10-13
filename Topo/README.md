@@ -5,9 +5,9 @@ model domain, from the best available sources, at resolutions from the base grid
 down to 32 km for the ice sheets. The domains are the ice sheets (ANT, GRL-PAL, NH),
 nests of single basins and ice shelves in ANT (500 m) and GRL-PAL (250 m), and the
 mountain-glacier domains at 50-500 m: the Pyrenees (PYR), Patagonia (PAT) with its
-icefields (crops NPI, SPI; nests SRG, GCN, CDI), the Drang Drung Glacier (DDG, a nest of
-HIM), and, inactive until needed, the Alps (ALP), the Himalaya (HIM), Svalbard (SVB) and
-New Zealand (NZ) (see
+icefields (crops NPI, SPI; nests SRG, GCN, CDI), the Himalaya (HIM) with the Drang Drung
+Glacier (nest DDG), and, inactive until needed, the Alps (ALP), Svalbard (SVB) and New
+Zealand (NZ) (see
 `../shared/README.md`).
 
 The processing has two stages:
@@ -117,7 +117,7 @@ tiles, a few MB each) are downloaded automatically (Levante login node):
 
 ```bash
 julia --project=Topo Topo/scripts/00_sources.jl --download
-julia --project=Topo Topo/scripts/00_sources.jl --download HIM   # the tiles of an inactive domain
+julia --project=Topo Topo/scripts/00_sources.jl --download NZ    # the tiles of an inactive domain
 ```
 
 The other sources need a manual download into the path printed by the script:
@@ -173,9 +173,11 @@ resolution within the base cells it covers, and the file has `H_ice` (cell mean,
 off the glaciers) and `f_ice` (glacier area fraction). The pixels touched by a
 glacier outline count as glacier in the tiles, so the thickness and area of each
 tile are scaled to the glacier volume and area given with it (the raw pixels give
-2% more volume and 3-6% more area). Tiles still overlap along shared ice divides,
-where `f_ice` is limited to 1. The job log compares the glacier area and volume with
-those of the tiles.
+2% more volume and 3-6% more area). Tiles still overlap along shared ice divides:
+where their glacier fractions add up to more than 1, the cell is shared, its glacier
+fraction and thickness divided by that sum, so that the overlap is not counted twice
+(this matters on grids of 50-250 m, where a boundary is a large part of a cell). The job
+log compares the glacier area and volume with those of the tiles, before and after.
 
 Only the tiles overlapping the base grid are read (threaded). Their grids and
 latitude ranges, from the file headers, are kept in an index per RGI region

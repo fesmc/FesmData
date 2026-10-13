@@ -99,7 +99,9 @@ read (threaded). Each is remapped onto the base cells covering it, with samples
 spaced at most half the tile spacing, and the tiles are summed in order. Since
 the glacier pixels of a tile extend beyond its outline, the thickness and area of
 each tile are scaled to the glacier volume and area given with it. Neighbouring
-tiles still overlap along shared boundaries, so `f_ice` is limited to 1.
+tiles still overlap along shared boundaries: where their glacier fractions add up to
+more than 1, the cell is shared, its fraction and thickness divided by that sum (so
+that the overlap is not counted twice).
 """
 function regrid(src::GlacierTiles)
     # Base cells covered by each tile, from its grid (on one thread: Proj
@@ -137,11 +139,17 @@ function regrid(src::GlacierTiles)
 
     lon, lat = lonlat(base)
     area_cells = cell_area(base, lon, lat) ./ 1e6  # km2
-    println("On $(base.name): glacier area $(round(sum(f_ice .* area_cells); digits=0)) km2 ",
-            "($(round(sum(min.(f_ice, 1) .* area_cells); digits=0)) km2 with f_ice <= 1, ",
-            "max f_ice $(round(maximum(f_ice); digits=3))), ",
-            "volume $(round(sum(H_ice .* area_cells) / 1000; digits=0)) km3")
-    return Dict("H_ice" => Float32.(H_ice), "f_ice" => Float32.(min.(f_ice, 1)))
+    total(F) = round(sum(F .* area_cells); digits=0)
+    println("On $(base.name), summed: glacier area $(total(f_ice)) km2, volume $(total(H_ice) / 1000) km3, ",
+            "max f_ice $(round(maximum(f_ice); digits=3))")
+
+    # Overlapping tiles share a cell: fraction and thickness divided by the summed
+    # fraction where it exceeds 1
+    shared = max.(f_ice, 1)
+    H_ice ./= shared
+    f_ice ./= shared
+    println("On $(base.name): glacier area $(total(f_ice)) km2, volume $(total(H_ice) / 1000) km3")
+    return Dict("H_ice" => Float32.(H_ice), "f_ice" => Float32.(f_ice))
 end
 
 # Base cells overlapping the lon-lat box of the lon-lat grid `g` (from its outline on
