@@ -85,7 +85,8 @@ uplift rates) colour the sites. The variable is the first data variable on the s
 ## Topo and Regions
 
 Topo has a figure per domain, its products side by side (bed elevation and ice
-thickness), and the bed around Jakobshavn Isbræ on grids of 1, 4 and 16 km
-(`topo.jl`). Regions has worked examples of the region codes, zones and basins
+thickness, with colour ranges from the data of the domain: the bed centred on sea
+level where it reaches below, otherwise over the land elevations), and the bed around
+Jakobshavn Isbræ on grids of 1, 4 and 16 km (`topo.jl`). Regions has worked examples of the region codes, zones and basins
 (`regions.jl`): snippets of Julia code, run in order to make their maps, and shown
 on the page with their output.
