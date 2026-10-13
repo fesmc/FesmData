@@ -178,6 +178,28 @@ regions_examples() = [
         m -> [MapPanel("NH-16KM", m.greenland[1], :mask, "1.3 Greenland on NH-16KM"),
               MapPanel("GRL-PAL-16KM", m.greenland[2], :mask, "1.3 Greenland on GRL-PAL-16KM")],
         "Region 1.3 Greenland (its land and EEZ) on NH-16KM and GRL-PAL-16KM."),
+
+    Example("Antarctica: the tree, level by level", """
+        The same files on Antarctica: the levels of the tree of the ice sheet, its ice
+        shelves and the Southern Ocean.""",
+        """
+        ant = joinpath(ENV["FESMDATA"], "products", "Antarctica", "ANT-16KM")
+        da = NCDataset(joinpath(ant, "ANT-16KM_REGIONS.nc"))
+        ant_regions = [da["region_\$l"][:, :] for l in 1:3]""",
+        m -> [MapPanel("ANT-16KM", m.ant_regions[l], :classes, "region_$l"; labels=region_labels(m.da, "region_$l"))
+              for l in 1:3],
+        "The three levels of the regions on ANT-16KM, labelled by path and name."),
+
+    Example("Antarctica: zones and basins", """
+        The zones of Antarctica and one of its basin sets, IMBIE2016 (the others are
+        IMBIE2016-refined, Zwally2012 and Schmidt2025).""",
+        """
+        ant_zone = da["zone"][:, :]
+        ab = NCDataset(joinpath(ant, "ANT-16KM_BASINS-IMBIE2016.nc"))
+        ant_basin = ab["basin"][:, :]""",
+        m -> [MapPanel("ANT-16KM", m.ant_zone, :classes, "zone"; names=flag_names(m.da["zone"].attrib)),
+              MapPanel("ANT-16KM", m.ant_basin, :classes, "basin (IMBIE2016)")],
+        "Zones and the IMBIE2016 basins on ANT-16KM."),
 ]
 
 """

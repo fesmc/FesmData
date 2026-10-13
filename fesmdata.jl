@@ -58,6 +58,8 @@ Records datasets, non-gridded data (maintainers, see Remap/DATASETS.md):
 Figures for the website (maintainers, see Figures/README.md):
   figures <Dataset>                            maps of the products of a dataset and its
                                                gallery page, docs/figures/<Dataset>/
+  figures Domains                              overview figure of each Topo product of each
+                                               domain, docs/figures/Domains/
 
 Release (maintainers, see Publish/README.md):
   stamp <Dataset> [<Domain> ...]               set the version of the files to the release

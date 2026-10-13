@@ -17,10 +17,24 @@ function topo_figure(panels::Vector{Panel})
     z, h = Float64[], Float64[]
     for p in panels
         NCDataset(p.path) do ds
-            append!(z, filter(isfinite, Float64.(coalesce.(ds["z_bed"][:, :], NaN))))
-            append!(h, filter(x -> isfinite(x) && x > 0, Float64.(coalesce.(ds["H_ice"][:, :], NaN))))
+            append!(z, ds["z_bed"][:, :])
+            append!(h, ds["H_ice"][:, :])
         end
     end
+    zmap, zrange, hrange = topo_colors(z, h)
+    return merge(TOPO_FIGURE, Dict{String,Any}("colormap" => Dict("z_bed" => zmap, "H_ice" => "ice"),
+                                               "colorrange" => Dict("z_bed" => zrange, "H_ice" => hrange)))
+end
+
+"""
+    topo_colors(z, h) -> (colormap, range of z, range of h)
+
+Colours of the elevations `z` and ice thicknesses `h` of a figure of the topography
+(0.5-99.5% of their values, see `topo_figure`).
+"""
+function topo_colors(z, h)
+    z = filter(isfinite, Float64.(coalesce.(z, NaN)))
+    h = filter(x -> isfinite(x) && x > 0, Float64.(coalesce.(h, NaN)))
     lo, hi = quantile(z, (0.005, 0.995))
     if lo < 0
         r = round_up(max(hi, 1.0))
@@ -29,9 +43,13 @@ function topo_figure(panels::Vector{Panel})
         step = round_up((hi - lo) / 10)
         zmap, zrange = "batlow", [floor(lo / step) * step, max(ceil(hi / step), floor(lo / step) + 1) * step]
     end
-    hmax = isempty(h) ? 1.0 : round_up(quantile(h, 0.995))
-    return merge(TOPO_FIGURE, Dict{String,Any}("colormap" => Dict("z_bed" => zmap, "H_ice" => "ice"),
-                                               "colorrange" => Dict("z_bed" => zrange, "H_ice" => [0, hmax])))
+    return zmap, zrange, [0, isempty(h) ? 1.0 : round_up(quantile(h, 0.995))]
+end
+
+"Topo products of a domain: its default products, then its variants (../Topo/products.toml)."
+function topo_products(key::AbstractString)
+    p = read_products()[key]
+    return [sort(collect(keys(p["products"]))); sort(collect(keys(get(p, "variants", Dict()))))]
 end
 
 "`v` rounded up to a multiple of half its power of 10 (e.g. 3800 to 4000, 420 to 450)."
@@ -55,8 +73,7 @@ function topo_figures()
     for key in sort(topo_domains(); by=k -> something(findfirst(==(Domain(k).folder), FOLDER_ORDER), 99))
         dom = Domain(key)
         og = only(figure_grids(filter(og -> og.folder == dom.folder, dom.grids)))
-        p = read_products()[key]
-        products = [sort(collect(keys(p["products"]))); sort(collect(keys(get(p, "variants", Dict()))))]
+        products = topo_products(key)
         file = "Topo-$(dom.folder).png"
         panels = [Panel(og, product_file(og, pr), pr, nothing) for pr in products]
         caption = plot_gridded(joinpath(figures_dir("Topo"), file), "Topo of $(dom.folder)", panels, String[],

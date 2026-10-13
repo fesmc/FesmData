@@ -26,12 +26,14 @@ function figure_grids(grids::Vector{OutGrid})
     folders = unique(og.folder for og in grids)
     parent(f) = folder_grids(f)[1].folder
     shown = filter(f -> parent(f) == f || !(parent(f) in folders), folders)
-    function pick(f)
-        gs = filter(og -> og.folder == f, grids)
-        small = filter(og -> maximum(size(og.grid)) <= MAX_SHOWN_CELLS, gs)
-        return isempty(small) ? argmin(og -> prod(size(og.grid)), gs) : argmax(og -> prod(size(og.grid)), small)
-    end
+    pick(f) = shown_grid(filter(og -> og.folder == f, grids), MAX_SHOWN_CELLS)
     return [pick(f) for f in sort(shown; by=f -> something(findfirst(==(f), FOLDER_ORDER), length(FOLDER_ORDER) + 1))]
+end
+
+"The finest of `grids` with at most `max_cells` cells along its longer side (the coarsest if all have more)."
+function shown_grid(grids::Vector{OutGrid}, max_cells::Integer)
+    small = filter(og -> maximum(size(og.grid)) <= max_cells, grids)
+    return isempty(small) ? argmin(og -> prod(size(og.grid)), grids) : argmax(og -> prod(size(og.grid)), small)
 end
 
 """

@@ -23,6 +23,7 @@ include(joinpath(@__DIR__, "gridded.jl"))
 include(joinpath(@__DIR__, "topo.jl"))
 include(joinpath(@__DIR__, "records.jl"))
 include(joinpath(@__DIR__, "regions.jl"))
+include(joinpath(@__DIR__, "domains.jl"))
 
 "Folder of the figures of a dataset: docs/figures/<Dataset>."
 figures_dir(dataset::AbstractString) = joinpath(REPO_DIR, "docs", "figures", dataset)
@@ -66,7 +67,8 @@ end
     figures_command(args) -> Vector{String}
 
 `julia fesmdata.jl figures <Dataset>`: the figures of the products of a dataset and its
-gallery page. Topo and Regions have their own figures; thematic datasets (remap.toml)
+gallery page. Topo and Regions have their own figures, and `Domains` makes the overview
+figures of the domains (no gallery, see domains.jl); thematic datasets (remap.toml)
 and records datasets (records.toml) one figure per released product, with the options
 of its `figure` table (none for `figure = false`). Thematic products not made yet (no
 file on any of their grids) are left out.
@@ -79,6 +81,8 @@ function figures_command(args::AbstractVector)
         topo_figures()
     elseif dataset == "Regions"
         return regions_figures()
+    elseif dataset == "Domains"
+        return domain_overviews()
     elseif is_remap_dataset(dataset)
         products = [p for p in remap_products(dataset) if p.release && p.figure !== nothing]
         made = [any(pn -> isfile(pn.path), product_panels(p)) for p in products]

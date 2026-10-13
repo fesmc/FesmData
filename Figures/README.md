@@ -97,6 +97,18 @@ uplift rates) colour the sites. The variable is the first data variable on the s
 Topo has a figure per domain, its products side by side (bed elevation and ice
 thickness, with colour ranges from the data of the domain: the bed centred on sea
 level where it reaches below, otherwise over the land elevations), and the bed around
-Jakobshavn Isbræ on grids of 1, 4 and 16 km (`topo.jl`). Regions has worked examples of the region codes, zones and basins
-(`regions.jl`): snippets of Julia code, run in order to make their maps, and shown
-on the page with their output.
+Jakobshavn Isbræ on grids of 1, 4 and 16 km (`topo.jl`). Regions has worked examples
+of the region codes, zones and basins (`regions.jl`), on the North and on Antarctica:
+snippets of Julia code, run in order to make their maps, and shown on the page with
+their output.
+
+## Overview of the domains
+
+`julia fesmdata.jl figures Domains` makes an overview figure of each Topo product of
+each domain, `docs/figures/Domains/<folder>_TOPO-<product>.png`, linked from the table
+of the domains (Domains page; crops link to those of their domain): the bed and surface
+elevation and ice thickness of the product, the three levels of the regions (labelled
+by path and name), the zones and the basins of each basin set of the domain, on the
+finest grid with at most 1600 cells along its longer side (`domains.jl`). They are
+large (a few MB) and open on their own; they have no gallery. Publish them as the
+other figures (`Figures/publish_figures.sh Domains`).
