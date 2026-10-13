@@ -3,6 +3,7 @@ project:
   output-dir: _site
   render:
     - "index.qmd"
+    - "download.qmd"
     - "products.qmd"
     - "datasets.qmd"
     - "records_overview.qmd"

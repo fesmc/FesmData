@@ -3,113 +3,33 @@ title: "FesmData"
 subtitle: "Processed datasets for ice-sheet and Earth-system models, on the grids of each model domain"
 ---
 
-FesmData produces datasets for models, such as topography and region masks, on the
-grids of each model domain, from the base grid (25 m to 2 km) to 32 km, and on global
-lon-lat grids. The
-[products](products.qmd) are released on
-[Helmholtz Codebase](https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages), one package
-per domain, dataset and grid, versioned by the release; releases can also be archived
-on [Zenodo](https://zenodo.org/communities/fesmc) with a DOI. The
-[datasets](datasets/topo.qmd) pages explain how each is made, and how to produce it
-yourself, on other domains or from other sources.
+FesmData produces datasets for models, such as topography, region masks, geothermal heat
+flow or surface mass balance, on the grids of each model domain, from the base grid
+(25 m to 2 km) to 32 km, and on global lon-lat grids. Each is made from the original
+sources, with every step in the [repository](https://github.com/fesmc/FesmData), and
+released on
+[Helmholtz Codebase](https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages),
+one package per domain, dataset and grid, versioned by the release; releases can also
+be archived on [Zenodo](https://zenodo.org/communities/fesmc) with a DOI.
+
+- [Datasets](datasets.qmd): what each dataset contains, its sources and licences, and
+  its files; [Records](records_overview.qmd) for the non-gridded data.
+- [Products](products.qmd): which dataset is released on which domain.
+- [Domains](domains.qmd): the model domains and their grids.
+- [Download](download.qmd): how to get the files.
+- [Your own data](remap.qmd): put any gridded dataset onto the same grids.
 
 ## Getting started
 
-### 1. Get the tool
-
-You need [Julia](https://julialang.org/downloads/) (a recent version; no packages to
-install) and a copy of FesmData. All commands are run from its folder.
+With [Julia](https://julialang.org/downloads/) installed (no packages needed):
 
 ```bash
 git clone https://github.com/fesmc/FesmData.git
 cd FesmData
-julia fesmdata.jl help
+export FESMDATA=/path/to/fesmdata          # the files go to $FESMDATA/products
+julia fesmdata.jl list Topo                # where Topo is released
+julia fesmdata.jl fetch Topo ANT-8KM       # Topo on the 8 km grid of Antarctica
 ```
 
-### 2. Choose where the data go
-
-The environment variable `FESMDATA` sets the folder for the data, e.g. in your
-`~/.bashrc`:
-
-```bash
-export FESMDATA=/path/to/fesmdata
-```
-
-The products go to `$FESMDATA/products` (or to `$FESMDATA_PRODUCTS`, if set). On
-Levante and Albedo, `source shared/machines/<machine>.env` sets it to the shared
-folder of the project, where the products usually are already.
-
-Every file goes to `$FESMDATA_PRODUCTS/<Domain>/<GRID>/`: one folder per domain, and in it
-one folder per grid with all datasets on that grid. A grid folder thus holds everything
-a model needs on that grid, and can be copied as a whole:
-
-```
-$FESMDATA_PRODUCTS/
-  Antarctica/
-    ANT-8KM/
-      grid_ANT-8KM.txt                 grid description (cdo)
-      ANT-8KM_grid.nc                  lon, lat and area of the cells
-      ANT-8KM_TOPO-BedMachine-v4.nc    a product of the dataset Topo
-      ANT-8KM_TOPO-Bedmap3.nc
-      ...
-    ANT-16KM/
-  Greenland/
-    GRL-4KM/
-  ...
-```
-
-Domains are named after their folder (Antarctica, Greenland, GreenlandPaleo, North,
-Laurentide, Eurasia, ...), grids after their domain and resolution (ANT-8KM,
-GRL-500M); a grid name thus also gives its domain. See
-[Domains and grids](domains.qmd).
-
-### 3. Find what is there
-
-```bash
-julia fesmdata.jl list                     # all records (dataset on a domain)
-julia fesmdata.jl list Topo                # the records of a dataset (or of a domain)
-julia fesmdata.jl list Antarctica Topo     # one record: its grids and files, their
-                                           # sizes, and which are already there
-julia fesmdata.jl list ANT-8KM             # everything on a grid
-```
-
-### 4. Download what you need
-
-```bash
-julia fesmdata.jl fetch Topo ANT-8KM            # one grid
-julia fesmdata.jl fetch Topo ANT-8KM ANT-16KM   # several grids
-julia fesmdata.jl fetch Antarctica Topo         # all grids of a domain
-```
-
-`fetch` needs the dataset, and a domain or grids (the arguments can be in any order).
-On a nest or crop of a domain (e.g. Thwaites, a nest of Antarctica), the thematic
-datasets (GHF, Velocity, SMB, ...) are made by cropping those of the domain, which
-`fetch` downloads first: `julia fesmdata.jl fetch GHF Thwaites` (see
-[Releasing](releasing.qmd#download), Nests and crops).
-Each file is checked against its checksum. Files already present are kept; a file that
-differs (e.g. of an earlier release) stops the download, unless `--overwrite` is given.
-
-### 5. Or mirror everything
-
-To keep a copy of all products on a machine (or of a dataset or a domain):
-
-```bash
-julia fesmdata.jl mirror           # everything
-julia fesmdata.jl mirror Topo      # one dataset
-```
-
-It shows the total size and what is already there, and asks once before downloading.
-Run it again after new releases to update the copy: only new files are downloaded
-(`--yes` skips the question, e.g. in a job).
-
-### 6. Versions and citation
-
-Each release of a dataset has a version (e.g. Topo 2.0.0, tag `topo-v2.0.0` of
-FesmData), shown on the [products](products.qmd) page and by `list`. Every file records
-how it was made in its global attributes (`fesmdata_version`, `fesmdata_commit`,
-`sources`). Please cite the original datasets (see the page of each dataset), and the
-DOI of the release where there is one.
-
-Single files can also be downloaded directly from the [products](products.qmd) page or
-from [Helmholtz Codebase](https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages), without the
-tool.
+The files land in `$FESMDATA/products/Antarctica/ANT-8KM/`, with the grid files. See
+[Download](download.qmd) for the details.

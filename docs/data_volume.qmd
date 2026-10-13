@@ -22,7 +22,7 @@ online. Topo and Regions, made from high-resolution sources, are on all grids.
 The crops of a domain (e.g. Greenland, Laurentide, Eurasia, NorthPatagonianIcefield) and
 its nests (e.g. SRG) lie on the grids of their parent. Their thematic datasets are
 therefore not stored: `fetch` cuts the product of the parent to them on demand (see
-[Download](releasing.qmd#download)). Only a product made for the crop or nest itself
+[Nests and crops](download.qmd#nests-and-crops)). Only a product made for the crop or nest itself
 (e.g. a Greenland-only source on Greenland) is stored there.
 
 ## Precision
@@ -99,4 +99,4 @@ of the releases (see [Domains and grids](domains.qmd#domains)).
 
 Only the latest release of each dataset is kept on Helmholtz Codebase. Earlier releases
 still in use are kept in archives on the HPC systems (`mirror --dir`, see
-[Download](releasing.qmd#download)).
+[Archives and other folders](download.qmd#archives-and-other-folders)).
