@@ -193,11 +193,11 @@ the base grid (steps 1-3) are not rounded.
 |---|---|
 | Marine Regions: EEZ-land union v4, IHO Sea Areas v3, Global Oceans and Seas v1 (Flanders Marine Institute) | CC BY 4.0 |
 | HydroBASINS v1c (Lehner and Grill, 2013) | HydroSHEDS licence: free use with attribution |
-| ISO 3166 countries with UN M49 regions | See the repository |
+| ISO 3166 countries with UN M49 regions | CC BY-SA 4.0 (the repository; used only to group the territories by continent) |
 | Mouginot and Rignot (2019), Dryad | CC0 1.0 (Dryad) |
 | NSIDC-0709 v2 (Mouginot et al., 2017) and NSIDC-0670 v1 (Joughin et al., 2018) | NASA NSIDC DAAC: no restrictions on use (cite the data) |
 | Zwally et al. (2012) | No licence stated (GSFC web page) |
-| Schmidt et al. (2025), Zenodo | See the data record |
+| Schmidt et al. (2025), Zenodo | CC BY 4.0 |
 | NEGIS-v1 (Ilaria Tabone, 2024) | Kept in the repository (`sources/negis_v1_GRL-16KM.csv`) |
 
 References:

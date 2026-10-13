@@ -200,11 +200,11 @@ sources on the base grid (step 2) are intermediate files and are not rounded.
 |---|---|---|
 | BedMachine Antarctica v2-v4 | Morlighem et al. (2020), NSIDC-0756: v4 [doi:10.5067/POJQI54A45HX](https://doi.org/10.5067/POJQI54A45HX), v3 [doi:10.5067/FPSU0V1MWUB6](https://doi.org/10.5067/FPSU0V1MWUB6), v2 [doi:10.5067/E1QL9HFQ7A8M](https://doi.org/10.5067/E1QL9HFQ7A8M) | NASA NSIDC DAAC: no restrictions on use (cite the data) |
 | BedMachine Greenland v4-v6 | Morlighem et al. (2017), NSIDC-0150: v6 [doi:10.5067/6B6B225B8V2D](https://doi.org/10.5067/6B6B225B8V2D), v5 [doi:10.5067/GMEVBWFLWA7X](https://doi.org/10.5067/GMEVBWFLWA7X), v4 [doi:10.5067/VLJ5YXKCNGXO](https://doi.org/10.5067/VLJ5YXKCNGXO) | NASA NSIDC DAAC: no restrictions on use (cite the data) |
-| Bedmap3 | Pritchard et al. (2025), [doi:10.5285/2d0e4791-8e20-46a3-80e4-f5f6716025d2](https://doi.org/10.5285/2d0e4791-8e20-46a3-80e4-f5f6716025d2) | UK Polar Data Centre: see the data record |
-| Bedmap2 | Fretwell et al. (2013) | British Antarctic Survey: see the data record |
+| Bedmap3 | Pritchard et al. (2025), [doi:10.5285/2d0e4791-8e20-46a3-80e4-f5f6716025d2](https://doi.org/10.5285/2d0e4791-8e20-46a3-80e4-f5f6716025d2) | CC BY 4.0 (UK Polar Data Centre) |
+| Bedmap2 | Fretwell et al. (2013), [doi:10.5285/fa5d606c-dc95-47ee-9016-7a82e446f2f2](https://doi.org/10.5285/fa5d606c-dc95-47ee-9016-7a82e446f2f2) | CC BY 4.0 (UK Polar Data Centre) |
 | GEBCO 2026 | GEBCO Compilation Group (2026), [doi:10.5285/4f68d5c7-45eb-f999-e063-7086abc036fa](https://doi.org/10.5285/4f68d5c7-45eb-f999-e063-7086abc036fa) | Public domain (GEBCO terms of use: cite the grid) |
 | Copernicus DEM GLO-90 | ESA, [doi:10.5270/ESA-c5d3d65](https://doi.org/10.5270/ESA-c5d3d65) | Free use with attribution (see below) |
-| IceBoost v2.0 | Maffezzoli et al., [doi:10.5281/zenodo.17724512](https://doi.org/10.5281/zenodo.17724512) | Zenodo: see the data record |
+| IceBoost v2.0 | Maffezzoli et al., [doi:10.5281/zenodo.17724512](https://doi.org/10.5281/zenodo.17724512) | CC BY 4.0 (Zenodo) |
 | Drang Drung Glacier | Sommers (2025), [doi:10.5281/zenodo.17593643](https://doi.org/10.5281/zenodo.17593643), with the DEM of LEGOS and OMP (2025) and the ice thickness of Millan et al. (2022), [doi:10.1038/s41561-021-00885-z](https://doi.org/10.1038/s41561-021-00885-z) | CC BY 4.0 (Sommers, 2025) |
 
 Products from the Copernicus DEM must credit "Copernicus WorldDEM-90 © DLR e.V.
