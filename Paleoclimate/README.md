@@ -18,6 +18,8 @@ data](https://fesmc.github.io/FesmData/remap.html)): its products are defined in
 | `Paleoclimate-Buizert2018`, `Paleoclimate-Buizert2018-1981-2010` | Buizert et al. (2018): Greenland monthly temperature and precipitation, 22 ka to present, decadal, [doi:10.25921/psvs-yg80](https://doi.org/10.25921/psvs-yg80); and its 1981-2010 baseline | `tas` (K), `pr` (kg m-2 s-1) on `month` and `time` (years ago), `z_srf` | Greenland |
 | `Paleoclimate-Badgeley2020` | Badgeley et al. (2020): Greenland temperature and precipitation from data assimilation, 20 ka to present, 50-year means, [doi:10.18739/A2599Z26M](https://doi.org/10.18739/A2599Z26M) | `tas_anom` (K), `pr_frac`, `pr_frac_low`, `pr_frac_high` (relative to 1850-2000 CE) on `time` (years ago) | Greenland |
 
+On the mountain-glacier domains (Pyrenees, Patagonia, Himalaya), on their 2 km grid: the ensemble means and standard deviations of PMIP3 and PMIP4 (`-mean`, `-stdev`; not the members); their nests and crops get these by cropping (see [Nests and crops](https://fesmc.github.io/FesmData/download.html#nests-and-crops)).
+
 The model output is on the models' own grids (some Gaussian), remapped conservatively.
 Products are made on grids of 8 km and coarser (16 km for the Buizert et al. time
 series): finer grids add no information to these sources, and models can remap them

@@ -22,6 +22,8 @@ in `GHF/remap.toml`.
 | `GHF-Colgan2021-topocorr-GRL` | Colgan et al. (2021): relative topographic correction at 150 m (BedMachine), [doi:10.22008/FK2/BQGYYG](https://doi.org/10.22008/FK2/BQGYYG) | `ghf_corr`, `ghf_corr_unc` (dimensionless) | Greenland |
 | `GHF-Colgan2021-topocorr-ANT` | Colgan et al. (2021): relative topographic correction at 500 m (BedMachine), [doi:10.22008/FK2/BQGYYG](https://doi.org/10.22008/FK2/BQGYYG) | `ghf_corr`, `ghf_corr_unc` (dimensionless) | Antarctica |
 
+On the mountain-glacier domains (Pyrenees, Patagonia, Himalaya), on their 2 km grid: `GHF-Lucazeau2019`, `GHF-Davies2013` and `GHF-Shapiro2004`; their nests and crops get these by cropping (see [Nests and crops](https://fesmc.github.io/FesmData/download.html#nests-and-crops)).
+
 The topographic correction of Colgan et al. (2021) is not a heat flow but a
 dimensionless relative correction (about 0 on average), to be applied to any heat flow
 product as corrected heat flow = (1 + `ghf_corr`) × `ghf` (higher heat flow in

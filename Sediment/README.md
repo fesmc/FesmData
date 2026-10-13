@@ -16,6 +16,8 @@ data](https://fesmc.github.io/FesmData/remap.html)): its products are defined in
 | `Sediment-ANTASed` | Baranov et al. (2021): ANTASed, 0.1° (11 km) map of the Antarctic continent (grounded ice and ice shelves, missing in the ocean), [doi:10.3389/feart.2021.722699](https://doi.org/10.3389/feart.2021.722699) | `z_sed` | Antarctica |
 | `Sediment-Gowan2019` | Gowan et al. (2019): 5 km maps of the surface sediments of North America, Greenland and Iceland (areas of the former ice sheets; missing elsewhere), [doi:10.1594/PANGAEA.895889](https://doi.org/10.1594/PANGAEA.895889); the v1 product SED-G19 | `grain` (1 clay, 2 sand, 3 silt), `distribution` (1 blanket, 2 veneer, 3 rock), `composite` (0-8, both combined); classes | GreenlandPaleo, Greenland, Laurentide |
 
+On the mountain-glacier domains (Pyrenees, Patagonia, Himalaya), on their 2 km grid: `Sediment-CRUST1` and `Sediment-ECM1`, and `Sediment-GlobSed` on Patagonia (ocean only); their nests and crops get these by cropping (see [Nests and crops](https://fesmc.github.io/FesmData/download.html#nests-and-crops)).
+
 Each file `<GRID>_Sediment-<Source>.nc` also has `f_valid`, the fraction of each cell
 covered by the source. Each source is remapped conservatively; on grids finer than the
 source it is then smoothed with a Gaussian of half the source spacing. CRUST1.0 contains the sediment map of Laske and Masters (1997) (A Global Digital Map of

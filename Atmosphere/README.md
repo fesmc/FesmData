@@ -14,6 +14,8 @@ data](https://fesmc.github.io/FesmData/remap.html)): its products are defined in
 | `Atmosphere-ERA5-plev-1981-2010`, `Atmosphere-ERA5-plev-1991-2020` | as above, 9 pressure levels from 1000 to 500 hPa | `t`, `z`, `u`, `v`, `w`, `uv` on `plev`, monthly | Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Eurasia, Global |
 | `Atmosphere-CERES-2001-2020` | Loeb et al. (2018): CERES EBAF Ed4.2.1, 1°, [doi:10.1175/JCLI-D-17-0208.1](https://doi.org/10.1175/JCLI-D-17-0208.1) | TOA and surface radiative fluxes (W m-2), monthly | Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Eurasia, Global |
 
+On the mountain-glacier domains (Pyrenees, Patagonia, Himalaya), on their 2 km grid: `Atmosphere-ERA5-1981-2010` and `Atmosphere-ERA5-1991-2020`; their nests and crops get these by cropping (see [Nests and crops](https://fesmc.github.io/FesmData/download.html#nests-and-crops)).
+
 Winds are remapped as vectors and rotated to the axes of projected grids. Each file also
 has `f_valid`, the fraction of each cell covered by the source. Fields are remapped
 conservatively and smoothed on grids finer than the source.
