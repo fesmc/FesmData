@@ -76,39 +76,51 @@ function Domain(key::AbstractString)
     dx = res[1]
     base = ProjGrid(grid_name(key, dx), Tuple(d["xlim"]), Tuple(d["ylim"]), dx, d["proj"])
 
-    grids = OutGrid[]
-    for r in res
-        push!(grids, OutGrid(d["folder"], _derived(base, r / dx, grid_name(key, r))))
-    end
+    grids = OutGrid[OutGrid(d["folder"], _derived(base, r / dx, grid_name(key, r))) for r in res]
+    own = [og.grid for og in grids]
     for (ckey, c) in get(d, "crops", Dict())
-        cbase = crop(base, Tuple(c["xlim"]), Tuple(c["ylim"]); name=grid_name(ckey, dx))
+        cbase = _crop_base(base, dx, ckey, c)
         cres = Float64.(get(c, "resolutions", res))
         issubset(cres, res) || error("resolutions of crop $ckey must be resolutions of $key")
-        for r in cres
-            push!(grids, OutGrid(c["folder"], _derived(cbase, r / dx, grid_name(ckey, r))))
-        end
+        cgrids = [_derived(cbase, r / dx, grid_name(ckey, r)) for r in cres]
+        _check_on_parent("crop $ckey", cgrids, own, key)
+        append!(grids, OutGrid.(c["folder"], cgrids))
     end
-    haskey(d, "parent") && _check_nest(key, grids, Domain(d["parent"]))
+    haskey(d, "parent") && _check_nest(key, own, Domain(d["parent"]))
     return Domain(String(key), d["folder"], base, grids)
 end
 
 # A nest shares at least one resolution with its parent, and its grids at these
-# resolutions lie on the grids of its parent: same cell centres, inside its extent.
-function _check_nest(key, grids::Vector{OutGrid}, parent::Domain)
+# resolutions lie on the grids of its parent.
+function _check_nest(key, grids::Vector{ProjGrid}, parent::Domain)
     pgrids = [og.grid for og in parent.grids if og.folder == parent.folder]
-    same(g) = findfirst(pg -> isapprox(spacing(pg)[1], spacing(g)[1]; rtol=1e-6), pgrids)
-    shared = filter(og -> same(og.grid) !== nothing, grids)
-    isempty(shared) && error("nest $key shares no resolution with its parent $(parent.key)")
-    for og in shared
-        g, pg = og.grid, pgrids[same(og.grid)]
+    any(g -> any(pg -> _same_spacing(g, pg), pgrids), grids) ||
+        error("nest $key shares no resolution with its parent $(parent.key)")
+    _check_on_parent("nest $key", grids, pgrids, parent.key)
+end
+
+_same_spacing(g::ProjGrid, pg::ProjGrid) = isapprox(spacing(pg)[1], spacing(g)[1]; rtol=1e-6)
+
+# The grids of a nest or crop (`what`) at the resolutions of the grids `pgrids` of its
+# parent domain lie on them: same cell centres, inside their extent. So the datasets of
+# the parent can be cut to them (fetch, see ../Publish/crop.jl).
+function _check_on_parent(what, grids::Vector{ProjGrid}, pgrids::Vector{ProjGrid}, parent)
+    for g in grids
+        k = findfirst(pg -> _same_spacing(g, pg), pgrids)
+        k === nothing && continue
+        pg = pgrids[k]
         r = spacing(pg)[1]
         on(c, pc) = isapprox((c - pc[1]) / r, round((c - pc[1]) / r); atol=1e-6) &&
                     pc[1] - 1e-6r <= c && c <= pc[end] + 1e-6r
         (on(g.xc[1], pg.xc) && on(g.yc[1], pg.yc) && on(g.xc[end], pg.xc) && on(g.yc[end], pg.yc)) ||
-            error("grid $(g.name) of nest $key is not on grid $(pg.name) of its parent $(parent.key)")
+            error("grid $(g.name) of $what is not on grid $(pg.name) of its parent $parent (cell centres): " *
+                  "move its extent to the cell centres of $(pg.name)")
     end
     return nothing
 end
+
+"Base grid of crop `ckey` (table `c` of domains.toml): the base grid of its domain, `base` (resolution `dx`), cut to its extent."
+_crop_base(base::ProjGrid, dx, ckey, c) = crop(base, Tuple(c["xlim"]), Tuple(c["ylim"]); name=grid_name(ckey, dx))
 
 function _derived(g::ProjGrid, factor::Real, name::String)
     isinteger(factor) || error("resolution of $name is not a multiple of the base resolution")
@@ -129,6 +141,21 @@ function folder_grids(folder::AbstractString)
     isempty(found) && error("no domain with folder $folder, available: $(join(folders, ", "))")
     length(found) == 1 || error("folder $folder is shared by domains $(join([d.key for (d, _) in found], ", "))")
     return only(found)
+end
+
+"""
+    folder_base(folder) -> ProjGrid
+
+Base grid of the domain, nest or crop with output folder `folder`; for a crop, the base
+grid of its domain cut to the crop (at the base resolution, also if the crop has only
+coarser grids).
+"""
+function folder_base(folder::AbstractString)
+    dom, _ = folder_grids(folder)
+    dom.folder == folder && return dom.base
+    d = read_domains()[dom.key]
+    ckey, c = only((k, c) for (k, c) in get(d, "crops", Dict()) if c["folder"] == folder)
+    return _crop_base(dom.base, Float64(d["resolutions"][1]), ckey, c)
 end
 
 "Output folders of all domains and crops (also inactive), i.e. the names of the domains in published records."

@@ -1,6 +1,7 @@
 # Thematic datasets made by remapping (e.g. GHF): their products, defined in
 # <Dataset>/remap.toml, and the output files, also read by ../Publish. Needs only
-# ../shared/domains.jl and ../shared/precision.jl.
+# ../shared/provenance.jl (remap_spec_file), ../shared/domains.jl and
+# ../shared/precision.jl.
 
 using TOML
 
@@ -179,12 +180,6 @@ end
 
 "Grids of a product (see `on_grid`)."
 product_grids(p::ThematicProduct) = [og for key in domain_keys() for og in Domain(key).grids if on_grid(p, og)]
-
-"Path of the definition of a thematic dataset."
-remap_spec_file(dataset::AbstractString) = joinpath(REPO_DIR, dataset, "remap.toml")
-
-"Whether `dataset` is a thematic dataset made by remapping."
-is_remap_dataset(dataset::AbstractString) = isfile(remap_spec_file(dataset))
 
 "`file` of a product in remap.toml: a prepared file, or a list of them (combined)."
 function product_files(file, what)

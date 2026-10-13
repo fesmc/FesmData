@@ -28,6 +28,13 @@ base grid of its own (made from the sources, like any domain). At the resolution
 shares with its parent, its grids lie on those of the parent: same cell centres, so
 that its coarsest grid is a part of the parent grid at that resolution.
 
+Topo and Regions are made on every domain, nest and crop. The products of the thematic
+datasets (GHF, Velocity, SMB, ...) are made and released on the domains only, and on
+nests and crops only if their domain does not have them (e.g. a Greenland-only source
+on Greenland): nests and crops get the products of their domain by cropping, made on
+demand by `julia fesmdata.jl fetch <Dataset> <folder>` from the files of their parent
+domain (see Nests and crops in `Publish/README.md`).
+
 | Domain | Base grid | Other grids | Crops | Nests | Projection | Active |
 |---|---|---|---|---|---|---|
 | ANT | ANT-1KM | 2-32 km | ASE (1 km) | THW, PIG; FRIS, ROSS, AMY, WSB inactive (500 m, 1 km) | polar stereographic, south | yes |
@@ -118,7 +125,10 @@ resolutions = [0.1, 0.25, 0.5, 1, 2, 5]
 ```
 
 A crop is a table below its domain, with its own folder and extent (on the cell
-centres of the base grid), and optionally only some of the resolutions of its domain:
+centres of the base grid), and optionally only some of the resolutions of its domain.
+Its grids must lie on those of its domain at each resolution, i.e. its first cell
+centres must be cell centres of the domain grid at its coarsest resolution (checked
+when the domain is read), so that the products of the domain can be cut to them:
 
 ```toml
 [NH.crops.LIS]
@@ -156,7 +166,8 @@ A new resolution is a new entry in `resolutions`. Then, for each dataset:
   `Regions/basins.toml` (see the Regions README), and run its steps.
 
 - **Thematic datasets** (e.g. GHF): add the domain to the `grids` of its products in
-  `<Dataset>/remap.toml`, and run `julia fesmdata.jl remap <Dataset>`.
+  `<Dataset>/remap.toml`, and run `julia fesmdata.jl remap <Dataset>`. A nest or crop
+  needs none: `fetch` crops those of its domain.
 
 The domain is released as a new record with the next release of each dataset.
 

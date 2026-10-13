@@ -3,14 +3,16 @@
 #   julia fesmdata.jl <command> [arguments] [options]
 #
 # Run `julia fesmdata.jl help` for the commands. The commands for everyone (list,
-# fetch) use only the Julia standard library; the commands for releases activate the
-# Publish environment and install its packages if needed.
+# fetch) use only the Julia standard library, except fetch by cropping (on a nest or
+# crop), which, like the commands for releases, activates the Publish environment and
+# installs its packages if needed.
 
 const USAGE = """
 FesmData products (https://fesmc.github.io/FesmData/)
 
 Find and download:
-  list [<Dataset>] [<Domain>]                  records, of a dataset and/or a domain
+  list [<Dataset>] [<Domain>]                  records, of a dataset and/or a domain, and
+                                               datasets by cropping on nests and crops
   list <Domain> <Dataset>                      a record in detail: grids, files, sizes,
                                                files present in \$ICE_DATA
   list [<Dataset>] <GRID> ...                  the records of grids in detail (a grid
@@ -18,14 +20,18 @@ Find and download:
   fetch <Dataset> <Domain> | <GRID> ...        download into \$ICE_DATA/v2/<Domain>/<GRID>/
                                                and verify; files of earlier releases are
                                                updated (--overwrite: also replace files
-                                               changed locally)
+                                               changed locally). On a nest or crop without
+                                               a record of the dataset: download that of
+                                               its parent domain and cut it to the nest or
+                                               crop (installs the Publish packages once)
   mirror [<Dataset>] [<Domain>]                all records (or those of a dataset/domain),
                                                after one confirmation with the size; run
-                                               again to update (--yes: no confirmation)
+                                               again to update (--yes: no confirmation);
+                                               records only, not datasets by cropping
   (arguments in any order; --dir=<folder>: list, fetch or mirror in <folder> instead of
   \$ICE_DATA/v2, e.g. to archive the releases there before updating: files already in
   \$ICE_DATA/v2 are hard linked (--copy: copied), and the registry files go to
-  <folder>/registry/)
+  <folder>/registry/; fetch by cropping writes the crops there too)
 
 Bring your own data (see Remap/README.md):
   remap <file.nc> <Domain> | <GRID> | all ...  remap the fields of a prepared NetCDF file
@@ -112,8 +118,14 @@ function main(argv)
     elseif command == "fetch"
         include(joinpath(PUBLISH_DIR, "catalog.jl"))
         dir = get(valued, "dir", nothing)
-        paths = call(:fetch_files, rest; dir=dir, copy="--copy" in opts, overwrite="--overwrite" in opts,
-                     sandbox=sandbox)
+        paths, cropped = call(:fetch_files, rest; dir=dir, copy="--copy" in opts, overwrite="--overwrite" in opts,
+                              sandbox=sandbox)
+        if !isempty(cropped)
+            # Datasets by cropping, on a nest or crop: cut from the parent files just downloaded
+            activate_env(PUBLISH_DIR)
+            include(joinpath(PUBLISH_DIR, "crop.jl"))
+            append!(paths, call(:crop_files, cropped, call(:local_root, dir); sandbox=sandbox))
+        end
         println("$(length(paths)) files in $(call(:local_root, dir))")
     elseif command == "mirror"
         include(joinpath(PUBLISH_DIR, "catalog.jl"))

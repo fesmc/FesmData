@@ -26,6 +26,18 @@ function dataset_tag(dataset::AbstractString)
     return all[dataset]["tag"]
 end
 
+"Path of the definition of a thematic dataset (made by remapping, see ../Remap)."
+remap_spec_file(dataset::AbstractString) = joinpath(REPO_DIR, dataset, "remap.toml")
+
+"""
+    is_remap_dataset(dataset)
+
+Whether `dataset` is a thematic dataset made by remapping (e.g. GHF), rather than by a
+pipeline of its own from the sources on every domain (Topo, Regions) or a records
+dataset.
+"""
+is_remap_dataset(dataset::AbstractString) = isfile(remap_spec_file(dataset))
+
 """
     figure_spec(value, what) -> Union{Nothing,Dict{String,Any}}
 
@@ -89,11 +101,16 @@ Global attributes recording how a file of a dataset (e.g. "topo") was made: the
 repository, its version and commit, and the script with its arguments and the time.
 """
 function provenance_attrib(dataset::AbstractString)
-    script = isempty(PROGRAM_FILE) ? "interactive" : abspath(PROGRAM_FILE)
-    startswith(script, REPO_DIR * "/") && (script = relpath(script, REPO_DIR))
-    time = Dates.format(now(), dateformat"yyyy-mm-ddTHH:MM:SS")
     return ["source" => "FesmData, $REPO_URL",
             "fesmdata_version" => git_version(dataset),
             "fesmdata_commit" => git_commit(),
-            "history" => "$time: " * join([script; ARGS], " ")]
+            "history" => history_entry()]
+end
+
+"Entry of this run in the `history` attribute: the time, and the script with its arguments."
+function history_entry()
+    script = isempty(PROGRAM_FILE) ? "interactive" : abspath(PROGRAM_FILE)
+    startswith(script, REPO_DIR * "/") && (script = relpath(script, REPO_DIR))
+    time = Dates.format(now(), dateformat"yyyy-mm-ddTHH:MM:SS")
+    return "$time: " * join([script; ARGS], " ")
 end

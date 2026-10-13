@@ -77,6 +77,10 @@ julia fesmdata.jl fetch Antarctica Topo         # all grids of a domain
 ```
 
 `fetch` needs the dataset, and a domain or grids (the arguments can be in any order).
+On a nest or crop of a domain (e.g. Thwaites, a nest of Antarctica), the thematic
+datasets (GHF, Velocity, SMB, ...) are made by cropping those of the domain, which
+`fetch` downloads first: `julia fesmdata.jl fetch GHF Thwaites` (see
+[Releasing](releasing.qmd#download), Nests and crops).
 Each file is checked against its checksum. Files already present are kept; a file that
 differs (e.g. of an earlier release) stops the download, unless `--overwrite` is given.
 
