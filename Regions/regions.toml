@@ -35,12 +35,14 @@
 # is given per region (the most specific region path wins). `buffer` is the width of
 # the zone of open ocean along the shelf break. The bed elevation is that of the
 # topography product of each domain in `products`. A domain without open ocean (no
-# ocean deeper than `z_abyss`, e.g. the mountain domains PYR and SRG) has only land and
+# ocean deeper than `z_abyss`, e.g. the domains PYR and SRG) has only land and
 # shelf, and its distance to the shelf break is -Inf.
 
 [zone]
 products = { "ANT" = "BedMachine-v4", "GRL-PAL" = "BedMachine-v6", "NH" = "GEBCO2026",
-             "PYR" = "GEBCO2026", "SRG" = "GEBCO2026" }
+             "PYR" = "GLO90-GEBCO2026", "PAT" = "GLO90-GEBCO2026", "SRG" = "GLO90-GEBCO2026",
+             "GCN" = "GLO90-GEBCO2026", "CDI" = "GLO90-GEBCO2026", "ALP" = "GLO90-GEBCO2026",
+             "HIM" = "GLO90-GEBCO2026", "SVB" = "GLO90-GEBCO2026", "NZ" = "GLO90-GEBCO2026" }
 z_break = { "1" = -500.0, "2" = -500.0, "2.1" = -1000.0 }
 z_abyss = -2000.0
 r_open = 50.0

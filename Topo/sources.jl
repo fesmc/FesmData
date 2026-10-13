@@ -9,9 +9,14 @@
 # Thickness sources (`is_thickness_source`) only give the ice thickness of glaciers,
 # as tiles on their own projections (`GlacierTiles`). In a product they add grounded
 # ice onto the ice-free land of the sources below them (see 03_merge.jl).
+#
+# Land sources (`is_land_source`) only give the elevation of the land, as lon-lat
+# tiles (`DEMTiles`). In a product they set the land, ice-free, and its elevation
+# wherever their tiles reach (see 03_merge.jl).
 
 using NCDatasets
 import ArchGDAL as AG
+import Downloads
 
 const OCEAN = Int8(0)
 const LAND  = Int8(1)
@@ -43,12 +48,17 @@ function read_source(name::AbstractString, dom::Domain)
         return read_gebco(_nc_file(get_dataset_path(db, name)), dom)
     elseif name == "iceboost_v2"
         return read_iceboost(db, dom)
+    elseif name == "copernicus_glo90"
+        return read_glo90(db, dom)
     end
     error("unknown source $name")
 end
 
 "True for sources that only give glacier ice thickness (see `GlacierTiles`)."
 is_thickness_source(name::AbstractString) = name == "iceboost_v2"
+
+"True for sources that only give the elevation of the land (see `DEMTiles`)."
+is_land_source(name::AbstractString) = name == "copernicus_glo90"
 
 # The NetCDF file `path`, or the only one in folder `path` (an extracted zip)
 function _nc_file(path)
@@ -315,5 +325,131 @@ function read_tile(path::AbstractString)
         h.nx == 1 && (H = vcat(H, fill(eltype(H)(NaN), 1, size(H, 2))))
         h.ny == 1 && (H = hcat(H, fill(eltype(H)(NaN), size(H, 1), 1)))
         return _tile_grid(basename(path), h), H, area, volume
+    end
+end
+
+"""
+    DEMTiles(files, grids)
+
+Land surface elevation as lon-lat tiles (`grids`, from the file headers), one GeoTIFF
+each, with the elevation (m) in band 1 and 0 over the ocean. Read one tile with
+`read_dem_tile`.
+"""
+struct DEMTiles
+    files::Vector{String}
+    grids::Vector{LonLatGrid}
+end
+
+"""
+Copernicus DEM GLO-90 (ESA, doi:10.5270/ESA-c5d3d65): surface elevation of the land
+(m above the EGM2008 geoid), in 1-degree tiles with a spacing of 3" in latitude and 3"
+to 30" in longitude (by latitude), from the public bucket of the AWS Open Data
+programme. It is the edited TanDEM-X DEM (acquisitions 2011-2015), from the same
+acquisitions as the TanDEM-X EDEM from which IceBoost takes its surface features. The
+ocean is 0 m, and there are no tiles over the open ocean. Elevations at or below 0 m
+are taken as ocean, so land below sea level is ocean.
+"""
+const GLO90_URL = "https://copernicus-dem-90m.s3.amazonaws.com"
+
+# Name of the GLO-90 tile with its south-west corner at (lat, lon) (integers)
+glo90_tile(lat::Integer, lon::Integer) =
+    "Copernicus_DSM_COG_30_$(lat < 0 ? "S" : "N")$(lpad(abs(lat), 2, '0'))_00_" *
+    "$(lon < 0 ? "W" : "E")$(lpad(abs(lon), 3, '0'))_00_DEM"
+
+"""
+    lonlat_extent(g) -> ((lonmin, lonmax), (latmin, latmax))
+
+Longitudes and latitudes (degrees) covered by the projected grid `g`, from its outline
+(latitudes as in `lat_bounds`, without margin). The grid must not cross the
+antimeridian.
+"""
+function lonlat_extent(g::ProjGrid; npts::Integer=200)
+    dx, dy = spacing(g)
+    x0, x1 = g.xc[1] - dx / 2, g.xc[end] + dx / 2
+    y0, y1 = g.yc[1] - dy / 2, g.yc[end] + dy / 2
+    s = range(0, 1; length=npts)
+    pts = vcat([(x0 + t * (x1 - x0), y) for t in s, y in (y0, y1)][:],
+               [(x, y0 + t * (y1 - y0)) for t in s, x in (x0, x1)][:])
+    trans = FesmUtils.Proj.Transformation(g.proj, "EPSG:4326"; always_xy=true)
+    lon = first.(map(trans, pts))
+    lonmin, lonmax = extrema(lon)
+    lonmax - lonmin < 180 || error("grid $(g.name) crosses the antimeridian")
+    return (lonmin, lonmax), lat_bounds(g; margin=0.0)
+end
+
+"""
+    glo90_tiles(dom, dir) -> Vector{String}
+
+Names of the GLO-90 tiles over the lon-lat extent of the base grid of `dom` (see
+`lonlat_extent`), of those listed in `dir`/tileList.txt (the tiles that exist).
+"""
+function glo90_tiles(dom::Domain, dir::AbstractString)
+    (lon0, lon1), (lat0, lat1) = lonlat_extent(dom.base)
+    listed = Set(readlines(joinpath(dir, "tileList.txt")))
+    names = [glo90_tile(la, lo) for la in floor(Int, lat0):ceil(Int, lat1)-1
+                                for lo in floor(Int, lon0):ceil(Int, lon1)-1]
+    return sort(filter(in(listed), names))
+end
+
+glo90_file(dir, name) = joinpath(dir, "$name.tif")
+
+"""
+    download_glo90(dir, dom) -> Int
+
+Download the GLO-90 tiles of `dom` missing in `dir` (and the tile list), on a machine
+with internet access. Returns the number of tiles of the domain.
+"""
+function download_glo90(dir::AbstractString, dom::Domain)
+    mkpath(dir)
+    list = joinpath(dir, "tileList.txt")
+    isfile(list) || Downloads.download("$GLO90_URL/tileList.txt", list)
+    names = glo90_tiles(dom, dir)
+    missing_names = filter(n -> !isfile(glo90_file(dir, n)), names)
+    println("$(dom.key): $(length(names)) GLO-90 tiles, downloading $(length(missing_names))")
+    for n in missing_names
+        tmp = glo90_file(dir, n) * ".part"
+        Downloads.download("$GLO90_URL/$n/$n.tif", tmp)
+        mv(tmp, glo90_file(dir, n); force=true)
+    end
+    return length(names)
+end
+
+"""
+GLO-90 tiles over the base grid of `dom` (see `glo90_tiles`), which must all have been
+downloaded (00_sources.jl --download).
+"""
+function read_glo90(db, dom::Domain)
+    dir = get_dataset_path(db, "copernicus_glo90")
+    isfile(joinpath(dir, "tileList.txt")) || error("no GLO-90 tile list in $dir (run 00_sources.jl --download)")
+    names = glo90_tiles(dom, dir)
+    files = glo90_file.(dir, names)
+    absent = filter(!isfile, files)
+    isempty(absent) || error("$(length(absent)) of $(length(files)) GLO-90 tiles of $(dom.key) missing in $dir " *
+                             "(run 00_sources.jl --download $(dom.key))")
+    grids = Vector{LonLatGrid}(undef, length(files))
+    Threads.@threads :dynamic for k in eachindex(files)
+        grids[k] = AG.read(ds -> _lonlat_tif_grid(ds, files[k]), files[k])
+    end
+    println("$(length(files)) GLO-90 tiles over $(dom.base.name)")
+    return DEMTiles(files, grids)
+end
+
+# Lon-lat grid (ascending latitudes) of a north-up GeoTIFF in degrees
+function _lonlat_tif_grid(ds, path)
+    x0, dx, rx, y0, ry, dy = AG.getgeotransform(ds)
+    (rx == 0 && ry == 0 && dy < 0) || error("$path: not a north-up grid")
+    lon = x0 .+ dx .* ((1:AG.width(ds)) .- 0.5)
+    lat = reverse(y0 .+ dy .* ((1:AG.height(ds)) .- 0.5))
+    return LonLatGrid(lon, lat; name=basename(path))
+end
+
+"""
+    read_dem_tile(path) -> (grid, z)
+
+Lon-lat grid and elevation (band 1, rows in ascending latitude) of a DEM tile.
+"""
+function read_dem_tile(path::AbstractString)
+    AG.read(path) do ds
+        return _lonlat_tif_grid(ds, path), reverse(AG.read(AG.getband(ds, 1)); dims=2)
     end
 end

@@ -4,9 +4,11 @@
 #
 # Sources are blended in order of increasing priority. A source replaces the fields
 # below it where it fully covers a cell, with a weight that increases linearly from 0
-# at the edge of its coverage to 1 at TAPER_KM inside it. A thickness source
-# (glaciers) instead adds grounded ice onto the ice-free land below it, lowering the
-# bed by the ice thickness. Then the grounded and floating fractions are split by
+# at the edge of its coverage to 1 at TAPER_KM inside it. A land source (a DEM)
+# instead sets the land wherever its tiles reach, without taper: its land fraction
+# becomes ice-free land with its elevation, the rest of the cell ocean, at the bed
+# elevation below it (at most sea level). A thickness source (glaciers) adds grounded
+# ice onto the ice-free land below it, lowering the bed by the ice thickness. Then the grounded and floating fractions are split by
 # flotation of the cell-mean ice thickness and bed: the ice fraction of a cell is
 # grounded or floating as a whole, and grounded where it includes glacier ice from a
 # thickness source. Surface elevation is kept as given by the sources.
@@ -56,6 +58,37 @@ function blend!(out, f, w)
         end
     end
     return out
+end
+
+"""
+Set the land of a land source (fields `f`) on the merged fields `out` wherever its
+tiles reach (`f_valid` > 0, the rest of each cell being ocean, as there are no tiles
+over the open ocean): its land fraction `f_land` becomes ice-free land with the
+elevation of the source, and the rest ocean, with the merged bed elevation below it, at
+most sea level. The bed standard deviation combines both parts. Returns the land
+fraction.
+"""
+function put_land!(out, f)
+    added = zeros(Float32, size(out["z_bed"]))
+    Threads.@threads for j in axes(added, 2)
+        @inbounds for i in axes(added, 1)
+            f["f_valid"][i, j] > 0 || continue
+            a = f["f_land"][i, j]
+            zl, sl = a > 0 ? (f["z_land"][i, j], f["z_land_sd"][i, j]) : (0f0, 0f0)
+            zo, so = min(out["z_bed"][i, j], 0f0), out["z_bed_sd"][i, j]
+            z = a * zl + (1 - a) * zo
+            out["z_bed"][i, j] = z
+            out["z_bed_sd"][i, j] = sqrt(max(a * (sl^2 + zl^2) + (1 - a) * (so^2 + zo^2) - z^2, 0f0))
+            out["z_srf"][i, j] = a * zl
+            out["H_ice"][i, j] = 0f0
+            out["f_land"][i, j] = a
+            out["f_ocn"][i, j] = 1 - a
+            out["f_grnd"][i, j] = 0f0
+            out["f_flt"][i, j] = 0f0
+            added[i, j] = a
+        end
+    end
+    return added
 end
 
 """
@@ -118,13 +151,16 @@ for product in products
     for (k, source) in enumerate(reverse(sources))
         _, f = read_fields(source_file(dom, source))
         if out === nothing
-            is_thickness_source(source) && error("lowest-priority source $source must be a topography source")
+            (is_thickness_source(source) || is_land_source(source)) &&
+                error("lowest-priority source $source must be a topography source")
             out = Dict(name => copy(f[name]) for name in BLEND)
             push!(weights, Float32.(f["f_valid"] .> 0))
             continue
         end
         if is_thickness_source(source)
             w = add_glaciers!(out, f)
+        elseif is_land_source(source)
+            w = put_land!(out, f)
         else
             w = taper_weight(f["f_valid"])
             blend!(out, f, w)

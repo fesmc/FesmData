@@ -86,8 +86,9 @@ storage_path = "$datasets_dir/bedmap2/bedmap2_rockmask.tif"
 uri = "https://ramadda.data.bas.ac.uk/repository/entry/get/bedmap2_rockmask.tif?entryid=synth%3Afa5d606c-dc95-47ee-9016-7a82e446f2f2%3AL2JlZG1hcDJfdGlmZi9iZWRtYXAyX3JvY2ttYXNrLnRpZg%3D%3D"
 
 # IceBoost v2.0 glacier ice thickness (RGI 7.0), the regions of the NH domain except
-# Greenland (05), and 11 (Central Europe, PYR) and 17 (Southern Andes, SRG). One zip
-# per RGI region, one GeoTIFF per glacier.
+# Greenland (05), and those of the mountain-glacier domains: 11 (Central Europe, PYR
+# and ALP), 13-15 (High Mountain Asia, HIM), 17 (Southern Andes, PAT) and 18 (New
+# Zealand, NZ). One zip per RGI region, one GeoTIFF per glacier.
 
 [iceboost_v2_rgi01]
 key = "iceboost_v2_rgi01.zip"
@@ -154,6 +155,42 @@ key = "iceboost_v2_rgi17.zip"
 doi = "10.5281/zenodo.17724512"
 extract = true
 uri = "https://zenodo.org/records/17724512/files/RGI70G_rgi17.zip?download=1"
+
+[iceboost_v2_rgi13]
+key = "iceboost_v2_rgi13.zip"
+doi = "10.5281/zenodo.17724512"
+extract = true
+uri = "https://zenodo.org/records/17724512/files/RGI70G_rgi13.zip?download=1"
+
+[iceboost_v2_rgi14]
+key = "iceboost_v2_rgi14.zip"
+doi = "10.5281/zenodo.17724512"
+extract = true
+uri = "https://zenodo.org/records/17724512/files/RGI70G_rgi14.zip?download=1"
+
+[iceboost_v2_rgi15]
+key = "iceboost_v2_rgi15.zip"
+doi = "10.5281/zenodo.17724512"
+extract = true
+uri = "https://zenodo.org/records/17724512/files/RGI70G_rgi15.zip?download=1"
+
+[iceboost_v2_rgi18]
+key = "iceboost_v2_rgi18.zip"
+doi = "10.5281/zenodo.17724512"
+extract = true
+uri = "https://zenodo.org/records/17724512/files/RGI70G_rgi18.zip?download=1"
+
+# Copernicus DEM GLO-90 (ESA, doi:10.5270/ESA-c5d3d65; free licence, attribution
+# "produced using Copernicus WorldDEM-90 (c) DLR e.V. 2010-2014 and (c) Airbus Defence
+# and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA"):
+# 1-degree tiles from the public AWS bucket, only those over the domains that use it,
+# downloaded by Topo/scripts/00_sources.jl --download (see Topo/sources.jl).
+
+[copernicus_glo90]
+doi = "10.5270/ESA-c5d3d65"
+skip_download = true
+storage_path = "$datasets_dir/copernicus_glo90"
+uri = "https://copernicus-dem-90m.s3.amazonaws.com"
 
 # ---------------------------------------------------------------------------
 # Regions and basins (Regions/)

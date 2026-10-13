@@ -6,7 +6,10 @@
 #   f_land, f_grnd, f_flt, and f_valid (the fraction of each cell covered by the
 #   source);
 # - thickness sources (glacier tiles): H_ice (cell mean, 0 off the glaciers) and the
-#   glacier area fraction f_ice.
+#   glacier area fraction f_ice;
+# - land sources (DEM tiles): z_land and z_land_sd (mean and standard deviation of the
+#   land elevation), the land fraction f_land, and f_valid (the fraction of each cell
+#   covered by the tiles).
 #
 # Usage:
 #     julia --project=Topo -t N Topo/scripts/02_regrid_source.jl DOMAIN SOURCE
@@ -130,6 +133,70 @@ function regrid(src::GlacierTiles)
             "max f_ice $(round(maximum(f_ice); digits=3))), ",
             "volume $(round(sum(H_ice .* area_cells) / 1000; digits=0)) km3")
     return Dict("H_ice" => Float32.(H_ice), "f_ice" => Float32.(min.(f_ice, 1)))
+end
+
+# Base cells overlapping the lon-lat box of the lon-lat grid `g` (from its outline on
+# the base projection)
+function _tile_cover(g::LonLatGrid, trans; npts::Integer=50)
+    lon0, lon1 = g.lon[1] - g.dlon / 2, g.lon[end] + g.dlon / 2
+    lat0, lat1 = g.latedges[1], g.latedges[end]
+    s = range(0, 1; length=npts)
+    pts = vcat([(lon0 + t * (lon1 - lon0), la) for t in s, la in (lat0, lat1)][:],
+               [(lo, lat0 + t * (lat1 - lat0)) for t in s, lo in (lon0, lon1)][:])
+    xy = map(trans, pts)
+    return (_cover(base.xc, extrema(first.(xy))), _cover(base.yc, extrema(last.(xy))))
+end
+
+"""
+    regrid(src::DEMTiles) -> fields
+
+Mean and standard deviation of the land elevation (`z_land`, `z_land_sd`, NaN where
+there is no land), land fraction `f_land` and tile coverage `f_valid` on the base grid.
+Only the tiles overlapping the base grid are read (threaded). Each is remapped onto
+the base cells covering it, with samples spaced at most half the tile spacing in
+latitude; elevations at or below 0 m are ocean. The tiles are summed in order, so
+cells on the edges between tiles combine them.
+"""
+function regrid(src::DEMTiles)
+    trans = FesmUtils.Proj.Transformation("EPSG:4326", base.proj; always_xy=true)
+    cover = map(g -> _tile_cover(g, trans), src.grids)
+    sel = findall(c -> !(isempty(c[1]) || isempty(c[2])), cover)
+
+    # Sums of each tile on the cells it covers: land elevation and its square times
+    # the land fraction, land fraction, and coverage
+    parts = Vector{NTuple{4,Matrix{Float64}}}(undef, length(sel))
+    Threads.@threads :dynamic for k in eachindex(sel)
+        ix, iy = cover[sel[k]]
+        g, z = read_dem_tile(src.files[sel[k]])
+        sub = ProjGrid("sub", base.xc[ix], base.yc[iy], base.proj)
+        m = SampledMap(sub, g, max(1, ceil(Int, 2 * spacing(base)[1] / (g.dlat * 111.195))))
+        land = map(v -> v > 0 ? Float64(v) : NaN, z)
+        zl, fl = remap(m, land)
+        z2, _ = remap(m, land .^ 2)
+        _, fc = remap(m, ones(Float32, size(z)))
+        sz = map((v, f) -> f > 0 ? v * f : 0.0, zl, fl)
+        sz2 = map((v, f) -> f > 0 ? v * f : 0.0, z2, fl)
+        parts[k] = (sz, sz2, Float64.(fl), Float64.(fc))
+    end
+
+    # Sum the tiles in a fixed order (reproducible)
+    S = [zeros(Float64, size(base)) for _ in 1:4]
+    for (k, p) in enumerate(parts)
+        ix, iy = cover[sel[k]]
+        for q in 1:4
+            S[q][ix, iy] .+= p[q]
+        end
+    end
+    sz, sz2, f_land, f_valid = S
+    z_land = map((s, f) -> f > 0 ? s / f : NaN, sz, f_land)
+    z_sd = map((s2, z, f) -> f > 0 ? sqrt(max(s2 / f - z^2, 0.0)) : NaN, sz2, z_land, f_land)
+    lon, lat = lonlat(base)
+    area_cells = cell_area(base, lon, lat) ./ 1e6  # km2
+    println("$(length(sel)) of $(length(src.files)) tiles overlap $(base.name): land ",
+            "$(round(sum(min.(f_land, 1) .* area_cells); digits=0)) km2, covered ",
+            "$(round(100 * sum(min.(f_valid, 1) .* area_cells) / sum(area_cells); digits=1))% of the grid")
+    return Dict("z_land" => Float32.(z_land), "z_land_sd" => Float32.(z_sd),
+                "f_land" => Float32.(min.(f_land, 1)), "f_valid" => Float32.(min.(f_valid, 1)))
 end
 
 t0 = time()

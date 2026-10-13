@@ -2,21 +2,23 @@
 
 Bed topography, surface elevation, ice thickness and ice/ocean fractions for each
 model domain, from the best available sources, at resolutions from the base grid
-down to 32 km (16 km for SRG). The domains are the ice sheets (ANT, GRL-PAL, NH)
-and two mountain-glacier domains, the Pyrenees (PYR) and the San Rafael Glacier
-in Patagonia (SRG).
+down to 32 km for the ice sheets. The domains are the ice sheets (ANT, GRL-PAL, NH)
+and the mountain-glacier domains at 50-500 m: the Pyrenees (PYR), Patagonia (PAT) with
+its icefields (crops NPI, SPI; nests SRG, GCN, CDI), and, inactive until needed, the
+Alps (ALP), the Himalaya (HIM), Svalbard (SVB) and New Zealand (NZ) (see
+`../shared/README.md`).
 
 The processing has two stages:
 
 1. **Sources → base grid.** Each source is remapped once onto the base grid of a
-   domain (ANT-1KM, GRL-PAL-500M, NH-2KM, PYR-500M, SRG-250M), and the sources are then merged in
-   order of priority (e.g. BedMachine over GEBCO).
+   domain (e.g. ANT-1KM, GRL-PAL-500M, NH-2KM, PAT-250M, SRG-50M), and the sources are
+   then merged in order of priority (e.g. BedMachine over GEBCO).
 2. **Base → all other grids.** Every coarser grid, and the crops of a domain (GRL,
-   LIS, EIS), is remapped from the merged base product.
+   LIS, EIS, NPI, SPI), is remapped from the merged base product.
 
 Remapping is conservative: exact for sources on the same projection as the domain
 (BedMachine, Bedmap3), and from sub-cell sampling for sources on other grids (GEBCO,
-IceBoost glacier tiles). The
+Copernicus DEM tiles, IceBoost glacier tiles). The
 methods are in [FesmUtils.jl](https://github.com/fesmc/FesmUtils.jl) and are
 threaded.
 
@@ -24,12 +26,10 @@ Domains and resolutions are defined in `../shared/domains.toml` (shared with the
 other pipelines), and the products of each domain in `products.toml`. Grid extents
 follow the v1 grids in `../maps`, so the v1 grids at 4-32 km are reproduced, except
 GRL-32KM, which has 53 instead of 54 columns so that its extent matches the finer
-GRL grids. The ice-sheet domains are on polar stereographic projections, PYR and SRG
-on UTM (zones 31N and 18S). PYR has no v1 grid: it covers the whole range with
-20-30 km of foreland (see `domains.toml`). SRG reproduces the v1 SRG-16KM grid (5 x 3
-cells), and its base grid SRG-250M covers the same area; it is therefore larger than
-the v1 SRG-250M grid (257 x 129 instead of 208 x 120 cells), whose cell centres are
-offset by half a cell (125 m) in x and y from those of SRG-250M here.
+GRL grids, and the 250 m grid of the SRG nest reproduces the v1 SRG-250M grid. The
+ice-sheet domains are on polar stereographic projections, the mountain-glacier domains
+on the projection used for glacier modelling in each region (UTM, NZTM2000, and the
+Albers equal-area projection of High Mountain Asia).
 
 Each domain has default products, from the latest sources, and variants, from
 earlier versions of the ice-sheet datasets, made on request:
@@ -39,11 +39,12 @@ earlier versions of the ice-sheet datasets, made on request:
 | ANT | BedMachine-v4, Bedmap3 | BedMachine-v3, BedMachine-v2, Bedmap2 |
 | GRL-PAL | BedMachine-v6 | BedMachine-v5, BedMachine-v4 |
 | NH | GEBCO2026 | |
-| PYR | GEBCO2026 | |
-| SRG | GEBCO2026 | |
+| PYR, PAT, SRG, GCN, CDI, ALP, HIM, SVB, NZ | GLO90-GEBCO2026 | |
 
-All products use GEBCO 2026 outside the ice-sheet datasets, and the NH, PYR and
-SRG products add the IceBoost glaciers onto it. A new variant is a new
+All products use GEBCO 2026 outside the ice-sheet datasets, and the NH product adds
+the IceBoost glaciers onto it. The mountain-glacier products (GLO90-GEBCO2026) take the
+land from the Copernicus DEM GLO-90 and the ocean from GEBCO 2026, and add the IceBoost
+glaciers onto the land. A new variant is a new
 entry under `[<domain>.variants]` in `products.toml` (with its sources in
 `../datamanifest.toml` and `sources.jl`).
 
@@ -54,6 +55,7 @@ entry under `[<domain>.variants]` in `products.toml` (with its sources in
 | `$DATAMANIFEST_DATASETS_DIR` | Original datasets (see `../datamanifest.toml`) |
 | `$ICE_DATA/v2/<Domain>/<GRID>/` | Output: `grid_<GRID>.txt`, `<GRID>_grid.nc`, `<GRID>_TOPO-<product>.nc` |
 | `$FESMDATA_WORK/topo/` | Intermediate files (sources on base grids, IceBoost tile index) |
+| `$DATAMANIFEST_DATASETS_DIR/copernicus_glo90/` | Copernicus DEM GLO-90 tiles of the domains that use them |
 
 The environment variables are set per machine in `../shared/machines/<machine>.env`.
 
@@ -95,11 +97,13 @@ List the datasets and whether they are present:
 julia --project=Topo Topo/scripts/00_sources.jl
 ```
 
-GEBCO 2026 (4 GB zipped), Bedmap3 (2.5 GB) and IceBoost v2.0 (1.3 GB zipped, one
-zip per RGI region) are downloaded automatically (Levante login node):
+GEBCO 2026 (4 GB zipped), Bedmap3 (2.5 GB), IceBoost v2.0 (one zip per RGI region)
+and the Copernicus DEM GLO-90 tiles of the active domains that use them (1-degree
+tiles, a few MB each) are downloaded automatically (Levante login node):
 
 ```bash
 julia --project=Topo Topo/scripts/00_sources.jl --download
+julia --project=Topo Topo/scripts/00_sources.jl --download HIM   # the tiles of an inactive domain
 ```
 
 The other sources need a manual download into the path printed by the script:
@@ -142,6 +146,13 @@ Each writes `$FESMDATA_WORK/topo/<BASE>/<BASE>_<source>.nc` with `z_bed`, `z_srf
 by the source). Sources on the domain projection (BedMachine, Bedmap3) are remapped
 exactly; GEBCO is sampled at about half its resolution within each cell.
 
+Land sources (the Copernicus DEM GLO-90) give only the elevation of the land, as
+1-degree lon-lat tiles. Each tile overlapping the base grid is sampled within the base
+cells it covers, at about half its latitude spacing, and the file has `z_land` and
+`z_land_sd` (mean and standard deviation of the land elevation), `f_land` (land
+fraction; elevations at or below 0 m are ocean) and `f_valid` (fraction covered by the
+tiles).
+
 Thickness sources (IceBoost) give only glacier ice thickness, as one tile per
 glacier on its own projection (UTM). Each tile is sampled at about half its
 resolution within the base cells it covers, and the file has `H_ice` (cell mean, 0
@@ -174,8 +185,17 @@ Source notes (see `sources.jl`):
   sources), and differs from the main grid by a few metres elsewhere.
 - IceBoost v2.0 (Maffezzoli et al., doi:10.5281/zenodo.17724512; RGI 7.0 outlines)
   gives the ice thickness of the glaciers and ice caps outside Greenland in the NH
-  product, and of the glaciers of PYR (RGI region 11) and SRG (region 17). BedMachine
-  Greenland v6 uses the same dataset for the peripheral glaciers of Greenland.
+  product, and of the glaciers of the mountain-glacier domains (RGI regions 07, 11,
+  13-15, 17, 18). BedMachine Greenland v6 uses the same dataset for the peripheral
+  glaciers of Greenland.
+- Copernicus DEM GLO-90 (ESA, doi:10.5270/ESA-c5d3d65; the edited TanDEM-X DEM,
+  acquisitions 2011-2015, heights above the EGM2008 geoid) gives the land surface of
+  the mountain-glacier products. IceBoost v2.0 takes its surface features from the
+  TanDEM-X EDEM, from the same acquisitions, so the surface and the glacier thickness
+  are consistent. The ocean is 0 m in its tiles, and there are no tiles over the open
+  ocean; land below sea level is taken as ocean. Products from it must credit
+  "Copernicus WorldDEM-90 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH
+  2014-2018 provided under COPERNICUS by the European Union and ESA".
 
 ### 3. Merge
 
@@ -198,10 +218,15 @@ includes firn air). The file also has `mask` (dominant surface type: 0 ocean, 1
 ice-free land, 2 grounded ice, 3 floating ice) and `src_id` (source with the largest
 weight).
 
+A land source sets the land wherever its tiles reach (without taper, since it meets
+GEBCO at sea level along the coast): its land fraction becomes ice-free land with its
+elevation as bed and surface, and the rest of the cell ocean, with the GEBCO bed below
+it (at most sea level). The bed standard deviation combines both parts.
+
 A thickness source adds its glaciers onto the ice-free land of the sources below it
-(GEBCO, whose elevation is the ice surface): the glacier fraction, at most the
+(GEBCO or the Copernicus DEM, whose elevation is the ice surface): the glacier fraction, at most the
 ice-free land fraction, becomes grounded ice, and the bed is lowered by the
-cell-mean ice thickness. Glaciers on GEBCO ocean (e.g. retreated termini) are
+cell-mean ice thickness. Glaciers on ocean (e.g. retreated termini) are
 dropped. Cells with glacier ice are always grounded. In the NH product, BedMachine
 replaces the glaciers within its coverage.
 
@@ -259,7 +284,9 @@ only their sources.
    cell with data is its `f_valid`).
    A source on the projection of a domain is remapped exactly; any other is sampled
    within each base cell. A source that only gives glacier thickness (like IceBoost)
-   is a thickness source (`is_thickness_source`, `GlacierTiles`).
+   is a thickness source (`is_thickness_source`, `GlacierTiles`), and a source that
+   only gives the elevation of the land in lon-lat tiles (like the Copernicus DEM) a
+   land source (`is_land_source`, `DEMTiles`).
 3. Use it in a product (below) and run the steps from step 2 for the domain (step 2
    only for the new source: `02_regrid_source.jl <DOMAIN> <source>`).
 
@@ -274,7 +301,8 @@ released and made by default) or `[<domain>.variants]` (made on request with
 ```
 
 Then run steps 2-5 for it (`submit_domain.sh ANT 2 BedMachine-v3`). The lowest-priority
-source must be a topography source covering the whole domain (GEBCO). Variants are
+source must be a topography source covering the whole domain (GEBCO), and a land
+source must come before it. Variants are
 released with the default products.
 
 **A domain**: define it in `../shared/domains.toml` (see `../shared/README.md`), add its
@@ -299,24 +327,8 @@ IceBoost glaciers in the NH product (GEBCO 2026, run of 2026-10-09):
 The GRL-PAL and ANT products are unchanged (bitwise identical before and after
 adding thickness sources).
 
-## Glaciers in the PYR and SRG products
+## Glaciers in the mountain-glacier products
 
-IceBoost glaciers (RGI 7.0, 2000 outlines) on the base grids (GEBCO 2026, run of
-2026-10-10):
-
-| | Tiles | Area (km²) | Volume (km³) |
-|---|---:|---:|---:|
-| PYR-500M (RGI 11) | 45 | 4 | 0.08 |
-| SRG-250M (RGI 17) | 134 | 1,261 | 483 |
-
-On the extent of the v1 SRG-250M grid, the SRG product has 1,224 km² and 433 km³ of
-ice, against 1,149 km² and 358 km³ in the v1 SRG-250M_TOPO.nc (from an inversion of
-the Northern Patagonian Icefield thickness). Surface elevations agree (v2 - v1: mean
-1 m, rmse 56 m); the ice thickness differs by 164 m rms (v2 thinner along the trunk of
-the San Rafael Glacier, thicker on its sides).
-
-The coarser SRG grids extend beyond the base grid (by half a coarse cell, as for all
-domains), where their cells are means over the part the base grid covers. On a domain
-this small the overhang is a large part of the coarse grids (SRG-16KM covers 1.85
-times the area of SRG-250M), so their ice volume grows with the cell size, from 483
-km³ on SRG-250M to 762 km³ on SRG-16KM.
+The glacier area and volume of each mountain-glacier product, against those of the
+IceBoost tiles, are printed by step 2 (IceBoost) and step 5 in the job logs; a table
+follows with the first runs of the GLO90-GEBCO2026 products.

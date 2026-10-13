@@ -38,19 +38,69 @@ rho_sw = 1023.0
 [NH.products]
 "GEBCO2026" = ["bedmachine_greenland_v6", "iceboost_v2", "gebco2026"]
 
-# Mountain glaciers: GEBCO 2026 with the IceBoost glaciers (RGI 11 Central Europe, RGI
-# 17 Southern Andes). No BedMachine product sets the densities: rho_sw is that of
-# Yelmo (yelmo_phys_const.nml).
+# Mountain glaciers: the IceBoost glaciers on the land of the Copernicus DEM GLO-90,
+# with GEBCO 2026 for the ocean. No BedMachine product sets the densities: rho_sw is
+# that of Yelmo (yelmo_phys_const.nml).
+
 [PYR]
 rho_ice = 917.0
 rho_sw = 1028.0
 
 [PYR.products]
-"GEBCO2026" = ["iceboost_v2", "gebco2026"]
+"GLO90-GEBCO2026" = ["iceboost_v2", "copernicus_glo90", "gebco2026"]
+
+[PAT]
+rho_ice = 917.0
+rho_sw = 1028.0
+
+[PAT.products]
+"GLO90-GEBCO2026" = ["iceboost_v2", "copernicus_glo90", "gebco2026"]
 
 [SRG]
 rho_ice = 917.0
 rho_sw = 1028.0
 
 [SRG.products]
-"GEBCO2026" = ["iceboost_v2", "gebco2026"]
+"GLO90-GEBCO2026" = ["iceboost_v2", "copernicus_glo90", "gebco2026"]
+
+[GCN]
+rho_ice = 917.0
+rho_sw = 1028.0
+
+[GCN.products]
+"GLO90-GEBCO2026" = ["iceboost_v2", "copernicus_glo90", "gebco2026"]
+
+[CDI]
+rho_ice = 917.0
+rho_sw = 1028.0
+
+[CDI.products]
+"GLO90-GEBCO2026" = ["iceboost_v2", "copernicus_glo90", "gebco2026"]
+
+[ALP]
+rho_ice = 917.0
+rho_sw = 1028.0
+
+[ALP.products]
+"GLO90-GEBCO2026" = ["iceboost_v2", "copernicus_glo90", "gebco2026"]
+
+[HIM]
+rho_ice = 917.0
+rho_sw = 1028.0
+
+[HIM.products]
+"GLO90-GEBCO2026" = ["iceboost_v2", "copernicus_glo90", "gebco2026"]
+
+[SVB]
+rho_ice = 917.0
+rho_sw = 1028.0
+
+[SVB.products]
+"GLO90-GEBCO2026" = ["iceboost_v2", "copernicus_glo90", "gebco2026"]
+
+[NZ]
+rho_ice = 917.0
+rho_sw = 1028.0
+
+[NZ.products]
+"GLO90-GEBCO2026" = ["iceboost_v2", "copernicus_glo90", "gebco2026"]

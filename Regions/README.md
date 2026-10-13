@@ -13,9 +13,9 @@ and of ice-sheet drainage basins, for each model domain on all its grids
 - **Basins** (`basins.toml`) are the drainage basins of the ice sheets, extended over
   the land and shelf of their region up to the shelf break.
 
-Everything is computed on the base grid of a domain (ANT-1KM, GRL-PAL-500M, NH-2KM,
-PYR-500M, SRG-250M) and then mapped onto all other grids and crops, as for the
-topography.
+Everything is computed on the base grid of a domain (e.g. ANT-1KM, GRL-PAL-500M,
+NH-2KM, PAT-250M, SRG-50M) and then mapped onto all other grids and crops, as for the
+topography; a nest (e.g. SRG in PAT) is computed on its own base grid.
 
 ## Region codes
 
@@ -56,9 +56,9 @@ The rules of each region are documented in `regions.toml`. In short:
 - Cells of a region enclosed by its subregions but covered by none of them (where the
   coastlines of the sources do not match) get the nearest subregion.
 
-The mountain domains lie within single regions of level 2: PYR in 1.2 Western
+The mountain-glacier domains lie within few regions of level 2: e.g. PYR in 1.2 Western
 Eurasia (land and EEZs of Spain, France and Andorra) and 1.52 North Atlantic Ocean
-(beyond the EEZs, if any), SRG in 2.2 Latin America and the Caribbean.
+(beyond the EEZs, if any), PAT and its nests in 2.2 Latin America and the Caribbean.
 
 ## Zones
 
@@ -75,7 +75,7 @@ The open ocean is the ice-free ocean connected to the abyss (deeper than
 towards the ice sheet are therefore shelf. The parameters are in `regions.toml`.
 
 A domain without open ocean, where no ocean deeper than `z_abyss` lies within the
-domain (the mountain domains PYR and SRG), has only land and shelf, and
+domain (e.g. the mountain-glacier domains PYR and SRG), has only land and shelf, and
 `dist_shelfbreak` is -Inf everywhere (as noted in the `comment` attribute of the
 variable).
 
