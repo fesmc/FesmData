@@ -50,7 +50,9 @@ map, in m yr-1:
   y axes of EPSG:3031, the axes of the Antarctica grids (an indication of the relative
   quality rather than an absolute error, says the user guide).
 
-No data (ocean, gaps) is missing. The standard deviations `STDX`, `STDY`, the number of
+No data (ocean, gaps) is missing, as are the errors at about 1500 points where `ERRX`,
+`ERRY` are Inf in the source (in Velocity v2.1.0 these made the errors Inf on the cells
+around them). The standard deviations `STDX`, `STDY`, the number of
 scenes `CNT` and the method of measurement `SOURCE` (phase, tracking, hybrid) of the
 original file are left out. The few gaps over the ice are filled on the grids by the
 remapping (`fill` in `Velocity/remap.toml`).
