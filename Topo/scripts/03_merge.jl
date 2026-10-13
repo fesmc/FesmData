@@ -4,7 +4,8 @@
 #
 # Sources are blended in order of increasing priority. A source replaces the fields
 # below it where it fully covers a cell, with a weight that increases linearly from 0
-# at the edge of its coverage to 1 at TAPER_KM inside it. A land source (a DEM)
+# at the edge of its coverage to 1 at `taper_km(source)` inside it (20 km; with 0, the
+# source replaces exactly the cells it fully covers). A land source (a DEM)
 # instead sets the land wherever its tiles reach, without taper: its land fraction
 # becomes ice-free land with its elevation, the rest of the cell ocean, at the bed
 # elevation below it (at most sea level). A thickness source (glaciers) adds grounded
@@ -22,7 +23,6 @@
 include(joinpath(@__DIR__, "..", "common.jl"))
 include(joinpath(TOPO_DIR, "sources.jl"))
 
-const TAPER_KM = 20.0
 const BLEND = ("z_bed", "z_srf", "H_ice", "z_bed_sd", "f_ocn", "f_land", "f_grnd", "f_flt")
 
 1 <= length(ARGS) <= 2 || error("usage: 03_merge.jl DOMAIN [PRODUCTS]")
@@ -35,12 +35,13 @@ dx, dy = spacing(base)
 
 """
 Blending weight of a source: 0 outside its full coverage, rising linearly to 1 at
-TAPER_KM inside it.
+`taper` km inside it (1 on all of it for `taper` = 0).
 """
-function taper_weight(f_valid)
+function taper_weight(f_valid, taper)
     covered = f_valid .>= 0.999
+    taper > 0 || return Float32.(covered)
     d = distance_to(.!covered, dx, dy)
-    return Float32.(clamp.(d ./ TAPER_KM, 0, 1))
+    return Float32.(clamp.(d ./ taper, 0, 1))
 end
 
 """
@@ -162,7 +163,7 @@ for product in products
         elseif is_land_source(source)
             w = put_land!(out, f)
         else
-            w = taper_weight(f["f_valid"])
+            w = taper_weight(f["f_valid"], taper_km(source))
             blend!(out, f, w)
         end
         for wl in weights
@@ -184,10 +185,13 @@ for product in products
 
     src_attrib = Pair{String,Any}["flag_values" => Int8.(0:length(sources)-1),
                                   "flag_meanings" => join(reverse(sources), " ")]
+    # Taper of the blended sources (topography sources above the lowest one)
+    blended = filter(s -> !(is_thickness_source(s) || is_land_source(s)), sources[1:end-1])
+    attrib = Pair{String,String}["product" => product, "sources" => join(sources, " > ")]
+    isempty(blended) || push!(attrib, "taper_km" => join(["$s=$(taper_km(s))" for s in blended], " "))
+    append!(attrib, ["rho_ice" => string(rho_ice), "rho_sw" => string(rho_sw)])
     path = write_fields(product_file(dom.grids[1], product), base, out_fields; dataset=DATASET,
-        elevation=dom.grids[1].elevation,
-        attrib=["product" => product, "sources" => join(sources, " > "),
-                "taper_km" => string(TAPER_KM), "rho_ice" => string(rho_ice), "rho_sw" => string(rho_sw)],
+        elevation=dom.grids[1].elevation, attrib=attrib,
         varattrib=Dict("mask" => MASK_ATTRIB, "src_id" => src_attrib))
     println("Wrote $path ($(round(time() - t0; digits=1)) s)")
 end

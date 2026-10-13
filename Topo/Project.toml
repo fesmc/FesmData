@@ -4,7 +4,9 @@ CairoMakie = "13f3f980-e62b-5c42-98c6-ff1f3baf88f0"
 DataManifest = "b8ee69ef-a20a-4d38-bceb-a68d72817f72"
 Downloads = "f43a241f-c20a-4ad4-852c-f6b1247861c6"
 FesmUtils = "87fa8290-809d-4b2a-a2bb-fb70d9529671"
+MAT = "23992714-dd62-5051-b70f-ba57cb901cac"
 NCDatasets = "85f8d34a-cbdd-5861-8df4-14fed0d494ab"
+Statistics = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
 TOML = "fa267f1f-6049-4f14-aa54-33bafae1ed76"
 
 [sources]

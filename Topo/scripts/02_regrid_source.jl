@@ -22,9 +22,17 @@ dom = Domain(ARGS[1])
 source = ARGS[2]
 base = dom.base
 
-# Remapping onto the base grid, by source grid type
-remapper(src::ProjGrid) = (m = AlignedMap(base, src); F -> remap(m, F))
-fractions(src::ProjGrid, M) = remap_fractions(base, src, M, MASK_CLASSES)
+# Remapping onto the base grid, by source grid type. Projected sources: exact on the
+# projection of the domain, otherwise samples spaced at most half the source spacing
+nsub(src::ProjGrid) = same_projection(base, src) ? nothing :
+                      max(1, ceil(Int, 2 * spacing(base)[1] / minimum(spacing(src))))
+function remapper(src::ProjGrid)
+    n = nsub(src)
+    n === nothing || return F -> remap(base, src, F; nsub=n)
+    m = AlignedMap(base, src)
+    return F -> remap(m, F)
+end
+fractions(src::ProjGrid, M) = remap_fractions(base, src, M, MASK_CLASSES; nsub=nsub(src))
 
 # Lon-lat sources: samples spaced at most half the source latitude spacing
 nsub(src::LonLatGrid) = max(1, ceil(Int, 2 * spacing(base)[1] / (src.dlat * 111.195)))

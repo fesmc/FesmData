@@ -4,9 +4,9 @@ Bed topography, surface elevation, ice thickness and ice/ocean fractions for eac
 model domain, from the best available sources, at resolutions from the base grid
 down to 32 km for the ice sheets. The domains are the ice sheets (ANT, GRL-PAL, NH),
 nests of single basins and ice shelves in ANT (500 m) and GRL-PAL (250 m), and the
-mountain-glacier domains at 50-500 m: the Pyrenees (PYR), Patagonia (PAT) with its
+mountain-glacier domains at 25-500 m: the Pyrenees (PYR), Patagonia (PAT) with its
 icefields (crops NPI, SPI; nests SRG, GCN, CDI), the Himalaya (HIM) with the Drang Drung
-Glacier (nest DDG), and, inactive until needed, the Alps (ALP), Svalbard (SVB) and New
+Glacier (nest DDG, 25 m), and, inactive until needed, the Alps (ALP), Svalbard (SVB) and New
 Zealand (NZ) (see
 `../shared/README.md`).
 
@@ -20,7 +20,7 @@ The processing has two stages:
 
 Remapping is conservative: exact for sources on the same projection as the domain
 (BedMachine, Bedmap3), and from sub-cell sampling for sources on other grids (GEBCO,
-Copernicus DEM tiles, IceBoost glacier tiles). The
+Copernicus DEM tiles, IceBoost glacier tiles, the Drang Drung data in UTM). The
 methods are in [FesmUtils.jl](https://github.com/fesmc/FesmUtils.jl) and are
 threaded.
 
@@ -36,7 +36,7 @@ on the projection used for glacier modelling in each region (UTM, NZTM2000, and 
 Albers equal-area projection of High Mountain Asia).
 
 Each domain has default products, from the latest sources, and variants, from
-earlier versions of the ice-sheet datasets, made on request:
+earlier versions of the ice-sheet datasets or other sources, made on request:
 
 | Domain | Default products | Variants |
 |---|---|---|
@@ -45,12 +45,15 @@ earlier versions of the ice-sheet datasets, made on request:
 | GRL-PAL | BedMachine-v6 | BedMachine-v5, BedMachine-v4 |
 | JAK, NEGIS, PET, HEL (nests of GRL-PAL) | BedMachine-v6 | |
 | NH | GEBCO2026 | |
-| PYR, PAT, SRG, GCN, CDI, ALP, HIM, DDG, SVB, NZ | GLO90-GEBCO2026 | |
+| PYR, PAT, SRG, GCN, CDI, ALP, HIM, SVB, NZ | GLO90-GEBCO2026 | |
+| DDG (nest of HIM) | GLO90-GEBCO2026 | Sommers2025 |
 
 All products use GEBCO 2026 outside the ice-sheet datasets, and the NH product adds
 the IceBoost glaciers onto it. The mountain-glacier products (GLO90-GEBCO2026) take the
 land from the Copernicus DEM GLO-90 and the ocean from GEBCO 2026, and add the IceBoost
-glaciers onto the land. A new variant is a new
+glaciers onto the land. The Sommers2025 variant of DDG replaces them by the surface DEM
+and ice thickness of the model setup of Sommers (2025) within their box. A new variant
+is a new
 entry under `[<domain>.variants]` in `products.toml` (with its sources in
 `../datamanifest.toml` and `sources.jl`).
 
@@ -158,7 +161,8 @@ Each writes `$FESMDATA_WORK/topo/<BASE>/<BASE>_<source>.nc` with `z_bed`, `z_srf
 `H_ice`, `z_bed_sd` (sub-cell standard deviation of the bed), the area fractions
 `f_ocn`, `f_land`, `f_grnd`, `f_flt`, and `f_valid` (fraction of the cell covered
 by the source). Sources on the domain projection (BedMachine, Bedmap3) are remapped
-exactly; GEBCO is sampled at about half its resolution within each cell.
+exactly; GEBCO, and projected sources on another projection (the Drang Drung data), are
+sampled at about half their resolution within each cell.
 
 Land sources (the Copernicus DEM GLO-90) give only the elevation of the land, as
 1-degree lon-lat tiles. Each tile overlapping the base grid is sampled within the base
@@ -212,6 +216,24 @@ Source notes (see `sources.jl`):
   ocean; land below sea level is taken as ocean. Products from it must credit
   "Copernicus WorldDEM-90 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH
   2014-2018 provided under COPERNICUS by the European Union and ESA".
+- Drang Drung Glacier (`sommers2025_drangdrung`, DDG variant Sommers2025): the surface
+  DEM and ice thickness of the ISSM setup of Sommers (2025, "Seasonal variability in ice
+  velocity driven by subglacial hydrology of Drang Drung Glacier, Western Himalayas:
+  Modeling scripts and data", doi:10.5281/zenodo.17593643, CC BY 4.0), MATLAB files on
+  UTM zone 43N (EPSG:32643; not stated in the record, but the outline lies on the
+  glacier, and the DEM matches GLO-90 to 12 m (s.d.) on ice-free land at 50 m). The
+  surface is the 2 m DEM of LEGOS and OMP (2025), in heights above the WGS84 ellipsoid
+  (21 m above GLO-90 on ice-free land, the EGM2008 geoid height there): it is converted
+  to heights above the EGM2008 geoid at each point (PROJ, with the EGM2008 grid of the
+  PROJ data, `egm2008_geoid`), and its voids (29% of the grid, mostly on ice-free
+  slopes, 0.06 km² within the model domain) are filled with the GLO-90 surface
+  (bilinear). The ice thickness is that of Millan et al. (2022,
+  doi:10.1038/s41561-021-00885-z), 50 m, for all glaciers in a 25 x 25 km box (0 off
+  the ice; RGI 6.0 outlines). The source is the DEM grid within that box (20.5 x 24 km),
+  with bed = surface - thickness; it covers 77% of DDG, all but its edges (most of them
+  in the south). Products from it must credit
+  Sommers (2025), LEGOS and OMP (2025) for the DEM and Millan et al. (2022) for the ice
+  thickness.
 
 ### 3. Merge
 
@@ -227,7 +249,11 @@ the name of one product; the same holds for steps 4 and 5.
 This writes `$ICE_DATA/v2/<folder>/<BASE>/<BASE>_TOPO-<product>.nc`. Sources are
 blended in order of increasing priority: a source replaces the fields below it where
 it fully covers a cell, with a weight rising linearly from 0 at the edge of its
-coverage to 1 at 20 km inside it. The ice fraction of each cell is then grounded or
+coverage to 1 at a taper width inside it, a property of the source (`taper_km` in
+`sources.jl`, recorded in the file attribute `taper_km`): 20 km, so that the regional
+datasets meet GEBCO smoothly, and 0 for the Drang Drung data, whose coverage is smaller
+than that and whose edge lies on land of nearly the same surface, so that they replace
+exactly the cells they fully cover. The ice fraction of each cell is then grounded or
 floating as a whole, by flotation of its mean ice thickness and bed (densities in
 `products.toml`). Surface elevation is kept as given by the sources (in Antarctica it
 includes firn air). The file also has `mask` (dominant surface type: 0 ocean, 1
@@ -269,7 +295,8 @@ sbatch --job-name=plots-ANT Topo/jobs/run_step.sbatch 05_plots.jl ANT [PRODUCTS]
 
 This writes plots to `$FESMDATA_WORK/topo/plots/` (the base product, ice thickness
 on all grids, the difference with the v1 product at 16 or 32 km, and for a variant
-the difference with a default product at 4 km), and prints
+the difference with a default product at 4 km, or on the base grid of DDG), with colour
+ranges from the data (elevations centred on sea level where there is ocean), and prints
 the ice area and volume on every grid in the job log as a conservation check.
 
 ## Running a whole domain
@@ -348,3 +375,18 @@ adding thickness sources).
 The glacier area and volume of each mountain-glacier product, against those of the
 IceBoost tiles, are printed by step 2 (IceBoost) and step 5 in the job logs; a table
 follows with the first runs of the GLO90-GEBCO2026 products.
+
+On DDG-25M (run of 2026-10-13), the Sommers2025 variant against the default product:
+
+| | GLO90-GEBCO2026 area (km²) | volume (km³) | Sommers2025 area (km²) | volume (km³) |
+|---|---:|---:|---:|---:|
+| DDG | 271.7 | 27.03 | 269.9 | 31.26 |
+| Coverage of the Sommers data (486.5 km²) | 221.1 | 22.55 | 219.2 | 26.77 |
+| Model domain of Sommers (2025), DD.exp (27.0 km²) | 24.2 | 5.26 | 27.0 | 7.42 |
+
+Within the model domain the ice is 275 m thick on average (max 507 m) in Millan et al.
+(2022), against 218 m (max 398 m) in IceBoost; the surfaces differ by -4.9 m (rms 9.5
+m), about the thinning since the GLO-90 acquisitions. Across the edge of the coverage
+the surface steps by -1.8 m on average (rms 17.5 m, against 10 m between neighbouring
+cells), and the ice thickness on glaciers by 10 m (rms 43 m, Millan against IceBoost).
+

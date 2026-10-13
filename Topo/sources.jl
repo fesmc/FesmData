@@ -13,10 +13,14 @@
 # Land sources (`is_land_source`) only give the elevation of the land, as lon-lat
 # tiles (`DEMTiles`). In a product they set the land, ice-free, and its elevation
 # wherever their tiles reach (see 03_merge.jl).
+#
+# A topography source replaces the sources below it in a product with a weight rising
+# from 0 at the edge of its coverage to 1 at `taper_km` inside it (see 03_merge.jl).
 
 using NCDatasets
 import ArchGDAL as AG
 import Downloads
+using MAT
 
 const OCEAN = Int8(0)
 const LAND  = Int8(1)
@@ -50,9 +54,21 @@ function read_source(name::AbstractString, dom::Domain)
         return read_iceboost(db, dom)
     elseif name == "copernicus_glo90"
         return read_glo90(db, dom)
+    elseif name == "sommers2025_drangdrung"
+        return read_sommers2025(db, dom)
     end
     error("unknown source $name")
 end
+
+"""
+    taper_km(name) -> Float64
+
+Width (km) over which a topography source fades in from the edge of its coverage in a
+product (see 03_merge.jl): 20 km, so that a regional dataset meets GEBCO smoothly, and
+0 for the sources that replace exactly the base cells they fully cover (a regional
+dataset smaller than the taper, whose edge lies on land of the same surface).
+"""
+taper_km(name::AbstractString) = name == "sommers2025_drangdrung" ? 0.0 : 20.0
 
 "True for sources that only give glacier ice thickness (see `GlacierTiles`)."
 is_thickness_source(name::AbstractString) = name == "iceboost_v2"
@@ -378,13 +394,16 @@ function lonlat_extent(g::ProjGrid; npts::Integer=200)
 end
 
 """
-    glo90_tiles(dom, dir) -> Vector{String}
+    glo90_tiles(g, dir) -> Vector{String}
 
-Names of the GLO-90 tiles over the lon-lat extent of the base grid of `dom` (see
-`lonlat_extent`), of those listed in `dir`/tileList.txt (the tiles that exist).
+Names of the GLO-90 tiles over the lon-lat extent of the projected grid `g` (or of the
+base grid of a domain, see `lonlat_extent`), of those listed in `dir`/tileList.txt (the
+tiles that exist).
 """
-function glo90_tiles(dom::Domain, dir::AbstractString)
-    (lon0, lon1), (lat0, lat1) = lonlat_extent(dom.base)
+glo90_tiles(dom::Domain, dir::AbstractString) = glo90_tiles(dom.base, dir)
+
+function glo90_tiles(g::ProjGrid, dir::AbstractString)
+    (lon0, lon1), (lat0, lat1) = lonlat_extent(g)
     listed = Set(readlines(joinpath(dir, "tileList.txt")))
     names = [glo90_tile(la, lo) for la in floor(Int, lat0):ceil(Int, lat1)-1
                                 for lo in floor(Int, lon0):ceil(Int, lon1)-1]
@@ -415,22 +434,25 @@ function download_glo90(dir::AbstractString, dom::Domain)
 end
 
 """
-GLO-90 tiles over the base grid of `dom` (see `glo90_tiles`), which must all have been
-downloaded (00_sources.jl --download).
+GLO-90 tiles over the base grid of `dom` (see `glo90_tiles`), or over the projected grid
+`g`, which must all have been downloaded (00_sources.jl --download, for the domain with
+key `key`).
 """
-function read_glo90(db, dom::Domain)
+read_glo90(db, dom::Domain) = read_glo90(db, dom.base, dom.key)
+
+function read_glo90(db, g::ProjGrid, key::AbstractString)
     dir = get_dataset_path(db, "copernicus_glo90")
     isfile(joinpath(dir, "tileList.txt")) || error("no GLO-90 tile list in $dir (run 00_sources.jl --download)")
-    names = glo90_tiles(dom, dir)
+    names = glo90_tiles(g, dir)
     files = glo90_file.(dir, names)
     absent = filter(!isfile, files)
-    isempty(absent) || error("$(length(absent)) of $(length(files)) GLO-90 tiles of $(dom.key) missing in $dir " *
-                             "(run 00_sources.jl --download $(dom.key))")
+    isempty(absent) || error("$(length(absent)) of $(length(files)) GLO-90 tiles over $(g.name) missing in $dir " *
+                             "(run 00_sources.jl --download $key)")
     grids = Vector{LonLatGrid}(undef, length(files))
     Threads.@threads :dynamic for k in eachindex(files)
         grids[k] = AG.read(ds -> _lonlat_tif_grid(ds, files[k]), files[k])
     end
-    println("$(length(files)) GLO-90 tiles over $(dom.base.name)")
+    println("$(length(files)) GLO-90 tiles over $(g.name)")
     return DEMTiles(files, grids)
 end
 
@@ -452,4 +474,121 @@ function read_dem_tile(path::AbstractString)
     AG.read(path) do ds
         return _lonlat_tif_grid(ds, path), reverse(AG.read(AG.getband(ds, 1)); dims=2)
     end
+end
+
+# ---------------------------------------------------------------------------
+# Drang Drung Glacier (Sommers, 2025)
+# ---------------------------------------------------------------------------
+
+"UTM zone 43N (EPSG:32643) in km."
+const UTM43N = "+proj=tmerc +lat_0=0 +lon_0=75 +k=0.9996 +x_0=500000 +y_0=0 +a=6378137 +rf=298.257223563 +units=km"
+
+"""
+Drang Drung Glacier, Zanskar (Sommers, 2025, doi:10.5281/zenodo.17593643, CC BY 4.0):
+the data of an ISSM model setup, in UTM zone 43N (EPSG:32643, as MATLAB files with
+axes `x`, `y` in m, rows in descending `y`).
+
+- Surface: the 2 m DEM of LEGOS and OMP (2025), in heights above the WGS84 ellipsoid,
+  converted to heights above the EGM2008 geoid (as GLO-90 and GEBCO) at each point
+  with PROJ and the EGM2008 grid (`egm2008_geoid`, see `ellipsoid_to_egm2008!`). Its
+  voids (NaN, 29% of the grid, mostly on ice-free slopes) are filled with the GLO-90
+  surface, interpolated bilinearly.
+- Ice thickness: Millan et al. (2022), 50 m, for all glaciers in a 25 x 25 km box (0
+  off the ice), taken at each DEM point from the cell that contains it.
+
+The source is the DEM grid within the box of the thickness (where both are given),
+without missing values: bed elevation is surface minus thickness, grounded ice where
+the thickness is positive, and ice-free land elsewhere.
+"""
+function read_sommers2025(db, dom::Domain)
+    gd, zs = _read_mat_grid(get_dataset_path(db, "sommers2025_drangdrung_dem"), "zs")
+    gh, H = _read_mat_grid(get_dataset_path(db, "sommers2025_drangdrung_thickness"), "H")
+
+    # DEM grid within the box of the thickness
+    dxh, dyh = spacing(gh)
+    ix = findall(x -> gh.xc[1] - dxh / 2 <= x <= gh.xc[end] + dxh / 2, gd.xc)
+    iy = findall(y -> gh.yc[1] - dyh / 2 <= y <= gh.yc[end] + dyh / 2, gd.yc)
+    grid = ProjGrid("sommers2025_drangdrung", gd.xc[ix], gd.yc[iy], UTM43N)
+    z_srf = Float32.(view(zs, ix, iy))
+    zs = nothing
+    nvoid = count(isnan, z_srf)
+    println("Sommers (2025) DEM within the thickness box: $(size(grid)) points, ",
+            "$(round(100 * nvoid / length(z_srf); digits=1))% voids")
+
+    # Ellipsoidal heights to EGM2008, then voids from GLO-90
+    N = ellipsoid_to_egm2008!(z_srf, grid, get_dataset_path(db, "egm2008_geoid"))
+    println("EGM2008 geoid height over the DEM: $(round.(N; digits=2)) m")
+    glo = read_glo90(db, grid, dom.key)
+    for (file, g) in zip(glo.files, glo.grids)
+        _, z = read_dem_tile(file)
+        zg, fv = remap_bilinear(grid, g, z)
+        Threads.@threads for j in axes(z_srf, 2)
+            @inbounds for i in axes(z_srf, 1)
+                isnan(z_srf[i, j]) && fv[i, j] > 0 && (z_srf[i, j] = Float32(zg[i, j]))
+            end
+        end
+    end
+    left = count(isnan, z_srf)
+    left == 0 || error("$left voids of the Sommers (2025) DEM not covered by GLO-90")
+
+    # Thickness of the cell containing each point (all points are inside the box)
+    nxh, nyh = size(gh)
+    ih = [clamp(floor(Int, (x - gh.xc[1]) / dxh + 0.5) + 1, 1, nxh) for x in grid.xc]
+    jh = [clamp(floor(Int, (y - gh.yc[1]) / dyh + 0.5) + 1, 1, nyh) for y in grid.yc]
+    H_ice = Float32.(H[ih, jh])
+    z_bed = z_srf .- H_ice
+    mask = map(h -> h > 0 ? GRND : LAND, H_ice)
+    return (grid=grid, z_bed=z_bed, z_srf=z_srf, H_ice=H_ice, mask=mask)
+end
+
+"""
+    _read_mat_grid(path, var) -> (grid, A)
+
+Grid (UTM 43N, km, ascending axes) and field `var` (columns of x, rows of ascending y)
+of a MATLAB file with axes `x`, `y` (m) and `var` with rows of `y`.
+"""
+function _read_mat_grid(path, var)
+    d = matread(path)
+    x, y = vec(d["x"]) ./ 1000, vec(d["y"]) ./ 1000
+    A = permutedims(d[var])
+    if y[2] < y[1]
+        y = reverse(y)
+        A = reverse(A; dims=2)
+    end
+    return ProjGrid("native", x, y, UTM43N), A
+end
+
+"""
+    ellipsoid_to_egm2008!(z, grid, geoid) -> (Nmin, Nmax)
+
+Convert the heights `z` (m above the WGS84 ellipsoid, NaN kept) on the projected grid
+`grid` to heights above the EGM2008 geoid, at each point, with a PROJ pipeline using
+the geoid grid file `geoid` (us_nga_egm08_25.tif of the PROJ data; no network access
+needed). Threaded over rows, with one transformation per task. Returns the range of
+the geoid height N (height = ellipsoidal height - N).
+"""
+function ellipsoid_to_egm2008!(z::AbstractMatrix{<:AbstractFloat}, grid::ProjGrid, geoid::AbstractString)
+    isfile(geoid) || error("no EGM2008 geoid grid at $geoid (run 00_sources.jl --download)")
+    # Inverse projection to geographic coordinates (radians), then the vertical shift
+    # h - N, with N the geoid height of the grid
+    pipeline = "+proj=pipeline +step +inv $(replace(grid.proj, "+units=km" => "+units=m")) " *
+               "+step +proj=vgridshift +grids=$geoid +multiplier=-1"
+    P = FesmUtils.Proj
+    nrows = size(z, 2)
+    chunks = collect(Iterators.partition(1:nrows, cld(nrows, 4 * Threads.nthreads())))
+    ranges = Vector{NTuple{2,Float64}}(undef, length(chunks))
+    Threads.@threads :dynamic for k in eachindex(chunks)
+        trans = P.Transformation(pipeline; ctx=P.proj_context_create())
+        lo, hi = Inf, -Inf
+        for j in chunks[k], i in axes(z, 1)
+            isnan(z[i, j]) && continue
+            h = Float64(z[i, j])
+            _, _, H = trans((grid.xc[i] * 1000, grid.yc[j] * 1000, h))
+            isfinite(H) || error("no geoid height at $(grid.xc[i]), $(grid.yc[j]) km")
+            z[i, j] = H
+            lo, hi = min(lo, h - H), max(hi, h - H)
+        end
+        ranges[k] = (lo, hi)
+    end
+    return minimum(first.(ranges)), maximum(last.(ranges))
 end
