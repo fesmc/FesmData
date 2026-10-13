@@ -1,4 +1,4 @@
-# Topo: high-resolution topography (v2)
+# Topo: high-resolution topography
 
 Bed topography, surface elevation, ice thickness and ice/ocean fractions for each
 model domain, from the best available sources, at resolutions from the base grid

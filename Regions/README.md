@@ -1,4 +1,4 @@
-# Regions: region masks, zones and basins (v2)
+# Regions: region masks, zones and basins
 
 Masks of geographic regions, of present-day land, continental shelf and open ocean,
 and of ice-sheet drainage basins, for each model domain on all its grids
