@@ -49,7 +49,7 @@ function write_regions(og, m)
     attrib["zone"] = ZONE_ATTRIB
     fields["dist_shelfbreak"] = remap(m, Z["dist_shelfbreak"])[1]
     attrib["dist_shelfbreak"] = DIST_ATTRIB
-    write_fields(regions_file(og), g, fields; dataset=DATASET,
+    write_fields(regions_file(og), g, fields; dataset=DATASET, elevation=og.elevation,
                  attrib=["title" => "Regions v2 (FesmData/Regions)", "base_grid" => dom.base.name,
                          "sources" => join(sort(unique(region_keys)), ", ")],
                  varattrib=attrib)
@@ -79,7 +79,8 @@ for og in dom.grids
             push!(battrib, "comment" => negis_comment(set))
             ba["basin"] = vcat(Pair{String,Any}["long_name" => NEGIS_LONG_NAME], ba["basin"])
         end
-        write_fields(basins_file(og, set), g, bf; dataset=DATASET, attrib=battrib, varattrib=ba)
+        write_fields(basins_file(og, set), g, bf; dataset=DATASET, attrib=battrib, varattrib=ba,
+                     elevation=og.elevation)
     end
     @info "wrote $(g.name)"
 end

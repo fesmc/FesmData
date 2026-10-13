@@ -1097,7 +1097,7 @@ function remap_prepared(ps::AbstractVector{Prepared}, grids::Vector{OutGrid}; na
         end
         isfile(joinpath(outdir(og), "$(og.grid.name)_grid.nc")) || write_grid_files(outdir(og), og.grid; dataset)
         aux = unique(a -> a.name, [a for p in ps for a in p.aux])
-        write_fields(path, og.grid, fields; dataset, attrib, varattrib, dims, aux, precision)
+        write_fields(path, og.grid, fields; dataset, attrib, varattrib, dims, aux, precision, og.elevation)
         println("$(og.grid.name): $(basename(path)), $how ($(round(t; digits=1)) s)")
         push!(paths, path)
     end
@@ -1276,7 +1276,7 @@ function make_product(p::EnsembleProduct, grids::Vector{OutGrid}; tag::AbstractS
                       merged_attrib([m.attrib for m in ms]))
         aux = unique(a -> a.name, [a for m in ms for a in m.aux])
         isfile(joinpath(outdir(og), "$(og.grid.name)_grid.nc")) || write_grid_files(outdir(og), og.grid; dataset=tag)
-        write_fields(path, og.grid, fields; dataset=tag, attrib, varattrib, dims, aux, p.precision)
+        write_fields(path, og.grid, fields; dataset=tag, attrib, varattrib, dims, aux, p.precision, og.elevation)
         println("$(og.grid.name): $(basename(path))")
         push!(paths, path)
     end

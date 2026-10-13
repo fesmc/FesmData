@@ -39,12 +39,16 @@ values stay Float32, and missing values are kept.
 | Fractions (`f_ice`, `f_valid`, cloud cover, albedo, ...) | name `f_*`, or units `1` | 0.001 |
 | Ice velocities (`ux_srf`, `uy_srf`, `uxy_srf` and their errors) | name `ux`, `uy`, `uz`, `uxy`, and units `m yr-1` | 1% or 1 m yr-1, the larger |
 | Rates (`smb`, `pr`, `sf`, `rf`, `melt`, `runoff`, `subl`, `bmelt`, ...) | name | 1% |
-| Elevations, thicknesses, depths (`z_*`, `H_*`, their `*_sd`, ...) | units `m` | 0.1 m |
+| Elevations, thicknesses, depths (`z_*`, `H_*`, their `*_sd`, ...) | units `m` | 0.05 m; 0.01 m on the ice-sheet and mountain-glacier domains |
 | Temperatures | units `K`, `degC` | 0.01 K |
 | Other rates and fluxes (`dzdt`, winds, `ghf`, radiation, ...) | units per time (`yr-1`, `s-1`, `d-1`), or `W m-2` | 1% |
 | Everything else (salinity, viscosity, ages, distances in km, ...) | | 3 significant digits (0.05%) |
 
-The first row that matches a field applies (`shared/precision.jl`). Integer fields
+The first row that matches a field applies (`shared/precision.jl`). The tolerance of
+elevations and thicknesses is set by domain (`elevation_precision` in
+`shared/domains.toml`): 0.01 m on Antarctica, Greenland, the mountain-glacier domains
+and their nests and crops, where high-resolution data exist, and 0.05 m elsewhere
+(North, Global, ...). Integer fields
 (masks, classes, region numbers) are never rounded. A relative tolerance holds for each
 value; for an absolute tolerance, the bits kept are set by the largest magnitude of the
 field, so that every value is within it; most errors are well below the tolerance. The
@@ -57,11 +61,11 @@ The precision of each field is in its attributes:
 ```
 float z_bed(yc, xc) ;
         z_bed:units = "m" ;
-        z_bed:precision = "0.1 m" ;
+        z_bed:precision = "0.01 m" ;
         z_bed:bitround_keepbits = 15 ;
 ```
 
-`precision` is the tolerance (`"0.1 m"`, `"1%"`, `"1% or 1 m yr-1"`, `"lossless"`),
+`precision` is the tolerance (`"0.01 m"`, `"1%"`, `"1% or 1 m yr-1"`, `"lossless"`),
 `bitround_keepbits` the mantissa bits kept (of 23; 23 is lossless).
 
 With the rounding, the fields are compressed with deflate level 4 (with shuffle) instead

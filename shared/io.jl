@@ -63,14 +63,16 @@ end
 
 """
     write_fields(path, g, fields; dataset, attrib=[], varattrib=Dict(), dims=Dict(), aux=[],
-                 precision=Dict(), lossless=false)
+                 precision=Dict(), elevation=nothing, lossless=false)
 
 Write the fields on grid `g` (projected or lon-lat) to a new NetCDF file of `dataset` (e.g. "topo"), with
 the provenance attributes of the dataset and the global attributes `attrib`. A field
 is 2D, or has the extra dimensions `dims[name]` (a vector of `Dim`) after the grid
 dimensions. Float fields are written as Float32 with NaN as missing, rounded to the
-default precision of their kind (`default_precision`, by name and units) or to
-`precision[name]` (a `Precision`), recorded in their attributes (see `round_field!`);
+default precision of their kind (`default_precision`, by name and units; elevations and
+thicknesses to `elevation` m if given, the `elevation_precision` of the domain of the
+grid, see `OutGrid`) or to `precision[name]` (a `Precision`), recorded in their
+attributes (see `round_field!`);
 with `lossless`, they are not rounded (intermediate files read again by a pipeline).
 Integer fields (e.g. masks) are written as they are, with a fill value if they have
 missing values. `varattrib[name]` gives extra attributes of a variable (e.g. flag
@@ -82,6 +84,7 @@ leaves no partial file at `path`.
 function write_fields(path::AbstractString, g::Union{ProjGrid,LonLatGrid}, fields::AbstractDict; dataset::AbstractString,
                       attrib=Pair{String,String}[], varattrib=Dict{String,Vector{Pair{String,Any}}}(),
                       dims=Dict{String,Vector{Dim}}(), aux=AuxVar[], precision=Dict{String,Precision}(),
+                      elevation=nothing,
                       lossless::Bool=false)
     floats = [name for (name, F) in fields if !(nonmissingtype(eltype(F)) <: Integer)]
     unknown = setdiff(keys(precision), floats)
@@ -137,7 +140,7 @@ function write_fields(path::AbstractString, g::Union{ProjGrid,LonLatGrid}, field
                 A = Float32.(F)
                 if !lossless
                     units = string(Dict(atts)["units"])
-                    p = get(() -> default_precision(name, units), precision, name)
+                    p = get(() -> default_precision(name, units; elevation), precision, name)
                     atts = vcat(atts, round_field!(A, p, units))
                 end
                 defVar(ds, name, replace!(A, NaN32 => FILLVALUE), vdims;

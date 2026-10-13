@@ -30,6 +30,16 @@ struct PrecisionClass
     precision::Precision
 end
 
+"Kind of the fields in m (elevations, thicknesses), whose precision a domain may set."
+const ELEVATION = "elevation, thickness"
+
+"""
+Absolute tolerance (m) of elevations and thicknesses, unless their domain sets another
+(`elevation_precision` in ../shared/domains.toml, e.g. 0.01 m where high-resolution data
+exist).
+"""
+const DEFAULT_ELEVATION_PRECISION = 0.05
+
 """
 Default precision of the float fields by kind, the first that matches (`default_precision`).
 Documented in docs/data_volume.qmd.
@@ -42,16 +52,21 @@ const PRECISION_CLASSES = [
     PrecisionClass("fraction", nothing, r"^1$", Precision(1e-3, 0)),
     PrecisionClass("ice velocity", r"^u(x|y|z|xy)(_|$)", r"^m (yr|a)-1$", Precision(1, 0.01)),
     PrecisionClass("rate", r"^(smb|pr|sf|rf|melt|runoff|subl|evap|bmelt|bmb)(_|$)", nothing, Precision(0, 0.01)),
-    PrecisionClass("elevation, thickness", nothing, r"^m$", Precision(0.1, 0)),
+    PrecisionClass(ELEVATION, nothing, r"^m$", Precision(DEFAULT_ELEVATION_PRECISION, 0)),
     PrecisionClass("temperature", nothing, r"^(K|degC|°C|degree_Celsius)$", Precision(0.01, 0)),
     PrecisionClass("rate, flux", nothing, r"\b(s|d|day|yr|a)-1\b|W m-2", Precision(0, 0.01)),
     PrecisionClass("other", nothing, nothing, Precision(0, 5e-4)),   # 3 significant digits
 ]
 
-"Default precision of a float field with units `units` (see `PRECISION_CLASSES`)."
-function default_precision(name::AbstractString, units::AbstractString)
+"""
+Default precision of a float field with units `units` (see `PRECISION_CLASSES`), with
+the absolute tolerance `elevation` (m) for elevations and thicknesses if given (that of
+the domain of the grid).
+"""
+function default_precision(name::AbstractString, units::AbstractString; elevation=nothing)
     matches(re, s) = re === nothing || occursin(re, s)
-    return first(c for c in PRECISION_CLASSES if matches(c.name, name) && matches(c.units, units)).precision
+    c = first(c for c in PRECISION_CLASSES if matches(c.name, name) && matches(c.units, units))
+    return c.kind == ELEVATION && elevation !== nothing ? Precision(elevation, 0) : c.precision
 end
 
 """

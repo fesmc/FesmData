@@ -60,7 +60,7 @@ for product in products
         fr, _ = remap_fractions(g, base, fb["src_id"], src_classes)
         f["src_id"] = Int8.(map(I -> argmax([fr[c][I] for c in src_classes]), CartesianIndices(f["mask"])) .- 1)
 
-        write_fields(product_file(og, product), g, f; dataset=DATASET,
+        write_fields(product_file(og, product), g, f; dataset=DATASET, elevation=og.elevation,
             attrib=["product" => product, "sources" => join(sources_of[product], " > "),
                     "base_grid" => base.name],
             varattrib=Dict("mask" => MASK_ATTRIB, "src_id" => src_attrib))

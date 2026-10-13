@@ -52,7 +52,7 @@ original files where they are published:
 
 The float fields are rounded on output to a tolerance by kind (see [Data volume and
 precision](https://fesmc.github.io/FesmData/data_volume.html)): `z_litho` and
-`z_litho_sd` to 0.1 m; `log10_visc` and `log10_visc_sd` to 3 significant digits (about
+`z_litho_sd` to 0.05 m (0.01 m on the ice-sheet and mountain-glacier domains); `log10_visc` and `log10_visc_sd` to 3 significant digits (about
 0.01, 2% in viscosity); `f_valid` to 0.001.
 
 ## Licences

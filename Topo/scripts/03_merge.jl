@@ -185,6 +185,7 @@ for product in products
     src_attrib = Pair{String,Any}["flag_values" => Int8.(0:length(sources)-1),
                                   "flag_meanings" => join(reverse(sources), " ")]
     path = write_fields(product_file(dom.grids[1], product), base, out_fields; dataset=DATASET,
+        elevation=dom.grids[1].elevation,
         attrib=["product" => product, "sources" => join(sources, " > "),
                 "taper_km" => string(TAPER_KM), "rho_ice" => string(rho_ice), "rho_sw" => string(rho_sw)],
         varattrib=Dict("mask" => MASK_ATTRIB, "src_id" => src_attrib))

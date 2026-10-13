@@ -8,15 +8,19 @@ using TOML
 
 A grid of a domain together with its output folder under \$ICE_DATA/v2. A grid
 `on_request` (e.g. a Gaussian grid) is not one of the standard grids of the domain: it
-is made only for the products that name it.
+is made only for the products that name it. `elevation` is the absolute tolerance (m)
+of the elevations and thicknesses written on it (`elevation_precision` of its domain),
+or `nothing` for the default (see ../shared/precision.jl).
 """
 struct OutGrid
     folder::String
     grid::Union{ProjGrid,LonLatGrid}
     on_request::Bool
+    elevation::Union{Nothing,Float64}
 end
 
-OutGrid(folder, grid) = OutGrid(folder, grid, false)
+OutGrid(folder, grid; on_request::Bool=false, elevation=nothing) =
+    OutGrid(folder, grid, on_request, elevation === nothing ? nothing : Float64(elevation))
 
 """
     Domain
@@ -44,8 +48,9 @@ function read_domains()
     for (key, d) in collect(all)
         for (nkey, n) in get(d, "nests", Dict())
             haskey(all, nkey) && error("nest $nkey of $key has the key of another domain")
-            all[nkey] = merge(n, Dict("proj" => d["proj"], "parent" => key,
-                                      "active" => get(n, "active", get(d, "active", true))))
+            inherited = Dict(k => d[k] for k in ("elevation_precision",) if haskey(d, k))
+            all[nkey] = merge(inherited, n, Dict("proj" => d["proj"], "parent" => key,
+                                                 "active" => get(n, "active", get(d, "active", true))))
         end
     end
     return all
@@ -66,17 +71,18 @@ function Domain(key::AbstractString)
     haskey(all, key) || error("unknown domain $key, available: $(join(keys(all), ", "))")
     d = all[key]
     res = Float64.(d["resolutions"])
+    elevation = get(d, "elevation_precision", nothing)
     if get(d, "type", "projected") == "lonlat"
-        grids = [OutGrid(d["folder"], LonLatGrid(grid_name(key, r; units="deg"), r)) for r in res]
+        grids = [OutGrid(d["folder"], LonLatGrid(grid_name(key, r; units="deg"), r); elevation) for r in res]
         for (t, nlat) in sort(collect(get(d, "gaussian", Dict())))
-            push!(grids, OutGrid(d["folder"], gaussian_grid(nlat; name="$key-$t"), true))
+            push!(grids, OutGrid(d["folder"], gaussian_grid(nlat; name="$key-$t"); on_request=true, elevation))
         end
         return Domain(String(key), d["folder"], grids[1].grid, grids)
     end
     dx = res[1]
     base = ProjGrid(grid_name(key, dx), Tuple(d["xlim"]), Tuple(d["ylim"]), dx, d["proj"])
 
-    grids = OutGrid[OutGrid(d["folder"], _derived(base, r / dx, grid_name(key, r))) for r in res]
+    grids = OutGrid[OutGrid(d["folder"], _derived(base, r / dx, grid_name(key, r)); elevation) for r in res]
     own = [og.grid for og in grids]
     for (ckey, c) in get(d, "crops", Dict())
         cbase = _crop_base(base, dx, ckey, c)
@@ -84,7 +90,7 @@ function Domain(key::AbstractString)
         issubset(cres, res) || error("resolutions of crop $ckey must be resolutions of $key")
         cgrids = [_derived(cbase, r / dx, grid_name(ckey, r)) for r in cres]
         _check_on_parent("crop $ckey", cgrids, own, key)
-        append!(grids, OutGrid.(c["folder"], cgrids))
+        append!(grids, [OutGrid(c["folder"], g; elevation) for g in cgrids])
     end
     haskey(d, "parent") && _check_nest(key, own, Domain(d["parent"]))
     return Domain(String(key), d["folder"], base, grids)
