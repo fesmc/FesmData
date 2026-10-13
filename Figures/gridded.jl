@@ -29,7 +29,7 @@ function figure_grids(grids::Vector{OutGrid})
     function pick(f)
         gs = filter(og -> og.folder == f, grids)
         small = filter(og -> maximum(size(og.grid)) <= MAX_SHOWN_CELLS, gs)
-        return isempty(small) ? argmin(og -> length(og.grid), gs) : argmax(og -> length(og.grid), small)
+        return isempty(small) ? argmin(og -> prod(size(og.grid)), gs) : argmax(og -> prod(size(og.grid)), small)
     end
     return [pick(f) for f in sort(shown; by=f -> something(findfirst(==(f), FOLDER_ORDER), length(FOLDER_ORDER) + 1))]
 end
