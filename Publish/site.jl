@@ -384,7 +384,7 @@ function write_products(path::AbstractString, cat::Catalog)
             [Nests and crops](download.qmd#nests-and-crops)). Nests and crops are indented
             below their domain; inactive domains are left out (see [Domains](domains.qmd)).
             """)
-        println(io, "::: {.wide-table}\n")
+        println(io, "::: {.wide-table .column-screen-inset}\n")
         println(io, "| Domain | ", join(("[$s]($(dataset_page(s))#downloads)" for s in gridded), " | "), " |")
         println(io, "|---|", repeat("---|", length(gridded)))
         for folder in filter(f -> f != RECORDS_FOLDER && rows[f].active, cat.domains)

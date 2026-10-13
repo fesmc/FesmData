@@ -1,6 +1,8 @@
 ---
 title: "Products"
 subtitle: "The released datasets on each domain, with their versions"
+page-layout: full   # no table of contents: the table uses the whole width
+toc: false
 ---
 
 Each dataset is released on the domains below, one package per domain, dataset and grid

@@ -35,9 +35,11 @@ pre.sourceCode {
 
 .wide-table table {
   font-size: 0.85rem;
+  width: 100%;
 }
 
-.wide-table td:first-child {
+.wide-table th,
+.wide-table td {
   white-space: nowrap;
 }
 
