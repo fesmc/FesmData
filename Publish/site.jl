@@ -167,6 +167,7 @@ function write_domains(path::AbstractString)
     mkpath(dirname(path))
     open(path, "w") do io
         println(io, GENERATED, "\n")
+        println(io, "::: {.wide-table}\n")
         println(io, "| Folder | Grid prefix | Kind | Grids | Projection | Active | Overview |")
         println(io, "|---|---|---|---|---|---|---|")
         for r in rows
@@ -181,6 +182,7 @@ function write_domains(path::AbstractString)
             println(io, "| $(r.folder) | `$(r.key)` | $kind | $(resolutions_text(r)) | ",
                     "$(projection_text(r.proj)) | $(r.active ? "yes" : "no") | $figures |")
         end
+        println(io, "\n:::")
     end
     return path
 end
@@ -382,6 +384,7 @@ function write_products(path::AbstractString, cat::Catalog)
             [Nests and crops](download.qmd#nests-and-crops)). Nests and crops are indented
             below their domain (see [Domains](domains.qmd)).
             """)
+        println(io, "::: {.wide-table}\n")
         println(io, "| Domain | ", join(("[$s]($(dataset_page(s))#downloads)" for s in gridded), " | "), " |")
         println(io, "|---|", repeat("---|", length(gridded)))
         for folder in filter(!=(RECORDS_FOLDER), cat.domains)
@@ -395,6 +398,7 @@ function write_products(path::AbstractString, cat::Catalog)
             end
             println(io, "| $indent$folder | ", join(cells, " | "), " |")
         end
+        println(io, "\n:::")
         isempty(records) && return
         println(io, "\n## Records\n")
         println(io, "Non-gridded datasets (time series, sites, profiles), released on the domain ",
