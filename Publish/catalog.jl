@@ -89,7 +89,7 @@ function record_detail(domain::AbstractString, dataset::AbstractString; grids=St
     isempty(doi) || println("DOI: https://doi.org/$doi")
     have_local = dir !== nothing || has_fesmdata_dir("products")
     have_local || println("(FESMDATA is not set: local files not checked)")
-    where = dir === nothing ? products_dir() : local_root(dir)
+    where = have_local ? local_root(dir) : ""
     counts = Dict("present" => 0, "missing" => 0, "differs" => 0)
     for (grid, entries) in selected
         println("\n", rpad(grid, 16), length(entries), " files, ", human_size(total_size(last.(entries))))
@@ -334,7 +334,7 @@ function crop_detail(c::CropRecord; grids=String[], dir=nothing, sandbox::Bool=f
             "and cuts them to $(c.folder)")
     have_local = dir !== nothing || has_fesmdata_dir("products")
     have_local || println("(FESMDATA is not set: local files not checked)")
-    where = dir === nothing ? products_dir() : local_root(dir)
+    where = have_local ? local_root(dir) : ""
     root = have_local ? local_root(dir) : ""
     counts = Dict("present" => 0, "missing" => 0)
     n, size = 0, 0
