@@ -81,7 +81,7 @@ function Domain(key::AbstractString)
         push!(grids, OutGrid(d["folder"], _derived(base, r / dx, grid_name(key, r))))
     end
     for (ckey, c) in get(d, "crops", Dict())
-        cbase = crop(base, Tuple(c["xlim"]), Tuple(c["ylim"]); name=grid_name(ckey, dx))
+        cbase = _crop_base(base, dx, ckey, c)
         cres = Float64.(get(c, "resolutions", res))
         issubset(cres, res) || error("resolutions of crop $ckey must be resolutions of $key")
         for r in cres
@@ -110,6 +110,9 @@ function _check_nest(key, grids::Vector{OutGrid}, parent::Domain)
     return nothing
 end
 
+"Base grid of crop `ckey` (table `c` of domains.toml): the base grid of its domain, `base` (resolution `dx`), cut to its extent."
+_crop_base(base::ProjGrid, dx, ckey, c) = crop(base, Tuple(c["xlim"]), Tuple(c["ylim"]); name=grid_name(ckey, dx))
+
 function _derived(g::ProjGrid, factor::Real, name::String)
     isinteger(factor) || error("resolution of $name is not a multiple of the base resolution")
     return coarsen(g, Int(factor); name=name)
@@ -129,6 +132,21 @@ function folder_grids(folder::AbstractString)
     isempty(found) && error("no domain with folder $folder, available: $(join(folders, ", "))")
     length(found) == 1 || error("folder $folder is shared by domains $(join([d.key for (d, _) in found], ", "))")
     return only(found)
+end
+
+"""
+    folder_base(folder) -> ProjGrid
+
+Base grid of the domain, nest or crop with output folder `folder`; for a crop, the base
+grid of its domain cut to the crop (at the base resolution, also if the crop has only
+coarser grids).
+"""
+function folder_base(folder::AbstractString)
+    dom, _ = folder_grids(folder)
+    dom.folder == folder && return dom.base
+    d = read_domains()[dom.key]
+    ckey, c = only((k, c) for (k, c) in get(d, "crops", Dict()) if c["folder"] == folder)
+    return _crop_base(dom.base, Float64(d["resolutions"][1]), ckey, c)
 end
 
 "Output folders of all domains and crops (also inactive), i.e. the names of the domains in published records."
