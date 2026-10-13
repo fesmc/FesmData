@@ -4,61 +4,61 @@
 
 ### Antarctica
 
-![Topo of Antarctica on ANT-16KM: z_bed, H_ice.](../figures/Topo/Topo-Antarctica.png)
+![Topo of Antarctica on ANT-8KM: z_bed, H_ice.](../figures/Topo/Topo-Antarctica.png){width=1362px}
 
 ### Thwaites
 
-![Topo of Thwaites on THW-1KM: z_bed, H_ice.](../figures/Topo/Topo-Thwaites.png)
+![Topo of Thwaites on THW-1KM: z_bed, H_ice.](../figures/Topo/Topo-Thwaites.png){width=522px}
 
 ### PineIsland
 
-![Topo of PineIsland on PIG-1KM: z_bed, H_ice.](../figures/Topo/Topo-PineIsland.png)
+![Topo of PineIsland on PIG-1KM: z_bed, H_ice.](../figures/Topo/Topo-PineIsland.png){width=814px}
 
 ### GreenlandPaleo
 
-![Topo of GreenlandPaleo on GRL-PAL-8KM: z_bed, H_ice.](../figures/Topo/Topo-GreenlandPaleo.png)
+![Topo of GreenlandPaleo on GRL-PAL-4KM: z_bed, H_ice.](../figures/Topo/Topo-GreenlandPaleo.png){width=705px}
 
 ### Jakobshavn
 
-![Topo of Jakobshavn on JAK-1KM: z_bed, H_ice.](../figures/Topo/Topo-Jakobshavn.png)
+![Topo of Jakobshavn on JAK-1KM: z_bed, H_ice.](../figures/Topo/Topo-Jakobshavn.png){width=464px}
 
 ### NEGIS
 
-![Topo of NEGIS on NEGIS-1KM: z_bed, H_ice.](../figures/Topo/Topo-NEGIS.png)
+![Topo of NEGIS on NEGIS-1KM: z_bed, H_ice.](../figures/Topo/Topo-NEGIS.png){width=249px}
 
 ### North
 
-![Topo of North on NH-32KM: z_bed, H_ice.](../figures/Topo/Topo-North.png)
+![Topo of North on NH-16KM: z_bed, H_ice.](../figures/Topo/Topo-North.png){width=330px}
 
 ### Pyrenees
 
-![Topo of Pyrenees on PYR-2KM: z_bed, H_ice.](../figures/Topo/Topo-Pyrenees.png)
+![Topo of Pyrenees on PYR-500M: z_bed, H_ice.](../figures/Topo/Topo-Pyrenees.png){width=616px}
 
 ### Patagonia
 
-![Topo of Patagonia on PAT-2KM: z_bed, H_ice.](../figures/Topo/Topo-Patagonia.png)
+![Topo of Patagonia on PAT-2KM: z_bed, H_ice.](../figures/Topo/Topo-Patagonia.png){width=210px}
 
 ### SRG
 
-![Topo of SRG on SRG-250M: z_bed, H_ice.](../figures/Topo/Topo-SRG.png)
+![Topo of SRG on SRG-100M: z_bed, H_ice.](../figures/Topo/Topo-SRG.png){width=508px}
 
 ### GranCampoNevado
 
-![Topo of GranCampoNevado on GCN-250M: z_bed, H_ice.](../figures/Topo/Topo-GranCampoNevado.png)
+![Topo of GranCampoNevado on GCN-100M: z_bed, H_ice.](../figures/Topo/Topo-GranCampoNevado.png){width=349px}
 
 ### CordilleraDarwin
 
-![Topo of CordilleraDarwin on CDI-250M: z_bed, H_ice.](../figures/Topo/Topo-CordilleraDarwin.png)
+![Topo of CordilleraDarwin on CDI-250M: z_bed, H_ice.](../figures/Topo/Topo-CordilleraDarwin.png){width=503px}
 
 ### Himalaya
 
-![Topo of Himalaya on HIM-2KM: z_bed, H_ice.](../figures/Topo/Topo-Himalaya.png)
+![Topo of Himalaya on HIM-2KM: z_bed, H_ice.](../figures/Topo/Topo-Himalaya.png){width=554px}
 
 ### DrangDrung
 
-![Topo of DrangDrung on DDG-100M: z_bed, H_ice.](../figures/Topo/Topo-DrangDrung.png)
+![Topo of DrangDrung on DDG-50M: z_bed, H_ice.](../figures/Topo/Topo-DrangDrung.png){width=439px}
 
 ### Resolutions
 
-![Bed elevation of BedMachine-v6 around Jakobshavn Isbræ (300 km × 300 km) on GRL-PAL-1KM, GRL-PAL-4KM, GRL-PAL-16KM.](../figures/Topo/Topo-resolutions.png)
+![Bed elevation of BedMachine-v6 around Jakobshavn Isbræ (300 km × 300 km) on GRL-PAL-1KM, GRL-PAL-4KM, GRL-PAL-16KM.](../figures/Topo/Topo-resolutions.png){width=846px}
 
