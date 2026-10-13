@@ -20,6 +20,56 @@ rho_sw = 1027.0
 "BedMachine-v2" = ["bedmachine_antarctica_v2", "gebco2026"]
 "Bedmap2" = ["bedmap2", "gebco2026"]
 
+# Nests of ANT: the products of ANT.
+
+[THW]
+rho_ice = 917.0
+rho_sw = 1027.0
+
+[THW.products]
+"BedMachine-v4" = ["bedmachine_antarctica_v4", "gebco2026"]
+"Bedmap3" = ["bedmap3", "gebco2026"]
+
+[PIG]
+rho_ice = 917.0
+rho_sw = 1027.0
+
+[PIG.products]
+"BedMachine-v4" = ["bedmachine_antarctica_v4", "gebco2026"]
+"Bedmap3" = ["bedmap3", "gebco2026"]
+
+[FRIS]
+rho_ice = 917.0
+rho_sw = 1027.0
+
+[FRIS.products]
+"BedMachine-v4" = ["bedmachine_antarctica_v4", "gebco2026"]
+"Bedmap3" = ["bedmap3", "gebco2026"]
+
+[ROSS]
+rho_ice = 917.0
+rho_sw = 1027.0
+
+[ROSS.products]
+"BedMachine-v4" = ["bedmachine_antarctica_v4", "gebco2026"]
+"Bedmap3" = ["bedmap3", "gebco2026"]
+
+[AMY]
+rho_ice = 917.0
+rho_sw = 1027.0
+
+[AMY.products]
+"BedMachine-v4" = ["bedmachine_antarctica_v4", "gebco2026"]
+"Bedmap3" = ["bedmap3", "gebco2026"]
+
+[WSB]
+rho_ice = 917.0
+rho_sw = 1027.0
+
+[WSB.products]
+"BedMachine-v4" = ["bedmachine_antarctica_v4", "gebco2026"]
+"Bedmap3" = ["bedmap3", "gebco2026"]
+
 [GRL-PAL]
 rho_ice = 917.0
 rho_sw = 1023.0
@@ -30,6 +80,36 @@ rho_sw = 1023.0
 [GRL-PAL.variants]
 "BedMachine-v5" = ["bedmachine_greenland_v5", "gebco2026"]
 "BedMachine-v4" = ["bedmachine_greenland_v4", "gebco2026"]
+
+# Nests of GRL-PAL: the products of GRL-PAL.
+
+[JAK]
+rho_ice = 917.0
+rho_sw = 1023.0
+
+[JAK.products]
+"BedMachine-v6" = ["bedmachine_greenland_v6", "gebco2026"]
+
+[NEGIS]
+rho_ice = 917.0
+rho_sw = 1023.0
+
+[NEGIS.products]
+"BedMachine-v6" = ["bedmachine_greenland_v6", "gebco2026"]
+
+[PET]
+rho_ice = 917.0
+rho_sw = 1023.0
+
+[PET.products]
+"BedMachine-v6" = ["bedmachine_greenland_v6", "gebco2026"]
+
+[HEL]
+rho_ice = 917.0
+rho_sw = 1023.0
+
+[HEL.products]
+"BedMachine-v6" = ["bedmachine_greenland_v6", "gebco2026"]
 
 [NH]
 rho_ice = 917.0
