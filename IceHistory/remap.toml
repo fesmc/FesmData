@@ -1,5 +1,5 @@
 # Paleo ice-sheet and topography reconstructions (thematic dataset, see
-# ../Remap/README.md). Products are written as <GRID>_IceHistory-<name>.nc on their `grids`; see ../GHF/remap.toml for the options. The dataset and its
+# ../Remap/DATASETS.md). Products are written as <GRID>_IceHistory-<name>.nc on their `grids`; see ../GHF/remap.toml for the options. The dataset and its
 # release tag are in ../Publish/datasets.toml.
 
 [products.ICE5G]

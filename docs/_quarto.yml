@@ -14,6 +14,7 @@ project:
     - "records.qmd"
     - "developers.qmd"
     - "machines.qmd"
+    - "adding.qmd"
     - "releasing.qmd"
 
 website:

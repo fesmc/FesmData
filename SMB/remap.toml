@@ -1,5 +1,5 @@
 # Surface mass balance and surface climate from regional climate models (thematic
-# dataset, see ../Remap/README.md). Products are written as <GRID>_SMB-<name>.nc on
+# dataset, see ../Remap/DATASETS.md). Products are written as <GRID>_SMB-<name>.nc on
 # their `grids`; see ../GHF/remap.toml for the options. The dataset and
 # its release tag are in ../Publish/datasets.toml. <name>-annual-mean: the annual mean
 # (x, y) of the monthly climatology <name>.

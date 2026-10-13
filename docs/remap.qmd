@@ -1,5 +1,5 @@
 ---
-pagetitle: "Bring your own data"
+pagetitle: "Your own gridded data"
 ---
 
 {{< include ../Remap/README.md >}}

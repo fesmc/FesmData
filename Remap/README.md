@@ -1,4 +1,4 @@
-# Bring your own data
+# Your own gridded data
 
 Any gridded dataset (geothermal heat flow, basal melt, surface velocity, ...) can be
 put on the FesmData grids in two steps:
@@ -17,10 +17,10 @@ This writes, e.g., `$FESMDATA_PRODUCTS/Antarctica/ANT-8KM/ANT-8KM_GHF-Lucazeau20
 `$FESMDATA_PRODUCTS/Global/GLOBAL-1DEG/GLOBAL-1DEG_GHF-Lucazeau2019.nc`, on every grid of
 Antarctica and of the global lon-lat grids.
 
-To publish the result, make it part of a **thematic dataset** (step 3), e.g. GHF:
-then `julia fesmdata.jl remap GHF` makes all of it, and it is released like Topo.
-
-Non-gridded data (time series, sites, profiles) are not remapped: see Records.
+To release it with FesmData, make it a product of a thematic dataset, e.g. GHF (see
+[Adding a dataset](https://fesmc.github.io/FesmData/adding.html#thematic-datasets)).
+Non-gridded data (time series, sites, profiles) are not remapped: see
+[Records format](https://fesmc.github.io/FesmData/records.html).
 
 ## 1. Prepare a source
 
@@ -76,7 +76,7 @@ julia fesmdata.jl remap <file.nc> <Domain> | <GRID> | all ... [options]
 
 - Targets are domains (e.g. `Antarctica`, all of its grids; `Global`, the global
   lon-lat grids), grids (e.g. `GRL-4KM`, `GLOBAL-0.5DEG`), or `all`. The names are
-  listed under Domains and grids (`shared/README.md`).
+  listed under [Domains](https://fesmc.github.io/FesmData/domains.html).
 - `--vars=a,b` remaps only these fields (default: all fields of the file).
 - `--name=NAME` names the output `<GRID>_<NAME>.nc` (default: the file name). Use
   `<Dataset>-<Source>`, e.g. `GHF-Lucazeau2019`.
@@ -115,185 +115,20 @@ files of each grid are written too if they are missing.
 Run with threads for large grids: `julia -t 8 fesmdata.jl remap ...` (or set
 `JULIA_NUM_THREADS`).
 
-## 3. Make a thematic dataset
-
-A thematic dataset (e.g. GHF, geothermal heat flow) gathers the products of several
-sources on one theme, and is released like Topo, with its own versions (tags
-`ghf-vX.Y.Z`). It is defined by `<Dataset>/remap.toml`, one table per product:
-
-```toml
-[products.Lucazeau2019]                      # → <GRID>_GHF-Lucazeau2019.nc
-source = "Lucazeau2019_ghf"                  # source folder, with prepare.jl
-file = "Lucazeau2019_GHF.nc"                 # prepared file of the source (or a list, see below)
-variables = ["ghf", "ghf_sd"]                # optional, default all
-grids = { Antarctica = 4, Greenland = 4, Global = 4 }   # by domain, see below
-# method = "con"                             # optional, default "con"
-# smooth = "auto"                            # optional, default "auto"
-# release = false                            # optional: made, but not released
-# figure = { variables = ["ghf"] }            # optional: its figure on the website
-# fill = { variables = ["ux_srf", "uy_srf"], mask = "TOPO-BedMachine-v4" }   # optional: gaps over the ice (or "all") filled, see below
-# precision = { ghf = 0.1 }                  # optional: precision of fields instead of the default, see below
-```
-
-`grids` lists the domains (output folders) of the product, each with the grids it is
-made on; it is not made on other domains. For each domain:
-
-- a number: the minimum grid spacing in km, i.e. all standard grids of the domain not
-  finer than this (on lon-lat grids, 111 km per degree of latitude); 0 means all. Finer
-  grids are left out where a coarse source adds no information and its files would only
-  be large; models that need finer grids can remap online. As a rule, no grid is finer
-  than about a quarter of the source spacing: 16 km and 0.5° (`Global = 50`) for
-  sources at 1-2°, 8 km and 0.25° (`Global = 25`) for sources at 0.25-0.5°, 4 km for
-  most others.
-- a list of grid names: exactly these grids, e.g. `Global = ["GLOBAL-T170"]`. This also
-  gives the grids made only on request, which no number selects: the Gaussian grids of
-  the Global domain (`gaussian` in `../shared/domains.toml`, e.g. GLOBAL-T170, the T170
-  grid of 512 x 256 used by VILMA).
-
-For example, `grids = { Antarctica = 16, Global = ["GLOBAL-T170"] }` makes ANT-16KM,
-ANT-32KM and GLOBAL-T170.
-
-Crops (Greenland, Laurentide, Eurasia, ...) and nests are listed only for products their
-parent domain does not have (e.g. a Greenland-only source on Greenland): their grids lie
-on those of the parent, so `fetch` cuts a product of the parent to them on demand (see
-`../Publish/README.md`), and it is stored once.
-
-`fill` fills the gaps of a source over the ice on each grid, after remapping (and the
-rotation of vectors): the cells of the fields `variables` with ice (`H_ice > 0`) in the
-Topo product `mask` on the same grid (`<GRID>_TOPO-BedMachine-v4.nc` in the same folder)
-but no source data (`f_valid = 0`) get the harmonic (Laplace) interpolation of the cells
-around them (`laplace_fill` of FesmUtils). With `mask = "all"`, all the cells without
-source data are filled, e.g. outside the domain of a regional climate model, for fields
-used as model forcing over the whole grid. Gaps not connected to any data stay missing.
-Both components of a vector must be filled; the speed of a filled vector (the field with
-the standard name `<x>_speed`, for `eastward_<x>_velocity`) is the magnitude of the
-filled components there. Other fields (e.g. errors) stay missing in the gaps. The file
-has `mask_fill` (1: filled, 0: not; `mask_fill_<field>` when the fields differ) and the
-global attribute `gap_fill`. The Topo product must be made first (thematic datasets
-depend on Topo, and some on Regions).
-
-`fill` can also be a list of tables, each with its `method` (each field in one of them):
-`"harmonic"` (the default, as above), `"elevation_regression"`, for fields that depend
-on the surface elevation (e.g. the surface mass balance or temperature of a regional
-climate model, outside its ice mask or domain), or `"elevation"`, for the surface
-elevation of the source itself (e.g. the orography of the regional climate model):
-
-```toml
-fill = [{ variables = ["pr", "sf"], mask = "all" },
-        { method = "elevation_regression", variables = ["smb", "t2m", "T_srf"], mask = "all",
-          cap = { smb = -91.7 } },       # optional: elevation, radius = 150.0, min_points = 20
-        { method = "elevation", variables = ["z_srf"], mask = "all", gaps_of = "smb" }]   # optional: elevation, gaps_of
-```
-
-Each gap gets the linear regression of the field on the surface elevation, fitted over
-the cells with source data (`f_valid > 0`) within `radius` km (a disk; grown by
-`radius / 2` until it holds at least `min_points` of them), at the elevation of the cell
-clamped to the range of the elevations of these cells (no extrapolation beyond the
-lowest and highest of them). The elevation, for the cells with data as for the gaps, is
-`max(z_srf, 0)` of the Topo product `elevation` on the same grid (default
-`TOPO-BedMachine-v4`): the surface elevation, never below sea level. Where
-the elevations of these cells hardly differ (variance below 1 m2), the gap gets their
-mean. Fields with extra dimensions are filled slice by slice (e.g. each month). `cap`
-gives upper bounds of the filled values, by field, in its units: of each value, or for a
-monthly field (extra dimension `month` of 12 only) of the annual mean, the months
-weighted by their mean length (February 28.25 days, as the `-annual-mean` products up to
-the leap days of their period), all months of a cell shifted down by the same amount, so
-that the seasonal cycle is kept. The log gives, for each field, the cells filled, the cell-slices whose radius was
-grown and the median slope. Vectors are filled by harmonic interpolation only.
-
-`"elevation"` fills the gaps with the elevation of the regression itself, `max(z_srf,
-0)` of the Topo product `elevation` (default `TOPO-BedMachine-v4`), not clamped (the
-clamp applies only within the regression). With `gaps_of`, it fills the cells (of
-`mask`) where that field has no source data, in any of its slices (e.g. any month),
-instead of the gaps of the variables themselves, and so also replaces source data there
-(marked by `mask_fill`). Filling the orography of the source where the surface mass
-balance is filled keeps it the reference elevation of the filled values, e.g. for an
-elevation correction of the surface mass balance in a model, also where the source has
-an orography of its own (e.g. 0 over its ocean).
-
-`file` can be a list of prepared files of the source, each on its own grid, combined
-into one product. The files are meant to cover separate areas, e.g. the grounded and the
-floating ice of Antarctica on grids of their own (`file = ["Smith2020_ANT.nc",
-"Smith2020_ANT_floating.nc"]` in `IceChange/remap.toml`); they are not suited to
-alternative sources of the same quantity over the same area. Each file is remapped onto
-each grid as above; a field in one file only is taken as it is, and a field in several
-files (with the same units and extra dimensions) is the sum of their contributions, the
-value of each times the fraction of the cell it covers, divided by the sum of these
-fractions, with `f_valid` that sum. Where their remapped coverage overlaps (e.g. source
-grids offset from each other at a boundary) and the fractions add up to more than 1,
-`f_valid` is 1 and the value is the sum of the contributions, so that the total of each
-file is kept (for integer fields, the class of the file covering most of the cell).
-`variables` are taken from the files that have them, and `fill` applies to the combined
-fields. The global attributes of the files are joined (their distinct values), and
-`remapped_from` lists the files.
-
-`release = false` makes a product locally but leaves it out of the releases, e.g. data
-obtained by personal communication whose redistribution the authors have not agreed to
-yet (say so in the README of the dataset).
-
-`precision` sets the precision of some float fields instead of the default of their kind
-(see [Data volume and precision](https://fesmc.github.io/FesmData/data_volume.html);
-`shared/precision.jl`), for fields that need more (or allow less): by field, an absolute
-tolerance in the units of the field (a number), a relative one (`"x%"`) or `"lossless"`,
-e.g. `precision = { ghf = 0.1, smb = "1%", lat = "lossless" }`. Each float field records
-its precision in the attributes `precision` and `bitround_keepbits`.
-
-An **ensemble product** is the mean or the standard deviation of other products of the
-dataset, its members, e.g. the models of a model intercomparison:
-
-```toml
-[products.PMIP3-lgm-mean]                    # → <GRID>_Paleoclimate-PMIP3-lgm-mean.nc
-ensemble = ["PMIP3-CCSM4-lgm", "PMIP3-CNRM-CM5-lgm", ...]   # member products of the dataset
-stat = "mean"                                # or "stdev"
-grids = { Antarctica = 8, Global = 8 }       # members not made on some of these: intermediate there
-# release = false, figure = { ... }, precision = { ... }   # optional, as above
-```
-
-It has no `source`, `file`, `variables`, `method`, `smooth` or `fill`: it is made on each
-grid from the files of its members on that grid (those missing are remapped first),
-after the other products. On a grid that is not one of a member's own `grids`, the
-member is remapped as an intermediate file (`$FESMDATA_WORK/remap/members/`, full
-precision, not released), so that the statistics can be released on grids where the
-members are not, e.g. the 2 km grids of the mountain-glacier domains. Each of its fields is a field of any member (not `f_valid`,
-`mask_fill` or integer fields), with the same name, units and extra dimensions, and
-`, ensemble mean` or `, ensemble standard deviation` appended to its long name: in each
-cell, the mean or the standard deviation (population, divided by n, as `cdo ensstd`) of
-the members with a value there. `n_<field>` (a byte field) is the number of these
-members, e.g. 0 for a sea surface temperature over land. The global attributes of the
-members are joined, and `ensemble_members` lists them.
-
-Domains are listed explicitly, so that the files of a release are fixed; each source
-must cover all its grids (one of its files, for a product of several files). Then:
-
-1. Add the dataset to `Publish/datasets.toml` (its release tag, title, README,
-   keywords, description), and write `<Dataset>/README.md` (the products and their
-   sources), which becomes its page on the website (`docs/datasets/`).
-2. Make it, after preparing the sources not prepared yet:
-   ```bash
-   julia -t 8 fesmdata.jl remap GHF                          # all products, all grids
-   julia fesmdata.jl remap GHF Lucazeau2019 GLOBAL-0.5DEG    # one product, one grid
-   sbatch --job-name=remap-GHF Remap/jobs/remap_dataset.sbatch GHF   # Levante compute node
-   sbatch --job-name=remap-Sediment -p shared -c 64 --mem=58G -t 02:00:00 \
-       Remap/jobs/remap_dataset.sbatch Sediment                  # small dataset, shared partition
-   ```
-3. Make its figures for the website, `julia fesmdata.jl figures GHF` (see
-   `../Figures/README.md`, also for the options of `figure`), and add its page
-   `docs/datasets/ghf.qmd`, which includes the README and the figures.
-4. Release it (see Releasing): tag `ghf-vX.Y.Z`, `julia fesmdata.jl stamp GHF` at the
-   tag, and `julia fesmdata.jl release GHF`.
-
 ## Global grids
 
 The `Global` domain has global lon-lat grids at 0.1°, 0.25°, 0.5°, 1°, 2° and 5°
 (`GLOBAL-0.1DEG`, ...), with cell edges at -180° and -90°. Global sources are best
 remapped onto these rather than released on their own grid, so that all global
 products share the same grids. Other domains, projected or lon-lat, can be added in
-`shared/domains.toml` (see Domains and grids).
+`shared/domains.toml` (see
+[Overview and code](https://fesmc.github.io/FesmData/developers.html#domains)).
 
 ## Not supported yet
 
 - Files that are parts of one product along an extra dimension (e.g. a time series
-  from yearly files, or a climatology): prepare them into one file first. (Several
-  files of one product are combined in space only, see `file` above.)
+  from yearly files, or a climatology): prepare them into one file first. (A product of
+  a thematic dataset can combine several files in space only, see
+  [Several files](https://fesmc.github.io/FesmData/adding.html#several-files).)
 - Projected grids described only by CF grid-mapping parameters or WKT (add a PROJ
   string as `proj_params`).

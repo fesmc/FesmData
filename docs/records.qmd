@@ -1,5 +1,5 @@
 ---
-pagetitle: "Records"
+pagetitle: "Records format"
 ---
 
 {{< include ../Records/README.md >}}

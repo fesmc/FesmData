@@ -1,4 +1,4 @@
-# Englacial stratigraphy and age structure (thematic dataset, see ../Remap/README.md).
+# Englacial stratigraphy and age structure (thematic dataset, see ../Remap/DATASETS.md).
 # Products are written as <GRID>_Stratigraphy-<name>.nc on their `grids`; see ../GHF/remap.toml for the options. The dataset and its release tag are
 # in ../Publish/datasets.toml.
 
