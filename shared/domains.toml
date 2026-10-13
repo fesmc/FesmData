@@ -13,7 +13,9 @@
 # crop) in published records, unique to each.
 #
 # A crop (`[<KEY>.crops.<CROP>]`) is a part of the grids of its domain, at all its
-# resolutions or at those in its own `resolutions`. A nest (`[<KEY>.nests.<NEST>]`) is
+# resolutions or at those in its own `resolutions`, on the grids of its domain at each
+# of them (checked: its first cell centres must be cell centres of the domain grid at
+# its coarsest resolution). A nest (`[<KEY>.nests.<NEST>]`) is
 # a domain of its own on the projection of its parent, with a base grid finer than
 # that of the parent, made from the sources: at the resolutions it shares with its
 # parent, its grids lie on those of the parent (same cell centres).
