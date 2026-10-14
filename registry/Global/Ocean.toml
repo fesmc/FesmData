@@ -2,84 +2,84 @@
 
 [_RELEASE]
 date = "2026-10-14"
-git_tag = "ocean-v2.1.0"
+git_tag = "ocean-v2.2.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Global_Ocean"
-version = "2.1.0"
+version = "2.2.0"
 
 ["GLOBAL-1DEG_Ocean-ORAS5-1981-2010.nc"]
-checksum = "sha256:b5561d2687ca794e28876b20f8c17fba1c21d228ae90e5e981b94945da2cacbe"
-previous_checksums = ["sha256:0294ad9fd0540839f0dd3ac01ef03b1d5bde930ef431b539543eb19ac78319ae"]
-size = 57418460
+checksum = "sha256:e28992fc063388bba345ea2536bcb84e55ed34cb1178e45709b27a96b7eeb652"
+previous_checksums = ["sha256:0294ad9fd0540839f0dd3ac01ef03b1d5bde930ef431b539543eb19ac78319ae", "sha256:b5561d2687ca794e28876b20f8c17fba1c21d228ae90e5e981b94945da2cacbe"]
+size = 57613334
 storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_Ocean-ORAS5-1981-2010.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Ocean_GLOBAL-1DEG/2.1.0/GLOBAL-1DEG_Ocean-ORAS5-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Ocean_GLOBAL-1DEG/2.2.0/GLOBAL-1DEG_Ocean-ORAS5-1981-2010.nc"
 
 ["GLOBAL-1DEG_Ocean-ORAS5-annual.nc"]
-checksum = "sha256:db8fc96ee5fad410d73c984114bb73361b2c1bd7d3e3ad8dcea1460325b1c057"
-previous_checksums = ["sha256:1c77d646c5a840fa92abfb835ff44619ecdd079f13806e4f670ea8303917890d"]
-size = 215320131
+checksum = "sha256:e0533db31b25082eb396152e5e6e496e7cf5ab0207d9fd69d033a29748002b6a"
+previous_checksums = ["sha256:1c77d646c5a840fa92abfb835ff44619ecdd079f13806e4f670ea8303917890d", "sha256:db8fc96ee5fad410d73c984114bb73361b2c1bd7d3e3ad8dcea1460325b1c057"]
+size = 223021100
 storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_Ocean-ORAS5-annual.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Ocean_GLOBAL-1DEG/2.1.0/GLOBAL-1DEG_Ocean-ORAS5-annual.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Ocean_GLOBAL-1DEG/2.2.0/GLOBAL-1DEG_Ocean-ORAS5-annual.nc"
 
 ["GLOBAL-1DEG_grid.nc"]
 checksum = "sha256:72658a61a9d89e56a88266b6a3168ba7ea4e18c4c8b0d2a904164c2c047e5d47"
 size = 17869
 storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Ocean_GLOBAL-1DEG/2.1.0/GLOBAL-1DEG_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Ocean_GLOBAL-1DEG/2.2.0/GLOBAL-1DEG_grid.nc"
 
 ["GLOBAL-2DEG_Ocean-ORAS5-1981-2010.nc"]
-checksum = "sha256:40ab25aa41da94d4669e663f7e5385dcbd89294b8ac88bda3b29c7a36060e7e5"
-previous_checksums = ["sha256:e2b4bba87d0ceee152b922abb70e89723a83945ab700c7dc2d3ed46e3d553875"]
-size = 17773598
+checksum = "sha256:7060c1b2802a82241b57a42a9b862a2c2f8ff6e55c1cc727e75702dcbc242a90"
+previous_checksums = ["sha256:e2b4bba87d0ceee152b922abb70e89723a83945ab700c7dc2d3ed46e3d553875", "sha256:40ab25aa41da94d4669e663f7e5385dcbd89294b8ac88bda3b29c7a36060e7e5"]
+size = 17843351
 storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_Ocean-ORAS5-1981-2010.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Ocean_GLOBAL-2DEG/2.1.0/GLOBAL-2DEG_Ocean-ORAS5-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Ocean_GLOBAL-2DEG/2.2.0/GLOBAL-2DEG_Ocean-ORAS5-1981-2010.nc"
 
 ["GLOBAL-2DEG_Ocean-ORAS5-annual.nc"]
-checksum = "sha256:1b6aaea64f0bc597e881d76c928e72490e452b29c871c63a203860a9dd3252da"
-previous_checksums = ["sha256:b595e03cd24256915c8d2c0434f92d56ca24ffb2844b50dece30f80f710e1875"]
-size = 68448221
+checksum = "sha256:7500ca11a8d47d0de2084690debd12c9ddcfb0b0891c3f02d8556255af66867a"
+previous_checksums = ["sha256:b595e03cd24256915c8d2c0434f92d56ca24ffb2844b50dece30f80f710e1875", "sha256:1b6aaea64f0bc597e881d76c928e72490e452b29c871c63a203860a9dd3252da"]
+size = 71137632
 storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_Ocean-ORAS5-annual.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Ocean_GLOBAL-2DEG/2.1.0/GLOBAL-2DEG_Ocean-ORAS5-annual.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Ocean_GLOBAL-2DEG/2.2.0/GLOBAL-2DEG_Ocean-ORAS5-annual.nc"
 
 ["GLOBAL-2DEG_grid.nc"]
 checksum = "sha256:5fa987a099ab7e60d3a4b22e7bb5bd00cadccc8581874b8d600a38f9a512f104"
 size = 14559
 storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Ocean_GLOBAL-2DEG/2.1.0/GLOBAL-2DEG_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Ocean_GLOBAL-2DEG/2.2.0/GLOBAL-2DEG_grid.nc"
 
 ["GLOBAL-5DEG_Ocean-ORAS5-1981-2010.nc"]
-checksum = "sha256:4804474fefdc501b69d21086f17b68e7a25d42e54397b006f5cfb2c40c08045d"
-previous_checksums = ["sha256:ed3b6fc5540f3c2e0a668bca9f65f9f9a7d442d5fc62f8a71e707b50c961165e"]
-size = 3310579
+checksum = "sha256:f60bb30b86bd94ef9d75b916e5d736ddfa6d86ea5bdceb7e2ddb6e0c7fd3f4b9"
+previous_checksums = ["sha256:ed3b6fc5540f3c2e0a668bca9f65f9f9a7d442d5fc62f8a71e707b50c961165e", "sha256:4804474fefdc501b69d21086f17b68e7a25d42e54397b006f5cfb2c40c08045d"]
+size = 3328357
 storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_Ocean-ORAS5-1981-2010.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Ocean_GLOBAL-5DEG/2.1.0/GLOBAL-5DEG_Ocean-ORAS5-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Ocean_GLOBAL-5DEG/2.2.0/GLOBAL-5DEG_Ocean-ORAS5-1981-2010.nc"
 
 ["GLOBAL-5DEG_Ocean-ORAS5-annual.nc"]
-checksum = "sha256:e0f4a2bdaefc5c1659a4239d0fcdce629985ae70013ae7c99ff3bea6e8c64e76"
-previous_checksums = ["sha256:48c609c95523350196e24a39e892fe98eaacb49c6fd0b84692a3ebafd0448f3f"]
-size = 13377350
+checksum = "sha256:523f8df19e10f1cc8824e65d00f278c333cb8b1c40af7e8a174fcf9c1a2641bd"
+previous_checksums = ["sha256:48c609c95523350196e24a39e892fe98eaacb49c6fd0b84692a3ebafd0448f3f", "sha256:e0f4a2bdaefc5c1659a4239d0fcdce629985ae70013ae7c99ff3bea6e8c64e76"]
+size = 13887554
 storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_Ocean-ORAS5-annual.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Ocean_GLOBAL-5DEG/2.1.0/GLOBAL-5DEG_Ocean-ORAS5-annual.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Ocean_GLOBAL-5DEG/2.2.0/GLOBAL-5DEG_Ocean-ORAS5-annual.nc"
 
 ["GLOBAL-5DEG_grid.nc"]
 checksum = "sha256:55c037e0371c20123875dc16ddd01d1e864dd5b5b1b0cb29c9bfa3fd23f24cbf"
 size = 12511
 storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Ocean_GLOBAL-5DEG/2.1.0/GLOBAL-5DEG_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Ocean_GLOBAL-5DEG/2.2.0/GLOBAL-5DEG_grid.nc"
 
 ["grid_GLOBAL-1DEG.txt"]
 checksum = "sha256:38acf47f98866cc1c0479566b51a3a3df28fb09aa295652f52f67fffb2c499fd"
 size = 209
 storage_path = "$datasets_dir/Global/GLOBAL-1DEG/grid_GLOBAL-1DEG.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Ocean_GLOBAL-1DEG/2.1.0/grid_GLOBAL-1DEG.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Ocean_GLOBAL-1DEG/2.2.0/grid_GLOBAL-1DEG.txt"
 
 ["grid_GLOBAL-2DEG.txt"]
 checksum = "sha256:f09996b59b7b7cc91b348c53eec0a8cb246c5b293a890b4912278435d589fec6"
 size = 208
 storage_path = "$datasets_dir/Global/GLOBAL-2DEG/grid_GLOBAL-2DEG.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Ocean_GLOBAL-2DEG/2.1.0/grid_GLOBAL-2DEG.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Ocean_GLOBAL-2DEG/2.2.0/grid_GLOBAL-2DEG.txt"
 
 ["grid_GLOBAL-5DEG.txt"]
 checksum = "sha256:647911a4f8fd1afecd212683255ca869a1f3b9bdcb3ae180e7a1415cea84d344"
 size = 206
 storage_path = "$datasets_dir/Global/GLOBAL-5DEG/grid_GLOBAL-5DEG.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Ocean_GLOBAL-5DEG/2.1.0/grid_GLOBAL-5DEG.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Ocean_GLOBAL-5DEG/2.2.0/grid_GLOBAL-5DEG.txt"
