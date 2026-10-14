@@ -1261,10 +1261,15 @@ function make_product(p::RemapProduct, grids::Vector{OutGrid}; tag::AbstractStri
                           overwrite, strict=true, fill=p.fill, p.precision, intermediate)
 end
 
+"Whether the file `path` of member `m` of an ensemble is to be made: missing, or older than a prepared file of `m`."
+outdated(path::AbstractString, m::RemapProduct) =
+    !isfile(path) || any(f -> mtime(f) > mtime(path), prepared_files(m))
+
 """
 An ensemble product is made on each grid from the files of its members (see
 `ensemble_fields`), with the global attributes of their prepared files joined (see
-`merged_attrib`); the files of the members missing on a grid are made first: their
+`merged_attrib`); the files of the members missing on a grid, or older than their
+prepared files (e.g. a source prepared again), are made first: their
 products on the grids of their own, intermediate files (`member_work_file`) on the other
 grids of the ensemble (e.g. the 2 km grids of the mountain-glacier domains, where only
 the ensemble statistics are released).
@@ -1273,10 +1278,10 @@ function make_product(p::EnsembleProduct, grids::Vector{OutGrid}; tag::AbstractS
     members = ensemble_members(p)
     paths = String[]
     for m in members
-        todo = filter(og -> on_grid(m, og) && !isfile(remap_file(og, product_name(m))), grids)
-        isempty(todo) || append!(paths, make_product(m, todo; tag))
-        todo = filter(og -> !on_grid(m, og) && !isfile(member_work_file(og, product_name(m))), grids)
-        isempty(todo) || make_product(m, todo; tag, intermediate=true)
+        todo = filter(og -> on_grid(m, og) && outdated(remap_file(og, product_name(m)), m), grids)
+        isempty(todo) || append!(paths, make_product(m, todo; tag, overwrite=true))
+        todo = filter(og -> !on_grid(m, og) && outdated(member_work_file(og, product_name(m)), m), grids)
+        isempty(todo) || make_product(m, todo; tag, intermediate=true, overwrite=true)
     end
     println("$(product_name(p)): $(STAT_NAMES[p.stat]) of $(length(members)) products onto $(length(grids)) grids")
     for og in grids
