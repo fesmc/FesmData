@@ -99,10 +99,12 @@ function read_fx(db, model, experiment, lon, lat)
         NCDataset(download_dataset(db, key)) do ds
             flon, flat = ds["lon"][:], ds["lat"][:]
             F = _float(ds[var][:, :]) .* Float32(factor)
-            if length(flat) == length(lat) && flat ≈ reverse(lat)
+            # Same grid, to the precision of the axes (single or double)
+            same(a, b) = length(a) == length(b) && all(abs.(a .- b) .< 1e-3)
+            if same(flat, reverse(lat))
                 flat, F = reverse(flat), reverse(F; dims=2)
             end
-            flon ≈ lon && flat ≈ lat || error("$model $experiment: $var is not on the grid of the CVDP fields")
+            same(flon, lon) && same(flat, lat) || error("$model $experiment: $var is not on the grid of the CVDP fields")
             fx[name] = F
         end
     end
