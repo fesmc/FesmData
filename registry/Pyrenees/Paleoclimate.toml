@@ -2,90 +2,102 @@
 
 [_RELEASE]
 date = "2026-10-14"
-git_tag = "paleoclimate-v2.2.0"
+git_tag = "paleoclimate-v2.3.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Pyrenees_Paleoclimate"
-version = "2.2.0"
+version = "2.3.0"
 
 ["PYR-2KM_Paleoclimate-PMIP3-lgm-mean.nc"]
-checksum = "sha256:56790d417ec9442adbdd93250d4dd283b6097dda39a835b373041767e66f1795"
-size = 92011
+checksum = "sha256:5d29fa7dda6fa689888bd8fafe5ba545005aab70a2455d0692ca9ba097c17655"
+previous_checksums = ["sha256:56790d417ec9442adbdd93250d4dd283b6097dda39a835b373041767e66f1795"]
+size = 136866
 storage_path = "$datasets_dir/Pyrenees/PYR-2KM/PYR-2KM_Paleoclimate-PMIP3-lgm-mean.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Paleoclimate_PYR-2KM/2.2.0/PYR-2KM_Paleoclimate-PMIP3-lgm-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Paleoclimate_PYR-2KM/2.3.0/PYR-2KM_Paleoclimate-PMIP3-lgm-mean.nc"
 
 ["PYR-2KM_Paleoclimate-PMIP3-lgm-stdev.nc"]
-checksum = "sha256:6b98417e34c18992dc1e2edad10b4780943c0dbc595b273cf0ddd7996c704086"
-size = 79248
+checksum = "sha256:9012019950665c17d6895445ef406531338ab0ff9ebd3ff48dff882e22b3c943"
+previous_checksums = ["sha256:6b98417e34c18992dc1e2edad10b4780943c0dbc595b273cf0ddd7996c704086"]
+size = 119102
 storage_path = "$datasets_dir/Pyrenees/PYR-2KM/PYR-2KM_Paleoclimate-PMIP3-lgm-stdev.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Paleoclimate_PYR-2KM/2.2.0/PYR-2KM_Paleoclimate-PMIP3-lgm-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Paleoclimate_PYR-2KM/2.3.0/PYR-2KM_Paleoclimate-PMIP3-lgm-stdev.nc"
 
 ["PYR-2KM_Paleoclimate-PMIP3-midHolocene-mean.nc"]
-checksum = "sha256:57758c8677ca378c913fac9d8da3913aa8571f3d3186edd4b608ef2b3affe43f"
-size = 84577
+checksum = "sha256:a891af2450496010f90679abe892b20bcc72978c3a080c4cb9078c06d55da381"
+previous_checksums = ["sha256:57758c8677ca378c913fac9d8da3913aa8571f3d3186edd4b608ef2b3affe43f"]
+size = 127930
 storage_path = "$datasets_dir/Pyrenees/PYR-2KM/PYR-2KM_Paleoclimate-PMIP3-midHolocene-mean.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Paleoclimate_PYR-2KM/2.2.0/PYR-2KM_Paleoclimate-PMIP3-midHolocene-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Paleoclimate_PYR-2KM/2.3.0/PYR-2KM_Paleoclimate-PMIP3-midHolocene-mean.nc"
 
 ["PYR-2KM_Paleoclimate-PMIP3-midHolocene-stdev.nc"]
-checksum = "sha256:18bd0c330a31f2d36d83f77c72633acf0e7be959c78c0ba3993725f9261800a0"
-size = 78783
+checksum = "sha256:c15c69d7ea8b041f1b752585a28bc7c730cb295919a53cd9c5ebaf1c54a47172"
+previous_checksums = ["sha256:18bd0c330a31f2d36d83f77c72633acf0e7be959c78c0ba3993725f9261800a0"]
+size = 121293
 storage_path = "$datasets_dir/Pyrenees/PYR-2KM/PYR-2KM_Paleoclimate-PMIP3-midHolocene-stdev.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Paleoclimate_PYR-2KM/2.2.0/PYR-2KM_Paleoclimate-PMIP3-midHolocene-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Paleoclimate_PYR-2KM/2.3.0/PYR-2KM_Paleoclimate-PMIP3-midHolocene-stdev.nc"
 
 ["PYR-2KM_Paleoclimate-PMIP3-piControl-mean.nc"]
-checksum = "sha256:5e3f8bc9a28c79694322687b15915f3121d0b6ba4ce5d5f0dce80613e464b0d6"
-size = 85044
+checksum = "sha256:0b6ab7d690ae8ef353b7ed9e10be8f8c3577d83e1c3419ae987bee9e4d6a9088"
+previous_checksums = ["sha256:5e3f8bc9a28c79694322687b15915f3121d0b6ba4ce5d5f0dce80613e464b0d6"]
+size = 126569
 storage_path = "$datasets_dir/Pyrenees/PYR-2KM/PYR-2KM_Paleoclimate-PMIP3-piControl-mean.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Paleoclimate_PYR-2KM/2.2.0/PYR-2KM_Paleoclimate-PMIP3-piControl-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Paleoclimate_PYR-2KM/2.3.0/PYR-2KM_Paleoclimate-PMIP3-piControl-mean.nc"
 
 ["PYR-2KM_Paleoclimate-PMIP3-piControl-stdev.nc"]
-checksum = "sha256:cd2124beccc608d548c8cb9e9f600ad96bdf428317ff54080cd06ea33426dbf2"
-size = 78976
+checksum = "sha256:271096a4a86b3078d295192194e872d6990809ff6a2b77dfb51be276e101750d"
+previous_checksums = ["sha256:cd2124beccc608d548c8cb9e9f600ad96bdf428317ff54080cd06ea33426dbf2"]
+size = 119292
 storage_path = "$datasets_dir/Pyrenees/PYR-2KM/PYR-2KM_Paleoclimate-PMIP3-piControl-stdev.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Paleoclimate_PYR-2KM/2.2.0/PYR-2KM_Paleoclimate-PMIP3-piControl-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Paleoclimate_PYR-2KM/2.3.0/PYR-2KM_Paleoclimate-PMIP3-piControl-stdev.nc"
 
 ["PYR-2KM_Paleoclimate-PMIP4-lgm-mean.nc"]
-checksum = "sha256:bd9d193fda26628122bff0085d6104407919e13173c349a790c7e2823a50aa02"
+checksum = "sha256:27c155d114277e4706444b1a1bdea8f3b76844a8e42fe5d73bf1eb4dae256091"
+previous_checksums = ["sha256:bd9d193fda26628122bff0085d6104407919e13173c349a790c7e2823a50aa02"]
 size = 199714
 storage_path = "$datasets_dir/Pyrenees/PYR-2KM/PYR-2KM_Paleoclimate-PMIP4-lgm-mean.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Paleoclimate_PYR-2KM/2.2.0/PYR-2KM_Paleoclimate-PMIP4-lgm-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Paleoclimate_PYR-2KM/2.3.0/PYR-2KM_Paleoclimate-PMIP4-lgm-mean.nc"
 
 ["PYR-2KM_Paleoclimate-PMIP4-lgm-stdev.nc"]
-checksum = "sha256:b54ba893396fe73ac5c0cbd138e5f27fabc68ea7198508ba5c8b1ffbdd645a01"
+checksum = "sha256:a9ef0b8407427192cd6c1d801b23ce483563c672d32d266231fe0d47f2706a34"
+previous_checksums = ["sha256:b54ba893396fe73ac5c0cbd138e5f27fabc68ea7198508ba5c8b1ffbdd645a01"]
 size = 170096
 storage_path = "$datasets_dir/Pyrenees/PYR-2KM/PYR-2KM_Paleoclimate-PMIP4-lgm-stdev.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Paleoclimate_PYR-2KM/2.2.0/PYR-2KM_Paleoclimate-PMIP4-lgm-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Paleoclimate_PYR-2KM/2.3.0/PYR-2KM_Paleoclimate-PMIP4-lgm-stdev.nc"
 
 ["PYR-2KM_Paleoclimate-PMIP4-midHolocene-mean.nc"]
-checksum = "sha256:3b997c81eab4dcd9e406d97c55102403879200e9839d980bd9259996b3867030"
+checksum = "sha256:c948a09e50ec3e681d609287a4618d1aaa68ca8222a2e95de832e23a57f399e2"
+previous_checksums = ["sha256:3b997c81eab4dcd9e406d97c55102403879200e9839d980bd9259996b3867030"]
 size = 200473
 storage_path = "$datasets_dir/Pyrenees/PYR-2KM/PYR-2KM_Paleoclimate-PMIP4-midHolocene-mean.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Paleoclimate_PYR-2KM/2.2.0/PYR-2KM_Paleoclimate-PMIP4-midHolocene-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Paleoclimate_PYR-2KM/2.3.0/PYR-2KM_Paleoclimate-PMIP4-midHolocene-mean.nc"
 
 ["PYR-2KM_Paleoclimate-PMIP4-midHolocene-stdev.nc"]
-checksum = "sha256:7e84b608d735e110e0c2e0815044aa92b61b1ffd254095a0ac66aba638e6fa25"
+checksum = "sha256:a130414f8f1a41659087571d1a84a098808c56d60beae8222f34ab1c037d0daa"
+previous_checksums = ["sha256:7e84b608d735e110e0c2e0815044aa92b61b1ffd254095a0ac66aba638e6fa25"]
 size = 199211
 storage_path = "$datasets_dir/Pyrenees/PYR-2KM/PYR-2KM_Paleoclimate-PMIP4-midHolocene-stdev.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Paleoclimate_PYR-2KM/2.2.0/PYR-2KM_Paleoclimate-PMIP4-midHolocene-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Paleoclimate_PYR-2KM/2.3.0/PYR-2KM_Paleoclimate-PMIP4-midHolocene-stdev.nc"
 
 ["PYR-2KM_Paleoclimate-PMIP4-piControl-mean.nc"]
-checksum = "sha256:8ff695d0c80ec00bd9e49bdb0df7963a3a482a34bd75a42197cb9a859ccd64c1"
+checksum = "sha256:2d2ec9426ce15cf3294206feebf43f94dcdde5370b4d512510e42d51540ce15b"
+previous_checksums = ["sha256:8ff695d0c80ec00bd9e49bdb0df7963a3a482a34bd75a42197cb9a859ccd64c1"]
 size = 199118
 storage_path = "$datasets_dir/Pyrenees/PYR-2KM/PYR-2KM_Paleoclimate-PMIP4-piControl-mean.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Paleoclimate_PYR-2KM/2.2.0/PYR-2KM_Paleoclimate-PMIP4-piControl-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Paleoclimate_PYR-2KM/2.3.0/PYR-2KM_Paleoclimate-PMIP4-piControl-mean.nc"
 
 ["PYR-2KM_Paleoclimate-PMIP4-piControl-stdev.nc"]
-checksum = "sha256:97990d2acbbf90969cc6c5dc345a1dfc2ac533c1a0cee8ab5b190d51cffe4801"
+checksum = "sha256:2e784e139d6ba83ec1d19fe0dc91ae7b6c29b9ec2400af4508197ba42ab09bd8"
+previous_checksums = ["sha256:97990d2acbbf90969cc6c5dc345a1dfc2ac533c1a0cee8ab5b190d51cffe4801"]
 size = 171477
 storage_path = "$datasets_dir/Pyrenees/PYR-2KM/PYR-2KM_Paleoclimate-PMIP4-piControl-stdev.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Paleoclimate_PYR-2KM/2.2.0/PYR-2KM_Paleoclimate-PMIP4-piControl-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Paleoclimate_PYR-2KM/2.3.0/PYR-2KM_Paleoclimate-PMIP4-piControl-stdev.nc"
 
 ["PYR-2KM_grid.nc"]
 checksum = "sha256:20d63f5741b04cbdfbfe1bf5885e4a73a58a3d4fd9db5cd561dd531d0a3ffde9"
 size = 86648
 storage_path = "$datasets_dir/Pyrenees/PYR-2KM/PYR-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Paleoclimate_PYR-2KM/2.2.0/PYR-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Paleoclimate_PYR-2KM/2.3.0/PYR-2KM_grid.nc"
 
 ["grid_PYR-2KM.txt"]
 checksum = "sha256:8a8de7189e5797f759a3a8df305e651006339b630895a4b3da06e4c00098e192"
 size = 325
 storage_path = "$datasets_dir/Pyrenees/PYR-2KM/grid_PYR-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Paleoclimate_PYR-2KM/2.2.0/grid_PYR-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Paleoclimate_PYR-2KM/2.3.0/grid_PYR-2KM.txt"
