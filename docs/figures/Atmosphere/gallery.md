@@ -8,11 +8,11 @@
 
 ### ERA5-1981-2010
 
-![Atmosphere-ERA5-1981-2010 on ANT-8KM, GRL-PAL-8KM, NH-16KM, PYR-2KM, PAT-2KM, HIM-2KM, GLOBAL-0.5DEG: t2m.](../figures/Atmosphere/Atmosphere-ERA5-1981-2010.png){width=2475px}
+![Atmosphere-ERA5-1981-2010 on ANT-8KM, GRL-PAL-8KM, NH-16KM, PYR-2KM, ALP-2KM, PAT-2KM, HIM-2KM, SVB-2KM, NZ-2KM, GLOBAL-0.5DEG: t2m.](../figures/Atmosphere/Atmosphere-ERA5-1981-2010.png){width=3377px}
 
 ### ERA5-1991-2020
 
-![Atmosphere-ERA5-1991-2020 on ANT-8KM, GRL-PAL-8KM, NH-16KM, PYR-2KM, PAT-2KM, HIM-2KM, GLOBAL-0.5DEG: t2m.](../figures/Atmosphere/Atmosphere-ERA5-1991-2020.png){width=2475px}
+![Atmosphere-ERA5-1991-2020 on ANT-8KM, GRL-PAL-8KM, NH-16KM, PYR-2KM, ALP-2KM, PAT-2KM, HIM-2KM, SVB-2KM, NZ-2KM, GLOBAL-0.5DEG: t2m.](../figures/Atmosphere/Atmosphere-ERA5-1991-2020.png){width=3377px}
 
 ### ERA5-plev-1981-2010
 

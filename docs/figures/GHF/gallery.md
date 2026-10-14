@@ -16,7 +16,7 @@
 
 ### Davies2013
 
-![GHF-Davies2013 on ANT-8KM, GRL-PAL-4KM, NH-16KM, PYR-2KM, PAT-2KM, HIM-2KM, GLOBAL-0.5DEG: ghf.](../figures/GHF/GHF-Davies2013.png){width=2464px}
+![GHF-Davies2013 on ANT-8KM, GRL-PAL-4KM, NH-16KM, PYR-2KM, ALP-2KM, PAT-2KM, HIM-2KM, SVB-2KM, NZ-2KM, GLOBAL-0.5DEG: ghf.](../figures/GHF/GHF-Davies2013.png){width=3366px}
 
 ### FoxMaule2005
 
@@ -32,7 +32,7 @@
 
 ### Lucazeau2019
 
-![GHF-Lucazeau2019 on ANT-8KM, GRL-PAL-4KM, NH-16KM, PYR-2KM, PAT-2KM, HIM-2KM, GLOBAL-0.5DEG: ghf.](../figures/GHF/GHF-Lucazeau2019.png){width=2464px}
+![GHF-Lucazeau2019 on ANT-8KM, GRL-PAL-4KM, NH-16KM, PYR-2KM, ALP-2KM, PAT-2KM, HIM-2KM, SVB-2KM, NZ-2KM, GLOBAL-0.5DEG: ghf.](../figures/GHF/GHF-Lucazeau2019.png){width=3366px}
 
 ### Martos2017
 
@@ -44,7 +44,7 @@
 
 ### Shapiro2004
 
-![GHF-Shapiro2004 on ANT-8KM, GRL-PAL-4KM, NH-16KM, PYR-2KM, PAT-2KM, HIM-2KM, GLOBAL-0.5DEG: ghf.](../figures/GHF/GHF-Shapiro2004.png){width=2464px}
+![GHF-Shapiro2004 on ANT-8KM, GRL-PAL-4KM, NH-16KM, PYR-2KM, ALP-2KM, PAT-2KM, HIM-2KM, SVB-2KM, NZ-2KM, GLOBAL-0.5DEG: ghf.](../figures/GHF/GHF-Shapiro2004.png){width=3366px}
 
 ### Stal2020
 

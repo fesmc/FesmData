@@ -52,7 +52,7 @@
 
 ### PMIP3-lgm-mean
 
-![Paleoclimate-PMIP3-lgm-mean on ANT-16KM, GRL-PAL-16KM, NH-16KM, PYR-2KM, PAT-2KM, HIM-2KM, GLOBAL-0.5DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP3-lgm-mean.png){width=2464px}
+![Paleoclimate-PMIP3-lgm-mean on ANT-16KM, GRL-PAL-16KM, NH-16KM, PYR-2KM, ALP-2KM, PAT-2KM, HIM-2KM, SVB-2KM, NZ-2KM, GLOBAL-0.5DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP3-lgm-mean.png){width=3366px}
 
 ### PMIP4-AWI-ESM-1-1-LR-lgm
 
@@ -72,5 +72,5 @@
 
 ### PMIP4-lgm-mean
 
-![Paleoclimate-PMIP4-lgm-mean on ANT-16KM, GRL-PAL-16KM, NH-16KM, PYR-2KM, PAT-2KM, HIM-2KM, GLOBAL-0.5DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP4-lgm-mean.png){width=2464px}
+![Paleoclimate-PMIP4-lgm-mean on ANT-16KM, GRL-PAL-16KM, NH-16KM, PYR-2KM, ALP-2KM, PAT-2KM, HIM-2KM, SVB-2KM, NZ-2KM, GLOBAL-0.5DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP4-lgm-mean.png){width=3366px}
 

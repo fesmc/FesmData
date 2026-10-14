@@ -6,14 +6,6 @@
 
 ![Topo of Antarctica on ANT-8KM: z_bed, H_ice.](../figures/Topo/Topo-Antarctica.png){width=1362px}
 
-### Thwaites
-
-![Topo of Thwaites on THW-1KM: z_bed, H_ice.](../figures/Topo/Topo-Thwaites.png){width=522px}
-
-### PineIsland
-
-![Topo of PineIsland on PIG-1KM: z_bed, H_ice.](../figures/Topo/Topo-PineIsland.png){width=814px}
-
 ### GreenlandPaleo
 
 ![Topo of GreenlandPaleo on GRL-PAL-4KM: z_bed, H_ice.](../figures/Topo/Topo-GreenlandPaleo.png){width=705px}
@@ -26,6 +18,14 @@
 
 ![Topo of NEGIS on NEGIS-1KM: z_bed, H_ice.](../figures/Topo/Topo-NEGIS.png){width=249px}
 
+### Petermann
+
+![Topo of Petermann on PET-1KM: z_bed, H_ice.](../figures/Topo/Topo-Petermann.png){width=231px}
+
+### Helheim
+
+![Topo of Helheim on HEL-1KM: z_bed, H_ice.](../figures/Topo/Topo-Helheim.png){width=263px}
+
 ### North
 
 ![Topo of North on NH-16KM: z_bed, H_ice.](../figures/Topo/Topo-North.png){width=330px}
@@ -33,6 +33,10 @@
 ### Pyrenees
 
 ![Topo of Pyrenees on PYR-500M: z_bed, H_ice.](../figures/Topo/Topo-Pyrenees.png){width=616px}
+
+### Alps
+
+![Topo of Alps on ALP-2KM: z_bed, H_ice.](../figures/Topo/Topo-Alps.png){width=478px}
 
 ### Patagonia
 
@@ -57,6 +61,14 @@
 ### DrangDrung
 
 ![Topo of DrangDrung on DDG-50M: z_bed, H_ice.](../figures/Topo/Topo-DrangDrung.png){width=439px}
+
+### Svalbard
+
+![Topo of Svalbard on SVB-2KM: z_bed, H_ice.](../figures/Topo/Topo-Svalbard.png){width=330px}
+
+### NewZealand
+
+![Topo of NewZealand on NZ-2KM: z_bed, H_ice.](../figures/Topo/Topo-NewZealand.png){width=305px}
 
 ### Resolutions
 
