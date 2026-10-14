@@ -141,9 +141,10 @@ julia fesmdata.jl mirror Antarctica     # one domain
 
 It first checks the files present, shows what is to download or update and its size,
 and asks once. Run it again after new releases to update the copy: only new and changed
-files are downloaded (`--yes` skips the question, e.g. in a job). `mirror` gets the
-released files only, not the products of nests and crops by cropping (use `fetch` for
-those).
+files are downloaded (`--yes` skips the question, e.g. in a job). `mirror` also makes
+the products of the active nests and crops by cropping (as `fetch`, see
+[Nests and crops](#nests-and-crops)), e.g. Stratigraphy on Greenland from GreenlandPaleo;
+crops already made from the current files are kept.
 
 ## Archives and other folders
 

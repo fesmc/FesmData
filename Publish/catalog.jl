@@ -141,23 +141,26 @@ end
 
 The nests and crops of ../shared/domains.toml (also the crops of nests) by output
 folder: their `key`, whether they are a crop (`crop`), the `key` and folder (`parent`)
-of their parent domain, and their `extent`, the cell edges of their base grid (x0, x1,
-y0, y1, km).
+of their parent domain, their `extent`, the cell edges of their base grid (x0, x1, y0,
+y1, km), and whether they are `active` (a nest as its parent unless set, a crop as its
+domain).
 """
 function sub_domains()
     subs = Dict{String,NamedTuple}()
-    function add!(key, d, kinds)
+    function add!(key, d, kinds, active)
         for kind in kinds, (k, sub) in get(d, kind, Dict())
             # The base grid of a nest is its own, that of a crop the base grid of its domain
             h = (kind == "nests" ? sub : d)["resolutions"][1] / 2
             extent = (sub["xlim"][1] - h, sub["xlim"][2] + h, sub["ylim"][1] - h, sub["ylim"][2] + h)
-            subs[sub["folder"]] = (key=k, crop=kind == "crops", parent_key=key, parent=d["folder"], extent=extent)
+            subs[sub["folder"]] = (key=k, crop=kind == "crops", parent_key=key, parent=d["folder"], extent=extent,
+                                   active=kind == "nests" ? get(sub, "active", active) : active)
         end
     end
     for (key, d) in TOML.parsefile(joinpath(REPO_DIR, "shared", "domains.toml"))
-        add!(key, d, ("crops", "nests"))
+        active = get(d, "active", true)
+        add!(key, d, ("crops", "nests"), active)
         for (nkey, n) in get(d, "nests", Dict())
-            add!(nkey, n, ("crops",))
+            add!(nkey, n, ("crops",), get(n, "active", active))
         end
     end
     return subs
@@ -539,32 +542,37 @@ function fetch_files(args; dir=nothing, copy::Bool=false, overwrite::Bool=false,
 end
 
 """
-    mirror(args; dir=nothing, copy=false, overwrite=false, sandbox=false, yes=false) -> Vector{String}
+    mirror(args; dir=nothing, copy=false, overwrite=false, sandbox=false, yes=false) -> (paths, cropped)
 
 `fesmdata.jl mirror`: download all records (or those of a dataset and/or a domain)
-into \$FESMDATA_PRODUCTS, or `dir`; the records of the registry only (the records by
-cropping are made by `fetch`). The files present are checked first (checksums): files
-of the release are kept, files of an earlier release are updated, and files changed
-locally stop the mirror (replaced with `overwrite`). Into `dir`, files of the release
-in \$FESMDATA_PRODUCTS are hard linked from there (copied with `copy`, or on another file
-system), e.g. to archive the releases there before updating it. Then, after one
-confirmation (none with `yes`) showing what is to get, the missing and outdated files are downloaded.
+into \$FESMDATA_PRODUCTS, or `dir`, with the files that the records by cropping on the
+active nests and crops need (`crop_downloads`). The files present are checked first
+(checksums): files of the release are kept, files of an earlier release are updated,
+and files changed locally stop the mirror (replaced with `overwrite`). Into `dir`, files
+of the release in \$FESMDATA_PRODUCTS are hard linked from there (copied with `copy`, or
+on another file system), e.g. to archive the releases there before updating it. Then,
+after one confirmation (none with `yes`) showing what is to get, the missing and
+outdated files are downloaded. Returns their local paths, and the records by cropping,
+`cropped`, left for `crop_files` (crop.jl, in the Publish environment), as by `fetch`.
 """
 function mirror(args; dir=nothing, copy::Bool=false, overwrite::Bool=false, sandbox::Bool=false, yes::Bool=false)
     selected, cropped, _ = select_records(args; sandbox=sandbox)
-    isempty(cropped) || println("Not mirrored: $(length(cropped)) datasets by cropping, on nests and crops (made by fetch)")
-    isempty(selected) && (println("Nothing released"); return String[])
+    subs = sub_domains()
+    filter!(((c, _),) -> subs[c.folder].active, cropped)
+    isempty(selected) && isempty(cropped) && (println("Nothing released"); return String[], cropped)
     root = local_root(dir)
-    records = selected_entries(selected; sandbox=sandbox)
+    records = unique_files([selected_entries(selected; sandbox=sandbox); crop_downloads(cropped; sandbox=sandbox)])
     entries = [e for (_, _, es) in records for e in es]
-    println("$(length(selected)) datasets on domains, $(length(entries)) files, $(human_size(total_size(entries))) in total")
+    println("$(length(selected)) datasets on domains and $(length(cropped)) by cropping on nests and crops, ",
+            "$(length(entries)) files to keep, $(human_size(total_size(entries))) in total")
     states = check_local(entries, root; overwrite=overwrite)
     sources = local_sources(entries, root, states)
     todo = filter(e -> states[local_path(e, root)] != :current, entries)
     to_download = filter(e -> !haskey(sources, local_path(e, root)), todo)
     yes || isempty(todo) || confirm("Get $(length(todo)) files into $root " *
                                     "($(human_size(total_size(to_download))) to download)?") ||
-        (println("Nothing downloaded."); return String[])
-    return download_records(records, root, states; sources=sources, copy=copy, copy_registry=dir !== nothing,
-                            overwrite=overwrite, sandbox=sandbox)
+        (println("Nothing downloaded."); return String[], empty(cropped))
+    paths = download_records(records, root, states; sources=sources, copy=copy, copy_registry=dir !== nothing,
+                             overwrite=overwrite, sandbox=sandbox)
+    return paths, cropped
 end

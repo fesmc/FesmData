@@ -30,11 +30,12 @@ Find and download:
   mirror [<Dataset>] [<Domain>]                all released datasets on all domains (or
                                                of a dataset/domain), after one confirmation
                                                with the size; run again to update (--yes:
-                                               no confirmation); not datasets by cropping
+                                               no confirmation); also the products by
+                                               cropping on the active nests and crops
   (arguments in any order; --dir=<folder>: list, fetch or mirror in <folder> instead of
   \$FESMDATA_PRODUCTS, e.g. to archive the releases there before updating: files already in
   \$FESMDATA_PRODUCTS are hard linked (--copy: copied), and the registry files go to
-  <folder>/registry/; fetch by cropping writes the crops there too)
+  <folder>/registry/; the crops are written there too)
 
 Your own data (see Remap/README.md):
   remap <file.nc> <Domain> | <GRID> | all ...  remap the fields of a prepared NetCDF file
@@ -98,6 +99,20 @@ end
 call(name::Symbol, args...; kwargs...) =
     Base.invokelatest(Base.invokelatest(getglobal, Main, name), args...; kwargs...)
 
+"""
+    crop_downloaded(cropped, dir; sandbox=false) -> Vector{String}
+
+Cut the products by cropping on nests and crops, `cropped` (left by `fetch` or
+`mirror`), from the files just downloaded into \$FESMDATA_PRODUCTS or `dir`, in the
+Publish environment (crop.jl). Returns the paths of the crops and their grid files.
+"""
+function crop_downloaded(cropped, dir; sandbox::Bool=false)
+    isempty(cropped) && return String[]
+    activate_env(PUBLISH_DIR)
+    include(joinpath(PUBLISH_DIR, "crop.jl"))
+    return call(:crop_files, cropped, call(:local_root, dir); sandbox=sandbox)
+end
+
 function main(argv)
     opts = filter(o -> startswith(o, "--") && !occursin('=', o), argv)
     args = filter(!startswith("--"), argv)
@@ -126,18 +141,14 @@ function main(argv)
         dir = get(valued, "dir", nothing)
         paths, cropped = call(:fetch_files, rest; dir=dir, copy="--copy" in opts, overwrite="--overwrite" in opts,
                               sandbox=sandbox)
-        if !isempty(cropped)
-            # Products by cropping, on a nest or crop: cut from the files just downloaded
-            activate_env(PUBLISH_DIR)
-            include(joinpath(PUBLISH_DIR, "crop.jl"))
-            append!(paths, call(:crop_files, cropped, call(:local_root, dir); sandbox=sandbox))
-        end
+        append!(paths, crop_downloaded(cropped, dir; sandbox=sandbox))
         println("$(length(paths)) files in $(call(:local_root, dir))")
     elseif command == "mirror"
         include(joinpath(PUBLISH_DIR, "catalog.jl"))
         dir = get(valued, "dir", nothing)
-        paths = call(:mirror, rest; dir=dir, copy="--copy" in opts, overwrite="--overwrite" in opts,
-                     sandbox=sandbox, yes="--yes" in opts)
+        paths, cropped = call(:mirror, rest; dir=dir, copy="--copy" in opts, overwrite="--overwrite" in opts,
+                              sandbox=sandbox, yes="--yes" in opts)
+        append!(paths, crop_downloaded(cropped, dir; sandbox=sandbox))
         println("$(length(paths)) files in $(call(:local_root, dir))")
     elseif command == "remap"
         activate_env(REMAP_DIR)
