@@ -1,0 +1,91 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-14"
+git_tag = "paleoclimate-v2.2.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Patagonia_Paleoclimate"
+version = "2.2.0"
+
+["PAT-2KM_Paleoclimate-PMIP3-lgm-mean.nc"]
+checksum = "sha256:29300db1f205994f679407747b3aee9ab7bc6aaf5b50723ecd7cf44ef3e1f5a2"
+size = 1461161
+storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_Paleoclimate-PMIP3-lgm-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.2.0/PAT-2KM_Paleoclimate-PMIP3-lgm-mean.nc"
+
+["PAT-2KM_Paleoclimate-PMIP3-lgm-stdev.nc"]
+checksum = "sha256:18e857c909e32450cbf6ff128ac6f86c7500712bd8944d20830b05e590fbe040"
+size = 942953
+storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_Paleoclimate-PMIP3-lgm-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.2.0/PAT-2KM_Paleoclimate-PMIP3-lgm-stdev.nc"
+
+["PAT-2KM_Paleoclimate-PMIP3-midHolocene-mean.nc"]
+checksum = "sha256:6acf7b8199684f67c5f2d88d71ea18f131648e5fb2fea21691cc7f387689803b"
+size = 1114647
+storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_Paleoclimate-PMIP3-midHolocene-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.2.0/PAT-2KM_Paleoclimate-PMIP3-midHolocene-mean.nc"
+
+["PAT-2KM_Paleoclimate-PMIP3-midHolocene-stdev.nc"]
+checksum = "sha256:1b9ae34e28064136a34063d3da1f22b92515761c7b39975fe5e13c8f9c4b46db"
+size = 792634
+storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_Paleoclimate-PMIP3-midHolocene-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.2.0/PAT-2KM_Paleoclimate-PMIP3-midHolocene-stdev.nc"
+
+["PAT-2KM_Paleoclimate-PMIP3-piControl-mean.nc"]
+checksum = "sha256:7c4558e55b4a32080b291dd7849fd0efc2703bb95539aa087867fb9cef22280a"
+size = 1121943
+storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_Paleoclimate-PMIP3-piControl-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.2.0/PAT-2KM_Paleoclimate-PMIP3-piControl-mean.nc"
+
+["PAT-2KM_Paleoclimate-PMIP3-piControl-stdev.nc"]
+checksum = "sha256:998bfbcc73db44b15079ead7d7bcf3308dc75beaedc45bbb1479885dad9f0dc3"
+size = 789502
+storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_Paleoclimate-PMIP3-piControl-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.2.0/PAT-2KM_Paleoclimate-PMIP3-piControl-stdev.nc"
+
+["PAT-2KM_Paleoclimate-PMIP4-lgm-mean.nc"]
+checksum = "sha256:2031228678e21aa85b56b82451dfce4bb7c23e09f069665007cbec095a2bdf59"
+size = 7503939
+storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_Paleoclimate-PMIP4-lgm-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.2.0/PAT-2KM_Paleoclimate-PMIP4-lgm-mean.nc"
+
+["PAT-2KM_Paleoclimate-PMIP4-lgm-stdev.nc"]
+checksum = "sha256:bf874adf0ba33ce0943454f4c3c21b415819a7140df1ffc573826bdfc2f42a72"
+size = 5632640
+storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_Paleoclimate-PMIP4-lgm-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.2.0/PAT-2KM_Paleoclimate-PMIP4-lgm-stdev.nc"
+
+["PAT-2KM_Paleoclimate-PMIP4-midHolocene-mean.nc"]
+checksum = "sha256:d56b75f715acd0d9372a1fbae86120677049a7b2a829fdab0b4442e716120236"
+size = 5184343
+storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_Paleoclimate-PMIP4-midHolocene-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.2.0/PAT-2KM_Paleoclimate-PMIP4-midHolocene-mean.nc"
+
+["PAT-2KM_Paleoclimate-PMIP4-midHolocene-stdev.nc"]
+checksum = "sha256:aa679e0bb3987a460257cad64c70aa81d3f145ba7812120de277e2e159d4009f"
+size = 5098928
+storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_Paleoclimate-PMIP4-midHolocene-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.2.0/PAT-2KM_Paleoclimate-PMIP4-midHolocene-stdev.nc"
+
+["PAT-2KM_Paleoclimate-PMIP4-piControl-mean.nc"]
+checksum = "sha256:772a1f6b20bc2eeb92db99a03830a53da1acee6c8bb187fde3e52473aa51eebb"
+size = 5094665
+storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_Paleoclimate-PMIP4-piControl-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.2.0/PAT-2KM_Paleoclimate-PMIP4-piControl-mean.nc"
+
+["PAT-2KM_Paleoclimate-PMIP4-piControl-stdev.nc"]
+checksum = "sha256:392fb14bd702de18f94f81b8fdd5390de81a5feb6b5ca47072a0789546822815"
+size = 5042004
+storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_Paleoclimate-PMIP4-piControl-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.2.0/PAT-2KM_Paleoclimate-PMIP4-piControl-stdev.nc"
+
+["PAT-2KM_grid.nc"]
+checksum = "sha256:3b66736031d52fec9da8230693887255b90f7b276619eba31266bf950f5eb9e7"
+size = 1440853
+storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.2.0/PAT-2KM_grid.nc"
+
+["grid_PAT-2KM.txt"]
+checksum = "sha256:f30d2390e6c54f2628d81d4a3439a6b55b95c9e997754fcaa01ac160f60591bd"
+size = 347
+storage_path = "$datasets_dir/Patagonia/PAT-2KM/grid_PAT-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.2.0/grid_PAT-2KM.txt"

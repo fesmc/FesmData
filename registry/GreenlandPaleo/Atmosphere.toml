@@ -1,115 +1,130 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-12"
-git_tag = "atmosphere-v2.0.0"
+date = "2026-10-14"
+git_tag = "atmosphere-v2.1.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=GreenlandPaleo_Atmosphere"
-version = "2.0.0"
+version = "2.1.0"
 
 ["GRL-PAL-16KM_Atmosphere-CERES-2001-2020.nc"]
-checksum = "sha256:3eef24f9c5fc2cf8c2373689223aaaa9af809ff7a39424b0ae68d25dc9a6d11b"
-size = 24158757
+checksum = "sha256:a046efeb45527a46c7d14fbeb5c4ca3a0e3ecbfe3cedbe614b894671d7a408ba"
+previous_checksums = ["sha256:3eef24f9c5fc2cf8c2373689223aaaa9af809ff7a39424b0ae68d25dc9a6d11b"]
+size = 3907846
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_Atmosphere-CERES-2001-2020.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_Atmosphere-CERES-2001-2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-16KM/2.1.0/GRL-PAL-16KM_Atmosphere-CERES-2001-2020.nc"
 
 ["GRL-PAL-16KM_Atmosphere-ERA5-1981-2010.nc"]
-checksum = "sha256:ddd3af12d605c55dbbd3bad883941bcb8f04d52816375b8889791d7f637f1af0"
-size = 11031737
+checksum = "sha256:ac7e379257ce125e4f1e07c35614688241e66f4d636d450758a44e8c4611d2e7"
+previous_checksums = ["sha256:ddd3af12d605c55dbbd3bad883941bcb8f04d52816375b8889791d7f637f1af0"]
+size = 3968732
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_Atmosphere-ERA5-1981-2010.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_Atmosphere-ERA5-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-16KM/2.1.0/GRL-PAL-16KM_Atmosphere-ERA5-1981-2010.nc"
 
 ["GRL-PAL-16KM_Atmosphere-ERA5-1991-2020.nc"]
-checksum = "sha256:ae5769dbf48d6cd7b0dbe4e4c11e0708ebd3892cda2772e2e2a073a51b26c38f"
-size = 11037732
+checksum = "sha256:4c3c474fce488d03b5d2ebc47abdf130731f56169ccd6c07b54d2f97a4254ebc"
+previous_checksums = ["sha256:ae5769dbf48d6cd7b0dbe4e4c11e0708ebd3892cda2772e2e2a073a51b26c38f"]
+size = 3969442
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_Atmosphere-ERA5-1991-2020.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_Atmosphere-ERA5-1991-2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-16KM/2.1.0/GRL-PAL-16KM_Atmosphere-ERA5-1991-2020.nc"
 
 ["GRL-PAL-16KM_Atmosphere-ERA5-plev-1981-2010.nc"]
-checksum = "sha256:300b677f3992b9ff8a32ba311b6a50af99625679a6efccce21399ca5e5740d18"
-size = 45435468
+checksum = "sha256:99cf8f30bd938802f5a11f81e0072e9c917b9b3baf170db0f2132678f1eee5c7"
+previous_checksums = ["sha256:300b677f3992b9ff8a32ba311b6a50af99625679a6efccce21399ca5e5740d18"]
+size = 15523253
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_Atmosphere-ERA5-plev-1981-2010.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_Atmosphere-ERA5-plev-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-16KM/2.1.0/GRL-PAL-16KM_Atmosphere-ERA5-plev-1981-2010.nc"
 
 ["GRL-PAL-16KM_Atmosphere-ERA5-plev-1991-2020.nc"]
-checksum = "sha256:8c3f8ef5f7b246c72f97829e85bc6d6cde1f2a6f489e64ac97a5bda8a85be9f4"
-size = 45468657
+checksum = "sha256:de1786753ab4209451998462d26b83d83698736331bf73c115183db3c23026d2"
+previous_checksums = ["sha256:8c3f8ef5f7b246c72f97829e85bc6d6cde1f2a6f489e64ac97a5bda8a85be9f4"]
+size = 15547895
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_Atmosphere-ERA5-plev-1991-2020.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_Atmosphere-ERA5-plev-1991-2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-16KM/2.1.0/GRL-PAL-16KM_Atmosphere-ERA5-plev-1991-2020.nc"
 
 ["GRL-PAL-16KM_grid.nc"]
-checksum = "sha256:641614ed64e7a6989a9b632764bc593855f65f70fc7a200f9a89263c0fee7f3e"
-size = 197958
+checksum = "sha256:8cf34c50e47c103a6c0620dff139413344ec28730e2096923d51f9164a183a42"
+previous_checksums = ["sha256:641614ed64e7a6989a9b632764bc593855f65f70fc7a200f9a89263c0fee7f3e"]
+size = 172428
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-16KM/2.1.0/GRL-PAL-16KM_grid.nc"
 
 ["GRL-PAL-32KM_Atmosphere-CERES-2001-2020.nc"]
-checksum = "sha256:dc21952685b7799fc7e194b119597751a7e52226c0a1e0bc464049dda7d70f08"
-size = 6630541
+checksum = "sha256:c3d2ac9cf7f515745547a925784c1c86354914248f2abe3e628cb6b9572d028a"
+previous_checksums = ["sha256:dc21952685b7799fc7e194b119597751a7e52226c0a1e0bc464049dda7d70f08"]
+size = 1509138
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_Atmosphere-CERES-2001-2020.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_Atmosphere-CERES-2001-2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-32KM/2.1.0/GRL-PAL-32KM_Atmosphere-CERES-2001-2020.nc"
 
 ["GRL-PAL-32KM_Atmosphere-ERA5-1981-2010.nc"]
-checksum = "sha256:37d0b6962fbf7e768d02ff8a42e490161fb247c097a0b092495d93b8aa16832f"
-size = 3035467
+checksum = "sha256:59d1bfb35f107d57538eddf1364abb2884a437fc5d791f4ee92c85c36611f5e7"
+previous_checksums = ["sha256:37d0b6962fbf7e768d02ff8a42e490161fb247c097a0b092495d93b8aa16832f"]
+size = 1307326
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_Atmosphere-ERA5-1981-2010.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_Atmosphere-ERA5-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-32KM/2.1.0/GRL-PAL-32KM_Atmosphere-ERA5-1981-2010.nc"
 
 ["GRL-PAL-32KM_Atmosphere-ERA5-1991-2020.nc"]
-checksum = "sha256:26fdd4f1661450804a8240e594b607367858e497c927246f75c28cf69141a94f"
-size = 3036226
+checksum = "sha256:dcb7a5a4bcc9eae22e44a6531ee01714e1be4337c727bdddd964ec606f935afb"
+previous_checksums = ["sha256:26fdd4f1661450804a8240e594b607367858e497c927246f75c28cf69141a94f"]
+size = 1308025
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_Atmosphere-ERA5-1991-2020.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_Atmosphere-ERA5-1991-2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-32KM/2.1.0/GRL-PAL-32KM_Atmosphere-ERA5-1991-2020.nc"
 
 ["GRL-PAL-32KM_Atmosphere-ERA5-plev-1981-2010.nc"]
-checksum = "sha256:b3e8e0a74204ae4f3289672c448d5ce0cc569ab9a8095354bc1a18756516a026"
-size = 12174328
+checksum = "sha256:9b6b8862a85359c38ee0a592fde9b6969c1984119b460935466dc75fa516ba07"
+previous_checksums = ["sha256:b3e8e0a74204ae4f3289672c448d5ce0cc569ab9a8095354bc1a18756516a026"]
+size = 4737829
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_Atmosphere-ERA5-plev-1981-2010.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_Atmosphere-ERA5-plev-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-32KM/2.1.0/GRL-PAL-32KM_Atmosphere-ERA5-plev-1981-2010.nc"
 
 ["GRL-PAL-32KM_Atmosphere-ERA5-plev-1991-2020.nc"]
-checksum = "sha256:0b8c642efa8ac613f83ba35580e4f8334558510aed29c23adc66379d7d9fc087"
-size = 12178214
+checksum = "sha256:a8f41969340a37f09332b3c2ef3a4a02937d9531c8245222631f8cc38a9ab1ad"
+previous_checksums = ["sha256:0b8c642efa8ac613f83ba35580e4f8334558510aed29c23adc66379d7d9fc087"]
+size = 4741794
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_Atmosphere-ERA5-plev-1991-2020.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_Atmosphere-ERA5-plev-1991-2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-32KM/2.1.0/GRL-PAL-32KM_Atmosphere-ERA5-plev-1991-2020.nc"
 
 ["GRL-PAL-32KM_grid.nc"]
-checksum = "sha256:c94aeb9d12df68c5429b6e9ac944b6ed3328db1b3bcc9d10942a26343bde80f1"
-size = 70200
+checksum = "sha256:570fe99dfc077c00e8b1c79d102e5450df2b4cba1c8327043fff59056121b883"
+previous_checksums = ["sha256:c94aeb9d12df68c5429b6e9ac944b6ed3328db1b3bcc9d10942a26343bde80f1"]
+size = 63330
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-32KM/2.1.0/GRL-PAL-32KM_grid.nc"
 
 ["GRL-PAL-8KM_Atmosphere-ERA5-1981-2010.nc"]
-checksum = "sha256:01cdac3aef9c301df5df65f477669c8b6e506a357ae97e9718894b426b88cb4f"
-size = 40733938
+checksum = "sha256:20d1232600581c9c801c6a6b90a4a3da422d3a6ab7af5be45c82484a77a3fbde"
+previous_checksums = ["sha256:01cdac3aef9c301df5df65f477669c8b6e506a357ae97e9718894b426b88cb4f"]
+size = 12314077
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_Atmosphere-ERA5-1981-2010.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-8KM/2.0.0/GRL-PAL-8KM_Atmosphere-ERA5-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-8KM/2.1.0/GRL-PAL-8KM_Atmosphere-ERA5-1981-2010.nc"
 
 ["GRL-PAL-8KM_Atmosphere-ERA5-1991-2020.nc"]
-checksum = "sha256:ad34d5f4c304eec0d3f6ff278c4f042d4f85aa95c09e940be88c9a71543173f5"
-size = 40758434
+checksum = "sha256:81ecd9e074f5a60fb27799ac67ac12de145bea114622783a94bc15c1bcd2e06b"
+previous_checksums = ["sha256:ad34d5f4c304eec0d3f6ff278c4f042d4f85aa95c09e940be88c9a71543173f5"]
+size = 12334816
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_Atmosphere-ERA5-1991-2020.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-8KM/2.0.0/GRL-PAL-8KM_Atmosphere-ERA5-1991-2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-8KM/2.1.0/GRL-PAL-8KM_Atmosphere-ERA5-1991-2020.nc"
 
 ["GRL-PAL-8KM_grid.nc"]
-checksum = "sha256:16aa24f1cb3018fd4813ef64d58bd23aac3af70ef50ee98296c75ddad16c6f0b"
-size = 631820
+checksum = "sha256:4a64d43b061dd24979cac1a79798a17260084c1099d2fa47246b4af42cee24b5"
+previous_checksums = ["sha256:16aa24f1cb3018fd4813ef64d58bd23aac3af70ef50ee98296c75ddad16c6f0b"]
+size = 533422
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-8KM/2.0.0/GRL-PAL-8KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-8KM/2.1.0/GRL-PAL-8KM_grid.nc"
 
 ["grid_GRL-PAL-16KM.txt"]
 checksum = "sha256:1f2dd6b17cd99dee69b34afe4a7f49e087d4f935e01d862b2392ebebb071ea31"
 size = 466
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/grid_GRL-PAL-16KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-16KM/2.0.0/grid_GRL-PAL-16KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-16KM/2.1.0/grid_GRL-PAL-16KM.txt"
 
 ["grid_GRL-PAL-32KM.txt"]
 checksum = "sha256:cf0d0b1b8155818d7b19aa0eb4ebc0539c6a7d4d2ed0ddca89822c5f697e6646"
 size = 463
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/grid_GRL-PAL-32KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-32KM/2.0.0/grid_GRL-PAL-32KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-32KM/2.1.0/grid_GRL-PAL-32KM.txt"
 
 ["grid_GRL-PAL-8KM.txt"]
 checksum = "sha256:08c7a03da8b258951eebef55634ad60f44f0f7fe965aa38e7dd26e4ca287d743"
 size = 465
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/grid_GRL-PAL-8KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-8KM/2.0.0/grid_GRL-PAL-8KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Atmosphere_GRL-PAL-8KM/2.1.0/grid_GRL-PAL-8KM.txt"

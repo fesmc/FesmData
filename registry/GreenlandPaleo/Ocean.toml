@@ -1,55 +1,61 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-12"
-git_tag = "ocean-v2.0.0"
+date = "2026-10-14"
+git_tag = "ocean-v2.1.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=GreenlandPaleo_Ocean"
-version = "2.0.0"
+version = "2.1.0"
 
 ["GRL-PAL-16KM_Ocean-ORAS5-1981-2010.nc"]
-checksum = "sha256:51cbc99b6f0787f96a18b807d35e623f69214952b155b638f321f15a481918d5"
-size = 39771578
+checksum = "sha256:4c0f323765c1a6d59872e7798662004ac87b06554c413f7482dd8798a33c06d0"
+previous_checksums = ["sha256:51cbc99b6f0787f96a18b807d35e623f69214952b155b638f321f15a481918d5"]
+size = 14111364
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_Ocean-ORAS5-1981-2010.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Ocean_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_Ocean-ORAS5-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Ocean_GRL-PAL-16KM/2.1.0/GRL-PAL-16KM_Ocean-ORAS5-1981-2010.nc"
 
 ["GRL-PAL-16KM_Ocean-ORAS5-annual.nc"]
-checksum = "sha256:cbfbdc790e1457cab70ee7fa2f82ab9112a3e4de3327986b42143ab3773f7af5"
-size = 142269714
+checksum = "sha256:8ee17544a91f18de30de76cc77197120272de97ef511763355be7511755e44f6"
+previous_checksums = ["sha256:cbfbdc790e1457cab70ee7fa2f82ab9112a3e4de3327986b42143ab3773f7af5"]
+size = 50999432
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_Ocean-ORAS5-annual.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Ocean_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_Ocean-ORAS5-annual.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Ocean_GRL-PAL-16KM/2.1.0/GRL-PAL-16KM_Ocean-ORAS5-annual.nc"
 
 ["GRL-PAL-16KM_grid.nc"]
-checksum = "sha256:641614ed64e7a6989a9b632764bc593855f65f70fc7a200f9a89263c0fee7f3e"
-size = 197958
+checksum = "sha256:8cf34c50e47c103a6c0620dff139413344ec28730e2096923d51f9164a183a42"
+previous_checksums = ["sha256:641614ed64e7a6989a9b632764bc593855f65f70fc7a200f9a89263c0fee7f3e"]
+size = 172428
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Ocean_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Ocean_GRL-PAL-16KM/2.1.0/GRL-PAL-16KM_grid.nc"
 
 ["GRL-PAL-32KM_Ocean-ORAS5-1981-2010.nc"]
-checksum = "sha256:06191c8b388e950f43f1dae393bd2e260a3b3b1b9813dff40a6bbc9a16eb1e08"
-size = 12179201
+checksum = "sha256:22febdfa01d34ab68278438e17a837887cfbf15529c3bdd7ae555b4a3874745c"
+previous_checksums = ["sha256:06191c8b388e950f43f1dae393bd2e260a3b3b1b9813dff40a6bbc9a16eb1e08"]
+size = 4767870
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_Ocean-ORAS5-1981-2010.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Ocean_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_Ocean-ORAS5-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Ocean_GRL-PAL-32KM/2.1.0/GRL-PAL-32KM_Ocean-ORAS5-1981-2010.nc"
 
 ["GRL-PAL-32KM_Ocean-ORAS5-annual.nc"]
-checksum = "sha256:dc7674c15fec6b9dabdf1496f7f34ae0e17c2ebf5db7f011bc1605150e6af9a6"
-size = 43399021
+checksum = "sha256:87897981448aee6baaf1e9371cd87484b66a2083deb97665eb46503e844c5309"
+previous_checksums = ["sha256:dc7674c15fec6b9dabdf1496f7f34ae0e17c2ebf5db7f011bc1605150e6af9a6"]
+size = 17196588
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_Ocean-ORAS5-annual.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Ocean_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_Ocean-ORAS5-annual.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Ocean_GRL-PAL-32KM/2.1.0/GRL-PAL-32KM_Ocean-ORAS5-annual.nc"
 
 ["GRL-PAL-32KM_grid.nc"]
-checksum = "sha256:c94aeb9d12df68c5429b6e9ac944b6ed3328db1b3bcc9d10942a26343bde80f1"
-size = 70200
+checksum = "sha256:570fe99dfc077c00e8b1c79d102e5450df2b4cba1c8327043fff59056121b883"
+previous_checksums = ["sha256:c94aeb9d12df68c5429b6e9ac944b6ed3328db1b3bcc9d10942a26343bde80f1"]
+size = 63330
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Ocean_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Ocean_GRL-PAL-32KM/2.1.0/GRL-PAL-32KM_grid.nc"
 
 ["grid_GRL-PAL-16KM.txt"]
 checksum = "sha256:1f2dd6b17cd99dee69b34afe4a7f49e087d4f935e01d862b2392ebebb071ea31"
 size = 466
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/grid_GRL-PAL-16KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Ocean_GRL-PAL-16KM/2.0.0/grid_GRL-PAL-16KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Ocean_GRL-PAL-16KM/2.1.0/grid_GRL-PAL-16KM.txt"
 
 ["grid_GRL-PAL-32KM.txt"]
 checksum = "sha256:cf0d0b1b8155818d7b19aa0eb4ebc0539c6a7d4d2ed0ddca89822c5f697e6646"
 size = 463
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/grid_GRL-PAL-32KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Ocean_GRL-PAL-32KM/2.0.0/grid_GRL-PAL-32KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Ocean_GRL-PAL-32KM/2.1.0/grid_GRL-PAL-32KM.txt"

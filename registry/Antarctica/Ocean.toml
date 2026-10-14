@@ -1,121 +1,136 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-12"
-git_tag = "ocean-v2.0.0"
+date = "2026-10-14"
+git_tag = "ocean-v2.1.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Antarctica_Ocean"
-version = "2.0.0"
+version = "2.1.0"
 
 ["ANT-16KM_Ocean-ISMIP7.nc"]
-checksum = "sha256:19c36fd99cddd06554e7cd2e5fead387af5c0e5d16258fc0a62f5dcb185feede"
-size = 28233742
+checksum = "sha256:a7b60f49d524517bb05276bcc676b04d28d9e95017e0931f420e0720a5258769"
+previous_checksums = ["sha256:19c36fd99cddd06554e7cd2e5fead387af5c0e5d16258fc0a62f5dcb185feede"]
+size = 8655306
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_Ocean-ISMIP7.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-16KM/2.0.0/ANT-16KM_Ocean-ISMIP7.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-16KM/2.1.0/ANT-16KM_Ocean-ISMIP7.nc"
 
 ["ANT-16KM_Ocean-ORAS5-1981-2010.nc"]
-checksum = "sha256:26264d21012cea18a14cc87469832d69c3bd0170604f33084a5ce3c609625ca5"
-size = 302931220
+checksum = "sha256:991ae9bf71a68b01f07f252bbad593aee00631a9f826deca1fda6a730cf617ad"
+previous_checksums = ["sha256:26264d21012cea18a14cc87469832d69c3bd0170604f33084a5ce3c609625ca5"]
+size = 81751279
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_Ocean-ORAS5-1981-2010.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-16KM/2.0.0/ANT-16KM_Ocean-ORAS5-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-16KM/2.1.0/ANT-16KM_Ocean-ORAS5-1981-2010.nc"
 
 ["ANT-16KM_Ocean-ORAS5-annual.nc"]
-checksum = "sha256:89297390f2c76e9c9fa7b0e351cbba0199bb75b7ebeba63cd3bed1f455106add"
-size = 1045481402
+checksum = "sha256:e4e48886f9001400f9f91c73b85d2ed362f406ea2cf616597fbacabee4c9c4b8"
+previous_checksums = ["sha256:89297390f2c76e9c9fa7b0e351cbba0199bb75b7ebeba63cd3bed1f455106add"]
+size = 292785622
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_Ocean-ORAS5-annual.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-16KM/2.0.0/ANT-16KM_Ocean-ORAS5-annual.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-16KM/2.1.0/ANT-16KM_Ocean-ORAS5-annual.nc"
 
 ["ANT-16KM_Ocean-Schmidtko2014.nc"]
-checksum = "sha256:8429b2a14d037b6e73350a14b7dd2aa3eeb0e71af3c7c253b14dbda63d811d3d"
-size = 327293
+checksum = "sha256:b6db318cec6ed030530eff25465decd8b2261c3279f836f21a40512ef9d5e481"
+previous_checksums = ["sha256:8429b2a14d037b6e73350a14b7dd2aa3eeb0e71af3c7c253b14dbda63d811d3d"]
+size = 197898
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_Ocean-Schmidtko2014.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-16KM/2.0.0/ANT-16KM_Ocean-Schmidtko2014.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-16KM/2.1.0/ANT-16KM_Ocean-Schmidtko2014.nc"
 
 ["ANT-16KM_grid.nc"]
-checksum = "sha256:dea44445828fdc3adbae04afc6662224e96a6838c8381f80a855659b3ad6460c"
-size = 892250
+checksum = "sha256:0c9b8e003b33ca4188cc54c9d7dbe4932f742ee4f6ac9431d8d38e33fa5af978"
+previous_checksums = ["sha256:dea44445828fdc3adbae04afc6662224e96a6838c8381f80a855659b3ad6460c"]
+size = 766020
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-16KM/2.0.0/ANT-16KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-16KM/2.1.0/ANT-16KM_grid.nc"
 
 ["ANT-32KM_Ocean-ISMIP7.nc"]
-checksum = "sha256:dd71c4a9181a699021e7d2ada10262ee534d028788ed77e28b014116f31c9632"
-size = 6935589
+checksum = "sha256:a653ef8e2bbb8064003abd0002cd4e6f6c83d55ac28de6c38e2969f720f09e0f"
+previous_checksums = ["sha256:dd71c4a9181a699021e7d2ada10262ee534d028788ed77e28b014116f31c9632"]
+size = 2418371
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_Ocean-ISMIP7.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-32KM/2.0.0/ANT-32KM_Ocean-ISMIP7.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-32KM/2.1.0/ANT-32KM_Ocean-ISMIP7.nc"
 
 ["ANT-32KM_Ocean-ORAS5-1981-2010.nc"]
-checksum = "sha256:cf94342507d9f0f3bb33dc1c5fe1bd492e4d0237211204dfe8dd142ff067004e"
-size = 85650941
+checksum = "sha256:c259de5a5f36d4d58334a5c5a2a683759e0278ebbaf71a6680373638b44344e2"
+previous_checksums = ["sha256:cf94342507d9f0f3bb33dc1c5fe1bd492e4d0237211204dfe8dd142ff067004e"]
+size = 26872761
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_Ocean-ORAS5-1981-2010.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-32KM/2.0.0/ANT-32KM_Ocean-ORAS5-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-32KM/2.1.0/ANT-32KM_Ocean-ORAS5-1981-2010.nc"
 
 ["ANT-32KM_Ocean-ORAS5-annual.nc"]
-checksum = "sha256:450c4dfe0cf8bc91c21c8e6cab2351d58d8797c03efa3306756ec973e49691f0"
-size = 300609033
+checksum = "sha256:f83dc200ee41bc0ec25b8512dd15dd8044f86f171c5a6e28d32b40eea8368ec0"
+previous_checksums = ["sha256:450c4dfe0cf8bc91c21c8e6cab2351d58d8797c03efa3306756ec973e49691f0"]
+size = 97483439
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_Ocean-ORAS5-annual.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-32KM/2.0.0/ANT-32KM_Ocean-ORAS5-annual.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-32KM/2.1.0/ANT-32KM_Ocean-ORAS5-annual.nc"
 
 ["ANT-32KM_Ocean-Schmidtko2014.nc"]
-checksum = "sha256:e3b98cd47ee175f07928c21feca4dd3f8af6383ee9c72b00bf4798d53f4c595c"
-size = 134104
+checksum = "sha256:b01ef4ddc93464e9bd871bdc8f36bbe3d435a30654e19da9f6ce04b063326268"
+previous_checksums = ["sha256:e3b98cd47ee175f07928c21feca4dd3f8af6383ee9c72b00bf4798d53f4c595c"]
+size = 92564
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_Ocean-Schmidtko2014.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-32KM/2.0.0/ANT-32KM_Ocean-Schmidtko2014.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-32KM/2.1.0/ANT-32KM_Ocean-Schmidtko2014.nc"
 
 ["ANT-32KM_grid.nc"]
-checksum = "sha256:66765d3512c62479e60ad1095a4ee84b38edb681fe816eddf9896c3a2799efd8"
-size = 212550
+checksum = "sha256:49cf80092bf11538d76d480dea852afea71c414565d6123fb01ff4e7e853bee1"
+previous_checksums = ["sha256:66765d3512c62479e60ad1095a4ee84b38edb681fe816eddf9896c3a2799efd8"]
+size = 190659
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-32KM/2.0.0/ANT-32KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-32KM/2.1.0/ANT-32KM_grid.nc"
 
 ["ANT-4KM_Ocean-Schmidtko2014.nc"]
-checksum = "sha256:5244114b16d2632529b284b454d66273bcc49a136075d46355e5ce11f0a675fe"
-size = 3126096
+checksum = "sha256:db6fa06e73ff7682105864f200de45b98fd516dab35742aff433ea81fb0d7461"
+previous_checksums = ["sha256:5244114b16d2632529b284b454d66273bcc49a136075d46355e5ce11f0a675fe"]
+size = 1483335
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_Ocean-Schmidtko2014.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-4KM/2.0.0/ANT-4KM_Ocean-Schmidtko2014.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-4KM/2.1.0/ANT-4KM_Ocean-Schmidtko2014.nc"
 
 ["ANT-4KM_grid.nc"]
-checksum = "sha256:b553afcb6273200e9cd436c4f3ba5f081c599c58237374342aade5c4588e879f"
-size = 11450508
+checksum = "sha256:fb6604c91ce17a3978a380d4e7d8b641d2f57eea5da4c37e0f46189faa07884f"
+previous_checksums = ["sha256:b553afcb6273200e9cd436c4f3ba5f081c599c58237374342aade5c4588e879f"]
+size = 9192910
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-4KM/2.0.0/ANT-4KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-4KM/2.1.0/ANT-4KM_grid.nc"
 
 ["ANT-8KM_Ocean-ISMIP7.nc"]
-checksum = "sha256:81e84528c00c220bca657d886877887b0a09845f69590af3e5ac187d8b7cb85b"
-size = 98116350
+checksum = "sha256:ce6d41768f4394f05c9cab0c3c76f308dc9e94cb4ab3b577c43815403d3f1122"
+previous_checksums = ["sha256:81e84528c00c220bca657d886877887b0a09845f69590af3e5ac187d8b7cb85b"]
+size = 26370689
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_Ocean-ISMIP7.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-8KM/2.0.0/ANT-8KM_Ocean-ISMIP7.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-8KM/2.1.0/ANT-8KM_Ocean-ISMIP7.nc"
 
 ["ANT-8KM_Ocean-Schmidtko2014.nc"]
-checksum = "sha256:b0ac5d67f6bcfc2001104dc12d2d4cce893ecb4e8d1c4901102e0785e760ed4a"
-size = 981076
+checksum = "sha256:8ceb16ff46c5944450c2d2792844c3aeaf39712d2ea0b3f89c011a95a20cfa3b"
+previous_checksums = ["sha256:b0ac5d67f6bcfc2001104dc12d2d4cce893ecb4e8d1c4901102e0785e760ed4a"]
+size = 508722
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_Ocean-Schmidtko2014.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-8KM/2.0.0/ANT-8KM_Ocean-Schmidtko2014.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-8KM/2.1.0/ANT-8KM_Ocean-Schmidtko2014.nc"
 
 ["ANT-8KM_grid.nc"]
-checksum = "sha256:6d00ae1cafbf496c1375c74c9153d92c5e2aec79d8026f004ba0dc26d0c47ece"
-size = 3314952
+checksum = "sha256:27b6ffe5af1932ac7e1fcf32b8e8219420fe82be6287f09f931efbebed8ec93d"
+previous_checksums = ["sha256:6d00ae1cafbf496c1375c74c9153d92c5e2aec79d8026f004ba0dc26d0c47ece"]
+size = 2776497
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-8KM/2.0.0/ANT-8KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-8KM/2.1.0/ANT-8KM_grid.nc"
 
 ["grid_ANT-16KM.txt"]
 checksum = "sha256:09d646757fe153b435cee10a90cf772b4626efbe2f187d410eab83876c8305cb"
 size = 467
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/grid_ANT-16KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-16KM/2.0.0/grid_ANT-16KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-16KM/2.1.0/grid_ANT-16KM.txt"
 
 ["grid_ANT-32KM.txt"]
 checksum = "sha256:619c2b14b9667a6ff1efe4de41f1b2bd0ddc8d3e10df6d5fd99222b80be20276"
 size = 466
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/grid_ANT-32KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-32KM/2.0.0/grid_ANT-32KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-32KM/2.1.0/grid_ANT-32KM.txt"
 
 ["grid_ANT-4KM.txt"]
 checksum = "sha256:dc549c434411d3f7ad5b46e4f954f9bb180d0d2e272e1942d97e7072ae8b711d"
 size = 468
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/grid_ANT-4KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-4KM/2.0.0/grid_ANT-4KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-4KM/2.1.0/grid_ANT-4KM.txt"
 
 ["grid_ANT-8KM.txt"]
 checksum = "sha256:66ff6285f42ec156b6c6a6c30fcb0d2e4c94e07d67512fb002cb0348b3420ce5"
 size = 465
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/grid_ANT-8KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-8KM/2.0.0/grid_ANT-8KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Ocean_ANT-8KM/2.1.0/grid_ANT-8KM.txt"
