@@ -1038,7 +1038,9 @@ uri = "https://pmip3.lsce.ipsl.fr/share/design/ice_bc/pmip3_21k_sftgif_v0.nc"
 # PMIP3/CMIP5 fixed fields of the 8 models of PMIP3_cvdp (ESGF, CEDA data node): surface
 # altitude (orog), land area fraction (sftlf) and land ice area fraction (sftgif) of each
 # model and experiment (GISS-E2-R lgm: physics version p150). Not available: sftgif of
-# FGOALS-g2 lgm, orog and sftlf of MPI-ESM-P lgm (only on the retired DKRZ data node).
+# FGOALS-g2 lgm, orog and sftlf of MPI-ESM-P lgm (only on the retired DKRZ data node),
+# and those of CNRM-CM5 midHolocene (not on any data node; prepare.jl takes those of
+# piControl, the same surface in the midHolocene protocol).
 
 [pmip3_fx_ccsm4_lgm_orog]
 storage_path = "$datasets_dir/pmip3_fx/orog_fx_CCSM4_lgm_r0i0p0.nc"
@@ -1087,18 +1089,6 @@ uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/CNR
 [pmip3_fx_cnrm_cm5_lgm_sftgif]
 storage_path = "$datasets_dir/pmip3_fx/sftgif_fx_CNRM-CM5_lgm_r0i0p0.nc"
 uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/CNRM-CERFACS/CNRM-CM5/lgm/fx/land/fx/r0i0p0/v20130826/sftgif/sftgif_fx_CNRM-CM5_lgm_r0i0p0.nc"
-
-[pmip3_fx_cnrm_cm5_midholocene_orog]
-storage_path = "$datasets_dir/pmip3_fx/orog_fx_CNRM-CM5_midHolocene_r0i0p0.nc"
-uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/CNRM-CERFACS/CNRM-CM5/midHolocene/fx/atmos/fx/r0i0p0/v20130826/orog/orog_fx_CNRM-CM5_midHolocene_r0i0p0.nc"
-
-[pmip3_fx_cnrm_cm5_midholocene_sftlf]
-storage_path = "$datasets_dir/pmip3_fx/sftlf_fx_CNRM-CM5_midHolocene_r0i0p0.nc"
-uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/CNRM-CERFACS/CNRM-CM5/midHolocene/fx/atmos/fx/r0i0p0/v20130826/sftlf/sftlf_fx_CNRM-CM5_midHolocene_r0i0p0.nc"
-
-[pmip3_fx_cnrm_cm5_midholocene_sftgif]
-storage_path = "$datasets_dir/pmip3_fx/sftgif_fx_CNRM-CM5_midHolocene_r0i0p0.nc"
-uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/CNRM-CERFACS/CNRM-CM5/midHolocene/fx/land/fx/r0i0p0/v20130826/sftgif/sftgif_fx_CNRM-CM5_midHolocene_r0i0p0.nc"
 
 [pmip3_fx_cnrm_cm5_picontrol_orog]
 storage_path = "$datasets_dir/pmip3_fx/orog_fx_CNRM-CM5_piControl_r0i0p0.nc"

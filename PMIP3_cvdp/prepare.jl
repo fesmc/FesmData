@@ -88,15 +88,20 @@ end
     read_fx(db, model, experiment, lon, lat) -> Dict
 
 The CMIP5 fixed fields of a model and experiment that are available (`FX_FIELDS`, by
-prepared name), on the grid of its CVDP fields (`lon`, `lat`, which they must match);
-land ice fraction 0 where there is no land.
+prepared name; for midHolocene, those of piControl where its own are not available), on
+the grid of its CVDP fields (`lon`, `lat`, which they must match); land ice fraction 0
+where there is no land.
 """
 function read_fx(db, model, experiment, lon, lat)
     fx = Dict{String,Matrix{Float32}}()
     for (name, (var, factor, _, _)) in FX_FIELDS
-        key = lowercase(replace("pmip3_fx_$(model)_$(experiment)_$var", "-" => "_"))
-        haskey(db.datasets, key) || (println("  $model $experiment: no $var"); continue)
-        NCDataset(download_dataset(db, key)) do ds
+        key(e) = lowercase(replace("pmip3_fx_$(model)_$(e)_$var", "-" => "_"))
+        # midHolocene has the surface of piControl in the PMIP3 protocol: its fields where
+        # those of midHolocene are not available (CNRM-CM5)
+        e = !haskey(db.datasets, key(experiment)) && experiment == "midHolocene" ? "piControl" : experiment
+        haskey(db.datasets, key(e)) || (println("  $model $experiment: no $var"); continue)
+        e == experiment || println("  $model $experiment: $var of piControl")
+        NCDataset(download_dataset(db, key(e))) do ds
             flon, flat = ds["lon"][:], ds["lat"][:]
             F = _float(ds[var][:, :]) .* Float32(factor)
             # Same grid, to the precision of the axes (single or double)
