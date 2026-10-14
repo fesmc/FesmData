@@ -15,6 +15,7 @@ each domain.
   and the open ocean, from the bed elevation of the topography product.
 - **Basins** (`basins.toml`) are the drainage basins of the ice sheets, extended over
   the land and shelf of their region up to the shelf break.
+- **Domains** are masks of the nests and crops of a domain on all grids of its family.
 
 ## Products
 
@@ -28,10 +29,12 @@ each domain.
 | `BASINS-SanRafael` | San Rafael Glacier (RGI2000-v7.0-G-17-12835), its RGI 7.0 outline as the footprint of its IceBoost v2 tile | `basin`, `basin_mask` | SRG |
 | `BASINS-NEGIS-v1` | Northeast Greenland Ice Stream in three parts, drawn by hand for yelmox v1 on GRL-16KM (Ilaria Tabone, 2024) | `basin`, `basin_mask` | GreenlandPaleo, Greenland, NEGIS |
 | `BASINS-NEGIS` | Northeast Greenland Ice Stream in three parts: centre and south from the surface speed (Joughin et al., 2018), north from NEGIS-v1 | `basin`, `basin_mask` | GreenlandPaleo, Greenland, NEGIS |
+| `DOMAINS` | Extents of the nests and crops (`../shared/domains.toml`) | `domain_<KEY>` (0/1), one per nest and crop | Domains with nests or crops, with their crops and nests |
 
-The files are `<GRID>_REGIONS.nc` and `<GRID>_BASINS-<set>.nc`. Everything is computed
-on the base grid of a domain (e.g. ANT-500M, GRL-PAL-500M, NH-2KM, PAT-250M, SRG-50M) and
-then mapped onto all other grids and crops, as for the topography; a nest (e.g. SRG in
+The files are `<GRID>_REGIONS.nc`, `<GRID>_BASINS-<set>.nc` and `<GRID>_DOMAINS.nc`.
+Regions, zones and basins are computed on the base grid of a domain (e.g. ANT-500M,
+GRL-PAL-500M, NH-2KM, PAT-250M, SRG-50M) and then mapped onto all other grids and
+crops, as for the topography; a nest (e.g. SRG in
 PAT) is computed on its own base grid. On each other grid, region codes, zones and
 basins are the class covering most of a cell, nested level by level (a cell's
 `region_3` lies within its `region_2`; basins within their group), and
@@ -180,6 +183,18 @@ of the line gives IoU 0.74 (centre) and 0.79 (south), and a cut at a distance al
 stream from the grounding line of 79N (200 km) 0.68 and 0.63. The Mouginot basins of
 79N, Zachariae Isstrom and Storstrommen are far broader than the stream (IoU 0.23).
 
+## Domains
+
+`<GRID>_DOMAINS.nc` locates the nests and crops of a domain family (a domain with all
+its nests and crops) on every grid of the family, e.g. NPI, SPI, SRG, GCN and CDI on the
+grids of PAT, of its crops and of its nests. `domain_<KEY>` (int8) is 1 where the cell
+centre lies within the extent of nest or crop KEY, the cell edges of its base grid (that
+of its domain for a crop), and 0 elsewhere; one variable per nest or crop, as they may
+overlap (SRG lies in NPI). Its attributes give the folder (`long_name`), `kind` (nest
+or crop), `parent` (key) and `extent` (x0, x1, y0, y1, km). Only active nests and crops
+are included, and domains without any (e.g. PYR) have no file. The masks are computed
+on each grid from the cell centres (`07_domains.jl`).
+
 ## Precision
 
 Region codes, zones and basins are integers and exact. `dist_shelfbreak` (km) is rounded
@@ -239,7 +254,7 @@ The machine environment is set up as described under
 | Location | Contents |
 |---|---|
 | `$FESMDATA_SOURCES` | Original datasets (see `../datamanifest.toml`) |
-| `$FESMDATA_PRODUCTS/<Domain>/<GRID>/` | Output: `<GRID>_REGIONS.nc`, `<GRID>_BASINS-<set>.nc` |
+| `$FESMDATA_PRODUCTS/<Domain>/<GRID>/` | Output: `<GRID>_REGIONS.nc`, `<GRID>_BASINS-<set>.nc`, `<GRID>_DOMAINS.nc` |
 | `$FESMDATA_WORK/regions/` | Intermediate files (base grids) and check plots |
 
 ### Steps
@@ -252,7 +267,8 @@ sbatch --job-name=<name> Regions/jobs/run_step.sbatch <script> <args...>
 ```
 
 and `Regions/jobs/submit_domain.sh DOMAIN [FIRST_STEP]` submits steps 1-5 as a chain
-of jobs. The topography product of the domain (Topo, step 3) is needed from step 2.
+of jobs, and step 7. The topography product of the domain (Topo, step 3) is needed
+from step 2.
 
 #### 0. Original datasets
 
@@ -323,6 +339,16 @@ sbatch --job-name=negis Regions/jobs/run_step.sbatch 06_negis.jl \
 ```
 
 The v1 file is optional; with it, the script checks that NEGIS-v1 reproduces it.
+
+#### 7. Domains
+
+```bash
+sbatch --job-name=domains-PAT Regions/jobs/run_step.sbatch 07_domains.jl PAT
+```
+
+Writes `<GRID>_DOMAINS.nc` on all grids of the domain and its crops (run it for each
+domain and nest of a family). Needs no other step; rerun it for the whole family when a
+nest or crop is added or changed.
 
 ### Adding a region, a basin set or a domain
 

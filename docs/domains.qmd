@@ -102,7 +102,9 @@ The grid files come with every dataset on the grid.
 ## Which datasets are on which grids
 
 Topo and Regions are made on every grid of every active domain, crop and nest, from
-the high-resolution sources.
+the high-resolution sources. Regions also has the masks of the nests and crops of a
+domain on all grids of the domain, its crops and nests (`<GRID>_DOMAINS.nc`, see
+[Regions](datasets/regions.qmd#domains)).
 
 The thematic datasets (GHF, Velocity, SMB, ...) are made by remapping published maps,
 which are much coarser than the base grids. They are made only on the grids that add

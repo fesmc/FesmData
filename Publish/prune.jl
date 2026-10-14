@@ -6,12 +6,12 @@
 using Dates
 using NCDatasets
 
-"Dataset of a product file by its name (ANT-8KM_GHF-Davies2013.nc: GHF; _TOPO-: Topo; _REGIONS, _BASINS-: Regions)."
+"Dataset of a product file by its name (ANT-8KM_GHF-Davies2013.nc: GHF; _TOPO-: Topo; _REGIONS, _BASINS-, _DOMAINS: Regions)."
 function file_dataset(name::AbstractString)
     m = match(r"^[A-Za-z0-9.-]+?_([A-Za-z0-9]+)[-.]", name)
     m === nothing && return nothing
     tag = m.captures[1]
-    return tag == "TOPO" ? "Topo" : tag in ("REGIONS", "BASINS") ? "Regions" : tag
+    return tag == "TOPO" ? "Topo" : tag in ("REGIONS", "BASINS", "DOMAINS") ? "Regions" : tag
 end
 
 "Products made but not released (`release = false` in <Dataset>/remap.toml), as <Dataset>-<name>."

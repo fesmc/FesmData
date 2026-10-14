@@ -47,8 +47,9 @@ readme = "Regions/README.md"
 keywords = ["regions", "drainage basins", "continental shelf", "ice sheet", "model input"]
 description = """
 Region codes (a hierarchy of hemispheres, continents, ice sheets and oceans), zones
-(open ocean, continental shelf, land) with the distance to the shelf break, and
-ice-sheet drainage basins extended to the shelf break, on the grids of a model domain.
+(open ocean, continental shelf, land) with the distance to the shelf break,
+ice-sheet drainage basins extended to the shelf break, and masks of the nests and crops,
+on the grids of a model domain.
 """
 
 [GHF]

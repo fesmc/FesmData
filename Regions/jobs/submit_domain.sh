@@ -7,7 +7,8 @@
 #
 #     Regions/jobs/submit_domain.sh DOMAIN [FIRST_STEP]
 #
-# FIRST_STEP (1-5, default 1) skips the earlier steps.
+# FIRST_STEP (1-5 or 7, default 1) skips the earlier steps. Step 7 (masks of the nests
+# and crops) needs no other step, so it starts at once.
 #
 set -euo pipefail
 domain=$1
@@ -33,5 +34,9 @@ if [ "$first" -le 4 ]; then
 fi
 if [ "$first" -le 5 ]; then
     id=$(submit "plots-$domain" 00:30:00 05_plots.jl "$domain")
+fi
+if [ "$first" -le 7 ]; then
+    dep=""
+    id=$(submit "domains-$domain" 00:10:00 07_domains.jl "$domain")
 fi
 squeue -u "$USER" -o "%.10i %.28j %.10T %.12r"
