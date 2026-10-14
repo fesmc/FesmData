@@ -145,7 +145,6 @@ resolutions = [0.25, 0.5, 1]
 # Basin).
 [GRL-PAL.nests.PET]
 folder = "Petermann"
-active = false
 xlim = [-336, 79]
 ylim = [-1567, -861]
 resolutions = [0.25, 0.5, 1]
@@ -153,7 +152,6 @@ resolutions = [0.25, 0.5, 1]
 # Helheim Glacier, 43.9-34.0W, 65.0-69.9N: its basin and Sermilik Fjord.
 [GRL-PAL.nests.HEL]
 folder = "Helheim"
-active = false
 xlim = [51, 426]
 ylim = [-2718, -2198]
 resolutions = [0.25, 0.5, 1]
@@ -245,7 +243,6 @@ resolutions = [0.05, 0.1, 0.25]
 # (2018), 4-17.5E, 43-48.8N (the Lyon lobe in the west, the Po plain in the south).
 [ALP]
 folder = "Alps"
-active = false
 proj = "+proj=tmerc +lat_0=0 +lon_0=9 +k=0.9996 +x_0=500000 +y_0=0 +a=6378137 +rf=298.257223563 +units=km"
 xlim = [92, 1193]
 ylim = [4760, 5441]
@@ -273,7 +270,6 @@ resolutions = [0.025, 0.05, 0.1, 0.25]
 # 74-81.5N (the archipelago and its shelf).
 [SVB]
 folder = "Svalbard"
-active = false
 proj = "+proj=tmerc +lat_0=0 +lon_0=15 +k=0.9996 +x_0=500000 +y_0=0 +a=6378137 +rf=298.257223563 +units=km"
 xlim = [193, 1105]
 ylim = [8212, 9106]
@@ -283,7 +279,6 @@ resolutions = [0.5, 1, 2]
 # 40-47.5S (the South Island and its shelf).
 [NZ]
 folder = "NewZealand"
-active = false
 proj = "+proj=tmerc +lat_0=0 +lon_0=173 +k=0.9996 +x_0=1600000 +y_0=10000000 +a=6378137 +rf=298.257222101 +units=km"
 xlim = [1002, 1771]
 ylim = [4715, 5573]

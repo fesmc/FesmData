@@ -19,9 +19,9 @@ a product are merged in order of priority, the first over the others:
 |---|---|---|
 | `TOPO-BedMachine-v4` | BedMachine Antarctica v4, GEBCO 2026 | Antarctica and its crops |
 | `TOPO-Bedmap3` | Bedmap3, GEBCO 2026 | Antarctica and its crops |
-| `TOPO-BedMachine-v6` | BedMachine Greenland v6, GEBCO 2026 | GreenlandPaleo, Greenland, Jakobshavn, NEGIS |
+| `TOPO-BedMachine-v6` | BedMachine Greenland v6, GEBCO 2026 | GreenlandPaleo, Greenland, Jakobshavn, NEGIS, Petermann, Helheim |
 | `TOPO-GEBCO2026` | BedMachine Greenland v6, IceBoost v2.0, GEBCO 2026 | North, Laurentide, Eurasia |
-| `TOPO-GLO90-GEBCO2026` | IceBoost v2.0, Copernicus DEM GLO-90, GEBCO 2026 | Pyrenees, Patagonia, NorthPatagonianIcefield, SouthPatagonianIcefield, SRG, GranCampoNevado, CordilleraDarwin, Himalaya, DrangDrung |
+| `TOPO-GLO90-GEBCO2026` | IceBoost v2.0, Copernicus DEM GLO-90, GEBCO 2026 | Pyrenees, Patagonia, NorthPatagonianIcefield, SouthPatagonianIcefield, SRG, GranCampoNevado, CordilleraDarwin, Himalaya, DrangDrung, Alps, Svalbard, NewZealand |
 
 Variants:
 
@@ -32,8 +32,7 @@ Variants:
 | `TOPO-BedMachine-v5`, `TOPO-BedMachine-v4` | BedMachine Greenland v5, v4, GEBCO 2026 | GreenlandPaleo, Greenland |
 | `TOPO-Sommers2025` | Sommers (2025) surface and Millan et al. (2022) thickness, IceBoost v2.0, Copernicus DEM GLO-90, GEBCO 2026 | DrangDrung |
 
-The inactive nests of Greenland and the inactive mountain-glacier domains have the
-default products of their kind. The variants of Antarctica are merged on ANT-500M, but
+The variants of Antarctica are merged on ANT-500M, but
 written only on the grids of 1 km and coarser (`variants_resolution` in
 `products.toml`). The files are `<GRID>_TOPO-<product>.nc`, with
 the fields:
@@ -257,7 +256,7 @@ tiles, a few MB each) are downloaded automatically (Levante login node):
 
 ```bash
 julia --project=Topo Topo/scripts/00_sources.jl --download
-julia --project=Topo Topo/scripts/00_sources.jl --download NZ    # the tiles of an inactive domain
+julia --project=Topo Topo/scripts/00_sources.jl --download NZ    # the tiles of one domain (also inactive)
 ```
 
 The other sources need a manual download into the path printed by the script:

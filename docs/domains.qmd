@@ -36,7 +36,7 @@ also its name in `fesmdata.jl` and on the website (e.g. Antarctica, Thwaites), a
 The **overview figures** show, for each Topo product of a domain (default products,
 then variants; of its parent, for a crop), its bed, surface and ice thickness together
 with the regions, zones and basins of the domain, on one of its finer grids. They are
-large and open on their own. Inactive domains have none yet.
+large and open on their own.
 
 {{< include _domains.md >}}
 
@@ -53,8 +53,8 @@ Embayment (ASE, at 500 m, 1 and 2 km), the Thwaites (THW) and Pine Island (PIG)
 glaciers, the Filchner-Ronne (FRIS), Ross (ROSS) and Amery (AMY) ice shelves with the
 grounded ice within 300 km upstream of them, and the Wilkes Subglacial Basin (WSB),
 at 500 m and 1 km; in Greenland Jakobshavn Isbrae (JAK), the
-Northeast Greenland Ice Stream (NEGIS), and, inactive, the Petermann (PET) and Helheim
-(HEL) glaciers, at 250 m, 500 m and 1 km.
+Northeast Greenland Ice Stream (NEGIS), and the Petermann (PET) and Helheim (HEL)
+glaciers, at 250 m, 500 m and 1 km.
 
 ## Mountain-glacier domains
 
@@ -70,8 +70,9 @@ grids of 250 m (500 m for Svalbard) and a 2 km grid:
 - **Himalaya** (HIM, Albers equal-area of High Mountain Asia), the Himalaya, Karakoram
   and Hindu Kush, with a nest of the Drang Drung Glacier (DDG, Zanskar) at 25, 50, 100
   and 250 m.
-- Inactive: the **Alps** (ALP, UTM 32N), **Svalbard** (SVB, UTM 33N) and **New
-  Zealand** (NZ, NZTM2000).
+- **Alps** (ALP, UTM 32N).
+- **Svalbard** (SVB, UTM 33N).
+- **New Zealand** (NZ, NZTM2000).
 
 ## Global grids
 
@@ -120,8 +121,7 @@ dataset is on which domain.
 
 ## Inactive domains
 
-Domains that are defined but not used yet (the Alps, Svalbard, New Zealand, and the
-nests Petermann and Helheim) are inactive:
-their grids and products are made only on request, and they are left out of the
-releases and figures. To have one made and released, open an
+A domain can be defined but not used yet (`active = false` in `shared/domains.toml`;
+none at present): its grids and products are made only on request, and it is left out
+of the releases and figures. To have one made and released, open an
 [issue](https://github.com/fesmc/FesmData/issues).
