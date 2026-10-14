@@ -83,6 +83,14 @@ chmod -R g+w $FESMDATA && find $FESMDATA -type d -exec chmod g+s {} +
 setfacl -R -m g::rwX -d -m g::rwX $FESMDATA
 ```
 
+Each shared folder has a README for those who browse it, `$FESMDATA/README.md`, a copy of
+[`FESMDATA_README.md`](https://github.com/fesmc/FesmData/blob/main/shared/machines/FESMDATA_README.md)
+(copy it again when it changes, and on a new machine):
+
+```bash
+cp shared/machines/FESMDATA_README.md $FESMDATA/README.md
+```
+
 ## Jobs
 
 The pipelines run their steps as Slurm jobs on full compute nodes, with all cores as
