@@ -9,7 +9,7 @@
 source = "Laske2013_crust1"
 file = "Laske2013_CRUST1_sed.nc"
 variables = ["z_sed", "z_sed_upper", "z_sed_middle", "z_sed_lower"]
-grids = { Antarctica = 4, GreenlandPaleo = 4, Greenland = 4, North = 4, Global = 4, Pyrenees = 2, Patagonia = 2, Himalaya = 2, Alps = 2, Svalbard = 2, NewZealand = 2 }
+grids = { Antarctica = 4, GreenlandPaleo = 4, North = 4, Global = 4, Pyrenees = 2, Patagonia = 2, Himalaya = 2, Alps = 2, Svalbard = 2, NewZealand = 2 }
 
 # Ocean only: not on the land-locked mountain-glacier domains (Pyrenees, Alps, Himalaya)
 [products.GlobSed]
