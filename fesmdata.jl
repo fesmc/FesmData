@@ -69,6 +69,10 @@ Release (maintainers, see Publish/README.md):
                                                and write the registry (--dry-run: check
                                                and list only)
   status <Dataset> [<Domain> ...]              local files, packages, registered release
+  prune [<Dataset>] [<Domain>]                 delete the files in \$FESMDATA_PRODUCTS that no
+                                               release refers to (not crops, unreleased
+                                               products, grid files in use), after one
+                                               confirmation (--yes: none)
   delete <Dataset> <version> [<Domain> ...]    delete the packages of a version
   archive upload|publish|register|status|discard <Dataset> [<Domain> ...]
                                                archive releases on Zenodo, for a DOI
@@ -78,7 +82,7 @@ Release (maintainers, see Publish/README.md):
                                                preview docs)
 
 Options: --sandbox (test releases: registry/_sandbox/, test packages, Zenodo sandbox),
---allow-untagged (skip the release checks), --dry-run, --yes (mirror, archive publish),
+--allow-untagged (skip the release checks), --dry-run, --yes (mirror, prune, archive publish),
 --overwrite (fetch, remap, record).
 """
 
@@ -190,6 +194,11 @@ function main(argv)
             length(rest) >= 2 || usage("delete: give a dataset and a version")
             call(:delete_release, dataset, rest[2], rest[3:end]; sandbox=sandbox)
         end
+    elseif command == "prune"
+        include(joinpath(PUBLISH_DIR, "catalog.jl"))
+        activate_env(PUBLISH_DIR)
+        include(joinpath(PUBLISH_DIR, "prune.jl"))
+        call(:prune, rest; yes="--yes" in opts, sandbox=sandbox)
     elseif command == "archive"
         isempty(rest) && usage("archive: give a subcommand")
         sub, rest = rest[1], rest[2:end]

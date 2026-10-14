@@ -104,6 +104,25 @@ already uploaded are kept, and domains already released are skipped.
 git add registry && git commit -m "registry: GHF v2.0.0" && git push
 ```
 
+**5. Clean up** the files the release replaced, once the release is out (and mirrored,
+`fesmdata.jl mirror`, on the other machines): products no longer made (e.g. copies on a
+crop that now gets them by cropping, grids dropped by the resolution rule) stay in
+`$FESMDATA_PRODUCTS` until pruned, and earlier versions stay on the packages page until
+deleted:
+
+```bash
+julia fesmdata.jl prune               # or: prune <Dataset> [<Domain>]
+julia fesmdata.jl delete GHF 2.0.0    # packages of a version no longer registered
+```
+
+`prune` lists the files that no record of the registry refers to, by domain and dataset
+with their size, and deletes them after one confirmation (`--yes`: none), writing their
+list to `$FESMDATA_WORK/prune-<date>.txt`. It keeps the products by cropping (files with
+a `cropped_from` attribute, made by `fetch` and `mirror`), the products not released
+(`release = false` in `<Dataset>/remap.toml`, e.g. SolidEarth Pan2022), the grid files
+of grids still in use, and the records (`Records/`). Run it on every machine with a copy
+(Levante, Albedo), after `mirror` there.
+
 At any point, `status` shows each domain: its local files and their version, its
 packages on GitLab, and its registered release (and DOI):
 
