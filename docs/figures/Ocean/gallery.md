@@ -4,17 +4,17 @@
 
 ### ISMIP7
 
-![Ocean-ISMIP7 on ANT-16KM: tf.](../figures/Ocean/Ocean-ISMIP7.png)
+![Ocean-ISMIP7 on ANT-8KM: tf.](../figures/Ocean/Ocean-ISMIP7.png){width=321px}
 
 ### ORAS5-1981-2010
 
-![Ocean-ORAS5-1981-2010 on ANT-16KM, GRL-PAL-16KM, NH-32KM, GLOBAL-1DEG: to.](../figures/Ocean/Ocean-ORAS5-1981-2010.png)
+![Ocean-ORAS5-1981-2010 on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-1DEG: to.](../figures/Ocean/Ocean-ORAS5-1981-2010.png){width=1293px}
 
 ### ORAS5-annual
 
-![Ocean-ORAS5-annual on ANT-16KM, GRL-PAL-16KM, NH-32KM, GLOBAL-1DEG: to.](../figures/Ocean/Ocean-ORAS5-annual.png)
+![Ocean-ORAS5-annual on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-1DEG: to.](../figures/Ocean/Ocean-ORAS5-annual.png){width=1293px}
 
 ### Schmidtko2014
 
-![Ocean-Schmidtko2014 on ANT-16KM: ct_bottom.](../figures/Ocean/Ocean-Schmidtko2014.png)
+![Ocean-Schmidtko2014 on ANT-8KM: ct_bottom.](../figures/Ocean/Ocean-Schmidtko2014.png){width=315px}
 

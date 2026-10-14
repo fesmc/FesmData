@@ -4,21 +4,21 @@
 
 ### CERES-2001-2020
 
-![Atmosphere-CERES-2001-2020 on ANT-16KM, GRL-PAL-16KM, NH-32KM, GLOBAL-1DEG: sfc_net_tot_all.](../figures/Atmosphere/Atmosphere-CERES-2001-2020.png)
+![Atmosphere-CERES-2001-2020 on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: sfc_net_tot_all.](../figures/Atmosphere/Atmosphere-CERES-2001-2020.png){width=1304px}
 
 ### ERA5-1981-2010
 
-![Atmosphere-ERA5-1981-2010 on ANT-16KM, GRL-PAL-8KM, NH-32KM, GLOBAL-1DEG: t2m.](../figures/Atmosphere/Atmosphere-ERA5-1981-2010.png)
+![Atmosphere-ERA5-1981-2010 on ANT-8KM, GRL-PAL-8KM, NH-16KM, PYR-2KM, PAT-2KM, HIM-2KM, GLOBAL-0.5DEG: t2m.](../figures/Atmosphere/Atmosphere-ERA5-1981-2010.png){width=2475px}
 
 ### ERA5-1991-2020
 
-![Atmosphere-ERA5-1991-2020 on ANT-16KM, GRL-PAL-8KM, NH-32KM, GLOBAL-1DEG: t2m.](../figures/Atmosphere/Atmosphere-ERA5-1991-2020.png)
+![Atmosphere-ERA5-1991-2020 on ANT-8KM, GRL-PAL-8KM, NH-16KM, PYR-2KM, PAT-2KM, HIM-2KM, GLOBAL-0.5DEG: t2m.](../figures/Atmosphere/Atmosphere-ERA5-1991-2020.png){width=2475px}
 
 ### ERA5-plev-1981-2010
 
-![Atmosphere-ERA5-plev-1981-2010 on ANT-16KM, GRL-PAL-16KM, NH-32KM, GLOBAL-1DEG: t.](../figures/Atmosphere/Atmosphere-ERA5-plev-1981-2010.png)
+![Atmosphere-ERA5-plev-1981-2010 on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: t.](../figures/Atmosphere/Atmosphere-ERA5-plev-1981-2010.png){width=1298px}
 
 ### ERA5-plev-1991-2020
 
-![Atmosphere-ERA5-plev-1991-2020 on ANT-16KM, GRL-PAL-16KM, NH-32KM, GLOBAL-1DEG: t.](../figures/Atmosphere/Atmosphere-ERA5-plev-1991-2020.png)
+![Atmosphere-ERA5-plev-1991-2020 on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: t.](../figures/Atmosphere/Atmosphere-ERA5-plev-1991-2020.png){width=1298px}
 

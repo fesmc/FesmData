@@ -4,41 +4,41 @@
 
 ### Batchelor2019
 
-![IceHistory-Batchelor2019 on GRL-PAL-8KM, NH-32KM: f_ice_best.](../figures/IceHistory/IceHistory-Batchelor2019.png)
+![IceHistory-Batchelor2019 on GRL-PAL-4KM, NH-16KM: f_ice_best.](../figures/IceHistory/IceHistory-Batchelor2019.png){width=540px}
 
 ### Batchelor2019_PaleoMIST_LGC
 
-![IceHistory-Batchelor2019_PaleoMIST_LGC on GLOBAL-1DEG: f_ice_best.](../figures/IceHistory/IceHistory-Batchelor2019_PaleoMIST_LGC.png)
+![IceHistory-Batchelor2019_PaleoMIST_LGC on GLOBAL-0.5DEG: f_ice_best.](../figures/IceHistory/IceHistory-Batchelor2019_PaleoMIST_LGC.png){width=569px}
 
 ### ICE5G
 
-![IceHistory-ICE5G on ANT-16KM, GRL-PAL-8KM, NH-32KM, GLOBAL-1DEG: H_ice.](../figures/IceHistory/IceHistory-ICE5G.png)
+![IceHistory-ICE5G on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: H_ice.](../figures/IceHistory/IceHistory-ICE5G.png){width=1303px}
 
 ### ICE6G_C
 
-![IceHistory-ICE6G_C on ANT-16KM, GRL-PAL-8KM, NH-32KM, GLOBAL-1DEG: H_ice.](../figures/IceHistory/IceHistory-ICE6G_C.png)
+![IceHistory-ICE6G_C on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: H_ice.](../figures/IceHistory/IceHistory-ICE6G_C.png){width=1303px}
 
 ### ICE6G_D
 
-![IceHistory-ICE6G_D on ANT-16KM: H_ice.](../figures/IceHistory/IceHistory-ICE6G_D.png)
+![IceHistory-ICE6G_D on ANT-8KM: H_ice.](../figures/IceHistory/IceHistory-ICE6G_D.png){width=336px}
 
 ### Margold2015
 
-![IceHistory-Margold2015 on NH-32KM: f_stream.](../figures/IceHistory/IceHistory-Margold2015.png)
+![IceHistory-Margold2015 on NH-16KM: f_stream.](../figures/IceHistory/IceHistory-Margold2015.png){width=317px}
 
 ### PRISM4
 
-![IceHistory-PRISM4 on ANT-16KM, GRL-PAL-8KM, NH-32KM, GLOBAL-1DEG: z_topo_enh.](../figures/IceHistory/IceHistory-PRISM4.png)
+![IceHistory-PRISM4 on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: z_topo_enh.](../figures/IceHistory/IceHistory-PRISM4.png){width=1297px}
 
 ### PaleoGrIS
 
-![IceHistory-PaleoGrIS on GRL-PAL-8KM: age_deglac.](../figures/IceHistory/IceHistory-PaleoGrIS.png)
+![IceHistory-PaleoGrIS on GRL-PAL-4KM: age_deglac.](../figures/IceHistory/IceHistory-PaleoGrIS.png){width=283px}
 
 ### PaleoMIST
 
-![IceHistory-PaleoMIST on ANT-16KM, GRL-PAL-8KM, NH-32KM, GLOBAL-1DEG: H_ice.](../figures/IceHistory/IceHistory-PaleoMIST.png)
+![IceHistory-PaleoMIST on ANT-8KM, GRL-PAL-8KM, NH-16KM, GLOBAL-0.5DEG: H_ice.](../figures/IceHistory/IceHistory-PaleoMIST.png){width=1303px}
 
 ### PaleoMIST_max
 
-![IceHistory-PaleoMIST_max on ANT-16KM, GRL-PAL-8KM, NH-32KM, GLOBAL-1DEG: H_ice.](../figures/IceHistory/IceHistory-PaleoMIST_max.png)
+![IceHistory-PaleoMIST_max on ANT-8KM, GRL-PAL-8KM, NH-16KM, GLOBAL-0.5DEG: H_ice.](../figures/IceHistory/IceHistory-PaleoMIST_max.png){width=1303px}
 

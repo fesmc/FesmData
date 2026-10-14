@@ -4,73 +4,73 @@
 
 ### Badgeley2020
 
-![Paleoclimate-Badgeley2020 on GRL-8KM: tas_anom.](../figures/Paleoclimate/Paleoclimate-Badgeley2020.png)
+![Paleoclimate-Badgeley2020 on GRL-16KM: tas_anom.](../figures/Paleoclimate/Paleoclimate-Badgeley2020.png){width=234px}
 
 ### Buizert2018
 
-![Paleoclimate-Buizert2018 on GRL-16KM: tas.](../figures/Paleoclimate/Paleoclimate-Buizert2018.png)
+![Paleoclimate-Buizert2018 on GRL-16KM: tas.](../figures/Paleoclimate/Paleoclimate-Buizert2018.png){width=231px}
 
 ### Buizert2018-1981-2010
 
-![Paleoclimate-Buizert2018-1981-2010 on GRL-8KM: pr.](../figures/Paleoclimate/Paleoclimate-Buizert2018-1981-2010.png)
+![Paleoclimate-Buizert2018-1981-2010 on GRL-8KM: pr.](../figures/Paleoclimate/Paleoclimate-Buizert2018-1981-2010.png){width=244px}
 
 ### PMIP3-CCSM4-lgm
 
-![Paleoclimate-PMIP3-CCSM4-lgm on ANT-16KM, GRL-PAL-8KM, NH-32KM, GLOBAL-1DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP3-CCSM4-lgm.png)
+![Paleoclimate-PMIP3-CCSM4-lgm on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP3-CCSM4-lgm.png){width=1287px}
 
 ### PMIP3-CNRM-CM5-lgm
 
-![Paleoclimate-PMIP3-CNRM-CM5-lgm on ANT-16KM, GRL-PAL-8KM, NH-32KM, GLOBAL-1DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP3-CNRM-CM5-lgm.png)
+![Paleoclimate-PMIP3-CNRM-CM5-lgm on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP3-CNRM-CM5-lgm.png){width=1287px}
 
 ### PMIP3-FGOALS-g2-lgm
 
-![Paleoclimate-PMIP3-FGOALS-g2-lgm on ANT-16KM, GRL-PAL-8KM, NH-32KM, GLOBAL-1DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP3-FGOALS-g2-lgm.png)
+![Paleoclimate-PMIP3-FGOALS-g2-lgm on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP3-FGOALS-g2-lgm.png){width=1287px}
 
 ### PMIP3-GISS-E2-R-lgm
 
-![Paleoclimate-PMIP3-GISS-E2-R-lgm on ANT-16KM, GRL-PAL-8KM, NH-32KM, GLOBAL-1DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP3-GISS-E2-R-lgm.png)
+![Paleoclimate-PMIP3-GISS-E2-R-lgm on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP3-GISS-E2-R-lgm.png){width=1287px}
 
 ### PMIP3-IPSL-CM5A-LR-lgm
 
-![Paleoclimate-PMIP3-IPSL-CM5A-LR-lgm on ANT-16KM, GRL-PAL-8KM, NH-32KM, GLOBAL-1DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP3-IPSL-CM5A-LR-lgm.png)
+![Paleoclimate-PMIP3-IPSL-CM5A-LR-lgm on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP3-IPSL-CM5A-LR-lgm.png){width=1287px}
 
 ### PMIP3-MIROC-ESM-lgm
 
-![Paleoclimate-PMIP3-MIROC-ESM-lgm on ANT-16KM, GRL-PAL-8KM, NH-32KM, GLOBAL-1DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP3-MIROC-ESM-lgm.png)
+![Paleoclimate-PMIP3-MIROC-ESM-lgm on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP3-MIROC-ESM-lgm.png){width=1287px}
 
 ### PMIP3-MPI-ESM-P-lgm
 
-![Paleoclimate-PMIP3-MPI-ESM-P-lgm on ANT-16KM, GRL-PAL-8KM, NH-32KM, GLOBAL-1DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP3-MPI-ESM-P-lgm.png)
+![Paleoclimate-PMIP3-MPI-ESM-P-lgm on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP3-MPI-ESM-P-lgm.png){width=1287px}
 
 ### PMIP3-MRI-CGCM3-lgm
 
-![Paleoclimate-PMIP3-MRI-CGCM3-lgm on ANT-16KM, GRL-PAL-8KM, NH-32KM, GLOBAL-1DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP3-MRI-CGCM3-lgm.png)
+![Paleoclimate-PMIP3-MRI-CGCM3-lgm on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP3-MRI-CGCM3-lgm.png){width=1287px}
 
 ### PMIP3-lgm-boundary-conditions
 
-![Paleoclimate-PMIP3-lgm-boundary-conditions on ANT-16KM, GRL-PAL-8KM, NH-32KM, GLOBAL-1DEG: dz_srf.](../figures/Paleoclimate/Paleoclimate-PMIP3-lgm-boundary-conditions.png)
+![Paleoclimate-PMIP3-lgm-boundary-conditions on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: dz_srf.](../figures/Paleoclimate/Paleoclimate-PMIP3-lgm-boundary-conditions.png){width=1292px}
 
 ### PMIP3-lgm-mean
 
-![Paleoclimate-PMIP3-lgm-mean on ANT-16KM, GRL-PAL-8KM, NH-32KM, GLOBAL-1DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP3-lgm-mean.png)
+![Paleoclimate-PMIP3-lgm-mean on ANT-16KM, GRL-PAL-16KM, NH-16KM, PYR-2KM, PAT-2KM, HIM-2KM, GLOBAL-0.5DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP3-lgm-mean.png){width=2464px}
 
 ### PMIP4-AWI-ESM-1-1-LR-lgm
 
-![Paleoclimate-PMIP4-AWI-ESM-1-1-LR-lgm on ANT-16KM, GRL-PAL-8KM, NH-32KM, GLOBAL-1DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP4-AWI-ESM-1-1-LR-lgm.png)
+![Paleoclimate-PMIP4-AWI-ESM-1-1-LR-lgm on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP4-AWI-ESM-1-1-LR-lgm.png){width=1287px}
 
 ### PMIP4-INM-CM4-8-lgm
 
-![Paleoclimate-PMIP4-INM-CM4-8-lgm on ANT-16KM, GRL-PAL-8KM, NH-32KM, GLOBAL-1DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP4-INM-CM4-8-lgm.png)
+![Paleoclimate-PMIP4-INM-CM4-8-lgm on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP4-INM-CM4-8-lgm.png){width=1287px}
 
 ### PMIP4-MIROC-ES2L-lgm
 
-![Paleoclimate-PMIP4-MIROC-ES2L-lgm on ANT-16KM, GRL-PAL-8KM, NH-32KM, GLOBAL-1DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP4-MIROC-ES2L-lgm.png)
+![Paleoclimate-PMIP4-MIROC-ES2L-lgm on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP4-MIROC-ES2L-lgm.png){width=1287px}
 
 ### PMIP4-MPI-ESM1-2-LR-lgm
 
-![Paleoclimate-PMIP4-MPI-ESM1-2-LR-lgm on ANT-16KM, GRL-PAL-8KM, NH-32KM, GLOBAL-1DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP4-MPI-ESM1-2-LR-lgm.png)
+![Paleoclimate-PMIP4-MPI-ESM1-2-LR-lgm on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP4-MPI-ESM1-2-LR-lgm.png){width=1287px}
 
 ### PMIP4-lgm-mean
 
-![Paleoclimate-PMIP4-lgm-mean on ANT-16KM, GRL-PAL-8KM, NH-32KM, GLOBAL-1DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP4-lgm-mean.png)
+![Paleoclimate-PMIP4-lgm-mean on ANT-16KM, GRL-PAL-16KM, NH-16KM, PYR-2KM, PAT-2KM, HIM-2KM, GLOBAL-0.5DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP4-lgm-mean.png){width=2464px}
 

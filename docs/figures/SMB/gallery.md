@@ -2,43 +2,47 @@
 
 ## Figures
 
+### MARv3.14-1961-1990
+
+![SMB-MARv3.14-1961-1990 on GRL-4KM: smb.](../figures/SMB/SMB-MARv3.14-1961-1990.png){width=253px}
+
 ### MARv3.14-1981-2010
 
-![SMB-MARv3.14-1981-2010 on GRL-8KM: smb.](../figures/SMB/SMB-MARv3.14-1981-2010.png)
+![SMB-MARv3.14-1981-2010 on GRL-4KM: smb.](../figures/SMB/SMB-MARv3.14-1981-2010.png){width=253px}
 
 ### MARv3.14-1991-2020
 
-![SMB-MARv3.14-1991-2020 on GRL-8KM: smb.](../figures/SMB/SMB-MARv3.14-1991-2020.png)
+![SMB-MARv3.14-1991-2020 on GRL-4KM: smb.](../figures/SMB/SMB-MARv3.14-1991-2020.png){width=247px}
 
 ### MARv3.14-annual
 
-![SMB-MARv3.14-annual on GRL-8KM: smb.](../figures/SMB/SMB-MARv3.14-annual.png)
+![SMB-MARv3.14-annual on GRL-8KM: smb.](../figures/SMB/SMB-MARv3.14-annual.png){width=242px}
 
 ### RACMO2.3p2-1981-2010
 
-![SMB-RACMO2.3p2-1981-2010 on ANT-16KM: smb.](../figures/SMB/SMB-RACMO2.3p2-1981-2010.png)
+![SMB-RACMO2.3p2-1981-2010 on ANT-8KM: smb.](../figures/SMB/SMB-RACMO2.3p2-1981-2010.png){width=337px}
 
 ### RACMO2.3p2-1985-2014
 
-![SMB-RACMO2.3p2-1985-2014 on ANT-16KM: smb.](../figures/SMB/SMB-RACMO2.3p2-1985-2014.png)
+![SMB-RACMO2.3p2-1985-2014 on ANT-8KM: smb.](../figures/SMB/SMB-RACMO2.3p2-1985-2014.png){width=336px}
 
 ### RACMO2.3p2-1991-2020
 
-![SMB-RACMO2.3p2-1991-2020 on ANT-16KM: smb.](../figures/SMB/SMB-RACMO2.3p2-1991-2020.png)
+![SMB-RACMO2.3p2-1991-2020 on ANT-8KM: smb.](../figures/SMB/SMB-RACMO2.3p2-1991-2020.png){width=331px}
 
 ### RACMO2.3p2-annual
 
-![SMB-RACMO2.3p2-annual on ANT-16KM: smb.](../figures/SMB/SMB-RACMO2.3p2-annual.png)
+![SMB-RACMO2.3p2-annual on ANT-8KM: smb.](../figures/SMB/SMB-RACMO2.3p2-annual.png){width=331px}
 
 ### RACMO2.4p1-1981-2010
 
-![SMB-RACMO2.4p1-1981-2010 on ANT-16KM: smb.](../figures/SMB/SMB-RACMO2.4p1-1981-2010.png)
+![SMB-RACMO2.4p1-1981-2010 on ANT-8KM: smb.](../figures/SMB/SMB-RACMO2.4p1-1981-2010.png){width=336px}
 
 ### RACMO2.4p1-1991-2020
 
-![SMB-RACMO2.4p1-1991-2020 on ANT-16KM: smb.](../figures/SMB/SMB-RACMO2.4p1-1991-2020.png)
+![SMB-RACMO2.4p1-1991-2020 on ANT-8KM: smb.](../figures/SMB/SMB-RACMO2.4p1-1991-2020.png){width=336px}
 
 ### RACMO2.4p1-annual
 
-![SMB-RACMO2.4p1-annual on ANT-16KM: smb.](../figures/SMB/SMB-RACMO2.4p1-annual.png)
+![SMB-RACMO2.4p1-annual on ANT-8KM: smb.](../figures/SMB/SMB-RACMO2.4p1-annual.png){width=336px}
 
