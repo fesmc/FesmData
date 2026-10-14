@@ -106,7 +106,7 @@ function domain_overview(path::AbstractString, dom::Domain, og::OutGrid, product
             text!(ax, median(x[i[1]] for i in cells), median(y[i[2]] for i in cells); text=label, fontsize=9,
                   align=(:center, :center))
         end
-        startswith(title, "region_") && outline!(ax, og, outlines)
+        startswith(title, "region_") && outline!(ax, og, outlines, width)
     end
     for c in 1:min(OVERVIEW_COLUMNS, length(panels))
         colsize!(fig.layout, 2c - 1, Fixed(width))
@@ -117,19 +117,65 @@ function domain_overview(path::AbstractString, dom::Domain, og::OutGrid, product
     return path
 end
 
-"""
-    outline!(ax, og, outlines)
+"Font size of the keys of the nests and crops on the maps of an overview figure."
+const OUTLINE_FONTSIZE = 9
 
-Outline each nest or crop (key => its mask on grid `og`, 1 inside) on map `ax`, the
-contour of its mask, with its key at its upper left corner.
 """
-function outline!(ax, og::OutGrid, outlines)
+    outline!(ax, og, outlines, width)
+
+Outline each nest or crop (key => its mask on grid `og`, 1 inside) on map `ax`, of
+`width` units of the layout: the contour of its mask, with its key at its centre, or,
+if it overlaps another one, at the nearest edge of the map, with a line to its centre.
+"""
+function outline!(ax, og::OutGrid, outlines, width)
     x, y = map_coords(og.grid)
-    for (key, mask) in outlines
-        contour!(ax, x, y, mask; levels=[0.5], color=:black, linewidth=1.2)
+    xlim, ylim = extrema(x), extrema(y)
+    unit = (xlim[2] - xlim[1]) / width              # map units per unit of the layout
+    boxes = map(outlines) do (_, mask)
         cells = findall(==(1), mask)
-        text!(ax, minimum(x[i[1]] for i in cells), maximum(y[i[2]] for i in cells); text=key, fontsize=9,
-              font=:bold, align=(:left, :top), offset=(2, -2))
+        (extrema(x[i[1]] for i in cells)..., extrema(y[i[2]] for i in cells)...)
+    end
+    overlaps(a, b) = a[1] <= b[2] && b[1] <= a[2] && a[3] <= b[4] && b[3] <= a[4]
+    at_edge = Dict(e => Tuple{Float64,String,NTuple{2,Float64}}[] for e in (:left, :right, :bottom, :top))
+    for (k, (key, mask)) in enumerate(outlines)
+        contour!(ax, x, y, mask; levels=[0.5], color=:black, linewidth=1.2)
+        b = boxes[k]
+        c = ((b[1] + b[2]) / 2, (b[3] + b[4]) / 2)
+        if !any(j -> j != k && overlaps(b, boxes[j]), eachindex(boxes))
+            _outline_key!(ax, c, key, (:center, :center))
+            continue
+        end
+        d = (left=c[1] - xlim[1], right=xlim[2] - c[1], bottom=c[2] - ylim[1], top=ylim[2] - c[2])
+        e = argmin(d)
+        push!(at_edge[e], (e in (:left, :right) ? c[2] : c[1], key, c))
+    end
+    # Keys along each edge, at least two lines of text apart
+    gap = 2.5 * OUTLINE_FONTSIZE * unit
+    inset = 0.5 * OUTLINE_FONTSIZE * unit
+    for (e, keys) in at_edge
+        isempty(keys) && continue
+        sort!(keys)
+        pos = first.(keys)
+        for k in 2:length(pos)
+            pos[k] = max(pos[k], pos[k-1] + gap)
+        end
+        lo, hi = e in (:left, :right) ? ylim : xlim
+        pos .-= max(0, pos[end] - (hi - 2gap))      # within the edge
+        pos .+= max(0, lo + 2gap - pos[1])
+        for ((_, key, c), p) in zip(keys, pos)
+            w = (0.6 * length(key) + 0.5) * OUTLINE_FONTSIZE * unit   # width of the key
+            h = OUTLINE_FONTSIZE * unit
+            anchor, align, start = e == :left ? ((xlim[1] + inset, p), (:left, :center), (xlim[1] + inset + w, p)) :
+                                   e == :right ? ((xlim[2] - inset, p), (:right, :center), (xlim[2] - inset - w, p)) :
+                                   e == :bottom ? ((p, ylim[1] + inset), (:center, :bottom), (p, ylim[1] + inset + h)) :
+                                                  ((p, ylim[2] - inset), (:center, :top), (p, ylim[2] - inset - h))
+            lines!(ax, [start[1], c[1]], [start[2], c[2]]; color=:black, linewidth=0.8)
+            _outline_key!(ax, anchor, key, align)
+        end
     end
     return ax
 end
+
+_outline_key!(ax, pos, key, align) =
+    text!(ax, pos...; text=key, fontsize=OUTLINE_FONTSIZE, font=:bold, align=align,
+          glowwidth=2, glowcolor=(:white, 0.8))
