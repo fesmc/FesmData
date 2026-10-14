@@ -40,8 +40,6 @@
 
 [zone]
 products = { "ANT" = "BedMachine-v4", "GRL-PAL" = "BedMachine-v6", "NH" = "GEBCO2026",
-             "THW" = "BedMachine-v4", "PIG" = "BedMachine-v4", "FRIS" = "BedMachine-v4",
-             "ROSS" = "BedMachine-v4", "AMY" = "BedMachine-v4", "WSB" = "BedMachine-v4",
              "JAK" = "BedMachine-v6", "NEGIS" = "BedMachine-v6", "PET" = "BedMachine-v6",
              "HEL" = "BedMachine-v6",
              "PYR" = "GLO90-GEBCO2026", "PAT" = "GLO90-GEBCO2026", "SRG" = "GLO90-GEBCO2026",

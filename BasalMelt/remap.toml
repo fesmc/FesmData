@@ -7,14 +7,14 @@
 source = "Rignot2013_bmelt"
 file = "Rignot2013_BMELT.nc"
 variables = ["bmelt", "bmelt_ss", "bmelt_basin", "bmelt_eq_basin", "bmelt_reese", "bmelt_eq_reese"]
-grids = { Antarctica = 0 }
+grids = { Antarctica = 1 }
 figure = { colormap = "balance", colorrange = [-10, 10] }
 
 [products.Adusumilli2020]
 source = "Adusumilli2020_bmelt"
 file = "Adusumilli2020_BMELT_2010-2018.nc"
 variables = ["bmelt", "bmelt_cs2", "bmelt_err"]
-grids = { Antarctica = 0 }
+grids = { Antarctica = 1 }
 figure = { colormap = "balance", colorrange = [-10, 10] }
 
 # Height changes (not melt rates), quarterly 1992-2018 on a 10 km grid

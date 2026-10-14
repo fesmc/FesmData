@@ -5,11 +5,14 @@
 # `products` are the default products of a domain, from the latest sources; `variants`
 # are further products from earlier versions or other sources, made on request.
 # `rho_ice` and `rho_sw` (kg m-3) are used for flotation, as in the BedMachine product
-# of the domain.
+# of the domain. `variants_resolution` (km, optional) is the finest resolution of the
+# variants: they are merged on the base grid as the default products, but not written
+# on the grids finer than this. The crops of a domain have its products.
 
 [ANT]
 rho_ice = 917.0
 rho_sw = 1027.0
+variants_resolution = 1
 
 [ANT.products]
 "BedMachine-v4" = ["bedmachine_antarctica_v4", "gebco2026"]
@@ -19,56 +22,6 @@ rho_sw = 1027.0
 "BedMachine-v3" = ["bedmachine_antarctica_v3", "gebco2026"]
 "BedMachine-v2" = ["bedmachine_antarctica_v2", "gebco2026"]
 "Bedmap2" = ["bedmap2", "gebco2026"]
-
-# Nests of ANT: the products of ANT.
-
-[THW]
-rho_ice = 917.0
-rho_sw = 1027.0
-
-[THW.products]
-"BedMachine-v4" = ["bedmachine_antarctica_v4", "gebco2026"]
-"Bedmap3" = ["bedmap3", "gebco2026"]
-
-[PIG]
-rho_ice = 917.0
-rho_sw = 1027.0
-
-[PIG.products]
-"BedMachine-v4" = ["bedmachine_antarctica_v4", "gebco2026"]
-"Bedmap3" = ["bedmap3", "gebco2026"]
-
-[FRIS]
-rho_ice = 917.0
-rho_sw = 1027.0
-
-[FRIS.products]
-"BedMachine-v4" = ["bedmachine_antarctica_v4", "gebco2026"]
-"Bedmap3" = ["bedmap3", "gebco2026"]
-
-[ROSS]
-rho_ice = 917.0
-rho_sw = 1027.0
-
-[ROSS.products]
-"BedMachine-v4" = ["bedmachine_antarctica_v4", "gebco2026"]
-"Bedmap3" = ["bedmap3", "gebco2026"]
-
-[AMY]
-rho_ice = 917.0
-rho_sw = 1027.0
-
-[AMY.products]
-"BedMachine-v4" = ["bedmachine_antarctica_v4", "gebco2026"]
-"Bedmap3" = ["bedmap3", "gebco2026"]
-
-[WSB]
-rho_ice = 917.0
-rho_sw = 1027.0
-
-[WSB.products]
-"BedMachine-v4" = ["bedmachine_antarctica_v4", "gebco2026"]
-"Bedmap3" = ["bedmap3", "gebco2026"]
 
 [GRL-PAL]
 rho_ice = 917.0

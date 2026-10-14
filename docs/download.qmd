@@ -93,7 +93,7 @@ domain, so the domain can be left out when grids are given.
 
 The thematic datasets (those made by remapping: GHF, Velocity, SMB, Atmosphere, ...)
 are released once, on the domain or crop that has them, and not again on the nests and
-crops inside it (e.g. Thwaites, a nest of Antarctica, or Jakobshavn, a nest of
+crops inside it (e.g. Thwaites, a crop of Antarctica, or Jakobshavn, a nest of
 GreenlandPaleo inside its crop Greenland); a nest or crop is released with its own
 products only (e.g. Topo, Regions). `fetch` makes the others there on demand, by cropping
 them:

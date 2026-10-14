@@ -44,25 +44,25 @@ folder = "Antarctica"
 proj = "+proj=stere +lat_0=-90 +lat_ts=-71 +lon_0=0 +x_0=0 +y_0=0 +a=6378137 +rf=298.25722356 +units=km"
 xlim = [-3040, 3040]
 ylim = [-3040, 3040]
-resolutions = [1, 2, 4, 8, 16, 32]
+resolutions = [0.5, 1, 2, 4, 8, 16, 32]
 
-# Ice-sheet basins (crop ASE at 1 km, nests at 500 m and 1 km, the 1 km grids on
-# ANT-1KM): bounding box of the drainage basins (Basins_Antarctica_v02 of NSIDC-0709,
+# Ice-sheet basins (crops, ASE at 500 m, 1 and 2 km, the others at 500 m and 1 km):
+# bounding box of the drainage basins (Basins_Antarctica_v02 of NSIDC-0709,
 # as IMBIE2016-refined) and their ice shelves (floating ice of BedMachine v4 in their
-# extended basins), plus 50 km, snapped outward to whole km.
+# extended basins), plus 50 km, snapped outward to whole km (ASE: to even km, for its 2 km grid).
 
 # Amundsen Sea Embayment, 133.8-80.9W, 81.3-71.1S: the basins of system G-H (Pine
 # Island, Lucchitta-Velasco, Thwaites, Haynes, Pope, Smith, Kohler, Philbin, Cosgrove,
 # Walgreen Coast; not King, which drains to Abbot) and their ice shelves.
 [ANT.crops.ASE]
 folder = "Amundsen"
-xlim = [-1865, -948]
+xlim = [-1866, -948]
 ylim = [-908, 152]
-resolutions = [1]
+resolutions = [0.5, 1, 2]
 
 # Thwaites Glacier, 133.8-93.3W, 81.3-72.8S: its basin and ice shelf (tongue, eastern
 # shelf).
-[ANT.nests.THW]
+[ANT.crops.THW]
 folder = "Thwaites"
 xlim = [-1650, -948]
 ylim = [-908, -96]
@@ -70,7 +70,7 @@ resolutions = [0.5, 1]
 
 # Pine Island Glacier, 114.4-80.9W, 81.3-73.0S: its basin (and Lucchitta-Velasco) and
 # ice shelf.
-[ANT.nests.PIG]
+[ANT.crops.PIG]
 folder = "PineIsland"
 xlim = [-1805, -950]
 ylim = [-430, 152]
@@ -78,18 +78,16 @@ resolutions = [0.5, 1]
 
 # Filchner-Ronne Ice Shelf, 130.7-7.5W, 88.4-70.0S: the shelf and the grounded ice of
 # the basins draining into it (Asso_Shelf Filchner, Ronne_Ice) within 300 km of it.
-[ANT.nests.FRIS]
+[ANT.crops.FRIS]
 folder = "FilchnerRonne"
-active = false
 xlim = [-1732, -178]
 ylim = [-153, 1357]
 resolutions = [0.5, 1]
 
 # Ross Ice Shelf, 96.5E-95.2W, 89.2-74.5S: the shelf and the grounded ice of the
 # basins draining into it (Asso_Shelf Ross_West, Ross_East) within 300 km of it.
-[ANT.nests.ROSS]
+[ANT.crops.ROSS]
 folder = "Ross"
-active = false
 xlim = [-943, 745]
 ylim = [-1402, -85]
 resolutions = [0.5, 1]
@@ -97,18 +95,16 @@ resolutions = [0.5, 1]
 # Amery Ice Shelf, 49.2-82.8E, 77.5-66.7S: the shelf and the grounded ice of the basins
 # draining into it (Lambert, Mellor, Fisher, American Highland, MacRobertson Land)
 # within 300 km of it.
-[ANT.nests.AMY]
+[ANT.crops.AMY]
 folder = "Amery"
-active = false
 xlim = [1331, 2291]
 ylim = [291, 1148]
 resolutions = [0.5, 1]
 
 # Wilkes Subglacial Basin, 117.8-163.8E, 80.2-65.3S: the basins of Cook, Ninnis and
 # Mertz glaciers and their ice shelves and tongues.
-[ANT.nests.WSB]
+[ANT.crops.WSB]
 folder = "WilkesBasin"
-active = false
 xlim = [633, 1635]
 ylim = [-2184, -863]
 resolutions = [0.5, 1]

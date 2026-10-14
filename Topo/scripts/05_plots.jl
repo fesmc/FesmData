@@ -136,7 +136,7 @@ end
 
 for product in products
     # Base product
-    g, f = read_fields(product_file(dom.grids[1], product))
+    g, f = read_fields(merged_file(dom, product))
     nsrc = length(sources_of[product])
     fig = Figure(size=(1500, 950))
     zmap, zrange = elevation_colors(f["z_bed"], f["z_srf"])
@@ -152,7 +152,7 @@ for product in products
     save(joinpath(plotdir, "$(g.name)_TOPO-$(product).png"), fig)
 
     # All grids: ice thickness, and conservation table
-    grids = dom.grids
+    grids = filter(og -> has_product(dom, og, product), dom.grids)
     ncol = min(4, length(grids))
     fig = Figure(size=(380 * ncol, 360 * cld(length(grids), ncol)))
     println(@sprintf("%-16s %12s %12s %14s", "grid", "grnd km2", "flt km2", "volume km3"))

@@ -10,8 +10,8 @@ All datasets are made on the same model domains and grids, defined in
 
 A **domain** is a region on a map projection (polar stereographic, transverse Mercator
 such as UTM, or Albers equal-area) with a **base grid**, its finest resolution, e.g.
-ANT-1KM for Antarctica. The **coarser grids** of the domain are made from the base grid
-by merging whole cells, e.g. ANT-2KM to ANT-32KM. All grids of a domain are therefore
+ANT-500M for Antarctica. The **coarser grids** of the domain are made from the base grid
+by merging whole cells, e.g. ANT-1KM to ANT-32KM. All grids of a domain are therefore
 nested: every coarse cell is made of whole base cells, and the datasets on them are
 exact conservative means of the base grid.
 
@@ -20,9 +20,9 @@ resolutions or some of them, e.g. Greenland, a crop of GreenlandPaleo. Its cells
 cells of the domain grids.
 
 A **nest** is a smaller domain inside a domain, on the same projection, with a finer
-base grid of its own, made from the sources like any domain, e.g. Thwaites (500 m) in
-Antarctica (1 km). At the resolutions it shares with its parent, its grids lie on those
-of the parent: same cell centres, so that its 1 km grid is a part of ANT-1KM.
+base grid of its own, made from the sources like any domain, e.g. Jakobshavn (250 m) in
+GreenlandPaleo (500 m). At the resolutions it shares with its parent, its grids lie on
+those of the parent: same cell centres, so that its 500 m grid is a part of GRL-PAL-500M.
 
 A domain is **active** if its products are made and released. An inactive domain is
 defined, but left out of the releases (see [Inactive domains](#inactive-domains)).
@@ -42,17 +42,17 @@ large and open on their own. Inactive domains have none yet.
 
 ## Ice-sheet domains and nests
 
-Antarctica (ANT, 1-32 km), GreenlandPaleo (GRL-PAL, 500 m to 32 km; Greenland and the
+Antarctica (ANT, 500 m to 32 km), GreenlandPaleo (GRL-PAL, 500 m to 32 km; Greenland and the
 surrounding ocean and land, for glacial cycles) and North (NH, 2-32 km; the Northern
 Hemisphere ice sheets) are on polar stereographic projections. Greenland (GRL) is a crop
-of GreenlandPaleo, Laurentide (LIS) and Eurasia (EIS) are crops of North, and Amundsen
-(ASE) is the Amundsen Sea Embayment at 1 km, a crop of Antarctica.
+of GreenlandPaleo, and Laurentide (LIS) and Eurasia (EIS) are crops of North.
 
-The nests of the ice sheets cover single drainage basins, with their ice shelves or
-fjords and 50 km around them: in Antarctica the Thwaites (THW) and Pine Island (PIG)
-glaciers, and, inactive, the Filchner-Ronne (FRIS), Ross (ROSS) and Amery (AMY) ice
-shelves with the grounded ice within 300 km upstream of them, and the Wilkes
-Subglacial Basin (WSB), all at 500 m and 1 km; in Greenland Jakobshavn Isbrae (JAK), the
+The crops of Antarctica and the nests of Greenland cover single drainage basins, with
+their ice shelves or fjords and 50 km around them: in Antarctica the Amundsen Sea
+Embayment (ASE, at 500 m, 1 and 2 km), the Thwaites (THW) and Pine Island (PIG)
+glaciers, the Filchner-Ronne (FRIS), Ross (ROSS) and Amery (AMY) ice shelves with the
+grounded ice within 300 km upstream of them, and the Wilkes Subglacial Basin (WSB),
+at 500 m and 1 km; in Greenland Jakobshavn Isbrae (JAK), the
 Northeast Greenland Ice Stream (NEGIS), and, inactive, the Petermann (PET) and Helheim
 (HEL) glaciers, at 250 m, 500 m and 1 km.
 
@@ -121,7 +121,7 @@ dataset is on which domain.
 ## Inactive domains
 
 Domains that are defined but not used yet (the Alps, Svalbard, New Zealand, and the
-nests FilchnerRonne, Ross, Amery, WilkesBasin, Petermann and Helheim) are inactive:
+nests Petermann and Helheim) are inactive:
 their grids and products are made only on request, and they are left out of the
 releases and figures. To have one made and released, open an
 [issue](https://github.com/fesmc/FesmData/issues).

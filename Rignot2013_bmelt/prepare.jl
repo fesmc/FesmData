@@ -29,8 +29,7 @@ const FIELDS = [
     ("bmelt_ss", "melt_steadystate", "steady-state basal melt rate of ice shelves (no thickness change; positive for melting)"),
 ]
 
-# Basin set of the basin means (Regions), on the base grid of the domain (ANT-1KM), whose
-# cells include those of the source grid
+# Basin set of the basin means (Regions), on ANT-1KM, whose cells include those of the source grid
 const BASIN_SET = "Zwally2012"
 
 # Groups of Zwally2012 basins of bmelt_reese and bmelt_eq_reese: those of bm_ac_reese and

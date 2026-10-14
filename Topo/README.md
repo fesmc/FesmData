@@ -17,8 +17,8 @@ a product are merged in order of priority, the first over the others:
 
 | Product | Sources, by priority | Domains |
 |---|---|---|
-| `TOPO-BedMachine-v4` | BedMachine Antarctica v4, GEBCO 2026 | Antarctica, Amundsen, Thwaites, PineIsland |
-| `TOPO-Bedmap3` | Bedmap3, GEBCO 2026 | Antarctica, Amundsen, Thwaites, PineIsland |
+| `TOPO-BedMachine-v4` | BedMachine Antarctica v4, GEBCO 2026 | Antarctica and its crops |
+| `TOPO-Bedmap3` | Bedmap3, GEBCO 2026 | Antarctica and its crops |
 | `TOPO-BedMachine-v6` | BedMachine Greenland v6, GEBCO 2026 | GreenlandPaleo, Greenland, Jakobshavn, NEGIS |
 | `TOPO-GEBCO2026` | BedMachine Greenland v6, IceBoost v2.0, GEBCO 2026 | North, Laurentide, Eurasia |
 | `TOPO-GLO90-GEBCO2026` | IceBoost v2.0, Copernicus DEM GLO-90, GEBCO 2026 | Pyrenees, Patagonia, NorthPatagonianIcefield, SouthPatagonianIcefield, SRG, GranCampoNevado, CordilleraDarwin, Himalaya, DrangDrung |
@@ -27,13 +27,15 @@ Variants:
 
 | Product | Sources, by priority | Domains |
 |---|---|---|
-| `TOPO-BedMachine-v3`, `TOPO-BedMachine-v2` | BedMachine Antarctica v3, v2, GEBCO 2026 | Antarctica, Amundsen |
-| `TOPO-Bedmap2` | Bedmap2, GEBCO 2026 | Antarctica, Amundsen |
+| `TOPO-BedMachine-v3`, `TOPO-BedMachine-v2` | BedMachine Antarctica v3, v2, GEBCO 2026 | Antarctica and its crops, 1 km and coarser |
+| `TOPO-Bedmap2` | Bedmap2, GEBCO 2026 | Antarctica and its crops, 1 km and coarser |
 | `TOPO-BedMachine-v5`, `TOPO-BedMachine-v4` | BedMachine Greenland v5, v4, GEBCO 2026 | GreenlandPaleo, Greenland |
 | `TOPO-Sommers2025` | Sommers (2025) surface and Millan et al. (2022) thickness, IceBoost v2.0, Copernicus DEM GLO-90, GEBCO 2026 | DrangDrung |
 
-The inactive nests of Antarctica and Greenland and the inactive mountain-glacier domains
-have the default products of their kind. The files are `<GRID>_TOPO-<product>.nc`, with
+The inactive nests of Greenland and the inactive mountain-glacier domains have the
+default products of their kind. The variants of Antarctica are merged on ANT-500M, but
+written only on the grids of 1 km and coarser (`variants_resolution` in
+`products.toml`). The files are `<GRID>_TOPO-<product>.nc`, with
 the fields:
 
 | Field | Units | Contents |
@@ -54,10 +56,10 @@ priority.
 The processing has two stages:
 
 1. **Sources → base grid.** Each source is remapped once onto the base grid of a
-   domain (e.g. ANT-1KM, GRL-PAL-500M, NH-2KM, PAT-250M, SRG-50M), and the sources are
+   domain (e.g. ANT-500M, GRL-PAL-500M, NH-2KM, PAT-250M, SRG-50M), and the sources are
    then merged in order of priority (e.g. BedMachine over GEBCO).
-2. **Base → all other grids.** Every coarser grid, and the crops of a domain (GRL,
-   LIS, EIS, NPI, SPI), is remapped from the merged base product.
+2. **Base → all other grids.** Every coarser grid, and the crops of a domain (e.g. GRL,
+   LIS, EIS, ASE, THW, NPI, SPI), is remapped from the merged base product.
 
 Remapping is conservative: exact for sources on the same projection as the domain
 (BedMachine, Bedmap3), and from sub-cell sampling for sources on other grids (GEBCO,

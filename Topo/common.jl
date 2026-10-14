@@ -43,6 +43,17 @@ densities(dom::Domain) = (Float64(_products(dom)["rho_ice"]), Float64(_products(
 "Folder for intermediate files: \$FESMDATA_WORK/topo."
 workdir() = joinpath(fesmdata_dir("work"), "topo")
 
+"""
+    merged_file(dom, product)
+
+File of `product` merged on the base grid of `dom` (step 3): its product file on the base
+grid, or an intermediate file if the product is not written there (see `has_product`).
+"""
+function merged_file(dom::Domain, product::AbstractString)
+    has_product(dom, dom.grids[1], product) && return product_file(dom.grids[1], product)
+    return joinpath(workdir(), dom.base.name, "$(dom.base.name)_TOPO-$(product).nc")
+end
+
 "Intermediate file of a source remapped onto the base grid of a domain."
 source_file(dom::Domain, source::AbstractString) =
     joinpath(workdir(), dom.base.name, "$(dom.base.name)_$(source).nc")

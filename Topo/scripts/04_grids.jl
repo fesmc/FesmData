@@ -1,7 +1,8 @@
 #
 # Remap each product of a domain from its base grid (output of step 3) onto all
-# other grids of the domain, including the crops, and write
-# <GRID>_TOPO-<product>.nc to $FESMDATA_PRODUCTS/<folder>/<GRID>/.
+# other grids of the domain, including the crops (for a variant, those not finer than
+# `variants_resolution`), and write <GRID>_TOPO-<product>.nc to
+# $FESMDATA_PRODUCTS/<folder>/<GRID>/.
 #
 # Fields and area fractions are conservative cell means. The bed standard deviation
 # combines the sub-cell variance of the base grid with the variance of the base-grid
@@ -40,14 +41,14 @@ function dominant_mask(f)
 end
 
 for product in products
-    _, fb = read_fields(product_file(dom.grids[1], product))
+    _, fb = read_fields(merged_file(dom, product))
     # Second moment of the bed on the base grid (cell variance + mean^2)
     z2 = Float64.(fb["z_bed_sd"]) .^ 2 .+ Float64.(fb["z_bed"]) .^ 2
     src_classes = Int8.(0:length(sources_of[product])-1)
     src_attrib = Pair{String,Any}["flag_values" => collect(src_classes),
                                   "flag_meanings" => join(reverse(sources_of[product]), " ")]
 
-    for og in dom.grids[2:end]
+    for og in filter(og -> has_product(dom, og, product), dom.grids[2:end])
         t0 = time()
         g = og.grid
         m = AlignedMap(g, base)

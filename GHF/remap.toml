@@ -89,4 +89,4 @@ grids = { Greenland = 0 }
 source = "Colgan2021_topocorr"
 file = "Colgan2021_topocorr_ANT.nc"
 variables = ["ghf_corr", "ghf_corr_unc"]
-grids = { Antarctica = 0 }
+grids = { Antarctica = 1 }

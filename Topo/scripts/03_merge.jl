@@ -1,6 +1,8 @@
 #
 # Merge the sources of each product of a domain on its base grid (output of step 2),
-# and write <BASE>_TOPO-<product>.nc to $FESMDATA_PRODUCTS/<folder>/<BASE>/.
+# and write <BASE>_TOPO-<product>.nc to $FESMDATA_PRODUCTS/<folder>/<BASE>/ (to
+# $FESMDATA_WORK/topo/<BASE>/ for a variant not written on the base grid, see
+# `variants_resolution` in products.toml).
 #
 # Sources are blended in order of increasing priority. A source replaces the fields
 # below it where it fully covers a cell, with a weight that increases linearly from 0
@@ -190,7 +192,7 @@ for product in products
     attrib = Pair{String,String}["product" => product, "sources" => join(sources, " > ")]
     isempty(blended) || push!(attrib, "taper_km" => join(["$s=$(taper_km(s))" for s in blended], " "))
     append!(attrib, ["rho_ice" => string(rho_ice), "rho_sw" => string(rho_sw)])
-    path = write_fields(product_file(dom.grids[1], product), base, out_fields; dataset=DATASET,
+    path = write_fields(merged_file(dom, product), base, out_fields; dataset=DATASET,
         elevation=dom.grids[1].elevation, attrib=attrib,
         varattrib=Dict("mask" => MASK_ATTRIB, "src_id" => src_attrib))
     println("Wrote $path ($(round(time() - t0; digits=1)) s)")

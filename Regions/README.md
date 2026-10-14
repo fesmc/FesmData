@@ -30,7 +30,7 @@ each domain.
 | `BASINS-NEGIS` | Northeast Greenland Ice Stream in three parts: centre and south from the surface speed (Joughin et al., 2018), north from NEGIS-v1 | `basin`, `basin_mask` | GreenlandPaleo, Greenland, NEGIS |
 
 The files are `<GRID>_REGIONS.nc` and `<GRID>_BASINS-<set>.nc`. Everything is computed
-on the base grid of a domain (e.g. ANT-1KM, GRL-PAL-500M, NH-2KM, PAT-250M, SRG-50M) and
+on the base grid of a domain (e.g. ANT-500M, GRL-PAL-500M, NH-2KM, PAT-250M, SRG-50M) and
 then mapped onto all other grids and crops, as for the topography; a nest (e.g. SRG in
 PAT) is computed on its own base grid. On each other grid, region codes, zones and
 basins are the class covering most of a cell, nested level by level (a cell's

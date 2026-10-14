@@ -34,6 +34,18 @@ function product_sources(dom::Domain)
     return products
 end
 
+"""
+    has_product(dom, og, product) -> Bool
+
+Whether `product` of `dom` is written on its grid `og`: the default products on all
+grids, the variants on the grids not finer than `variants_resolution` (products.toml).
+"""
+function has_product(dom::Domain, og::OutGrid, product::AbstractString)
+    p = _products(dom)
+    haskey(get(p, "variants", Dict{String,Any}()), product) || return true
+    return spacing(og.grid)[1] >= get(p, "variants_resolution", 0) - 1e-6
+end
+
 "Output file of a topography product on a grid."
 product_file(og::OutGrid, product::AbstractString) =
     joinpath(outdir(og), "$(og.grid.name)_TOPO-$(product).nc")
@@ -41,11 +53,11 @@ product_file(og::OutGrid, product::AbstractString) =
 """
     topo_release_files(dom, og) -> Vector{String}
 
-Files of a release of the topography on grid `og` of `dom`: all its products, default
-and variants (see ../Publish).
+Files of a release of the topography on grid `og` of `dom`: its products, default and
+variants, written on it (see `has_product` and ../Publish).
 """
 function topo_release_files(dom::Domain, og::OutGrid)
     p = _products(dom)
     products = vcat(collect(keys(p["products"])), collect(keys(get(p, "variants", Dict{String,Any}()))))
-    return sort([basename(product_file(og, product)) for product in products])
+    return sort([basename(product_file(og, product)) for product in products if has_product(dom, og, product)])
 end
