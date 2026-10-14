@@ -47,6 +47,14 @@ licence.
   `cmip5.piControl`, one tar file each) has CVDP output of the same simulations, but over
   other years and without GISS-E2-R lgm and midHolocene, FGOALS-g2 midHolocene and
   MPI-ESM-P piControl.
+- CMIP5 fixed fields of each model and experiment (`orog`, `sftlf`, `sftgif`, 66 files of
+  a few hundred kB), from the ESGF data node of CEDA (no login needed), downloaded by
+  `prepare.jl` (`datamanifest.toml`, entries `pmip3_fx_<model>_<experiment>_<field>`).
+  GISS-E2-R lgm: physics version p150 (of p150 and p151; the CVDP file names r0i0p0).
+  Not available: `sftgif` of FGOALS-g2 lgm, `orog` and `sftlf` of MPI-ESM-P lgm (only on
+  the retired DKRZ data node), and all three of CNRM-CM5 midHolocene (no data node serves
+  them), for which `prepare.jl` takes those of piControl: in the PMIP3 protocol the
+  mid-Holocene has the preindustrial surface.
 - LGM boundary conditions: `pmip3_21k_orog_diff_v0.nc`, `pmip3_21k_sftlf_v0.nc` and
   `pmip3_21k_sftgif_v0.nc` from https://pmip3.lsce.ipsl.fr/share/design/ice_bc/, downloaded
   by `prepare.jl` (`datamanifest.toml`).
@@ -60,12 +68,15 @@ julia fesmdata.jl remap $FESMDATA_PREPARED/PMIP3_cvdp/PMIP3_CCSM4_lgm.nc all --n
 
 `prepare.jl` writes one file per model and experiment, `PMIP3_<model>_<experiment>.nc`,
 with `t2m_ann`, `t2m_djf`, `t2m_jja` (degC), `pr_ann`, `pr_djf`, `pr_jja` (mm d-1) and
-`sst_ann` (degC; missing for GISS-E2-R piControl), and `PMIP3_lgm_boundary_conditions.nc`
+`sst_ann` (degC; missing for GISS-E2-R piControl), `z_srf` (m, surface altitude of the
+experiment), `f_land` and `f_ice` (land and land ice area fractions; scaled to 0-1 from
+their values, as the units of GISS-E2-R lgm, fractions, and MIROC-ESM lgm, 0-10000, are
+mislabelled %), and `PMIP3_lgm_boundary_conditions.nc`
 with `dz_srf` (m, LGM - preindustrial surface elevation), `f_land` and `f_ice` (land and
 land-ice area fractions at the LGM, 1° grid). The years of each climatology are in the
-global attribute `years`. The CVDP files have neither orography nor land mask; v1 made
-the LGM `z_srf` as present-day surface elevation + `dz_srf`, and its `mask` from these
-land and ice fractions.
+global attribute `years`. The CVDP files have neither orography nor land mask, hence the
+CMIP5 fixed fields (v1 made the LGM `z_srf` as present-day surface elevation + `dz_srf`,
+and its `mask` from the land and ice fractions of the boundary conditions).
 
 Only regular lon-lat grids can be remapped. The models on Gaussian grids (CNRM-CM5,
 MIROC-ESM, MPI-ESM-P, MRI-CGCM3; latitude spacing uneven by 0.8 %) and FGOALS-g2 (finer
