@@ -1035,6 +1035,287 @@ doi = "10.5194/gmd-8-3621-2015"
 storage_path = "$datasets_dir/pmip3_21k_bc/pmip3_21k_sftgif_v0.nc"
 uri = "https://pmip3.lsce.ipsl.fr/share/design/ice_bc/pmip3_21k_sftgif_v0.nc"
 
+# PMIP3/CMIP5 fixed fields of the 8 models of PMIP3_cvdp (ESGF, CEDA data node): surface
+# altitude (orog), land area fraction (sftlf) and land ice area fraction (sftgif) of each
+# model and experiment (GISS-E2-R lgm: physics version p150). Not available: sftgif of
+# FGOALS-g2 lgm, orog and sftlf of MPI-ESM-P lgm (only on the retired DKRZ data node).
+
+[pmip3_fx_ccsm4_lgm_orog]
+storage_path = "$datasets_dir/pmip3_fx/orog_fx_CCSM4_lgm_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/NCAR/CCSM4/lgm/fx/atmos/fx/r0i0p0/v20120611/orog/orog_fx_CCSM4_lgm_r0i0p0.nc"
+
+[pmip3_fx_ccsm4_lgm_sftlf]
+storage_path = "$datasets_dir/pmip3_fx/sftlf_fx_CCSM4_lgm_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/NCAR/CCSM4/lgm/fx/atmos/fx/r0i0p0/v20120611/sftlf/sftlf_fx_CCSM4_lgm_r0i0p0.nc"
+
+[pmip3_fx_ccsm4_lgm_sftgif]
+storage_path = "$datasets_dir/pmip3_fx/sftgif_fx_CCSM4_lgm_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/NCAR/CCSM4/lgm/fx/land/fx/r0i0p0/v20130312/sftgif/sftgif_fx_CCSM4_lgm_r0i0p0.nc"
+
+[pmip3_fx_ccsm4_midholocene_orog]
+storage_path = "$datasets_dir/pmip3_fx/orog_fx_CCSM4_midHolocene_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/NCAR/CCSM4/midHolocene/fx/atmos/fx/r0i0p0/v20120413/orog/orog_fx_CCSM4_midHolocene_r0i0p0.nc"
+
+[pmip3_fx_ccsm4_midholocene_sftlf]
+storage_path = "$datasets_dir/pmip3_fx/sftlf_fx_CCSM4_midHolocene_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/NCAR/CCSM4/midHolocene/fx/atmos/fx/r0i0p0/v20120413/sftlf/sftlf_fx_CCSM4_midHolocene_r0i0p0.nc"
+
+[pmip3_fx_ccsm4_midholocene_sftgif]
+storage_path = "$datasets_dir/pmip3_fx/sftgif_fx_CCSM4_midHolocene_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/NCAR/CCSM4/midHolocene/fx/land/fx/r0i0p0/v20130312/sftgif/sftgif_fx_CCSM4_midHolocene_r0i0p0.nc"
+
+[pmip3_fx_ccsm4_picontrol_orog]
+storage_path = "$datasets_dir/pmip3_fx/orog_fx_CCSM4_piControl_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/NCAR/CCSM4/piControl/fx/atmos/fx/r0i0p0/v20120413/orog/orog_fx_CCSM4_piControl_r0i0p0.nc"
+
+[pmip3_fx_ccsm4_picontrol_sftlf]
+storage_path = "$datasets_dir/pmip3_fx/sftlf_fx_CCSM4_piControl_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/NCAR/CCSM4/piControl/fx/atmos/fx/r0i0p0/v20120413/sftlf/sftlf_fx_CCSM4_piControl_r0i0p0.nc"
+
+[pmip3_fx_ccsm4_picontrol_sftgif]
+storage_path = "$datasets_dir/pmip3_fx/sftgif_fx_CCSM4_piControl_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/NCAR/CCSM4/piControl/fx/land/fx/r0i0p0/v20130312/sftgif/sftgif_fx_CCSM4_piControl_r0i0p0.nc"
+
+[pmip3_fx_cnrm_cm5_lgm_orog]
+storage_path = "$datasets_dir/pmip3_fx/orog_fx_CNRM-CM5_lgm_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/CNRM-CERFACS/CNRM-CM5/lgm/fx/atmos/fx/r0i0p0/v20140201/orog/orog_fx_CNRM-CM5_lgm_r0i0p0.nc"
+
+[pmip3_fx_cnrm_cm5_lgm_sftlf]
+storage_path = "$datasets_dir/pmip3_fx/sftlf_fx_CNRM-CM5_lgm_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/CNRM-CERFACS/CNRM-CM5/lgm/fx/atmos/fx/r0i0p0/v20140201/sftlf/sftlf_fx_CNRM-CM5_lgm_r0i0p0.nc"
+
+[pmip3_fx_cnrm_cm5_lgm_sftgif]
+storage_path = "$datasets_dir/pmip3_fx/sftgif_fx_CNRM-CM5_lgm_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/CNRM-CERFACS/CNRM-CM5/lgm/fx/land/fx/r0i0p0/v20130826/sftgif/sftgif_fx_CNRM-CM5_lgm_r0i0p0.nc"
+
+[pmip3_fx_cnrm_cm5_midholocene_orog]
+storage_path = "$datasets_dir/pmip3_fx/orog_fx_CNRM-CM5_midHolocene_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/CNRM-CERFACS/CNRM-CM5/midHolocene/fx/atmos/fx/r0i0p0/v20130826/orog/orog_fx_CNRM-CM5_midHolocene_r0i0p0.nc"
+
+[pmip3_fx_cnrm_cm5_midholocene_sftlf]
+storage_path = "$datasets_dir/pmip3_fx/sftlf_fx_CNRM-CM5_midHolocene_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/CNRM-CERFACS/CNRM-CM5/midHolocene/fx/atmos/fx/r0i0p0/v20130826/sftlf/sftlf_fx_CNRM-CM5_midHolocene_r0i0p0.nc"
+
+[pmip3_fx_cnrm_cm5_midholocene_sftgif]
+storage_path = "$datasets_dir/pmip3_fx/sftgif_fx_CNRM-CM5_midHolocene_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/CNRM-CERFACS/CNRM-CM5/midHolocene/fx/land/fx/r0i0p0/v20130826/sftgif/sftgif_fx_CNRM-CM5_midHolocene_r0i0p0.nc"
+
+[pmip3_fx_cnrm_cm5_picontrol_orog]
+storage_path = "$datasets_dir/pmip3_fx/orog_fx_CNRM-CM5_piControl_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/CNRM-CERFACS/CNRM-CM5/piControl/fx/atmos/fx/r0i0p0/v20130826/orog/orog_fx_CNRM-CM5_piControl_r0i0p0.nc"
+
+[pmip3_fx_cnrm_cm5_picontrol_sftlf]
+storage_path = "$datasets_dir/pmip3_fx/sftlf_fx_CNRM-CM5_piControl_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/CNRM-CERFACS/CNRM-CM5/piControl/fx/atmos/fx/r0i0p0/v20130826/sftlf/sftlf_fx_CNRM-CM5_piControl_r0i0p0.nc"
+
+[pmip3_fx_cnrm_cm5_picontrol_sftgif]
+storage_path = "$datasets_dir/pmip3_fx/sftgif_fx_CNRM-CM5_piControl_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/CNRM-CERFACS/CNRM-CM5/piControl/fx/land/fx/r0i0p0/v20130826/sftgif/sftgif_fx_CNRM-CM5_piControl_r0i0p0.nc"
+
+[pmip3_fx_fgoals_g2_lgm_orog]
+storage_path = "$datasets_dir/pmip3_fx/orog_fx_FGOALS-g2_lgm_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/LASG-CESS/FGOALS-g2/lgm/fx/atmos/fx/r0i0p0/v20130314/orog/orog_fx_FGOALS-g2_lgm_r0i0p0.nc"
+
+[pmip3_fx_fgoals_g2_lgm_sftlf]
+storage_path = "$datasets_dir/pmip3_fx/sftlf_fx_FGOALS-g2_lgm_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/LASG-CESS/FGOALS-g2/lgm/fx/atmos/fx/r0i0p0/v20130314/sftlf/sftlf_fx_FGOALS-g2_lgm_r0i0p0.nc"
+
+[pmip3_fx_fgoals_g2_midholocene_orog]
+storage_path = "$datasets_dir/pmip3_fx/orog_fx_FGOALS-g2_midHolocene_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/LASG-CESS/FGOALS-g2/midHolocene/fx/atmos/fx/r0i0p0/v20130314/orog/orog_fx_FGOALS-g2_midHolocene_r0i0p0.nc"
+
+[pmip3_fx_fgoals_g2_midholocene_sftlf]
+storage_path = "$datasets_dir/pmip3_fx/sftlf_fx_FGOALS-g2_midHolocene_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/LASG-CESS/FGOALS-g2/midHolocene/fx/atmos/fx/r0i0p0/v20130314/sftlf/sftlf_fx_FGOALS-g2_midHolocene_r0i0p0.nc"
+
+[pmip3_fx_fgoals_g2_midholocene_sftgif]
+storage_path = "$datasets_dir/pmip3_fx/sftgif_fx_FGOALS-g2_midHolocene_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/LASG-CESS/FGOALS-g2/midHolocene/fx/land/fx/r0i0p0/v20130314/sftgif/sftgif_fx_FGOALS-g2_midHolocene_r0i0p0.nc"
+
+[pmip3_fx_fgoals_g2_picontrol_orog]
+storage_path = "$datasets_dir/pmip3_fx/orog_fx_FGOALS-g2_piControl_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/LASG-CESS/FGOALS-g2/piControl/fx/atmos/fx/r0i0p0/v20130314/orog/orog_fx_FGOALS-g2_piControl_r0i0p0.nc"
+
+[pmip3_fx_fgoals_g2_picontrol_sftlf]
+storage_path = "$datasets_dir/pmip3_fx/sftlf_fx_FGOALS-g2_piControl_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/LASG-CESS/FGOALS-g2/piControl/fx/atmos/fx/r0i0p0/v20130314/sftlf/sftlf_fx_FGOALS-g2_piControl_r0i0p0.nc"
+
+[pmip3_fx_fgoals_g2_picontrol_sftgif]
+storage_path = "$datasets_dir/pmip3_fx/sftgif_fx_FGOALS-g2_piControl_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/LASG-CESS/FGOALS-g2/piControl/fx/land/fx/r0i0p0/v20130314/sftgif/sftgif_fx_FGOALS-g2_piControl_r0i0p0.nc"
+
+[pmip3_fx_giss_e2_r_lgm_orog]
+storage_path = "$datasets_dir/pmip3_fx/orog_fx_GISS-E2-R_lgm_r0i0p150.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/NASA-GISS/GISS-E2-R/lgm/fx/atmos/fx/r0i0p150/v20130313/orog/orog_fx_GISS-E2-R_lgm_r0i0p150.nc"
+
+[pmip3_fx_giss_e2_r_lgm_sftlf]
+storage_path = "$datasets_dir/pmip3_fx/sftlf_fx_GISS-E2-R_lgm_r0i0p150.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/NASA-GISS/GISS-E2-R/lgm/fx/atmos/fx/r0i0p150/v20130313/sftlf/sftlf_fx_GISS-E2-R_lgm_r0i0p150.nc"
+
+[pmip3_fx_giss_e2_r_lgm_sftgif]
+storage_path = "$datasets_dir/pmip3_fx/sftgif_fx_GISS-E2-R_lgm_r0i0p150.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/NASA-GISS/GISS-E2-R/lgm/fx/land/fx/r0i0p150/v20130313/sftgif/sftgif_fx_GISS-E2-R_lgm_r0i0p150.nc"
+
+[pmip3_fx_giss_e2_r_midholocene_orog]
+storage_path = "$datasets_dir/pmip3_fx/orog_fx_GISS-E2-R_midHolocene_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/NASA-GISS/GISS-E2-R/midHolocene/fx/atmos/fx/r0i0p0/v20130313/orog/orog_fx_GISS-E2-R_midHolocene_r0i0p0.nc"
+
+[pmip3_fx_giss_e2_r_midholocene_sftlf]
+storage_path = "$datasets_dir/pmip3_fx/sftlf_fx_GISS-E2-R_midHolocene_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/NASA-GISS/GISS-E2-R/midHolocene/fx/atmos/fx/r0i0p0/v20130313/sftlf/sftlf_fx_GISS-E2-R_midHolocene_r0i0p0.nc"
+
+[pmip3_fx_giss_e2_r_midholocene_sftgif]
+storage_path = "$datasets_dir/pmip3_fx/sftgif_fx_GISS-E2-R_midHolocene_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/NASA-GISS/GISS-E2-R/midHolocene/fx/land/fx/r0i0p0/v20130313/sftgif/sftgif_fx_GISS-E2-R_midHolocene_r0i0p0.nc"
+
+[pmip3_fx_giss_e2_r_picontrol_orog]
+storage_path = "$datasets_dir/pmip3_fx/orog_fx_GISS-E2-R_piControl_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/NASA-GISS/GISS-E2-R/piControl/fx/atmos/fx/r0i0p0/v20130312/orog/orog_fx_GISS-E2-R_piControl_r0i0p0.nc"
+
+[pmip3_fx_giss_e2_r_picontrol_sftlf]
+storage_path = "$datasets_dir/pmip3_fx/sftlf_fx_GISS-E2-R_piControl_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/NASA-GISS/GISS-E2-R/piControl/fx/atmos/fx/r0i0p0/v20130312/sftlf/sftlf_fx_GISS-E2-R_piControl_r0i0p0.nc"
+
+[pmip3_fx_giss_e2_r_picontrol_sftgif]
+storage_path = "$datasets_dir/pmip3_fx/sftgif_fx_GISS-E2-R_piControl_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/NASA-GISS/GISS-E2-R/piControl/fx/land/fx/r0i0p0/v20130312/sftgif/sftgif_fx_GISS-E2-R_piControl_r0i0p0.nc"
+
+[pmip3_fx_ipsl_cm5a_lr_lgm_orog]
+storage_path = "$datasets_dir/pmip3_fx/orog_fx_IPSL-CM5A-LR_lgm_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/IPSL/IPSL-CM5A-LR/lgm/fx/atmos/fx/r0i0p0/v20120114/orog/orog_fx_IPSL-CM5A-LR_lgm_r0i0p0.nc"
+
+[pmip3_fx_ipsl_cm5a_lr_lgm_sftlf]
+storage_path = "$datasets_dir/pmip3_fx/sftlf_fx_IPSL-CM5A-LR_lgm_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/IPSL/IPSL-CM5A-LR/lgm/fx/atmos/fx/r0i0p0/v20120114/sftlf/sftlf_fx_IPSL-CM5A-LR_lgm_r0i0p0.nc"
+
+[pmip3_fx_ipsl_cm5a_lr_lgm_sftgif]
+storage_path = "$datasets_dir/pmip3_fx/sftgif_fx_IPSL-CM5A-LR_lgm_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/IPSL/IPSL-CM5A-LR/lgm/fx/land/fx/r0i0p0/v20120114/sftgif/sftgif_fx_IPSL-CM5A-LR_lgm_r0i0p0.nc"
+
+[pmip3_fx_ipsl_cm5a_lr_midholocene_orog]
+storage_path = "$datasets_dir/pmip3_fx/orog_fx_IPSL-CM5A-LR_midHolocene_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/IPSL/IPSL-CM5A-LR/midHolocene/fx/atmos/fx/r0i0p0/v20111119/orog/orog_fx_IPSL-CM5A-LR_midHolocene_r0i0p0.nc"
+
+[pmip3_fx_ipsl_cm5a_lr_midholocene_sftlf]
+storage_path = "$datasets_dir/pmip3_fx/sftlf_fx_IPSL-CM5A-LR_midHolocene_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/IPSL/IPSL-CM5A-LR/midHolocene/fx/atmos/fx/r0i0p0/v20111119/sftlf/sftlf_fx_IPSL-CM5A-LR_midHolocene_r0i0p0.nc"
+
+[pmip3_fx_ipsl_cm5a_lr_midholocene_sftgif]
+storage_path = "$datasets_dir/pmip3_fx/sftgif_fx_IPSL-CM5A-LR_midHolocene_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/IPSL/IPSL-CM5A-LR/midHolocene/fx/land/fx/r0i0p0/v20111119/sftgif/sftgif_fx_IPSL-CM5A-LR_midHolocene_r0i0p0.nc"
+
+[pmip3_fx_ipsl_cm5a_lr_picontrol_orog]
+storage_path = "$datasets_dir/pmip3_fx/orog_fx_IPSL-CM5A-LR_piControl_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/IPSL/IPSL-CM5A-LR/piControl/fx/atmos/fx/r0i0p0/v20110324/orog/orog_fx_IPSL-CM5A-LR_piControl_r0i0p0.nc"
+
+[pmip3_fx_ipsl_cm5a_lr_picontrol_sftlf]
+storage_path = "$datasets_dir/pmip3_fx/sftlf_fx_IPSL-CM5A-LR_piControl_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/IPSL/IPSL-CM5A-LR/piControl/fx/atmos/fx/r0i0p0/v20110324/sftlf/sftlf_fx_IPSL-CM5A-LR_piControl_r0i0p0.nc"
+
+[pmip3_fx_ipsl_cm5a_lr_picontrol_sftgif]
+storage_path = "$datasets_dir/pmip3_fx/sftgif_fx_IPSL-CM5A-LR_piControl_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/IPSL/IPSL-CM5A-LR/piControl/fx/land/fx/r0i0p0/v20110324/sftgif/sftgif_fx_IPSL-CM5A-LR_piControl_r0i0p0.nc"
+
+[pmip3_fx_miroc_esm_lgm_orog]
+storage_path = "$datasets_dir/pmip3_fx/orog_fx_MIROC-ESM_lgm_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/MIROC/MIROC-ESM/lgm/fx/atmos/fx/r0i0p0/v20120828/orog/orog_fx_MIROC-ESM_lgm_r0i0p0.nc"
+
+[pmip3_fx_miroc_esm_lgm_sftlf]
+storage_path = "$datasets_dir/pmip3_fx/sftlf_fx_MIROC-ESM_lgm_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/MIROC/MIROC-ESM/lgm/fx/atmos/fx/r0i0p0/v20120828/sftlf/sftlf_fx_MIROC-ESM_lgm_r0i0p0.nc"
+
+[pmip3_fx_miroc_esm_lgm_sftgif]
+storage_path = "$datasets_dir/pmip3_fx/sftgif_fx_MIROC-ESM_lgm_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/MIROC/MIROC-ESM/lgm/fx/land/fx/r0i0p0/v20120828/sftgif/sftgif_fx_MIROC-ESM_lgm_r0i0p0.nc"
+
+[pmip3_fx_miroc_esm_midholocene_orog]
+storage_path = "$datasets_dir/pmip3_fx/orog_fx_MIROC-ESM_midHolocene_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/MIROC/MIROC-ESM/midHolocene/fx/atmos/fx/r0i0p0/v20120828/orog/orog_fx_MIROC-ESM_midHolocene_r0i0p0.nc"
+
+[pmip3_fx_miroc_esm_midholocene_sftlf]
+storage_path = "$datasets_dir/pmip3_fx/sftlf_fx_MIROC-ESM_midHolocene_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/MIROC/MIROC-ESM/midHolocene/fx/atmos/fx/r0i0p0/v20120828/sftlf/sftlf_fx_MIROC-ESM_midHolocene_r0i0p0.nc"
+
+[pmip3_fx_miroc_esm_midholocene_sftgif]
+storage_path = "$datasets_dir/pmip3_fx/sftgif_fx_MIROC-ESM_midHolocene_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/MIROC/MIROC-ESM/midHolocene/fx/land/fx/r0i0p0/v20120828/sftgif/sftgif_fx_MIROC-ESM_midHolocene_r0i0p0.nc"
+
+[pmip3_fx_miroc_esm_picontrol_orog]
+storage_path = "$datasets_dir/pmip3_fx/orog_fx_MIROC-ESM_piControl_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/MIROC/MIROC-ESM/piControl/fx/atmos/fx/r0i0p0/v20120828/orog/orog_fx_MIROC-ESM_piControl_r0i0p0.nc"
+
+[pmip3_fx_miroc_esm_picontrol_sftlf]
+storage_path = "$datasets_dir/pmip3_fx/sftlf_fx_MIROC-ESM_piControl_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/MIROC/MIROC-ESM/piControl/fx/atmos/fx/r0i0p0/v20120828/sftlf/sftlf_fx_MIROC-ESM_piControl_r0i0p0.nc"
+
+[pmip3_fx_miroc_esm_picontrol_sftgif]
+storage_path = "$datasets_dir/pmip3_fx/sftgif_fx_MIROC-ESM_piControl_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/MIROC/MIROC-ESM/piControl/fx/land/fx/r0i0p0/v20120828/sftgif/sftgif_fx_MIROC-ESM_piControl_r0i0p0.nc"
+
+[pmip3_fx_mpi_esm_p_lgm_sftgif]
+storage_path = "$datasets_dir/pmip3_fx/sftgif_fx_MPI-ESM-P_lgm_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/MPI-M/MPI-ESM-P/lgm/fx/land/fx/r0i0p0/v20111028/sftgif/sftgif_fx_MPI-ESM-P_lgm_r0i0p0.nc"
+
+[pmip3_fx_mpi_esm_p_midholocene_orog]
+storage_path = "$datasets_dir/pmip3_fx/orog_fx_MPI-ESM-P_midHolocene_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/MPI-M/MPI-ESM-P/midHolocene/fx/atmos/fx/r0i0p0/v20120625/orog/orog_fx_MPI-ESM-P_midHolocene_r0i0p0.nc"
+
+[pmip3_fx_mpi_esm_p_midholocene_sftlf]
+storage_path = "$datasets_dir/pmip3_fx/sftlf_fx_MPI-ESM-P_midHolocene_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/MPI-M/MPI-ESM-P/midHolocene/fx/atmos/fx/r0i0p0/v20120625/sftlf/sftlf_fx_MPI-ESM-P_midHolocene_r0i0p0.nc"
+
+[pmip3_fx_mpi_esm_p_midholocene_sftgif]
+storage_path = "$datasets_dir/pmip3_fx/sftgif_fx_MPI-ESM-P_midHolocene_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/MPI-M/MPI-ESM-P/midHolocene/fx/land/fx/r0i0p0/v20111028/sftgif/sftgif_fx_MPI-ESM-P_midHolocene_r0i0p0.nc"
+
+[pmip3_fx_mpi_esm_p_picontrol_orog]
+storage_path = "$datasets_dir/pmip3_fx/orog_fx_MPI-ESM-P_piControl_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/MPI-M/MPI-ESM-P/piControl/fx/atmos/fx/r0i0p0/v20120625/orog/orog_fx_MPI-ESM-P_piControl_r0i0p0.nc"
+
+[pmip3_fx_mpi_esm_p_picontrol_sftlf]
+storage_path = "$datasets_dir/pmip3_fx/sftlf_fx_MPI-ESM-P_piControl_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/MPI-M/MPI-ESM-P/piControl/fx/atmos/fx/r0i0p0/v20120625/sftlf/sftlf_fx_MPI-ESM-P_piControl_r0i0p0.nc"
+
+[pmip3_fx_mpi_esm_p_picontrol_sftgif]
+storage_path = "$datasets_dir/pmip3_fx/sftgif_fx_MPI-ESM-P_piControl_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/MPI-M/MPI-ESM-P/piControl/fx/land/fx/r0i0p0/v20111028/sftgif/sftgif_fx_MPI-ESM-P_piControl_r0i0p0.nc"
+
+[pmip3_fx_mri_cgcm3_lgm_orog]
+storage_path = "$datasets_dir/pmip3_fx/orog_fx_MRI-CGCM3_lgm_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/MRI/MRI-CGCM3/lgm/fx/atmos/fx/r0i0p0/v20120609/orog/orog_fx_MRI-CGCM3_lgm_r0i0p0.nc"
+
+[pmip3_fx_mri_cgcm3_lgm_sftlf]
+storage_path = "$datasets_dir/pmip3_fx/sftlf_fx_MRI-CGCM3_lgm_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/MRI/MRI-CGCM3/lgm/fx/atmos/fx/r0i0p0/v20120609/sftlf/sftlf_fx_MRI-CGCM3_lgm_r0i0p0.nc"
+
+[pmip3_fx_mri_cgcm3_lgm_sftgif]
+storage_path = "$datasets_dir/pmip3_fx/sftgif_fx_MRI-CGCM3_lgm_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/MRI/MRI-CGCM3/lgm/fx/land/fx/r0i0p0/v20120629/sftgif/sftgif_fx_MRI-CGCM3_lgm_r0i0p0.nc"
+
+[pmip3_fx_mri_cgcm3_midholocene_orog]
+storage_path = "$datasets_dir/pmip3_fx/orog_fx_MRI-CGCM3_midHolocene_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/MRI/MRI-CGCM3/midHolocene/fx/atmos/fx/r0i0p0/v20110915/orog/orog_fx_MRI-CGCM3_midHolocene_r0i0p0.nc"
+
+[pmip3_fx_mri_cgcm3_midholocene_sftlf]
+storage_path = "$datasets_dir/pmip3_fx/sftlf_fx_MRI-CGCM3_midHolocene_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/MRI/MRI-CGCM3/midHolocene/fx/atmos/fx/r0i0p0/v20110915/sftlf/sftlf_fx_MRI-CGCM3_midHolocene_r0i0p0.nc"
+
+[pmip3_fx_mri_cgcm3_midholocene_sftgif]
+storage_path = "$datasets_dir/pmip3_fx/sftgif_fx_MRI-CGCM3_midHolocene_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/MRI/MRI-CGCM3/midHolocene/fx/land/fx/r0i0p0/v20120629/sftgif/sftgif_fx_MRI-CGCM3_midHolocene_r0i0p0.nc"
+
+[pmip3_fx_mri_cgcm3_picontrol_orog]
+storage_path = "$datasets_dir/pmip3_fx/orog_fx_MRI-CGCM3_piControl_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/MRI/MRI-CGCM3/piControl/fx/atmos/fx/r0i0p0/v20110831/orog/orog_fx_MRI-CGCM3_piControl_r0i0p0.nc"
+
+[pmip3_fx_mri_cgcm3_picontrol_sftlf]
+storage_path = "$datasets_dir/pmip3_fx/sftlf_fx_MRI-CGCM3_piControl_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/MRI/MRI-CGCM3/piControl/fx/atmos/fx/r0i0p0/v20110831/sftlf/sftlf_fx_MRI-CGCM3_piControl_r0i0p0.nc"
+
+[pmip3_fx_mri_cgcm3_picontrol_sftgif]
+storage_path = "$datasets_dir/pmip3_fx/sftgif_fx_MRI-CGCM3_piControl_r0i0p0.nc"
+uri = "https://esgf.ceda.ac.uk/thredds/fileServer/esg_dataroot/cmip5/output1/MRI/MRI-CGCM3/piControl/fx/land/fx/r0i0p0/v20120629/sftgif/sftgif_fx_MRI-CGCM3_piControl_r0i0p0.nc"
+
 # Buizert et al. (2018): Greenland seasonal temperature reconstruction, 22 ka to present
 # (NOAA NCEI paleo archive), and its 1981-2010 baseline climatology.
 

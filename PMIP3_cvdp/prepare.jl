@@ -1,6 +1,7 @@
 # Prepare the PMIP3 (CMIP5) lgm, midHolocene and piControl climatologies for remapping:
-# the annual and seasonal means of the CVDP output (cvdp_data files, see README.md), one
-# file per model and experiment on the model's own lon-lat grid,
+# the annual and seasonal means of the CVDP output (cvdp_data files, see README.md), with
+# the surface altitude, land and land ice fractions of the model and experiment (CMIP5
+# fixed fields, ESGF), one file per model and experiment on the model's own lon-lat grid,
 # $FESMDATA_PREPARED/PMIP3_cvdp/PMIP3_<model>_<experiment>.nc, and the PMIP3 LGM
 # boundary conditions, PMIP3_lgm_boundary_conditions.nc.
 #
@@ -52,6 +53,15 @@ const FIELDS = [
     "sst_ann" => ("sst_spatialmean_ann", "degC", "sea surface temperature, annual mean"),
 ]
 
+# Prepared field => (CMIP5 fixed field of the model and experiment, factor, units, long
+# name), from ESGF (datamanifest entries pmip3_fx_<model>_<experiment>_<field>), where
+# available
+const FX_FIELDS = [
+    "z_srf" => ("orog", 1, "m", "surface altitude (orography of the experiment)"),
+    "f_land" => ("sftlf", 0.01, "1", "land area fraction"),
+    "f_ice" => ("sftgif", 0.01, "1", "land ice area fraction"),
+]
+
 const REFERENCES =
     "Braconnot, P., Harrison, S. P., Kageyama, M., et al.: Evaluation of climate models using " *
     "palaeoclimatic data, Nat. Clim. Change, 2, 417-424, 2012, doi:10.1038/nclimate1456; " *
@@ -74,17 +84,50 @@ function _write_lonlat(ds, lon, lat)
     defVar(ds, "lat", Float64.(lat), ("lat",); attrib=["units" => "degrees_north", "standard_name" => "latitude"])
 end
 
-function prepare_cvdp(model, experiment, input, outdir)
+"""
+    read_fx(db, model, experiment, lon, lat) -> Dict
+
+The CMIP5 fixed fields of a model and experiment that are available (`FX_FIELDS`, by
+prepared name), on the grid of its CVDP fields (`lon`, `lat`, which they must match);
+land ice fraction 0 where there is no land.
+"""
+function read_fx(db, model, experiment, lon, lat)
+    fx = Dict{String,Matrix{Float32}}()
+    for (name, (var, factor, _, _)) in FX_FIELDS
+        key = lowercase(replace("pmip3_fx_$(model)_$(experiment)_$var", "-" => "_"))
+        haskey(db.datasets, key) || (println("  $model $experiment: no $var"); continue)
+        NCDataset(download_dataset(db, key)) do ds
+            flon, flat = ds["lon"][:], ds["lat"][:]
+            F = _float(ds[var][:, :]) .* Float32(factor)
+            if length(flat) == length(lat) && flat ≈ reverse(lat)
+                flat, F = reverse(flat), reverse(F; dims=2)
+            end
+            flon ≈ lon && flat ≈ lat || error("$model $experiment: $var is not on the grid of the CVDP fields")
+            fx[name] = F
+        end
+    end
+    haskey(fx, "f_ice") && haskey(fx, "f_land") && (fx["f_ice"][isnan.(fx["f_ice"]) .& (fx["f_land"] .== 0)] .= 0)
+    return fx
+end
+
+function prepare_cvdp(model, experiment, input, outdir, db)
     years = match(r"\.cvdp_data\.(\d+-\d+)\.nc$", input)[1]
     path = joinpath(outdir, "PMIP3_$(model)_$(experiment).nc")
     NCDataset(input) do src
         NCDataset(path, "c") do ds
-            _write_lonlat(ds, src["lon"][:], src["lat"][:])
+            lon, lat = src["lon"][:], src["lat"][:]
+            _write_lonlat(ds, lon, lat)
             for (name, (cvdp, units, long_name)) in FIELDS
                 # Not every simulation has every field (e.g. no sst for GISS-E2-R piControl)
                 haskey(src, cvdp) || (println("  $model $experiment: no $cvdp"); continue)
                 defVar(ds, name, _float(src[cvdp][:, :]), ("lon", "lat"); fillvalue=NaN32, deflatelevel=1,
                        attrib=["units" => units, "long_name" => long_name])
+            end
+            fx = read_fx(db, model, experiment, lon, lat)
+            for (name, (var, _, units, long_name)) in FX_FIELDS
+                haskey(fx, name) || continue
+                defVar(ds, name, fx[name], ("lon", "lat"); fillvalue=NaN32, deflatelevel=1,
+                       attrib=["units" => units, "long_name" => long_name, "source" => "CMIP5 fx $var"])
             end
             ds.attrib["title"] = "PMIP3 $model $experiment climatology (years $years of the simulation)"
             ds.attrib["model"] = model
@@ -133,10 +176,11 @@ end
 
 outdir = prepared_dir("PMIP3_cvdp")
 mkpath(outdir)
-indir = get_dataset_path(manifest(), "pmip3_cvdp")
+db = manifest()
+indir = get_dataset_path(db, "pmip3_cvdp")
 for model in sort(collect(keys(FILES))), (experiment, file) in FILES[model]
     input = joinpath(indir, file)
     isfile(input) || error("$input is missing: copy it from the PIK archive (PMIP3_cvdp/README.md)")
-    prepare_cvdp(model, experiment, input, outdir)
+    prepare_cvdp(model, experiment, input, outdir, db)
 end
 prepare_bc(outdir)
