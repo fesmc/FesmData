@@ -45,7 +45,8 @@ end
 
 The overview figure of Topo `product` of domain `dom` on grid `og`: bed and surface
 elevation (above sea level) and ice thickness (colours as the figures of Topo,
-`topo_colors`), the three levels of the regions labelled by path and name, the zones,
+`topo_colors`), the three levels of the regions labelled by path and name, with the
+outlines of the nests and crops of the domain family (DOMAINS of Regions), the zones,
 and the basins of each basin set of the domain (those made on the grid; blank outside
 the basins).
 """
@@ -69,6 +70,16 @@ function domain_overview(path::AbstractString, dom::Domain, og::OutGrid, product
             end
             zone = Float32.(coalesce.(ds["zone"][:, :], NaN))
             push!(panels, ("zone", zone, class_scale(zone, flag_names(ds["zone"].attrib)), nolabels))
+        end
+    end
+    # Nests and crops (key => mask) outlined on the maps of the regions
+    outlines = Pair{String,Matrix{Float32}}[]
+    if isfile(domains_file(og))
+        NCDataset(domains_file(og)) do ds
+            for v in sort(filter(startswith("domain_"), keys(ds)))
+                mask = Float32.(coalesce.(ds[v][:, :], 0))
+                0 < sum(mask) < length(mask) && push!(outlines, chopprefix(v, "domain_") => mask)
+            end
         end
     end
     for set in basin_sets(dom)
@@ -95,6 +106,7 @@ function domain_overview(path::AbstractString, dom::Domain, og::OutGrid, product
             text!(ax, median(x[i[1]] for i in cells), median(y[i[2]] for i in cells); text=label, fontsize=9,
                   align=(:center, :center))
         end
+        startswith(title, "region_") && outline!(ax, og, outlines)
     end
     for c in 1:min(OVERVIEW_COLUMNS, length(panels))
         colsize!(fig.layout, 2c - 1, Fixed(width))
@@ -103,4 +115,21 @@ function domain_overview(path::AbstractString, dom::Domain, og::OutGrid, product
     resize_to_layout!(fig)
     save_figure(path, fig)
     return path
+end
+
+"""
+    outline!(ax, og, outlines)
+
+Outline each nest or crop (key => its mask on grid `og`, 1 inside) on map `ax`, the
+contour of its mask, with its key at its upper left corner.
+"""
+function outline!(ax, og::OutGrid, outlines)
+    x, y = map_coords(og.grid)
+    for (key, mask) in outlines
+        contour!(ax, x, y, mask; levels=[0.5], color=:black, linewidth=1.2)
+        cells = findall(==(1), mask)
+        text!(ax, minimum(x[i[1]] for i in cells), maximum(y[i[2]] for i in cells); text=key, fontsize=9,
+              font=:bold, align=(:left, :top), offset=(2, -2))
+    end
+    return ax
 end
