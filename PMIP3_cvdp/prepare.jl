@@ -53,14 +53,29 @@ const FIELDS = [
     "sst_ann" => ("sst_spatialmean_ann", "degC", "sea surface temperature, annual mean"),
 ]
 
-# Prepared field => (CMIP5 fixed field of the model and experiment, factor, units, long
-# name), from ESGF (datamanifest entries pmip3_fx_<model>_<experiment>_<field>), where
-# available
+# Prepared field => (CMIP5 fixed field of the model and experiment, whether a fraction,
+# units, long name), from ESGF (datamanifest entries pmip3_fx_<model>_<experiment>_<field>),
+# where available
 const FX_FIELDS = [
-    "z_srf" => ("orog", 1, "m", "surface altitude (orography of the experiment)"),
-    "f_land" => ("sftlf", 0.01, "1", "land area fraction"),
-    "f_ice" => ("sftgif", 0.01, "1", "land ice area fraction"),
+    "z_srf" => ("orog", false, "m", "surface altitude (orography of the experiment)"),
+    "f_land" => ("sftlf", true, "1", "land area fraction"),
+    "f_ice" => ("sftgif", true, "1", "land ice area fraction"),
 ]
+
+"""
+    fraction_scale(F, what) -> Float32
+
+Factor of the values `F` of a fraction to 0-1, from their maximum: the units of the files
+(%) are not always those of their values (fractions in GISS-E2-R lgm, 0-10000 in
+MIROC-ESM lgm).
+"""
+function fraction_scale(F, what)
+    m = maximum(filter(isfinite, F))
+    m <= 1.001 && return (println("  $what: fraction (0-1)"); 1.0f0)
+    m <= 100.1 && return 0.01f0
+    m <= 10001 && return (println("  $what: 0-10000"); 1.0f-4)
+    error("$what: maximum $m is not of a fraction")
+end
 
 const REFERENCES =
     "Braconnot, P., Harrison, S. P., Kageyama, M., et al.: Evaluation of climate models using " *
@@ -94,7 +109,7 @@ where there is no land.
 """
 function read_fx(db, model, experiment, lon, lat)
     fx = Dict{String,Matrix{Float32}}()
-    for (name, (var, factor, _, _)) in FX_FIELDS
+    for (name, (var, fraction, _, _)) in FX_FIELDS
         key(e) = lowercase(replace("pmip3_fx_$(model)_$(e)_$var", "-" => "_"))
         # midHolocene has the surface of piControl in the PMIP3 protocol: its fields where
         # those of midHolocene are not available (CNRM-CM5)
@@ -103,7 +118,8 @@ function read_fx(db, model, experiment, lon, lat)
         e == experiment || println("  $model $experiment: $var of piControl")
         NCDataset(download_dataset(db, key(e))) do ds
             flon, flat = ds["lon"][:], ds["lat"][:]
-            F = _float(ds[var][:, :]) .* Float32(factor)
+            F = map(x -> x > 1f19 ? NaN32 : x, _float(ds[var][:, :]))
+            fraction && (F .*= fraction_scale(F, "$model $experiment $var"))
             # Same grid, to the precision of the axes (single or double)
             same(a, b) = length(a) == length(b) && all(abs.(a .- b) .< 1e-3)
             if same(flat, reverse(lat))
