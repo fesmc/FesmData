@@ -125,8 +125,8 @@ const OUTLINE_FONTSIZE = 9
 
 Outline each nest or crop (key => its mask on grid `og`, 1 inside) on map `ax`, of
 `width` units of the layout: the contour of its mask, with its key at its centre, or,
-if the key would cross the outline of another one or another key, at the nearest edge
-of the map, with a line to its centre.
+if the key would not fit inside it or would cross the outline of another one or another
+key, at the nearest edge of the map, with a line to its centre.
 """
 function outline!(ax, og::OutGrid, outlines, width)
     x, y = map_coords(og.grid)
@@ -145,7 +145,7 @@ function outline!(ax, og::OutGrid, outlines, width)
     overlaps(a, b) = a[1] <= b[2] && b[1] <= a[2] && a[3] <= b[4] && b[3] <= a[4]
     inside(a, b) = b[1] <= a[1] && a[2] <= b[2] && b[3] <= a[3] && a[4] <= b[4]
     crosses(kb, j) = overlaps(kb, boxes[j]) && !inside(kb, boxes[j])
-    clashes(k) = any(j -> j != k && (crosses(keybox(k), j) || overlaps(keybox(k), keybox(j))), eachindex(boxes))
+    clashes(k) = !inside(keybox(k), boxes[k]) || any(j -> j != k && (crosses(keybox(k), j) || overlaps(keybox(k), keybox(j))), eachindex(boxes))
     at_edge = Dict(e => Tuple{Float64,String,NTuple{2,Float64}}[] for e in (:left, :right, :bottom, :top))
     for (k, (key, mask)) in enumerate(outlines)
         contour!(ax, x, y, mask; levels=[0.5], color=:black, linewidth=1.2)
