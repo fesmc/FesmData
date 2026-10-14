@@ -78,11 +78,13 @@ global attribute `years`. The CVDP files have neither orography nor land mask, h
 CMIP5 fixed fields (v1 made the LGM `z_srf` as present-day surface elevation + `dz_srf`,
 and its `mask` from the land and ice fractions of the boundary conditions).
 
-Only regular lon-lat grids can be remapped. The models on Gaussian grids (CNRM-CM5,
-MIROC-ESM, MPI-ESM-P, MRI-CGCM3; latitude spacing uneven by 0.8 %) and FGOALS-g2 (finer
-latitudes near the poles) are prepared on their own grids but cannot be remapped yet.
+Each model is prepared and remapped on its own grid. The Gaussian grids (CNRM-CM5,
+MIROC-ESM, MPI-ESM-P, MRI-CGCM3; latitude spacing uneven by 0.8 %) and that of FGOALS-g2
+(finer latitudes near the poles) are remapped as lon-lat grids with unevenly spaced
+latitudes, their cell edges halfway between them (see
+[Your own gridded data](https://fesmc.github.io/FesmData/remap.html)).
 
-| Model | Grid (lon × lat) | Regular |
+| Model | Grid (lon × lat) | Even latitudes |
 |---|---|---|
 | CCSM4 | 288 × 192 (1.25° × 0.94°) | yes |
 | CNRM-CM5 | 256 × 128 (T127 Gaussian) | no |

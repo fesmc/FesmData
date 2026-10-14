@@ -1049,7 +1049,7 @@ function remap_prepared(ps::AbstractVector{Prepared}, grids::Vector{OutGrid}; na
                         method::AbstractString="con", smooth="auto", dataset::AbstractString="remap",
                         overwrite::Bool=false, strict::Bool=false, fill::AbstractVector{GapFill}=GapFill[],
                         precision::AbstractDict{String,Precision}=Dict{String,Precision}(),
-                        intermediate::Bool=false)
+                        mask::AbstractDict{String,Float64}=Dict{String,Float64}(), intermediate::Bool=false)
     method in METHODS || error("unknown method $method, available: $(join(METHODS, ", "))")
     pf = PreparedFields(ps)
     check_fill(pf, fill)
@@ -1092,6 +1092,15 @@ function remap_prepared(ps::AbstractVector{Prepared}, grids::Vector{OutGrid}; na
         dims = copy(pf.dims)
         _per_field!(fields, dims, varattrib, Dict(f => out[f][2] for f in names), pf.dims, "f_valid",
                     f -> f === nothing ? Pair{String,Any}[] : ["units" => "1", "long_name" => "area fraction covered by $f"])
+        for (m, threshold) in mask
+            haskey(fields, "f_valid") ||
+                error("$name: mask $m needs one f_valid for all fields (their coverage differs)")
+            fields[m] = Int8.(fields["f_valid"] .>= threshold)
+            dims[m] = dims["f_valid"]
+            varattrib[m] = Pair{String,Any}["units" => "1",
+                "long_name" => "1 where the source covers at least $threshold of the cell (f_valid >= $threshold)",
+                "flag_values" => Int8[0, 1], "flag_meanings" => "no_data data"]
+        end
         how = allequal(hows) ? hows[1] : join(("$(basename(p.path)): $h" for (p, h) in zip(ps, hows)), "; ")
         attrib = vcat(merged_attrib(ps), ["remapped_from" => sources, "remap_method" => how])
         length(ps) > 1 && push!(attrib, "combined" => "fields of several files covering separate areas merged: " *
@@ -1258,7 +1267,7 @@ function make_product(p::RemapProduct, grids::Vector{OutGrid}; tag::AbstractStri
     println("$(product_name(p)): $(join(names, ", ")) from $(p.source) " *
             (length(files) > 1 ? "($(length(files)) files) " : "") * "onto $(length(grids)) grids")
     return remap_prepared(preps, grids; name=product_name(p), method=p.method, smooth=p.smooth, dataset=tag,
-                          overwrite, strict=true, fill=p.fill, p.precision, intermediate)
+                          overwrite, strict=true, fill=p.fill, p.precision, p.mask, intermediate)
 end
 
 "Whether the file `path` of member `m` of an ensemble is to be made: missing, or older than a prepared file of `m`."

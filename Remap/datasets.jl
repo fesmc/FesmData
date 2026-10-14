@@ -109,6 +109,7 @@ struct RemapProduct <: ThematicProduct
     figure::Union{Nothing,Dict{String,Any}}   # options of its figure on the website, nothing: none
     precision::Dict{String,Precision}         # by field, instead of the default
     fill::Vector{GapFill}           # gaps filled (none: empty)
+    mask::Dict{String,Float64}      # integer masks of its coverage: name => threshold of f_valid
 end
 
 "Statistics of an ensemble product over its members."
@@ -227,14 +228,30 @@ end
 "A remap product from its table `p` in remap.toml (`grids`, `release`, `figure` and `precision` parsed)."
 function remap_product(dataset, name, p, grids, release, figure, precision)
     what = "$dataset/$name"
-    unknown = setdiff(keys(p), (PRODUCT_KEYS..., "source", "file", "variables", "method", "smooth", "fill"))
+    unknown = setdiff(keys(p), (PRODUCT_KEYS..., "source", "file", "variables", "method", "smooth", "fill", "mask"))
     isempty(unknown) || error("$what: unknown keys $(join(unknown, ", "))")
     smooth = get(p, "smooth", "auto")
     variables = haskey(p, "variables") ? Vector{String}(p["variables"]) : nothing
     fill = haskey(p, "fill") ? gap_fill_spec(p["fill"], what, variables) : GapFill[]
     files = product_files(get(p, "file", nothing), what)
     return RemapProduct(dataset, name, p["source"], files, variables, grids, get(p, "method", "con"),
-                        smooth isa Real ? Float64(smooth) : String(smooth), release, figure, precision, fill)
+                        smooth isa Real ? Float64(smooth) : String(smooth), release, figure, precision, fill,
+                        product_mask(get(p, "mask", Dict()), what))
+end
+
+"""
+    product_mask(value, what) -> Dict{String,Float64}
+
+`mask` of a product in remap.toml: integer masks of the coverage of the source, by name,
+each 1 where `f_valid` is at least its threshold (in 0-1) and 0 elsewhere, e.g.
+`{ mask_ocn = 0.5 }` for a source missing on land and below the sea floor.
+"""
+function product_mask(value, what)
+    value isa AbstractDict || error("$what: mask must be a table, e.g. { mask_ocn = 0.5 }")
+    for (k, v) in value
+        v isa Real && 0 < v <= 1 || error("$what: mask.$k must be a threshold of f_valid in (0, 1], not $v")
+    end
+    return Dict{String,Float64}(k => Float64(v) for (k, v) in value)
 end
 
 "An ensemble product from its table `p` in remap.toml (`grids`, `release`, `figure` and `precision` parsed)."

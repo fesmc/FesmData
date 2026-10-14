@@ -13,6 +13,7 @@ grids = { Antarctica = 4 }
 source = "Zuo2019_oras5"
 file = "ORAS5_1981-2010.nc"
 variables = ["to", "so"]
+mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing in ORAS5)
 grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 100 }   # source at 1°: no finer global grids
 figure = { select = { depth = 400 } }
 
@@ -20,6 +21,7 @@ figure = { select = { depth = 400 } }
 source = "Zuo2019_oras5"
 file = "ORAS5_annual_1979-2018.nc"
 variables = ["to", "so"]
+mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing in ORAS5)
 grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 100 }   # source at 1°: no finer global grids
 figure = { select = { depth = 400 } }
 

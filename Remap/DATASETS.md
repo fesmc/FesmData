@@ -44,6 +44,7 @@ grids = { Antarctica = 4, Greenland = 4, Global = 4 }   # by domain, see below
 # figure = { variables = ["ghf"] }            # optional: its figure on the website
 # fill = { variables = ["ux_srf", "uy_srf"], mask = "TOPO-BedMachine-v4" }   # optional: gaps over the ice (or "all") filled, see below
 # precision = { ghf = 0.1 }                  # optional: precision of fields instead of the default, see below
+# mask = { mask_ocn = 0.5 }                  # optional: integer masks of the coverage, see below
 ```
 
 ### Grids
@@ -159,6 +160,14 @@ yet (say so in the README of the dataset).
 tolerance in the units of the field (a number), a relative one (`"x%"`) or `"lossless"`,
 e.g. `precision = { ghf = 0.1, smb = "1%", lat = "lossless" }`. Each float field records
 its precision in the attributes `precision` and `bitround_keepbits`.
+
+### Masks
+
+`mask` adds integer masks of the coverage of the source to the product, by name, each 1
+where `f_valid` is at least its threshold and 0 elsewhere, with `f_valid` itself (on the
+same dimensions, e.g. a 3D ocean mask by depth). For a source missing on land and below
+the sea floor (ORAS5), `mask = { mask_ocn = 0.5 }` gives the ocean cells of each level
+that are mostly ocean. It needs one `f_valid` for all fields of the product.
 
 ### Ensembles
 
