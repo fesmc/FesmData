@@ -1,205 +1,205 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-13"
-git_tag = "ghf-v2.2.0"
+date = "2026-10-14"
+git_tag = "ghf-v2.3.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Global_GHF"
-version = "2.2.0"
+version = "2.3.0"
 
 ["GLOBAL-0.1DEG_GHF-Davies2013.nc"]
-checksum = "sha256:95388e63ec016fefab80b892ee8ade5a751e322db179e2ab0f1202f24e96d69d"
-previous_checksums = ["sha256:8421e979727bed4274ceb02b0e4ad3a98783cdc8557ddac6514af330c9a1619b", "sha256:fd92329a84a45a685d2ffc19194ea91c3b690d88e28d49c293b819adad56ba5b"]
+checksum = "sha256:19b8d9555b71777f2857046f38fff450ad7f95beb1ba10f73fdfed471987c9e5"
+previous_checksums = ["sha256:8421e979727bed4274ceb02b0e4ad3a98783cdc8557ddac6514af330c9a1619b", "sha256:fd92329a84a45a685d2ffc19194ea91c3b690d88e28d49c293b819adad56ba5b", "sha256:95388e63ec016fefab80b892ee8ade5a751e322db179e2ab0f1202f24e96d69d"]
 size = 3891718
 storage_path = "$datasets_dir/Global/GLOBAL-0.1DEG/GLOBAL-0.1DEG_GHF-Davies2013.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-0.1DEG/2.2.0/GLOBAL-0.1DEG_GHF-Davies2013.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-0.1DEG/2.3.0/GLOBAL-0.1DEG_GHF-Davies2013.nc"
 
 ["GLOBAL-0.1DEG_GHF-Lucazeau2019.nc"]
-checksum = "sha256:51542548c89ab06e7df57d3c6a969c0f56c3af6d1b18a24f6441da85f1c53b1e"
-previous_checksums = ["sha256:839826e4a734a476375e457c430391768d4d07f9b6e8fbae4ec49826dd7bc832", "sha256:0bfd79fa2fc94f94da5fd4ea6ffdd5afc8d13065e8153c0ebd2f1b9d793f099d"]
+checksum = "sha256:6b4444f13182205d29a85f31d66ef3d0d8f60471728e52d33cf2f29f5bfa2cb7"
+previous_checksums = ["sha256:839826e4a734a476375e457c430391768d4d07f9b6e8fbae4ec49826dd7bc832", "sha256:0bfd79fa2fc94f94da5fd4ea6ffdd5afc8d13065e8153c0ebd2f1b9d793f099d", "sha256:51542548c89ab06e7df57d3c6a969c0f56c3af6d1b18a24f6441da85f1c53b1e"]
 size = 5799920
 storage_path = "$datasets_dir/Global/GLOBAL-0.1DEG/GLOBAL-0.1DEG_GHF-Lucazeau2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-0.1DEG/2.2.0/GLOBAL-0.1DEG_GHF-Lucazeau2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-0.1DEG/2.3.0/GLOBAL-0.1DEG_GHF-Lucazeau2019.nc"
 
 ["GLOBAL-0.1DEG_GHF-Shapiro2004.nc"]
-checksum = "sha256:baff31b62f11552ef9071c871b95a91d7eed907e146b25795fc2b4d78427f334"
-previous_checksums = ["sha256:11611effe4e3f0842348e039bf4adbd04da84c38d757d54b1a2ae99447e2caa7", "sha256:04b0bf84f46aed7d06da0caca4c2fe65f2785677e5d4280d607f66182892d33b"]
+checksum = "sha256:634de0a78330b49c5306e9f6af73aa218094e50e2d134cf0976b8c49cd4748de"
+previous_checksums = ["sha256:11611effe4e3f0842348e039bf4adbd04da84c38d757d54b1a2ae99447e2caa7", "sha256:04b0bf84f46aed7d06da0caca4c2fe65f2785677e5d4280d607f66182892d33b", "sha256:baff31b62f11552ef9071c871b95a91d7eed907e146b25795fc2b4d78427f334"]
 size = 2510787
 storage_path = "$datasets_dir/Global/GLOBAL-0.1DEG/GLOBAL-0.1DEG_GHF-Shapiro2004.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-0.1DEG/2.2.0/GLOBAL-0.1DEG_GHF-Shapiro2004.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-0.1DEG/2.3.0/GLOBAL-0.1DEG_GHF-Shapiro2004.nc"
 
 ["GLOBAL-0.1DEG_grid.nc"]
 checksum = "sha256:a4e56f174dc574ee53539866c27d4c7f5e740742d1d16f8daa8cb96fac1fc5b8"
 size = 192057
 storage_path = "$datasets_dir/Global/GLOBAL-0.1DEG/GLOBAL-0.1DEG_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-0.1DEG/2.2.0/GLOBAL-0.1DEG_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-0.1DEG/2.3.0/GLOBAL-0.1DEG_grid.nc"
 
 ["GLOBAL-0.25DEG_GHF-Davies2013.nc"]
-checksum = "sha256:d28fc75506b75f4355958bf33acbbc9fa3ad00c65da947aac1f0771a72f7a039"
-previous_checksums = ["sha256:b25481e1b1418e0616a2ef1a117cb8e5cf03a303c1532620d1d31460907b31f9", "sha256:94a4ad1b241f3ae386fa411f8247421fb9dc9fe96ae1f59a5ce19b8a1836cc37"]
+checksum = "sha256:8f3a3398d5b0ae43dc45c0d23e2a98774d2019d81c99169d6085a00a7095bedd"
+previous_checksums = ["sha256:b25481e1b1418e0616a2ef1a117cb8e5cf03a303c1532620d1d31460907b31f9", "sha256:94a4ad1b241f3ae386fa411f8247421fb9dc9fe96ae1f59a5ce19b8a1836cc37", "sha256:d28fc75506b75f4355958bf33acbbc9fa3ad00c65da947aac1f0771a72f7a039"]
 size = 1069459
 storage_path = "$datasets_dir/Global/GLOBAL-0.25DEG/GLOBAL-0.25DEG_GHF-Davies2013.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-0.25DEG/2.2.0/GLOBAL-0.25DEG_GHF-Davies2013.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-0.25DEG/2.3.0/GLOBAL-0.25DEG_GHF-Davies2013.nc"
 
 ["GLOBAL-0.25DEG_GHF-Lucazeau2019.nc"]
-checksum = "sha256:aab4d5666f4c37ef42020ef5c8b10bcbbea3cf46d5f090d81c36a02b1b612867"
-previous_checksums = ["sha256:717b25c664d65b71925b52960a8ee48dae2643c4e49dd298a613787259f42e8e", "sha256:482ebfc37aec660eebfe058454be0c281e17159b41eeb1a07f7476433cfbf265"]
+checksum = "sha256:79b987798a11113b6858d426ceae2b8819f395acb4dade568c254458c78249a8"
+previous_checksums = ["sha256:717b25c664d65b71925b52960a8ee48dae2643c4e49dd298a613787259f42e8e", "sha256:482ebfc37aec660eebfe058454be0c281e17159b41eeb1a07f7476433cfbf265", "sha256:aab4d5666f4c37ef42020ef5c8b10bcbbea3cf46d5f090d81c36a02b1b612867"]
 size = 1403190
 storage_path = "$datasets_dir/Global/GLOBAL-0.25DEG/GLOBAL-0.25DEG_GHF-Lucazeau2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-0.25DEG/2.2.0/GLOBAL-0.25DEG_GHF-Lucazeau2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-0.25DEG/2.3.0/GLOBAL-0.25DEG_GHF-Lucazeau2019.nc"
 
 ["GLOBAL-0.25DEG_GHF-Shapiro2004.nc"]
-checksum = "sha256:ce43cf7b0fc614b76b084808fac5764df15b9bf8b3b2bbdbecb338e6b70f1f9a"
-previous_checksums = ["sha256:a9ea47a8e33178b740640a555a4bae1e9bd445da49ffdb36faac5610403f8886", "sha256:11d9660046e9b1df3d88d83e580f8a369c3c2bece664bd3981dc1aaf23cbf9a7"]
+checksum = "sha256:c218df0eeebe7e773e4e9127d5dcf8f41ff0227e642b73f46c89fc6d58859013"
+previous_checksums = ["sha256:a9ea47a8e33178b740640a555a4bae1e9bd445da49ffdb36faac5610403f8886", "sha256:11d9660046e9b1df3d88d83e580f8a369c3c2bece664bd3981dc1aaf23cbf9a7", "sha256:ce43cf7b0fc614b76b084808fac5764df15b9bf8b3b2bbdbecb338e6b70f1f9a"]
 size = 706659
 storage_path = "$datasets_dir/Global/GLOBAL-0.25DEG/GLOBAL-0.25DEG_GHF-Shapiro2004.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-0.25DEG/2.2.0/GLOBAL-0.25DEG_GHF-Shapiro2004.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-0.25DEG/2.3.0/GLOBAL-0.25DEG_GHF-Shapiro2004.nc"
 
 ["GLOBAL-0.25DEG_grid.nc"]
 checksum = "sha256:5ff16fa62830a5bcf93baa975e7fbb6294ba9e94c9a4e30a1ecbec5fb2afbc42"
 size = 49586
 storage_path = "$datasets_dir/Global/GLOBAL-0.25DEG/GLOBAL-0.25DEG_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-0.25DEG/2.2.0/GLOBAL-0.25DEG_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-0.25DEG/2.3.0/GLOBAL-0.25DEG_grid.nc"
 
 ["GLOBAL-0.5DEG_GHF-Davies2013.nc"]
-checksum = "sha256:dbeec24d0da68ec8b66018b29f83d7398d6867a47f2d84fbc410e42a40ca792a"
-previous_checksums = ["sha256:3560a136469a9c990704168396602cfbc0def6db13adb1f2c7a330cc9c9124d4", "sha256:29b90aa14e1c7048cefe09268ee4a798bf692e9499179c211d106f5f1228fc99"]
+checksum = "sha256:05311ff282709e894519108efae98cd1bb4a71232ec980839052533f9039e135"
+previous_checksums = ["sha256:3560a136469a9c990704168396602cfbc0def6db13adb1f2c7a330cc9c9124d4", "sha256:29b90aa14e1c7048cefe09268ee4a798bf692e9499179c211d106f5f1228fc99", "sha256:dbeec24d0da68ec8b66018b29f83d7398d6867a47f2d84fbc410e42a40ca792a"]
 size = 398453
 storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/GLOBAL-0.5DEG_GHF-Davies2013.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-0.5DEG/2.2.0/GLOBAL-0.5DEG_GHF-Davies2013.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-0.5DEG/2.3.0/GLOBAL-0.5DEG_GHF-Davies2013.nc"
 
 ["GLOBAL-0.5DEG_GHF-Lucazeau2019.nc"]
-checksum = "sha256:cf64f7e788743c0387d17b5e966b2db492220494fd1a28a8933bb28578311ada"
-previous_checksums = ["sha256:602e86725ac2553721ebd5ae5a7fb54ea260ac1839008adbeeaba00931e57aeb", "sha256:17191cc1840ddc5216fa7267d2d3c9c57056b8f298e135b19397e788b074ce06"]
+checksum = "sha256:0b845653fbce887e3d00ee9c5ed4846d387d02ce256efc7f811274c2a450abf0"
+previous_checksums = ["sha256:602e86725ac2553721ebd5ae5a7fb54ea260ac1839008adbeeaba00931e57aeb", "sha256:17191cc1840ddc5216fa7267d2d3c9c57056b8f298e135b19397e788b074ce06", "sha256:cf64f7e788743c0387d17b5e966b2db492220494fd1a28a8933bb28578311ada"]
 size = 510840
 storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/GLOBAL-0.5DEG_GHF-Lucazeau2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-0.5DEG/2.2.0/GLOBAL-0.5DEG_GHF-Lucazeau2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-0.5DEG/2.3.0/GLOBAL-0.5DEG_GHF-Lucazeau2019.nc"
 
 ["GLOBAL-0.5DEG_GHF-Shapiro2004.nc"]
-checksum = "sha256:ee40b88af9bfa6d5332904257d76d73c3866562264d26cdcb281b66ac8d916ff"
-previous_checksums = ["sha256:3cd9d594c865f675380364591378cc3642c120650ebe8d271c58f224aad3de95", "sha256:3b0eb8e3b0ab830f2c5011b750fc364367bee4479b7a9943fc0a13ec8b4ec2c2"]
+checksum = "sha256:bc837988708cdab0fd6488ba324e9d3c072cb6db4c501b36271616ab2ced4aa3"
+previous_checksums = ["sha256:3cd9d594c865f675380364591378cc3642c120650ebe8d271c58f224aad3de95", "sha256:3b0eb8e3b0ab830f2c5011b750fc364367bee4479b7a9943fc0a13ec8b4ec2c2", "sha256:ee40b88af9bfa6d5332904257d76d73c3866562264d26cdcb281b66ac8d916ff"]
 size = 274064
 storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/GLOBAL-0.5DEG_GHF-Shapiro2004.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-0.5DEG/2.2.0/GLOBAL-0.5DEG_GHF-Shapiro2004.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-0.5DEG/2.3.0/GLOBAL-0.5DEG_GHF-Shapiro2004.nc"
 
 ["GLOBAL-0.5DEG_grid.nc"]
 checksum = "sha256:43301e8a8f8a7d3a47e181cc3ba1b216c72fbca797d8ed8f8672b5da2c1a95de"
 size = 25589
 storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/GLOBAL-0.5DEG_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-0.5DEG/2.2.0/GLOBAL-0.5DEG_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-0.5DEG/2.3.0/GLOBAL-0.5DEG_grid.nc"
 
 ["GLOBAL-1DEG_GHF-Davies2013.nc"]
-checksum = "sha256:609405ed3bd5c9fa1ced05c18f9cfbf653313e026126734f9dbbf9cd602e1942"
-previous_checksums = ["sha256:e054e0730f29ceb474da89321eaad049fc20cbd56ea92bcba5bc983f4b7d5e62", "sha256:54008364ad27fdb9be306cecd05196fbc379a0c8f2cc5c4021e30884fd6812c2"]
+checksum = "sha256:320bd6f46725cab93ee0f7ba71b4b1bcc1403e0fd7fd3eb9ea530ca2189a95fd"
+previous_checksums = ["sha256:e054e0730f29ceb474da89321eaad049fc20cbd56ea92bcba5bc983f4b7d5e62", "sha256:54008364ad27fdb9be306cecd05196fbc379a0c8f2cc5c4021e30884fd6812c2", "sha256:609405ed3bd5c9fa1ced05c18f9cfbf653313e026126734f9dbbf9cd602e1942"]
 size = 153772
 storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_GHF-Davies2013.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-1DEG/2.2.0/GLOBAL-1DEG_GHF-Davies2013.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-1DEG/2.3.0/GLOBAL-1DEG_GHF-Davies2013.nc"
 
 ["GLOBAL-1DEG_GHF-Lucazeau2019.nc"]
-checksum = "sha256:2b96adf6432575a85ed134be394d9fb16478c8e7a9a1fcced218ec8148e5a23d"
-previous_checksums = ["sha256:c62ee5aeffbbdcba57faa947a3527fed3338b5e448767ea0d7f82c3416370f80", "sha256:3d912bfd6ce04f640cd4c6f9d01b0d80554c3da6a843d88932b26e9f6c249952"]
+checksum = "sha256:e53f29b2af5bc113d22f1604fdefb0de6ddfc25f72939d9f96614d940df80a43"
+previous_checksums = ["sha256:c62ee5aeffbbdcba57faa947a3527fed3338b5e448767ea0d7f82c3416370f80", "sha256:3d912bfd6ce04f640cd4c6f9d01b0d80554c3da6a843d88932b26e9f6c249952", "sha256:2b96adf6432575a85ed134be394d9fb16478c8e7a9a1fcced218ec8148e5a23d"]
 size = 148844
 storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_GHF-Lucazeau2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-1DEG/2.2.0/GLOBAL-1DEG_GHF-Lucazeau2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-1DEG/2.3.0/GLOBAL-1DEG_GHF-Lucazeau2019.nc"
 
 ["GLOBAL-1DEG_GHF-Shapiro2004.nc"]
-checksum = "sha256:50855d0cfab9f6757435b7a70d9a103fa0f7b25432027b907f7a5bd649036371"
-previous_checksums = ["sha256:ae69f163deab3af76acbb4c8754608461034172d3392c6dae747dd812b4f42f9", "sha256:915f7df724784e6a9aa7c67e26da1337a335cbbabd09bc6185ceac31de9e9020"]
+checksum = "sha256:9b0ba522b124a2edec1a2b0713842d6e05caaec58c690086f2a4d85a23434b50"
+previous_checksums = ["sha256:ae69f163deab3af76acbb4c8754608461034172d3392c6dae747dd812b4f42f9", "sha256:915f7df724784e6a9aa7c67e26da1337a335cbbabd09bc6185ceac31de9e9020", "sha256:50855d0cfab9f6757435b7a70d9a103fa0f7b25432027b907f7a5bd649036371"]
 size = 120624
 storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_GHF-Shapiro2004.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-1DEG/2.2.0/GLOBAL-1DEG_GHF-Shapiro2004.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-1DEG/2.3.0/GLOBAL-1DEG_GHF-Shapiro2004.nc"
 
 ["GLOBAL-1DEG_grid.nc"]
 checksum = "sha256:72658a61a9d89e56a88266b6a3168ba7ea4e18c4c8b0d2a904164c2c047e5d47"
 size = 17869
 storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-1DEG/2.2.0/GLOBAL-1DEG_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-1DEG/2.3.0/GLOBAL-1DEG_grid.nc"
 
 ["GLOBAL-2DEG_GHF-Davies2013.nc"]
-checksum = "sha256:cec50bb2e223945d26fbeb92a787a7b98f359acda01e26401892fe2a8e1a4fed"
-previous_checksums = ["sha256:3c837c109b2cb8cd1e28f0bba13056190b43b9ff28254779b0d36c05522b1e3c", "sha256:fc8055b382828362a44399b1f7a90856fe246989f138f732bfd4ee97314326d6"]
+checksum = "sha256:75de8cd16a6d65fa402bb9a63876bb357c6fb88ad4e7d3fbfd0daf89cede18df"
+previous_checksums = ["sha256:3c837c109b2cb8cd1e28f0bba13056190b43b9ff28254779b0d36c05522b1e3c", "sha256:fc8055b382828362a44399b1f7a90856fe246989f138f732bfd4ee97314326d6", "sha256:cec50bb2e223945d26fbeb92a787a7b98f359acda01e26401892fe2a8e1a4fed"]
 size = 61928
 storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_GHF-Davies2013.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-2DEG/2.2.0/GLOBAL-2DEG_GHF-Davies2013.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-2DEG/2.3.0/GLOBAL-2DEG_GHF-Davies2013.nc"
 
 ["GLOBAL-2DEG_GHF-Lucazeau2019.nc"]
-checksum = "sha256:9209f8c30325c6608cd984fdac2c98df355b16ab626294a0dc3c619ceca6a57a"
-previous_checksums = ["sha256:d85bd8dc62477e1f30628a4001818c1749ad07155c205e1ea36a15d638f0fe9f", "sha256:00e2a5d796446badfdd3673dc0d8dbb11794a567989e05414ac528dc6a677d24"]
+checksum = "sha256:cd541c17c19dbd3d4f1d3b6eccb18453529736c69127e4bc534da0cfec6f099d"
+previous_checksums = ["sha256:d85bd8dc62477e1f30628a4001818c1749ad07155c205e1ea36a15d638f0fe9f", "sha256:00e2a5d796446badfdd3673dc0d8dbb11794a567989e05414ac528dc6a677d24", "sha256:9209f8c30325c6608cd984fdac2c98df355b16ab626294a0dc3c619ceca6a57a"]
 size = 56168
 storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_GHF-Lucazeau2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-2DEG/2.2.0/GLOBAL-2DEG_GHF-Lucazeau2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-2DEG/2.3.0/GLOBAL-2DEG_GHF-Lucazeau2019.nc"
 
 ["GLOBAL-2DEG_GHF-Shapiro2004.nc"]
-checksum = "sha256:246a149936f1d8205a3b71c92aced2041ed0219599d127f2b0cde0a233765510"
-previous_checksums = ["sha256:4fe833512c6a8339985ca8c80a4155731fb4fe92a922a811d38912b67f51cb85", "sha256:41636cec7a85a0e49718cfa4cc75743136622c6d79901dc45fcb332689c46d82"]
+checksum = "sha256:5db819f69c6a103b79e5840b8dd563a72d5fe2d800e9818623c65e36077d9f4c"
+previous_checksums = ["sha256:4fe833512c6a8339985ca8c80a4155731fb4fe92a922a811d38912b67f51cb85", "sha256:41636cec7a85a0e49718cfa4cc75743136622c6d79901dc45fcb332689c46d82", "sha256:246a149936f1d8205a3b71c92aced2041ed0219599d127f2b0cde0a233765510"]
 size = 52787
 storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_GHF-Shapiro2004.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-2DEG/2.2.0/GLOBAL-2DEG_GHF-Shapiro2004.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-2DEG/2.3.0/GLOBAL-2DEG_GHF-Shapiro2004.nc"
 
 ["GLOBAL-2DEG_grid.nc"]
 checksum = "sha256:5fa987a099ab7e60d3a4b22e7bb5bd00cadccc8581874b8d600a38f9a512f104"
 size = 14559
 storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-2DEG/2.2.0/GLOBAL-2DEG_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-2DEG/2.3.0/GLOBAL-2DEG_grid.nc"
 
 ["GLOBAL-5DEG_GHF-Davies2013.nc"]
-checksum = "sha256:5d3a840b82d7224ce15e0938f3ec784ed512659ae1d1bdd2ce14889c437ed61e"
-previous_checksums = ["sha256:bda21982216d09d630b16dacf837dc6a60069340cf006a214de1d042d4ea2bf5", "sha256:d000da660d4be5ff6be8dd5bb13d1822d6e72622e97a0beaf16d661db6b36fd5"]
+checksum = "sha256:06661f40aff30a8b1638130ac68e5cc26bc6898cefd785023c12929ece09b87b"
+previous_checksums = ["sha256:bda21982216d09d630b16dacf837dc6a60069340cf006a214de1d042d4ea2bf5", "sha256:d000da660d4be5ff6be8dd5bb13d1822d6e72622e97a0beaf16d661db6b36fd5", "sha256:5d3a840b82d7224ce15e0938f3ec784ed512659ae1d1bdd2ce14889c437ed61e"]
 size = 32464
 storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_GHF-Davies2013.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-5DEG/2.2.0/GLOBAL-5DEG_GHF-Davies2013.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-5DEG/2.3.0/GLOBAL-5DEG_GHF-Davies2013.nc"
 
 ["GLOBAL-5DEG_GHF-Lucazeau2019.nc"]
-checksum = "sha256:9bc2c5d7d7ab98da3db4cc32755213b12325918b04dbe84f6c71a4bb4ef6d28b"
-previous_checksums = ["sha256:9089b380acc1197f8b7be3f79d12573bf5b81ad236f067d75696f1c1f2e3778a", "sha256:64659d3c94b11fc2879006d88bbd8225e3f66b690475c5ec154665db171fd860"]
+checksum = "sha256:deb90ec4627a952f6a9441ae709efb6890f817708421e0b9ba407bae7df881c7"
+previous_checksums = ["sha256:9089b380acc1197f8b7be3f79d12573bf5b81ad236f067d75696f1c1f2e3778a", "sha256:64659d3c94b11fc2879006d88bbd8225e3f66b690475c5ec154665db171fd860", "sha256:9bc2c5d7d7ab98da3db4cc32755213b12325918b04dbe84f6c71a4bb4ef6d28b"]
 size = 28077
 storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_GHF-Lucazeau2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-5DEG/2.2.0/GLOBAL-5DEG_GHF-Lucazeau2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-5DEG/2.3.0/GLOBAL-5DEG_GHF-Lucazeau2019.nc"
 
 ["GLOBAL-5DEG_GHF-Shapiro2004.nc"]
-checksum = "sha256:a15020333ef9ab6c013922ee28646c0de1b9ebaba96649903101c01e4664ae5e"
-previous_checksums = ["sha256:935361676d2a8a95e856588998243b979f8fe4a248a75ae717fdf66fb4d3c5fc", "sha256:fc80a029c23fe523c6792468638df3b7c4f8c5679c61b6b57058d5cbf9a2ad1f"]
+checksum = "sha256:d10686a7b12ff4268ec696d930116b5961c25aeb5617dd1c3f7d883bd9b97f0f"
+previous_checksums = ["sha256:935361676d2a8a95e856588998243b979f8fe4a248a75ae717fdf66fb4d3c5fc", "sha256:fc80a029c23fe523c6792468638df3b7c4f8c5679c61b6b57058d5cbf9a2ad1f", "sha256:a15020333ef9ab6c013922ee28646c0de1b9ebaba96649903101c01e4664ae5e"]
 size = 27786
 storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_GHF-Shapiro2004.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-5DEG/2.2.0/GLOBAL-5DEG_GHF-Shapiro2004.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-5DEG/2.3.0/GLOBAL-5DEG_GHF-Shapiro2004.nc"
 
 ["GLOBAL-5DEG_grid.nc"]
 checksum = "sha256:55c037e0371c20123875dc16ddd01d1e864dd5b5b1b0cb29c9bfa3fd23f24cbf"
 size = 12511
 storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-5DEG/2.2.0/GLOBAL-5DEG_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-5DEG/2.3.0/GLOBAL-5DEG_grid.nc"
 
 ["grid_GLOBAL-0.1DEG.txt"]
 checksum = "sha256:5b3a831c01fa4276db84a6d54d7cb5d4da7ca2fbc859ab2a85080a431155e4e3"
 size = 215
 storage_path = "$datasets_dir/Global/GLOBAL-0.1DEG/grid_GLOBAL-0.1DEG.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-0.1DEG/2.2.0/grid_GLOBAL-0.1DEG.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-0.1DEG/2.3.0/grid_GLOBAL-0.1DEG.txt"
 
 ["grid_GLOBAL-0.25DEG.txt"]
 checksum = "sha256:18ffa92b5b37bbafa504215d99896bfe5ed3d9cada9beed41bf6f79353279d7e"
 size = 218
 storage_path = "$datasets_dir/Global/GLOBAL-0.25DEG/grid_GLOBAL-0.25DEG.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-0.25DEG/2.2.0/grid_GLOBAL-0.25DEG.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-0.25DEG/2.3.0/grid_GLOBAL-0.25DEG.txt"
 
 ["grid_GLOBAL-0.5DEG.txt"]
 checksum = "sha256:7d6ca9751973abeb4a15b25146d8c6601cd47bf9e2cbf62a9dce3e00519955cd"
 size = 212
 storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/grid_GLOBAL-0.5DEG.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-0.5DEG/2.2.0/grid_GLOBAL-0.5DEG.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-0.5DEG/2.3.0/grid_GLOBAL-0.5DEG.txt"
 
 ["grid_GLOBAL-1DEG.txt"]
 checksum = "sha256:38acf47f98866cc1c0479566b51a3a3df28fb09aa295652f52f67fffb2c499fd"
 size = 209
 storage_path = "$datasets_dir/Global/GLOBAL-1DEG/grid_GLOBAL-1DEG.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-1DEG/2.2.0/grid_GLOBAL-1DEG.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-1DEG/2.3.0/grid_GLOBAL-1DEG.txt"
 
 ["grid_GLOBAL-2DEG.txt"]
 checksum = "sha256:f09996b59b7b7cc91b348c53eec0a8cb246c5b293a890b4912278435d589fec6"
 size = 208
 storage_path = "$datasets_dir/Global/GLOBAL-2DEG/grid_GLOBAL-2DEG.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-2DEG/2.2.0/grid_GLOBAL-2DEG.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-2DEG/2.3.0/grid_GLOBAL-2DEG.txt"
 
 ["grid_GLOBAL-5DEG.txt"]
 checksum = "sha256:647911a4f8fd1afecd212683255ca869a1f3b9bdcb3ae180e7a1415cea84d344"
 size = 206
 storage_path = "$datasets_dir/Global/GLOBAL-5DEG/grid_GLOBAL-5DEG.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-5DEG/2.2.0/grid_GLOBAL-5DEG.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_GHF_GLOBAL-5DEG/2.3.0/grid_GLOBAL-5DEG.txt"

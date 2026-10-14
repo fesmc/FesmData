@@ -1,0 +1,37 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-14"
+git_tag = "ghf-v2.3.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Svalbard_GHF"
+version = "2.3.0"
+
+["SVB-2KM_GHF-Davies2013.nc"]
+checksum = "sha256:47100761a4cd47445ef10730239e16a4d1fb09219457d6dcb9382f28b7192a38"
+size = 91873
+storage_path = "$datasets_dir/Svalbard/SVB-2KM/SVB-2KM_GHF-Davies2013.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_GHF_SVB-2KM/2.3.0/SVB-2KM_GHF-Davies2013.nc"
+
+["SVB-2KM_GHF-Lucazeau2019.nc"]
+checksum = "sha256:26de9bbc431aa282edeffeecd33f6dba160c92e39c4d947951192b4fa7ed8de9"
+size = 133711
+storage_path = "$datasets_dir/Svalbard/SVB-2KM/SVB-2KM_GHF-Lucazeau2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_GHF_SVB-2KM/2.3.0/SVB-2KM_GHF-Lucazeau2019.nc"
+
+["SVB-2KM_GHF-Shapiro2004.nc"]
+checksum = "sha256:03c17da235d8d71618bba4898fcf1a881e0305870365a32a3fb11fea651e9ecf"
+size = 74760
+storage_path = "$datasets_dir/Svalbard/SVB-2KM/SVB-2KM_GHF-Shapiro2004.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_GHF_SVB-2KM/2.3.0/SVB-2KM_GHF-Shapiro2004.nc"
+
+["SVB-2KM_grid.nc"]
+checksum = "sha256:6a0409b44fa4c45229d431e113338e59f766947595e5bb697b316743ba9912a6"
+size = 744534
+storage_path = "$datasets_dir/Svalbard/SVB-2KM/SVB-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_GHF_SVB-2KM/2.3.0/SVB-2KM_grid.nc"
+
+["grid_SVB-2KM.txt"]
+checksum = "sha256:18fa470f57070e72b08f324dbf95f9619f896701bfa78523290698f89b5aab05"
+size = 324
+storage_path = "$datasets_dir/Svalbard/SVB-2KM/grid_SVB-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_GHF_SVB-2KM/2.3.0/grid_SVB-2KM.txt"

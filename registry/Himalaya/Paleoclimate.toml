@@ -2,102 +2,102 @@
 
 [_RELEASE]
 date = "2026-10-14"
-git_tag = "paleoclimate-v2.3.0"
+git_tag = "paleoclimate-v2.4.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Himalaya_Paleoclimate"
-version = "2.3.0"
+version = "2.4.0"
 
 ["HIM-2KM_Paleoclimate-PMIP3-lgm-mean.nc"]
-checksum = "sha256:1981f2e00b8b3d7b0abcc4ebda81a6b528b09580ee57a6592e8b66f841947542"
-previous_checksums = ["sha256:09a1401cd005bd929875521e71d73251a5c252380c07ee61f613738f7f920d36"]
+checksum = "sha256:026fd4aece3e978f680a29dbf0bb001c7dfcf16d074dfd36d6b00694aa7b7e03"
+previous_checksums = ["sha256:09a1401cd005bd929875521e71d73251a5c252380c07ee61f613738f7f920d36", "sha256:1981f2e00b8b3d7b0abcc4ebda81a6b528b09580ee57a6592e8b66f841947542"]
 size = 4681369
 storage_path = "$datasets_dir/Himalaya/HIM-2KM/HIM-2KM_Paleoclimate-PMIP3-lgm-mean.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Paleoclimate_HIM-2KM/2.3.0/HIM-2KM_Paleoclimate-PMIP3-lgm-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Paleoclimate_HIM-2KM/2.4.0/HIM-2KM_Paleoclimate-PMIP3-lgm-mean.nc"
 
 ["HIM-2KM_Paleoclimate-PMIP3-lgm-stdev.nc"]
-checksum = "sha256:f041727f27ad4257ccfa90048e059643dcd579da21185b86ec0a58818d7ff356"
-previous_checksums = ["sha256:4af2e6279af958e8cd97392d1b09af26f60e3b943853bacb428e2f1ceff050d2"]
+checksum = "sha256:29c5137c6902f61f45eaee429b18f51f3daf71c72b0b44951eb0680ef3ac4f68"
+previous_checksums = ["sha256:4af2e6279af958e8cd97392d1b09af26f60e3b943853bacb428e2f1ceff050d2", "sha256:f041727f27ad4257ccfa90048e059643dcd579da21185b86ec0a58818d7ff356"]
 size = 4364702
 storage_path = "$datasets_dir/Himalaya/HIM-2KM/HIM-2KM_Paleoclimate-PMIP3-lgm-stdev.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Paleoclimate_HIM-2KM/2.3.0/HIM-2KM_Paleoclimate-PMIP3-lgm-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Paleoclimate_HIM-2KM/2.4.0/HIM-2KM_Paleoclimate-PMIP3-lgm-stdev.nc"
 
 ["HIM-2KM_Paleoclimate-PMIP3-midHolocene-mean.nc"]
-checksum = "sha256:ea40e70d960bd62c853a274eaa5085b11478449295f1588b67fad9c5ce307d3a"
-previous_checksums = ["sha256:dc9910deae5c2a42cca573b1c541c6ede83fc1a180484259953287b43603bc67"]
+checksum = "sha256:819e71557038f10c6ea586dd850a8769f63e135fc3ecc250e16d0e3af8fc6553"
+previous_checksums = ["sha256:dc9910deae5c2a42cca573b1c541c6ede83fc1a180484259953287b43603bc67", "sha256:ea40e70d960bd62c853a274eaa5085b11478449295f1588b67fad9c5ce307d3a"]
 size = 4454374
 storage_path = "$datasets_dir/Himalaya/HIM-2KM/HIM-2KM_Paleoclimate-PMIP3-midHolocene-mean.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Paleoclimate_HIM-2KM/2.3.0/HIM-2KM_Paleoclimate-PMIP3-midHolocene-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Paleoclimate_HIM-2KM/2.4.0/HIM-2KM_Paleoclimate-PMIP3-midHolocene-mean.nc"
 
 ["HIM-2KM_Paleoclimate-PMIP3-midHolocene-stdev.nc"]
-checksum = "sha256:54f61b5756984b40f7bb33ef7090787b9b516b076dcdb7022d610abfe794af3e"
-previous_checksums = ["sha256:ef49c3be949d720bfd889f3029a57ceed0d9a0515f8b8b14ece2b7bce5d7e2e8"]
+checksum = "sha256:b5315b8e7ee4a1984c4e7e161b59730a85043f8990083a560ef9424ceab316e1"
+previous_checksums = ["sha256:ef49c3be949d720bfd889f3029a57ceed0d9a0515f8b8b14ece2b7bce5d7e2e8", "sha256:54f61b5756984b40f7bb33ef7090787b9b516b076dcdb7022d610abfe794af3e"]
 size = 4396388
 storage_path = "$datasets_dir/Himalaya/HIM-2KM/HIM-2KM_Paleoclimate-PMIP3-midHolocene-stdev.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Paleoclimate_HIM-2KM/2.3.0/HIM-2KM_Paleoclimate-PMIP3-midHolocene-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Paleoclimate_HIM-2KM/2.4.0/HIM-2KM_Paleoclimate-PMIP3-midHolocene-stdev.nc"
 
 ["HIM-2KM_Paleoclimate-PMIP3-piControl-mean.nc"]
-checksum = "sha256:30cf7e3715dcf2d1e1c0ea59ce9fa97ce5552515aa8c1f767b50a9275d15bc68"
-previous_checksums = ["sha256:7b3ce993c00102165f989b0efff12f2ff8cd892223ecf82dba233054cf53eb34"]
+checksum = "sha256:91058daace6caccbaa9a80bac704a425043eb5f13d38e612ce25f7bf32607076"
+previous_checksums = ["sha256:7b3ce993c00102165f989b0efff12f2ff8cd892223ecf82dba233054cf53eb34", "sha256:30cf7e3715dcf2d1e1c0ea59ce9fa97ce5552515aa8c1f767b50a9275d15bc68"]
 size = 4497205
 storage_path = "$datasets_dir/Himalaya/HIM-2KM/HIM-2KM_Paleoclimate-PMIP3-piControl-mean.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Paleoclimate_HIM-2KM/2.3.0/HIM-2KM_Paleoclimate-PMIP3-piControl-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Paleoclimate_HIM-2KM/2.4.0/HIM-2KM_Paleoclimate-PMIP3-piControl-mean.nc"
 
 ["HIM-2KM_Paleoclimate-PMIP3-piControl-stdev.nc"]
-checksum = "sha256:91fef10effa7eaafaa1c47a75f3be24c83f703e9549a2a50678d093a411997ec"
-previous_checksums = ["sha256:117592550c2353f88d2a6bd674a4fe7d6f50555665de21b2c1283623cf1601df"]
+checksum = "sha256:6be3d683fc8d01f32bf5dda59d7dcbc57ee714b3d58ddcfc327ec23e1bf65af0"
+previous_checksums = ["sha256:117592550c2353f88d2a6bd674a4fe7d6f50555665de21b2c1283623cf1601df", "sha256:91fef10effa7eaafaa1c47a75f3be24c83f703e9549a2a50678d093a411997ec"]
 size = 4406583
 storage_path = "$datasets_dir/Himalaya/HIM-2KM/HIM-2KM_Paleoclimate-PMIP3-piControl-stdev.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Paleoclimate_HIM-2KM/2.3.0/HIM-2KM_Paleoclimate-PMIP3-piControl-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Paleoclimate_HIM-2KM/2.4.0/HIM-2KM_Paleoclimate-PMIP3-piControl-stdev.nc"
 
 ["HIM-2KM_Paleoclimate-PMIP4-lgm-mean.nc"]
-checksum = "sha256:a2f433011e6e2979f1c818b8147e3d614eaaa7c6e833f87785198ee527b7abe1"
-previous_checksums = ["sha256:5c727d84b953064fbaed21b6f1f2910dea3e5a06cd5a39244f9c8bdce16c4c65"]
+checksum = "sha256:5d7903d228d843e98ef56648b45e143a9afd4bd649f9516de4c1a7cf607321b1"
+previous_checksums = ["sha256:5c727d84b953064fbaed21b6f1f2910dea3e5a06cd5a39244f9c8bdce16c4c65", "sha256:a2f433011e6e2979f1c818b8147e3d614eaaa7c6e833f87785198ee527b7abe1"]
 size = 13147595
 storage_path = "$datasets_dir/Himalaya/HIM-2KM/HIM-2KM_Paleoclimate-PMIP4-lgm-mean.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Paleoclimate_HIM-2KM/2.3.0/HIM-2KM_Paleoclimate-PMIP4-lgm-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Paleoclimate_HIM-2KM/2.4.0/HIM-2KM_Paleoclimate-PMIP4-lgm-mean.nc"
 
 ["HIM-2KM_Paleoclimate-PMIP4-lgm-stdev.nc"]
-checksum = "sha256:ed1f2fd3814dbcf09d7f36114fbc8acd45e1131ced48fc14a692974007f02b3c"
-previous_checksums = ["sha256:36d84fb50cb3f980646e9d31e6a2f1b16488916388e7ede83de1e1b537ca56c0"]
+checksum = "sha256:5de7c5c5e6cd9b21a13d98773458e2a3dc013799db6d4a3355348e295b6f3d49"
+previous_checksums = ["sha256:36d84fb50cb3f980646e9d31e6a2f1b16488916388e7ede83de1e1b537ca56c0", "sha256:ed1f2fd3814dbcf09d7f36114fbc8acd45e1131ced48fc14a692974007f02b3c"]
 size = 13884446
 storage_path = "$datasets_dir/Himalaya/HIM-2KM/HIM-2KM_Paleoclimate-PMIP4-lgm-stdev.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Paleoclimate_HIM-2KM/2.3.0/HIM-2KM_Paleoclimate-PMIP4-lgm-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Paleoclimate_HIM-2KM/2.4.0/HIM-2KM_Paleoclimate-PMIP4-lgm-stdev.nc"
 
 ["HIM-2KM_Paleoclimate-PMIP4-midHolocene-mean.nc"]
-checksum = "sha256:a0995be2e41eab853b536597be04ebb9fc54af9881e13cdf39e25f91c2a9a3d1"
-previous_checksums = ["sha256:fd474072a5bbfe6f9ff9a877e29f2c41f0a81ae129d49f6d0a20f87d89d52b77"]
+checksum = "sha256:4abeac2d3266ab3f5d4d5a6b66ab9ca7dba5513e2be026fb789c8802ee512106"
+previous_checksums = ["sha256:fd474072a5bbfe6f9ff9a877e29f2c41f0a81ae129d49f6d0a20f87d89d52b77", "sha256:a0995be2e41eab853b536597be04ebb9fc54af9881e13cdf39e25f91c2a9a3d1"]
 size = 12639725
 storage_path = "$datasets_dir/Himalaya/HIM-2KM/HIM-2KM_Paleoclimate-PMIP4-midHolocene-mean.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Paleoclimate_HIM-2KM/2.3.0/HIM-2KM_Paleoclimate-PMIP4-midHolocene-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Paleoclimate_HIM-2KM/2.4.0/HIM-2KM_Paleoclimate-PMIP4-midHolocene-mean.nc"
 
 ["HIM-2KM_Paleoclimate-PMIP4-midHolocene-stdev.nc"]
-checksum = "sha256:736064381d034dad7876105812ac47db91d492c0eba8e61389b67075e694376a"
-previous_checksums = ["sha256:936f30b0448500aa2d741ca3268baae8d6f1e6233ed4be51a82cbff1b4fb0d55"]
+checksum = "sha256:b12ae567a7783dc02b5e38c6d4c1d369873650ff318c7b6e8577be8426045cfb"
+previous_checksums = ["sha256:936f30b0448500aa2d741ca3268baae8d6f1e6233ed4be51a82cbff1b4fb0d55", "sha256:736064381d034dad7876105812ac47db91d492c0eba8e61389b67075e694376a"]
 size = 14205160
 storage_path = "$datasets_dir/Himalaya/HIM-2KM/HIM-2KM_Paleoclimate-PMIP4-midHolocene-stdev.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Paleoclimate_HIM-2KM/2.3.0/HIM-2KM_Paleoclimate-PMIP4-midHolocene-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Paleoclimate_HIM-2KM/2.4.0/HIM-2KM_Paleoclimate-PMIP4-midHolocene-stdev.nc"
 
 ["HIM-2KM_Paleoclimate-PMIP4-piControl-mean.nc"]
-checksum = "sha256:e87624287c3bc186f46a84d61c799f786fa4367229fe4dc42197384e72855275"
-previous_checksums = ["sha256:3a5aed97ad5d80b003e514c6a1c138f58838c5eb322843564e7569e4cc8a8d03"]
+checksum = "sha256:1968d0c88bdaf575d8d12a5c47898bc64a0526c1f131349e573ecda1cef5ed53"
+previous_checksums = ["sha256:3a5aed97ad5d80b003e514c6a1c138f58838c5eb322843564e7569e4cc8a8d03", "sha256:e87624287c3bc186f46a84d61c799f786fa4367229fe4dc42197384e72855275"]
 size = 12745930
 storage_path = "$datasets_dir/Himalaya/HIM-2KM/HIM-2KM_Paleoclimate-PMIP4-piControl-mean.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Paleoclimate_HIM-2KM/2.3.0/HIM-2KM_Paleoclimate-PMIP4-piControl-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Paleoclimate_HIM-2KM/2.4.0/HIM-2KM_Paleoclimate-PMIP4-piControl-mean.nc"
 
 ["HIM-2KM_Paleoclimate-PMIP4-piControl-stdev.nc"]
-checksum = "sha256:d3a3e59ff5461672fccd0205447e75f4eb77287af54c01b90f3645d690c42210"
-previous_checksums = ["sha256:afa41227e6a54f1864cb54141b85e84126b334a04f022cf37fbb944884ee386c"]
+checksum = "sha256:bab0d6ef14da737abb5dbec5e4b10fe804bfe00f0c0c93958e70c5d959532e73"
+previous_checksums = ["sha256:afa41227e6a54f1864cb54141b85e84126b334a04f022cf37fbb944884ee386c", "sha256:d3a3e59ff5461672fccd0205447e75f4eb77287af54c01b90f3645d690c42210"]
 size = 14106311
 storage_path = "$datasets_dir/Himalaya/HIM-2KM/HIM-2KM_Paleoclimate-PMIP4-piControl-stdev.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Paleoclimate_HIM-2KM/2.3.0/HIM-2KM_Paleoclimate-PMIP4-piControl-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Paleoclimate_HIM-2KM/2.4.0/HIM-2KM_Paleoclimate-PMIP4-piControl-stdev.nc"
 
 ["HIM-2KM_grid.nc"]
 checksum = "sha256:c80460c96b66ee86b7f0ad0ba2095ab24de793493dda2a341dfa36b5a715a209"
 size = 2883062
 storage_path = "$datasets_dir/Himalaya/HIM-2KM/HIM-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Paleoclimate_HIM-2KM/2.3.0/HIM-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Paleoclimate_HIM-2KM/2.4.0/HIM-2KM_grid.nc"
 
 ["grid_HIM-2KM.txt"]
 checksum = "sha256:534cff6d3562a47b21187e2279ce0b3a848e720b093bc7ae578073c24219bdcf"
 size = 333
 storage_path = "$datasets_dir/Himalaya/HIM-2KM/grid_HIM-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Paleoclimate_HIM-2KM/2.3.0/grid_HIM-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Paleoclimate_HIM-2KM/2.4.0/grid_HIM-2KM.txt"

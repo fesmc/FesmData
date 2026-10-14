@@ -1,0 +1,73 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-14"
+git_tag = "topo-v2.3.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=WilkesBasin_Topo"
+version = "2.3.0"
+
+["WSB-1KM_TOPO-BedMachine-v2.nc"]
+checksum = "sha256:0911a6c7758b561f8df7d9bf4d927e10bf8cc38acd426be3c11b107de8a81aea"
+size = 10535859
+storage_path = "$datasets_dir/WilkesBasin/WSB-1KM/WSB-1KM_TOPO-BedMachine-v2.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-1KM/2.3.0/WSB-1KM_TOPO-BedMachine-v2.nc"
+
+["WSB-1KM_TOPO-BedMachine-v3.nc"]
+checksum = "sha256:f8caabe37ce8d90de079658e5f0d7da3a584333e3c74b30eca8f255de8a4c4c7"
+size = 10533356
+storage_path = "$datasets_dir/WilkesBasin/WSB-1KM/WSB-1KM_TOPO-BedMachine-v3.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-1KM/2.3.0/WSB-1KM_TOPO-BedMachine-v3.nc"
+
+["WSB-1KM_TOPO-BedMachine-v4.nc"]
+checksum = "sha256:2dfdc5b48d79535194ebad1ec954ca412fb2ce22ac465d77854635a33dd6ddd0"
+size = 10813577
+storage_path = "$datasets_dir/WilkesBasin/WSB-1KM/WSB-1KM_TOPO-BedMachine-v4.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-1KM/2.3.0/WSB-1KM_TOPO-BedMachine-v4.nc"
+
+["WSB-1KM_TOPO-Bedmap2.nc"]
+checksum = "sha256:95a6f6536303f75a1db56064df52fc29a87ffdb0ff52e8f3c2b220b1a5200608"
+size = 9226406
+storage_path = "$datasets_dir/WilkesBasin/WSB-1KM/WSB-1KM_TOPO-Bedmap2.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-1KM/2.3.0/WSB-1KM_TOPO-Bedmap2.nc"
+
+["WSB-1KM_TOPO-Bedmap3.nc"]
+checksum = "sha256:754956e1f75a832fbc22576483441334455829e912d8a345ac18da0ca57f8275"
+size = 9647123
+storage_path = "$datasets_dir/WilkesBasin/WSB-1KM/WSB-1KM_TOPO-Bedmap3.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-1KM/2.3.0/WSB-1KM_TOPO-Bedmap3.nc"
+
+["WSB-1KM_grid.nc"]
+checksum = "sha256:f9f76dbe46429b2377b8a835d0dff284099155ce6f72e7d0b878da790a97e056"
+size = 3623202
+storage_path = "$datasets_dir/WilkesBasin/WSB-1KM/WSB-1KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-1KM/2.3.0/WSB-1KM_grid.nc"
+
+["WSB-500M_TOPO-BedMachine-v4.nc"]
+checksum = "sha256:19ef4c9921fcce164214abfe23c294fe5604860cf5d56fc70cf1711762ec6671"
+size = 29286350
+storage_path = "$datasets_dir/WilkesBasin/WSB-500M/WSB-500M_TOPO-BedMachine-v4.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-500M/2.3.0/WSB-500M_TOPO-BedMachine-v4.nc"
+
+["WSB-500M_TOPO-Bedmap3.nc"]
+checksum = "sha256:d778691b3fe9ce1671c610f6a46c8cd490b392dbd9ec68918bc4085809642465"
+size = 26761919
+storage_path = "$datasets_dir/WilkesBasin/WSB-500M/WSB-500M_TOPO-Bedmap3.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-500M/2.3.0/WSB-500M_TOPO-Bedmap3.nc"
+
+["WSB-500M_grid.nc"]
+checksum = "sha256:ae75837654f0c5f8d19ddda8b84dd8a12aa354240a9c62e965d5cc714822585a"
+size = 11720500
+storage_path = "$datasets_dir/WilkesBasin/WSB-500M/WSB-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-500M/2.3.0/WSB-500M_grid.nc"
+
+["grid_WSB-1KM.txt"]
+checksum = "sha256:6eb013f46c20176e719fe3f4458c27a2930b3ceafc95e2440ea04bbee0bd32a2"
+size = 466
+storage_path = "$datasets_dir/WilkesBasin/WSB-1KM/grid_WSB-1KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-1KM/2.3.0/grid_WSB-1KM.txt"
+
+["grid_WSB-500M.txt"]
+checksum = "sha256:34c44cfad7a5c085807ba0ebb81f03c8a3b176eb7c8ff267329b4c81a95fa9fe"
+size = 466
+storage_path = "$datasets_dir/WilkesBasin/WSB-500M/grid_WSB-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-500M/2.3.0/grid_WSB-500M.txt"

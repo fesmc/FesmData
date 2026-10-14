@@ -1,0 +1,91 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-14"
+git_tag = "paleoclimate-v2.4.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Svalbard_Paleoclimate"
+version = "2.4.0"
+
+["SVB-2KM_Paleoclimate-PMIP3-lgm-mean.nc"]
+checksum = "sha256:cc7939aecf7f4061e50b4e9244e1fab0125a62bbb53a7b4c754fa96041732c1e"
+size = 845801
+storage_path = "$datasets_dir/Svalbard/SVB-2KM/SVB-2KM_Paleoclimate-PMIP3-lgm-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Paleoclimate_SVB-2KM/2.4.0/SVB-2KM_Paleoclimate-PMIP3-lgm-mean.nc"
+
+["SVB-2KM_Paleoclimate-PMIP3-lgm-stdev.nc"]
+checksum = "sha256:7f7e8de325cc2ec0f147ab4a819c313417e5a0dd169cc17e4c630c406c2717ab"
+size = 851829
+storage_path = "$datasets_dir/Svalbard/SVB-2KM/SVB-2KM_Paleoclimate-PMIP3-lgm-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Paleoclimate_SVB-2KM/2.4.0/SVB-2KM_Paleoclimate-PMIP3-lgm-stdev.nc"
+
+["SVB-2KM_Paleoclimate-PMIP3-midHolocene-mean.nc"]
+checksum = "sha256:d339cb1ffabcd08f1404d3f25b76fd92f31f5539b303056707f276dc28ba4c79"
+size = 931676
+storage_path = "$datasets_dir/Svalbard/SVB-2KM/SVB-2KM_Paleoclimate-PMIP3-midHolocene-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Paleoclimate_SVB-2KM/2.4.0/SVB-2KM_Paleoclimate-PMIP3-midHolocene-mean.nc"
+
+["SVB-2KM_Paleoclimate-PMIP3-midHolocene-stdev.nc"]
+checksum = "sha256:2967a21db6561f7b1ae5eed26491f52de5b25ddadcf9198ba2408850b1b4d03e"
+size = 754676
+storage_path = "$datasets_dir/Svalbard/SVB-2KM/SVB-2KM_Paleoclimate-PMIP3-midHolocene-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Paleoclimate_SVB-2KM/2.4.0/SVB-2KM_Paleoclimate-PMIP3-midHolocene-stdev.nc"
+
+["SVB-2KM_Paleoclimate-PMIP3-piControl-mean.nc"]
+checksum = "sha256:1aa318409d6d41ffe650dadbb2c3452ef02a865dd045d8654e57bfca89f6ab18"
+size = 921582
+storage_path = "$datasets_dir/Svalbard/SVB-2KM/SVB-2KM_Paleoclimate-PMIP3-piControl-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Paleoclimate_SVB-2KM/2.4.0/SVB-2KM_Paleoclimate-PMIP3-piControl-mean.nc"
+
+["SVB-2KM_Paleoclimate-PMIP3-piControl-stdev.nc"]
+checksum = "sha256:4a9688d89ae2b073943d73880c36c50f6c089849ba098cfb6d666acb22b8ce8d"
+size = 727684
+storage_path = "$datasets_dir/Svalbard/SVB-2KM/SVB-2KM_Paleoclimate-PMIP3-piControl-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Paleoclimate_SVB-2KM/2.4.0/SVB-2KM_Paleoclimate-PMIP3-piControl-stdev.nc"
+
+["SVB-2KM_Paleoclimate-PMIP4-lgm-mean.nc"]
+checksum = "sha256:a6fffb88c762e57b1a01acb892d13e17875342ecf5f24f3fef6c3bfc37c0ad19"
+size = 2223267
+storage_path = "$datasets_dir/Svalbard/SVB-2KM/SVB-2KM_Paleoclimate-PMIP4-lgm-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Paleoclimate_SVB-2KM/2.4.0/SVB-2KM_Paleoclimate-PMIP4-lgm-mean.nc"
+
+["SVB-2KM_Paleoclimate-PMIP4-lgm-stdev.nc"]
+checksum = "sha256:5c4422316908463b26a42050fb5d770a407a460525426d3b1a41f7f8670f001c"
+size = 2080641
+storage_path = "$datasets_dir/Svalbard/SVB-2KM/SVB-2KM_Paleoclimate-PMIP4-lgm-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Paleoclimate_SVB-2KM/2.4.0/SVB-2KM_Paleoclimate-PMIP4-lgm-stdev.nc"
+
+["SVB-2KM_Paleoclimate-PMIP4-midHolocene-mean.nc"]
+checksum = "sha256:cd84a4798cf3f4f97cbf6c2f23b43eb732d61701922c192a7b09e5ebea22b805"
+size = 2259955
+storage_path = "$datasets_dir/Svalbard/SVB-2KM/SVB-2KM_Paleoclimate-PMIP4-midHolocene-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Paleoclimate_SVB-2KM/2.4.0/SVB-2KM_Paleoclimate-PMIP4-midHolocene-mean.nc"
+
+["SVB-2KM_Paleoclimate-PMIP4-midHolocene-stdev.nc"]
+checksum = "sha256:f24ae5b3612f08cbd852cc34006d42b97e9b365ad2c4166c53561a570e4e56d3"
+size = 1879852
+storage_path = "$datasets_dir/Svalbard/SVB-2KM/SVB-2KM_Paleoclimate-PMIP4-midHolocene-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Paleoclimate_SVB-2KM/2.4.0/SVB-2KM_Paleoclimate-PMIP4-midHolocene-stdev.nc"
+
+["SVB-2KM_Paleoclimate-PMIP4-piControl-mean.nc"]
+checksum = "sha256:1d51c6304e3359127a5cb2edd97bba43abb4f0d25d8ae3986ad526680767af68"
+size = 2251860
+storage_path = "$datasets_dir/Svalbard/SVB-2KM/SVB-2KM_Paleoclimate-PMIP4-piControl-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Paleoclimate_SVB-2KM/2.4.0/SVB-2KM_Paleoclimate-PMIP4-piControl-mean.nc"
+
+["SVB-2KM_Paleoclimate-PMIP4-piControl-stdev.nc"]
+checksum = "sha256:fe7704443915bd8ec2edb4b1aebcfa7304ab1b19a26009bdc027960c703250f3"
+size = 2145171
+storage_path = "$datasets_dir/Svalbard/SVB-2KM/SVB-2KM_Paleoclimate-PMIP4-piControl-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Paleoclimate_SVB-2KM/2.4.0/SVB-2KM_Paleoclimate-PMIP4-piControl-stdev.nc"
+
+["SVB-2KM_grid.nc"]
+checksum = "sha256:6a0409b44fa4c45229d431e113338e59f766947595e5bb697b316743ba9912a6"
+size = 744534
+storage_path = "$datasets_dir/Svalbard/SVB-2KM/SVB-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Paleoclimate_SVB-2KM/2.4.0/SVB-2KM_grid.nc"
+
+["grid_SVB-2KM.txt"]
+checksum = "sha256:18fa470f57070e72b08f324dbf95f9619f896701bfa78523290698f89b5aab05"
+size = 324
+storage_path = "$datasets_dir/Svalbard/SVB-2KM/grid_SVB-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Paleoclimate_SVB-2KM/2.4.0/grid_SVB-2KM.txt"

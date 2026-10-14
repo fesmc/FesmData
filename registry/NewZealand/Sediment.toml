@@ -1,0 +1,37 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-14"
+git_tag = "sediment-v2.2.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=NewZealand_Sediment"
+version = "2.2.0"
+
+["NZ-2KM_Sediment-CRUST1.nc"]
+checksum = "sha256:ca5c1146c584bff8788215745b1a461babc25bdd79bc16a8da542aae3629f958"
+size = 867405
+storage_path = "$datasets_dir/NewZealand/NZ-2KM/NZ-2KM_Sediment-CRUST1.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Sediment_NZ-2KM/2.2.0/NZ-2KM_Sediment-CRUST1.nc"
+
+["NZ-2KM_Sediment-ECM1.nc"]
+checksum = "sha256:3cb28bd10fa8fab7cb8a22dd26be419b9dd75a150da92535b04d18d701a42fd7"
+size = 514698
+storage_path = "$datasets_dir/NewZealand/NZ-2KM/NZ-2KM_Sediment-ECM1.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Sediment_NZ-2KM/2.2.0/NZ-2KM_Sediment-ECM1.nc"
+
+["NZ-2KM_Sediment-GlobSed.nc"]
+checksum = "sha256:fe680f88c42880cc4bc767d7a4b64987e65d58140567418c8677df259a6e63c9"
+size = 252825
+storage_path = "$datasets_dir/NewZealand/NZ-2KM/NZ-2KM_Sediment-GlobSed.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Sediment_NZ-2KM/2.2.0/NZ-2KM_Sediment-GlobSed.nc"
+
+["NZ-2KM_grid.nc"]
+checksum = "sha256:8a6333b930e208cef12d1b144497cd478c0881052c7caf42e928b1b6855f32b2"
+size = 416034
+storage_path = "$datasets_dir/NewZealand/NZ-2KM/NZ-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Sediment_NZ-2KM/2.2.0/NZ-2KM_grid.nc"
+
+["grid_NZ-2KM.txt"]
+checksum = "sha256:00ec7490a3740cfcf1dfa4058f7ef1b5d024f831e2ed1a97075c73bf1a8a7adc"
+size = 334
+storage_path = "$datasets_dir/NewZealand/NZ-2KM/grid_NZ-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Sediment_NZ-2KM/2.2.0/grid_NZ-2KM.txt"

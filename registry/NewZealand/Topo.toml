@@ -1,0 +1,61 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-14"
+git_tag = "topo-v2.3.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=NewZealand_Topo"
+version = "2.3.0"
+
+["NZ-250M_TOPO-GLO90-GEBCO2026.nc"]
+checksum = "sha256:c9ac73eaad5016eb549d97feb26b27fb2335fa9eee6b6bea53b8bd02d540b6d9"
+size = 31579461
+storage_path = "$datasets_dir/NewZealand/NZ-250M/NZ-250M_TOPO-GLO90-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Topo_NZ-250M/2.3.0/NZ-250M_TOPO-GLO90-GEBCO2026.nc"
+
+["NZ-250M_grid.nc"]
+checksum = "sha256:a10fc753479d778955e315667f465e0b726a52684dcd677b2af398da7d4c532d"
+size = 9705952
+storage_path = "$datasets_dir/NewZealand/NZ-250M/NZ-250M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Topo_NZ-250M/2.3.0/NZ-250M_grid.nc"
+
+["NZ-2KM_TOPO-GLO90-GEBCO2026.nc"]
+checksum = "sha256:cc0fa5bdfcd4e8f59f713df20029d19aca53f50878b6cdf3545ff4aa3b7904de"
+size = 981000
+storage_path = "$datasets_dir/NewZealand/NZ-2KM/NZ-2KM_TOPO-GLO90-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Topo_NZ-2KM/2.3.0/NZ-2KM_TOPO-GLO90-GEBCO2026.nc"
+
+["NZ-2KM_grid.nc"]
+checksum = "sha256:8a6333b930e208cef12d1b144497cd478c0881052c7caf42e928b1b6855f32b2"
+size = 416034
+storage_path = "$datasets_dir/NewZealand/NZ-2KM/NZ-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Topo_NZ-2KM/2.3.0/NZ-2KM_grid.nc"
+
+["NZ-500M_TOPO-GLO90-GEBCO2026.nc"]
+checksum = "sha256:7f3d9abf9ffae3846877767c9751c12259bdab2820c13f6374b2a73370bdddde"
+size = 12296645
+storage_path = "$datasets_dir/NewZealand/NZ-500M/NZ-500M_TOPO-GLO90-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Topo_NZ-500M/2.3.0/NZ-500M_TOPO-GLO90-GEBCO2026.nc"
+
+["NZ-500M_grid.nc"]
+checksum = "sha256:386ddcba13dd4d8d2b686d07bc2baf994777b6c16c9bc16d229a9ad1949c471c"
+size = 3694548
+storage_path = "$datasets_dir/NewZealand/NZ-500M/NZ-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Topo_NZ-500M/2.3.0/NZ-500M_grid.nc"
+
+["grid_NZ-250M.txt"]
+checksum = "sha256:32cbfa45ba75bc74d62e37e6359adf0408daee45b08b448ff4977a69f3182aeb"
+size = 340
+storage_path = "$datasets_dir/NewZealand/NZ-250M/grid_NZ-250M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Topo_NZ-250M/2.3.0/grid_NZ-250M.txt"
+
+["grid_NZ-2KM.txt"]
+checksum = "sha256:00ec7490a3740cfcf1dfa4058f7ef1b5d024f831e2ed1a97075c73bf1a8a7adc"
+size = 334
+storage_path = "$datasets_dir/NewZealand/NZ-2KM/grid_NZ-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Topo_NZ-2KM/2.3.0/grid_NZ-2KM.txt"
+
+["grid_NZ-500M.txt"]
+checksum = "sha256:148c1e8fe2691c9692bde95c55faa47cca48098598f7088b0951dbae7f1fb8c0"
+size = 337
+storage_path = "$datasets_dir/NewZealand/NZ-500M/grid_NZ-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Topo_NZ-500M/2.3.0/grid_NZ-500M.txt"

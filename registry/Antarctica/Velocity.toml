@@ -2,168 +2,192 @@
 
 [_RELEASE]
 date = "2026-10-14"
-git_tag = "velocity-v2.2.0"
+git_tag = "velocity-v2.3.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Antarctica_Velocity"
-version = "2.2.0"
+version = "2.3.0"
 
 ["ANT-16KM_Velocity-Mouginot2019.nc"]
-checksum = "sha256:a36407b65fdafc72f5bad93c59034de51655d6ffa450d3ee66ff875b93892956"
-previous_checksums = ["sha256:8f07a4e6c8fa68354b5f58c10486ef9ce38dfc5fda6fedf30970293f26e8076f"]
+checksum = "sha256:a4473804de9bafa92fc430056bd1ffd9c3a19430bf665786dc8a6af54f691823"
+previous_checksums = ["sha256:8f07a4e6c8fa68354b5f58c10486ef9ce38dfc5fda6fedf30970293f26e8076f", "sha256:a36407b65fdafc72f5bad93c59034de51655d6ffa450d3ee66ff875b93892956"]
 size = 457263
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_Velocity-Mouginot2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-16KM/2.2.0/ANT-16KM_Velocity-Mouginot2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-16KM/2.3.0/ANT-16KM_Velocity-Mouginot2019.nc"
 
 ["ANT-16KM_Velocity-Rignot2011.nc"]
-checksum = "sha256:05bfe2ae26fb409144e7be9f1c263ed139378e8d4d9e713277bb50c9d1a470b7"
-previous_checksums = ["sha256:cec8eeff498fd07fb4bad758e71fa8039efd9670eca785c8535bcdeae75478e2", "sha256:cbf5a76905cfda53a30febcadb26006ea7bae9bcb9b0dc43e4db0668f836262a"]
+checksum = "sha256:a5f7d1e631d1b1f92a3150838ec74dc1351094c09176b9d11e91f526891d17dc"
+previous_checksums = ["sha256:cec8eeff498fd07fb4bad758e71fa8039efd9670eca785c8535bcdeae75478e2", "sha256:cbf5a76905cfda53a30febcadb26006ea7bae9bcb9b0dc43e4db0668f836262a", "sha256:05bfe2ae26fb409144e7be9f1c263ed139378e8d4d9e713277bb50c9d1a470b7"]
 size = 456650
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_Velocity-Rignot2011.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-16KM/2.2.0/ANT-16KM_Velocity-Rignot2011.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-16KM/2.3.0/ANT-16KM_Velocity-Rignot2011.nc"
 
 ["ANT-16KM_grid.nc"]
-checksum = "sha256:0c9b8e003b33ca4188cc54c9d7dbe4932f742ee4f6ac9431d8d38e33fa5af978"
-previous_checksums = ["sha256:dea44445828fdc3adbae04afc6662224e96a6838c8381f80a855659b3ad6460c"]
+checksum = "sha256:dc1fecc6c052b75d57955d69f028216b5449d2997e17a65fb6fd739af2118189"
+previous_checksums = ["sha256:dea44445828fdc3adbae04afc6662224e96a6838c8381f80a855659b3ad6460c", "sha256:0c9b8e003b33ca4188cc54c9d7dbe4932f742ee4f6ac9431d8d38e33fa5af978"]
 size = 766020
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-16KM/2.2.0/ANT-16KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-16KM/2.3.0/ANT-16KM_grid.nc"
 
 ["ANT-1KM_Velocity-Mouginot2019.nc"]
-checksum = "sha256:2817b6c9a8e30d12ae62792333cd365656901796b492293e04f73ab069cc0a7c"
-previous_checksums = ["sha256:1f8af5993a17163628e6584838f682f836d4ef807d4d07f2952abfa027dbff6b"]
+checksum = "sha256:21d98952b516dd741e363cec9f9fc96abbe70e31a04ceab1c20a0b10c15456ed"
+previous_checksums = ["sha256:1f8af5993a17163628e6584838f682f836d4ef807d4d07f2952abfa027dbff6b", "sha256:2817b6c9a8e30d12ae62792333cd365656901796b492293e04f73ab069cc0a7c"]
 size = 50645199
 storage_path = "$datasets_dir/Antarctica/ANT-1KM/ANT-1KM_Velocity-Mouginot2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-1KM/2.2.0/ANT-1KM_Velocity-Mouginot2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-1KM/2.3.0/ANT-1KM_Velocity-Mouginot2019.nc"
 
 ["ANT-1KM_Velocity-Rignot2011.nc"]
-checksum = "sha256:e0432a8446c0e6e11d5094b5343bae999668e5e0009ee432a4689c9c81703abe"
-previous_checksums = ["sha256:5f2c677036c8cf782c972fc81f151b1190d0cae522157745b335548736625739", "sha256:9452d78249061a46cdf85b5ef24dc0b43f561e9f387a3c3318add32234b0329f"]
+checksum = "sha256:0b95d9b7d49dd67b0e24937a3308a2b84bbbc31d9c46394fb8b7375edec04496"
+previous_checksums = ["sha256:5f2c677036c8cf782c972fc81f151b1190d0cae522157745b335548736625739", "sha256:9452d78249061a46cdf85b5ef24dc0b43f561e9f387a3c3318add32234b0329f", "sha256:e0432a8446c0e6e11d5094b5343bae999668e5e0009ee432a4689c9c81703abe"]
 size = 61967573
 storage_path = "$datasets_dir/Antarctica/ANT-1KM/ANT-1KM_Velocity-Rignot2011.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-1KM/2.2.0/ANT-1KM_Velocity-Rignot2011.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-1KM/2.3.0/ANT-1KM_Velocity-Rignot2011.nc"
 
 ["ANT-1KM_grid.nc"]
-checksum = "sha256:138b7ff212af93d6d11244da889fcead9cb4956bb787fa135b9161f680a970c3"
-previous_checksums = ["sha256:1564185a4ce4e24d55ceaa7e6a6fc6170b28746fb5435d96af1ddb267a5da085"]
+checksum = "sha256:024dfbd81ca8e09bd9ae2723e08f2f19e124fcca9681809187aea09483799f7e"
+previous_checksums = ["sha256:1564185a4ce4e24d55ceaa7e6a6fc6170b28746fb5435d96af1ddb267a5da085", "sha256:138b7ff212af93d6d11244da889fcead9cb4956bb787fa135b9161f680a970c3"]
 size = 101715868
 storage_path = "$datasets_dir/Antarctica/ANT-1KM/ANT-1KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-1KM/2.2.0/ANT-1KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-1KM/2.3.0/ANT-1KM_grid.nc"
 
 ["ANT-2KM_Velocity-Mouginot2019.nc"]
-checksum = "sha256:0f79c62ae16a2a9a700ac9e4b4fa984dc90231e2583b421d99d975df646e8b96"
-previous_checksums = ["sha256:962b7045ae2f2175cbb69df933a7dee8c0bd1b98a69e708471e7a297b0cc7211"]
+checksum = "sha256:89f9ce03208f34658b3b4c287d4d6958bb4fc7aa4e247ff84538e5f75d0cde8c"
+previous_checksums = ["sha256:962b7045ae2f2175cbb69df933a7dee8c0bd1b98a69e708471e7a297b0cc7211", "sha256:0f79c62ae16a2a9a700ac9e4b4fa984dc90231e2583b421d99d975df646e8b96"]
 size = 15620499
 storage_path = "$datasets_dir/Antarctica/ANT-2KM/ANT-2KM_Velocity-Mouginot2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-2KM/2.2.0/ANT-2KM_Velocity-Mouginot2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-2KM/2.3.0/ANT-2KM_Velocity-Mouginot2019.nc"
 
 ["ANT-2KM_Velocity-Rignot2011.nc"]
-checksum = "sha256:1c0ff1d1b97f9e5dc836abb2aeb5a1ef1e832fddeba122d7c0c693adff1049f0"
-previous_checksums = ["sha256:476d57a7fc59160d875cdab45c9304351212bc3868cbc74726941803efec090f", "sha256:d830bd5ce481482c22cc507ce8ec1ff333099024275eaa78fffd950daf0c5217"]
+checksum = "sha256:67e43a460de2dcd5a80e768287442e40ca73a34b54b7a0c3d80e5876f10202c3"
+previous_checksums = ["sha256:476d57a7fc59160d875cdab45c9304351212bc3868cbc74726941803efec090f", "sha256:d830bd5ce481482c22cc507ce8ec1ff333099024275eaa78fffd950daf0c5217", "sha256:1c0ff1d1b97f9e5dc836abb2aeb5a1ef1e832fddeba122d7c0c693adff1049f0"]
 size = 17686570
 storage_path = "$datasets_dir/Antarctica/ANT-2KM/ANT-2KM_Velocity-Rignot2011.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-2KM/2.2.0/ANT-2KM_Velocity-Rignot2011.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-2KM/2.3.0/ANT-2KM_Velocity-Rignot2011.nc"
 
 ["ANT-2KM_grid.nc"]
-checksum = "sha256:b6ac983d1cadde8def80249d1304d0cf5eae0defdf320a7dae437d825e55ab11"
-previous_checksums = ["sha256:405a1131131ba119609bf7c4147b29477ab4801fd0221f56656ab6ff1abf8ffc"]
+checksum = "sha256:5ca84d951f1514ff66807c1a3597fdc405fd0622ec0efc2227600ad3943df522"
+previous_checksums = ["sha256:405a1131131ba119609bf7c4147b29477ab4801fd0221f56656ab6ff1abf8ffc", "sha256:b6ac983d1cadde8def80249d1304d0cf5eae0defdf320a7dae437d825e55ab11"]
 size = 30598617
 storage_path = "$datasets_dir/Antarctica/ANT-2KM/ANT-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-2KM/2.2.0/ANT-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-2KM/2.3.0/ANT-2KM_grid.nc"
 
 ["ANT-32KM_Velocity-Mouginot2019.nc"]
-checksum = "sha256:a71478b62c86089fa4a6d9f1bc7aef9a520f6ee0f5d3800d1fe67e7ef9c14dec"
-previous_checksums = ["sha256:b1584733ace34f8f85ccffce997375f6ab3a3c93fe0099ee002658d9e038762d"]
+checksum = "sha256:d6fbff320c950babbe94fe0189bcc63f9b72c7fe75243ee07acf1fbc594d649e"
+previous_checksums = ["sha256:b1584733ace34f8f85ccffce997375f6ab3a3c93fe0099ee002658d9e038762d", "sha256:a71478b62c86089fa4a6d9f1bc7aef9a520f6ee0f5d3800d1fe67e7ef9c14dec"]
 size = 182008
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_Velocity-Mouginot2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-32KM/2.2.0/ANT-32KM_Velocity-Mouginot2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-32KM/2.3.0/ANT-32KM_Velocity-Mouginot2019.nc"
 
 ["ANT-32KM_Velocity-Rignot2011.nc"]
-checksum = "sha256:d188d3c12a9873d76a6050f95808bc2633cd90ee70eee6daa3bbbb5345c02314"
-previous_checksums = ["sha256:452e5249af9f7a2130cc083b30ae39cbfe8969f911758051246294d36324508b", "sha256:97c8f5939f15332cb45d507803ccc084dcefeab35e787ce34acfcf02c36e4589"]
+checksum = "sha256:c7af3789b64ec237860625721abc2522b28bb9b5b663ec5432c204e512a3e44b"
+previous_checksums = ["sha256:452e5249af9f7a2130cc083b30ae39cbfe8969f911758051246294d36324508b", "sha256:97c8f5939f15332cb45d507803ccc084dcefeab35e787ce34acfcf02c36e4589", "sha256:d188d3c12a9873d76a6050f95808bc2633cd90ee70eee6daa3bbbb5345c02314"]
 size = 179914
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_Velocity-Rignot2011.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-32KM/2.2.0/ANT-32KM_Velocity-Rignot2011.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-32KM/2.3.0/ANT-32KM_Velocity-Rignot2011.nc"
 
 ["ANT-32KM_grid.nc"]
-checksum = "sha256:49cf80092bf11538d76d480dea852afea71c414565d6123fb01ff4e7e853bee1"
-previous_checksums = ["sha256:66765d3512c62479e60ad1095a4ee84b38edb681fe816eddf9896c3a2799efd8"]
+checksum = "sha256:c91dabc6970bd7b99809d38352627c34d0d24c3ea9797a18c266a8f302ee1958"
+previous_checksums = ["sha256:66765d3512c62479e60ad1095a4ee84b38edb681fe816eddf9896c3a2799efd8", "sha256:49cf80092bf11538d76d480dea852afea71c414565d6123fb01ff4e7e853bee1"]
 size = 190659
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-32KM/2.2.0/ANT-32KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-32KM/2.3.0/ANT-32KM_grid.nc"
 
 ["ANT-4KM_Velocity-Mouginot2019.nc"]
-checksum = "sha256:85d50b502eefa0dd8471ae8a6719cbaf376e43702ab74a90988031f4dbd90d60"
-previous_checksums = ["sha256:3c2e100bc31bf65449adaf7307ed3d9ddf9c1ec851f172a7b57f748778191a06"]
+checksum = "sha256:9d326d867889cf7164e59c7bd39005095c0478e7ec9854c049f8394869c97bf3"
+previous_checksums = ["sha256:3c2e100bc31bf65449adaf7307ed3d9ddf9c1ec851f172a7b57f748778191a06", "sha256:85d50b502eefa0dd8471ae8a6719cbaf376e43702ab74a90988031f4dbd90d60"]
 size = 4741472
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_Velocity-Mouginot2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-4KM/2.2.0/ANT-4KM_Velocity-Mouginot2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-4KM/2.3.0/ANT-4KM_Velocity-Mouginot2019.nc"
 
 ["ANT-4KM_Velocity-Rignot2011.nc"]
-checksum = "sha256:d8db236e466927d4dd28e0d99088d71a5f71abf1e0c32331fa5b67abc9deaf31"
-previous_checksums = ["sha256:6e35657970715aa76b18330baa67c036b54dca09261814dbae17b50630df1ad6", "sha256:9e4b40886d826f85fe9750587381365fe164f8f9e187a72d90ffe180a1cd6ef1"]
+checksum = "sha256:567c6aeab2fa5c6405c3c6258548104afae35a512626b41b54054aea9939e432"
+previous_checksums = ["sha256:6e35657970715aa76b18330baa67c036b54dca09261814dbae17b50630df1ad6", "sha256:9e4b40886d826f85fe9750587381365fe164f8f9e187a72d90ffe180a1cd6ef1", "sha256:d8db236e466927d4dd28e0d99088d71a5f71abf1e0c32331fa5b67abc9deaf31"]
 size = 5068475
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_Velocity-Rignot2011.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-4KM/2.2.0/ANT-4KM_Velocity-Rignot2011.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-4KM/2.3.0/ANT-4KM_Velocity-Rignot2011.nc"
 
 ["ANT-4KM_grid.nc"]
-checksum = "sha256:fb6604c91ce17a3978a380d4e7d8b641d2f57eea5da4c37e0f46189faa07884f"
-previous_checksums = ["sha256:b553afcb6273200e9cd436c4f3ba5f081c599c58237374342aade5c4588e879f"]
+checksum = "sha256:c44530bdcaef1f3b2415a9503dd2eabc0239f25984a3b7ccb0678641dd283f20"
+previous_checksums = ["sha256:b553afcb6273200e9cd436c4f3ba5f081c599c58237374342aade5c4588e879f", "sha256:fb6604c91ce17a3978a380d4e7d8b641d2f57eea5da4c37e0f46189faa07884f"]
 size = 9192910
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-4KM/2.2.0/ANT-4KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-4KM/2.3.0/ANT-4KM_grid.nc"
+
+["ANT-500M_Velocity-Mouginot2019.nc"]
+checksum = "sha256:e84af62e3f6faa8089e770c6c72885b12d126f7bbd60085b2043a22a433fc67b"
+size = 158926348
+storage_path = "$datasets_dir/Antarctica/ANT-500M/ANT-500M_Velocity-Mouginot2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-500M/2.3.0/ANT-500M_Velocity-Mouginot2019.nc"
+
+["ANT-500M_Velocity-Rignot2011.nc"]
+checksum = "sha256:09c37365a28cbdeb4cfb2ee7ef02f050ee128c44185d564372a36e80954e6959"
+size = 212181937
+storage_path = "$datasets_dir/Antarctica/ANT-500M/ANT-500M_Velocity-Rignot2011.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-500M/2.3.0/ANT-500M_Velocity-Rignot2011.nc"
+
+["ANT-500M_grid.nc"]
+checksum = "sha256:28c3b0fb780403d2c16844aa8da3c4f798eeb613f1417b53081088e2cdcb7e1d"
+size = 327558139
+storage_path = "$datasets_dir/Antarctica/ANT-500M/ANT-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-500M/2.3.0/ANT-500M_grid.nc"
 
 ["ANT-8KM_Velocity-Mouginot2019.nc"]
-checksum = "sha256:aab3ec120341d7eb4965a7565dbc386b46ad183552ce1d0f7c19c1bdc96f919e"
-previous_checksums = ["sha256:8fbca61bd3694e6ab063ba9b4acaa06a2e564a16679322406e518c389d4dd5b9"]
+checksum = "sha256:f784ed9112225cb51088dc629986e5050c7e9aedfc906300e4c11310e482bc35"
+previous_checksums = ["sha256:8fbca61bd3694e6ab063ba9b4acaa06a2e564a16679322406e518c389d4dd5b9", "sha256:aab3ec120341d7eb4965a7565dbc386b46ad183552ce1d0f7c19c1bdc96f919e"]
 size = 1406537
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_Velocity-Mouginot2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-8KM/2.2.0/ANT-8KM_Velocity-Mouginot2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-8KM/2.3.0/ANT-8KM_Velocity-Mouginot2019.nc"
 
 ["ANT-8KM_Velocity-Rignot2011.nc"]
-checksum = "sha256:bd39fcebc3317172e595023a544d0a4b54dc73286c326c17d67b234fc6b0ac6a"
-previous_checksums = ["sha256:55fc47a67759ce46d0fe04f2a0b3d02a1727820f6e1048d9270d4676a74d2b85", "sha256:8b4e4b029bd7f42569f3dc9785d8f16f55151be86994d78da0630e1a2349e3ca"]
+checksum = "sha256:a4f66678d0c65b3fd992d864a0339c4b19831ae233a4adec55bac5c02ac4bb66"
+previous_checksums = ["sha256:55fc47a67759ce46d0fe04f2a0b3d02a1727820f6e1048d9270d4676a74d2b85", "sha256:8b4e4b029bd7f42569f3dc9785d8f16f55151be86994d78da0630e1a2349e3ca", "sha256:bd39fcebc3317172e595023a544d0a4b54dc73286c326c17d67b234fc6b0ac6a"]
 size = 1431090
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_Velocity-Rignot2011.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-8KM/2.2.0/ANT-8KM_Velocity-Rignot2011.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-8KM/2.3.0/ANT-8KM_Velocity-Rignot2011.nc"
 
 ["ANT-8KM_grid.nc"]
-checksum = "sha256:27b6ffe5af1932ac7e1fcf32b8e8219420fe82be6287f09f931efbebed8ec93d"
-previous_checksums = ["sha256:6d00ae1cafbf496c1375c74c9153d92c5e2aec79d8026f004ba0dc26d0c47ece"]
+checksum = "sha256:866f0fcc4dd06b0fc27fe92d8528d025206288f01b612839490689daaf469d5a"
+previous_checksums = ["sha256:6d00ae1cafbf496c1375c74c9153d92c5e2aec79d8026f004ba0dc26d0c47ece", "sha256:27b6ffe5af1932ac7e1fcf32b8e8219420fe82be6287f09f931efbebed8ec93d"]
 size = 2776497
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-8KM/2.2.0/ANT-8KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-8KM/2.3.0/ANT-8KM_grid.nc"
 
 ["grid_ANT-16KM.txt"]
 checksum = "sha256:09d646757fe153b435cee10a90cf772b4626efbe2f187d410eab83876c8305cb"
 size = 467
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/grid_ANT-16KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-16KM/2.2.0/grid_ANT-16KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-16KM/2.3.0/grid_ANT-16KM.txt"
 
 ["grid_ANT-1KM.txt"]
 checksum = "sha256:d8e6029b241c90da5ba2b6f4aed5fc6736d2251dfbf96e1432952605eaf02d67"
 size = 469
 storage_path = "$datasets_dir/Antarctica/ANT-1KM/grid_ANT-1KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-1KM/2.2.0/grid_ANT-1KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-1KM/2.3.0/grid_ANT-1KM.txt"
 
 ["grid_ANT-2KM.txt"]
 checksum = "sha256:d02bf6fb1a40ffa3a09cad2982212ffa925a643e487b74b8c38af6cf773faff5"
 size = 468
 storage_path = "$datasets_dir/Antarctica/ANT-2KM/grid_ANT-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-2KM/2.2.0/grid_ANT-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-2KM/2.3.0/grid_ANT-2KM.txt"
 
 ["grid_ANT-32KM.txt"]
 checksum = "sha256:619c2b14b9667a6ff1efe4de41f1b2bd0ddc8d3e10df6d5fd99222b80be20276"
 size = 466
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/grid_ANT-32KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-32KM/2.2.0/grid_ANT-32KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-32KM/2.3.0/grid_ANT-32KM.txt"
 
 ["grid_ANT-4KM.txt"]
 checksum = "sha256:dc549c434411d3f7ad5b46e4f954f9bb180d0d2e272e1942d97e7072ae8b711d"
 size = 468
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/grid_ANT-4KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-4KM/2.2.0/grid_ANT-4KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-4KM/2.3.0/grid_ANT-4KM.txt"
+
+["grid_ANT-500M.txt"]
+checksum = "sha256:2923180d7edf174ad3a57b9d97fc475516fd33c239bcef35073fbce24f08292d"
+size = 472
+storage_path = "$datasets_dir/Antarctica/ANT-500M/grid_ANT-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-500M/2.3.0/grid_ANT-500M.txt"
 
 ["grid_ANT-8KM.txt"]
 checksum = "sha256:66ff6285f42ec156b6c6a6c30fcb0d2e4c94e07d67512fb002cb0348b3420ce5"
 size = 465
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/grid_ANT-8KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-8KM/2.2.0/grid_ANT-8KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Velocity_ANT-8KM/2.3.0/grid_ANT-8KM.txt"

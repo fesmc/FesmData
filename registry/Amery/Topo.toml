@@ -1,0 +1,73 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-14"
+git_tag = "topo-v2.3.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Amery_Topo"
+version = "2.3.0"
+
+["AMY-1KM_TOPO-BedMachine-v2.nc"]
+checksum = "sha256:47f99359325e8c674cccecc50809eeb1a2a52dc49fdd347392f4d3fc9df4a920"
+size = 7304949
+storage_path = "$datasets_dir/Amery/AMY-1KM/AMY-1KM_TOPO-BedMachine-v2.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Topo_AMY-1KM/2.3.0/AMY-1KM_TOPO-BedMachine-v2.nc"
+
+["AMY-1KM_TOPO-BedMachine-v3.nc"]
+checksum = "sha256:71ebb1ef76ce7fc3f55a1b560b9ce337dedb635fbf6efd275530864582b5481a"
+size = 7306751
+storage_path = "$datasets_dir/Amery/AMY-1KM/AMY-1KM_TOPO-BedMachine-v3.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Topo_AMY-1KM/2.3.0/AMY-1KM_TOPO-BedMachine-v3.nc"
+
+["AMY-1KM_TOPO-BedMachine-v4.nc"]
+checksum = "sha256:99646ee3b47814597585cf081e286c5e270d8c0d96bf4e717d75dba90a908a71"
+size = 7496854
+storage_path = "$datasets_dir/Amery/AMY-1KM/AMY-1KM_TOPO-BedMachine-v4.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Topo_AMY-1KM/2.3.0/AMY-1KM_TOPO-BedMachine-v4.nc"
+
+["AMY-1KM_TOPO-Bedmap2.nc"]
+checksum = "sha256:17d4be69cb5d3872af76824ddbfb8157498167ad0fa2c17c9685be6ccc52bd5e"
+size = 6204451
+storage_path = "$datasets_dir/Amery/AMY-1KM/AMY-1KM_TOPO-Bedmap2.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Topo_AMY-1KM/2.3.0/AMY-1KM_TOPO-Bedmap2.nc"
+
+["AMY-1KM_TOPO-Bedmap3.nc"]
+checksum = "sha256:ea211822ef041c0233853691f75041e95a38771546ac90265946ad2afd1dee4f"
+size = 6558533
+storage_path = "$datasets_dir/Amery/AMY-1KM/AMY-1KM_TOPO-Bedmap3.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Topo_AMY-1KM/2.3.0/AMY-1KM_TOPO-Bedmap3.nc"
+
+["AMY-1KM_grid.nc"]
+checksum = "sha256:69118798dca9d67d99c7d1f516dc20fd67b5023e6ca9bee09beb31da6949dc2a"
+size = 2131806
+storage_path = "$datasets_dir/Amery/AMY-1KM/AMY-1KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Topo_AMY-1KM/2.3.0/AMY-1KM_grid.nc"
+
+["AMY-500M_TOPO-BedMachine-v4.nc"]
+checksum = "sha256:44768b63e87d003179e03b1dab5d7ccd98704968bebcd2fc32fcdfa690640d15"
+size = 20428095
+storage_path = "$datasets_dir/Amery/AMY-500M/AMY-500M_TOPO-BedMachine-v4.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Topo_AMY-500M/2.3.0/AMY-500M_TOPO-BedMachine-v4.nc"
+
+["AMY-500M_TOPO-Bedmap3.nc"]
+checksum = "sha256:d67dd03a17a60bc1fc08efb8e148f7cfef41c9340756411cf4b16df4fbd4b234"
+size = 18781316
+storage_path = "$datasets_dir/Amery/AMY-500M/AMY-500M_TOPO-Bedmap3.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Topo_AMY-500M/2.3.0/AMY-500M_TOPO-Bedmap3.nc"
+
+["AMY-500M_grid.nc"]
+checksum = "sha256:ba6a831b936aa8824e569c2773474b7c9efc54601aa5f2e07254f39c391fa6e2"
+size = 6584091
+storage_path = "$datasets_dir/Amery/AMY-500M/AMY-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Topo_AMY-500M/2.3.0/AMY-500M_grid.nc"
+
+["grid_AMY-1KM.txt"]
+checksum = "sha256:9c34ff38d2907959f9c6ea0379d286f360eba11243c201194ca78354e5860dfe"
+size = 462
+storage_path = "$datasets_dir/Amery/AMY-1KM/grid_AMY-1KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Topo_AMY-1KM/2.3.0/grid_AMY-1KM.txt"
+
+["grid_AMY-500M.txt"]
+checksum = "sha256:547d9cf5546f45bd6bda45d91ad010d8ae5f99aca19e95887be6e16a2b650bea"
+size = 465
+storage_path = "$datasets_dir/Amery/AMY-500M/grid_AMY-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Topo_AMY-500M/2.3.0/grid_AMY-500M.txt"

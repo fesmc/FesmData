@@ -1,0 +1,61 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-14"
+git_tag = "topo-v2.3.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Svalbard_Topo"
+version = "2.3.0"
+
+["SVB-1KM_TOPO-GLO90-GEBCO2026.nc"]
+checksum = "sha256:eb983b8aeb903e8cf4c81719ca159ba9a7da2c62cfde4365cadeed087953b289"
+size = 4356836
+storage_path = "$datasets_dir/Svalbard/SVB-1KM/SVB-1KM_TOPO-GLO90-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Topo_SVB-1KM/2.3.0/SVB-1KM_TOPO-GLO90-GEBCO2026.nc"
+
+["SVB-1KM_grid.nc"]
+checksum = "sha256:33a1627f3514492e93fb59f8753f6ed0e3fcdaac9b0805b93bc76764b19d7221"
+size = 2515972
+storage_path = "$datasets_dir/Svalbard/SVB-1KM/SVB-1KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Topo_SVB-1KM/2.3.0/SVB-1KM_grid.nc"
+
+["SVB-2KM_TOPO-GLO90-GEBCO2026.nc"]
+checksum = "sha256:f2dac3b2941159539a07a1cecf850873eb0777cc32fbba6699f2d3ded5dbfa4f"
+size = 1234870
+storage_path = "$datasets_dir/Svalbard/SVB-2KM/SVB-2KM_TOPO-GLO90-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Topo_SVB-2KM/2.3.0/SVB-2KM_TOPO-GLO90-GEBCO2026.nc"
+
+["SVB-2KM_grid.nc"]
+checksum = "sha256:6a0409b44fa4c45229d431e113338e59f766947595e5bb697b316743ba9912a6"
+size = 744534
+storage_path = "$datasets_dir/Svalbard/SVB-2KM/SVB-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Topo_SVB-2KM/2.3.0/SVB-2KM_grid.nc"
+
+["SVB-500M_TOPO-GLO90-GEBCO2026.nc"]
+checksum = "sha256:70e07673a65b2848e274fa3146ae2b4b47178ab6d26b7ff7929d46c751cdcd31"
+size = 14987115
+storage_path = "$datasets_dir/Svalbard/SVB-500M/SVB-500M_TOPO-GLO90-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Topo_SVB-500M/2.3.0/SVB-500M_TOPO-GLO90-GEBCO2026.nc"
+
+["SVB-500M_grid.nc"]
+checksum = "sha256:71c3072a0258c03c830b9eca4180db94b41d6bb2eacf8a1a2cafe3505ade362d"
+size = 8476908
+storage_path = "$datasets_dir/Svalbard/SVB-500M/SVB-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Topo_SVB-500M/2.3.0/SVB-500M_grid.nc"
+
+["grid_SVB-1KM.txt"]
+checksum = "sha256:7e607480f98e6ee5a0ba30a6232d9350541a233036f7c15dc884eed98639a473"
+size = 324
+storage_path = "$datasets_dir/Svalbard/SVB-1KM/grid_SVB-1KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Topo_SVB-1KM/2.3.0/grid_SVB-1KM.txt"
+
+["grid_SVB-2KM.txt"]
+checksum = "sha256:18fa470f57070e72b08f324dbf95f9619f896701bfa78523290698f89b5aab05"
+size = 324
+storage_path = "$datasets_dir/Svalbard/SVB-2KM/grid_SVB-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Topo_SVB-2KM/2.3.0/grid_SVB-2KM.txt"
+
+["grid_SVB-500M.txt"]
+checksum = "sha256:95bd5fe3217c56bbdbcf22f4df16ecea09581e9a3a3391eadd6fdcdb94714780"
+size = 327
+storage_path = "$datasets_dir/Svalbard/SVB-500M/grid_SVB-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Topo_SVB-500M/2.3.0/grid_SVB-500M.txt"

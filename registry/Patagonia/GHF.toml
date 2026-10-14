@@ -1,37 +1,40 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-13"
-git_tag = "ghf-v2.2.0"
+date = "2026-10-14"
+git_tag = "ghf-v2.3.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Patagonia_GHF"
-version = "2.2.0"
+version = "2.3.0"
 
 ["PAT-2KM_GHF-Davies2013.nc"]
-checksum = "sha256:b6fa2da583ede4be846eaca0c77b54fae4b633ac1d6e7a538106760527a237e5"
+checksum = "sha256:f65d3d8986dba402dca1390e42f4826e4f522822e34d8efa98278dbe2993c5db"
+previous_checksums = ["sha256:b6fa2da583ede4be846eaca0c77b54fae4b633ac1d6e7a538106760527a237e5"]
 size = 184781
 storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_GHF-Davies2013.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_GHF_PAT-2KM/2.2.0/PAT-2KM_GHF-Davies2013.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_GHF_PAT-2KM/2.3.0/PAT-2KM_GHF-Davies2013.nc"
 
 ["PAT-2KM_GHF-Lucazeau2019.nc"]
-checksum = "sha256:a0b0da00143fef568ff64d8c2373c9129ab958e3c3530e31e6a7beccffef4add"
+checksum = "sha256:2d90d6fea214641d8c81eef622ecffd93884065e4b00cacfbd7983db27816c23"
+previous_checksums = ["sha256:a0b0da00143fef568ff64d8c2373c9129ab958e3c3530e31e6a7beccffef4add"]
 size = 258892
 storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_GHF-Lucazeau2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_GHF_PAT-2KM/2.2.0/PAT-2KM_GHF-Lucazeau2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_GHF_PAT-2KM/2.3.0/PAT-2KM_GHF-Lucazeau2019.nc"
 
 ["PAT-2KM_GHF-Shapiro2004.nc"]
-checksum = "sha256:d6bc5a75c321a11440f1e48c1e87331e71650688d43fda8616539bc2f26da483"
+checksum = "sha256:a1b95ca68e86281a8969161669ce83839d720bb7dd8afc4b114c13b06e24a766"
+previous_checksums = ["sha256:d6bc5a75c321a11440f1e48c1e87331e71650688d43fda8616539bc2f26da483"]
 size = 132213
 storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_GHF-Shapiro2004.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_GHF_PAT-2KM/2.2.0/PAT-2KM_GHF-Shapiro2004.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_GHF_PAT-2KM/2.3.0/PAT-2KM_GHF-Shapiro2004.nc"
 
 ["PAT-2KM_grid.nc"]
 checksum = "sha256:3b66736031d52fec9da8230693887255b90f7b276619eba31266bf950f5eb9e7"
 size = 1440853
 storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_GHF_PAT-2KM/2.2.0/PAT-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_GHF_PAT-2KM/2.3.0/PAT-2KM_grid.nc"
 
 ["grid_PAT-2KM.txt"]
 checksum = "sha256:f30d2390e6c54f2628d81d4a3439a6b55b95c9e997754fcaa01ac160f60591bd"
 size = 347
 storage_path = "$datasets_dir/Patagonia/PAT-2KM/grid_PAT-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_GHF_PAT-2KM/2.2.0/grid_PAT-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_GHF_PAT-2KM/2.3.0/grid_PAT-2KM.txt"

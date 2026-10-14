@@ -1,25 +1,32 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-13"
-git_tag = "regions-v2.2.0"
+date = "2026-10-14"
+git_tag = "regions-v2.3.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=NorthPatagonianIcefield_Regions"
-version = "2.2.0"
+version = "2.3.0"
+
+["NPI-250M_DOMAINS.nc"]
+checksum = "sha256:8e2e5ca3ceca18d75371d663e622609798351baa387b6f50e96e9515d4fd9d02"
+size = 50704
+storage_path = "$datasets_dir/NorthPatagonianIcefield/NPI-250M/NPI-250M_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NorthPatagonianIcefield_Regions_NPI-250M/2.3.0/NPI-250M_DOMAINS.nc"
 
 ["NPI-250M_REGIONS.nc"]
-checksum = "sha256:a6785e39cd1165e5de7bbf787cf11bdb29db72e45e6a2a94298317ffe4099cf8"
-size = 88531
+checksum = "sha256:511877a9a80493c2b685968c3d19cfdc718d846f3388d087c9a8dd0c34bfabb6"
+previous_checksums = ["sha256:a6785e39cd1165e5de7bbf787cf11bdb29db72e45e6a2a94298317ffe4099cf8"]
+size = 89619
 storage_path = "$datasets_dir/NorthPatagonianIcefield/NPI-250M/NPI-250M_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NorthPatagonianIcefield_Regions_NPI-250M/2.2.0/NPI-250M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NorthPatagonianIcefield_Regions_NPI-250M/2.3.0/NPI-250M_REGIONS.nc"
 
 ["NPI-250M_grid.nc"]
 checksum = "sha256:e622e73dac435e3f26bc47251cf5239192877914b7f82e8c5fc63373f92e71cf"
 size = 320693
 storage_path = "$datasets_dir/NorthPatagonianIcefield/NPI-250M/NPI-250M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NorthPatagonianIcefield_Regions_NPI-250M/2.2.0/NPI-250M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NorthPatagonianIcefield_Regions_NPI-250M/2.3.0/NPI-250M_grid.nc"
 
 ["grid_NPI-250M.txt"]
 checksum = "sha256:f286d516cb7fd8b24cb84caaa59bc1b6f06226a14e43a9657e3242f2bd58c9c0"
 size = 348
 storage_path = "$datasets_dir/NorthPatagonianIcefield/NPI-250M/grid_NPI-250M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NorthPatagonianIcefield_Regions_NPI-250M/2.2.0/grid_NPI-250M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NorthPatagonianIcefield_Regions_NPI-250M/2.3.0/grid_NPI-250M.txt"

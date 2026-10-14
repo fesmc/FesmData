@@ -1,143 +1,143 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-13"
-git_tag = "ghf-v2.2.0"
+date = "2026-10-14"
+git_tag = "ghf-v2.3.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=North_GHF"
-version = "2.2.0"
+version = "2.3.0"
 
 ["NH-16KM_GHF-Davies2013.nc"]
-checksum = "sha256:9eee6c1ed8b3b15440a8d72e65a68fca3023368e1acfc1299238c919f11706f7"
-previous_checksums = ["sha256:ff2a9b2d66de2b7105682591b2f9be201c797b55832053572733344c87448fa7", "sha256:53b052e8c672a05b0c76278bbf3fd25c112a4d130970026939e6ac104ecedfc8"]
+checksum = "sha256:0e9b7a31b7d1de7fb0f958e2db090a3c7a02e71ecb882a4efa12d7bef6bb6113"
+previous_checksums = ["sha256:ff2a9b2d66de2b7105682591b2f9be201c797b55832053572733344c87448fa7", "sha256:53b052e8c672a05b0c76278bbf3fd25c112a4d130970026939e6ac104ecedfc8", "sha256:9eee6c1ed8b3b15440a8d72e65a68fca3023368e1acfc1299238c919f11706f7"]
 size = 352222
 storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_GHF-Davies2013.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-16KM/2.2.0/NH-16KM_GHF-Davies2013.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-16KM/2.3.0/NH-16KM_GHF-Davies2013.nc"
 
 ["NH-16KM_GHF-Lucazeau2019.nc"]
-checksum = "sha256:e977ee8999d204f1a73af2df9486247392699f84a7bdbe5ee015d934a957d9ef"
-previous_checksums = ["sha256:908600b1478f651bc613856981af302682cbbb1a111fea02631915c97fdb2426", "sha256:d9741248c21b0aaa45b7721b1221ed1e097cf5cb43530f2e0b63590cda36bab8"]
+checksum = "sha256:3eeb643f73709688354b45dfa9f4369e0b544d10eaaa80f6ae5bb1cf5c9f6f9d"
+previous_checksums = ["sha256:908600b1478f651bc613856981af302682cbbb1a111fea02631915c97fdb2426", "sha256:d9741248c21b0aaa45b7721b1221ed1e097cf5cb43530f2e0b63590cda36bab8", "sha256:e977ee8999d204f1a73af2df9486247392699f84a7bdbe5ee015d934a957d9ef"]
 size = 436905
 storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_GHF-Lucazeau2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-16KM/2.2.0/NH-16KM_GHF-Lucazeau2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-16KM/2.3.0/NH-16KM_GHF-Lucazeau2019.nc"
 
 ["NH-16KM_GHF-Shapiro2004.nc"]
-checksum = "sha256:74c5cdde04ce5a97c0d78258d04b0203274d87446c7401ec98754d3362751207"
-previous_checksums = ["sha256:b14efdd3bb1e0965bd6122598dad5be793c2e40039a61822a3fd25e0c801e5c5", "sha256:4e9b06c1a293ac50487dbed85bf344a88a041e7a5d698d84caac1de18d551c0a"]
+checksum = "sha256:3d84e32714b5e46d0ea56b1a1246c366e554a9a5e7ff9985aecedee41332a57f"
+previous_checksums = ["sha256:b14efdd3bb1e0965bd6122598dad5be793c2e40039a61822a3fd25e0c801e5c5", "sha256:4e9b06c1a293ac50487dbed85bf344a88a041e7a5d698d84caac1de18d551c0a", "sha256:74c5cdde04ce5a97c0d78258d04b0203274d87446c7401ec98754d3362751207"]
 size = 226427
 storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_GHF-Shapiro2004.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-16KM/2.2.0/NH-16KM_GHF-Shapiro2004.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-16KM/2.3.0/NH-16KM_GHF-Shapiro2004.nc"
 
 ["NH-16KM_grid.nc"]
 checksum = "sha256:854570fc78e4fbb918d307c80874ceeb85265df6ab6b76393344a98e4a874abc"
 previous_checksums = ["sha256:5a64b9ab83264c23ca7c96aa0a1a1b02debcea94890fb2556039c205a148d957"]
 size = 1592909
 storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-16KM/2.2.0/NH-16KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-16KM/2.3.0/NH-16KM_grid.nc"
 
 ["NH-32KM_GHF-Davies2013.nc"]
-checksum = "sha256:fa514516016bbded1e246b9a6143efcee329ffb3a0d6c0fde5aa3796c5d7bc21"
-previous_checksums = ["sha256:00d79c9103108fb1a0a308f39c88e907edccf448ab45cef4d27d6fd9ee378898", "sha256:592cdaf8907fb662864e80828b82dca8bbf63891de1628c241e3defbcaead75a"]
+checksum = "sha256:1fdd9422956216edffa929e95a4e3cdf188e0966d4efeb344689c19f02e7e78c"
+previous_checksums = ["sha256:00d79c9103108fb1a0a308f39c88e907edccf448ab45cef4d27d6fd9ee378898", "sha256:592cdaf8907fb662864e80828b82dca8bbf63891de1628c241e3defbcaead75a", "sha256:fa514516016bbded1e246b9a6143efcee329ffb3a0d6c0fde5aa3796c5d7bc21"]
 size = 152891
 storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_GHF-Davies2013.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-32KM/2.2.0/NH-32KM_GHF-Davies2013.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-32KM/2.3.0/NH-32KM_GHF-Davies2013.nc"
 
 ["NH-32KM_GHF-Lucazeau2019.nc"]
-checksum = "sha256:bc19947c0317e90330a74f920c033271b3c67be8813c106d416a7e8313899fd0"
-previous_checksums = ["sha256:fcd0cb6ee586cf56f1830af57111232588c995c18b97e2494711a32f082ca177", "sha256:7b60d875bbefb318fc0e0678e47a27ba484b11c7dd44b4bfaa80f17e423d5fb9"]
+checksum = "sha256:7b5520932355cd12bab4f43a6eac9d37f36cda0e5294b04d35d962eef1cf8a32"
+previous_checksums = ["sha256:fcd0cb6ee586cf56f1830af57111232588c995c18b97e2494711a32f082ca177", "sha256:7b60d875bbefb318fc0e0678e47a27ba484b11c7dd44b4bfaa80f17e423d5fb9", "sha256:bc19947c0317e90330a74f920c033271b3c67be8813c106d416a7e8313899fd0"]
 size = 157189
 storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_GHF-Lucazeau2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-32KM/2.2.0/NH-32KM_GHF-Lucazeau2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-32KM/2.3.0/NH-32KM_GHF-Lucazeau2019.nc"
 
 ["NH-32KM_GHF-Shapiro2004.nc"]
-checksum = "sha256:b11c939d810140994501cf5e04b7f4098e0601ab51b49ae57a5bf99efaf73f6e"
-previous_checksums = ["sha256:27bb6f99a16ce574498fd4ed4dc86f1c057cffdad22cdfb68e043b3d264145ba", "sha256:c0ded36e9dfc060a35058199fcae0d789314d66c92325696f535250dc939b944"]
+checksum = "sha256:dfcd45afc161a67918aeebeb1228963212f300e3253904925b3d0a634ea1f5e6"
+previous_checksums = ["sha256:27bb6f99a16ce574498fd4ed4dc86f1c057cffdad22cdfb68e043b3d264145ba", "sha256:c0ded36e9dfc060a35058199fcae0d789314d66c92325696f535250dc939b944", "sha256:b11c939d810140994501cf5e04b7f4098e0601ab51b49ae57a5bf99efaf73f6e"]
 size = 104675
 storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_GHF-Shapiro2004.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-32KM/2.2.0/NH-32KM_GHF-Shapiro2004.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-32KM/2.3.0/NH-32KM_GHF-Shapiro2004.nc"
 
 ["NH-32KM_grid.nc"]
 checksum = "sha256:5acfb784cc05a51351ad8cbfb8d51d8256e96833d9b17acecf39a43c92196c63"
 previous_checksums = ["sha256:3d48fc58818a8820d1c19088ab3ac0a0aa5f463ca080d4d5f8f60d0fc525894f"]
 size = 464986
 storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-32KM/2.2.0/NH-32KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-32KM/2.3.0/NH-32KM_grid.nc"
 
 ["NH-4KM_GHF-Davies2013.nc"]
-checksum = "sha256:d2c13412926f312e637631f2a5dd8905b34547461006e677b27c667834136a08"
-previous_checksums = ["sha256:7fca932779751d4427b23224a381434ab142e1ece9b5ff85c5c06bc9e731a875", "sha256:2bd209cf40f730a27f2e4a4d1f1fdf8e6218c09570ae8685433465697176d9a9"]
+checksum = "sha256:a5174c6d6cff76ff997ee4ffe3a7ea850697f500069cf8d17f7eaf7b18c55275"
+previous_checksums = ["sha256:7fca932779751d4427b23224a381434ab142e1ece9b5ff85c5c06bc9e731a875", "sha256:2bd209cf40f730a27f2e4a4d1f1fdf8e6218c09570ae8685433465697176d9a9", "sha256:d2c13412926f312e637631f2a5dd8905b34547461006e677b27c667834136a08"]
 size = 2123486
 storage_path = "$datasets_dir/North/NH-4KM/NH-4KM_GHF-Davies2013.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-4KM/2.2.0/NH-4KM_GHF-Davies2013.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-4KM/2.3.0/NH-4KM_GHF-Davies2013.nc"
 
 ["NH-4KM_GHF-Lucazeau2019.nc"]
-checksum = "sha256:587e35fa1a2808335f2fbfea61ec1a226bc29bdb2e898b91611c6ca3753bcd58"
-previous_checksums = ["sha256:3f1f6b74877e340a3a38ba62acebd3c6e9ccef0ea334c2b1515541ec8f0795c9", "sha256:31b087b4196b2135a18086d287898493d93b61f799f5e75d0a951e238124716e"]
+checksum = "sha256:e50df48848ab8af2a3d4e78834c396005966f28b9a626b0b2b3e1d4e5028c5d6"
+previous_checksums = ["sha256:3f1f6b74877e340a3a38ba62acebd3c6e9ccef0ea334c2b1515541ec8f0795c9", "sha256:31b087b4196b2135a18086d287898493d93b61f799f5e75d0a951e238124716e", "sha256:587e35fa1a2808335f2fbfea61ec1a226bc29bdb2e898b91611c6ca3753bcd58"]
 size = 3219246
 storage_path = "$datasets_dir/North/NH-4KM/NH-4KM_GHF-Lucazeau2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-4KM/2.2.0/NH-4KM_GHF-Lucazeau2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-4KM/2.3.0/NH-4KM_GHF-Lucazeau2019.nc"
 
 ["NH-4KM_GHF-Shapiro2004.nc"]
-checksum = "sha256:688d2bddb3a04371a16bf40fb0d5f042f80fd6e2afa1bae65b3b5d5f03999d7d"
-previous_checksums = ["sha256:35afd1a71cb387033fbdf91224bf98a6fcad49fb7f48dfdb3c81df3030e7a243", "sha256:47b62091944a43e987d57a02af3fefa68a69b94ddcb0011d04c8ca50b60d770d"]
+checksum = "sha256:d10e774884e99f2dcefd6c71c47500771cfb191bca9d8fc173fed33479aa855c"
+previous_checksums = ["sha256:35afd1a71cb387033fbdf91224bf98a6fcad49fb7f48dfdb3c81df3030e7a243", "sha256:47b62091944a43e987d57a02af3fefa68a69b94ddcb0011d04c8ca50b60d770d", "sha256:688d2bddb3a04371a16bf40fb0d5f042f80fd6e2afa1bae65b3b5d5f03999d7d"]
 size = 1314179
 storage_path = "$datasets_dir/North/NH-4KM/NH-4KM_GHF-Shapiro2004.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-4KM/2.2.0/NH-4KM_GHF-Shapiro2004.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-4KM/2.3.0/NH-4KM_GHF-Shapiro2004.nc"
 
 ["NH-4KM_grid.nc"]
 checksum = "sha256:9bced2023750c842ecc2da1da032d7c8e70d9b55ab3b9adceef7fd5afbc7b9e8"
 previous_checksums = ["sha256:e237d8848d1250e9fa59fc281f80e16784adff8c496c9d9989f29046f6830e94"]
 size = 18052984
 storage_path = "$datasets_dir/North/NH-4KM/NH-4KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-4KM/2.2.0/NH-4KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-4KM/2.3.0/NH-4KM_grid.nc"
 
 ["NH-8KM_GHF-Davies2013.nc"]
-checksum = "sha256:4dbbec58ac0f154c4886abf36efc58d28f03ff689034d9a95e7e4ad609bee064"
-previous_checksums = ["sha256:099ad0436316951511ff862cf03b9ffb0b180e40abac135bfff44e761e0951d0", "sha256:7fd17ea1852fcd1064fe97c6de4cf013405302c756b807f99d0c5c5d37dd35c0"]
+checksum = "sha256:97b77445f7d678f08dbb0babfa8e7fef3a5c9423d5488621471b58ee30c57676"
+previous_checksums = ["sha256:099ad0436316951511ff862cf03b9ffb0b180e40abac135bfff44e761e0951d0", "sha256:7fd17ea1852fcd1064fe97c6de4cf013405302c756b807f99d0c5c5d37dd35c0", "sha256:4dbbec58ac0f154c4886abf36efc58d28f03ff689034d9a95e7e4ad609bee064"]
 size = 874489
 storage_path = "$datasets_dir/North/NH-8KM/NH-8KM_GHF-Davies2013.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-8KM/2.2.0/NH-8KM_GHF-Davies2013.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-8KM/2.3.0/NH-8KM_GHF-Davies2013.nc"
 
 ["NH-8KM_GHF-Lucazeau2019.nc"]
-checksum = "sha256:3db60c6081026ea40fc5d8c97fed1d684227355e1c30d4df64091248189d0ac0"
-previous_checksums = ["sha256:5760393763af3cbccbb7dc7b31c6156134d60f50695e72b60511fa64b971673b", "sha256:13bd34cc9a7618655a7878069df0b36ed3caab3454eb401260451764377bd33a"]
+checksum = "sha256:4a34740dfbac3b001aa158a36c0d9867c97d45f540e1941b7bb14be7866e53a9"
+previous_checksums = ["sha256:5760393763af3cbccbb7dc7b31c6156134d60f50695e72b60511fa64b971673b", "sha256:13bd34cc9a7618655a7878069df0b36ed3caab3454eb401260451764377bd33a", "sha256:3db60c6081026ea40fc5d8c97fed1d684227355e1c30d4df64091248189d0ac0"]
 size = 1223495
 storage_path = "$datasets_dir/North/NH-8KM/NH-8KM_GHF-Lucazeau2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-8KM/2.2.0/NH-8KM_GHF-Lucazeau2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-8KM/2.3.0/NH-8KM_GHF-Lucazeau2019.nc"
 
 ["NH-8KM_GHF-Shapiro2004.nc"]
-checksum = "sha256:a13350c7bfb4f0ce7900614fa8f0cd29463863f055b2ab933f430b0f2e6e10fd"
-previous_checksums = ["sha256:0eeab96b148d24cc387d78de7d90f755673e524afe9ddabccc2ef4c5a419958e", "sha256:1206f6502ad0662ab36560735f3a762e3537c8cf242190dd9c73ea29d38f383d"]
+checksum = "sha256:b6862615262aa2db8539a7a8685bbf60dfa034ddca238470f5300636e854ae44"
+previous_checksums = ["sha256:0eeab96b148d24cc387d78de7d90f755673e524afe9ddabccc2ef4c5a419958e", "sha256:1206f6502ad0662ab36560735f3a762e3537c8cf242190dd9c73ea29d38f383d", "sha256:a13350c7bfb4f0ce7900614fa8f0cd29463863f055b2ab933f430b0f2e6e10fd"]
 size = 538387
 storage_path = "$datasets_dir/North/NH-8KM/NH-8KM_GHF-Shapiro2004.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-8KM/2.2.0/NH-8KM_GHF-Shapiro2004.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-8KM/2.3.0/NH-8KM_GHF-Shapiro2004.nc"
 
 ["NH-8KM_grid.nc"]
 checksum = "sha256:ca974e22347230883fa4b6a84f9213b4dc984ab36195dcab4c54646ba27134c2"
 previous_checksums = ["sha256:ae6fa2991da8179295e27f76c8de94a400b394c3335375b0255f570a6ceb95cf"]
 size = 5426807
 storage_path = "$datasets_dir/North/NH-8KM/NH-8KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-8KM/2.2.0/NH-8KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-8KM/2.3.0/NH-8KM_grid.nc"
 
 ["grid_NH-16KM.txt"]
 checksum = "sha256:b784904b58207dc754c6dbb670f90ccd35dfccfadbd68bfea1c239abac6a7c89"
 size = 467
 storage_path = "$datasets_dir/North/NH-16KM/grid_NH-16KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-16KM/2.2.0/grid_NH-16KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-16KM/2.3.0/grid_NH-16KM.txt"
 
 ["grid_NH-32KM.txt"]
 checksum = "sha256:6562aa2ab0d5e8ac51d50e7caac9b766095e22eb71e450ead46ce581543d44a4"
 size = 466
 storage_path = "$datasets_dir/North/NH-32KM/grid_NH-32KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-32KM/2.2.0/grid_NH-32KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-32KM/2.3.0/grid_NH-32KM.txt"
 
 ["grid_NH-4KM.txt"]
 checksum = "sha256:4338207aa84d7d969fa1ea8827f49543d1f8c6a16329965e82d1ce27874918c7"
 size = 468
 storage_path = "$datasets_dir/North/NH-4KM/grid_NH-4KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-4KM/2.2.0/grid_NH-4KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-4KM/2.3.0/grid_NH-4KM.txt"
 
 ["grid_NH-8KM.txt"]
 checksum = "sha256:8220a06ea13149c0973191099db52b5d789c8ecc190c3d1b8ed05223dcb25b41"
 size = 468
 storage_path = "$datasets_dir/North/NH-8KM/grid_NH-8KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-8KM/2.2.0/grid_NH-8KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_GHF_NH-8KM/2.3.0/grid_NH-8KM.txt"

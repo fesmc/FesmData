@@ -1,25 +1,32 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-13"
-git_tag = "regions-v2.2.0"
+date = "2026-10-14"
+git_tag = "regions-v2.3.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=SouthPatagonianIcefield_Regions"
-version = "2.2.0"
+version = "2.3.0"
+
+["SPI-250M_DOMAINS.nc"]
+checksum = "sha256:e0f8da9f655c82c36116fb5b9a73f418a6e7bed0af99f364a5341238172e1986"
+size = 61172
+storage_path = "$datasets_dir/SouthPatagonianIcefield/SPI-250M/SPI-250M_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SouthPatagonianIcefield_Regions_SPI-250M/2.3.0/SPI-250M_DOMAINS.nc"
 
 ["SPI-250M_REGIONS.nc"]
-checksum = "sha256:ffda5ef39a2a6265e2b5b115fb802ce6d6a42e47cea1d2ea72edaae5ea0284fa"
-size = 202806
+checksum = "sha256:56c755035c773e394c66e2075f3b760c31fb44d62ba7213c5bc58ef05c523de3"
+previous_checksums = ["sha256:ffda5ef39a2a6265e2b5b115fb802ce6d6a42e47cea1d2ea72edaae5ea0284fa"]
+size = 203894
 storage_path = "$datasets_dir/SouthPatagonianIcefield/SPI-250M/SPI-250M_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SouthPatagonianIcefield_Regions_SPI-250M/2.2.0/SPI-250M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SouthPatagonianIcefield_Regions_SPI-250M/2.3.0/SPI-250M_REGIONS.nc"
 
 ["SPI-250M_grid.nc"]
 checksum = "sha256:99a05087a73fdc0f9cb9c1ce2aaff35655712ae2528e377a2bc8d7b8cd5ac2c7"
 size = 1008090
 storage_path = "$datasets_dir/SouthPatagonianIcefield/SPI-250M/SPI-250M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SouthPatagonianIcefield_Regions_SPI-250M/2.2.0/SPI-250M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SouthPatagonianIcefield_Regions_SPI-250M/2.3.0/SPI-250M_grid.nc"
 
 ["grid_SPI-250M.txt"]
 checksum = "sha256:2743ca07ebc8abb1ac58159d5d4b082eb6edec722eb23f3212596ea3d55cf0b7"
 size = 349
 storage_path = "$datasets_dir/SouthPatagonianIcefield/SPI-250M/grid_SPI-250M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SouthPatagonianIcefield_Regions_SPI-250M/2.2.0/grid_SPI-250M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SouthPatagonianIcefield_Regions_SPI-250M/2.3.0/grid_SPI-250M.txt"

@@ -1,61 +1,64 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-13"
-git_tag = "topo-v2.2.0"
+date = "2026-10-14"
+git_tag = "topo-v2.3.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Himalaya_Topo"
-version = "2.2.0"
+version = "2.3.0"
 
 ["HIM-250M_TOPO-GLO90-GEBCO2026.nc"]
-checksum = "sha256:b4dfa9ea982cbfb2c5bfb549bde720ab864f2149caeb1054c148d2e2328a9018"
+checksum = "sha256:eccd22fd0f06dafc8e7871123a4eb399179cdbcd44fcebefbfd1bff7ed57ac2d"
+previous_checksums = ["sha256:b4dfa9ea982cbfb2c5bfb549bde720ab864f2149caeb1054c148d2e2328a9018"]
 size = 523503465
 storage_path = "$datasets_dir/Himalaya/HIM-250M/HIM-250M_TOPO-GLO90-GEBCO2026.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Topo_HIM-250M/2.2.0/HIM-250M_TOPO-GLO90-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Topo_HIM-250M/2.3.0/HIM-250M_TOPO-GLO90-GEBCO2026.nc"
 
 ["HIM-250M_grid.nc"]
 checksum = "sha256:d8f5e6cb696e1d8c6ff9195f476dd63abc4c13b2fda847ad0fdc92571660b62b"
 size = 79614295
 storage_path = "$datasets_dir/Himalaya/HIM-250M/HIM-250M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Topo_HIM-250M/2.2.0/HIM-250M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Topo_HIM-250M/2.3.0/HIM-250M_grid.nc"
 
 ["HIM-2KM_TOPO-GLO90-GEBCO2026.nc"]
-checksum = "sha256:b0d68033b30c43dfa34fdb3910149b9c042280f1390a0eab8fb2d5b91856246b"
+checksum = "sha256:bf5a4543706ca371602fa036613cc47ef64da750297579e19e2b9c7854801e68"
+previous_checksums = ["sha256:b0d68033b30c43dfa34fdb3910149b9c042280f1390a0eab8fb2d5b91856246b"]
 size = 9616863
 storage_path = "$datasets_dir/Himalaya/HIM-2KM/HIM-2KM_TOPO-GLO90-GEBCO2026.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Topo_HIM-2KM/2.2.0/HIM-2KM_TOPO-GLO90-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Topo_HIM-2KM/2.3.0/HIM-2KM_TOPO-GLO90-GEBCO2026.nc"
 
 ["HIM-2KM_grid.nc"]
 checksum = "sha256:c80460c96b66ee86b7f0ad0ba2095ab24de793493dda2a341dfa36b5a715a209"
 size = 2883062
 storage_path = "$datasets_dir/Himalaya/HIM-2KM/HIM-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Topo_HIM-2KM/2.2.0/HIM-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Topo_HIM-2KM/2.3.0/HIM-2KM_grid.nc"
 
 ["HIM-500M_TOPO-GLO90-GEBCO2026.nc"]
-checksum = "sha256:a6ee0a01084d75acfb4db9a8a5489ce19673bef9012c407aa74e1ecc58bd96ee"
+checksum = "sha256:901cafd63f42c11bd23a4244ad2fea8e8b4ac2d201271f9487ec6ce9fd3c3a85"
+previous_checksums = ["sha256:a6ee0a01084d75acfb4db9a8a5489ce19673bef9012c407aa74e1ecc58bd96ee"]
 size = 140615456
 storage_path = "$datasets_dir/Himalaya/HIM-500M/HIM-500M_TOPO-GLO90-GEBCO2026.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Topo_HIM-500M/2.2.0/HIM-500M_TOPO-GLO90-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Topo_HIM-500M/2.3.0/HIM-500M_TOPO-GLO90-GEBCO2026.nc"
 
 ["HIM-500M_grid.nc"]
 checksum = "sha256:b2b49ce5c29c569e29329d67738dae64ad40af75a4af4fcac73731d913bd25d8"
 size = 28755563
 storage_path = "$datasets_dir/Himalaya/HIM-500M/HIM-500M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Topo_HIM-500M/2.2.0/HIM-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Topo_HIM-500M/2.3.0/HIM-500M_grid.nc"
 
 ["grid_HIM-250M.txt"]
 checksum = "sha256:abccefdb9881cf976d320563a960626c932190e9f9613fd38709920675177fcd"
 size = 338
 storage_path = "$datasets_dir/Himalaya/HIM-250M/grid_HIM-250M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Topo_HIM-250M/2.2.0/grid_HIM-250M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Topo_HIM-250M/2.3.0/grid_HIM-250M.txt"
 
 ["grid_HIM-2KM.txt"]
 checksum = "sha256:534cff6d3562a47b21187e2279ce0b3a848e720b093bc7ae578073c24219bdcf"
 size = 333
 storage_path = "$datasets_dir/Himalaya/HIM-2KM/grid_HIM-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Topo_HIM-2KM/2.2.0/grid_HIM-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Topo_HIM-2KM/2.3.0/grid_HIM-2KM.txt"
 
 ["grid_HIM-500M.txt"]
 checksum = "sha256:9b8eb519ec9eb47069c6e8cbad7c9e8bb474c3bcefb4ab8de89c55ec4be68ae3"
 size = 335
 storage_path = "$datasets_dir/Himalaya/HIM-500M/grid_HIM-500M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Topo_HIM-500M/2.2.0/grid_HIM-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Topo_HIM-500M/2.3.0/grid_HIM-500M.txt"

@@ -2,30 +2,32 @@
 
 [_RELEASE]
 date = "2026-10-14"
-git_tag = "atmosphere-v2.1.0"
+git_tag = "atmosphere-v2.2.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Patagonia_Atmosphere"
-version = "2.1.0"
+version = "2.2.0"
 
 ["PAT-2KM_Atmosphere-ERA5-1981-2010.nc"]
-checksum = "sha256:46cdbf910e27c44b5ea6e83593f1719a3336ba9ed9a1d04ce68b2f24a840179e"
+checksum = "sha256:53f1eb1babc05a85ac50af207a60e5040575c6a462b4ab3a2984812948fc5319"
+previous_checksums = ["sha256:46cdbf910e27c44b5ea6e83593f1719a3336ba9ed9a1d04ce68b2f24a840179e"]
 size = 32961336
 storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_Atmosphere-ERA5-1981-2010.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Atmosphere_PAT-2KM/2.1.0/PAT-2KM_Atmosphere-ERA5-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Atmosphere_PAT-2KM/2.2.0/PAT-2KM_Atmosphere-ERA5-1981-2010.nc"
 
 ["PAT-2KM_Atmosphere-ERA5-1991-2020.nc"]
-checksum = "sha256:15fb05da5b7cfdf8bca989b45b34103a088c6a551c5d5e6f294a2ee95c982a20"
+checksum = "sha256:e7670911b3e3e3378587e9051253deff9c1457121b553ce159b7280b7ebac632"
+previous_checksums = ["sha256:15fb05da5b7cfdf8bca989b45b34103a088c6a551c5d5e6f294a2ee95c982a20"]
 size = 32968462
 storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_Atmosphere-ERA5-1991-2020.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Atmosphere_PAT-2KM/2.1.0/PAT-2KM_Atmosphere-ERA5-1991-2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Atmosphere_PAT-2KM/2.2.0/PAT-2KM_Atmosphere-ERA5-1991-2020.nc"
 
 ["PAT-2KM_grid.nc"]
 checksum = "sha256:3b66736031d52fec9da8230693887255b90f7b276619eba31266bf950f5eb9e7"
 size = 1440853
 storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Atmosphere_PAT-2KM/2.1.0/PAT-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Atmosphere_PAT-2KM/2.2.0/PAT-2KM_grid.nc"
 
 ["grid_PAT-2KM.txt"]
 checksum = "sha256:f30d2390e6c54f2628d81d4a3439a6b55b95c9e997754fcaa01ac160f60591bd"
 size = 347
 storage_path = "$datasets_dir/Patagonia/PAT-2KM/grid_PAT-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Atmosphere_PAT-2KM/2.1.0/grid_PAT-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Atmosphere_PAT-2KM/2.2.0/grid_PAT-2KM.txt"

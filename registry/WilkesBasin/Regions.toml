@@ -1,0 +1,103 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-14"
+git_tag = "regions-v2.3.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=WilkesBasin_Regions"
+version = "2.3.0"
+
+["WSB-1KM_BASINS-IMBIE2016-refined.nc"]
+checksum = "sha256:5aa5f63f7359bd94a345aebf3f00f1fcb9ca129939b4804899fa979278388102"
+size = 85619
+storage_path = "$datasets_dir/WilkesBasin/WSB-1KM/WSB-1KM_BASINS-IMBIE2016-refined.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Regions_WSB-1KM/2.3.0/WSB-1KM_BASINS-IMBIE2016-refined.nc"
+
+["WSB-1KM_BASINS-IMBIE2016.nc"]
+checksum = "sha256:13cf62a89d58690b95fc59cba481c688ca01cdae7c8ecaf21e891c0d3b76d3a1"
+size = 75251
+storage_path = "$datasets_dir/WilkesBasin/WSB-1KM/WSB-1KM_BASINS-IMBIE2016.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Regions_WSB-1KM/2.3.0/WSB-1KM_BASINS-IMBIE2016.nc"
+
+["WSB-1KM_BASINS-Schmidt2025.nc"]
+checksum = "sha256:05d3618152857cc4f6f45e449802172166f2b8823880b36bc5c051c2925724e6"
+size = 75251
+storage_path = "$datasets_dir/WilkesBasin/WSB-1KM/WSB-1KM_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Regions_WSB-1KM/2.3.0/WSB-1KM_BASINS-Schmidt2025.nc"
+
+["WSB-1KM_BASINS-Zwally2012.nc"]
+checksum = "sha256:17b6327c4001127fb359bb45059a2d1ec24e51e3ad4ccbf399a8095c154d69ca"
+size = 64921
+storage_path = "$datasets_dir/WilkesBasin/WSB-1KM/WSB-1KM_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Regions_WSB-1KM/2.3.0/WSB-1KM_BASINS-Zwally2012.nc"
+
+["WSB-1KM_DOMAINS.nc"]
+checksum = "sha256:295f3ce3b4652359adfcc2057901f9abd7c453c20bbd3a3c0a176387a337c8ad"
+size = 82328
+storage_path = "$datasets_dir/WilkesBasin/WSB-1KM/WSB-1KM_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Regions_WSB-1KM/2.3.0/WSB-1KM_DOMAINS.nc"
+
+["WSB-1KM_REGIONS.nc"]
+checksum = "sha256:9b707ad065e8b8c2552010f24c54e401be533379336e061ecc2e942ae177d99b"
+size = 487142
+storage_path = "$datasets_dir/WilkesBasin/WSB-1KM/WSB-1KM_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Regions_WSB-1KM/2.3.0/WSB-1KM_REGIONS.nc"
+
+["WSB-1KM_grid.nc"]
+checksum = "sha256:f9f76dbe46429b2377b8a835d0dff284099155ce6f72e7d0b878da790a97e056"
+size = 3623202
+storage_path = "$datasets_dir/WilkesBasin/WSB-1KM/WSB-1KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Regions_WSB-1KM/2.3.0/WSB-1KM_grid.nc"
+
+["WSB-500M_BASINS-IMBIE2016-refined.nc"]
+checksum = "sha256:7cb625cb7b6d49fd9c61b173b3a6375143da34888ebc1db60957d07aa889a0d3"
+size = 187260
+storage_path = "$datasets_dir/WilkesBasin/WSB-500M/WSB-500M_BASINS-IMBIE2016-refined.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Regions_WSB-500M/2.3.0/WSB-500M_BASINS-IMBIE2016-refined.nc"
+
+["WSB-500M_BASINS-IMBIE2016.nc"]
+checksum = "sha256:01cb2844b38c831ba9fbca805152edbe664995c84de623b1d0de852dc89b8736"
+size = 159295
+storage_path = "$datasets_dir/WilkesBasin/WSB-500M/WSB-500M_BASINS-IMBIE2016.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Regions_WSB-500M/2.3.0/WSB-500M_BASINS-IMBIE2016.nc"
+
+["WSB-500M_BASINS-Schmidt2025.nc"]
+checksum = "sha256:1fc04ca856874f2a878927c1e99316a316bf753bb0221d21f18dc8cf602a8b76"
+size = 159295
+storage_path = "$datasets_dir/WilkesBasin/WSB-500M/WSB-500M_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Regions_WSB-500M/2.3.0/WSB-500M_BASINS-Schmidt2025.nc"
+
+["WSB-500M_BASINS-Zwally2012.nc"]
+checksum = "sha256:e8df1e10581e79e87e976dc6272a3b9f552bab5a3733f0560b5853e346a881be"
+size = 127036
+storage_path = "$datasets_dir/WilkesBasin/WSB-500M/WSB-500M_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Regions_WSB-500M/2.3.0/WSB-500M_BASINS-Zwally2012.nc"
+
+["WSB-500M_DOMAINS.nc"]
+checksum = "sha256:4aba3d0a7af39227c01f981ea090cbe4c37c104efafe08b940a79bfff536099e"
+size = 167283
+storage_path = "$datasets_dir/WilkesBasin/WSB-500M/WSB-500M_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Regions_WSB-500M/2.3.0/WSB-500M_DOMAINS.nc"
+
+["WSB-500M_REGIONS.nc"]
+checksum = "sha256:c351874b7c46c06a189248f4c31fa4ed2580a3fe7f1dbb7c37edf2452ff8372c"
+size = 1392937
+storage_path = "$datasets_dir/WilkesBasin/WSB-500M/WSB-500M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Regions_WSB-500M/2.3.0/WSB-500M_REGIONS.nc"
+
+["WSB-500M_grid.nc"]
+checksum = "sha256:ae75837654f0c5f8d19ddda8b84dd8a12aa354240a9c62e965d5cc714822585a"
+size = 11720500
+storage_path = "$datasets_dir/WilkesBasin/WSB-500M/WSB-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Regions_WSB-500M/2.3.0/WSB-500M_grid.nc"
+
+["grid_WSB-1KM.txt"]
+checksum = "sha256:6eb013f46c20176e719fe3f4458c27a2930b3ceafc95e2440ea04bbee0bd32a2"
+size = 466
+storage_path = "$datasets_dir/WilkesBasin/WSB-1KM/grid_WSB-1KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Regions_WSB-1KM/2.3.0/grid_WSB-1KM.txt"
+
+["grid_WSB-500M.txt"]
+checksum = "sha256:34c44cfad7a5c085807ba0ebb81f03c8a3b176eb7c8ff267329b4c81a95fa9fe"
+size = 466
+storage_path = "$datasets_dir/WilkesBasin/WSB-500M/grid_WSB-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Regions_WSB-500M/2.3.0/grid_WSB-500M.txt"

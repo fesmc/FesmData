@@ -1,61 +1,64 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-13"
-git_tag = "topo-v2.2.0"
+date = "2026-10-14"
+git_tag = "topo-v2.3.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=NEGIS_Topo"
-version = "2.2.0"
+version = "2.3.0"
 
 ["NEGIS-1KM_TOPO-BedMachine-v6.nc"]
-checksum = "sha256:fbbdb9b57ae43c7e6a249b88e9ef73cc850d4d658c4d037b5ff3867073b375c9"
+checksum = "sha256:a406e78db4b31c1cae193021e559a1a3b6f6c6cd15b4b7d5538676a01bb36eed"
+previous_checksums = ["sha256:fbbdb9b57ae43c7e6a249b88e9ef73cc850d4d658c4d037b5ff3867073b375c9"]
 size = 5330013
 storage_path = "$datasets_dir/NEGIS/NEGIS-1KM/NEGIS-1KM_TOPO-BedMachine-v6.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Topo_NEGIS-1KM/2.2.0/NEGIS-1KM_TOPO-BedMachine-v6.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Topo_NEGIS-1KM/2.3.0/NEGIS-1KM_TOPO-BedMachine-v6.nc"
 
 ["NEGIS-1KM_grid.nc"]
 checksum = "sha256:d72ad9615b637fb7e5537d89f9e8416daaf3cb517db3dfdf3298249c3870d334"
 size = 1769185
 storage_path = "$datasets_dir/NEGIS/NEGIS-1KM/NEGIS-1KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Topo_NEGIS-1KM/2.2.0/NEGIS-1KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Topo_NEGIS-1KM/2.3.0/NEGIS-1KM_grid.nc"
 
 ["NEGIS-250M_TOPO-BedMachine-v6.nc"]
-checksum = "sha256:5959f1ed937a122377d7a72803ca098bb03ffef039f15ffd71096909940fb1e7"
+checksum = "sha256:9561e9db16a833356ddcd34dcc0451493857c0e52d7871de219ee35d339b1c20"
+previous_checksums = ["sha256:5959f1ed937a122377d7a72803ca098bb03ffef039f15ffd71096909940fb1e7"]
 size = 72387025
 storage_path = "$datasets_dir/NEGIS/NEGIS-250M/NEGIS-250M_TOPO-BedMachine-v6.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Topo_NEGIS-250M/2.2.0/NEGIS-250M_TOPO-BedMachine-v6.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Topo_NEGIS-250M/2.3.0/NEGIS-250M_TOPO-BedMachine-v6.nc"
 
 ["NEGIS-250M_grid.nc"]
 checksum = "sha256:8211aff1a9d0be2ad6d10cff1c64572f06e7412095835f009d43c5e6080abca0"
 size = 17663102
 storage_path = "$datasets_dir/NEGIS/NEGIS-250M/NEGIS-250M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Topo_NEGIS-250M/2.2.0/NEGIS-250M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Topo_NEGIS-250M/2.3.0/NEGIS-250M_grid.nc"
 
 ["NEGIS-500M_TOPO-BedMachine-v6.nc"]
-checksum = "sha256:ed1107f85e4fb12a5c61262f3ee0d339ff6c6c064ebc5d6750e0cb0b252a0ef6"
+checksum = "sha256:b253919f8f1a7d9c0257c3317019632c7982bfaf2f11fd0527132cbb4f2bbcfa"
+previous_checksums = ["sha256:ed1107f85e4fb12a5c61262f3ee0d339ff6c6c064ebc5d6750e0cb0b252a0ef6"]
 size = 19581247
 storage_path = "$datasets_dir/NEGIS/NEGIS-500M/NEGIS-500M_TOPO-BedMachine-v6.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Topo_NEGIS-500M/2.2.0/NEGIS-500M_TOPO-BedMachine-v6.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Topo_NEGIS-500M/2.3.0/NEGIS-500M_TOPO-BedMachine-v6.nc"
 
 ["NEGIS-500M_grid.nc"]
 checksum = "sha256:9382a70cc99844d0600d02758bae2ddddccd4a5c590aa6068c077ca493c9b714"
 size = 5760881
 storage_path = "$datasets_dir/NEGIS/NEGIS-500M/NEGIS-500M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Topo_NEGIS-500M/2.2.0/NEGIS-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Topo_NEGIS-500M/2.3.0/NEGIS-500M_grid.nc"
 
 ["grid_NEGIS-1KM.txt"]
 checksum = "sha256:621ed798939a58d9e5d3ab085c1fb6297c00b73224aa4473de5bef7c21d74336"
 size = 463
 storage_path = "$datasets_dir/NEGIS/NEGIS-1KM/grid_NEGIS-1KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Topo_NEGIS-1KM/2.2.0/grid_NEGIS-1KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Topo_NEGIS-1KM/2.3.0/grid_NEGIS-1KM.txt"
 
 ["grid_NEGIS-250M.txt"]
 checksum = "sha256:bae390eff5a7ed3bd8ce0902dfc2212fa51b67a6ef909a315da89965ec022c28"
 size = 468
 storage_path = "$datasets_dir/NEGIS/NEGIS-250M/grid_NEGIS-250M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Topo_NEGIS-250M/2.2.0/grid_NEGIS-250M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Topo_NEGIS-250M/2.3.0/grid_NEGIS-250M.txt"
 
 ["grid_NEGIS-500M.txt"]
 checksum = "sha256:9c535bf2d454cbc1ff1faabea7c6e028122fc12514d0a5da5230fc6149dc4f6b"
 size = 466
 storage_path = "$datasets_dir/NEGIS/NEGIS-500M/grid_NEGIS-500M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Topo_NEGIS-500M/2.2.0/grid_NEGIS-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Topo_NEGIS-500M/2.3.0/grid_NEGIS-500M.txt"

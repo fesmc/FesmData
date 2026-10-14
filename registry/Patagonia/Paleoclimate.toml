@@ -2,102 +2,102 @@
 
 [_RELEASE]
 date = "2026-10-14"
-git_tag = "paleoclimate-v2.3.0"
+git_tag = "paleoclimate-v2.4.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Patagonia_Paleoclimate"
-version = "2.3.0"
+version = "2.4.0"
 
 ["PAT-2KM_Paleoclimate-PMIP3-lgm-mean.nc"]
-checksum = "sha256:c31343c8e0bac26cf094bf14585a197975649d7ecb4a17e64a3eabc8d83719a3"
-previous_checksums = ["sha256:29300db1f205994f679407747b3aee9ab7bc6aaf5b50723ecd7cf44ef3e1f5a2"]
+checksum = "sha256:f017e30f34ba8e07280892ac1a2e732ac6a8b49e1af62d8918ae603a7093d47b"
+previous_checksums = ["sha256:29300db1f205994f679407747b3aee9ab7bc6aaf5b50723ecd7cf44ef3e1f5a2", "sha256:c31343c8e0bac26cf094bf14585a197975649d7ecb4a17e64a3eabc8d83719a3"]
 size = 2810985
 storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_Paleoclimate-PMIP3-lgm-mean.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.3.0/PAT-2KM_Paleoclimate-PMIP3-lgm-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.4.0/PAT-2KM_Paleoclimate-PMIP3-lgm-mean.nc"
 
 ["PAT-2KM_Paleoclimate-PMIP3-lgm-stdev.nc"]
-checksum = "sha256:323c87748864026f14568457762ac0900343ba7c20335f86b0482b6e46e1c34a"
-previous_checksums = ["sha256:18e857c909e32450cbf6ff128ac6f86c7500712bd8944d20830b05e590fbe040"]
+checksum = "sha256:832ffe66ba2e6835f097830a68a8f91c303c95efeaca5b522203cd7fdd475550"
+previous_checksums = ["sha256:18e857c909e32450cbf6ff128ac6f86c7500712bd8944d20830b05e590fbe040", "sha256:323c87748864026f14568457762ac0900343ba7c20335f86b0482b6e46e1c34a"]
 size = 2143840
 storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_Paleoclimate-PMIP3-lgm-stdev.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.3.0/PAT-2KM_Paleoclimate-PMIP3-lgm-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.4.0/PAT-2KM_Paleoclimate-PMIP3-lgm-stdev.nc"
 
 ["PAT-2KM_Paleoclimate-PMIP3-midHolocene-mean.nc"]
-checksum = "sha256:78f3b0e270f5bcd24fd9ff9cc998c4aa8f68dcaea78f3c87a7fce14b9111fa27"
-previous_checksums = ["sha256:6acf7b8199684f67c5f2d88d71ea18f131648e5fb2fea21691cc7f387689803b"]
+checksum = "sha256:4f2fc25f9184054b9a5c8268a95a28573643a5dacaa73594eb82b72f8aa89830"
+previous_checksums = ["sha256:6acf7b8199684f67c5f2d88d71ea18f131648e5fb2fea21691cc7f387689803b", "sha256:78f3b0e270f5bcd24fd9ff9cc998c4aa8f68dcaea78f3c87a7fce14b9111fa27"]
 size = 2316424
 storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_Paleoclimate-PMIP3-midHolocene-mean.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.3.0/PAT-2KM_Paleoclimate-PMIP3-midHolocene-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.4.0/PAT-2KM_Paleoclimate-PMIP3-midHolocene-mean.nc"
 
 ["PAT-2KM_Paleoclimate-PMIP3-midHolocene-stdev.nc"]
-checksum = "sha256:5c66adbfe9a3d7e06edee6ed793bf8e33831679ac9541df0407469a6aa938a00"
-previous_checksums = ["sha256:1b9ae34e28064136a34063d3da1f22b92515761c7b39975fe5e13c8f9c4b46db"]
+checksum = "sha256:f0b5e3ac4fb24405af3d0a7ed0902ad30b8b3936471e189ab29572d23752ebc1"
+previous_checksums = ["sha256:1b9ae34e28064136a34063d3da1f22b92515761c7b39975fe5e13c8f9c4b46db", "sha256:5c66adbfe9a3d7e06edee6ed793bf8e33831679ac9541df0407469a6aa938a00"]
 size = 1736036
 storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_Paleoclimate-PMIP3-midHolocene-stdev.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.3.0/PAT-2KM_Paleoclimate-PMIP3-midHolocene-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.4.0/PAT-2KM_Paleoclimate-PMIP3-midHolocene-stdev.nc"
 
 ["PAT-2KM_Paleoclimate-PMIP3-piControl-mean.nc"]
-checksum = "sha256:a72821cde38524fb021f23977dfb4529a46e20c2b80efe63560f7dd44cefdba1"
-previous_checksums = ["sha256:7c4558e55b4a32080b291dd7849fd0efc2703bb95539aa087867fb9cef22280a"]
+checksum = "sha256:7799d24a74fcbce82346da0723754dac698575f8ea7736a5e339bd9b0777cfa3"
+previous_checksums = ["sha256:7c4558e55b4a32080b291dd7849fd0efc2703bb95539aa087867fb9cef22280a", "sha256:a72821cde38524fb021f23977dfb4529a46e20c2b80efe63560f7dd44cefdba1"]
 size = 2323720
 storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_Paleoclimate-PMIP3-piControl-mean.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.3.0/PAT-2KM_Paleoclimate-PMIP3-piControl-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.4.0/PAT-2KM_Paleoclimate-PMIP3-piControl-mean.nc"
 
 ["PAT-2KM_Paleoclimate-PMIP3-piControl-stdev.nc"]
-checksum = "sha256:319c5191ffe4e590f014c4a261173b2c857c40a2b21a7a66f2460b87736dc695"
-previous_checksums = ["sha256:998bfbcc73db44b15079ead7d7bcf3308dc75beaedc45bbb1479885dad9f0dc3"]
+checksum = "sha256:5544eccc5fab0f97ffaaf9fba9d776f8767deb3a71b83a3d2b8c0e3ae64dbf38"
+previous_checksums = ["sha256:998bfbcc73db44b15079ead7d7bcf3308dc75beaedc45bbb1479885dad9f0dc3", "sha256:319c5191ffe4e590f014c4a261173b2c857c40a2b21a7a66f2460b87736dc695"]
 size = 1733174
 storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_Paleoclimate-PMIP3-piControl-stdev.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.3.0/PAT-2KM_Paleoclimate-PMIP3-piControl-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.4.0/PAT-2KM_Paleoclimate-PMIP3-piControl-stdev.nc"
 
 ["PAT-2KM_Paleoclimate-PMIP4-lgm-mean.nc"]
-checksum = "sha256:1a291b3191c082d2ab59060afef407e3da1115b70fe433b47495fcb9688bcc12"
-previous_checksums = ["sha256:2031228678e21aa85b56b82451dfce4bb7c23e09f069665007cbec095a2bdf59"]
+checksum = "sha256:526bb68523ad28f3e7187595af7ce696701f14f5b30b9861495de0096882d0d6"
+previous_checksums = ["sha256:2031228678e21aa85b56b82451dfce4bb7c23e09f069665007cbec095a2bdf59", "sha256:1a291b3191c082d2ab59060afef407e3da1115b70fe433b47495fcb9688bcc12"]
 size = 7503939
 storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_Paleoclimate-PMIP4-lgm-mean.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.3.0/PAT-2KM_Paleoclimate-PMIP4-lgm-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.4.0/PAT-2KM_Paleoclimate-PMIP4-lgm-mean.nc"
 
 ["PAT-2KM_Paleoclimate-PMIP4-lgm-stdev.nc"]
-checksum = "sha256:5156a07132a53303198f2790e11c8e56f03dcadd48a9689ee93c56ef56dcc0ac"
-previous_checksums = ["sha256:bf874adf0ba33ce0943454f4c3c21b415819a7140df1ffc573826bdfc2f42a72"]
+checksum = "sha256:1089c06709bfe0ba103d553e49aaffb0d051e95761e4d67e9b8d0e9c377aef7e"
+previous_checksums = ["sha256:bf874adf0ba33ce0943454f4c3c21b415819a7140df1ffc573826bdfc2f42a72", "sha256:5156a07132a53303198f2790e11c8e56f03dcadd48a9689ee93c56ef56dcc0ac"]
 size = 5632640
 storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_Paleoclimate-PMIP4-lgm-stdev.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.3.0/PAT-2KM_Paleoclimate-PMIP4-lgm-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.4.0/PAT-2KM_Paleoclimate-PMIP4-lgm-stdev.nc"
 
 ["PAT-2KM_Paleoclimate-PMIP4-midHolocene-mean.nc"]
-checksum = "sha256:95047544938537fa69b3b084fbd153b210330a740b6b695c117a9b9d35296df0"
-previous_checksums = ["sha256:d56b75f715acd0d9372a1fbae86120677049a7b2a829fdab0b4442e716120236"]
+checksum = "sha256:60fc43f5ea18ddd3c0bb887e6ca6984398fe7895c87a49a38da4983e0d36c8ae"
+previous_checksums = ["sha256:d56b75f715acd0d9372a1fbae86120677049a7b2a829fdab0b4442e716120236", "sha256:95047544938537fa69b3b084fbd153b210330a740b6b695c117a9b9d35296df0"]
 size = 5184343
 storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_Paleoclimate-PMIP4-midHolocene-mean.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.3.0/PAT-2KM_Paleoclimate-PMIP4-midHolocene-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.4.0/PAT-2KM_Paleoclimate-PMIP4-midHolocene-mean.nc"
 
 ["PAT-2KM_Paleoclimate-PMIP4-midHolocene-stdev.nc"]
-checksum = "sha256:2639ee4aa9a80b17344bdfd4973a16672b8c4f3beb997d1704b3f06fa132f37c"
-previous_checksums = ["sha256:aa679e0bb3987a460257cad64c70aa81d3f145ba7812120de277e2e159d4009f"]
+checksum = "sha256:ace3a30c0632f4e49961cc71d7adcf3f84287e9767218af8c10ecb1a081e77ca"
+previous_checksums = ["sha256:aa679e0bb3987a460257cad64c70aa81d3f145ba7812120de277e2e159d4009f", "sha256:2639ee4aa9a80b17344bdfd4973a16672b8c4f3beb997d1704b3f06fa132f37c"]
 size = 5098928
 storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_Paleoclimate-PMIP4-midHolocene-stdev.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.3.0/PAT-2KM_Paleoclimate-PMIP4-midHolocene-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.4.0/PAT-2KM_Paleoclimate-PMIP4-midHolocene-stdev.nc"
 
 ["PAT-2KM_Paleoclimate-PMIP4-piControl-mean.nc"]
-checksum = "sha256:ac5cebbd588a8580e3d37452b43c503f1545419596cd4abd1d229ce6b8254ead"
-previous_checksums = ["sha256:772a1f6b20bc2eeb92db99a03830a53da1acee6c8bb187fde3e52473aa51eebb"]
+checksum = "sha256:66914faa64ebde3be1a75e6e92ed567bd607dca739a24e17a131a63c7ade54c1"
+previous_checksums = ["sha256:772a1f6b20bc2eeb92db99a03830a53da1acee6c8bb187fde3e52473aa51eebb", "sha256:ac5cebbd588a8580e3d37452b43c503f1545419596cd4abd1d229ce6b8254ead"]
 size = 5094665
 storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_Paleoclimate-PMIP4-piControl-mean.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.3.0/PAT-2KM_Paleoclimate-PMIP4-piControl-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.4.0/PAT-2KM_Paleoclimate-PMIP4-piControl-mean.nc"
 
 ["PAT-2KM_Paleoclimate-PMIP4-piControl-stdev.nc"]
-checksum = "sha256:655d3ba6ad110cc170f55e61dca1817638573c3d8f27f96ca64f0b283f0c58b5"
-previous_checksums = ["sha256:392fb14bd702de18f94f81b8fdd5390de81a5feb6b5ca47072a0789546822815"]
+checksum = "sha256:8260f0e671cd52382595dccfda54a0e8abfa9834f97eb5526401e8f43659a3e7"
+previous_checksums = ["sha256:392fb14bd702de18f94f81b8fdd5390de81a5feb6b5ca47072a0789546822815", "sha256:655d3ba6ad110cc170f55e61dca1817638573c3d8f27f96ca64f0b283f0c58b5"]
 size = 5042004
 storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_Paleoclimate-PMIP4-piControl-stdev.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.3.0/PAT-2KM_Paleoclimate-PMIP4-piControl-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.4.0/PAT-2KM_Paleoclimate-PMIP4-piControl-stdev.nc"
 
 ["PAT-2KM_grid.nc"]
 checksum = "sha256:3b66736031d52fec9da8230693887255b90f7b276619eba31266bf950f5eb9e7"
 size = 1440853
 storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.3.0/PAT-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.4.0/PAT-2KM_grid.nc"
 
 ["grid_PAT-2KM.txt"]
 checksum = "sha256:f30d2390e6c54f2628d81d4a3439a6b55b95c9e997754fcaa01ac160f60591bd"
 size = 347
 storage_path = "$datasets_dir/Patagonia/PAT-2KM/grid_PAT-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.3.0/grid_PAT-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.4.0/grid_PAT-2KM.txt"

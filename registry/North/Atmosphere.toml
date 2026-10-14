@@ -2,129 +2,129 @@
 
 [_RELEASE]
 date = "2026-10-14"
-git_tag = "atmosphere-v2.1.0"
+git_tag = "atmosphere-v2.2.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=North_Atmosphere"
-version = "2.1.0"
+version = "2.2.0"
 
 ["NH-16KM_Atmosphere-CERES-2001-2020.nc"]
-checksum = "sha256:6d1044ccef63fbd539a6653df3037153fd55df94f3fa34e83a0b25a71a4d0607"
-previous_checksums = ["sha256:4b2a820d83b545a362d8b38e1e2ed2c407a24a15dc0a31a6d34de7dca45e9cf0"]
+checksum = "sha256:01050be76b7e644c5d21c8600a2819262e35770fdda0d366cfa781900ca4a052"
+previous_checksums = ["sha256:4b2a820d83b545a362d8b38e1e2ed2c407a24a15dc0a31a6d34de7dca45e9cf0", "sha256:6d1044ccef63fbd539a6653df3037153fd55df94f3fa34e83a0b25a71a4d0607"]
 size = 32187628
 storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_Atmosphere-CERES-2001-2020.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Atmosphere_NH-16KM/2.1.0/NH-16KM_Atmosphere-CERES-2001-2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Atmosphere_NH-16KM/2.2.0/NH-16KM_Atmosphere-CERES-2001-2020.nc"
 
 ["NH-16KM_Atmosphere-ERA5-1981-2010.nc"]
-checksum = "sha256:ec36d45bda9225ce3689b9e03ed979d38b202b99fda55c99eac81b1c2034e855"
-previous_checksums = ["sha256:48c0aaa9ffb9cc9256e65deec15024f43d9b6df68fd417c863adbc07e0c74a86"]
+checksum = "sha256:566abd79897f43e829e5d4edf99e40a0e90125e19eca671df2a1ae25e6a8df03"
+previous_checksums = ["sha256:48c0aaa9ffb9cc9256e65deec15024f43d9b6df68fd417c863adbc07e0c74a86", "sha256:ec36d45bda9225ce3689b9e03ed979d38b202b99fda55c99eac81b1c2034e855"]
 size = 37183065
 storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_Atmosphere-ERA5-1981-2010.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Atmosphere_NH-16KM/2.1.0/NH-16KM_Atmosphere-ERA5-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Atmosphere_NH-16KM/2.2.0/NH-16KM_Atmosphere-ERA5-1981-2010.nc"
 
 ["NH-16KM_Atmosphere-ERA5-1991-2020.nc"]
-checksum = "sha256:49c581d8658754a835c99a20e86a2861c76cadd7628556468cfbe3a184f9d34b"
-previous_checksums = ["sha256:3b9167811a675ccf4994ce0a268d68e190b65e19a087d5e0930a7ded4e83b0f9"]
+checksum = "sha256:1de3bff370c5e631f12de254b6cc2ee524a9af5fde07ca1eddea06f318b84807"
+previous_checksums = ["sha256:3b9167811a675ccf4994ce0a268d68e190b65e19a087d5e0930a7ded4e83b0f9", "sha256:49c581d8658754a835c99a20e86a2861c76cadd7628556468cfbe3a184f9d34b"]
 size = 37188647
 storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_Atmosphere-ERA5-1991-2020.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Atmosphere_NH-16KM/2.1.0/NH-16KM_Atmosphere-ERA5-1991-2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Atmosphere_NH-16KM/2.2.0/NH-16KM_Atmosphere-ERA5-1991-2020.nc"
 
 ["NH-16KM_Atmosphere-ERA5-plev-1981-2010.nc"]
-checksum = "sha256:2a04bf1055d0e670045979e02be7f7df00ff7a218563d3c80bfd26312f0e283b"
-previous_checksums = ["sha256:d8aa52f53ff8514bb997301a7ace39b637f90d15ce6a1edbaf8e1cd1bca2c8a3"]
+checksum = "sha256:fad45154656f76a421d76f9ceff6fcfca5e71f4aa48cc1f3b0ae716da8168088"
+previous_checksums = ["sha256:d8aa52f53ff8514bb997301a7ace39b637f90d15ce6a1edbaf8e1cd1bca2c8a3", "sha256:2a04bf1055d0e670045979e02be7f7df00ff7a218563d3c80bfd26312f0e283b"]
 size = 147511941
 storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_Atmosphere-ERA5-plev-1981-2010.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Atmosphere_NH-16KM/2.1.0/NH-16KM_Atmosphere-ERA5-plev-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Atmosphere_NH-16KM/2.2.0/NH-16KM_Atmosphere-ERA5-plev-1981-2010.nc"
 
 ["NH-16KM_Atmosphere-ERA5-plev-1991-2020.nc"]
-checksum = "sha256:fd16f6b9eb5657c10c3277eff8814843c21dfc17ef3be89a0a1994eea19fc224"
-previous_checksums = ["sha256:b306ad2fde78498003aceb437ab6dd7c3962a7e9f88a7ba196dfb85edb25f2ac"]
+checksum = "sha256:c614b26f3ec63ac0282aa07c39f2c0464468f1408503913f6d10fbb2d055425b"
+previous_checksums = ["sha256:b306ad2fde78498003aceb437ab6dd7c3962a7e9f88a7ba196dfb85edb25f2ac", "sha256:fd16f6b9eb5657c10c3277eff8814843c21dfc17ef3be89a0a1994eea19fc224"]
 size = 147575221
 storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_Atmosphere-ERA5-plev-1991-2020.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Atmosphere_NH-16KM/2.1.0/NH-16KM_Atmosphere-ERA5-plev-1991-2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Atmosphere_NH-16KM/2.2.0/NH-16KM_Atmosphere-ERA5-plev-1991-2020.nc"
 
 ["NH-16KM_grid.nc"]
 checksum = "sha256:854570fc78e4fbb918d307c80874ceeb85265df6ab6b76393344a98e4a874abc"
 previous_checksums = ["sha256:5a64b9ab83264c23ca7c96aa0a1a1b02debcea94890fb2556039c205a148d957"]
 size = 1592909
 storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Atmosphere_NH-16KM/2.1.0/NH-16KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Atmosphere_NH-16KM/2.2.0/NH-16KM_grid.nc"
 
 ["NH-32KM_Atmosphere-CERES-2001-2020.nc"]
-checksum = "sha256:f694931e1d2ad9c5c23d58f080550d129cadab84a57d818f8dcf25207017bcdf"
-previous_checksums = ["sha256:fb2e0410f2c81c44e3b138d618441f6db7b85011d2f34112e341fb2351f54652"]
+checksum = "sha256:ae520fbcd5ae816de3a773b2fdaa1ee3034926fe3ea02936165be8ec9459af62"
+previous_checksums = ["sha256:fb2e0410f2c81c44e3b138d618441f6db7b85011d2f34112e341fb2351f54652", "sha256:f694931e1d2ad9c5c23d58f080550d129cadab84a57d818f8dcf25207017bcdf"]
 size = 11673858
 storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_Atmosphere-CERES-2001-2020.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Atmosphere_NH-32KM/2.1.0/NH-32KM_Atmosphere-CERES-2001-2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Atmosphere_NH-32KM/2.2.0/NH-32KM_Atmosphere-CERES-2001-2020.nc"
 
 ["NH-32KM_Atmosphere-ERA5-1981-2010.nc"]
-checksum = "sha256:ed84e8165beafd58155fc1322f070607edfc56570e71d4c8532ad0ae08a9e587"
-previous_checksums = ["sha256:3872c67e10f9de1b0af40090f62e7fc35bd7a566a53b4fb25b8a4be476a99651"]
+checksum = "sha256:49adbab4070e1f2ec7e147e7b08b2a9edd7ecb6747af8f52aaa1f58e56471051"
+previous_checksums = ["sha256:3872c67e10f9de1b0af40090f62e7fc35bd7a566a53b4fb25b8a4be476a99651", "sha256:ed84e8165beafd58155fc1322f070607edfc56570e71d4c8532ad0ae08a9e587"]
 size = 11610035
 storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_Atmosphere-ERA5-1981-2010.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Atmosphere_NH-32KM/2.1.0/NH-32KM_Atmosphere-ERA5-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Atmosphere_NH-32KM/2.2.0/NH-32KM_Atmosphere-ERA5-1981-2010.nc"
 
 ["NH-32KM_Atmosphere-ERA5-1991-2020.nc"]
-checksum = "sha256:9cc54e948de028414557ca35fec25d53a100a12cc07e37828507596bac1f8ff5"
-previous_checksums = ["sha256:125612d74bde91a20bfa0c13f870971c00faafebb756614a7992a53bfb02fcce"]
+checksum = "sha256:d8ab9e83c4a269ec23306240a385e1e0668b474cd7aae0d8d97bf109674073ee"
+previous_checksums = ["sha256:125612d74bde91a20bfa0c13f870971c00faafebb756614a7992a53bfb02fcce", "sha256:9cc54e948de028414557ca35fec25d53a100a12cc07e37828507596bac1f8ff5"]
 size = 11613073
 storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_Atmosphere-ERA5-1991-2020.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Atmosphere_NH-32KM/2.1.0/NH-32KM_Atmosphere-ERA5-1991-2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Atmosphere_NH-32KM/2.2.0/NH-32KM_Atmosphere-ERA5-1991-2020.nc"
 
 ["NH-32KM_Atmosphere-ERA5-plev-1981-2010.nc"]
-checksum = "sha256:3ed4775a7c11e10fc5b9772df4dcd2280444281295538addbfcbdb27c59604fa"
-previous_checksums = ["sha256:a9304387c6566fefe3d17111a51ed8d2675d0bf186dd742c5d4a386a03fe6324"]
+checksum = "sha256:a60df7be12a941828b632cf86cf5a800f3e83789c38f7d1b76010c196572053f"
+previous_checksums = ["sha256:a9304387c6566fefe3d17111a51ed8d2675d0bf186dd742c5d4a386a03fe6324", "sha256:3ed4775a7c11e10fc5b9772df4dcd2280444281295538addbfcbdb27c59604fa"]
 size = 46899364
 storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_Atmosphere-ERA5-plev-1981-2010.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Atmosphere_NH-32KM/2.1.0/NH-32KM_Atmosphere-ERA5-plev-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Atmosphere_NH-32KM/2.2.0/NH-32KM_Atmosphere-ERA5-plev-1981-2010.nc"
 
 ["NH-32KM_Atmosphere-ERA5-plev-1991-2020.nc"]
-checksum = "sha256:ae313cb4942c057486ff3cf6b37cee4cfa701c9f1b8b217ffbf598360bf70e84"
-previous_checksums = ["sha256:8e45fe19136c7878d199c61c2708a304d491a0316f9c697f73d00e6dc0be55b3"]
+checksum = "sha256:b97b4ea8019890e556a31ab7d5c97c0b63b291552d82a45079b53a2ac18412e5"
+previous_checksums = ["sha256:8e45fe19136c7878d199c61c2708a304d491a0316f9c697f73d00e6dc0be55b3", "sha256:ae313cb4942c057486ff3cf6b37cee4cfa701c9f1b8b217ffbf598360bf70e84"]
 size = 46917428
 storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_Atmosphere-ERA5-plev-1991-2020.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Atmosphere_NH-32KM/2.1.0/NH-32KM_Atmosphere-ERA5-plev-1991-2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Atmosphere_NH-32KM/2.2.0/NH-32KM_Atmosphere-ERA5-plev-1991-2020.nc"
 
 ["NH-32KM_grid.nc"]
 checksum = "sha256:5acfb784cc05a51351ad8cbfb8d51d8256e96833d9b17acecf39a43c92196c63"
 previous_checksums = ["sha256:3d48fc58818a8820d1c19088ab3ac0a0aa5f463ca080d4d5f8f60d0fc525894f"]
 size = 464986
 storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Atmosphere_NH-32KM/2.1.0/NH-32KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Atmosphere_NH-32KM/2.2.0/NH-32KM_grid.nc"
 
 ["NH-8KM_Atmosphere-ERA5-1981-2010.nc"]
-checksum = "sha256:5c8e07f3ad636d8ad195c73d59aada1f4b55bc492e71dda569ee7cbf2f85a37c"
-previous_checksums = ["sha256:ae62073676eaaef2c08a8c75e599360a9288dfa6f3cfd5fc302fd930dd8edc25"]
+checksum = "sha256:d60b90a934ec36611b8ddf2dfa9c52c3974d48646ff0391b2ae34650ff638a80"
+previous_checksums = ["sha256:ae62073676eaaef2c08a8c75e599360a9288dfa6f3cfd5fc302fd930dd8edc25", "sha256:5c8e07f3ad636d8ad195c73d59aada1f4b55bc492e71dda569ee7cbf2f85a37c"]
 size = 112745654
 storage_path = "$datasets_dir/North/NH-8KM/NH-8KM_Atmosphere-ERA5-1981-2010.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Atmosphere_NH-8KM/2.1.0/NH-8KM_Atmosphere-ERA5-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Atmosphere_NH-8KM/2.2.0/NH-8KM_Atmosphere-ERA5-1981-2010.nc"
 
 ["NH-8KM_Atmosphere-ERA5-1991-2020.nc"]
-checksum = "sha256:5bfb1e308b559eb5057cd00ce879e743d76cb4c4226924ed04e8727783eeedaf"
-previous_checksums = ["sha256:af9b4711209d4bcf4986836f890d75deb111099bb85326d28a02e0436e886760"]
+checksum = "sha256:26ff38cd0d6f1a4d267702bc2c10f916bd0578910b77c41164354bb4a1fa6feb"
+previous_checksums = ["sha256:af9b4711209d4bcf4986836f890d75deb111099bb85326d28a02e0436e886760", "sha256:5bfb1e308b559eb5057cd00ce879e743d76cb4c4226924ed04e8727783eeedaf"]
 size = 112768781
 storage_path = "$datasets_dir/North/NH-8KM/NH-8KM_Atmosphere-ERA5-1991-2020.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Atmosphere_NH-8KM/2.1.0/NH-8KM_Atmosphere-ERA5-1991-2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Atmosphere_NH-8KM/2.2.0/NH-8KM_Atmosphere-ERA5-1991-2020.nc"
 
 ["NH-8KM_grid.nc"]
 checksum = "sha256:ca974e22347230883fa4b6a84f9213b4dc984ab36195dcab4c54646ba27134c2"
 previous_checksums = ["sha256:ae6fa2991da8179295e27f76c8de94a400b394c3335375b0255f570a6ceb95cf"]
 size = 5426807
 storage_path = "$datasets_dir/North/NH-8KM/NH-8KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Atmosphere_NH-8KM/2.1.0/NH-8KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Atmosphere_NH-8KM/2.2.0/NH-8KM_grid.nc"
 
 ["grid_NH-16KM.txt"]
 checksum = "sha256:b784904b58207dc754c6dbb670f90ccd35dfccfadbd68bfea1c239abac6a7c89"
 size = 467
 storage_path = "$datasets_dir/North/NH-16KM/grid_NH-16KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Atmosphere_NH-16KM/2.1.0/grid_NH-16KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Atmosphere_NH-16KM/2.2.0/grid_NH-16KM.txt"
 
 ["grid_NH-32KM.txt"]
 checksum = "sha256:6562aa2ab0d5e8ac51d50e7caac9b766095e22eb71e450ead46ce581543d44a4"
 size = 466
 storage_path = "$datasets_dir/North/NH-32KM/grid_NH-32KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Atmosphere_NH-32KM/2.1.0/grid_NH-32KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Atmosphere_NH-32KM/2.2.0/grid_NH-32KM.txt"
 
 ["grid_NH-8KM.txt"]
 checksum = "sha256:8220a06ea13149c0973191099db52b5d789c8ecc190c3d1b8ed05223dcb25b41"
 size = 468
 storage_path = "$datasets_dir/North/NH-8KM/grid_NH-8KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Atmosphere_NH-8KM/2.1.0/grid_NH-8KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Atmosphere_NH-8KM/2.2.0/grid_NH-8KM.txt"

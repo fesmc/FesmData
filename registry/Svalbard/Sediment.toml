@@ -1,0 +1,37 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-14"
+git_tag = "sediment-v2.2.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Svalbard_Sediment"
+version = "2.2.0"
+
+["SVB-2KM_Sediment-CRUST1.nc"]
+checksum = "sha256:c0c7ff8092266dda9d79d4d503be13af12de5919d2bfeb8256a41c5d7dc9948b"
+size = 1448066
+storage_path = "$datasets_dir/Svalbard/SVB-2KM/SVB-2KM_Sediment-CRUST1.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Sediment_SVB-2KM/2.2.0/SVB-2KM_Sediment-CRUST1.nc"
+
+["SVB-2KM_Sediment-ECM1.nc"]
+checksum = "sha256:391015543665bd4a044665335a0c8df1d80e4c8095fb1a98dca26d30cddef188"
+size = 1452083
+storage_path = "$datasets_dir/Svalbard/SVB-2KM/SVB-2KM_Sediment-ECM1.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Sediment_SVB-2KM/2.2.0/SVB-2KM_Sediment-ECM1.nc"
+
+["SVB-2KM_Sediment-GlobSed.nc"]
+checksum = "sha256:be3b76b1c0b42436601eda301c864990753fb105b9e109669ee5ac40cb22ad43"
+size = 497096
+storage_path = "$datasets_dir/Svalbard/SVB-2KM/SVB-2KM_Sediment-GlobSed.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Sediment_SVB-2KM/2.2.0/SVB-2KM_Sediment-GlobSed.nc"
+
+["SVB-2KM_grid.nc"]
+checksum = "sha256:6a0409b44fa4c45229d431e113338e59f766947595e5bb697b316743ba9912a6"
+size = 744534
+storage_path = "$datasets_dir/Svalbard/SVB-2KM/SVB-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Sediment_SVB-2KM/2.2.0/SVB-2KM_grid.nc"
+
+["grid_SVB-2KM.txt"]
+checksum = "sha256:18fa470f57070e72b08f324dbf95f9619f896701bfa78523290698f89b5aab05"
+size = 324
+storage_path = "$datasets_dir/Svalbard/SVB-2KM/grid_SVB-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Sediment_SVB-2KM/2.2.0/grid_SVB-2KM.txt"

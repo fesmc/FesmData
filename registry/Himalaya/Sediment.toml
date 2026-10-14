@@ -1,31 +1,33 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-13"
-git_tag = "sediment-v2.1.0"
+date = "2026-10-14"
+git_tag = "sediment-v2.2.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Himalaya_Sediment"
-version = "2.1.0"
+version = "2.2.0"
 
 ["HIM-2KM_Sediment-CRUST1.nc"]
-checksum = "sha256:8db635ff81181c0c75201c2b6c2ccc94eb62b0b1403ff1dfaf7a0524335c2dd9"
+checksum = "sha256:a83faed0e3a766e1bee17e3b08aaa90f8486f953a90182b5ef93207ab96769e2"
+previous_checksums = ["sha256:8db635ff81181c0c75201c2b6c2ccc94eb62b0b1403ff1dfaf7a0524335c2dd9"]
 size = 7728285
 storage_path = "$datasets_dir/Himalaya/HIM-2KM/HIM-2KM_Sediment-CRUST1.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Sediment_HIM-2KM/2.1.0/HIM-2KM_Sediment-CRUST1.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Sediment_HIM-2KM/2.2.0/HIM-2KM_Sediment-CRUST1.nc"
 
 ["HIM-2KM_Sediment-ECM1.nc"]
-checksum = "sha256:4c176e3f2869e5e39febb37c0290e4ec5ddba28ef8b80b31d754c6b2cde529dd"
+checksum = "sha256:2d85729af68c243412626b32862fa140f0d184d8680db50c334f3f25b3078f69"
+previous_checksums = ["sha256:4c176e3f2869e5e39febb37c0290e4ec5ddba28ef8b80b31d754c6b2cde529dd"]
 size = 6964578
 storage_path = "$datasets_dir/Himalaya/HIM-2KM/HIM-2KM_Sediment-ECM1.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Sediment_HIM-2KM/2.1.0/HIM-2KM_Sediment-ECM1.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Sediment_HIM-2KM/2.2.0/HIM-2KM_Sediment-ECM1.nc"
 
 ["HIM-2KM_grid.nc"]
 checksum = "sha256:c80460c96b66ee86b7f0ad0ba2095ab24de793493dda2a341dfa36b5a715a209"
 size = 2883062
 storage_path = "$datasets_dir/Himalaya/HIM-2KM/HIM-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Sediment_HIM-2KM/2.1.0/HIM-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Sediment_HIM-2KM/2.2.0/HIM-2KM_grid.nc"
 
 ["grid_HIM-2KM.txt"]
 checksum = "sha256:534cff6d3562a47b21187e2279ce0b3a848e720b093bc7ae578073c24219bdcf"
 size = 333
 storage_path = "$datasets_dir/Himalaya/HIM-2KM/grid_HIM-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Sediment_HIM-2KM/2.1.0/grid_HIM-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Sediment_HIM-2KM/2.2.0/grid_HIM-2KM.txt"
