@@ -92,7 +92,7 @@ function figures_command(args::AbstractVector)
         [product_figure(p, path -> plot_gridded(path, product_name(p), product_panels(p), figure_variables(p), p.figure))
          for p in products[made]]
     elseif is_records_dataset(dataset)
-        [product_figure(p, path -> plot_record(path, record_path(p), p.figure)) for p in records_products(dataset)
+        [product_figure(p, path -> plot_record(path, record_paths(p), p.figure)) for p in records_products(dataset)
          if p.figure !== nothing]
     else
         error("dataset $dataset has no figures (no Topo, Regions, $dataset/remap.toml or $dataset/records.toml)")

@@ -76,38 +76,36 @@ function instance_names(ds, inst)
 end
 
 """
-    plot_record(path, file, spec) -> String
+    plot_record(path, files, spec) -> String
 
-The figure of a record: maps of its sites (coloured by the variable shown, for data
-without a time or depth axis) and a panel of the data: series (`timeSeries`), profiles
-(`profile`) or observations through time. Returns its caption.
+The figure of a record product of one or more files (part => path): maps of the sites of
+all its files (coloured by the variable shown, for data without a time or depth axis)
+and a panel of the data of each file, one under the other: series (`timeSeries`),
+profiles (`profile`) or observations through time. Returns its caption.
 """
-function plot_record(path::AbstractString, file::AbstractString, spec::AbstractDict)
+function plot_record(path::AbstractString, files::Vector{Pair{String,String}}, spec::AbstractDict)
     unknown = setdiff(keys(spec), RECORD_FIGURE_KEYS)
-    isempty(unknown) || error("$file: unknown keys of figure: $(join(unknown, ", ")) ($(join(RECORD_FIGURE_KEYS, ", ")))")
-    isfile(file) || error("no $file")
-    NCDataset(file) do ds
-        inst = only(dimnames(ds["lat"]))
-        lon, lat = Float64.(coalesce.(ds["lon"][:], NaN)), Float64.(coalesce.(ds["lat"][:], NaN))
-        var = get(spec, "variable", record_variable(ds, inst))
-        v = ds[var]
-        units = get(v.attrib, "units", "")
-        label = var * (isempty(units) || units == "1" ? "" : " ($units)")
-        names = instance_names(ds, inst)
-        other = [d for d in dimnames(v) if d != inst]
-        n = length(lon)
-        shown = n > MAX_POINTS ? round.(Int, range(1, n; length=MAX_POINTS)) : collect(1:n)
+    isempty(unknown) || error("$(first(files)[2]): unknown keys of figure: $(join(unknown, ", ")) ($(join(RECORD_FIGURE_KEYS, ", ")))")
+    for (_, file) in files
+        isfile(file) || error("no $file")
+    end
+    dss = [NCDataset(file) for (_, file) in files]
+    try
+        recs = [record_data(ds, spec) for ds in dss]
+        lon, lat = reduce(vcat, (r.lon[r.shown] for r in recs)), reduce(vcat, (r.lat[r.shown] for r in recs))
+        names = all(r -> r.names !== nothing, recs) ? reduce(vcat, (r.names[r.shown] for r in recs)) : nothing
         # Values at the sites colour the maps when the variable has no other axis
-        values = isempty(other) ? Float64.(coalesce.(v[:], NaN)) : nothing
-        scale = values === nothing ? nothing : continuous_scale(values[shown])
+        values = all(r -> r.values !== nothing && r.label == recs[1].label, recs) ?
+                 reduce(vcat, (r.values[r.shown] for r in recs)) : nothing
+        scale = values === nothing ? nothing : continuous_scale(values)
+        nrows = length(recs)
 
         fig = Figure(; fontsize=10, figure_padding=6)
-        panels, outside = map_panels(lon[shown], lat[shown])
+        panels, outside = map_panels(lon, lat)
         sc = nothing
-        for (j, (og, idx)) in enumerate(panels)
-            ax = map_axis(fig[1, j], og; title=og.grid.name)
+        for (j, (og, i)) in enumerate(panels)
+            ax = map_axis(fig[1:nrows, j], og; title=og.grid.name)
             coastline!(ax, og)
-            i = shown[idx]
             x, y = project(og, lon[i], lat[i])
             ms = length(i) > 1000 ? 3 : 7
             sc = values === nothing ? scatter!(ax, x, y; color=:black, markersize=ms) :
@@ -119,31 +117,60 @@ function plot_record(path::AbstractString, file::AbstractString, spec::AbstractD
             end
             colsize!(fig.layout, j, Fixed(round(Int, PANEL_HEIGHT * map_aspect(og.grid))))
         end
-        isempty(panels) && error("$file: no sites within the domains $(join(RECORD_MAP_DOMAINS, ", "))")
-        values === nothing || Colorbar(fig[1, length(panels)+1], sc; label=label, ticklabelsize=9, labelsize=10, width=10)
-        data_panel!(fig[1, length(panels)+2], ds, v, inst, other, label, names, shown)
-        rowsize!(fig.layout, 1, Fixed(PANEL_HEIGHT))
+        isempty(panels) && error("$(first(files)[2]): no sites within the domains $(join(RECORD_MAP_DOMAINS, ", "))")
+        values === nothing || Colorbar(fig[1:nrows, length(panels)+1], sc; label=recs[1].label, ticklabelsize=9,
+                                       labelsize=10, width=10)
+        for (k, (r, ds, (part, _))) in enumerate(zip(recs, dss, files))
+            data_panel!(fig[k, length(panels)+2], ds, r.v, r.inst, r.other, r.label, r.names, r.shown; title=part)
+        end
+        height = nrows == 1 ? PANEL_HEIGHT : round(Int, 0.6 * PANEL_HEIGHT)
+        foreach(k -> rowsize!(fig.layout, k, Fixed(height)), 1:nrows)
         resize_to_layout!(fig)
         save_figure(path, fig)
-        caption = "$(basename(file)): $(length(unique(names === nothing ? (1:n) : names))) " *
-                  "$(names === nothing ? "observations" : inst == "region" ? "regions" : "sites"), $var"
+        sites = names === nothing ? length(lon) : length(unique(names))
+        kind = names === nothing ? "observations" : recs[1].inst == "region" ? "regions" : "sites"
+        caption = "$(join((basename(f) for (_, f) in files), ", ")): $sites $kind, $(join(unique(r.var for r in recs), ", "))"
         return caption * (outside > 0 ? " ($outside outside the maps)." : ".")
+    finally
+        foreach(close, dss)
     end
 end
 
 """
-    data_panel!(pos, ds, v, inst, other, label, names, shown)
+    record_data(ds, spec) -> NamedTuple
+
+What the figure of a record shows of one file: its instance dimension, sites, the
+variable shown (`spec["variable"]` or the first data variable), its label and other
+dimensions, the values at the sites (for a variable without other dimensions) and the
+indices of the instances drawn (at most `MAX_POINTS`).
+"""
+function record_data(ds, spec)
+    inst = only(dimnames(ds["lat"]))
+    lon, lat = Float64.(coalesce.(ds["lon"][:], NaN)), Float64.(coalesce.(ds["lat"][:], NaN))
+    var = get(spec, "variable", record_variable(ds, inst))
+    v = ds[var]
+    units = get(v.attrib, "units", "")
+    label = var * (isempty(units) || units == "1" ? "" : " ($units)")
+    other = [d for d in dimnames(v) if d != inst]
+    n = length(lon)
+    shown = n > MAX_POINTS ? round.(Int, range(1, n; length=MAX_POINTS)) : collect(1:n)
+    values = isempty(other) ? Float64.(coalesce.(v[:], NaN)) : nothing
+    return (; inst, lon, lat, names=instance_names(ds, inst), var, v, label, other, values, shown)
+end
+
+"""
+    data_panel!(pos, ds, v, inst, other, label, names, shown; title="")
 
 The data of a record next to its maps: a line per instance against time or depth (the
 other dimension of the variable), or the observations against their time; nothing for
 data at sites only.
 """
-function data_panel!(pos, ds, v, inst, other, label, names, shown)
+function data_panel!(pos, ds, v, inst, other, label, names, shown; title::AbstractString="")
     if isempty(other)
         t = time_of(ds, inst)
         t === nothing && return
         x, xlabel, rev = time_axis(ds, t)
-        ax = Axis(pos; xlabel=xlabel, ylabel=label, xreversed=rev, width=2 * PANEL_HEIGHT)
+        ax = Axis(pos; xlabel=xlabel, ylabel=label, xreversed=rev, width=2 * PANEL_HEIGHT, title=title, titlesize=10)
         y = Float64.(coalesce.(v[:], NaN))[shown]
         scatter!(ax, x[shown], y; markersize=length(shown) > 1000 ? 2 : 5, color=(:black, 0.5))
         # The bulk of the observations, without the outliers
@@ -158,7 +185,8 @@ function data_panel!(pos, ds, v, inst, other, label, names, shown)
     data = Float64.(coalesce.(dimnames(v)[1] == inst ? v[:, :] : permutedims(v[:, :]), NaN))   # (instance, d)
     labels = names === nothing ? string.(1:size(data, 1)) : names
     if d == "depth"
-        ax = Axis(pos; xlabel=label, ylabel="depth (m)", yreversed=true, width=round(Int, 1.2 * PANEL_HEIGHT))
+        ax = Axis(pos; xlabel=label, ylabel="depth (m)", yreversed=true, width=round(Int, 1.2 * PANEL_HEIGHT), title=title,
+                  titlesize=10)
         depth = Float64.(ds["depth"][:])
         for k in axes(data, 1)
             lines!(ax, data[k, :], depth; label=labels[k])
@@ -167,7 +195,7 @@ function data_panel!(pos, ds, v, inst, other, label, names, shown)
         t = time_of(ds, d)
         t === nothing && error("$label: no time on its dimension $d")
         x, xlabel, rev = time_axis(ds, t)
-        ax = Axis(pos; xlabel=xlabel, ylabel=label, xreversed=rev, width=2 * PANEL_HEIGHT)
+        ax = Axis(pos; xlabel=xlabel, ylabel=label, xreversed=rev, width=2 * PANEL_HEIGHT, title=title, titlesize=10)
         for k in axes(data, 1)
             ok = isfinite.(data[k, :])
             lines!(ax, x[ok], data[k, ok]; label=labels[k], linewidth=0.8)

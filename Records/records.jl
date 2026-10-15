@@ -1,10 +1,11 @@
 # Records (see README.md): check the prepared files of non-gridded data and copy them to
-# $FESMDATA_PRODUCTS/Records/<Dataset>/ (`julia fesmdata.jl record`).
+# $FESMDATA_PRODUCTS/Records/<Dataset>/ with their text forms (`julia fesmdata.jl record`).
 
 using NCDatasets
 
 include(joinpath(@__DIR__, "..", "shared", "provenance.jl"))
 include(joinpath(@__DIR__, "datasets.jl"))
+include(joinpath(@__DIR__, "text.jl"))
 
 "Feature types of the CF discrete sampling geometries used for records."
 const FEATURE_TYPES = ("point", "timeSeries", "profile", "timeSeriesProfile")
@@ -64,7 +65,8 @@ end
 
 Make the products of a records dataset (<Dataset>/records.toml): all, or those named in
 `args`. A prepared file that is missing is made first by the prepare.jl of its source;
-each is checked (`check_record`) and copied to `\$FESMDATA_PRODUCTS/Records/<Dataset>/`.
+each is checked (`check_record`), copied to `\$FESMDATA_PRODUCTS/Records/<Dataset>/` and
+written in its text form (`write_record_text`, unless `text = false`).
 """
 function record_dataset(dataset::AbstractString, args=String[]; overwrite::Bool=false)
     products = records_products(dataset)
@@ -74,21 +76,33 @@ function record_dataset(dataset::AbstractString, args=String[]; overwrite::Bool=
     selected = isempty(args) ? products : filter(p -> p.name in args, products)
     paths = String[]
     for p in selected
-        out = record_path(p)
-        if isfile(out) && !overwrite
-            println("$(basename(out)): exists, skipped (--overwrite to replace)")
+        outs = Dict(record_paths(p))
+        to_copy = [part for (part, _) in p.files if overwrite || !isfile(outs[part])]
+        to_text = [part for (part, _) in p.files if p.text && (part in to_copy || !isfile(text_path(outs[part])))]
+        if isempty(to_copy) && isempty(to_text)
+            println("$(product_name(p)): exists, skipped (--overwrite to replace)")
             continue
         end
-        src = prepared_file(p)
-        isfile(src) || run_prepare(p.source)
-        isfile(src) || error("$(p.source)/prepare.jl did not write $src")
-        problems = check_record(src)
-        isempty(problems) || error("$src is not a record (see Records/README.md):\n  " * join(problems, "\n  "))
-        mkpath(dirname(out))
-        cp(src, out * ".part"; force=true)
-        mv(out * ".part", out; force=true)
-        println("$(product_name(p)): $out")
-        push!(paths, out)
+        srcs = Dict(prepared_files(p))
+        any(part -> !isfile(srcs[part]), to_copy) && run_prepare(p.source)
+        for (part, _) in p.files
+            out = outs[part]
+            if part in to_copy
+                src = srcs[part]
+                isfile(src) || error("$(p.source)/prepare.jl did not write $src")
+                problems = check_record(src)
+                isempty(problems) || error("$src is not a record (see Records/README.md):\n  " * join(problems, "\n  "))
+                mkpath(dirname(out))
+                cp(src, out * ".part"; force=true)
+                mv(out * ".part", out; force=true)
+                push!(paths, out)
+                println("$(part_name(p, part)): $out")
+            end
+            if part in to_text
+                push!(paths, write_record_text(out, text_path(out)))
+                println("$(part_name(p, part)): $(text_path(out))")
+            end
+        end
     end
     return paths
 end

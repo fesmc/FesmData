@@ -4,3 +4,4 @@
 [products.SUMup2025]
 source = "SUMup_smb"
 file = "SUMup2025_SMB.nc"
+text = false                      # 2.7 million observations: too large for text

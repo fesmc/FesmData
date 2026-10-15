@@ -223,11 +223,20 @@ version of the dataset.
 A records dataset is defined by `<Dataset>/records.toml`, one table per product:
 
 ```toml
-[products.Kindler2014]            # → IceCores-Kindler2014.nc
+[products.Kindler2014]            # → IceCores-Kindler2014.nc (+ .txt)
 source = "Kindler2014"            # source folder
 file = "Kindler2014_NGRIP.nc"     # prepared file
 # figure = { variable = "acc" }   # optional: the variable of its figure on the website
+# text = false                    # optional: no text form (more than two axes, or too large)
+
+[products.Rasmussen2014]          # → IceCores-Rasmussen2014-<part>.nc (+ .txt), one per part
+source = "Rasmussen2014_GICC05"
+files = { NGRIP = "Rasmussen2014_NGRIP.nc", GRIP = "Rasmussen2014_GRIP.nc" }   # part = prepared file
 ```
+
+A product has either `file` or `files`: several files when its data do not share their
+axes (e.g. ice cores, each on its own time axis); part names have letters, digits and
+`_` only.
 
 The prepared files follow the [Records format](https://fesmc.github.io/FesmData/records.html),
 with the provenance attributes (`provenance_attrib(<tag>)` of
@@ -238,9 +247,10 @@ julia fesmdata.jl record IceCores                 # all products
 julia fesmdata.jl record IceCores Kindler2014     # one product
 ```
 
-prepares the missing sources, checks each prepared file against the form and copies it
-to `$FESMDATA_PRODUCTS/Records/<Dataset>/<Dataset>-<Product>.nc` (`--overwrite` to
-replace). A records dataset is released on the domain `Records` (one package per
+prepares the missing sources, checks each prepared file against the form, copies it
+to `$FESMDATA_PRODUCTS/Records/<Dataset>/<Dataset>-<Product>[-<part>].nc` and writes
+its [text form](https://fesmc.github.io/FesmData/records.html#text-form) next to it
+(`.txt`; `--overwrite` to replace both). A records dataset is released on the domain `Records` (one package per
 dataset, `Records_<Dataset>`, and `registry/Records/<Dataset>.toml`); `fesmdata.jl
 list`, `fetch` and `release` work as for the gridded datasets.
 

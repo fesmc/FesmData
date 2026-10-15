@@ -53,8 +53,9 @@ Your own data (see Remap/README.md):
 Records datasets, non-gridded data (maintainers, see Remap/DATASETS.md):
   record <Dataset> [<product> ...]             make the products of a records dataset
                                                (defined in <Dataset>/records.toml) as
-                                               \$FESMDATA_PRODUCTS/Records/<Dataset>/<Dataset>-<product>.nc,
-                                               preparing missing sources first (--overwrite)
+                                               \$FESMDATA_PRODUCTS/Records/<Dataset>/<Dataset>-<product>[-<part>].nc
+                                               with their text forms (.txt), preparing
+                                               missing sources first (--overwrite)
 
 Figures for the website (maintainers, see Figures/README.md):
   figures <Dataset>                            maps of the products of a dataset and its

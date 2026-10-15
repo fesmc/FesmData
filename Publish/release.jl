@@ -13,6 +13,7 @@ include(joinpath(REPO_DIR, "Topo", "files.jl"))
 include(joinpath(REPO_DIR, "Regions", "files.jl"))
 include(joinpath(REPO_DIR, "Remap", "datasets.jl"))
 include(joinpath(REPO_DIR, "Records", "datasets.jl"))
+include(joinpath(REPO_DIR, "Records", "text.jl"))
 
 "Output folders of the domains `keys`, with their crops."
 key_folders(keys) = sort(unique(og.folder for key in keys for og in Domain(key).grids))
@@ -171,7 +172,8 @@ its files by default) to its release tag, in place: the tag `<tag>-vX.Y.Z` of th
 dataset on the checked-out commit, which must have no uncommitted changes. Only the
 global attributes of the data files change: `fesmdata_version` becomes the tag, and
 `history` records the stamp and the version the file was made at; `fesmdata_commit`
-stays the commit that made it. All files must be present (`collect_files`).
+stays the commit that made it. The text forms of records (.txt) are written again from
+their stamped files. All files must be present (`collect_files`).
 """
 function stamp(dataset::AbstractString, domains=String[])
     tag = dataset_config(dataset)["tag"]
@@ -181,7 +183,9 @@ function stamp(dataset::AbstractString, domains=String[])
               "(git describe: $version); tag the release first (README.md, Release)")
     time = Dates.format(now(), dateformat"yyyy-mm-ddTHH:MM:SS")
     for domain in select_domains(dataset, domains)
-        files = filter(f -> !f.is_grid && endswith(f.path, ".nc"), collect_files(domain, dataset))
+        all_files = collect_files(domain, dataset)
+        files = filter(f -> !f.is_grid && endswith(f.path, ".nc"), all_files)
+        texts = Set(f.path for f in all_files if endswith(f.path, ".txt") && !f.is_grid)
         n = 0
         for f in files
             NCDataset(f.path, "a") do ds
@@ -192,6 +196,7 @@ function stamp(dataset::AbstractString, domains=String[])
                                        get(ds.attrib, "history", "")
                 n += 1
             end
+            text_path(f.path) in texts && write_record_text(f.path, text_path(f.path))
         end
         println("$domain/$dataset: $n of $(length(files)) files stamped $version")
     end
