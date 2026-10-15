@@ -16,13 +16,16 @@ nested: every coarse cell is made of whole base cells, and the datasets on them 
 exact conservative means of the base grid.
 
 A **crop** is a smaller region inside a domain, cut from its grids, at the same
-resolutions or some of them, e.g. Greenland, a crop of GreenlandPaleo. Its cells are
-cells of the domain grids.
+resolutions or some of them, e.g. Greenland, a crop of GreenlandPaleo. Its extent is
+that of its grid at the base resolution; at each coarser resolution its grid is the
+cells of the domain grid that overlap this extent, so adding a resolution does not
+change the others.
 
 A **nest** is a smaller domain inside a domain, on the same projection, with a finer
 base grid of its own, made from the sources like any domain, e.g. Jakobshavn (250 m) in
-GreenlandPaleo (500 m). At the resolutions it shares with its parent, its grids lie on
-those of the parent: same cell centres, so that its 500 m grid is a part of GRL-PAL-500M.
+GreenlandPaleo (500 m). At the resolutions it shares with its parent, its grids are the
+cells of the parent grids that overlap its extent, so that its 500 m grid is a part of
+GRL-PAL-500M.
 
 A domain is **active** if its products are made and released. An inactive domain is
 defined, but left out of the releases (see [Inactive domains](#inactive-domains)).

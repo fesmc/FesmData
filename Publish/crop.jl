@@ -17,12 +17,6 @@ function lattice_indices(sub::AbstractVector, axis::AbstractVector)
     return isapprox(axis[1] .+ r .* (idx .- 1), sub; atol=1e-6r) ? idx : nothing
 end
 
-"Indices on the lattice of axis `axis` (cell centres, also beyond it) of the cells that overlap the interval `edges`."
-function overlapping(axis::AbstractVector, edges)
-    r = axis[2] - axis[1]
-    return floor(Int, (edges[1] - axis[1]) / r - 0.5 + 1e-6) + 2 : ceil(Int, (edges[2] - axis[1]) / r + 0.5 - 1e-6)
-end
-
 """
     crop_grid(c, sg) -> Union{Tuple{ProjGrid,UnitRange{Int},UnitRange{Int}},String}
 
@@ -43,10 +37,7 @@ function crop_grid(c::CropRecord, sg::ProjGrid)
     _, own = folder_grids(c.folder)
     k = findfirst(og -> isapprox(spacing(og.grid)[1], r; rtol=1e-6), own)
     if k === nothing
-        base = folder_base(c.folder)
-        h = spacing(base)[1] / 2
-        ix = overlapping(sg.xc, (base.xc[1] - h, base.xc[end] + h))
-        iy = overlapping(sg.yc, (base.yc[1] - h, base.yc[end] + h))
+        ix, iy = overlap_cells(sg, folder_base(c.folder))
         (length(ix) < 2 || length(iy) < 2) && return "$(c.folder) is within less than 2 cells along x or y"
         inside(ix, iy) || return outside
         return ProjGrid(crop_grid_name(c, sg.name), sg.xc[ix], sg.yc[iy], sg.proj), ix, iy

@@ -82,56 +82,71 @@ function Domain(key::AbstractString)
     dx = res[1]
     base = ProjGrid(grid_name(key, dx), Tuple(d["xlim"]), Tuple(d["ylim"]), dx, d["proj"])
 
-    grids = OutGrid[OutGrid(d["folder"], _derived(base, r / dx, grid_name(key, r)); elevation) for r in res]
-    own = [og.grid for og in grids]
+    # A nest: its grids at the resolutions of its parent are the cells of the parent grids
+    # over its extent, the others are derived from its base grid
+    pgrids = Dict{Float64,ProjGrid}()           # by resolution, rounded (spacing of the axes)
+    if haskey(d, "parent")
+        parent = Domain(d["parent"])
+        pgrids = Dict(round(spacing(og.grid)[1]; digits=6) => og.grid for og in parent.grids if og.folder == parent.folder)
+        any(r -> haskey(pgrids, round(r; digits=6)), res) || error("nest $key shares no resolution with its parent $(parent.key)")
+    end
+    own = map(res) do r
+        pg = get(pgrids, round(r; digits=6), nothing)
+        pg === nothing ? _derived(base, r / dx, grid_name(key, r)) : cells_over(pg, base, grid_name(key, r))
+    end
+    grids = OutGrid[OutGrid(d["folder"], g; elevation) for g in own]
+    # Crops: the cells of the grids of the domain over their extent
     for (ckey, c) in get(d, "crops", Dict())
         cbase = _crop_base(base, dx, ckey, c)
         cres = Float64.(get(c, "resolutions", res))
         issubset(cres, res) || error("resolutions of crop $ckey must be resolutions of $key")
-        cgrids = [_derived(cbase, r / dx, grid_name(ckey, r)) for r in cres]
-        _check_on_parent("crop $ckey", cgrids, own, key)
-        append!(grids, [OutGrid(c["folder"], g; elevation) for g in cgrids])
+        append!(grids, [OutGrid(c["folder"], cells_over(own[findfirst(==(r), res)], cbase, grid_name(ckey, r)); elevation)
+                        for r in cres])
     end
-    haskey(d, "parent") && _check_nest(key, own, Domain(d["parent"]))
     return Domain(String(key), d["folder"], base, grids)
 end
 
-# A nest shares at least one resolution with its parent, and its grids at these
-# resolutions lie on the grids of its parent.
-function _check_nest(key, grids::Vector{ProjGrid}, parent::Domain)
-    pgrids = [og.grid for og in parent.grids if og.folder == parent.folder]
-    any(g -> any(pg -> _same_spacing(g, pg), pgrids), grids) ||
-        error("nest $key shares no resolution with its parent $(parent.key)")
-    _check_on_parent("nest $key", grids, pgrids, parent.key)
+"Indices on the lattice of axis `axis` (cell centres, also beyond it) of the cells that overlap the interval `edges`."
+function overlapping(axis::AbstractVector, edges)
+    r = axis[2] - axis[1]
+    return floor(Int, (edges[1] - axis[1]) / r - 0.5 + 1e-6) + 2 : ceil(Int, (edges[2] - axis[1]) / r + 0.5 - 1e-6)
 end
 
-_same_spacing(g::ProjGrid, pg::ProjGrid) = isapprox(spacing(pg)[1], spacing(g)[1]; rtol=1e-6)
+"""
+    overlap_cells(pg, g) -> (ix, iy)
 
-# The grids of a nest or crop (`what`) at the resolutions of the grids `pgrids` of its
-# parent domain lie on them: same cell centres, inside their extent. So the datasets of
-# the parent can be cut to them (fetch, see ../Publish/crop.jl).
-function _check_on_parent(what, grids::Vector{ProjGrid}, pgrids::Vector{ProjGrid}, parent)
-    for g in grids
-        k = findfirst(pg -> _same_spacing(g, pg), pgrids)
-        k === nothing && continue
-        pg = pgrids[k]
-        r = spacing(pg)[1]
-        on(c, pc) = isapprox((c - pc[1]) / r, round((c - pc[1]) / r); atol=1e-6) &&
-                    pc[1] - 1e-6r <= c && c <= pc[end] + 1e-6r
-        (on(g.xc[1], pg.xc) && on(g.yc[1], pg.yc) && on(g.xc[end], pg.xc) && on(g.yc[end], pg.yc)) ||
-            error("grid $(g.name) of $what is not on grid $(pg.name) of its parent $parent (cell centres): " *
-                  "move its extent to the cell centres of $(pg.name)")
-    end
-    return nothing
+Indices on the lattice of grid `pg` (also beyond it) of its cells that overlap the
+extent of grid `g` (cell edges).
+"""
+function overlap_cells(pg::ProjGrid, g::ProjGrid)
+    hx, hy = spacing(g) ./ 2
+    return overlapping(pg.xc, (g.xc[1] - hx, g.xc[end] + hx)), overlapping(pg.yc, (g.yc[1] - hy, g.yc[end] + hy))
 end
 
-"Base grid of crop `ckey` (table `c` of domains.toml): the base grid of its domain, `base` (resolution `dx`), cut to its extent."
-_crop_base(base::ProjGrid, dx, ckey, c) = crop(base, Tuple(c["xlim"]), Tuple(c["ylim"]); name=grid_name(ckey, dx))
+"""
+    cells_over(pg, g, name) -> ProjGrid
+
+The grid `name` of the cells of grid `pg` that overlap the extent of grid `g`: the grid
+of a nest or crop (extent of `g`, its base grid) at the resolution of `pg`, a grid of its
+parent domain. Its cells are those of `pg` (within it: a coarse grid of the parent may
+end short of its base grid at an edge shared with the nest or crop), and do not depend
+on the other resolutions.
+"""
+function cells_over(pg::ProjGrid, g::ProjGrid, name::AbstractString)
+    ix, iy = overlap_cells(pg, g)
+    ix, iy = intersect(ix, eachindex(pg.xc)), intersect(iy, eachindex(pg.yc))
+    length(ix) >= 2 && length(iy) >= 2 ||
+        error("grid $name has fewer than 2 cells along x or y in grid $(pg.name) (extent of $(g.name))")
+    return ProjGrid(name, pg.xc[ix], pg.yc[iy], pg.proj)
+end
 
 function _derived(g::ProjGrid, factor::Real, name::String)
     isinteger(factor) || error("resolution of $name is not a multiple of the base resolution")
     return coarsen(g, Int(factor); name=name)
 end
+
+"Base grid of crop `ckey` (table `c` of domains.toml): the base grid of its domain, `base` (resolution `dx`), cut to its extent."
+_crop_base(base::ProjGrid, dx, ckey, c) = crop(base, Tuple(c["xlim"]), Tuple(c["ylim"]); name=grid_name(ckey, dx))
 
 """
     folder_grids(folder) -> (Domain, Vector{OutGrid})
@@ -162,6 +177,28 @@ function folder_base(folder::AbstractString)
     d = read_domains()[dom.key]
     ckey, c = only((k, c) for (k, c) in get(d, "crops", Dict()) if c["folder"] == folder)
     return _crop_base(dom.base, Float64(d["resolutions"][1]), ckey, c)
+end
+
+"""
+    folder_option(args) -> (args, folder)
+
+The arguments of a pipeline step without the option `--folder=<FOLDER>`, and FOLDER, or
+`nothing` without it: the step then makes only the grids in output folder FOLDER (e.g.
+the grids added to a crop), see `in_folder`.
+"""
+function folder_option(args)
+    opts = filter(startswith("--folder="), args)
+    length(opts) <= 1 || error("--folder given more than once")
+    folder = isempty(opts) ? nothing : String(split(only(opts), "="; limit=2)[2])
+    return filter(!startswith("--folder="), args), folder
+end
+
+"The grids `grids` (of domain `dom`) in output folder `folder`, or all of them if `nothing`."
+function in_folder(grids::AbstractVector{OutGrid}, folder, dom::Domain)
+    folder === nothing && return grids
+    sel = filter(og -> og.folder == folder, grids)
+    isempty(sel) && error("no grids of $(dom.key) in folder $folder")
+    return sel
 end
 
 "Output folders of all domains and crops (also inactive), i.e. the names of the domains in published records."
