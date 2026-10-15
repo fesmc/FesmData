@@ -92,6 +92,8 @@ function plot_record(path::AbstractString, files::Vector{Pair{String,String}}, s
     end
     dss = [NCDataset(file) for (_, file) in files]
     try
+        haskey(spec, "variable") && !any(ds -> haskey(ds, spec["variable"]), dss) &&
+            error("$(first(files)[2]): no file of the product has the variable $(spec["variable"]) of its figure")
         recs = [record_data(ds, spec) for ds in dss]
         lon, lat = reduce(vcat, (r.lon[r.shown] for r in recs)), reduce(vcat, (r.lat[r.shown] for r in recs))
         names = all(r -> r.names !== nothing, recs) ? reduce(vcat, (r.names[r.shown] for r in recs)) : nothing
@@ -145,14 +147,14 @@ end
     record_data(ds, spec) -> NamedTuple
 
 What the figure of a record shows of one file: its instance dimension, sites, the
-variable shown (`spec["variable"]` or the first data variable), its label and other
+variable shown (`spec["variable"]` if the file has it, else the first data variable), its label and other
 dimensions, the values at the sites (for a variable without other dimensions) and the
 indices of the instances drawn (at most `MAX_POINTS`).
 """
 function record_data(ds, spec)
     inst = only(dimnames(ds["lat"]))
     lon, lat = Float64.(coalesce.(ds["lon"][:], NaN)), Float64.(coalesce.(ds["lat"][:], NaN))
-    var = get(spec, "variable", record_variable(ds, inst))
+    var = haskey(spec, "variable") && haskey(ds, spec["variable"]) ? spec["variable"] : record_variable(ds, inst)
     v = ds[var]
     units = get(v.attrib, "units", "")
     label = var * (isempty(units) || units == "1" ? "" : " ($units)")
