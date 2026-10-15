@@ -90,6 +90,8 @@ website:
           - text: "---"
           - text: "IceCores — ice core records"
             href: datasets/icecores.qmd
+          - text: "GHG — greenhouse gases"
+            href: datasets/ghg.qmd
           - text: "RSL — relative sea level"
             href: datasets/rsl.qmd
           - text: "Boreholes — ice temperature profiles"

@@ -1,0 +1,18 @@
+# Products of the records dataset GHG (see ../Records/README.md):
+# $FESMDATA_PRODUCTS/Records/GHG/GHG-<product>.nc
+
+[products.Bereiter2015]
+source = "Bereiter2015_CO2"
+file = "Bereiter2015_CO2.nc"
+
+[products.Loulergue2008]
+source = "Loulergue2008_CH4"
+file = "Loulergue2008_CH4.nc"
+
+[products.Schilt2010]
+source = "Schilt2010_N2O"
+file = "Schilt2010_N2O.nc"
+
+[products.Koehler2017]
+source = "Koehler2017_GHG"
+file = "Koehler2017_GHG.nc"

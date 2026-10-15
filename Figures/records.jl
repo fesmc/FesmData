@@ -79,9 +79,10 @@ end
     plot_record(path, files, spec) -> String
 
 The figure of a record product of one or more files (part => path): maps of the sites of
-all its files (coloured by the variable shown, for data without a time or depth axis)
-and a panel of the data of each file, one under the other: series (`timeSeries`),
-profiles (`profile`) or observations through time. Returns its caption.
+all its files (coloured by the variable shown, for data without a time or depth axis;
+none for series of regions without a location) and a panel of the data of each file,
+one under the other: series (`timeSeries`), profiles (`profile`) or observations through
+time. Returns its caption.
 """
 function plot_record(path::AbstractString, files::Vector{Pair{String,String}}, spec::AbstractDict)
     unknown = setdiff(keys(spec), RECORD_FIGURE_KEYS)
@@ -101,7 +102,9 @@ function plot_record(path::AbstractString, files::Vector{Pair{String,String}}, s
         nrows = length(recs)
 
         fig = Figure(; fontsize=10, figure_padding=6)
-        panels, outside = map_panels(lon, lat)
+        # Series of regions without a location (e.g. global means) have no maps
+        located = any(isfinite, lat)
+        panels, outside = located ? map_panels(lon, lat) : (Tuple{OutGrid,Vector{Int}}[], 0)
         sc = nothing
         for (j, (og, i)) in enumerate(panels)
             ax = map_axis(fig[1:nrows, j], og; title=og.grid.name)
@@ -117,11 +120,12 @@ function plot_record(path::AbstractString, files::Vector{Pair{String,String}}, s
             end
             colsize!(fig.layout, j, Fixed(round(Int, PANEL_HEIGHT * map_aspect(og.grid))))
         end
-        isempty(panels) && error("$(first(files)[2]): no sites within the domains $(join(RECORD_MAP_DOMAINS, ", "))")
+        located && isempty(panels) && error("$(first(files)[2]): no sites within the domains $(join(RECORD_MAP_DOMAINS, ", "))")
         values === nothing || Colorbar(fig[1:nrows, length(panels)+1], sc; label=recs[1].label, ticklabelsize=9,
                                        labelsize=10, width=10)
         for (k, (r, ds, (part, _))) in enumerate(zip(recs, dss, files))
-            data_panel!(fig[k, length(panels)+2], ds, r.v, r.inst, r.other, r.label, r.names, r.shown; title=part)
+            data_panel!(fig[k, located ? length(panels) + 2 : 1], ds, r.v, r.inst, r.other, r.label, r.names, r.shown;
+                        title=part)
         end
         height = nrows == 1 ? PANEL_HEIGHT : round(Int, 0.6 * PANEL_HEIGHT)
         foreach(k -> rowsize!(fig.layout, k, Fixed(height)), 1:nrows)

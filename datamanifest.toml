@@ -1514,6 +1514,54 @@ storage_path = "$datasets_dir/buizert2018_cores/buizert2018cores.txt"
 uri = "https://www.ncei.noaa.gov/pub/data/paleo/reconstructions/buizert2018/buizert2018cores.txt"
 
 # ---------------------------------------------------------------------------
+# Greenhouse gases (GHG/)
+# ---------------------------------------------------------------------------
+
+# Bereiter et al. (2015): revised Antarctic ice core CO2 composite, 800 kyr (NOAA NCEI,
+# template text; the per-core files and the xls with core and depth are in the same
+# folder, not used).
+
+[bereiter2015_co2]
+doi = "10.25921/n8y4-bp27"
+storage_path = "$datasets_dir/bereiter2015_co2/antarctica2015co2composite-noaa.txt"
+uri = "https://www.ncei.noaa.gov/pub/data/paleo/icecore/antarctica/antarctica2015co2composite-noaa.txt"
+
+# Loulergue et al. (2008): EPICA Dome C CH4, 800 kyr, EDC3 gas age (NOAA NCEI, template
+# text).
+
+[loulergue2008_ch4]
+doi = "10.25921/gfsj-jc86"
+storage_path = "$datasets_dir/loulergue2008_ch4/edc-ch4-2008-noaa.txt"
+uri = "https://www.ncei.noaa.gov/pub/data/paleo/icecore/antarctica/epica_domec/edc-ch4-2008-noaa.txt"
+
+# Schilt et al. (2010): EPICA Dome C N2O, 800 kyr, EDC3 gas age (NOAA NCEI, free text;
+# no dataset DOI, the DOI is of the article).
+
+[schilt2010_n2o]
+doi = "10.1016/j.quascirev.2009.03.011"
+storage_path = "$datasets_dir/schilt2010_n2o/edc-n2o-2010-800k.txt"
+uri = "https://www.ncei.noaa.gov/pub/data/paleo/icecore/antarctica/epica_domec/edc-n2o-2010-800k.txt"
+
+# Köhler et al. (2017): spline-smoothed CO2, CH4 and N2O and their radiative forcing,
+# every year to 156 ka (version 2 of 2017-06-08, PANGAEA, CC BY 3.0; part of
+# doi:10.1594/PANGAEA.871273).
+
+[koehler2017_co2]
+doi = "10.1594/PANGAEA.876013"
+storage_path = "$datasets_dir/koehler2017_ghg/CO2_spline_v2.tab"
+uri = "https://doi.pangaea.de/10.1594/PANGAEA.876013?format=textfile"
+
+[koehler2017_ch4]
+doi = "10.1594/PANGAEA.876009"
+storage_path = "$datasets_dir/koehler2017_ghg/CH4_spline_v2.tab"
+uri = "https://doi.pangaea.de/10.1594/PANGAEA.876009?format=textfile"
+
+[koehler2017_n2o]
+doi = "10.1594/PANGAEA.876014"
+storage_path = "$datasets_dir/koehler2017_ghg/N2O_spline_v2.tab"
+uri = "https://doi.pangaea.de/10.1594/PANGAEA.876014?format=textfile"
+
+# ---------------------------------------------------------------------------
 # Relative sea level (RSL/)
 # ---------------------------------------------------------------------------
 

@@ -38,6 +38,9 @@ chapter 9), so that every file is read the same way:
 
 - Sites (`station` dimension): `lat`, `lon` (degrees), `site_name` (string), and
   `z_srf` (m) where known; a region instead of a site gets a `region` variable.
+  Series of a region without a location (a global mean, a composite of several cores,
+  a stack) have the dimension `region` with `region_name` (e.g. `"global"`), and
+  `lat`, `lon` missing.
 - Time: paleo series use `time` in **years ago** (positive, before 1950 CE; units
   `"years ago"`); modern series a CF time axis (`days since ...`, mid-interval
   values with `time_bnds`).

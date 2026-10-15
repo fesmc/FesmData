@@ -1,0 +1,9 @@
+---
+pagetitle: "GHG"
+---
+
+{{< include ../../GHG/README.md >}}
+
+{{< include ../_downloads/GHG.md >}}
+
+{{< include ../figures/GHG/gallery.md >}}

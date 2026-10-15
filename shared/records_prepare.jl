@@ -159,7 +159,11 @@ years_ago_b2k(age) = nan64(age) .- B2K_TO_BP
 # Time series at sites
 # ---------------------------------------------------------------------------
 
-"A site of a record: name, location (degrees) and, if known, surface elevation (m)."
+"""
+A site of a record: name, location (degrees) and, if known, surface elevation (m). A
+series without a site (a composite or global mean) is a region, without a location
+(`Region(name)`, written with `instance = "region"`).
+"""
 struct Site
     name::String
     lat::Float64
@@ -167,6 +171,7 @@ struct Site
     z_srf::Union{Nothing,Float64}
 end
 Site(name, lat, lon; z_srf=nothing) = Site(name, lat, lon, z_srf)
+Region(name) = Site(name, NaN, NaN, nothing)
 
 """
     Var(name, data, units, long_name; T=Float32, attrib=Pair{String,String}[])
@@ -188,6 +193,9 @@ Var(name, data, units, long_name; T::Type=Float32, attrib=Pair{String,String}[])
 
 _values(T, data) = T[ismissing(x) || (x isa AbstractFloat && isnan(x)) ? T(NaN) : T(x) for x in data]
 
+"Fill value of a variable of type T: NaN for floats, none for integers (which must not be missing)."
+_fill(T) = T <: AbstractFloat ? T(NaN) : nothing
+
 """
     write_series(path; sites, time, vars, axis_vars=Var[], axis="time", time_comment,
                  time_bnds=nothing, title, references, doi, license, tag)
@@ -196,28 +204,38 @@ Write a record of time series at `sites` on a common axis (`axis`, \"time\" or, 
 ages repeat or are not sorted, \"sample\"): `time` (years ago, before 1950 CE, with
 `time_comment` on its time scale, no missing values) and `time_bnds` (2 x n, optional) on the axis; the
 `axis_vars` (other time scales, counting errors) on the axis; the `vars` on the axis and
-the sites (`site_name` described as `site_long_name`). The global attributes are the CF
-and provenance attributes of `tag`.
+the sites (`site_name` described as `site_long_name`). With `instance = "region"`, the
+series are of regions (`Region(name)`, e.g. a global mean or a composite of cores):
+dimension `region`, `region_name`, and `lat`, `lon` missing. The global attributes are
+the CF and provenance attributes of `tag`.
 """
 function write_series(path::AbstractString; sites::Vector{Site}, time::AbstractVector, vars::Vector{Var},
                       axis_vars::Vector{Var}=Var[], axis::AbstractString="time", time_comment::AbstractString,
                       time_bnds=nothing, title::AbstractString, references::AbstractString,
                       doi::AbstractString, license::AbstractString, tag::AbstractString,
-                      site_long_name::AbstractString="ice core site")
+                      site_long_name::AbstractString="ice core site", instance::AbstractString="station")
     nt, ns = length(time), length(sites)
+    instance in ("station", "region") || error("instance must be station or region")
     axis == "time" && any(<=(0), diff(nan64(time))) &&
         error("$path: time is not increasing, use axis = \"sample\"")
     mkpath(dirname(path))
     rm(path; force=true)
     NCDataset(path, "c") do ds
-        defDim(ds, "station", ns)
-        defDim(ds, axis, nt)
-        defVar(ds, "site_name", [s.name for s in sites], ("station",);
-               attrib=["long_name" => site_long_name, "cf_role" => "timeseries_id"])
-        defVar(ds, "lat", [s.lat for s in sites], ("station",); attrib=["units" => "degrees_north", "standard_name" => "latitude"])
-        defVar(ds, "lon", [s.lon for s in sites], ("station",); attrib=["units" => "degrees_east", "standard_name" => "longitude"])
+        defDim(ds, instance, ns)
+        if instance == "station"
+            defVar(ds, "site_name", [s.name for s in sites], (instance,);
+                   attrib=["long_name" => site_long_name, "cf_role" => "timeseries_id"])
+        else
+            defVar(ds, "region_name", [s.name for s in sites], (instance,);
+                   attrib=["long_name" => "region of the series", "cf_role" => "timeseries_id"])
+        end
+        geo(name, units) = ["units" => units, "standard_name" => name,
+                            (instance == "region" ? ["comment" => "missing: the series is of a region, not a site"] : [])...]
+        fill = instance == "region" ? NaN : nothing
+        defVar(ds, "lat", [s.lat for s in sites], (instance,); fillvalue=fill, attrib=geo("latitude", "degrees_north"))
+        defVar(ds, "lon", [s.lon for s in sites], (instance,); fillvalue=fill, attrib=geo("longitude", "degrees_east"))
         if all(s -> s.z_srf !== nothing, sites)
-            defVar(ds, "z_srf", [s.z_srf for s in sites], ("station",);
+            defVar(ds, "z_srf", [s.z_srf for s in sites], (instance,);
                    attrib=["units" => "m", "long_name" => "present surface elevation of the site"])
         end
         tattrib = ["units" => "years ago", "long_name" => "time (years before 1950 CE)", "comment" => time_comment]
@@ -231,13 +249,13 @@ function write_series(path::AbstractString; sites::Vector{Site}, time::AbstractV
         end
         for v in axis_vars
             length(v.data) == nt || error("$path: $(v.name) has $(length(v.data)) values, the axis $nt")
-            defVar(ds, v.name, _values(v.T, v.data), (axis,); fillvalue=v.T(NaN), deflatelevel=1,
+            defVar(ds, v.name, _values(v.T, v.data), (axis,); fillvalue=_fill(v.T), deflatelevel=1,
                    attrib=["units" => v.units, "long_name" => v.long_name, v.attrib...])
         end
         for v in vars
             data = v.data isa AbstractVector ? reshape(v.data, :, 1) : v.data
-            size(data) == (nt, ns) || error("$path: $(v.name) is $(size(data)), not $axis x station ($nt x $ns)")
-            defVar(ds, v.name, _values(v.T, data), (axis, "station"); fillvalue=v.T(NaN), deflatelevel=1,
+            size(data) == (nt, ns) || error("$path: $(v.name) is $(size(data)), not $axis x $instance ($nt x $ns)")
+            defVar(ds, v.name, _values(v.T, data), (axis, instance); fillvalue=_fill(v.T), deflatelevel=1,
                    attrib=["units" => v.units, "long_name" => v.long_name, "coordinates" => "time lat lon", v.attrib...])
         end
         ds.attrib["title"] = title

@@ -44,6 +44,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | geo      | Baranov2021_sed             | Antarctic sediment thickness, ANTASed            | Baranov et al. (2021)          |
 | paleo    | Batchelor2019_NHIceMasks    | Northern Hemisphere ice extents, 18 time slices  | Batchelor et al. (2019)        |
 | paleo    | Batchelor2019_PaleoMIST_lgc | Global ice extents of the last glacial cycle (Batchelor north, PaleoMIST south) | Batchelor et al. (2019), Gowan et al. (2021) |
+| paleo    | Bereiter2015_CO2            | Antarctic ice core CO2 composite, 800 kyr        | Bereiter et al. (2015)         |
 | paleo    | Bouchet2023_AICC2023        | AICC2023 ice core chronology (EDC, EDML, NGRIP, TALDICE, Vostok) | Bouchet et al. (2023)          |
 | paleo    | Buizert2018                 | Greenland seasonal temperatures, 22 ka to present | Buizert et al. (2018)         |
 | paleo    | Buizert2018_cores           | Seasonal temperatures at Greenland ice core sites, 22 ka | Buizert et al. (2018)          |
@@ -70,6 +71,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | ocean    | Jourdain2020_ismip6         | ISMIP6 Antarctic ocean climatology (deprecated, see Zhou2026_ismip7ocean) | Jourdain et al. (2020) |
 | paleo    | Jouzel2007_EDC              | EPICA Dome C deuterium and temperature, 800 kyr  | Jouzel et al. (2007)           |
 | paleo    | Kindler2014                 | NGRIP temperature reconstruction, 10-120 kyr b2k | Kindler et al. (2014)          |
+| paleo    | Koehler2017_GHG             | CO2, CH4, N2O splines and radiative forcing, 156 kyr | Köhler et al. (2017)           |
 | paleo    | Lambert2012_EDCdust         | EPICA Dome C dust flux, 800 kyr                  | Lambert et al. (2012)          |
 | geo      | Laske2013_crust1            | Sediment thickness of CRUST1.0                   | Laske et al. (2013)            |
 | paleo    | Leger2024_PaleoGris         | Retreat chronology of the Greenland Ice Sheet    | Leger et al. (2024)            |
@@ -77,6 +79,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | climate  | Loeb2018_ceres              | CERES EBAF Ed4.2.1 radiative fluxes              | Loeb et al. (2018)             |
 | geo      | Loesing2021_ghf             | Geothermal heat flow of Antarctica               | Lösing & Ebbing (2021)         |
 | ice      | Lokkegaard2023_temp_profile | Greenland and Canadian Arctic ice temperature profiles | Løkkegaard et al. (2023) |
+| paleo    | Loulergue2008_CH4           | EPICA Dome C methane, 800 kyr                    | Loulergue et al. (2008)        |
 | geo      | Lucazeau2019_ghf            | Global geothermal heat flow                      | Lucazeau (2019)                |
 | ice      | MacGregor2025_strat         | Radiostratigraphy and age structure of the Greenland Ice Sheet | MacGregor et al. (2025) |
 | ice      | Margold2015_icestreams      | Ice stream outlines                              | Margold et al. (2015)          |
@@ -97,6 +100,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | ocean    | Rignot2013_bmelt            | Basal melt rates of Antarctic ice shelves        | Rignot et al. (2013)           |
 | paleo    | RSL_GrIS                    | Relative sea level reconstructions in Greenland  | Multiple                       |
 | topo     | RTOPO2                      | RTopo2 global topography data                    | Schaffer et al. (2016)         |
+| paleo    | Schilt2010_N2O              | EPICA Dome C nitrous oxide, 800 kyr              | Schilt et al. (2010)           |
 | masks    | Schmidt2025_fwf             | Freshwater flux series of the ice sheets by region | Schmidt et al. (2025)        |
 | ocean    | Schmidtko2014_ocean         | Antarctic shelf bottom water                     | Schmidtko et al. (2014)        |
 | geo      | Schumacher2018_gps          | GPS vertical velocities (GIA uplift rates), global | Schumacher et al. (2018)     |
