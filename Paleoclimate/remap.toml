@@ -370,11 +370,11 @@ source = "Montoya2008_climber3a"
 file = "CLIMBER3a_lgm_1p7weak_ocean.nc"
 mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 32, GreenlandPaleo = 32, North = 32, Global = 100 }   # source at 3.75°
-figure = { select = { depth = 400 } }
+figure = { variables = ["to"], select = { depth = 400 } }
 
 [products.CLIMBER3a-lgm_1p7strong-ocean]
 source = "Montoya2008_climber3a"
 file = "CLIMBER3a_lgm_1p7strong_ocean.nc"
 mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 32, GreenlandPaleo = 32, North = 32, Global = 100 }   # source at 3.75°
-figure = { select = { depth = 400 } }
+figure = { variables = ["to"], select = { depth = 400 } }
