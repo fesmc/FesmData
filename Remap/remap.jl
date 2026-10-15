@@ -54,7 +54,7 @@ struct Prepared
     vectors::Vector{Tuple{String,String}}   # (eastward, northward) components
     varattrib::Dict{String,Vector{Pair{String,Any}}}
     attrib::Vector{Pair{String,String}}
-    aux::Vector{AuxVar}                     # variables on extra dimensions only (e.g. labels)
+    aux::Vector{AuxVar}                     # variables off the grid (e.g. labels, time series)
     regional::Vector{RegionField}           # fields given by region
 end
 
@@ -217,7 +217,7 @@ function read_prepared(path::AbstractString; vars=nothing)
         attrib = [k => string(ds.attrib[k]) for k in COPIED_ATTRIB if haskey(ds.attrib, k)]
         regional = [_region_field(ds, name) for name in filter(in(byregion), chosen)]
         return Prepared(abspath(path), grid, fields, dims, _vectors(path, fields, dims, varattrib), varattrib, attrib,
-                        _aux(ds, dims), regional)
+                        _aux(ds, (xdim, ydim)), regional)
     end
 end
 
@@ -232,16 +232,20 @@ function _region_field(ds, name)
                        [k => v.attrib[k] for k in COPIED_VARATTRIB if haskey(v.attrib, k)])
 end
 
-# Variables on extra dimensions of the fields only (e.g. label(time)), other than the
-# coordinate and bounds variables of these dimensions, copied as they are.
-function _aux(ds, dims)
-    extra = Set(d.name for ds_ in values(dims) for d in ds_)
+# Variables off the grid (on none of the grid dimensions `griddims`), copied as they are
+# with their dimensions: on extra dimensions of the fields (e.g. label(time)) or on
+# dimensions of their own (e.g. an annual time series next to fields every 10 years, a
+# section of the overturning streamfunction), other than coordinate and bounds
+# variables, scalars (e.g. a grid mapping) and the fields given by region.
+function _aux(ds, griddims)
     bounds = Set(v.attrib["bounds"] for (_, v) in ds if haskey(v.attrib, "bounds"))
     aux = AuxVar[]
     for (name, v) in ds
         dn = collect(dimnames(v))
-        (isempty(dn) || !issubset(dn, extra) || dn == [name] || name in bounds) && continue
-        push!(aux, AuxVar(name, Array(v.var), dn, Pair{String,Any}[k => v.attrib[k] for k in keys(v.attrib)]))
+        (isempty(dn) || any(in(griddims), dn) || dn == [name] || name in bounds ||
+         haskey(v.attrib, "regions")) && continue
+        push!(aux, AuxVar(name, Array(v.var), [_dim(ds, d) for d in dn],
+                          Pair{String,Any}[k => v.attrib[k] for k in keys(v.attrib)]))
     end
     return aux
 end
@@ -1173,7 +1177,7 @@ end
 
 The output file of a member of an ensemble product on a grid: its float fields (size
 `(nx, ny, extra...)`, NaN as missing), their extra dimensions and attributes, the
-variables on the extra dimensions only, and the global attributes copied from the
+variables off the grid, and the global attributes copied from the
 prepared files (but the title).
 """
 struct MemberFile
@@ -1210,7 +1214,7 @@ function read_member(path::AbstractString, og::OutGrid)
         end
         isempty(fields) && error("$path: no float fields on $(og.grid.name)")
         attrib = [k => string(ds.attrib[k]) for k in COPIED_ATTRIB if haskey(ds.attrib, k) && k != "title"]
-        return MemberFile(path, fields, dims, varattrib, _aux(ds, dims), attrib)
+        return MemberFile(path, fields, dims, varattrib, _aux(ds, gdims), attrib)
     end
 end
 

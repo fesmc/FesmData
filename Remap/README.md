@@ -46,7 +46,10 @@ A prepared file is a NetCDF file with:
 - **fields** on that grid, each with `units` and `long_name`, and missing values
   as `_FillValue` or NaN. A field may have more dimensions than the grid (e.g.
   `month`, `time`, `depth`), each with a 1D coordinate variable; they are kept as they
-  are, with the variables on these dimensions only (e.g. `label(time)`). Integer fields (e.g. masks, classes) stay integer, with `flag_values` and
+  are. Variables off the grid are copied as they are, with their dimensions: on these
+  dimensions (e.g. `label(time)`) or on dimensions of their own (e.g. an annual time
+  series next to fields every 10 years, a section of the overturning streamfunction).
+  Integer fields (e.g. masks, classes) stay integer, with `flag_values` and
   `flag_meanings` if they are classes. Vectors are given by their eastward and
   northward components, marked by the standard names `eastward_<name>` and
   `northward_<name>` (e.g. `eastward_land_ice_surface_velocity`), never by their
