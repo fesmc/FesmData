@@ -56,6 +56,9 @@ Entries of `../datamanifest.toml`, downloaded by `prepare.jl` (no login):
   but the base of the floating ice under ice shelves; `ICEM`, ice fraction) and
   `GLAC1DHiceF26.nc` (57 MB, 0.5° x 0.25°; `HGLOBH`, ice thickness).
 
+`HGLOBH` has thin ice (up to about 85 m) over Siberia and Alaska, about the same at
+all times (e.g. 21 ka and 0 ka), where `ICEM` is 0; it is kept as it is.
+
 The PMIP4 page also has `TopoIcem-140-122k.nc`, which is not GLAC-1D but a sample of the
 penultimate deglaciation (GLAC2-1E / Abe-Ouchi), and is not used.
 
