@@ -54,6 +54,14 @@
 
 ![Topo of CordilleraDarwin on CDI-250M: z_bed, H_ice.](../figures/Topo/Topo-CordilleraDarwin.png){width=503px}
 
+### MonteSarmiento
+
+![Topo of MonteSarmiento on SAR-50M: z_bed, H_ice.](../figures/Topo/Topo-MonteSarmiento.png){width=666px}
+
+### SchiaparelliGlacier
+
+![Topo of SchiaparelliGlacier on SCH-25M: z_bed, H_ice.](../figures/Topo/Topo-SchiaparelliGlacier.png){width=350px}
+
 ### Himalaya
 
 ![Topo of Himalaya on HIM-2KM: z_bed, H_ice.](../figures/Topo/Topo-Himalaya.png){width=554px}
