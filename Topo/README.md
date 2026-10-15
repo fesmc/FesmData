@@ -76,12 +76,16 @@ Each source is remapped onto the base grid as `z_bed`, `z_srf`, `H_ice`, `z_bed_
 exactly; GEBCO, and projected sources on another projection (the Drang Drung data), are
 sampled at about half their resolution within each cell.
 
-Land sources (the Copernicus DEMs GLO-90 and GLO-30) give only the elevation of the land, as
-1-degree lon-lat tiles. Each tile overlapping the base grid is sampled within the base
-cells it covers, at about half its latitude spacing, and the file has `z_land` and
-`z_land_sd` (mean and standard deviation of the land elevation), `f_land` (land
-fraction; elevations at or below 0 m are ocean) and `f_valid` (fraction covered by the
-tiles).
+Land sources (the Copernicus DEMs GLO-90 and GLO-30) give only the elevation of the
+land, as 1-degree lon-lat tiles. Each tile overlapping the base grid is remapped
+exactly conservatively onto the base cells it covers: every pixel, a quadrilateral on
+the projection of the domain, is weighted by its area in each cell, so the fields are
+not aliased also on cells smaller than the pixels (sampling gave stripes in `z_bed_sd`
+on the 25-50 m grids). The file has `z_land` and `z_land_sd` (mean and standard
+deviation of the land elevation, from the pixels in the cell), `f_land` (land fraction;
+elevations at or below 0 m are ocean) and `f_valid` (fraction covered by the tiles).
+On cells smaller than about two pixels, `z_land_sd` reflects the steps between pixels
+rather than the roughness of the land.
 
 Thickness sources (IceBoost) give only glacier ice thickness, as one tile per
 glacier on its own projection (UTM). Each tile is sampled at about half its

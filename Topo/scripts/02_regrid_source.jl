@@ -175,13 +175,14 @@ end
 """
     regrid_dem_tile(path, ix, iy) -> (sz, sz2, f_land, f_valid)
 
-Sums of the DEM tile `path` on the base cells `ix`, `iy` covering it: land elevation and
-its square times the land fraction, land fraction, and coverage.
+Sums of the DEM tile `path` on the base cells `ix`, `iy` covering it, from the area of
+each DEM pixel in each cell (exact conservative remapping): land elevation and its
+square times the land fraction, land fraction, and coverage.
 """
 function regrid_dem_tile(path, ix, iy)
     g, z = read_dem_tile(path)
     sub = ProjGrid("sub", base.xc[ix], base.yc[iy], base.proj)
-    m = SampledMap(sub, g, max(1, ceil(Int, 2 * spacing(base)[1] / (g.dlat * 111.195))))
+    m = ConservativeMap(sub, g)
     land = map(v -> v > 0 ? Float64(v) : NaN, z)
     zl, fl = remap(m, land)
     z2, _ = remap(m, land .^ 2)
@@ -196,9 +197,10 @@ end
 
 Mean and standard deviation of the land elevation (`z_land`, `z_land_sd`, NaN where
 there is no land), land fraction `f_land` and tile coverage `f_valid` on the base grid.
-Only the tiles overlapping the base grid are read (threaded). Each is remapped onto
-the base cells covering it, with samples spaced at most half the tile spacing in
-latitude; elevations at or below 0 m are ocean. The tiles are summed in order, so
+Only the tiles overlapping the base grid are read (threaded). Each is remapped
+conservatively onto the base cells covering it, every pixel weighted by its area in
+each cell (also on cells smaller than the pixels, without aliasing); elevations at or
+below 0 m are ocean. The tiles are summed in order, so
 cells on the edges between tiles combine them.
 """
 function regrid(src::DEMTiles)

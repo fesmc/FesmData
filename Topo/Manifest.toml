@@ -491,7 +491,7 @@ version = "0.3.1"
 
 [[deps.FesmUtils]]
 deps = ["NCDatasets", "Proj", "SparseArrays"]
-git-tree-sha1 = "69b929808e6c310bc01f1587b717a71e8aed3380"
+git-tree-sha1 = "dcee9dc7da6d6055b569e2b9511ab12ccd3dd02f"
 repo-rev = "main"
 repo-url = "https://github.com/fesmc/FesmUtils.jl"
 uuid = "87fa8290-809d-4b2a-a2bb-fb70d9529671"
