@@ -24,6 +24,8 @@ Find and download:
                                                (authors, references), variables or domains
                                                contain all terms (ignoring case), with
                                                their sources and domains
+  cite <Dataset> [<product> ...]               where the references of the products are:
+                                               the READMEs of their sources and dataset
   fetch <Dataset> <Domain> | <GRID> ...        download into \$FESMDATA_PRODUCTS/<Domain>/<GRID>/
                                                and verify; files of earlier releases are
                                                updated (--overwrite: also replace files
@@ -149,6 +151,9 @@ function main(argv)
         isempty(rest) && usage("search: give a term")
         include(joinpath(PUBLISH_DIR, "discover.jl"))
         call(:search, rest; sandbox=sandbox)
+    elseif command == "cite"
+        include(joinpath(PUBLISH_DIR, "discover.jl"))
+        call(:cite, rest; sandbox=sandbox)
     elseif command == "fetch"
         include(joinpath(PUBLISH_DIR, "catalog.jl"))
         dir = get(valued, "dir", nothing)

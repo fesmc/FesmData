@@ -195,7 +195,14 @@ FesmData), shown on the [Products](products.qmd) page and by `list`. Every file 
 how it was made in its global attributes (`fesmdata_version`, `fesmdata_commit`,
 `history`), and the sources it was made from. Please cite the original datasets (see the
 page of each dataset), and the DOI of the release where there is one (releases can be
-archived on [Zenodo](https://zenodo.org/communities/fesmc)).
+archived on [Zenodo](https://zenodo.org/communities/fesmc)). `cite` shows where the
+references of products are: the README of each source (references and licence), the
+README of the dataset, and the DOIs of the releases:
+
+```bash
+julia fesmdata.jl cite Paleoclimate CLIMBER3a-present   # one product (or several)
+julia fesmdata.jl cite GHF                              # all products of a dataset
+```
 
 ## Single files {#single-files}
 
