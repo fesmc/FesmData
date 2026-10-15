@@ -1,0 +1,7 @@
+# Products of the records dataset Orbital (see ../Records/README.md):
+# $FESMDATA_PRODUCTS/Records/Orbital/Orbital-<product>.nc
+
+[products.La2004]
+source = "Laskar2004_orbital"
+file = "Laskar2004_orbital.nc"
+figure = { variable = "insol_65n_jun21" }

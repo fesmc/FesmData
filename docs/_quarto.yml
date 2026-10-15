@@ -96,6 +96,8 @@ website:
             href: datasets/sealevel.qmd
           - text: "Stacks — benthic δ18O stacks"
             href: datasets/stacks.qmd
+          - text: "Orbital — orbital elements and insolation"
+            href: datasets/orbital.qmd
           - text: "RSL — relative sea level"
             href: datasets/rsl.qmd
           - text: "Boreholes — ice temperature profiles"

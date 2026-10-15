@@ -79,6 +79,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | paleo    | Kindler2014                 | NGRIP temperature reconstruction, 10-120 kyr b2k | Kindler et al. (2014)          |
 | paleo    | Koehler2017_GHG             | CO2, CH4, N2O splines and radiative forcing, 156 kyr | Köhler et al. (2017)           |
 | paleo    | Lambert2012_EDCdust         | EPICA Dome C dust flux, 800 kyr                  | Lambert et al. (2012)          |
+| paleo    | Laskar2004_orbital          | Orbital elements (La2004) and insolation, 5 Ma to +1 Ma | Laskar et al. (2004)           |
 | geo      | Laske2013_crust1            | Sediment thickness of CRUST1.0                   | Laske et al. (2013)            |
 | paleo    | Leger2024_PaleoGris         | Retreat chronology of the Greenland Ice Sheet    | Leger et al. (2024)            |
 | paleo    | Lisiecki2005_LR04           | LR04 benthic d18O stack, 5.3 Myr                 | Lisiecki and Raymo (2005)      |

@@ -1513,6 +1513,25 @@ doi = "10.25921/psvs-yg80"
 storage_path = "$datasets_dir/buizert2018_cores/buizert2018cores.txt"
 uri = "https://www.ncei.noaa.gov/pub/data/paleo/reconstructions/buizert2018/buizert2018cores.txt"
 
+# WAIS Divide Project Members (2015): WAIS Divide d18O, 68 kyr, WD2014, full data set of
+# E. Steig on USAP-DC (CC BY-NC 4.0). The download is behind a captcha: download it by
+# hand from the landing page (the zip has this file and a file of 100-year means).
+
+[wais2015_wdc]
+doi = "10.7265/N5GT5K41"
+skip_download = true
+storage_path = "$datasets_dir/wais2015_wdc/Steig_WAIS_Divide_Ice_Core_WDC06A_Oxygen_Isotopes.txt"
+uri = "https://www.usap-dc.org/view/dataset/609629"
+
+# Bouchet et al. (2023): tie points of WAIS Divide and EDC with their ages on WD2014,
+# AICC2012 and AICC2023 (PANGAEA, version 2, CC BY 4.0), for the AICC2023 ages of WAIS
+# Divide.
+
+[aicc2023_wdc_ties]
+doi = "10.1594/PANGAEA.990386"
+storage_path = "$datasets_dir/aicc2023/AICC2023_WDC_EDC_ties.tab"
+uri = "https://doi.pangaea.de/10.1594/PANGAEA.990386?format=textfile"
+
 # ---------------------------------------------------------------------------
 # Greenhouse gases (GHG/)
 # ---------------------------------------------------------------------------
@@ -1621,6 +1640,16 @@ doi = "10.1038/ncomms6076"
 storage_path = "$datasets_dir/grant2014_redsea/41467_2014_BFncomms6076_MOESM1342_ESM.xlsx"
 uri = "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fncomms6076/MediaObjects/41467_2014_BFncomms6076_MOESM1342_ESM.xlsx"
 
+# Lambeck et al. (2014): ice-volume equivalent sea level, 35 ka to present, Table S3 of the
+# supporting information (PDF; no open licence stated). The PNAS site refuses scripted
+# downloads: download it by hand.
+
+[lambeck2014_esl]
+doi = "10.1073/pnas.1411762111"
+skip_download = true
+storage_path = "$datasets_dir/lambeck2014_esl/pnas.1411762111.sapp.pdf"
+uri = "https://doi.org/10.1073/pnas.1411762111"
+
 # ---------------------------------------------------------------------------
 # Stacks (Stacks/)
 # ---------------------------------------------------------------------------
@@ -1640,6 +1669,24 @@ uri = "https://www.ncei.noaa.gov/pub/data/paleo/contributions_by_author/lisiecki
 doi = "10.1093/climsys/dzx002"
 storage_path = "$datasets_dir/ahn2017_probstack/Prob_stack.txt"
 uri = "https://raw.githubusercontent.com/seonminahn/HMM-Stack/c8125f8856c47eca59281c6ef2cdb598736e391d/Prob_stack.txt"
+
+# ---------------------------------------------------------------------------
+# Orbital (Orbital/)
+# ---------------------------------------------------------------------------
+
+# Laskar et al. (2004): La2004 orbital solution of IMCCE, eccentricity, obliquity and
+# longitude of perihelion every 1 kyr, the past (0 to -51 Myr) and the future (0 to +21
+# Myr), kyr from J2000 (the same tables as in the insol library, input/).
+
+[laskar2004_past]
+doi = "10.1051/0004-6361:20041335"
+storage_path = "$datasets_dir/laskar2004/INSOLN.LA2004.BTL.ASC"
+uri = "https://ssp.imcce.fr/insola/earth/online/earth/La2004/INSOLN.LA2004.BTL.ASC"
+
+[laskar2004_future]
+doi = "10.1051/0004-6361:20041335"
+storage_path = "$datasets_dir/laskar2004/INSOLP.LA2004.BTL.ASC"
+uri = "https://ssp.imcce.fr/insola/earth/online/earth/La2004/INSOLP.LA2004.BTL.ASC"
 
 # ---------------------------------------------------------------------------
 # Relative sea level (RSL/)

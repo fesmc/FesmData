@@ -25,7 +25,7 @@ topics = [
     { name = "Ice", datasets = ["Velocity", "IceChange", "IceHistory", "Stratigraphy", "BasalMelt", "BasalState"] },
     { name = "Solid Earth", datasets = ["GHF", "Sediment", "SolidEarth"] },
     { name = "Ocean and climate", datasets = ["Ocean", "SMB", "Atmosphere", "Paleoclimate"] },
-    { name = "Records", datasets = ["IceCores", "GHG", "SeaLevel", "Stacks", "RSL", "Boreholes", "GPS", "SMBObs", "Freshwater"] },
+    { name = "Records", datasets = ["IceCores", "GHG", "SeaLevel", "Stacks", "Orbital", "RSL", "Boreholes", "GPS", "SMBObs", "Freshwater"] },
 ]
 
 [Topo]
@@ -244,6 +244,17 @@ description = """
 Global stacks of benthic foraminiferal δ18O over the last 5 Myr: LR04 (Lisiecki and
 Raymo, 2005) and the probabilistic stack of Ahn et al. (2017), as CF discrete sampling
 geometry files with text copies.
+"""
+
+[Orbital]
+tag = "orbital"
+title = "orbital elements and insolation"
+readme = "Orbital/README.md"
+keywords = ["orbital forcing", "insolation", "eccentricity", "obliquity", "precession", "La2004", "glacial cycles"]
+description = """
+The orbital elements of the La2004 solution (Laskar et al., 2004) and daily-mean
+insolation at 65°N and 65°S computed from them, every 1 kyr from 5 Ma ago to 1 Ma in the
+future, as CF discrete sampling geometry files with text copies.
 """
 
 [RSL]
