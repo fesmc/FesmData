@@ -23,7 +23,7 @@ On the mountain-glacier domains (Pyrenees, Patagonia, Himalaya), on their 2 km g
 
 The model output is on the models' own grids (some Gaussian), remapped conservatively.
 Products are made on grids of 8 km and coarser (16 km for the Buizert et al. time
-series): finer grids add no information to these sources, and models can remap them
+series, 32 km for CLIMBER-3α): finer grids add no information to these sources, and models can remap them
 online. Each file also has `f_valid`, the fraction of each cell covered by the source.
 The ensemble products are made from the files of the models on each grid: in each
 cell, the mean or the standard deviation (population) of the models with a value there
