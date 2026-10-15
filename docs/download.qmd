@@ -57,6 +57,7 @@ $FESMDATA_PRODUCTS/
   Records/
     IceCores/
       IceCores-Kindler2014.nc          a product of the records dataset IceCores
+      IceCores-Kindler2014.txt         its text form
 ```
 
 Domains are named after their folder (Antarctica, Greenland, Thwaites, Patagonia, ...),
