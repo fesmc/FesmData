@@ -10,10 +10,11 @@
 # one half), and `src_id` the source covering most of the cell.
 #
 # Usage:
-#     julia --project=Topo -t N Topo/scripts/04_grids.jl DOMAIN [PRODUCTS]
+#     julia --project=Topo -t N Topo/scripts/04_grids.jl DOMAIN [PRODUCTS] [--folder=FOLDER]
 #
 # PRODUCTS is "default" (the default products, if omitted), "variants", "all",
-# or the name of one product (see products.toml).
+# or the name of one product (see products.toml). --folder: only the grids in output
+# folder FOLDER (e.g. the grids added to a crop).
 #
 include(joinpath(@__DIR__, "..", "common.jl"))
 include(joinpath(TOPO_DIR, "sources.jl"))
@@ -22,10 +23,11 @@ const MEANS = ("z_bed", "z_srf", "H_ice", "f_ocn", "f_land", "f_grnd", "f_flt")
 const MASK_ATTRIB = Pair{String,Any}["flag_values" => collect(MASK_CLASSES),
                                      "flag_meanings" => "ocean ice_free_land grounded_ice floating_ice"]
 
-1 <= length(ARGS) <= 2 || error("usage: 04_grids.jl DOMAIN [PRODUCTS]")
-dom = Domain(ARGS[1])
+args, folder = folder_option(ARGS)
+1 <= length(args) <= 2 || error("usage: 04_grids.jl DOMAIN [PRODUCTS] [--folder=FOLDER]")
+dom = Domain(args[1])
 sources_of = product_sources(dom)
-products = select_products(dom, get(ARGS, 2, "default"))
+products = select_products(dom, get(args, 2, "default"))
 base = dom.base
 
 function dominant_mask(f)
@@ -48,7 +50,7 @@ for product in products
     src_attrib = Pair{String,Any}["flag_values" => collect(src_classes),
                                   "flag_meanings" => join(reverse(sources_of[product]), " ")]
 
-    for og in filter(og -> has_product(dom, og, product), dom.grids[2:end])
+    for og in filter(og -> has_product(dom, og, product), in_folder(dom.grids[2:end], folder, dom))
         t0 = time()
         g = og.grid
         m = AlignedMap(g, base)
