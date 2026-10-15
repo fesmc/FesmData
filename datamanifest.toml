@@ -192,6 +192,15 @@ skip_download = true
 storage_path = "$datasets_dir/copernicus_glo90"
 uri = "https://copernicus-dem-90m.s3.amazonaws.com"
 
+# Copernicus DEM GLO-30 (as GLO-90, attribution "Copernicus WorldDEM-30"): 1-degree
+# tiles, only over the domains that use them (Topo/scripts/00_sources.jl --download).
+
+[copernicus_glo30]
+doi = "10.5270/ESA-c5d3d65"
+skip_download = true
+storage_path = "$datasets_dir/copernicus_glo30"
+uri = "https://copernicus-dem-30m.s3.amazonaws.com"
+
 # Drang Drung Glacier (Sommers, 2025, ISSM setup, CC BY 4.0): outline of the model
 # domain, surface DEM (LEGOS and OMP, 2025; 2 m, heights above the WGS84 ellipsoid) and
 # ice thickness (Millan et al., 2022; 50 m), as MATLAB v5 files with x, y in UTM zone

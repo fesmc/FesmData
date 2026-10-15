@@ -31,6 +31,7 @@ Variants:
 | `TOPO-Bedmap2` | Bedmap2, GEBCO 2026 | Antarctica and its crops, 1 km and coarser |
 | `TOPO-BedMachine-v5`, `TOPO-BedMachine-v4` | BedMachine Greenland v5, v4, GEBCO 2026 | GreenlandPaleo, Greenland |
 | `TOPO-Sommers2025` | Sommers (2025) surface and Millan et al. (2022) thickness, IceBoost v2.0, Copernicus DEM GLO-90, GEBCO 2026 | DrangDrung |
+| `TOPO-GLO30-GEBCO2026` | IceBoost v2.0, Copernicus DEM GLO-30, GEBCO 2026 | SchiaparelliGlacier |
 
 The variants of Antarctica are merged on ANT-500M, but
 written only on the grids of 1 km and coarser (`variants_resolution` in
@@ -74,7 +75,7 @@ Each source is remapped onto the base grid as `z_bed`, `z_srf`, `H_ice`, `z_bed_
 exactly; GEBCO, and projected sources on another projection (the Drang Drung data), are
 sampled at about half their resolution within each cell.
 
-Land sources (the Copernicus DEM GLO-90) give only the elevation of the land, as
+Land sources (the Copernicus DEMs GLO-90 and GLO-30) give only the elevation of the land, as
 1-degree lon-lat tiles. Each tile overlapping the base grid is sampled within the base
 cells it covers, at about half its latitude spacing, and the file has `z_land` and
 `z_land_sd` (mean and standard deviation of the land elevation), `f_land` (land
@@ -166,9 +167,10 @@ Albers equal-area projection of High Mountain Asia).
   glaciers of Greenland.
 - Copernicus DEM GLO-90 (ESA, doi:10.5270/ESA-c5d3d65; the edited TanDEM-X DEM,
   acquisitions 2011-2015, heights above the EGM2008 geoid) gives the land surface of
-  the mountain-glacier products. IceBoost v2.0 takes its surface features from the
-  TanDEM-X EDEM, from the same acquisitions, so the surface and the glacier thickness
-  are consistent. The ocean is 0 m in its tiles, and there are no tiles over the open
+  the mountain-glacier products; GLO-30 (1" in latitude) that of the variant
+  GLO30-GEBCO2026 of the Schiaparelli Glacier (50 m). IceBoost v2.0 takes its surface
+  features from the TanDEM-X EDEM, from the same acquisitions, so the surface and the
+  glacier thickness are consistent. The ocean is 0 m in its tiles, and there are no tiles over the open
   ocean; land below sea level is taken as ocean.
 - Drang Drung Glacier (`sommers2025_drangdrung`, DDG variant Sommers2025): the surface
   DEM and ice thickness of the ISSM setup of Sommers (2025, "Seasonal variability in ice
@@ -204,11 +206,11 @@ sources on the base grid (step 2) are intermediate files and are not rounded.
 | Bedmap3 | Pritchard et al. (2025), [doi:10.5285/2d0e4791-8e20-46a3-80e4-f5f6716025d2](https://doi.org/10.5285/2d0e4791-8e20-46a3-80e4-f5f6716025d2) | CC BY 4.0 (UK Polar Data Centre) |
 | Bedmap2 | Fretwell et al. (2013), [doi:10.5285/fa5d606c-dc95-47ee-9016-7a82e446f2f2](https://doi.org/10.5285/fa5d606c-dc95-47ee-9016-7a82e446f2f2) | CC BY 4.0 (UK Polar Data Centre) |
 | GEBCO 2026 | GEBCO Compilation Group (2026), [doi:10.5285/4f68d5c7-45eb-f999-e063-7086abc036fa](https://doi.org/10.5285/4f68d5c7-45eb-f999-e063-7086abc036fa) | Public domain (GEBCO terms of use: cite the grid) |
-| Copernicus DEM GLO-90 | ESA, [doi:10.5270/ESA-c5d3d65](https://doi.org/10.5270/ESA-c5d3d65) | Free use with attribution (see below) |
+| Copernicus DEM GLO-90, GLO-30 | ESA, [doi:10.5270/ESA-c5d3d65](https://doi.org/10.5270/ESA-c5d3d65) | Free use with attribution (see below) |
 | IceBoost v2.0 | Maffezzoli et al., [doi:10.5281/zenodo.17724512](https://doi.org/10.5281/zenodo.17724512) | CC BY 4.0 (Zenodo) |
 | Drang Drung Glacier | Sommers (2025), [doi:10.5281/zenodo.17593643](https://doi.org/10.5281/zenodo.17593643), with the DEM of LEGOS and OMP (2025) and the ice thickness of Millan et al. (2022), [doi:10.1038/s41561-021-00885-z](https://doi.org/10.1038/s41561-021-00885-z) | CC BY 4.0 (Sommers, 2025) |
 
-Products from the Copernicus DEM must credit "Copernicus WorldDEM-90 © DLR e.V.
+Products from the Copernicus DEM must credit "Copernicus WorldDEM-90 (WorldDEM-30 for GLO-30) © DLR e.V.
 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the
 European Union and ESA"; products from the Drang Drung data must credit Sommers (2025),
 LEGOS and OMP (2025) for the DEM and Millan et al. (2022) for the ice thickness. The
@@ -227,7 +229,7 @@ the Julia packages are set up as described under
 | `$FESMDATA_SOURCES` | Original datasets (see `../datamanifest.toml`) |
 | `$FESMDATA_PRODUCTS/<Domain>/<GRID>/` | Output: `grid_<GRID>.txt`, `<GRID>_grid.nc`, `<GRID>_TOPO-<product>.nc` |
 | `$FESMDATA_WORK/topo/` | Intermediate files (sources on base grids, IceBoost tile index) |
-| `$FESMDATA_SOURCES/copernicus_glo90/` | Copernicus DEM GLO-90 tiles of the domains that use them |
+| `$FESMDATA_SOURCES/copernicus_glo90/`, `copernicus_glo30/` | Copernicus DEM GLO-90 and GLO-30 tiles of the domains that use them |
 
 The environment variables are set per machine in `../shared/machines/<machine>.env`.
 
@@ -251,7 +253,7 @@ julia --project=Topo Topo/scripts/00_sources.jl
 ```
 
 GEBCO 2026 (4 GB zipped), Bedmap3 (2.5 GB), IceBoost v2.0 (one zip per RGI region)
-and the Copernicus DEM GLO-90 tiles of the active domains that use them (1-degree
+and the Copernicus DEM GLO-90 and GLO-30 tiles of the active domains that use them (1-degree
 tiles, a few MB each) are downloaded automatically (Levante login node):
 
 ```bash

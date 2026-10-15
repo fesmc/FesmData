@@ -117,6 +117,10 @@ rho_sw = 1028.0
 [SCH.products]
 "GLO90-GEBCO2026" = ["iceboost_v2", "copernicus_glo90", "gebco2026"]
 
+# The land surface from the Copernicus DEM GLO-30, for the 50 m grid
+[SCH.variants]
+"GLO30-GEBCO2026" = ["iceboost_v2", "copernicus_glo30", "gebco2026"]
+
 [ALP]
 rho_ice = 917.0
 rho_sw = 1028.0
