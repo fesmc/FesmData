@@ -81,7 +81,7 @@ readme = "IceHistory/README.md"
 keywords = ["ice sheet reconstruction", "paleotopography", "glacial cycles", "Pliocene", "model input"]
 description = """
 Reconstructions of past ice sheets and topography (ICE-5G, ICE-6G_C, ICE-6G_D,
-PaleoMIST, PRISM4), ice extents (Batchelor et al., 2019, and a last-glacial-cycle
+PaleoMIST, GLAC-1D, PRISM4), ice extents (Batchelor et al., 2019, and a last-glacial-cycle
 combination with PaleoMIST), the deglaciation of Greenland (PaleoGrIS) and the ice
 streams of the Laurentide ice sheet, remapped conservatively onto the grids of a model
 domain, or onto global lon-lat grids.
