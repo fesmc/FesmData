@@ -45,6 +45,8 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | paleo    | Batchelor2019_NHIceMasks    | Northern Hemisphere ice extents, 18 time slices  | Batchelor et al. (2019)        |
 | paleo    | Batchelor2019_PaleoMIST_lgc | Global ice extents of the last glacial cycle (Batchelor north, PaleoMIST south) | Batchelor et al. (2019), Gowan et al. (2021) |
 | paleo    | Bereiter2015_CO2            | Antarctic ice core CO2 composite, 800 kyr        | Bereiter et al. (2015)         |
+| paleo    | Berends2021_sealevel        | Sea level and CO2 of an ice-sheet-climate model, 3.6 Myr | Berends et al. (2021)          |
+| paleo    | Bintanja2008_sealevel       | Sea level, NH ice volume and temperature, 3 Myr  | Bintanja and van de Wal (2008) |
 | paleo    | Bouchet2023_AICC2023        | AICC2023 ice core chronology (EDC, EDML, NGRIP, TALDICE, Vostok) | Bouchet et al. (2023)          |
 | paleo    | Buizert2018                 | Greenland seasonal temperatures, 22 ka to present | Buizert et al. (2018)         |
 | paleo    | Buizert2018_cores           | Seasonal temperatures at Greenland ice core sites, 22 ka | Buizert et al. (2018)          |
@@ -53,6 +55,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | geo      | Colgan2021_topocorr         | Topographic correction of geothermal heat flow   | Colgan et al. (2021)           |
 | geo      | Davies2013_ghf              | Global geothermal heat flow                      | Davies (2013)                  |
 | ice      | Dawson2022_basalstate       | Antarctic ice sheet basal thermal state          | Dawson et al. (2022)           |
+| paleo    | deBoer2014_sealevel         | Sea level and ice sheet contributions, 5.3 Myr   | de Boer et al. (2014)          |
 | paleo    | Dowsett2016_prism4          | PRISM4 Pliocene topography and ice sheets        | Dowsett et al. (2016)          |
 | paleo    | EPICA2006_EDML              | EDML d18O, 150 kyr                               | EPICA Community Members (2006) |
 | climate  | ERA5                        | Monthly ERA5 for radiation + moist-stack valid. (v1) | Hersbach et al. (2020)     |
@@ -62,7 +65,9 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | paleo    | Gkinis2020_NEEMwateriso     | NEEM ice core high-resolution water isotopes     | Gkinis et al. (2020)           |
 | geo      | Gowan2019_sed               | Surface sediment properties of North America and Greenland | Gowan et al. (2019) |
 | paleo    | Gowan2021_PaleoMIST1.0      | PaleoMIST 1.0 global ice sheet reconstruction, 80 ka to present | Gowan et al. (2021) |
+| paleo    | Gowan2021_PaleoMIST_esl     | Sea level from the ice sheets of PaleoMIST 1.0, 80 kyr | Gowan et al. (2021)            |
 | paleo    | Gowan2023_GAPSLIP_GrIS      | Relative sea level data for Greenland            | Gowan (2023)                   |
+| paleo    | Grant2014_RedSea            | Red Sea relative sea level, 492 kyr              | Grant et al. (2014)            |
 | geo      | Hazzard2023_visc            | Antarctic mantle viscosity and lithosphere thickness | Hazzard et al. (2023)      |
 | geo      | HazzardRichards2024_ghf     | Antarctic geothermal heat flow                   | Hazzard & Richards (2024)      |
 | climate  | Hersbach2020_era5           | ERA5 monthly climatologies                       | Hersbach et al. (2020)         |
@@ -98,6 +103,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | masks    | regions_legacy              | Ice relevant regions (v1, deprecated)            | Robinson et al.  - no ref      |
 | ice      | Rignot2011_vel              | Antarctic ice surface velocity                   | Rignot et al. (2011)           |
 | ocean    | Rignot2013_bmelt            | Basal melt rates of Antarctic ice shelves        | Rignot et al. (2013)           |
+| paleo    | Rohling2021_sealevel        | Sea level and ice sheet volumes, 5.3 Myr         | Rohling et al. (2021)          |
 | paleo    | RSL_GrIS                    | Relative sea level reconstructions in Greenland  | Multiple                       |
 | topo     | RTOPO2                      | RTopo2 global topography data                    | Schaffer et al. (2016)         |
 | paleo    | Schilt2010_N2O              | EPICA Dome C nitrous oxide, 800 kyr              | Schilt et al. (2010)           |
@@ -106,6 +112,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | geo      | Schumacher2018_gps          | GPS vertical velocities (GIA uplift rates), global | Schumacher et al. (2018)     |
 | geo      | Shapiro2004_ghf             | Global geothermal heat flow                      | Shapiro & Ritzwoller (2004)    |
 | ice      | Smith2020_dzdt              | Elevation and thickness change rates, ICESat to ICESat-2 | Smith et al. (2020)    |
+| paleo    | Spratt2016_sealevel         | Sea-level stacks, 798 kyr                        | Spratt and Lisiecki (2016)     |
 | geo      | Stal2020_ghf                | Geothermal heat flow of Antarctica, Aq1          | Stål et al. (2021)             |
 | paleo    | Stenni2011_TALDICE          | TALDICE d18O on AICC2012, 153 kyr                | Stenni et al. (2011)           |
 | paleo    | Stokes2016_icestreams       | Laurentide ice sheet, ice-stream timing          | Stokes et al. (2016)           |
@@ -116,6 +123,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | smb      | vanDalum2025_racmo24        | Antarctic SMB and surface climate, RACMO2.4p1    | van Dalum et al. (2025)        |
 | smb      | vanWessem2023_racmo23       | Antarctic SMB and surface climate, RACMO2.3p2    | van Wessem et al. (2018, 2023) |
 | paleo    | Vinther2009_elevations      | Elevations at the ice core locations             | Vinther et al. (2009)          |
+| paleo    | Waelbroeck2002_sealevel     | Sea level from benthic foraminifera, 430 kyr     | Waelbroeck et al. (2002)       |
 | geo      | Wiens2022_visc              | Antarctic upper-mantle viscosity                 | Wiens et al. (2022)            |
 | ocean    | Zhou2026_ismip7ocean        | ISMIP7 Antarctic ocean climatology               | Zhou et al. (2026)             |
 | ocean    | Zuo2019_oras5               | Ocean temperature and salinity from ORAS5        | Zuo et al. (2019)              |

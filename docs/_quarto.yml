@@ -92,6 +92,8 @@ website:
             href: datasets/icecores.qmd
           - text: "GHG — greenhouse gases"
             href: datasets/ghg.qmd
+          - text: "SeaLevel — global sea level"
+            href: datasets/sealevel.qmd
           - text: "RSL — relative sea level"
             href: datasets/rsl.qmd
           - text: "Boreholes — ice temperature profiles"

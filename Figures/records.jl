@@ -80,7 +80,7 @@ end
 
 The figure of a record product of one or more files (part => path): maps of the sites of
 all its files (coloured by the variable shown, for data without a time or depth axis;
-none for series of regions without a location) and a panel of the data of each file,
+none for series of regions without a location or sites outside the domains of the maps) and a panel of the data of each file,
 one under the other: series (`timeSeries`), profiles (`profile`) or observations through
 time. Returns its caption.
 """
@@ -102,9 +102,10 @@ function plot_record(path::AbstractString, files::Vector{Pair{String,String}}, s
         nrows = length(recs)
 
         fig = Figure(; fontsize=10, figure_padding=6)
-        # Series of regions without a location (e.g. global means) have no maps
-        located = any(isfinite, lat)
-        panels, outside = located ? map_panels(lon, lat) : (Tuple{OutGrid,Vector{Int}}[], 0)
+        # Series of regions without a location (e.g. global means), and sites outside all
+        # domains of the maps, have no maps
+        panels, outside = any(isfinite, lat) ? map_panels(lon, lat) : (Tuple{OutGrid,Vector{Int}}[], 0)
+        located = !isempty(panels)
         sc = nothing
         for (j, (og, i)) in enumerate(panels)
             ax = map_axis(fig[1:nrows, j], og; title=og.grid.name)
@@ -120,7 +121,6 @@ function plot_record(path::AbstractString, files::Vector{Pair{String,String}}, s
             end
             colsize!(fig.layout, j, Fixed(round(Int, PANEL_HEIGHT * map_aspect(og.grid))))
         end
-        located && isempty(panels) && error("$(first(files)[2]): no sites within the domains $(join(RECORD_MAP_DOMAINS, ", "))")
         values === nothing || Colorbar(fig[1:nrows, length(panels)+1], sc; label=recs[1].label, ticklabelsize=9,
                                        labelsize=10, width=10)
         for (k, (r, ds, (part, _))) in enumerate(zip(recs, dss, files))
@@ -133,6 +133,7 @@ function plot_record(path::AbstractString, files::Vector{Pair{String,String}}, s
         save_figure(path, fig)
         sites = names === nothing ? length(lon) : length(unique(names))
         kind = names === nothing ? "observations" : recs[1].inst == "region" ? "regions" : "sites"
+        sites == 1 && (kind = chop(kind))
         caption = "$(join((basename(f) for (_, f) in files), ", ")): $sites $kind, $(join(unique(r.var for r in recs), ", "))"
         return caption * (outside > 0 ? " ($outside outside the maps)." : ".")
     finally

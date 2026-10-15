@@ -1562,6 +1562,66 @@ storage_path = "$datasets_dir/koehler2017_ghg/N2O_spline_v2.tab"
 uri = "https://doi.pangaea.de/10.1594/PANGAEA.876014?format=textfile"
 
 # ---------------------------------------------------------------------------
+# Global sea level (SeaLevel/)
+# ---------------------------------------------------------------------------
+
+# Spratt and Lisiecki (2016): sea-level stacks of 0-430 ka and 0-798 ka (NOAA NCEI,
+# template text; also PANGAEA.979830, CC BY 3.0, same values).
+
+[spratt2016_sealevel]
+doi = "10.25921/rd66-5820"
+storage_path = "$datasets_dir/spratt2016_sealevel/spratt2016-noaa.txt"
+uri = "https://www.ncei.noaa.gov/pub/data/paleo/contributions_by_author/spratt2016/spratt2016-noaa.txt"
+
+# Waelbroeck et al. (2002): sea level and mean ocean d18O from benthic foraminifera, 430
+# kyr (NOAA NCEI, free text).
+
+[waelbroeck2002_sealevel]
+doi = "10.25921/08dt-1228"
+storage_path = "$datasets_dir/waelbroeck2002_sealevel/waelbroeck2002.txt"
+uri = "https://www.ncei.noaa.gov/pub/data/paleo/contributions_by_author/waelbroeck2002/waelbroeck2002.txt"
+
+# Bintanja and van de Wal (2008): sea level, Northern Hemisphere ice volume and
+# temperature, 3 Myr (NOAA NCEI, template text).
+
+[bintanja2008_sealevel]
+doi = "10.25921/revb-da37"
+storage_path = "$datasets_dir/bintanja2008_sealevel/bintanja2008-noaa.txt"
+uri = "https://www.ncei.noaa.gov/pub/data/paleo/contributions_by_author/bintanja2008/bintanja2008-noaa.txt"
+
+# de Boer et al. (2014): sea level and ice volume of four ice sheets, 5.3 Myr (NOAA NCEI,
+# template text; also PANGAEA.855850).
+
+[deboer2014_sealevel]
+doi = "10.25921/xs31-nt56"
+storage_path = "$datasets_dir/deboer2014_sealevel/deboer2014-noaa.txt"
+uri = "https://www.ncei.noaa.gov/pub/data/paleo/reconstructions/deboer2014/deboer2014-noaa.txt"
+
+# Berends et al. (2021): sea level and CO2 of a coupled ice-sheet-climate model, 3.6 Myr
+# (supplement on Zenodo, CC BY 4.0).
+
+[berends2021_sealevel]
+doi = "10.5281/zenodo.3793592"
+storage_path = "$datasets_dir/berends2021_sealevel/Berends_etal_2020_CP_supplement.dat"
+uri = "https://zenodo.org/api/records/3793592/files/Berends_etal_2020_CP_supplement.dat/content"
+
+# Rohling et al. (2021): sea level and ice sheet volumes on the LR04 stack, 5.3 Myr (NOAA
+# NCEI, template text; the versions on Westerhold et al. (2020), 40 Myr, are not used).
+
+[rohling2021_sealevel]
+doi = "10.25921/rq2y-4k67"
+storage_path = "$datasets_dir/rohling2021_sealevel/rohling2021-lr-main.txt"
+uri = "https://www.ncei.noaa.gov/pub/data/paleo/contributions_by_author/rohling2021/rohling2021-lr-main.txt"
+
+# Grant et al. (2014): Red Sea relative sea level, 492 kyr, Supplementary Data 1 of the
+# Nature Communications article (xlsx; no open licence stated).
+
+[grant2014_redsea]
+doi = "10.1038/ncomms6076"
+storage_path = "$datasets_dir/grant2014_redsea/41467_2014_BFncomms6076_MOESM1342_ESM.xlsx"
+uri = "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fncomms6076/MediaObjects/41467_2014_BFncomms6076_MOESM1342_ESM.xlsx"
+
+# ---------------------------------------------------------------------------
 # Relative sea level (RSL/)
 # ---------------------------------------------------------------------------
 

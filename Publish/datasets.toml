@@ -25,7 +25,7 @@ topics = [
     { name = "Ice", datasets = ["Velocity", "IceChange", "IceHistory", "Stratigraphy", "BasalMelt", "BasalState"] },
     { name = "Solid Earth", datasets = ["GHF", "Sediment", "SolidEarth"] },
     { name = "Ocean and climate", datasets = ["Ocean", "SMB", "Atmosphere", "Paleoclimate"] },
-    { name = "Records", datasets = ["IceCores", "GHG", "RSL", "Boreholes", "GPS", "SMBObs", "Freshwater"] },
+    { name = "Records", datasets = ["IceCores", "GHG", "SeaLevel", "RSL", "Boreholes", "GPS", "SMBObs", "Freshwater"] },
 ]
 
 [Topo]
@@ -220,6 +220,19 @@ CO2 composite (Bereiter et al., 2015), EPICA Dome C methane (Loulergue et al., 2
 nitrous oxide (Schilt et al., 2010), and the spline-smoothed series of the last 156 kyr
 with their radiative forcing (Köhler et al., 2017), as CF discrete sampling geometry
 files with text copies.
+"""
+
+[SeaLevel]
+tag = "sealevel"
+title = "global sea level over glacial cycles"
+readme = "SeaLevel/README.md"
+keywords = ["sea level", "ice volume", "glacial cycles", "benthic d18O", "Pleistocene", "Pliocene"]
+description = """
+Reconstructions of global sea level over glacial cycles, some with the contributions of
+the ice sheets: the stacks of Spratt and Lisiecki (2016), Waelbroeck et al. (2002),
+Bintanja and van de Wal (2008), de Boer et al. (2014), Berends et al. (2021), Rohling et
+al. (2021), the Red Sea record of Grant et al. (2014) and the ice sheets of PaleoMIST 1.0
+(Gowan et al., 2021), as CF discrete sampling geometry files with text copies.
 """
 
 [RSL]

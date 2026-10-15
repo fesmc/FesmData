@@ -1,0 +1,39 @@
+# Products of the records dataset SeaLevel (see ../Records/README.md):
+# $FESMDATA_PRODUCTS/Records/SeaLevel/SeaLevel-<product>[-<part>].nc
+
+[products.Spratt2016]
+source = "Spratt2016_sealevel"
+file = "Spratt2016_sealevel.nc"
+figure = { variable = "sl_long" }
+
+[products.Waelbroeck2002]
+source = "Waelbroeck2002_sealevel"
+file = "Waelbroeck2002_sealevel.nc"
+
+[products.Bintanja2008]
+source = "Bintanja2008_sealevel"
+file = "Bintanja2008_sealevel.nc"
+
+[products.deBoer2014]
+source = "deBoer2014_sealevel"
+file = "deBoer2014_sealevel.nc"
+
+[products.Berends2021]
+source = "Berends2021_sealevel"
+file = "Berends2021_sealevel.nc"
+
+[products.Rohling2021]
+source = "Rohling2021_sealevel"
+file = "Rohling2021_sealevel.nc"
+
+[products.Grant2014]
+source = "Grant2014_RedSea"
+files = { probabilistic = "Grant2014_RedSea_probabilistic.nc", data = "Grant2014_RedSea_data.nc" }
+
+[products.PaleoMIST]
+source = "Gowan2021_PaleoMIST_esl"
+file = "Gowan2021_PaleoMIST_esl.nc"
+
+[products.PaleoMIST_max]
+source = "Gowan2021_PaleoMIST_esl"
+file = "Gowan2021_PaleoMIST_max_esl.nc"
