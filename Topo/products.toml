@@ -110,15 +110,23 @@ rho_sw = 1028.0
 [CDI.products]
 "GLO90-GEBCO2026" = ["iceboost_v2", "copernicus_glo90", "gebco2026"]
 
+# The land surface from the Copernicus DEM GLO-30 on the nests of Monte Sarmiento (50 m)
+# and the Schiaparelli Glacier (25 m)
+[SAR]
+rho_ice = 917.0
+rho_sw = 1028.0
+
+[SAR.products]
+"GLO30-GEBCO2026" = ["iceboost_v2", "copernicus_glo30", "gebco2026"]
+
+[SAR.variants]
+"GLO90-GEBCO2026" = ["iceboost_v2", "copernicus_glo90", "gebco2026"]
+
 [SCH]
 rho_ice = 917.0
 rho_sw = 1028.0
 
 [SCH.products]
-"GLO90-GEBCO2026" = ["iceboost_v2", "copernicus_glo90", "gebco2026"]
-
-# The land surface from the Copernicus DEM GLO-30, for the 50 m grid
-[SCH.variants]
 "GLO30-GEBCO2026" = ["iceboost_v2", "copernicus_glo30", "gebco2026"]
 
 [ALP]

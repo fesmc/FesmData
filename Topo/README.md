@@ -21,7 +21,8 @@ a product are merged in order of priority, the first over the others:
 | `TOPO-Bedmap3` | Bedmap3, GEBCO 2026 | Antarctica and its crops |
 | `TOPO-BedMachine-v6` | BedMachine Greenland v6, GEBCO 2026 | GreenlandPaleo, Greenland, Jakobshavn, NEGIS, Petermann, Helheim |
 | `TOPO-GEBCO2026` | BedMachine Greenland v6, IceBoost v2.0, GEBCO 2026 | North, Laurentide, Eurasia |
-| `TOPO-GLO90-GEBCO2026` | IceBoost v2.0, Copernicus DEM GLO-90, GEBCO 2026 | Pyrenees, Patagonia, NorthPatagonianIcefield, SouthPatagonianIcefield, SRG, GranCampoNevado, CordilleraDarwin, SchiaparelliGlacier, Himalaya, DrangDrung, Alps, Svalbard, NewZealand |
+| `TOPO-GLO30-GEBCO2026` | IceBoost v2.0, Copernicus DEM GLO-30, GEBCO 2026 | MonteSarmiento, SchiaparelliGlacier |
+| `TOPO-GLO90-GEBCO2026` | IceBoost v2.0, Copernicus DEM GLO-90, GEBCO 2026 | Pyrenees, Patagonia, NorthPatagonianIcefield, SouthPatagonianIcefield, SRG, GranCampoNevado, CordilleraDarwin, Himalaya, DrangDrung, Alps, Svalbard, NewZealand |
 
 Variants:
 
@@ -31,7 +32,7 @@ Variants:
 | `TOPO-Bedmap2` | Bedmap2, GEBCO 2026 | Antarctica and its crops, 1 km and coarser |
 | `TOPO-BedMachine-v5`, `TOPO-BedMachine-v4` | BedMachine Greenland v5, v4, GEBCO 2026 | GreenlandPaleo, Greenland |
 | `TOPO-Sommers2025` | Sommers (2025) surface and Millan et al. (2022) thickness, IceBoost v2.0, Copernicus DEM GLO-90, GEBCO 2026 | DrangDrung |
-| `TOPO-GLO30-GEBCO2026` | IceBoost v2.0, Copernicus DEM GLO-30, GEBCO 2026 | SchiaparelliGlacier |
+| `TOPO-GLO90-GEBCO2026` | IceBoost v2.0, Copernicus DEM GLO-90, GEBCO 2026 | MonteSarmiento |
 
 The variants of Antarctica are merged on ANT-500M, but
 written only on the grids of 1 km and coarser (`variants_resolution` in
@@ -167,8 +168,8 @@ Albers equal-area projection of High Mountain Asia).
   glaciers of Greenland.
 - Copernicus DEM GLO-90 (ESA, doi:10.5270/ESA-c5d3d65; the edited TanDEM-X DEM,
   acquisitions 2011-2015, heights above the EGM2008 geoid) gives the land surface of
-  the mountain-glacier products; GLO-30 (1" in latitude) that of the variant
-  GLO30-GEBCO2026 of the Schiaparelli Glacier (50 m). IceBoost v2.0 takes its surface
+  the mountain-glacier products; GLO-30 (1" in latitude) that of Monte Sarmiento (50 m)
+  and the Schiaparelli Glacier (25 m). IceBoost v2.0 takes its surface
   features from the TanDEM-X EDEM, from the same acquisitions, so the surface and the
   glacier thickness are consistent. The ocean is 0 m in its tiles, and there are no tiles over the open
   ocean; land below sea level is taken as ocean.

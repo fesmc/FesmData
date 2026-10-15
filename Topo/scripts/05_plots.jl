@@ -37,6 +37,7 @@ const REF = Dict(
     ("GRL-PAL", "BedMachine-v5") => ("GRL-4KM", "BedMachine-v6"),
     ("GRL-PAL", "BedMachine-v4") => ("GRL-4KM", "BedMachine-v6"),
     ("DDG", "Sommers2025")       => ("DDG-25M", "GLO90-GEBCO2026"),
+    ("SAR", "GLO90-GEBCO2026")   => ("SAR-50M", "GLO30-GEBCO2026"),
 )
 
 const MAXPIX = 1200

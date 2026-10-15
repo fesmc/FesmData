@@ -241,12 +241,20 @@ xlim = [736.087171469987, 910.587171469987]
 ylim = [3881.102314639904, 3982.602314639904]
 resolutions = [0.05, 0.1, 0.25]
 
-# 54.30-54.55S, 71.15-70.65W: the Schiaparelli Glacier (Monte Sarmiento massif)
-[PAT.nests.SCH]
-folder = "SchiaparelliGlacier"
+# 54.30-54.55S, 71.15-70.65W
+[PAT.nests.SAR]
+folder = "MonteSarmiento"
 xlim = [748.087171469987, 784.087171469987]
 ylim = [3946.102314639904, 3977.102314639904]
 resolutions = [0.05, 0.1, 0.25]
+
+# 54.37-54.46S, 70.93-70.74W: the Schiaparelli Glacier (RGI2000-v7.0-G-17-15343) and its
+# proglacial lake
+[PAT.nests.SCH]
+folder = "SchiaparelliGlacier"
+xlim = [763.087171469987, 776.087171469987]
+ylim = [3956.102314639904, 3968.102314639904]
+resolutions = [0.025, 0.05, 0.1, 0.25]
 
 # Alps: UTM zone 32N (EPSG:32632), as the glacial-cycle simulations of Seguinot et al.
 # (2018), 4-17.5E, 43-48.8N (the Lyon lobe in the west, the Po plain in the south).
