@@ -473,14 +473,47 @@ function select_records(cat::RegistryCatalog, args)
 end
 
 """
-    list(args; dir=nothing, sandbox=false)
+    list_outdated(selected; dir=nothing, sandbox=false)
+
+`fesmdata.jl list --outdated`: the local files of the records `selected` ((domain,
+dataset, grids), see `select_records`) in \$FESMDATA_PRODUCTS or `dir` that are not of
+their release (checksums): of an earlier release, or changed locally, with the commands
+to update them. The files missing are not listed, nor the products by cropping (`fetch`
+cuts them again from the current files of their source).
+"""
+function list_outdated(selected; dir=nothing, sandbox::Bool=false)
+    root = local_root(dir)
+    println("Checking the files in $root (checksums)")
+    n = Dict(:current => 0, :older => 0, :changed => 0)
+    for (d, s, grids) in selected
+        states = [e => local_state(e, root) for e in record_entries(d, s; grids=grids, sandbox=sandbox)
+                  if isfile(local_path(e, root))]
+        foreach(((_, st),) -> n[st] += 1, states)
+        outdated = filter(((_, st),) -> st != :current, states)
+        isempty(outdated) && continue
+        println("\n$d/$s, version $(read_record(d, s; sandbox=sandbox)[1]["_RELEASE"]["version"])")
+        w = maximum(((e, _),) -> length(basename(e["storage_path"])), outdated) + 2
+        for (e, st) in outdated
+            println("  ", rpad(basename(e["storage_path"]), w), st == :older ? "earlier release" : "changed locally")
+        end
+        target = d == RECORDS_FOLDER ? d : join(unique(entry_grid(e) for (e, _) in outdated), " ")
+        println("Update: julia fesmdata.jl fetch $s $target", any(((_, st),) -> st == :changed, outdated) ? " --overwrite" : "")
+    end
+    println("\n$(n[:current]) files current, $(n[:older]) of earlier releases, $(n[:changed]) changed locally")
+end
+
+"""
+    list(args; dir=nothing, sandbox=false, outdated=false)
 
 `fesmdata.jl list`: all records, or those of a dataset and/or a domain, and the records
 by cropping on nests and crops; with a domain and a dataset, or with grids, the records
-in detail (for those grids), with the local files in \$FESMDATA_PRODUCTS or `dir`.
+in detail (for those grids), with the local files in \$FESMDATA_PRODUCTS or `dir`. With
+`outdated`, the local files of these records that are not of their release
+(`list_outdated`).
 """
-function list(args; dir=nothing, sandbox::Bool=false)
+function list(args; dir=nothing, sandbox::Bool=false, outdated::Bool=false)
     selected, cropped, detail = select_records(args; sandbox=sandbox)
+    outdated && return list_outdated(selected; dir=dir, sandbox=sandbox)
     isempty(selected) && isempty(cropped) && (println("Nothing released"); return)
     if !detail
         isempty(selected) || list_records_table([(d, s) for (d, s, _) in selected]; sandbox=sandbox)

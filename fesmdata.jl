@@ -20,6 +20,10 @@ Find and download:
                                                \$FESMDATA_PRODUCTS
   list [<Dataset>] <GRID> ...                  the datasets on grids in detail (a grid
                                                implies its domain, e.g. ANT-32KM)
+  list [<Dataset>] [<Domain> | <GRID> ...] --outdated
+                                               the files in \$FESMDATA_PRODUCTS that are not
+                                               of the release (earlier releases, changed
+                                               locally; checksums), with the fetch commands
   search <term> ...                            the products whose dataset, name, sources
                                                (authors, references), variables or domains
                                                contain all terms (ignoring case), with
@@ -100,7 +104,7 @@ Release (maintainers, see Publish/README.md):
 
 Options: --sandbox (test releases: registry/_sandbox/, test packages, Zenodo sandbox),
 --allow-untagged (skip the release checks), --dry-run, --yes (mirror, prune, archive publish),
---overwrite (fetch, remap, record).
+--overwrite (fetch, remap, record), --outdated (list).
 """
 
 const PUBLISH_DIR = joinpath(@__DIR__, "Publish")
@@ -137,7 +141,7 @@ end
 function main(argv)
     opts = filter(o -> startswith(o, "--") && !occursin('=', o), argv)
     args = filter(!startswith("--"), argv)
-    known = ("--sandbox", "--allow-untagged", "--dry-run", "--yes", "--overwrite", "--copy")
+    known = ("--sandbox", "--allow-untagged", "--dry-run", "--yes", "--overwrite", "--copy", "--outdated")
     for o in opts
         o in known || error("unknown option $o\n\n$USAGE")
     end
@@ -156,7 +160,7 @@ function main(argv)
         print(USAGE)
     elseif command == "list"
         include(joinpath(PUBLISH_DIR, "catalog.jl"))
-        call(:list, rest; dir=get(valued, "dir", nothing), sandbox=sandbox)
+        call(:list, rest; dir=get(valued, "dir", nothing), sandbox=sandbox, outdated="--outdated" in opts)
     elseif command == "search"
         isempty(rest) && usage("search: give a term")
         include(joinpath(PUBLISH_DIR, "discover.jl"))

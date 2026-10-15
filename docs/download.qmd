@@ -196,7 +196,14 @@ releases. Earlier releases still in use are kept in such archives on the HPC sys
 Every file is checked against its checksum (sha256) after download. Files already
 present are kept if they are of the release, and replaced if they are of an earlier
 release (`fetch` and `mirror` update them); a file changed locally (not of a release)
-stops the download, unless `--overwrite` is given.
+stops the download, unless `--overwrite` is given. `list --outdated` checks the files already
+present (of all datasets, or of a dataset, domain or grids) and lists those of earlier
+releases or changed locally, with the `fetch` commands to update them:
+
+```bash
+julia fesmdata.jl list --outdated                # everything in $FESMDATA_PRODUCTS
+julia fesmdata.jl list Antarctica --outdated     # one domain
+```
 
 ## Versions and citation
 
