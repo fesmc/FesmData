@@ -133,5 +133,6 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | paleo    | Waelbroeck2002_sealevel     | Sea level from benthic foraminifera, 430 kyr     | Waelbroeck et al. (2002)       |
 | paleo    | WAIS2015_WDC                | WAIS Divide d18O, 68 kyr                         | WAIS Divide Project Members (2015) |
 | geo      | Wiens2022_visc              | Antarctic upper-mantle viscosity                 | Wiens et al. (2022)            |
+| paleo    | Willeit2025_climberx        | CLIMBER-X Dansgaard-Oeschger and Heinrich events (stadial, interstadial climates; transient output) | Willeit et al. (2025) |
 | ocean    | Zhou2026_ismip7ocean        | ISMIP7 Antarctic ocean climatology               | Zhou et al. (2026)             |
 | ocean    | Zuo2019_oras5               | Ocean temperature and salinity from ORAS5        | Zuo et al. (2019)              |

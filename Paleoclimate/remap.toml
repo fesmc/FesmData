@@ -378,3 +378,96 @@ file = "CLIMBER3a_lgm_1p7strong_ocean.nc"
 mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 32, GreenlandPaleo = 32, North = 32, Global = 100 }   # source at 3.75°
 figure = { variables = ["to"], select = { depth = 400 } }
+
+# CLIMBER-X (Willeit et al., 2025): climate states of the reference simulation HS4
+# (interstadial, stadial, Heinrich stadial; with their anomalies relative to piControl)
+# and of the preindustrial control, surface (monthly) and ocean (annual) fields on the
+# 5° model grid, so separate products as for CLIMBER-3α.
+
+[products.CLIMBERX-Willeit2025-piControl]
+source = "Willeit2025_climberx"
+file = "CLIMBERX_Willeit2025_piControl.nc"
+grids = { Antarctica = 32, GreenlandPaleo = 32, North = 32, Global = 100 }   # source at 5°
+figure = false
+
+[products.CLIMBERX-Willeit2025-interstadial]
+source = "Willeit2025_climberx"
+file = "CLIMBERX_Willeit2025_interstadial.nc"
+grids = { Antarctica = 32, GreenlandPaleo = 32, North = 32, Global = 100 }
+figure = { variables = ["t2m_ann_anom"] }
+
+[products.CLIMBERX-Willeit2025-stadial]
+source = "Willeit2025_climberx"
+file = "CLIMBERX_Willeit2025_stadial.nc"
+grids = { Antarctica = 32, GreenlandPaleo = 32, North = 32, Global = 100 }
+figure = { variables = ["t2m_ann_anom"] }
+
+[products.CLIMBERX-Willeit2025-heinrich]
+source = "Willeit2025_climberx"
+file = "CLIMBERX_Willeit2025_heinrich.nc"
+grids = { Antarctica = 32, GreenlandPaleo = 32, North = 32, Global = 100 }
+figure = { variables = ["t2m_ann_anom"] }
+
+[products.CLIMBERX-Willeit2025-piControl-ocean]
+source = "Willeit2025_climberx"
+file = "CLIMBERX_Willeit2025_piControl_ocean.nc"
+mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
+precision = { so = 0.001 }
+grids = { Antarctica = 32, GreenlandPaleo = 32, North = 32, Global = 100 }
+figure = false
+
+[products.CLIMBERX-Willeit2025-interstadial-ocean]
+source = "Willeit2025_climberx"
+file = "CLIMBERX_Willeit2025_interstadial_ocean.nc"
+mask = { mask_ocn = 0.5 }
+precision = { so = 0.001, so_anom = 0.001 }
+grids = { Antarctica = 32, GreenlandPaleo = 32, North = 32, Global = 100 }
+figure = { variables = ["to_anom"], select = { depth = 400 } }
+
+[products.CLIMBERX-Willeit2025-stadial-ocean]
+source = "Willeit2025_climberx"
+file = "CLIMBERX_Willeit2025_stadial_ocean.nc"
+mask = { mask_ocn = 0.5 }
+precision = { so = 0.001, so_anom = 0.001 }
+grids = { Antarctica = 32, GreenlandPaleo = 32, North = 32, Global = 100 }
+figure = { variables = ["to_anom"], select = { depth = 400 } }
+
+[products.CLIMBERX-Willeit2025-heinrich-ocean]
+source = "Willeit2025_climberx"
+file = "CLIMBERX_Willeit2025_heinrich_ocean.nc"
+mask = { mask_ocn = 0.5 }
+precision = { so = 0.001, so_anom = 0.001 }
+grids = { Antarctica = 32, GreenlandPaleo = 32, North = 32, Global = 100 }
+figure = { variables = ["to_anom"], select = { depth = 400 } }
+
+# The 2D output of the two runs (HS4: every 10 years; piControl: every 1000 years) with
+# their annual time series and the Atlantic overturning streamfunction, on the model
+# grid only (GLOBAL-5DEG is the CLIMBER-X grid): for models to remap online.
+
+[products.CLIMBERX-Willeit2025-HS4-transient]
+source = "Willeit2025_climberx"
+file = "CLIMBERX_Willeit2025_HS4_transient.nc"
+grids = { Global = ["GLOBAL-5DEG"] }
+figure = false
+
+[products.CLIMBERX-Willeit2025-HS4-transient-ocean]
+source = "Willeit2025_climberx"
+file = "CLIMBERX_Willeit2025_HS4_transient_ocean.nc"
+mask = { mask_ocn = 0.5 }
+precision = { so = 0.001 }
+grids = { Global = ["GLOBAL-5DEG"] }
+figure = false
+
+[products.CLIMBERX-Willeit2025-piControl-transient]
+source = "Willeit2025_climberx"
+file = "CLIMBERX_Willeit2025_piControl_transient.nc"
+grids = { Global = ["GLOBAL-5DEG"] }
+figure = false
+
+[products.CLIMBERX-Willeit2025-piControl-transient-ocean]
+source = "Willeit2025_climberx"
+file = "CLIMBERX_Willeit2025_piControl_transient_ocean.nc"
+mask = { mask_ocn = 0.5 }
+precision = { so = 0.001 }
+grids = { Global = ["GLOBAL-5DEG"] }
+figure = false

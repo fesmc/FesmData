@@ -174,10 +174,12 @@ grids.
 tag = "paleoclimate"
 title = "simulations and reconstructions of past climates"
 readme = "Paleoclimate/README.md"
-keywords = ["paleoclimate", "PMIP", "CLIMBER-3α", "Last Glacial Maximum", "Holocene", "deglaciation", "model input"]
+keywords = ["paleoclimate", "PMIP", "CLIMBER-3α", "CLIMBER-X", "Last Glacial Maximum", "Dansgaard-Oeschger events", "Heinrich events", "Holocene", "deglaciation", "model input"]
 description = """
-Climatologies of past climates from the PMIP3 and PMIP4 model intercomparisons and
-CLIMBER-3α (Montoya and Levermann, 2008), and reconstructions of the deglacial climate of Greenland, remapped conservatively onto the
+Climatologies of past climates from the PMIP3 and PMIP4 model intercomparisons,
+CLIMBER-3α (Montoya and Levermann, 2008) and CLIMBER-X (stadial, interstadial and
+Heinrich stadial climates, and the transient output of the simulation; Willeit et al.,
+2025), and reconstructions of the deglacial climate of Greenland, remapped conservatively onto the
 grids of a model domain, or onto global lon-lat grids.
 """
 

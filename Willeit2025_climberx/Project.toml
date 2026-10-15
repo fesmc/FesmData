@@ -1,0 +1,4 @@
+[deps]
+DataManifest = "b8ee69ef-a20a-4d38-bceb-a68d72817f72"
+NCDatasets = "85f8d34a-cbdd-5861-8df4-14fed0d494ab"
+Statistics = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"

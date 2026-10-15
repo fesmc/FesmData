@@ -1396,6 +1396,19 @@ doi = "10.1029/2007GL032560"
 extract = true
 uri = "https://github.com/fesmc/Montoya2008-CLIMBER3a/archive/refs/tags/v1.0.0.tar.gz"
 
+# Willeit et al. (2025): CLIMBER-X output of the reference simulation HS4 (Dansgaard-
+# Oeschger events and a Heinrich event under mid-glacial conditions) and of the
+# preindustrial control, provided by M. Willeit (not public): a folder per run
+# (HS4_Hamp_1.0/, ice_tarasov_0ka_co2_280ppm/) with the model output as written by
+# CLIMBER-X. On Levante, $datasets_dir/willeit2025_climberx links to
+# /work/ba1442/data/Willeit2025 (137 GB).
+
+[willeit2025_climberx]
+doi = "10.1038/s41561-025-01814-0"
+skip_download = true
+storage_path = "$datasets_dir/willeit2025_climberx"
+uri = "https://doi.org/10.1038/s41561-025-01814-0"
+
 # ---------------------------------------------------------------------------
 # Solid Earth (SolidEarth/)
 # ---------------------------------------------------------------------------
