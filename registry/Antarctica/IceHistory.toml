@@ -1,151 +1,187 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-14"
-git_tag = "icehistory-v2.1.0"
+date = "2026-10-15"
+git_tag = "icehistory-v2.2.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Antarctica_IceHistory"
-version = "2.1.0"
+version = "2.2.0"
+
+["ANT-16KM_IceHistory-GLAC1D.nc"]
+checksum = "sha256:c4a09af7b696d65440d01b6262fa5fcf2927355e8cd546da91568818665e5c5f"
+size = 182102990
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_IceHistory-GLAC1D.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-16KM/2.2.0/ANT-16KM_IceHistory-GLAC1D.nc"
+
+["ANT-16KM_IceHistory-GLAC1D_nn9894.nc"]
+checksum = "sha256:4cc3019f2a9d5e573c7e149e33db166aa44bdedf7a7a4d0c87175ee87a866d79"
+size = 60617565
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_IceHistory-GLAC1D_nn9894.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-16KM/2.2.0/ANT-16KM_IceHistory-GLAC1D_nn9894.nc"
+
+["ANT-16KM_IceHistory-GLAC1D_nn9927.nc"]
+checksum = "sha256:7e4b1f401ece95d593b591b712783840914bf4dd69942c334d94c2582fc68763"
+size = 60851349
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_IceHistory-GLAC1D_nn9927.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-16KM/2.2.0/ANT-16KM_IceHistory-GLAC1D_nn9927.nc"
 
 ["ANT-16KM_IceHistory-ICE5G.nc"]
-checksum = "sha256:67f3f9f6072869ae32de33deef94bea0ab0c552aabf7f3ce8b14d846390bd465"
-previous_checksums = ["sha256:ab9b81998094a3a3b50b2b4b494607e1a52740547bbbb7afd59e44b1a6b24610"]
+checksum = "sha256:00601acde01ab83c2dc325d4fcede5b2c241cfe43de8aaeafc8943bba5a1b28d"
+previous_checksums = ["sha256:ab9b81998094a3a3b50b2b4b494607e1a52740547bbbb7afd59e44b1a6b24610", "sha256:67f3f9f6072869ae32de33deef94bea0ab0c552aabf7f3ce8b14d846390bd465"]
 size = 21189321
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_IceHistory-ICE5G.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-16KM/2.1.0/ANT-16KM_IceHistory-ICE5G.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-16KM/2.2.0/ANT-16KM_IceHistory-ICE5G.nc"
 
 ["ANT-16KM_IceHistory-ICE6G_C.nc"]
-checksum = "sha256:b53ee637d75a6da49cd2fd5ae2f8ba3d4bcc2c60e1e2e0cd15e455c1fad98599"
-previous_checksums = ["sha256:b15e9a8d55ec7108a01e8648a58120c1ce7572871c28e9775208901fbd81914f"]
+checksum = "sha256:ee7ff0d0999eb361b481c317a4e49cc081122e54dd72aa26bcc83bbeb465ad3f"
+previous_checksums = ["sha256:b15e9a8d55ec7108a01e8648a58120c1ce7572871c28e9775208901fbd81914f", "sha256:b53ee637d75a6da49cd2fd5ae2f8ba3d4bcc2c60e1e2e0cd15e455c1fad98599"]
 size = 53018327
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_IceHistory-ICE6G_C.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-16KM/2.1.0/ANT-16KM_IceHistory-ICE6G_C.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-16KM/2.2.0/ANT-16KM_IceHistory-ICE6G_C.nc"
 
 ["ANT-16KM_IceHistory-ICE6G_D.nc"]
-checksum = "sha256:8f37efcb17dcaffa6f686a27fb45793db52a6abc0e688267079d12c552895279"
-previous_checksums = ["sha256:7005a03b20f3e142e94ca02e787711816150bd0738f1db38aec679128393981b"]
+checksum = "sha256:22cc4b5e8f90ee639bd67f500e9760c47be9a7afcc3876717eab1dca84c2bca6"
+previous_checksums = ["sha256:7005a03b20f3e142e94ca02e787711816150bd0738f1db38aec679128393981b", "sha256:8f37efcb17dcaffa6f686a27fb45793db52a6abc0e688267079d12c552895279"]
 size = 61932924
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_IceHistory-ICE6G_D.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-16KM/2.1.0/ANT-16KM_IceHistory-ICE6G_D.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-16KM/2.2.0/ANT-16KM_IceHistory-ICE6G_D.nc"
 
 ["ANT-16KM_IceHistory-PRISM4.nc"]
-checksum = "sha256:ec8425512a5f318f7babebbd6486830f0ea433a84b9e31cbc966f32311a68e82"
-previous_checksums = ["sha256:bdd109d6f08a2689cad88abf2ffc27c798d0e8f4798cb7cafb2ad9c736293ac0"]
+checksum = "sha256:a88c8e05dc9e003e04229a21b8ed7dce0a084aff9377a519cdfbc1d42f5044de"
+previous_checksums = ["sha256:bdd109d6f08a2689cad88abf2ffc27c798d0e8f4798cb7cafb2ad9c736293ac0", "sha256:ec8425512a5f318f7babebbd6486830f0ea433a84b9e31cbc966f32311a68e82"]
 size = 851992
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_IceHistory-PRISM4.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-16KM/2.1.0/ANT-16KM_IceHistory-PRISM4.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-16KM/2.2.0/ANT-16KM_IceHistory-PRISM4.nc"
 
 ["ANT-16KM_IceHistory-PaleoMIST.nc"]
-checksum = "sha256:999a61a2e3eee3401a2516aad4acfb4b3148a3808f6d4ced332181587148e9f2"
-previous_checksums = ["sha256:ca89a87ac9e96c1828fa20f365ee439303816e27db912bd1a744fe0e86e5c02b"]
+checksum = "sha256:89f83789ba63b480dacdb5bfca80ce092e1e81bdbbeb98026804676ecc0e7b5d"
+previous_checksums = ["sha256:ca89a87ac9e96c1828fa20f365ee439303816e27db912bd1a744fe0e86e5c02b", "sha256:999a61a2e3eee3401a2516aad4acfb4b3148a3808f6d4ced332181587148e9f2"]
 size = 36431706
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_IceHistory-PaleoMIST.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-16KM/2.1.0/ANT-16KM_IceHistory-PaleoMIST.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-16KM/2.2.0/ANT-16KM_IceHistory-PaleoMIST.nc"
 
 ["ANT-16KM_IceHistory-PaleoMIST_max.nc"]
-checksum = "sha256:321a35ecd62d46b47ee52d0ff49c60dc5f8074d104cbb02235dec1a6adfd6d97"
-previous_checksums = ["sha256:919050d1b6df1dee2c3a380ea4931671ac2f6c03ed46d706f10215179e399009"]
-size = 36382045
+checksum = "sha256:25e10ee19c3be2babb1c57d09713d041764d9e480a7ce68ec8985e602af03144"
+previous_checksums = ["sha256:919050d1b6df1dee2c3a380ea4931671ac2f6c03ed46d706f10215179e399009", "sha256:321a35ecd62d46b47ee52d0ff49c60dc5f8074d104cbb02235dec1a6adfd6d97"]
+size = 36383079
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_IceHistory-PaleoMIST_max.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-16KM/2.1.0/ANT-16KM_IceHistory-PaleoMIST_max.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-16KM/2.2.0/ANT-16KM_IceHistory-PaleoMIST_max.nc"
 
 ["ANT-16KM_grid.nc"]
-checksum = "sha256:0c9b8e003b33ca4188cc54c9d7dbe4932f742ee4f6ac9431d8d38e33fa5af978"
-previous_checksums = ["sha256:dea44445828fdc3adbae04afc6662224e96a6838c8381f80a855659b3ad6460c"]
+checksum = "sha256:dc1fecc6c052b75d57955d69f028216b5449d2997e17a65fb6fd739af2118189"
+previous_checksums = ["sha256:dea44445828fdc3adbae04afc6662224e96a6838c8381f80a855659b3ad6460c", "sha256:0c9b8e003b33ca4188cc54c9d7dbe4932f742ee4f6ac9431d8d38e33fa5af978"]
 size = 766020
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-16KM/2.1.0/ANT-16KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-16KM/2.2.0/ANT-16KM_grid.nc"
+
+["ANT-32KM_IceHistory-GLAC1D.nc"]
+checksum = "sha256:aac12226bc578a9bac4f585358b611587a339046354c1d752b49563b464dc297"
+size = 46036677
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_IceHistory-GLAC1D.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-32KM/2.2.0/ANT-32KM_IceHistory-GLAC1D.nc"
+
+["ANT-32KM_IceHistory-GLAC1D_nn9894.nc"]
+checksum = "sha256:52eada49f6d8ccc0f0878c171943dc00daed36ca0ffdb203789233d07716eeee"
+size = 16348093
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_IceHistory-GLAC1D_nn9894.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-32KM/2.2.0/ANT-32KM_IceHistory-GLAC1D_nn9894.nc"
+
+["ANT-32KM_IceHistory-GLAC1D_nn9927.nc"]
+checksum = "sha256:1e6539a0fd95ebd513d60f48411b9c549bde3f27626670b3e60c251730977c24"
+size = 16412863
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_IceHistory-GLAC1D_nn9927.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-32KM/2.2.0/ANT-32KM_IceHistory-GLAC1D_nn9927.nc"
 
 ["ANT-32KM_IceHistory-ICE5G.nc"]
-checksum = "sha256:9ad87baae989b379233699a6f5e725a35c6d2908754ad34d498c60213d31a4f4"
-previous_checksums = ["sha256:7216a83d7e7766737ff8858968ccdced560e54e275c9084a6526f97cc434b8d4"]
+checksum = "sha256:c3777c89648bee6bee71e8e3e5427df522d23cad0dfab433fc90e057d2b9fd1b"
+previous_checksums = ["sha256:7216a83d7e7766737ff8858968ccdced560e54e275c9084a6526f97cc434b8d4", "sha256:9ad87baae989b379233699a6f5e725a35c6d2908754ad34d498c60213d31a4f4"]
 size = 4357279
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_IceHistory-ICE5G.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-32KM/2.1.0/ANT-32KM_IceHistory-ICE5G.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-32KM/2.2.0/ANT-32KM_IceHistory-ICE5G.nc"
 
 ["ANT-32KM_IceHistory-ICE6G_C.nc"]
-checksum = "sha256:76684439e00896546ce39554ebed4c5361d5261215b6305997fdd99812addd21"
-previous_checksums = ["sha256:ccd5b0b121c2e51f4dd546ef95551032f67ac77a9e3cff1f87b9a0610bcd3dd4"]
+checksum = "sha256:a04befa863b58c725a1f238eb5b4d0545f0acc761192870c3db900768bc2c93d"
+previous_checksums = ["sha256:ccd5b0b121c2e51f4dd546ef95551032f67ac77a9e3cff1f87b9a0610bcd3dd4", "sha256:76684439e00896546ce39554ebed4c5361d5261215b6305997fdd99812addd21"]
 size = 11598636
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_IceHistory-ICE6G_C.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-32KM/2.1.0/ANT-32KM_IceHistory-ICE6G_C.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-32KM/2.2.0/ANT-32KM_IceHistory-ICE6G_C.nc"
 
 ["ANT-32KM_IceHistory-ICE6G_D.nc"]
-checksum = "sha256:72fc7db7a896ecffaa90b5f3d1f70c96d137350bd864a35f3f237330a3c6ffdf"
-previous_checksums = ["sha256:6fcec3132776d8cc9c64a1b2abf828c4d5faa78f318be34a4ea6bb31f9a67081"]
+checksum = "sha256:1c420c6496f6b22bda84215860dfc918685b750c68474d05ce849c5c588fe4ab"
+previous_checksums = ["sha256:6fcec3132776d8cc9c64a1b2abf828c4d5faa78f318be34a4ea6bb31f9a67081", "sha256:72fc7db7a896ecffaa90b5f3d1f70c96d137350bd864a35f3f237330a3c6ffdf"]
 size = 16512489
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_IceHistory-ICE6G_D.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-32KM/2.1.0/ANT-32KM_IceHistory-ICE6G_D.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-32KM/2.2.0/ANT-32KM_IceHistory-ICE6G_D.nc"
 
 ["ANT-32KM_IceHistory-PRISM4.nc"]
-checksum = "sha256:55073a4cc36414be05d8783988b689207840c54793406504e264071173c86d20"
-previous_checksums = ["sha256:1d04ff74f4ba2006c12f1e98edaaf47121435ee5e5859ae0d910cac4fd9781ab"]
+checksum = "sha256:5563dfad65621c7a0ff79a646cc53b304389663a4156d058e3bd0c1b07fce65a"
+previous_checksums = ["sha256:1d04ff74f4ba2006c12f1e98edaaf47121435ee5e5859ae0d910cac4fd9781ab", "sha256:55073a4cc36414be05d8783988b689207840c54793406504e264071173c86d20"]
 size = 277061
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_IceHistory-PRISM4.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-32KM/2.1.0/ANT-32KM_IceHistory-PRISM4.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-32KM/2.2.0/ANT-32KM_IceHistory-PRISM4.nc"
 
 ["ANT-32KM_IceHistory-PaleoMIST.nc"]
-checksum = "sha256:4db2a10cc89a4325ed14222599c82997bd6788794f2a4a2fcf8e7e253663205a"
-previous_checksums = ["sha256:bc73397822c0f8ef956c2ef9c1f839ee8fdb6f0c0abffad7f9fceb57eb73131b"]
+checksum = "sha256:54370cf94cde9b8b5a18e92bfa7af694cbf1c74d8142efd7da02df295bc7fac0"
+previous_checksums = ["sha256:bc73397822c0f8ef956c2ef9c1f839ee8fdb6f0c0abffad7f9fceb57eb73131b", "sha256:4db2a10cc89a4325ed14222599c82997bd6788794f2a4a2fcf8e7e253663205a"]
 size = 9360288
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_IceHistory-PaleoMIST.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-32KM/2.1.0/ANT-32KM_IceHistory-PaleoMIST.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-32KM/2.2.0/ANT-32KM_IceHistory-PaleoMIST.nc"
 
 ["ANT-32KM_IceHistory-PaleoMIST_max.nc"]
-checksum = "sha256:92985545aa6d53c4dd83b3275ff7fe4639e824affcdc4876b105a3ec6bfe06a5"
-previous_checksums = ["sha256:076f8b40df47e20f60d2c84735c4681fade690725d9ca0b58b5362086c27fa64"]
-size = 9273522
+checksum = "sha256:a7d4592222176c3872dd71d1a67b735dd421b974ef76c1dbcb2c22838caefc5f"
+previous_checksums = ["sha256:076f8b40df47e20f60d2c84735c4681fade690725d9ca0b58b5362086c27fa64", "sha256:92985545aa6d53c4dd83b3275ff7fe4639e824affcdc4876b105a3ec6bfe06a5"]
+size = 9274556
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_IceHistory-PaleoMIST_max.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-32KM/2.1.0/ANT-32KM_IceHistory-PaleoMIST_max.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-32KM/2.2.0/ANT-32KM_IceHistory-PaleoMIST_max.nc"
 
 ["ANT-32KM_grid.nc"]
-checksum = "sha256:49cf80092bf11538d76d480dea852afea71c414565d6123fb01ff4e7e853bee1"
-previous_checksums = ["sha256:66765d3512c62479e60ad1095a4ee84b38edb681fe816eddf9896c3a2799efd8"]
+checksum = "sha256:c91dabc6970bd7b99809d38352627c34d0d24c3ea9797a18c266a8f302ee1958"
+previous_checksums = ["sha256:66765d3512c62479e60ad1095a4ee84b38edb681fe816eddf9896c3a2799efd8", "sha256:49cf80092bf11538d76d480dea852afea71c414565d6123fb01ff4e7e853bee1"]
 size = 190659
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-32KM/2.1.0/ANT-32KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-32KM/2.2.0/ANT-32KM_grid.nc"
 
 ["ANT-8KM_IceHistory-ICE6G_D.nc"]
-checksum = "sha256:e70acb66e505ade9b30801d1743fa58c6448ce9f9c13ea07dcb3707bd369d97c"
-previous_checksums = ["sha256:b1603ab127e0194f0ebc65d8f09fde2001d3c508bd6f3b7fc44663d50d33f60b"]
+checksum = "sha256:3fe1c114210bb72f0a447f9177203d076859b65d93b8d36b65007532d3e6fae5"
+previous_checksums = ["sha256:b1603ab127e0194f0ebc65d8f09fde2001d3c508bd6f3b7fc44663d50d33f60b", "sha256:e70acb66e505ade9b30801d1743fa58c6448ce9f9c13ea07dcb3707bd369d97c"]
 size = 232265085
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_IceHistory-ICE6G_D.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-8KM/2.1.0/ANT-8KM_IceHistory-ICE6G_D.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-8KM/2.2.0/ANT-8KM_IceHistory-ICE6G_D.nc"
 
 ["ANT-8KM_IceHistory-PaleoMIST.nc"]
-checksum = "sha256:fa59da1098cc87fc506a83d28448f088470e149ef1d2aa46e3b51675e7d8560f"
-previous_checksums = ["sha256:c67cae98ea54a9b06434bdf5f4be02d7500302f2a5b4f8bda1f76ce80d574c20"]
+checksum = "sha256:2f4a8e226c2aca73d530d3f5c78bb92a8812f3bbd623becffc8107cbee780058"
+previous_checksums = ["sha256:c67cae98ea54a9b06434bdf5f4be02d7500302f2a5b4f8bda1f76ce80d574c20", "sha256:fa59da1098cc87fc506a83d28448f088470e149ef1d2aa46e3b51675e7d8560f"]
 size = 131538515
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_IceHistory-PaleoMIST.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-8KM/2.1.0/ANT-8KM_IceHistory-PaleoMIST.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-8KM/2.2.0/ANT-8KM_IceHistory-PaleoMIST.nc"
 
 ["ANT-8KM_IceHistory-PaleoMIST_max.nc"]
-checksum = "sha256:cb931678b6bdfe2702613af7405213d9f5fde9fe10a13c3100fdfe2b5873b566"
-previous_checksums = ["sha256:e3adc3aaede26ca80bdf8ae8bae76bf62a063532748dc362279f0f160a552610"]
-size = 131333631
+checksum = "sha256:c6627b6fd0cd5e8a9dc5a6bcf22b311a33e2b178e4686bb7c85e9ce54fa04c5e"
+previous_checksums = ["sha256:e3adc3aaede26ca80bdf8ae8bae76bf62a063532748dc362279f0f160a552610", "sha256:cb931678b6bdfe2702613af7405213d9f5fde9fe10a13c3100fdfe2b5873b566"]
+size = 131334665
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_IceHistory-PaleoMIST_max.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-8KM/2.1.0/ANT-8KM_IceHistory-PaleoMIST_max.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-8KM/2.2.0/ANT-8KM_IceHistory-PaleoMIST_max.nc"
 
 ["ANT-8KM_grid.nc"]
-checksum = "sha256:27b6ffe5af1932ac7e1fcf32b8e8219420fe82be6287f09f931efbebed8ec93d"
-previous_checksums = ["sha256:6d00ae1cafbf496c1375c74c9153d92c5e2aec79d8026f004ba0dc26d0c47ece"]
+checksum = "sha256:866f0fcc4dd06b0fc27fe92d8528d025206288f01b612839490689daaf469d5a"
+previous_checksums = ["sha256:6d00ae1cafbf496c1375c74c9153d92c5e2aec79d8026f004ba0dc26d0c47ece", "sha256:27b6ffe5af1932ac7e1fcf32b8e8219420fe82be6287f09f931efbebed8ec93d"]
 size = 2776497
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-8KM/2.1.0/ANT-8KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-8KM/2.2.0/ANT-8KM_grid.nc"
 
 ["grid_ANT-16KM.txt"]
 checksum = "sha256:09d646757fe153b435cee10a90cf772b4626efbe2f187d410eab83876c8305cb"
 size = 467
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/grid_ANT-16KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-16KM/2.1.0/grid_ANT-16KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-16KM/2.2.0/grid_ANT-16KM.txt"
 
 ["grid_ANT-32KM.txt"]
 checksum = "sha256:619c2b14b9667a6ff1efe4de41f1b2bd0ddc8d3e10df6d5fd99222b80be20276"
 size = 466
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/grid_ANT-32KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-32KM/2.1.0/grid_ANT-32KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-32KM/2.2.0/grid_ANT-32KM.txt"
 
 ["grid_ANT-8KM.txt"]
 checksum = "sha256:66ff6285f42ec156b6c6a6c30fcb0d2e4c94e07d67512fb002cb0348b3420ce5"
 size = 465
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/grid_ANT-8KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-8KM/2.1.0/grid_ANT-8KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-8KM/2.2.0/grid_ANT-8KM.txt"

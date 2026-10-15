@@ -10,6 +10,18 @@
 
 ![IceHistory-Batchelor2019_PaleoMIST_LGC on GLOBAL-0.5DEG: f_ice_best.](../figures/IceHistory/IceHistory-Batchelor2019_PaleoMIST_LGC.png){width=569px}
 
+### GLAC1D
+
+![IceHistory-GLAC1D on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: H_ice.](../figures/IceHistory/IceHistory-GLAC1D.png){width=1303px}
+
+### GLAC1D_nn9894
+
+![IceHistory-GLAC1D_nn9894 on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: H_ice.](../figures/IceHistory/IceHistory-GLAC1D_nn9894.png){width=1303px}
+
+### GLAC1D_nn9927
+
+![IceHistory-GLAC1D_nn9927 on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: H_ice.](../figures/IceHistory/IceHistory-GLAC1D_nn9927.png){width=1303px}
+
 ### ICE5G
 
 ![IceHistory-ICE5G on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: H_ice.](../figures/IceHistory/IceHistory-ICE5G.png){width=1303px}

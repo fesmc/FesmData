@@ -1,275 +1,347 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-14"
-git_tag = "icehistory-v2.1.0"
+date = "2026-10-15"
+git_tag = "icehistory-v2.2.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Global_IceHistory"
-version = "2.1.0"
+version = "2.2.0"
 
 ["GLOBAL-0.1DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc"]
-checksum = "sha256:f555dff8c96ab0829e15e224a920e8226dd0ec46773fcd506aaae8c7c029ad11"
-previous_checksums = ["sha256:3041bda8907eb078ec3333966fa3fa0f893b2a3248aac029c81b9434be3ff0d3"]
+checksum = "sha256:3ad45aa76f1550cbd860a72a7eceeb7e5f5bd23044628fef10844c8a0feb0921"
+previous_checksums = ["sha256:3041bda8907eb078ec3333966fa3fa0f893b2a3248aac029c81b9434be3ff0d3", "sha256:f555dff8c96ab0829e15e224a920e8226dd0ec46773fcd506aaae8c7c029ad11"]
 size = 3864451
 storage_path = "$datasets_dir/Global/GLOBAL-0.1DEG/GLOBAL-0.1DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.1DEG/2.1.0/GLOBAL-0.1DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.1DEG/2.2.0/GLOBAL-0.1DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc"
 
 ["GLOBAL-0.1DEG_grid.nc"]
 checksum = "sha256:a4e56f174dc574ee53539866c27d4c7f5e740742d1d16f8daa8cb96fac1fc5b8"
 size = 192057
 storage_path = "$datasets_dir/Global/GLOBAL-0.1DEG/GLOBAL-0.1DEG_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.1DEG/2.1.0/GLOBAL-0.1DEG_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.1DEG/2.2.0/GLOBAL-0.1DEG_grid.nc"
 
 ["GLOBAL-0.25DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc"]
-checksum = "sha256:4dcc402529b0c11ae6486a936713a7560967da75ce82c09b8f593ab1a7e693b1"
-previous_checksums = ["sha256:dc375acf07e0632cc60d63302b927d2a24c3190ba11cbc32a09ea9778c06ce20"]
+checksum = "sha256:ac2f7c483113fd9ddce9fe4c7eb0948b5927fb74e07c79a6b604ef32a0d22ca5"
+previous_checksums = ["sha256:dc375acf07e0632cc60d63302b927d2a24c3190ba11cbc32a09ea9778c06ce20", "sha256:4dcc402529b0c11ae6486a936713a7560967da75ce82c09b8f593ab1a7e693b1"]
 size = 1241193
 storage_path = "$datasets_dir/Global/GLOBAL-0.25DEG/GLOBAL-0.25DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.25DEG/2.1.0/GLOBAL-0.25DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.25DEG/2.2.0/GLOBAL-0.25DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc"
 
 ["GLOBAL-0.25DEG_IceHistory-PaleoMIST.nc"]
-checksum = "sha256:a24174ebca22e140561b32cc5b1c303215d3adda86d09af40d7b254d027b1178"
-previous_checksums = ["sha256:144145d0ecedbf37eaf604f5763d93e367f9c0198f6325d622fc28f801c1c8df"]
+checksum = "sha256:e3dff10c88fc24de8256173f2d4b200feaf1a10c8ff1a975f5bdad87b94798e5"
+previous_checksums = ["sha256:144145d0ecedbf37eaf604f5763d93e367f9c0198f6325d622fc28f801c1c8df", "sha256:a24174ebca22e140561b32cc5b1c303215d3adda86d09af40d7b254d027b1178"]
 size = 229207813
 storage_path = "$datasets_dir/Global/GLOBAL-0.25DEG/GLOBAL-0.25DEG_IceHistory-PaleoMIST.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.25DEG/2.1.0/GLOBAL-0.25DEG_IceHistory-PaleoMIST.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.25DEG/2.2.0/GLOBAL-0.25DEG_IceHistory-PaleoMIST.nc"
 
 ["GLOBAL-0.25DEG_IceHistory-PaleoMIST_max.nc"]
-checksum = "sha256:2fbcfed00fd4d7d56e3b5b7c9a07fa5768d175c01c2714253f381deeeb3b0018"
-previous_checksums = ["sha256:0558c24f30569b3d157a803a27fecc4bf1767448e9f13426b8a084ee8c11d4a9"]
-size = 229057746
+checksum = "sha256:6261fb411839ce9792499d459173d0a74b13048bd9d74555b378ac1737b27415"
+previous_checksums = ["sha256:0558c24f30569b3d157a803a27fecc4bf1767448e9f13426b8a084ee8c11d4a9", "sha256:2fbcfed00fd4d7d56e3b5b7c9a07fa5768d175c01c2714253f381deeeb3b0018"]
+size = 229058780
 storage_path = "$datasets_dir/Global/GLOBAL-0.25DEG/GLOBAL-0.25DEG_IceHistory-PaleoMIST_max.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.25DEG/2.1.0/GLOBAL-0.25DEG_IceHistory-PaleoMIST_max.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.25DEG/2.2.0/GLOBAL-0.25DEG_IceHistory-PaleoMIST_max.nc"
 
 ["GLOBAL-0.25DEG_grid.nc"]
 checksum = "sha256:5ff16fa62830a5bcf93baa975e7fbb6294ba9e94c9a4e30a1ecbec5fb2afbc42"
 size = 49586
 storage_path = "$datasets_dir/Global/GLOBAL-0.25DEG/GLOBAL-0.25DEG_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.25DEG/2.1.0/GLOBAL-0.25DEG_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.25DEG/2.2.0/GLOBAL-0.25DEG_grid.nc"
 
 ["GLOBAL-0.5DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc"]
-checksum = "sha256:dfd169ad30232b191b674ab0c4648dae741a5fcadde3ee374356954ed6ebe895"
-previous_checksums = ["sha256:4b3203242786844f4749fd53cd8f0734819ffb8b807cc0ca6715974c5cb30d3f"]
+checksum = "sha256:53b905dd92e3c818ee623098f63c86a349fe2017b9db8ced9dd903853fda9c3e"
+previous_checksums = ["sha256:4b3203242786844f4749fd53cd8f0734819ffb8b807cc0ca6715974c5cb30d3f", "sha256:dfd169ad30232b191b674ab0c4648dae741a5fcadde3ee374356954ed6ebe895"]
 size = 503547
 storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/GLOBAL-0.5DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.5DEG/2.1.0/GLOBAL-0.5DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.5DEG/2.2.0/GLOBAL-0.5DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc"
+
+["GLOBAL-0.5DEG_IceHistory-GLAC1D.nc"]
+checksum = "sha256:84c3825bce36e77ed2fd143b7cab2d1ee8dfce3ad551f54133241f74dd47159d"
+size = 207317277
+storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/GLOBAL-0.5DEG_IceHistory-GLAC1D.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.5DEG/2.2.0/GLOBAL-0.5DEG_IceHistory-GLAC1D.nc"
+
+["GLOBAL-0.5DEG_IceHistory-GLAC1D_nn9894.nc"]
+checksum = "sha256:997853c7497a0497303c8e2cac5e79b0a627c0a66fa21db102ff0e09a423ad13"
+size = 14041876
+storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/GLOBAL-0.5DEG_IceHistory-GLAC1D_nn9894.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.5DEG/2.2.0/GLOBAL-0.5DEG_IceHistory-GLAC1D_nn9894.nc"
+
+["GLOBAL-0.5DEG_IceHistory-GLAC1D_nn9927.nc"]
+checksum = "sha256:786d53eba1b165e4742d6a62b163e4987107b7fdf6941485e9025a60d2de2ce4"
+size = 15609435
+storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/GLOBAL-0.5DEG_IceHistory-GLAC1D_nn9927.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.5DEG/2.2.0/GLOBAL-0.5DEG_IceHistory-GLAC1D_nn9927.nc"
 
 ["GLOBAL-0.5DEG_IceHistory-ICE5G.nc"]
-checksum = "sha256:58cb6900163c379611ffb86dc2f6fed5d19ada7a29e16145f7fb532f1960b9f7"
-previous_checksums = ["sha256:251a63eb014498cc4f68c924237d72c6fd8ed786d5475de19c1ed138c7760383"]
+checksum = "sha256:59176a6fcb39a831d794ea8cfbbea6224a9b813ce9213943b9a8e0d9621698e6"
+previous_checksums = ["sha256:251a63eb014498cc4f68c924237d72c6fd8ed786d5475de19c1ed138c7760383", "sha256:58cb6900163c379611ffb86dc2f6fed5d19ada7a29e16145f7fb532f1960b9f7"]
 size = 25543745
 storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/GLOBAL-0.5DEG_IceHistory-ICE5G.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.5DEG/2.1.0/GLOBAL-0.5DEG_IceHistory-ICE5G.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.5DEG/2.2.0/GLOBAL-0.5DEG_IceHistory-ICE5G.nc"
 
 ["GLOBAL-0.5DEG_IceHistory-ICE6G_C.nc"]
-checksum = "sha256:d9aa0a4a8f414dd411dc8bb09ee948145e6bf0d72ce2acc872a53b433a23f778"
-previous_checksums = ["sha256:b1e26f0c9e22185e362a2ff1baa9a517e4d8256e4a641167df8224abad30b1a1"]
+checksum = "sha256:caba0ee7b214421664c16a9e4848f18067fdcc0aad119d93363216711f175730"
+previous_checksums = ["sha256:b1e26f0c9e22185e362a2ff1baa9a517e4d8256e4a641167df8224abad30b1a1", "sha256:d9aa0a4a8f414dd411dc8bb09ee948145e6bf0d72ce2acc872a53b433a23f778"]
 size = 75377777
 storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/GLOBAL-0.5DEG_IceHistory-ICE6G_C.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.5DEG/2.1.0/GLOBAL-0.5DEG_IceHistory-ICE6G_C.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.5DEG/2.2.0/GLOBAL-0.5DEG_IceHistory-ICE6G_C.nc"
 
 ["GLOBAL-0.5DEG_IceHistory-PRISM4.nc"]
-checksum = "sha256:63f52cf22e3579ac14a60d0db6b02cc093ca9897060a272cc0e032ed9b5104a5"
-previous_checksums = ["sha256:ada6cc21974af0bf4d48dba96b7704b225c8a8116f4cf4f8f21f64ce7a92e005"]
+checksum = "sha256:4a1bd80e84797c9d345a29804dd1f04569ae06ec9330fe362e44c46a5b76cd21"
+previous_checksums = ["sha256:ada6cc21974af0bf4d48dba96b7704b225c8a8116f4cf4f8f21f64ce7a92e005", "sha256:63f52cf22e3579ac14a60d0db6b02cc093ca9897060a272cc0e032ed9b5104a5"]
 size = 1596168
 storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/GLOBAL-0.5DEG_IceHistory-PRISM4.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.5DEG/2.1.0/GLOBAL-0.5DEG_IceHistory-PRISM4.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.5DEG/2.2.0/GLOBAL-0.5DEG_IceHistory-PRISM4.nc"
 
 ["GLOBAL-0.5DEG_IceHistory-PaleoMIST.nc"]
-checksum = "sha256:8facf8410752cb1c13bd6c2688f1b0f4b75ec064b37ce0314ddde8760711ab14"
-previous_checksums = ["sha256:a58a609d6c6cab6efc36a133e628156fa9f9b136d015d651d556fce17142ec26"]
+checksum = "sha256:3776606e30ecd85cba4a1cb7a3036e133ca4f3eb2a60a1cb48f62fe7c0ec27c9"
+previous_checksums = ["sha256:a58a609d6c6cab6efc36a133e628156fa9f9b136d015d651d556fce17142ec26", "sha256:8facf8410752cb1c13bd6c2688f1b0f4b75ec064b37ce0314ddde8760711ab14"]
 size = 58525299
 storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/GLOBAL-0.5DEG_IceHistory-PaleoMIST.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.5DEG/2.1.0/GLOBAL-0.5DEG_IceHistory-PaleoMIST.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.5DEG/2.2.0/GLOBAL-0.5DEG_IceHistory-PaleoMIST.nc"
 
 ["GLOBAL-0.5DEG_IceHistory-PaleoMIST_max.nc"]
-checksum = "sha256:d2acc966e2cd3cdbdc3356af1218ac7438dbcdafc993945915f22e40e9ab1582"
-previous_checksums = ["sha256:3976b332b9444aded048380d9590fdfa292b8c84f2f571e11c8620f8dbc9e545"]
-size = 58031877
+checksum = "sha256:a60d11413d7613bd99947efc481b19f8a30f15081fa640e482c295c9a7b25f45"
+previous_checksums = ["sha256:3976b332b9444aded048380d9590fdfa292b8c84f2f571e11c8620f8dbc9e545", "sha256:d2acc966e2cd3cdbdc3356af1218ac7438dbcdafc993945915f22e40e9ab1582"]
+size = 58032911
 storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/GLOBAL-0.5DEG_IceHistory-PaleoMIST_max.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.5DEG/2.1.0/GLOBAL-0.5DEG_IceHistory-PaleoMIST_max.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.5DEG/2.2.0/GLOBAL-0.5DEG_IceHistory-PaleoMIST_max.nc"
 
 ["GLOBAL-0.5DEG_grid.nc"]
 checksum = "sha256:43301e8a8f8a7d3a47e181cc3ba1b216c72fbca797d8ed8f8672b5da2c1a95de"
 size = 25589
 storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/GLOBAL-0.5DEG_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.5DEG/2.1.0/GLOBAL-0.5DEG_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.5DEG/2.2.0/GLOBAL-0.5DEG_grid.nc"
 
 ["GLOBAL-1DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc"]
-checksum = "sha256:b7825850f49aed72a9330281c69754d1082ecb03b3bb7c5530ae8c5ac796a608"
-previous_checksums = ["sha256:b7e7b9354eea6548eb906922e62e39a6f516112f748eabcda7466e16f21c18fa"]
+checksum = "sha256:67d1287fb0240781c9ded4fe1a1db180d762686b6380247db896df5a4a8b0c84"
+previous_checksums = ["sha256:b7e7b9354eea6548eb906922e62e39a6f516112f748eabcda7466e16f21c18fa", "sha256:b7825850f49aed72a9330281c69754d1082ecb03b3bb7c5530ae8c5ac796a608"]
 size = 218438
 storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-1DEG/2.1.0/GLOBAL-1DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-1DEG/2.2.0/GLOBAL-1DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc"
+
+["GLOBAL-1DEG_IceHistory-GLAC1D.nc"]
+checksum = "sha256:edb4babf8693e2f0f30ba01fa73877cb7b5ed73096bd44d994b00c5792cf6752"
+size = 69685654
+storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_IceHistory-GLAC1D.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-1DEG/2.2.0/GLOBAL-1DEG_IceHistory-GLAC1D.nc"
+
+["GLOBAL-1DEG_IceHistory-GLAC1D_nn9894.nc"]
+checksum = "sha256:8f2ec50ef46c08f3ea77f2ee3cc225fb58c02571e0673f2df42bea8bf87d7a61"
+size = 8430366
+storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_IceHistory-GLAC1D_nn9894.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-1DEG/2.2.0/GLOBAL-1DEG_IceHistory-GLAC1D_nn9894.nc"
+
+["GLOBAL-1DEG_IceHistory-GLAC1D_nn9927.nc"]
+checksum = "sha256:1cb9f89c41b2d3083430b6cdf7a9141c89ddeea6d52a59d3c8e137ebbfd578a3"
+size = 9025411
+storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_IceHistory-GLAC1D_nn9927.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-1DEG/2.2.0/GLOBAL-1DEG_IceHistory-GLAC1D_nn9927.nc"
 
 ["GLOBAL-1DEG_IceHistory-ICE5G.nc"]
-checksum = "sha256:0f7ad942cbf73ae3d0b6aebb08d3cae614cc2c17c6455e11ae3754d179281e80"
-previous_checksums = ["sha256:ab48c98aa94695fe27739134996e126751f553735223e0ea6e4385965319ad08"]
+checksum = "sha256:bf3de1e4710e628961d6aa2df6d9efd52b5683deb2da22227956a7775b17ff48"
+previous_checksums = ["sha256:ab48c98aa94695fe27739134996e126751f553735223e0ea6e4385965319ad08", "sha256:0f7ad942cbf73ae3d0b6aebb08d3cae614cc2c17c6455e11ae3754d179281e80"]
 size = 5197703
 storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_IceHistory-ICE5G.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-1DEG/2.1.0/GLOBAL-1DEG_IceHistory-ICE5G.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-1DEG/2.2.0/GLOBAL-1DEG_IceHistory-ICE5G.nc"
 
 ["GLOBAL-1DEG_IceHistory-ICE6G_C.nc"]
-checksum = "sha256:1e09d1ba97c576aa206e0cfdc80876ded23b76eda6f1900be660a0175077d406"
-previous_checksums = ["sha256:bb0403b2f5fedbd56a21102b515ebf2704d55290caf04cadad17588888349391"]
+checksum = "sha256:70bdffebaf099416c04f3d1cc187fe8deec3c2ac2564ef803196f4fc36a7afe2"
+previous_checksums = ["sha256:bb0403b2f5fedbd56a21102b515ebf2704d55290caf04cadad17588888349391", "sha256:1e09d1ba97c576aa206e0cfdc80876ded23b76eda6f1900be660a0175077d406"]
 size = 17652164
 storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_IceHistory-ICE6G_C.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-1DEG/2.1.0/GLOBAL-1DEG_IceHistory-ICE6G_C.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-1DEG/2.2.0/GLOBAL-1DEG_IceHistory-ICE6G_C.nc"
 
 ["GLOBAL-1DEG_IceHistory-PRISM4.nc"]
-checksum = "sha256:ba93777ce076d4d6e8b62a159ee431c1140ff7ffcf9d3c79af5dc452acb999d5"
-previous_checksums = ["sha256:59f7397ee51653c857e7b25c4f0eec662c60ab2476f12b5fe0a83eceacd0818e"]
+checksum = "sha256:1660e35c0fecd3803593661fdbe9e7d0c4d69fa20d1719d6230e29064e653be8"
+previous_checksums = ["sha256:59f7397ee51653c857e7b25c4f0eec662c60ab2476f12b5fe0a83eceacd0818e", "sha256:ba93777ce076d4d6e8b62a159ee431c1140ff7ffcf9d3c79af5dc452acb999d5"]
 size = 318536
 storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_IceHistory-PRISM4.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-1DEG/2.1.0/GLOBAL-1DEG_IceHistory-PRISM4.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-1DEG/2.2.0/GLOBAL-1DEG_IceHistory-PRISM4.nc"
 
 ["GLOBAL-1DEG_IceHistory-PaleoMIST.nc"]
-checksum = "sha256:0fff09ce07d4b3c324be6b1fb807087917e370cad0a15cc51bdfaee288a03a2a"
-previous_checksums = ["sha256:411ab96d9b5f75fcafedd88e12aba44151e16784e4ade902f4ae3465dbcaa5e6"]
+checksum = "sha256:bcab42a55493fa5662d5ba23bd7787815aae4e2ba79844ed588693f47047c0ef"
+previous_checksums = ["sha256:411ab96d9b5f75fcafedd88e12aba44151e16784e4ade902f4ae3465dbcaa5e6", "sha256:0fff09ce07d4b3c324be6b1fb807087917e370cad0a15cc51bdfaee288a03a2a"]
 size = 15253548
 storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_IceHistory-PaleoMIST.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-1DEG/2.1.0/GLOBAL-1DEG_IceHistory-PaleoMIST.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-1DEG/2.2.0/GLOBAL-1DEG_IceHistory-PaleoMIST.nc"
 
 ["GLOBAL-1DEG_IceHistory-PaleoMIST_max.nc"]
-checksum = "sha256:a4ad76795d0c5e36de048e1e73e3ad85c8846d98472f5ca6354445495a8e8915"
-previous_checksums = ["sha256:32d00016000aebfba6ae24fcc5bb00d3e7a2fb97a6d19754b301f2e5cc38c703"]
-size = 15152855
+checksum = "sha256:342eae4cb5c13718b83bbb53be262b75ad399207932ec521485d388dd7d15c8b"
+previous_checksums = ["sha256:32d00016000aebfba6ae24fcc5bb00d3e7a2fb97a6d19754b301f2e5cc38c703", "sha256:a4ad76795d0c5e36de048e1e73e3ad85c8846d98472f5ca6354445495a8e8915"]
+size = 15153889
 storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_IceHistory-PaleoMIST_max.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-1DEG/2.1.0/GLOBAL-1DEG_IceHistory-PaleoMIST_max.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-1DEG/2.2.0/GLOBAL-1DEG_IceHistory-PaleoMIST_max.nc"
 
 ["GLOBAL-1DEG_grid.nc"]
 checksum = "sha256:72658a61a9d89e56a88266b6a3168ba7ea4e18c4c8b0d2a904164c2c047e5d47"
 size = 17869
 storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-1DEG/2.1.0/GLOBAL-1DEG_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-1DEG/2.2.0/GLOBAL-1DEG_grid.nc"
 
 ["GLOBAL-2DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc"]
-checksum = "sha256:8cb074d853f17a95905d476801a2adfb6d6ca2b0e576a1d3e6e42b92481c6f61"
-previous_checksums = ["sha256:b902b9a54a90cd121676ddb1db61b76f608958c2f0e05c6d88869fc9dbf50615"]
+checksum = "sha256:cb652a8a124b46cdfc41840d75e83d99b7463b28b8707321d954c73132316436"
+previous_checksums = ["sha256:b902b9a54a90cd121676ddb1db61b76f608958c2f0e05c6d88869fc9dbf50615", "sha256:8cb074d853f17a95905d476801a2adfb6d6ca2b0e576a1d3e6e42b92481c6f61"]
 size = 92956
 storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-2DEG/2.1.0/GLOBAL-2DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-2DEG/2.2.0/GLOBAL-2DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc"
+
+["GLOBAL-2DEG_IceHistory-GLAC1D.nc"]
+checksum = "sha256:26396fed02fee4d759db29a12b1cad61c6cfedd954479c0ee48558b4c6304629"
+size = 17800056
+storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_IceHistory-GLAC1D.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-2DEG/2.2.0/GLOBAL-2DEG_IceHistory-GLAC1D.nc"
+
+["GLOBAL-2DEG_IceHistory-GLAC1D_nn9894.nc"]
+checksum = "sha256:ba6f3782a290897a3806520688089fa6c59f7dc9d8a4e7656d009b343520fd5b"
+size = 2420258
+storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_IceHistory-GLAC1D_nn9894.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-2DEG/2.2.0/GLOBAL-2DEG_IceHistory-GLAC1D_nn9894.nc"
+
+["GLOBAL-2DEG_IceHistory-GLAC1D_nn9927.nc"]
+checksum = "sha256:8e27585d79a0658078395752fec303138cae1150d01e8bad288fa704e2e6334e"
+size = 2603917
+storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_IceHistory-GLAC1D_nn9927.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-2DEG/2.2.0/GLOBAL-2DEG_IceHistory-GLAC1D_nn9927.nc"
 
 ["GLOBAL-2DEG_IceHistory-ICE5G.nc"]
-checksum = "sha256:83485a57661b933e4c4cb5a30ecb63d7c0189fb54913e64863954082413e8552"
-previous_checksums = ["sha256:c991ef0751ee8a9d88bba427869ed7485462df970249502f068e2695df5798f8"]
+checksum = "sha256:4888553a1a7c2b7f8c5ecd16d8fcb6eddbba04eadfd57f92c2c50fb75c166456"
+previous_checksums = ["sha256:c991ef0751ee8a9d88bba427869ed7485462df970249502f068e2695df5798f8", "sha256:83485a57661b933e4c4cb5a30ecb63d7c0189fb54913e64863954082413e8552"]
 size = 1611265
 storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_IceHistory-ICE5G.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-2DEG/2.1.0/GLOBAL-2DEG_IceHistory-ICE5G.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-2DEG/2.2.0/GLOBAL-2DEG_IceHistory-ICE5G.nc"
 
 ["GLOBAL-2DEG_IceHistory-ICE6G_C.nc"]
-checksum = "sha256:0eed17fcd2838c12ca2d2c6b410a2897a76cde19fc70d97a78c9fee68faaa37e"
-previous_checksums = ["sha256:9af50781f487508eae5e72a2d31330867acef0657da0da50f72fc397c4bbe247"]
+checksum = "sha256:91a5a1e03d10fd25fc109941a998d380a266d9b280cf5cd191c0c97c555700d7"
+previous_checksums = ["sha256:9af50781f487508eae5e72a2d31330867acef0657da0da50f72fc397c4bbe247", "sha256:0eed17fcd2838c12ca2d2c6b410a2897a76cde19fc70d97a78c9fee68faaa37e"]
 size = 4946670
 storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_IceHistory-ICE6G_C.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-2DEG/2.1.0/GLOBAL-2DEG_IceHistory-ICE6G_C.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-2DEG/2.2.0/GLOBAL-2DEG_IceHistory-ICE6G_C.nc"
 
 ["GLOBAL-2DEG_IceHistory-PRISM4.nc"]
-checksum = "sha256:9f3c781b9d744742e4ca0bfdb26430d7ba8494b0c05da4e2bbcf462da8d6403e"
-previous_checksums = ["sha256:b7e7edfe78d3b0f7aca1241270886f18390c401c5bb8bc7511cebb03039c15fe"]
+checksum = "sha256:5d8b33765ae330a1c0e0d87dba25bc10556393b3affff30d2fe57bbcc62f6f35"
+previous_checksums = ["sha256:b7e7edfe78d3b0f7aca1241270886f18390c401c5bb8bc7511cebb03039c15fe", "sha256:9f3c781b9d744742e4ca0bfdb26430d7ba8494b0c05da4e2bbcf462da8d6403e"]
 size = 168518
 storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_IceHistory-PRISM4.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-2DEG/2.1.0/GLOBAL-2DEG_IceHistory-PRISM4.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-2DEG/2.2.0/GLOBAL-2DEG_IceHistory-PRISM4.nc"
 
 ["GLOBAL-2DEG_IceHistory-PaleoMIST.nc"]
-checksum = "sha256:9d0c5f3492fcc68424b6634f7a5752ad309f2f5a3b6e443a1b61824d72e8e5c7"
-previous_checksums = ["sha256:154f2f38be1dcd01ffff11492de8fab2977d15ddecc85163315e75dfce2d825f"]
+checksum = "sha256:f736c95801d3b0da1010bac76ee66bf47d289398d796fcbf9fb3edc9d8b7d2f6"
+previous_checksums = ["sha256:154f2f38be1dcd01ffff11492de8fab2977d15ddecc85163315e75dfce2d825f", "sha256:9d0c5f3492fcc68424b6634f7a5752ad309f2f5a3b6e443a1b61824d72e8e5c7"]
 size = 4023910
 storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_IceHistory-PaleoMIST.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-2DEG/2.1.0/GLOBAL-2DEG_IceHistory-PaleoMIST.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-2DEG/2.2.0/GLOBAL-2DEG_IceHistory-PaleoMIST.nc"
 
 ["GLOBAL-2DEG_IceHistory-PaleoMIST_max.nc"]
-checksum = "sha256:532e3fdb247007fb5cf91acf21cc59d13bd35fdcae1ffe373cff0de23a064e57"
-previous_checksums = ["sha256:fa217fddd4697fbd1df78188252bd9aca8a11ce390584e3dff625d1773749011"]
-size = 3988659
+checksum = "sha256:d7a1254c306abf8f20b9baff181197d25f64b9fc02a967b70f20cce1d1e082fa"
+previous_checksums = ["sha256:fa217fddd4697fbd1df78188252bd9aca8a11ce390584e3dff625d1773749011", "sha256:532e3fdb247007fb5cf91acf21cc59d13bd35fdcae1ffe373cff0de23a064e57"]
+size = 3989693
 storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_IceHistory-PaleoMIST_max.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-2DEG/2.1.0/GLOBAL-2DEG_IceHistory-PaleoMIST_max.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-2DEG/2.2.0/GLOBAL-2DEG_IceHistory-PaleoMIST_max.nc"
 
 ["GLOBAL-2DEG_grid.nc"]
 checksum = "sha256:5fa987a099ab7e60d3a4b22e7bb5bd00cadccc8581874b8d600a38f9a512f104"
 size = 14559
 storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-2DEG/2.1.0/GLOBAL-2DEG_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-2DEG/2.2.0/GLOBAL-2DEG_grid.nc"
 
 ["GLOBAL-5DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc"]
-checksum = "sha256:8c8881b55cb79d93c798fb28bba2d5fcb845009256b7cfc63220aca3efecfb3b"
-previous_checksums = ["sha256:38ab240ff084dba12068dd5516d9c600109fc8da621da749bcd411ea05935b2d"]
+checksum = "sha256:51a3012245b4aae06c6d32e847bae708aef7ec8195867dc2fd05a8f3b2836eeb"
+previous_checksums = ["sha256:38ab240ff084dba12068dd5516d9c600109fc8da621da749bcd411ea05935b2d", "sha256:8c8881b55cb79d93c798fb28bba2d5fcb845009256b7cfc63220aca3efecfb3b"]
 size = 48477
 storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-5DEG/2.1.0/GLOBAL-5DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-5DEG/2.2.0/GLOBAL-5DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc"
+
+["GLOBAL-5DEG_IceHistory-GLAC1D.nc"]
+checksum = "sha256:27714d0f4c3be0a0bd7534695898f23aeb0c4acd211e90d8f935ab58b07a3525"
+size = 3046519
+storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_IceHistory-GLAC1D.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-5DEG/2.2.0/GLOBAL-5DEG_IceHistory-GLAC1D.nc"
+
+["GLOBAL-5DEG_IceHistory-GLAC1D_nn9894.nc"]
+checksum = "sha256:d52e86784438ec154f8fc707a78c38afee792b35e5fa8d7b8a9eba344b750071"
+size = 512350
+storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_IceHistory-GLAC1D_nn9894.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-5DEG/2.2.0/GLOBAL-5DEG_IceHistory-GLAC1D_nn9894.nc"
+
+["GLOBAL-5DEG_IceHistory-GLAC1D_nn9927.nc"]
+checksum = "sha256:db8103357b474884c58b02ff92899abf502ecd29c792063460909870b7c71b7b"
+size = 600009
+storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_IceHistory-GLAC1D_nn9927.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-5DEG/2.2.0/GLOBAL-5DEG_IceHistory-GLAC1D_nn9927.nc"
 
 ["GLOBAL-5DEG_IceHistory-ICE5G.nc"]
-checksum = "sha256:61a49eba604d15b4d6384832a7a1435438e7141f3820bd73304090a126d02084"
-previous_checksums = ["sha256:90921e115e22265a72b0d47aade023863ca71232ba7f5bbb514cde987f400d9d"]
+checksum = "sha256:f8b25ff67f8f16a8792ee3d904061ea54622950380989d8db787dfb813711f58"
+previous_checksums = ["sha256:90921e115e22265a72b0d47aade023863ca71232ba7f5bbb514cde987f400d9d", "sha256:61a49eba604d15b4d6384832a7a1435438e7141f3820bd73304090a126d02084"]
 size = 295514
 storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_IceHistory-ICE5G.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-5DEG/2.1.0/GLOBAL-5DEG_IceHistory-ICE5G.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-5DEG/2.2.0/GLOBAL-5DEG_IceHistory-ICE5G.nc"
 
 ["GLOBAL-5DEG_IceHistory-ICE6G_C.nc"]
-checksum = "sha256:510297afb7b1b094a785bdc920ed1422c9c74642211283d8f33fca156f71c2a3"
-previous_checksums = ["sha256:d0eadbbd3a0681be104ae504954a076009b4c8a4d97069bb91ae7f312706ea80"]
+checksum = "sha256:a1d6eab9f0f9bca54ba40655dd4d47bf5a4ca650cfbab4275113561f0f4dd6ef"
+previous_checksums = ["sha256:d0eadbbd3a0681be104ae504954a076009b4c8a4d97069bb91ae7f312706ea80", "sha256:510297afb7b1b094a785bdc920ed1422c9c74642211283d8f33fca156f71c2a3"]
 size = 919695
 storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_IceHistory-ICE6G_C.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-5DEG/2.1.0/GLOBAL-5DEG_IceHistory-ICE6G_C.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-5DEG/2.2.0/GLOBAL-5DEG_IceHistory-ICE6G_C.nc"
 
 ["GLOBAL-5DEG_IceHistory-PRISM4.nc"]
-checksum = "sha256:7682268152faabb120e4a08f3d33beafa2addab7ba57714f13207e6569050e9d"
-previous_checksums = ["sha256:05488a215f82bc3f52fc9333a5895ca54dada2250bf9cbdb7f9a956acb14793d"]
+checksum = "sha256:30d24bd31023f24acb0a07cee15a84b418468d903cebcd1c6814f67aea7c0e4d"
+previous_checksums = ["sha256:05488a215f82bc3f52fc9333a5895ca54dada2250bf9cbdb7f9a956acb14793d", "sha256:7682268152faabb120e4a08f3d33beafa2addab7ba57714f13207e6569050e9d"]
 size = 70210
 storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_IceHistory-PRISM4.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-5DEG/2.1.0/GLOBAL-5DEG_IceHistory-PRISM4.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-5DEG/2.2.0/GLOBAL-5DEG_IceHistory-PRISM4.nc"
 
 ["GLOBAL-5DEG_IceHistory-PaleoMIST.nc"]
-checksum = "sha256:f8d86a5bf1fb754a4360bee5a90fa965d33d9a072f80e6a19ae906782403b6c8"
-previous_checksums = ["sha256:6bc6254b3ed4703ec27108e2b88f4f6eed66e637f9ce7a31836488400cd6dede"]
+checksum = "sha256:21f1a0aafef390fb381d03f371ffe29313d164956203e179bfe29f9b80bc7e32"
+previous_checksums = ["sha256:6bc6254b3ed4703ec27108e2b88f4f6eed66e637f9ce7a31836488400cd6dede", "sha256:f8d86a5bf1fb754a4360bee5a90fa965d33d9a072f80e6a19ae906782403b6c8"]
 size = 705772
 storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_IceHistory-PaleoMIST.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-5DEG/2.1.0/GLOBAL-5DEG_IceHistory-PaleoMIST.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-5DEG/2.2.0/GLOBAL-5DEG_IceHistory-PaleoMIST.nc"
 
 ["GLOBAL-5DEG_IceHistory-PaleoMIST_max.nc"]
-checksum = "sha256:c754125748e5379ab8607efbef1da9c9ec1b9f63736f07c59f150842fa3f144e"
-previous_checksums = ["sha256:20c58b281f39a0661adc7e28154a5bd911d3b473ada34b3cb3cf039f32357ef8"]
-size = 702645
+checksum = "sha256:c4af78b5ca9009c3fe14760e83451ab012b4e0358d7a84502fe5514219917ef9"
+previous_checksums = ["sha256:20c58b281f39a0661adc7e28154a5bd911d3b473ada34b3cb3cf039f32357ef8", "sha256:c754125748e5379ab8607efbef1da9c9ec1b9f63736f07c59f150842fa3f144e"]
+size = 703679
 storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_IceHistory-PaleoMIST_max.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-5DEG/2.1.0/GLOBAL-5DEG_IceHistory-PaleoMIST_max.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-5DEG/2.2.0/GLOBAL-5DEG_IceHistory-PaleoMIST_max.nc"
 
 ["GLOBAL-5DEG_grid.nc"]
 checksum = "sha256:55c037e0371c20123875dc16ddd01d1e864dd5b5b1b0cb29c9bfa3fd23f24cbf"
 size = 12511
 storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-5DEG/2.1.0/GLOBAL-5DEG_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-5DEG/2.2.0/GLOBAL-5DEG_grid.nc"
 
 ["grid_GLOBAL-0.1DEG.txt"]
 checksum = "sha256:5b3a831c01fa4276db84a6d54d7cb5d4da7ca2fbc859ab2a85080a431155e4e3"
 size = 215
 storage_path = "$datasets_dir/Global/GLOBAL-0.1DEG/grid_GLOBAL-0.1DEG.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.1DEG/2.1.0/grid_GLOBAL-0.1DEG.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.1DEG/2.2.0/grid_GLOBAL-0.1DEG.txt"
 
 ["grid_GLOBAL-0.25DEG.txt"]
 checksum = "sha256:18ffa92b5b37bbafa504215d99896bfe5ed3d9cada9beed41bf6f79353279d7e"
 size = 218
 storage_path = "$datasets_dir/Global/GLOBAL-0.25DEG/grid_GLOBAL-0.25DEG.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.25DEG/2.1.0/grid_GLOBAL-0.25DEG.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.25DEG/2.2.0/grid_GLOBAL-0.25DEG.txt"
 
 ["grid_GLOBAL-0.5DEG.txt"]
 checksum = "sha256:7d6ca9751973abeb4a15b25146d8c6601cd47bf9e2cbf62a9dce3e00519955cd"
 size = 212
 storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/grid_GLOBAL-0.5DEG.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.5DEG/2.1.0/grid_GLOBAL-0.5DEG.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.5DEG/2.2.0/grid_GLOBAL-0.5DEG.txt"
 
 ["grid_GLOBAL-1DEG.txt"]
 checksum = "sha256:38acf47f98866cc1c0479566b51a3a3df28fb09aa295652f52f67fffb2c499fd"
 size = 209
 storage_path = "$datasets_dir/Global/GLOBAL-1DEG/grid_GLOBAL-1DEG.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-1DEG/2.1.0/grid_GLOBAL-1DEG.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-1DEG/2.2.0/grid_GLOBAL-1DEG.txt"
 
 ["grid_GLOBAL-2DEG.txt"]
 checksum = "sha256:f09996b59b7b7cc91b348c53eec0a8cb246c5b293a890b4912278435d589fec6"
 size = 208
 storage_path = "$datasets_dir/Global/GLOBAL-2DEG/grid_GLOBAL-2DEG.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-2DEG/2.1.0/grid_GLOBAL-2DEG.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-2DEG/2.2.0/grid_GLOBAL-2DEG.txt"
 
 ["grid_GLOBAL-5DEG.txt"]
 checksum = "sha256:647911a4f8fd1afecd212683255ca869a1f3b9bdcb3ae180e7a1415cea84d344"
 size = 206
 storage_path = "$datasets_dir/Global/GLOBAL-5DEG/grid_GLOBAL-5DEG.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-5DEG/2.1.0/grid_GLOBAL-5DEG.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-5DEG/2.2.0/grid_GLOBAL-5DEG.txt"
