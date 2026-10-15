@@ -48,7 +48,7 @@ xlim = [-3040, 3040]
 ylim = [-3040, 3040]
 resolutions = [0.5, 1, 2, 4, 8, 16, 32]
 
-# Ice-sheet basins (crops, ASE at 500 m, 1 and 2 km, the others at 500 m and 1 km):
+# Ice-sheet basins (crops, ASE at 500 m to 32 km, the others at 500 m and 1 km):
 # bounding box of the drainage basins (Basins_Antarctica_v02 of NSIDC-0709,
 # as IMBIE2016-refined) and their ice shelves (floating ice of BedMachine v4 in their
 # extended basins), plus 50 km, snapped outward to whole km (ASE: to even km).
@@ -60,7 +60,7 @@ resolutions = [0.5, 1, 2, 4, 8, 16, 32]
 folder = "Amundsen"
 xlim = [-1866, -948]
 ylim = [-908, 152]
-resolutions = [0.5, 1, 2]
+resolutions = [0.5, 1, 2, 4, 8, 16, 32]
 
 # Thwaites Glacier, 133.8-93.3W, 81.3-72.8S: its basin and ice shelf (tongue, eastern
 # shelf).
