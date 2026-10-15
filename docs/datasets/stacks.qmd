@@ -1,0 +1,9 @@
+---
+pagetitle: "Stacks"
+---
+
+{{< include ../../Stacks/README.md >}}
+
+{{< include ../_downloads/Stacks.md >}}
+
+{{< include ../figures/Stacks/gallery.md >}}

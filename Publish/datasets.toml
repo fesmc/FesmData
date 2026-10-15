@@ -25,7 +25,7 @@ topics = [
     { name = "Ice", datasets = ["Velocity", "IceChange", "IceHistory", "Stratigraphy", "BasalMelt", "BasalState"] },
     { name = "Solid Earth", datasets = ["GHF", "Sediment", "SolidEarth"] },
     { name = "Ocean and climate", datasets = ["Ocean", "SMB", "Atmosphere", "Paleoclimate"] },
-    { name = "Records", datasets = ["IceCores", "GHG", "SeaLevel", "RSL", "Boreholes", "GPS", "SMBObs", "Freshwater"] },
+    { name = "Records", datasets = ["IceCores", "GHG", "SeaLevel", "Stacks", "RSL", "Boreholes", "GPS", "SMBObs", "Freshwater"] },
 ]
 
 [Topo]
@@ -233,6 +233,17 @@ the ice sheets: the stacks of Spratt and Lisiecki (2016), Waelbroeck et al. (200
 Bintanja and van de Wal (2008), de Boer et al. (2014), Berends et al. (2021), Rohling et
 al. (2021), the Red Sea record of Grant et al. (2014) and the ice sheets of PaleoMIST 1.0
 (Gowan et al., 2021), as CF discrete sampling geometry files with text copies.
+"""
+
+[Stacks]
+tag = "stacks"
+title = "benthic d18O stacks"
+readme = "Stacks/README.md"
+keywords = ["benthic d18O", "stack", "LR04", "ice volume", "Pleistocene", "Pliocene"]
+description = """
+Global stacks of benthic foraminiferal δ18O over the last 5 Myr: LR04 (Lisiecki and
+Raymo, 2005) and the probabilistic stack of Ahn et al. (2017), as CF discrete sampling
+geometry files with text copies.
 """
 
 [RSL]

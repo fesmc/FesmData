@@ -94,6 +94,8 @@ website:
             href: datasets/ghg.qmd
           - text: "SeaLevel — global sea level"
             href: datasets/sealevel.qmd
+          - text: "Stacks — benthic δ18O stacks"
+            href: datasets/stacks.qmd
           - text: "RSL — relative sea level"
             href: datasets/rsl.qmd
           - text: "Boreholes — ice temperature profiles"

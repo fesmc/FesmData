@@ -1622,6 +1622,26 @@ storage_path = "$datasets_dir/grant2014_redsea/41467_2014_BFncomms6076_MOESM1342
 uri = "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fncomms6076/MediaObjects/41467_2014_BFncomms6076_MOESM1342_ESM.xlsx"
 
 # ---------------------------------------------------------------------------
+# Stacks (Stacks/)
+# ---------------------------------------------------------------------------
+
+# Lisiecki and Raymo (2005): LR04 benthic d18O stack, 5.3 Myr (NOAA NCEI, template text;
+# also on the page of the author and on PANGAEA.701576).
+
+[lisiecki2005_lr04]
+doi = "10.25921/k88j-0106"
+storage_path = "$datasets_dir/lisiecki2005_lr04/lisiecki2005-d18o-stack-noaa.txt"
+uri = "https://www.ncei.noaa.gov/pub/data/paleo/contributions_by_author/lisiecki2005/lisiecki2005-d18o-stack-noaa.txt"
+
+# Ahn et al. (2017): probabilistic benthic d18O stack (Prob-stack), 5 Myr, from the
+# repository of the authors at a fixed commit (GPL-3.0; no copy in a data centre).
+
+[ahn2017_probstack]
+doi = "10.1093/climsys/dzx002"
+storage_path = "$datasets_dir/ahn2017_probstack/Prob_stack.txt"
+uri = "https://raw.githubusercontent.com/seonminahn/HMM-Stack/c8125f8856c47eca59281c6ef2cdb598736e391d/Prob_stack.txt"
+
+# ---------------------------------------------------------------------------
 # Relative sea level (RSL/)
 # ---------------------------------------------------------------------------
 

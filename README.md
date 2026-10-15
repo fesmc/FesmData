@@ -38,6 +38,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 
 | Category | Key | Description | Ref(s) |
 |----------|-----|-------------|--------|
+| paleo    | Ahn2017_ProbStack           | Probabilistic benthic d18O stack, 5 Myr          | Ahn et al. (2017)              |
 | ice      | ATL15_dzdt                  | Surface elevation change rate, ICESat-2 ATL15 v6 | Smith et al. (2026)            |
 | paleo    | Badgeley2020_recon          | Greenland temperature and precipitation, 20 ka to present | Badgeley et al. (2020) |
 | geo      | Bagge2021_visc              | Global 3D mantle viscosity                       | Bagge et al. (2021)            |
@@ -80,6 +81,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | paleo    | Lambert2012_EDCdust         | EPICA Dome C dust flux, 800 kyr                  | Lambert et al. (2012)          |
 | geo      | Laske2013_crust1            | Sediment thickness of CRUST1.0                   | Laske et al. (2013)            |
 | paleo    | Leger2024_PaleoGris         | Retreat chronology of the Greenland Ice Sheet    | Leger et al. (2024)            |
+| paleo    | Lisiecki2005_LR04           | LR04 benthic d18O stack, 5.3 Myr                 | Lisiecki and Raymo (2005)      |
 | geo      | Lloyd2024_visc              | Global 3D mantle viscosity from GLAD-M25         | Lloyd et al. (2024)            |
 | climate  | Loeb2018_ceres              | CERES EBAF Ed4.2.1 radiative fluxes              | Loeb et al. (2018)             |
 | geo      | Loesing2021_ghf             | Geothermal heat flow of Antarctica               | Lösing & Ebbing (2021)         |

@@ -4,7 +4,7 @@ subtitle: "Non-gridded data: time series, sites and profiles"
 ---
 
 The Records datasets hold data that are not on a grid: ice core series, greenhouse
-gases, global sea level, relative sea level indicators, borehole temperature profiles, GPS uplift rates, point measurements of
+gases, global sea level, benthic δ18O stacks, relative sea level indicators, borehole temperature profiles, GPS uplift rates, point measurements of
 the surface mass balance, and freshwater fluxes by region. They are made from the
 original sources, like the gridded datasets, but not remapped: each product is one
 NetCDF file, or several (e.g. one per ice core), following the CF conventions for
