@@ -44,6 +44,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | geo      | Baranov2021_sed             | Antarctic sediment thickness, ANTASed            | Baranov et al. (2021)          |
 | paleo    | Batchelor2019_NHIceMasks    | Northern Hemisphere ice extents, 18 time slices  | Batchelor et al. (2019)        |
 | paleo    | Batchelor2019_PaleoMIST_lgc | Global ice extents of the last glacial cycle (Batchelor north, PaleoMIST south) | Batchelor et al. (2019), Gowan et al. (2021) |
+| paleo    | Bouchet2023_AICC2023        | AICC2023 ice core chronology (EDC, EDML, NGRIP, TALDICE, Vostok) | Bouchet et al. (2023)          |
 | paleo    | Buizert2018                 | Greenland seasonal temperatures, 22 ka to present | Buizert et al. (2018)         |
 | climate  | CMIP                        | Working with CMIP data (CMIP5/CMIP6/etc)         | Unpublished                    |
 | geo      | Colgan2021_ghf              | Geothermal heat flow of Greenland                | Colgan & Wansing (2021)        |

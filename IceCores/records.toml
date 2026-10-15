@@ -12,3 +12,7 @@ file = "Gkinis2020_NEEM.nc"
 [products.Vinther2009]
 source = "Vinther2009_elevations"
 file = "Vinther2009_elevations.nc"
+
+[products.AICC2023]
+source = "Bouchet2023_AICC2023"
+files = { EDC = "AICC2023_EDC.nc", EDML = "AICC2023_EDML.nc", NGRIP = "AICC2023_NGRIP.nc", TALDICE = "AICC2023_TALDICE.nc", Vostok = "AICC2023_Vostok.nc" }

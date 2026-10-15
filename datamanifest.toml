@@ -1419,6 +1419,35 @@ doi = "10.1038/nature08355"
 storage_path = "$datasets_dir/vinther2009/vinther2009greenland.txt"
 uri = "https://www.ncei.noaa.gov/pub/data/paleo/icecore/greenland/vinther2009greenland.txt"
 
+# Bouchet et al. (2023): AICC2023 chronology of EDC, EDML, NGRIP, TALDICE and Vostok,
+# depth-age tables on PANGAEA (version 2 of 2026, which corrects the AICC2012 columns of
+# the first tables 961018-961022; CC BY 4.0), part of doi:10.1594/PANGAEA.961017.
+
+[aicc2023_edc]
+doi = "10.1594/PANGAEA.990377"
+storage_path = "$datasets_dir/aicc2023/AICC2023_edc.tab"
+uri = "https://doi.pangaea.de/10.1594/PANGAEA.990377?format=textfile"
+
+[aicc2023_edml]
+doi = "10.1594/PANGAEA.990380"
+storage_path = "$datasets_dir/aicc2023/AICC2023_edml.tab"
+uri = "https://doi.pangaea.de/10.1594/PANGAEA.990380?format=textfile"
+
+[aicc2023_ngrip]
+doi = "10.1594/PANGAEA.990383"
+storage_path = "$datasets_dir/aicc2023/AICC2023_ngrip.tab"
+uri = "https://doi.pangaea.de/10.1594/PANGAEA.990383?format=textfile"
+
+[aicc2023_taldice]
+doi = "10.1594/PANGAEA.990384"
+storage_path = "$datasets_dir/aicc2023/AICC2023_taldice.tab"
+uri = "https://doi.pangaea.de/10.1594/PANGAEA.990384?format=textfile"
+
+[aicc2023_vostok]
+doi = "10.1594/PANGAEA.990385"
+storage_path = "$datasets_dir/aicc2023/AICC2023_vostok.tab"
+uri = "https://doi.pangaea.de/10.1594/PANGAEA.990385?format=textfile"
+
 # ---------------------------------------------------------------------------
 # Relative sea level (RSL/)
 # ---------------------------------------------------------------------------

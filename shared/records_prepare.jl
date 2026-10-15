@@ -99,6 +99,24 @@ function read_pangaea(path::AbstractString; missing_values=())
 end
 
 """
+    pangaea_event(path) -> NamedTuple
+
+Name, location (degrees) and elevation (m, `nothing` if not given) of the first event
+(site) in the metadata header of a PANGAEA dataset.
+"""
+function pangaea_event(path::AbstractString)
+    lines = read_lines(path)
+    i = findfirst(l -> startswith(l, "Event(s):"), lines)
+    i === nothing && error("$path: no Event(s) in the metadata header")
+    l = lines[i]
+    field(key) = (m = match(Regex("\\* $key: ([-0-9.]+)"), l); m === nothing ? nothing : parse(Float64, m[1]))
+    lat, lon = field("LATITUDE"), field("LONGITUDE")
+    (lat === nothing || lon === nothing) && error("$path: no LATITUDE/LONGITUDE in $l")
+    name = replace(strip(split(l[length("Event(s):")+1:end], '*')[1]), r"\s*\(URI: [^)]*\)" => "")
+    return (name=name, lat=lat, lon=lon, z_srf=field("ELEVATION"))
+end
+
+"""
     read_columns(path, header; skipto, stop=nothing, missing_values=()) -> Table
 
 A whitespace-separated table of a text file without a usable header line: the lines
