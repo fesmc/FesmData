@@ -2,8 +2,8 @@
 # List the original datasets of datamanifest.toml and whether they are present on
 # this machine. With --download, fetch the missing ones that can be downloaded
 # automatically (run on a node with internet access, e.g. a Levante login node), and
-# the GLO-90 tiles of the domains that use them: the active domains, or the DOMAINs
-# given.
+# the tiles of the Copernicus DEMs (GLO-90, GLO-30) of the domains that use them: the
+# active domains, or the DOMAINs given.
 #
 # Usage:
 #     julia --project=Topo Topo/scripts/00_sources.jl [--download] [DOMAIN ...]
@@ -27,20 +27,22 @@ for key in sort(collect(keys(db.datasets)))
     println(rpad(key, 28), rpad(status, 28), path)
 end
 
-# GLO-90 tiles of the domains with products that use them
-glo90 = get_dataset_path(db, "copernicus_glo90")
-keys_glo90 = filter(isempty(named) ? topo_domains() : named) do key
-    any(srcs -> "copernicus_glo90" in srcs, values(product_sources(Domain(key))))
-end
-for key in keys_glo90
-    dom = Domain(key)
-    if download
-        download_glo90(glo90, dom)
-    elseif isfile(joinpath(glo90, "tileList.txt"))
-        names = glo90_tiles(dom, glo90)
-        println(rpad("copernicus_glo90 $key", 28), count(n -> isfile(glo90_file(glo90, n)), names), " of ",
-                length(names), " tiles present")
-    else
-        println(rpad("copernicus_glo90 $key", 28), "MISSING (tile list, run with --download)")
+# Tiles of the Copernicus DEMs over the domains with products that use them
+for name in sort(collect(keys(COPERNICUS_DEMS)))
+    dir = get_dataset_path(db, name)
+    keys_dem = filter(isempty(named) ? topo_domains() : named) do key
+        any(srcs -> name in srcs, values(product_sources(Domain(key))))
+    end
+    for key in keys_dem
+        dom = Domain(key)
+        if download
+            download_copdem(name, dir, dom)
+        elseif isfile(joinpath(dir, "tileList.txt"))
+            tiles = copdem_tiles(name, dom, dir)
+            println(rpad("$name $key", 28), count(t -> isfile(copdem_file(dir, t)), tiles), " of ",
+                    length(tiles), " tiles present")
+        else
+            println(rpad("$name $key", 28), "MISSING (tile list, run with --download)")
+        end
     end
 end

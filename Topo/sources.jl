@@ -52,8 +52,8 @@ function read_source(name::AbstractString, dom::Domain)
         return read_gebco(_nc_file(get_dataset_path(db, name)), dom)
     elseif name == "iceboost_v2"
         return read_iceboost(db, dom)
-    elseif name == "copernicus_glo90"
-        return read_glo90(db, dom)
+    elseif haskey(COPERNICUS_DEMS, name)
+        return read_copdem(db, name, dom)
     elseif name == "sommers2025_drangdrung"
         return read_sommers2025(db, dom)
     end
@@ -74,7 +74,7 @@ taper_km(name::AbstractString) = name == "sommers2025_drangdrung" ? 0.0 : 20.0
 is_thickness_source(name::AbstractString) = name == "iceboost_v2"
 
 "True for sources that only give the elevation of the land (see `DEMTiles`)."
-is_land_source(name::AbstractString) = name == "copernicus_glo90"
+is_land_source(name::AbstractString) = haskey(COPERNICUS_DEMS, name)
 
 # The NetCDF file `path`, or the only one in folder `path` (an extracted zip)
 function _nc_file(path)
@@ -357,19 +357,25 @@ struct DEMTiles
 end
 
 """
-Copernicus DEM GLO-90 (ESA, doi:10.5270/ESA-c5d3d65): surface elevation of the land
-(m above the EGM2008 geoid), in 1-degree tiles with a spacing of 3" in latitude and 3"
-to 30" in longitude (by latitude), from the public bucket of the AWS Open Data
-programme. It is the edited TanDEM-X DEM (acquisitions 2011-2015), from the same
-acquisitions as the TanDEM-X EDEM from which IceBoost takes its surface features. The
-ocean is 0 m, and there are no tiles over the open ocean. Elevations at or below 0 m
-are taken as ocean, so land below sea level is ocean.
-"""
-const GLO90_URL = "https://copernicus-dem-90m.s3.amazonaws.com"
+Copernicus DEMs (ESA, doi:10.5270/ESA-c5d3d65): surface elevation of the land (m above
+the EGM2008 geoid), in 1-degree tiles from the public buckets of the AWS Open Data
+programme, GLO-90 with a spacing of 3" in latitude and 3" to 30" in longitude (by
+latitude), GLO-30 with 1" and 1" to 10". They are the edited TanDEM-X DEM (acquisitions
+2011-2015), from the same acquisitions as the TanDEM-X EDEM from which IceBoost takes
+its surface features. The ocean is 0 m, and there are no tiles over the open ocean.
+Elevations at or below 0 m are taken as ocean, so land below sea level is ocean.
 
-# Name of the GLO-90 tile with its south-west corner at (lat, lon) (integers)
-glo90_tile(lat::Integer, lon::Integer) =
-    "Copernicus_DSM_COG_30_$(lat < 0 ? "S" : "N")$(lpad(abs(lat), 2, '0'))_00_" *
+By source name: label, bucket and code of the spacing in the tile names (arc seconds
+times 10).
+"""
+const COPERNICUS_DEMS = Dict(
+    "copernicus_glo90" => (label="GLO-90", url="https://copernicus-dem-90m.s3.amazonaws.com", code="30"),
+    "copernicus_glo30" => (label="GLO-30", url="https://copernicus-dem-30m.s3.amazonaws.com", code="10"),
+)
+
+# Name of the tile of Copernicus DEM `name` with its south-west corner at (lat, lon) (integers)
+copdem_tile(name::AbstractString, lat::Integer, lon::Integer) =
+    "Copernicus_DSM_COG_$(COPERNICUS_DEMS[name].code)_$(lat < 0 ? "S" : "N")$(lpad(abs(lat), 2, '0'))_00_" *
     "$(lon < 0 ? "W" : "E")$(lpad(abs(lon), 3, '0'))_00_DEM"
 
 """
@@ -394,65 +400,67 @@ function lonlat_extent(g::ProjGrid; npts::Integer=200)
 end
 
 """
-    glo90_tiles(g, dir) -> Vector{String}
+    copdem_tiles(name, g, dir) -> Vector{String}
 
-Names of the GLO-90 tiles over the lon-lat extent of the projected grid `g` (or of the
-base grid of a domain, see `lonlat_extent`), of those listed in `dir`/tileList.txt (the
-tiles that exist).
+Names of the tiles of Copernicus DEM `name` over the lon-lat extent of the projected grid
+`g` (or of the base grid of a domain, see `lonlat_extent`), of those listed in
+`dir`/tileList.txt (the tiles that exist).
 """
-glo90_tiles(dom::Domain, dir::AbstractString) = glo90_tiles(dom.base, dir)
+copdem_tiles(name::AbstractString, dom::Domain, dir::AbstractString) = copdem_tiles(name, dom.base, dir)
 
-function glo90_tiles(g::ProjGrid, dir::AbstractString)
+function copdem_tiles(name::AbstractString, g::ProjGrid, dir::AbstractString)
     (lon0, lon1), (lat0, lat1) = lonlat_extent(g)
     listed = Set(readlines(joinpath(dir, "tileList.txt")))
-    names = [glo90_tile(la, lo) for la in floor(Int, lat0):ceil(Int, lat1)-1
-                                for lo in floor(Int, lon0):ceil(Int, lon1)-1]
+    names = [copdem_tile(name, la, lo) for la in floor(Int, lat0):ceil(Int, lat1)-1
+                                       for lo in floor(Int, lon0):ceil(Int, lon1)-1]
     return sort(filter(in(listed), names))
 end
 
-glo90_file(dir, name) = joinpath(dir, "$name.tif")
+copdem_file(dir, tile) = joinpath(dir, "$tile.tif")
 
 """
-    download_glo90(dir, dom) -> Int
+    download_copdem(name, dir, dom) -> Int
 
-Download the GLO-90 tiles of `dom` missing in `dir` (and the tile list), on a machine
-with internet access. Returns the number of tiles of the domain.
+Download the tiles of Copernicus DEM `name` over `dom` missing in `dir` (and the tile
+list), on a machine with internet access. Returns the number of tiles of the domain.
 """
-function download_glo90(dir::AbstractString, dom::Domain)
+function download_copdem(name::AbstractString, dir::AbstractString, dom::Domain)
+    (; label, url) = COPERNICUS_DEMS[name]
     mkpath(dir)
     list = joinpath(dir, "tileList.txt")
-    isfile(list) || Downloads.download("$GLO90_URL/tileList.txt", list)
-    names = glo90_tiles(dom, dir)
-    missing_names = filter(n -> !isfile(glo90_file(dir, n)), names)
-    println("$(dom.key): $(length(names)) GLO-90 tiles, downloading $(length(missing_names))")
-    for n in missing_names
-        tmp = glo90_file(dir, n) * ".part"
-        Downloads.download("$GLO90_URL/$n/$n.tif", tmp)
-        mv(tmp, glo90_file(dir, n); force=true)
+    isfile(list) || Downloads.download("$url/tileList.txt", list)
+    tiles = copdem_tiles(name, dom, dir)
+    missing_tiles = filter(t -> !isfile(copdem_file(dir, t)), tiles)
+    println("$(dom.key): $(length(tiles)) $label tiles, downloading $(length(missing_tiles))")
+    for t in missing_tiles
+        tmp = copdem_file(dir, t) * ".part"
+        Downloads.download("$url/$t/$t.tif", tmp)
+        mv(tmp, copdem_file(dir, t); force=true)
     end
-    return length(names)
+    return length(tiles)
 end
 
 """
-GLO-90 tiles over the base grid of `dom` (see `glo90_tiles`), or over the projected grid
-`g`, which must all have been downloaded (00_sources.jl --download, for the domain with
-key `key`).
+Tiles of Copernicus DEM `name` over the base grid of `dom` (see `copdem_tiles`), or over
+the projected grid `g`, which must all have been downloaded (00_sources.jl --download,
+for the domain with key `key`).
 """
-read_glo90(db, dom::Domain) = read_glo90(db, dom.base, dom.key)
+read_copdem(db, name::AbstractString, dom::Domain) = read_copdem(db, name, dom.base, dom.key)
 
-function read_glo90(db, g::ProjGrid, key::AbstractString)
-    dir = get_dataset_path(db, "copernicus_glo90")
-    isfile(joinpath(dir, "tileList.txt")) || error("no GLO-90 tile list in $dir (run 00_sources.jl --download)")
-    names = glo90_tiles(g, dir)
-    files = glo90_file.(dir, names)
+function read_copdem(db, name::AbstractString, g::ProjGrid, key::AbstractString)
+    label = COPERNICUS_DEMS[name].label
+    dir = get_dataset_path(db, name)
+    isfile(joinpath(dir, "tileList.txt")) || error("no $label tile list in $dir (run 00_sources.jl --download)")
+    tiles = copdem_tiles(name, g, dir)
+    files = copdem_file.(dir, tiles)
     absent = filter(!isfile, files)
-    isempty(absent) || error("$(length(absent)) of $(length(files)) GLO-90 tiles over $(g.name) missing in $dir " *
+    isempty(absent) || error("$(length(absent)) of $(length(files)) $label tiles over $(g.name) missing in $dir " *
                              "(run 00_sources.jl --download $key)")
     grids = Vector{LonLatGrid}(undef, length(files))
     Threads.@threads :dynamic for k in eachindex(files)
         grids[k] = AG.read(ds -> _lonlat_tif_grid(ds, files[k]), files[k])
     end
-    println("$(length(files)) GLO-90 tiles over $(g.name)")
+    println("$(length(files)) $label tiles over $(g.name)")
     return DEMTiles(files, grids)
 end
 
@@ -518,7 +526,7 @@ function read_sommers2025(db, dom::Domain)
     # Ellipsoidal heights to EGM2008, then voids from GLO-90
     N = ellipsoid_to_egm2008!(z_srf, grid, get_dataset_path(db, "egm2008_geoid"))
     println("EGM2008 geoid height over the DEM: $(round.(N; digits=2)) m")
-    glo = read_glo90(db, grid, dom.key)
+    glo = read_copdem(db, "copernicus_glo90", grid, dom.key)
     for (file, g) in zip(glo.files, glo.grids)
         _, z = read_dem_tile(file)
         zg, fv = remap_bilinear(grid, g, z)
