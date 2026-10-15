@@ -67,6 +67,32 @@ file_grid(path::AbstractString, name::AbstractString) =
 "Whether grid `a` has the cell centres of grid `b`."
 on_grid(a::ProjGrid, b::ProjGrid) = size(a) == size(b) && isapprox(a.xc, b.xc) && isapprox(a.yc, b.yc)
 
+"""
+    regrid_crops(dir, g, gridfiles)
+
+Prepare the folder `dir` of a grid whose grid files (`gridfiles`) are not those of grid
+`g` (the grid of a nest or crop changed in ../shared/domains.toml since they were
+written): if it holds only crops (files with `cropped_from`), they and the grid files
+were written by cropping, so the crops not on `g` are removed, to be cropped again on
+the new grid (of their dataset now, of the others when they are fetched). Files of
+records of the nest or crop itself are on the grid of their release, which cannot be
+changed here: an error until they are released again.
+"""
+function regrid_crops(dir::AbstractString, g::ProjGrid, gridfiles)
+    files = filter(f -> endswith(f, ".nc") && f != gridfiles[2], readdir(dir; join=true))
+    own = filter(f -> !NCDataset(ds -> haskey(ds.attrib, "cropped_from"), f), files)
+    isempty(own) ||
+        error("$(gridfiles[2]) is not grid $(g.name) of ../shared/domains.toml (of a release made before the grid " *
+              "changed?): cannot add crops on this grid until its records ($(join(basename.(own), ", "))) are " *
+              "released again")
+    for f in files
+        on_grid(file_grid(f, g.name), g) && continue
+        rm(f)
+        println(rpad("removed", 12), f, " (old grid)")
+    end
+    return nothing
+end
+
 "Whether `path` is the crop of the source file with `checksum` on the cells `ix`, `iy` (by its attributes)."
 is_crop_of(path::AbstractString, checksum::AbstractString, ix, iy) =
     isfile(path) && NCDataset(path) do ds
@@ -151,10 +177,11 @@ function crop_files(cropped, root::AbstractString; sandbox::Bool=false)
             dir = joinpath(root, c.folder, g.name)
             gridfiles = [joinpath(dir, "grid_$(g.name).txt"), joinpath(dir, "$(g.name)_grid.nc")]
             status = all(isfile, gridfiles) ? :present : (write_grid_files(dir, g; dataset=tag); :written)
-            # The files there (e.g. of an earlier release) must be on the same grid as the crops
-            on_grid(file_grid(gridfiles[2], g.name), g) ||
-                error("$(gridfiles[2]) is not grid $(g.name) of ../shared/domains.toml (of a release made before " *
-                      "the grid changed?): cannot add crops on this grid until its records are released again")
+            if !on_grid(file_grid(gridfiles[2], g.name), g)
+                regrid_crops(dir, g, gridfiles)
+                write_grid_files(dir, g; dataset=tag)
+                status = :rewritten
+            end
             foreach(p -> println(rpad(string(status), 12), p), gridfiles)
             append!(paths, gridfiles)
             for (e, dst) in targets
