@@ -173,11 +173,13 @@ function _tile_cover(g::LonLatGrid, trans; npts::Integer=50)
 end
 
 """
-    regrid_dem_tile(path, ix, iy) -> (sz, sz2, f_land, f_valid)
+    regrid_dem_tile(path, ix, iy) -> (sz, f_land, f_valid, sb, sbz, sbz2)
 
-Sums of the DEM tile `path` on the base cells `ix`, `iy` covering it, from the area of
-each DEM pixel in each cell (exact conservative remapping): land elevation and its
-square times the land fraction, land fraction, and coverage.
+Sums of the DEM tile `path` on the base cells `ix`, `iy` covering it. From the area of
+each DEM pixel in each cell (exact conservative remapping): land elevation times the
+land fraction, land fraction, and coverage. From the bilinear interpolation of the land
+elevation, sampled at most half a pixel apart and at least 4 x 4 times per cell (see
+`remap_sd`): the fraction of land samples, and their elevation and its square times it.
 """
 function regrid_dem_tile(path, ix, iy)
     g, z = read_dem_tile(path)
@@ -185,11 +187,13 @@ function regrid_dem_tile(path, ix, iy)
     m = ConservativeMap(sub, g)
     land = map(v -> v > 0 ? Float64(v) : NaN, z)
     zl, fl = remap(m, land)
-    z2, _ = remap(m, land .^ 2)
     _, fc = remap(m, ones(Float32, size(z)))
     sz = map((v, f) -> f > 0 ? v * f : 0.0, zl, fl)
-    sz2 = map((v, f) -> f > 0 ? v * f : 0.0, z2, fl)
-    return (sz, sz2, Float64.(fl), Float64.(fc))
+    nsub = max(4, ceil(Int, 2 * spacing(base)[1] / (g.dlat * 111.195)))
+    zb, sdb, fb = remap_sd(sub, g, land; nsub)
+    sbz = map((v, f) -> f > 0 ? v * f : 0.0, zb, fb)
+    sbz2 = map((v, s, f) -> f > 0 ? (s^2 + v^2) * f : 0.0, zb, sdb, fb)
+    return (sz, Float64.(fl), Float64.(fc), Float64.(fb), sbz, sbz2)
 end
 
 """
@@ -199,9 +203,11 @@ Mean and standard deviation of the land elevation (`z_land`, `z_land_sd`, NaN wh
 there is no land), land fraction `f_land` and tile coverage `f_valid` on the base grid.
 Only the tiles overlapping the base grid are read (threaded). Each is remapped
 conservatively onto the base cells covering it, every pixel weighted by its area in
-each cell (also on cells smaller than the pixels, without aliasing); elevations at or
-below 0 m are ocean. The tiles are summed in order, so
-cells on the edges between tiles combine them.
+each cell; elevations at or below 0 m are ocean. The standard deviation is that of the
+bilinear interpolation of the land elevation within the cell, which varies smoothly
+also on cells smaller than the pixels (the spread of the pixels in such cells would
+alias the pixel lattice). The tiles are summed in order, so cells on the edges between
+tiles combine them.
 """
 function regrid(src::DEMTiles)
     trans = FesmUtils.Proj.Transformation("EPSG:4326", base.proj; always_xy=true)
@@ -209,27 +215,29 @@ function regrid(src::DEMTiles)
     sel = findall(c -> !(isempty(c[1]) || isempty(c[2])), cover)
 
     # Sums of each tile on the cells it covers (see `regrid_dem_tile`)
-    parts = Vector{NTuple{4,Matrix{Float64}}}(undef, length(sel))
+    parts = Vector{NTuple{6,Matrix{Float64}}}(undef, length(sel))
     Threads.@threads :dynamic for k in eachindex(sel)
         parts[k] = regrid_dem_tile(src.files[sel[k]], cover[sel[k]]...)
     end
 
     # Sum the tiles in a fixed order (reproducible)
-    S = [zeros(Float64, size(base)) for _ in 1:4]
+    S = [zeros(Float64, size(base)) for _ in 1:6]
     for (k, p) in enumerate(parts)
         ix, iy = cover[sel[k]]
-        for q in 1:4
+        for q in 1:6
             S[q][ix, iy] .+= p[q]
         end
     end
-    sz, sz2, f_land, f_valid = S
+    sz, f_land, f_valid, sb, sbz, sbz2 = S
     z_land = map((s, f) -> f > 0 ? s / f : NaN, sz, f_land)
-    z_sd = map((s2, z, f) -> f > 0 ? sqrt(max(s2 / f - z^2, 0.0)) : NaN, sz2, z_land, f_land)
+    z_sd = map((f, n, s, s2) -> f > 0 && n > 0 ? sqrt(max(s2 / n - (s / n)^2, 0.0)) : NaN, f_land, sb, sbz, sbz2)
+    nosd = count(((f, n),) -> f > 0 && n == 0, zip(f_land, sb))
     lon, lat = lonlat(base)
     area_cells = cell_area(base, lon, lat) ./ 1e6  # km2
     println("$(length(sel)) of $(length(src.files)) tiles overlap $(base.name): land ",
             "$(round(sum(min.(f_land, 1) .* area_cells); digits=0)) km2, covered ",
-            "$(round(100 * sum(min.(f_valid, 1) .* area_cells) / sum(area_cells); digits=1))% of the grid")
+            "$(round(100 * sum(min.(f_valid, 1) .* area_cells) / sum(area_cells); digits=1))% of the grid, ",
+            "$nosd land cells without z_land_sd")
     return Dict("z_land" => Float32.(z_land), "z_land_sd" => Float32.(z_sd),
                 "f_land" => Float32.(min.(f_land, 1)), "f_valid" => Float32.(min.(f_valid, 1)))
 end
