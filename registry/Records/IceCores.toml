@@ -1,25 +1,238 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-12"
-git_tag = "icecores-v2.0.0"
+date = "2026-10-15"
+git_tag = "icecores-v2.1.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Records_IceCores"
-version = "2.0.0"
+version = "2.1.0"
+
+["IceCores-AICC2023-EDC.nc"]
+checksum = "sha256:0f1cc210c343bebb70fd23778b19c9798d20b78b8fec0daf06dafe356c51e5fa"
+size = 297349
+storage_path = "$datasets_dir/Records/IceCores/IceCores-AICC2023-EDC.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-AICC2023-EDC.nc"
+
+["IceCores-AICC2023-EDC.txt"]
+checksum = "sha256:c7755bbc9b9cb1d9631bc8c34a508069610ee86bd5fc9e971c63fc6ea22dab92"
+size = 1198674
+storage_path = "$datasets_dir/Records/IceCores/IceCores-AICC2023-EDC.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-AICC2023-EDC.txt"
+
+["IceCores-AICC2023-EDML.nc"]
+checksum = "sha256:7ef68b78cac2b5ed810795069d667ee441a715cb2deeb73ea9f7400c5e100b66"
+size = 169084
+storage_path = "$datasets_dir/Records/IceCores/IceCores-AICC2023-EDML.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-AICC2023-EDML.nc"
+
+["IceCores-AICC2023-EDML.txt"]
+checksum = "sha256:523f5c340e04bd5a36d9075be30c238474e7ede4adacf1aea48d2129060a870b"
+size = 494439
+storage_path = "$datasets_dir/Records/IceCores/IceCores-AICC2023-EDML.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-AICC2023-EDML.txt"
+
+["IceCores-AICC2023-NGRIP.nc"]
+checksum = "sha256:fd035181837d4b5d3d5ecf9aa01632e4c1e729974f5829bb296d05911679e1a5"
+size = 186601
+storage_path = "$datasets_dir/Records/IceCores/IceCores-AICC2023-NGRIP.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-AICC2023-NGRIP.nc"
+
+["IceCores-AICC2023-NGRIP.txt"]
+checksum = "sha256:4d5e0cdcd0deac65a89cdbe80f9dada20237ed16426ee5d5502434110cc1b6c1"
+size = 636095
+storage_path = "$datasets_dir/Records/IceCores/IceCores-AICC2023-NGRIP.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-AICC2023-NGRIP.txt"
+
+["IceCores-AICC2023-TALDICE.nc"]
+checksum = "sha256:16f5a94e19063115728a8de45dd6615de981318d8e5db06e54a936a91c0c97ea"
+size = 130004
+storage_path = "$datasets_dir/Records/IceCores/IceCores-AICC2023-TALDICE.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-AICC2023-TALDICE.nc"
+
+["IceCores-AICC2023-TALDICE.txt"]
+checksum = "sha256:828df9872b030cae2bc0ce97eda68ca11515b92833ea736a6bd617fab47f909a"
+size = 331849
+storage_path = "$datasets_dir/Records/IceCores/IceCores-AICC2023-TALDICE.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-AICC2023-TALDICE.txt"
+
+["IceCores-AICC2023-Vostok.nc"]
+checksum = "sha256:08795b06104e44be45c3056f167a74269c785cd356e08525413056af0b7cef6c"
+size = 202915
+storage_path = "$datasets_dir/Records/IceCores/IceCores-AICC2023-Vostok.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-AICC2023-Vostok.nc"
+
+["IceCores-AICC2023-Vostok.txt"]
+checksum = "sha256:534eec1f6cfedabb8769a4f4fb2ff23ef893dfa6381fc1ef803d8fce2cde18ef"
+size = 676895
+storage_path = "$datasets_dir/Records/IceCores/IceCores-AICC2023-Vostok.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-AICC2023-Vostok.txt"
+
+["IceCores-Barker2011-GLTsyn.nc"]
+checksum = "sha256:3205365786817023e73773f4bc425cd15aaa2b92d30ae793ea0646bc13554081"
+size = 361385
+storage_path = "$datasets_dir/Records/IceCores/IceCores-Barker2011-GLTsyn.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Barker2011-GLTsyn.nc"
+
+["IceCores-Barker2011-GLTsyn.txt"]
+checksum = "sha256:438b893f57bdafe1a59e94495d81abac91486564b16446d14b20aa711769f896"
+size = 921435
+storage_path = "$datasets_dir/Records/IceCores/IceCores-Barker2011-GLTsyn.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Barker2011-GLTsyn.txt"
+
+["IceCores-Barker2011-events.nc"]
+checksum = "sha256:551857ea32ea608042a8303a524faf3cf33f678740afef3f7951e029a48fbbdf"
+size = 24905
+storage_path = "$datasets_dir/Records/IceCores/IceCores-Barker2011-events.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Barker2011-events.nc"
+
+["IceCores-Barker2011-events.txt"]
+checksum = "sha256:260fd6142f0387a2c578ceac19fe293b5ad8cdbeca12045c461276afd5567dfa"
+size = 6565
+storage_path = "$datasets_dir/Records/IceCores/IceCores-Barker2011-events.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Barker2011-events.txt"
+
+["IceCores-Buizert2018.nc"]
+checksum = "sha256:c6dcdc0d8a2ae51b791975664c962110b3f5d0decff218e62d376334e80bec7b"
+size = 184640
+storage_path = "$datasets_dir/Records/IceCores/IceCores-Buizert2018.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Buizert2018.nc"
+
+["IceCores-Buizert2018.txt"]
+checksum = "sha256:2e9ca3ee6abd46c25d1825b23e52a73f08f734f414a4ea41fcb34c0494d362a5"
+size = 904161
+storage_path = "$datasets_dir/Records/IceCores/IceCores-Buizert2018.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Buizert2018.txt"
+
+["IceCores-EPICA2006.nc"]
+checksum = "sha256:5d6a8322f12c549a6ac89565faf085ced5c31a3f6dc3cf894fad1e2414658fb3"
+size = 221672
+storage_path = "$datasets_dir/Records/IceCores/IceCores-EPICA2006.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-EPICA2006.nc"
+
+["IceCores-EPICA2006.txt"]
+checksum = "sha256:1716e46ec25fbf7feb6f9c0d5093d1809a9d5b98d928cfd430a9315e9489298a"
+size = 499553
+storage_path = "$datasets_dir/Records/IceCores/IceCores-EPICA2006.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-EPICA2006.txt"
 
 ["IceCores-Gkinis2020.nc"]
-checksum = "sha256:712bb32c3daac6fe827a690d3eb63919ec2a57a9ef0243ee701be51c747c91e8"
+checksum = "sha256:1716c1ba827089c3ed93ee168f3e8816bcd17953dc6738504c7ad2611c8bb415"
+previous_checksums = ["sha256:712bb32c3daac6fe827a690d3eb63919ec2a57a9ef0243ee701be51c747c91e8"]
 size = 695076
 storage_path = "$datasets_dir/Records/IceCores/IceCores-Gkinis2020.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.0.0/IceCores-Gkinis2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Gkinis2020.nc"
+
+["IceCores-Gkinis2020.txt"]
+checksum = "sha256:cb9ffc4b95a4833e14bf5295135fb06df5ae2b67524c81ed2a1eb32ad0df33c8"
+size = 2204680
+storage_path = "$datasets_dir/Records/IceCores/IceCores-Gkinis2020.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Gkinis2020.txt"
+
+["IceCores-Jouzel2007.nc"]
+checksum = "sha256:8f22bc1a6962ad2bab7bcc7084ebc436f87b7f081d96307e0a79e73709ea0a5c"
+size = 132509
+storage_path = "$datasets_dir/Records/IceCores/IceCores-Jouzel2007.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Jouzel2007.nc"
+
+["IceCores-Jouzel2007.txt"]
+checksum = "sha256:044012615203a7b76c820f5fd04a9ced12daa9f5d12e2cd9056ca5359820c068"
+size = 291992
+storage_path = "$datasets_dir/Records/IceCores/IceCores-Jouzel2007.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Jouzel2007.txt"
 
 ["IceCores-Kindler2014.nc"]
-checksum = "sha256:977e53f63f472ef87066212095fba8ab379cbb0ac10cffbdc8b0346641815599"
+checksum = "sha256:7f245588493f8f80d0c164e6d3bccc35b1e53d59d2c60616a3eee24e5589c483"
+previous_checksums = ["sha256:977e53f63f472ef87066212095fba8ab379cbb0ac10cffbdc8b0346641815599"]
 size = 192221
 storage_path = "$datasets_dir/Records/IceCores/IceCores-Kindler2014.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.0.0/IceCores-Kindler2014.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Kindler2014.nc"
+
+["IceCores-Kindler2014.txt"]
+checksum = "sha256:104db71a61bda773f94dd57b89bac896a996f235f4cfc31bc1f46d79c4ba5ab7"
+size = 351811
+storage_path = "$datasets_dir/Records/IceCores/IceCores-Kindler2014.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Kindler2014.txt"
+
+["IceCores-Lambert2012.nc"]
+checksum = "sha256:1f3afb0373189fb8f4e68ace5ef5884c0271fdc8237610de6fba88f051cc20f2"
+size = 641904
+storage_path = "$datasets_dir/Records/IceCores/IceCores-Lambert2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Lambert2012.nc"
+
+["IceCores-Lambert2012.txt"]
+checksum = "sha256:ade963de27dff49c9350815e30082735027da181243b7a27a16e6677277ead3a"
+size = 1338541
+storage_path = "$datasets_dir/Records/IceCores/IceCores-Lambert2012.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Lambert2012.txt"
+
+["IceCores-Petit1999.nc"]
+checksum = "sha256:2c62326310a3f8e8b7e0d94df8b78c748ffbada4e45a87911df40e15268f994d"
+size = 85480
+storage_path = "$datasets_dir/Records/IceCores/IceCores-Petit1999.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Petit1999.nc"
+
+["IceCores-Petit1999.txt"]
+checksum = "sha256:561c3bb4288c3fabf9c59108d899578fcb900fd944f9a7ab8754192c87996c0b"
+size = 157217
+storage_path = "$datasets_dir/Records/IceCores/IceCores-Petit1999.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Petit1999.txt"
+
+["IceCores-Rasmussen2014.nc"]
+checksum = "sha256:aff94eea84c258b7fae5b1b5e27c0f059a9d99bb7f9369342c5c8716e3b388a7"
+size = 339785
+storage_path = "$datasets_dir/Records/IceCores/IceCores-Rasmussen2014.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Rasmussen2014.nc"
+
+["IceCores-Rasmussen2014.txt"]
+checksum = "sha256:7cf03c42db07468227835765b2aa56968d11f1b79274da1bba61776cd7fb1475"
+size = 1544489
+storage_path = "$datasets_dir/Records/IceCores/IceCores-Rasmussen2014.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Rasmussen2014.txt"
+
+["IceCores-Stenni2011.nc"]
+checksum = "sha256:27b0ee88e4907f6e7d8a36923699210643a4900345a977743ac35644c6021060"
+size = 45541
+storage_path = "$datasets_dir/Records/IceCores/IceCores-Stenni2011.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Stenni2011.nc"
+
+["IceCores-Stenni2011.txt"]
+checksum = "sha256:f8330ac6d9edcb4542e2c02a97c92f09630a50d4010039667a5a8ce5c7c7ce2c"
+size = 57534
+storage_path = "$datasets_dir/Records/IceCores/IceCores-Stenni2011.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Stenni2011.txt"
+
+["IceCores-Uemura2018.nc"]
+checksum = "sha256:901e6fafd8c09979bb01790727e6cd9cdfdff454f383a232d793bf440d3720c4"
+size = 200585
+storage_path = "$datasets_dir/Records/IceCores/IceCores-Uemura2018.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Uemura2018.nc"
+
+["IceCores-Uemura2018.txt"]
+checksum = "sha256:591c8104279a0248e444d4d82b6a7f054f700d63b5af005e5ec3dde651b42ee3"
+size = 592342
+storage_path = "$datasets_dir/Records/IceCores/IceCores-Uemura2018.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Uemura2018.txt"
 
 ["IceCores-Vinther2009.nc"]
-checksum = "sha256:13fa3e44cb4fbb78441970eaad9c6c6255d0c9f971f26911e41787f78e8f9029"
+checksum = "sha256:aeae189b2b9413d490f56f175b13b8296d5e795991f3912ba7ac41df9f423687"
+previous_checksums = ["sha256:13fa3e44cb4fbb78441970eaad9c6c6255d0c9f971f26911e41787f78e8f9029"]
 size = 44283
 storage_path = "$datasets_dir/Records/IceCores/IceCores-Vinther2009.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.0.0/IceCores-Vinther2009.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Vinther2009.nc"
+
+["IceCores-Vinther2009.txt"]
+checksum = "sha256:0bd63e7c7a69fbbda21f51e572d74c1d62914591379e35539130d6f2e98a9af4"
+size = 96239
+storage_path = "$datasets_dir/Records/IceCores/IceCores-Vinther2009.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Vinther2009.txt"
+
+["IceCores-WAIS2015.nc"]
+checksum = "sha256:d0fef7b7a99f90cc673f5677951a2f2a6f719eb6b4f8fa8c3d9cf0c98b3e9c5f"
+size = 305810
+storage_path = "$datasets_dir/Records/IceCores/IceCores-WAIS2015.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-WAIS2015.nc"
+
+["IceCores-WAIS2015.txt"]
+checksum = "sha256:69270acf9f7a5101a50760f332ac93926bc4db9b60dcd3886032226cc2a53437"
+size = 633322
+storage_path = "$datasets_dir/Records/IceCores/IceCores-WAIS2015.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-WAIS2015.txt"

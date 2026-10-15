@@ -1,0 +1,19 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-15"
+git_tag = "orbital-v2.0.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Records_Orbital"
+version = "2.0.0"
+
+["Orbital-La2004.nc"]
+checksum = "sha256:92598b45cc3cba91e20312b988533de9ee8843d5f3116f9503710d8b52fa0814"
+size = 351338
+storage_path = "$datasets_dir/Records/Orbital/Orbital-La2004.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_Orbital/2.0.0/Orbital-La2004.nc"
+
+["Orbital-La2004.txt"]
+checksum = "sha256:44ef76503802bcf906980a8b23c65a167928c7ea659640a84e86a609f7c75357"
+size = 776352
+storage_path = "$datasets_dir/Records/Orbital/Orbital-La2004.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_Orbital/2.0.0/Orbital-La2004.txt"

@@ -1,0 +1,139 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-15"
+git_tag = "sealevel-v2.0.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Records_SeaLevel"
+version = "2.0.0"
+
+["SeaLevel-Berends2021.nc"]
+checksum = "sha256:1ea6a0e93b7260d206cc535344103727634628d543a1ccdb98d835d6cb4ec7df"
+size = 829182
+storage_path = "$datasets_dir/Records/SeaLevel/SeaLevel-Berends2021.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-Berends2021.nc"
+
+["SeaLevel-Berends2021.txt"]
+checksum = "sha256:f0a3d6243de9d4711ca0747842fa6483f0de8fcb815fa095fd468d651ff01ffc"
+size = 2017396
+storage_path = "$datasets_dir/Records/SeaLevel/SeaLevel-Berends2021.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-Berends2021.txt"
+
+["SeaLevel-Bintanja2008.nc"]
+checksum = "sha256:aa0998d6d905e3236d3e5c2d61f1a20501bd3a21ac878e4ee9f77a73905a3ada"
+size = 950913
+storage_path = "$datasets_dir/Records/SeaLevel/SeaLevel-Bintanja2008.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-Bintanja2008.nc"
+
+["SeaLevel-Bintanja2008.txt"]
+checksum = "sha256:15ada060900ed678c4b8e063956cb94934c72b99f8195f36c7afe600f0314ec2"
+size = 2672061
+storage_path = "$datasets_dir/Records/SeaLevel/SeaLevel-Bintanja2008.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-Bintanja2008.txt"
+
+["SeaLevel-Grant2014-data.nc"]
+checksum = "sha256:32357453c79b4ff7a71b61a582cc0b95b3e79749bcc347fcda0522b242f1ffb3"
+size = 38271
+storage_path = "$datasets_dir/Records/SeaLevel/SeaLevel-Grant2014-data.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-Grant2014-data.nc"
+
+["SeaLevel-Grant2014-data.txt"]
+checksum = "sha256:a650cc5cd8187db92f51863f6b4ddbe3ea50e4a323586f4c08828cc8e86ffaae"
+size = 36065
+storage_path = "$datasets_dir/Records/SeaLevel/SeaLevel-Grant2014-data.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-Grant2014-data.txt"
+
+["SeaLevel-Grant2014-probabilistic.nc"]
+checksum = "sha256:a0c0d92e94f32eb4a01c2b511856bfd354802d791a0ce1f268b103937242f271"
+size = 168885
+storage_path = "$datasets_dir/Records/SeaLevel/SeaLevel-Grant2014-probabilistic.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-Grant2014-probabilistic.nc"
+
+["SeaLevel-Grant2014-probabilistic.txt"]
+checksum = "sha256:770f0c14d7a6b8fd02696e9cb91eec4ae716debe77ed0a3a1ea3cec4ca92418e"
+size = 364163
+storage_path = "$datasets_dir/Records/SeaLevel/SeaLevel-Grant2014-probabilistic.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-Grant2014-probabilistic.txt"
+
+["SeaLevel-Lambeck2014.nc"]
+checksum = "sha256:8ccaadb08a4cc0af217b9a35bd2b17061b911d5afc715b492c50470c4de50809"
+size = 27898
+storage_path = "$datasets_dir/Records/SeaLevel/SeaLevel-Lambeck2014.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-Lambeck2014.nc"
+
+["SeaLevel-Lambeck2014.txt"]
+checksum = "sha256:1f8e10c1397d96f523ef24a2c5a59cbb3b42096574e447cdb74380c332195623"
+size = 12100
+storage_path = "$datasets_dir/Records/SeaLevel/SeaLevel-Lambeck2014.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-Lambeck2014.txt"
+
+["SeaLevel-PaleoMIST.nc"]
+checksum = "sha256:9beb84874b4b8518092fb85eb9b0478e9dadf155e785495e1701276be1c4800e"
+size = 32649
+storage_path = "$datasets_dir/Records/SeaLevel/SeaLevel-PaleoMIST.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-PaleoMIST.nc"
+
+["SeaLevel-PaleoMIST.txt"]
+checksum = "sha256:024ceb06bac111cbdca307581b633f75dde63c733746cf1559796c6dda5c9292"
+size = 4211
+storage_path = "$datasets_dir/Records/SeaLevel/SeaLevel-PaleoMIST.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-PaleoMIST.txt"
+
+["SeaLevel-PaleoMIST_max.nc"]
+checksum = "sha256:6a3d0144dc2b558e7bc2f2a0988165f771a2f42d21f8c53eafa34996d2dd6d23"
+size = 32657
+storage_path = "$datasets_dir/Records/SeaLevel/SeaLevel-PaleoMIST_max.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-PaleoMIST_max.nc"
+
+["SeaLevel-PaleoMIST_max.txt"]
+checksum = "sha256:c51ac9e33ba01d4a87fad573d551c737cf577999511fa349fc47a3ff2c3695ad"
+size = 4265
+storage_path = "$datasets_dir/Records/SeaLevel/SeaLevel-PaleoMIST_max.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-PaleoMIST_max.txt"
+
+["SeaLevel-Rohling2021.nc"]
+checksum = "sha256:013039fccb9e297be60aa984091743d59b336916c7db1f39cd5fdc8f53d7214a"
+size = 205353
+storage_path = "$datasets_dir/Records/SeaLevel/SeaLevel-Rohling2021.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-Rohling2021.nc"
+
+["SeaLevel-Rohling2021.txt"]
+checksum = "sha256:2d75495cf3eac4f0a9e19ba6f98d875796ec184dc91da29acab009fe19f6df2d"
+size = 516173
+storage_path = "$datasets_dir/Records/SeaLevel/SeaLevel-Rohling2021.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-Rohling2021.txt"
+
+["SeaLevel-Spratt2016.nc"]
+checksum = "sha256:82a65a557df211982596d89b36901bf263a929b0d3d10386a42b41a47cdd7d62"
+size = 61743
+storage_path = "$datasets_dir/Records/SeaLevel/SeaLevel-Spratt2016.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-Spratt2016.nc"
+
+["SeaLevel-Spratt2016.txt"]
+checksum = "sha256:36e217c8224d326894aa76c5cb91d31e19ad3083c25b64fa917f2396bf04d830"
+size = 80867
+storage_path = "$datasets_dir/Records/SeaLevel/SeaLevel-Spratt2016.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-Spratt2016.txt"
+
+["SeaLevel-Waelbroeck2002.nc"]
+checksum = "sha256:54f6d927f2ebeed95926d1178e5a4c1e58e343ef59677b0098c33a61722615a7"
+size = 52407
+storage_path = "$datasets_dir/Records/SeaLevel/SeaLevel-Waelbroeck2002.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-Waelbroeck2002.nc"
+
+["SeaLevel-Waelbroeck2002.txt"]
+checksum = "sha256:7936af7833e4ce9cc835e22eadece433be82d1cdca0763e64054ab2ce218b76e"
+size = 29221
+storage_path = "$datasets_dir/Records/SeaLevel/SeaLevel-Waelbroeck2002.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-Waelbroeck2002.txt"
+
+["SeaLevel-deBoer2014.nc"]
+checksum = "sha256:ca95a7e434779aa53c40430645ddad9c6a53883ec3968aa9d8a2c09761d2a90c"
+size = 1487332
+storage_path = "$datasets_dir/Records/SeaLevel/SeaLevel-deBoer2014.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-deBoer2014.nc"
+
+["SeaLevel-deBoer2014.txt"]
+checksum = "sha256:e4ea683bb29a24608c4882f778007109e5bdf22694574c437fb76dc473bb1234"
+size = 5673311
+storage_path = "$datasets_dir/Records/SeaLevel/SeaLevel-deBoer2014.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-deBoer2014.txt"

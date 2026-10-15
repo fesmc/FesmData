@@ -2,15 +2,59 @@
 
 ## Figures
 
+### AICC2023
+
+![IceCores-AICC2023-EDC.nc, IceCores-AICC2023-EDML.nc, IceCores-AICC2023-NGRIP.nc, IceCores-AICC2023-TALDICE.nc, IceCores-AICC2023-Vostok.nc: 5 sites, age_ice_aicc2023.](../figures/IceCores/IceCores-AICC2023.png){width=836px}
+
+### Barker2011
+
+![IceCores-Barker2011-GLTsyn.nc, IceCores-Barker2011-events.nc: 1 region, glt_syn, do_pick.](../figures/IceCores/IceCores-Barker2011.png){width=543px}
+
+### Buizert2018
+
+![IceCores-Buizert2018.nc: 9 sites, tas_ann.](../figures/IceCores/IceCores-Buizert2018.png){width=764px}
+
+### EPICA2006
+
+![IceCores-EPICA2006.nc: 1 site, d18O.](../figures/IceCores/IceCores-EPICA2006.png){width=820px}
+
 ### Gkinis2020
 
-![IceCores-Gkinis2020.nc: 1 sites, d18O.](../figures/IceCores/IceCores-Gkinis2020.png)
+![IceCores-Gkinis2020.nc: 1 site, d18O.](../figures/IceCores/IceCores-Gkinis2020.png){width=765px}
+
+### Jouzel2007
+
+![IceCores-Jouzel2007.nc: 1 site, dD.](../figures/IceCores/IceCores-Jouzel2007.png){width=817px}
 
 ### Kindler2014
 
-![IceCores-Kindler2014.nc: 1 sites, tas.](../figures/IceCores/IceCores-Kindler2014.png)
+![IceCores-Kindler2014.nc: 1 site, tas.](../figures/IceCores/IceCores-Kindler2014.png){width=764px}
+
+### Lambert2012
+
+![IceCores-Lambert2012.nc: 1 site, dust_flux.](../figures/IceCores/IceCores-Lambert2012.png){width=806px}
+
+### Petit1999
+
+![IceCores-Petit1999.nc: 1 site, dD.](../figures/IceCores/IceCores-Petit1999.png){width=817px}
+
+### Rasmussen2014
+
+![IceCores-Rasmussen2014.nc: 4 sites, d18O.](../figures/IceCores/IceCores-Rasmussen2014.png){width=765px}
+
+### Stenni2011
+
+![IceCores-Stenni2011.nc: 1 site, d18O.](../figures/IceCores/IceCores-Stenni2011.png){width=812px}
+
+### Uemura2018
+
+![IceCores-Uemura2018.nc: 1 site, d18O.](../figures/IceCores/IceCores-Uemura2018.png){width=812px}
 
 ### Vinther2009
 
-![IceCores-Vinther2009.nc: 4 sites, dz_srf.](../figures/IceCores/IceCores-Vinther2009.png)
+![IceCores-Vinther2009.nc: 4 sites, dz_srf.](../figures/IceCores/IceCores-Vinther2009.png){width=764px}
+
+### WAIS2015
+
+![IceCores-WAIS2015.nc: 1 site, d18O.](../figures/IceCores/IceCores-WAIS2015.png){width=812px}
 

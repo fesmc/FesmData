@@ -1,0 +1,31 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-15"
+git_tag = "stacks-v2.0.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Records_Stacks"
+version = "2.0.0"
+
+["Stacks-LR04.nc"]
+checksum = "sha256:e4b3ef2b7084ca1db9d76f039462730af39e059ccce407928c10b6ee176011d4"
+size = 41540
+storage_path = "$datasets_dir/Records/Stacks/Stacks-LR04.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_Stacks/2.0.0/Stacks-LR04.nc"
+
+["Stacks-LR04.txt"]
+checksum = "sha256:1f610b100485874a581c4aaf26128dea26b0876770fae4a7eb93f82555401d42"
+size = 81620
+storage_path = "$datasets_dir/Records/Stacks/Stacks-LR04.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_Stacks/2.0.0/Stacks-LR04.txt"
+
+["Stacks-ProbStack.nc"]
+checksum = "sha256:52a49951dc8dd1e56269c1300d0942dedc68d21893b9baff57ebf72b34ffcd8c"
+size = 73876
+storage_path = "$datasets_dir/Records/Stacks/Stacks-ProbStack.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_Stacks/2.0.0/Stacks-ProbStack.nc"
+
+["Stacks-ProbStack.txt"]
+checksum = "sha256:73cbd906d055346fad792e2c6eaa2c763daedda997e9d1b90463960ffff21a5c"
+size = 149072
+storage_path = "$datasets_dir/Records/Stacks/Stacks-ProbStack.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_Stacks/2.0.0/Stacks-ProbStack.txt"

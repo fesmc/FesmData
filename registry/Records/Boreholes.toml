@@ -1,13 +1,20 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-12"
-git_tag = "boreholes-v2.0.0"
+date = "2026-10-15"
+git_tag = "boreholes-v2.1.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Records_Boreholes"
-version = "2.0.0"
+version = "2.1.0"
 
 ["Boreholes-Lokkegaard2023.nc"]
-checksum = "sha256:d6fa6945a2c551801e09b59d14b1c20d660dc9f63ab9541415f49e7639dae910"
+checksum = "sha256:caf6da14d9273ebfb992ca9ac16fc57ccf6c80e2dbb2b9f423c1b2e269c8dec3"
+previous_checksums = ["sha256:d6fa6945a2c551801e09b59d14b1c20d660dc9f63ab9541415f49e7639dae910"]
 size = 294478
 storage_path = "$datasets_dir/Records/Boreholes/Boreholes-Lokkegaard2023.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_Boreholes/2.0.0/Boreholes-Lokkegaard2023.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_Boreholes/2.1.0/Boreholes-Lokkegaard2023.nc"
+
+["Boreholes-Lokkegaard2023.txt"]
+checksum = "sha256:af8ec45037980d90013a7f716d4599a8c6a94253eac5dcc215afbfb671bd52a4"
+size = 5753759
+storage_path = "$datasets_dir/Records/Boreholes/Boreholes-Lokkegaard2023.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_Boreholes/2.1.0/Boreholes-Lokkegaard2023.txt"

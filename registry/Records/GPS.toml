@@ -1,13 +1,20 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-12"
-git_tag = "gps-v2.0.0"
+date = "2026-10-15"
+git_tag = "gps-v2.1.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Records_GPS"
-version = "2.0.0"
+version = "2.1.0"
 
 ["GPS-Schumacher2018.nc"]
-checksum = "sha256:1c3c7a001055aa461b519f5af6eb2ef5dcc95a6e9e518c729d84c26f961c60ce"
+checksum = "sha256:d49fd9fb6ab1df9b8a3920dc91fdec0f48cc44dce96c96d26d07a7b3cc234e14"
+previous_checksums = ["sha256:1c3c7a001055aa461b519f5af6eb2ef5dcc95a6e9e518c729d84c26f961c60ce"]
 size = 338420
 storage_path = "$datasets_dir/Records/GPS/GPS-Schumacher2018.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_GPS/2.0.0/GPS-Schumacher2018.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_GPS/2.1.0/GPS-Schumacher2018.nc"
+
+["GPS-Schumacher2018.txt"]
+checksum = "sha256:650600a44175a2ce3fd2207982713dfdf23bb2630d8368620f121c6aab972f75"
+size = 245461
+storage_path = "$datasets_dir/Records/GPS/GPS-Schumacher2018.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_GPS/2.1.0/GPS-Schumacher2018.txt"

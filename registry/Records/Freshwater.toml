@@ -1,49 +1,98 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-12"
-git_tag = "freshwater-v2.0.0"
+date = "2026-10-15"
+git_tag = "freshwater-v2.1.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Records_Freshwater"
-version = "2.0.0"
+version = "2.1.0"
 
 ["Freshwater-Schmidt2025_AQ_calving.nc"]
-checksum = "sha256:756b7c93763f8a8c6604225f740ff3c792f39f5563831001a68ad94abb067150"
+checksum = "sha256:5aa954aa2da3092b37621809431ec4810b72dcb86146ff979b16c641ad065d13"
+previous_checksums = ["sha256:756b7c93763f8a8c6604225f740ff3c792f39f5563831001a68ad94abb067150"]
 size = 32150
 storage_path = "$datasets_dir/Records/Freshwater/Freshwater-Schmidt2025_AQ_calving.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_Freshwater/2.0.0/Freshwater-Schmidt2025_AQ_calving.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_Freshwater/2.1.0/Freshwater-Schmidt2025_AQ_calving.nc"
+
+["Freshwater-Schmidt2025_AQ_calving.txt"]
+checksum = "sha256:91f52e593d8ed69ad1cb60b9bee1dead4a52bea5fdb7edd5b0f9bdb78dfe8d0b"
+size = 27114
+storage_path = "$datasets_dir/Records/Freshwater/Freshwater-Schmidt2025_AQ_calving.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_Freshwater/2.1.0/Freshwater-Schmidt2025_AQ_calving.txt"
 
 ["Freshwater-Schmidt2025_AQ_grounded_mass_change.nc"]
-checksum = "sha256:a9992dc55e973a8a6a1a336f27bdae2312d27182e3cd4e6e9710585dfc9aee5d"
+checksum = "sha256:73621571741955b2271c65568df029040b4fa22f86f24e02af5a87af48fd57c3"
+previous_checksums = ["sha256:a9992dc55e973a8a6a1a336f27bdae2312d27182e3cd4e6e9710585dfc9aee5d"]
 size = 20790
 storage_path = "$datasets_dir/Records/Freshwater/Freshwater-Schmidt2025_AQ_grounded_mass_change.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_Freshwater/2.0.0/Freshwater-Schmidt2025_AQ_grounded_mass_change.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_Freshwater/2.1.0/Freshwater-Schmidt2025_AQ_grounded_mass_change.nc"
+
+["Freshwater-Schmidt2025_AQ_grounded_mass_change.txt"]
+checksum = "sha256:56b8c6974f62f02730410b51e81d2e0102944c64f7f82d1d3fad2a712c303017"
+size = 11332
+storage_path = "$datasets_dir/Records/Freshwater/Freshwater-Schmidt2025_AQ_grounded_mass_change.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_Freshwater/2.1.0/Freshwater-Schmidt2025_AQ_grounded_mass_change.txt"
 
 ["Freshwater-Schmidt2025_AQ_mass_anomaly.nc"]
-checksum = "sha256:84df9de0b98dcd67988fd59320a2a4cf59be798274b79e3aa4fb5515343bbf57"
+checksum = "sha256:1283f44a38a63ba35c5dec202ba2c114e295d35fcacbfe6e9312dd0b8363913c"
+previous_checksums = ["sha256:84df9de0b98dcd67988fd59320a2a4cf59be798274b79e3aa4fb5515343bbf57"]
 size = 43442
 storage_path = "$datasets_dir/Records/Freshwater/Freshwater-Schmidt2025_AQ_mass_anomaly.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_Freshwater/2.0.0/Freshwater-Schmidt2025_AQ_mass_anomaly.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_Freshwater/2.1.0/Freshwater-Schmidt2025_AQ_mass_anomaly.nc"
+
+["Freshwater-Schmidt2025_AQ_mass_anomaly.txt"]
+checksum = "sha256:146ba8c27fb89fe54d886b5d6a3f91befaf7afb6d2a91043ca2e51bd5571887f"
+size = 50570
+storage_path = "$datasets_dir/Records/Freshwater/Freshwater-Schmidt2025_AQ_mass_anomaly.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_Freshwater/2.1.0/Freshwater-Schmidt2025_AQ_mass_anomaly.txt"
 
 ["Freshwater-Schmidt2025_AQ_subshelf_melt.nc"]
-checksum = "sha256:3e1092acd0ff8fc7fc80244ce39f98de6a0ce441f4e5b053752ceea3e9b01b25"
+checksum = "sha256:3c478ae8d0d5fa0c1c12b51bfb0b89a660393e515e37b415a8aac8d49f78e1cf"
+previous_checksums = ["sha256:3e1092acd0ff8fc7fc80244ce39f98de6a0ce441f4e5b053752ceea3e9b01b25"]
 size = 30657
 storage_path = "$datasets_dir/Records/Freshwater/Freshwater-Schmidt2025_AQ_subshelf_melt.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_Freshwater/2.0.0/Freshwater-Schmidt2025_AQ_subshelf_melt.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_Freshwater/2.1.0/Freshwater-Schmidt2025_AQ_subshelf_melt.nc"
+
+["Freshwater-Schmidt2025_AQ_subshelf_melt.txt"]
+checksum = "sha256:881f4145250ec1d2facf824e7d8f6c29f7cf3cb169d1be49c01f27c2ba3c0419"
+size = 22339
+storage_path = "$datasets_dir/Records/Freshwater/Freshwater-Schmidt2025_AQ_subshelf_melt.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_Freshwater/2.1.0/Freshwater-Schmidt2025_AQ_subshelf_melt.txt"
 
 ["Freshwater-Schmidt2025_GL_discharge.nc"]
-checksum = "sha256:0419b694b972d22c37c443264b8dad2ec095636bb2188d5b62188d873071a6bf"
+checksum = "sha256:17875aa3244f470276750d199f285128cd575d095ac1f0090d7058f8ea0ce73d"
+previous_checksums = ["sha256:0419b694b972d22c37c443264b8dad2ec095636bb2188d5b62188d873071a6bf"]
 size = 44128
 storage_path = "$datasets_dir/Records/Freshwater/Freshwater-Schmidt2025_GL_discharge.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_Freshwater/2.0.0/Freshwater-Schmidt2025_GL_discharge.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_Freshwater/2.1.0/Freshwater-Schmidt2025_GL_discharge.nc"
+
+["Freshwater-Schmidt2025_GL_discharge.txt"]
+checksum = "sha256:996abf63cf2c4976bf407325545f22cfb2da31f4ac35a5ce5fdb86289a22647c"
+size = 47265
+storage_path = "$datasets_dir/Records/Freshwater/Freshwater-Schmidt2025_GL_discharge.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_Freshwater/2.1.0/Freshwater-Schmidt2025_GL_discharge.txt"
 
 ["Freshwater-Schmidt2025_GL_mass_anomaly.nc"]
-checksum = "sha256:1d9c0d7a85373e491fcdb41aab6e46d18ad0d89b600c44e5b14591451687a7b6"
+checksum = "sha256:310cef415fe1ec075a20e46a89116d4bc88053f53c9d3ee1496320188ba6c94e"
+previous_checksums = ["sha256:1d9c0d7a85373e491fcdb41aab6e46d18ad0d89b600c44e5b14591451687a7b6"]
 size = 109824
 storage_path = "$datasets_dir/Records/Freshwater/Freshwater-Schmidt2025_GL_mass_anomaly.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_Freshwater/2.0.0/Freshwater-Schmidt2025_GL_mass_anomaly.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_Freshwater/2.1.0/Freshwater-Schmidt2025_GL_mass_anomaly.nc"
+
+["Freshwater-Schmidt2025_GL_mass_anomaly.txt"]
+checksum = "sha256:314e1579c7475a62b0bb8ac868f2ad1a3995a15810e3b5ef408e3f8e1b3e0a0a"
+size = 149136
+storage_path = "$datasets_dir/Records/Freshwater/Freshwater-Schmidt2025_GL_mass_anomaly.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_Freshwater/2.1.0/Freshwater-Schmidt2025_GL_mass_anomaly.txt"
 
 ["Freshwater-Schmidt2025_GL_runoff.nc"]
-checksum = "sha256:a4cbd38d86bac49bde0795d07196edd15c65ef83f17292e126d6f804225d7922"
+checksum = "sha256:ef3cc63b8746d1f16fe5aafba6e385cbeb314cdd287fc5437e094b7bc321cdb8"
+previous_checksums = ["sha256:a4cbd38d86bac49bde0795d07196edd15c65ef83f17292e126d6f804225d7922"]
 size = 239777
 storage_path = "$datasets_dir/Records/Freshwater/Freshwater-Schmidt2025_GL_runoff.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_Freshwater/2.0.0/Freshwater-Schmidt2025_GL_runoff.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_Freshwater/2.1.0/Freshwater-Schmidt2025_GL_runoff.nc"
+
+["Freshwater-Schmidt2025_GL_runoff.txt"]
+checksum = "sha256:b0a0af3728bffcc6d4af54dc902eb3a1692e68b637206683398543e143528475"
+size = 780630
+storage_path = "$datasets_dir/Records/Freshwater/Freshwater-Schmidt2025_GL_runoff.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_Freshwater/2.1.0/Freshwater-Schmidt2025_GL_runoff.txt"

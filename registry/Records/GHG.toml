@@ -1,0 +1,55 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-15"
+git_tag = "ghg-v2.0.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Records_GHG"
+version = "2.0.0"
+
+["GHG-Bereiter2015.nc"]
+checksum = "sha256:b9c3e441595f408aeeaccda8dc7be5e49bc212919cd2a6dabf79870ea3338547"
+size = 44312
+storage_path = "$datasets_dir/Records/GHG/GHG-Bereiter2015.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_GHG/2.0.0/GHG-Bereiter2015.nc"
+
+["GHG-Bereiter2015.txt"]
+checksum = "sha256:c93a65befbc77d4f52c67903087893171f140e26aed4c6bc16263c23304c51f4"
+size = 46991
+storage_path = "$datasets_dir/Records/GHG/GHG-Bereiter2015.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_GHG/2.0.0/GHG-Bereiter2015.txt"
+
+["GHG-Koehler2017.nc"]
+checksum = "sha256:4b46fbf3cfdeff0dd4443b82830debe68a53444eeb58a7719233df6a65e0424e"
+size = 2617910
+storage_path = "$datasets_dir/Records/GHG/GHG-Koehler2017.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_GHG/2.0.0/GHG-Koehler2017.nc"
+
+["GHG-Koehler2017.txt"]
+checksum = "sha256:2258d672ac8b68c3169f124c710eb40248a7f308bbccd49e3093868eef5df0e5"
+size = 16108510
+storage_path = "$datasets_dir/Records/GHG/GHG-Koehler2017.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_GHG/2.0.0/GHG-Koehler2017.txt"
+
+["GHG-Loulergue2008.nc"]
+checksum = "sha256:33f71ecf5153203f8b7e042ee872a8b7a92c2ea1261aca1f6cd74533216b2da8"
+size = 69799
+storage_path = "$datasets_dir/Records/GHG/GHG-Loulergue2008.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_GHG/2.0.0/GHG-Loulergue2008.nc"
+
+["GHG-Loulergue2008.txt"]
+checksum = "sha256:77ef9c00f3b5fcf0f250750f5cda24707f4cbf19a3c77086c453da65ea08a5f7"
+size = 102461
+storage_path = "$datasets_dir/Records/GHG/GHG-Loulergue2008.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_GHG/2.0.0/GHG-Loulergue2008.txt"
+
+["GHG-Schilt2010.nc"]
+checksum = "sha256:d93200fbc99ec1f895ba9692982fc9198d03443e5d2da53b1bcec9a812ab6709"
+size = 49643
+storage_path = "$datasets_dir/Records/GHG/GHG-Schilt2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_GHG/2.0.0/GHG-Schilt2010.nc"
+
+["GHG-Schilt2010.txt"]
+checksum = "sha256:5243fb78f0f7daf4154e92ae5f80135ad13f9bb5516a7b53b72a8f507bdd72d6"
+size = 54661
+storage_path = "$datasets_dir/Records/GHG/GHG-Schilt2010.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_GHG/2.0.0/GHG-Schilt2010.txt"
