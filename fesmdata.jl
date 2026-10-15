@@ -32,6 +32,10 @@ Find and download:
                                                ncview \$(julia fesmdata.jl path ...))
   domains                                      the domains, crops and nests: folder, grid
                                                prefix, kind, grids, projection, active
+  where <lon> <lat>                            the domains, crops and nests containing a
+                                               point, with its position on their grids and
+                                               their datasets (installs the Publish
+                                               packages once)
   fetch <Dataset> <Domain> | <GRID> ...        download into \$FESMDATA_PRODUCTS/<Domain>/<GRID>/
                                                and verify; files of earlier releases are
                                                updated (--overwrite: also replace files
@@ -166,6 +170,13 @@ function main(argv)
     elseif command == "domains"
         include(joinpath(PUBLISH_DIR, "discover.jl"))
         call(:list_domains)
+    elseif command == "where"
+        length(rest) == 2 || usage("where: give a longitude and a latitude")
+        lon, lat = tryparse.(Float64, rest)
+        (lon === nothing || lat === nothing) && usage("where: give a longitude and a latitude (degrees)")
+        activate_env(PUBLISH_DIR)
+        include(joinpath(PUBLISH_DIR, "where.jl"))
+        call(:domains_at, lon, lat; sandbox=sandbox)
     elseif command == "fetch"
         include(joinpath(PUBLISH_DIR, "catalog.jl"))
         dir = get(valued, "dir", nothing)
