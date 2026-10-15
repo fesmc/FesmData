@@ -1376,6 +1376,17 @@ doi = "10.18739/A2599Z26M"
 storage_path = "$datasets_dir/badgeley2020/pr_high_Badgeley_etal_2020.nc"
 uri = "https://arcticdata.io/metacat/d1/mn/v2/object/urn:uuid:c5e3fa59-7117-4fee-8163-07aae8519886"
 
+# Montoya & Levermann (2008): CLIMBER-3α present-day and LGM (weak and strong AMOC)
+# climatologies, the original files of the old PIK archive (hpc:/data/sicopolis/data/
+# CLIMBER3a/), published unchanged in github.com/fesmc/Montoya2008-CLIMBER3a (CC BY 4.0;
+# SHA256SUMS in the repository).
+
+[montoya2008_climber3a]
+key = "montoya2008_climber3a.tar.gz"
+doi = "10.1029/2007GL032560"
+extract = true
+uri = "https://github.com/fesmc/Montoya2008-CLIMBER3a/archive/refs/tags/v1.0.0.tar.gz"
+
 # ---------------------------------------------------------------------------
 # Solid Earth (SolidEarth/)
 # ---------------------------------------------------------------------------

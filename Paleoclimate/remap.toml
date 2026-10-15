@@ -336,3 +336,45 @@ source = "Badgeley2020_recon"
 file = "Badgeley2020.nc"
 variables = ["tas_anom", "pr_frac", "pr_frac_low", "pr_frac_high"]
 grids = { Greenland = 16 }
+
+# CLIMBER-3α (Montoya and Levermann, 2008): present day and LGM with weak and strong AMOC,
+# atmosphere (22.5° x 7.5°) and ocean (3.75°) on separate grids, so separate products.
+
+[products.CLIMBER3a-present]
+source = "Montoya2008_climber3a"
+file = "CLIMBER3a_present.nc"
+grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+figure = false
+
+[products.CLIMBER3a-lgm_1p7weak]
+source = "Montoya2008_climber3a"
+file = "CLIMBER3a_lgm_1p7weak.nc"
+grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+figure = { variables = ["t2m_ann"] }
+
+[products.CLIMBER3a-lgm_1p7strong]
+source = "Montoya2008_climber3a"
+file = "CLIMBER3a_lgm_1p7strong.nc"
+grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+figure = { variables = ["t2m_ann"] }
+
+[products.CLIMBER3a-present-ocean]
+source = "Montoya2008_climber3a"
+file = "CLIMBER3a_present_ocean.nc"
+mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
+grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 100 }   # source at 3.75°
+figure = false
+
+[products.CLIMBER3a-lgm_1p7weak-ocean]
+source = "Montoya2008_climber3a"
+file = "CLIMBER3a_lgm_1p7weak_ocean.nc"
+mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
+grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 100 }   # source at 3.75°
+figure = { select = { depth = 400 } }
+
+[products.CLIMBER3a-lgm_1p7strong-ocean]
+source = "Montoya2008_climber3a"
+file = "CLIMBER3a_lgm_1p7strong_ocean.nc"
+mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
+grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 100 }   # source at 3.75°
+figure = { select = { depth = 400 } }

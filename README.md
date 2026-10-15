@@ -77,6 +77,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | ice      | Margold2015_icestreams      | Ice stream outlines                              | Margold et al. (2015)          |
 | geo      | Martos2017_ghf              | Antarctic geothermal heat flow                   | Martos et al. (2017)           |
 | geo      | Martos2018_ghf              | Geothermal heat flux of Greenland                | Martos et al. (2018)           |
+| paleo    | Montoya2008_climber3a       | CLIMBER-3α present-day and LGM (weak, strong AMOC) climatologies | Montoya & Levermann (2008) |
 | geo      | Mooney2023_ecm1             | Sediment thickness of ECM1                       | Mooney et al. (2023)           |
 | geo      | Pan2022_litho               | Global lithosphere thickness and mantle viscosity | Pan et al. (2022)             |
 | paleo    | Peltier2004_ice5g           | ICE-5G v1.2 ice-sheet reconstruction             | Peltier (2004)                 |

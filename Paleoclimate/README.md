@@ -1,6 +1,6 @@
 # Paleoclimate: simulations and reconstructions of past climates
 
-Climatologies of past climates from the PMIP model intercomparisons, and gridded
+Climatologies of past climates from the PMIP model intercomparisons and CLIMBER-3α, and gridded
 reconstructions of the deglacial climate of Greenland, remapped onto the grids of the
 domains. Paleoclimate is a thematic dataset made by remapping (see [Gridded
 data](https://fesmc.github.io/FesmData/remap.html)): its products are defined in
@@ -15,6 +15,7 @@ data](https://fesmc.github.io/FesmData/remap.html)): its products are defined in
 | `Paleoclimate-PMIP3-lgm-boundary-conditions` | PMIP3 LGM boundary conditions (Abe-Ouchi et al., 2015, [doi:10.5194/gmd-8-3621-2015](https://doi.org/10.5194/gmd-8-3621-2015)) | `dz_srf` (m), `f_land`, `f_ice` | as above |
 | `Paleoclimate-PMIP4-<model>-<experiment>` | PMIP4/CMIP6 (Kageyama et al., 2018, [doi:10.5194/gmd-11-1033-2018](https://doi.org/10.5194/gmd-11-1033-2018)): climatologies of the last 100 years, 4 models (AWI-ESM-1-1-LR, INM-CM4-8, MIROC-ES2L, MPI-ESM1-2-LR), experiments lgm, midHolocene, piControl | `t2m_*`, `pr_*` (annual, DJF, JJA, monthly), `z_srf`, `f_land`, `f_ice` | as above |
 | `Paleoclimate-PMIP4-<experiment>-mean`, `Paleoclimate-PMIP4-<experiment>-stdev` | Ensemble mean and standard deviation of the 4 PMIP4 models, for each experiment | as the models, with `n_<field>` | as above |
+| `Paleoclimate-CLIMBER3a-<simulation>`, `Paleoclimate-CLIMBER3a-<simulation>-ocean` | CLIMBER-3α (Montoya and Levermann, 2008, [doi:10.1029/2007GL032560](https://doi.org/10.1029/2007GL032560)): present day (`present`) and LGM with wind stress x 1.7, weak and strong Atlantic overturning (`lgm_1p7weak`, `lgm_1p7strong`); atmosphere at 22.5° x 7.5°, ocean at 3.75° | atmosphere: `t2m_ann`, `t2m_jja` (degC), `pr_ann` (mm d-1), `z_srf` (m), `f_land` of the model; ocean: `to` (potential temperature, degC) on `depth`, `mask_ocn` | Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Eurasia, Global |
 | `Paleoclimate-Buizert2018`, `Paleoclimate-Buizert2018-1981-2010` | Buizert et al. (2018): Greenland monthly temperature and precipitation, 22 ka to present, decadal, [doi:10.25921/psvs-yg80](https://doi.org/10.25921/psvs-yg80); and its 1981-2010 baseline | `tas` (K), `pr` (kg m-2 s-1) on `month` and `time` (years ago), `z_srf` | Greenland |
 | `Paleoclimate-Badgeley2020` | Badgeley et al. (2020): Greenland temperature and precipitation from data assimilation, 20 ka to present, 50-year means, [doi:10.18739/A2599Z26M](https://doi.org/10.18739/A2599Z26M) | `tas_anom` (K), `pr_frac`, `pr_frac_low`, `pr_frac_high` (relative to 1850-2000 CE) on `time` (years ago) | Greenland |
 
@@ -45,6 +46,7 @@ rounded again.
 | PMIP4 (CMIP6) | CC BY-SA 4.0 (the four models): releases must keep the ShareAlike terms |
 | Buizert et al. (2018) | NOAA NCEI open data, no licence stated; cite the paper and the data DOI |
 | Badgeley et al. (2020) | CC0 1.0 (Arctic Data Center) |
+| CLIMBER-3α (Montoya and Levermann, 2008) | CC BY 4.0 ([github.com/fesmc/Montoya2008-CLIMBER3a](https://github.com/fesmc/Montoya2008-CLIMBER3a)); cite Montoya and Levermann (2008) and Montoya et al. (2005) |
 
 ## Not included
 
