@@ -14,6 +14,22 @@
 
 ![Paleoclimate-Buizert2018-1981-2010 on GRL-8KM: pr.](../figures/Paleoclimate/Paleoclimate-Buizert2018-1981-2010.png){width=244px}
 
+### CLIMBER3a-lgm_1p7strong
+
+![Paleoclimate-CLIMBER3a-lgm_1p7strong on ANT-32KM, GRL-PAL-32KM, NH-32KM, GLOBAL-0.5DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-CLIMBER3a-lgm_1p7strong.png){width=1286px}
+
+### CLIMBER3a-lgm_1p7strong-ocean
+
+![Paleoclimate-CLIMBER3a-lgm_1p7strong-ocean on ANT-32KM, GRL-PAL-32KM, NH-32KM, GLOBAL-1DEG: to.](../figures/Paleoclimate/Paleoclimate-CLIMBER3a-lgm_1p7strong-ocean.png){width=1292px}
+
+### CLIMBER3a-lgm_1p7weak
+
+![Paleoclimate-CLIMBER3a-lgm_1p7weak on ANT-32KM, GRL-PAL-32KM, NH-32KM, GLOBAL-0.5DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-CLIMBER3a-lgm_1p7weak.png){width=1286px}
+
+### CLIMBER3a-lgm_1p7weak-ocean
+
+![Paleoclimate-CLIMBER3a-lgm_1p7weak-ocean on ANT-32KM, GRL-PAL-32KM, NH-32KM, GLOBAL-1DEG: to.](../figures/Paleoclimate/Paleoclimate-CLIMBER3a-lgm_1p7weak-ocean.png){width=1292px}
+
 ### PMIP3-CCSM4-lgm
 
 ![Paleoclimate-PMIP3-CCSM4-lgm on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP3-CCSM4-lgm.png){width=1287px}
