@@ -1,4 +1,4 @@
-# Discovery of the products, for `fesmdata.jl search` and `cite`: the products of each dataset,
+# Discovery of the products, for `fesmdata.jl search`, `cite` and `path`: the products of each dataset,
 # from their definitions (<Dataset>/remap.toml, <Dataset>/records.toml,
 # ../Topo/products.toml, ../Regions/basins.toml) and the registry (where they are
 # released, and the products that only the registry has), with their sources and the
@@ -67,10 +67,10 @@ function defined_products(dataset::AbstractString)
     return Product[]
 end
 
-"Names of the data files of a record without grid and extension (records: <Dataset>-<name>[-<part>])."
-function record_stems(domain::AbstractString, files::AbstractDict)
-    domain == RECORDS_FOLDER && return unique(splitext(name)[1] for name in keys(files))
-    return unique(splitext(product_name(e))[1] for e in values(files) if is_data_file(e))
+"Name of the file of a registry entry without grid and extension: GHF-Lucazeau2019 (records: IceCores-AICC2023-EDC)."
+function entry_stem(e::AbstractDict)
+    is_records = basename(dirname(dirname(e["storage_path"]))) == RECORDS_FOLDER
+    return splitext(is_records ? basename(e["storage_path"]) : product_name(e))[1]
 end
 
 """
@@ -89,7 +89,9 @@ function all_products(cat::RegistryCatalog=RegistryCatalog())
     end
     products = collect(values(defined))
     by_stem = Dict((p.dataset, stem) => p for p in products for stem in p.stems)
-    for (domain, dataset) in cat.records, stem in record_stems(domain, cat.files_of[(domain, dataset)])
+    for (domain, dataset) in cat.records, e in values(cat.files_of[(domain, dataset)])
+        is_data_file(e) || continue
+        stem = entry_stem(e)
         p = get!(by_stem, (dataset, stem)) do
             name = startswith(stem, "$dataset-") ? stem[ncodeunits(dataset)+2:end] : stem
             push!(products, Product(dataset, name, [stem], String[]))[end]
@@ -236,4 +238,35 @@ function cite(args; sandbox::Bool=false)
     doi = unique(record_doi(read_record(d, dataset; sandbox=sandbox)[1]) for p in products for d in p.domains)
     filter!(!isempty, doi)
     isempty(doi) || println("\nDOI of the releases: ", join(("https://doi.org/$d" for d in doi), ", "))
+end
+
+"""
+    path(args; dir=nothing, sandbox=false)
+
+`fesmdata.jl path <Dataset> [<Domain> | <GRID> ...] [<product> ...]`: the local paths
+of the data files (not the grid files and text forms) of the products of a dataset (all,
+or those named) on a domain or grids (all if none are named), also of the products by
+cropping on nests and crops, in \$FESMDATA_PRODUCTS or `dir`, one per line, for scripts.
+Only the files present are printed; the missing ones are counted on stderr, with the
+command to fetch them.
+"""
+function path(args; dir=nothing, sandbox::Bool=false)
+    cat = RegistryCatalog(; sandbox=sandbox)
+    names = filter(a -> !is_registry_name(cat, a), args)
+    selection = filter(a -> is_registry_name(cat, a), args)
+    datasets = filter(in(cat.datasets), selection)
+    length(datasets) == 1 || error("path: name one dataset (e.g. Topo)")
+    stems = Set(s for p in select_products(only(datasets), names; sandbox=sandbox) for s in p.stems)
+    selected, cropped, _ = select_records(cat, selection)
+    root = local_root(dir)
+    wanted(e) = is_data_file(e) && !endswith(e["storage_path"], ".txt") && entry_stem(e) in stems
+    paths = [[local_path(e, root) for (d, s, grids) in selected for e in record_entries(d, s; grids=grids, sandbox=sandbox)
+              if wanted(e)];
+             [p for (c, grids) in cropped
+              for (e, p) in crop_data_files(c, record_entries(c.source, c.dataset; sandbox=sandbox), root)
+              if wanted(e) && (isempty(grids) || basename(dirname(p)) in grids)]]
+    present = filter(isfile, paths)
+    foreach(println, present)
+    n = length(paths) - length(present)
+    n > 0 && println(stderr, "$n files not in $root: julia fesmdata.jl fetch $(join(selection, " "))")
 end

@@ -26,6 +26,10 @@ Find and download:
                                                their sources and domains
   cite <Dataset> [<product> ...]               where the references of the products are:
                                                the READMEs of their sources and dataset
+  path <Dataset> [<Domain> | <GRID> ...] [<product> ...]
+                                               the files of the products present in
+                                               \$FESMDATA_PRODUCTS, one per line (e.g.
+                                               ncview \$(julia fesmdata.jl path ...))
   fetch <Dataset> <Domain> | <GRID> ...        download into \$FESMDATA_PRODUCTS/<Domain>/<GRID>/
                                                and verify; files of earlier releases are
                                                updated (--overwrite: also replace files
@@ -38,7 +42,7 @@ Find and download:
                                                with the size; run again to update (--yes:
                                                no confirmation); also the products by
                                                cropping on the active nests and crops
-  (arguments in any order; --dir=<folder>: list, fetch or mirror in <folder> instead of
+  (arguments in any order; --dir=<folder>: list, path, fetch or mirror in <folder> instead of
   \$FESMDATA_PRODUCTS, e.g. to archive the releases there before updating: files already in
   \$FESMDATA_PRODUCTS are hard linked (--copy: copied), and the registry files go to
   <folder>/registry/; the crops are written there too)
@@ -154,6 +158,9 @@ function main(argv)
     elseif command == "cite"
         include(joinpath(PUBLISH_DIR, "discover.jl"))
         call(:cite, rest; sandbox=sandbox)
+    elseif command == "path"
+        include(joinpath(PUBLISH_DIR, "discover.jl"))
+        call(:path, rest; dir=get(valued, "dir", nothing), sandbox=sandbox)
     elseif command == "fetch"
         include(joinpath(PUBLISH_DIR, "catalog.jl"))
         dir = get(valued, "dir", nothing)

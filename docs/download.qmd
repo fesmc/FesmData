@@ -103,6 +103,15 @@ julia fesmdata.jl fetch IceCores Records        # a records dataset
 `fetch` needs the dataset, and a domain or grids (in any order). A grid name implies its
 domain, so the domain can be left out when grids are given.
 
+`path` prints the paths of the downloaded files of a dataset, one per line, for scripts
+and viewers; products can be named to keep only theirs (the files missing are counted
+on stderr):
+
+```bash
+julia fesmdata.jl path Topo ANT-8KM                  # all products of Topo on a grid
+ncview $(julia fesmdata.jl path Topo ANT-8KM BedMachine-v4)
+```
+
 ## Nests and crops
 
 The thematic datasets (those made by remapping: GHF, Velocity, SMB, Atmosphere, ...)
