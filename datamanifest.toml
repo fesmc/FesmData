@@ -1577,6 +1577,18 @@ doi = "10.1594/PANGAEA.990386"
 storage_path = "$datasets_dir/aicc2023/AICC2023_WDC_EDC_ties.tab"
 uri = "https://doi.pangaea.de/10.1594/PANGAEA.990386?format=textfile"
 
+# Barker et al. (2011): synthetic Greenland record GLT_syn and predicted D-O events,
+# Tables S2 and S3 of the supplement of the Science article (no open licence stated).
+# Download by hand: the zip 1203580-barker_tables_s2-s3.zip of the supplementary
+# material has 1203580s2.xls (Excel 97-2003), which is opened and saved again as xlsx
+# (Excel), 1203580s2.xlsx (Julia reads only xlsx).
+
+[barker2011_gltsyn]
+doi = "10.1126/science.1203580"
+skip_download = true
+storage_path = "$datasets_dir/barker2011_gltsyn/1203580s2.xlsx"
+uri = "https://doi.org/10.1126/science.1203580"
+
 # ---------------------------------------------------------------------------
 # Greenhouse gases (GHG/)
 # ---------------------------------------------------------------------------

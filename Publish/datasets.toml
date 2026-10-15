@@ -202,7 +202,8 @@ keywords = ["ice core", "paleoclimate", "Antarctica", "Greenland", "temperature"
 description = """
 Time series at Antarctic and Greenland ice core sites over glacial cycles: water isotopes
 and temperatures of EPICA Dome C, Vostok, Dome Fuji, EDML, TALDICE and WAIS Divide, the synchronized
-Greenland δ18O and calcium records of NGRIP, GRIP and GISP2, seasonal temperatures at
+Greenland δ18O and calcium records of NGRIP, GRIP and GISP2, the synthetic Greenland
+record GLT_syn (Barker et al., 2011), seasonal temperatures at
 Greenland sites (Buizert et al., 2018), NGRIP temperature and accumulation (Kindler et
 al., 2014), NEEM water isotopes (Gkinis et al., 2020), Holocene surface elevation changes
 (Vinther et al., 2009), EPICA Dome C dust flux, and the AICC2023 chronology of five cores,

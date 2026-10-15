@@ -22,6 +22,7 @@ form (`.txt`).
 | `IceCores-Lambert2012` | Lambert et al. (2012): EPICA Dome C dust flux, [doi:10.1594/PANGAEA.778213](https://doi.org/10.1594/PANGAEA.778213) | EDC | `dust_flux` (mg m-2 yr-1), `depth` | 0.4-801 ka, 25 years (EDC3; also AICC2023) |
 | `IceCores-Rasmussen2014` | Rasmussen et al. (2014), Seierstad et al. (2014): synchronized Greenland records, [doi:10.1016/j.quascirev.2014.09.007](https://doi.org/10.1016/j.quascirev.2014.09.007) | NGRIP1, NGRIP2, GRIP, GISP2 | `d18O` (‰), `ca` (ng g-1), `depth`, `mce` | 0-122 ka, 20 years (GICC05modelext; NGRIP also AICC2023) |
 | `IceCores-Buizert2018` | Buizert et al. (2018): seasonal temperatures at ice core sites, [doi:10.25921/psvs-yg80](https://doi.org/10.25921/psvs-yg80) | NEEM, NGRIP, GISP2, Dye-3, ReCAP, Agassiz, Hans Tausen, Camp Century, EGRIP | `tas_ann`, `tas_djf`, `tas_mam`, `tas_jja`, `tas_son` (K) | 22 ka to present, 20 years |
+| `IceCores-Barker2011-<part>` | Barker et al. (2011): synthetic Greenland record GLT_syn from EDC, [doi:10.1126/science.1203580](https://doi.org/10.1126/science.1203580); parts `GLTsyn` and `events` | Greenland (synthetic, no location) | `glt_syn`, `glt_syn_hi`, `glt_syn_lo` (‰); `events`: `do_pick`, `do_pick_var` | 5-800 ka, 50 years (EDC3; speleothem ages to 400 ka) |
 | `IceCores-Kindler2014` | Kindler et al. (2014): reconstruction from δ15N and a firn model, [doi:10.5194/cp-10-887-2014](https://doi.org/10.5194/cp-10-887-2014) | NGRIP | `tas` (K), `acc` (kg m-2 yr-1), `depth` | 10-122 ka, 20 years (GICC05modelext) |
 | `IceCores-Gkinis2020` | Gkinis et al. (2020): 0.05 m samples, [doi:10.1594/PANGAEA.925552](https://doi.org/10.1594/PANGAEA.925552) | NEEM | `d18O`, `dD` (‰) with precision and accuracy offsets, `depth` | 8-121 ka (GICC05, GICC05_modelext; also AICC2012) |
 | `IceCores-Vinther2009` | Vinther et al. (2009): Holocene thinning, [doi:10.1038/nature08355](https://doi.org/10.1038/nature08355) | Camp Century, NGRIP, GRIP, DYE-3 | `dz_srf`, `dz_srf_sd` (m), `z_srf` (present) | 11.7 ka to present, 20 years (GICC05) |
@@ -29,7 +30,8 @@ form (`.txt`).
 
 The records are time series at fixed sites (featureType timeSeries, dimension `station`,
 with `lat`, `lon`, `site_name`, and `z_srf` where the source gives it); the AICC2023
-files are profiles along depth (featureType profile). `time` is in years before 1950 CE
+files are profiles along depth (featureType profile); GLT_syn is a series of a region
+without a location. `time` is in years before 1950 CE
 (units "years ago"), on the time scale of the source (in the comment of `time`); ages b2k
 (before 2000 CE) are converted by subtracting 50. Water isotopes are in ‰ (units
 `1e-3`); temperature anomalies `tas_anom` are relative to the present (see each source).
@@ -48,6 +50,7 @@ Divide has AICC2023 ages from the WAIS Divide-EDC tie points of AICC2023 (10-57 
 | Rasmussen et al. (2014), Seierstad et al. (2014) | No licence stated (Centre for Ice and Climate); publishing assumed to be allowed |
 | Bouchet et al. (2023), AICC2023 | CC BY 4.0 (PANGAEA) |
 | WAIS Divide Project Members (2015), data of E. Steig | CC BY-NC 4.0 (USAP-DC) |
+| Barker et al. (2011) | Supplement of a Science article, no open licence stated; publishing assumed to be allowed |
 | Kindler et al. (2014) | CC BY 3.0 (Clim. Past supplement) |
 | Gkinis et al. (2020) | CC BY 4.0 (PANGAEA) |
 | Vinther et al. (2009) | NOAA NCEI open data, no licence stated; publishing assumed to be allowed |

@@ -43,6 +43,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | paleo    | Badgeley2020_recon          | Greenland temperature and precipitation, 20 ka to present | Badgeley et al. (2020) |
 | geo      | Bagge2021_visc              | Global 3D mantle viscosity                       | Bagge et al. (2021)            |
 | geo      | Baranov2021_sed             | Antarctic sediment thickness, ANTASed            | Baranov et al. (2021)          |
+| paleo    | Barker2011_GLTsyn           | Synthetic Greenland record GLT_syn, 800 kyr      | Barker et al. (2011)           |
 | paleo    | Batchelor2019_NHIceMasks    | Northern Hemisphere ice extents, 18 time slices  | Batchelor et al. (2019)        |
 | paleo    | Batchelor2019_PaleoMIST_lgc | Global ice extents of the last glacial cycle (Batchelor north, PaleoMIST south) | Batchelor et al. (2019), Gowan et al. (2021) |
 | paleo    | Bereiter2015_CO2            | Antarctic ice core CO2 composite, 800 kyr        | Bereiter et al. (2015)         |

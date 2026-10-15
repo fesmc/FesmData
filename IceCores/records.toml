@@ -53,3 +53,8 @@ figure = { variable = "tas_ann" }
 [products.WAIS2015]
 source = "WAIS2015_WDC"
 file = "WAIS2015_WDC.nc"
+
+[products.Barker2011]
+source = "Barker2011_GLTsyn"
+files = { GLTsyn = "Barker2011_GLTsyn.nc", events = "Barker2011_GLTsyn_events.nc" }
+figure = { variable = "glt_syn" }
