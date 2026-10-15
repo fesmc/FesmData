@@ -1,82 +1,85 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-14"
-git_tag = "regions-v2.3.0"
+date = "2026-10-15"
+git_tag = "regions-v2.5.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Himalaya_Regions"
-version = "2.3.0"
+version = "2.5.0"
 
 ["HIM-250M_DOMAINS.nc"]
-checksum = "sha256:ca2431e11c9032b431e0ea55894f7adc4e86e2ab30b33ecf0ae8ee7a62a1f298"
+checksum = "sha256:7beab7141ba26a55e52f4e2c323b81d74373f921b50dda2809a794d3cc08b32b"
+previous_checksums = ["sha256:ca2431e11c9032b431e0ea55894f7adc4e86e2ab30b33ecf0ae8ee7a62a1f298"]
 size = 259258
 storage_path = "$datasets_dir/Himalaya/HIM-250M/HIM-250M_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Regions_HIM-250M/2.3.0/HIM-250M_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Regions_HIM-250M/2.5.0/HIM-250M_DOMAINS.nc"
 
 ["HIM-250M_REGIONS.nc"]
-checksum = "sha256:6bae2165c034a2e65ebb39670760800f16ea9fd592b251e4e1d5d0c30d3888ef"
-previous_checksums = ["sha256:55dec6e60e809e8011153e3ee1efe70ce79440a7da741133f84c188c3bbed514"]
-size = 1638892
+checksum = "sha256:147cfb772312db2a962701123ac1b783eb7fa98e9c5cd9e6a00bf6d7703fe83a"
+previous_checksums = ["sha256:55dec6e60e809e8011153e3ee1efe70ce79440a7da741133f84c188c3bbed514", "sha256:6bae2165c034a2e65ebb39670760800f16ea9fd592b251e4e1d5d0c30d3888ef"]
+size = 1637794
 storage_path = "$datasets_dir/Himalaya/HIM-250M/HIM-250M_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Regions_HIM-250M/2.3.0/HIM-250M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Regions_HIM-250M/2.5.0/HIM-250M_REGIONS.nc"
 
 ["HIM-250M_grid.nc"]
 checksum = "sha256:d8f5e6cb696e1d8c6ff9195f476dd63abc4c13b2fda847ad0fdc92571660b62b"
 size = 79614295
 storage_path = "$datasets_dir/Himalaya/HIM-250M/HIM-250M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Regions_HIM-250M/2.3.0/HIM-250M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Regions_HIM-250M/2.5.0/HIM-250M_grid.nc"
 
 ["HIM-2KM_DOMAINS.nc"]
-checksum = "sha256:f9fddfa4ca29758720193191379ed2dc2b5b1e37ca86b75c84a3930b0c494796"
+checksum = "sha256:1fd57c2ca95c7099049b5e12cdd5e01017825fa431f6a7ce008dc614e92232c5"
+previous_checksums = ["sha256:f9fddfa4ca29758720193191379ed2dc2b5b1e37ca86b75c84a3930b0c494796"]
 size = 36481
 storage_path = "$datasets_dir/Himalaya/HIM-2KM/HIM-2KM_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Regions_HIM-2KM/2.3.0/HIM-2KM_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Regions_HIM-2KM/2.5.0/HIM-2KM_DOMAINS.nc"
 
 ["HIM-2KM_REGIONS.nc"]
-checksum = "sha256:d252ae8867c2bf0c39f57d66551a35142c939bbedb1759c8baf7868efe27a156"
-previous_checksums = ["sha256:1df1d19a6dae83e3cc55ac5d9ea07c7db34750a194da55bb1a4c223198ef34f0"]
-size = 84357
+checksum = "sha256:30d5d08c7ce272c58a22ed9abdd8c66ca5352ad1d222974bd1d70bd1db75f316"
+previous_checksums = ["sha256:1df1d19a6dae83e3cc55ac5d9ea07c7db34750a194da55bb1a4c223198ef34f0", "sha256:d252ae8867c2bf0c39f57d66551a35142c939bbedb1759c8baf7868efe27a156"]
+size = 83269
 storage_path = "$datasets_dir/Himalaya/HIM-2KM/HIM-2KM_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Regions_HIM-2KM/2.3.0/HIM-2KM_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Regions_HIM-2KM/2.5.0/HIM-2KM_REGIONS.nc"
 
 ["HIM-2KM_grid.nc"]
 checksum = "sha256:c80460c96b66ee86b7f0ad0ba2095ab24de793493dda2a341dfa36b5a715a209"
 size = 2883062
 storage_path = "$datasets_dir/Himalaya/HIM-2KM/HIM-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Regions_HIM-2KM/2.3.0/HIM-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Regions_HIM-2KM/2.5.0/HIM-2KM_grid.nc"
 
 ["HIM-500M_DOMAINS.nc"]
-checksum = "sha256:8706d7686367bc7846fbdbc778c014dfdc1c2d45865c0441191fd1e3b837dacc"
+checksum = "sha256:8a06870ee4b3763f66c995b56f52c07ce9a24f0accc8f2bc2fea0a9139e5fbee"
+previous_checksums = ["sha256:8706d7686367bc7846fbdbc778c014dfdc1c2d45865c0441191fd1e3b837dacc"]
 size = 112287
 storage_path = "$datasets_dir/Himalaya/HIM-500M/HIM-500M_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Regions_HIM-500M/2.3.0/HIM-500M_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Regions_HIM-500M/2.5.0/HIM-500M_DOMAINS.nc"
 
 ["HIM-500M_REGIONS.nc"]
-checksum = "sha256:b08a3ad3e8f40d5f7c4237ff346e8361f584081cf19974fa9c1f09aeaac12b23"
-previous_checksums = ["sha256:203cec73b35d115ec99f8daa936795128ee80c6ff4d24a876dcb0bf1cd5d32bd"]
-size = 489283
+checksum = "sha256:5b50e91ab26cb00fee1f0b9c0f96db5dfed1106b0fb9e230f51111b64559d1c5"
+previous_checksums = ["sha256:203cec73b35d115ec99f8daa936795128ee80c6ff4d24a876dcb0bf1cd5d32bd", "sha256:b08a3ad3e8f40d5f7c4237ff346e8361f584081cf19974fa9c1f09aeaac12b23"]
+size = 488194
 storage_path = "$datasets_dir/Himalaya/HIM-500M/HIM-500M_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Regions_HIM-500M/2.3.0/HIM-500M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Regions_HIM-500M/2.5.0/HIM-500M_REGIONS.nc"
 
 ["HIM-500M_grid.nc"]
 checksum = "sha256:b2b49ce5c29c569e29329d67738dae64ad40af75a4af4fcac73731d913bd25d8"
 size = 28755563
 storage_path = "$datasets_dir/Himalaya/HIM-500M/HIM-500M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Regions_HIM-500M/2.3.0/HIM-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Regions_HIM-500M/2.5.0/HIM-500M_grid.nc"
 
 ["grid_HIM-250M.txt"]
 checksum = "sha256:abccefdb9881cf976d320563a960626c932190e9f9613fd38709920675177fcd"
 size = 338
 storage_path = "$datasets_dir/Himalaya/HIM-250M/grid_HIM-250M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Regions_HIM-250M/2.3.0/grid_HIM-250M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Regions_HIM-250M/2.5.0/grid_HIM-250M.txt"
 
 ["grid_HIM-2KM.txt"]
 checksum = "sha256:534cff6d3562a47b21187e2279ce0b3a848e720b093bc7ae578073c24219bdcf"
 size = 333
 storage_path = "$datasets_dir/Himalaya/HIM-2KM/grid_HIM-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Regions_HIM-2KM/2.3.0/grid_HIM-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Regions_HIM-2KM/2.5.0/grid_HIM-2KM.txt"
 
 ["grid_HIM-500M.txt"]
 checksum = "sha256:9b8eb519ec9eb47069c6e8cbad7c9e8bb474c3bcefb4ab8de89c55ec4be68ae3"
 size = 335
 storage_path = "$datasets_dir/Himalaya/HIM-500M/grid_HIM-500M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Regions_HIM-500M/2.3.0/grid_HIM-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Regions_HIM-500M/2.5.0/grid_HIM-500M.txt"

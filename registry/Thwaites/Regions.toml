@@ -1,115 +1,117 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-14"
-git_tag = "regions-v2.3.0"
+date = "2026-10-15"
+git_tag = "regions-v2.5.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Thwaites_Regions"
-version = "2.3.0"
+version = "2.5.0"
 
 ["THW-1KM_BASINS-IMBIE2016-refined.nc"]
-checksum = "sha256:b7d49c9f2955ee1dca980f4fef1c0732a808f4b2f25c052f1bc36efb790a2fd3"
-previous_checksums = ["sha256:ffbdbff73d621a5162a385d8d5b295f7d6d85ef3e3ec1bb5cab53b7eb698bdee"]
+checksum = "sha256:ab1ad0ff62e2daee1ac93d5054b9192db0551b2f6489f4ec571c55a766ef5007"
+previous_checksums = ["sha256:ffbdbff73d621a5162a385d8d5b295f7d6d85ef3e3ec1bb5cab53b7eb698bdee", "sha256:b7d49c9f2955ee1dca980f4fef1c0732a808f4b2f25c052f1bc36efb790a2fd3"]
 size = 57508
 storage_path = "$datasets_dir/Thwaites/THW-1KM/THW-1KM_BASINS-IMBIE2016-refined.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-1KM/2.3.0/THW-1KM_BASINS-IMBIE2016-refined.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-1KM/2.5.0/THW-1KM_BASINS-IMBIE2016-refined.nc"
 
 ["THW-1KM_BASINS-IMBIE2016.nc"]
-checksum = "sha256:9db6caaedede03df6c587a2700c6af6bd73ee250ea96cd8209370e41fbd5b5cf"
-previous_checksums = ["sha256:5f36644fd8d146478fde673409ffc449d71201c46494611cc1d5f399db7d4ea8"]
+checksum = "sha256:2c2d80cdaec7f8031a975de6885cf5bb718b7760e0c3827f0d8c8599881fd1b5"
+previous_checksums = ["sha256:5f36644fd8d146478fde673409ffc449d71201c46494611cc1d5f399db7d4ea8", "sha256:9db6caaedede03df6c587a2700c6af6bd73ee250ea96cd8209370e41fbd5b5cf"]
 size = 51143
 storage_path = "$datasets_dir/Thwaites/THW-1KM/THW-1KM_BASINS-IMBIE2016.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-1KM/2.3.0/THW-1KM_BASINS-IMBIE2016.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-1KM/2.5.0/THW-1KM_BASINS-IMBIE2016.nc"
 
 ["THW-1KM_BASINS-Schmidt2025.nc"]
-checksum = "sha256:15892c5d2ebe05e407eec05a9186698de230b308e60bb7970e20ded67d940a43"
-previous_checksums = ["sha256:9f9bec9c7676a1e00336a4ec9f3c8cb3f8fd1b18a0c8f388848cf0753e238e7a"]
+checksum = "sha256:75597b2feadfabebe258effa9551b5f46b0a5a84b6ec81235568d993975820f3"
+previous_checksums = ["sha256:9f9bec9c7676a1e00336a4ec9f3c8cb3f8fd1b18a0c8f388848cf0753e238e7a", "sha256:15892c5d2ebe05e407eec05a9186698de230b308e60bb7970e20ded67d940a43"]
 size = 51143
 storage_path = "$datasets_dir/Thwaites/THW-1KM/THW-1KM_BASINS-Schmidt2025.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-1KM/2.3.0/THW-1KM_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-1KM/2.5.0/THW-1KM_BASINS-Schmidt2025.nc"
 
 ["THW-1KM_BASINS-Zwally2012.nc"]
-checksum = "sha256:80c5f9cb946416260788516f225900ee520f93f0ecf5b767f22914fc1ad734dd"
-previous_checksums = ["sha256:be456e81450dd4ccb3c3284f27c784e504b576dc0d9e0ef6802254757d9f99e6"]
+checksum = "sha256:a633778a48ef69732dc76aeb680dadd423eb3af2a0b66632799209255a7d089a"
+previous_checksums = ["sha256:be456e81450dd4ccb3c3284f27c784e504b576dc0d9e0ef6802254757d9f99e6", "sha256:80c5f9cb946416260788516f225900ee520f93f0ecf5b767f22914fc1ad734dd"]
 size = 46256
 storage_path = "$datasets_dir/Thwaites/THW-1KM/THW-1KM_BASINS-Zwally2012.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-1KM/2.3.0/THW-1KM_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-1KM/2.5.0/THW-1KM_BASINS-Zwally2012.nc"
 
 ["THW-1KM_DOMAINS.nc"]
-checksum = "sha256:ff862923ec1d15a094812812f22601f4faac709bb908cf2ffd466abc5e943d94"
-size = 68275
+checksum = "sha256:72420618bbbe075496b7787a8644d265efd98167097c969ed9104574e660f56d"
+previous_checksums = ["sha256:ff862923ec1d15a094812812f22601f4faac709bb908cf2ffd466abc5e943d94"]
+size = 68371
 storage_path = "$datasets_dir/Thwaites/THW-1KM/THW-1KM_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-1KM/2.3.0/THW-1KM_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-1KM/2.5.0/THW-1KM_DOMAINS.nc"
 
 ["THW-1KM_REGIONS.nc"]
-checksum = "sha256:c52f5f4e4470e221aeb43f4dcfc18ef62ebd2663d632fdccf215316d5d6aa714"
-previous_checksums = ["sha256:be3b8babe5a2f25b5b79e1b86901f2407abcad9e78d1b3fa93d56788b6b4f8d1"]
-size = 210539
+checksum = "sha256:cf971eba8849d7e42bee7c69323e7d47327e2891d897c4ee2c6ed490956f9799"
+previous_checksums = ["sha256:be3b8babe5a2f25b5b79e1b86901f2407abcad9e78d1b3fa93d56788b6b4f8d1", "sha256:c52f5f4e4470e221aeb43f4dcfc18ef62ebd2663d632fdccf215316d5d6aa714"]
+size = 211627
 storage_path = "$datasets_dir/Thwaites/THW-1KM/THW-1KM_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-1KM/2.3.0/THW-1KM_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-1KM/2.5.0/THW-1KM_REGIONS.nc"
 
 ["THW-1KM_grid.nc"]
 checksum = "sha256:705cca061b5de19e4c240cd530f9e3761fc7ec33edc9a63c2d5d51264e144250"
 previous_checksums = ["sha256:f0844ba5083fd5f5f3ffa1363f7cafdebbf5a0f74a7c2aa7a5289a5498ffb2ff"]
 size = 1499689
 storage_path = "$datasets_dir/Thwaites/THW-1KM/THW-1KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-1KM/2.3.0/THW-1KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-1KM/2.5.0/THW-1KM_grid.nc"
 
 ["THW-500M_BASINS-IMBIE2016-refined.nc"]
-checksum = "sha256:86f9a76d3ba4626bd7e2cf4b351206054c159b16f7bc4727e361bfedce59e1bd"
-previous_checksums = ["sha256:d2f8842a85d24731144c1d57167630c7501ff57b9dbf9a354f5ab9816c160e56"]
+checksum = "sha256:ed520320dff82580b40dd19e9a756691669c95f3190808cf036973b4a8132f15"
+previous_checksums = ["sha256:d2f8842a85d24731144c1d57167630c7501ff57b9dbf9a354f5ab9816c160e56", "sha256:86f9a76d3ba4626bd7e2cf4b351206054c159b16f7bc4727e361bfedce59e1bd"]
 size = 119224
 storage_path = "$datasets_dir/Thwaites/THW-500M/THW-500M_BASINS-IMBIE2016-refined.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-500M/2.3.0/THW-500M_BASINS-IMBIE2016-refined.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-500M/2.5.0/THW-500M_BASINS-IMBIE2016-refined.nc"
 
 ["THW-500M_BASINS-IMBIE2016.nc"]
-checksum = "sha256:6507527358ff9ff977975c5b2ae6b34d7416e0bf57d39af9e0cfba9964ed644b"
-previous_checksums = ["sha256:843168ed0602a962f0a90ef0cb926b53dcfbffbee1dc72b96a4d61b4bbf2f3c3"]
+checksum = "sha256:99c8e3e80bdc15d5a321c8b23a7f7a081048943c9a04ddc3f5c1d726dd492efa"
+previous_checksums = ["sha256:843168ed0602a962f0a90ef0cb926b53dcfbffbee1dc72b96a4d61b4bbf2f3c3", "sha256:6507527358ff9ff977975c5b2ae6b34d7416e0bf57d39af9e0cfba9964ed644b"]
 size = 99580
 storage_path = "$datasets_dir/Thwaites/THW-500M/THW-500M_BASINS-IMBIE2016.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-500M/2.3.0/THW-500M_BASINS-IMBIE2016.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-500M/2.5.0/THW-500M_BASINS-IMBIE2016.nc"
 
 ["THW-500M_BASINS-Schmidt2025.nc"]
-checksum = "sha256:7355eceecbbee6b0cf582edd79124dc91e2e718e78aafca908b13aa7f0de6c5d"
-previous_checksums = ["sha256:21797c4e39bff31ae295bd4010388c822000df19f9df2b7dd4fa5455eff4c716"]
+checksum = "sha256:7861a949886d1c3954c37120750b7a002d23bb90a44a18cb6ec405b72ef3a8d6"
+previous_checksums = ["sha256:21797c4e39bff31ae295bd4010388c822000df19f9df2b7dd4fa5455eff4c716", "sha256:7355eceecbbee6b0cf582edd79124dc91e2e718e78aafca908b13aa7f0de6c5d"]
 size = 99580
 storage_path = "$datasets_dir/Thwaites/THW-500M/THW-500M_BASINS-Schmidt2025.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-500M/2.3.0/THW-500M_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-500M/2.5.0/THW-500M_BASINS-Schmidt2025.nc"
 
 ["THW-500M_BASINS-Zwally2012.nc"]
-checksum = "sha256:9eb9dbf3592ebd1b3dcba51bebf9cb9caaf0c5bc49cf727c88db58ee9b08133d"
-previous_checksums = ["sha256:ccb3479a465669c3caabd71ce5c272db709687dd66f9ee4f1da10d5394403bd9"]
+checksum = "sha256:7861c11ba64529e523ba37ccd21ae818ed21bc2c9291e4b73187ee3acd32dceb"
+previous_checksums = ["sha256:ccb3479a465669c3caabd71ce5c272db709687dd66f9ee4f1da10d5394403bd9", "sha256:9eb9dbf3592ebd1b3dcba51bebf9cb9caaf0c5bc49cf727c88db58ee9b08133d"]
 size = 82622
 storage_path = "$datasets_dir/Thwaites/THW-500M/THW-500M_BASINS-Zwally2012.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-500M/2.3.0/THW-500M_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-500M/2.5.0/THW-500M_BASINS-Zwally2012.nc"
 
 ["THW-500M_DOMAINS.nc"]
-checksum = "sha256:27bbeaf8b43d359b69502491e7b9751310e2e1129e62cc863cab5268562fd3b9"
-size = 94385
+checksum = "sha256:e98e1d039f1abdf228e545380c7a2aca828bc579603b1426466f61f964ee6f23"
+previous_checksums = ["sha256:27bbeaf8b43d359b69502491e7b9751310e2e1129e62cc863cab5268562fd3b9"]
+size = 94481
 storage_path = "$datasets_dir/Thwaites/THW-500M/THW-500M_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-500M/2.3.0/THW-500M_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-500M/2.5.0/THW-500M_DOMAINS.nc"
 
 ["THW-500M_REGIONS.nc"]
-checksum = "sha256:ecaa1b2dd1c66421e369e76aa443ade49abb3ddbfc810d93eb447c68dc4399a0"
-previous_checksums = ["sha256:ca98c361d46275134699a1ff936cc3e588c40b0cdede2d3c4a0eeb879a1d8196"]
-size = 590775
+checksum = "sha256:61f5f52cb730362287199fe4c28456445f033fe9e6a2a97d7a29098b17edbe37"
+previous_checksums = ["sha256:ca98c361d46275134699a1ff936cc3e588c40b0cdede2d3c4a0eeb879a1d8196", "sha256:ecaa1b2dd1c66421e369e76aa443ade49abb3ddbfc810d93eb447c68dc4399a0"]
+size = 591863
 storage_path = "$datasets_dir/Thwaites/THW-500M/THW-500M_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-500M/2.3.0/THW-500M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-500M/2.5.0/THW-500M_REGIONS.nc"
 
 ["THW-500M_grid.nc"]
 checksum = "sha256:74e70697a5d962a8f05dfd6d61639a8ff285e3cf476e09530db0694df45e3469"
 previous_checksums = ["sha256:d50616bf3d370a92f0c024753209f24facc23f52adf0cbb7d86e2d5473c9e766"]
 size = 4661122
 storage_path = "$datasets_dir/Thwaites/THW-500M/THW-500M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-500M/2.3.0/THW-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-500M/2.5.0/THW-500M_grid.nc"
 
 ["grid_THW-1KM.txt"]
 checksum = "sha256:f5a26a47267918dfdc4cd6e3bef8405e52e6d86836990bc344b6e79df2535b0e"
 size = 464
 storage_path = "$datasets_dir/Thwaites/THW-1KM/grid_THW-1KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-1KM/2.3.0/grid_THW-1KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-1KM/2.5.0/grid_THW-1KM.txt"
 
 ["grid_THW-500M.txt"]
 checksum = "sha256:235395dbd0c851b00ed00c2a51a3b5b5e0c8771a2634c1d48d939eabacf6e6f9"
 size = 467
 storage_path = "$datasets_dir/Thwaites/THW-500M/grid_THW-500M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-500M/2.3.0/grid_THW-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-500M/2.5.0/grid_THW-500M.txt"

@@ -1,187 +1,190 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-14"
-git_tag = "regions-v2.3.0"
+date = "2026-10-15"
+git_tag = "regions-v2.5.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=NEGIS_Regions"
-version = "2.3.0"
+version = "2.5.0"
 
 ["NEGIS-1KM_BASINS-Mouginot2019.nc"]
-checksum = "sha256:66ec4f4f74ab93d96fe4e908690bdca7715f651d428684fa725a707ccf080da5"
-previous_checksums = ["sha256:b360a2bbecb5156ec0064b14e476b974b2af6f3a5902312d4760bcdad374ed4e"]
+checksum = "sha256:aebf6d713b4fec2af3450bd8a65ab07398355c765e3c75578431797d51fcb213"
+previous_checksums = ["sha256:b360a2bbecb5156ec0064b14e476b974b2af6f3a5902312d4760bcdad374ed4e", "sha256:66ec4f4f74ab93d96fe4e908690bdca7715f651d428684fa725a707ccf080da5"]
 size = 80487
 storage_path = "$datasets_dir/NEGIS/NEGIS-1KM/NEGIS-1KM_BASINS-Mouginot2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-1KM/2.3.0/NEGIS-1KM_BASINS-Mouginot2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-1KM/2.5.0/NEGIS-1KM_BASINS-Mouginot2019.nc"
 
 ["NEGIS-1KM_BASINS-NEGIS-v1.nc"]
-checksum = "sha256:8ef265ecc4423a716051e36b64463b8878eb9292846bd343be0536f6fa78ef62"
-previous_checksums = ["sha256:45f153bb8d1086fa513c330caf15532d9a959f6338ee5f664b7bad97a054832d"]
+checksum = "sha256:82a7b55cb7a10a255ad93423ef3c60f3448ba12e1e175da1d34cf8eabf6e9fad"
+previous_checksums = ["sha256:45f153bb8d1086fa513c330caf15532d9a959f6338ee5f664b7bad97a054832d", "sha256:8ef265ecc4423a716051e36b64463b8878eb9292846bd343be0536f6fa78ef62"]
 size = 45896
 storage_path = "$datasets_dir/NEGIS/NEGIS-1KM/NEGIS-1KM_BASINS-NEGIS-v1.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-1KM/2.3.0/NEGIS-1KM_BASINS-NEGIS-v1.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-1KM/2.5.0/NEGIS-1KM_BASINS-NEGIS-v1.nc"
 
 ["NEGIS-1KM_BASINS-NEGIS.nc"]
-checksum = "sha256:22c7b0cc90c9a15122441a8600362f877527a4e63d3801c0a0497f7f990f465e"
-previous_checksums = ["sha256:6d176aee5b0ef6cf1c0f2d4d5aa2962bd0e30b07d793644ab0ee81e1771c13f3"]
+checksum = "sha256:fd9f112b3d29baae172ea2846c7c4349fa048d925876345da013ffd991e06917"
+previous_checksums = ["sha256:6d176aee5b0ef6cf1c0f2d4d5aa2962bd0e30b07d793644ab0ee81e1771c13f3", "sha256:22c7b0cc90c9a15122441a8600362f877527a4e63d3801c0a0497f7f990f465e"]
 size = 45765
 storage_path = "$datasets_dir/NEGIS/NEGIS-1KM/NEGIS-1KM_BASINS-NEGIS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-1KM/2.3.0/NEGIS-1KM_BASINS-NEGIS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-1KM/2.5.0/NEGIS-1KM_BASINS-NEGIS.nc"
 
 ["NEGIS-1KM_BASINS-Schmidt2025.nc"]
-checksum = "sha256:ca2ab12e1b22c0c8120b157e73ad7aa13bca16a309e8ea207ff3eeed1eb3ecf3"
-previous_checksums = ["sha256:38f7405a8ca74139fd85c23f26cb45910ded15c56e1cc11cad4aa75265baf61c"]
-size = 47703
+checksum = "sha256:0ffcbe5e0d3fb194d0a740459316c002c3db8e448bfe0d86a0ddc64c3dccec6c"
+previous_checksums = ["sha256:38f7405a8ca74139fd85c23f26cb45910ded15c56e1cc11cad4aa75265baf61c", "sha256:ca2ab12e1b22c0c8120b157e73ad7aa13bca16a309e8ea207ff3eeed1eb3ecf3"]
+size = 48791
 storage_path = "$datasets_dir/NEGIS/NEGIS-1KM/NEGIS-1KM_BASINS-Schmidt2025.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-1KM/2.3.0/NEGIS-1KM_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-1KM/2.5.0/NEGIS-1KM_BASINS-Schmidt2025.nc"
 
 ["NEGIS-1KM_BASINS-Zwally2012.nc"]
-checksum = "sha256:3cd0dea89cccd9d210964bf0950946a410f4408cf6992889cf801e431614d4b1"
-previous_checksums = ["sha256:cf9e91dcb0abd086624581e603f2d8e5190df43197f5399142a27412c9d04094"]
+checksum = "sha256:7d1c1d7cd4de1476d2c68299400ce405915c4dc8ee90fe5b580dec6a6b810d7e"
+previous_checksums = ["sha256:cf9e91dcb0abd086624581e603f2d8e5190df43197f5399142a27412c9d04094", "sha256:3cd0dea89cccd9d210964bf0950946a410f4408cf6992889cf801e431614d4b1"]
 size = 63023
 storage_path = "$datasets_dir/NEGIS/NEGIS-1KM/NEGIS-1KM_BASINS-Zwally2012.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-1KM/2.3.0/NEGIS-1KM_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-1KM/2.5.0/NEGIS-1KM_BASINS-Zwally2012.nc"
 
 ["NEGIS-1KM_DOMAINS.nc"]
-checksum = "sha256:b64d0954beadf9bbe8d925be092e04f5023dc7c0c13b14a3f9a32cdeee934d41"
-size = 57209
+checksum = "sha256:3cbb2bf1568e86623ba23d817c5991a1db9fa4255b1eeac60f59bf7a68795f94"
+previous_checksums = ["sha256:b64d0954beadf9bbe8d925be092e04f5023dc7c0c13b14a3f9a32cdeee934d41"]
+size = 57305
 storage_path = "$datasets_dir/NEGIS/NEGIS-1KM/NEGIS-1KM_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-1KM/2.3.0/NEGIS-1KM_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-1KM/2.5.0/NEGIS-1KM_DOMAINS.nc"
 
 ["NEGIS-1KM_REGIONS.nc"]
-checksum = "sha256:1bfb13e75374bfc30c5f538f3c2867e719338f2b1fcf7e4b6096e91684ba30e0"
-previous_checksums = ["sha256:0805986d33535fb37f7cad569b51fe8b795cef180f1407833f81b5dd60ac955c"]
+checksum = "sha256:33485e0482f66691c7228b3ab982baeb2abdbd056cae796bd141d2c8c9aa8dee"
+previous_checksums = ["sha256:0805986d33535fb37f7cad569b51fe8b795cef180f1407833f81b5dd60ac955c", "sha256:1bfb13e75374bfc30c5f538f3c2867e719338f2b1fcf7e4b6096e91684ba30e0"]
 size = 60946
 storage_path = "$datasets_dir/NEGIS/NEGIS-1KM/NEGIS-1KM_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-1KM/2.3.0/NEGIS-1KM_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-1KM/2.5.0/NEGIS-1KM_REGIONS.nc"
 
 ["NEGIS-1KM_grid.nc"]
 checksum = "sha256:d72ad9615b637fb7e5537d89f9e8416daaf3cb517db3dfdf3298249c3870d334"
 size = 1769185
 storage_path = "$datasets_dir/NEGIS/NEGIS-1KM/NEGIS-1KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-1KM/2.3.0/NEGIS-1KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-1KM/2.5.0/NEGIS-1KM_grid.nc"
 
 ["NEGIS-250M_BASINS-Mouginot2019.nc"]
-checksum = "sha256:4bf22f359b34b9efeb88feb50adc85e980a43e3b7b4d469bad2eb55505343c3f"
-previous_checksums = ["sha256:2bcb51284cecaf97bc42f7da2c3cc41fc8395badd19e1ca3f6387686b50eb404"]
+checksum = "sha256:ccdff6250217a8f6b978fa8545f03a2715f3aab25b402989530ae9b5825bbea3"
+previous_checksums = ["sha256:2bcb51284cecaf97bc42f7da2c3cc41fc8395badd19e1ca3f6387686b50eb404", "sha256:4bf22f359b34b9efeb88feb50adc85e980a43e3b7b4d469bad2eb55505343c3f"]
 size = 409359
 storage_path = "$datasets_dir/NEGIS/NEGIS-250M/NEGIS-250M_BASINS-Mouginot2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-250M/2.3.0/NEGIS-250M_BASINS-Mouginot2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-250M/2.5.0/NEGIS-250M_BASINS-Mouginot2019.nc"
 
 ["NEGIS-250M_BASINS-NEGIS-v1.nc"]
-checksum = "sha256:e212f5fb199bda945230e9ed2c6a8521e8a5fa14f3ad9c0f874c8be609e40876"
-previous_checksums = ["sha256:e34bf34bc4a5c6856f9d3894c545958267b6ca4d9354ee443ba82066a7f2ba64"]
+checksum = "sha256:604e5053eeb7b0d95e3a164984ebd3d05908cb63d6668ec5a319f9630c357787"
+previous_checksums = ["sha256:e34bf34bc4a5c6856f9d3894c545958267b6ca4d9354ee443ba82066a7f2ba64", "sha256:e212f5fb199bda945230e9ed2c6a8521e8a5fa14f3ad9c0f874c8be609e40876"]
 size = 187092
 storage_path = "$datasets_dir/NEGIS/NEGIS-250M/NEGIS-250M_BASINS-NEGIS-v1.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-250M/2.3.0/NEGIS-250M_BASINS-NEGIS-v1.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-250M/2.5.0/NEGIS-250M_BASINS-NEGIS-v1.nc"
 
 ["NEGIS-250M_BASINS-NEGIS.nc"]
-checksum = "sha256:c13389e6fceeed027815804692005815d1e067328be3ad7c433dce8e2aab4df9"
-previous_checksums = ["sha256:374fa1a2130a8063d09353b841fc567f89664f26e7fa620342af2578d0aff841"]
+checksum = "sha256:174108b18b46b6f1e0395a0efbe0703e45e460c52ee007275c61f91af13c532f"
+previous_checksums = ["sha256:374fa1a2130a8063d09353b841fc567f89664f26e7fa620342af2578d0aff841", "sha256:c13389e6fceeed027815804692005815d1e067328be3ad7c433dce8e2aab4df9"]
 size = 193227
 storage_path = "$datasets_dir/NEGIS/NEGIS-250M/NEGIS-250M_BASINS-NEGIS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-250M/2.3.0/NEGIS-250M_BASINS-NEGIS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-250M/2.5.0/NEGIS-250M_BASINS-NEGIS.nc"
 
 ["NEGIS-250M_BASINS-Schmidt2025.nc"]
-checksum = "sha256:de30529e5d2ce82296eb8bf19ab610c5d21eb4780461d911f5e4e6ab2d13518f"
-previous_checksums = ["sha256:38a706f5b7791f4c4bfc7a7f972ecf349436ac2af955f5afceec08a57bd8e642"]
-size = 188477
+checksum = "sha256:966ae29fb0de0998c923a5fb69f1751a371de3b8fc28a1a70153c59420cffa6d"
+previous_checksums = ["sha256:38a706f5b7791f4c4bfc7a7f972ecf349436ac2af955f5afceec08a57bd8e642", "sha256:de30529e5d2ce82296eb8bf19ab610c5d21eb4780461d911f5e4e6ab2d13518f"]
+size = 189565
 storage_path = "$datasets_dir/NEGIS/NEGIS-250M/NEGIS-250M_BASINS-Schmidt2025.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-250M/2.3.0/NEGIS-250M_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-250M/2.5.0/NEGIS-250M_BASINS-Schmidt2025.nc"
 
 ["NEGIS-250M_BASINS-Zwally2012.nc"]
-checksum = "sha256:4852fbade4e1aba3bd483ed417c4b7949aedfabe28816ecdec45f5bb0af9f823"
-previous_checksums = ["sha256:ff74b857fbc05cd52e11c9265e789d3aebb769a3087e297d7c2913abb03e97c3"]
+checksum = "sha256:277568435b3ecfd007a62a12a5b4e45e915b3800591fae24c9dc1c5c9cbbc685"
+previous_checksums = ["sha256:ff74b857fbc05cd52e11c9265e789d3aebb769a3087e297d7c2913abb03e97c3", "sha256:4852fbade4e1aba3bd483ed417c4b7949aedfabe28816ecdec45f5bb0af9f823"]
 size = 296444
 storage_path = "$datasets_dir/NEGIS/NEGIS-250M/NEGIS-250M_BASINS-Zwally2012.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-250M/2.3.0/NEGIS-250M_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-250M/2.5.0/NEGIS-250M_BASINS-Zwally2012.nc"
 
 ["NEGIS-250M_DOMAINS.nc"]
-checksum = "sha256:efdbfecd5996f4149a5dfb632e39fc7b4792f4274fb977a619cd5fb19f94c6df"
-size = 189594
+checksum = "sha256:1bee58a9301ad2ae05bad61e2daa82df08dd55dc792ff3745ea4c6d9e84eb4c5"
+previous_checksums = ["sha256:efdbfecd5996f4149a5dfb632e39fc7b4792f4274fb977a619cd5fb19f94c6df"]
+size = 189690
 storage_path = "$datasets_dir/NEGIS/NEGIS-250M/NEGIS-250M_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-250M/2.3.0/NEGIS-250M_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-250M/2.5.0/NEGIS-250M_DOMAINS.nc"
 
 ["NEGIS-250M_REGIONS.nc"]
-checksum = "sha256:9f3e806bdaa6c56edab682fd0f7c272fb8b5e600441a2e82fc5939e452d14d60"
-previous_checksums = ["sha256:be7579bb6c7eab815be98da57c00c0b0f1e0a4f12c6dd2fdc385b04fa0e4ac25"]
+checksum = "sha256:67a141910aef1eea142f6663a1e50ffba4dc09d1e239219cf10e77f16380e0a6"
+previous_checksums = ["sha256:be7579bb6c7eab815be98da57c00c0b0f1e0a4f12c6dd2fdc385b04fa0e4ac25", "sha256:9f3e806bdaa6c56edab682fd0f7c272fb8b5e600441a2e82fc5939e452d14d60"]
 size = 329472
 storage_path = "$datasets_dir/NEGIS/NEGIS-250M/NEGIS-250M_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-250M/2.3.0/NEGIS-250M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-250M/2.5.0/NEGIS-250M_REGIONS.nc"
 
 ["NEGIS-250M_grid.nc"]
 checksum = "sha256:8211aff1a9d0be2ad6d10cff1c64572f06e7412095835f009d43c5e6080abca0"
 size = 17663102
 storage_path = "$datasets_dir/NEGIS/NEGIS-250M/NEGIS-250M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-250M/2.3.0/NEGIS-250M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-250M/2.5.0/NEGIS-250M_grid.nc"
 
 ["NEGIS-500M_BASINS-Mouginot2019.nc"]
-checksum = "sha256:5801ed6ceb5aac79d6f42a278cbfa2b818061a32d1683f6fe9d264107bc32abb"
-previous_checksums = ["sha256:16c4dce7512fb84be4f953d7b0c7a4fbeb2c64f2448a66309b33d93bc281db03"]
+checksum = "sha256:376ead7208d06e173020d9f84348211af89da5f4daa25681a05c2d5847645cfd"
+previous_checksums = ["sha256:16c4dce7512fb84be4f953d7b0c7a4fbeb2c64f2448a66309b33d93bc281db03", "sha256:5801ed6ceb5aac79d6f42a278cbfa2b818061a32d1683f6fe9d264107bc32abb"]
 size = 175843
 storage_path = "$datasets_dir/NEGIS/NEGIS-500M/NEGIS-500M_BASINS-Mouginot2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-500M/2.3.0/NEGIS-500M_BASINS-Mouginot2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-500M/2.5.0/NEGIS-500M_BASINS-Mouginot2019.nc"
 
 ["NEGIS-500M_BASINS-NEGIS-v1.nc"]
-checksum = "sha256:071a2df6d7b7909001c583b9c799b0a1320d835fe777c44a9623bdc9c1cd2618"
-previous_checksums = ["sha256:114f6de12d194cf64228fb93a8be5c0bd30a5bab7b7c6a47429854842787faa0"]
+checksum = "sha256:cfc1a79a0b3f9ec76e5515cfa1019e77fb5a7f2b2016182c1d2801589c7dcca7"
+previous_checksums = ["sha256:114f6de12d194cf64228fb93a8be5c0bd30a5bab7b7c6a47429854842787faa0", "sha256:071a2df6d7b7909001c583b9c799b0a1320d835fe777c44a9623bdc9c1cd2618"]
 size = 86092
 storage_path = "$datasets_dir/NEGIS/NEGIS-500M/NEGIS-500M_BASINS-NEGIS-v1.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-500M/2.3.0/NEGIS-500M_BASINS-NEGIS-v1.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-500M/2.5.0/NEGIS-500M_BASINS-NEGIS-v1.nc"
 
 ["NEGIS-500M_BASINS-NEGIS.nc"]
-checksum = "sha256:08e560b645800f97407478fb515ebad1f636c62ae7c978352bd344cd64f2ff20"
-previous_checksums = ["sha256:974cb0d726e64a27838757ae8ebc0ac386679974778d581a027b2af2556c210e"]
+checksum = "sha256:5bb5ed2462760c70105c84d90c8c6adab10cdcfeab83021c455ccccf8ed478fd"
+previous_checksums = ["sha256:974cb0d726e64a27838757ae8ebc0ac386679974778d581a027b2af2556c210e", "sha256:08e560b645800f97407478fb515ebad1f636c62ae7c978352bd344cd64f2ff20"]
 size = 87213
 storage_path = "$datasets_dir/NEGIS/NEGIS-500M/NEGIS-500M_BASINS-NEGIS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-500M/2.3.0/NEGIS-500M_BASINS-NEGIS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-500M/2.5.0/NEGIS-500M_BASINS-NEGIS.nc"
 
 ["NEGIS-500M_BASINS-Schmidt2025.nc"]
-checksum = "sha256:1895f8c119aecfd215e1ead62291ec8c2914f4c78106eac79c0c1827ecb7b86b"
-previous_checksums = ["sha256:63e13991b532c94f98d5ae9d166b79920fab3b4b23f0171043f62ff9530c71ee"]
-size = 90568
+checksum = "sha256:9543be35e28de6322ef8ddc14b4c49e5e490affac9a18003923183c9a8cd1f4a"
+previous_checksums = ["sha256:63e13991b532c94f98d5ae9d166b79920fab3b4b23f0171043f62ff9530c71ee", "sha256:1895f8c119aecfd215e1ead62291ec8c2914f4c78106eac79c0c1827ecb7b86b"]
+size = 91656
 storage_path = "$datasets_dir/NEGIS/NEGIS-500M/NEGIS-500M_BASINS-Schmidt2025.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-500M/2.3.0/NEGIS-500M_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-500M/2.5.0/NEGIS-500M_BASINS-Schmidt2025.nc"
 
 ["NEGIS-500M_BASINS-Zwally2012.nc"]
-checksum = "sha256:283e85706dacb21d40e5b5ab177a8679c9014358356d95d767ce1923cfe47cf8"
-previous_checksums = ["sha256:2c96839bdf2d0be9440b727847aa0acd6d0ec21ea6a2646a214e2fdb8ea60a83"]
+checksum = "sha256:76fddbf1201fcc9c707d6be1528dea422c0937d431b9e5774e3946d5fc66dc4d"
+previous_checksums = ["sha256:2c96839bdf2d0be9440b727847aa0acd6d0ec21ea6a2646a214e2fdb8ea60a83", "sha256:283e85706dacb21d40e5b5ab177a8679c9014358356d95d767ce1923cfe47cf8"]
 size = 131077
 storage_path = "$datasets_dir/NEGIS/NEGIS-500M/NEGIS-500M_BASINS-Zwally2012.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-500M/2.3.0/NEGIS-500M_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-500M/2.5.0/NEGIS-500M_BASINS-Zwally2012.nc"
 
 ["NEGIS-500M_DOMAINS.nc"]
-checksum = "sha256:903635abe5043acc69248646d2dd9e969136d39b3de72ac7e1aacb7ecaa23ca3"
-size = 83075
+checksum = "sha256:284db7d22052cbee132eea18237ee7a8515bc00e9288a4240901a6bee5eb85f0"
+previous_checksums = ["sha256:903635abe5043acc69248646d2dd9e969136d39b3de72ac7e1aacb7ecaa23ca3"]
+size = 83171
 storage_path = "$datasets_dir/NEGIS/NEGIS-500M/NEGIS-500M_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-500M/2.3.0/NEGIS-500M_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-500M/2.5.0/NEGIS-500M_DOMAINS.nc"
 
 ["NEGIS-500M_REGIONS.nc"]
-checksum = "sha256:d0abd9ffc8c1a69c305bd05664c79872f3ca0012da4de7f3825937bb7faafa90"
-previous_checksums = ["sha256:2ccd6179fcbee5070c68290fb90a506fa7320d4b2c08a38a31962127a759fecb"]
+checksum = "sha256:1b237d820ffbafede6cef59bd082c7569130e68a3d681abf83ec3e4047817628"
+previous_checksums = ["sha256:2ccd6179fcbee5070c68290fb90a506fa7320d4b2c08a38a31962127a759fecb", "sha256:d0abd9ffc8c1a69c305bd05664c79872f3ca0012da4de7f3825937bb7faafa90"]
 size = 141249
 storage_path = "$datasets_dir/NEGIS/NEGIS-500M/NEGIS-500M_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-500M/2.3.0/NEGIS-500M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-500M/2.5.0/NEGIS-500M_REGIONS.nc"
 
 ["NEGIS-500M_grid.nc"]
 checksum = "sha256:9382a70cc99844d0600d02758bae2ddddccd4a5c590aa6068c077ca493c9b714"
 size = 5760881
 storage_path = "$datasets_dir/NEGIS/NEGIS-500M/NEGIS-500M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-500M/2.3.0/NEGIS-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-500M/2.5.0/NEGIS-500M_grid.nc"
 
 ["grid_NEGIS-1KM.txt"]
 checksum = "sha256:621ed798939a58d9e5d3ab085c1fb6297c00b73224aa4473de5bef7c21d74336"
 size = 463
 storage_path = "$datasets_dir/NEGIS/NEGIS-1KM/grid_NEGIS-1KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-1KM/2.3.0/grid_NEGIS-1KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-1KM/2.5.0/grid_NEGIS-1KM.txt"
 
 ["grid_NEGIS-250M.txt"]
 checksum = "sha256:bae390eff5a7ed3bd8ce0902dfc2212fa51b67a6ef909a315da89965ec022c28"
 size = 468
 storage_path = "$datasets_dir/NEGIS/NEGIS-250M/grid_NEGIS-250M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-250M/2.3.0/grid_NEGIS-250M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-250M/2.5.0/grid_NEGIS-250M.txt"
 
 ["grid_NEGIS-500M.txt"]
 checksum = "sha256:9c535bf2d454cbc1ff1faabea7c6e028122fc12514d0a5da5230fc6149dc4f6b"
 size = 466
 storage_path = "$datasets_dir/NEGIS/NEGIS-500M/grid_NEGIS-500M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-500M/2.3.0/grid_NEGIS-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Regions_NEGIS-500M/2.5.0/grid_NEGIS-500M.txt"

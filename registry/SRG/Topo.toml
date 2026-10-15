@@ -1,66 +1,66 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-14"
-git_tag = "topo-v2.3.0"
+date = "2026-10-15"
+git_tag = "topo-v2.5.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=SRG_Topo"
-version = "2.3.0"
+version = "2.5.0"
 
 ["SRG-100M_TOPO-GLO90-GEBCO2026.nc"]
-checksum = "sha256:301a661fd0e7e01f2eb7b97f709004012b381bbd9b9a59be1a77632ecde7984e"
-previous_checksums = ["sha256:82dcc01f0650d2f6b725a6e2de159416f89ac8bb25b2d2ce09d44fdc35300ee9"]
-size = 1411168
+checksum = "sha256:08dfef8ffbc57390fde344051f5f196bb2c4a61dac5440b919e54a0d433fc592"
+previous_checksums = ["sha256:82dcc01f0650d2f6b725a6e2de159416f89ac8bb25b2d2ce09d44fdc35300ee9", "sha256:301a661fd0e7e01f2eb7b97f709004012b381bbd9b9a59be1a77632ecde7984e"]
+size = 1414559
 storage_path = "$datasets_dir/SRG/SRG-100M/SRG-100M_TOPO-GLO90-GEBCO2026.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-100M/2.3.0/SRG-100M_TOPO-GLO90-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-100M/2.5.0/SRG-100M_TOPO-GLO90-GEBCO2026.nc"
 
 ["SRG-100M_grid.nc"]
 checksum = "sha256:b6f4582fd3bf4c3239b93fdab15e2c2c9471993e341da13618400b117f2b61b7"
 size = 131780
 storage_path = "$datasets_dir/SRG/SRG-100M/SRG-100M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-100M/2.3.0/SRG-100M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-100M/2.5.0/SRG-100M_grid.nc"
 
 ["SRG-250M_TOPO-GLO90-GEBCO2026.nc"]
-checksum = "sha256:7a82fa4364b0524b46328052fb6c508392b61bffc659158a9fe275973352b179"
-previous_checksums = ["sha256:22fd03cf63c0bbb5932acfea3142855a660d60ad761d68c07222b8d9de34066a"]
-size = 301936
+checksum = "sha256:415583ef7c16206015832215c14377a6f0ee0b3eb1cb668d471c206148032180"
+previous_checksums = ["sha256:22fd03cf63c0bbb5932acfea3142855a660d60ad761d68c07222b8d9de34066a", "sha256:7a82fa4364b0524b46328052fb6c508392b61bffc659158a9fe275973352b179"]
+size = 301686
 storage_path = "$datasets_dir/SRG/SRG-250M/SRG-250M_TOPO-GLO90-GEBCO2026.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-250M/2.3.0/SRG-250M_TOPO-GLO90-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-250M/2.5.0/SRG-250M_TOPO-GLO90-GEBCO2026.nc"
 
 ["SRG-250M_grid.nc"]
 checksum = "sha256:8f83717a4b91db1d906621a54b64880a4951f8a0c7360533dd453dd579e92a0b"
 previous_checksums = ["sha256:a2f66927bd462ba52b12fea9dc3628beaad1ee31ae6531333d2e02c48ef4023c"]
 size = 51488
 storage_path = "$datasets_dir/SRG/SRG-250M/SRG-250M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-250M/2.3.0/SRG-250M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-250M/2.5.0/SRG-250M_grid.nc"
 
 ["SRG-50M_TOPO-GLO90-GEBCO2026.nc"]
-checksum = "sha256:88609d917c27ebc8e27dc546228c55582340883760c5084c3713dbcd8840af7c"
-previous_checksums = ["sha256:f39187e433e0623fe97c438c4b0a73fad12c80a102d4742baf0c791ba9669303"]
-size = 3825686
+checksum = "sha256:aa7bf27958ad1b615f6bb2dcb0234416518c1d97f42da08cb7305af1f7b51c11"
+previous_checksums = ["sha256:f39187e433e0623fe97c438c4b0a73fad12c80a102d4742baf0c791ba9669303", "sha256:88609d917c27ebc8e27dc546228c55582340883760c5084c3713dbcd8840af7c"]
+size = 4121249
 storage_path = "$datasets_dir/SRG/SRG-50M/SRG-50M_TOPO-GLO90-GEBCO2026.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-50M/2.3.0/SRG-50M_TOPO-GLO90-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-50M/2.5.0/SRG-50M_TOPO-GLO90-GEBCO2026.nc"
 
 ["SRG-50M_grid.nc"]
 checksum = "sha256:69d33da0b995b9a0e9123d0bafd516e037596c2d8e1b62b73a0e1c5889f2bb0a"
 size = 322209
 storage_path = "$datasets_dir/SRG/SRG-50M/SRG-50M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-50M/2.3.0/SRG-50M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-50M/2.5.0/SRG-50M_grid.nc"
 
 ["grid_SRG-100M.txt"]
 checksum = "sha256:77478ffd3bd4f790374da770035187ecf091d83c93fb3f1bdd2e0150b6626ccb"
 size = 346
 storage_path = "$datasets_dir/SRG/SRG-100M/grid_SRG-100M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-100M/2.3.0/grid_SRG-100M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-100M/2.5.0/grid_SRG-100M.txt"
 
 ["grid_SRG-250M.txt"]
 checksum = "sha256:ed1764d95bdeb2c3760adf4fa4c84691f2adb72c830c07822af5e2a10439f773"
 previous_checksums = ["sha256:56d72b8d4956d6f26b75b8782dc7bd41a78ca77110be6b25a6d8161ba9068f38"]
 size = 347
 storage_path = "$datasets_dir/SRG/SRG-250M/grid_SRG-250M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-250M/2.3.0/grid_SRG-250M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-250M/2.5.0/grid_SRG-250M.txt"
 
 ["grid_SRG-50M.txt"]
 checksum = "sha256:8847356d899ce03a11186c0f290e27752d812d60af0b1f05be560b20fdbe77c1"
 size = 349
 storage_path = "$datasets_dir/SRG/SRG-50M/grid_SRG-50M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-50M/2.3.0/grid_SRG-50M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-50M/2.5.0/grid_SRG-50M.txt"

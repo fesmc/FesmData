@@ -1,379 +1,391 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-14"
-git_tag = "regions-v2.3.0"
+date = "2026-10-15"
+git_tag = "regions-v2.5.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Antarctica_Regions"
-version = "2.3.0"
+version = "2.5.0"
 
 ["ANT-16KM_BASINS-IMBIE2016-refined.nc"]
-checksum = "sha256:ebbaded4a6fe2b5d09d67d782c5e685c9b714db50914860c2af1e01ece3ff89f"
-previous_checksums = ["sha256:3cc1e51fd5c2043b32bc24f3d03515401c5123bae124b2f7cd68a2e768aac60b", "sha256:5166c7ad99b1b1156d50c68ea0c4f0048eed7557ee3bd1abb158eca4ce651f6c"]
+checksum = "sha256:971bb1cdda4e57e1a98a2b9d4b71845c11569c9c38d0eba4734b10502e5f2840"
+previous_checksums = ["sha256:3cc1e51fd5c2043b32bc24f3d03515401c5123bae124b2f7cd68a2e768aac60b", "sha256:5166c7ad99b1b1156d50c68ea0c4f0048eed7557ee3bd1abb158eca4ce651f6c", "sha256:ebbaded4a6fe2b5d09d67d782c5e685c9b714db50914860c2af1e01ece3ff89f"]
 size = 48842
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_BASINS-IMBIE2016-refined.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-16KM/2.3.0/ANT-16KM_BASINS-IMBIE2016-refined.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-16KM/2.5.0/ANT-16KM_BASINS-IMBIE2016-refined.nc"
 
 ["ANT-16KM_BASINS-IMBIE2016.nc"]
-checksum = "sha256:a856ae0c0c24ade35866c484f03879d60c793c815d7240f01915f0444df37453"
-previous_checksums = ["sha256:a60aca568b350459db2c301516833c74ddb7099719e78c12ded7c29633b2ab3a", "sha256:6ff9492dbdc445ae466c685dccf770b6c051803e22114a5aa7922bca4b699ce5"]
+checksum = "sha256:486bab5b5380109001d6732a6146f796a0094c0f67d329f4aed71fcd62c55251"
+previous_checksums = ["sha256:a60aca568b350459db2c301516833c74ddb7099719e78c12ded7c29633b2ab3a", "sha256:6ff9492dbdc445ae466c685dccf770b6c051803e22114a5aa7922bca4b699ce5", "sha256:a856ae0c0c24ade35866c484f03879d60c793c815d7240f01915f0444df37453"]
 size = 40870
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_BASINS-IMBIE2016.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-16KM/2.3.0/ANT-16KM_BASINS-IMBIE2016.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-16KM/2.5.0/ANT-16KM_BASINS-IMBIE2016.nc"
 
 ["ANT-16KM_BASINS-Schmidt2025.nc"]
-checksum = "sha256:05bc879a6f13ad13ee84a60da268012229d356d203b413766b1ec59d9ab22e66"
-previous_checksums = ["sha256:656e17016e22f8cec2bd7c080ae62b708fbe21a4f33a94f4de31b03d36ab4a5b", "sha256:e3ba3abf200952e68ae286bdb116b4fc164ec3a3a5856437cf8863898c75ee2c"]
+checksum = "sha256:cf557f2de59278d0359fb24d8d0bfa18147a8454585b72d8548829d7fba676f4"
+previous_checksums = ["sha256:656e17016e22f8cec2bd7c080ae62b708fbe21a4f33a94f4de31b03d36ab4a5b", "sha256:e3ba3abf200952e68ae286bdb116b4fc164ec3a3a5856437cf8863898c75ee2c", "sha256:05bc879a6f13ad13ee84a60da268012229d356d203b413766b1ec59d9ab22e66"]
 size = 40870
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_BASINS-Schmidt2025.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-16KM/2.3.0/ANT-16KM_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-16KM/2.5.0/ANT-16KM_BASINS-Schmidt2025.nc"
 
 ["ANT-16KM_BASINS-Zwally2012.nc"]
-checksum = "sha256:44ebab1fa5ec8a76011229293580731426920dd114f682305a092badfce40389"
-previous_checksums = ["sha256:582dc08b745a58c72b285e78718ee21af9677f59380bedccc1759f4aa45b1119", "sha256:72fb08d5319220acfddef339957a2761a124ef4ff78601e60e87c0052a0810c8"]
+checksum = "sha256:3bb660fdb7b5c7ec9ca748e9cf038e019744438e7909cdbf177abb571ab3a359"
+previous_checksums = ["sha256:582dc08b745a58c72b285e78718ee21af9677f59380bedccc1759f4aa45b1119", "sha256:72fb08d5319220acfddef339957a2761a124ef4ff78601e60e87c0052a0810c8", "sha256:44ebab1fa5ec8a76011229293580731426920dd114f682305a092badfce40389"]
 size = 35059
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_BASINS-Zwally2012.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-16KM/2.3.0/ANT-16KM_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-16KM/2.5.0/ANT-16KM_BASINS-Zwally2012.nc"
 
 ["ANT-16KM_DOMAINS.nc"]
-checksum = "sha256:702de5a7a234a7cdb7a10d48296d8c407c19b9c31b8e344d4d09f874216f4a18"
-size = 60647
+checksum = "sha256:39ffa4aa3bd47a0def64962231476737be8e2182943f8c1064e155e8a0ae816b"
+previous_checksums = ["sha256:702de5a7a234a7cdb7a10d48296d8c407c19b9c31b8e344d4d09f874216f4a18"]
+size = 60743
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-16KM/2.3.0/ANT-16KM_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-16KM/2.5.0/ANT-16KM_DOMAINS.nc"
 
 ["ANT-16KM_REGIONS.nc"]
-checksum = "sha256:f8cff80b598e2615b5e0b257fac6c8db15aa6241bc6ef1969f6d573a9633b487"
-previous_checksums = ["sha256:ff715ca7bc21d7252828d14a0713effe7b96459c80a1c68a1f0ceede2f1415ff", "sha256:44585475a53472202a3cc389f93c58107725db18389a0c210aa016f963ff635c"]
-size = 219172
+checksum = "sha256:f0701e1a7ce7563bc28ec2ceb861eafc7ef471b62809361869bacd3f3a0cfdbb"
+previous_checksums = ["sha256:ff715ca7bc21d7252828d14a0713effe7b96459c80a1c68a1f0ceede2f1415ff", "sha256:44585475a53472202a3cc389f93c58107725db18389a0c210aa016f963ff635c", "sha256:f8cff80b598e2615b5e0b257fac6c8db15aa6241bc6ef1969f6d573a9633b487"]
+size = 220260
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-16KM/2.3.0/ANT-16KM_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-16KM/2.5.0/ANT-16KM_REGIONS.nc"
 
 ["ANT-16KM_grid.nc"]
 checksum = "sha256:dc1fecc6c052b75d57955d69f028216b5449d2997e17a65fb6fd739af2118189"
 previous_checksums = ["sha256:dea44445828fdc3adbae04afc6662224e96a6838c8381f80a855659b3ad6460c", "sha256:0c9b8e003b33ca4188cc54c9d7dbe4932f742ee4f6ac9431d8d38e33fa5af978"]
 size = 766020
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-16KM/2.3.0/ANT-16KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-16KM/2.5.0/ANT-16KM_grid.nc"
 
 ["ANT-1KM_BASINS-IMBIE2016-refined.nc"]
-checksum = "sha256:38a56e2ff41c0b890baa6c09d400d6ffacc79d54dd4b3406410464a99df7c585"
-previous_checksums = ["sha256:c7cddbcb00c474ffa53e277e69f05b67b903f34d4e07d6154ff699c467e23d6a", "sha256:9c380c83f32b1f63271c0ed5467cea1a9de784000561ba0c29e9a83c34cddc28"]
+checksum = "sha256:53cd689e386204a6c7a9e9288662ff79522b506dfe215bbc00b48a91607c6a6b"
+previous_checksums = ["sha256:c7cddbcb00c474ffa53e277e69f05b67b903f34d4e07d6154ff699c467e23d6a", "sha256:9c380c83f32b1f63271c0ed5467cea1a9de784000561ba0c29e9a83c34cddc28", "sha256:38a56e2ff41c0b890baa6c09d400d6ffacc79d54dd4b3406410464a99df7c585"]
 size = 993665
 storage_path = "$datasets_dir/Antarctica/ANT-1KM/ANT-1KM_BASINS-IMBIE2016-refined.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-1KM/2.3.0/ANT-1KM_BASINS-IMBIE2016-refined.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-1KM/2.5.0/ANT-1KM_BASINS-IMBIE2016-refined.nc"
 
 ["ANT-1KM_BASINS-IMBIE2016.nc"]
-checksum = "sha256:2b3d9da1ee0570a00a01dd09af5b3efcc5b07782f361223ec14c95b6b3d582a6"
-previous_checksums = ["sha256:091a94c0028d18342ecc9bdae6445a44114cbe3993d9b5ad85a8862195f938ae", "sha256:4de8e8229dc7a9a76fb4ec335a2e195aa8b9a81d8a9b84714ae99fc783172145"]
+checksum = "sha256:3823f799751df362abdec1b25abdfe6a50ced4019c0d90d24d9309251d1e9c8e"
+previous_checksums = ["sha256:091a94c0028d18342ecc9bdae6445a44114cbe3993d9b5ad85a8862195f938ae", "sha256:4de8e8229dc7a9a76fb4ec335a2e195aa8b9a81d8a9b84714ae99fc783172145", "sha256:2b3d9da1ee0570a00a01dd09af5b3efcc5b07782f361223ec14c95b6b3d582a6"]
 size = 804866
 storage_path = "$datasets_dir/Antarctica/ANT-1KM/ANT-1KM_BASINS-IMBIE2016.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-1KM/2.3.0/ANT-1KM_BASINS-IMBIE2016.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-1KM/2.5.0/ANT-1KM_BASINS-IMBIE2016.nc"
 
 ["ANT-1KM_BASINS-Schmidt2025.nc"]
-checksum = "sha256:8e021bc6e729ddb4f3697ea62bb7129bae2e2d2f630655535a474f4445ffa23f"
-previous_checksums = ["sha256:370cb0bfa392b49e3c0e665fbfcd65e2fe2c6742f06636721b590c726e288a9f", "sha256:af810668c8752db8f1f0aef425920b824ca334525320d066fd2b58304c89f553"]
+checksum = "sha256:a6feb52588864663a6afdcabbdfdfa7bf4d4cee91c2aa2b49dbc62db1fc79097"
+previous_checksums = ["sha256:370cb0bfa392b49e3c0e665fbfcd65e2fe2c6742f06636721b590c726e288a9f", "sha256:af810668c8752db8f1f0aef425920b824ca334525320d066fd2b58304c89f553", "sha256:8e021bc6e729ddb4f3697ea62bb7129bae2e2d2f630655535a474f4445ffa23f"]
 size = 804866
 storage_path = "$datasets_dir/Antarctica/ANT-1KM/ANT-1KM_BASINS-Schmidt2025.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-1KM/2.3.0/ANT-1KM_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-1KM/2.5.0/ANT-1KM_BASINS-Schmidt2025.nc"
 
 ["ANT-1KM_BASINS-Zwally2012.nc"]
-checksum = "sha256:078d9a7c1501d31bf2e4d8a0d9b49298f8767153b8061e41f0ee8105cf42e64e"
-previous_checksums = ["sha256:d8cb6c84f3a305ad2ed7bd3f535359edc9fd5560e188f1f406e7b57ba461b37a", "sha256:54884de3aac22d39ca3a23fe6e48d76ed7df938f26009ab2f314c69bb01beb00"]
+checksum = "sha256:046ac390071db9a154ca8aa756b206743d04c6161d0cb8727fff6853f2155f42"
+previous_checksums = ["sha256:d8cb6c84f3a305ad2ed7bd3f535359edc9fd5560e188f1f406e7b57ba461b37a", "sha256:54884de3aac22d39ca3a23fe6e48d76ed7df938f26009ab2f314c69bb01beb00", "sha256:078d9a7c1501d31bf2e4d8a0d9b49298f8767153b8061e41f0ee8105cf42e64e"]
 size = 558491
 storage_path = "$datasets_dir/Antarctica/ANT-1KM/ANT-1KM_BASINS-Zwally2012.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-1KM/2.3.0/ANT-1KM_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-1KM/2.5.0/ANT-1KM_BASINS-Zwally2012.nc"
 
 ["ANT-1KM_DOMAINS.nc"]
-checksum = "sha256:775a599f805d1f26fd724173dc6605587c50ab3171abb5b0199fd22f3080fe02"
-size = 465808
+checksum = "sha256:8413adbc1a7782e2efb2170a87edc1f19f0568fb0262b5aa4ce2f3a43ca9da65"
+previous_checksums = ["sha256:775a599f805d1f26fd724173dc6605587c50ab3171abb5b0199fd22f3080fe02"]
+size = 465904
 storage_path = "$datasets_dir/Antarctica/ANT-1KM/ANT-1KM_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-1KM/2.3.0/ANT-1KM_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-1KM/2.5.0/ANT-1KM_DOMAINS.nc"
 
 ["ANT-1KM_REGIONS.nc"]
-checksum = "sha256:a1ec192d871db4e81b6be84925d94dee08945d94ce16e6df636ebd66b7205fc6"
-previous_checksums = ["sha256:6350749c4cd18d1e3110cbdf1a8e87eec8eb9c8eef52ac6f617e9610ed6a857a", "sha256:4e17583bc2cca0feabdb89bcb7e28b16d782a2b8f791e7521c0c3675dfaa611c"]
-size = 14042696
+checksum = "sha256:97f98fbf44424677d29daf1e41289948bcfeef310aca4c4702ccde3e26343238"
+previous_checksums = ["sha256:6350749c4cd18d1e3110cbdf1a8e87eec8eb9c8eef52ac6f617e9610ed6a857a", "sha256:4e17583bc2cca0feabdb89bcb7e28b16d782a2b8f791e7521c0c3675dfaa611c", "sha256:a1ec192d871db4e81b6be84925d94dee08945d94ce16e6df636ebd66b7205fc6"]
+size = 14043784
 storage_path = "$datasets_dir/Antarctica/ANT-1KM/ANT-1KM_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-1KM/2.3.0/ANT-1KM_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-1KM/2.5.0/ANT-1KM_REGIONS.nc"
 
 ["ANT-1KM_grid.nc"]
 checksum = "sha256:024dfbd81ca8e09bd9ae2723e08f2f19e124fcca9681809187aea09483799f7e"
 previous_checksums = ["sha256:1564185a4ce4e24d55ceaa7e6a6fc6170b28746fb5435d96af1ddb267a5da085", "sha256:138b7ff212af93d6d11244da889fcead9cb4956bb787fa135b9161f680a970c3"]
 size = 101715868
 storage_path = "$datasets_dir/Antarctica/ANT-1KM/ANT-1KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-1KM/2.3.0/ANT-1KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-1KM/2.5.0/ANT-1KM_grid.nc"
 
 ["ANT-2KM_BASINS-IMBIE2016-refined.nc"]
-checksum = "sha256:6a6a76fe96050f770dd3fd6da8c47b417da9cddb2a9774fb690f6de4ac1bfabd"
-previous_checksums = ["sha256:d703c3aa1c39a873ea3ff24c27f10f430a42f4973553966794bdabe3f23cb6db", "sha256:3985927d1fb7d8e97c010cb96eccce624d37684c31f88f9056ab9036b0afa5b6"]
+checksum = "sha256:49cd639a59efc27e887146c50819da214d621f4bd66f7c9c1298332dd2d73b33"
+previous_checksums = ["sha256:d703c3aa1c39a873ea3ff24c27f10f430a42f4973553966794bdabe3f23cb6db", "sha256:3985927d1fb7d8e97c010cb96eccce624d37684c31f88f9056ab9036b0afa5b6", "sha256:6a6a76fe96050f770dd3fd6da8c47b417da9cddb2a9774fb690f6de4ac1bfabd"]
 size = 396080
 storage_path = "$datasets_dir/Antarctica/ANT-2KM/ANT-2KM_BASINS-IMBIE2016-refined.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-2KM/2.3.0/ANT-2KM_BASINS-IMBIE2016-refined.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-2KM/2.5.0/ANT-2KM_BASINS-IMBIE2016-refined.nc"
 
 ["ANT-2KM_BASINS-IMBIE2016.nc"]
-checksum = "sha256:92d86c2e905d3d07ff7b0e41e6548f8c37a9725636af4eed30e26190f2237273"
-previous_checksums = ["sha256:49d436907acc1d8ab428291a8216aba105ed03de8bea33b9ea9e250e2f443c34", "sha256:13914c87bce0100550a875cceb73779d7c91d66c9cbfaa45c7afe3889bd63873"]
+checksum = "sha256:7de8a1a3cbf7d7ea498182f0a0c751513d6d1b7ba9cc16692f77cb49dd9cfd6a"
+previous_checksums = ["sha256:49d436907acc1d8ab428291a8216aba105ed03de8bea33b9ea9e250e2f443c34", "sha256:13914c87bce0100550a875cceb73779d7c91d66c9cbfaa45c7afe3889bd63873", "sha256:92d86c2e905d3d07ff7b0e41e6548f8c37a9725636af4eed30e26190f2237273"]
 size = 319271
 storage_path = "$datasets_dir/Antarctica/ANT-2KM/ANT-2KM_BASINS-IMBIE2016.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-2KM/2.3.0/ANT-2KM_BASINS-IMBIE2016.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-2KM/2.5.0/ANT-2KM_BASINS-IMBIE2016.nc"
 
 ["ANT-2KM_BASINS-Schmidt2025.nc"]
-checksum = "sha256:97a15dd0f7e815aa7a8515fb1a4a87d29776ad67e5aff965cea66f3c7ee22eb5"
-previous_checksums = ["sha256:4c0779191c550600e74359572d611a8ee937389d3808741b5920e0c7af255545", "sha256:5cfd16a8796c9eb1b3734ce0f4b5a94b6208e50070cfcc3d88bf668c4bbe858b"]
+checksum = "sha256:c811c79e7a029e60d83d16b280ff789ebfae4d06af23adcdca057345735cf419"
+previous_checksums = ["sha256:4c0779191c550600e74359572d611a8ee937389d3808741b5920e0c7af255545", "sha256:5cfd16a8796c9eb1b3734ce0f4b5a94b6208e50070cfcc3d88bf668c4bbe858b", "sha256:97a15dd0f7e815aa7a8515fb1a4a87d29776ad67e5aff965cea66f3c7ee22eb5"]
 size = 319271
 storage_path = "$datasets_dir/Antarctica/ANT-2KM/ANT-2KM_BASINS-Schmidt2025.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-2KM/2.3.0/ANT-2KM_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-2KM/2.5.0/ANT-2KM_BASINS-Schmidt2025.nc"
 
 ["ANT-2KM_BASINS-Zwally2012.nc"]
-checksum = "sha256:020e54b9d7f6b411cf820c8662069cdc468ede950d83766a741281ce0e0212ae"
-previous_checksums = ["sha256:a3c0757abe2b1d42bc4a65a77fc3cfe7759365e2d15dbffb3e36ef0816eb6bf3", "sha256:a7c3c069bf6f1280e7762231457d485b518bcc51325bfa8662818db30754d7dc"]
+checksum = "sha256:4fc5d4be393e099c084a3a59b6352c74a4858eae8523ab02e5d11c691215bd16"
+previous_checksums = ["sha256:a3c0757abe2b1d42bc4a65a77fc3cfe7759365e2d15dbffb3e36ef0816eb6bf3", "sha256:a7c3c069bf6f1280e7762231457d485b518bcc51325bfa8662818db30754d7dc", "sha256:020e54b9d7f6b411cf820c8662069cdc468ede950d83766a741281ce0e0212ae"]
 size = 229808
 storage_path = "$datasets_dir/Antarctica/ANT-2KM/ANT-2KM_BASINS-Zwally2012.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-2KM/2.3.0/ANT-2KM_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-2KM/2.5.0/ANT-2KM_BASINS-Zwally2012.nc"
 
 ["ANT-2KM_DOMAINS.nc"]
-checksum = "sha256:8dac297611bf3b67aff9b7707f74633288cbfbfa88fba3f201430130599dc5df"
-size = 230475
+checksum = "sha256:5bced75fa95a9e89b346fdb87786c7703c53f7306b0d8182f01c6fb987917fab"
+previous_checksums = ["sha256:8dac297611bf3b67aff9b7707f74633288cbfbfa88fba3f201430130599dc5df"]
+size = 230571
 storage_path = "$datasets_dir/Antarctica/ANT-2KM/ANT-2KM_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-2KM/2.3.0/ANT-2KM_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-2KM/2.5.0/ANT-2KM_DOMAINS.nc"
 
 ["ANT-2KM_REGIONS.nc"]
-checksum = "sha256:fdb63eebc03af341e7807b2d0e3a049ad61aec302ac3a58e4b287b7a4cb589f7"
-previous_checksums = ["sha256:d7d6de13728b9f659d27aa09f137c01ba2cb456758a9b03520427134d7c2c123", "sha256:cc4f17113221709a08784e5852c2375d28581471e9ef6b04d1451c421976b919"]
-size = 5051188
+checksum = "sha256:59faa040568fb2ba4576e1f30e9a09418ac13c454583dba914127facb9a50728"
+previous_checksums = ["sha256:d7d6de13728b9f659d27aa09f137c01ba2cb456758a9b03520427134d7c2c123", "sha256:cc4f17113221709a08784e5852c2375d28581471e9ef6b04d1451c421976b919", "sha256:fdb63eebc03af341e7807b2d0e3a049ad61aec302ac3a58e4b287b7a4cb589f7"]
+size = 5052276
 storage_path = "$datasets_dir/Antarctica/ANT-2KM/ANT-2KM_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-2KM/2.3.0/ANT-2KM_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-2KM/2.5.0/ANT-2KM_REGIONS.nc"
 
 ["ANT-2KM_grid.nc"]
 checksum = "sha256:5ca84d951f1514ff66807c1a3597fdc405fd0622ec0efc2227600ad3943df522"
 previous_checksums = ["sha256:405a1131131ba119609bf7c4147b29477ab4801fd0221f56656ab6ff1abf8ffc", "sha256:b6ac983d1cadde8def80249d1304d0cf5eae0defdf320a7dae437d825e55ab11"]
 size = 30598617
 storage_path = "$datasets_dir/Antarctica/ANT-2KM/ANT-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-2KM/2.3.0/ANT-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-2KM/2.5.0/ANT-2KM_grid.nc"
 
 ["ANT-32KM_BASINS-IMBIE2016-refined.nc"]
-checksum = "sha256:0d4d96c27792e7392574019650b649f3fc2b09d407bb64aa9f18b079085bf7ac"
-previous_checksums = ["sha256:1d1f38d8e9d2b186e99032e09b05a5762124e46c47be504efbafb17564d7fc7c", "sha256:afb7f63b9decedf32e0245cc9f758c682e83abf30008af2bcf5c36fa30abd73d"]
+checksum = "sha256:03bd8ced19b14a5c732f4c7e7e3a01faebf7800942d1fc86bb4eb0f59bf04cfc"
+previous_checksums = ["sha256:1d1f38d8e9d2b186e99032e09b05a5762124e46c47be504efbafb17564d7fc7c", "sha256:afb7f63b9decedf32e0245cc9f758c682e83abf30008af2bcf5c36fa30abd73d", "sha256:0d4d96c27792e7392574019650b649f3fc2b09d407bb64aa9f18b079085bf7ac"]
 size = 35380
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_BASINS-IMBIE2016-refined.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-32KM/2.3.0/ANT-32KM_BASINS-IMBIE2016-refined.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-32KM/2.5.0/ANT-32KM_BASINS-IMBIE2016-refined.nc"
 
 ["ANT-32KM_BASINS-IMBIE2016.nc"]
-checksum = "sha256:34bcbfef0107ffc69725665fe0062f2bd39153462abf1b31693603f1f4fe9f0a"
-previous_checksums = ["sha256:8a62439203927f21cbd2b17874bc813aeab78131f4a18efd3015a63794cc6c87", "sha256:f1731e118c78d0ba0c11937d522fcbf83b4c3df237c6882224ff68f85c74b0c9"]
+checksum = "sha256:1296d33a8a56a7f7243bf031895b350a96924e16994f18e91a108f2660f6642a"
+previous_checksums = ["sha256:8a62439203927f21cbd2b17874bc813aeab78131f4a18efd3015a63794cc6c87", "sha256:f1731e118c78d0ba0c11937d522fcbf83b4c3df237c6882224ff68f85c74b0c9", "sha256:34bcbfef0107ffc69725665fe0062f2bd39153462abf1b31693603f1f4fe9f0a"]
 size = 30731
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_BASINS-IMBIE2016.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-32KM/2.3.0/ANT-32KM_BASINS-IMBIE2016.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-32KM/2.5.0/ANT-32KM_BASINS-IMBIE2016.nc"
 
 ["ANT-32KM_BASINS-Schmidt2025.nc"]
-checksum = "sha256:20cd20bed213719375118472cb35814a4a000b362fe0d29e34affc96edf4030a"
-previous_checksums = ["sha256:3ddde54217a1b69ab6f4f38eba5fdf05063738fc8a6be91c290df3b491f3c8a2", "sha256:c3f31b88aee40f940dfa4e7f838974aa2119afc486564852eae9cb7e2c64b2fb"]
+checksum = "sha256:95b4972bddf4c8eb6a7c6ed6f8f761869b5b9435057f78f525f1cb159011c4cc"
+previous_checksums = ["sha256:3ddde54217a1b69ab6f4f38eba5fdf05063738fc8a6be91c290df3b491f3c8a2", "sha256:c3f31b88aee40f940dfa4e7f838974aa2119afc486564852eae9cb7e2c64b2fb", "sha256:20cd20bed213719375118472cb35814a4a000b362fe0d29e34affc96edf4030a"]
 size = 30731
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_BASINS-Schmidt2025.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-32KM/2.3.0/ANT-32KM_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-32KM/2.5.0/ANT-32KM_BASINS-Schmidt2025.nc"
 
 ["ANT-32KM_BASINS-Zwally2012.nc"]
-checksum = "sha256:b6b3d0dc90fa355a3bf2ae96d1b062b00f2973a8ec86ebc18b0a8f1efcbc79d9"
-previous_checksums = ["sha256:6056ceaec55096d9a6c2483c2e84fb85e94c340ce2c8c44bdd9870496a54a8e4", "sha256:72347b722378725aca8c0a015170b18dda2d368614495e813bf3736e3b9be1f0"]
+checksum = "sha256:6c7f98856d5dce9a145fc0c3e9e0d39632c333f9b9b603aa17c2456b388030d3"
+previous_checksums = ["sha256:6056ceaec55096d9a6c2483c2e84fb85e94c340ce2c8c44bdd9870496a54a8e4", "sha256:72347b722378725aca8c0a015170b18dda2d368614495e813bf3736e3b9be1f0", "sha256:b6b3d0dc90fa355a3bf2ae96d1b062b00f2973a8ec86ebc18b0a8f1efcbc79d9"]
 size = 24757
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_BASINS-Zwally2012.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-32KM/2.3.0/ANT-32KM_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-32KM/2.5.0/ANT-32KM_BASINS-Zwally2012.nc"
 
 ["ANT-32KM_DOMAINS.nc"]
-checksum = "sha256:70a441a3b12ee2b625d8d1bedc860bb58af1363b137bd3ca64be57162a79a6b4"
-size = 55039
+checksum = "sha256:b55bcd8a1b43606553a8832ce3dd2bd6d8d55ac0371e76504ec01f4add874149"
+previous_checksums = ["sha256:70a441a3b12ee2b625d8d1bedc860bb58af1363b137bd3ca64be57162a79a6b4"]
+size = 55135
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-32KM/2.3.0/ANT-32KM_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-32KM/2.5.0/ANT-32KM_DOMAINS.nc"
 
 ["ANT-32KM_REGIONS.nc"]
-checksum = "sha256:73a62aa37d006ead8d8aad13abd1af1c0f49b8f851e2473deb778ee9a0b95383"
-previous_checksums = ["sha256:3632345d67799deec09f9daf9e06b729754e46db229ee4482389ffba244517e2", "sha256:1c15da5f0eef0264080f7df0c214a4c63e32460cdf818b987bc775bf6dab5cec"]
-size = 93468
+checksum = "sha256:3ca87cfc2d380ea98dc77cddb2c3af1ebeff6f5ac67f567f7b13c7943bf322ef"
+previous_checksums = ["sha256:3632345d67799deec09f9daf9e06b729754e46db229ee4482389ffba244517e2", "sha256:1c15da5f0eef0264080f7df0c214a4c63e32460cdf818b987bc775bf6dab5cec", "sha256:73a62aa37d006ead8d8aad13abd1af1c0f49b8f851e2473deb778ee9a0b95383"]
+size = 94556
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-32KM/2.3.0/ANT-32KM_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-32KM/2.5.0/ANT-32KM_REGIONS.nc"
 
 ["ANT-32KM_grid.nc"]
 checksum = "sha256:c91dabc6970bd7b99809d38352627c34d0d24c3ea9797a18c266a8f302ee1958"
 previous_checksums = ["sha256:66765d3512c62479e60ad1095a4ee84b38edb681fe816eddf9896c3a2799efd8", "sha256:49cf80092bf11538d76d480dea852afea71c414565d6123fb01ff4e7e853bee1"]
 size = 190659
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-32KM/2.3.0/ANT-32KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-32KM/2.5.0/ANT-32KM_grid.nc"
 
 ["ANT-4KM_BASINS-IMBIE2016-refined.nc"]
-checksum = "sha256:b48f94195ac67312b5d445eab243e3f289cad6cca017e523f4461092c7b61b45"
-previous_checksums = ["sha256:9ebd58a854a5164001695b967f38d0ed6e33b44e28c45d1ecc6c9d6301063148", "sha256:e7d05019fe7aaecaa5087d04597170b4718c9a06e9134236ea8afa881bdc5e11"]
+checksum = "sha256:eee9914e151eb4fb4b7de22b511d3e391b591e5b5d6b7cf583cd55f729987ab5"
+previous_checksums = ["sha256:9ebd58a854a5164001695b967f38d0ed6e33b44e28c45d1ecc6c9d6301063148", "sha256:e7d05019fe7aaecaa5087d04597170b4718c9a06e9134236ea8afa881bdc5e11", "sha256:b48f94195ac67312b5d445eab243e3f289cad6cca017e523f4461092c7b61b45"]
 size = 173197
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_BASINS-IMBIE2016-refined.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-4KM/2.3.0/ANT-4KM_BASINS-IMBIE2016-refined.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-4KM/2.5.0/ANT-4KM_BASINS-IMBIE2016-refined.nc"
 
 ["ANT-4KM_BASINS-IMBIE2016.nc"]
-checksum = "sha256:463258052cc73ea6d1948700bc317e1a544d57caf6af32a3e29304c60a8e1711"
-previous_checksums = ["sha256:f5c565b8dc959c956791162eee79c0317892330399df3fa4f1e81edf5248d007", "sha256:1c6fcee0b35956200be76fa6e7aba06b7f591377beecb21676fa3dc81bc8d02c"]
+checksum = "sha256:d5cf490c54d33a90e7049da2f627d6f3274f9a26b78e690c9075dd81baee0abe"
+previous_checksums = ["sha256:f5c565b8dc959c956791162eee79c0317892330399df3fa4f1e81edf5248d007", "sha256:1c6fcee0b35956200be76fa6e7aba06b7f591377beecb21676fa3dc81bc8d02c", "sha256:463258052cc73ea6d1948700bc317e1a544d57caf6af32a3e29304c60a8e1711"]
 size = 137849
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_BASINS-IMBIE2016.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-4KM/2.3.0/ANT-4KM_BASINS-IMBIE2016.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-4KM/2.5.0/ANT-4KM_BASINS-IMBIE2016.nc"
 
 ["ANT-4KM_BASINS-Schmidt2025.nc"]
-checksum = "sha256:dbd89e0de1cbfec38230bac63c15fc7f604bf505a2447caf93b59360b9a7d245"
-previous_checksums = ["sha256:6d3704246d303688fd658316f5206c58e339dc8827dd824e3e34ddf0db83a2db", "sha256:fca0fc60a8433a736fa2565d251908ee4be2d1d5d9548952cb1826905abffd11"]
+checksum = "sha256:7e2a2b536501c71d970cca9f35874379866de17b2c45415b8daf0cf9fc2bf2a6"
+previous_checksums = ["sha256:6d3704246d303688fd658316f5206c58e339dc8827dd824e3e34ddf0db83a2db", "sha256:fca0fc60a8433a736fa2565d251908ee4be2d1d5d9548952cb1826905abffd11", "sha256:dbd89e0de1cbfec38230bac63c15fc7f604bf505a2447caf93b59360b9a7d245"]
 size = 137849
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_BASINS-Schmidt2025.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-4KM/2.3.0/ANT-4KM_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-4KM/2.5.0/ANT-4KM_BASINS-Schmidt2025.nc"
 
 ["ANT-4KM_BASINS-Zwally2012.nc"]
-checksum = "sha256:117b99d147c4667f8f6e9af213676c92efc39d65deaa05a532eb7a1cc39575e6"
-previous_checksums = ["sha256:dabe7233e9c89a32ba6f49c2ccc1884fb82343a81ef4115f064f01af4771df50", "sha256:de11a3459c2b814258303eebe4e9477df1a11b311116fc08404b43918329a7d5"]
+checksum = "sha256:e55b606e308c965869ab47beb525454320ddca7fbf138315d76cdc7aaa9de289"
+previous_checksums = ["sha256:dabe7233e9c89a32ba6f49c2ccc1884fb82343a81ef4115f064f01af4771df50", "sha256:de11a3459c2b814258303eebe4e9477df1a11b311116fc08404b43918329a7d5", "sha256:117b99d147c4667f8f6e9af213676c92efc39d65deaa05a532eb7a1cc39575e6"]
 size = 103522
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_BASINS-Zwally2012.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-4KM/2.3.0/ANT-4KM_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-4KM/2.5.0/ANT-4KM_BASINS-Zwally2012.nc"
 
 ["ANT-4KM_DOMAINS.nc"]
-checksum = "sha256:35efd6980994edf254fb6f165db2895555ea8aea8026e5fccab930dad1ea563b"
-size = 102710
+checksum = "sha256:172cf6c8ad352abf0338538ec40017964a2bc4af12bd04475de03cd31f15ce3d"
+previous_checksums = ["sha256:35efd6980994edf254fb6f165db2895555ea8aea8026e5fccab930dad1ea563b"]
+size = 102806
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-4KM/2.3.0/ANT-4KM_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-4KM/2.5.0/ANT-4KM_DOMAINS.nc"
 
 ["ANT-4KM_REGIONS.nc"]
-checksum = "sha256:edfe298116cf5a4195112721380c180d85d0658fcd7ef97e5012f2b5e82ef471"
-previous_checksums = ["sha256:7e36697b9d2eb4be3f37e26152818d3c1a73fb5cbdda2a3883b511ac06bb0837", "sha256:e75bce324ffe525b70c8114ea69ce1a5c9bffac13d8c9568f4f60d91a3b57ac3"]
-size = 1766667
+checksum = "sha256:d045157eb2cc1b8d2143f23fd8b341f03b7d0b6d0c6054d7ad300eac2305a8be"
+previous_checksums = ["sha256:7e36697b9d2eb4be3f37e26152818d3c1a73fb5cbdda2a3883b511ac06bb0837", "sha256:e75bce324ffe525b70c8114ea69ce1a5c9bffac13d8c9568f4f60d91a3b57ac3", "sha256:edfe298116cf5a4195112721380c180d85d0658fcd7ef97e5012f2b5e82ef471"]
+size = 1767755
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-4KM/2.3.0/ANT-4KM_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-4KM/2.5.0/ANT-4KM_REGIONS.nc"
 
 ["ANT-4KM_grid.nc"]
 checksum = "sha256:c44530bdcaef1f3b2415a9503dd2eabc0239f25984a3b7ccb0678641dd283f20"
 previous_checksums = ["sha256:b553afcb6273200e9cd436c4f3ba5f081c599c58237374342aade5c4588e879f", "sha256:fb6604c91ce17a3978a380d4e7d8b641d2f57eea5da4c37e0f46189faa07884f"]
 size = 9192910
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-4KM/2.3.0/ANT-4KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-4KM/2.5.0/ANT-4KM_grid.nc"
 
 ["ANT-500M_BASINS-IMBIE2016-refined.nc"]
-checksum = "sha256:95abcd1184ca3c00f6913047391d5af1352b547bcc0787e51e2226ec6c05a1a6"
+checksum = "sha256:86f4896d93cf278b24ffd0d3860cfeecde3d1f20c18969deba3191088f8fab67"
+previous_checksums = ["sha256:95abcd1184ca3c00f6913047391d5af1352b547bcc0787e51e2226ec6c05a1a6"]
 size = 2829907
 storage_path = "$datasets_dir/Antarctica/ANT-500M/ANT-500M_BASINS-IMBIE2016-refined.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-500M/2.3.0/ANT-500M_BASINS-IMBIE2016-refined.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-500M/2.5.0/ANT-500M_BASINS-IMBIE2016-refined.nc"
 
 ["ANT-500M_BASINS-IMBIE2016.nc"]
-checksum = "sha256:17268da1620be1072f00293632f60834698b6ffa13ee151618ee1df967b00b14"
+checksum = "sha256:5ae41b2350fbead7b9f6d365f0153c30b605619611cfdacb942a025933637437"
+previous_checksums = ["sha256:17268da1620be1072f00293632f60834698b6ffa13ee151618ee1df967b00b14"]
 size = 2359669
 storage_path = "$datasets_dir/Antarctica/ANT-500M/ANT-500M_BASINS-IMBIE2016.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-500M/2.3.0/ANT-500M_BASINS-IMBIE2016.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-500M/2.5.0/ANT-500M_BASINS-IMBIE2016.nc"
 
 ["ANT-500M_BASINS-Schmidt2025.nc"]
-checksum = "sha256:dc5bcdf4311fda72fa816289681af18e70b5b83dc700b1ad795533cd36b90c29"
+checksum = "sha256:d52c637adf8cf40929a07278701c91ff935384b9f00c315a97f08de7928edc14"
+previous_checksums = ["sha256:dc5bcdf4311fda72fa816289681af18e70b5b83dc700b1ad795533cd36b90c29"]
 size = 2359669
 storage_path = "$datasets_dir/Antarctica/ANT-500M/ANT-500M_BASINS-Schmidt2025.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-500M/2.3.0/ANT-500M_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-500M/2.5.0/ANT-500M_BASINS-Schmidt2025.nc"
 
 ["ANT-500M_BASINS-Zwally2012.nc"]
-checksum = "sha256:d867b4cdf2764f5d59e3ed0ebe633abb8180521b7d4faa7fe02e02ed056aab06"
+checksum = "sha256:99777e401f4a945e545e4bc484b5c6d0eeaa73bd02ec345ff7619f97876d7679"
+previous_checksums = ["sha256:d867b4cdf2764f5d59e3ed0ebe633abb8180521b7d4faa7fe02e02ed056aab06"]
 size = 1556346
 storage_path = "$datasets_dir/Antarctica/ANT-500M/ANT-500M_BASINS-Zwally2012.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-500M/2.3.0/ANT-500M_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-500M/2.5.0/ANT-500M_BASINS-Zwally2012.nc"
 
 ["ANT-500M_DOMAINS.nc"]
-checksum = "sha256:0627632c03e9b3a22180eb42a4ed0e6321fa846ebb562751462337a871fc13ff"
-size = 1583526
+checksum = "sha256:36b626b3c67cca84afbd65fe8d091b0a475b5b28b4b5f8ca5f9c8e72be37f994"
+previous_checksums = ["sha256:0627632c03e9b3a22180eb42a4ed0e6321fa846ebb562751462337a871fc13ff"]
+size = 1583622
 storage_path = "$datasets_dir/Antarctica/ANT-500M/ANT-500M_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-500M/2.3.0/ANT-500M_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-500M/2.5.0/ANT-500M_DOMAINS.nc"
 
 ["ANT-500M_REGIONS.nc"]
-checksum = "sha256:43ba5fee5bfe338065a42bfabcfd91179cd860de0fe0cddd08a0d50e4b7ba8a2"
-size = 39930937
+checksum = "sha256:5f3e3d173ccae093d3c9d140b6541e17fc19aff6a162c72979416e60678ddfc3"
+previous_checksums = ["sha256:43ba5fee5bfe338065a42bfabcfd91179cd860de0fe0cddd08a0d50e4b7ba8a2"]
+size = 39932025
 storage_path = "$datasets_dir/Antarctica/ANT-500M/ANT-500M_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-500M/2.3.0/ANT-500M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-500M/2.5.0/ANT-500M_REGIONS.nc"
 
 ["ANT-500M_grid.nc"]
 checksum = "sha256:28c3b0fb780403d2c16844aa8da3c4f798eeb613f1417b53081088e2cdcb7e1d"
 size = 327558139
 storage_path = "$datasets_dir/Antarctica/ANT-500M/ANT-500M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-500M/2.3.0/ANT-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-500M/2.5.0/ANT-500M_grid.nc"
 
 ["ANT-8KM_BASINS-IMBIE2016-refined.nc"]
-checksum = "sha256:ed3a4dc71c0d733270cc321199e055506632579835ea781b3291696759d3edb0"
-previous_checksums = ["sha256:3d3a3c539121a65fb07980fd6b15be370cbbf02b1420c544cc0848a287251811", "sha256:3bfda8764c654ba72ab6dd5ce1de7383a66efefafa1027ee26a27f479a5da203"]
+checksum = "sha256:ec810fd32c549479c1368f14f62ce7b6a362623aea2d9564c88a09e39333d1b1"
+previous_checksums = ["sha256:3d3a3c539121a65fb07980fd6b15be370cbbf02b1420c544cc0848a287251811", "sha256:3bfda8764c654ba72ab6dd5ce1de7383a66efefafa1027ee26a27f479a5da203", "sha256:ed3a4dc71c0d733270cc321199e055506632579835ea781b3291696759d3edb0"]
 size = 79041
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_BASINS-IMBIE2016-refined.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-8KM/2.3.0/ANT-8KM_BASINS-IMBIE2016-refined.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-8KM/2.5.0/ANT-8KM_BASINS-IMBIE2016-refined.nc"
 
 ["ANT-8KM_BASINS-IMBIE2016.nc"]
-checksum = "sha256:64e9805c1fe03c42775f2823b6b0a2526a9bb82f26cb4022e5590088633ac457"
-previous_checksums = ["sha256:760f03222a934a3bcd785ecd7290375d815a398da61b90d99843f63ee539bf6f", "sha256:27d3fe7b21d22fdf03ed5031aa0c6b91ab7e9468104e51aec93f090d63eb94a1"]
+checksum = "sha256:b036232049cb80861b712b2b9514b9001bfb80ee4f3469b74166c6674c463b78"
+previous_checksums = ["sha256:760f03222a934a3bcd785ecd7290375d815a398da61b90d99843f63ee539bf6f", "sha256:27d3fe7b21d22fdf03ed5031aa0c6b91ab7e9468104e51aec93f090d63eb94a1", "sha256:64e9805c1fe03c42775f2823b6b0a2526a9bb82f26cb4022e5590088633ac457"]
 size = 63669
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_BASINS-IMBIE2016.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-8KM/2.3.0/ANT-8KM_BASINS-IMBIE2016.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-8KM/2.5.0/ANT-8KM_BASINS-IMBIE2016.nc"
 
 ["ANT-8KM_BASINS-Schmidt2025.nc"]
-checksum = "sha256:8245ef46d9155be96199df80934d8bc86e9951db6658e706b7b0a310f7aebbbc"
-previous_checksums = ["sha256:c9167ae4528c530dced5b1d8e2166602f0fcb56090655d4ab5849b8e554ac6a9", "sha256:6f2b433f90cc8ffc3eaaed7bfdb42361888635b711cbd54772a11af353ea260e"]
+checksum = "sha256:04a4b804b9d5ff7ed17be617debb3e3520507cfa76f26cb8e3f00372e4b1c246"
+previous_checksums = ["sha256:c9167ae4528c530dced5b1d8e2166602f0fcb56090655d4ab5849b8e554ac6a9", "sha256:6f2b433f90cc8ffc3eaaed7bfdb42361888635b711cbd54772a11af353ea260e", "sha256:8245ef46d9155be96199df80934d8bc86e9951db6658e706b7b0a310f7aebbbc"]
 size = 63669
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_BASINS-Schmidt2025.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-8KM/2.3.0/ANT-8KM_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-8KM/2.5.0/ANT-8KM_BASINS-Schmidt2025.nc"
 
 ["ANT-8KM_BASINS-Zwally2012.nc"]
-checksum = "sha256:b816d0ac45a174aa5c8ac5a8ab0a7818e9a66682186edbfbd908bb62ba4d05f5"
-previous_checksums = ["sha256:51c79a174e40a35ce85ce06f11d682ba6f376dbf0031085624abf67082266a4d", "sha256:50e43233162c27c292bd8ea10348d0bcc874c9dabfa689a3aadcbf8d32cb44f1"]
+checksum = "sha256:e552d2b2e32764dacfb1d37a9ae3b54cc2e029a9e52fb24f5067aa529db95efe"
+previous_checksums = ["sha256:51c79a174e40a35ce85ce06f11d682ba6f376dbf0031085624abf67082266a4d", "sha256:50e43233162c27c292bd8ea10348d0bcc874c9dabfa689a3aadcbf8d32cb44f1", "sha256:b816d0ac45a174aa5c8ac5a8ab0a7818e9a66682186edbfbd908bb62ba4d05f5"]
 size = 53519
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_BASINS-Zwally2012.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-8KM/2.3.0/ANT-8KM_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-8KM/2.5.0/ANT-8KM_BASINS-Zwally2012.nc"
 
 ["ANT-8KM_DOMAINS.nc"]
-checksum = "sha256:88963d6a89b17ddcd47bfada8a593cba3b2d73b6b9ed8a26c5b47dc5169db671"
-size = 71973
+checksum = "sha256:98ae2837dabfc67e48c23f3d75739ad645f960cd3e7b47a1f3635e61e6872ce0"
+previous_checksums = ["sha256:88963d6a89b17ddcd47bfada8a593cba3b2d73b6b9ed8a26c5b47dc5169db671"]
+size = 72069
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-8KM/2.3.0/ANT-8KM_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-8KM/2.5.0/ANT-8KM_DOMAINS.nc"
 
 ["ANT-8KM_REGIONS.nc"]
-checksum = "sha256:dfcbecd0507c57a204d7f401110cca11c07acf830822b7ab0935f22446f56264"
-previous_checksums = ["sha256:a92929f47e7a9d0cae5e6000bd2d8aecca3b5e560de379cc95d55e6c0cfc914c", "sha256:ee8b41db1bee2041feb57138eedf42afd89d295c37af0ac78773d9cf8044786d"]
-size = 602921
+checksum = "sha256:3c7a9adf6d3a30dea463fb804fa260796776c104b6f76fe41d3d6f29d2f3e3c5"
+previous_checksums = ["sha256:a92929f47e7a9d0cae5e6000bd2d8aecca3b5e560de379cc95d55e6c0cfc914c", "sha256:ee8b41db1bee2041feb57138eedf42afd89d295c37af0ac78773d9cf8044786d", "sha256:dfcbecd0507c57a204d7f401110cca11c07acf830822b7ab0935f22446f56264"]
+size = 604009
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-8KM/2.3.0/ANT-8KM_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-8KM/2.5.0/ANT-8KM_REGIONS.nc"
 
 ["ANT-8KM_grid.nc"]
 checksum = "sha256:866f0fcc4dd06b0fc27fe92d8528d025206288f01b612839490689daaf469d5a"
 previous_checksums = ["sha256:6d00ae1cafbf496c1375c74c9153d92c5e2aec79d8026f004ba0dc26d0c47ece", "sha256:27b6ffe5af1932ac7e1fcf32b8e8219420fe82be6287f09f931efbebed8ec93d"]
 size = 2776497
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-8KM/2.3.0/ANT-8KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-8KM/2.5.0/ANT-8KM_grid.nc"
 
 ["grid_ANT-16KM.txt"]
 checksum = "sha256:09d646757fe153b435cee10a90cf772b4626efbe2f187d410eab83876c8305cb"
 size = 467
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/grid_ANT-16KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-16KM/2.3.0/grid_ANT-16KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-16KM/2.5.0/grid_ANT-16KM.txt"
 
 ["grid_ANT-1KM.txt"]
 checksum = "sha256:d8e6029b241c90da5ba2b6f4aed5fc6736d2251dfbf96e1432952605eaf02d67"
 size = 469
 storage_path = "$datasets_dir/Antarctica/ANT-1KM/grid_ANT-1KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-1KM/2.3.0/grid_ANT-1KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-1KM/2.5.0/grid_ANT-1KM.txt"
 
 ["grid_ANT-2KM.txt"]
 checksum = "sha256:d02bf6fb1a40ffa3a09cad2982212ffa925a643e487b74b8c38af6cf773faff5"
 size = 468
 storage_path = "$datasets_dir/Antarctica/ANT-2KM/grid_ANT-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-2KM/2.3.0/grid_ANT-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-2KM/2.5.0/grid_ANT-2KM.txt"
 
 ["grid_ANT-32KM.txt"]
 checksum = "sha256:619c2b14b9667a6ff1efe4de41f1b2bd0ddc8d3e10df6d5fd99222b80be20276"
 size = 466
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/grid_ANT-32KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-32KM/2.3.0/grid_ANT-32KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-32KM/2.5.0/grid_ANT-32KM.txt"
 
 ["grid_ANT-4KM.txt"]
 checksum = "sha256:dc549c434411d3f7ad5b46e4f954f9bb180d0d2e272e1942d97e7072ae8b711d"
 size = 468
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/grid_ANT-4KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-4KM/2.3.0/grid_ANT-4KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-4KM/2.5.0/grid_ANT-4KM.txt"
 
 ["grid_ANT-500M.txt"]
 checksum = "sha256:2923180d7edf174ad3a57b9d97fc475516fd33c239bcef35073fbce24f08292d"
 size = 472
 storage_path = "$datasets_dir/Antarctica/ANT-500M/grid_ANT-500M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-500M/2.3.0/grid_ANT-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-500M/2.5.0/grid_ANT-500M.txt"
 
 ["grid_ANT-8KM.txt"]
 checksum = "sha256:66ff6285f42ec156b6c6a6c30fcb0d2e4c94e07d67512fb002cb0348b3420ce5"
 size = 465
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/grid_ANT-8KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-8KM/2.3.0/grid_ANT-8KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Regions_ANT-8KM/2.5.0/grid_ANT-8KM.txt"

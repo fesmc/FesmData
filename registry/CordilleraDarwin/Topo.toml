@@ -1,64 +1,64 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-14"
-git_tag = "topo-v2.3.0"
+date = "2026-10-15"
+git_tag = "topo-v2.5.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=CordilleraDarwin_Topo"
-version = "2.3.0"
+version = "2.5.0"
 
 ["CDI-100M_TOPO-GLO90-GEBCO2026.nc"]
-checksum = "sha256:4450010ca406a770cda2a81832756d2e7fe286c228e4123389fc8406f94778c2"
-previous_checksums = ["sha256:28fa17a3b9deb733979020b4f2d5e4a986fb2c8deb51b7deca4fff61f5d1375e"]
-size = 12157409
+checksum = "sha256:b99381992d306ebd1868c2576264f149f367bcd2d16d9bc215c6300135e29c38"
+previous_checksums = ["sha256:28fa17a3b9deb733979020b4f2d5e4a986fb2c8deb51b7deca4fff61f5d1375e", "sha256:4450010ca406a770cda2a81832756d2e7fe286c228e4123389fc8406f94778c2"]
+size = 12464152
 storage_path = "$datasets_dir/CordilleraDarwin/CDI-100M/CDI-100M_TOPO-GLO90-GEBCO2026.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Topo_CDI-100M/2.3.0/CDI-100M_TOPO-GLO90-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Topo_CDI-100M/2.5.0/CDI-100M_TOPO-GLO90-GEBCO2026.nc"
 
 ["CDI-100M_grid.nc"]
 checksum = "sha256:d41df55f93c43ddce877f1f32f2262b037fab306ab9db2e91db2430285411f3d"
 size = 1312140
 storage_path = "$datasets_dir/CordilleraDarwin/CDI-100M/CDI-100M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Topo_CDI-100M/2.3.0/CDI-100M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Topo_CDI-100M/2.5.0/CDI-100M_grid.nc"
 
 ["CDI-250M_TOPO-GLO90-GEBCO2026.nc"]
-checksum = "sha256:ff69fccbd3f9159fe28ef441a55f1de55754e5630724287d574f7ba2e76eae67"
-previous_checksums = ["sha256:21b9c801f5342c55d945b703a9387cc07468cc5be52592b41fb1a1f238193c82"]
-size = 2452861
+checksum = "sha256:568e6ed1220e6600c8e1202e2f4d610fca09ce59e164614dbd31b910da97a12e"
+previous_checksums = ["sha256:21b9c801f5342c55d945b703a9387cc07468cc5be52592b41fb1a1f238193c82", "sha256:ff69fccbd3f9159fe28ef441a55f1de55754e5630724287d574f7ba2e76eae67"]
+size = 2446959
 storage_path = "$datasets_dir/CordilleraDarwin/CDI-250M/CDI-250M_TOPO-GLO90-GEBCO2026.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Topo_CDI-250M/2.3.0/CDI-250M_TOPO-GLO90-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Topo_CDI-250M/2.5.0/CDI-250M_TOPO-GLO90-GEBCO2026.nc"
 
 ["CDI-250M_grid.nc"]
 checksum = "sha256:26b5750d8f6d797030f4db2396a7c6f578629a79ee978b3008e0880f8943f6df"
 size = 341882
 storage_path = "$datasets_dir/CordilleraDarwin/CDI-250M/CDI-250M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Topo_CDI-250M/2.3.0/CDI-250M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Topo_CDI-250M/2.5.0/CDI-250M_grid.nc"
 
 ["CDI-50M_TOPO-GLO90-GEBCO2026.nc"]
-checksum = "sha256:277113bfaa4dc81f064967dcc135c6e0854f4ad91ad113a9b69b4a749fb6c2d5"
-previous_checksums = ["sha256:882665bad30ac3016675b4bb15aeca691c6c0150fcabc9aa47b41761f7bda02d"]
-size = 35937059
+checksum = "sha256:b396f5ca902260c2385a00fb2f025994aa5564b4b89cd1ec919080c574af3995"
+previous_checksums = ["sha256:882665bad30ac3016675b4bb15aeca691c6c0150fcabc9aa47b41761f7bda02d", "sha256:277113bfaa4dc81f064967dcc135c6e0854f4ad91ad113a9b69b4a749fb6c2d5"]
+size = 39380791
 storage_path = "$datasets_dir/CordilleraDarwin/CDI-50M/CDI-50M_TOPO-GLO90-GEBCO2026.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Topo_CDI-50M/2.3.0/CDI-50M_TOPO-GLO90-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Topo_CDI-50M/2.5.0/CDI-50M_TOPO-GLO90-GEBCO2026.nc"
 
 ["CDI-50M_grid.nc"]
 checksum = "sha256:6965d6ba5732ec1028b621de7c75a46eb52abb71c4271fe5d5795f31789101bb"
 size = 4673811
 storage_path = "$datasets_dir/CordilleraDarwin/CDI-50M/CDI-50M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Topo_CDI-50M/2.3.0/CDI-50M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Topo_CDI-50M/2.5.0/CDI-50M_grid.nc"
 
 ["grid_CDI-100M.txt"]
 checksum = "sha256:e1d96a1e1ea9dfe99d10892e1144a9a641b5e38525accb0638836f18fbc30de6"
 size = 349
 storage_path = "$datasets_dir/CordilleraDarwin/CDI-100M/grid_CDI-100M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Topo_CDI-100M/2.3.0/grid_CDI-100M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Topo_CDI-100M/2.5.0/grid_CDI-100M.txt"
 
 ["grid_CDI-250M.txt"]
 checksum = "sha256:a14cd02e43ff4ff83090dc2dd37bce8fb2ce2039bae2640013e2f781f7b99da6"
 size = 348
 storage_path = "$datasets_dir/CordilleraDarwin/CDI-250M/grid_CDI-250M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Topo_CDI-250M/2.3.0/grid_CDI-250M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Topo_CDI-250M/2.5.0/grid_CDI-250M.txt"
 
 ["grid_CDI-50M.txt"]
 checksum = "sha256:ec2c7f2e092ca5bda36190f2f19957361554d597c3c37c9dea3a35488b4cbbfb"
 size = 351
 storage_path = "$datasets_dir/CordilleraDarwin/CDI-50M/grid_CDI-50M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Topo_CDI-50M/2.3.0/grid_CDI-50M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Topo_CDI-50M/2.5.0/grid_CDI-50M.txt"

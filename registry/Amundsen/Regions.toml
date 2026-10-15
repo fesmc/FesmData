@@ -2,364 +2,388 @@
 
 [_RELEASE]
 date = "2026-10-15"
-git_tag = "regions-v2.4.0"
+git_tag = "regions-v2.5.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Amundsen_Regions"
-version = "2.4.0"
+version = "2.5.0"
 
 ["ASE-16KM_BASINS-IMBIE2016-refined.nc"]
-checksum = "sha256:0be2906fe9ae638c5937f8b0d637f6e26d4d4b42a2638b0744e36ce5c68d3027"
+checksum = "sha256:353b7185fb172cef2eb65b9296880951fc4b4e14bf8bd950373d8289af4297c6"
+previous_checksums = ["sha256:0be2906fe9ae638c5937f8b0d637f6e26d4d4b42a2638b0744e36ce5c68d3027"]
 size = 23311
 storage_path = "$datasets_dir/Amundsen/ASE-16KM/ASE-16KM_BASINS-IMBIE2016-refined.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-16KM/2.4.0/ASE-16KM_BASINS-IMBIE2016-refined.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-16KM/2.5.0/ASE-16KM_BASINS-IMBIE2016-refined.nc"
 
 ["ASE-16KM_BASINS-IMBIE2016.nc"]
-checksum = "sha256:3db5a6576e77f688ad1d6c5bfdf6dac6cc74477e9365907fabc744988bc130fc"
+checksum = "sha256:b577791e9e93f2d888584bf9c7e305fafc63f11ea6098af655490e5a84085bab"
+previous_checksums = ["sha256:3db5a6576e77f688ad1d6c5bfdf6dac6cc74477e9365907fabc744988bc130fc"]
 size = 23140
 storage_path = "$datasets_dir/Amundsen/ASE-16KM/ASE-16KM_BASINS-IMBIE2016.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-16KM/2.4.0/ASE-16KM_BASINS-IMBIE2016.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-16KM/2.5.0/ASE-16KM_BASINS-IMBIE2016.nc"
 
 ["ASE-16KM_BASINS-Schmidt2025.nc"]
-checksum = "sha256:b128e770464079a2ac8da2f730f2916a04134615694b8f0d7eecdd00ed69cba6"
+checksum = "sha256:56e63fd8b7bcd40aed51c6baceda09a8621f371e79761e1d32c2a5af31d8fe70"
+previous_checksums = ["sha256:b128e770464079a2ac8da2f730f2916a04134615694b8f0d7eecdd00ed69cba6"]
 size = 23114
 storage_path = "$datasets_dir/Amundsen/ASE-16KM/ASE-16KM_BASINS-Schmidt2025.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-16KM/2.4.0/ASE-16KM_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-16KM/2.5.0/ASE-16KM_BASINS-Schmidt2025.nc"
 
 ["ASE-16KM_BASINS-Zwally2012.nc"]
-checksum = "sha256:e4819756cd56c592b3c0af252f77e9e3467cf94df7e189315966115952890c2e"
+checksum = "sha256:e16bb53dbd736bbd1c94223997ce2686b1ad41f24407a88bdc2807d1c30fa210"
+previous_checksums = ["sha256:e4819756cd56c592b3c0af252f77e9e3467cf94df7e189315966115952890c2e"]
 size = 19561
 storage_path = "$datasets_dir/Amundsen/ASE-16KM/ASE-16KM_BASINS-Zwally2012.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-16KM/2.4.0/ASE-16KM_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-16KM/2.5.0/ASE-16KM_BASINS-Zwally2012.nc"
 
 ["ASE-16KM_DOMAINS.nc"]
-checksum = "sha256:de1049a95cf3043a5eb30eff9795c0df2765b47ffb722b4c1bb3c8b953d380fe"
-size = 52385
+checksum = "sha256:4e4b5d47e52d203ce4b8f252491a6ccd17a0f2cc2125521a5d55522cc18e613e"
+previous_checksums = ["sha256:de1049a95cf3043a5eb30eff9795c0df2765b47ffb722b4c1bb3c8b953d380fe"]
+size = 52481
 storage_path = "$datasets_dir/Amundsen/ASE-16KM/ASE-16KM_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-16KM/2.4.0/ASE-16KM_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-16KM/2.5.0/ASE-16KM_DOMAINS.nc"
 
 ["ASE-16KM_REGIONS.nc"]
-checksum = "sha256:5fc4208f455dd20cc2aff7ecde9f59203cba396886f36b319e00d8a2a1859afa"
+checksum = "sha256:9930792082f514f47b542ce9d4f643e1c8ffcb6071975ac876c7dd8a6b27ae5b"
+previous_checksums = ["sha256:5fc4208f455dd20cc2aff7ecde9f59203cba396886f36b319e00d8a2a1859afa"]
 size = 38455
 storage_path = "$datasets_dir/Amundsen/ASE-16KM/ASE-16KM_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-16KM/2.4.0/ASE-16KM_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-16KM/2.5.0/ASE-16KM_REGIONS.nc"
 
 ["ASE-16KM_grid.nc"]
 checksum = "sha256:e0bc2a0aa93531fd7d37af2dc0afe3acb28bac1b9f7b145ab2baa5d9fbc6f1ae"
 size = 42468
 storage_path = "$datasets_dir/Amundsen/ASE-16KM/ASE-16KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-16KM/2.4.0/ASE-16KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-16KM/2.5.0/ASE-16KM_grid.nc"
 
 ["ASE-1KM_BASINS-IMBIE2016-refined.nc"]
-checksum = "sha256:3da9f8afee47ffdbdfa7fc46c5283906891d8c3e32501a1864e6ad93baa5dfc0"
-previous_checksums = ["sha256:ca11503fff99e6a08452b2ed172212cd02af250294b13fed9ffc5abc7871f870", "sha256:622f1ee071965741c97d8f08de2ca66f1ee29b1fed0f10638b51afbcfb57ec62"]
+checksum = "sha256:1da4981e3fc0c8810a1b59331f7c4c0b1ab96a70a0776d3e3f46c704485d2c7e"
+previous_checksums = ["sha256:ca11503fff99e6a08452b2ed172212cd02af250294b13fed9ffc5abc7871f870", "sha256:622f1ee071965741c97d8f08de2ca66f1ee29b1fed0f10638b51afbcfb57ec62", "sha256:3da9f8afee47ffdbdfa7fc46c5283906891d8c3e32501a1864e6ad93baa5dfc0"]
 size = 79430
 storage_path = "$datasets_dir/Amundsen/ASE-1KM/ASE-1KM_BASINS-IMBIE2016-refined.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-1KM/2.4.0/ASE-1KM_BASINS-IMBIE2016-refined.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-1KM/2.5.0/ASE-1KM_BASINS-IMBIE2016-refined.nc"
 
 ["ASE-1KM_BASINS-IMBIE2016.nc"]
-checksum = "sha256:f537bd4abd6dce97e0c2e519572a932a234833635d02dc79d1452138c0773a84"
-previous_checksums = ["sha256:ad6810b8e29c52f241f1e66b32b667597a626cfc419d5ff7a8e26f50ac9026c6", "sha256:b6d79347afa66a9052041d38f48a23e7d72ff1c32659f3acac775ffe0e1f337b"]
+checksum = "sha256:e0df163678fb90add1f7b108a2dcbfabc82d0aecdde1d65f08365160a4049a5e"
+previous_checksums = ["sha256:ad6810b8e29c52f241f1e66b32b667597a626cfc419d5ff7a8e26f50ac9026c6", "sha256:b6d79347afa66a9052041d38f48a23e7d72ff1c32659f3acac775ffe0e1f337b", "sha256:f537bd4abd6dce97e0c2e519572a932a234833635d02dc79d1452138c0773a84"]
 size = 66827
 storage_path = "$datasets_dir/Amundsen/ASE-1KM/ASE-1KM_BASINS-IMBIE2016.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-1KM/2.4.0/ASE-1KM_BASINS-IMBIE2016.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-1KM/2.5.0/ASE-1KM_BASINS-IMBIE2016.nc"
 
 ["ASE-1KM_BASINS-Schmidt2025.nc"]
-checksum = "sha256:849f95d0796f87b77509b6425f12e96c4c9019ef34afe9a7840d606ce4b74a5f"
-previous_checksums = ["sha256:4dcd053ff4778df5adaf94368b11eafe94316f5e224684d550570750745531d6", "sha256:4a74e6c9f971c019dd35038f7d30dc43877fd76a2ed700838a2b5db1ae8295dd"]
+checksum = "sha256:dc9d6f5a05c81a947b56fbbbcec52e5aa7f0ff2595a77d2b9fe24b011a3bd7a0"
+previous_checksums = ["sha256:4dcd053ff4778df5adaf94368b11eafe94316f5e224684d550570750745531d6", "sha256:4a74e6c9f971c019dd35038f7d30dc43877fd76a2ed700838a2b5db1ae8295dd", "sha256:849f95d0796f87b77509b6425f12e96c4c9019ef34afe9a7840d606ce4b74a5f"]
 size = 66827
 storage_path = "$datasets_dir/Amundsen/ASE-1KM/ASE-1KM_BASINS-Schmidt2025.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-1KM/2.4.0/ASE-1KM_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-1KM/2.5.0/ASE-1KM_BASINS-Schmidt2025.nc"
 
 ["ASE-1KM_BASINS-Zwally2012.nc"]
-checksum = "sha256:c489b98358812c4f2b8cca3f23c950ec8ddd7bdd078fe66af61ffca619ac42ac"
-previous_checksums = ["sha256:10aa43f5effa630dbfc1035f55f573b9fa5a19b425981f8c8431705ed7015316", "sha256:aa34b3bf0f41fdea1a4876384433629ce04687407f78031c0dd7f2f2a50ff896"]
+checksum = "sha256:47030965421c9159d28fd41703f86827d4e9a79f3c2c20ed5b06dd6a2daf7c34"
+previous_checksums = ["sha256:10aa43f5effa630dbfc1035f55f573b9fa5a19b425981f8c8431705ed7015316", "sha256:aa34b3bf0f41fdea1a4876384433629ce04687407f78031c0dd7f2f2a50ff896", "sha256:c489b98358812c4f2b8cca3f23c950ec8ddd7bdd078fe66af61ffca619ac42ac"]
 size = 57969
 storage_path = "$datasets_dir/Amundsen/ASE-1KM/ASE-1KM_BASINS-Zwally2012.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-1KM/2.4.0/ASE-1KM_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-1KM/2.5.0/ASE-1KM_BASINS-Zwally2012.nc"
 
 ["ASE-1KM_DOMAINS.nc"]
-checksum = "sha256:44742f60a8c0a4c9162a12ac79db12aca604865205e1c449c01b13f5dffb9ca0"
-previous_checksums = ["sha256:bd453ee5792b888fea2db23462620311600b899fa6e1b6b22c738db719ae72c3"]
-size = 82123
+checksum = "sha256:cc755449368e45444d32888f47629d8380b2df15d699f1c548dd529b8449a31e"
+previous_checksums = ["sha256:bd453ee5792b888fea2db23462620311600b899fa6e1b6b22c738db719ae72c3", "sha256:44742f60a8c0a4c9162a12ac79db12aca604865205e1c449c01b13f5dffb9ca0"]
+size = 82219
 storage_path = "$datasets_dir/Amundsen/ASE-1KM/ASE-1KM_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-1KM/2.4.0/ASE-1KM_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-1KM/2.5.0/ASE-1KM_DOMAINS.nc"
 
 ["ASE-1KM_REGIONS.nc"]
-checksum = "sha256:949d3614bf86ccdf1758db2b6056b3bc357e8f5dbca1c101a4800e8612d42520"
-previous_checksums = ["sha256:eca831f51bcab72c66d64867d219e24971061cb4618781748c85f84d7de86ee3", "sha256:e6cfb2ee44389c3020d62c98123d1ec4b3f82d507909b9b933a59b2e3f30511c"]
+checksum = "sha256:f0f3b404ab67d23af8995b154065dd36687dcbc9fbdf6e8b87b53a351fdec22e"
+previous_checksums = ["sha256:eca831f51bcab72c66d64867d219e24971061cb4618781748c85f84d7de86ee3", "sha256:e6cfb2ee44389c3020d62c98123d1ec4b3f82d507909b9b933a59b2e3f30511c", "sha256:949d3614bf86ccdf1758db2b6056b3bc357e8f5dbca1c101a4800e8612d42520"]
 size = 321077
 storage_path = "$datasets_dir/Amundsen/ASE-1KM/ASE-1KM_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-1KM/2.4.0/ASE-1KM_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-1KM/2.5.0/ASE-1KM_REGIONS.nc"
 
 ["ASE-1KM_grid.nc"]
 checksum = "sha256:932f933be1385f53e74f21a62b1075d6254c223ca29c07f887c337425d3da22d"
 previous_checksums = ["sha256:372dfde71dfe5885d45c1c5b0809c72b3056ad14a7ed3f9a676d472b97b66e88", "sha256:956d225b43f980f117e20a4c2ef7087c3bfa063065a4c92e53dc778aaba191fa"]
 size = 2409116
 storage_path = "$datasets_dir/Amundsen/ASE-1KM/ASE-1KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-1KM/2.4.0/ASE-1KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-1KM/2.5.0/ASE-1KM_grid.nc"
 
 ["ASE-2KM_BASINS-IMBIE2016-refined.nc"]
-checksum = "sha256:dc0e53db2a4a9557c072222c140a0b510b49696c0224dea09ff252ba19bde321"
-previous_checksums = ["sha256:219b593027c2545059e8d583dce834c970978b39f40f10b0601774917d16cdee"]
+checksum = "sha256:a6d3d07a2d11afabb1a9cc332947972d2af847431d24c9392f1764f54914d446"
+previous_checksums = ["sha256:219b593027c2545059e8d583dce834c970978b39f40f10b0601774917d16cdee", "sha256:dc0e53db2a4a9557c072222c140a0b510b49696c0224dea09ff252ba19bde321"]
 size = 44113
 storage_path = "$datasets_dir/Amundsen/ASE-2KM/ASE-2KM_BASINS-IMBIE2016-refined.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-2KM/2.4.0/ASE-2KM_BASINS-IMBIE2016-refined.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-2KM/2.5.0/ASE-2KM_BASINS-IMBIE2016-refined.nc"
 
 ["ASE-2KM_BASINS-IMBIE2016.nc"]
-checksum = "sha256:38fd71dffaeab2b6d2eb85f1a53bea25a57f85ae7e65c37f30d22e5be068b168"
-previous_checksums = ["sha256:1d918d3bf78aa92764c5ea0948c4f5bb9b7edc6a68391e9f4960e8b94b652a89"]
+checksum = "sha256:6aff9b5fe431dd9186c65f328fb7896bae02c9adb74889cad2551a723df7b905"
+previous_checksums = ["sha256:1d918d3bf78aa92764c5ea0948c4f5bb9b7edc6a68391e9f4960e8b94b652a89", "sha256:38fd71dffaeab2b6d2eb85f1a53bea25a57f85ae7e65c37f30d22e5be068b168"]
 size = 40875
 storage_path = "$datasets_dir/Amundsen/ASE-2KM/ASE-2KM_BASINS-IMBIE2016.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-2KM/2.4.0/ASE-2KM_BASINS-IMBIE2016.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-2KM/2.5.0/ASE-2KM_BASINS-IMBIE2016.nc"
 
 ["ASE-2KM_BASINS-Schmidt2025.nc"]
-checksum = "sha256:5ad35a835e9148eebd1e0fc14bab6854885c468c134566c74312e94dbf13f9b1"
-previous_checksums = ["sha256:359b7c9a78f9d7e68a7ee957fb4e113cb39c4c6f0036dcdcb9ae7d2a07c37d7a"]
+checksum = "sha256:3300c960859389f3007b6e2a144881ce8fc2bb7957c3b2171d6fbde22361f3f8"
+previous_checksums = ["sha256:359b7c9a78f9d7e68a7ee957fb4e113cb39c4c6f0036dcdcb9ae7d2a07c37d7a", "sha256:5ad35a835e9148eebd1e0fc14bab6854885c468c134566c74312e94dbf13f9b1"]
 size = 40875
 storage_path = "$datasets_dir/Amundsen/ASE-2KM/ASE-2KM_BASINS-Schmidt2025.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-2KM/2.4.0/ASE-2KM_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-2KM/2.5.0/ASE-2KM_BASINS-Schmidt2025.nc"
 
 ["ASE-2KM_BASINS-Zwally2012.nc"]
-checksum = "sha256:7f4ecf0680640a7ab680a7a399857e602ace8f007054764669a538ba5bba02bd"
-previous_checksums = ["sha256:3800f6ca00f5e67f969539f4790f7d1d3739d03216c0b12c911c91eef765313d"]
+checksum = "sha256:fd43fc0ed6266f942bc5bd1910a0670b4464e6440f5ab5c11bd290a63c506293"
+previous_checksums = ["sha256:3800f6ca00f5e67f969539f4790f7d1d3739d03216c0b12c911c91eef765313d", "sha256:7f4ecf0680640a7ab680a7a399857e602ace8f007054764669a538ba5bba02bd"]
 size = 37687
 storage_path = "$datasets_dir/Amundsen/ASE-2KM/ASE-2KM_BASINS-Zwally2012.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-2KM/2.4.0/ASE-2KM_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-2KM/2.5.0/ASE-2KM_BASINS-Zwally2012.nc"
 
 ["ASE-2KM_DOMAINS.nc"]
-checksum = "sha256:58a6338b8bb05d551b9d080031063e805d5db929b10bfe1fefb4dc640654eab0"
-previous_checksums = ["sha256:1176231c2755a906d8ee953587b0e31a58ff5a9ea3784807765510d5f9ea995d"]
-size = 64703
+checksum = "sha256:f318ac75203922bfcec8f85c52e517fca2b8b95844d141fdac070d832445c334"
+previous_checksums = ["sha256:1176231c2755a906d8ee953587b0e31a58ff5a9ea3784807765510d5f9ea995d", "sha256:58a6338b8bb05d551b9d080031063e805d5db929b10bfe1fefb4dc640654eab0"]
+size = 64799
 storage_path = "$datasets_dir/Amundsen/ASE-2KM/ASE-2KM_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-2KM/2.4.0/ASE-2KM_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-2KM/2.5.0/ASE-2KM_DOMAINS.nc"
 
 ["ASE-2KM_REGIONS.nc"]
-checksum = "sha256:6cba272e189f3713fe35098467b5d9399832e008b4fe11a22b5308c32088211b"
-previous_checksums = ["sha256:4a6d602faaf96920b60d6a68b68acb13c3ac48ab2e879fcaa6af77c6351a8e04"]
+checksum = "sha256:4bc039d264e9d1f00f30b586b95b4ebb4b32f1dc19c214c32dadf294afafbabf"
+previous_checksums = ["sha256:4a6d602faaf96920b60d6a68b68acb13c3ac48ab2e879fcaa6af77c6351a8e04", "sha256:6cba272e189f3713fe35098467b5d9399832e008b4fe11a22b5308c32088211b"]
 size = 133435
 storage_path = "$datasets_dir/Amundsen/ASE-2KM/ASE-2KM_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-2KM/2.4.0/ASE-2KM_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-2KM/2.5.0/ASE-2KM_REGIONS.nc"
 
 ["ASE-2KM_grid.nc"]
 checksum = "sha256:ae1e9bb02a2ce3efe609495ec5d9c3c81c0e95fd9e4d8b21e0406b3bb9ae473f"
 previous_checksums = ["sha256:67a1a92d789b7426ca14a418905aebacb509fa65f22ccf115ce600739e559ba9"]
 size = 750312
 storage_path = "$datasets_dir/Amundsen/ASE-2KM/ASE-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-2KM/2.4.0/ASE-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-2KM/2.5.0/ASE-2KM_grid.nc"
 
 ["ASE-32KM_BASINS-IMBIE2016-refined.nc"]
-checksum = "sha256:54460488e68773152e61575437230ee9405e80aa66037bfe2b2f6be72937cb73"
+checksum = "sha256:2f2ccbb1239af8bcd10e9eb862eaad1ff11f83730a36c5bacf33d4e77f242263"
+previous_checksums = ["sha256:54460488e68773152e61575437230ee9405e80aa66037bfe2b2f6be72937cb73"]
 size = 23301
 storage_path = "$datasets_dir/Amundsen/ASE-32KM/ASE-32KM_BASINS-IMBIE2016-refined.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-32KM/2.4.0/ASE-32KM_BASINS-IMBIE2016-refined.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-32KM/2.5.0/ASE-32KM_BASINS-IMBIE2016-refined.nc"
 
 ["ASE-32KM_BASINS-IMBIE2016.nc"]
-checksum = "sha256:52f2da30a90396db3e23487aea10199f489d3ea4cf37b07cd5fff70eaf37b3fc"
+checksum = "sha256:ce6e146355ae20d9c025a9ba25da683bdc84c0a5df8a0f13800c7dd9f3504eb1"
+previous_checksums = ["sha256:52f2da30a90396db3e23487aea10199f489d3ea4cf37b07cd5fff70eaf37b3fc"]
 size = 23140
 storage_path = "$datasets_dir/Amundsen/ASE-32KM/ASE-32KM_BASINS-IMBIE2016.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-32KM/2.4.0/ASE-32KM_BASINS-IMBIE2016.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-32KM/2.5.0/ASE-32KM_BASINS-IMBIE2016.nc"
 
 ["ASE-32KM_BASINS-Schmidt2025.nc"]
-checksum = "sha256:bf173758f2fcfcab192f8465d6f283dc14b42c9d86ec6ee230a3a1884b42e699"
+checksum = "sha256:90802c758b4c12a5b2edab037d504a404a92ac4f5333091cf2fd921d48b2e3d0"
+previous_checksums = ["sha256:bf173758f2fcfcab192f8465d6f283dc14b42c9d86ec6ee230a3a1884b42e699"]
 size = 23114
 storage_path = "$datasets_dir/Amundsen/ASE-32KM/ASE-32KM_BASINS-Schmidt2025.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-32KM/2.4.0/ASE-32KM_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-32KM/2.5.0/ASE-32KM_BASINS-Schmidt2025.nc"
 
 ["ASE-32KM_BASINS-Zwally2012.nc"]
-checksum = "sha256:55c4dc9d7d51da1d6edd6d925f2e651fbabbdc86af5d22367b0514c49b5274c7"
+checksum = "sha256:339cf66b431fc8be8c55e3621b9dc889d23d067163656622f2e95770843ec05b"
+previous_checksums = ["sha256:55c4dc9d7d51da1d6edd6d925f2e651fbabbdc86af5d22367b0514c49b5274c7"]
 size = 19561
 storage_path = "$datasets_dir/Amundsen/ASE-32KM/ASE-32KM_BASINS-Zwally2012.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-32KM/2.4.0/ASE-32KM_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-32KM/2.5.0/ASE-32KM_BASINS-Zwally2012.nc"
 
 ["ASE-32KM_DOMAINS.nc"]
-checksum = "sha256:4d09389a41488713045c5e44800682cfb026e3ee01a09ace8c98cae562ddb8ea"
-size = 52385
+checksum = "sha256:3c59e22420622653ea6d572904a7e3ab93b8f72ad09bde7d4041e5f918bb0f3a"
+previous_checksums = ["sha256:4d09389a41488713045c5e44800682cfb026e3ee01a09ace8c98cae562ddb8ea"]
+size = 52481
 storage_path = "$datasets_dir/Amundsen/ASE-32KM/ASE-32KM_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-32KM/2.4.0/ASE-32KM_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-32KM/2.5.0/ASE-32KM_DOMAINS.nc"
 
 ["ASE-32KM_REGIONS.nc"]
-checksum = "sha256:a31fc0bda5af2f7a5842d0e4316bd6993a4f10958932c57368c156ce4b56a8f6"
+checksum = "sha256:e9ce85f1c9c19dd69eee5c5e0ad027130d9d1aa77b3d30cd29321176044c3ef1"
+previous_checksums = ["sha256:a31fc0bda5af2f7a5842d0e4316bd6993a4f10958932c57368c156ce4b56a8f6"]
 size = 35101
 storage_path = "$datasets_dir/Amundsen/ASE-32KM/ASE-32KM_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-32KM/2.4.0/ASE-32KM_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-32KM/2.5.0/ASE-32KM_REGIONS.nc"
 
 ["ASE-32KM_grid.nc"]
 checksum = "sha256:6c4e81fb16a275aef49df14e80981b1262f25221443b9440a80e500cf2a025b2"
 size = 26143
 storage_path = "$datasets_dir/Amundsen/ASE-32KM/ASE-32KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-32KM/2.4.0/ASE-32KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-32KM/2.5.0/ASE-32KM_grid.nc"
 
 ["ASE-4KM_BASINS-IMBIE2016-refined.nc"]
-checksum = "sha256:b0f5d45b24d8cd182fce8162cf814adbabcfefafd95aee7a3dddc724f02aa2a4"
+checksum = "sha256:224c6c50aa4bd30c02127bf0de370105878e1bfdb7a8a7bbf9515d21dc4004c8"
+previous_checksums = ["sha256:b0f5d45b24d8cd182fce8162cf814adbabcfefafd95aee7a3dddc724f02aa2a4"]
 size = 32302
 storage_path = "$datasets_dir/Amundsen/ASE-4KM/ASE-4KM_BASINS-IMBIE2016-refined.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-4KM/2.4.0/ASE-4KM_BASINS-IMBIE2016-refined.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-4KM/2.5.0/ASE-4KM_BASINS-IMBIE2016-refined.nc"
 
 ["ASE-4KM_BASINS-IMBIE2016.nc"]
-checksum = "sha256:6419070e983b0ee92a8b798a2d10d2f1c4e59554192f0d24ac5f8cfa46a0c744"
+checksum = "sha256:bdbcbad2e4e235cc04967016c95a2b9076b65e4183f30e5b624508098645003e"
+previous_checksums = ["sha256:6419070e983b0ee92a8b798a2d10d2f1c4e59554192f0d24ac5f8cfa46a0c744"]
 size = 30270
 storage_path = "$datasets_dir/Amundsen/ASE-4KM/ASE-4KM_BASINS-IMBIE2016.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-4KM/2.4.0/ASE-4KM_BASINS-IMBIE2016.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-4KM/2.5.0/ASE-4KM_BASINS-IMBIE2016.nc"
 
 ["ASE-4KM_BASINS-Schmidt2025.nc"]
-checksum = "sha256:328bd68055a9eed69a9adbee0ec353f5b5cc88f245524b170f3d8d46b607fc86"
+checksum = "sha256:014a0f8ef6cb70de256d42f5fafc0516c0c36324aa853d313905c91f74868244"
+previous_checksums = ["sha256:328bd68055a9eed69a9adbee0ec353f5b5cc88f245524b170f3d8d46b607fc86"]
 size = 30244
 storage_path = "$datasets_dir/Amundsen/ASE-4KM/ASE-4KM_BASINS-Schmidt2025.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-4KM/2.4.0/ASE-4KM_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-4KM/2.5.0/ASE-4KM_BASINS-Schmidt2025.nc"
 
 ["ASE-4KM_BASINS-Zwally2012.nc"]
-checksum = "sha256:6ae937b8f691f24e5b762678e19725cf53a7d4066f4646a162e88f6804ec45fd"
+checksum = "sha256:805deafe5f9d1a52ee7c574fab6cf57d860db72dde56ade961fd00b1de772a45"
+previous_checksums = ["sha256:6ae937b8f691f24e5b762678e19725cf53a7d4066f4646a162e88f6804ec45fd"]
 size = 25016
 storage_path = "$datasets_dir/Amundsen/ASE-4KM/ASE-4KM_BASINS-Zwally2012.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-4KM/2.4.0/ASE-4KM_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-4KM/2.5.0/ASE-4KM_BASINS-Zwally2012.nc"
 
 ["ASE-4KM_DOMAINS.nc"]
-checksum = "sha256:08c7d8f28ac853d85267e9daedcb446bd8c8a412223042cb597fcfd22b59c2b0"
-size = 56550
+checksum = "sha256:44b19c80d684e5705bb3e42a85011761f36afdd8e3fa4c9acc4ef0505a1d69e5"
+previous_checksums = ["sha256:08c7d8f28ac853d85267e9daedcb446bd8c8a412223042cb597fcfd22b59c2b0"]
+size = 56646
 storage_path = "$datasets_dir/Amundsen/ASE-4KM/ASE-4KM_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-4KM/2.4.0/ASE-4KM_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-4KM/2.5.0/ASE-4KM_DOMAINS.nc"
 
 ["ASE-4KM_REGIONS.nc"]
-checksum = "sha256:f8c4cb1c42dd4316f704996803d153d059f41361bd2121b54f02e789ce9e0cc9"
+checksum = "sha256:9211f78a216b9f169ef83af8108177837bbf48ba897f120ee1002de19f6f988b"
+previous_checksums = ["sha256:f8c4cb1c42dd4316f704996803d153d059f41361bd2121b54f02e789ce9e0cc9"]
 size = 71475
 storage_path = "$datasets_dir/Amundsen/ASE-4KM/ASE-4KM_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-4KM/2.4.0/ASE-4KM_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-4KM/2.5.0/ASE-4KM_REGIONS.nc"
 
 ["ASE-4KM_grid.nc"]
 checksum = "sha256:b2df245eccd00992c9727946c8b6d7566b1c78641cc8685a636602ad04236221"
 size = 243707
 storage_path = "$datasets_dir/Amundsen/ASE-4KM/ASE-4KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-4KM/2.4.0/ASE-4KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-4KM/2.5.0/ASE-4KM_grid.nc"
 
 ["ASE-500M_BASINS-IMBIE2016-refined.nc"]
-checksum = "sha256:df1a615b75bdd5c65131bfea3f834888afcbcf54b73e425c902de62e50a32c4f"
-previous_checksums = ["sha256:ce3186f10e72d7d42efe6644d58bd7b7b21f5c161ca0116ef24e7e9d3bdbec50"]
+checksum = "sha256:fa67136d3bbf79eb1277af56989ef3bb8758a1cd0a71371beccb4148e1c19a0c"
+previous_checksums = ["sha256:ce3186f10e72d7d42efe6644d58bd7b7b21f5c161ca0116ef24e7e9d3bdbec50", "sha256:df1a615b75bdd5c65131bfea3f834888afcbcf54b73e425c902de62e50a32c4f"]
 size = 177793
 storage_path = "$datasets_dir/Amundsen/ASE-500M/ASE-500M_BASINS-IMBIE2016-refined.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-500M/2.4.0/ASE-500M_BASINS-IMBIE2016-refined.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-500M/2.5.0/ASE-500M_BASINS-IMBIE2016-refined.nc"
 
 ["ASE-500M_BASINS-IMBIE2016.nc"]
-checksum = "sha256:24d39b0e2047488b33b132f0d18d00e3a8a3928227543ac8605f6f703e6413d3"
-previous_checksums = ["sha256:62317e317672d51e890de55d8b30d66d29c9137d9f105c9ec69ba47555522a1d"]
+checksum = "sha256:5ce7a1e2726b27bf14f9174c4006a1c534b663b3b5eb9ec9c0bd93908f206f10"
+previous_checksums = ["sha256:62317e317672d51e890de55d8b30d66d29c9137d9f105c9ec69ba47555522a1d", "sha256:24d39b0e2047488b33b132f0d18d00e3a8a3928227543ac8605f6f703e6413d3"]
 size = 146546
 storage_path = "$datasets_dir/Amundsen/ASE-500M/ASE-500M_BASINS-IMBIE2016.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-500M/2.4.0/ASE-500M_BASINS-IMBIE2016.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-500M/2.5.0/ASE-500M_BASINS-IMBIE2016.nc"
 
 ["ASE-500M_BASINS-Schmidt2025.nc"]
-checksum = "sha256:3fd20d6a7e7e7fa63e8ff1980bdde2b1b2639d209115b364632a2a2215e1e44c"
-previous_checksums = ["sha256:6a97f829785cab79d404d46fbe7fcdd098cbadda72649443807bff08a863ca68"]
+checksum = "sha256:59119e6f2a06dc07b8195909305b4d794aa2a904dca99a308a7c08b42cebabc5"
+previous_checksums = ["sha256:6a97f829785cab79d404d46fbe7fcdd098cbadda72649443807bff08a863ca68", "sha256:3fd20d6a7e7e7fa63e8ff1980bdde2b1b2639d209115b364632a2a2215e1e44c"]
 size = 146546
 storage_path = "$datasets_dir/Amundsen/ASE-500M/ASE-500M_BASINS-Schmidt2025.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-500M/2.4.0/ASE-500M_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-500M/2.5.0/ASE-500M_BASINS-Schmidt2025.nc"
 
 ["ASE-500M_BASINS-Zwally2012.nc"]
-checksum = "sha256:b496337087dd8ac28acfd96b525db783daa1f8fc1294605fed867ffe481d1c4d"
-previous_checksums = ["sha256:dd088937c8fb7d2ed9a8aa0b5bb056d0026c8e8c80486b3a65c792709fe2ccae"]
+checksum = "sha256:7765a1b5bb3c3cde12168b7e97886f424fd347b2e81b326cb996499212851fb8"
+previous_checksums = ["sha256:dd088937c8fb7d2ed9a8aa0b5bb056d0026c8e8c80486b3a65c792709fe2ccae", "sha256:b496337087dd8ac28acfd96b525db783daa1f8fc1294605fed867ffe481d1c4d"]
 size = 113969
 storage_path = "$datasets_dir/Amundsen/ASE-500M/ASE-500M_BASINS-Zwally2012.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-500M/2.4.0/ASE-500M_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-500M/2.5.0/ASE-500M_BASINS-Zwally2012.nc"
 
 ["ASE-500M_DOMAINS.nc"]
-checksum = "sha256:55986465400422e96f3107a8e8e283f9a89d56f49e99e22247d80d0d1c1525f0"
-previous_checksums = ["sha256:03330577e504baa4648472294280f89dfd204acc4023190e7f114610a136c1cf"]
-size = 128823
+checksum = "sha256:3b90a491780cd6cabf414d19b4f5be288854d4d98fc169a7642850180f9d852c"
+previous_checksums = ["sha256:03330577e504baa4648472294280f89dfd204acc4023190e7f114610a136c1cf", "sha256:55986465400422e96f3107a8e8e283f9a89d56f49e99e22247d80d0d1c1525f0"]
+size = 128919
 storage_path = "$datasets_dir/Amundsen/ASE-500M/ASE-500M_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-500M/2.4.0/ASE-500M_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-500M/2.5.0/ASE-500M_DOMAINS.nc"
 
 ["ASE-500M_REGIONS.nc"]
-checksum = "sha256:3ec3d7a14a99ffaa61461ca6d14938bedc06051566dad0ec7f695acc6e3cbf44"
-previous_checksums = ["sha256:b39946931a7cca029c73f9c37e35710b218fcf29ee8037d6292951beb006e73f"]
+checksum = "sha256:53afefdb44b4f6c55a0aff9c8ff9476757b883c65eafdcf8bc852dc649bc4699"
+previous_checksums = ["sha256:b39946931a7cca029c73f9c37e35710b218fcf29ee8037d6292951beb006e73f", "sha256:3ec3d7a14a99ffaa61461ca6d14938bedc06051566dad0ec7f695acc6e3cbf44"]
 size = 898510
 storage_path = "$datasets_dir/Amundsen/ASE-500M/ASE-500M_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-500M/2.4.0/ASE-500M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-500M/2.5.0/ASE-500M_REGIONS.nc"
 
 ["ASE-500M_grid.nc"]
 checksum = "sha256:fb7f3c62a89b5ba3d8b1f6f33e0b7ecd71e5d72ae5c9e2e573fe7497b4d31845"
 previous_checksums = ["sha256:5e19aacfe56268bb0b9cf9556323862e8c3206455e044192ef2c6538f7fe9d40"]
 size = 7439234
 storage_path = "$datasets_dir/Amundsen/ASE-500M/ASE-500M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-500M/2.4.0/ASE-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-500M/2.5.0/ASE-500M_grid.nc"
 
 ["ASE-8KM_BASINS-IMBIE2016-refined.nc"]
-checksum = "sha256:9d67e640bdfcc0b6af3dd0e0ad57fc428b3be7b935f27dd8df97fb64029b0aac"
+checksum = "sha256:1db522ddcba61ff8623a7e88b70f9b5ce81499347a2766da2deb914ca7dd9148"
+previous_checksums = ["sha256:9d67e640bdfcc0b6af3dd0e0ad57fc428b3be7b935f27dd8df97fb64029b0aac"]
 size = 26806
 storage_path = "$datasets_dir/Amundsen/ASE-8KM/ASE-8KM_BASINS-IMBIE2016-refined.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-8KM/2.4.0/ASE-8KM_BASINS-IMBIE2016-refined.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-8KM/2.5.0/ASE-8KM_BASINS-IMBIE2016-refined.nc"
 
 ["ASE-8KM_BASINS-IMBIE2016.nc"]
-checksum = "sha256:06e909c046d2f11f20f7d4bf2562fd5f72353acbced801b684e29bd6b80bd766"
+checksum = "sha256:767dec0831129df3bb976441ed352a34555299be34c32dd2898b0c2640463c3a"
+previous_checksums = ["sha256:06e909c046d2f11f20f7d4bf2562fd5f72353acbced801b684e29bd6b80bd766"]
 size = 25828
 storage_path = "$datasets_dir/Amundsen/ASE-8KM/ASE-8KM_BASINS-IMBIE2016.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-8KM/2.4.0/ASE-8KM_BASINS-IMBIE2016.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-8KM/2.5.0/ASE-8KM_BASINS-IMBIE2016.nc"
 
 ["ASE-8KM_BASINS-Schmidt2025.nc"]
-checksum = "sha256:1143cc2aff938a2804a6676f76613fb2797b95c55946f6b515b39e288026ae3f"
+checksum = "sha256:f866ab0f581f9c03fc4433d55a21b73567d26dcf90f6b85cbe10a1565e5fa526"
+previous_checksums = ["sha256:1143cc2aff938a2804a6676f76613fb2797b95c55946f6b515b39e288026ae3f"]
 size = 25802
 storage_path = "$datasets_dir/Amundsen/ASE-8KM/ASE-8KM_BASINS-Schmidt2025.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-8KM/2.4.0/ASE-8KM_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-8KM/2.5.0/ASE-8KM_BASINS-Schmidt2025.nc"
 
 ["ASE-8KM_BASINS-Zwally2012.nc"]
-checksum = "sha256:3e60570835db072d8e8c8134cbd98b1b5be5664e4fafc0e39e50b8194640abb3"
+checksum = "sha256:418024d81d5c871c54e2c9971253fde2b3dbd174760c278aad3bab9e495dffe7"
+previous_checksums = ["sha256:3e60570835db072d8e8c8134cbd98b1b5be5664e4fafc0e39e50b8194640abb3"]
 size = 20782
 storage_path = "$datasets_dir/Amundsen/ASE-8KM/ASE-8KM_BASINS-Zwally2012.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-8KM/2.4.0/ASE-8KM_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-8KM/2.5.0/ASE-8KM_BASINS-Zwally2012.nc"
 
 ["ASE-8KM_DOMAINS.nc"]
-checksum = "sha256:204f986388a1c224cb8181e83ad4903008c303056a517d97618f6fb99d31ed32"
-size = 53134
+checksum = "sha256:3e1dc52b707e28f7dc91b3736c9647656ddee8f1b91850b40a48f481fa2d9b7d"
+previous_checksums = ["sha256:204f986388a1c224cb8181e83ad4903008c303056a517d97618f6fb99d31ed32"]
+size = 53230
 storage_path = "$datasets_dir/Amundsen/ASE-8KM/ASE-8KM_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-8KM/2.4.0/ASE-8KM_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-8KM/2.5.0/ASE-8KM_DOMAINS.nc"
 
 ["ASE-8KM_REGIONS.nc"]
-checksum = "sha256:863de17df648b7dd54eb7de31314237673c3cbf189f8416ffa093f47ae8860a7"
+checksum = "sha256:8bff1caecd9f1b19d88e9ecee9605218edde1cf755e5e5ffd36c891a481b0783"
+previous_checksums = ["sha256:863de17df648b7dd54eb7de31314237673c3cbf189f8416ffa093f47ae8860a7"]
 size = 48638
 storage_path = "$datasets_dir/Amundsen/ASE-8KM/ASE-8KM_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-8KM/2.4.0/ASE-8KM_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-8KM/2.5.0/ASE-8KM_REGIONS.nc"
 
 ["ASE-8KM_grid.nc"]
 checksum = "sha256:3fd26acdc3703b8645a3771517852d4776cea47e2134f46aa337120ac1c5bb5a"
 size = 90193
 storage_path = "$datasets_dir/Amundsen/ASE-8KM/ASE-8KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-8KM/2.4.0/ASE-8KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-8KM/2.5.0/ASE-8KM_grid.nc"
 
 ["grid_ASE-16KM.txt"]
 checksum = "sha256:dd78598528afea08ab313aef3d1763bf85369d340fcc547502f210ab00caa87f"
 size = 462
 storage_path = "$datasets_dir/Amundsen/ASE-16KM/grid_ASE-16KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-16KM/2.4.0/grid_ASE-16KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-16KM/2.5.0/grid_ASE-16KM.txt"
 
 ["grid_ASE-1KM.txt"]
 checksum = "sha256:77c38a8b59f794987f2c7a8e8e1345ecef466b9fa5aa9eb67a00d5b5d6c289c2"
 previous_checksums = ["sha256:d91c16654cbcd5e95a87a23f7b4a0f3b020c68fa2a71dcbd7d5710c7723740cc"]
 size = 465
 storage_path = "$datasets_dir/Amundsen/ASE-1KM/grid_ASE-1KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-1KM/2.4.0/grid_ASE-1KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-1KM/2.5.0/grid_ASE-1KM.txt"
 
 ["grid_ASE-2KM.txt"]
 checksum = "sha256:8957f4f5150fea98e05c924f53e59bdf51562548d34e9113f5d98296a5360e17"
 size = 464
 storage_path = "$datasets_dir/Amundsen/ASE-2KM/grid_ASE-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-2KM/2.4.0/grid_ASE-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-2KM/2.5.0/grid_ASE-2KM.txt"
 
 ["grid_ASE-32KM.txt"]
 checksum = "sha256:869e1b44423e7053840e745d703f540ee3ad4ef362bfd24ff392c90c26ff4929"
 size = 461
 storage_path = "$datasets_dir/Amundsen/ASE-32KM/grid_ASE-32KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-32KM/2.4.0/grid_ASE-32KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-32KM/2.5.0/grid_ASE-32KM.txt"
 
 ["grid_ASE-4KM.txt"]
 checksum = "sha256:8f4916fe1ab65f4a59611b9e4c22bf322f25b6b9f709cebd838cf627dc5dd2b0"
 size = 463
 storage_path = "$datasets_dir/Amundsen/ASE-4KM/grid_ASE-4KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-4KM/2.4.0/grid_ASE-4KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-4KM/2.5.0/grid_ASE-4KM.txt"
 
 ["grid_ASE-500M.txt"]
 checksum = "sha256:9963fbdfa2703f308b9b4cb2498a9f945a45cfec8b5d786d37a586263e2a80fa"
 size = 467
 storage_path = "$datasets_dir/Amundsen/ASE-500M/grid_ASE-500M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-500M/2.4.0/grid_ASE-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-500M/2.5.0/grid_ASE-500M.txt"
 
 ["grid_ASE-8KM.txt"]
 checksum = "sha256:56c6d578cd60246607af1b7128f90d5934f869028022445d4e3f912e2d61cb17"
 size = 463
 storage_path = "$datasets_dir/Amundsen/ASE-8KM/grid_ASE-8KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-8KM/2.4.0/grid_ASE-8KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Regions_ASE-8KM/2.5.0/grid_ASE-8KM.txt"

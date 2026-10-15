@@ -1,103 +1,115 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-14"
-git_tag = "regions-v2.3.0"
+date = "2026-10-15"
+git_tag = "regions-v2.5.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=FilchnerRonne_Regions"
-version = "2.3.0"
+version = "2.5.0"
 
 ["FRIS-1KM_BASINS-IMBIE2016-refined.nc"]
-checksum = "sha256:a194d97cb6dd59fd279f5d062b3ae99749f650f7dd3db9284bf192057ab374d2"
+checksum = "sha256:d83bba4aaa2100db893a40245b4c3ebf6a034fd141b7bb1b8d2de83f27a84989"
+previous_checksums = ["sha256:a194d97cb6dd59fd279f5d062b3ae99749f650f7dd3db9284bf192057ab374d2"]
 size = 151195
 storage_path = "$datasets_dir/FilchnerRonne/FRIS-1KM/FRIS-1KM_BASINS-IMBIE2016-refined.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Regions_FRIS-1KM/2.3.0/FRIS-1KM_BASINS-IMBIE2016-refined.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Regions_FRIS-1KM/2.5.0/FRIS-1KM_BASINS-IMBIE2016-refined.nc"
 
 ["FRIS-1KM_BASINS-IMBIE2016.nc"]
-checksum = "sha256:a816be528c017a6f93327fe1a3eacc6f6224e6e2fad43724dffbe11cc2da5e1a"
+checksum = "sha256:3cbed02ee83f699e39b8167525409d0e11c56471ddf38a0875a0f12509cf3b31"
+previous_checksums = ["sha256:a816be528c017a6f93327fe1a3eacc6f6224e6e2fad43724dffbe11cc2da5e1a"]
 size = 119088
 storage_path = "$datasets_dir/FilchnerRonne/FRIS-1KM/FRIS-1KM_BASINS-IMBIE2016.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Regions_FRIS-1KM/2.3.0/FRIS-1KM_BASINS-IMBIE2016.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Regions_FRIS-1KM/2.5.0/FRIS-1KM_BASINS-IMBIE2016.nc"
 
 ["FRIS-1KM_BASINS-Schmidt2025.nc"]
-checksum = "sha256:a3ed9d15b6f2b7b4ae6129805c0ae02d22208346fd735fa5879115999c2dc9fe"
+checksum = "sha256:e8a493ffaec43ebfe81382dabdce2a7199d944da07ce194a5b80dd5728302dfc"
+previous_checksums = ["sha256:a3ed9d15b6f2b7b4ae6129805c0ae02d22208346fd735fa5879115999c2dc9fe"]
 size = 119088
 storage_path = "$datasets_dir/FilchnerRonne/FRIS-1KM/FRIS-1KM_BASINS-Schmidt2025.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Regions_FRIS-1KM/2.3.0/FRIS-1KM_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Regions_FRIS-1KM/2.5.0/FRIS-1KM_BASINS-Schmidt2025.nc"
 
 ["FRIS-1KM_BASINS-Zwally2012.nc"]
-checksum = "sha256:9043e0e8057a07f2b9e1db9c18826a13ebbb618a852b9335363fd356ffb102ce"
+checksum = "sha256:15dd027ac769fda28391c67e09efc5718b5164bff0cfcd695848a870d3b2c8a4"
+previous_checksums = ["sha256:9043e0e8057a07f2b9e1db9c18826a13ebbb618a852b9335363fd356ffb102ce"]
 size = 88142
 storage_path = "$datasets_dir/FilchnerRonne/FRIS-1KM/FRIS-1KM_BASINS-Zwally2012.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Regions_FRIS-1KM/2.3.0/FRIS-1KM_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Regions_FRIS-1KM/2.5.0/FRIS-1KM_BASINS-Zwally2012.nc"
 
 ["FRIS-1KM_DOMAINS.nc"]
-checksum = "sha256:532c6d248823d0fc54bb773ca0d642f72934c79fb1fb230c2ea8559306549f05"
-size = 97392
+checksum = "sha256:dcfa8f88b5a378aa94c27c5caf5792b987fa1827492ed9c2dcb3342acc7db2ce"
+previous_checksums = ["sha256:532c6d248823d0fc54bb773ca0d642f72934c79fb1fb230c2ea8559306549f05"]
+size = 97488
 storage_path = "$datasets_dir/FilchnerRonne/FRIS-1KM/FRIS-1KM_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Regions_FRIS-1KM/2.3.0/FRIS-1KM_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Regions_FRIS-1KM/2.5.0/FRIS-1KM_DOMAINS.nc"
 
 ["FRIS-1KM_REGIONS.nc"]
-checksum = "sha256:a4b462990077d3f9d9e724afe5afc11f523623272fed81f9d9ffdd576a172634"
-size = 765851
+checksum = "sha256:a2d2dd58c1440e6ee1971e148ffa3e937575ca4e21ab9ee98326a6405ebd89aa"
+previous_checksums = ["sha256:a4b462990077d3f9d9e724afe5afc11f523623272fed81f9d9ffdd576a172634"]
+size = 766939
 storage_path = "$datasets_dir/FilchnerRonne/FRIS-1KM/FRIS-1KM_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Regions_FRIS-1KM/2.3.0/FRIS-1KM_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Regions_FRIS-1KM/2.5.0/FRIS-1KM_REGIONS.nc"
 
 ["FRIS-1KM_grid.nc"]
 checksum = "sha256:0c02cf89c76ce327455337d17dde70714b09b28a0ec56e6fc971782118de9384"
 size = 6797667
 storage_path = "$datasets_dir/FilchnerRonne/FRIS-1KM/FRIS-1KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Regions_FRIS-1KM/2.3.0/FRIS-1KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Regions_FRIS-1KM/2.5.0/FRIS-1KM_grid.nc"
 
 ["FRIS-500M_BASINS-IMBIE2016-refined.nc"]
-checksum = "sha256:6387be4e876cd779a2fd9bb649d95e06ad5075721910fae790686efb03413cac"
+checksum = "sha256:d64a6849f8a66738f2a3e4c6afce92d6b8c7455e0dfd765120a27f60f8522bb4"
+previous_checksums = ["sha256:6387be4e876cd779a2fd9bb649d95e06ad5075721910fae790686efb03413cac"]
 size = 334136
 storage_path = "$datasets_dir/FilchnerRonne/FRIS-500M/FRIS-500M_BASINS-IMBIE2016-refined.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Regions_FRIS-500M/2.3.0/FRIS-500M_BASINS-IMBIE2016-refined.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Regions_FRIS-500M/2.5.0/FRIS-500M_BASINS-IMBIE2016-refined.nc"
 
 ["FRIS-500M_BASINS-IMBIE2016.nc"]
-checksum = "sha256:9f50f893f6cea4f5597927466e0c895ae7cade57af2807596d945207d1975a88"
+checksum = "sha256:6c7e72852809663917d471e20e73eb71075b094501059813bd5fe6fed77fe33c"
+previous_checksums = ["sha256:9f50f893f6cea4f5597927466e0c895ae7cade57af2807596d945207d1975a88"]
 size = 263680
 storage_path = "$datasets_dir/FilchnerRonne/FRIS-500M/FRIS-500M_BASINS-IMBIE2016.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Regions_FRIS-500M/2.3.0/FRIS-500M_BASINS-IMBIE2016.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Regions_FRIS-500M/2.5.0/FRIS-500M_BASINS-IMBIE2016.nc"
 
 ["FRIS-500M_BASINS-Schmidt2025.nc"]
-checksum = "sha256:f2439097ad8fd859175941b8e2406d1de843fcbe4c478d38fe7e479779d834c6"
+checksum = "sha256:838943a21056d7378f71c0c707e8fa53e77b5295d23ab6d78e23e60c4fdf98dc"
+previous_checksums = ["sha256:f2439097ad8fd859175941b8e2406d1de843fcbe4c478d38fe7e479779d834c6"]
 size = 263680
 storage_path = "$datasets_dir/FilchnerRonne/FRIS-500M/FRIS-500M_BASINS-Schmidt2025.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Regions_FRIS-500M/2.3.0/FRIS-500M_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Regions_FRIS-500M/2.5.0/FRIS-500M_BASINS-Schmidt2025.nc"
 
 ["FRIS-500M_BASINS-Zwally2012.nc"]
-checksum = "sha256:104f4528c0867f6070e8511be34b0070bb6ed814509839bfecd9d9070b07d5ed"
+checksum = "sha256:755b4bdf8a91d4d11e194f3b96b02dc1eda475e76ac2b104f1f59d1f772cf008"
+previous_checksums = ["sha256:104f4528c0867f6070e8511be34b0070bb6ed814509839bfecd9d9070b07d5ed"]
 size = 185768
 storage_path = "$datasets_dir/FilchnerRonne/FRIS-500M/FRIS-500M_BASINS-Zwally2012.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Regions_FRIS-500M/2.3.0/FRIS-500M_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Regions_FRIS-500M/2.5.0/FRIS-500M_BASINS-Zwally2012.nc"
 
 ["FRIS-500M_DOMAINS.nc"]
-checksum = "sha256:55c916286edeb9654cb20b2ff7cc9e4194aa1177dccffc5f66257f7f523ef7fb"
-size = 203490
+checksum = "sha256:64a1731e28137107400d0a1a9ad671f4e24a236ee55a8e7dc381bcade66809d8"
+previous_checksums = ["sha256:55c916286edeb9654cb20b2ff7cc9e4194aa1177dccffc5f66257f7f523ef7fb"]
+size = 203586
 storage_path = "$datasets_dir/FilchnerRonne/FRIS-500M/FRIS-500M_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Regions_FRIS-500M/2.3.0/FRIS-500M_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Regions_FRIS-500M/2.5.0/FRIS-500M_DOMAINS.nc"
 
 ["FRIS-500M_REGIONS.nc"]
-checksum = "sha256:33b92e46c25c5a1d2514b12da50a2b1ea27903040b24cbc8b99ed442d798fbde"
-size = 2212237
+checksum = "sha256:a4f257ace2fd9969b452f405788bf70cc983f7449173474c98261d3fdb4999bb"
+previous_checksums = ["sha256:33b92e46c25c5a1d2514b12da50a2b1ea27903040b24cbc8b99ed442d798fbde"]
+size = 2213325
 storage_path = "$datasets_dir/FilchnerRonne/FRIS-500M/FRIS-500M_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Regions_FRIS-500M/2.3.0/FRIS-500M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Regions_FRIS-500M/2.5.0/FRIS-500M_REGIONS.nc"
 
 ["FRIS-500M_grid.nc"]
 checksum = "sha256:0c8e9de7f49cd15a2c135cb9a3b9748e4f5624692d452a1199f1b3e52a1dc15e"
 size = 22434824
 storage_path = "$datasets_dir/FilchnerRonne/FRIS-500M/FRIS-500M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Regions_FRIS-500M/2.3.0/FRIS-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Regions_FRIS-500M/2.5.0/FRIS-500M_grid.nc"
 
 ["grid_FRIS-1KM.txt"]
 checksum = "sha256:a7f4d34451d77b5a784e3439999ee1adb083ed937053ade210119122904c8fed"
 size = 467
 storage_path = "$datasets_dir/FilchnerRonne/FRIS-1KM/grid_FRIS-1KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Regions_FRIS-1KM/2.3.0/grid_FRIS-1KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Regions_FRIS-1KM/2.5.0/grid_FRIS-1KM.txt"
 
 ["grid_FRIS-500M.txt"]
 checksum = "sha256:0e7c50472f23d5491407840cacd7c3cfccf4ec28d2746058ba30a12daf006fcb"
 size = 467
 storage_path = "$datasets_dir/FilchnerRonne/FRIS-500M/grid_FRIS-500M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Regions_FRIS-500M/2.3.0/grid_FRIS-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Regions_FRIS-500M/2.5.0/grid_FRIS-500M.txt"

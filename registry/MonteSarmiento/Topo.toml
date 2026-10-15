@@ -1,0 +1,79 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-15"
+git_tag = "topo-v2.5.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=MonteSarmiento_Topo"
+version = "2.5.0"
+
+["SAR-100M_TOPO-GLO30-GEBCO2026.nc"]
+checksum = "sha256:0bf7fa496ad9d53f8b05637c2dfd2b09777426734d5f9f497d5a600889e29f74"
+size = 838712
+storage_path = "$datasets_dir/MonteSarmiento/SAR-100M/SAR-100M_TOPO-GLO30-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/MonteSarmiento_Topo_SAR-100M/2.5.0/SAR-100M_TOPO-GLO30-GEBCO2026.nc"
+
+["SAR-100M_TOPO-GLO90-GEBCO2026.nc"]
+checksum = "sha256:d8bdc3336b86efb7eae41df7dd832224e42fb2b7cd4b9bcce11cb2b7830ea32a"
+size = 835106
+storage_path = "$datasets_dir/MonteSarmiento/SAR-100M/SAR-100M_TOPO-GLO90-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/MonteSarmiento_Topo_SAR-100M/2.5.0/SAR-100M_TOPO-GLO90-GEBCO2026.nc"
+
+["SAR-100M_grid.nc"]
+checksum = "sha256:0ebb2a3ef49b9396daa22181337f78c9e4ec68d98d227e9495704d37e053b3ee"
+size = 101756
+storage_path = "$datasets_dir/MonteSarmiento/SAR-100M/SAR-100M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/MonteSarmiento_Topo_SAR-100M/2.5.0/SAR-100M_grid.nc"
+
+["SAR-250M_TOPO-GLO30-GEBCO2026.nc"]
+checksum = "sha256:3aaa6adeda888863b4624dd68c776145dd12713f4cd86fd84ee66b7960b3db02"
+size = 212881
+storage_path = "$datasets_dir/MonteSarmiento/SAR-250M/SAR-250M_TOPO-GLO30-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/MonteSarmiento_Topo_SAR-250M/2.5.0/SAR-250M_TOPO-GLO30-GEBCO2026.nc"
+
+["SAR-250M_TOPO-GLO90-GEBCO2026.nc"]
+checksum = "sha256:efff823485623a1310b30013b848f0ecbcfa4be18ee41b122ac2d2137600c0c4"
+size = 212450
+storage_path = "$datasets_dir/MonteSarmiento/SAR-250M/SAR-250M_TOPO-GLO90-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/MonteSarmiento_Topo_SAR-250M/2.5.0/SAR-250M_TOPO-GLO90-GEBCO2026.nc"
+
+["SAR-250M_grid.nc"]
+checksum = "sha256:4d870e5346b9cc653c7e9246d63f25505e34b452e62387eabaa07d6c507acc48"
+size = 47755
+storage_path = "$datasets_dir/MonteSarmiento/SAR-250M/SAR-250M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/MonteSarmiento_Topo_SAR-250M/2.5.0/SAR-250M_grid.nc"
+
+["SAR-50M_TOPO-GLO30-GEBCO2026.nc"]
+checksum = "sha256:1043e226a5588bd23d94f8c02d9e2bd77d4efe3bf95a8146e745f9602ba06b35"
+size = 2439610
+storage_path = "$datasets_dir/MonteSarmiento/SAR-50M/SAR-50M_TOPO-GLO30-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/MonteSarmiento_Topo_SAR-50M/2.5.0/SAR-50M_TOPO-GLO30-GEBCO2026.nc"
+
+["SAR-50M_TOPO-GLO90-GEBCO2026.nc"]
+checksum = "sha256:7e4f08ac2369c68fb8cc902c907b96866b607b5f2b6572c0b05b80180cec4f02"
+size = 2420154
+storage_path = "$datasets_dir/MonteSarmiento/SAR-50M/SAR-50M_TOPO-GLO90-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/MonteSarmiento_Topo_SAR-50M/2.5.0/SAR-50M_TOPO-GLO90-GEBCO2026.nc"
+
+["SAR-50M_grid.nc"]
+checksum = "sha256:4608881003b70880b859c0f176478673915331746d893c1d8f5fa587dc1f6e91"
+size = 306747
+storage_path = "$datasets_dir/MonteSarmiento/SAR-50M/SAR-50M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/MonteSarmiento_Topo_SAR-50M/2.5.0/SAR-50M_grid.nc"
+
+["grid_SAR-100M.txt"]
+checksum = "sha256:3841abca5f1388f7b84ec83d9c8746697bb7737ee86d2285e7c384001390060a"
+size = 346
+storage_path = "$datasets_dir/MonteSarmiento/SAR-100M/grid_SAR-100M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/MonteSarmiento_Topo_SAR-100M/2.5.0/grid_SAR-100M.txt"
+
+["grid_SAR-250M.txt"]
+checksum = "sha256:5423dc91cb5a2a9eb104be82cf8a7b619153d16087fa6b200d8e31de015195cc"
+size = 347
+storage_path = "$datasets_dir/MonteSarmiento/SAR-250M/grid_SAR-250M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/MonteSarmiento_Topo_SAR-250M/2.5.0/grid_SAR-250M.txt"
+
+["grid_SAR-50M.txt"]
+checksum = "sha256:f111760218cf252472bce4e3f09a779ed6c74eb1456e067c0da3ef42cad7dc58"
+size = 348
+storage_path = "$datasets_dir/MonteSarmiento/SAR-50M/grid_SAR-50M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/MonteSarmiento_Topo_SAR-50M/2.5.0/grid_SAR-50M.txt"

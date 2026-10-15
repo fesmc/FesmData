@@ -1,0 +1,79 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-15"
+git_tag = "regions-v2.5.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=MonteSarmiento_Regions"
+version = "2.5.0"
+
+["SAR-100M_DOMAINS.nc"]
+checksum = "sha256:50e1bb40b6d980cfe92d576542dadbfeae1cb637938f819acd11112da953b10f"
+size = 58714
+storage_path = "$datasets_dir/MonteSarmiento/SAR-100M/SAR-100M_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/MonteSarmiento_Regions_SAR-100M/2.5.0/SAR-100M_DOMAINS.nc"
+
+["SAR-100M_REGIONS.nc"]
+checksum = "sha256:a7ff09e0620b1055c47a65863db75e6ad4b8ccc1f921461470154b6fc13e7903"
+size = 41137
+storage_path = "$datasets_dir/MonteSarmiento/SAR-100M/SAR-100M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/MonteSarmiento_Regions_SAR-100M/2.5.0/SAR-100M_REGIONS.nc"
+
+["SAR-100M_grid.nc"]
+checksum = "sha256:0ebb2a3ef49b9396daa22181337f78c9e4ec68d98d227e9495704d37e053b3ee"
+size = 101756
+storage_path = "$datasets_dir/MonteSarmiento/SAR-100M/SAR-100M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/MonteSarmiento_Regions_SAR-100M/2.5.0/SAR-100M_grid.nc"
+
+["SAR-250M_DOMAINS.nc"]
+checksum = "sha256:d42ff76e4df05050b7705d9ac6c3687ec400f918670c2508efc331816a696f4e"
+size = 54447
+storage_path = "$datasets_dir/MonteSarmiento/SAR-250M/SAR-250M_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/MonteSarmiento_Regions_SAR-250M/2.5.0/SAR-250M_DOMAINS.nc"
+
+["SAR-250M_REGIONS.nc"]
+checksum = "sha256:6ca4c66de0b4ea029db042913de25a380aa96544f0a8829c70b8fd2767e106db"
+size = 34434
+storage_path = "$datasets_dir/MonteSarmiento/SAR-250M/SAR-250M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/MonteSarmiento_Regions_SAR-250M/2.5.0/SAR-250M_REGIONS.nc"
+
+["SAR-250M_grid.nc"]
+checksum = "sha256:4d870e5346b9cc653c7e9246d63f25505e34b452e62387eabaa07d6c507acc48"
+size = 47755
+storage_path = "$datasets_dir/MonteSarmiento/SAR-250M/SAR-250M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/MonteSarmiento_Regions_SAR-250M/2.5.0/SAR-250M_grid.nc"
+
+["SAR-50M_DOMAINS.nc"]
+checksum = "sha256:f48fa5f95f6ec16ae8033254ba58ab084f96b88ee681c3437b6440856530a8f7"
+size = 66639
+storage_path = "$datasets_dir/MonteSarmiento/SAR-50M/SAR-50M_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/MonteSarmiento_Regions_SAR-50M/2.5.0/SAR-50M_DOMAINS.nc"
+
+["SAR-50M_REGIONS.nc"]
+checksum = "sha256:c628548bf79cfd980cfdf4ba225bb7c912d44e6de79635ec1b2ed59de98354f5"
+size = 59107
+storage_path = "$datasets_dir/MonteSarmiento/SAR-50M/SAR-50M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/MonteSarmiento_Regions_SAR-50M/2.5.0/SAR-50M_REGIONS.nc"
+
+["SAR-50M_grid.nc"]
+checksum = "sha256:4608881003b70880b859c0f176478673915331746d893c1d8f5fa587dc1f6e91"
+size = 306747
+storage_path = "$datasets_dir/MonteSarmiento/SAR-50M/SAR-50M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/MonteSarmiento_Regions_SAR-50M/2.5.0/SAR-50M_grid.nc"
+
+["grid_SAR-100M.txt"]
+checksum = "sha256:3841abca5f1388f7b84ec83d9c8746697bb7737ee86d2285e7c384001390060a"
+size = 346
+storage_path = "$datasets_dir/MonteSarmiento/SAR-100M/grid_SAR-100M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/MonteSarmiento_Regions_SAR-100M/2.5.0/grid_SAR-100M.txt"
+
+["grid_SAR-250M.txt"]
+checksum = "sha256:5423dc91cb5a2a9eb104be82cf8a7b619153d16087fa6b200d8e31de015195cc"
+size = 347
+storage_path = "$datasets_dir/MonteSarmiento/SAR-250M/grid_SAR-250M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/MonteSarmiento_Regions_SAR-250M/2.5.0/grid_SAR-250M.txt"
+
+["grid_SAR-50M.txt"]
+checksum = "sha256:f111760218cf252472bce4e3f09a779ed6c74eb1456e067c0da3ef42cad7dc58"
+size = 348
+storage_path = "$datasets_dir/MonteSarmiento/SAR-50M/grid_SAR-50M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/MonteSarmiento_Regions_SAR-50M/2.5.0/grid_SAR-50M.txt"

@@ -1,82 +1,85 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-14"
-git_tag = "regions-v2.3.0"
+date = "2026-10-15"
+git_tag = "regions-v2.5.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=GranCampoNevado_Regions"
-version = "2.3.0"
+version = "2.5.0"
 
 ["GCN-100M_DOMAINS.nc"]
-checksum = "sha256:a21106c792c0d69cb5e30dcb8d7098040ac4970aa37288ac9284edac8f419a25"
-size = 50262
+checksum = "sha256:9c7bd55e35be47a66d47367787cd389f860e17c5f83b0523b44bbc98eb27fe71"
+previous_checksums = ["sha256:a21106c792c0d69cb5e30dcb8d7098040ac4970aa37288ac9284edac8f419a25"]
+size = 63744
 storage_path = "$datasets_dir/GranCampoNevado/GCN-100M/GCN-100M_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Regions_GCN-100M/2.3.0/GCN-100M_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Regions_GCN-100M/2.5.0/GCN-100M_DOMAINS.nc"
 
 ["GCN-100M_REGIONS.nc"]
-checksum = "sha256:a9c715421300a4b937a412d9a7190c16f68b4718284f91140c211317d7e8826e"
-previous_checksums = ["sha256:c2bcd3ccf2d8f34fad715e2d171ddf68599bd49fcd3d14c39478b614ab981f59"]
-size = 63145
+checksum = "sha256:d79991204490cbb189079315f6584965920fbdafce11bf9b929615816ac4488a"
+previous_checksums = ["sha256:c2bcd3ccf2d8f34fad715e2d171ddf68599bd49fcd3d14c39478b614ab981f59", "sha256:a9c715421300a4b937a412d9a7190c16f68b4718284f91140c211317d7e8826e"]
+size = 62156
 storage_path = "$datasets_dir/GranCampoNevado/GCN-100M/GCN-100M_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Regions_GCN-100M/2.3.0/GCN-100M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Regions_GCN-100M/2.5.0/GCN-100M_REGIONS.nc"
 
 ["GCN-100M_grid.nc"]
 checksum = "sha256:d24b70741b21b9102365d41749eb3d7e6115408bf547d03261cae4a6af58aa80"
 size = 287090
 storage_path = "$datasets_dir/GranCampoNevado/GCN-100M/GCN-100M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Regions_GCN-100M/2.3.0/GCN-100M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Regions_GCN-100M/2.5.0/GCN-100M_grid.nc"
 
 ["GCN-250M_DOMAINS.nc"]
-checksum = "sha256:e4fc5212ed9ab6d5702097e0956987bfd66ed02dedd805591ea13125ca82b137"
-size = 41977
+checksum = "sha256:2791aba16a3da085f4b08f843e7c672311dedbe29551ee82aff0ec4dda0e5296"
+previous_checksums = ["sha256:e4fc5212ed9ab6d5702097e0956987bfd66ed02dedd805591ea13125ca82b137"]
+size = 54847
 storage_path = "$datasets_dir/GranCampoNevado/GCN-250M/GCN-250M_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Regions_GCN-250M/2.3.0/GCN-250M_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Regions_GCN-250M/2.5.0/GCN-250M_DOMAINS.nc"
 
 ["GCN-250M_REGIONS.nc"]
-checksum = "sha256:5ca870433dc09e4b4f54f13c4d571adbb85b4a335a4ce2a74360757f99b1ab27"
-previous_checksums = ["sha256:b18991a82f95b3df7ea0a67387e8867e7310a570e76e3553efb22bcc8316aee8"]
-size = 41803
+checksum = "sha256:23fc60d63ef3cba1587886b463ea69b8d4e076ccc3d7f78e46bc5996f1f94247"
+previous_checksums = ["sha256:b18991a82f95b3df7ea0a67387e8867e7310a570e76e3553efb22bcc8316aee8", "sha256:5ca870433dc09e4b4f54f13c4d571adbb85b4a335a4ce2a74360757f99b1ab27"]
+size = 40730
 storage_path = "$datasets_dir/GranCampoNevado/GCN-250M/GCN-250M_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Regions_GCN-250M/2.3.0/GCN-250M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Regions_GCN-250M/2.5.0/GCN-250M_REGIONS.nc"
 
 ["GCN-250M_grid.nc"]
 checksum = "sha256:e978a495cdf3c514562045456e23e192fe96cc23f128148b2c44895cfbd5a527"
 size = 86565
 storage_path = "$datasets_dir/GranCampoNevado/GCN-250M/GCN-250M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Regions_GCN-250M/2.3.0/GCN-250M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Regions_GCN-250M/2.5.0/GCN-250M_grid.nc"
 
 ["GCN-50M_DOMAINS.nc"]
-checksum = "sha256:00708307fc2e3c49dc428d1cd69892c9bddad1504121c3831ad3e13a58c278cc"
-size = 65623
+checksum = "sha256:0d66180458288528046d2813922f625a59e784a5142984415532cae2a60386da"
+previous_checksums = ["sha256:00708307fc2e3c49dc428d1cd69892c9bddad1504121c3831ad3e13a58c278cc"]
+size = 81215
 storage_path = "$datasets_dir/GranCampoNevado/GCN-50M/GCN-50M_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Regions_GCN-50M/2.3.0/GCN-50M_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Regions_GCN-50M/2.5.0/GCN-50M_DOMAINS.nc"
 
 ["GCN-50M_REGIONS.nc"]
-checksum = "sha256:fd92ba431db83f9fc476c1265eb08de35872d3cfd50aa2f307b997d616c1a267"
-previous_checksums = ["sha256:cdc4489b413b0720055e5ac7d2990bf6c3e6845e253bf1a11a0aebc7189f57de"]
-size = 135399
+checksum = "sha256:764b06b1ba1f70ecf44961a2d30bc2ef761f481d2f4cca81077b9c80a28fac6f"
+previous_checksums = ["sha256:cdc4489b413b0720055e5ac7d2990bf6c3e6845e253bf1a11a0aebc7189f57de", "sha256:fd92ba431db83f9fc476c1265eb08de35872d3cfd50aa2f307b997d616c1a267"]
+size = 134208
 storage_path = "$datasets_dir/GranCampoNevado/GCN-50M/GCN-50M_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Regions_GCN-50M/2.3.0/GCN-50M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Regions_GCN-50M/2.5.0/GCN-50M_REGIONS.nc"
 
 ["GCN-50M_grid.nc"]
 checksum = "sha256:6c0ce1bb1bb74fe1802b6b2b6e340fa0d33b889893c8d0da4f9296af9354d31e"
 size = 756025
 storage_path = "$datasets_dir/GranCampoNevado/GCN-50M/GCN-50M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Regions_GCN-50M/2.3.0/GCN-50M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Regions_GCN-50M/2.5.0/GCN-50M_grid.nc"
 
 ["grid_GCN-100M.txt"]
 checksum = "sha256:0eab4ea0d279450046078d07b4f186cb0e4de112919f1a299d68e4d315af748e"
 size = 346
 storage_path = "$datasets_dir/GranCampoNevado/GCN-100M/grid_GCN-100M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Regions_GCN-100M/2.3.0/grid_GCN-100M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Regions_GCN-100M/2.5.0/grid_GCN-100M.txt"
 
 ["grid_GCN-250M.txt"]
 checksum = "sha256:0ed503f98e060b004438dbfe972a4a657db1cbf876b362d584c30a6e51cb9f0a"
 size = 347
 storage_path = "$datasets_dir/GranCampoNevado/GCN-250M/grid_GCN-250M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Regions_GCN-250M/2.3.0/grid_GCN-250M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Regions_GCN-250M/2.5.0/grid_GCN-250M.txt"
 
 ["grid_GCN-50M.txt"]
 checksum = "sha256:f34d5e4a90ffd3bc1e0fe637e010c82b3c6769971bad171d39198f7adfae6d26"
 size = 351
 storage_path = "$datasets_dir/GranCampoNevado/GCN-50M/grid_GCN-50M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Regions_GCN-50M/2.3.0/grid_GCN-50M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Regions_GCN-50M/2.5.0/grid_GCN-50M.txt"

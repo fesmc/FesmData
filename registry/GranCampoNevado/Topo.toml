@@ -1,64 +1,64 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-14"
-git_tag = "topo-v2.3.0"
+date = "2026-10-15"
+git_tag = "topo-v2.5.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=GranCampoNevado_Topo"
-version = "2.3.0"
+version = "2.5.0"
 
 ["GCN-100M_TOPO-GLO90-GEBCO2026.nc"]
-checksum = "sha256:69e7bfd1f8853d49181b65e5d4a5e82408fc03325502c8e71d7d428756e7435a"
-previous_checksums = ["sha256:b2479c2cc111ff23f89661d7aacafe2d4983a1e80b89d3700f9143d8a03af011"]
-size = 2670113
+checksum = "sha256:7e28375fd87f98f3b2cf5d778c41fcdc39fafcf31844f4bb7b945c851fc4ba57"
+previous_checksums = ["sha256:b2479c2cc111ff23f89661d7aacafe2d4983a1e80b89d3700f9143d8a03af011", "sha256:69e7bfd1f8853d49181b65e5d4a5e82408fc03325502c8e71d7d428756e7435a"]
+size = 2768663
 storage_path = "$datasets_dir/GranCampoNevado/GCN-100M/GCN-100M_TOPO-GLO90-GEBCO2026.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Topo_GCN-100M/2.3.0/GCN-100M_TOPO-GLO90-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Topo_GCN-100M/2.5.0/GCN-100M_TOPO-GLO90-GEBCO2026.nc"
 
 ["GCN-100M_grid.nc"]
 checksum = "sha256:d24b70741b21b9102365d41749eb3d7e6115408bf547d03261cae4a6af58aa80"
 size = 287090
 storage_path = "$datasets_dir/GranCampoNevado/GCN-100M/GCN-100M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Topo_GCN-100M/2.3.0/GCN-100M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Topo_GCN-100M/2.5.0/GCN-100M_grid.nc"
 
 ["GCN-250M_TOPO-GLO90-GEBCO2026.nc"]
-checksum = "sha256:0e26efb8252a7cf85f80bf0166e05b84fa3efc419ef0b775a06b45aafdb047a2"
-previous_checksums = ["sha256:e8b714ab7caa8d18bdae5e0f3e27ebb006b3740e30f84ad331e7f81b9560f3d7"]
-size = 575093
+checksum = "sha256:b384f878018544b845e8ce6c69d6d44ef6108506b21397aa4b05ec68dd87408e"
+previous_checksums = ["sha256:e8b714ab7caa8d18bdae5e0f3e27ebb006b3740e30f84ad331e7f81b9560f3d7", "sha256:0e26efb8252a7cf85f80bf0166e05b84fa3efc419ef0b775a06b45aafdb047a2"]
+size = 576403
 storage_path = "$datasets_dir/GranCampoNevado/GCN-250M/GCN-250M_TOPO-GLO90-GEBCO2026.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Topo_GCN-250M/2.3.0/GCN-250M_TOPO-GLO90-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Topo_GCN-250M/2.5.0/GCN-250M_TOPO-GLO90-GEBCO2026.nc"
 
 ["GCN-250M_grid.nc"]
 checksum = "sha256:e978a495cdf3c514562045456e23e192fe96cc23f128148b2c44895cfbd5a527"
 size = 86565
 storage_path = "$datasets_dir/GranCampoNevado/GCN-250M/GCN-250M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Topo_GCN-250M/2.3.0/GCN-250M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Topo_GCN-250M/2.5.0/GCN-250M_grid.nc"
 
 ["GCN-50M_TOPO-GLO90-GEBCO2026.nc"]
-checksum = "sha256:7405ecf29956d62b38b0bade7deaaae48bac5c86975b3562fc6ed600135c49a2"
-previous_checksums = ["sha256:428484ba9d3b3b1a4b104c17a1141f5ed3001da0726daf1e93af89305098e8a9"]
-size = 7481090
+checksum = "sha256:2942e57cf145c5897f87fa41bbafe57e133ed1af0efd9d87a2a4f6b8654fb4be"
+previous_checksums = ["sha256:428484ba9d3b3b1a4b104c17a1141f5ed3001da0726daf1e93af89305098e8a9", "sha256:7405ecf29956d62b38b0bade7deaaae48bac5c86975b3562fc6ed600135c49a2"]
+size = 9006675
 storage_path = "$datasets_dir/GranCampoNevado/GCN-50M/GCN-50M_TOPO-GLO90-GEBCO2026.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Topo_GCN-50M/2.3.0/GCN-50M_TOPO-GLO90-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Topo_GCN-50M/2.5.0/GCN-50M_TOPO-GLO90-GEBCO2026.nc"
 
 ["GCN-50M_grid.nc"]
 checksum = "sha256:6c0ce1bb1bb74fe1802b6b2b6e340fa0d33b889893c8d0da4f9296af9354d31e"
 size = 756025
 storage_path = "$datasets_dir/GranCampoNevado/GCN-50M/GCN-50M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Topo_GCN-50M/2.3.0/GCN-50M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Topo_GCN-50M/2.5.0/GCN-50M_grid.nc"
 
 ["grid_GCN-100M.txt"]
 checksum = "sha256:0eab4ea0d279450046078d07b4f186cb0e4de112919f1a299d68e4d315af748e"
 size = 346
 storage_path = "$datasets_dir/GranCampoNevado/GCN-100M/grid_GCN-100M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Topo_GCN-100M/2.3.0/grid_GCN-100M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Topo_GCN-100M/2.5.0/grid_GCN-100M.txt"
 
 ["grid_GCN-250M.txt"]
 checksum = "sha256:0ed503f98e060b004438dbfe972a4a657db1cbf876b362d584c30a6e51cb9f0a"
 size = 347
 storage_path = "$datasets_dir/GranCampoNevado/GCN-250M/grid_GCN-250M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Topo_GCN-250M/2.3.0/grid_GCN-250M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Topo_GCN-250M/2.5.0/grid_GCN-250M.txt"
 
 ["grid_GCN-50M.txt"]
 checksum = "sha256:f34d5e4a90ffd3bc1e0fe637e010c82b3c6769971bad171d39198f7adfae6d26"
 size = 351
 storage_path = "$datasets_dir/GranCampoNevado/GCN-50M/grid_GCN-50M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Topo_GCN-50M/2.3.0/grid_GCN-50M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Topo_GCN-50M/2.5.0/grid_GCN-50M.txt"

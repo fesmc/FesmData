@@ -1,103 +1,115 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-14"
-git_tag = "regions-v2.3.0"
+date = "2026-10-15"
+git_tag = "regions-v2.5.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Amery_Regions"
-version = "2.3.0"
+version = "2.5.0"
 
 ["AMY-1KM_BASINS-IMBIE2016-refined.nc"]
-checksum = "sha256:41b666f180c4dbbd330459d9e963237f60e4a8a1f8a8227e3a4fbd186573f499"
+checksum = "sha256:6360c5d994a87c4003ed7cf2ff7f9768e9a5e89c79fa1bbe882cd977948678fa"
+previous_checksums = ["sha256:41b666f180c4dbbd330459d9e963237f60e4a8a1f8a8227e3a4fbd186573f499"]
 size = 62017
 storage_path = "$datasets_dir/Amery/AMY-1KM/AMY-1KM_BASINS-IMBIE2016-refined.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Regions_AMY-1KM/2.3.0/AMY-1KM_BASINS-IMBIE2016-refined.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Regions_AMY-1KM/2.5.0/AMY-1KM_BASINS-IMBIE2016-refined.nc"
 
 ["AMY-1KM_BASINS-IMBIE2016.nc"]
-checksum = "sha256:ae4331cb5f0cf1892a659b2a66c79fefc1ba385bc70598a20a2d1d470c26b0a5"
+checksum = "sha256:171cc5404d6705bf3b3385a47ea3d04fdd806c20187fffa2616a81b5c2317a32"
+previous_checksums = ["sha256:ae4331cb5f0cf1892a659b2a66c79fefc1ba385bc70598a20a2d1d470c26b0a5"]
 size = 56120
 storage_path = "$datasets_dir/Amery/AMY-1KM/AMY-1KM_BASINS-IMBIE2016.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Regions_AMY-1KM/2.3.0/AMY-1KM_BASINS-IMBIE2016.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Regions_AMY-1KM/2.5.0/AMY-1KM_BASINS-IMBIE2016.nc"
 
 ["AMY-1KM_BASINS-Schmidt2025.nc"]
-checksum = "sha256:76d60c8e732c21bb89f6c03a63dbb329555033301f3f91ea621074e1ce1fab21"
+checksum = "sha256:c5e90dd43582860945d83ae8acafc7a6327b843f687e8d8d2f9a8d52a43009da"
+previous_checksums = ["sha256:76d60c8e732c21bb89f6c03a63dbb329555033301f3f91ea621074e1ce1fab21"]
 size = 56120
 storage_path = "$datasets_dir/Amery/AMY-1KM/AMY-1KM_BASINS-Schmidt2025.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Regions_AMY-1KM/2.3.0/AMY-1KM_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Regions_AMY-1KM/2.5.0/AMY-1KM_BASINS-Schmidt2025.nc"
 
 ["AMY-1KM_BASINS-Zwally2012.nc"]
-checksum = "sha256:cf0643a411072bdfa95e12365139335b8c9d5fe69b2a3822abce133b0a6ec83c"
+checksum = "sha256:64f30c3dedfc39bd11f4891d2d98d6740350bc80fabb27aa22288c7ee05baf5a"
+previous_checksums = ["sha256:cf0643a411072bdfa95e12365139335b8c9d5fe69b2a3822abce133b0a6ec83c"]
 size = 51046
 storage_path = "$datasets_dir/Amery/AMY-1KM/AMY-1KM_BASINS-Zwally2012.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Regions_AMY-1KM/2.3.0/AMY-1KM_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Regions_AMY-1KM/2.5.0/AMY-1KM_BASINS-Zwally2012.nc"
 
 ["AMY-1KM_DOMAINS.nc"]
-checksum = "sha256:9608eed8d3d8944b36c5b192bc8f2182da905cb1a2dff16774b9b392919be9b5"
-size = 71883
+checksum = "sha256:4de8457a2a129ce6e33a4a7002897444069c288ea2403a6e5832b2e2be02a51b"
+previous_checksums = ["sha256:9608eed8d3d8944b36c5b192bc8f2182da905cb1a2dff16774b9b392919be9b5"]
+size = 71979
 storage_path = "$datasets_dir/Amery/AMY-1KM/AMY-1KM_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Regions_AMY-1KM/2.3.0/AMY-1KM_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Regions_AMY-1KM/2.5.0/AMY-1KM_DOMAINS.nc"
 
 ["AMY-1KM_REGIONS.nc"]
-checksum = "sha256:6c38e97493810277f3240abbe9d1a8e1fc4cc5f3c1474a0f73573d86117f42ff"
-size = 266990
+checksum = "sha256:0e8e2a8e4e9b672e45101c9d58dbef15837fb76c0ff7d1618a2eb34dec529e8e"
+previous_checksums = ["sha256:6c38e97493810277f3240abbe9d1a8e1fc4cc5f3c1474a0f73573d86117f42ff"]
+size = 268078
 storage_path = "$datasets_dir/Amery/AMY-1KM/AMY-1KM_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Regions_AMY-1KM/2.3.0/AMY-1KM_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Regions_AMY-1KM/2.5.0/AMY-1KM_REGIONS.nc"
 
 ["AMY-1KM_grid.nc"]
 checksum = "sha256:69118798dca9d67d99c7d1f516dc20fd67b5023e6ca9bee09beb31da6949dc2a"
 size = 2131806
 storage_path = "$datasets_dir/Amery/AMY-1KM/AMY-1KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Regions_AMY-1KM/2.3.0/AMY-1KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Regions_AMY-1KM/2.5.0/AMY-1KM_grid.nc"
 
 ["AMY-500M_BASINS-IMBIE2016-refined.nc"]
-checksum = "sha256:267725e6160a77100ca20a798fc6d405ecdf79d860599460d734959130ea25ab"
+checksum = "sha256:b84bdd4cf1b2213a9e0c576fbce1bc37c6e7064dbe37ec2e3b05036f2ce6fa9b"
+previous_checksums = ["sha256:267725e6160a77100ca20a798fc6d405ecdf79d860599460d734959130ea25ab"]
 size = 129018
 storage_path = "$datasets_dir/Amery/AMY-500M/AMY-500M_BASINS-IMBIE2016-refined.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Regions_AMY-500M/2.3.0/AMY-500M_BASINS-IMBIE2016-refined.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Regions_AMY-500M/2.5.0/AMY-500M_BASINS-IMBIE2016-refined.nc"
 
 ["AMY-500M_BASINS-IMBIE2016.nc"]
-checksum = "sha256:d30d7edcd09bc6accd9ffb5f4cf091cc10a43859fed62aeda34b0914b8f94ef7"
+checksum = "sha256:aab183e10aa740486ef10e8d70568e9754a91ab4227551427c67c6f2e7f6138b"
+previous_checksums = ["sha256:d30d7edcd09bc6accd9ffb5f4cf091cc10a43859fed62aeda34b0914b8f94ef7"]
 size = 111562
 storage_path = "$datasets_dir/Amery/AMY-500M/AMY-500M_BASINS-IMBIE2016.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Regions_AMY-500M/2.3.0/AMY-500M_BASINS-IMBIE2016.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Regions_AMY-500M/2.5.0/AMY-500M_BASINS-IMBIE2016.nc"
 
 ["AMY-500M_BASINS-Schmidt2025.nc"]
-checksum = "sha256:e39b384abf0dd0d4110e27012846d83917a436fbeffb788e5bb22df09da5458a"
+checksum = "sha256:4f3122ad982d9169fbc863a76a92ccc64f62a6fc38e1a0864febf8370cc80d94"
+previous_checksums = ["sha256:e39b384abf0dd0d4110e27012846d83917a436fbeffb788e5bb22df09da5458a"]
 size = 111562
 storage_path = "$datasets_dir/Amery/AMY-500M/AMY-500M_BASINS-Schmidt2025.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Regions_AMY-500M/2.3.0/AMY-500M_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Regions_AMY-500M/2.5.0/AMY-500M_BASINS-Schmidt2025.nc"
 
 ["AMY-500M_BASINS-Zwally2012.nc"]
-checksum = "sha256:ee735b0a453789878f232753005c6d3f5892c1a270ab1b1a1c4e3587b11ca7c8"
+checksum = "sha256:7bfcb73b6188413702f5cc4198b6459c7ee7add10c62094abc91202d7dc0fffb"
+previous_checksums = ["sha256:ee735b0a453789878f232753005c6d3f5892c1a270ab1b1a1c4e3587b11ca7c8"]
 size = 98471
 storage_path = "$datasets_dir/Amery/AMY-500M/AMY-500M_BASINS-Zwally2012.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Regions_AMY-500M/2.3.0/AMY-500M_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Regions_AMY-500M/2.5.0/AMY-500M_BASINS-Zwally2012.nc"
 
 ["AMY-500M_DOMAINS.nc"]
-checksum = "sha256:ee7ca98a5710915b5db948714b3f40eeadc6b952b65e155ff0ba38ac53a8fc49"
-size = 104820
+checksum = "sha256:93817fd7a46614df78f73a5cfd19f9156b5dc8e877ca35e6dd1550a5317e2776"
+previous_checksums = ["sha256:ee7ca98a5710915b5db948714b3f40eeadc6b952b65e155ff0ba38ac53a8fc49"]
+size = 104916
 storage_path = "$datasets_dir/Amery/AMY-500M/AMY-500M_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Regions_AMY-500M/2.3.0/AMY-500M_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Regions_AMY-500M/2.5.0/AMY-500M_DOMAINS.nc"
 
 ["AMY-500M_REGIONS.nc"]
-checksum = "sha256:100b62908b27da8743e3ed54088bf15c9646b17ddcf044657315819a9bd7e651"
-size = 736787
+checksum = "sha256:725b9c2fbfe5028e08d8c69e96d085836799b44b7272979d510b98f71330211c"
+previous_checksums = ["sha256:100b62908b27da8743e3ed54088bf15c9646b17ddcf044657315819a9bd7e651"]
+size = 737875
 storage_path = "$datasets_dir/Amery/AMY-500M/AMY-500M_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Regions_AMY-500M/2.3.0/AMY-500M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Regions_AMY-500M/2.5.0/AMY-500M_REGIONS.nc"
 
 ["AMY-500M_grid.nc"]
 checksum = "sha256:ba6a831b936aa8824e569c2773474b7c9efc54601aa5f2e07254f39c391fa6e2"
 size = 6584091
 storage_path = "$datasets_dir/Amery/AMY-500M/AMY-500M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Regions_AMY-500M/2.3.0/AMY-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Regions_AMY-500M/2.5.0/AMY-500M_grid.nc"
 
 ["grid_AMY-1KM.txt"]
 checksum = "sha256:9c34ff38d2907959f9c6ea0379d286f360eba11243c201194ca78354e5860dfe"
 size = 462
 storage_path = "$datasets_dir/Amery/AMY-1KM/grid_AMY-1KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Regions_AMY-1KM/2.3.0/grid_AMY-1KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Regions_AMY-1KM/2.5.0/grid_AMY-1KM.txt"
 
 ["grid_AMY-500M.txt"]
 checksum = "sha256:547d9cf5546f45bd6bda45d91ad010d8ae5f99aca19e95887be6e16a2b650bea"
 size = 465
 storage_path = "$datasets_dir/Amery/AMY-500M/grid_AMY-500M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Regions_AMY-500M/2.3.0/grid_AMY-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Regions_AMY-500M/2.5.0/grid_AMY-500M.txt"

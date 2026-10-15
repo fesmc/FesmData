@@ -1,133 +1,148 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-14"
-git_tag = "regions-v2.3.0"
+date = "2026-10-15"
+git_tag = "regions-v2.5.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Helheim_Regions"
-version = "2.3.0"
+version = "2.5.0"
 
 ["HEL-1KM_BASINS-Mouginot2019.nc"]
-checksum = "sha256:2fa3d3559583c954af0c5f28b299e915f5877bc05a50d3574708422e1c071104"
+checksum = "sha256:38db7e01f4982d3b97069f4cedf9d694e63cb7ddfbd42687e976b5ab123ab35b"
+previous_checksums = ["sha256:2fa3d3559583c954af0c5f28b299e915f5877bc05a50d3574708422e1c071104"]
 size = 46528
 storage_path = "$datasets_dir/Helheim/HEL-1KM/HEL-1KM_BASINS-Mouginot2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-1KM/2.3.0/HEL-1KM_BASINS-Mouginot2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-1KM/2.5.0/HEL-1KM_BASINS-Mouginot2019.nc"
 
 ["HEL-1KM_BASINS-Schmidt2025.nc"]
-checksum = "sha256:6d397557025c430076fede7589fe32a9a95f3fe5cf432aeb9b1d188846574d50"
+checksum = "sha256:7c66e3cf2046a62a78141bde745a8f6af48c0d5f9d647e2573577e813495024b"
+previous_checksums = ["sha256:6d397557025c430076fede7589fe32a9a95f3fe5cf432aeb9b1d188846574d50"]
 size = 32124
 storage_path = "$datasets_dir/Helheim/HEL-1KM/HEL-1KM_BASINS-Schmidt2025.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-1KM/2.3.0/HEL-1KM_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-1KM/2.5.0/HEL-1KM_BASINS-Schmidt2025.nc"
 
 ["HEL-1KM_BASINS-Zwally2012.nc"]
-checksum = "sha256:d8f9378fe28c0eef376f6ed20fde9666343e94f807d9c79fb55cccdd6f5afe2e"
+checksum = "sha256:952f61456f8943e6f946de3a20060a64420314dbb945cd228aeddbc7bae5ab00"
+previous_checksums = ["sha256:d8f9378fe28c0eef376f6ed20fde9666343e94f807d9c79fb55cccdd6f5afe2e"]
 size = 39111
 storage_path = "$datasets_dir/Helheim/HEL-1KM/HEL-1KM_BASINS-Zwally2012.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-1KM/2.3.0/HEL-1KM_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-1KM/2.5.0/HEL-1KM_BASINS-Zwally2012.nc"
 
 ["HEL-1KM_DOMAINS.nc"]
-checksum = "sha256:95abb401a0433b6adf0e22c14b3c09cf1a49565e3a34522b5a4789f3ba0f9fd2"
-size = 47740
+checksum = "sha256:076e76933524dc56812a9be50d6815724e32a8a3ad9c7e86adce020002faf6e1"
+previous_checksums = ["sha256:95abb401a0433b6adf0e22c14b3c09cf1a49565e3a34522b5a4789f3ba0f9fd2"]
+size = 47836
 storage_path = "$datasets_dir/Helheim/HEL-1KM/HEL-1KM_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-1KM/2.3.0/HEL-1KM_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-1KM/2.5.0/HEL-1KM_DOMAINS.nc"
 
 ["HEL-1KM_REGIONS.nc"]
-checksum = "sha256:4b2c3bc5e92a7fef910aba51144c35f9962e8d8b7310645206b2c401a422872e"
-size = 43702
+checksum = "sha256:1fb551fb28f3d959a4c9d6af7eae283ecff5c3893b3d1dac3afe6eaee10fb26e"
+previous_checksums = ["sha256:4b2c3bc5e92a7fef910aba51144c35f9962e8d8b7310645206b2c401a422872e"]
+size = 44790
 storage_path = "$datasets_dir/Helheim/HEL-1KM/HEL-1KM_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-1KM/2.3.0/HEL-1KM_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-1KM/2.5.0/HEL-1KM_REGIONS.nc"
 
 ["HEL-1KM_grid.nc"]
 checksum = "sha256:c5c91160786169fa69c27a596c491c9abdeae09ad999e30b239996d390134314"
 size = 540775
 storage_path = "$datasets_dir/Helheim/HEL-1KM/HEL-1KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-1KM/2.3.0/HEL-1KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-1KM/2.5.0/HEL-1KM_grid.nc"
 
 ["HEL-250M_BASINS-Mouginot2019.nc"]
-checksum = "sha256:6edd9985877b3e86ab39dccb3ceb2b865362a516208822ba4a89b78380e7b8a7"
+checksum = "sha256:4d9074e72593487b44c82cfdd3b6a4f3e8aa92876ef8bff38b75a3fe1a4bec86"
+previous_checksums = ["sha256:6edd9985877b3e86ab39dccb3ceb2b865362a516208822ba4a89b78380e7b8a7"]
 size = 162501
 storage_path = "$datasets_dir/Helheim/HEL-250M/HEL-250M_BASINS-Mouginot2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-250M/2.3.0/HEL-250M_BASINS-Mouginot2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-250M/2.5.0/HEL-250M_BASINS-Mouginot2019.nc"
 
 ["HEL-250M_BASINS-Schmidt2025.nc"]
-checksum = "sha256:8107f5edbed55f9fc1e8dd5fc44d3dc5d7c6515a3d267f13f22b240fb0c5c76d"
+checksum = "sha256:082068fa93fea807cc87b75c6ddc78227b33f2a524c3628571897d063c7e1506"
+previous_checksums = ["sha256:8107f5edbed55f9fc1e8dd5fc44d3dc5d7c6515a3d267f13f22b240fb0c5c76d"]
 size = 98698
 storage_path = "$datasets_dir/Helheim/HEL-250M/HEL-250M_BASINS-Schmidt2025.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-250M/2.3.0/HEL-250M_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-250M/2.5.0/HEL-250M_BASINS-Schmidt2025.nc"
 
 ["HEL-250M_BASINS-Zwally2012.nc"]
-checksum = "sha256:f1faeb792133993fab8fb126daf6def51d779ae8244b580dfed1b039cdd7baf4"
+checksum = "sha256:de52e33dc55c4587ab964ecb618fe93d586aa5e0b6bed5ca09b80f62ad194ac3"
+previous_checksums = ["sha256:f1faeb792133993fab8fb126daf6def51d779ae8244b580dfed1b039cdd7baf4"]
 size = 132663
 storage_path = "$datasets_dir/Helheim/HEL-250M/HEL-250M_BASINS-Zwally2012.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-250M/2.3.0/HEL-250M_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-250M/2.5.0/HEL-250M_BASINS-Zwally2012.nc"
 
 ["HEL-250M_DOMAINS.nc"]
-checksum = "sha256:8db63833d62d300cedc3947199010e277e764ab94576d3b88a42ff4e4421ab9c"
-size = 88284
+checksum = "sha256:69545497dc64f81e1f1567546c774d5be33bdd9549f305a756bdcdaecdff9327"
+previous_checksums = ["sha256:8db63833d62d300cedc3947199010e277e764ab94576d3b88a42ff4e4421ab9c"]
+size = 88380
 storage_path = "$datasets_dir/Helheim/HEL-250M/HEL-250M_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-250M/2.3.0/HEL-250M_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-250M/2.5.0/HEL-250M_DOMAINS.nc"
 
 ["HEL-250M_REGIONS.nc"]
-checksum = "sha256:680225a1ea0fc919f000d68014d01dc8f18ecd574aa2a6a1d411bd5d00cd2032"
-size = 164960
+checksum = "sha256:40a22a8786ec9ec816df14ce9af4869b60a429cd3af9bb01f3d8837605749eae"
+previous_checksums = ["sha256:680225a1ea0fc919f000d68014d01dc8f18ecd574aa2a6a1d411bd5d00cd2032"]
+size = 166048
 storage_path = "$datasets_dir/Helheim/HEL-250M/HEL-250M_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-250M/2.3.0/HEL-250M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-250M/2.5.0/HEL-250M_REGIONS.nc"
 
 ["HEL-250M_grid.nc"]
 checksum = "sha256:729d6be5006086cd5d24a00e7c6d1bdb3d8ae61c6fcd595b499d4b7677d91f2f"
 size = 4612602
 storage_path = "$datasets_dir/Helheim/HEL-250M/HEL-250M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-250M/2.3.0/HEL-250M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-250M/2.5.0/HEL-250M_grid.nc"
 
 ["HEL-500M_BASINS-Mouginot2019.nc"]
-checksum = "sha256:2ae221c75f76189f33b05af0e0df87c545509eb2d8d09a2452c17e3cea3db969"
+checksum = "sha256:b35ec50a10c3ef6ebf25fa2a3323202497915d3525b33af82aa7ad8dc748d97b"
+previous_checksums = ["sha256:2ae221c75f76189f33b05af0e0df87c545509eb2d8d09a2452c17e3cea3db969"]
 size = 75779
 storage_path = "$datasets_dir/Helheim/HEL-500M/HEL-500M_BASINS-Mouginot2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-500M/2.3.0/HEL-500M_BASINS-Mouginot2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-500M/2.5.0/HEL-500M_BASINS-Mouginot2019.nc"
 
 ["HEL-500M_BASINS-Schmidt2025.nc"]
-checksum = "sha256:3242ed5bbdc9457cfdbf99953555d1f63bf1e2161b78818f043801e406672fb8"
+checksum = "sha256:604c21c146c43895eaa314a1a06277929e083020013c3ae8b175606039193048"
+previous_checksums = ["sha256:3242ed5bbdc9457cfdbf99953555d1f63bf1e2161b78818f043801e406672fb8"]
 size = 50192
 storage_path = "$datasets_dir/Helheim/HEL-500M/HEL-500M_BASINS-Schmidt2025.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-500M/2.3.0/HEL-500M_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-500M/2.5.0/HEL-500M_BASINS-Schmidt2025.nc"
 
 ["HEL-500M_BASINS-Zwally2012.nc"]
-checksum = "sha256:cf2371a71fd23393579a742c13166d5cc8b377a1bd2fa0e107f4d1714a04cb34"
+checksum = "sha256:b982e075ab672f6b3248a1a495706b64fb43088b542cce624cc56c154193201a"
+previous_checksums = ["sha256:cf2371a71fd23393579a742c13166d5cc8b377a1bd2fa0e107f4d1714a04cb34"]
 size = 63150
 storage_path = "$datasets_dir/Helheim/HEL-500M/HEL-500M_BASINS-Zwally2012.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-500M/2.3.0/HEL-500M_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-500M/2.5.0/HEL-500M_BASINS-Zwally2012.nc"
 
 ["HEL-500M_DOMAINS.nc"]
-checksum = "sha256:3fbf2ee27bf751321fffd135f24a4d7db37838ac3b0e82894ee0150f116bcfc8"
-size = 59056
+checksum = "sha256:f7b49a1e5ad4da503306a3a98d8d909d2ce6ad601a7c5064bdfc3eb4d576c713"
+previous_checksums = ["sha256:3fbf2ee27bf751321fffd135f24a4d7db37838ac3b0e82894ee0150f116bcfc8"]
+size = 59152
 storage_path = "$datasets_dir/Helheim/HEL-500M/HEL-500M_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-500M/2.3.0/HEL-500M_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-500M/2.5.0/HEL-500M_DOMAINS.nc"
 
 ["HEL-500M_REGIONS.nc"]
-checksum = "sha256:fc5aeb9de1076be87345af44328639a93ef854c91b35a11e69c2dd89fa9d6d57"
-size = 66922
+checksum = "sha256:28b93eff6da44e3ddceb0428df2b6c81675a6fcfb38e974edf1917b5b9d642ee"
+previous_checksums = ["sha256:fc5aeb9de1076be87345af44328639a93ef854c91b35a11e69c2dd89fa9d6d57"]
+size = 68010
 storage_path = "$datasets_dir/Helheim/HEL-500M/HEL-500M_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-500M/2.3.0/HEL-500M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-500M/2.5.0/HEL-500M_REGIONS.nc"
 
 ["HEL-500M_grid.nc"]
 checksum = "sha256:c6e125170082a9e743b2cd1542ffe3282f19062cbec8ccb6f0757dd6fc898ec4"
 size = 1699963
 storage_path = "$datasets_dir/Helheim/HEL-500M/HEL-500M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-500M/2.3.0/HEL-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-500M/2.5.0/HEL-500M_grid.nc"
 
 ["grid_HEL-1KM.txt"]
 checksum = "sha256:9dc58cd00a199e57a061f9ceffa116b7dc7d6c1198c9d055932ac9d2b201a678"
 size = 462
 storage_path = "$datasets_dir/Helheim/HEL-1KM/grid_HEL-1KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-1KM/2.3.0/grid_HEL-1KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-1KM/2.5.0/grid_HEL-1KM.txt"
 
 ["grid_HEL-250M.txt"]
 checksum = "sha256:0ebf5f9b04128645f19cba3cc5b34271ef32951354689bca729bde207c4a2313"
 size = 467
 storage_path = "$datasets_dir/Helheim/HEL-250M/grid_HEL-250M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-250M/2.3.0/grid_HEL-250M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-250M/2.5.0/grid_HEL-250M.txt"
 
 ["grid_HEL-500M.txt"]
 checksum = "sha256:55f16542254cf301c23c0f562da082761c412f7296c250e9b175285771515b79"
 size = 463
 storage_path = "$datasets_dir/Helheim/HEL-500M/grid_HEL-500M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-500M/2.3.0/grid_HEL-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Regions_HEL-500M/2.5.0/grid_HEL-500M.txt"

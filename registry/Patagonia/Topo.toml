@@ -1,64 +1,64 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-14"
-git_tag = "topo-v2.3.0"
+date = "2026-10-15"
+git_tag = "topo-v2.5.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Patagonia_Topo"
-version = "2.3.0"
+version = "2.5.0"
 
 ["PAT-250M_TOPO-GLO90-GEBCO2026.nc"]
-checksum = "sha256:b82e83bd8032a94ea34b6e53d3ab11e0f6661bcffb4c261f2bc37ead2243e825"
-previous_checksums = ["sha256:38a8812bdc6c672ea7b8a37223cfdbce3f906a45f54f1873718b0a4abed589db"]
-size = 155999241
+checksum = "sha256:7167d9d77196478b47d2349c5dae37a9768d4d94634581eeac3410b0c04682d4"
+previous_checksums = ["sha256:38a8812bdc6c672ea7b8a37223cfdbce3f906a45f54f1873718b0a4abed589db", "sha256:b82e83bd8032a94ea34b6e53d3ab11e0f6661bcffb4c261f2bc37ead2243e825"]
+size = 156609019
 storage_path = "$datasets_dir/Patagonia/PAT-250M/PAT-250M_TOPO-GLO90-GEBCO2026.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Topo_PAT-250M/2.3.0/PAT-250M_TOPO-GLO90-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Topo_PAT-250M/2.5.0/PAT-250M_TOPO-GLO90-GEBCO2026.nc"
 
 ["PAT-250M_grid.nc"]
 checksum = "sha256:80af98d3aa692e30c8eed5986a5c0db295b62bd46ed0a8f844d2b9bfdc55c6d9"
 size = 36181275
 storage_path = "$datasets_dir/Patagonia/PAT-250M/PAT-250M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Topo_PAT-250M/2.3.0/PAT-250M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Topo_PAT-250M/2.5.0/PAT-250M_grid.nc"
 
 ["PAT-2KM_TOPO-GLO90-GEBCO2026.nc"]
-checksum = "sha256:794cea8693de28ca60ded7e57a50c96f78eea37b31bf35609d5576b46f9805b0"
-previous_checksums = ["sha256:fb5a277896ff6311b8fe486d363a245b6e327c90c7061cbcf221df19558761ae"]
-size = 3948601
+checksum = "sha256:5cf75108084f6ba5978f911010453614ca07ea622fb1c7fef09f3f47df74c5f4"
+previous_checksums = ["sha256:fb5a277896ff6311b8fe486d363a245b6e327c90c7061cbcf221df19558761ae", "sha256:794cea8693de28ca60ded7e57a50c96f78eea37b31bf35609d5576b46f9805b0"]
+size = 3951473
 storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_TOPO-GLO90-GEBCO2026.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Topo_PAT-2KM/2.3.0/PAT-2KM_TOPO-GLO90-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Topo_PAT-2KM/2.5.0/PAT-2KM_TOPO-GLO90-GEBCO2026.nc"
 
 ["PAT-2KM_grid.nc"]
 checksum = "sha256:3b66736031d52fec9da8230693887255b90f7b276619eba31266bf950f5eb9e7"
 size = 1440853
 storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Topo_PAT-2KM/2.3.0/PAT-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Topo_PAT-2KM/2.5.0/PAT-2KM_grid.nc"
 
 ["PAT-500M_TOPO-GLO90-GEBCO2026.nc"]
-checksum = "sha256:fb3c5ca2c42802c52dba9bdc8a00f056387598bcaa01a775a4784b538a4f7fd6"
-previous_checksums = ["sha256:7c78d681f510dbd8986bc0fe2644cb66e717d3d4c666cebdefa59c26099cdc3b"]
-size = 53140490
+checksum = "sha256:84448a8378dcbeaf7644aa73eb3fa24a7248747747b0bccd57b7a662debd9063"
+previous_checksums = ["sha256:7c78d681f510dbd8986bc0fe2644cb66e717d3d4c666cebdefa59c26099cdc3b", "sha256:fb3c5ca2c42802c52dba9bdc8a00f056387598bcaa01a775a4784b538a4f7fd6"]
+size = 53233701
 storage_path = "$datasets_dir/Patagonia/PAT-500M/PAT-500M_TOPO-GLO90-GEBCO2026.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Topo_PAT-500M/2.3.0/PAT-500M_TOPO-GLO90-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Topo_PAT-500M/2.5.0/PAT-500M_TOPO-GLO90-GEBCO2026.nc"
 
 ["PAT-500M_grid.nc"]
 checksum = "sha256:a92f99c506891258edbbd082a3a8df8c49ccfba7ba45a29f2f35a627b6d7a7ac"
 size = 13985267
 storage_path = "$datasets_dir/Patagonia/PAT-500M/PAT-500M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Topo_PAT-500M/2.3.0/PAT-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Topo_PAT-500M/2.5.0/PAT-500M_grid.nc"
 
 ["grid_PAT-250M.txt"]
 checksum = "sha256:0ba7b6207968bb0efc50fdb0dbd5869d3ce8b3fd8578ea3e5cc7f3071d0e0b2f"
 size = 352
 storage_path = "$datasets_dir/Patagonia/PAT-250M/grid_PAT-250M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Topo_PAT-250M/2.3.0/grid_PAT-250M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Topo_PAT-250M/2.5.0/grid_PAT-250M.txt"
 
 ["grid_PAT-2KM.txt"]
 checksum = "sha256:f30d2390e6c54f2628d81d4a3439a6b55b95c9e997754fcaa01ac160f60591bd"
 size = 347
 storage_path = "$datasets_dir/Patagonia/PAT-2KM/grid_PAT-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Topo_PAT-2KM/2.3.0/grid_PAT-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Topo_PAT-2KM/2.5.0/grid_PAT-2KM.txt"
 
 ["grid_PAT-500M.txt"]
 checksum = "sha256:a50298f18a79d068e1b0cd798ba8753adc208e7ac09a8f9ecfa0b76c3d067ded"
 size = 349
 storage_path = "$datasets_dir/Patagonia/PAT-500M/grid_PAT-500M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Topo_PAT-500M/2.3.0/grid_PAT-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Topo_PAT-500M/2.5.0/grid_PAT-500M.txt"
