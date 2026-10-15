@@ -62,8 +62,8 @@ $FESMDATA_PRODUCTS/
 
 Domains are named after their folder (Antarctica, Greenland, Thwaites, Patagonia, ...),
 grids after the key of their domain and their resolution (ANT-8KM, GRL-500M, DDG-25M);
-a grid name thus also gives its domain. See [Domains](domains.qmd) for all domains and
-grids, and [Products](products.qmd) for what is released on each.
+a grid name thus also gives its domain. See [Domains](domains.qmd) (or
+`julia fesmdata.jl domains`) for all domains and grids, and [Products](products.qmd) for what is released on each.
 
 ## Find what is there
 

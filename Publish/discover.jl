@@ -1,8 +1,9 @@
-# Discovery of the products, for `fesmdata.jl search`, `cite` and `path`: the products of each dataset,
-# from their definitions (<Dataset>/remap.toml, <Dataset>/records.toml,
-# ../Topo/products.toml, ../Regions/basins.toml) and the registry (where they are
-# released, and the products that only the registry has), with their sources and the
-# READMEs of these. Standard library only.
+# Discovery of the products and domains, for `fesmdata.jl search`, `cite`, `path` and
+# `domains`: the products of each dataset, from their definitions (<Dataset>/remap.toml,
+# <Dataset>/records.toml, ../Topo/products.toml, ../Regions/basins.toml) and the registry
+# (where they are released, and the products that only the registry has), with their
+# sources and the READMEs of these; the domains, crops and nests of
+# ../shared/domains.toml. Standard library only.
 
 using Unicode
 
@@ -241,7 +242,7 @@ function cite(args; sandbox::Bool=false)
 end
 
 """
-    path(args; dir=nothing, sandbox=false)
+    product_paths(args; dir=nothing, sandbox=false)
 
 `fesmdata.jl path <Dataset> [<Domain> | <GRID> ...] [<product> ...]`: the local paths
 of the data files (not the grid files and text forms) of the products of a dataset (all,
@@ -250,7 +251,7 @@ cropping on nests and crops, in \$FESMDATA_PRODUCTS or `dir`, one per line, for 
 Only the files present are printed; the missing ones are counted on stderr, with the
 command to fetch them.
 """
-function path(args; dir=nothing, sandbox::Bool=false)
+function product_paths(args; dir=nothing, sandbox::Bool=false)
     cat = RegistryCatalog(; sandbox=sandbox)
     names = filter(a -> !is_registry_name(cat, a), args)
     selection = filter(a -> is_registry_name(cat, a), args)
@@ -269,4 +270,131 @@ function path(args; dir=nothing, sandbox::Bool=false)
     foreach(println, present)
     n = length(paths) - length(present)
     n > 0 && println(stderr, "$n files not in $root: julia fesmdata.jl fetch $(join(selection, " "))")
+end
+
+# ---------------------------------------------------------------------------
+# Domains
+# ---------------------------------------------------------------------------
+
+"""
+    toml_tables(path) -> Vector{String}
+
+Names of the tables of a TOML file, in the order of the file (e.g. ANT, ANT.crops.ASE),
+which TOML.parsefile does not keep.
+"""
+toml_tables(path::AbstractString) =
+    [String(m[1]) for m in (match(r"^\s*\[([^\[\]]+)\]\s*(#.*)?$", l) for l in eachline(path)) if m !== nothing]
+
+"""
+    toml_keys(path) -> Dict{String,Vector{String}}
+
+Keys of each table of a TOML file, in the order of the file (e.g. the products of a
+domain in ../Topo/products.toml).
+"""
+function toml_keys(path::AbstractString)
+    keys_of = Dict{String,Vector{String}}()
+    table = ""
+    for l in eachline(path)
+        if (m = match(r"^\s*\[([^\[\]]+)\]", l)) !== nothing
+            table = m[1]
+        elseif (m = match(r"^\s*\"?([^\"=#\s]+)\"?\s*=", l)) !== nothing
+            push!(get!(keys_of, table, String[]), m[1])
+        end
+    end
+    return keys_of
+end
+
+"""
+    domain_rows() -> Vector{NamedTuple}
+
+The domains, crops and nests of ../shared/domains.toml, in the order of the file: their
+output folder, key (the prefix of their grid names), kind (`"domain"`, `"crop"`,
+`"nest"`), parent (folder, empty for a domain), resolutions (km, or degrees for a
+lon-lat domain) and Gaussian grids, projection (PROJ string, or `"lonlat"`), whether
+they are active, and their Topo products, default and variants (../Topo/products.toml).
+"""
+function domain_rows()
+    path = joinpath(REPO_DIR, "shared", "domains.toml")
+    tables = TOML.parsefile(path)
+    topo = TOML.parsefile(joinpath(REPO_DIR, "Topo", "products.toml"))
+    topo_keys = toml_keys(joinpath(REPO_DIR, "Topo", "products.toml"))
+    rows = NamedTuple[]
+    info = Dict{String,NamedTuple}()
+    for name in toml_tables(path)
+        parts = split(name, '.')
+        d = foldl((t, k) -> t[k], parts; init=tables)
+        key = String(parts[end])
+        parent = length(parts) == 1 ? nothing : info[join(parts[1:end-2], '.')]
+        kind = parent === nothing ? "domain" : parts[end-1] == "crops" ? "crop" : "nest"
+        lonlat = get(d, "type", parent === nothing ? "" : (parent.proj == "lonlat" ? "lonlat" : "")) == "lonlat"
+        resolutions = Float64.(get(d, "resolutions", parent === nothing ? Float64[] : parent.resolutions))
+        proj = lonlat ? "lonlat" : get(d, "proj", parent === nothing ? "" : parent.proj)
+        # Nests are active as their parent unless set; crops as their parent
+        active = kind == "crop" ? parent.active : get(d, "active", parent === nothing ? true : parent.active)
+        products = haskey(topo, key) ? get(topo_keys, "$key.products", String[]) : String[]
+        variants = haskey(topo, key) ? get(topo_keys, "$key.variants", String[]) : String[]
+        row = (folder=d["folder"], key=key, kind=kind, parent=parent === nothing ? "" : parent.folder,
+               resolutions=resolutions, gaussian=sort(collect(keys(get(d, "gaussian", Dict())))), proj=proj,
+               active=active, products=products, variants=variants)
+        info[name] = row
+        push!(rows, row)
+    end
+    return rows
+end
+
+"A resolution: 250 m, 2 km (from km), or 0.5° (from degrees, `lonlat`)."
+function resolution_text(r::Real; lonlat::Bool=false)
+    num(x) = isinteger(x) ? string(Int(x)) : string(x)
+    lonlat && return "$(num(r))°"
+    return r < 1 ? "$(num(round(r * 1000; digits=3))) m" : "$(num(r)) km"
+end
+
+"Resolutions of a domain, from fine to coarse, with its Gaussian grids: 250, 500 m, 2 km."
+function resolutions_text(row)
+    texts = [resolution_text(r; lonlat=row.proj == "lonlat") for r in sort(row.resolutions)]
+    # The unit once per run of resolutions with the same unit
+    parts = [i < length(texts) && split(t)[end] == split(texts[i+1])[end] && occursin(' ', t) ? split(t)[1] : t
+             for (i, t) in enumerate(texts)]
+    s = join(parts, ", ")
+    isempty(row.gaussian) || (s *= "; Gaussian " * join(row.gaussian, ", "))
+    return s
+end
+
+"Short name of the projection of a domain, from its PROJ string."
+function projection_text(proj::AbstractString)
+    proj == "lonlat" && return "lon-lat"
+    p = Dict(String(m[1]) => String(m[2]) for m in eachmatch(r"\+(\w+)=(\S+)", proj))
+    kind = get(p, "proj", "")
+    if kind == "stere"
+        return "polar stereographic, " * (parse(Float64, p["lat_0"]) < 0 ? "south" : "north")
+    elseif kind == "tmerc"
+        lon0 = parse(Float64, p["lon_0"])
+        if get(p, "k", "") == "0.9996" && get(p, "x_0", "") == "500000"
+            zone = round(Int, (lon0 + 183) / 6)
+            return "UTM $zone" * (get(p, "y_0", "0") == "0" ? "N" : "S")
+        end
+        return "transverse Mercator, $(round(Int, abs(lon0)))°$(lon0 < 0 ? "W" : "E")"
+    elseif kind == "aea"
+        return "Albers equal-area"
+    end
+    return kind
+end
+
+"""
+    list_domains()
+
+`fesmdata.jl domains`: the domains, crops and nests of ../shared/domains.toml, in the
+order of the file: their folder (the name of the domain in the registry), key (the
+prefix of their grid names), kind, grids, projection, and whether they are active.
+"""
+function list_domains()
+    rows = domain_rows()
+    kind(r) = r.kind == "domain" ? "domain" : "$(r.kind) of $(r.parent)"
+    cols = [("Folder", r -> r.folder), ("Key", r -> r.key), ("Kind", kind), ("Grids", resolutions_text),
+            ("Projection", r -> projection_text(r.proj)), ("Active", r -> r.active ? "yes" : "no")]
+    widths = [maximum(length(f(r)) for r in rows; init=length(h)) + 2 for (h, f) in cols]
+    println(join(rpad(h, w) for ((h, _), w) in zip(cols, widths)) |> rstrip)
+    for r in rows
+        println(join(rpad(f(r), w) for ((_, f), w) in zip(cols, widths)) |> rstrip)
+    end
 end

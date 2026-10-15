@@ -30,6 +30,8 @@ Find and download:
                                                the files of the products present in
                                                \$FESMDATA_PRODUCTS, one per line (e.g.
                                                ncview \$(julia fesmdata.jl path ...))
+  domains                                      the domains, crops and nests: folder, grid
+                                               prefix, kind, grids, projection, active
   fetch <Dataset> <Domain> | <GRID> ...        download into \$FESMDATA_PRODUCTS/<Domain>/<GRID>/
                                                and verify; files of earlier releases are
                                                updated (--overwrite: also replace files
@@ -160,7 +162,10 @@ function main(argv)
         call(:cite, rest; sandbox=sandbox)
     elseif command == "path"
         include(joinpath(PUBLISH_DIR, "discover.jl"))
-        call(:path, rest; dir=get(valued, "dir", nothing), sandbox=sandbox)
+        call(:product_paths, rest; dir=get(valued, "dir", nothing), sandbox=sandbox)
+    elseif command == "domains"
+        include(joinpath(PUBLISH_DIR, "discover.jl"))
+        call(:list_domains)
     elseif command == "fetch"
         include(joinpath(PUBLISH_DIR, "catalog.jl"))
         dir = get(valued, "dir", nothing)
