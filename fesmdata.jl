@@ -20,6 +20,10 @@ Find and download:
                                                \$FESMDATA_PRODUCTS
   list [<Dataset>] <GRID> ...                  the datasets on grids in detail (a grid
                                                implies its domain, e.g. ANT-32KM)
+  search <term> ...                            the products whose dataset, name, sources
+                                               (authors, references), variables or domains
+                                               contain all terms (ignoring case), with
+                                               their sources and domains
   fetch <Dataset> <Domain> | <GRID> ...        download into \$FESMDATA_PRODUCTS/<Domain>/<GRID>/
                                                and verify; files of earlier releases are
                                                updated (--overwrite: also replace files
@@ -141,6 +145,10 @@ function main(argv)
     elseif command == "list"
         include(joinpath(PUBLISH_DIR, "catalog.jl"))
         call(:list, rest; dir=get(valued, "dir", nothing), sandbox=sandbox)
+    elseif command == "search"
+        isempty(rest) && usage("search: give a term")
+        include(joinpath(PUBLISH_DIR, "discover.jl"))
+        call(:search, rest; sandbox=sandbox)
     elseif command == "fetch"
         include(joinpath(PUBLISH_DIR, "catalog.jl"))
         dir = get(valued, "dir", nothing)

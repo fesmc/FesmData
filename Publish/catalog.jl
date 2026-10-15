@@ -38,6 +38,9 @@ end
 
 total_size(entries) = sum(e -> get(e, "size", 0), entries; init=0)
 
+"Datasets of datasets.toml (without the tables of settings, `_*`)."
+read_site_datasets() = filter(p -> !startswith(first(p), "_"), read_datasets())
+
 "DOI of a record, if its release is archived on Zenodo (else empty)."
 function record_doi(tables::AbstractDict)
     z = get(tables, "_ZENODO", nothing)
@@ -368,6 +371,76 @@ end
 # Commands
 # ---------------------------------------------------------------------------
 
+"Edit distance (Levenshtein) between two strings, ignoring case."
+function edit_distance(a::AbstractString, b::AbstractString)
+    a, b = collect(lowercase(a)), collect(lowercase(b))
+    d = collect(0:length(b))
+    for i in eachindex(a)
+        prev, d[1] = d[1], i
+        for j in eachindex(b)
+            prev, d[j+1] = d[j+1], min(d[j+1] + 1, d[j] + 1, prev + (a[i] != b[j]))
+        end
+    end
+    return d[end]
+end
+
+"The names of `names` close to `name` (edit distance at most a third of its length), closest first, at most `n`."
+function close_names(name::AbstractString, names; n::Integer=5)
+    tol = max(1, length(name) ÷ 3)
+    found = sort([(edit_distance(name, x), x) for x in unique(names)])
+    return first(last.(filter(p -> first(p) <= tol, found)), n)
+end
+
+"""
+    RegistryCatalog
+
+The records of the registry and the names that select them on the command line:
+`records` ((domain, dataset) pairs), their files (`files_of`, see `read_record`) and
+grids (`grids_of`), the records by cropping (`crops`) and their grids
+(`crop_grids_of`), the names of the `datasets` and `domains` (also of the nests and
+crops with records by cropping), and the domain of each grid (`grid_domain`; grid
+names are unique).
+"""
+struct RegistryCatalog
+    records::Vector{Tuple{String,String}}
+    files_of::Dict{Tuple{String,String},Dict{String,Any}}
+    grids_of::Dict{Tuple{String,String},Vector{String}}
+    crops::Vector{CropRecord}
+    crop_grids_of::Dict{CropRecord,Vector{String}}
+    datasets::Set{String}
+    domains::Set{String}
+    grid_domain::Dict{String,String}
+end
+
+function RegistryCatalog(; sandbox::Bool=false)
+    records = list_records(; sandbox=sandbox)
+    files_of = Dict(r => read_record(r...; sandbox=sandbox)[2] for r in records)
+    crops = crop_records(files_of)
+    grids_of = Dict(r => unique(entry_grid(e) for e in values(files_of[r])) for r in records)
+    crop_grids_of = Dict(c => crop_grids(c, files_of[(c.source, c.dataset)]) for c in crops)
+    grid_domain = Dict{String,String}()
+    foreach(((r, gs),) -> foreach(g -> grid_domain[g] = first(r), gs), grids_of)
+    foreach(((c, gs),) -> foreach(g -> grid_domain[g] = c.folder, gs), crop_grids_of)
+    return RegistryCatalog(records, files_of, grids_of, crops, crop_grids_of, Set(last.(records)),
+                           union(Set(first.(records)), (c.folder for c in crops)), grid_domain)
+end
+
+"Whether `name` names a dataset, domain or grid of the registry."
+is_registry_name(cat::RegistryCatalog, name::AbstractString) =
+    name in cat.datasets || name in cat.domains || haskey(cat.grid_domain, name)
+
+"Error for arguments that name no dataset, domain or grid, with the close names and a hint to search the products."
+function unknown_names_error(cat::RegistryCatalog, unknown)
+    names = [collect(cat.datasets); collect(cat.domains); collect(keys(cat.grid_domain))]
+    lines = map(unknown) do u
+        close = close_names(u, names)
+        "unknown $u" * (isempty(close) ? "" : ", did you mean $(join(close, ", "))?")
+    end
+    error(join(lines, "\n"), "\nDatasets: $(join(sort(collect(cat.datasets)), ", "))\n",
+          "Domains: $(join(sort(collect(cat.domains)), ", "))\nGrids: e.g. ANT-32KM\n",
+          "Search the products (names, sources, references, variables): julia fesmdata.jl search $(join(unknown, " "))")
+end
+
 """
     select_records(args; sandbox=false) -> (selected, cropped, detail)
 
@@ -377,23 +450,15 @@ domain, and grids, which imply their domain (grid names are unique). Returns the
 of each matching record by cropping (`CropRecord`), with the named grids that each
 has, and whether a single record or grids were named (to show them in detail).
 """
-function select_records(args; sandbox::Bool=false)
-    records = list_records(; sandbox=sandbox)
-    files_of = Dict(r => read_record(r...; sandbox=sandbox)[2] for r in records)
-    crops = crop_records(files_of)
-    grids_of = Dict(r => unique(entry_grid(e) for e in values(files_of[r])) for r in records)
-    crop_grids_of = Dict(c => crop_grids(c, files_of[(c.source, c.dataset)]) for c in crops)
-    datasets = Set(last.(records))
-    domains = union(Set(first.(records)), (c.folder for c in crops))
-    grid_domain = Dict{String,String}()
-    foreach(((r, gs),) -> foreach(g -> grid_domain[g] = first(r), gs), grids_of)
-    foreach(((c, gs),) -> foreach(g -> grid_domain[g] = c.folder, gs), crop_grids_of)
+select_records(args; sandbox::Bool=false) = select_records(RegistryCatalog(; sandbox=sandbox), args)
+
+function select_records(cat::RegistryCatalog, args)
+    (; records, grids_of, crops, crop_grids_of, datasets, domains, grid_domain) = cat
+    unknown = filter(a -> !is_registry_name(cat, a), args)
+    isempty(unknown) || unknown_names_error(cat, unknown)
     domain = filter(in(domains), args)
     dataset = filter(in(datasets), args)
     grids = filter(a -> !(a in domains) && !(a in datasets), args)
-    unknown = filter(g -> !haskey(grid_domain, g), grids)
-    isempty(unknown) || error("unknown $(join(unknown, ", ")): not a dataset ($(join(sort(collect(datasets)), ", "))), " *
-                              "domain ($(join(sort(collect(domains)), ", "))) or grid (e.g. ANT-32KM)")
     (length(domain) > 1 || length(dataset) > 1) && error("give at most one domain and one dataset")
     isempty(domain) || all(g -> grid_domain[g] == only(domain), grids) ||
         error("grids $(join(grids, ", ")) are not all on $(only(domain))")

@@ -48,9 +48,6 @@ end
 # Datasets
 # ---------------------------------------------------------------------------
 
-"Datasets of datasets.toml (without the tables of settings, `_*`)."
-read_site_datasets() = filter(p -> !startswith(first(p), "_"), TOML.parsefile(joinpath(@__DIR__, "datasets.toml")))
-
 """
     site_topics(datasets) -> Vector{Pair{String,Vector{String}}}
 

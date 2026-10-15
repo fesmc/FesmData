@@ -78,6 +78,19 @@ julia fesmdata.jl list ANT-8KM             # everything on a grid
 The arguments can be given in any order. `list` also shows the products that nests and
 crops get by cropping (see [Nests and crops](#nests-and-crops)).
 
+To find products by what they are rather than by dataset, `search` looks for terms in
+the names of the products and their files, their sources (with the titles, authors and
+references of their READMEs), their variables (where the definitions list them) and the
+domains they are released on, ignoring case and accents; a product must contain all
+terms:
+
+```bash
+julia fesmdata.jl search Montoya           # the products from Montoya and Levermann (2008)
+julia fesmdata.jl search ghf Antarctica    # heat flow products released on Antarctica
+```
+
+Products not released yet are listed too, as `(not released)`.
+
 ## Download what you need
 
 ```bash
