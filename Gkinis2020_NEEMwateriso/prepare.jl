@@ -21,11 +21,10 @@ using NCDatasets
 
 include(joinpath(@__DIR__, "..", "shared", "provenance.jl"))
 include(joinpath(@__DIR__, "..", "shared", "manifest.jl"))
-
-const B2K_TO_BP = 50.0          # years before 2000 CE -> years before 1950 CE
+include(joinpath(@__DIR__, "..", "shared", "records_prepare.jl"))
 
 # NEEM, from the event of the PANGAEA dataset
-const SITE = (name="NEEM", lat=77.45, lon=-51.06, z_srf=2545.0)
+const SITE = Site("NEEM", 77.45, -51.06; z_srf=2545.0)
 
 # Columns of the table, in order
 const COLUMNS = [:depth, :age_gicc05, :age_gicc05_modelext, :age_aicc2012, :mce,
@@ -51,48 +50,26 @@ idx = keep[sortperm(Float64.(age[keep]))]
 nt = length(idx)
 
 years_ago(a) = ismissing(a) ? NaN : 1000.0 * a - B2K_TO_BP
-f32(v) = Float32[ismissing(x) ? NaN32 : Float32(x) for x in v]
-series(v) = reshape(f32(v[idx]), nt, 1)
 
-path = joinpath(prepared_dir("Gkinis2020_NEEMwateriso"), "Gkinis2020_NEEM.nc")
-mkpath(dirname(path))
-rm(path; force=true)
-NCDataset(path, "c") do ds
-    defDim(ds, "station", 1)
-    defDim(ds, "sample", nt)
-    defVar(ds, "site_name", [SITE.name], ("station",); attrib=["long_name" => "ice core site", "cf_role" => "timeseries_id"])
-    defVar(ds, "lat", [SITE.lat], ("station",); attrib=["units" => "degrees_north", "standard_name" => "latitude"])
-    defVar(ds, "lon", [SITE.lon], ("station",); attrib=["units" => "degrees_east", "standard_name" => "longitude"])
-    defVar(ds, "z_srf", [SITE.z_srf], ("station",); attrib=["units" => "m", "long_name" => "surface elevation of the site"])
-    defVar(ds, "time", years_ago.(age[idx]), ("sample",); attrib=[
-        "units" => "years ago", "long_name" => "time (years before 1950 CE)",
-        "comment" => "ice age at the bottom of the sample, GICC05 (counted) above 1955.90 m and GICC05_modelext " *
-                     "below, converted from years b2k (before 2000 CE) by subtracting 50"])
-    defVar(ds, "time_aicc2012", years_ago.(age_aicc[idx]), ("sample",); fillvalue=NaN, attrib=[
-        "units" => "years ago", "long_name" => "time on GICC05 (above 1955.90 m) and AICC2012 (below), years before 1950 CE"])
-    defVar(ds, "mce", f32(df.mce[idx]), ("sample",); fillvalue=NaN32, attrib=[
-        "units" => "yr", "long_name" => "maximum counting error of GICC05 (counted part only)"])
-    attrib_series(units, long_name) = ["units" => units, "long_name" => long_name, "coordinates" => "time lat lon"]
-    defVar(ds, "depth", series(df.depth), ("sample", "station"); deflatelevel=1,
-           attrib=["units" => "m", "positive" => "down", "long_name" => "depth in the core of the bottom of the 0.05 m sample"])
-    for (name, long_name) in (("d18O", "delta-18O of the ice (18O/16O), per mil VSMOW"),
-                              ("dD", "delta-D of the ice (2H/1H), per mil VSMOW"),
-                              ("d18O_sd", "precision (1 sigma) of d18O, per mil"),
-                              ("dD_sd", "precision (1 sigma) of dD, per mil"),
-                              ("d18O_offset", "offset of the d18O accuracy check, per mil VSMOW"),
-                              ("dD_offset", "offset of the dD accuracy check, per mil VSMOW"))
-        defVar(ds, name, series(df[!, Symbol(name)]), ("sample", "station"); fillvalue=NaN32, deflatelevel=1,
-               attrib=attrib_series("1e-3", long_name))
-    end
-    ds.attrib["title"] = "NEEM ice core high-resolution (0.05 m) water isotopes, 8-129 ka b2k (Gkinis et al., 2020)"
-    ds.attrib["references"] = "Gkinis, V. et al.: NEEM ice core High Resolution (0.05m) Water Isotope Ratios " *
-                              "(18O/16O, 2H/1H) covering 8-129 ky b2k, PANGAEA, 2020, doi:10.1594/PANGAEA.925552; " *
-                              "Gkinis, V. et al.: A 120,000-year long climate record from a NW-Greenland deep ice " *
-                              "core at ultra-high resolution, Sci. Data, 8, 141, 2021, doi:10.1038/s41597-021-00916-9"
-    ds.attrib["doi"] = "10.1594/PANGAEA.925552"
-    ds.attrib["license"] = "CC BY 4.0 (PANGAEA)"
-    ds.attrib["featureType"] = "timeSeries"
-    ds.attrib["Conventions"] = "CF-1.11"
-    foreach(((k, v),) -> ds.attrib[k] = v, provenance_attrib("icecores"))
-end
-println("Wrote $path")
+write_series(joinpath(prepared_dir("Gkinis2020_NEEMwateriso"), "Gkinis2020_NEEM.nc"); sites=[SITE], tag="icecores",
+    axis="sample", time=years_ago.(age[idx]),
+    time_comment="ice age at the bottom of the sample, GICC05 (counted) above 1955.90 m and GICC05_modelext " *
+                 "below, converted from years b2k (before 2000 CE) by subtracting 50",
+    axis_vars=[Var("time_aicc2012", years_ago.(age_aicc[idx]), "years ago",
+                   "time on GICC05 (above 1955.90 m) and AICC2012 (below), years before 1950 CE"; T=Float64),
+               Var("mce", df.mce[idx], "yr", "maximum counting error of GICC05 (counted part only)")],
+    vars=[Var("depth", df.depth[idx], "m", "depth in the core of the bottom of the 0.05 m sample";
+              attrib=["positive" => "down"]);
+          [Var(name, df[idx, Symbol(name)], "1e-3", long_name) for (name, long_name) in (
+              ("d18O", "delta-18O of the ice (18O/16O), per mil VSMOW"),
+              ("dD", "delta-D of the ice (2H/1H), per mil VSMOW"),
+              ("d18O_sd", "precision (1 sigma) of d18O, per mil"),
+              ("dD_sd", "precision (1 sigma) of dD, per mil"),
+              ("d18O_offset", "offset of the d18O accuracy check, per mil VSMOW"),
+              ("dD_offset", "offset of the dD accuracy check, per mil VSMOW"))]],
+    title="NEEM ice core high-resolution (0.05 m) water isotopes, 8-129 ka b2k (Gkinis et al., 2020)",
+    references="Gkinis, V. et al.: NEEM ice core High Resolution (0.05m) Water Isotope Ratios " *
+               "(18O/16O, 2H/1H) covering 8-129 ky b2k, PANGAEA, 2020, doi:10.1594/PANGAEA.925552; " *
+               "Gkinis, V. et al.: A 120,000-year long climate record from a NW-Greenland deep ice " *
+               "core at ultra-high resolution, Sci. Data, 8, 141, 2021, doi:10.1038/s41597-021-00916-9",
+    doi="10.1594/PANGAEA.925552", license="CC BY 4.0 (PANGAEA)")

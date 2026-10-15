@@ -240,7 +240,10 @@ axes (e.g. ice cores, each on its own time axis); part names have letters, digit
 
 The prepared files follow the [Records format](https://fesmc.github.io/FesmData/records.html),
 with the provenance attributes (`provenance_attrib(<tag>)` of
-`../shared/provenance.jl`). Then
+`../shared/provenance.jl`). `../shared/records_prepare.jl` has what most sources need:
+`read_noaa` and `read_pangaea` (the text tables of NOAA NCEI and PANGAEA), `write_series`
+(time series at sites, with the attributes) and `aicc2023_age` (AICC2023 ages of the
+Antarctic cores and NGRIP from their depths). Then
 
 ```bash
 julia fesmdata.jl record IceCores                 # all products

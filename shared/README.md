@@ -50,6 +50,7 @@ kinds of datasets and how to add one.
 | `shared/precision.jl` | Default precision of the float fields by kind, and their bit rounding (see [Precision and file sizes](https://fesmc.github.io/FesmData/precision.html)) |
 | `shared/provenance.jl` | Repository paths, storage folders, provenance attributes |
 | `shared/manifest.jl` | The original datasets (`../datamanifest.toml`) |
+| `shared/records_prepare.jl` | For the prepare.jl of records: readers of NOAA and PANGAEA tables, `write_series` (time series at sites), AICC2023 ages |
 | `shared/ringgrid.jl` | Gridding of equal-area points |
 | `shared/machines/` | The environment of each machine (see [Machines and storage](https://fesmc.github.io/FesmData/machines.html)) |
 | `maps/`, `grid/` | Grid descriptions (cdo) of the v1 grids, and the tools that made them |
