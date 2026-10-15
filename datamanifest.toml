@@ -1448,6 +1448,71 @@ doi = "10.1594/PANGAEA.990385"
 storage_path = "$datasets_dir/aicc2023/AICC2023_vostok.tab"
 uri = "https://doi.pangaea.de/10.1594/PANGAEA.990385?format=textfile"
 
+# Jouzel et al. (2007): EPICA Dome C dD and temperature anomaly, 800 kyr, EDC3 (NOAA NCEI,
+# template text).
+
+[jouzel2007_edc]
+doi = "10.25921/8t7e-z147"
+storage_path = "$datasets_dir/jouzel2007_edc/edc3deuttemp2007-noaa.txt"
+uri = "https://www.ncei.noaa.gov/pub/data/paleo/icecore/antarctica/epica_domec/edc3deuttemp2007-noaa.txt"
+
+# Petit et al. (1999): Vostok dD and temperature anomaly, 420 kyr, GT4 (NOAA NCEI, template
+# text).
+
+[petit1999_vostok]
+doi = "10.25921/kcry-ae86"
+storage_path = "$datasets_dir/petit1999_vostok/deutnat-noaa.txt"
+uri = "https://www.ncei.noaa.gov/pub/data/paleo/icecore/antarctica/vostok/deutnat-noaa.txt"
+
+# Uemura et al. (2012, 2018): Dome Fuji d18O, dD, deuterium excess, site and source
+# temperatures, 720 kyr, AICC2012 (NOAA NCEI, template text).
+
+[uemura2018_domefuji]
+doi = "10.25921/9886-bg13"
+storage_path = "$datasets_dir/uemura2018_domefuji/domefuji2018iso-temp-noaa.txt"
+uri = "https://www.ncei.noaa.gov/pub/data/paleo/icecore/antarctica/domefuji/domefuji2018iso-temp-noaa.txt"
+
+# EPICA Community Members (2006): EDML d18O, 150 kyr, EDML1 (PANGAEA version 2 of 2010,
+# CC BY 3.0).
+
+[epica2006_edml]
+doi = "10.1594/PANGAEA.754444"
+storage_path = "$datasets_dir/epica2006_edml/EDML_d18O.tab"
+uri = "https://doi.pangaea.de/10.1594/PANGAEA.754444?format=textfile"
+
+# Stenni et al. (2011): TALDICE d18O on AICC2012, to 153 ka (PANGAEA, part of the AICC2012
+# collection of Bazin et al., 2013, CC BY 3.0).
+
+[stenni2011_taldice]
+doi = "10.1594/PANGAEA.824890"
+storage_path = "$datasets_dir/stenni2011_taldice/TALDICE_d18O_AICC2012.tab"
+uri = "https://doi.pangaea.de/10.1594/PANGAEA.824890?format=textfile"
+
+# Lambert et al. (2012): EPICA Dome C dust flux, 25-year means, 800 kyr, EDC3 (PANGAEA,
+# CC BY 3.0).
+
+[lambert2012_edcdust]
+doi = "10.1594/PANGAEA.778213"
+storage_path = "$datasets_dir/lambert2012_edcdust/EDC_dust_flux_25yr.tab"
+uri = "https://doi.pangaea.de/10.1594/PANGAEA.778213?format=textfile"
+
+# Rasmussen et al. (2014), Seierstad et al. (2014): NGRIP, GRIP and GISP2 d18O and calcium
+# on GICC05modelext, workbook of the Centre for Ice and Climate (version of 10 December
+# 2014; no licence stated).
+
+[rasmussen2014_gicc05]
+doi = "10.1016/j.quascirev.2014.09.007"
+storage_path = "$datasets_dir/rasmussen2014_gicc05/GICC05modelext_GRIP_and_GISP2_and_resampled_data_series_Seierstad_et_al._2014_version_10Dec2014-2.xlsx"
+uri = "https://www.iceandclimate.nbi.ku.dk/data/GICC05modelext_GRIP_and_GISP2_and_resampled_data_series_Seierstad_et_al._2014_version_10Dec2014-2.xlsx"
+
+# Buizert et al. (2018): seasonal temperatures at nine Greenland ice core sites, 22 ka to
+# present (NOAA NCEI; the gridded reconstruction is buizert2018_recon).
+
+[buizert2018_cores]
+doi = "10.25921/psvs-yg80"
+storage_path = "$datasets_dir/buizert2018_cores/buizert2018cores.txt"
+uri = "https://www.ncei.noaa.gov/pub/data/paleo/reconstructions/buizert2018/buizert2018cores.txt"
+
 # ---------------------------------------------------------------------------
 # Relative sea level (RSL/)
 # ---------------------------------------------------------------------------

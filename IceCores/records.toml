@@ -16,3 +16,36 @@ file = "Vinther2009_elevations.nc"
 [products.AICC2023]
 source = "Bouchet2023_AICC2023"
 files = { EDC = "AICC2023_EDC.nc", EDML = "AICC2023_EDML.nc", NGRIP = "AICC2023_NGRIP.nc", TALDICE = "AICC2023_TALDICE.nc", Vostok = "AICC2023_Vostok.nc" }
+
+[products.Jouzel2007]
+source = "Jouzel2007_EDC"
+file = "Jouzel2007_EDC.nc"
+
+[products.Petit1999]
+source = "Petit1999_Vostok"
+file = "Petit1999_Vostok.nc"
+
+[products.Uemura2018]
+source = "Uemura2018_DomeFuji"
+file = "Uemura2018_DomeFuji.nc"
+
+[products.EPICA2006]
+source = "EPICA2006_EDML"
+file = "EPICA2006_EDML.nc"
+
+[products.Stenni2011]
+source = "Stenni2011_TALDICE"
+file = "Stenni2011_TALDICE.nc"
+
+[products.Lambert2012]
+source = "Lambert2012_EDCdust"
+file = "Lambert2012_EDCdust.nc"
+
+[products.Rasmussen2014]
+source = "Rasmussen2014_GICC05"
+file = "Rasmussen2014_GICC05.nc"
+
+[products.Buizert2018]
+source = "Buizert2018_cores"
+file = "Buizert2018_cores.nc"
+figure = { variable = "tas_ann" }

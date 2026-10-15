@@ -46,12 +46,14 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | paleo    | Batchelor2019_PaleoMIST_lgc | Global ice extents of the last glacial cycle (Batchelor north, PaleoMIST south) | Batchelor et al. (2019), Gowan et al. (2021) |
 | paleo    | Bouchet2023_AICC2023        | AICC2023 ice core chronology (EDC, EDML, NGRIP, TALDICE, Vostok) | Bouchet et al. (2023)          |
 | paleo    | Buizert2018                 | Greenland seasonal temperatures, 22 ka to present | Buizert et al. (2018)         |
+| paleo    | Buizert2018_cores           | Seasonal temperatures at Greenland ice core sites, 22 ka | Buizert et al. (2018)          |
 | climate  | CMIP                        | Working with CMIP data (CMIP5/CMIP6/etc)         | Unpublished                    |
 | geo      | Colgan2021_ghf              | Geothermal heat flow of Greenland                | Colgan & Wansing (2021)        |
 | geo      | Colgan2021_topocorr         | Topographic correction of geothermal heat flow   | Colgan et al. (2021)           |
 | geo      | Davies2013_ghf              | Global geothermal heat flow                      | Davies (2013)                  |
 | ice      | Dawson2022_basalstate       | Antarctic ice sheet basal thermal state          | Dawson et al. (2022)           |
 | paleo    | Dowsett2016_prism4          | PRISM4 Pliocene topography and ice sheets        | Dowsett et al. (2016)          |
+| paleo    | EPICA2006_EDML              | EDML d18O, 150 kyr                               | EPICA Community Members (2006) |
 | climate  | ERA5                        | Monthly ERA5 for radiation + moist-stack valid. (v1) | Hersbach et al. (2020)     |
 | smb      | Fettweis2017_mar314         | Greenland SMB and surface climate, MAR v3.14 (ERA5) | Fettweis et al. (2017)      |
 | geo      | FoxMaule2005_ghf            | Geothermal heat flow from satellite magnetic data | Fox Maule et al. (2005)       |
@@ -66,7 +68,9 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | climate  | Jackson2022                 | NAHosMIP freshwater hosing                       | Jackson et al. (2022)          |
 | ice      | Joughin2018                 | Greenland ice surface velocity                   | Joughin et al. (2018)          |
 | ocean    | Jourdain2020_ismip6         | ISMIP6 Antarctic ocean climatology (deprecated, see Zhou2026_ismip7ocean) | Jourdain et al. (2020) |
+| paleo    | Jouzel2007_EDC              | EPICA Dome C deuterium and temperature, 800 kyr  | Jouzel et al. (2007)           |
 | paleo    | Kindler2014                 | NGRIP temperature reconstruction, 10-120 kyr b2k | Kindler et al. (2014)          |
+| paleo    | Lambert2012_EDCdust         | EPICA Dome C dust flux, 800 kyr                  | Lambert et al. (2012)          |
 | geo      | Laske2013_crust1            | Sediment thickness of CRUST1.0                   | Laske et al. (2013)            |
 | paleo    | Leger2024_PaleoGris         | Retreat chronology of the Greenland Ice Sheet    | Leger et al. (2024)            |
 | geo      | Lloyd2024_visc              | Global 3D mantle viscosity from GLAD-M25         | Lloyd et al. (2024)            |
@@ -83,8 +87,10 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | paleo    | Peltier2004_ice5g           | ICE-5G v1.2 ice-sheet reconstruction             | Peltier (2004)                 |
 | paleo    | Peltier2015_ice6g           | ICE-6G_C (VM5a) ice-sheet and topography reconstruction | Peltier et al. (2015)   |
 | paleo    | Peltier2018_ice6gd          | ICE-6G_D (VM5a) ice thickness and topography of Antarctica | Peltier et al. (2018) |
+| paleo    | Petit1999_Vostok            | Vostok deuterium and temperature, 420 kyr        | Petit et al. (1999)            |
 | paleo    | PMIP3_cvdp                  | PMIP3 climatologies (CMIP5 lgm, midHolocene, piControl) | Braconnot et al. (2012)  |
 | paleo    | PMIP4_cmip6                 | PMIP4 climatologies (CMIP6 lgm, midHolocene, piControl) | Kageyama et al. (2018)  |
+| paleo    | Rasmussen2014_GICC05        | NGRIP, GRIP, GISP2 d18O and calcium, GICC05modelext | Rasmussen et al. (2014)        |
 | masks    | Regions                     | Regions v2: region tree, shelf zone, ice-sheet basins, 25 m-32 km | Multiple (see Regions/README.md) |
 | masks    | regions_legacy              | Ice relevant regions (v1, deprecated)            | Robinson et al.  - no ref      |
 | ice      | Rignot2011_vel              | Antarctic ice surface velocity                   | Rignot et al. (2011)           |
@@ -97,10 +103,12 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | geo      | Shapiro2004_ghf             | Global geothermal heat flow                      | Shapiro & Ritzwoller (2004)    |
 | ice      | Smith2020_dzdt              | Elevation and thickness change rates, ICESat to ICESat-2 | Smith et al. (2020)    |
 | geo      | Stal2020_ghf                | Geothermal heat flow of Antarctica, Aq1          | Stål et al. (2021)             |
+| paleo    | Stenni2011_TALDICE          | TALDICE d18O on AICC2012, 153 kyr                | Stenni et al. (2011)           |
 | paleo    | Stokes2016_icestreams       | Laurentide ice sheet, ice-stream timing          | Stokes et al. (2016)           |
 | geo      | Straume2019_globsed         | Total sediment thickness of the oceans, GlobSed v3 | Straume et al. (2019)        |
 | smb      | SUMup_smb                   | SMB measurements, SUMup 2025                     | Vandecrux et al. (2025)        |
 | topo     | Topo                        | Topography v2: GEBCO2026 + BedMachine/Bedmap3, 25 m-32 km | Multiple (see Topo/README.md) |
+| paleo    | Uemura2018_DomeFuji         | Dome Fuji water isotopes and temperatures, 720 kyr | Uemura et al. (2012, 2018)     |
 | smb      | vanDalum2025_racmo24        | Antarctic SMB and surface climate, RACMO2.4p1    | van Dalum et al. (2025)        |
 | smb      | vanWessem2023_racmo23       | Antarctic SMB and surface climate, RACMO2.3p2    | van Wessem et al. (2018, 2023) |
 | paleo    | Vinther2009_elevations      | Elevations at the ice core locations             | Vinther et al. (2009)          |

@@ -99,6 +99,25 @@ function read_pangaea(path::AbstractString; missing_values=())
 end
 
 """
+    noaa_site(path) -> NamedTuple
+
+Name, location (degrees) and elevation (m, `nothing` if not given) of the site in the
+header of a file of the NOAA NCEI template.
+"""
+function noaa_site(path::AbstractString)
+    lines = read_lines(path)
+    function field(key)
+        i = findfirst(l -> occursin(Regex("^#\\s*$key:"), l), lines)
+        i === nothing && return nothing
+        return strip(split(lines[i], ':'; limit=2)[2])
+    end
+    name, lat, lon, z = field("Site_Name"), field("Northernmost_Latitude"), field("Easternmost_Longitude"), field("Elevation_m")
+    (name === nothing || lat === nothing || lon === nothing) && error("$path: no Site_Name/Northernmost_Latitude/Easternmost_Longitude")
+    return (name=name, lat=parse(Float64, lat), lon=parse(Float64, lon),
+            z_srf=z === nothing || isempty(z) ? nothing : parse(Float64, z))
+end
+
+"""
     pangaea_event(path) -> NamedTuple
 
 Name, location (degrees) and elevation (m, `nothing` if not given) of the first event

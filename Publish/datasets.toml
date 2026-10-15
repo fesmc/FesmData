@@ -198,11 +198,15 @@ a model domain, or onto global lon-lat grids.
 tag = "icecores"
 title = "ice core records"
 readme = "IceCores/README.md"
-keywords = ["ice core", "paleoclimate", "Greenland", "temperature", "water isotopes", "surface elevation"]
+keywords = ["ice core", "paleoclimate", "Antarctica", "Greenland", "temperature", "water isotopes", "dust", "chronology", "surface elevation"]
 description = """
-Time series at Greenland ice core sites: NGRIP temperature and accumulation (Kindler et
-al., 2014), NEEM water isotopes (Gkinis et al., 2020) and Holocene surface elevation
-changes at four sites (Vinther et al., 2009), as CF discrete sampling geometry files.
+Time series at Antarctic and Greenland ice core sites over glacial cycles: water isotopes
+and temperatures of EPICA Dome C, Vostok, Dome Fuji, EDML and TALDICE, the synchronized
+Greenland δ18O and calcium records of NGRIP, GRIP and GISP2, seasonal temperatures at
+Greenland sites (Buizert et al., 2018), NGRIP temperature and accumulation (Kindler et
+al., 2014), NEEM water isotopes (Gkinis et al., 2020), Holocene surface elevation changes
+(Vinther et al., 2009), EPICA Dome C dust flux, and the AICC2023 chronology of five cores,
+as CF discrete sampling geometry files with text copies.
 """
 
 [RSL]
