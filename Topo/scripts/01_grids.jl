@@ -4,14 +4,17 @@
 # v1 grid definitions in maps/.
 #
 # Usage:
-#     julia --project=Topo -t N Topo/scripts/01_grids.jl DOMAIN
+#     julia --project=Topo -t N Topo/scripts/01_grids.jl DOMAIN [--folder=FOLDER]
+#
+# --folder: only the grids in output folder FOLDER (e.g. the grids added to a crop).
 #
 include(joinpath(@__DIR__, "..", "common.jl"))
 
-length(ARGS) == 1 || error("usage: 01_grids.jl DOMAIN  (one of $(join(domain_keys(), ", ")))")
-dom = Domain(ARGS[1])
+args, folder = folder_option(ARGS)
+length(args) == 1 || error("usage: 01_grids.jl DOMAIN [--folder=FOLDER]  (one of $(join(domain_keys(), ", ")))")
+dom = Domain(args[1])
 
-for og in dom.grids
+for og in in_folder(dom.grids, folder, dom)
     g = og.grid
     dir = write_grid_files(outdir(og), g; dataset=DATASET)
 
