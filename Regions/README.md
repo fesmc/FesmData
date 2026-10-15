@@ -186,7 +186,7 @@ stream from the grounding line of 79N (200 km) 0.68 and 0.63. The Mouginot basin
 ## Domains
 
 `<GRID>_DOMAINS.nc` locates the nests and crops of a domain family (a domain with all
-its nests and crops) on every grid of the family, e.g. NPI, SPI, SRG, GCN and CDI on the
+its nests and crops) on every grid of the family, e.g. NPI, SPI, SRG, GCN, CDI and SCH on the
 grids of PAT, of its crops and of its nests. `domain_<KEY>` (int8) is 1 where the cell
 centre lies within the extent of nest or crop KEY, the cell edges of its base grid (that
 of its domain for a crop), and 0 elsewhere; one variable per nest or crop, as they may

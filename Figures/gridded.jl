@@ -9,7 +9,7 @@ const FOLDER_ORDER = ["Antarctica", "Amundsen", "Thwaites", "PineIsland", "Filch
                       "WilkesBasin", "GreenlandPaleo", "Greenland", "Jakobshavn", "NEGIS", "Petermann",
                       "Helheim", "North", "Laurentide", "Eurasia",
                       "Pyrenees", "Alps", "Patagonia", "NorthPatagonianIcefield", "SouthPatagonianIcefield",
-                      "SRG", "GranCampoNevado", "CordilleraDarwin", "Himalaya", "DrangDrung", "Svalbard", "NewZealand", "Global"]
+                      "SRG", "GranCampoNevado", "CordilleraDarwin", "SchiaparelliGlacier", "Himalaya", "DrangDrung", "Svalbard", "NewZealand", "Global"]
 
 "Options of the `figure` table of a product."
 const FIGURE_KEYS = ("variables", "select", "colormap", "colorrange", "scale", "hide")
