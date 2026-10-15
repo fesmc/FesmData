@@ -94,6 +94,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | ice      | Margold2015_icestreams      | Ice stream outlines                              | Margold et al. (2015)          |
 | geo      | Martos2017_ghf              | Antarctic geothermal heat flow                   | Martos et al. (2017)           |
 | geo      | Martos2018_ghf              | Geothermal heat flux of Greenland                | Martos et al. (2018)           |
+| paleo    | Montoya2008_climber3a       | CLIMBER-3α present-day and LGM (weak, strong AMOC) climatologies | Montoya & Levermann (2008) |
 | geo      | Mooney2023_ecm1             | Sediment thickness of ECM1                       | Mooney et al. (2023)           |
 | geo      | Pan2022_litho               | Global lithosphere thickness and mantle viscosity | Pan et al. (2022)             |
 | paleo    | Peltier2004_ice5g           | ICE-5G v1.2 ice-sheet reconstruction             | Peltier (2004)                 |
@@ -122,6 +123,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | paleo    | Stokes2016_icestreams       | Laurentide ice sheet, ice-stream timing          | Stokes et al. (2016)           |
 | geo      | Straume2019_globsed         | Total sediment thickness of the oceans, GlobSed v3 | Straume et al. (2019)        |
 | smb      | SUMup_smb                   | SMB measurements, SUMup 2025                     | Vandecrux et al. (2025)        |
+| paleo    | Tarasov2012_glac1d          | GLAC-1D ice-sheet reconstruction, 120 ka to present | Tarasov et al. (2012), Briggs et al. (2014) |
 | topo     | Topo                        | Topography v2: GEBCO2026 + BedMachine/Bedmap3, 25 m-32 km | Multiple (see Topo/README.md) |
 | paleo    | Uemura2018_DomeFuji         | Dome Fuji water isotopes and temperatures, 720 kyr | Uemura et al. (2012, 2018)     |
 | smb      | vanDalum2025_racmo24        | Antarctic SMB and surface climate, RACMO2.4p1    | van Dalum et al. (2025)        |

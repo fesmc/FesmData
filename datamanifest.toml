@@ -636,6 +636,40 @@ doi = "10.1594/PANGAEA.905800"
 extract = true
 uri = "https://hs.pangaea.de/Maps/Global_Ice_Sheets/Gowan_ice_reconstruction.zip"
 
+# GLAC-1D (Tarasov et al., 2012; Briggs et al., 2014; Tarasov & Peltier, 2002), from the data
+# page of L. Tarasov (https://www.physics.mun.ca/~lev/dataAccess.html): ice thickness of
+# North America + Greenland (two variants, nn9927 with lake water thickness, and nn9894)
+# and Antarctica (nn4041), 1° x 0.5°, 120-30 ka every 1 kyr and 30-0 ka every 100 years.
+# The server does not send its intermediate TLS certificate: prepare.jl downloads with
+# JULIA_SSL_NO_VERIFY_HOSTS set to that host (or curl -k).
+
+[glac1d_tarasov]
+storage_path = "$datasets_dir/glac1d_tarasov"
+uris = [
+    "https://www.physics.mun.ca/~lev/GLAC1Dnn9927NAGrB120kto30k.nc",
+    "https://www.physics.mun.ca/~lev/GLAC1Dnn9927NAGrB30kto0k.nc",
+    "https://www.physics.mun.ca/~lev/GLAC1Dnn9894NAGrB120kto30k.nc",
+    "https://www.physics.mun.ca/~lev/GLAC1Dnn9894NAGrB30kto0k.nc",
+    "https://www.physics.mun.ca/~lev/GLAC1Dnn4041ANT120kto30k.nc",
+    "https://www.physics.mun.ca/~lev/GLAC1Dnn4041ANT30kto0k.nc",
+]
+
+# GLAC-1D for PMIP4 (https://pmip4.lsce.ipsl.fr/doku.php/data:ice_glac_1d), global, 26-0 ka
+# every 100 years (NA nn9894, Eurasia, Greenland GrB, Antarctica nn4041): topography and
+# ice mask, 1° x 0.5° (812 MB), and ice thickness, 0.5° x 0.25° (57 MB), from the public
+# share of the PMIP4 data (md5 sums on the PMIP4 page). The links differ only by their
+# query, so each entry has its own `key`.
+
+[glac1d_pmip4_topo]
+key = "TOPicemsk.GLACD26kN9894GE90227A6005GGrBgic.nc"
+storage_path = "$datasets_dir/glac1d_pmip4/TOPicemsk.GLACD26kN9894GE90227A6005GGrBgic.nc"
+uri = "https://sharebox.lsce.ipsl.fr/index.php/s/yfuUw91ruuJXroC/download?path=/&files=TOPicemsk.GLACD26kN9894GE90227A6005GGrBgic.nc"
+
+[glac1d_pmip4_hice]
+key = "GLAC1DHiceF26.nc"
+storage_path = "$datasets_dir/glac1d_pmip4/GLAC1DHiceF26.nc"
+uri = "https://sharebox.lsce.ipsl.fr/index.php/s/yfuUw91ruuJXroC/download?path=/&files=GLAC1DHiceF26.nc"
+
 # PaleoGrIS 1.0 (Leger et al., 2024), Mendeley Data: the supplementary data in one zip
 # (2 GB), of which only the isochrone buffers (NetCDF) are used.
 
@@ -1341,6 +1375,17 @@ uri = "https://arcticdata.io/metacat/d1/mn/v2/object/urn:uuid:64b58bc8-0cf6-4e6b
 doi = "10.18739/A2599Z26M"
 storage_path = "$datasets_dir/badgeley2020/pr_high_Badgeley_etal_2020.nc"
 uri = "https://arcticdata.io/metacat/d1/mn/v2/object/urn:uuid:c5e3fa59-7117-4fee-8163-07aae8519886"
+
+# Montoya & Levermann (2008): CLIMBER-3α present-day and LGM (weak and strong AMOC)
+# climatologies, the original files of the old PIK archive (hpc:/data/sicopolis/data/
+# CLIMBER3a/), published unchanged in github.com/fesmc/Montoya2008-CLIMBER3a (CC BY 4.0;
+# SHA256SUMS in the repository).
+
+[montoya2008_climber3a]
+key = "montoya2008_climber3a.tar.gz"
+doi = "10.1029/2007GL032560"
+extract = true
+uri = "https://github.com/fesmc/Montoya2008-CLIMBER3a/archive/refs/tags/v1.0.0.tar.gz"
 
 # ---------------------------------------------------------------------------
 # Solid Earth (SolidEarth/)

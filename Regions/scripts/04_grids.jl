@@ -5,17 +5,19 @@
 # dist_shelfbreak the cell mean.
 #
 # Usage:
-#     julia --project=Regions -t 8 Regions/scripts/04_grids.jl DOMAIN [SET]
+#     julia --project=Regions -t 8 Regions/scripts/04_grids.jl DOMAIN [SET] [--folder=FOLDER]
 #
 # Writes $FESMDATA_PRODUCTS/<folder>/<GRID>/<GRID>_REGIONS.nc (region_1-3, zone,
 # dist_shelfbreak) and <GRID>_BASINS-<SET>.nc for each basin set of the domain, or only
-# the files of basin set SET.
+# the files of basin set SET; with --folder, only on the grids in output folder FOLDER
+# (e.g. the grids added to a crop).
 #
 include(joinpath(@__DIR__, "..", "common.jl"))
 
-1 <= length(ARGS) <= 2 || error("usage: 04_grids.jl DOMAIN [SET]")
-dom = Domain(ARGS[1])
-only_set = length(ARGS) == 2 ? ARGS[2] : nothing
+args, folder = folder_option(ARGS)
+1 <= length(args) <= 2 || error("usage: 04_grids.jl DOMAIN [SET] [--folder=FOLDER]")
+dom = Domain(args[1])
+only_set = length(args) == 2 ? args[2] : nothing
 sets = filter(set -> only_set === nothing || set.name == only_set, basin_sets(dom))
 isempty(sets) && only_set !== nothing && error("no basin set $only_set for domain $(dom.key)")
 defs = read_regions()
@@ -55,7 +57,7 @@ function write_regions(og, m)
                  varattrib=attrib)
 end
 
-for og in dom.grids
+for og in in_folder(dom.grids, folder, dom)
     g = og.grid
     m = AlignedMap(g, dom.base)
     only_set === nothing && write_regions(og, m)

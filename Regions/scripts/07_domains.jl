@@ -5,16 +5,18 @@
 # of its base grid (centres on an edge are inside). Needs no other step.
 #
 # Usage:
-#     julia --project=Regions Regions/scripts/07_domains.jl DOMAIN
+#     julia --project=Regions Regions/scripts/07_domains.jl DOMAIN [--folder=FOLDER]
 #
 # Writes $FESMDATA_PRODUCTS/<folder>/<GRID>/<GRID>_DOMAINS.nc, with one variable
 # domain_<KEY> (int8, 0/1) per active nest and crop of the family; nothing if it has
-# none.
+# none. With --folder, only on the grids in output folder FOLDER (e.g. the grids added to
+# a crop).
 #
 include(joinpath(@__DIR__, "..", "common.jl"))
 
-length(ARGS) == 1 || error("usage: 07_domains.jl DOMAIN")
-dom = Domain(ARGS[1])
+args, folder = folder_option(ARGS)
+length(args) == 1 || error("usage: 07_domains.jl DOMAIN [--folder=FOLDER]")
+dom = Domain(args[1])
 subs = family_subdomains(dom.key)
 if isempty(subs)
     @info "the family of $(dom.key) has no active nests or crops: no DOMAINS files"
@@ -34,7 +36,7 @@ for s in subs
     @info "domain_$(s.key): $(s.kind) of $(s.parent), extent $(round.(e; digits=3)) km ($(base.name))"
 end
 
-for og in filter(og -> !og.on_request, dom.grids)
+for og in filter(og -> !og.on_request, in_folder(dom.grids, folder, dom))
     g = og.grid
     tol = 1e-6 * spacing(g)[1]
     fields = Dict{String,Any}()

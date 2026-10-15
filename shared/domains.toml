@@ -13,12 +13,14 @@
 # crop) in published records, unique to each.
 #
 # A crop (`[<KEY>.crops.<CROP>]`) is a part of the grids of its domain, at all its
-# resolutions or at those in its own `resolutions`, on the grids of its domain at each
-# of them (checked: its first cell centres must be cell centres of the domain grid at
-# its coarsest resolution). A nest (`[<KEY>.nests.<NEST>]`) is
-# a domain of its own on the projection of its parent, with a base grid finer than
-# that of the parent, made from the sources: at the resolutions it shares with its
-# parent, its grids lie on those of the parent (same cell centres).
+# resolutions or at those in its own `resolutions`: its extent (xlim, ylim, cell centres
+# of the base grid of the domain) is that of its grid at the base resolution, and its
+# grid at each other resolution is the cells of the domain grid that overlap that
+# extent. A nest (`[<KEY>.nests.<NEST>]`) is a domain of its own on the projection of
+# its parent, with a base grid finer than that of the parent, made from the sources: at
+# the resolutions it shares with its parent (at least one), its grids are the cells of
+# the parent grids that overlap its extent. So the grids of nests and crops lie on those
+# of their domain, and adding a resolution does not change the others.
 #
 # `elevation_precision` (optional) is the absolute tolerance (m) of the elevations and
 # thicknesses written on the grids of a domain, if not the default 0.01 m (see
@@ -46,10 +48,10 @@ xlim = [-3040, 3040]
 ylim = [-3040, 3040]
 resolutions = [0.5, 1, 2, 4, 8, 16, 32]
 
-# Ice-sheet basins (crops, ASE at 500 m, 1 and 2 km, the others at 500 m and 1 km):
+# Ice-sheet basins (crops, ASE at 500 m to 32 km, the others at 500 m and 1 km):
 # bounding box of the drainage basins (Basins_Antarctica_v02 of NSIDC-0709,
 # as IMBIE2016-refined) and their ice shelves (floating ice of BedMachine v4 in their
-# extended basins), plus 50 km, snapped outward to whole km (ASE: to even km, for its 2 km grid).
+# extended basins), plus 50 km, snapped outward to whole km (ASE: to even km).
 
 # Amundsen Sea Embayment, 133.8-80.9W, 81.3-71.1S: the basins of system G-H (Pine
 # Island, Lucchitta-Velasco, Thwaites, Haynes, Pope, Smith, Kohler, Philbin, Cosgrove,
@@ -58,7 +60,7 @@ resolutions = [0.5, 1, 2, 4, 8, 16, 32]
 folder = "Amundsen"
 xlim = [-1866, -948]
 ylim = [-908, 152]
-resolutions = [0.5, 1, 2]
+resolutions = [0.5, 1, 2, 4, 8, 16, 32]
 
 # Thwaites Glacier, 133.8-93.3W, 81.3-72.8S: its basin and ice shelf (tongue, eastern
 # shelf).

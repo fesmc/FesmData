@@ -1,226 +1,262 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-14"
-git_tag = "icehistory-v2.1.0"
+date = "2026-10-15"
+git_tag = "icehistory-v2.2.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=North_IceHistory"
-version = "2.1.0"
+version = "2.2.0"
 
 ["NH-16KM_IceHistory-Batchelor2019.nc"]
-checksum = "sha256:ee2c144700c8b83b0594b7840a6733ff0e2a43352ed62cb8d192c49fc7497e56"
-previous_checksums = ["sha256:8ee3f7e4b1997d770a19184476d4cadcb88e2de347dfe2dcf9eaf3556ec8bd9b"]
+checksum = "sha256:3c007d6c08ee3adcb52da6457c97e899f4ad0e9e7169494c31e01b8e045a0c87"
+previous_checksums = ["sha256:8ee3f7e4b1997d770a19184476d4cadcb88e2de347dfe2dcf9eaf3556ec8bd9b", "sha256:ee2c144700c8b83b0594b7840a6733ff0e2a43352ed62cb8d192c49fc7497e56"]
 size = 2181402
 storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_IceHistory-Batchelor2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.1.0/NH-16KM_IceHistory-Batchelor2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.2.0/NH-16KM_IceHistory-Batchelor2019.nc"
+
+["NH-16KM_IceHistory-GLAC1D.nc"]
+checksum = "sha256:6d7a02897ca411c2228133a23e4abe120361f30662d145d5b451ff035c0d45af"
+size = 400165980
+storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_IceHistory-GLAC1D.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.2.0/NH-16KM_IceHistory-GLAC1D.nc"
+
+["NH-16KM_IceHistory-GLAC1D_nn9894.nc"]
+checksum = "sha256:10bf448c84458faa4773e90157568539ecc17cee8a9221e254a5d1d487d9f62d"
+size = 61271956
+storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_IceHistory-GLAC1D_nn9894.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.2.0/NH-16KM_IceHistory-GLAC1D_nn9894.nc"
+
+["NH-16KM_IceHistory-GLAC1D_nn9927.nc"]
+checksum = "sha256:1a95d92b59ad46138e74b7b4eee1c86aea7966c8fe643132f3f5934fbfa8d7a2"
+size = 73915341
+storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_IceHistory-GLAC1D_nn9927.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.2.0/NH-16KM_IceHistory-GLAC1D_nn9927.nc"
 
 ["NH-16KM_IceHistory-ICE5G.nc"]
-checksum = "sha256:25e3931bd2c9c3c647801d9bb6e98851662c1df0bd2c608263584faedb03cb5d"
-previous_checksums = ["sha256:b78368ea098f9b46205380712d0674be4ae4c13b8f3cf5f01ff3419c5464c135"]
+checksum = "sha256:8ffe5107f10170938666b48c18535949ab15ce37a9eadd5563f45ed47d94c6e3"
+previous_checksums = ["sha256:b78368ea098f9b46205380712d0674be4ae4c13b8f3cf5f01ff3419c5464c135", "sha256:25e3931bd2c9c3c647801d9bb6e98851662c1df0bd2c608263584faedb03cb5d"]
 size = 39375027
 storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_IceHistory-ICE5G.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.1.0/NH-16KM_IceHistory-ICE5G.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.2.0/NH-16KM_IceHistory-ICE5G.nc"
 
 ["NH-16KM_IceHistory-ICE6G_C.nc"]
-checksum = "sha256:8105dd00fb67b6f1cf9f46ab100705b5a9d49ae69b51c716fcf15390cb8058cb"
-previous_checksums = ["sha256:04fe0da8fb45c9af9349335b19389b94ff4e2e31b53e0380fe693b0f2f2d2b77"]
+checksum = "sha256:bb92cff470665d793974d8ab5912593b71a9b9ac725b8f9f93506b6d6da51bd2"
+previous_checksums = ["sha256:04fe0da8fb45c9af9349335b19389b94ff4e2e31b53e0380fe693b0f2f2d2b77", "sha256:8105dd00fb67b6f1cf9f46ab100705b5a9d49ae69b51c716fcf15390cb8058cb"]
 size = 116366897
 storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_IceHistory-ICE6G_C.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.1.0/NH-16KM_IceHistory-ICE6G_C.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.2.0/NH-16KM_IceHistory-ICE6G_C.nc"
 
 ["NH-16KM_IceHistory-Margold2015.nc"]
-checksum = "sha256:c22f4197d55937b02173724d6b13d701616454abe2989a16f209a7f596bcc1b2"
-previous_checksums = ["sha256:7f9ae5484f89c79aa73baf45fc1ecf5f0497c88b6d27b59a6a546338865f2ba9"]
-size = 198407
+checksum = "sha256:3cbe43089d9f4877cd6d6785a0b61ae4358504c0554878f7294e370534cf33cf"
+previous_checksums = ["sha256:7f9ae5484f89c79aa73baf45fc1ecf5f0497c88b6d27b59a6a546338865f2ba9", "sha256:c22f4197d55937b02173724d6b13d701616454abe2989a16f209a7f596bcc1b2"]
+size = 199441
 storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_IceHistory-Margold2015.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.1.0/NH-16KM_IceHistory-Margold2015.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.2.0/NH-16KM_IceHistory-Margold2015.nc"
 
 ["NH-16KM_IceHistory-PRISM4.nc"]
-checksum = "sha256:45d2800521bf5a58723cdf96c29754ff4d9c7fa2190c10ac06083d9b0b5a7668"
-previous_checksums = ["sha256:57d618e3030da18c087fdacda6ea9575ab2576b525120e4d004b297fb32395e0"]
+checksum = "sha256:56bc35ca0e17a3c704577888022062ebe6f585089eb9f5e3743d523993e8aae0"
+previous_checksums = ["sha256:57d618e3030da18c087fdacda6ea9575ab2576b525120e4d004b297fb32395e0", "sha256:45d2800521bf5a58723cdf96c29754ff4d9c7fa2190c10ac06083d9b0b5a7668"]
 size = 1997169
 storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_IceHistory-PRISM4.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.1.0/NH-16KM_IceHistory-PRISM4.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.2.0/NH-16KM_IceHistory-PRISM4.nc"
 
 ["NH-16KM_IceHistory-PaleoMIST.nc"]
-checksum = "sha256:1a0f0112425bde73a10b98d965ef6735015a8accc29aee0bc50ab36a2f4687a2"
-previous_checksums = ["sha256:838d06fff0828c6c07aff0c07c2308427bf79762b385992dc7dc5733c4751618"]
+checksum = "sha256:4a443715b0bcda56c75b9d16a78fe32373acb4838f43ac165eac040310a22382"
+previous_checksums = ["sha256:838d06fff0828c6c07aff0c07c2308427bf79762b385992dc7dc5733c4751618", "sha256:1a0f0112425bde73a10b98d965ef6735015a8accc29aee0bc50ab36a2f4687a2"]
 size = 75685566
 storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_IceHistory-PaleoMIST.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.1.0/NH-16KM_IceHistory-PaleoMIST.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.2.0/NH-16KM_IceHistory-PaleoMIST.nc"
 
 ["NH-16KM_IceHistory-PaleoMIST_max.nc"]
-checksum = "sha256:223b1a6cc6155e274cca4605b6597e32deb0977e7b6146588288049fb50e3202"
-previous_checksums = ["sha256:9acb9277a27507ed38936e6f0cd009aa399e1ca0918d45972e053559ada0486b"]
-size = 75644455
+checksum = "sha256:0b37b6e2edcaf4267eedf820bc0a700fa8a42c2c2dc1c2a1582fea4fd73a3c8c"
+previous_checksums = ["sha256:9acb9277a27507ed38936e6f0cd009aa399e1ca0918d45972e053559ada0486b", "sha256:223b1a6cc6155e274cca4605b6597e32deb0977e7b6146588288049fb50e3202"]
+size = 75645489
 storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_IceHistory-PaleoMIST_max.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.1.0/NH-16KM_IceHistory-PaleoMIST_max.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.2.0/NH-16KM_IceHistory-PaleoMIST_max.nc"
 
 ["NH-16KM_grid.nc"]
 checksum = "sha256:854570fc78e4fbb918d307c80874ceeb85265df6ab6b76393344a98e4a874abc"
 previous_checksums = ["sha256:5a64b9ab83264c23ca7c96aa0a1a1b02debcea94890fb2556039c205a148d957"]
 size = 1592909
 storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.1.0/NH-16KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.2.0/NH-16KM_grid.nc"
 
 ["NH-2KM_IceHistory-Batchelor2019.nc"]
-checksum = "sha256:f8fb09e8a988a0b313e213077d497ce134fee4aee1168a2b823931e37bea7478"
-previous_checksums = ["sha256:9f923a3d4f93f5ea08e5e8dac1bce82874311528b4faba3ccd1018b712fed238"]
+checksum = "sha256:781cbc66ded296bfa332a2495a1fb21a2882326ac40c80d7cc796fddd9fbddd5"
+previous_checksums = ["sha256:9f923a3d4f93f5ea08e5e8dac1bce82874311528b4faba3ccd1018b712fed238", "sha256:f8fb09e8a988a0b313e213077d497ce134fee4aee1168a2b823931e37bea7478"]
 size = 20835516
 storage_path = "$datasets_dir/North/NH-2KM/NH-2KM_IceHistory-Batchelor2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-2KM/2.1.0/NH-2KM_IceHistory-Batchelor2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-2KM/2.2.0/NH-2KM_IceHistory-Batchelor2019.nc"
 
 ["NH-2KM_IceHistory-Margold2015.nc"]
-checksum = "sha256:94b104d184cf963857872de8e2d6c37ba030f9dde9d56ea75e79b5df4075b7f0"
-previous_checksums = ["sha256:fe845fc89c0589d8f7666d2f3da67ceed4740e390a9ba09a2f7d64e366aa9e22"]
-size = 2052383
+checksum = "sha256:4b68853e064298874dcd80858dd226023ed57c0232c1bd840d33b6048fe30ffd"
+previous_checksums = ["sha256:fe845fc89c0589d8f7666d2f3da67ceed4740e390a9ba09a2f7d64e366aa9e22", "sha256:94b104d184cf963857872de8e2d6c37ba030f9dde9d56ea75e79b5df4075b7f0"]
+size = 2053417
 storage_path = "$datasets_dir/North/NH-2KM/NH-2KM_IceHistory-Margold2015.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-2KM/2.1.0/NH-2KM_IceHistory-Margold2015.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-2KM/2.2.0/NH-2KM_IceHistory-Margold2015.nc"
 
 ["NH-2KM_grid.nc"]
 checksum = "sha256:9100831d04b2fb2ca91e9a51fd91b6546b2bf4a96a0b0cae533475e4ec485281"
 previous_checksums = ["sha256:17ea7246834ca75081390a11841f74d1316d1f58fcc4bb33e6df3d5a2b3febe6"]
 size = 60833953
 storage_path = "$datasets_dir/North/NH-2KM/NH-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-2KM/2.1.0/NH-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-2KM/2.2.0/NH-2KM_grid.nc"
 
 ["NH-32KM_IceHistory-Batchelor2019.nc"]
-checksum = "sha256:d747085b495cddce8a9402acb01633ce9440841b7c1f18264ad7971792b4496d"
-previous_checksums = ["sha256:f4a176458980dd4ea6a08e9e55901e996f3fa24ff5c9fcc1613f215ea0c5cab0"]
+checksum = "sha256:04ba9c23a6287a4b916876ddb5d4ac087bbf9b543ca17baeeea625b334730fba"
+previous_checksums = ["sha256:f4a176458980dd4ea6a08e9e55901e996f3fa24ff5c9fcc1613f215ea0c5cab0", "sha256:d747085b495cddce8a9402acb01633ce9440841b7c1f18264ad7971792b4496d"]
 size = 769188
 storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_IceHistory-Batchelor2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.1.0/NH-32KM_IceHistory-Batchelor2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.2.0/NH-32KM_IceHistory-Batchelor2019.nc"
+
+["NH-32KM_IceHistory-GLAC1D.nc"]
+checksum = "sha256:798a58b9e870105c65cf0b15453254975d43e232910752c6e6d7fbdd9fb264f5"
+size = 101714065
+storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_IceHistory-GLAC1D.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.2.0/NH-32KM_IceHistory-GLAC1D.nc"
+
+["NH-32KM_IceHistory-GLAC1D_nn9894.nc"]
+checksum = "sha256:18295ed929e03d0e9eb0ce5f20baa0e0de83d91c07c4dfa9abff2f732eb3d172"
+size = 17158790
+storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_IceHistory-GLAC1D_nn9894.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.2.0/NH-32KM_IceHistory-GLAC1D_nn9894.nc"
+
+["NH-32KM_IceHistory-GLAC1D_nn9927.nc"]
+checksum = "sha256:7ce547c3520b4c635b74383d44963b7ad380eba3c15adccc65da5934e66f36e9"
+size = 21095186
+storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_IceHistory-GLAC1D_nn9927.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.2.0/NH-32KM_IceHistory-GLAC1D_nn9927.nc"
 
 ["NH-32KM_IceHistory-ICE5G.nc"]
-checksum = "sha256:8cc3eaca38a77c29ecd4a9bf2bf86252c8ace8a64cbbad4b2c8b1ae57bf7c800"
-previous_checksums = ["sha256:1edf3107ad65b391fc829dffe7f0c111087ebe25a2555178e0ef36e856e0aa85"]
+checksum = "sha256:f73143d2f803afdc079f34966c4e1c1e0c5e171dbff3d1992139ddfe5625e3e9"
+previous_checksums = ["sha256:1edf3107ad65b391fc829dffe7f0c111087ebe25a2555178e0ef36e856e0aa85", "sha256:8cc3eaca38a77c29ecd4a9bf2bf86252c8ace8a64cbbad4b2c8b1ae57bf7c800"]
 size = 9673815
 storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_IceHistory-ICE5G.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.1.0/NH-32KM_IceHistory-ICE5G.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.2.0/NH-32KM_IceHistory-ICE5G.nc"
 
 ["NH-32KM_IceHistory-ICE6G_C.nc"]
-checksum = "sha256:67a90d17369e9b98730d421acead23da75ffede5778ad76f2b898241e237b882"
-previous_checksums = ["sha256:5c5095441b3a7db10410952bfbd637bc1cbf61ddd28f8e1142215d9929ee3485"]
+checksum = "sha256:7094d1fb05624f7e5fbb2c647f145b4db5a1133921a7eb0cdb795ebf13ddfe1e"
+previous_checksums = ["sha256:5c5095441b3a7db10410952bfbd637bc1cbf61ddd28f8e1142215d9929ee3485", "sha256:67a90d17369e9b98730d421acead23da75ffede5778ad76f2b898241e237b882"]
 size = 29468219
 storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_IceHistory-ICE6G_C.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.1.0/NH-32KM_IceHistory-ICE6G_C.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.2.0/NH-32KM_IceHistory-ICE6G_C.nc"
 
 ["NH-32KM_IceHistory-Margold2015.nc"]
-checksum = "sha256:bc338a7674ddab70b443fa135de14b2c3d5dab461ef32712a6b11f3a01e8717c"
-previous_checksums = ["sha256:1eb76fdfb9a20b775e241722632382034a1c88933420cf4534e21403bc4b067a"]
-size = 114516
+checksum = "sha256:5bf42cb4d0409805bf286e795673acf15820f32bce09ff457d768600903c52ad"
+previous_checksums = ["sha256:1eb76fdfb9a20b775e241722632382034a1c88933420cf4534e21403bc4b067a", "sha256:bc338a7674ddab70b443fa135de14b2c3d5dab461ef32712a6b11f3a01e8717c"]
+size = 115550
 storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_IceHistory-Margold2015.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.1.0/NH-32KM_IceHistory-Margold2015.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.2.0/NH-32KM_IceHistory-Margold2015.nc"
 
 ["NH-32KM_IceHistory-PRISM4.nc"]
-checksum = "sha256:253a0bee9b3c602acb9dda2839ab19c9d64cfaed698519252cfd81df1dbba20b"
-previous_checksums = ["sha256:58157fa000715420a24b3648dd11abe4a65a1d07ca0f092f232c54a873007389"]
+checksum = "sha256:ab441aed7e9d3350bfc560d9263259321e175099e8560071f83befad11545cfe"
+previous_checksums = ["sha256:58157fa000715420a24b3648dd11abe4a65a1d07ca0f092f232c54a873007389", "sha256:253a0bee9b3c602acb9dda2839ab19c9d64cfaed698519252cfd81df1dbba20b"]
 size = 598518
 storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_IceHistory-PRISM4.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.1.0/NH-32KM_IceHistory-PRISM4.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.2.0/NH-32KM_IceHistory-PRISM4.nc"
 
 ["NH-32KM_IceHistory-PaleoMIST.nc"]
-checksum = "sha256:6c09700f0aefe253353fa65f03067c56682ff7719ee5f00652266f05ff32d608"
-previous_checksums = ["sha256:cb40a4b85df5282bd566cfe2ec2b00ecdea586b2e095e531c50c2034a7fe0068"]
+checksum = "sha256:55d25486347261a17fcb0055aed5332206c2b090ec9185380217ba508bf25d2f"
+previous_checksums = ["sha256:cb40a4b85df5282bd566cfe2ec2b00ecdea586b2e095e531c50c2034a7fe0068", "sha256:6c09700f0aefe253353fa65f03067c56682ff7719ee5f00652266f05ff32d608"]
 size = 19410355
 storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_IceHistory-PaleoMIST.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.1.0/NH-32KM_IceHistory-PaleoMIST.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.2.0/NH-32KM_IceHistory-PaleoMIST.nc"
 
 ["NH-32KM_IceHistory-PaleoMIST_max.nc"]
-checksum = "sha256:a76cb24ce05185be213a8be18e4a994d51350af8891677ae16fa93f4eeafed40"
-previous_checksums = ["sha256:e385c67de7d380d62223d66f33216b114f6993406a2eb374e8cc80b1a7daee9e"]
-size = 19353235
+checksum = "sha256:579ea1063b0754bd14cd8e362a77196a0188e24caed6a34652ecb560496714bc"
+previous_checksums = ["sha256:e385c67de7d380d62223d66f33216b114f6993406a2eb374e8cc80b1a7daee9e", "sha256:a76cb24ce05185be213a8be18e4a994d51350af8891677ae16fa93f4eeafed40"]
+size = 19354269
 storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_IceHistory-PaleoMIST_max.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.1.0/NH-32KM_IceHistory-PaleoMIST_max.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.2.0/NH-32KM_IceHistory-PaleoMIST_max.nc"
 
 ["NH-32KM_grid.nc"]
 checksum = "sha256:5acfb784cc05a51351ad8cbfb8d51d8256e96833d9b17acecf39a43c92196c63"
 previous_checksums = ["sha256:3d48fc58818a8820d1c19088ab3ac0a0aa5f463ca080d4d5f8f60d0fc525894f"]
 size = 464986
 storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.1.0/NH-32KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.2.0/NH-32KM_grid.nc"
 
 ["NH-4KM_IceHistory-Batchelor2019.nc"]
-checksum = "sha256:eb3a7f15d668b3a82e281365211067bc0b38cfc809c2cb24bde67fcc06155b31"
-previous_checksums = ["sha256:21d933f2cc16f439a240758025878b56462fdf90e84c8654b1b66574513f6acd"]
+checksum = "sha256:289618c7648e9dd6ffc0e65519361e091d0d87ee86dcdc55c4606d8cfa641273"
+previous_checksums = ["sha256:21d933f2cc16f439a240758025878b56462fdf90e84c8654b1b66574513f6acd", "sha256:eb3a7f15d668b3a82e281365211067bc0b38cfc809c2cb24bde67fcc06155b31"]
 size = 12417151
 storage_path = "$datasets_dir/North/NH-4KM/NH-4KM_IceHistory-Batchelor2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-4KM/2.1.0/NH-4KM_IceHistory-Batchelor2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-4KM/2.2.0/NH-4KM_IceHistory-Batchelor2019.nc"
 
 ["NH-4KM_IceHistory-Margold2015.nc"]
-checksum = "sha256:f8c6f7fd5c601e69205481d698bd52787080a712659a763cdcb3aac59f2516f2"
-previous_checksums = ["sha256:0adc617684e6f30dc81c4786bceb234f1fbffaae451b7e928ef423de85f9af04"]
-size = 875281
+checksum = "sha256:9fe80e7b6931fe1618fd848f9ff050d7c4b9b50c9477ee607aa0b30fcfe5ccfa"
+previous_checksums = ["sha256:0adc617684e6f30dc81c4786bceb234f1fbffaae451b7e928ef423de85f9af04", "sha256:f8c6f7fd5c601e69205481d698bd52787080a712659a763cdcb3aac59f2516f2"]
+size = 876315
 storage_path = "$datasets_dir/North/NH-4KM/NH-4KM_IceHistory-Margold2015.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-4KM/2.1.0/NH-4KM_IceHistory-Margold2015.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-4KM/2.2.0/NH-4KM_IceHistory-Margold2015.nc"
 
 ["NH-4KM_grid.nc"]
 checksum = "sha256:9bced2023750c842ecc2da1da032d7c8e70d9b55ab3b9adceef7fd5afbc7b9e8"
 previous_checksums = ["sha256:e237d8848d1250e9fa59fc281f80e16784adff8c496c9d9989f29046f6830e94"]
 size = 18052984
 storage_path = "$datasets_dir/North/NH-4KM/NH-4KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-4KM/2.1.0/NH-4KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-4KM/2.2.0/NH-4KM_grid.nc"
 
 ["NH-8KM_IceHistory-Batchelor2019.nc"]
-checksum = "sha256:f16ba9fd55935eae795b512f3bcd11ea74d075d1c8f21fb8d8d2d1243e4a41dd"
-previous_checksums = ["sha256:70de7a7fc776fb7e1ac5d30f697a838f2ca3566727418d38804ee2fdc278b757"]
+checksum = "sha256:ee11ff9dd903b23226a001bf637865284e45c5b324d52c916630e23b46f333c4"
+previous_checksums = ["sha256:70de7a7fc776fb7e1ac5d30f697a838f2ca3566727418d38804ee2fdc278b757", "sha256:f16ba9fd55935eae795b512f3bcd11ea74d075d1c8f21fb8d8d2d1243e4a41dd"]
 size = 4915079
 storage_path = "$datasets_dir/North/NH-8KM/NH-8KM_IceHistory-Batchelor2019.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-8KM/2.1.0/NH-8KM_IceHistory-Batchelor2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-8KM/2.2.0/NH-8KM_IceHistory-Batchelor2019.nc"
 
 ["NH-8KM_IceHistory-Margold2015.nc"]
-checksum = "sha256:49b008b0c20e68c78a688d928103dc688e4f2d876ed3cebe41e65f8df65a9ee8"
-previous_checksums = ["sha256:fc879f5c7b14f530c3eb4d8b0261011e1c6fabb09d3ace5386c6e98991e8230d"]
-size = 415296
+checksum = "sha256:04a02ced6e84ad475231a848f4e5f436211e2f7465712e19d178413cb6dc4b2b"
+previous_checksums = ["sha256:fc879f5c7b14f530c3eb4d8b0261011e1c6fabb09d3ace5386c6e98991e8230d", "sha256:49b008b0c20e68c78a688d928103dc688e4f2d876ed3cebe41e65f8df65a9ee8"]
+size = 416330
 storage_path = "$datasets_dir/North/NH-8KM/NH-8KM_IceHistory-Margold2015.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-8KM/2.1.0/NH-8KM_IceHistory-Margold2015.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-8KM/2.2.0/NH-8KM_IceHistory-Margold2015.nc"
 
 ["NH-8KM_IceHistory-PaleoMIST.nc"]
-checksum = "sha256:27f36c9eae75f981c9074eac797a562d3e2f157fcf8d1dc3530895792da4bd0f"
-previous_checksums = ["sha256:b54a050f192602781036dc248dc0e3408efa3a23d1a92baa4c11dc8d3f01b17a"]
+checksum = "sha256:58791d7387cd75d132e5aae73cf3d83f914c309cb12a8ab0bba68939cddac62c"
+previous_checksums = ["sha256:b54a050f192602781036dc248dc0e3408efa3a23d1a92baa4c11dc8d3f01b17a", "sha256:27f36c9eae75f981c9074eac797a562d3e2f157fcf8d1dc3530895792da4bd0f"]
 size = 278010800
 storage_path = "$datasets_dir/North/NH-8KM/NH-8KM_IceHistory-PaleoMIST.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-8KM/2.1.0/NH-8KM_IceHistory-PaleoMIST.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-8KM/2.2.0/NH-8KM_IceHistory-PaleoMIST.nc"
 
 ["NH-8KM_IceHistory-PaleoMIST_max.nc"]
-checksum = "sha256:fafaf60d83d80e2bbbdf3d6cff29d2127cb608a2c0b7b4fc89eff145d5fd6b48"
-previous_checksums = ["sha256:d62f6f6a8e02dcd687a93787d5a21db082f2d906cb1b7f40ea89918467d4b30e"]
-size = 277841047
+checksum = "sha256:097fae2bdf428e43f2dc7c311d9ddb2807b2283524c61e8c41ac00f660768d8f"
+previous_checksums = ["sha256:d62f6f6a8e02dcd687a93787d5a21db082f2d906cb1b7f40ea89918467d4b30e", "sha256:fafaf60d83d80e2bbbdf3d6cff29d2127cb608a2c0b7b4fc89eff145d5fd6b48"]
+size = 277842081
 storage_path = "$datasets_dir/North/NH-8KM/NH-8KM_IceHistory-PaleoMIST_max.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-8KM/2.1.0/NH-8KM_IceHistory-PaleoMIST_max.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-8KM/2.2.0/NH-8KM_IceHistory-PaleoMIST_max.nc"
 
 ["NH-8KM_grid.nc"]
 checksum = "sha256:ca974e22347230883fa4b6a84f9213b4dc984ab36195dcab4c54646ba27134c2"
 previous_checksums = ["sha256:ae6fa2991da8179295e27f76c8de94a400b394c3335375b0255f570a6ceb95cf"]
 size = 5426807
 storage_path = "$datasets_dir/North/NH-8KM/NH-8KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-8KM/2.1.0/NH-8KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-8KM/2.2.0/NH-8KM_grid.nc"
 
 ["grid_NH-16KM.txt"]
 checksum = "sha256:b784904b58207dc754c6dbb670f90ccd35dfccfadbd68bfea1c239abac6a7c89"
 size = 467
 storage_path = "$datasets_dir/North/NH-16KM/grid_NH-16KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.1.0/grid_NH-16KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.2.0/grid_NH-16KM.txt"
 
 ["grid_NH-2KM.txt"]
 checksum = "sha256:8512e56bf6d59c6a51776662bdc110a6179897b1b4e1b898f2bce8bdb71c7189"
 size = 469
 storage_path = "$datasets_dir/North/NH-2KM/grid_NH-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-2KM/2.1.0/grid_NH-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-2KM/2.2.0/grid_NH-2KM.txt"
 
 ["grid_NH-32KM.txt"]
 checksum = "sha256:6562aa2ab0d5e8ac51d50e7caac9b766095e22eb71e450ead46ce581543d44a4"
 size = 466
 storage_path = "$datasets_dir/North/NH-32KM/grid_NH-32KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.1.0/grid_NH-32KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.2.0/grid_NH-32KM.txt"
 
 ["grid_NH-4KM.txt"]
 checksum = "sha256:4338207aa84d7d969fa1ea8827f49543d1f8c6a16329965e82d1ce27874918c7"
 size = 468
 storage_path = "$datasets_dir/North/NH-4KM/grid_NH-4KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-4KM/2.1.0/grid_NH-4KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-4KM/2.2.0/grid_NH-4KM.txt"
 
 ["grid_NH-8KM.txt"]
 checksum = "sha256:8220a06ea13149c0973191099db52b5d789c8ecc190c3d1b8ed05223dcb25b41"
 size = 468
 storage_path = "$datasets_dir/North/NH-8KM/grid_NH-8KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-8KM/2.1.0/grid_NH-8KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-8KM/2.2.0/grid_NH-8KM.txt"

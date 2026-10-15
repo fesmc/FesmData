@@ -43,6 +43,30 @@ variables = ["z_topo", "z_bed", "H_ice", "dz_sl", "f_ice"]
 grids = { Antarctica = 8, GreenlandPaleo = 8, North = 8, Global = 25 }
 figure = { variables = ["H_ice"], hide = 0, colormap = "ice" }
 
+# GLAC-1D: global for PMIP4 (26-0 ka), with the ice thickness on a finer grid of its own;
+# and the regional reconstructions (120-0 ka) of North America + Greenland (two variants)
+# and Antarctica, without Eurasia (f_valid = 0 outside them)
+[products.GLAC1D]
+source = "Tarasov2012_glac1d"
+file = ["Tarasov2012_GLAC1D_PMIP4_topo.nc", "Tarasov2012_GLAC1D_PMIP4_ice.nc"]
+variables = ["z_topo", "z_srf", "H_ice", "f_ice"]
+grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+figure = { variables = ["H_ice"], hide = 0, colormap = "ice" }
+
+[products.GLAC1D_nn9927]
+source = "Tarasov2012_glac1d"
+file = ["Tarasov2012_GLAC1D_NA_nn9927.nc", "Tarasov2012_GLAC1D_ANT_nn4041.nc"]
+variables = ["H_ice", "H_lake"]
+grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+figure = { variables = ["H_ice"], hide = 0, colormap = "ice" }
+
+[products.GLAC1D_nn9894]
+source = "Tarasov2012_glac1d"
+file = ["Tarasov2012_GLAC1D_NA_nn9894.nc", "Tarasov2012_GLAC1D_ANT_nn4041.nc"]
+variables = ["H_ice"]
+grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+figure = { variables = ["H_ice"], hide = 0, colormap = "ice" }
+
 [products.PaleoGrIS]
 source = "Leger2024_PaleoGris"
 file = "Leger2024_PaleoGrIS.nc"
