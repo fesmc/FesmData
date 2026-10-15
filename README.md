@@ -78,6 +78,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | paleo    | Jouzel2007_EDC              | EPICA Dome C deuterium and temperature, 800 kyr  | Jouzel et al. (2007)           |
 | paleo    | Kindler2014                 | NGRIP temperature reconstruction, 10-120 kyr b2k | Kindler et al. (2014)          |
 | paleo    | Koehler2017_GHG             | CO2, CH4, N2O splines and radiative forcing, 156 kyr | Köhler et al. (2017)           |
+| paleo    | Lambeck2014_esl             | Ice-volume equivalent sea level, 35 ka to present | Lambeck et al. (2014)          |
 | paleo    | Lambert2012_EDCdust         | EPICA Dome C dust flux, 800 kyr                  | Lambert et al. (2012)          |
 | paleo    | Laskar2004_orbital          | Orbital elements (La2004) and insolation, 5 Ma to +1 Ma | Laskar et al. (2004)           |
 | geo      | Laske2013_crust1            | Sediment thickness of CRUST1.0                   | Laske et al. (2013)            |
@@ -127,6 +128,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | smb      | vanWessem2023_racmo23       | Antarctic SMB and surface climate, RACMO2.3p2    | van Wessem et al. (2018, 2023) |
 | paleo    | Vinther2009_elevations      | Elevations at the ice core locations             | Vinther et al. (2009)          |
 | paleo    | Waelbroeck2002_sealevel     | Sea level from benthic foraminifera, 430 kyr     | Waelbroeck et al. (2002)       |
+| paleo    | WAIS2015_WDC                | WAIS Divide d18O, 68 kyr                         | WAIS Divide Project Members (2015) |
 | geo      | Wiens2022_visc              | Antarctic upper-mantle viscosity                 | Wiens et al. (2022)            |
 | ocean    | Zhou2026_ismip7ocean        | ISMIP7 Antarctic ocean climatology               | Zhou et al. (2026)             |
 | ocean    | Zuo2019_oras5               | Ocean temperature and salinity from ORAS5        | Zuo et al. (2019)              |

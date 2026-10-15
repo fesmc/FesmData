@@ -201,7 +201,7 @@ readme = "IceCores/README.md"
 keywords = ["ice core", "paleoclimate", "Antarctica", "Greenland", "temperature", "water isotopes", "dust", "chronology", "surface elevation"]
 description = """
 Time series at Antarctic and Greenland ice core sites over glacial cycles: water isotopes
-and temperatures of EPICA Dome C, Vostok, Dome Fuji, EDML and TALDICE, the synchronized
+and temperatures of EPICA Dome C, Vostok, Dome Fuji, EDML, TALDICE and WAIS Divide, the synchronized
 Greenland δ18O and calcium records of NGRIP, GRIP and GISP2, seasonal temperatures at
 Greenland sites (Buizert et al., 2018), NGRIP temperature and accumulation (Kindler et
 al., 2014), NEEM water isotopes (Gkinis et al., 2020), Holocene surface elevation changes
@@ -231,7 +231,8 @@ description = """
 Reconstructions of global sea level over glacial cycles, some with the contributions of
 the ice sheets: the stacks of Spratt and Lisiecki (2016), Waelbroeck et al. (2002),
 Bintanja and van de Wal (2008), de Boer et al. (2014), Berends et al. (2021), Rohling et
-al. (2021), the Red Sea record of Grant et al. (2014) and the ice sheets of PaleoMIST 1.0
+al. (2021), the last deglaciation of Lambeck et al. (2014), the Red Sea record of Grant et
+al. (2014) and the ice sheets of PaleoMIST 1.0
 (Gowan et al., 2021), as CF discrete sampling geometry files with text copies.
 """
 

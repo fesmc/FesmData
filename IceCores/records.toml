@@ -49,3 +49,7 @@ file = "Rasmussen2014_GICC05.nc"
 source = "Buizert2018_cores"
 file = "Buizert2018_cores.nc"
 figure = { variable = "tas_ann" }
+
+[products.WAIS2015]
+source = "WAIS2015_WDC"
+file = "WAIS2015_WDC.nc"

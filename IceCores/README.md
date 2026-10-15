@@ -17,6 +17,7 @@ form (`.txt`).
 | `IceCores-Petit1999` | Petit et al. (1999): Vostok deuterium, [doi:10.25921/kcry-ae86](https://doi.org/10.25921/kcry-ae86) | Vostok | `dD` (‰), `tas_anom` (K), `depth` | 0-423 ka, every 1 m (GT4; also AICC2023) |
 | `IceCores-Uemura2018` | Uemura et al. (2012, 2018): Dome Fuji water isotopes, [doi:10.25921/9886-bg13](https://doi.org/10.25921/9886-bg13) | Dome Fuji | `d18O`, `dD`, `dxs`, `dln` (‰), `tas_anom`, `t_source_anom` (K), `depth_top`, `depth_bottom` | 0-716 ka (AICC2012) |
 | `IceCores-EPICA2006` | EPICA Community Members (2006): EDML δ18O, [doi:10.1594/PANGAEA.754444](https://doi.org/10.1594/PANGAEA.754444) | EDML | `d18O`, `d18O_swcor`, `d18O_swaltcor`, `d18O_sw` (‰), `dz_srf`, `depth` | 0-150 ka, 0.5 m (EDML1; also AICC2023) |
+| `IceCores-WAIS2015` | WAIS Divide Project Members (2015): WAIS Divide δ18O, [doi:10.7265/N5GT5K41](https://doi.org/10.7265/N5GT5K41) | WAIS Divide | `d18O` (‰), `depth`, `depth_top`, `depth_bottom`, `tube` | 0-68 ka, about 1 m tubes (WD2014; AICC2023 for 10-57 ka) |
 | `IceCores-Stenni2011` | Stenni et al. (2011): TALDICE δ18O on AICC2012, [doi:10.1594/PANGAEA.824890](https://doi.org/10.1594/PANGAEA.824890) | TALDICE | `d18O` (‰), `depth` | 0-153 ka, every 1 m (AICC2012; also AICC2023) |
 | `IceCores-Lambert2012` | Lambert et al. (2012): EPICA Dome C dust flux, [doi:10.1594/PANGAEA.778213](https://doi.org/10.1594/PANGAEA.778213) | EDC | `dust_flux` (mg m-2 yr-1), `depth` | 0.4-801 ka, 25 years (EDC3; also AICC2023) |
 | `IceCores-Rasmussen2014` | Rasmussen et al. (2014), Seierstad et al. (2014): synchronized Greenland records, [doi:10.1016/j.quascirev.2014.09.007](https://doi.org/10.1016/j.quascirev.2014.09.007) | NGRIP1, NGRIP2, GRIP, GISP2 | `d18O` (‰), `ca` (ng g-1), `depth`, `mce` | 0-122 ka, 20 years (GICC05modelext; NGRIP also AICC2023) |
@@ -35,7 +36,8 @@ files are profiles along depth (featureType profile). `time` is in years before 
 
 `time_aicc2023`: the records of EDC, EDML, TALDICE, Vostok and NGRIP with depths also
 have the ages on AICC2023 (Bouchet et al., 2023), interpolated linearly in depth in the
-AICC2023 table of the core (`IceCores-AICC2023-<core>`); missing outside the table.
+AICC2023 table of the core (`IceCores-AICC2023-<core>`); missing outside the table. WAIS
+Divide has AICC2023 ages from the WAIS Divide-EDC tie points of AICC2023 (10-57 ka).
 
 ## Licences
 
@@ -45,6 +47,7 @@ AICC2023 table of the core (`IceCores-AICC2023-<core>`); missing outside the tab
 | EPICA Community Members (2006), Stenni et al. (2011) on AICC2012, Lambert et al. (2012) | CC BY 3.0 (PANGAEA) |
 | Rasmussen et al. (2014), Seierstad et al. (2014) | No licence stated (Centre for Ice and Climate); publishing assumed to be allowed |
 | Bouchet et al. (2023), AICC2023 | CC BY 4.0 (PANGAEA) |
+| WAIS Divide Project Members (2015), data of E. Steig | CC BY-NC 4.0 (USAP-DC) |
 | Kindler et al. (2014) | CC BY 3.0 (Clim. Past supplement) |
 | Gkinis et al. (2020) | CC BY 4.0 (PANGAEA) |
 | Vinther et al. (2009) | NOAA NCEI open data, no licence stated; publishing assumed to be allowed |

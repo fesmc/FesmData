@@ -26,6 +26,10 @@ file = "Berends2021_sealevel.nc"
 source = "Rohling2021_sealevel"
 file = "Rohling2021_sealevel.nc"
 
+[products.Lambeck2014]
+source = "Lambeck2014_esl"
+file = "Lambeck2014_esl.nc"
+
 [products.Grant2014]
 source = "Grant2014_RedSea"
 files = { probabilistic = "Grant2014_RedSea_probabilistic.nc", data = "Grant2014_RedSea_data.nc" }

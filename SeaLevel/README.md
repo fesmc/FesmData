@@ -20,6 +20,7 @@ form (`.txt`). Relative sea level indicators at sites are in RSL.
 | `SeaLevel-deBoer2014` | de Boer et al. (2014): inverse modelling with four ice sheets, [doi:10.25921/xs31-nt56](https://doi.org/10.25921/xs31-nt56) | `sl`, `sl_eis`, `sl_nais`, `sl_ais`, `sl_gris`, `tas_anom_nh`, `d18O_benthic`, `d18O_sw`, `d18O_temp`, `V_ais`, `D_ais` | 0-5.3 Ma, 100 years |
 | `SeaLevel-Berends2021` | Berends et al. (2021): coupled ice-sheet-climate model, [doi:10.5281/zenodo.3793592](https://doi.org/10.5281/zenodo.3793592) | `sl`, `sl_min`, `sl_max`, `co2`, `co2_min`, `co2_max` (three simulations) | 0-3.6 Ma, 100 years |
 | `SeaLevel-Rohling2021` | Rohling et al. (2021): regression on the LR04 stack, [doi:10.25921/rq2y-4k67](https://doi.org/10.25921/rq2y-4k67) | `sl`, `sl_lis`, `sl_eis`, `sl_ais`, `sl_gris`, `d18O_benthic`, `d18O_sw`, `d18O_temp`, `t_deep_anom` | 0-5.3 Ma, 1 kyr (LR04) |
+| `SeaLevel-Lambeck2014` | Lambeck et al. (2014): ice-volume equivalent sea level from sea-level indicators and glacial isostatic adjustment, [doi:10.1073/pnas.1411762111](https://doi.org/10.1073/pnas.1411762111) | `sl`, `sl_sd`, `sl_nominal` | 0-35 ka, 326 values |
 | `SeaLevel-Grant2014-<part>` | Grant et al. (2014): Red Sea relative sea level, [doi:10.1038/ncomms6076](https://doi.org/10.1038/ncomms6076); parts `probabilistic` and `data` | `rsl`, `rsl_min`, `rsl_max` (95%), `rsl_data_min`, `rsl_data_max`, `drsl` with its range; `data`: `rsl` of the data points | 0-492 ka, 125 years; data points |
 | `SeaLevel-PaleoMIST`, `SeaLevel-PaleoMIST_max` | Gowan et al. (2021): ice sheets of PaleoMIST 1.0, minimal and maximal MIS 3 scenarios, [doi:10.1594/PANGAEA.905800](https://doi.org/10.1594/PANGAEA.905800) | `sl`, `sl_nam` (with Greenland), `sl_eis`, `sl_ais`, `sl_pat` | 0-80 ka, 2.5 kyr |
 
@@ -44,6 +45,7 @@ bounds given by the source (see the long names).
 | Spratt and Lisiecki (2016), Waelbroeck et al. (2002), Bintanja and van de Wal (2008), de Boer et al. (2014), Rohling et al. (2021) | NOAA NCEI open data, no licence stated; publishing assumed to be allowed |
 | Berends et al. (2021) | CC BY 4.0 (Zenodo) |
 | Grant et al. (2014) | Supplement of a Nature Communications article, no open licence stated; publishing assumed to be allowed |
+| Lambeck et al. (2014) | Supporting information of a PNAS article, no open licence stated; publishing assumed to be allowed |
 | Gowan et al. (2021), PaleoMIST 1.0 | CC BY 4.0 (PANGAEA) |
 
 ## Making the dataset
@@ -55,4 +57,4 @@ julia fesmdata.jl record SeaLevel
 prepares the missing sources (`<Source>/prepare.jl`), checks the prepared files and
 copies them to `$FESMDATA_PRODUCTS/Records/SeaLevel/` with their text forms
 (`--overwrite` to replace them). PaleoMIST needs the archive of PaleoMIST 1.0 (3.5 GB,
-also used by IceHistory).
+also used by IceHistory); Lambeck2014 a manual download (see its README) and `pdftotext`.
