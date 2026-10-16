@@ -10,7 +10,10 @@ package registry of the GitLab project
 (Helmholtz Codebase), and listed on the [website](https://fesmc.github.io/FesmData/). A
 release of a dataset (tag `<dataset>-vX.Y.Z`, e.g. `topo-v2.0.0`) covers all its
 domains, with one package per domain, dataset and grid, e.g. `Antarctica_Topo_ANT-32KM`
-version `2.0.0`, with the files of that grid (grid description, grid file and products).
+version `2.0.0`, with the files of that grid (grid description, grid file and products)
+new or changed in that release. A file unchanged since an earlier release stays in the
+package of the release it was first uploaded at (`2.0.0`), so that a release uploads, and
+`fetch` downloads, only what is new.
 Domains are named by their output folder (`folder` in `../shared/domains.toml`, e.g.
 Antarctica, Greenland, Patagonia; all are listed on the
 [Domains](https://fesmc.github.io/FesmData/domains.html) page). Records datasets
@@ -38,9 +41,11 @@ storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_TOPO-Bedmap3.nc"
 ```
 
 `$datasets_dir` stands for `$FESMDATA_PRODUCTS`, so the files land in the usual layout,
-`$FESMDATA_PRODUCTS/<Domain>/<GRID>/`. A file that changed since an earlier release (if
-only by the version stamped in it) also has `previous_checksums`, the checksums of
-its earlier releases, so that copies of those are updated. The registry files are also
+`$FESMDATA_PRODUCTS/<Domain>/<GRID>/`. The `uri` of a file unchanged since an earlier
+release is that of the package where it was uploaded (e.g. `2.0.0` in the registry of
+release `2.1.0`). A file that changed since an earlier release also has
+`previous_checksums`, the checksums of its earlier releases, so that copies of those
+are updated. The registry files are also
 [DataManifest.jl](https://github.com/awi-esc/DataManifest.jl) databases.
 
 ## Download
@@ -75,8 +80,10 @@ source shared/machines/levante.env
 julia fesmdata.jl stamp GHF
 ```
 
-`stamp` sets `fesmdata_version` of every file of the release to the tag, in place
-(only the global attributes change). `fesmdata_commit` stays the commit that made the
+`stamp` sets `fesmdata_version` of every file new or changed since the earlier release
+to the tag, in place (only the global attributes change). The files unchanged since then
+(the checksum of their entry in the registry, which must therefore be committed) keep
+the version they were released at, and are not uploaded or downloaded again. `fesmdata_commit` stays the commit that made the
 file, and `history` records the stamp and the version the file was made at, so that
 files made before the tag (whose code may differ in details from the tag) can be
 recognised. The files are not made again: a product is made and checked once, and
@@ -92,9 +99,12 @@ julia fesmdata.jl release GHF --dry-run
 julia fesmdata.jl release GHF
 ```
 
-The dry run checks every domain (all files present, all at the release tag) and lists
-the packages. `release` then uploads the files of each grid to its package, checks
-them (sha256), and writes the registry file of each domain. Requests that fail because
+The release is that of the newest tag of the dataset. The dry run checks every domain
+(all files present, the new and changed files at the release tag, the unchanged ones at
+an earlier tag) and lists the files to upload by package. `release` then uploads the new
+and changed files of each grid to its package, checks them (sha256), and writes the
+registry file of each domain, with the entries of the unchanged files kept. A domain
+without new or changed files gets only its registry, at the version of the release. Requests that fail because
 the server is busy are tried again after a wait. If it still stops, run it again: files
 already uploaded are kept, and domains already released are skipped.
 
@@ -107,12 +117,12 @@ git add registry && git commit -m "registry: GHF v2.0.0" && git push
 **5. Clean up** the files the release replaced, once the release is out (and mirrored,
 `fesmdata.jl mirror`, on the other machines): products no longer made (e.g. copies on a
 crop that now gets them by cropping, grids dropped by the resolution rule) stay in
-`$FESMDATA_PRODUCTS` until pruned, and earlier versions stay on the packages page until
-deleted:
+`$FESMDATA_PRODUCTS` until pruned, and the files of earlier releases that were replaced
+stay on the packages page until deleted:
 
 ```bash
 julia fesmdata.jl prune               # or: prune <Dataset> [<Domain>]
-julia fesmdata.jl delete GHF 2.0.0    # packages of a version no longer registered
+julia fesmdata.jl delete GHF          # files of the packages no release refers to
 ```
 
 `prune` lists the files that no record of the registry refers to, by domain and dataset
@@ -123,6 +133,13 @@ a `cropped_from` attribute, made by `fetch` and `mirror`), the products not rele
 of grids still in use, and the records (`Records/`). Run it on every machine with a copy
 (Levante, Albedo), after `mirror` there.
 
+`delete <Dataset>` lists the files of the packages of the dataset, all versions, that
+no entry of the registry refers to, and deletes them after one confirmation, with the
+packages left without files. It reads the registry of the checkout, so it only cleans
+the packages of versions up to the registered release of each domain: those of a later
+version (an upload not finished, or a release not yet pulled) and of domains without a
+registry are kept, and can be deleted by version.
+
 At any point, `status` shows each domain: its local files and their version, its
 packages on GitLab, and its registered release (and DOI):
 
@@ -132,8 +149,9 @@ julia fesmdata.jl status Topo
 
 All commands take domains after the dataset to work on some only (e.g. `upload Topo
 Antarctica`). `--allow-untagged` skips the release checks, e.g. for a test.
-`delete Topo <version>` removes the packages of a version (e.g. of a test), after one
-confirmation; registered releases are not deleted.
+`delete Topo <version>` removes the packages of a version (e.g. of a test, or of a
+domain no longer released), after one confirmation; packages with files of the registry
+are not deleted.
 
 To test, use `--sandbox`: the packages are named `test_<Domain>_<Dataset>_<GRID>` and
 the registry files go to `registry/_sandbox/`, which is not tracked (`fetch.jl

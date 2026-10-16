@@ -95,7 +95,11 @@ Release (maintainers, see Publish/README.md):
                                                release refers to (not crops, unreleased
                                                products, grid files in use), after one
                                                confirmation (--yes: none)
-  delete <Dataset> <version> [<Domain> ...]    delete the packages of a version
+  delete <Dataset> [<Domain> ...]              delete the files of the packages (all
+                                               versions) that no release refers to, after
+                                               one confirmation
+  delete <Dataset> <version> [<Domain> ...]    delete the packages of a version (not of
+                                               the registry)
   archive upload|publish|register|status|discard <Dataset> [<Domain> ...]
                                                archive releases on Zenodo, for a DOI
   archive discard <draft id> ...  |  archive drafts
@@ -233,8 +237,11 @@ function main(argv)
         elseif command == "status"
             call(:status, dataset, rest[2:end]; sandbox=sandbox)
         else
-            length(rest) >= 2 || usage("delete: give a dataset and a version")
-            call(:delete_release, dataset, rest[2], rest[3:end]; sandbox=sandbox)
+            if length(rest) >= 2 && occursin(r"^\d+\.\d+\.\d+", rest[2])
+                call(:delete_release, dataset, rest[2], rest[3:end]; sandbox=sandbox)
+            else
+                call(:delete_unused, dataset, rest[2:end]; sandbox=sandbox)
+            end
         end
     elseif command == "prune"
         include(joinpath(PUBLISH_DIR, "catalog.jl"))

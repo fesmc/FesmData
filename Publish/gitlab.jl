@@ -2,7 +2,7 @@
 # GitLab project ([_gitlab] in datasets.toml), with one package per domain, dataset and
 # grid (<Domain>_<Dataset>_<GRID>, e.g. Antarctica_Topo_ANT-32KM; one per records
 # dataset, Records_<Dataset>, e.g. Records_IceCores), versioned by the
-# release (2.0.0). Uploads need a token of the project with the scope api in
+# release (2.0.0), with the files new or changed in that release. Uploads need a token of the project with the scope api in
 # GITLAB_TOKEN; downloads need none (public project). Test releases (`sandbox`) go to
 # packages named test_<Domain>_<Dataset>_<GRID>, with their registry in
 # registry/_sandbox/.
@@ -49,8 +49,43 @@ function find_package(package::AbstractString, number::AbstractString)
     return isempty(found) ? nothing : only(found)
 end
 
+"All results of a GET request to the GitLab API, over its pages."
+function gitlab_pages(url::AbstractString)
+    results, page = [], 1
+    while true
+        found = gitlab("GET", "$url$(occursin('?', url) ? '&' : '?')per_page=100&page=$page")
+        append!(results, found)
+        length(found) < 100 && return results
+        page += 1
+    end
+end
+
 "Files of a package (name, id, file_sha256, size, ...)."
-package_files(pkg) = gitlab("GET", "$(project_api())/packages/$(pkg["id"])/package_files?per_page=100")
+package_files(pkg) = gitlab_pages("$(project_api())/packages/$(pkg["id"])/package_files")
+
+"Download URL of a file of a package, as in the registry."
+file_uri(pkg, file) = download_url(pkg["name"], pkg["version"], file["file_name"])
+
+"""
+    dataset_packages(dataset, domains=String[]; sandbox=false) -> Vector{(domain, package)}
+
+Packages of a dataset on GitLab, all versions, on the domains `domains` (all by
+default), by their names (<Domain>_<Dataset>_<GRID>, or <Domain>_<Dataset> for records).
+"""
+function dataset_packages(dataset::AbstractString, domains=String[]; sandbox::Bool=false)
+    pattern = Regex("^$(sandbox ? "test_" : "")([^_]+)_$(dataset)(_.+)?\$")
+    found = Tuple{String,Any}[]
+    for pkg in gitlab_pages("$(project_api())/packages?package_type=generic&package_name=_$(dataset)")
+        m = match(pattern, pkg["name"])
+        m === nothing || !(isempty(domains) || m[1] in domains) || push!(found, (m[1], pkg))
+    end
+    return sort(found; by=((d, p),) -> (d, p["name"], p["version"]))
+end
+
+"Download URLs of all files in the registry of a dataset (all domains)."
+referenced_uris(dataset::AbstractString; sandbox::Bool=false) =
+    Set(e["uri"] for (d, s) in list_records(; sandbox=sandbox) if s == dataset
+                 for e in values(registry_entries(d, s; sandbox=sandbox)))
 
 sha256_of(path::AbstractString) = replace(release_checksum(path), "sha256:" => "")
 
@@ -200,23 +235,73 @@ function status(dataset::AbstractString, domains=String[]; sandbox::Bool=false)
 end
 
 """
+    delete_unused(dataset, domains=String[]; sandbox=false)
+
+Delete the files of the packages of a dataset on GitLab (all versions, all domains by
+default) that no entry of the registry refers to, e.g. those replaced by a later
+release, and the packages left without files, after one confirmation. Only packages of
+versions up to the registered release of their domain are cleaned: those of a later
+version (an upload not finished, or a release not in this checkout of the registry) and
+of domains without a registry are listed and kept (`delete_release` deletes them).
+"""
+function delete_unused(dataset::AbstractString, domains=String[]; sandbox::Bool=false)
+    dataset_config(dataset)
+    referenced = referenced_uris(dataset; sandbox=sandbox)
+    targets = []
+    for (domain, pkg) in dataset_packages(dataset, domains; sandbox=sandbox)
+        release = get(registry_tables(domain, dataset; sandbox=sandbox), "_RELEASE", nothing)
+        newer = release === nothing ? true :
+                something(tryparse(VersionNumber, pkg["version"]), v"0") > VersionNumber(release["version"])
+        if newer
+            println("  kept      $(pkg["name"]) $(pkg["version"]): " *
+                    (release === nothing ? "$domain/$dataset not registered" : "later than the registered $(release["version"])"))
+            continue
+        end
+        files = package_files(pkg)
+        unused = filter(r -> !(file_uri(pkg, r) in referenced), files)
+        isempty(unused) && !isempty(files) && continue
+        push!(targets, (pkg, unused, length(unused) == length(files)))
+    end
+    isempty(targets) && (println("No unused files in the packages of $dataset"); return)
+    _env("GITLAB_TOKEN")   # needed to delete
+    for (pkg, unused, whole) in targets
+        mb = round(sum(r -> r["size"], unused; init=0) / 1e6; digits=1)
+        println("  ", pkg["name"], " ", pkg["version"], ": ",
+                whole ? "the package, " : "", "$(length(unused)) files, $mb MB")
+    end
+    n = sum(t -> length(t[2]), targets)
+    gb = round(sum(r -> r["size"], (r for t in targets for r in t[2]); init=0) / 1e9; digits=2)
+    confirm("Delete these $n files ($gb GB) of $(length(targets)) packages ($(count(t -> t[3], targets)) " *
+            "entirely)? This cannot be undone.") || (println("Nothing deleted."); return)
+    for (pkg, unused, whole) in targets
+        if whole
+            gitlab("DELETE", "$(project_api())/packages/$(pkg["id"])"; missing_ok=true)
+        else
+            for r in unused
+                gitlab("DELETE", "$(project_api())/packages/$(pkg["id"])/package_files/$(r["id"])"; missing_ok=true)
+            end
+        end
+        println("deleted $(pkg["name"]) $(pkg["version"]): ", whole ? "the package" : "$(length(unused)) files")
+    end
+end
+
+"""
     delete_release(dataset, number, domains=String[]; sandbox=false)
 
 Delete the packages of a version of a dataset on GitLab (all domains by default), after
-one confirmation, e.g. those of a test or of an incomplete upload. A registered release
-is not deleted (outside the tests).
+one confirmation, e.g. those of a test or of an incomplete upload. Packages with files
+of a registered release are not deleted (outside the tests, where the registry of their
+domain is removed too).
 """
 function delete_release(dataset::AbstractString, number::AbstractString, domains=String[]; sandbox::Bool=false)
     dataset_config(dataset)
+    referenced = referenced_uris(dataset; sandbox=sandbox)
     targets = []
-    for domain in (isempty(domains) ? release_domains(dataset) : domains)
-        tables = registry_tables(domain, dataset; sandbox=sandbox)
-        registered = get(get(tables, "_RELEASE", Dict()), "version", "") == number
-        registered && !sandbox && (println("$domain/$dataset $number is registered, not deleted"); continue)
-        for grid in unique(f.grid for f in release_files(domain, dataset))
-            pkg = find_package(package_name(domain, dataset, grid; sandbox=sandbox), number)
-            pkg === nothing || push!(targets, (domain, pkg, registered))
-        end
+    for (domain, pkg) in dataset_packages(dataset, domains; sandbox=sandbox)
+        pkg["version"] == number || continue
+        registered = any(r -> file_uri(pkg, r) in referenced, package_files(pkg))
+        registered && !sandbox && (println("$(pkg["name"]) $number has files of the registry, not deleted"); continue)
+        push!(targets, (domain, pkg, registered))
     end
     isempty(targets) && (println("No packages of $dataset $number to delete"); return)
     _env("GITLAB_TOKEN")   # needed to delete
