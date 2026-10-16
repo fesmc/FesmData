@@ -51,9 +51,9 @@ domain_figure(folder::AbstractString, product::AbstractString) = "figures/Domain
     write_domains(path)
 
 Write the table of the domains (Markdown) to `path`: for each domain, crop and nest of
-../shared/domains.toml, its folder, grid prefix, kind, resolutions, projection, whether
-it is active, and links to the overview figures of its Topo products (of its parent,
-for a crop; active domains only).
+../shared/domains.toml, its folder, grid prefix, kind, resolutions, size of its base
+grid (nx x ny) and extent, projection, whether it is active, and links to the overview
+figures of its Topo products (of its parent, for a crop; active domains only).
 """
 function write_domains(path::AbstractString)
     rows = domain_rows()
@@ -61,9 +61,9 @@ function write_domains(path::AbstractString)
     mkpath(dirname(path))
     open(path, "w") do io
         println(io, GENERATED, "\n")
-        println(io, "::: {.wide-table .column-screen-inset}\n")
-        println(io, "| Folder | Overview figures (Topo products) | Grid prefix | Kind | Grids | Projection | Active |")
-        println(io, "|---|---|---|---|---|---|---|")
+        println(io, "::: {.wide-table .domains-table .column-screen-inset}\n")
+        println(io, "| Folder | Overview figures (Topo products) | Grid prefix | Kind | Grids | Base grid (nx × ny) | Extent | Projection | Active |")
+        println(io, "|---|---|---|---|---|---|---|---|---|")
         for r in rows
             kind = r.kind == "domain" ? "domain" : "$(r.kind) of $(r.parent)"
             # Figures of the Topo products of the domain (of its parent, for a crop), made
@@ -79,7 +79,7 @@ function write_domains(path::AbstractString)
                 join(["[$x]($(domain_figure(r.folder, x)))" for x in [r.products; r.variants]], ", ")
             end
             println(io, "| $(r.folder) | $figures | `$(r.key)` | $kind | $(resolutions_text(r)) | ",
-                    "$(projection_text(r.proj)) | $(r.active ? "yes" : "no") |")
+                    "$(base_size_text(r)) | $(extent_text(r)) | $(projection_text(r.proj)) | $(r.active ? "yes" : "no") |")
         end
         println(io, "\n:::")
     end

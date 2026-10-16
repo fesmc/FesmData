@@ -333,9 +333,23 @@ function domain_rows()
         active = kind == "crop" ? parent.active : get(d, "active", parent === nothing ? true : parent.active)
         products = haskey(topo, key) ? get(topo_keys, "$key.products", String[]) : String[]
         variants = haskey(topo, key) ? get(topo_keys, "$key.variants", String[]) : String[]
+        # Cell centres of the base grid along x and y (km): the extent of a domain or nest
+        # at its finest resolution, and for a crop the centres of its parent base grid
+        # within its extent (as `crop` in FesmUtils)
+        xc, yc = if lonlat
+            Float64[], Float64[]
+        elseif kind == "crop"
+            within(c, lim, step) = filter(v -> lim[1] - 1e-6step <= v <= lim[2] + 1e-6step, c)
+            within(parent.xc, d["xlim"], parent.dx), within(parent.yc, d["ylim"], parent.dx)
+        else
+            dx = minimum(resolutions)
+            centres(lim) = collect(range(lim[1], lim[2]; length=round(Int, (lim[2] - lim[1]) / dx) + 1))
+            centres(d["xlim"]), centres(d["ylim"])
+        end
+        dx = lonlat || kind == "crop" ? (parent === nothing ? 0.0 : parent.dx) : minimum(resolutions)
         row = (folder=d["folder"], key=key, kind=kind, parent=parent === nothing ? "" : parent.folder,
                resolutions=resolutions, gaussian=sort(collect(keys(get(d, "gaussian", Dict())))), proj=proj,
-               active=active, products=products, variants=variants)
+               active=active, products=products, variants=variants, xc=xc, yc=yc, dx=dx)
         info[name] = row
         push!(rows, row)
     end
@@ -348,6 +362,25 @@ function resolution_text(r::Real; lonlat::Bool=false)
     lonlat && return "$(num(r))°"
     return r < 1 ? "$(num(round(r * 1000; digits=3))) m" : "$(num(r)) km"
 end
+
+"Size of the base grid of a domain, nx x ny (at the finest resolution for a lon-lat domain)."
+function base_size_text(row)
+    if row.proj == "lonlat"
+        r = minimum(row.resolutions)
+        return "$(thousands(round(Int, 360 / r))) × $(thousands(round(Int, 180 / r)))"
+    end
+    return "$(thousands(length(row.xc))) × $(thousands(length(row.yc)))"
+end
+
+"Extent of a projected domain, width x height in km (from the edges of its base grid); empty for lon-lat."
+function extent_text(row)
+    row.proj == "lonlat" && return ""
+    km(n) = (w = n * row.dx; w >= 10 ? thousands(round(Int, w)) : string(round(w; digits=1)))
+    return "$(km(length(row.xc))) × $(km(length(row.yc))) km"
+end
+
+"An integer with thousands separators: 13,329."
+thousands(n::Integer) = replace(string(n), r"(?<=\d)(?=(\d{3})+$)" => ",")
 
 "Resolutions of a domain, from fine to coarse, with its Gaussian grids: 250, 500 m, 2 km."
 function resolutions_text(row)

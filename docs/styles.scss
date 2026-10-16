@@ -43,6 +43,13 @@ pre.sourceCode {
   white-space: nowrap;
 }
 
+// Domains table: the links to the overview figures wrap
+.domains-table td:nth-child(2) {
+  white-space: normal;
+  min-width: 14rem;
+  max-width: 22rem;
+}
+
 // Downloads of the dataset pages (generated, see Publish/site.jl)
 .muted {
   color: #57606a;
