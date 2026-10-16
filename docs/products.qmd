@@ -10,6 +10,6 @@ on [Helmholtz Codebase](https://codebase.helmholtz.cloud/fesmc/fesmdata-products
 The files of each grid are listed at the end of the page of each dataset, under
 Downloads; download them with `fesmdata.jl` (see [Download](download.qmd)) or one by one.
 What each dataset contains is under [Datasets](datasets.qmd), the domains and their grids
-under [Domains](domains.qmd).
+under [Domains and grids](domains.qmd).
 
 {{< include _products.md >}}

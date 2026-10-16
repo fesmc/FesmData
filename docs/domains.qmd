@@ -1,6 +1,6 @@
 ---
-title: "Domains"
-subtitle: "The model domains and their grids"
+title: "Domains and grids"
+subtitle: "The model domains, their grids and grid files"
 ---
 
 All datasets are made on the same model domains and grids, defined in
@@ -88,7 +88,7 @@ spectral truncation, e.g. GLOBAL-T170 (512 x 256, as used by VILMA), made only f
 products that need them. Global sources are remapped onto these grids, so that all
 global products share them.
 
-## Grid names and grid files
+## Grid names and grid files {#grid-files}
 
 Grids are named after the key of their domain (or crop, or nest) and their resolution:
 `ANT-8KM`, `GRL-PAL-500M`, `DDG-25M`, `GLOBAL-0.5DEG`. A grid name thus also gives its
@@ -102,8 +102,25 @@ $FESMDATA_PRODUCTS/<folder>/<GRID>/
     <GRID>_TOPO-<product>.nc, <GRID>_REGIONS.nc, <GRID>_GHF-<source>.nc, ...
 ```
 
-The grid files are released once per grid, in the dataset [Grids](datasets/grids.qmd),
-for all datasets on the grid: `fetch` gets them with the products of any dataset.
+The grid files are released once per grid, in the dataset Grids, for all datasets on
+the grid: `fetch` gets them with the products of any dataset. To get only the grid files
+of a domain, or of a grid:
+
+```bash
+julia fesmdata.jl fetch Grids Antarctica
+julia fesmdata.jl fetch Grids ANT-8KM
+```
+
+They are released on the grids with products of at least one dataset (Grids in the
+table above links to those of each domain), and listed below. The other grids (e.g. the
+grids of a nest at the resolutions of its parent, which get their products by cropping)
+get their grid files from `fetch`, which writes them with the crops. The grid files are
+written by Topo step 1 on the projected grids, and by `fesmdata.jl remap` on the global
+grids (see [Grids/README.md](https://github.com/fesmc/FesmData/blob/main/Grids/README.md)).
+
+### Grid files of each domain {#grid-downloads}
+
+{{< include _grids.md >}}
 
 ## Which datasets are on which grids
 

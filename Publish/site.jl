@@ -17,6 +17,9 @@ dataset_page(dataset::AbstractString) = "datasets/$(lowercase(dataset)).qmd"
 "Anchor of the downloads of a dataset on a domain, on the page of the dataset."
 download_anchor(domain::AbstractString) = "download-$(lowercase(domain))"
 
+"Anchor of the grid files of a domain (Grids), on the page Domains and grids."
+grids_anchor(domain::AbstractString) = "grids-$(lowercase(domain))"
+
 # ---------------------------------------------------------------------------
 # Datasets
 # ---------------------------------------------------------------------------
@@ -25,12 +28,14 @@ download_anchor(domain::AbstractString) = "download-$(lowercase(domain))"
     site_topics(datasets) -> Vector{Pair{String,Vector{String}}}
 
 Topics of the datasets on the website, in order (`[_site] topics` of datasets.toml), as
-name => datasets; every dataset must be in one.
+name => datasets; every dataset must be in one, except Grids, which is on the page
+Domains and grids (`write_grids_downloads`).
 """
 function site_topics(datasets::AbstractDict)
     topics = [t["name"] => String.(t["datasets"]) for t in TOML.parsefile(joinpath(@__DIR__, "datasets.toml"))["_site"]["topics"]]
     listed = [s for (_, ss) in topics for s in ss]
-    missing_ = setdiff(keys(datasets), listed)
+    GRIDS in listed && error("$GRIDS is on the page Domains and grids, not in a topic of [_site] in datasets.toml")
+    missing_ = setdiff(keys(datasets), listed, [GRIDS])
     isempty(missing_) || error("datasets without a topic in [_site] of datasets.toml: $(join(sort(collect(missing_)), ", "))")
     unknown = setdiff(listed, keys(datasets))
     isempty(unknown) || error("unknown datasets in [_site] of datasets.toml: $(join(unknown, ", "))")
@@ -48,14 +53,15 @@ title_case(s::AbstractString) = isempty(s) ? s : uppercase(s[1:1]) * s[nextind(s
 domain_figure(folder::AbstractString, product::AbstractString) = "figures/Domains/$(folder)_TOPO-$(product).png"
 
 """
-    write_domains(path)
+    write_domains(path, cat)
 
 Write the table of the domains (Markdown) to `path`: for each domain, crop and nest of
-../shared/domains.toml, its folder, grid prefix, kind, resolutions, size of its base
-grid (nx x ny) and extent, projection, whether it is active, and links to the overview
-figures of its Topo products (of its parent, for a crop; active domains only).
+../shared/domains.toml, its folder, grid prefix, kind, resolutions (linked to its grid
+files, if released in Grids), size of its base grid (nx x ny) and extent, projection,
+whether it is active, and links to the overview figures of its Topo products (of its
+parent, for a crop; active domains only).
 """
-function write_domains(path::AbstractString)
+function write_domains(path::AbstractString, cat)
     rows = domain_rows()
     by_folder = Dict(r.folder => r for r in rows)
     mkpath(dirname(path))
@@ -78,7 +84,9 @@ function write_domains(path::AbstractString)
             else
                 join(["[$x]($(domain_figure(r.folder, x)))" for x in [r.products; r.variants]], ", ")
             end
-            println(io, "| $(r.folder) | $figures | `$(r.key)` | $kind | $(resolutions_text(r)) | ",
+            grids = (r.folder, GRIDS) in cat.records ? "[$(resolutions_text(r))](#$(grids_anchor(r.folder)))" :
+                                                       resolutions_text(r)
+            println(io, "| $(r.folder) | $figures | `$(r.key)` | $kind | $grids | ",
                     "$(base_size_text(r)) | $(extent_text(r)) | $(projection_text(r.proj)) | $(r.active ? "yes" : "no") |")
         end
         println(io, "\n:::")
@@ -213,6 +221,28 @@ function write_downloads(path::AbstractString, cat::Catalog, dataset::AbstractSt
 end
 
 """
+    write_grids_downloads(path, cat)
+
+Write the downloads of Grids (Markdown with HTML blocks) to `path`, which the page
+Domains and grids includes: for each domain, the release of its grid files and the files
+of each grid with their links.
+"""
+function write_grids_downloads(path::AbstractString, cat::Catalog)
+    mkpath(dirname(path))
+    open(path, "w") do io
+        println(io, GENERATED, "\n")
+        domains = released_on(cat, GRIDS)
+        isempty(domains) && (println(io, "*Not released yet.*"); return)
+        for domain in domains
+            println(io, "#### $domain {#$(grids_anchor(domain))}\n\n```{=html}")
+            record_html(io, domain, GRIDS)
+            println(io, "```\n")
+        end
+    end
+    return path
+end
+
+"""
     datasets_table(io, cat, datasets, meta)
 
 A table of datasets (Markdown): each with its title, the domains it is released on (for
@@ -311,16 +341,18 @@ end
     write_site(docs)
 
 Write the generated pages of the website into the folder `docs`: `_products.md`,
-`_datasets.md`, `_records.md`, `_domains.md` and `_downloads/<Dataset>.md`. Returns
-their paths.
+`_datasets.md`, `_records.md`, `_domains.md`, `_grids.md` and `_downloads/<Dataset>.md`
+(not Grids, which is on the page Domains and grids). Returns their paths.
 """
 function write_site(docs::AbstractString)
     cat = Catalog()
     paths = [write_products(joinpath(docs, "_products.md"), cat),
              write_datasets(joinpath(docs, "_datasets.md"), cat),
              write_datasets(joinpath(docs, "_records.md"), cat; records=true),
-             write_domains(joinpath(docs, "_domains.md"))]
+             write_domains(joinpath(docs, "_domains.md"), cat),
+             write_grids_downloads(joinpath(docs, "_grids.md"), cat)]
     for s in sort(collect(keys(read_site_datasets())))
+        s == GRIDS && continue
         push!(paths, write_downloads(joinpath(docs, "_downloads", "$s.md"), cat, s))
     end
     return paths

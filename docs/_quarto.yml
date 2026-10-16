@@ -37,7 +37,7 @@ website:
         href: download.qmd
       - text: "Products"
         href: products.qmd
-      - text: "Domains"
+      - text: "Domains and grids"
         href: domains.qmd
       - text: "Datasets"
         menu:
@@ -51,8 +51,6 @@ website:
             href: datasets/topo.qmd
           - text: "Regions — regions and basins"
             href: datasets/regions.qmd
-          - text: "Grids — grid files"
-            href: datasets/grids.qmd
           - text: "---"
           - text: "Ice"
           - text: "Velocity — ice surface velocity"

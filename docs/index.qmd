@@ -15,7 +15,7 @@ be archived on [Zenodo](https://zenodo.org/communities/fesmc) with a DOI.
 - [Datasets](datasets.qmd): what each dataset contains, its sources and licences, and
   its files; [Records](records_overview.qmd) for the non-gridded data.
 - [Products](products.qmd): which dataset is released on which domain.
-- [Domains](domains.qmd): the model domains and their grids.
+- [Domains and grids](domains.qmd): the model domains, their grids and grid files.
 - [Download](download.qmd): how to get the files.
 - [Your own data](remap.qmd): put any gridded dataset onto the same grids.
 
