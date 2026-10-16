@@ -1,111 +1,135 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-15"
-git_tag = "topo-v2.5.0"
+date = "2026-10-16"
+git_tag = "topo-v2.6.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=DrangDrung_Topo"
-version = "2.5.0"
+version = "2.6.0"
+
+["DDG-100M_TOPO-GLO30-GEBCO2026.nc"]
+checksum = "sha256:c5fc37185fa689d3417162a4ae723cacc6b09537b92307f3182f7d6d5aa94e6d"
+size = 620399
+storage_path = "$datasets_dir/DrangDrung/DDG-100M/DDG-100M_TOPO-GLO30-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-100M/2.6.0/DDG-100M_TOPO-GLO30-GEBCO2026.nc"
 
 ["DDG-100M_TOPO-GLO90-GEBCO2026.nc"]
-checksum = "sha256:5cc9aa54178b357ac2f532d3faf6b564650a7035beeea266c5964143e9387963"
-previous_checksums = ["sha256:4326d56c6c9e12c9cea64310245325774c99dc151930108a3c3d2e571dbed072", "sha256:fa118bf6f89fc1eb5549974b7e3a4d368d76222506b2712884bd75cba3e47326"]
+checksum = "sha256:7c081cfb3f9fb1ec742fa10c5ebdc8ff433914ac1dee990485ae25caaad49ef8"
+previous_checksums = ["sha256:4326d56c6c9e12c9cea64310245325774c99dc151930108a3c3d2e571dbed072", "sha256:fa118bf6f89fc1eb5549974b7e3a4d368d76222506b2712884bd75cba3e47326", "sha256:5cc9aa54178b357ac2f532d3faf6b564650a7035beeea266c5964143e9387963"]
 size = 619505
 storage_path = "$datasets_dir/DrangDrung/DDG-100M/DDG-100M_TOPO-GLO90-GEBCO2026.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-100M/2.5.0/DDG-100M_TOPO-GLO90-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-100M/2.6.0/DDG-100M_TOPO-GLO90-GEBCO2026.nc"
 
 ["DDG-100M_TOPO-Sommers2025.nc"]
-checksum = "sha256:acba5962755fd35bff161e0a9ddf62e17cb16397e27742b0faf10f8821b437a5"
-previous_checksums = ["sha256:f41bcba82076124ec176f991155a85a4931d2f0790e8ca0ca91c61bde98310b3", "sha256:555c83d3b3458cc1b42d71ce7252c1f65f1f48947f329dc322980c6c8c749e3d"]
-size = 626515
+checksum = "sha256:cfb86755d05a879a52d983767da2dcf8542f5d597271c5ef02911df8e1e7ef58"
+previous_checksums = ["sha256:f41bcba82076124ec176f991155a85a4931d2f0790e8ca0ca91c61bde98310b3", "sha256:555c83d3b3458cc1b42d71ce7252c1f65f1f48947f329dc322980c6c8c749e3d", "sha256:acba5962755fd35bff161e0a9ddf62e17cb16397e27742b0faf10f8821b437a5"]
+size = 627210
 storage_path = "$datasets_dir/DrangDrung/DDG-100M/DDG-100M_TOPO-Sommers2025.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-100M/2.5.0/DDG-100M_TOPO-Sommers2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-100M/2.6.0/DDG-100M_TOPO-Sommers2025.nc"
 
 ["DDG-100M_grid.nc"]
 checksum = "sha256:9d298879d1e3bbeb494d3e41eafe6981aea7ac0a42587d906ab5a75d6e5f2008"
 size = 59857
 storage_path = "$datasets_dir/DrangDrung/DDG-100M/DDG-100M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-100M/2.5.0/DDG-100M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-100M/2.6.0/DDG-100M_grid.nc"
+
+["DDG-250M_TOPO-GLO30-GEBCO2026.nc"]
+checksum = "sha256:d6d846c0d0032f877723b74dfe3630ec1b27601389363959f2534057e043cd77"
+size = 164636
+storage_path = "$datasets_dir/DrangDrung/DDG-250M/DDG-250M_TOPO-GLO30-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-250M/2.6.0/DDG-250M_TOPO-GLO30-GEBCO2026.nc"
 
 ["DDG-250M_TOPO-GLO90-GEBCO2026.nc"]
-checksum = "sha256:9171d25e4d68a7e03ce02fa33a833d88bcaccd8d599b6638c1d8f4d73e1ec161"
-previous_checksums = ["sha256:c56ac40ed564c5e20aa33f904bba9009a76c2addf6f1f3a17e99cb1b0fec97f6", "sha256:fcf771ac8b819139a9177a6664454c8c8175cc3f540070187a0c739be7bdbde2"]
+checksum = "sha256:7bc8d854494785539d2390186a8d496319ac6472fcf3b1cb8672ff641792bd0c"
+previous_checksums = ["sha256:c56ac40ed564c5e20aa33f904bba9009a76c2addf6f1f3a17e99cb1b0fec97f6", "sha256:fcf771ac8b819139a9177a6664454c8c8175cc3f540070187a0c739be7bdbde2", "sha256:9171d25e4d68a7e03ce02fa33a833d88bcaccd8d599b6638c1d8f4d73e1ec161"]
 size = 164632
 storage_path = "$datasets_dir/DrangDrung/DDG-250M/DDG-250M_TOPO-GLO90-GEBCO2026.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-250M/2.5.0/DDG-250M_TOPO-GLO90-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-250M/2.6.0/DDG-250M_TOPO-GLO90-GEBCO2026.nc"
 
 ["DDG-250M_TOPO-Sommers2025.nc"]
-checksum = "sha256:a93a3816f4e0eaabbb6601c2bec464e145b308b32c92be57e67006b193f72d0f"
-previous_checksums = ["sha256:7a00c5bd4e805f02c54d821324b1cb14e8357eb3424d98491db3d27b4f947867", "sha256:c1b11e8060ea8c26e88c2664b9a380b93c3aa5ec1c65e9a8c69bb76ac8d66530"]
-size = 165628
+checksum = "sha256:02f617964c8cd287425956df5bc7e43ffca4863061390103077b02444b356192"
+previous_checksums = ["sha256:7a00c5bd4e805f02c54d821324b1cb14e8357eb3424d98491db3d27b4f947867", "sha256:c1b11e8060ea8c26e88c2664b9a380b93c3aa5ec1c65e9a8c69bb76ac8d66530", "sha256:a93a3816f4e0eaabbb6601c2bec464e145b308b32c92be57e67006b193f72d0f"]
+size = 165640
 storage_path = "$datasets_dir/DrangDrung/DDG-250M/DDG-250M_TOPO-Sommers2025.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-250M/2.5.0/DDG-250M_TOPO-Sommers2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-250M/2.6.0/DDG-250M_TOPO-Sommers2025.nc"
 
 ["DDG-250M_grid.nc"]
 checksum = "sha256:9408c0dc3d832a8f8d9ff377512f564be9397400cc6ae7b945479874b6312478"
 size = 31801
 storage_path = "$datasets_dir/DrangDrung/DDG-250M/DDG-250M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-250M/2.5.0/DDG-250M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-250M/2.6.0/DDG-250M_grid.nc"
+
+["DDG-25M_TOPO-GLO30-GEBCO2026.nc"]
+checksum = "sha256:d02a3e7ec8599fc5b09a9eeebb25b1789d1a5c9aaaa2d7b47cff56d7f34704a0"
+size = 5560883
+storage_path = "$datasets_dir/DrangDrung/DDG-25M/DDG-25M_TOPO-GLO30-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-25M/2.6.0/DDG-25M_TOPO-GLO30-GEBCO2026.nc"
 
 ["DDG-25M_TOPO-GLO90-GEBCO2026.nc"]
-checksum = "sha256:20ac9f3b9adff012f4af198475274afe69931b56cc29dababb61e509775b445b"
-previous_checksums = ["sha256:fb40e49e7c4251293907a5bba371e57377d74518267c0c28f84f48dc77fb6bb8", "sha256:9122aea2fac2c74f8bbfae5549fb68d2ae6a59cc904e6b9af3c5069ec4170b41"]
+checksum = "sha256:1e094ac84b9f87110a80224558e596766baab3516d9b7bb6f713b912aabb11c4"
+previous_checksums = ["sha256:fb40e49e7c4251293907a5bba371e57377d74518267c0c28f84f48dc77fb6bb8", "sha256:9122aea2fac2c74f8bbfae5549fb68d2ae6a59cc904e6b9af3c5069ec4170b41", "sha256:20ac9f3b9adff012f4af198475274afe69931b56cc29dababb61e509775b445b"]
 size = 5266530
 storage_path = "$datasets_dir/DrangDrung/DDG-25M/DDG-25M_TOPO-GLO90-GEBCO2026.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-25M/2.5.0/DDG-25M_TOPO-GLO90-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-25M/2.6.0/DDG-25M_TOPO-GLO90-GEBCO2026.nc"
 
 ["DDG-25M_TOPO-Sommers2025.nc"]
-checksum = "sha256:a835fdb55200f25fde2219931153b07e56093622691129000355e66fc9d047ee"
-previous_checksums = ["sha256:25d7e95884a5e7ea43271801062f89d2e0321ca04a33067f7307e922296b645b", "sha256:811fcff0cc4753cf5915b9a9ba6086e85c62e86e55d42cce65bc11d20f867042"]
-size = 6887585
+checksum = "sha256:d65b2963486d2af90b2446f7b89f8809bc41f8e739907f58a023eda2b95baae1"
+previous_checksums = ["sha256:25d7e95884a5e7ea43271801062f89d2e0321ca04a33067f7307e922296b645b", "sha256:811fcff0cc4753cf5915b9a9ba6086e85c62e86e55d42cce65bc11d20f867042", "sha256:a835fdb55200f25fde2219931153b07e56093622691129000355e66fc9d047ee"]
+size = 6961443
 storage_path = "$datasets_dir/DrangDrung/DDG-25M/DDG-25M_TOPO-Sommers2025.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-25M/2.5.0/DDG-25M_TOPO-Sommers2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-25M/2.6.0/DDG-25M_TOPO-Sommers2025.nc"
 
 ["DDG-25M_grid.nc"]
 checksum = "sha256:e888b6c587ccd09f77f7f071a9eefaf0d394e067a64edfc2b84ef43ae4b73252"
 size = 357729
 storage_path = "$datasets_dir/DrangDrung/DDG-25M/DDG-25M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-25M/2.5.0/DDG-25M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-25M/2.6.0/DDG-25M_grid.nc"
+
+["DDG-50M_TOPO-GLO30-GEBCO2026.nc"]
+checksum = "sha256:e26edaa6b6ab42d187eebb8eea518053f5fc47625e6b8932db3e3b27cb33f36e"
+size = 2024419
+storage_path = "$datasets_dir/DrangDrung/DDG-50M/DDG-50M_TOPO-GLO30-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-50M/2.6.0/DDG-50M_TOPO-GLO30-GEBCO2026.nc"
 
 ["DDG-50M_TOPO-GLO90-GEBCO2026.nc"]
-checksum = "sha256:16709fdadd978e73228d44b18013cee31eadf15a0efec5fac3932999065bba3c"
-previous_checksums = ["sha256:c38ecc748e7d6a89ccfc194edf4c1ed14e31dcc0fffe35054d2d739455d135f6", "sha256:5a9c2ad66378d1cf528c31f795cfabf6d154619f907fda442b1be7cae0bd4775"]
+checksum = "sha256:d17e06eff1707eb8d4f85490068787057526dd979cebc2e6b9582dc6a4bf8b78"
+previous_checksums = ["sha256:c38ecc748e7d6a89ccfc194edf4c1ed14e31dcc0fffe35054d2d739455d135f6", "sha256:5a9c2ad66378d1cf528c31f795cfabf6d154619f907fda442b1be7cae0bd4775", "sha256:16709fdadd978e73228d44b18013cee31eadf15a0efec5fac3932999065bba3c"]
 size = 2032795
 storage_path = "$datasets_dir/DrangDrung/DDG-50M/DDG-50M_TOPO-GLO90-GEBCO2026.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-50M/2.5.0/DDG-50M_TOPO-GLO90-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-50M/2.6.0/DDG-50M_TOPO-GLO90-GEBCO2026.nc"
 
 ["DDG-50M_TOPO-Sommers2025.nc"]
-checksum = "sha256:ea5c8134d325450ce73a86154069ef9e7cd858dace028f1024f164b8dbcfec1e"
-previous_checksums = ["sha256:cdd6c35c2d4a937d23c3d01d1d5cadd0f4d5ebea06bb7d786c430aed7bc461f8", "sha256:9f610e7e01c646734535d795f69a4e667f9f473f72fca3d7757d3f699a1da41a"]
-size = 2055891
+checksum = "sha256:5834660dde64e876b568bcc9f536c25bbbce96aee038eeea19067a5cf38c6637"
+previous_checksums = ["sha256:cdd6c35c2d4a937d23c3d01d1d5cadd0f4d5ebea06bb7d786c430aed7bc461f8", "sha256:9f610e7e01c646734535d795f69a4e667f9f473f72fca3d7757d3f699a1da41a", "sha256:ea5c8134d325450ce73a86154069ef9e7cd858dace028f1024f164b8dbcfec1e"]
+size = 2055500
 storage_path = "$datasets_dir/DrangDrung/DDG-50M/DDG-50M_TOPO-Sommers2025.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-50M/2.5.0/DDG-50M_TOPO-Sommers2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-50M/2.6.0/DDG-50M_TOPO-Sommers2025.nc"
 
 ["DDG-50M_grid.nc"]
 checksum = "sha256:38e817a99d04de54364494636d62e6cace2b652dc34528569ed316b7a2de8a23"
 size = 139387
 storage_path = "$datasets_dir/DrangDrung/DDG-50M/DDG-50M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-50M/2.5.0/DDG-50M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-50M/2.6.0/DDG-50M_grid.nc"
 
 ["grid_DDG-100M.txt"]
 checksum = "sha256:0b4bf7cf03c45d5dff9bbd34e6b3f2a3c58dab5c91a9adcde478cd84880c93bd"
 size = 328
 storage_path = "$datasets_dir/DrangDrung/DDG-100M/grid_DDG-100M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-100M/2.5.0/grid_DDG-100M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-100M/2.6.0/grid_DDG-100M.txt"
 
 ["grid_DDG-250M.txt"]
 checksum = "sha256:53710759793ff9375e3603025b6c422ebeaa5365fd6137ee970e0f087f2ab587"
 size = 329
 storage_path = "$datasets_dir/DrangDrung/DDG-250M/grid_DDG-250M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-250M/2.5.0/grid_DDG-250M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-250M/2.6.0/grid_DDG-250M.txt"
 
 ["grid_DDG-25M.txt"]
 checksum = "sha256:6b10c6bbad6595ba131119cdfd9e3645a6877313c43558099ce84b574400fea4"
 size = 335
 storage_path = "$datasets_dir/DrangDrung/DDG-25M/grid_DDG-25M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-25M/2.5.0/grid_DDG-25M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-25M/2.6.0/grid_DDG-25M.txt"
 
 ["grid_DDG-50M.txt"]
 checksum = "sha256:0c19c11587ee8a4bf3183524ea23adb40956e3d196b6af8b109f337933036ce7"
 size = 331
 storage_path = "$datasets_dir/DrangDrung/DDG-50M/grid_DDG-50M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-50M/2.5.0/grid_DDG-50M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-50M/2.6.0/grid_DDG-50M.txt"

@@ -1,117 +1,117 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-15"
-git_tag = "regions-v2.5.0"
+date = "2026-10-16"
+git_tag = "regions-v2.6.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=PineIsland_Regions"
-version = "2.5.0"
+version = "2.6.0"
 
 ["PIG-1KM_BASINS-IMBIE2016-refined.nc"]
-checksum = "sha256:f6b456adb0c78a269058fcaeaccf11ed4100de6ae000a806360188c67f5e7145"
-previous_checksums = ["sha256:00c850cfaf05176bc3bf5954235e682d16fcc3d41af33deac926ed60a5de996d", "sha256:d8d42355361bd2f2059459d8f9196c4feef121d22fbd8af5aa6fde7d91fb51ed"]
+checksum = "sha256:a9519079f34fc04f6945ea16ae0c53b1567c2ae04253673e4c16d69dbb4c8c96"
+previous_checksums = ["sha256:00c850cfaf05176bc3bf5954235e682d16fcc3d41af33deac926ed60a5de996d", "sha256:d8d42355361bd2f2059459d8f9196c4feef121d22fbd8af5aa6fde7d91fb51ed", "sha256:f6b456adb0c78a269058fcaeaccf11ed4100de6ae000a806360188c67f5e7145"]
 size = 51932
 storage_path = "$datasets_dir/PineIsland/PIG-1KM/PIG-1KM_BASINS-IMBIE2016-refined.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Regions_PIG-1KM/2.5.0/PIG-1KM_BASINS-IMBIE2016-refined.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Regions_PIG-1KM/2.6.0/PIG-1KM_BASINS-IMBIE2016-refined.nc"
 
 ["PIG-1KM_BASINS-IMBIE2016.nc"]
-checksum = "sha256:97226b9efa304070e4e94b3c3d948f6533083e82ca120ade0e3d6ea3aaee2856"
-previous_checksums = ["sha256:1398d5d223d11f192c4af3b09912648c7ae0fb0b111cafd75c73e1d4aa6b6f7f", "sha256:b2090ef08fd49cea474860d5d948aca62f1f98c26594841f1b7cc6b210003f08"]
+checksum = "sha256:3dbb07d2f9c6588cc7dbb4ba9bf2526e9173908519d10495d059c12893d6c5f5"
+previous_checksums = ["sha256:1398d5d223d11f192c4af3b09912648c7ae0fb0b111cafd75c73e1d4aa6b6f7f", "sha256:b2090ef08fd49cea474860d5d948aca62f1f98c26594841f1b7cc6b210003f08", "sha256:97226b9efa304070e4e94b3c3d948f6533083e82ca120ade0e3d6ea3aaee2856"]
 size = 44685
 storage_path = "$datasets_dir/PineIsland/PIG-1KM/PIG-1KM_BASINS-IMBIE2016.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Regions_PIG-1KM/2.5.0/PIG-1KM_BASINS-IMBIE2016.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Regions_PIG-1KM/2.6.0/PIG-1KM_BASINS-IMBIE2016.nc"
 
 ["PIG-1KM_BASINS-Schmidt2025.nc"]
-checksum = "sha256:8b394e354d66f4e7d61c9e20157181e00ea8f3891616f8874fd3999db4c636b6"
-previous_checksums = ["sha256:6c58ca7a45b643c89c8d4a8ad39a0132d208472ecf4dd4eb0e4172eb22988fee", "sha256:4f821574b486c7831075a5d3f9fd7a97f6e04f1cb99399c1d471d526ad91aae1"]
+checksum = "sha256:de241562621e8c2414b0536766af0f9c23cb81a723571434e519281ddca0c5d6"
+previous_checksums = ["sha256:6c58ca7a45b643c89c8d4a8ad39a0132d208472ecf4dd4eb0e4172eb22988fee", "sha256:4f821574b486c7831075a5d3f9fd7a97f6e04f1cb99399c1d471d526ad91aae1", "sha256:8b394e354d66f4e7d61c9e20157181e00ea8f3891616f8874fd3999db4c636b6"]
 size = 44685
 storage_path = "$datasets_dir/PineIsland/PIG-1KM/PIG-1KM_BASINS-Schmidt2025.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Regions_PIG-1KM/2.5.0/PIG-1KM_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Regions_PIG-1KM/2.6.0/PIG-1KM_BASINS-Schmidt2025.nc"
 
 ["PIG-1KM_BASINS-Zwally2012.nc"]
-checksum = "sha256:194433749fd56d550f5ad65dec144e5d193d8df0df6a56a665e1b4c429829532"
-previous_checksums = ["sha256:829401878e41fb5775dc27ac3548e2cc0792f21c0d203c48131bb6c4921df4ce", "sha256:9d70d114f5b6a241fb4c214db4960e32b3f3be58f8155374ba8ad4a6f61fc22d"]
+checksum = "sha256:50153f0b82502cb156c5ae0effff3b02920b7474815b21b807c2616bcb9a4da1"
+previous_checksums = ["sha256:829401878e41fb5775dc27ac3548e2cc0792f21c0d203c48131bb6c4921df4ce", "sha256:9d70d114f5b6a241fb4c214db4960e32b3f3be58f8155374ba8ad4a6f61fc22d", "sha256:194433749fd56d550f5ad65dec144e5d193d8df0df6a56a665e1b4c429829532"]
 size = 42028
 storage_path = "$datasets_dir/PineIsland/PIG-1KM/PIG-1KM_BASINS-Zwally2012.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Regions_PIG-1KM/2.5.0/PIG-1KM_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Regions_PIG-1KM/2.6.0/PIG-1KM_BASINS-Zwally2012.nc"
 
 ["PIG-1KM_DOMAINS.nc"]
-checksum = "sha256:439744ccca23eff516a1fdc8de70cba03df3cc2b3b556950e592aa73906ab7fb"
-previous_checksums = ["sha256:b40a55ed501a844c15940f43efa6fcc030261cc7cf84ff5ab8b22b284c2d060b"]
-size = 69484
+checksum = "sha256:ca29560d66ff83cf1565bebffcc536c64ee57452cb0620782536a4093ef76720"
+previous_checksums = ["sha256:b40a55ed501a844c15940f43efa6fcc030261cc7cf84ff5ab8b22b284c2d060b", "sha256:439744ccca23eff516a1fdc8de70cba03df3cc2b3b556950e592aa73906ab7fb"]
+size = 69580
 storage_path = "$datasets_dir/PineIsland/PIG-1KM/PIG-1KM_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Regions_PIG-1KM/2.5.0/PIG-1KM_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Regions_PIG-1KM/2.6.0/PIG-1KM_DOMAINS.nc"
 
 ["PIG-1KM_REGIONS.nc"]
-checksum = "sha256:f8e589f814ea228a77ba2bea619dbfb767a052d8dc5b8076b288ebc3027f2a85"
-previous_checksums = ["sha256:9bf45332fdf7aff47153e400d892f17fc07deff4eef0776b29ac5946e6ad4e25", "sha256:51e38dd37e5e010d0f2257488b7a6fea33abf390cb24973f5947f895e1ffb6ce"]
+checksum = "sha256:3e9b67fba5657269e737c6cbd74d1f3024c1b6f4a92d8ff202c86b4fb0fca100"
+previous_checksums = ["sha256:9bf45332fdf7aff47153e400d892f17fc07deff4eef0776b29ac5946e6ad4e25", "sha256:51e38dd37e5e010d0f2257488b7a6fea33abf390cb24973f5947f895e1ffb6ce", "sha256:f8e589f814ea228a77ba2bea619dbfb767a052d8dc5b8076b288ebc3027f2a85"]
 size = 142151
 storage_path = "$datasets_dir/PineIsland/PIG-1KM/PIG-1KM_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Regions_PIG-1KM/2.5.0/PIG-1KM_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Regions_PIG-1KM/2.6.0/PIG-1KM_REGIONS.nc"
 
 ["PIG-1KM_grid.nc"]
 checksum = "sha256:8a51506735209acbe991ad6cba3f059f079cc249bbc422708c6c0b42de8d053a"
 previous_checksums = ["sha256:fce70b563deef10cf46e31b799f055f199c817aa46a838bc3e176595228c6b6d"]
 size = 1126631
 storage_path = "$datasets_dir/PineIsland/PIG-1KM/PIG-1KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Regions_PIG-1KM/2.5.0/PIG-1KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Regions_PIG-1KM/2.6.0/PIG-1KM_grid.nc"
 
 ["PIG-500M_BASINS-IMBIE2016-refined.nc"]
-checksum = "sha256:6f191058a8b5b719a97a77e6eda439cb1771165b6370bcc25140fe6c065bf2ec"
-previous_checksums = ["sha256:8808e0883b2053c5623c5391cef5a811ef2fecb7c74602f86179f1428444a00e", "sha256:f38b82989b0aa053c8c9b6b53de9f11aa0a7df5651782eaf34abf497460c67a1"]
+checksum = "sha256:36b81935caec5eaa8fb4b450453d7af25d738bd2568abf70482b3b8fac6cc748"
+previous_checksums = ["sha256:8808e0883b2053c5623c5391cef5a811ef2fecb7c74602f86179f1428444a00e", "sha256:f38b82989b0aa053c8c9b6b53de9f11aa0a7df5651782eaf34abf497460c67a1", "sha256:6f191058a8b5b719a97a77e6eda439cb1771165b6370bcc25140fe6c065bf2ec"]
 size = 98767
 storage_path = "$datasets_dir/PineIsland/PIG-500M/PIG-500M_BASINS-IMBIE2016-refined.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Regions_PIG-500M/2.5.0/PIG-500M_BASINS-IMBIE2016-refined.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Regions_PIG-500M/2.6.0/PIG-500M_BASINS-IMBIE2016-refined.nc"
 
 ["PIG-500M_BASINS-IMBIE2016.nc"]
-checksum = "sha256:552bad3c8ce269f53a87e7a3cdd3e418bc285c7124e39481615bdbf04de5572c"
-previous_checksums = ["sha256:ad0cc6b670a1b3ef76de8ec064ca12ad697daa054ef65aa2a6a533eed4cd9b21", "sha256:15e911d5bc4011e7b010cfe4dd3e34938d33ca65287d63ff8258eccf7cc7a1fb"]
+checksum = "sha256:0cb50ab1ac98274cc099ceb06cf0138919b2cb5f9aa10ae3de3d68f4f8d5b03a"
+previous_checksums = ["sha256:ad0cc6b670a1b3ef76de8ec064ca12ad697daa054ef65aa2a6a533eed4cd9b21", "sha256:15e911d5bc4011e7b010cfe4dd3e34938d33ca65287d63ff8258eccf7cc7a1fb", "sha256:552bad3c8ce269f53a87e7a3cdd3e418bc285c7124e39481615bdbf04de5572c"]
 size = 87055
 storage_path = "$datasets_dir/PineIsland/PIG-500M/PIG-500M_BASINS-IMBIE2016.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Regions_PIG-500M/2.5.0/PIG-500M_BASINS-IMBIE2016.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Regions_PIG-500M/2.6.0/PIG-500M_BASINS-IMBIE2016.nc"
 
 ["PIG-500M_BASINS-Schmidt2025.nc"]
-checksum = "sha256:56ab0bb46c2e40b53f7c228b4633ffcdf3f102c9bd931d2cfb3da4fd5bf24657"
-previous_checksums = ["sha256:88eced9937320b05fd87154ff5a916f9daf4a03ac4f5bdfc3c5280804134f8f9", "sha256:0be4059701719a19a48776f0d306e7720d680a361a38e28fc04b420fba2e0f13"]
+checksum = "sha256:d1be553fd033be2174b0eb542f6598116815343602bc05eb04b951680dd0a5fb"
+previous_checksums = ["sha256:88eced9937320b05fd87154ff5a916f9daf4a03ac4f5bdfc3c5280804134f8f9", "sha256:0be4059701719a19a48776f0d306e7720d680a361a38e28fc04b420fba2e0f13", "sha256:56ab0bb46c2e40b53f7c228b4633ffcdf3f102c9bd931d2cfb3da4fd5bf24657"]
 size = 87055
 storage_path = "$datasets_dir/PineIsland/PIG-500M/PIG-500M_BASINS-Schmidt2025.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Regions_PIG-500M/2.5.0/PIG-500M_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Regions_PIG-500M/2.6.0/PIG-500M_BASINS-Schmidt2025.nc"
 
 ["PIG-500M_BASINS-Zwally2012.nc"]
-checksum = "sha256:0d2bca7d82d9c4be50c7d8ed04d195897617dd7cae64ff24e01785773af38b7a"
-previous_checksums = ["sha256:7a3c463a32d59b3f746929024b8bdfe06eab7cf54f16e64b34b27bc127c1799d", "sha256:5e9541bb65f5dc67003a49371ecb6de903fb9897c439006f088a931e34cd7294"]
+checksum = "sha256:7bc89802bc4c19d6f088142aa647d6a99047a14795c6d9a174851f01c064a8a4"
+previous_checksums = ["sha256:7a3c463a32d59b3f746929024b8bdfe06eab7cf54f16e64b34b27bc127c1799d", "sha256:5e9541bb65f5dc67003a49371ecb6de903fb9897c439006f088a931e34cd7294", "sha256:0d2bca7d82d9c4be50c7d8ed04d195897617dd7cae64ff24e01785773af38b7a"]
 size = 75794
 storage_path = "$datasets_dir/PineIsland/PIG-500M/PIG-500M_BASINS-Zwally2012.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Regions_PIG-500M/2.5.0/PIG-500M_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Regions_PIG-500M/2.6.0/PIG-500M_BASINS-Zwally2012.nc"
 
 ["PIG-500M_DOMAINS.nc"]
-checksum = "sha256:ed2ebad0daf820e09023f6419904a76d0172f2092e63edfc769b14548e856587"
-previous_checksums = ["sha256:f453acbc9522125b64e91a672f0533c5472186a74f847a0236be15f97b1289bb"]
-size = 93403
+checksum = "sha256:08d2fb110f6d7a06a1c021a7de5c23328b2fbd2f228d224e68e4b96fdc017c44"
+previous_checksums = ["sha256:f453acbc9522125b64e91a672f0533c5472186a74f847a0236be15f97b1289bb", "sha256:ed2ebad0daf820e09023f6419904a76d0172f2092e63edfc769b14548e856587"]
+size = 93499
 storage_path = "$datasets_dir/PineIsland/PIG-500M/PIG-500M_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Regions_PIG-500M/2.5.0/PIG-500M_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Regions_PIG-500M/2.6.0/PIG-500M_DOMAINS.nc"
 
 ["PIG-500M_REGIONS.nc"]
-checksum = "sha256:4abfa9074a3f0365b83ee542e8d97b25d967bab598e0e2da6f0302bec15f566f"
-previous_checksums = ["sha256:b94585e6bd59da2e7678a5ae4dd2922291e707d90b6efc681e4753a217c984f0", "sha256:622e784985b5ccb7eb87633d20fb9a884df93bdafa46ff753f4fc9fb0e2695e9"]
+checksum = "sha256:5f9cbb9954d1d80f23088357aef718a9c49efc3a76021551febad8c0c78faad1"
+previous_checksums = ["sha256:b94585e6bd59da2e7678a5ae4dd2922291e707d90b6efc681e4753a217c984f0", "sha256:622e784985b5ccb7eb87633d20fb9a884df93bdafa46ff753f4fc9fb0e2695e9", "sha256:4abfa9074a3f0365b83ee542e8d97b25d967bab598e0e2da6f0302bec15f566f"]
 size = 385368
 storage_path = "$datasets_dir/PineIsland/PIG-500M/PIG-500M_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Regions_PIG-500M/2.5.0/PIG-500M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Regions_PIG-500M/2.6.0/PIG-500M_REGIONS.nc"
 
 ["PIG-500M_grid.nc"]
 checksum = "sha256:aa519e1467d9f12570520fa77442f036c84a92f5b2241e1adfa78c7c18ee025d"
 previous_checksums = ["sha256:1e53111452d054b459eb49969ced8a9d1d5b0e80440c12188a1137a3dc1e59a6"]
 size = 3462929
 storage_path = "$datasets_dir/PineIsland/PIG-500M/PIG-500M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Regions_PIG-500M/2.5.0/PIG-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Regions_PIG-500M/2.6.0/PIG-500M_grid.nc"
 
 ["grid_PIG-1KM.txt"]
 checksum = "sha256:014b20f47c3e7e7056576a6de9495351e521d772c62376743fea17f68d079e8c"
 size = 464
 storage_path = "$datasets_dir/PineIsland/PIG-1KM/grid_PIG-1KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Regions_PIG-1KM/2.5.0/grid_PIG-1KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Regions_PIG-1KM/2.6.0/grid_PIG-1KM.txt"
 
 ["grid_PIG-500M.txt"]
 checksum = "sha256:1385ab1af18969ce4d10acbb2fe96e50184add87c15e703af45c125820389d5b"
 size = 467
 storage_path = "$datasets_dir/PineIsland/PIG-500M/grid_PIG-500M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Regions_PIG-500M/2.5.0/grid_PIG-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Regions_PIG-500M/2.6.0/grid_PIG-500M.txt"

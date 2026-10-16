@@ -1,26 +1,26 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-15"
-git_tag = "topo-v2.5.0"
+date = "2026-10-16"
+git_tag = "topo-v2.6.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=NorthPatagonianIcefield_Topo"
-version = "2.5.0"
+version = "2.6.0"
 
 ["NPI-250M_TOPO-GLO90-GEBCO2026.nc"]
-checksum = "sha256:4dda31260d2d19a215515b18503cfe4f9abb3bda2afcff2aca3176d6bf4105ce"
-previous_checksums = ["sha256:7cd4005285ec86ff99932b075a27b5bdb9e01af224fe5e4979382931cc3eae3f", "sha256:f84ef53097ac7e1398ffa14688af9b660f29680e9536bb3c66d0924f8b179197"]
+checksum = "sha256:e8b7cd4428d5a26aede7911ed3cb73a61b12c909ecd60333146ed02dbc7e2b78"
+previous_checksums = ["sha256:7cd4005285ec86ff99932b075a27b5bdb9e01af224fe5e4979382931cc3eae3f", "sha256:f84ef53097ac7e1398ffa14688af9b660f29680e9536bb3c66d0924f8b179197", "sha256:4dda31260d2d19a215515b18503cfe4f9abb3bda2afcff2aca3176d6bf4105ce"]
 size = 2888073
 storage_path = "$datasets_dir/NorthPatagonianIcefield/NPI-250M/NPI-250M_TOPO-GLO90-GEBCO2026.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NorthPatagonianIcefield_Topo_NPI-250M/2.5.0/NPI-250M_TOPO-GLO90-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NorthPatagonianIcefield_Topo_NPI-250M/2.6.0/NPI-250M_TOPO-GLO90-GEBCO2026.nc"
 
 ["NPI-250M_grid.nc"]
 checksum = "sha256:e622e73dac435e3f26bc47251cf5239192877914b7f82e8c5fc63373f92e71cf"
 size = 320693
 storage_path = "$datasets_dir/NorthPatagonianIcefield/NPI-250M/NPI-250M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NorthPatagonianIcefield_Topo_NPI-250M/2.5.0/NPI-250M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NorthPatagonianIcefield_Topo_NPI-250M/2.6.0/NPI-250M_grid.nc"
 
 ["grid_NPI-250M.txt"]
 checksum = "sha256:f286d516cb7fd8b24cb84caaa59bc1b6f06226a14e43a9657e3242f2bd58c9c0"
 size = 348
 storage_path = "$datasets_dir/NorthPatagonianIcefield/NPI-250M/grid_NPI-250M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NorthPatagonianIcefield_Topo_NPI-250M/2.5.0/grid_NPI-250M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NorthPatagonianIcefield_Topo_NPI-250M/2.6.0/grid_NPI-250M.txt"

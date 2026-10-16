@@ -1,80 +1,80 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-15"
-git_tag = "topo-v2.5.0"
+date = "2026-10-16"
+git_tag = "topo-v2.6.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=WilkesBasin_Topo"
-version = "2.5.0"
+version = "2.6.0"
 
 ["WSB-1KM_TOPO-BedMachine-v2.nc"]
-checksum = "sha256:f83427ff106538cb09542a8d220720e510c094ed7817702a141f8f52d29216ff"
-previous_checksums = ["sha256:0911a6c7758b561f8df7d9bf4d927e10bf8cc38acd426be3c11b107de8a81aea"]
+checksum = "sha256:4d816165f1c22fea3b9a6f65d0f57ad6323ff289ceda44d4dbb14c89c817f422"
+previous_checksums = ["sha256:0911a6c7758b561f8df7d9bf4d927e10bf8cc38acd426be3c11b107de8a81aea", "sha256:f83427ff106538cb09542a8d220720e510c094ed7817702a141f8f52d29216ff"]
 size = 10535859
 storage_path = "$datasets_dir/WilkesBasin/WSB-1KM/WSB-1KM_TOPO-BedMachine-v2.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-1KM/2.5.0/WSB-1KM_TOPO-BedMachine-v2.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-1KM/2.6.0/WSB-1KM_TOPO-BedMachine-v2.nc"
 
 ["WSB-1KM_TOPO-BedMachine-v3.nc"]
-checksum = "sha256:8e664160b6d29fbf8830b48da305582bf10f2b996bd0e1c70c17a3e53f773342"
-previous_checksums = ["sha256:f8caabe37ce8d90de079658e5f0d7da3a584333e3c74b30eca8f255de8a4c4c7"]
+checksum = "sha256:57eac19cb8bd5e9701dce3e6cf7bf464c1c429e97110feedfad2b8306875fb85"
+previous_checksums = ["sha256:f8caabe37ce8d90de079658e5f0d7da3a584333e3c74b30eca8f255de8a4c4c7", "sha256:8e664160b6d29fbf8830b48da305582bf10f2b996bd0e1c70c17a3e53f773342"]
 size = 10533356
 storage_path = "$datasets_dir/WilkesBasin/WSB-1KM/WSB-1KM_TOPO-BedMachine-v3.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-1KM/2.5.0/WSB-1KM_TOPO-BedMachine-v3.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-1KM/2.6.0/WSB-1KM_TOPO-BedMachine-v3.nc"
 
 ["WSB-1KM_TOPO-BedMachine-v4.nc"]
-checksum = "sha256:f2262845a058de61849cd0645dce805a39fe25ed3c1738af03b87e2edbaf700f"
-previous_checksums = ["sha256:2dfdc5b48d79535194ebad1ec954ca412fb2ce22ac465d77854635a33dd6ddd0"]
+checksum = "sha256:b0b58d17bcfe358059a628229002eda0b63751ddd61bb83d481ee18e8ccc7ca7"
+previous_checksums = ["sha256:2dfdc5b48d79535194ebad1ec954ca412fb2ce22ac465d77854635a33dd6ddd0", "sha256:f2262845a058de61849cd0645dce805a39fe25ed3c1738af03b87e2edbaf700f"]
 size = 10813577
 storage_path = "$datasets_dir/WilkesBasin/WSB-1KM/WSB-1KM_TOPO-BedMachine-v4.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-1KM/2.5.0/WSB-1KM_TOPO-BedMachine-v4.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-1KM/2.6.0/WSB-1KM_TOPO-BedMachine-v4.nc"
 
 ["WSB-1KM_TOPO-Bedmap2.nc"]
-checksum = "sha256:2799783e5369cef45d260b5925f710798a96032f4f343f250c5818a6e930658e"
-previous_checksums = ["sha256:95a6f6536303f75a1db56064df52fc29a87ffdb0ff52e8f3c2b220b1a5200608"]
+checksum = "sha256:2e01118c1b0d2a905074ce80c75267eaec377b86fcac6f427d4a7feb9cc334ba"
+previous_checksums = ["sha256:95a6f6536303f75a1db56064df52fc29a87ffdb0ff52e8f3c2b220b1a5200608", "sha256:2799783e5369cef45d260b5925f710798a96032f4f343f250c5818a6e930658e"]
 size = 9226406
 storage_path = "$datasets_dir/WilkesBasin/WSB-1KM/WSB-1KM_TOPO-Bedmap2.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-1KM/2.5.0/WSB-1KM_TOPO-Bedmap2.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-1KM/2.6.0/WSB-1KM_TOPO-Bedmap2.nc"
 
 ["WSB-1KM_TOPO-Bedmap3.nc"]
-checksum = "sha256:8c80e8bb75b496ad1e349daafaf788318bcc039296d2f72fd2a0a13132594c4c"
-previous_checksums = ["sha256:754956e1f75a832fbc22576483441334455829e912d8a345ac18da0ca57f8275"]
+checksum = "sha256:9ca714a3e63db06b06908d1ab75d523a4f8155f84d75ed72d43e8ebb4d1d2ad9"
+previous_checksums = ["sha256:754956e1f75a832fbc22576483441334455829e912d8a345ac18da0ca57f8275", "sha256:8c80e8bb75b496ad1e349daafaf788318bcc039296d2f72fd2a0a13132594c4c"]
 size = 9647123
 storage_path = "$datasets_dir/WilkesBasin/WSB-1KM/WSB-1KM_TOPO-Bedmap3.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-1KM/2.5.0/WSB-1KM_TOPO-Bedmap3.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-1KM/2.6.0/WSB-1KM_TOPO-Bedmap3.nc"
 
 ["WSB-1KM_grid.nc"]
 checksum = "sha256:f9f76dbe46429b2377b8a835d0dff284099155ce6f72e7d0b878da790a97e056"
 size = 3623202
 storage_path = "$datasets_dir/WilkesBasin/WSB-1KM/WSB-1KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-1KM/2.5.0/WSB-1KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-1KM/2.6.0/WSB-1KM_grid.nc"
 
 ["WSB-500M_TOPO-BedMachine-v4.nc"]
-checksum = "sha256:0549e6d41c836d0160e37afaa6b4e94da677681a54328c97339328f60bffda3c"
-previous_checksums = ["sha256:19ef4c9921fcce164214abfe23c294fe5604860cf5d56fc70cf1711762ec6671"]
+checksum = "sha256:cc22be8dd76c2d58464c61a09bac12cb026e6fa787c6b88855785c291450e7e1"
+previous_checksums = ["sha256:19ef4c9921fcce164214abfe23c294fe5604860cf5d56fc70cf1711762ec6671", "sha256:0549e6d41c836d0160e37afaa6b4e94da677681a54328c97339328f60bffda3c"]
 size = 29286350
 storage_path = "$datasets_dir/WilkesBasin/WSB-500M/WSB-500M_TOPO-BedMachine-v4.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-500M/2.5.0/WSB-500M_TOPO-BedMachine-v4.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-500M/2.6.0/WSB-500M_TOPO-BedMachine-v4.nc"
 
 ["WSB-500M_TOPO-Bedmap3.nc"]
-checksum = "sha256:4b8da922d1a414833beffdf90313ab1721fab00db1138de17535adca63f90369"
-previous_checksums = ["sha256:d778691b3fe9ce1671c610f6a46c8cd490b392dbd9ec68918bc4085809642465"]
+checksum = "sha256:be8103387fdc8a1dd3ec52ee15bd0103ea9d6c41d56b341078d3961dd8a8df10"
+previous_checksums = ["sha256:d778691b3fe9ce1671c610f6a46c8cd490b392dbd9ec68918bc4085809642465", "sha256:4b8da922d1a414833beffdf90313ab1721fab00db1138de17535adca63f90369"]
 size = 26761919
 storage_path = "$datasets_dir/WilkesBasin/WSB-500M/WSB-500M_TOPO-Bedmap3.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-500M/2.5.0/WSB-500M_TOPO-Bedmap3.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-500M/2.6.0/WSB-500M_TOPO-Bedmap3.nc"
 
 ["WSB-500M_grid.nc"]
 checksum = "sha256:ae75837654f0c5f8d19ddda8b84dd8a12aa354240a9c62e965d5cc714822585a"
 size = 11720500
 storage_path = "$datasets_dir/WilkesBasin/WSB-500M/WSB-500M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-500M/2.5.0/WSB-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-500M/2.6.0/WSB-500M_grid.nc"
 
 ["grid_WSB-1KM.txt"]
 checksum = "sha256:6eb013f46c20176e719fe3f4458c27a2930b3ceafc95e2440ea04bbee0bd32a2"
 size = 466
 storage_path = "$datasets_dir/WilkesBasin/WSB-1KM/grid_WSB-1KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-1KM/2.5.0/grid_WSB-1KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-1KM/2.6.0/grid_WSB-1KM.txt"
 
 ["grid_WSB-500M.txt"]
 checksum = "sha256:34c44cfad7a5c085807ba0ebb81f03c8a3b176eb7c8ff267329b4c81a95fa9fe"
 size = 466
 storage_path = "$datasets_dir/WilkesBasin/WSB-500M/grid_WSB-500M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-500M/2.5.0/grid_WSB-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-500M/2.6.0/grid_WSB-500M.txt"

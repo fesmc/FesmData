@@ -1,107 +1,107 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-15"
-git_tag = "topo-v2.5.0"
+date = "2026-10-16"
+git_tag = "topo-v2.6.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=North_Topo"
-version = "2.5.0"
+version = "2.6.0"
 
 ["NH-16KM_TOPO-GEBCO2026.nc"]
-checksum = "sha256:0d168a8d98e925a0fbfc0b2031127b7dec70c1e9ee04e773d862fd9ca53e6720"
-previous_checksums = ["sha256:f07ef7bb60a04229e05d0ca7fc2a0a1b863735948e9dc99b4e6bffe5169a1910", "sha256:0e7d229b8e0f849123523c7f4a9c83be32ad67bc491af37b748fdc35c43afb67", "sha256:8daf32da13a1f992dd3ae29665aca6f771b31bdfc08e1152d0b6f9af9533a710"]
+checksum = "sha256:94b54bb10bd4b3ba2969e15c21497d843d59d84a7fbbf553512dbe2884e0864f"
+previous_checksums = ["sha256:f07ef7bb60a04229e05d0ca7fc2a0a1b863735948e9dc99b4e6bffe5169a1910", "sha256:0e7d229b8e0f849123523c7f4a9c83be32ad67bc491af37b748fdc35c43afb67", "sha256:8daf32da13a1f992dd3ae29665aca6f771b31bdfc08e1152d0b6f9af9533a710", "sha256:0d168a8d98e925a0fbfc0b2031127b7dec70c1e9ee04e773d862fd9ca53e6720"]
 size = 2404690
 storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_TOPO-GEBCO2026.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Topo_NH-16KM/2.5.0/NH-16KM_TOPO-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Topo_NH-16KM/2.6.0/NH-16KM_TOPO-GEBCO2026.nc"
 
 ["NH-16KM_grid.nc"]
 checksum = "sha256:854570fc78e4fbb918d307c80874ceeb85265df6ab6b76393344a98e4a874abc"
 previous_checksums = ["sha256:5a64b9ab83264c23ca7c96aa0a1a1b02debcea94890fb2556039c205a148d957"]
 size = 1592909
 storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Topo_NH-16KM/2.5.0/NH-16KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Topo_NH-16KM/2.6.0/NH-16KM_grid.nc"
 
 ["NH-2KM_TOPO-GEBCO2026.nc"]
-checksum = "sha256:78d8559c2c92e9ad5478e04beb0689737d1771a37ad7e8678e909ed7071f761b"
-previous_checksums = ["sha256:a0304f4d961cfe02c4765d8374e68c988f49481bb7ab1945a35303dd74c56c3d", "sha256:f6b4ab37552980e93d2d1f55d00f7e8a62c8aeee9ba213b7c5e56c1ff937b8ba", "sha256:9c1a72d81a3622a85e6eb17dc59445d400da0bc33a3e555d59efe92dfa971e71"]
-size = 125411911
+checksum = "sha256:255071941fb599123505e8ccaff5ca2370ff026a28210c79808082550fbfb4e2"
+previous_checksums = ["sha256:a0304f4d961cfe02c4765d8374e68c988f49481bb7ab1945a35303dd74c56c3d", "sha256:f6b4ab37552980e93d2d1f55d00f7e8a62c8aeee9ba213b7c5e56c1ff937b8ba", "sha256:9c1a72d81a3622a85e6eb17dc59445d400da0bc33a3e555d59efe92dfa971e71", "sha256:78d8559c2c92e9ad5478e04beb0689737d1771a37ad7e8678e909ed7071f761b"]
+size = 125412999
 storage_path = "$datasets_dir/North/NH-2KM/NH-2KM_TOPO-GEBCO2026.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Topo_NH-2KM/2.5.0/NH-2KM_TOPO-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Topo_NH-2KM/2.6.0/NH-2KM_TOPO-GEBCO2026.nc"
 
 ["NH-2KM_grid.nc"]
 checksum = "sha256:9100831d04b2fb2ca91e9a51fd91b6546b2bf4a96a0b0cae533475e4ec485281"
 previous_checksums = ["sha256:17ea7246834ca75081390a11841f74d1316d1f58fcc4bb33e6df3d5a2b3febe6"]
 size = 60833953
 storage_path = "$datasets_dir/North/NH-2KM/NH-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Topo_NH-2KM/2.5.0/NH-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Topo_NH-2KM/2.6.0/NH-2KM_grid.nc"
 
 ["NH-32KM_TOPO-GEBCO2026.nc"]
-checksum = "sha256:d4b9d2fee4dc4b54ba17178a7ff4e1df6723beecb34670a8daacc4e2b81ba0c6"
-previous_checksums = ["sha256:06e13d800d7d31e7431da787972a433e494f8a81e67c6a40915ad84fd34f11bb", "sha256:72eefd249dfd627415ce4e41ce4eee1978d60f4902fc617eaeeffe097c8050b9", "sha256:e6352d2970d00d0a64fd5801cd6559fdc93f7fe54442e929e272ff05d6aeea45"]
+checksum = "sha256:7fa32bee7d3643ca51a5dffb300e5bb0b6131fdc24be4846c8b092ee5e08fd7e"
+previous_checksums = ["sha256:06e13d800d7d31e7431da787972a433e494f8a81e67c6a40915ad84fd34f11bb", "sha256:72eefd249dfd627415ce4e41ce4eee1978d60f4902fc617eaeeffe097c8050b9", "sha256:e6352d2970d00d0a64fd5801cd6559fdc93f7fe54442e929e272ff05d6aeea45", "sha256:d4b9d2fee4dc4b54ba17178a7ff4e1df6723beecb34670a8daacc4e2b81ba0c6"]
 size = 694384
 storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_TOPO-GEBCO2026.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Topo_NH-32KM/2.5.0/NH-32KM_TOPO-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Topo_NH-32KM/2.6.0/NH-32KM_TOPO-GEBCO2026.nc"
 
 ["NH-32KM_grid.nc"]
 checksum = "sha256:5acfb784cc05a51351ad8cbfb8d51d8256e96833d9b17acecf39a43c92196c63"
 previous_checksums = ["sha256:3d48fc58818a8820d1c19088ab3ac0a0aa5f463ca080d4d5f8f60d0fc525894f"]
 size = 464986
 storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Topo_NH-32KM/2.5.0/NH-32KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Topo_NH-32KM/2.6.0/NH-32KM_grid.nc"
 
 ["NH-4KM_TOPO-GEBCO2026.nc"]
-checksum = "sha256:02c5ffb13b7ea935073b373ec4ad232aa83f62690b69e88b864a3968697c0b6f"
-previous_checksums = ["sha256:4616bb721440f66331b8b32917f0c5146d174d975f3056351835fe48bc690d63", "sha256:92ea0b6f1aeb561a40833fa1597f783996a7a58c2876aa2ebea5fceb6418d04c", "sha256:a0b0b66428d613e044b3bcb285a2e9a1c9caff4bcec7f6cff9b5afd024c0ea89"]
+checksum = "sha256:40d9444717ce27cdd1842bf98dc07c7bb4337f96a84ca75729cfabf26004890c"
+previous_checksums = ["sha256:4616bb721440f66331b8b32917f0c5146d174d975f3056351835fe48bc690d63", "sha256:92ea0b6f1aeb561a40833fa1597f783996a7a58c2876aa2ebea5fceb6418d04c", "sha256:a0b0b66428d613e044b3bcb285a2e9a1c9caff4bcec7f6cff9b5afd024c0ea89", "sha256:02c5ffb13b7ea935073b373ec4ad232aa83f62690b69e88b864a3968697c0b6f"]
 size = 33092075
 storage_path = "$datasets_dir/North/NH-4KM/NH-4KM_TOPO-GEBCO2026.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Topo_NH-4KM/2.5.0/NH-4KM_TOPO-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Topo_NH-4KM/2.6.0/NH-4KM_TOPO-GEBCO2026.nc"
 
 ["NH-4KM_grid.nc"]
 checksum = "sha256:9bced2023750c842ecc2da1da032d7c8e70d9b55ab3b9adceef7fd5afbc7b9e8"
 previous_checksums = ["sha256:e237d8848d1250e9fa59fc281f80e16784adff8c496c9d9989f29046f6830e94"]
 size = 18052984
 storage_path = "$datasets_dir/North/NH-4KM/NH-4KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Topo_NH-4KM/2.5.0/NH-4KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Topo_NH-4KM/2.6.0/NH-4KM_grid.nc"
 
 ["NH-8KM_TOPO-GEBCO2026.nc"]
-checksum = "sha256:b0181624b1d5c2383e3fa4888a86d8a7f24fb82704a8d45c8840b51cbb2cd5c1"
-previous_checksums = ["sha256:d248269a868b044132ee73d7e681a8dcf2c90afd39f615f765735ca5efcc0b8d", "sha256:89b9b4a2e52545d0d9aa2805bbf13b0c08e3a00a38d9cdb09689fe14bd161a42", "sha256:0e7a620ea90598e5bb8f945a399e6013829678378fefdca2320360aa83a1ed7a"]
+checksum = "sha256:a86e7acc9c40afaff6700855d9c21f70ddea15224c4f25a9b72d4dc4a68845b7"
+previous_checksums = ["sha256:d248269a868b044132ee73d7e681a8dcf2c90afd39f615f765735ca5efcc0b8d", "sha256:89b9b4a2e52545d0d9aa2805bbf13b0c08e3a00a38d9cdb09689fe14bd161a42", "sha256:0e7a620ea90598e5bb8f945a399e6013829678378fefdca2320360aa83a1ed7a", "sha256:b0181624b1d5c2383e3fa4888a86d8a7f24fb82704a8d45c8840b51cbb2cd5c1"]
 size = 8793791
 storage_path = "$datasets_dir/North/NH-8KM/NH-8KM_TOPO-GEBCO2026.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Topo_NH-8KM/2.5.0/NH-8KM_TOPO-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Topo_NH-8KM/2.6.0/NH-8KM_TOPO-GEBCO2026.nc"
 
 ["NH-8KM_grid.nc"]
 checksum = "sha256:ca974e22347230883fa4b6a84f9213b4dc984ab36195dcab4c54646ba27134c2"
 previous_checksums = ["sha256:ae6fa2991da8179295e27f76c8de94a400b394c3335375b0255f570a6ceb95cf"]
 size = 5426807
 storage_path = "$datasets_dir/North/NH-8KM/NH-8KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Topo_NH-8KM/2.5.0/NH-8KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Topo_NH-8KM/2.6.0/NH-8KM_grid.nc"
 
 ["grid_NH-16KM.txt"]
 checksum = "sha256:b784904b58207dc754c6dbb670f90ccd35dfccfadbd68bfea1c239abac6a7c89"
 size = 467
 storage_path = "$datasets_dir/North/NH-16KM/grid_NH-16KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Topo_NH-16KM/2.5.0/grid_NH-16KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Topo_NH-16KM/2.6.0/grid_NH-16KM.txt"
 
 ["grid_NH-2KM.txt"]
 checksum = "sha256:8512e56bf6d59c6a51776662bdc110a6179897b1b4e1b898f2bce8bdb71c7189"
 size = 469
 storage_path = "$datasets_dir/North/NH-2KM/grid_NH-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Topo_NH-2KM/2.5.0/grid_NH-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Topo_NH-2KM/2.6.0/grid_NH-2KM.txt"
 
 ["grid_NH-32KM.txt"]
 checksum = "sha256:6562aa2ab0d5e8ac51d50e7caac9b766095e22eb71e450ead46ce581543d44a4"
 size = 466
 storage_path = "$datasets_dir/North/NH-32KM/grid_NH-32KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Topo_NH-32KM/2.5.0/grid_NH-32KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Topo_NH-32KM/2.6.0/grid_NH-32KM.txt"
 
 ["grid_NH-4KM.txt"]
 checksum = "sha256:4338207aa84d7d969fa1ea8827f49543d1f8c6a16329965e82d1ce27874918c7"
 size = 468
 storage_path = "$datasets_dir/North/NH-4KM/grid_NH-4KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Topo_NH-4KM/2.5.0/grid_NH-4KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Topo_NH-4KM/2.6.0/grid_NH-4KM.txt"
 
 ["grid_NH-8KM.txt"]
 checksum = "sha256:8220a06ea13149c0973191099db52b5d789c8ecc190c3d1b8ed05223dcb25b41"
 size = 468
 storage_path = "$datasets_dir/North/NH-8KM/grid_NH-8KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Topo_NH-8KM/2.5.0/grid_NH-8KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Topo_NH-8KM/2.6.0/grid_NH-8KM.txt"

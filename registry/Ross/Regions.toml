@@ -1,115 +1,115 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-15"
-git_tag = "regions-v2.5.0"
+date = "2026-10-16"
+git_tag = "regions-v2.6.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Ross_Regions"
-version = "2.5.0"
+version = "2.6.0"
 
 ["ROSS-1KM_BASINS-IMBIE2016-refined.nc"]
-checksum = "sha256:882f42145796de3397e82b02e796aa93c5ad32060df1cb927704ccfa0d7a266a"
-previous_checksums = ["sha256:b0ac38ffd32f4501f2dfe5feb28e98b4c3ac3706a0d042a34dd0ab1e2bee2e21"]
+checksum = "sha256:4e49096c93926f3c71f9a9e02b5b505f7a94ba4d34d3dfaef4330ca358023b31"
+previous_checksums = ["sha256:b0ac38ffd32f4501f2dfe5feb28e98b4c3ac3706a0d042a34dd0ab1e2bee2e21", "sha256:882f42145796de3397e82b02e796aa93c5ad32060df1cb927704ccfa0d7a266a"]
 size = 138031
 storage_path = "$datasets_dir/Ross/ROSS-1KM/ROSS-1KM_BASINS-IMBIE2016-refined.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Regions_ROSS-1KM/2.5.0/ROSS-1KM_BASINS-IMBIE2016-refined.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Regions_ROSS-1KM/2.6.0/ROSS-1KM_BASINS-IMBIE2016-refined.nc"
 
 ["ROSS-1KM_BASINS-IMBIE2016.nc"]
-checksum = "sha256:2c716d7187368c7c069496e0c39d0e54e9725af4638b901cccc6a7b001cb7f29"
-previous_checksums = ["sha256:1f6139e8997c8cbc97ebb26772021b26c3f548005d0e867d7941dc23ecc979ee"]
+checksum = "sha256:32a9b3b0e6429c88b3e361edf8fd20a9c7901376d579630889f72289bcb4233d"
+previous_checksums = ["sha256:1f6139e8997c8cbc97ebb26772021b26c3f548005d0e867d7941dc23ecc979ee", "sha256:2c716d7187368c7c069496e0c39d0e54e9725af4638b901cccc6a7b001cb7f29"]
 size = 103005
 storage_path = "$datasets_dir/Ross/ROSS-1KM/ROSS-1KM_BASINS-IMBIE2016.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Regions_ROSS-1KM/2.5.0/ROSS-1KM_BASINS-IMBIE2016.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Regions_ROSS-1KM/2.6.0/ROSS-1KM_BASINS-IMBIE2016.nc"
 
 ["ROSS-1KM_BASINS-Schmidt2025.nc"]
-checksum = "sha256:173c017e5bf73805907c167c30d44a846851cd543b94e712ce675e8d587f1a5e"
-previous_checksums = ["sha256:4a699b85db5e06e05fbcc1f58425acd7053666b894f0db6ac562491ba3c56bd6"]
+checksum = "sha256:3b5e1d3242ff8e8b9d75da0339ee1360d18946032905b636f18aa99bc71ef6e8"
+previous_checksums = ["sha256:4a699b85db5e06e05fbcc1f58425acd7053666b894f0db6ac562491ba3c56bd6", "sha256:173c017e5bf73805907c167c30d44a846851cd543b94e712ce675e8d587f1a5e"]
 size = 103005
 storage_path = "$datasets_dir/Ross/ROSS-1KM/ROSS-1KM_BASINS-Schmidt2025.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Regions_ROSS-1KM/2.5.0/ROSS-1KM_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Regions_ROSS-1KM/2.6.0/ROSS-1KM_BASINS-Schmidt2025.nc"
 
 ["ROSS-1KM_BASINS-Zwally2012.nc"]
-checksum = "sha256:553b6c2a00bb9bdbb2ab4832418b72a69168114f674c66606c2db18c36625b3e"
-previous_checksums = ["sha256:2ba499eb06a08eed81bb30831948c76561d76e98aca18727cf5a25594ed9defd"]
+checksum = "sha256:9ade3369b2942dcdb25c97e66dee522d61021168e237d79b5f3ccf612d38ce28"
+previous_checksums = ["sha256:2ba499eb06a08eed81bb30831948c76561d76e98aca18727cf5a25594ed9defd", "sha256:553b6c2a00bb9bdbb2ab4832418b72a69168114f674c66606c2db18c36625b3e"]
 size = 79628
 storage_path = "$datasets_dir/Ross/ROSS-1KM/ROSS-1KM_BASINS-Zwally2012.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Regions_ROSS-1KM/2.5.0/ROSS-1KM_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Regions_ROSS-1KM/2.6.0/ROSS-1KM_BASINS-Zwally2012.nc"
 
 ["ROSS-1KM_DOMAINS.nc"]
-checksum = "sha256:370e4e3e8ecaba2ca255231a4d36f15ca5771abaf5345580ebd6f7b4768feade"
-previous_checksums = ["sha256:22d576033575a483b0140d4442c9c4b955be7b13059c0e8f7d0a8b1d5ffa6f2b"]
-size = 95556
+checksum = "sha256:261b7703ad11d0fa7e7e1ace6ede0b2bdb277ed4cda5dbc5ed9fc5fe6e942f2a"
+previous_checksums = ["sha256:22d576033575a483b0140d4442c9c4b955be7b13059c0e8f7d0a8b1d5ffa6f2b", "sha256:370e4e3e8ecaba2ca255231a4d36f15ca5771abaf5345580ebd6f7b4768feade"]
+size = 95652
 storage_path = "$datasets_dir/Ross/ROSS-1KM/ROSS-1KM_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Regions_ROSS-1KM/2.5.0/ROSS-1KM_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Regions_ROSS-1KM/2.6.0/ROSS-1KM_DOMAINS.nc"
 
 ["ROSS-1KM_REGIONS.nc"]
-checksum = "sha256:324b2b8205ad0488b7a77991e31b4ec7b005abe6b4af0a4e1bca0832ff290469"
-previous_checksums = ["sha256:d1ea0c7d5cf1d6529bd9b4dc9c9c833cafd3aecd675332671328c301423acb22"]
+checksum = "sha256:3ce64e703d5ce98ba06417f7402f8a3153e8b504d3ecbe05f1e7ac9d0eedcc14"
+previous_checksums = ["sha256:d1ea0c7d5cf1d6529bd9b4dc9c9c833cafd3aecd675332671328c301423acb22", "sha256:324b2b8205ad0488b7a77991e31b4ec7b005abe6b4af0a4e1bca0832ff290469"]
 size = 692037
 storage_path = "$datasets_dir/Ross/ROSS-1KM/ROSS-1KM_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Regions_ROSS-1KM/2.5.0/ROSS-1KM_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Regions_ROSS-1KM/2.6.0/ROSS-1KM_REGIONS.nc"
 
 ["ROSS-1KM_grid.nc"]
 checksum = "sha256:f916a379f22ad5bee024893b7af140573a33bc15cefc21933458dcc0e34df537"
 size = 6670587
 storage_path = "$datasets_dir/Ross/ROSS-1KM/ROSS-1KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Regions_ROSS-1KM/2.5.0/ROSS-1KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Regions_ROSS-1KM/2.6.0/ROSS-1KM_grid.nc"
 
 ["ROSS-500M_BASINS-IMBIE2016-refined.nc"]
-checksum = "sha256:29a3ae6d5bdf09463ad1b0fc53810d362648e45a5d08acd2ca6947ca0eab2253"
-previous_checksums = ["sha256:70ebe32af641f4db429f4fa5aecfbd9f86ffc9f17dd3ba205357b57a4ba6adf1"]
+checksum = "sha256:724f59a7b25f25cedb5321144ef07556e8c82e83c98396c0c5eb9b3a15de500f"
+previous_checksums = ["sha256:70ebe32af641f4db429f4fa5aecfbd9f86ffc9f17dd3ba205357b57a4ba6adf1", "sha256:29a3ae6d5bdf09463ad1b0fc53810d362648e45a5d08acd2ca6947ca0eab2253"]
 size = 319589
 storage_path = "$datasets_dir/Ross/ROSS-500M/ROSS-500M_BASINS-IMBIE2016-refined.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Regions_ROSS-500M/2.5.0/ROSS-500M_BASINS-IMBIE2016-refined.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Regions_ROSS-500M/2.6.0/ROSS-500M_BASINS-IMBIE2016-refined.nc"
 
 ["ROSS-500M_BASINS-IMBIE2016.nc"]
-checksum = "sha256:c22628150f4f3568fb5150f522721d5bfe52d28f6ab29777514ec3daebc78d70"
-previous_checksums = ["sha256:a53d5e3329a9c55081f5f4f32820386ba4700e8dd8395272834de8f2acb2bc94"]
+checksum = "sha256:a1e506783e89926f3f4137afaae214abb52b4e4027e0c459ec29ee695466cb1b"
+previous_checksums = ["sha256:a53d5e3329a9c55081f5f4f32820386ba4700e8dd8395272834de8f2acb2bc94", "sha256:c22628150f4f3568fb5150f522721d5bfe52d28f6ab29777514ec3daebc78d70"]
 size = 242674
 storage_path = "$datasets_dir/Ross/ROSS-500M/ROSS-500M_BASINS-IMBIE2016.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Regions_ROSS-500M/2.5.0/ROSS-500M_BASINS-IMBIE2016.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Regions_ROSS-500M/2.6.0/ROSS-500M_BASINS-IMBIE2016.nc"
 
 ["ROSS-500M_BASINS-Schmidt2025.nc"]
-checksum = "sha256:6999515a4df2c3eef65d0bbd09dbf203b96f856eaea5aec9b3e0893a56d23897"
-previous_checksums = ["sha256:a7bcea134339fd7f22fee32f6f75b55e56eb7396ae8c1a22688c7838982b5b2c"]
+checksum = "sha256:e1e3d1737fc4b31b7fb453c511e12021f67f3b5542688ec0b253568aadd757aa"
+previous_checksums = ["sha256:a7bcea134339fd7f22fee32f6f75b55e56eb7396ae8c1a22688c7838982b5b2c", "sha256:6999515a4df2c3eef65d0bbd09dbf203b96f856eaea5aec9b3e0893a56d23897"]
 size = 242674
 storage_path = "$datasets_dir/Ross/ROSS-500M/ROSS-500M_BASINS-Schmidt2025.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Regions_ROSS-500M/2.5.0/ROSS-500M_BASINS-Schmidt2025.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Regions_ROSS-500M/2.6.0/ROSS-500M_BASINS-Schmidt2025.nc"
 
 ["ROSS-500M_BASINS-Zwally2012.nc"]
-checksum = "sha256:723c4f09b774695f23bec2410c4abafb4a1034614f6cc1304aa78182eb2c26f4"
-previous_checksums = ["sha256:27c1b1f496c406dc884bbd31d274f504eb82a9ce613b3a826e2a96971097b4cd"]
-size = 174583
+checksum = "sha256:16925552746d36a9913cdabfd956c405635e5159a1e73f90b99a562151ecbad1"
+previous_checksums = ["sha256:27c1b1f496c406dc884bbd31d274f504eb82a9ce613b3a826e2a96971097b4cd", "sha256:723c4f09b774695f23bec2410c4abafb4a1034614f6cc1304aa78182eb2c26f4"]
+size = 174579
 storage_path = "$datasets_dir/Ross/ROSS-500M/ROSS-500M_BASINS-Zwally2012.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Regions_ROSS-500M/2.5.0/ROSS-500M_BASINS-Zwally2012.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Regions_ROSS-500M/2.6.0/ROSS-500M_BASINS-Zwally2012.nc"
 
 ["ROSS-500M_DOMAINS.nc"]
-checksum = "sha256:447ec1f6fecf4d5c67dec017e8fc5958e0647ba635afd336752a0f9fc68233af"
-previous_checksums = ["sha256:3f1e1eaae40587f9dcf89ad85797b356e1dd48008b1610b5552596cbf03c5c01"]
-size = 205852
+checksum = "sha256:207b818d14d8b07852298ac99d3653ae0e6d31adbdd2283d69fc6541344dedc3"
+previous_checksums = ["sha256:3f1e1eaae40587f9dcf89ad85797b356e1dd48008b1610b5552596cbf03c5c01", "sha256:447ec1f6fecf4d5c67dec017e8fc5958e0647ba635afd336752a0f9fc68233af"]
+size = 205948
 storage_path = "$datasets_dir/Ross/ROSS-500M/ROSS-500M_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Regions_ROSS-500M/2.5.0/ROSS-500M_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Regions_ROSS-500M/2.6.0/ROSS-500M_DOMAINS.nc"
 
 ["ROSS-500M_REGIONS.nc"]
-checksum = "sha256:1ac32d682ae803255cfd06b4ce9f9140c309465e9c6bab75f7154598d6b4721d"
-previous_checksums = ["sha256:2e9ca0fa5df039a8fdec40df10ef35c1974547c8f6b16805f94834f8ecb592f6"]
+checksum = "sha256:b58fa6665692e84aa7114a286ee61e8970f6c046a78e3f05d4248484f16d29ce"
+previous_checksums = ["sha256:2e9ca0fa5df039a8fdec40df10ef35c1974547c8f6b16805f94834f8ecb592f6", "sha256:1ac32d682ae803255cfd06b4ce9f9140c309465e9c6bab75f7154598d6b4721d"]
 size = 2039674
 storage_path = "$datasets_dir/Ross/ROSS-500M/ROSS-500M_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Regions_ROSS-500M/2.5.0/ROSS-500M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Regions_ROSS-500M/2.6.0/ROSS-500M_REGIONS.nc"
 
 ["ROSS-500M_grid.nc"]
 checksum = "sha256:01d2a132c3b39921509f30823784cc0c1ebef14479cab32e32ab7c73c9bb3162"
 size = 22858188
 storage_path = "$datasets_dir/Ross/ROSS-500M/ROSS-500M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Regions_ROSS-500M/2.5.0/ROSS-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Regions_ROSS-500M/2.6.0/ROSS-500M_grid.nc"
 
 ["grid_ROSS-1KM.txt"]
 checksum = "sha256:82b1d9feda3aba0abdf51c01f1e64af08b926c2fa2cec28de28a50f0b1bbe255"
 size = 467
 storage_path = "$datasets_dir/Ross/ROSS-1KM/grid_ROSS-1KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Regions_ROSS-1KM/2.5.0/grid_ROSS-1KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Regions_ROSS-1KM/2.6.0/grid_ROSS-1KM.txt"
 
 ["grid_ROSS-500M.txt"]
 checksum = "sha256:aad73dab4ee12c61a7c0395ff5142865e6a82e92ed1f0ace4e741f35f9832841"
 size = 467
 storage_path = "$datasets_dir/Ross/ROSS-500M/grid_ROSS-500M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Regions_ROSS-500M/2.5.0/grid_ROSS-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Regions_ROSS-500M/2.6.0/grid_ROSS-500M.txt"

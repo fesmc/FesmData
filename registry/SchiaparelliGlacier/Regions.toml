@@ -1,103 +1,111 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-15"
-git_tag = "regions-v2.5.0"
+date = "2026-10-16"
+git_tag = "regions-v2.6.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=SchiaparelliGlacier_Regions"
-version = "2.5.0"
+version = "2.6.0"
 
 ["SCH-100M_DOMAINS.nc"]
-checksum = "sha256:879926b4c952b0fc63b342e57a659b8f62ddabcf2ef0c714d807c0f2dad8c65e"
-size = 52668
+checksum = "sha256:d834c30f357e872b2c33bdb2283ebaa07572f7727312b6f3a036a1ad1f567060"
+previous_checksums = ["sha256:879926b4c952b0fc63b342e57a659b8f62ddabcf2ef0c714d807c0f2dad8c65e"]
+size = 52667
 storage_path = "$datasets_dir/SchiaparelliGlacier/SCH-100M/SCH-100M_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Regions_SCH-100M/2.5.0/SCH-100M_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Regions_SCH-100M/2.6.0/SCH-100M_DOMAINS.nc"
 
 ["SCH-100M_REGIONS.nc"]
-checksum = "sha256:24acf17f99903a0d1f4c62dab159c582520fb5cd8f425afd1f23ef1a1cbea82a"
-size = 34371
+checksum = "sha256:296cddb448c69b736c58ed65ff53de09320309209f7e79aea77b571b9912e871"
+previous_checksums = ["sha256:24acf17f99903a0d1f4c62dab159c582520fb5cd8f425afd1f23ef1a1cbea82a"]
+size = 35459
 storage_path = "$datasets_dir/SchiaparelliGlacier/SCH-100M/SCH-100M_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Regions_SCH-100M/2.5.0/SCH-100M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Regions_SCH-100M/2.6.0/SCH-100M_REGIONS.nc"
 
 ["SCH-100M_grid.nc"]
 checksum = "sha256:749a1860e30092c1ece2bc90bb995365740567fda0497f601a55a9a7d694d2c5"
 size = 34450
 storage_path = "$datasets_dir/SchiaparelliGlacier/SCH-100M/SCH-100M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Regions_SCH-100M/2.5.0/SCH-100M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Regions_SCH-100M/2.6.0/SCH-100M_grid.nc"
 
 ["SCH-250M_DOMAINS.nc"]
-checksum = "sha256:217cb035d353bc4a0ec266a8cccaa361eb17be8d09066fc14650d70df57a611f"
-size = 52399
+checksum = "sha256:c8c2af192b0db5e97b6725a5b17eeaaaa3669729ab950b79cd93e7760cae884c"
+previous_checksums = ["sha256:217cb035d353bc4a0ec266a8cccaa361eb17be8d09066fc14650d70df57a611f"]
+size = 52398
 storage_path = "$datasets_dir/SchiaparelliGlacier/SCH-250M/SCH-250M_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Regions_SCH-250M/2.5.0/SCH-250M_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Regions_SCH-250M/2.6.0/SCH-250M_DOMAINS.nc"
 
 ["SCH-250M_REGIONS.nc"]
-checksum = "sha256:6cd41ecd09e76fb2252941dddd700b32ae73382934832f56e62f6f29322075fc"
-size = 32386
+checksum = "sha256:572152daf2320d03b8e3191f08488a8452be260326305e16704628658c93e409"
+previous_checksums = ["sha256:6cd41ecd09e76fb2252941dddd700b32ae73382934832f56e62f6f29322075fc"]
+size = 33474
 storage_path = "$datasets_dir/SchiaparelliGlacier/SCH-250M/SCH-250M_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Regions_SCH-250M/2.5.0/SCH-250M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Regions_SCH-250M/2.6.0/SCH-250M_REGIONS.nc"
 
 ["SCH-250M_grid.nc"]
 checksum = "sha256:64ff20940ce62a1d07ed261474d3d53c6701634711c4035e1c082e5f4d8c3437"
 size = 25997
 storage_path = "$datasets_dir/SchiaparelliGlacier/SCH-250M/SCH-250M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Regions_SCH-250M/2.5.0/SCH-250M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Regions_SCH-250M/2.6.0/SCH-250M_grid.nc"
 
 ["SCH-25M_DOMAINS.nc"]
-checksum = "sha256:8a9d106d53885a4efde096aaa11a037996b0500dab82070ff6d15c09a7625b5c"
-size = 61354
+checksum = "sha256:630820ce556813065dd9f8cb19a07fecd9dd23233b2bb66c0170bce7c21f6758"
+previous_checksums = ["sha256:8a9d106d53885a4efde096aaa11a037996b0500dab82070ff6d15c09a7625b5c"]
+size = 61353
 storage_path = "$datasets_dir/SchiaparelliGlacier/SCH-25M/SCH-25M_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Regions_SCH-25M/2.5.0/SCH-25M_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Regions_SCH-25M/2.6.0/SCH-25M_DOMAINS.nc"
 
 ["SCH-25M_REGIONS.nc"]
-checksum = "sha256:d034c05adcb3554fa57e05dbf091f94d8296730902e1e55975a9691e12d3626c"
-size = 44648
+checksum = "sha256:85fcadaf4059861806ecea6a5cfeab218d92c0893aaa78b9a6fe41100e6198b4"
+previous_checksums = ["sha256:d034c05adcb3554fa57e05dbf091f94d8296730902e1e55975a9691e12d3626c"]
+size = 45736
 storage_path = "$datasets_dir/SchiaparelliGlacier/SCH-25M/SCH-25M_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Regions_SCH-25M/2.5.0/SCH-25M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Regions_SCH-25M/2.6.0/SCH-25M_REGIONS.nc"
 
 ["SCH-25M_grid.nc"]
 checksum = "sha256:939400fb61c63042da2f1d804df24e1d49b6641f0bdd30a397f376864575f002"
 size = 130741
 storage_path = "$datasets_dir/SchiaparelliGlacier/SCH-25M/SCH-25M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Regions_SCH-25M/2.5.0/SCH-25M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Regions_SCH-25M/2.6.0/SCH-25M_grid.nc"
 
 ["SCH-50M_DOMAINS.nc"]
-checksum = "sha256:5f4c953a7ada1d4cdec77adf9a8b901222297d5aa313ad6944e6dd58e605b1ec"
-size = 54987
+checksum = "sha256:27d0e7d6658dd5c55d5250e396108e6f8dc495cdd5994305f68e79fde3f39298"
+previous_checksums = ["sha256:5f4c953a7ada1d4cdec77adf9a8b901222297d5aa313ad6944e6dd58e605b1ec"]
+size = 54986
 storage_path = "$datasets_dir/SchiaparelliGlacier/SCH-50M/SCH-50M_DOMAINS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Regions_SCH-50M/2.5.0/SCH-50M_DOMAINS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Regions_SCH-50M/2.6.0/SCH-50M_DOMAINS.nc"
 
 ["SCH-50M_REGIONS.nc"]
-checksum = "sha256:69cf307013d8abc29b5975e348770296fda5f985468f8722b0c5446530ed6994"
-size = 37750
+checksum = "sha256:b61c6396f08774d981db5ef10e63d01b140c3399c84c378cde081804a4f0da72"
+previous_checksums = ["sha256:69cf307013d8abc29b5975e348770296fda5f985468f8722b0c5446530ed6994"]
+size = 38838
 storage_path = "$datasets_dir/SchiaparelliGlacier/SCH-50M/SCH-50M_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Regions_SCH-50M/2.5.0/SCH-50M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Regions_SCH-50M/2.6.0/SCH-50M_REGIONS.nc"
 
 ["SCH-50M_grid.nc"]
 checksum = "sha256:e3ebd92f6e7f907a711df74883f141bf9dc561409c8efcfda71bc422dcdaa1ca"
 size = 56988
 storage_path = "$datasets_dir/SchiaparelliGlacier/SCH-50M/SCH-50M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Regions_SCH-50M/2.5.0/SCH-50M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Regions_SCH-50M/2.6.0/SCH-50M_grid.nc"
 
 ["grid_SCH-100M.txt"]
 checksum = "sha256:00f2ea7d1116568bee5fffa1c211c351c5cedc95b8c92a52932824ec753011f2"
 size = 345
 storage_path = "$datasets_dir/SchiaparelliGlacier/SCH-100M/grid_SCH-100M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Regions_SCH-100M/2.5.0/grid_SCH-100M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Regions_SCH-100M/2.6.0/grid_SCH-100M.txt"
 
 ["grid_SCH-250M.txt"]
 checksum = "sha256:4e5f7f3c17b3cccbeafe1d81c8f76e31f9ad676569c43abe578a93c5fd829267"
 size = 344
 storage_path = "$datasets_dir/SchiaparelliGlacier/SCH-250M/grid_SCH-250M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Regions_SCH-250M/2.5.0/grid_SCH-250M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Regions_SCH-250M/2.6.0/grid_SCH-250M.txt"
 
 ["grid_SCH-25M.txt"]
 checksum = "sha256:c11d8eea4366a430b9888949f8b996dcd9b7b9e791615a5aa40e14b759697ddf"
 size = 350
 storage_path = "$datasets_dir/SchiaparelliGlacier/SCH-25M/grid_SCH-25M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Regions_SCH-25M/2.5.0/grid_SCH-25M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Regions_SCH-25M/2.6.0/grid_SCH-25M.txt"
 
 ["grid_SCH-50M.txt"]
 checksum = "sha256:4b63b9d615fcc762ec90e1b2ead37faf4089f23988831309268c00b674165894"
 size = 347
 storage_path = "$datasets_dir/SchiaparelliGlacier/SCH-50M/grid_SCH-50M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Regions_SCH-50M/2.5.0/grid_SCH-50M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Regions_SCH-50M/2.6.0/grid_SCH-50M.txt"

@@ -1,64 +1,64 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-15"
-git_tag = "regions-v2.5.0"
+date = "2026-10-16"
+git_tag = "regions-v2.6.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Alps_Regions"
-version = "2.5.0"
+version = "2.6.0"
 
 ["ALP-250M_REGIONS.nc"]
-checksum = "sha256:2617badbed8a115ac7c9383598f6b2a3d4af328d946caf0c5bbe3fdef6ecd1b5"
-previous_checksums = ["sha256:c2dbd1cc17449a4df70b87c64448500839f3fa40c7cbf61c57488da8e5ec2848"]
-size = 2581631
+checksum = "sha256:19730a8519ce3dd9b7117f4a62b7d52e36c1866c0ba06a847a9058fe85483071"
+previous_checksums = ["sha256:c2dbd1cc17449a4df70b87c64448500839f3fa40c7cbf61c57488da8e5ec2848", "sha256:2617badbed8a115ac7c9383598f6b2a3d4af328d946caf0c5bbe3fdef6ecd1b5"]
+size = 2582719
 storage_path = "$datasets_dir/Alps/ALP-250M/ALP-250M_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Regions_ALP-250M/2.5.0/ALP-250M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Regions_ALP-250M/2.6.0/ALP-250M_REGIONS.nc"
 
 ["ALP-250M_grid.nc"]
 checksum = "sha256:bdd69cb8354b0ecacc9a665421507b75c9beb56fcb9d2ec9f50d13c8a653f240"
 size = 17187010
 storage_path = "$datasets_dir/Alps/ALP-250M/ALP-250M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Regions_ALP-250M/2.5.0/ALP-250M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Regions_ALP-250M/2.6.0/ALP-250M_grid.nc"
 
 ["ALP-2KM_REGIONS.nc"]
-checksum = "sha256:4a7e3b2b34ddcf85e008c4a9d2e4f71184a5a4f01f01592f3576862af2c1fbe9"
-previous_checksums = ["sha256:f8f1b472b2dc2869a5799151e711999db41cbfd17f6e67406a68b34913b5fdff"]
-size = 132134
+checksum = "sha256:4c245c5380313e16932d618b16e806edafddaf94809b1b1c43ccb36a8499e9a3"
+previous_checksums = ["sha256:f8f1b472b2dc2869a5799151e711999db41cbfd17f6e67406a68b34913b5fdff", "sha256:4a7e3b2b34ddcf85e008c4a9d2e4f71184a5a4f01f01592f3576862af2c1fbe9"]
+size = 133222
 storage_path = "$datasets_dir/Alps/ALP-2KM/ALP-2KM_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Regions_ALP-2KM/2.5.0/ALP-2KM_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Regions_ALP-2KM/2.6.0/ALP-2KM_REGIONS.nc"
 
 ["ALP-2KM_grid.nc"]
 checksum = "sha256:a0f3e138044c18d2d70b38706a6179ec6b5ac50aa61229a5574780b96ac00a37"
 size = 572770
 storage_path = "$datasets_dir/Alps/ALP-2KM/ALP-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Regions_ALP-2KM/2.5.0/ALP-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Regions_ALP-2KM/2.6.0/ALP-2KM_grid.nc"
 
 ["ALP-500M_REGIONS.nc"]
-checksum = "sha256:818c1df7ac313fa7ec897d9a97f92c2d01a47649eca0047673893d01d190de85"
-previous_checksums = ["sha256:c0e521530ef293b0a4c9465bf8d95d50bde2748f6e2a41c1d73637f519e787d2"]
-size = 868426
+checksum = "sha256:adc56760a24ec2574f8d6be073d7f8d7fdde7fec766ffedb55ee9ffcf3e4a4d9"
+previous_checksums = ["sha256:c0e521530ef293b0a4c9465bf8d95d50bde2748f6e2a41c1d73637f519e787d2", "sha256:818c1df7ac313fa7ec897d9a97f92c2d01a47649eca0047673893d01d190de85"]
+size = 869514
 storage_path = "$datasets_dir/Alps/ALP-500M/ALP-500M_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Regions_ALP-500M/2.5.0/ALP-500M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Regions_ALP-500M/2.6.0/ALP-500M_REGIONS.nc"
 
 ["ALP-500M_grid.nc"]
 checksum = "sha256:f8602616ce71d9eea41cdcc704772816ed5fc9b821b395f8275578bbf4f2f934"
 size = 6248137
 storage_path = "$datasets_dir/Alps/ALP-500M/ALP-500M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Regions_ALP-500M/2.5.0/ALP-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Regions_ALP-500M/2.6.0/ALP-500M_grid.nc"
 
 ["grid_ALP-250M.txt"]
 checksum = "sha256:1d739347656434cb467b96e5f70dba5b44714a8e93ad0fc9125009c3bf6ff112"
 size = 328
 storage_path = "$datasets_dir/Alps/ALP-250M/grid_ALP-250M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Regions_ALP-250M/2.5.0/grid_ALP-250M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Regions_ALP-250M/2.6.0/grid_ALP-250M.txt"
 
 ["grid_ALP-2KM.txt"]
 checksum = "sha256:dfeeea31315f1ba8ec9eb4bc25cd2322e4fa4bb7c63a7c5379adc6109a6610a9"
 size = 322
 storage_path = "$datasets_dir/Alps/ALP-2KM/grid_ALP-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Regions_ALP-2KM/2.5.0/grid_ALP-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Regions_ALP-2KM/2.6.0/grid_ALP-2KM.txt"
 
 ["grid_ALP-500M.txt"]
 checksum = "sha256:9c52a5415fc9af0040d5d6478effbf4c0fb3e998f5610706d94262f1a428c7b9"
 size = 325
 storage_path = "$datasets_dir/Alps/ALP-500M/grid_ALP-500M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Regions_ALP-500M/2.5.0/grid_ALP-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Regions_ALP-500M/2.6.0/grid_ALP-500M.txt"

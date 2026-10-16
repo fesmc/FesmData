@@ -1,64 +1,64 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-15"
-git_tag = "topo-v2.5.0"
+date = "2026-10-16"
+git_tag = "topo-v2.6.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Helheim_Topo"
-version = "2.5.0"
+version = "2.6.0"
 
 ["HEL-1KM_TOPO-BedMachine-v6.nc"]
-checksum = "sha256:3820d2c64bf5f10bbc58c2ea37d63415295ed1fdf8c7bb8b00d367188b40159b"
-previous_checksums = ["sha256:79b2bce60fb5931034265f4aff9b15bf4cd4adff8ed0d507cd49a4a9b23855e1"]
+checksum = "sha256:b43198fc2918a7d2e9c9bf45bd97ab7116700a24d79b909d93227357a6786f94"
+previous_checksums = ["sha256:79b2bce60fb5931034265f4aff9b15bf4cd4adff8ed0d507cd49a4a9b23855e1", "sha256:3820d2c64bf5f10bbc58c2ea37d63415295ed1fdf8c7bb8b00d367188b40159b"]
 size = 1797126
 storage_path = "$datasets_dir/Helheim/HEL-1KM/HEL-1KM_TOPO-BedMachine-v6.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Topo_HEL-1KM/2.5.0/HEL-1KM_TOPO-BedMachine-v6.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Topo_HEL-1KM/2.6.0/HEL-1KM_TOPO-BedMachine-v6.nc"
 
 ["HEL-1KM_grid.nc"]
 checksum = "sha256:c5c91160786169fa69c27a596c491c9abdeae09ad999e30b239996d390134314"
 size = 540775
 storage_path = "$datasets_dir/Helheim/HEL-1KM/HEL-1KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Topo_HEL-1KM/2.5.0/HEL-1KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Topo_HEL-1KM/2.6.0/HEL-1KM_grid.nc"
 
 ["HEL-250M_TOPO-BedMachine-v6.nc"]
-checksum = "sha256:1047b125016856282458be2b2c91f78f0214899b770490d54d9c893d4e6b754c"
-previous_checksums = ["sha256:3031882114fee84afb4c5dfe170100ddf8a37122d2905388b840b68802a16053"]
+checksum = "sha256:ec96fdadea3db6e65b35e8af545f9007ddbeca9906a204269ed38bae1dbd9b7a"
+previous_checksums = ["sha256:3031882114fee84afb4c5dfe170100ddf8a37122d2905388b840b68802a16053", "sha256:1047b125016856282458be2b2c91f78f0214899b770490d54d9c893d4e6b754c"]
 size = 24039778
 storage_path = "$datasets_dir/Helheim/HEL-250M/HEL-250M_TOPO-BedMachine-v6.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Topo_HEL-250M/2.5.0/HEL-250M_TOPO-BedMachine-v6.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Topo_HEL-250M/2.6.0/HEL-250M_TOPO-BedMachine-v6.nc"
 
 ["HEL-250M_grid.nc"]
 checksum = "sha256:729d6be5006086cd5d24a00e7c6d1bdb3d8ae61c6fcd595b499d4b7677d91f2f"
 size = 4612602
 storage_path = "$datasets_dir/Helheim/HEL-250M/HEL-250M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Topo_HEL-250M/2.5.0/HEL-250M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Topo_HEL-250M/2.6.0/HEL-250M_grid.nc"
 
 ["HEL-500M_TOPO-BedMachine-v6.nc"]
-checksum = "sha256:a5bbe75c47e9302919bbc6b2b87f93f58d0d882b9d71991b0b06cee6b1e098ec"
-previous_checksums = ["sha256:68a2302eac118e6adbe3b19e232bfb7d6cb5c8849d8dbe7ed7b4142e5ccb37e8"]
+checksum = "sha256:8337fc3069b6034e718545b7138ecc4069dc1db607e9887a5384bf219fa5ec1c"
+previous_checksums = ["sha256:68a2302eac118e6adbe3b19e232bfb7d6cb5c8849d8dbe7ed7b4142e5ccb37e8", "sha256:a5bbe75c47e9302919bbc6b2b87f93f58d0d882b9d71991b0b06cee6b1e098ec"]
 size = 6555101
 storage_path = "$datasets_dir/Helheim/HEL-500M/HEL-500M_TOPO-BedMachine-v6.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Topo_HEL-500M/2.5.0/HEL-500M_TOPO-BedMachine-v6.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Topo_HEL-500M/2.6.0/HEL-500M_TOPO-BedMachine-v6.nc"
 
 ["HEL-500M_grid.nc"]
 checksum = "sha256:c6e125170082a9e743b2cd1542ffe3282f19062cbec8ccb6f0757dd6fc898ec4"
 size = 1699963
 storage_path = "$datasets_dir/Helheim/HEL-500M/HEL-500M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Topo_HEL-500M/2.5.0/HEL-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Topo_HEL-500M/2.6.0/HEL-500M_grid.nc"
 
 ["grid_HEL-1KM.txt"]
 checksum = "sha256:9dc58cd00a199e57a061f9ceffa116b7dc7d6c1198c9d055932ac9d2b201a678"
 size = 462
 storage_path = "$datasets_dir/Helheim/HEL-1KM/grid_HEL-1KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Topo_HEL-1KM/2.5.0/grid_HEL-1KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Topo_HEL-1KM/2.6.0/grid_HEL-1KM.txt"
 
 ["grid_HEL-250M.txt"]
 checksum = "sha256:0ebf5f9b04128645f19cba3cc5b34271ef32951354689bca729bde207c4a2313"
 size = 467
 storage_path = "$datasets_dir/Helheim/HEL-250M/grid_HEL-250M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Topo_HEL-250M/2.5.0/grid_HEL-250M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Topo_HEL-250M/2.6.0/grid_HEL-250M.txt"
 
 ["grid_HEL-500M.txt"]
 checksum = "sha256:55f16542254cf301c23c0f562da082761c412f7296c250e9b175285771515b79"
 size = 463
 storage_path = "$datasets_dir/Helheim/HEL-500M/grid_HEL-500M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Topo_HEL-500M/2.5.0/grid_HEL-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Topo_HEL-500M/2.6.0/grid_HEL-500M.txt"

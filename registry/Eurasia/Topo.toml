@@ -1,112 +1,112 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-15"
-git_tag = "topo-v2.5.0"
+date = "2026-10-16"
+git_tag = "topo-v2.6.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Eurasia_Topo"
-version = "2.5.0"
+version = "2.6.0"
 
 ["EIS-16KM_TOPO-GEBCO2026.nc"]
-checksum = "sha256:a0fa7785fe957283bc9efe0c38db6d7f803fc6d9d75efd01c521269961122e81"
-previous_checksums = ["sha256:a56438b3cbcef8b110822fb5e77503ae41c428eff06db41a104391ae54d3f0b8", "sha256:09b93447b4b722366dab90be31b37fd1ba4359fab92ebcdae3e5486db59b0fc3", "sha256:a3a31ff161c2cb0e9a72dacfd37115b8f47643f57fc07788892dedf2e02ff1ad"]
+checksum = "sha256:e2274ea3529b6d16e5c661d47a2a414f93164e13e9539661d2713d14a3b5f2da"
+previous_checksums = ["sha256:a56438b3cbcef8b110822fb5e77503ae41c428eff06db41a104391ae54d3f0b8", "sha256:09b93447b4b722366dab90be31b37fd1ba4359fab92ebcdae3e5486db59b0fc3", "sha256:a3a31ff161c2cb0e9a72dacfd37115b8f47643f57fc07788892dedf2e02ff1ad", "sha256:a0fa7785fe957283bc9efe0c38db6d7f803fc6d9d75efd01c521269961122e81"]
 size = 721933
 storage_path = "$datasets_dir/Eurasia/EIS-16KM/EIS-16KM_TOPO-GEBCO2026.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Topo_EIS-16KM/2.5.0/EIS-16KM_TOPO-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Topo_EIS-16KM/2.6.0/EIS-16KM_TOPO-GEBCO2026.nc"
 
 ["EIS-16KM_grid.nc"]
 checksum = "sha256:1d20e7d7e8259ed487714e94f54ceaffb6bad6892f01e3d712126deaa272486e"
 previous_checksums = ["sha256:3ccbbbaff781920c19b763490d74854b90eb5c81a20c242e5969e11498bb2aaf"]
 size = 468044
 storage_path = "$datasets_dir/Eurasia/EIS-16KM/EIS-16KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Topo_EIS-16KM/2.5.0/EIS-16KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Topo_EIS-16KM/2.6.0/EIS-16KM_grid.nc"
 
 ["EIS-2KM_TOPO-GEBCO2026.nc"]
-checksum = "sha256:a63a246d4b39dff2708d9a9f46f8016aae687f2d85c499d06ee4182ab9079540"
-previous_checksums = ["sha256:45a9290d22beb09de7c3dbccbd0ea2bd7ccb068c8c86d5e608a3b9576c2d65eb", "sha256:b9f97148772fe28aacefedfc6a395e5d27f351b2cb7fbe88d16d803340ab5249", "sha256:f1d4e03719868000e4b48dd1cfafb4f6ae2c48b69907c14ccf1adde5447f6ba8"]
+checksum = "sha256:27eb4683694c3a820ec0a5a80030b4d1983d702eed92d8d8a00067adaa8bbbc2"
+previous_checksums = ["sha256:45a9290d22beb09de7c3dbccbd0ea2bd7ccb068c8c86d5e608a3b9576c2d65eb", "sha256:b9f97148772fe28aacefedfc6a395e5d27f351b2cb7fbe88d16d803340ab5249", "sha256:f1d4e03719868000e4b48dd1cfafb4f6ae2c48b69907c14ccf1adde5447f6ba8", "sha256:a63a246d4b39dff2708d9a9f46f8016aae687f2d85c499d06ee4182ab9079540"]
 size = 34765243
 storage_path = "$datasets_dir/Eurasia/EIS-2KM/EIS-2KM_TOPO-GEBCO2026.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Topo_EIS-2KM/2.5.0/EIS-2KM_TOPO-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Topo_EIS-2KM/2.6.0/EIS-2KM_TOPO-GEBCO2026.nc"
 
 ["EIS-2KM_grid.nc"]
 checksum = "sha256:2c16f49f87cf613181321f5de5c6de93b118b1de7ca85176dea276e121c92625"
 previous_checksums = ["sha256:1be738832e5a153b12b3f0a4950683a72b5ec28c08082de3236696959f96664e"]
 size = 18652824
 storage_path = "$datasets_dir/Eurasia/EIS-2KM/EIS-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Topo_EIS-2KM/2.5.0/EIS-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Topo_EIS-2KM/2.6.0/EIS-2KM_grid.nc"
 
 ["EIS-32KM_TOPO-GEBCO2026.nc"]
-checksum = "sha256:258b065a5704ee97770c6a1d27d4da6c92e527b6e00ccb34f89eb233f20d7933"
-previous_checksums = ["sha256:6c91f812a8be5511f56a3b8bfd1969947c75ef2458f72cbba3c0f3ae3e16042c", "sha256:64a89876b74125a511fce322753ca649d454b261329e2630b256417b37256a44", "sha256:f9a18c8f76cc150dad2646b42e287d603974079f19de362e35fe2992bec90cf1"]
+checksum = "sha256:27b9703a467a61baae280053eee795b1a668e805f4235d3e6ecf665ed4852b7c"
+previous_checksums = ["sha256:6c91f812a8be5511f56a3b8bfd1969947c75ef2458f72cbba3c0f3ae3e16042c", "sha256:64a89876b74125a511fce322753ca649d454b261329e2630b256417b37256a44", "sha256:f9a18c8f76cc150dad2646b42e287d603974079f19de362e35fe2992bec90cf1", "sha256:258b065a5704ee97770c6a1d27d4da6c92e527b6e00ccb34f89eb233f20d7933"]
 size = 242502
 storage_path = "$datasets_dir/Eurasia/EIS-32KM/EIS-32KM_TOPO-GEBCO2026.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Topo_EIS-32KM/2.5.0/EIS-32KM_TOPO-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Topo_EIS-32KM/2.6.0/EIS-32KM_TOPO-GEBCO2026.nc"
 
 ["EIS-32KM_grid.nc"]
 checksum = "sha256:24ac950cafda724a347b80a3994df8dccda33452b4ec15567318be11fbd7c5ee"
 previous_checksums = ["sha256:9e10ed988c345621993429a7fc642860b6592e15c52089fec9a2ed510dc4848d"]
 size = 162448
 storage_path = "$datasets_dir/Eurasia/EIS-32KM/EIS-32KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Topo_EIS-32KM/2.5.0/EIS-32KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Topo_EIS-32KM/2.6.0/EIS-32KM_grid.nc"
 
 ["EIS-4KM_TOPO-GEBCO2026.nc"]
-checksum = "sha256:ecab821ea5b5cfe45240132edd0447dcffc7753d2860af8d70907f84d5b1225d"
-previous_checksums = ["sha256:cbdc05b6c713446e443f0909cd471aaf1625dc8173cbe89050d4c5afdf647020", "sha256:f05e8bf1e92534136c02c09e5f99522e69a608c96bcfb94333e7300465b62111", "sha256:af60dbd3122047defbdda5ef4fc24de8dd5139ee0fbf7b39363cc43874e0a04f"]
+checksum = "sha256:a6a7fdb31cd878ca23f6397e049adddae3a5b70d18dce978121bdcbac93444f5"
+previous_checksums = ["sha256:cbdc05b6c713446e443f0909cd471aaf1625dc8173cbe89050d4c5afdf647020", "sha256:f05e8bf1e92534136c02c09e5f99522e69a608c96bcfb94333e7300465b62111", "sha256:af60dbd3122047defbdda5ef4fc24de8dd5139ee0fbf7b39363cc43874e0a04f", "sha256:ecab821ea5b5cfe45240132edd0447dcffc7753d2860af8d70907f84d5b1225d"]
 size = 9434408
 storage_path = "$datasets_dir/Eurasia/EIS-4KM/EIS-4KM_TOPO-GEBCO2026.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Topo_EIS-4KM/2.5.0/EIS-4KM_TOPO-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Topo_EIS-4KM/2.6.0/EIS-4KM_TOPO-GEBCO2026.nc"
 
 ["EIS-4KM_grid.nc"]
 checksum = "sha256:5441dfd488b31896fd1a8fe2e8bf60f01cdfbeaa7375dbf22dd8cdb49d98dd50"
 previous_checksums = ["sha256:373c757f707abbe99f9ab7b7abe03f492dcea72388500bb37b202746fd7fc65e"]
 size = 5517943
 storage_path = "$datasets_dir/Eurasia/EIS-4KM/EIS-4KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Topo_EIS-4KM/2.5.0/EIS-4KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Topo_EIS-4KM/2.6.0/EIS-4KM_grid.nc"
 
 ["EIS-8KM_TOPO-GEBCO2026.nc"]
-checksum = "sha256:c0d803ce33e0febb45cdee6bde1906e65e90c8e2bd8ea6ddc494cefb21ea5cf4"
-previous_checksums = ["sha256:1c7ffcec8e032d188064910f8c2e2683edcf530de30d403cf72f34e758acb08a", "sha256:14e13df09810752dc0dbb0708818ed2fde92c17dad8e965b5b00b891188b0ec2", "sha256:94dabc195b30c681c2f92bc8d0d80835994f6d09ccc3575a82853638fbead2e8"]
+checksum = "sha256:511ae74ad10a2367066930faee155815d96a0b8cf752ed0e08ebd47c41d6489a"
+previous_checksums = ["sha256:1c7ffcec8e032d188064910f8c2e2683edcf530de30d403cf72f34e758acb08a", "sha256:14e13df09810752dc0dbb0708818ed2fde92c17dad8e965b5b00b891188b0ec2", "sha256:94dabc195b30c681c2f92bc8d0d80835994f6d09ccc3575a82853638fbead2e8", "sha256:c0d803ce33e0febb45cdee6bde1906e65e90c8e2bd8ea6ddc494cefb21ea5cf4"]
 size = 2528380
 storage_path = "$datasets_dir/Eurasia/EIS-8KM/EIS-8KM_TOPO-GEBCO2026.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Topo_EIS-8KM/2.5.0/EIS-8KM_TOPO-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Topo_EIS-8KM/2.6.0/EIS-8KM_TOPO-GEBCO2026.nc"
 
 ["EIS-8KM_grid.nc"]
 checksum = "sha256:b289f645ce99c3fc50d18a0c1a3f0b8d821ca7a84f584718ae6bd56dda8ee5d4"
 previous_checksums = ["sha256:90639828c760ba55d266c036fc40c47b59325e59152e2e621d239c047cda490b"]
 size = 1656104
 storage_path = "$datasets_dir/Eurasia/EIS-8KM/EIS-8KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Topo_EIS-8KM/2.5.0/EIS-8KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Topo_EIS-8KM/2.6.0/EIS-8KM_grid.nc"
 
 ["grid_EIS-16KM.txt"]
 checksum = "sha256:2c844ed81d718b909a05871fd57de0a194b4f6f423ff30c4084d6fd2cac8bce6"
 previous_checksums = ["sha256:f9dcc420be94b52e00da717a5a3cd27ae5ec77529c8270863e2c22037d5a2a57"]
 size = 464
 storage_path = "$datasets_dir/Eurasia/EIS-16KM/grid_EIS-16KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Topo_EIS-16KM/2.5.0/grid_EIS-16KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Topo_EIS-16KM/2.6.0/grid_EIS-16KM.txt"
 
 ["grid_EIS-2KM.txt"]
 checksum = "sha256:636d1375cbf3277d84199f419cfc279855c80b9e8292606b8bb3298178fa6281"
 previous_checksums = ["sha256:02790e920a9945695a5bc4cd34e864bfe0279ff8ec58fd1a33a13d927fb58cfd"]
 size = 466
 storage_path = "$datasets_dir/Eurasia/EIS-2KM/grid_EIS-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Topo_EIS-2KM/2.5.0/grid_EIS-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Topo_EIS-2KM/2.6.0/grid_EIS-2KM.txt"
 
 ["grid_EIS-32KM.txt"]
 checksum = "sha256:9143f4a004c229926591f2a6aa972da8cf0788ff168417995e345d4bcf4c7023"
 previous_checksums = ["sha256:584cc251e7f41da6803698d607738c531a0c41d306088e866eb3c4afa2d3c7f4"]
 size = 464
 storage_path = "$datasets_dir/Eurasia/EIS-32KM/grid_EIS-32KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Topo_EIS-32KM/2.5.0/grid_EIS-32KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Topo_EIS-32KM/2.6.0/grid_EIS-32KM.txt"
 
 ["grid_EIS-4KM.txt"]
 checksum = "sha256:526a81280cc48930651222189c908659003751995a9d810376176f5dc255f6b4"
 previous_checksums = ["sha256:caf47ab7f9cc3083416e8d211838b46d9ee04abe3b62e628cd8c875d0861e48e"]
 size = 465
 storage_path = "$datasets_dir/Eurasia/EIS-4KM/grid_EIS-4KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Topo_EIS-4KM/2.5.0/grid_EIS-4KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Topo_EIS-4KM/2.6.0/grid_EIS-4KM.txt"
 
 ["grid_EIS-8KM.txt"]
 checksum = "sha256:3b98d7c7568c1a65bbc3a59c63ee50bfa067c562c42521d3948074a110d02c3f"
 previous_checksums = ["sha256:4d139fd20ce9e7a1137a553e0bec79dd31f2c05ccac88be0baca279d6a07dd95"]
 size = 463
 storage_path = "$datasets_dir/Eurasia/EIS-8KM/grid_EIS-8KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Topo_EIS-8KM/2.5.0/grid_EIS-8KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Topo_EIS-8KM/2.6.0/grid_EIS-8KM.txt"

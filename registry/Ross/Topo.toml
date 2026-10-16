@@ -1,80 +1,80 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-15"
-git_tag = "topo-v2.5.0"
+date = "2026-10-16"
+git_tag = "topo-v2.6.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Ross_Topo"
-version = "2.5.0"
+version = "2.6.0"
 
 ["ROSS-1KM_TOPO-BedMachine-v2.nc"]
-checksum = "sha256:c0ab206d12548d131753d6ddf707fe34104bbeb62c4c6d7515697427d06c8dd4"
-previous_checksums = ["sha256:d3092feb8b60e508b6b71868c1f2f6066f4984b164c5886f35a123610f642b60"]
+checksum = "sha256:0f75d077e33de7677fdae570a5a7eca113bd1a97af90ad85f8ba18d4dcec3818"
+previous_checksums = ["sha256:d3092feb8b60e508b6b71868c1f2f6066f4984b164c5886f35a123610f642b60", "sha256:c0ab206d12548d131753d6ddf707fe34104bbeb62c4c6d7515697427d06c8dd4"]
 size = 19478913
 storage_path = "$datasets_dir/Ross/ROSS-1KM/ROSS-1KM_TOPO-BedMachine-v2.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Topo_ROSS-1KM/2.5.0/ROSS-1KM_TOPO-BedMachine-v2.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Topo_ROSS-1KM/2.6.0/ROSS-1KM_TOPO-BedMachine-v2.nc"
 
 ["ROSS-1KM_TOPO-BedMachine-v3.nc"]
-checksum = "sha256:e27a578013388fc6e759098d23d116d34f6573b4dd02ee577051061d058f1eb7"
-previous_checksums = ["sha256:ddb69df9b17c9652af98329dc5c63e6624beeafb5294459950199d76cb2d9553"]
+checksum = "sha256:0f0c6d2b6f46cce8cdabc5533219d9b9f582511b630558acdaed03dea517ae8f"
+previous_checksums = ["sha256:ddb69df9b17c9652af98329dc5c63e6624beeafb5294459950199d76cb2d9553", "sha256:e27a578013388fc6e759098d23d116d34f6573b4dd02ee577051061d058f1eb7"]
 size = 19481414
 storage_path = "$datasets_dir/Ross/ROSS-1KM/ROSS-1KM_TOPO-BedMachine-v3.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Topo_ROSS-1KM/2.5.0/ROSS-1KM_TOPO-BedMachine-v3.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Topo_ROSS-1KM/2.6.0/ROSS-1KM_TOPO-BedMachine-v3.nc"
 
 ["ROSS-1KM_TOPO-BedMachine-v4.nc"]
-checksum = "sha256:222f03e7bee5d8ffbaa5df7c645dd5ed87a732a06e36461399692364e89946c0"
-previous_checksums = ["sha256:8f1ffce1b8bef199a1bc7e474ab67f9e390c283d7de5819fab31e3c7dcd76e2d"]
+checksum = "sha256:7406302703ebebc88089cf426c93c99e064d5bbd54db9e580e35a98eb5e6d345"
+previous_checksums = ["sha256:8f1ffce1b8bef199a1bc7e474ab67f9e390c283d7de5819fab31e3c7dcd76e2d", "sha256:222f03e7bee5d8ffbaa5df7c645dd5ed87a732a06e36461399692364e89946c0"]
 size = 19916589
 storage_path = "$datasets_dir/Ross/ROSS-1KM/ROSS-1KM_TOPO-BedMachine-v4.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Topo_ROSS-1KM/2.5.0/ROSS-1KM_TOPO-BedMachine-v4.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Topo_ROSS-1KM/2.6.0/ROSS-1KM_TOPO-BedMachine-v4.nc"
 
 ["ROSS-1KM_TOPO-Bedmap2.nc"]
-checksum = "sha256:2fadd8b326b0c6c019908fca96acc29e6f19a138101d96e1d7d7db4b9172a85f"
-previous_checksums = ["sha256:75fb5fdf503b3be304a0c469504c8ff5bec190390db290f4409a718b5ec5b50d"]
+checksum = "sha256:69567a26e9b9db4e5194584e4e3dd7e22177bb5efafc712b7d55bb8910f5b50b"
+previous_checksums = ["sha256:75fb5fdf503b3be304a0c469504c8ff5bec190390db290f4409a718b5ec5b50d", "sha256:2fadd8b326b0c6c019908fca96acc29e6f19a138101d96e1d7d7db4b9172a85f"]
 size = 15702186
 storage_path = "$datasets_dir/Ross/ROSS-1KM/ROSS-1KM_TOPO-Bedmap2.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Topo_ROSS-1KM/2.5.0/ROSS-1KM_TOPO-Bedmap2.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Topo_ROSS-1KM/2.6.0/ROSS-1KM_TOPO-Bedmap2.nc"
 
 ["ROSS-1KM_TOPO-Bedmap3.nc"]
-checksum = "sha256:4ded6f28ddc3d7edb1bbc7d56e5811201419a3ef12a72e66ed9021bebc6bf6b9"
-previous_checksums = ["sha256:99fd47d16967e8222add4eda5e37d8e18c28d7fc4c3ddf32b2f369d8a65662e5"]
+checksum = "sha256:f08133d39c319deb6120b56b372ef2bbe09cf552368a5dd9ae1178e490dcd2bc"
+previous_checksums = ["sha256:99fd47d16967e8222add4eda5e37d8e18c28d7fc4c3ddf32b2f369d8a65662e5", "sha256:4ded6f28ddc3d7edb1bbc7d56e5811201419a3ef12a72e66ed9021bebc6bf6b9"]
 size = 16595093
 storage_path = "$datasets_dir/Ross/ROSS-1KM/ROSS-1KM_TOPO-Bedmap3.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Topo_ROSS-1KM/2.5.0/ROSS-1KM_TOPO-Bedmap3.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Topo_ROSS-1KM/2.6.0/ROSS-1KM_TOPO-Bedmap3.nc"
 
 ["ROSS-1KM_grid.nc"]
 checksum = "sha256:f916a379f22ad5bee024893b7af140573a33bc15cefc21933458dcc0e34df537"
 size = 6670587
 storage_path = "$datasets_dir/Ross/ROSS-1KM/ROSS-1KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Topo_ROSS-1KM/2.5.0/ROSS-1KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Topo_ROSS-1KM/2.6.0/ROSS-1KM_grid.nc"
 
 ["ROSS-500M_TOPO-BedMachine-v4.nc"]
-checksum = "sha256:d13abde95067b5033ad5e6681517b0102283ee4da35957ce0f9c41c085e73797"
-previous_checksums = ["sha256:6015970ba807720680091b09b10578bb2dc25f819bb6c502a12e2ae5c4fa92f9"]
+checksum = "sha256:320327a3dd76099fa8f588f39bd4a80b68a0b64f4e49270431be9b666b4f0197"
+previous_checksums = ["sha256:6015970ba807720680091b09b10578bb2dc25f819bb6c502a12e2ae5c4fa92f9", "sha256:d13abde95067b5033ad5e6681517b0102283ee4da35957ce0f9c41c085e73797"]
 size = 52937216
 storage_path = "$datasets_dir/Ross/ROSS-500M/ROSS-500M_TOPO-BedMachine-v4.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Topo_ROSS-500M/2.5.0/ROSS-500M_TOPO-BedMachine-v4.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Topo_ROSS-500M/2.6.0/ROSS-500M_TOPO-BedMachine-v4.nc"
 
 ["ROSS-500M_TOPO-Bedmap3.nc"]
-checksum = "sha256:4f0732d17fb03216ddee1cf41e5867a34ac324a50c0941b80e595669d74dea31"
-previous_checksums = ["sha256:5911b9bebdf913cccd6a0227e883210ae37748f36da5ac12b949e6b9284cbc04"]
+checksum = "sha256:ca45a624a1a72e7e17d43db79528ac4c2fad57f7a17fe2b87d7e582019e5213d"
+previous_checksums = ["sha256:5911b9bebdf913cccd6a0227e883210ae37748f36da5ac12b949e6b9284cbc04", "sha256:4f0732d17fb03216ddee1cf41e5867a34ac324a50c0941b80e595669d74dea31"]
 size = 45217926
 storage_path = "$datasets_dir/Ross/ROSS-500M/ROSS-500M_TOPO-Bedmap3.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Topo_ROSS-500M/2.5.0/ROSS-500M_TOPO-Bedmap3.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Topo_ROSS-500M/2.6.0/ROSS-500M_TOPO-Bedmap3.nc"
 
 ["ROSS-500M_grid.nc"]
 checksum = "sha256:01d2a132c3b39921509f30823784cc0c1ebef14479cab32e32ab7c73c9bb3162"
 size = 22858188
 storage_path = "$datasets_dir/Ross/ROSS-500M/ROSS-500M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Topo_ROSS-500M/2.5.0/ROSS-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Topo_ROSS-500M/2.6.0/ROSS-500M_grid.nc"
 
 ["grid_ROSS-1KM.txt"]
 checksum = "sha256:82b1d9feda3aba0abdf51c01f1e64af08b926c2fa2cec28de28a50f0b1bbe255"
 size = 467
 storage_path = "$datasets_dir/Ross/ROSS-1KM/grid_ROSS-1KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Topo_ROSS-1KM/2.5.0/grid_ROSS-1KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Topo_ROSS-1KM/2.6.0/grid_ROSS-1KM.txt"
 
 ["grid_ROSS-500M.txt"]
 checksum = "sha256:aad73dab4ee12c61a7c0395ff5142865e6a82e92ed1f0ace4e741f35f9832841"
 size = 467
 storage_path = "$datasets_dir/Ross/ROSS-500M/grid_ROSS-500M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Topo_ROSS-500M/2.5.0/grid_ROSS-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Topo_ROSS-500M/2.6.0/grid_ROSS-500M.txt"

@@ -1,80 +1,80 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-15"
-git_tag = "topo-v2.5.0"
+date = "2026-10-16"
+git_tag = "topo-v2.6.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=FilchnerRonne_Topo"
-version = "2.5.0"
+version = "2.6.0"
 
 ["FRIS-1KM_TOPO-BedMachine-v2.nc"]
-checksum = "sha256:59235d898683e8d44f0e29aded65f1ca6dcff5d6f7da76f2b686e19e0e2a949d"
-previous_checksums = ["sha256:f6d3c2edc92ee3d23e497d213d0af2b2b2139491e629bf68b8c26fafe8816fb9"]
+checksum = "sha256:fe5bdf9094a4b792b4d0d31e03ae9ac4bcd8a36a927844cf4da895d739be837a"
+previous_checksums = ["sha256:f6d3c2edc92ee3d23e497d213d0af2b2b2139491e629bf68b8c26fafe8816fb9", "sha256:59235d898683e8d44f0e29aded65f1ca6dcff5d6f7da76f2b686e19e0e2a949d"]
 size = 19022547
 storage_path = "$datasets_dir/FilchnerRonne/FRIS-1KM/FRIS-1KM_TOPO-BedMachine-v2.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Topo_FRIS-1KM/2.5.0/FRIS-1KM_TOPO-BedMachine-v2.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Topo_FRIS-1KM/2.6.0/FRIS-1KM_TOPO-BedMachine-v2.nc"
 
 ["FRIS-1KM_TOPO-BedMachine-v3.nc"]
-checksum = "sha256:0519333553c690b6041be7a06faaacced0ca8211f4d2ccfb23e4daff78fa7032"
-previous_checksums = ["sha256:0c8e9b2e1c8cdf1058d115badcc7fe48a3f55960740baa4f918845ceee929c46"]
+checksum = "sha256:c9d20c3ae18ea7ec6145fb6e375ad6a6280bb3ed7a72f272f547c7d35905685a"
+previous_checksums = ["sha256:0c8e9b2e1c8cdf1058d115badcc7fe48a3f55960740baa4f918845ceee929c46", "sha256:0519333553c690b6041be7a06faaacced0ca8211f4d2ccfb23e4daff78fa7032"]
 size = 18970501
 storage_path = "$datasets_dir/FilchnerRonne/FRIS-1KM/FRIS-1KM_TOPO-BedMachine-v3.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Topo_FRIS-1KM/2.5.0/FRIS-1KM_TOPO-BedMachine-v3.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Topo_FRIS-1KM/2.6.0/FRIS-1KM_TOPO-BedMachine-v3.nc"
 
 ["FRIS-1KM_TOPO-BedMachine-v4.nc"]
-checksum = "sha256:b3762af0fe9abd37cf1737ec6d11eb0521a4af32414ca07555eef1b49070863b"
-previous_checksums = ["sha256:0886861e994340ec20bbd2aed5af7db82452539398e75ecafbc0fae0712b5281"]
+checksum = "sha256:d16667b7074bee6a9949315a37c0d3d53b8d4f7ab1494a9a72b2fbdd78a6aa17"
+previous_checksums = ["sha256:0886861e994340ec20bbd2aed5af7db82452539398e75ecafbc0fae0712b5281", "sha256:b3762af0fe9abd37cf1737ec6d11eb0521a4af32414ca07555eef1b49070863b"]
 size = 19346718
 storage_path = "$datasets_dir/FilchnerRonne/FRIS-1KM/FRIS-1KM_TOPO-BedMachine-v4.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Topo_FRIS-1KM/2.5.0/FRIS-1KM_TOPO-BedMachine-v4.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Topo_FRIS-1KM/2.6.0/FRIS-1KM_TOPO-BedMachine-v4.nc"
 
 ["FRIS-1KM_TOPO-Bedmap2.nc"]
-checksum = "sha256:315b8599dcd365ba373b489750b4a011053fd5c1f4caa38d4698ca6def3b574b"
-previous_checksums = ["sha256:8f59ced5a02496655ad48682283a72fcff3925d995ac2b82f1b3364fc1f35865"]
+checksum = "sha256:a0fc37b633672b2ec8278c6c45fc340cdff0ecc4207f316da75123a1a726fcc7"
+previous_checksums = ["sha256:8f59ced5a02496655ad48682283a72fcff3925d995ac2b82f1b3364fc1f35865", "sha256:315b8599dcd365ba373b489750b4a011053fd5c1f4caa38d4698ca6def3b574b"]
 size = 15379119
 storage_path = "$datasets_dir/FilchnerRonne/FRIS-1KM/FRIS-1KM_TOPO-Bedmap2.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Topo_FRIS-1KM/2.5.0/FRIS-1KM_TOPO-Bedmap2.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Topo_FRIS-1KM/2.6.0/FRIS-1KM_TOPO-Bedmap2.nc"
 
 ["FRIS-1KM_TOPO-Bedmap3.nc"]
-checksum = "sha256:62029761c40fa943441d7451056cf511e1959c3e01ab0d46fd4453bf6c43690d"
-previous_checksums = ["sha256:82adce673548762c22f7561c501c9c043e8d38d114e16c123b32201e22a2c0b4"]
+checksum = "sha256:0fadc3e30545a24b89aab48407f8ba360198dd3f5f354b7ecfd39fb0afe67bef"
+previous_checksums = ["sha256:82adce673548762c22f7561c501c9c043e8d38d114e16c123b32201e22a2c0b4", "sha256:62029761c40fa943441d7451056cf511e1959c3e01ab0d46fd4453bf6c43690d"]
 size = 16294809
 storage_path = "$datasets_dir/FilchnerRonne/FRIS-1KM/FRIS-1KM_TOPO-Bedmap3.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Topo_FRIS-1KM/2.5.0/FRIS-1KM_TOPO-Bedmap3.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Topo_FRIS-1KM/2.6.0/FRIS-1KM_TOPO-Bedmap3.nc"
 
 ["FRIS-1KM_grid.nc"]
 checksum = "sha256:0c02cf89c76ce327455337d17dde70714b09b28a0ec56e6fc971782118de9384"
 size = 6797667
 storage_path = "$datasets_dir/FilchnerRonne/FRIS-1KM/FRIS-1KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Topo_FRIS-1KM/2.5.0/FRIS-1KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Topo_FRIS-1KM/2.6.0/FRIS-1KM_grid.nc"
 
 ["FRIS-500M_TOPO-BedMachine-v4.nc"]
-checksum = "sha256:6f9f8b1e39182639f8430b2050d4ba55dcf5c85c6413e5947f713000528dc1cb"
-previous_checksums = ["sha256:36deffa6ff7f92232c6fac321583678c6f574641f975f967c7db91bb4a9ddc15"]
+checksum = "sha256:6ad3c188ac19056a53d8f445079feadf0fca0370b1f1cd8bee53b17ebc7347f4"
+previous_checksums = ["sha256:36deffa6ff7f92232c6fac321583678c6f574641f975f967c7db91bb4a9ddc15", "sha256:6f9f8b1e39182639f8430b2050d4ba55dcf5c85c6413e5947f713000528dc1cb"]
 size = 51108760
 storage_path = "$datasets_dir/FilchnerRonne/FRIS-500M/FRIS-500M_TOPO-BedMachine-v4.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Topo_FRIS-500M/2.5.0/FRIS-500M_TOPO-BedMachine-v4.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Topo_FRIS-500M/2.6.0/FRIS-500M_TOPO-BedMachine-v4.nc"
 
 ["FRIS-500M_TOPO-Bedmap3.nc"]
-checksum = "sha256:2e9eda2a8bd3ee7688e2527c302c66c33ec535d9826c6995219a003867a2559c"
-previous_checksums = ["sha256:1c69b8b20f41c62b58f58db6e587717cf2b04472b1b3cce0eb211da1cbd2dff5"]
+checksum = "sha256:e6602b7bb18f77059f4e3f4c9274e613be587792e531b8fb8dcbb20aa79fd4d5"
+previous_checksums = ["sha256:1c69b8b20f41c62b58f58db6e587717cf2b04472b1b3cce0eb211da1cbd2dff5", "sha256:2e9eda2a8bd3ee7688e2527c302c66c33ec535d9826c6995219a003867a2559c"]
 size = 43777571
 storage_path = "$datasets_dir/FilchnerRonne/FRIS-500M/FRIS-500M_TOPO-Bedmap3.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Topo_FRIS-500M/2.5.0/FRIS-500M_TOPO-Bedmap3.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Topo_FRIS-500M/2.6.0/FRIS-500M_TOPO-Bedmap3.nc"
 
 ["FRIS-500M_grid.nc"]
 checksum = "sha256:0c8e9de7f49cd15a2c135cb9a3b9748e4f5624692d452a1199f1b3e52a1dc15e"
 size = 22434824
 storage_path = "$datasets_dir/FilchnerRonne/FRIS-500M/FRIS-500M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Topo_FRIS-500M/2.5.0/FRIS-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Topo_FRIS-500M/2.6.0/FRIS-500M_grid.nc"
 
 ["grid_FRIS-1KM.txt"]
 checksum = "sha256:a7f4d34451d77b5a784e3439999ee1adb083ed937053ade210119122904c8fed"
 size = 467
 storage_path = "$datasets_dir/FilchnerRonne/FRIS-1KM/grid_FRIS-1KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Topo_FRIS-1KM/2.5.0/grid_FRIS-1KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Topo_FRIS-1KM/2.6.0/grid_FRIS-1KM.txt"
 
 ["grid_FRIS-500M.txt"]
 checksum = "sha256:0e7c50472f23d5491407840cacd7c3cfccf4ec28d2746058ba30a12daf006fcb"
 size = 467
 storage_path = "$datasets_dir/FilchnerRonne/FRIS-500M/grid_FRIS-500M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Topo_FRIS-500M/2.5.0/grid_FRIS-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Topo_FRIS-500M/2.6.0/grid_FRIS-500M.txt"

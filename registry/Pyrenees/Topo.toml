@@ -1,68 +1,68 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-15"
-git_tag = "topo-v2.5.0"
+date = "2026-10-16"
+git_tag = "topo-v2.6.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Pyrenees_Topo"
-version = "2.5.0"
+version = "2.6.0"
 
 ["PYR-250M_TOPO-GLO90-GEBCO2026.nc"]
-checksum = "sha256:1e8e150d45652eeeb168761965ae4587ed10f7bb9eee93ec58edc04b41f7659c"
-previous_checksums = ["sha256:b9c71e911d45de94381e1e0a90e45197d324e03edee43abc600e2afed5cbb479", "sha256:386848653c3f49a162a433bdad2b37ce3dfabcb346232fced375147cdadd8ac6"]
+checksum = "sha256:b8a7f3454beb4cf2702050089c62e5b16ad14515797312a51027f9bd7aee7231"
+previous_checksums = ["sha256:b9c71e911d45de94381e1e0a90e45197d324e03edee43abc600e2afed5cbb479", "sha256:386848653c3f49a162a433bdad2b37ce3dfabcb346232fced375147cdadd8ac6", "sha256:1e8e150d45652eeeb168761965ae4587ed10f7bb9eee93ec58edc04b41f7659c"]
 size = 7245854
 storage_path = "$datasets_dir/Pyrenees/PYR-250M/PYR-250M_TOPO-GLO90-GEBCO2026.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Topo_PYR-250M/2.5.0/PYR-250M_TOPO-GLO90-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Topo_PYR-250M/2.6.0/PYR-250M_TOPO-GLO90-GEBCO2026.nc"
 
 ["PYR-250M_grid.nc"]
 checksum = "sha256:3e0709b31b6cd203060fca5f2475acd3966154dc51f263cbdee01334c452df92"
 size = 2204528
 storage_path = "$datasets_dir/Pyrenees/PYR-250M/PYR-250M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Topo_PYR-250M/2.5.0/PYR-250M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Topo_PYR-250M/2.6.0/PYR-250M_grid.nc"
 
 ["PYR-2KM_TOPO-GLO90-GEBCO2026.nc"]
-checksum = "sha256:5a51c67351ed69f245360f6fba329f3c65c25dc25064e8aeba7842a8f6afcb9b"
-previous_checksums = ["sha256:142a8cce314d5856b32056ecfd4eff2c6b4b08f767913bf9357417f31656dd4a", "sha256:7da88bfb61b349f2328d36fd00ccdeb72ba5a2244772f0be50d51cfc1e29fc07"]
+checksum = "sha256:53107b1c64a8676a2f70b03de7a902f6e8f64acde108e955313de85238362262"
+previous_checksums = ["sha256:142a8cce314d5856b32056ecfd4eff2c6b4b08f767913bf9357417f31656dd4a", "sha256:7da88bfb61b349f2328d36fd00ccdeb72ba5a2244772f0be50d51cfc1e29fc07", "sha256:5a51c67351ed69f245360f6fba329f3c65c25dc25064e8aeba7842a8f6afcb9b"]
 size = 175387
 storage_path = "$datasets_dir/Pyrenees/PYR-2KM/PYR-2KM_TOPO-GLO90-GEBCO2026.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Topo_PYR-2KM/2.5.0/PYR-2KM_TOPO-GLO90-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Topo_PYR-2KM/2.6.0/PYR-2KM_TOPO-GLO90-GEBCO2026.nc"
 
 ["PYR-2KM_grid.nc"]
 checksum = "sha256:20d63f5741b04cbdfbfe1bf5885e4a73a58a3d4fd9db5cd561dd531d0a3ffde9"
 previous_checksums = ["sha256:02d80a754d9fd500540cfb6796be8ad88aefd7d6cf04ac3ac2b86c3bf831b25f"]
 size = 86648
 storage_path = "$datasets_dir/Pyrenees/PYR-2KM/PYR-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Topo_PYR-2KM/2.5.0/PYR-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Topo_PYR-2KM/2.6.0/PYR-2KM_grid.nc"
 
 ["PYR-500M_TOPO-GLO90-GEBCO2026.nc"]
-checksum = "sha256:f16530f857f4741e21dc6d5da69373de2cd4be0a5ca921fdb20010442a275187"
-previous_checksums = ["sha256:68ceced69bc0936425d7aaf04e5b0e320bd0cfc9d6981f433094005534fe3a0d", "sha256:de23905db046e104a285f52e58e5936aca5087a7e61db8b923363a9d6157c7f5"]
+checksum = "sha256:ec78432a1c2898799488f835705fbe7ad1685afdc63b8f2b59386fb2e66bd4c3"
+previous_checksums = ["sha256:68ceced69bc0936425d7aaf04e5b0e320bd0cfc9d6981f433094005534fe3a0d", "sha256:de23905db046e104a285f52e58e5936aca5087a7e61db8b923363a9d6157c7f5", "sha256:f16530f857f4741e21dc6d5da69373de2cd4be0a5ca921fdb20010442a275187"]
 size = 1904710
 storage_path = "$datasets_dir/Pyrenees/PYR-500M/PYR-500M_TOPO-GLO90-GEBCO2026.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Topo_PYR-500M/2.5.0/PYR-500M_TOPO-GLO90-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Topo_PYR-500M/2.6.0/PYR-500M_TOPO-GLO90-GEBCO2026.nc"
 
 ["PYR-500M_grid.nc"]
 checksum = "sha256:ac2f0c297dbceae9d9454ff7938f9a7e57624f06a50836c5e410ff011fb490b5"
 previous_checksums = ["sha256:e1171fb45db05153c818f693ebbc2637e9d501d150217e2a9dfbde2c94a98672"]
 size = 696990
 storage_path = "$datasets_dir/Pyrenees/PYR-500M/PYR-500M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Topo_PYR-500M/2.5.0/PYR-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Topo_PYR-500M/2.6.0/PYR-500M_grid.nc"
 
 ["grid_PYR-250M.txt"]
 checksum = "sha256:2cc0852b3af380633a652ae3ce0bd044899edbc75eadbb6ca64ecc92923f8221"
 size = 331
 storage_path = "$datasets_dir/Pyrenees/PYR-250M/grid_PYR-250M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Topo_PYR-250M/2.5.0/grid_PYR-250M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Topo_PYR-250M/2.6.0/grid_PYR-250M.txt"
 
 ["grid_PYR-2KM.txt"]
 checksum = "sha256:8a8de7189e5797f759a3a8df305e651006339b630895a4b3da06e4c00098e192"
 previous_checksums = ["sha256:cace1dfc9f744dd1d56f0f4560598dd70aa72f1c7bf01cf033a25b04d480b03d"]
 size = 325
 storage_path = "$datasets_dir/Pyrenees/PYR-2KM/grid_PYR-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Topo_PYR-2KM/2.5.0/grid_PYR-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Topo_PYR-2KM/2.6.0/grid_PYR-2KM.txt"
 
 ["grid_PYR-500M.txt"]
 checksum = "sha256:f5c3250096ab76fd6c156518227640019fc7938ab600ad440afafc62f241a757"
 previous_checksums = ["sha256:6ca4be959f99fbb9e7c5dad28c9c9f51e63790182a9d04df077762534ad14598"]
 size = 327
 storage_path = "$datasets_dir/Pyrenees/PYR-500M/grid_PYR-500M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Topo_PYR-500M/2.5.0/grid_PYR-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Topo_PYR-500M/2.6.0/grid_PYR-500M.txt"

@@ -1,64 +1,64 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-15"
-git_tag = "regions-v2.5.0"
+date = "2026-10-16"
+git_tag = "regions-v2.6.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=NewZealand_Regions"
-version = "2.5.0"
+version = "2.6.0"
 
 ["NZ-250M_REGIONS.nc"]
-checksum = "sha256:45eebe066840c4414327e069e91e803ce39b2af82146f67901089c02a36bf8cf"
-previous_checksums = ["sha256:6d093cdf45b2c4c64dcc7a2ff90f00ca3d15d0042ef89354f5701c4e78a2eca2"]
-size = 3738930
+checksum = "sha256:2cde2764b8785b7e3548cb665b3728a17bdff40d5a81cb67ea48112824011ed2"
+previous_checksums = ["sha256:6d093cdf45b2c4c64dcc7a2ff90f00ca3d15d0042ef89354f5701c4e78a2eca2", "sha256:45eebe066840c4414327e069e91e803ce39b2af82146f67901089c02a36bf8cf"]
+size = 3740018
 storage_path = "$datasets_dir/NewZealand/NZ-250M/NZ-250M_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Regions_NZ-250M/2.5.0/NZ-250M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Regions_NZ-250M/2.6.0/NZ-250M_REGIONS.nc"
 
 ["NZ-250M_grid.nc"]
 checksum = "sha256:a10fc753479d778955e315667f465e0b726a52684dcd677b2af398da7d4c532d"
 size = 9705952
 storage_path = "$datasets_dir/NewZealand/NZ-250M/NZ-250M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Regions_NZ-250M/2.5.0/NZ-250M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Regions_NZ-250M/2.6.0/NZ-250M_grid.nc"
 
 ["NZ-2KM_REGIONS.nc"]
-checksum = "sha256:dfe67c18996eb9fea30acfcab527206ca54aa4f23a884876a67826c83118537f"
-previous_checksums = ["sha256:178fde790d59f048880fa142ff5959d9b30360851dbda61156a8c187d9bfd8e0"]
-size = 200030
+checksum = "sha256:fa57d8674224e5f96973248f39bfd9761039936c039d3ffed83c42d7dee6631e"
+previous_checksums = ["sha256:178fde790d59f048880fa142ff5959d9b30360851dbda61156a8c187d9bfd8e0", "sha256:dfe67c18996eb9fea30acfcab527206ca54aa4f23a884876a67826c83118537f"]
+size = 201118
 storage_path = "$datasets_dir/NewZealand/NZ-2KM/NZ-2KM_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Regions_NZ-2KM/2.5.0/NZ-2KM_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Regions_NZ-2KM/2.6.0/NZ-2KM_REGIONS.nc"
 
 ["NZ-2KM_grid.nc"]
 checksum = "sha256:8a6333b930e208cef12d1b144497cd478c0881052c7caf42e928b1b6855f32b2"
 size = 416034
 storage_path = "$datasets_dir/NewZealand/NZ-2KM/NZ-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Regions_NZ-2KM/2.5.0/NZ-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Regions_NZ-2KM/2.6.0/NZ-2KM_grid.nc"
 
 ["NZ-500M_REGIONS.nc"]
-checksum = "sha256:1cecbe6b4c5d9a8f25f48160560b397dbd9fc16a1f90f99bd367790a3943064b"
-previous_checksums = ["sha256:2eb3b88264c1dfad3b39e2ec52ff855284c301bd1e99e17aa44fb1b3fab1ef42"]
-size = 1441778
+checksum = "sha256:5b6f44718ac9ec8f1e20a4c788a098b41fce99d08cd3854d662d61842a33c572"
+previous_checksums = ["sha256:2eb3b88264c1dfad3b39e2ec52ff855284c301bd1e99e17aa44fb1b3fab1ef42", "sha256:1cecbe6b4c5d9a8f25f48160560b397dbd9fc16a1f90f99bd367790a3943064b"]
+size = 1442866
 storage_path = "$datasets_dir/NewZealand/NZ-500M/NZ-500M_REGIONS.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Regions_NZ-500M/2.5.0/NZ-500M_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Regions_NZ-500M/2.6.0/NZ-500M_REGIONS.nc"
 
 ["NZ-500M_grid.nc"]
 checksum = "sha256:386ddcba13dd4d8d2b686d07bc2baf994777b6c16c9bc16d229a9ad1949c471c"
 size = 3694548
 storage_path = "$datasets_dir/NewZealand/NZ-500M/NZ-500M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Regions_NZ-500M/2.5.0/NZ-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Regions_NZ-500M/2.6.0/NZ-500M_grid.nc"
 
 ["grid_NZ-250M.txt"]
 checksum = "sha256:32cbfa45ba75bc74d62e37e6359adf0408daee45b08b448ff4977a69f3182aeb"
 size = 340
 storage_path = "$datasets_dir/NewZealand/NZ-250M/grid_NZ-250M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Regions_NZ-250M/2.5.0/grid_NZ-250M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Regions_NZ-250M/2.6.0/grid_NZ-250M.txt"
 
 ["grid_NZ-2KM.txt"]
 checksum = "sha256:00ec7490a3740cfcf1dfa4058f7ef1b5d024f831e2ed1a97075c73bf1a8a7adc"
 size = 334
 storage_path = "$datasets_dir/NewZealand/NZ-2KM/grid_NZ-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Regions_NZ-2KM/2.5.0/grid_NZ-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Regions_NZ-2KM/2.6.0/grid_NZ-2KM.txt"
 
 ["grid_NZ-500M.txt"]
 checksum = "sha256:148c1e8fe2691c9692bde95c55faa47cca48098598f7088b0951dbae7f1fb8c0"
 size = 337
 storage_path = "$datasets_dir/NewZealand/NZ-500M/grid_NZ-500M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Regions_NZ-500M/2.5.0/grid_NZ-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Regions_NZ-500M/2.6.0/grid_NZ-500M.txt"
