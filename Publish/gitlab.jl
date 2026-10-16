@@ -2,7 +2,7 @@
 # GitLab project ([_gitlab] in datasets.toml), with one package per domain, dataset and
 # grid (<Domain>_<Dataset>_<GRID>, e.g. Antarctica_Topo_ANT-32KM; one per records
 # dataset, Records_<Dataset>, e.g. Records_IceCores), versioned by the
-# release (2.0.0). Uploads need a token of the project with the scope api in
+# release (2.0.0), with the files new or changed in that release. Uploads need a token of the project with the scope api in
 # GITLAB_TOKEN; downloads need none (public project). Test releases (`sandbox`) go to
 # packages named test_<Domain>_<Dataset>_<GRID>, with their registry in
 # registry/_sandbox/.
@@ -49,8 +49,43 @@ function find_package(package::AbstractString, number::AbstractString)
     return isempty(found) ? nothing : only(found)
 end
 
+"All results of a GET request to the GitLab API, over its pages."
+function gitlab_pages(url::AbstractString)
+    results, page = [], 1
+    while true
+        found = gitlab("GET", "$url$(occursin('?', url) ? '&' : '?')per_page=100&page=$page")
+        append!(results, found)
+        length(found) < 100 && return results
+        page += 1
+    end
+end
+
 "Files of a package (name, id, file_sha256, size, ...)."
-package_files(pkg) = gitlab("GET", "$(project_api())/packages/$(pkg["id"])/package_files?per_page=100")
+package_files(pkg) = gitlab_pages("$(project_api())/packages/$(pkg["id"])/package_files")
+
+"Download URL of a file of a package, as in the registry."
+file_uri(pkg, file) = download_url(pkg["name"], pkg["version"], file["file_name"])
+
+"""
+    dataset_packages(dataset, domains=String[]; sandbox=false) -> Vector{(domain, package)}
+
+Packages of a dataset on GitLab, all versions, on the domains `domains` (all by
+default), by their names (<Domain>_<Dataset>_<GRID>, or <Domain>_<Dataset> for records).
+"""
+function dataset_packages(dataset::AbstractString, domains=String[]; sandbox::Bool=false)
+    pattern = Regex("^$(sandbox ? "test_" : "")([^_]+)_$(dataset)(_.+)?\$")
+    found = Tuple{String,Any}[]
+    for pkg in gitlab_pages("$(project_api())/packages?package_type=generic&package_name=_$(dataset)")
+        m = match(pattern, pkg["name"])
+        m === nothing || !(isempty(domains) || m[1] in domains) || push!(found, (m[1], pkg))
+    end
+    return sort(found; by=((d, p),) -> (d, p["name"], p["version"]))
+end
+
+"Download URLs of all files in the registry of a dataset (all domains)."
+referenced_uris(dataset::AbstractString; sandbox::Bool=false) =
+    Set(e["uri"] for (d, s) in list_records(; sandbox=sandbox) if s == dataset
+                 for e in values(registry_entries(d, s; sandbox=sandbox)))
 
 sha256_of(path::AbstractString) = replace(release_checksum(path), "sha256:" => "")
 
@@ -92,61 +127,72 @@ end
     upload(dataset, domains=String[]; sandbox=false, allow_untagged=false, dry_run=false)
 
 Release a dataset on each domain (all domains with its files by default): upload the
-files of each grid to its package, versioned by the release, and write the registry
-file of the domain. All domains are checked first (`collect_files`, `release_version`),
-so that nothing is uploaded if one of them is incomplete. Domains already released at
-this version on the current store are skipped; an interrupted upload is continued by
-running it again.
+files new or changed since the earlier release to the packages of the release, one per
+grid, and write the registry file of the domain. The files unchanged since the earlier
+release (`unchanged`) are not uploaded again: their entries, with the packages of the
+release they were uploaded at, are kept. A domain without such files gets only its
+registry, at the version of the release. All domains are checked first
+(`collect_files`, `release_version`), so that nothing is uploaded if one of them is
+incomplete. Domains already released at this version on the current store are skipped;
+an interrupted upload is continued by running it again.
 """
 function upload(dataset::AbstractString, domains=String[]; sandbox::Bool=false,
                 allow_untagged::Bool=false, dry_run::Bool=false)
     releases = []
     for domain in select_domains(dataset, domains)
         files = collect_files(domain, dataset)
-        version = release_version(files, dataset; allow_untagged=allow_untagged, what="$domain/$dataset")
+        old = registry_entries(domain, dataset; sandbox=sandbox)
+        version = release_version(files, dataset; old=old, allow_untagged=allow_untagged, what="$domain/$dataset")
         number = release_number(version, dataset)
-        grids = unique(f.grid for f in files)
-        total = sum(filesize(f.path) for f in files)
         release = get(registry_tables(domain, dataset; sandbox=sandbox), "_RELEASE", Dict())
         if get(release, "git_tag", "") == version && startswith(get(release, "store", ""), gitlab_config()["url"])
             println("$domain/$dataset $version: already released, skipped")
             continue
         end
-        println("$domain/$dataset $version: $(length(files)) files in $(length(grids)) packages, " *
-                "$(round(total / 1e9; digits=2)) GB")
-        push!(releases, (domain, files, version, number))
+        new = filter(f -> !unchanged(f, old), files)
+        total = isempty(new) ? 0 : sum(filesize(f.path) for f in new)
+        println("$domain/$dataset $version: $(length(files)) files, $(length(new)) to upload " *
+                "($(round(total / 1e9; digits=2)) GB) in $(length(unique(f.grid for f in new))) packages, " *
+                "$(length(files) - length(new)) unchanged")
+        push!(releases, (domain, files, new, old, version, number))
     end
     if dry_run
-        for (domain, files, version, number) in releases, grid in unique(f.grid for f in files)
+        for (domain, files, new, old, version, number) in releases, grid in unique(f.grid for f in new)
             println("  ", package_name(domain, dataset, grid; sandbox=sandbox), " ", number, ": ",
-                    join(basename.(filter(f -> f.grid == grid, files)), ", "))
+                    join(basename.(filter(f -> f.grid == grid, new)), ", "))
         end
         return nothing
     end
-    isempty(releases) || _env("GITLAB_TOKEN")   # needed to upload
-    for (domain, files, version, number) in releases
-        old = registry_entries(domain, dataset; sandbox=sandbox)
+    any(r -> !isempty(r[3]), releases) && _env("GITLAB_TOKEN")   # needed to upload
+    for (domain, files, new, old, version, number) in releases
         entries = Dict{String,Any}()
-        for grid in unique(f.grid for f in files)
+        uploaded = Set(basename.(new))
+        for grid in unique(f.grid for f in new)
             package = package_name(domain, dataset, grid; sandbox=sandbox)
             println("$package $number")
-            gfiles = filter(f -> f.grid == grid, files)
-            sync_package!(package, number, gfiles)
-            for f in gfiles
-                sha = release_checksum(f.path)
-                entry = Dict{String,Any}("uri" => download_url(package, number, basename(f)),
-                                         "checksum" => sha, "size" => filesize(f.path),
-                                         "storage_path" => "\$datasets_dir/" * relpath(f.path, products_dir()))
-                previous = previous_checksums(get(old, basename(f), nothing), sha)
-                isempty(previous) || (entry["previous_checksums"] = previous)
-                entries[basename(f)] = entry
-            end
+            # the package of the release holds the new files and those of its version kept
+            sync_package!(package, number, filter(files) do f
+                f.grid == grid && (basename(f) in uploaded ||
+                                   old[basename(f)]["uri"] == download_url(package, number, basename(f)))
+            end)
+        end
+        for f in files
+            name = basename(f)
+            name in uploaded || (entries[name] = old[name]; continue)
+            sha = release_checksum(f.path)
+            entry = Dict{String,Any}("uri" => download_url(package_name(domain, dataset, f.grid; sandbox=sandbox),
+                                                           number, name),
+                                     "checksum" => sha, "size" => filesize(f.path),
+                                     "storage_path" => "\$datasets_dir/" * relpath(f.path, products_dir()))
+            previous = previous_checksums(get(old, name, nothing), sha)
+            isempty(previous) || (entry["previous_checksums"] = previous)
+            entries[name] = entry
         end
         tables = registry_tables(domain, dataset; sandbox=sandbox)   # keeps an earlier _ZENODO
         tables["_RELEASE"] = Dict("version" => number, "git_tag" => version, "date" => string(today()),
                                   "store" => packages_page(package_name(domain, dataset, ""; sandbox=sandbox)))
         path = write_registry(registry_file(domain, dataset; sandbox=sandbox), tables, entries)
-        println("$domain/$dataset: released $number, wrote $path")
+        println("$domain/$dataset: released $number ($(length(new)) of $(length(files)) files uploaded), wrote $path")
     end
     isempty(releases) || sandbox || println("""
 
@@ -158,8 +204,9 @@ end
     status(dataset, domains=String[]; sandbox=false)
 
 State of the release of a dataset on each domain (all domains by default): the local
-files (present, version), the packages of that version on GitLab, and the registered
-release (and its DOI if archived on Zenodo).
+files (present, newest version), the packages of that version on GitLab (of the grids
+with files new or changed at that version only), and the registered release (and its
+DOI if archived on Zenodo).
 """
 function status(dataset::AbstractString, domains=String[]; sandbox::Bool=false)
     dataset_config(dataset)
@@ -170,12 +217,12 @@ function status(dataset::AbstractString, domains=String[]; sandbox::Bool=false)
         present = count(f -> isfile(f.path), files)
         localinfo, gitinfo = "$present/$(length(files))", "-"
         if present == length(files)
-            version = files_version(files)
+            version = files_version(files, dataset)
             localinfo *= " " * version
             number = release_number(version, dataset)
             grids = unique(f.grid for f in files)
             n = count(g -> find_package(package_name(domain, dataset, g; sandbox=sandbox), number) !== nothing, grids)
-            gitinfo = "$n/$(length(grids)) $number"
+            gitinfo = "$n of $(length(grids)) at $number"
         end
         tables = registry_tables(domain, dataset; sandbox=sandbox)
         reginfo = haskey(tables, "_RELEASE") ? "$(tables["_RELEASE"]["version"]) ($(tables["_RELEASE"]["date"]))" : "-"
@@ -188,23 +235,73 @@ function status(dataset::AbstractString, domains=String[]; sandbox::Bool=false)
 end
 
 """
+    delete_unused(dataset, domains=String[]; sandbox=false)
+
+Delete the files of the packages of a dataset on GitLab (all versions, all domains by
+default) that no entry of the registry refers to, e.g. those replaced by a later
+release, and the packages left without files, after one confirmation. Only packages of
+versions up to the registered release of their domain are cleaned: those of a later
+version (an upload not finished, or a release not in this checkout of the registry) and
+of domains without a registry are listed and kept (`delete_release` deletes them).
+"""
+function delete_unused(dataset::AbstractString, domains=String[]; sandbox::Bool=false)
+    dataset_config(dataset)
+    referenced = referenced_uris(dataset; sandbox=sandbox)
+    targets = []
+    for (domain, pkg) in dataset_packages(dataset, domains; sandbox=sandbox)
+        release = get(registry_tables(domain, dataset; sandbox=sandbox), "_RELEASE", nothing)
+        newer = release === nothing ? true :
+                something(tryparse(VersionNumber, pkg["version"]), v"0") > VersionNumber(release["version"])
+        if newer
+            println("  kept      $(pkg["name"]) $(pkg["version"]): " *
+                    (release === nothing ? "$domain/$dataset not registered" : "later than the registered $(release["version"])"))
+            continue
+        end
+        files = package_files(pkg)
+        unused = filter(r -> !(file_uri(pkg, r) in referenced), files)
+        isempty(unused) && !isempty(files) && continue
+        push!(targets, (pkg, unused, length(unused) == length(files)))
+    end
+    isempty(targets) && (println("No unused files in the packages of $dataset"); return)
+    _env("GITLAB_TOKEN")   # needed to delete
+    for (pkg, unused, whole) in targets
+        mb = round(sum(r -> r["size"], unused; init=0) / 1e6; digits=1)
+        println("  ", pkg["name"], " ", pkg["version"], ": ",
+                whole ? "the package, " : "", "$(length(unused)) files, $mb MB")
+    end
+    n = sum(t -> length(t[2]), targets)
+    gb = round(sum(r -> r["size"], (r for t in targets for r in t[2]); init=0) / 1e9; digits=2)
+    confirm("Delete these $n files ($gb GB) of $(length(targets)) packages ($(count(t -> t[3], targets)) " *
+            "entirely)? This cannot be undone.") || (println("Nothing deleted."); return)
+    for (pkg, unused, whole) in targets
+        if whole
+            gitlab("DELETE", "$(project_api())/packages/$(pkg["id"])"; missing_ok=true)
+        else
+            for r in unused
+                gitlab("DELETE", "$(project_api())/packages/$(pkg["id"])/package_files/$(r["id"])"; missing_ok=true)
+            end
+        end
+        println("deleted $(pkg["name"]) $(pkg["version"]): ", whole ? "the package" : "$(length(unused)) files")
+    end
+end
+
+"""
     delete_release(dataset, number, domains=String[]; sandbox=false)
 
 Delete the packages of a version of a dataset on GitLab (all domains by default), after
-one confirmation, e.g. those of a test or of an incomplete upload. A registered release
-is not deleted (outside the tests).
+one confirmation, e.g. those of a test or of an incomplete upload. Packages with files
+of a registered release are not deleted (outside the tests, where the registry of their
+domain is removed too).
 """
 function delete_release(dataset::AbstractString, number::AbstractString, domains=String[]; sandbox::Bool=false)
     dataset_config(dataset)
+    referenced = referenced_uris(dataset; sandbox=sandbox)
     targets = []
-    for domain in (isempty(domains) ? release_domains(dataset) : domains)
-        tables = registry_tables(domain, dataset; sandbox=sandbox)
-        registered = get(get(tables, "_RELEASE", Dict()), "version", "") == number
-        registered && !sandbox && (println("$domain/$dataset $number is registered, not deleted"); continue)
-        for grid in unique(f.grid for f in release_files(domain, dataset))
-            pkg = find_package(package_name(domain, dataset, grid; sandbox=sandbox), number)
-            pkg === nothing || push!(targets, (domain, pkg, registered))
-        end
+    for (domain, pkg) in dataset_packages(dataset, domains; sandbox=sandbox)
+        pkg["version"] == number || continue
+        registered = any(r -> file_uri(pkg, r) in referenced, package_files(pkg))
+        registered && !sandbox && (println("$(pkg["name"]) $number has files of the registry, not deleted"); continue)
+        push!(targets, (domain, pkg, registered))
     end
     isempty(targets) && (println("No packages of $dataset $number to delete"); return)
     _env("GITLAB_TOKEN")   # needed to delete
