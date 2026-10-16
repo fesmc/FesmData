@@ -49,7 +49,8 @@ julia fesmdata.jl remap Paleoclimate
 
 `prepare.jl` writes, to `$FESMDATA_PREPARED/Willeit2025_climberx/`, on the model grid:
 
-- `CLIMBERX_Willeit2025_<run>_transient.nc`: the 2D records of the run (`time`):
+- `CLIMBERX_Willeit2025_<run>_transient.nc`: the 2D records of the run every 100 years
+  (`time`; `HS4`: every 10th record, single model years; `piControl`: all):
   `t2m_mon` (2 m air temperature, `t2a`), `pr_mon` (precipitation, `prc`), `sst_mon`,
   `f_sic_mon` (sea-ice fraction, over the ocean), monthly; the boundary conditions
   `z_srf` (surface elevation of the atmosphere, `zsa`), `f_land`, `f_ice`; the state of

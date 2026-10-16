@@ -55,6 +55,11 @@ function hs4_state(amoc, hosing)
     return 0
 end
 
+# Spacing of the 2D records in the transient files (years): those of the model years
+# divisible by it (HS4: every 10th record; piControl: all, every 1000 years). The climate
+# states are means over all records.
+const TRANSIENT_STEP = 100
+
 # Annual time series: file => [(name, original name, long name, units)]
 const SERIES = [
     "ocn_ts.nc" => [
@@ -237,7 +242,7 @@ const STATIC = [
     ("f_ice", "1", "ice-sheet area fraction"),
 ]
 
-function write_attrib(ds, title, r::Run, original_files)
+function write_attrib(ds, title, r::Run, original_files; step=r.years[2] - r.years[1])
     ds.attrib["title"] = title
     ds.attrib["model"] = "CLIMBER-X v1.0"
     ds.attrib["simulation"] = r.name
@@ -247,13 +252,16 @@ function write_attrib(ds, title, r::Run, original_files)
     ds.attrib["license"] = LICENSE
     ds.attrib["original_files"] = original_files
     ds.attrib["comment"] = "2D output: monthly means of single model years (one every " *
-                           "$(Int(r.years[2] - r.years[1])) years); annual time series: every model year"
+                           "$(Int(step)) years); annual time series: every model year"
     foreach(((k, v),) -> ds.attrib[k] = v, provenance_attrib("paleoclimate"))
 end
 
-# The transient files of a run: the 2D records, their states, and the time series
+# The transient files of a run: the 2D records every TRANSIENT_STEP years (at least),
+# their states, and the time series
 function write_transient(outdir, r::Run, state, smooth)
     tf, tatt = time_attrib(r)
+    k = findall(y -> mod(y, TRANSIENT_STEP) == 0, r.years)
+    step = max(TRANSIENT_STEP, r.years[2] - r.years[1])
     defseries(ds) = begin
         defVar(ds, "time_ann", tf.(r.series_time), ("time_ann",); attrib=vcat(tatt, ["comment" => "annual time series"]))
         for (n, v, long_name, units) in r.series
@@ -266,40 +274,40 @@ function write_transient(outdir, r::Run, state, smooth)
     path = joinpath(outdir, "$(NAME)_$(r.name)_transient.nc")
     NCDataset(path, "c") do ds
         defcoords(ds, r)
-        defVar(ds, "time", tf.(r.years), ("time",); attrib=tatt)
+        defVar(ds, "time", tf.(r.years[k]), ("time",); attrib=tatt)
         for (n, units, long_name) in MONTHLY
-            field(ds, "$(n)_mon", r.monthly[n][:, :, 1:12, :], ("lon", "lat", "month", "time"), units, long_name * ", monthly mean")
+            field(ds, "$(n)_mon", r.monthly[n][:, :, 1:12, k], ("lon", "lat", "month", "time"), units, long_name * ", monthly mean")
         end
         for (n, units, long_name) in STATIC
             field(ds, n, r.static[n], ("lon", "lat"), units, long_name)
         end
-        defVar(ds, "state", state, ("time",);
+        defVar(ds, "state", state[k], ("time",);
                attrib=["units" => "1", "long_name" => "climate state of the 2D record",
                        "flag_values" => Int8.(0:4), "flag_meanings" => join(STATES, " "),
                        "comment" => join(("$s: $(STATE_RULES[s])" for s in STATES[2:end]), "; ") *
                                     "; AMOC: amoc_smooth"])
-        defVar(ds, "amoc_smooth", smooth, ("time",);
+        defVar(ds, "amoc_smooth", smooth[k], ("time",);
                attrib=["units" => "Sv", "long_name" => "maximum of the Atlantic overturning streamfunction, " *
                                                          "centred $SMOOTH_YEARS-year running mean"])
         defseries(ds)
         write_attrib(ds, "CLIMBER-X $(r.name) 2D output and time series (Willeit et al., 2025)", r,
-                     "atm.nc, sic.nc, ocn.nc, cmn.nc, ocn_ts.nc, atm_ts.nc, sic_ts.nc")
+                     "atm.nc, sic.nc, ocn.nc, cmn.nc, ocn_ts.nc, atm_ts.nc, sic_ts.nc"; step)
     end
     println("Wrote $path")
     path = joinpath(outdir, "$(NAME)_$(r.name)_transient_ocean.nc")
     NCDataset(path, "c") do ds
         defcoords(ds, r; month=false, depth=true)
-        defVar(ds, "time", tf.(r.years), ("time",); attrib=tatt)
+        defVar(ds, "time", tf.(r.years[k]), ("time",); attrib=tatt)
         for (n, units, long_name) in OCEAN
-            field(ds, n, r.ocean[n], ("lon", "lat", "depth", "time"), units, long_name * ", annual mean")
+            field(ds, n, r.ocean[n][:, :, :, k], ("lon", "lat", "depth", "time"), units, long_name * ", annual mean")
         end
         defVar(ds, "lat_moc", r.lat_moc, ("lat_moc",);
                attrib=["units" => "degrees_north", "long_name" => "latitude of the overturning streamfunction"])
         defVar(ds, "depth_w", Float32.(r.depth_w), ("depth_w",);
                attrib=["units" => "m", "positive" => "down", "long_name" => "depth of the tops of the levels"])
-        defVar(ds, "moc_atl", r.moc, ("lat_moc", "depth_w", "time"); fillvalue=NaN32, deflatelevel=1,
+        defVar(ds, "moc_atl", r.moc[:, :, k], ("lat_moc", "depth_w", "time"); fillvalue=NaN32, deflatelevel=1,
                attrib=["units" => "Sv", "long_name" => "Atlantic meridional overturning streamfunction, annual mean"])
-        write_attrib(ds, "CLIMBER-X $(r.name) ocean 2D output (Willeit et al., 2025)", r, "ocn.nc")
+        write_attrib(ds, "CLIMBER-X $(r.name) ocean 2D output (Willeit et al., 2025)", r, "ocn.nc"; step)
     end
     println("Wrote $path")
 end

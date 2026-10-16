@@ -440,7 +440,7 @@ precision = { so = 0.001, so_anom = 0.001 }
 grids = { Antarctica = 32, GreenlandPaleo = 32, North = 32, Global = 100 }
 figure = { variables = ["to_anom"], select = { depth = 400 } }
 
-# The 2D output of the two runs (HS4: every 10 years; piControl: every 1000 years) with
+# The 2D output of the two runs (HS4: every 100 years; piControl: every 1000 years) with
 # their annual time series and the Atlantic overturning streamfunction, on the model
 # grid only (GLOBAL-5DEG is the CLIMBER-X grid): for models to remap online.
 
