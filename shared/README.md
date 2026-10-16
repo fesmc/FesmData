@@ -144,7 +144,9 @@ and the products made for all domains. Its grids and products are made when it i
 (e.g. `Topo/jobs/submit_domain.sh ALP`); set it active to release it.
 
 The grid files of each grid (`grid_<GRID>.txt`, `<GRID>_grid.nc`) are written by Topo
-step 1 (`Topo/scripts/01_grids.jl`), or by `fesmdata.jl remap` if they are missing.
+step 1 (`Topo/scripts/01_grids.jl`), or by `fesmdata.jl remap` if they are missing (it
+downloads those released in Grids instead). They are released in the dataset
+[Grids](https://fesmc.github.io/FesmData/datasets/grids.html), once per grid.
 
 ## Adding a domain, a crop, a nest or a resolution
 

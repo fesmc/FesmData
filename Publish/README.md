@@ -10,10 +10,12 @@ package registry of the GitLab project
 (Helmholtz Codebase), and listed on the [website](https://fesmc.github.io/FesmData/). A
 release of a dataset (tag `<dataset>-vX.Y.Z`, e.g. `topo-v2.0.0`) covers all its
 domains, with one package per domain, dataset and grid, e.g. `Antarctica_Topo_ANT-32KM`
-version `2.0.0`, with the files of that grid (grid description, grid file and products)
-new or changed in that release. A file unchanged since an earlier release stays in the
-package of the release it was first uploaded at (`2.0.0`), so that a release uploads, and
-`fetch` downloads, only what is new.
+version `2.0.0`, with the products of that grid new or changed in that release. A file
+unchanged since an earlier release stays in the package of the release it was first
+uploaded at (`2.0.0`), so that a release uploads, and `fetch` downloads, only what is
+new. The grid files of each grid (grid description and grid file) are released once, in
+the dataset Grids (`Antarctica_Grids_ANT-32KM`), for all datasets on the grid; `fetch`
+gets them with the products.
 Domains are named by their output folder (`folder` in `../shared/domains.toml`, e.g.
 Antarctica, Greenland, Patagonia; all are listed on the
 [Domains](https://fesmc.github.io/FesmData/domains.html) page). Records datasets
@@ -59,9 +61,13 @@ The datasets, the GitLab project and the Zenodo metadata (creators, licence,
 community) are set in `datasets.toml`. The files of a release on each grid are defined
 by the pipeline of the dataset (`topo_release_files` in `../Topo/files.jl`: all
 products of the domain, default and variants; `regions_release_files` in
-`../Regions/files.jl`), and must all be present. A release of a dataset (here GHF,
-version 2.0.0) is made on Levante, where the files are, from the files as they were
-made and checked, and needs a GitLab token (see Access below). It takes four steps.
+`../Regions/files.jl`; the grid files of the grids with products of any dataset for
+Grids, `grids_files` in `release.jl`), and must all be present. A release of a dataset
+(here GHF, version 2.0.0) is made on Levante, where the files are, from the files as
+they were made and checked, and needs a GitLab token (see Access below). It takes four
+steps. The grid files of its grids must be released in Grids, as they are locally
+(checksums): when grid files are written again (Topo step 1) or a dataset is released
+on new grids, release Grids first, the same way.
 
 **1. Tag the release** (from any checkout, after the changes are on main):
 
