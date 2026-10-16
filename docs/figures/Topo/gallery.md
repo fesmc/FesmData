@@ -44,7 +44,7 @@
 
 ### SRG
 
-![Topo of SRG on SRG-100M: z_bed, H_ice.](../figures/Topo/Topo-SRG.png){width=508px}
+![Topo of SRG on SRG-100M: z_bed, H_ice.](../figures/Topo/Topo-SRG.png){width=944px}
 
 ### GranCampoNevado
 
@@ -68,7 +68,7 @@
 
 ### DrangDrung
 
-![Topo of DrangDrung on DDG-50M: z_bed, H_ice.](../figures/Topo/Topo-DrangDrung.png){width=439px}
+![Topo of DrangDrung on DDG-50M: z_bed, H_ice.](../figures/Topo/Topo-DrangDrung.png){width=625px}
 
 ### Svalbard
 
