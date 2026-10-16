@@ -2,9 +2,9 @@
 
 [_RELEASE]
 date = "2026-10-16"
-git_tag = "topo-v2.6.0"
+git_tag = "topo-v2.6.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Thwaites_Topo"
-version = "2.6.0"
+version = "2.6.1"
 
 ["THW-1KM_TOPO-BedMachine-v2.nc"]
 checksum = "sha256:f94bc3dcee38cb2ed29e1c6183e0ebbe53e52cc9f9e8db996365dc7a2f0ee7b2"
@@ -41,13 +41,6 @@ size = 4513953
 storage_path = "$datasets_dir/Thwaites/THW-1KM/THW-1KM_TOPO-Bedmap3.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Topo_THW-1KM/2.6.0/THW-1KM_TOPO-Bedmap3.nc"
 
-["THW-1KM_grid.nc"]
-checksum = "sha256:705cca061b5de19e4c240cd530f9e3761fc7ec33edc9a63c2d5d51264e144250"
-previous_checksums = ["sha256:f0844ba5083fd5f5f3ffa1363f7cafdebbf5a0f74a7c2aa7a5289a5498ffb2ff"]
-size = 1499689
-storage_path = "$datasets_dir/Thwaites/THW-1KM/THW-1KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Topo_THW-1KM/2.6.0/THW-1KM_grid.nc"
-
 ["THW-500M_TOPO-BedMachine-v4.nc"]
 checksum = "sha256:c6fca643cc4068f79eed33bc6110623f3364576747343a35f115892ff22178f3"
 previous_checksums = ["sha256:8acd9944ac9f26200b7adf97718d52e84895172e0bad937caa594939b128f445", "sha256:9bee526a6963f24c4cdef02ef599cf6203cdabc9bc076ba8c8cd17cfe4cdb7be", "sha256:cda83f9ec79e40f20abf84746acf650ed6056b6ea07c01c7c8cfff9ca01a020a"]
@@ -61,22 +54,3 @@ previous_checksums = ["sha256:3ac5df1239d3d2000c8d4e02e768244b1f91f6b037d1bf6a3e
 size = 13032746
 storage_path = "$datasets_dir/Thwaites/THW-500M/THW-500M_TOPO-Bedmap3.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Topo_THW-500M/2.6.0/THW-500M_TOPO-Bedmap3.nc"
-
-["THW-500M_grid.nc"]
-checksum = "sha256:74e70697a5d962a8f05dfd6d61639a8ff285e3cf476e09530db0694df45e3469"
-previous_checksums = ["sha256:d50616bf3d370a92f0c024753209f24facc23f52adf0cbb7d86e2d5473c9e766"]
-size = 4661122
-storage_path = "$datasets_dir/Thwaites/THW-500M/THW-500M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Topo_THW-500M/2.6.0/THW-500M_grid.nc"
-
-["grid_THW-1KM.txt"]
-checksum = "sha256:f5a26a47267918dfdc4cd6e3bef8405e52e6d86836990bc344b6e79df2535b0e"
-size = 464
-storage_path = "$datasets_dir/Thwaites/THW-1KM/grid_THW-1KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Topo_THW-1KM/2.6.0/grid_THW-1KM.txt"
-
-["grid_THW-500M.txt"]
-checksum = "sha256:235395dbd0c851b00ed00c2a51a3b5b5e0c8771a2634c1d48d939eabacf6e6f9"
-size = 467
-storage_path = "$datasets_dir/Thwaites/THW-500M/grid_THW-500M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Topo_THW-500M/2.6.0/grid_THW-500M.txt"

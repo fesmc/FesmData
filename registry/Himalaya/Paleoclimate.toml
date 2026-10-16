@@ -2,9 +2,9 @@
 
 [_RELEASE]
 date = "2026-10-16"
-git_tag = "paleoclimate-v2.6.0"
+git_tag = "paleoclimate-v2.6.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Himalaya_Paleoclimate"
-version = "2.6.0"
+version = "2.6.1"
 
 ["HIM-2KM_Paleoclimate-PMIP3-lgm-mean.nc"]
 checksum = "sha256:0dcf03d906b1a06e00ff80dba81c6b860093ef6c95763e97bae7c13c16ecf254"
@@ -89,15 +89,3 @@ previous_checksums = ["sha256:afa41227e6a54f1864cb54141b85e84126b334a04f022cf37f
 size = 14106311
 storage_path = "$datasets_dir/Himalaya/HIM-2KM/HIM-2KM_Paleoclimate-PMIP4-piControl-stdev.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Paleoclimate_HIM-2KM/2.6.0/HIM-2KM_Paleoclimate-PMIP4-piControl-stdev.nc"
-
-["HIM-2KM_grid.nc"]
-checksum = "sha256:c80460c96b66ee86b7f0ad0ba2095ab24de793493dda2a341dfa36b5a715a209"
-size = 2883062
-storage_path = "$datasets_dir/Himalaya/HIM-2KM/HIM-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Paleoclimate_HIM-2KM/2.6.0/HIM-2KM_grid.nc"
-
-["grid_HIM-2KM.txt"]
-checksum = "sha256:534cff6d3562a47b21187e2279ce0b3a848e720b093bc7ae578073c24219bdcf"
-size = 333
-storage_path = "$datasets_dir/Himalaya/HIM-2KM/grid_HIM-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Paleoclimate_HIM-2KM/2.6.0/grid_HIM-2KM.txt"

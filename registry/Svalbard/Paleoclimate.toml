@@ -2,9 +2,9 @@
 
 [_RELEASE]
 date = "2026-10-16"
-git_tag = "paleoclimate-v2.6.0"
+git_tag = "paleoclimate-v2.6.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Svalbard_Paleoclimate"
-version = "2.6.0"
+version = "2.6.1"
 
 ["SVB-2KM_Paleoclimate-PMIP3-lgm-mean.nc"]
 checksum = "sha256:2dcd652fa8d0dca6aa62e9cb7ad67eaca2fefdd0405adc5d4cb1561002491b5e"
@@ -89,15 +89,3 @@ previous_checksums = ["sha256:fe7704443915bd8ec2edb4b1aebcfa7304ab1b19a26009bdc0
 size = 2145171
 storage_path = "$datasets_dir/Svalbard/SVB-2KM/SVB-2KM_Paleoclimate-PMIP4-piControl-stdev.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Paleoclimate_SVB-2KM/2.6.0/SVB-2KM_Paleoclimate-PMIP4-piControl-stdev.nc"
-
-["SVB-2KM_grid.nc"]
-checksum = "sha256:6a0409b44fa4c45229d431e113338e59f766947595e5bb697b316743ba9912a6"
-size = 744534
-storage_path = "$datasets_dir/Svalbard/SVB-2KM/SVB-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Paleoclimate_SVB-2KM/2.6.0/SVB-2KM_grid.nc"
-
-["grid_SVB-2KM.txt"]
-checksum = "sha256:18fa470f57070e72b08f324dbf95f9619f896701bfa78523290698f89b5aab05"
-size = 324
-storage_path = "$datasets_dir/Svalbard/SVB-2KM/grid_SVB-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Paleoclimate_SVB-2KM/2.6.0/grid_SVB-2KM.txt"

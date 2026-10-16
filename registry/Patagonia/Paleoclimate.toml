@@ -2,9 +2,9 @@
 
 [_RELEASE]
 date = "2026-10-16"
-git_tag = "paleoclimate-v2.6.0"
+git_tag = "paleoclimate-v2.6.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Patagonia_Paleoclimate"
-version = "2.6.0"
+version = "2.6.1"
 
 ["PAT-2KM_Paleoclimate-PMIP3-lgm-mean.nc"]
 checksum = "sha256:3c8eea7644bf8691c8171a20b31f3237eb1460ec45239ab23ccbddeb5131c0e8"
@@ -89,15 +89,3 @@ previous_checksums = ["sha256:392fb14bd702de18f94f81b8fdd5390de81a5feb6b5ca47072
 size = 5042004
 storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_Paleoclimate-PMIP4-piControl-stdev.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.6.0/PAT-2KM_Paleoclimate-PMIP4-piControl-stdev.nc"
-
-["PAT-2KM_grid.nc"]
-checksum = "sha256:3b66736031d52fec9da8230693887255b90f7b276619eba31266bf950f5eb9e7"
-size = 1440853
-storage_path = "$datasets_dir/Patagonia/PAT-2KM/PAT-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.6.0/PAT-2KM_grid.nc"
-
-["grid_PAT-2KM.txt"]
-checksum = "sha256:f30d2390e6c54f2628d81d4a3439a6b55b95c9e997754fcaa01ac160f60591bd"
-size = 347
-storage_path = "$datasets_dir/Patagonia/PAT-2KM/grid_PAT-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Paleoclimate_PAT-2KM/2.6.0/grid_PAT-2KM.txt"

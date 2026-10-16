@@ -2,9 +2,9 @@
 
 [_RELEASE]
 date = "2026-10-16"
-git_tag = "topo-v2.6.0"
+git_tag = "topo-v2.6.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Alps_Topo"
-version = "2.6.0"
+version = "2.6.1"
 
 ["ALP-250M_TOPO-GLO90-GEBCO2026.nc"]
 checksum = "sha256:5611f8f8d72a752c8751ba37c43aea827589a0be6a05108a7907cca1ae4b78df"
@@ -13,12 +13,6 @@ size = 75841280
 storage_path = "$datasets_dir/Alps/ALP-250M/ALP-250M_TOPO-GLO90-GEBCO2026.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Topo_ALP-250M/2.6.0/ALP-250M_TOPO-GLO90-GEBCO2026.nc"
 
-["ALP-250M_grid.nc"]
-checksum = "sha256:bdd69cb8354b0ecacc9a665421507b75c9beb56fcb9d2ec9f50d13c8a653f240"
-size = 17187010
-storage_path = "$datasets_dir/Alps/ALP-250M/ALP-250M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Topo_ALP-250M/2.6.0/ALP-250M_grid.nc"
-
 ["ALP-2KM_TOPO-GLO90-GEBCO2026.nc"]
 checksum = "sha256:987eddeeae03a19e2186a1b459413ac6eb561e927c3334418be962f2bd2850a6"
 previous_checksums = ["sha256:3d8fd3b0799f9bc193162dd9f5f84f9c995241a85ac23cc7ba8f33cebe97384f", "sha256:41e6a6cfde7c128f0000dc6b08fee090ab965b796c0857d142c9397171c8e62f"]
@@ -26,39 +20,9 @@ size = 1456652
 storage_path = "$datasets_dir/Alps/ALP-2KM/ALP-2KM_TOPO-GLO90-GEBCO2026.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Topo_ALP-2KM/2.6.0/ALP-2KM_TOPO-GLO90-GEBCO2026.nc"
 
-["ALP-2KM_grid.nc"]
-checksum = "sha256:a0f3e138044c18d2d70b38706a6179ec6b5ac50aa61229a5574780b96ac00a37"
-size = 572770
-storage_path = "$datasets_dir/Alps/ALP-2KM/ALP-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Topo_ALP-2KM/2.6.0/ALP-2KM_grid.nc"
-
 ["ALP-500M_TOPO-GLO90-GEBCO2026.nc"]
 checksum = "sha256:6bef1a4908908c06d28043834d3c05c3340450ebf82f65edf1c64a6fc447c229"
 previous_checksums = ["sha256:47bee5ce8ff8b07bec86f6e7d49115f0a27b0624b56a59918affcb863f651f3b", "sha256:633437435f41ec662b733544a4cef20aa173798be9f05071c730d91fac426c1c"]
 size = 20793440
 storage_path = "$datasets_dir/Alps/ALP-500M/ALP-500M_TOPO-GLO90-GEBCO2026.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Topo_ALP-500M/2.6.0/ALP-500M_TOPO-GLO90-GEBCO2026.nc"
-
-["ALP-500M_grid.nc"]
-checksum = "sha256:f8602616ce71d9eea41cdcc704772816ed5fc9b821b395f8275578bbf4f2f934"
-size = 6248137
-storage_path = "$datasets_dir/Alps/ALP-500M/ALP-500M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Topo_ALP-500M/2.6.0/ALP-500M_grid.nc"
-
-["grid_ALP-250M.txt"]
-checksum = "sha256:1d739347656434cb467b96e5f70dba5b44714a8e93ad0fc9125009c3bf6ff112"
-size = 328
-storage_path = "$datasets_dir/Alps/ALP-250M/grid_ALP-250M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Topo_ALP-250M/2.6.0/grid_ALP-250M.txt"
-
-["grid_ALP-2KM.txt"]
-checksum = "sha256:dfeeea31315f1ba8ec9eb4bc25cd2322e4fa4bb7c63a7c5379adc6109a6610a9"
-size = 322
-storage_path = "$datasets_dir/Alps/ALP-2KM/grid_ALP-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Topo_ALP-2KM/2.6.0/grid_ALP-2KM.txt"
-
-["grid_ALP-500M.txt"]
-checksum = "sha256:9c52a5415fc9af0040d5d6478effbf4c0fb3e998f5610706d94262f1a428c7b9"
-size = 325
-storage_path = "$datasets_dir/Alps/ALP-500M/grid_ALP-500M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Topo_ALP-500M/2.6.0/grid_ALP-500M.txt"

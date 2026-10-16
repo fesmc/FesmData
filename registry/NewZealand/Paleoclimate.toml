@@ -2,9 +2,9 @@
 
 [_RELEASE]
 date = "2026-10-16"
-git_tag = "paleoclimate-v2.6.0"
+git_tag = "paleoclimate-v2.6.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=NewZealand_Paleoclimate"
-version = "2.6.0"
+version = "2.6.1"
 
 ["NZ-2KM_Paleoclimate-PMIP3-lgm-mean.nc"]
 checksum = "sha256:0c3771f379cac2b5603b5e6e51de495abbce0a3e8967a48c465d5f0689ab50c3"
@@ -89,15 +89,3 @@ previous_checksums = ["sha256:fd9643549ebb4100ecfd763b93653168a858fe6866ccbb0bdf
 size = 1065702
 storage_path = "$datasets_dir/NewZealand/NZ-2KM/NZ-2KM_Paleoclimate-PMIP4-piControl-stdev.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Paleoclimate_NZ-2KM/2.6.0/NZ-2KM_Paleoclimate-PMIP4-piControl-stdev.nc"
-
-["NZ-2KM_grid.nc"]
-checksum = "sha256:8a6333b930e208cef12d1b144497cd478c0881052c7caf42e928b1b6855f32b2"
-size = 416034
-storage_path = "$datasets_dir/NewZealand/NZ-2KM/NZ-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Paleoclimate_NZ-2KM/2.6.0/NZ-2KM_grid.nc"
-
-["grid_NZ-2KM.txt"]
-checksum = "sha256:00ec7490a3740cfcf1dfa4058f7ef1b5d024f831e2ed1a97075c73bf1a8a7adc"
-size = 334
-storage_path = "$datasets_dir/NewZealand/NZ-2KM/grid_NZ-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Paleoclimate_NZ-2KM/2.6.0/grid_NZ-2KM.txt"

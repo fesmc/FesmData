@@ -2,9 +2,9 @@
 
 [_RELEASE]
 date = "2026-10-16"
-git_tag = "paleoclimate-v2.6.0"
+git_tag = "paleoclimate-v2.6.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Global_Paleoclimate"
-version = "2.6.0"
+version = "2.6.1"
 
 ["GLOBAL-0.5DEG_Paleoclimate-CLIMBER3a-lgm_1p7strong.nc"]
 checksum = "sha256:436217b897afd6d80620732cb67a87e25f30e9b2956eade9bb3c3df899a3853b"
@@ -369,12 +369,6 @@ previous_checksums = ["sha256:bce2df20fa6879679f2376e41a53a18a62b4a86c0e68ca7d29
 size = 8407352
 storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/GLOBAL-0.5DEG_Paleoclimate-PMIP4-piControl-stdev.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Paleoclimate_GLOBAL-0.5DEG/2.6.0/GLOBAL-0.5DEG_Paleoclimate-PMIP4-piControl-stdev.nc"
-
-["GLOBAL-0.5DEG_grid.nc"]
-checksum = "sha256:43301e8a8f8a7d3a47e181cc3ba1b216c72fbca797d8ed8f8672b5da2c1a95de"
-size = 25589
-storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/GLOBAL-0.5DEG_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Paleoclimate_GLOBAL-0.5DEG/2.6.0/GLOBAL-0.5DEG_grid.nc"
 
 ["GLOBAL-1DEG_Paleoclimate-CLIMBER3a-lgm_1p7strong-ocean.nc"]
 checksum = "sha256:18c75304b8837ed70ef987a30994be09818156b5f5b07bc62c1082cab24774bb"
@@ -809,12 +803,6 @@ size = 2478017
 storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_Paleoclimate-PMIP4-piControl-stdev.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Paleoclimate_GLOBAL-1DEG/2.6.0/GLOBAL-1DEG_Paleoclimate-PMIP4-piControl-stdev.nc"
 
-["GLOBAL-1DEG_grid.nc"]
-checksum = "sha256:72658a61a9d89e56a88266b6a3168ba7ea4e18c4c8b0d2a904164c2c047e5d47"
-size = 17869
-storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Paleoclimate_GLOBAL-1DEG/2.6.0/GLOBAL-1DEG_grid.nc"
-
 ["GLOBAL-2DEG_Paleoclimate-CLIMBER3a-lgm_1p7strong-ocean.nc"]
 checksum = "sha256:1d847c27d7eba030d8b1a45721886e4865e110bcc9c1fc05023b20ae9a5e3d5f"
 previous_checksums = ["sha256:1a1b27f980f0a35e4b14a7cc712aca3e6321ea3d07b51c5892e1378578505169"]
@@ -1247,12 +1235,6 @@ previous_checksums = ["sha256:89a42f762d89e34aff0b991c5626d4bf9b7a137a4218eb1df4
 size = 770630
 storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_Paleoclimate-PMIP4-piControl-stdev.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Paleoclimate_GLOBAL-2DEG/2.6.0/GLOBAL-2DEG_Paleoclimate-PMIP4-piControl-stdev.nc"
-
-["GLOBAL-2DEG_grid.nc"]
-checksum = "sha256:5fa987a099ab7e60d3a4b22e7bb5bd00cadccc8581874b8d600a38f9a512f104"
-size = 14559
-storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Paleoclimate_GLOBAL-2DEG/2.6.0/GLOBAL-2DEG_grid.nc"
 
 ["GLOBAL-5DEG_Paleoclimate-CLIMBER3a-lgm_1p7strong-ocean.nc"]
 checksum = "sha256:648ccec5b21938b7e811b970a578f0025f16f5f1c9d78ec9c4a1d1e427acf2a6"
@@ -1710,33 +1692,3 @@ previous_checksums = ["sha256:b88eb76ddff77dd130c4302e9f384a8d850e15b3528dc22105
 size = 210735
 storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_Paleoclimate-PMIP4-piControl-stdev.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Paleoclimate_GLOBAL-5DEG/2.6.0/GLOBAL-5DEG_Paleoclimate-PMIP4-piControl-stdev.nc"
-
-["GLOBAL-5DEG_grid.nc"]
-checksum = "sha256:55c037e0371c20123875dc16ddd01d1e864dd5b5b1b0cb29c9bfa3fd23f24cbf"
-size = 12511
-storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Paleoclimate_GLOBAL-5DEG/2.6.0/GLOBAL-5DEG_grid.nc"
-
-["grid_GLOBAL-0.5DEG.txt"]
-checksum = "sha256:7d6ca9751973abeb4a15b25146d8c6601cd47bf9e2cbf62a9dce3e00519955cd"
-size = 212
-storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/grid_GLOBAL-0.5DEG.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Paleoclimate_GLOBAL-0.5DEG/2.6.0/grid_GLOBAL-0.5DEG.txt"
-
-["grid_GLOBAL-1DEG.txt"]
-checksum = "sha256:38acf47f98866cc1c0479566b51a3a3df28fb09aa295652f52f67fffb2c499fd"
-size = 209
-storage_path = "$datasets_dir/Global/GLOBAL-1DEG/grid_GLOBAL-1DEG.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Paleoclimate_GLOBAL-1DEG/2.6.0/grid_GLOBAL-1DEG.txt"
-
-["grid_GLOBAL-2DEG.txt"]
-checksum = "sha256:f09996b59b7b7cc91b348c53eec0a8cb246c5b293a890b4912278435d589fec6"
-size = 208
-storage_path = "$datasets_dir/Global/GLOBAL-2DEG/grid_GLOBAL-2DEG.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Paleoclimate_GLOBAL-2DEG/2.6.0/grid_GLOBAL-2DEG.txt"
-
-["grid_GLOBAL-5DEG.txt"]
-checksum = "sha256:647911a4f8fd1afecd212683255ca869a1f3b9bdcb3ae180e7a1415cea84d344"
-size = 206
-storage_path = "$datasets_dir/Global/GLOBAL-5DEG/grid_GLOBAL-5DEG.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Paleoclimate_GLOBAL-5DEG/2.6.0/grid_GLOBAL-5DEG.txt"

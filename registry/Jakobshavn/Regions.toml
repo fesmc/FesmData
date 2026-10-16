@@ -2,9 +2,9 @@
 
 [_RELEASE]
 date = "2026-10-16"
-git_tag = "regions-v2.6.0"
+git_tag = "regions-v2.6.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Jakobshavn_Regions"
-version = "2.6.0"
+version = "2.6.1"
 
 ["JAK-1KM_BASINS-Mouginot2019.nc"]
 checksum = "sha256:0ddddcb43ba28af5f7b9921c2a09c47ccc253ec89e18a4f83f152b2116db2cf3"
@@ -41,12 +41,6 @@ size = 50017
 storage_path = "$datasets_dir/Jakobshavn/JAK-1KM/JAK-1KM_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Jakobshavn_Regions_JAK-1KM/2.6.0/JAK-1KM_REGIONS.nc"
 
-["JAK-1KM_grid.nc"]
-checksum = "sha256:62e97b87a3d29b6aa887c5adb0e9696a2eb1a0e01ecdf89ca4c031960048c6c1"
-size = 696253
-storage_path = "$datasets_dir/Jakobshavn/JAK-1KM/JAK-1KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Jakobshavn_Regions_JAK-1KM/2.6.0/JAK-1KM_grid.nc"
-
 ["JAK-250M_BASINS-Mouginot2019.nc"]
 checksum = "sha256:3a35a471cfa701fa22e04a41536d43a1743ccef2b138d3ceb047ac7fe30436b6"
 previous_checksums = ["sha256:423658318a55c65c0098be578d5369d2eb7216c68ef435d7fe950916090aad43", "sha256:70f8648fd91e4abeb650c2300a347d08ec8cbe937eb62a0d1dfe5402ea5e8289", "sha256:cad9345e69b5e515539dc11839115f9430c25e3b6abed86592eea0e9f5e1584a"]
@@ -82,12 +76,6 @@ size = 187430
 storage_path = "$datasets_dir/Jakobshavn/JAK-250M/JAK-250M_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Jakobshavn_Regions_JAK-250M/2.6.0/JAK-250M_REGIONS.nc"
 
-["JAK-250M_grid.nc"]
-checksum = "sha256:2e86dc013950ff880dfc7179c35ed9dc20d9e6a401e85c2f80ead8a3e4b7f5e5"
-size = 6916075
-storage_path = "$datasets_dir/Jakobshavn/JAK-250M/JAK-250M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Jakobshavn_Regions_JAK-250M/2.6.0/JAK-250M_grid.nc"
-
 ["JAK-500M_BASINS-Mouginot2019.nc"]
 checksum = "sha256:fb770b908686d380c9f2c8d46b2e49bd6bcb3818e41d882b4d6bb0d0ffe8d9a0"
 previous_checksums = ["sha256:fc138bbcb02ac1e0f9cb2093a7b24932939fcf20e6445310d7bccc304a548f67", "sha256:f27492cf8807a07bc40ce2ca7c5c2fef638a159e7c6607b99b07c0d2f7184a91", "sha256:83d62603086d94aac38b58c5cf31454518c721b03e9f5373ab08398266504430"]
@@ -122,27 +110,3 @@ previous_checksums = ["sha256:6295f50558095b859df977b84850a5159237f2febff5a10b39
 size = 77679
 storage_path = "$datasets_dir/Jakobshavn/JAK-500M/JAK-500M_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Jakobshavn_Regions_JAK-500M/2.6.0/JAK-500M_REGIONS.nc"
-
-["JAK-500M_grid.nc"]
-checksum = "sha256:e147a244ff9efd08f02a5e80083a37e1ef710d3efb416d428d0c5f332e1c624c"
-size = 2307149
-storage_path = "$datasets_dir/Jakobshavn/JAK-500M/JAK-500M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Jakobshavn_Regions_JAK-500M/2.6.0/JAK-500M_grid.nc"
-
-["grid_JAK-1KM.txt"]
-checksum = "sha256:9d45ff0987b2d2a0fb8d67866dbdf520a83aa8c411b1e9985f72e0867a8c284a"
-size = 464
-storage_path = "$datasets_dir/Jakobshavn/JAK-1KM/grid_JAK-1KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Jakobshavn_Regions_JAK-1KM/2.6.0/grid_JAK-1KM.txt"
-
-["grid_JAK-250M.txt"]
-checksum = "sha256:2d37fd9c8e5e5fb395186634719ef2ca3d4095405ba9bf66e5f48a25ce22e045"
-size = 469
-storage_path = "$datasets_dir/Jakobshavn/JAK-250M/grid_JAK-250M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Jakobshavn_Regions_JAK-250M/2.6.0/grid_JAK-250M.txt"
-
-["grid_JAK-500M.txt"]
-checksum = "sha256:95ca6a37840381038baa29f59b593937c82753824d8e98fe218fb3300a95dbb0"
-size = 466
-storage_path = "$datasets_dir/Jakobshavn/JAK-500M/grid_JAK-500M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Jakobshavn_Regions_JAK-500M/2.6.0/grid_JAK-500M.txt"

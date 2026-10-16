@@ -1,10 +1,10 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-14"
-git_tag = "atmosphere-v2.2.0"
+date = "2026-10-16"
+git_tag = "atmosphere-v2.2.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Pyrenees_Atmosphere"
-version = "2.2.0"
+version = "2.2.1"
 
 ["PYR-2KM_Atmosphere-ERA5-1981-2010.nc"]
 checksum = "sha256:ae22ce1fdd1b38dd0c0fe995252bad6ff66391be22141767011767030732daff"
@@ -19,15 +19,3 @@ previous_checksums = ["sha256:e5dccbce8335ca44bb3c6d855e3bc7295f181d9598c2005fa0
 size = 1375643
 storage_path = "$datasets_dir/Pyrenees/PYR-2KM/PYR-2KM_Atmosphere-ERA5-1991-2020.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Atmosphere_PYR-2KM/2.2.0/PYR-2KM_Atmosphere-ERA5-1991-2020.nc"
-
-["PYR-2KM_grid.nc"]
-checksum = "sha256:20d63f5741b04cbdfbfe1bf5885e4a73a58a3d4fd9db5cd561dd531d0a3ffde9"
-size = 86648
-storage_path = "$datasets_dir/Pyrenees/PYR-2KM/PYR-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Atmosphere_PYR-2KM/2.2.0/PYR-2KM_grid.nc"
-
-["grid_PYR-2KM.txt"]
-checksum = "sha256:8a8de7189e5797f759a3a8df305e651006339b630895a4b3da06e4c00098e192"
-size = 325
-storage_path = "$datasets_dir/Pyrenees/PYR-2KM/grid_PYR-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Atmosphere_PYR-2KM/2.2.0/grid_PYR-2KM.txt"

@@ -1,10 +1,10 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-13"
-git_tag = "solidearth-v2.1.0"
+date = "2026-10-16"
+git_tag = "solidearth-v2.1.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Global_SolidEarth"
-version = "2.1.0"
+version = "2.1.1"
 
 ["GLOBAL-0.25DEG_SolidEarth-Lloyd2024.nc"]
 checksum = "sha256:ebb6d45f25a07de8f5a8bb87632bcf70b86d1cea27356e32d8d4f75bec6ebb8a"
@@ -13,24 +13,12 @@ size = 75106513
 storage_path = "$datasets_dir/Global/GLOBAL-0.25DEG/GLOBAL-0.25DEG_SolidEarth-Lloyd2024.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_SolidEarth_GLOBAL-0.25DEG/2.1.0/GLOBAL-0.25DEG_SolidEarth-Lloyd2024.nc"
 
-["GLOBAL-0.25DEG_grid.nc"]
-checksum = "sha256:5ff16fa62830a5bcf93baa975e7fbb6294ba9e94c9a4e30a1ecbec5fb2afbc42"
-size = 49586
-storage_path = "$datasets_dir/Global/GLOBAL-0.25DEG/GLOBAL-0.25DEG_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_SolidEarth_GLOBAL-0.25DEG/2.1.0/GLOBAL-0.25DEG_grid.nc"
-
 ["GLOBAL-0.5DEG_SolidEarth-Lloyd2024.nc"]
 checksum = "sha256:e80541631deaaf245a3893fa54bbd3c5058a2c00981d8e26791b7add42c05753"
 previous_checksums = ["sha256:9bb3074a54d855282d9f3cac8b8423ab734b8e840be778f7e43cdbca1fa71d2e"]
 size = 25875513
 storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/GLOBAL-0.5DEG_SolidEarth-Lloyd2024.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_SolidEarth_GLOBAL-0.5DEG/2.1.0/GLOBAL-0.5DEG_SolidEarth-Lloyd2024.nc"
-
-["GLOBAL-0.5DEG_grid.nc"]
-checksum = "sha256:43301e8a8f8a7d3a47e181cc3ba1b216c72fbca797d8ed8f8672b5da2c1a95de"
-size = 25589
-storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/GLOBAL-0.5DEG_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_SolidEarth_GLOBAL-0.5DEG/2.1.0/GLOBAL-0.5DEG_grid.nc"
 
 ["GLOBAL-1DEG_SolidEarth-Lloyd2024.nc"]
 checksum = "sha256:3ba21cddc7ed214aa9fb52d219c96419e6e15f34dac7524e67cf88373a4d42f1"
@@ -39,24 +27,12 @@ size = 8474729
 storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_SolidEarth-Lloyd2024.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_SolidEarth_GLOBAL-1DEG/2.1.0/GLOBAL-1DEG_SolidEarth-Lloyd2024.nc"
 
-["GLOBAL-1DEG_grid.nc"]
-checksum = "sha256:72658a61a9d89e56a88266b6a3168ba7ea4e18c4c8b0d2a904164c2c047e5d47"
-size = 17869
-storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_SolidEarth_GLOBAL-1DEG/2.1.0/GLOBAL-1DEG_grid.nc"
-
 ["GLOBAL-2DEG_SolidEarth-Lloyd2024.nc"]
 checksum = "sha256:af0b9f6ee0db94815f36bad2cc0078d2036aa6a35a80d0e1d1e087a50c829833"
 previous_checksums = ["sha256:c1f7c00edd27411b619900b9e00f0e4c4c67392a74ceeb6d7905448cc0fae207"]
 size = 2623259
 storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_SolidEarth-Lloyd2024.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_SolidEarth_GLOBAL-2DEG/2.1.0/GLOBAL-2DEG_SolidEarth-Lloyd2024.nc"
-
-["GLOBAL-2DEG_grid.nc"]
-checksum = "sha256:5fa987a099ab7e60d3a4b22e7bb5bd00cadccc8581874b8d600a38f9a512f104"
-size = 14559
-storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_SolidEarth_GLOBAL-2DEG/2.1.0/GLOBAL-2DEG_grid.nc"
 
 ["GLOBAL-5DEG_SolidEarth-Lloyd2024.nc"]
 checksum = "sha256:1ee87c0133e726859b11f867d6ce196b1a2a428a63ef6ade1199fce57bb6b739"
@@ -65,57 +41,9 @@ size = 511558
 storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_SolidEarth-Lloyd2024.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_SolidEarth_GLOBAL-5DEG/2.1.0/GLOBAL-5DEG_SolidEarth-Lloyd2024.nc"
 
-["GLOBAL-5DEG_grid.nc"]
-checksum = "sha256:55c037e0371c20123875dc16ddd01d1e864dd5b5b1b0cb29c9bfa3fd23f24cbf"
-size = 12511
-storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_SolidEarth_GLOBAL-5DEG/2.1.0/GLOBAL-5DEG_grid.nc"
-
 ["GLOBAL-T170_SolidEarth-Bagge2021.nc"]
 checksum = "sha256:27c786b29de06739cf3a609d6910cd3a0a33217469648c06dda17f4b1b5cd743"
 previous_checksums = ["sha256:2e68c1458d729bd6c62f4e78706aa57933cd1acab33677b5df34de62a1bf7138"]
 size = 62826760
 storage_path = "$datasets_dir/Global/GLOBAL-T170/GLOBAL-T170_SolidEarth-Bagge2021.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_SolidEarth_GLOBAL-T170/2.1.0/GLOBAL-T170_SolidEarth-Bagge2021.nc"
-
-["GLOBAL-T170_grid.nc"]
-checksum = "sha256:8e4b1c35f3aef04bbdf0cbda53589b0dc3bf57a77b619c6014150e4c3cab7830"
-size = 20230
-storage_path = "$datasets_dir/Global/GLOBAL-T170/GLOBAL-T170_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_SolidEarth_GLOBAL-T170/2.1.0/GLOBAL-T170_grid.nc"
-
-["grid_GLOBAL-0.25DEG.txt"]
-checksum = "sha256:18ffa92b5b37bbafa504215d99896bfe5ed3d9cada9beed41bf6f79353279d7e"
-size = 218
-storage_path = "$datasets_dir/Global/GLOBAL-0.25DEG/grid_GLOBAL-0.25DEG.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_SolidEarth_GLOBAL-0.25DEG/2.1.0/grid_GLOBAL-0.25DEG.txt"
-
-["grid_GLOBAL-0.5DEG.txt"]
-checksum = "sha256:7d6ca9751973abeb4a15b25146d8c6601cd47bf9e2cbf62a9dce3e00519955cd"
-size = 212
-storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/grid_GLOBAL-0.5DEG.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_SolidEarth_GLOBAL-0.5DEG/2.1.0/grid_GLOBAL-0.5DEG.txt"
-
-["grid_GLOBAL-1DEG.txt"]
-checksum = "sha256:38acf47f98866cc1c0479566b51a3a3df28fb09aa295652f52f67fffb2c499fd"
-size = 209
-storage_path = "$datasets_dir/Global/GLOBAL-1DEG/grid_GLOBAL-1DEG.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_SolidEarth_GLOBAL-1DEG/2.1.0/grid_GLOBAL-1DEG.txt"
-
-["grid_GLOBAL-2DEG.txt"]
-checksum = "sha256:f09996b59b7b7cc91b348c53eec0a8cb246c5b293a890b4912278435d589fec6"
-size = 208
-storage_path = "$datasets_dir/Global/GLOBAL-2DEG/grid_GLOBAL-2DEG.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_SolidEarth_GLOBAL-2DEG/2.1.0/grid_GLOBAL-2DEG.txt"
-
-["grid_GLOBAL-5DEG.txt"]
-checksum = "sha256:647911a4f8fd1afecd212683255ca869a1f3b9bdcb3ae180e7a1415cea84d344"
-size = 206
-storage_path = "$datasets_dir/Global/GLOBAL-5DEG/grid_GLOBAL-5DEG.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_SolidEarth_GLOBAL-5DEG/2.1.0/grid_GLOBAL-5DEG.txt"
-
-["grid_GLOBAL-T170.txt"]
-checksum = "sha256:7b047934f6191deb78bb8d1021626f75123427ab8721728ffd0a5147baf41b24"
-size = 3324
-storage_path = "$datasets_dir/Global/GLOBAL-T170/grid_GLOBAL-T170.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_SolidEarth_GLOBAL-T170/2.1.0/grid_GLOBAL-T170.txt"

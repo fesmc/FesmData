@@ -1,10 +1,10 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-15"
-git_tag = "icehistory-v2.2.0"
+date = "2026-10-16"
+git_tag = "icehistory-v2.2.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=GreenlandPaleo_IceHistory"
-version = "2.2.0"
+version = "2.2.1"
 
 ["GRL-PAL-16KM_IceHistory-Batchelor2019.nc"]
 checksum = "sha256:c58bde83da6f1a30d7e58c2914ab349a01999e34d73018331dd734981de4a452"
@@ -73,26 +73,12 @@ size = 7915883
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_IceHistory-PaleoMIST_max.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-16KM/2.2.0/GRL-PAL-16KM_IceHistory-PaleoMIST_max.nc"
 
-["GRL-PAL-16KM_grid.nc"]
-checksum = "sha256:8cf34c50e47c103a6c0620dff139413344ec28730e2096923d51f9164a183a42"
-previous_checksums = ["sha256:641614ed64e7a6989a9b632764bc593855f65f70fc7a200f9a89263c0fee7f3e"]
-size = 172428
-storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-16KM/2.2.0/GRL-PAL-16KM_grid.nc"
-
 ["GRL-PAL-1KM_IceHistory-PaleoGrIS.nc"]
 checksum = "sha256:db551215afb6bf9d971d35c6800bf7014fd9d5051f529f32050fc6e01b7a08dc"
 previous_checksums = ["sha256:b50ee9ada9dd5a1a6b3feced8d0a98fa8f05912fd7bd2ec0fcaf436541576207", "sha256:e48028255149cdb13b8c740746098a4acc592544df5f110075fc6d7544c9bdb4"]
 size = 875207
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-1KM/GRL-PAL-1KM_IceHistory-PaleoGrIS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-1KM/2.2.0/GRL-PAL-1KM_IceHistory-PaleoGrIS.nc"
-
-["GRL-PAL-1KM_grid.nc"]
-checksum = "sha256:0f3b05c846060e1e73dfdecde7b7a18485198863e5a20bc10b51aab36b80b1e3"
-previous_checksums = ["sha256:051ad90e75b01946068ed84b3a3a0968ccd06820fa40c751454ad2e9e7f17eea"]
-size = 19157159
-storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-1KM/GRL-PAL-1KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-1KM/2.2.0/GRL-PAL-1KM_grid.nc"
 
 ["GRL-PAL-2KM_IceHistory-Batchelor2019.nc"]
 checksum = "sha256:5acc77e03f7209c3980efb1d8134fff13e6ba26738083bc397aac4e078fbed5c"
@@ -107,13 +93,6 @@ previous_checksums = ["sha256:a1bcb933be4dd4318bddb36f650f832bf9a5576665f3d8be01
 size = 416353
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-2KM/GRL-PAL-2KM_IceHistory-PaleoGrIS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-2KM/2.2.0/GRL-PAL-2KM_IceHistory-PaleoGrIS.nc"
-
-["GRL-PAL-2KM_grid.nc"]
-checksum = "sha256:d4db0792ccd2821387f95aca8bda52b335f9ae7c8d130ab702a5d0685ddbefd8"
-previous_checksums = ["sha256:b8bc00290e86b21effb37f08445b745f46a9b507cf09422dcc0fa8e3784ed031"]
-size = 5655578
-storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-2KM/GRL-PAL-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-2KM/2.2.0/GRL-PAL-2KM_grid.nc"
 
 ["GRL-PAL-32KM_IceHistory-Batchelor2019.nc"]
 checksum = "sha256:fb239f1a0d976ec64a8edb1718fd52cd249991664c558aa954977333244ba8d1"
@@ -182,13 +161,6 @@ size = 2039630
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_IceHistory-PaleoMIST_max.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-32KM/2.2.0/GRL-PAL-32KM_IceHistory-PaleoMIST_max.nc"
 
-["GRL-PAL-32KM_grid.nc"]
-checksum = "sha256:570fe99dfc077c00e8b1c79d102e5450df2b4cba1c8327043fff59056121b883"
-previous_checksums = ["sha256:c94aeb9d12df68c5429b6e9ac944b6ed3328db1b3bcc9d10942a26343bde80f1"]
-size = 63330
-storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-32KM/2.2.0/GRL-PAL-32KM_grid.nc"
-
 ["GRL-PAL-4KM_IceHistory-Batchelor2019.nc"]
 checksum = "sha256:5f501df281eccf8f9e25986472de5d7947b011bd0c2c794cb6de70060046a6c1"
 previous_checksums = ["sha256:89cb8ae517ab6ae04325663cd3c38138a887967145d098483beded684d0f6b66", "sha256:98f5f5049e9e7199d91acee884242a7165d426fbce31591fa6a56d4066490a13"]
@@ -202,13 +174,6 @@ previous_checksums = ["sha256:4150b6aecc07d707dac11a1d7d8fe088c38f4919307b2ead07
 size = 190954
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/GRL-PAL-4KM_IceHistory-PaleoGrIS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-4KM/2.2.0/GRL-PAL-4KM_IceHistory-PaleoGrIS.nc"
-
-["GRL-PAL-4KM_grid.nc"]
-checksum = "sha256:95b399fce2abcd42a143714214882b4a1fcc011e2eb05508913abb71649cc0c2"
-previous_checksums = ["sha256:69ea06b475ce4c286038e45b4e083ee61794c4e80053a4c21c0e088399a16270"]
-size = 1734747
-storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/GRL-PAL-4KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-4KM/2.2.0/GRL-PAL-4KM_grid.nc"
 
 ["GRL-PAL-8KM_IceHistory-Batchelor2019.nc"]
 checksum = "sha256:fcb86fe3d46cc472193d8299e544fb86ea11eab6ec03881fc3f330abcda29f3d"
@@ -237,46 +202,3 @@ previous_checksums = ["sha256:dc8e5f1dee02bcead717c4f5a376e7eefb93aa915019864e61
 size = 29149255
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_IceHistory-PaleoMIST_max.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-8KM/2.2.0/GRL-PAL-8KM_IceHistory-PaleoMIST_max.nc"
-
-["GRL-PAL-8KM_grid.nc"]
-checksum = "sha256:4a64d43b061dd24979cac1a79798a17260084c1099d2fa47246b4af42cee24b5"
-previous_checksums = ["sha256:16aa24f1cb3018fd4813ef64d58bd23aac3af70ef50ee98296c75ddad16c6f0b"]
-size = 533422
-storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-8KM/2.2.0/GRL-PAL-8KM_grid.nc"
-
-["grid_GRL-PAL-16KM.txt"]
-checksum = "sha256:1f2dd6b17cd99dee69b34afe4a7f49e087d4f935e01d862b2392ebebb071ea31"
-size = 466
-storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/grid_GRL-PAL-16KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-16KM/2.2.0/grid_GRL-PAL-16KM.txt"
-
-["grid_GRL-PAL-1KM.txt"]
-checksum = "sha256:2fc92ab8c6623174a42f3ce9eba446c9bae25d8e1a162e5afa009ed5e15cde74"
-size = 468
-storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-1KM/grid_GRL-PAL-1KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-1KM/2.2.0/grid_GRL-PAL-1KM.txt"
-
-["grid_GRL-PAL-2KM.txt"]
-checksum = "sha256:0b3a2eb4e99075435eb56acb2ded8b17cf553fce8a38af0feae840e8a1c4896e"
-size = 468
-storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-2KM/grid_GRL-PAL-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-2KM/2.2.0/grid_GRL-PAL-2KM.txt"
-
-["grid_GRL-PAL-32KM.txt"]
-checksum = "sha256:cf0d0b1b8155818d7b19aa0eb4ebc0539c6a7d4d2ed0ddca89822c5f697e6646"
-size = 463
-storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/grid_GRL-PAL-32KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-32KM/2.2.0/grid_GRL-PAL-32KM.txt"
-
-["grid_GRL-PAL-4KM.txt"]
-checksum = "sha256:3ef324e1bb441b7c2b48632ee65a337255fe992cdba249417f182c929089cf0f"
-size = 465
-storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/grid_GRL-PAL-4KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-4KM/2.2.0/grid_GRL-PAL-4KM.txt"
-
-["grid_GRL-PAL-8KM.txt"]
-checksum = "sha256:08c7a03da8b258951eebef55634ad60f44f0f7fe965aa38e7dd26e4ca287d743"
-size = 465
-storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/grid_GRL-PAL-8KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-8KM/2.2.0/grid_GRL-PAL-8KM.txt"

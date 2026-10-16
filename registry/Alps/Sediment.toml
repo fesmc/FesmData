@@ -1,10 +1,10 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-14"
-git_tag = "sediment-v2.2.0"
+date = "2026-10-16"
+git_tag = "sediment-v2.2.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Alps_Sediment"
-version = "2.2.0"
+version = "2.2.1"
 
 ["ALP-2KM_Sediment-CRUST1.nc"]
 checksum = "sha256:49174b3c56df0b1e19a7829dda83d5090a0851e401220e195d00c0a768617245"
@@ -17,15 +17,3 @@ checksum = "sha256:6bded42f8491455f30e0384a73e1da3de36036b2cca5b7ae76f7ca7dd9b35
 size = 1189448
 storage_path = "$datasets_dir/Alps/ALP-2KM/ALP-2KM_Sediment-ECM1.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Sediment_ALP-2KM/2.2.0/ALP-2KM_Sediment-ECM1.nc"
-
-["ALP-2KM_grid.nc"]
-checksum = "sha256:a0f3e138044c18d2d70b38706a6179ec6b5ac50aa61229a5574780b96ac00a37"
-size = 572770
-storage_path = "$datasets_dir/Alps/ALP-2KM/ALP-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Sediment_ALP-2KM/2.2.0/ALP-2KM_grid.nc"
-
-["grid_ALP-2KM.txt"]
-checksum = "sha256:dfeeea31315f1ba8ec9eb4bc25cd2322e4fa4bb7c63a7c5379adc6109a6610a9"
-size = 322
-storage_path = "$datasets_dir/Alps/ALP-2KM/grid_ALP-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Sediment_ALP-2KM/2.2.0/grid_ALP-2KM.txt"

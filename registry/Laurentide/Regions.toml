@@ -2,9 +2,9 @@
 
 [_RELEASE]
 date = "2026-10-16"
-git_tag = "regions-v2.6.0"
+git_tag = "regions-v2.6.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Laurentide_Regions"
-version = "2.6.0"
+version = "2.6.1"
 
 ["LIS-16KM_BASINS-Mouginot2019.nc"]
 checksum = "sha256:58702d86909c4bf77fb1844c0ccee7d5103a5a03ba8ccbd2711bb85a80b4fc5e"
@@ -41,13 +41,6 @@ size = 193693
 storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Regions_LIS-16KM/2.6.0/LIS-16KM_REGIONS.nc"
 
-["LIS-16KM_grid.nc"]
-checksum = "sha256:2f5661242d66ac2eecfaa2fd8306e6129bf5928fc22ed0d3105384fa9c5d0034"
-previous_checksums = ["sha256:9d90be456f08f945c8b097fb0900ddcb853666ea15d98e038b850317967362a3"]
-size = 655353
-storage_path = "$datasets_dir/Laurentide/LIS-16KM/LIS-16KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Regions_LIS-16KM/2.6.0/LIS-16KM_grid.nc"
-
 ["LIS-2KM_BASINS-Mouginot2019.nc"]
 checksum = "sha256:ff196664b85a6d09dff7db416ea7f958ee64798e52211f1c83fd2d4c6305e355"
 previous_checksums = ["sha256:6af611be976b30b280240608de0d3abf0e4f84e3ba05d7dca9faf4fce304c446", "sha256:90ebc0265896c239a900938ec867837647ba514cbd4578c38f389b2837fb5187", "sha256:32f129edccc72337c394a30995bef98e772e5969e7108d009bb9bf6afe2ebecd", "sha256:83260acdd782fc6d901a5c82fbd6e8627799a3f668f9b2c14b43b4f9643cc3a0", "sha256:6e47bc9ea2a6a927c5028e2a51365eb7f18f44a9b53277bd0246a7d6933034f1", "sha256:3d26f569987d3190cbcaae108c5f6b38a4bf3285dbf0b53f07433c258feecd28"]
@@ -82,13 +75,6 @@ previous_checksums = ["sha256:941f00482702d176dca09a2a26feafa792672899b1f85f1764
 size = 3510130
 storage_path = "$datasets_dir/Laurentide/LIS-2KM/LIS-2KM_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Regions_LIS-2KM/2.6.0/LIS-2KM_REGIONS.nc"
-
-["LIS-2KM_grid.nc"]
-checksum = "sha256:6b0a9abb1eddb7153008cb2f3216f9a02dc55568d56e0aad739b21557a82b5a9"
-previous_checksums = ["sha256:345ed788bff752a95c87edcf1cb0e6fbab9172937a7205137ab3416362c25257"]
-size = 25377152
-storage_path = "$datasets_dir/Laurentide/LIS-2KM/LIS-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Regions_LIS-2KM/2.6.0/LIS-2KM_grid.nc"
 
 ["LIS-32KM_BASINS-Mouginot2019.nc"]
 checksum = "sha256:974e0bc696e0ff534db92e3fa4542355d2c2d49c9dfbb571c8597805d669ab1d"
@@ -125,13 +111,6 @@ size = 88507
 storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Regions_LIS-32KM/2.6.0/LIS-32KM_REGIONS.nc"
 
-["LIS-32KM_grid.nc"]
-checksum = "sha256:5c4f48e20c36c1b064846a3ba101d01f11556703d5c1751f27b175f5de61df40"
-previous_checksums = ["sha256:a0c50b74b4a45787d5ad2c6183e5f1d339143079fd1302b0aad52cb13f8c5bbc"]
-size = 214195
-storage_path = "$datasets_dir/Laurentide/LIS-32KM/LIS-32KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Regions_LIS-32KM/2.6.0/LIS-32KM_grid.nc"
-
 ["LIS-4KM_BASINS-Mouginot2019.nc"]
 checksum = "sha256:05fb4833fb8eb2ffa0c7d8a0a37a392e7a94a5c94ddb321cf099735fba3608f0"
 previous_checksums = ["sha256:f28d3ec079c9e95b37e2407dc1778fd937f13638772eb6b70d5c0a6f3e6a4e18", "sha256:095481e214a4b46616bb60e41c612770d18c51bd85cf2f3cad17fc7ae3a38d37", "sha256:ceb05438950babaa89581443ff2ea36efd964419d31c2048d5db7232d92cf974", "sha256:36251953416e9dce6d1d76ce7fb2bcdb9f2ecef9fb7b1844d32c2bee23bcecbd", "sha256:6f680d2836ce0e5078cb6d0d8b43141b95be3b477958f5a091639e6f136b21cb", "sha256:5fb9f01b1d88b0d381e5c3cf62bbff4cc19ffb532419d473808009afd51b40d0"]
@@ -167,13 +146,6 @@ size = 1340237
 storage_path = "$datasets_dir/Laurentide/LIS-4KM/LIS-4KM_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Regions_LIS-4KM/2.6.0/LIS-4KM_REGIONS.nc"
 
-["LIS-4KM_grid.nc"]
-checksum = "sha256:53ca8085ced02308bb3be1bc2c3fad9f1f6849b9cb4e596c1186e9c302993885"
-previous_checksums = ["sha256:3000d9a81efb07c8b6ca0c9adcdab153945f8954ed05ca5e1435767d38896d80"]
-size = 7496765
-storage_path = "$datasets_dir/Laurentide/LIS-4KM/LIS-4KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Regions_LIS-4KM/2.6.0/LIS-4KM_grid.nc"
-
 ["LIS-8KM_BASINS-Mouginot2019.nc"]
 checksum = "sha256:0aaa22634c2fab391a15b963f98aa37fd443574b2b87a004eaa51528d1db07c7"
 previous_checksums = ["sha256:e18340cb820b0ecb56c913d39b7cc2bf554b3e3cf06c7bfa47585902c46ecd01", "sha256:74b83d8ffbd0cae7ddf58ab9924d00ef29ac8a0bc9101993361dc26513395d8d", "sha256:4293f497852aa9309c0527391a6fe5987876b4fbf524190bf16744b6b508649e", "sha256:87af3dca0e233d99ce17971eaa22c5fe05bf356cd71e53a580dd972c805a3c1e", "sha256:4a37f7e557aa5b1a876e1832d8bf0712e874915f9514c56e882b3a879f8accd4", "sha256:99add0e5d692f689567aa3ca9a6c31e4117a78f39d39715f74ac08d530a99346"]
@@ -208,40 +180,3 @@ previous_checksums = ["sha256:30993a3ef1a5ddac8c1088fbdf3f0bb8a748929f5ae3fae09d
 size = 497096
 storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Regions_LIS-8KM/2.6.0/LIS-8KM_REGIONS.nc"
-
-["LIS-8KM_grid.nc"]
-checksum = "sha256:2c2c5302c1c073cb7c6738e55be0c4ac6bdc18d0840f11c61eacb161866dadda"
-previous_checksums = ["sha256:39001f264d08010e472852f6861b6b6d6cdc15ffd7553d52b01acb51f22501ee"]
-size = 2300984
-storage_path = "$datasets_dir/Laurentide/LIS-8KM/LIS-8KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Regions_LIS-8KM/2.6.0/LIS-8KM_grid.nc"
-
-["grid_LIS-16KM.txt"]
-checksum = "sha256:4ff24933bce97627a1ffe6ec62ed994aabb15889197dda6597cc2ef85b623178"
-size = 467
-storage_path = "$datasets_dir/Laurentide/LIS-16KM/grid_LIS-16KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Regions_LIS-16KM/2.6.0/grid_LIS-16KM.txt"
-
-["grid_LIS-2KM.txt"]
-checksum = "sha256:9ed5e4f961114dee7efdb6c2a7f7141f748388059c72eae33d846d2784d22408"
-size = 468
-storage_path = "$datasets_dir/Laurentide/LIS-2KM/grid_LIS-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Regions_LIS-2KM/2.6.0/grid_LIS-2KM.txt"
-
-["grid_LIS-32KM.txt"]
-checksum = "sha256:0c5e99f11a025d656ee88fcbce389f89b815c0ca4c6a1dcf08868ffbafe0d09b"
-size = 466
-storage_path = "$datasets_dir/Laurentide/LIS-32KM/grid_LIS-32KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Regions_LIS-32KM/2.6.0/grid_LIS-32KM.txt"
-
-["grid_LIS-4KM.txt"]
-checksum = "sha256:fe2c0508c9d2b2faa8ef7ac20d6c196e1e726d93c5ffbf7d4b59901783a837be"
-size = 468
-storage_path = "$datasets_dir/Laurentide/LIS-4KM/grid_LIS-4KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Regions_LIS-4KM/2.6.0/grid_LIS-4KM.txt"
-
-["grid_LIS-8KM.txt"]
-checksum = "sha256:97811d3bbc0376118996535a4ec7c0209bf01f10bfb60bc738bb05b6eab6caa4"
-size = 465
-storage_path = "$datasets_dir/Laurentide/LIS-8KM/grid_LIS-8KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Regions_LIS-8KM/2.6.0/grid_LIS-8KM.txt"

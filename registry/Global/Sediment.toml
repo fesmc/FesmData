@@ -1,10 +1,10 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-14"
-git_tag = "sediment-v2.2.0"
+date = "2026-10-16"
+git_tag = "sediment-v2.2.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Global_Sediment"
-version = "2.2.0"
+version = "2.2.1"
 
 ["GLOBAL-0.1DEG_Sediment-CRUST1.nc"]
 checksum = "sha256:44ffecc28f8e30ccbd71639a66204d279acd5f7d73799e5fb90ade58196f89cb"
@@ -27,12 +27,6 @@ size = 10675511
 storage_path = "$datasets_dir/Global/GLOBAL-0.1DEG/GLOBAL-0.1DEG_Sediment-GlobSed.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Sediment_GLOBAL-0.1DEG/2.2.0/GLOBAL-0.1DEG_Sediment-GlobSed.nc"
 
-["GLOBAL-0.1DEG_grid.nc"]
-checksum = "sha256:a4e56f174dc574ee53539866c27d4c7f5e740742d1d16f8daa8cb96fac1fc5b8"
-size = 192057
-storage_path = "$datasets_dir/Global/GLOBAL-0.1DEG/GLOBAL-0.1DEG_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Sediment_GLOBAL-0.1DEG/2.2.0/GLOBAL-0.1DEG_grid.nc"
-
 ["GLOBAL-0.25DEG_Sediment-CRUST1.nc"]
 checksum = "sha256:52f886432e0bc8ac2caeb9ef092a2c6b5be4125f77335d77cd47543896e15667"
 previous_checksums = ["sha256:059ea9720c1f4c061255489b1742e4e4ff1b13fe97b87331be8c4f28b17da520", "sha256:97c3ef35e52b66d38d85376a156b4fbfbd930d67a499e8d0e896847ca35c5caf"]
@@ -53,12 +47,6 @@ previous_checksums = ["sha256:7fc9e7dd4a292b84238f4d34248c48b9b3beef8b4cdc1b16ac
 size = 1996912
 storage_path = "$datasets_dir/Global/GLOBAL-0.25DEG/GLOBAL-0.25DEG_Sediment-GlobSed.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Sediment_GLOBAL-0.25DEG/2.2.0/GLOBAL-0.25DEG_Sediment-GlobSed.nc"
-
-["GLOBAL-0.25DEG_grid.nc"]
-checksum = "sha256:5ff16fa62830a5bcf93baa975e7fbb6294ba9e94c9a4e30a1ecbec5fb2afbc42"
-size = 49586
-storage_path = "$datasets_dir/Global/GLOBAL-0.25DEG/GLOBAL-0.25DEG_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Sediment_GLOBAL-0.25DEG/2.2.0/GLOBAL-0.25DEG_grid.nc"
 
 ["GLOBAL-0.5DEG_Sediment-CRUST1.nc"]
 checksum = "sha256:0622a60bfef2ed9d7f2e2a31cda35a16019fb48f37f952a06141f5130ae30874"
@@ -81,12 +69,6 @@ size = 585794
 storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/GLOBAL-0.5DEG_Sediment-GlobSed.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Sediment_GLOBAL-0.5DEG/2.2.0/GLOBAL-0.5DEG_Sediment-GlobSed.nc"
 
-["GLOBAL-0.5DEG_grid.nc"]
-checksum = "sha256:43301e8a8f8a7d3a47e181cc3ba1b216c72fbca797d8ed8f8672b5da2c1a95de"
-size = 25589
-storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/GLOBAL-0.5DEG_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Sediment_GLOBAL-0.5DEG/2.2.0/GLOBAL-0.5DEG_grid.nc"
-
 ["GLOBAL-1DEG_Sediment-CRUST1.nc"]
 checksum = "sha256:4bba1225846641d916cb6ceb2942b43493338e760e452578bdd47e129e4821e9"
 previous_checksums = ["sha256:b9c1b4e5b9f02b64a1ed466cb4be7d4f6551cc6f67bf2da7f9254fc8ce0dc266", "sha256:d2ae256d77e0382f647b83f138a96ec0f36c67b4da74b4825eb8d3afe8c779d7"]
@@ -107,12 +89,6 @@ previous_checksums = ["sha256:b47a7e50449a6ea51d501c386550c3a54c5872354292932d08
 size = 180400
 storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_Sediment-GlobSed.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Sediment_GLOBAL-1DEG/2.2.0/GLOBAL-1DEG_Sediment-GlobSed.nc"
-
-["GLOBAL-1DEG_grid.nc"]
-checksum = "sha256:72658a61a9d89e56a88266b6a3168ba7ea4e18c4c8b0d2a904164c2c047e5d47"
-size = 17869
-storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Sediment_GLOBAL-1DEG/2.2.0/GLOBAL-1DEG_grid.nc"
 
 ["GLOBAL-2DEG_Sediment-CRUST1.nc"]
 checksum = "sha256:bcc51dcc14ead979fcfe14c7bbe96fd572a5b23c554264a246ccac5c9ec61067"
@@ -135,12 +111,6 @@ size = 66927
 storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_Sediment-GlobSed.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Sediment_GLOBAL-2DEG/2.2.0/GLOBAL-2DEG_Sediment-GlobSed.nc"
 
-["GLOBAL-2DEG_grid.nc"]
-checksum = "sha256:5fa987a099ab7e60d3a4b22e7bb5bd00cadccc8581874b8d600a38f9a512f104"
-size = 14559
-storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Sediment_GLOBAL-2DEG/2.2.0/GLOBAL-2DEG_grid.nc"
-
 ["GLOBAL-5DEG_Sediment-CRUST1.nc"]
 checksum = "sha256:fa0d2d0ae44fc8971cadfba7686a18fc0532b92c5de83d20f367eec90399e4a1"
 previous_checksums = ["sha256:b244ff451bb4945ca992ce9153c1c69f0fd7c8886d1fbd85002ec3ffe9be3504", "sha256:e337974e20edb3e74344a12ac627b2a89024b470369d0405c8e12a429c6e20fa"]
@@ -161,45 +131,3 @@ previous_checksums = ["sha256:08f19f7ea0887d5c2af07d81ff111afcde2d15b43dee52f1d6
 size = 27806
 storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_Sediment-GlobSed.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Sediment_GLOBAL-5DEG/2.2.0/GLOBAL-5DEG_Sediment-GlobSed.nc"
-
-["GLOBAL-5DEG_grid.nc"]
-checksum = "sha256:55c037e0371c20123875dc16ddd01d1e864dd5b5b1b0cb29c9bfa3fd23f24cbf"
-size = 12511
-storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Sediment_GLOBAL-5DEG/2.2.0/GLOBAL-5DEG_grid.nc"
-
-["grid_GLOBAL-0.1DEG.txt"]
-checksum = "sha256:5b3a831c01fa4276db84a6d54d7cb5d4da7ca2fbc859ab2a85080a431155e4e3"
-size = 215
-storage_path = "$datasets_dir/Global/GLOBAL-0.1DEG/grid_GLOBAL-0.1DEG.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Sediment_GLOBAL-0.1DEG/2.2.0/grid_GLOBAL-0.1DEG.txt"
-
-["grid_GLOBAL-0.25DEG.txt"]
-checksum = "sha256:18ffa92b5b37bbafa504215d99896bfe5ed3d9cada9beed41bf6f79353279d7e"
-size = 218
-storage_path = "$datasets_dir/Global/GLOBAL-0.25DEG/grid_GLOBAL-0.25DEG.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Sediment_GLOBAL-0.25DEG/2.2.0/grid_GLOBAL-0.25DEG.txt"
-
-["grid_GLOBAL-0.5DEG.txt"]
-checksum = "sha256:7d6ca9751973abeb4a15b25146d8c6601cd47bf9e2cbf62a9dce3e00519955cd"
-size = 212
-storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/grid_GLOBAL-0.5DEG.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Sediment_GLOBAL-0.5DEG/2.2.0/grid_GLOBAL-0.5DEG.txt"
-
-["grid_GLOBAL-1DEG.txt"]
-checksum = "sha256:38acf47f98866cc1c0479566b51a3a3df28fb09aa295652f52f67fffb2c499fd"
-size = 209
-storage_path = "$datasets_dir/Global/GLOBAL-1DEG/grid_GLOBAL-1DEG.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Sediment_GLOBAL-1DEG/2.2.0/grid_GLOBAL-1DEG.txt"
-
-["grid_GLOBAL-2DEG.txt"]
-checksum = "sha256:f09996b59b7b7cc91b348c53eec0a8cb246c5b293a890b4912278435d589fec6"
-size = 208
-storage_path = "$datasets_dir/Global/GLOBAL-2DEG/grid_GLOBAL-2DEG.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Sediment_GLOBAL-2DEG/2.2.0/grid_GLOBAL-2DEG.txt"
-
-["grid_GLOBAL-5DEG.txt"]
-checksum = "sha256:647911a4f8fd1afecd212683255ca869a1f3b9bdcb3ae180e7a1415cea84d344"
-size = 206
-storage_path = "$datasets_dir/Global/GLOBAL-5DEG/grid_GLOBAL-5DEG.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Sediment_GLOBAL-5DEG/2.2.0/grid_GLOBAL-5DEG.txt"

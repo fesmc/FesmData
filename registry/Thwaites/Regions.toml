@@ -2,9 +2,9 @@
 
 [_RELEASE]
 date = "2026-10-16"
-git_tag = "regions-v2.6.0"
+git_tag = "regions-v2.6.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Thwaites_Regions"
-version = "2.6.0"
+version = "2.6.1"
 
 ["THW-1KM_BASINS-IMBIE2016-refined.nc"]
 checksum = "sha256:81ae43017afdbbdf423ceef44204ffce2ad1ad7290443dc450f533c3ffb97a72"
@@ -48,13 +48,6 @@ size = 211627
 storage_path = "$datasets_dir/Thwaites/THW-1KM/THW-1KM_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-1KM/2.6.0/THW-1KM_REGIONS.nc"
 
-["THW-1KM_grid.nc"]
-checksum = "sha256:705cca061b5de19e4c240cd530f9e3761fc7ec33edc9a63c2d5d51264e144250"
-previous_checksums = ["sha256:f0844ba5083fd5f5f3ffa1363f7cafdebbf5a0f74a7c2aa7a5289a5498ffb2ff"]
-size = 1499689
-storage_path = "$datasets_dir/Thwaites/THW-1KM/THW-1KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-1KM/2.6.0/THW-1KM_grid.nc"
-
 ["THW-500M_BASINS-IMBIE2016-refined.nc"]
 checksum = "sha256:675e3cf1438301c32f55d449f9540983051d7e6213350e3aca9be3dc89e683bb"
 previous_checksums = ["sha256:d2f8842a85d24731144c1d57167630c7501ff57b9dbf9a354f5ab9816c160e56", "sha256:86f9a76d3ba4626bd7e2cf4b351206054c159b16f7bc4727e361bfedce59e1bd", "sha256:ed520320dff82580b40dd19e9a756691669c95f3190808cf036973b4a8132f15"]
@@ -96,22 +89,3 @@ previous_checksums = ["sha256:ca98c361d46275134699a1ff936cc3e588c40b0cdede2d3c4a
 size = 591863
 storage_path = "$datasets_dir/Thwaites/THW-500M/THW-500M_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-500M/2.6.0/THW-500M_REGIONS.nc"
-
-["THW-500M_grid.nc"]
-checksum = "sha256:74e70697a5d962a8f05dfd6d61639a8ff285e3cf476e09530db0694df45e3469"
-previous_checksums = ["sha256:d50616bf3d370a92f0c024753209f24facc23f52adf0cbb7d86e2d5473c9e766"]
-size = 4661122
-storage_path = "$datasets_dir/Thwaites/THW-500M/THW-500M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-500M/2.6.0/THW-500M_grid.nc"
-
-["grid_THW-1KM.txt"]
-checksum = "sha256:f5a26a47267918dfdc4cd6e3bef8405e52e6d86836990bc344b6e79df2535b0e"
-size = 464
-storage_path = "$datasets_dir/Thwaites/THW-1KM/grid_THW-1KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-1KM/2.6.0/grid_THW-1KM.txt"
-
-["grid_THW-500M.txt"]
-checksum = "sha256:235395dbd0c851b00ed00c2a51a3b5b5e0c8771a2634c1d48d939eabacf6e6f9"
-size = 467
-storage_path = "$datasets_dir/Thwaites/THW-500M/grid_THW-500M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Regions_THW-500M/2.6.0/grid_THW-500M.txt"

@@ -2,9 +2,9 @@
 
 [_RELEASE]
 date = "2026-10-16"
-git_tag = "regions-v2.6.0"
+git_tag = "regions-v2.6.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=GreenlandPaleo_Regions"
-version = "2.6.0"
+version = "2.6.1"
 
 ["GRL-PAL-16KM_BASINS-Mouginot2019.nc"]
 checksum = "sha256:3ef2475a9f0a36f781fc23a0d6c05382cfe431a857ea5e493f3a33560bd41ed7"
@@ -55,13 +55,6 @@ size = 78072
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Regions_GRL-PAL-16KM/2.6.0/GRL-PAL-16KM_REGIONS.nc"
 
-["GRL-PAL-16KM_grid.nc"]
-checksum = "sha256:8cf34c50e47c103a6c0620dff139413344ec28730e2096923d51f9164a183a42"
-previous_checksums = ["sha256:641614ed64e7a6989a9b632764bc593855f65f70fc7a200f9a89263c0fee7f3e"]
-size = 172428
-storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Regions_GRL-PAL-16KM/2.6.0/GRL-PAL-16KM_grid.nc"
-
 ["GRL-PAL-1KM_BASINS-Mouginot2019.nc"]
 checksum = "sha256:e81694eb3c8b169789e133d1834c729ce3821568349c6ca1aafe569533477648"
 previous_checksums = ["sha256:b360b2aa57a31b164dfafd5e84184f667ec79c6456b9beeecafcfadb36374f9e", "sha256:339e9dbc73783edf883ef1bb076d494ab350251c4915da488af180651e990b23", "sha256:a87893c1781aef14f11eb079609c82fa2ec3e53862cddcf00f9d0771d3abf918", "sha256:d238e95c9e6549c63e9044cca2e3b9af96170326f5582931a87d4a158b014a3a", "sha256:a921d542da708287cd9b7f3ef4840ddf356c8771d594efaa175dafa389c394b2", "sha256:9a71a440270e4b33482d427dae1bcf1f29da9bff07516e680c8e3864129c3f7f"]
@@ -110,13 +103,6 @@ previous_checksums = ["sha256:aae3f9e95fb5930c7febf7895f84a64df6f65e0ffd98d175cc
 size = 3203918
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-1KM/GRL-PAL-1KM_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Regions_GRL-PAL-1KM/2.6.0/GRL-PAL-1KM_REGIONS.nc"
-
-["GRL-PAL-1KM_grid.nc"]
-checksum = "sha256:0f3b05c846060e1e73dfdecde7b7a18485198863e5a20bc10b51aab36b80b1e3"
-previous_checksums = ["sha256:051ad90e75b01946068ed84b3a3a0968ccd06820fa40c751454ad2e9e7f17eea"]
-size = 19157159
-storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-1KM/GRL-PAL-1KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Regions_GRL-PAL-1KM/2.6.0/GRL-PAL-1KM_grid.nc"
 
 ["GRL-PAL-2KM_BASINS-Mouginot2019.nc"]
 checksum = "sha256:d10a4593ddbd1a8fef3eea261074846cd2930dcc5a765513a09460229bcacba9"
@@ -167,13 +153,6 @@ size = 1161987
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-2KM/GRL-PAL-2KM_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Regions_GRL-PAL-2KM/2.6.0/GRL-PAL-2KM_REGIONS.nc"
 
-["GRL-PAL-2KM_grid.nc"]
-checksum = "sha256:d4db0792ccd2821387f95aca8bda52b335f9ae7c8d130ab702a5d0685ddbefd8"
-previous_checksums = ["sha256:b8bc00290e86b21effb37f08445b745f46a9b507cf09422dcc0fa8e3784ed031"]
-size = 5655578
-storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-2KM/GRL-PAL-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Regions_GRL-PAL-2KM/2.6.0/GRL-PAL-2KM_grid.nc"
-
 ["GRL-PAL-32KM_BASINS-Mouginot2019.nc"]
 checksum = "sha256:753952684788e64b8bc6c22d812c3f0f7fde5d10b5599f9dfaad396e14841530"
 previous_checksums = ["sha256:7cefbc6b8ce5b546c970d979db78aa2dd9a34f4fdfcd6c42258d1a4467ad2a88", "sha256:4551882ee1d33ca2816cef4e56b39abc1aea2c1cfe4bfe472718d4c8f09b8958", "sha256:977a719d3f37bd3abd9d26c4ea258f2dc1f29d7f3e1fd6a66c032ae6fae10e9f", "sha256:3886800581b2e19cfbfbc4d905ac3d181dd3a65b88bc7c3c725af4489f92c31f", "sha256:254a37b7478bb87398d334e687b5707315d9d0756aeb8b88868d0d9271df4a7e", "sha256:59fda179e2f196e836b1af7ed5d5bbd626241411e590a705325e7fbdd9007bfe"]
@@ -222,13 +201,6 @@ previous_checksums = ["sha256:df79d9331b9958903ee7e3784c6c5bdcf332172aa51a7d4662
 size = 47562
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Regions_GRL-PAL-32KM/2.6.0/GRL-PAL-32KM_REGIONS.nc"
-
-["GRL-PAL-32KM_grid.nc"]
-checksum = "sha256:570fe99dfc077c00e8b1c79d102e5450df2b4cba1c8327043fff59056121b883"
-previous_checksums = ["sha256:c94aeb9d12df68c5429b6e9ac944b6ed3328db1b3bcc9d10942a26343bde80f1"]
-size = 63330
-storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Regions_GRL-PAL-32KM/2.6.0/GRL-PAL-32KM_grid.nc"
 
 ["GRL-PAL-4KM_BASINS-Mouginot2019.nc"]
 checksum = "sha256:c1b4d63b45748240514708149ba9cc0fbc2ea6a13271c17b4e639f92243a3426"
@@ -279,13 +251,6 @@ size = 423580
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/GRL-PAL-4KM_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Regions_GRL-PAL-4KM/2.6.0/GRL-PAL-4KM_REGIONS.nc"
 
-["GRL-PAL-4KM_grid.nc"]
-checksum = "sha256:95b399fce2abcd42a143714214882b4a1fcc011e2eb05508913abb71649cc0c2"
-previous_checksums = ["sha256:69ea06b475ce4c286038e45b4e083ee61794c4e80053a4c21c0e088399a16270"]
-size = 1734747
-storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/GRL-PAL-4KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Regions_GRL-PAL-4KM/2.6.0/GRL-PAL-4KM_grid.nc"
-
 ["GRL-PAL-500M_BASINS-Mouginot2019.nc"]
 checksum = "sha256:1eb2208ff245ea99fe204fa1897c636c5de58ab0b58ebd0d01323ea3d7a17ec2"
 previous_checksums = ["sha256:63f36c10b5410f20b03ff7652d135673641c99c1a5fe128b506841cef227864d", "sha256:b576f73c5ccf9e0f7619dc349efe9b87dff957e4c729abb7dfbcdd990f216f5b", "sha256:e00cc1d22bbbe3fbf254a46c9a9c54e1336d159dfc75a6c636286ceb52b768de", "sha256:a471ee937ed22b04e792dd96143331597aec706c8795077c9eefb87bcdb277c4", "sha256:9ef347492ad2d179ca7dabb1212e588901340cc324eb3fdf607f8c232f084651", "sha256:32c134ce5ea7ffad499d4059194ded430eabb5de1627521723e8b4aeecfc5a2f"]
@@ -335,13 +300,6 @@ size = 8419292
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-500M/GRL-PAL-500M_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Regions_GRL-PAL-500M/2.6.0/GRL-PAL-500M_REGIONS.nc"
 
-["GRL-PAL-500M_grid.nc"]
-checksum = "sha256:cf74444053da6d5ccc30a6e2a27c9304064ca59ad787fa71b4a2277e466f3c33"
-previous_checksums = ["sha256:4a90f13716e62533ae4a184dbc1fdc85e6802cb6a9e3e62eb0b34ca226e18cdc"]
-size = 63425697
-storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-500M/GRL-PAL-500M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Regions_GRL-PAL-500M/2.6.0/GRL-PAL-500M_grid.nc"
-
 ["GRL-PAL-8KM_BASINS-Mouginot2019.nc"]
 checksum = "sha256:d53ac3f111b438b01d866a5a2700ad958a8b5d3cb3db5e938911607f6eaa2a68"
 previous_checksums = ["sha256:3b6d60d22e1fc69699a747343ca950cd10a9d26c96540184e23d3e1c0698b051", "sha256:80b5707acadc1abb28419dbee9a8e205349ae3f7278a0ed47e0e4269c05b3b4b", "sha256:f804f2048d4ecd61dc266010bcef1e0081baa6d722afeda3bf372c9521a3d6a8", "sha256:2b148ebf9a7fb0a52dd8f86bd9602ee71cb29911ab49f484409b3fef6883f251", "sha256:dbb53cfe26a371f078bbc1ba209e2d34ef3ea5e07a89fcfdd45368f06065f026", "sha256:b1f2f62453feac038ed299f7a07bc2404f89c53c9c04a92b60c61feb2f0505b2"]
@@ -390,52 +348,3 @@ previous_checksums = ["sha256:8a625a5a14e1ef7ca048ca4306bc006370ccfe9c4075be1b44
 size = 166862
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Regions_GRL-PAL-8KM/2.6.0/GRL-PAL-8KM_REGIONS.nc"
-
-["GRL-PAL-8KM_grid.nc"]
-checksum = "sha256:4a64d43b061dd24979cac1a79798a17260084c1099d2fa47246b4af42cee24b5"
-previous_checksums = ["sha256:16aa24f1cb3018fd4813ef64d58bd23aac3af70ef50ee98296c75ddad16c6f0b"]
-size = 533422
-storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Regions_GRL-PAL-8KM/2.6.0/GRL-PAL-8KM_grid.nc"
-
-["grid_GRL-PAL-16KM.txt"]
-checksum = "sha256:1f2dd6b17cd99dee69b34afe4a7f49e087d4f935e01d862b2392ebebb071ea31"
-size = 466
-storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/grid_GRL-PAL-16KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Regions_GRL-PAL-16KM/2.6.0/grid_GRL-PAL-16KM.txt"
-
-["grid_GRL-PAL-1KM.txt"]
-checksum = "sha256:2fc92ab8c6623174a42f3ce9eba446c9bae25d8e1a162e5afa009ed5e15cde74"
-size = 468
-storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-1KM/grid_GRL-PAL-1KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Regions_GRL-PAL-1KM/2.6.0/grid_GRL-PAL-1KM.txt"
-
-["grid_GRL-PAL-2KM.txt"]
-checksum = "sha256:0b3a2eb4e99075435eb56acb2ded8b17cf553fce8a38af0feae840e8a1c4896e"
-size = 468
-storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-2KM/grid_GRL-PAL-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Regions_GRL-PAL-2KM/2.6.0/grid_GRL-PAL-2KM.txt"
-
-["grid_GRL-PAL-32KM.txt"]
-checksum = "sha256:cf0d0b1b8155818d7b19aa0eb4ebc0539c6a7d4d2ed0ddca89822c5f697e6646"
-size = 463
-storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/grid_GRL-PAL-32KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Regions_GRL-PAL-32KM/2.6.0/grid_GRL-PAL-32KM.txt"
-
-["grid_GRL-PAL-4KM.txt"]
-checksum = "sha256:3ef324e1bb441b7c2b48632ee65a337255fe992cdba249417f182c929089cf0f"
-size = 465
-storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-4KM/grid_GRL-PAL-4KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Regions_GRL-PAL-4KM/2.6.0/grid_GRL-PAL-4KM.txt"
-
-["grid_GRL-PAL-500M.txt"]
-checksum = "sha256:e09884485736d8b25bc95d5ed7e8d12114f9ce1b56e0d793f6b0ecbd862ffb2b"
-size = 469
-storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-500M/grid_GRL-PAL-500M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Regions_GRL-PAL-500M/2.6.0/grid_GRL-PAL-500M.txt"
-
-["grid_GRL-PAL-8KM.txt"]
-checksum = "sha256:08c7a03da8b258951eebef55634ad60f44f0f7fe965aa38e7dd26e4ca287d743"
-size = 465
-storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/grid_GRL-PAL-8KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Regions_GRL-PAL-8KM/2.6.0/grid_GRL-PAL-8KM.txt"

@@ -1,10 +1,10 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-14"
-git_tag = "atmosphere-v2.2.0"
+date = "2026-10-16"
+git_tag = "atmosphere-v2.2.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Global_Atmosphere"
-version = "2.2.0"
+version = "2.2.1"
 
 ["GLOBAL-0.1DEG_Atmosphere-ERA5-1981-2010.nc"]
 checksum = "sha256:d86544abaa7d81656b66b6b110e47f31b43b7b23143acf36709863bae895daca"
@@ -19,12 +19,6 @@ previous_checksums = ["sha256:ed591640c078de62e638891ed31f675b9ef0c6d64050e48797
 size = 458710616
 storage_path = "$datasets_dir/Global/GLOBAL-0.1DEG/GLOBAL-0.1DEG_Atmosphere-ERA5-1991-2020.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Atmosphere_GLOBAL-0.1DEG/2.2.0/GLOBAL-0.1DEG_Atmosphere-ERA5-1991-2020.nc"
-
-["GLOBAL-0.1DEG_grid.nc"]
-checksum = "sha256:a4e56f174dc574ee53539866c27d4c7f5e740742d1d16f8daa8cb96fac1fc5b8"
-size = 192057
-storage_path = "$datasets_dir/Global/GLOBAL-0.1DEG/GLOBAL-0.1DEG_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Atmosphere_GLOBAL-0.1DEG/2.2.0/GLOBAL-0.1DEG_grid.nc"
 
 ["GLOBAL-0.25DEG_Atmosphere-CERES-2001-2020.nc"]
 checksum = "sha256:5d196308a7017737205824e3585f052208f5b39846353dbad6bbfea8113cc555"
@@ -61,12 +55,6 @@ size = 457621820
 storage_path = "$datasets_dir/Global/GLOBAL-0.25DEG/GLOBAL-0.25DEG_Atmosphere-ERA5-plev-1991-2020.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Atmosphere_GLOBAL-0.25DEG/2.2.0/GLOBAL-0.25DEG_Atmosphere-ERA5-plev-1991-2020.nc"
 
-["GLOBAL-0.25DEG_grid.nc"]
-checksum = "sha256:5ff16fa62830a5bcf93baa975e7fbb6294ba9e94c9a4e30a1ecbec5fb2afbc42"
-size = 49586
-storage_path = "$datasets_dir/Global/GLOBAL-0.25DEG/GLOBAL-0.25DEG_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Atmosphere_GLOBAL-0.25DEG/2.2.0/GLOBAL-0.25DEG_grid.nc"
-
 ["GLOBAL-0.5DEG_Atmosphere-CERES-2001-2020.nc"]
 checksum = "sha256:c2ac88c6c08ee82bcd95fec20132455b5d9ff825288b8ea2a168e4f5cbe99f9c"
 previous_checksums = ["sha256:254fd77e58b54ea5ad79dc5b6d3f6ad945db0c279dab2a007e2f6a7bc6526e7b", "sha256:57cba8bec333989565818feb21b475833f326e83e5d2d9ac6303b5456b93f2df"]
@@ -101,12 +89,6 @@ previous_checksums = ["sha256:65617a1d918b7ebbafefcd4dee7224bfe8414feba916b6d371
 size = 140215813
 storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/GLOBAL-0.5DEG_Atmosphere-ERA5-plev-1991-2020.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Atmosphere_GLOBAL-0.5DEG/2.2.0/GLOBAL-0.5DEG_Atmosphere-ERA5-plev-1991-2020.nc"
-
-["GLOBAL-0.5DEG_grid.nc"]
-checksum = "sha256:43301e8a8f8a7d3a47e181cc3ba1b216c72fbca797d8ed8f8672b5da2c1a95de"
-size = 25589
-storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/GLOBAL-0.5DEG_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Atmosphere_GLOBAL-0.5DEG/2.2.0/GLOBAL-0.5DEG_grid.nc"
 
 ["GLOBAL-1DEG_Atmosphere-CERES-2001-2020.nc"]
 checksum = "sha256:e0a41444ad886731526f8fd4322e54ee5cec569242ff06009317b687af1191ba"
@@ -143,12 +125,6 @@ size = 40944516
 storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_Atmosphere-ERA5-plev-1991-2020.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Atmosphere_GLOBAL-1DEG/2.2.0/GLOBAL-1DEG_Atmosphere-ERA5-plev-1991-2020.nc"
 
-["GLOBAL-1DEG_grid.nc"]
-checksum = "sha256:72658a61a9d89e56a88266b6a3168ba7ea4e18c4c8b0d2a904164c2c047e5d47"
-size = 17869
-storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Atmosphere_GLOBAL-1DEG/2.2.0/GLOBAL-1DEG_grid.nc"
-
 ["GLOBAL-2DEG_Atmosphere-CERES-2001-2020.nc"]
 checksum = "sha256:cc91514c0f2273277a70d51eb8348af03252c0aa290aab48ca151bda2573ffe7"
 previous_checksums = ["sha256:57ab53dba00b2d2b69b1c86ae4ac85998b723743669f2997d3aa801fd29c1608", "sha256:de300b4017ed2243a89bf5f7a95b723a0dabdd251cdae53be74a89b0fe21f549"]
@@ -184,12 +160,6 @@ size = 11719705
 storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_Atmosphere-ERA5-plev-1991-2020.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Atmosphere_GLOBAL-2DEG/2.2.0/GLOBAL-2DEG_Atmosphere-ERA5-plev-1991-2020.nc"
 
-["GLOBAL-2DEG_grid.nc"]
-checksum = "sha256:5fa987a099ab7e60d3a4b22e7bb5bd00cadccc8581874b8d600a38f9a512f104"
-size = 14559
-storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Atmosphere_GLOBAL-2DEG/2.2.0/GLOBAL-2DEG_grid.nc"
-
 ["GLOBAL-5DEG_Atmosphere-CERES-2001-2020.nc"]
 checksum = "sha256:1a22d0f213c323fc693ee7be9a800d3ea6ab81e5804505f88466da25c6ec9dae"
 previous_checksums = ["sha256:4a883f9aa493f232b7112862ba61a05a6f05a3c3fd6d857f524e6b5eecec225a", "sha256:b677b00954d349b57e176ee7da363ed4d8c4b72b2357d2efcdbec797e3185ceb"]
@@ -224,45 +194,3 @@ previous_checksums = ["sha256:c625580a2d79eab7efd706c5d3339ff9e9a4f41a381bb4d8bf
 size = 2111645
 storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_Atmosphere-ERA5-plev-1991-2020.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Atmosphere_GLOBAL-5DEG/2.2.0/GLOBAL-5DEG_Atmosphere-ERA5-plev-1991-2020.nc"
-
-["GLOBAL-5DEG_grid.nc"]
-checksum = "sha256:55c037e0371c20123875dc16ddd01d1e864dd5b5b1b0cb29c9bfa3fd23f24cbf"
-size = 12511
-storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Atmosphere_GLOBAL-5DEG/2.2.0/GLOBAL-5DEG_grid.nc"
-
-["grid_GLOBAL-0.1DEG.txt"]
-checksum = "sha256:5b3a831c01fa4276db84a6d54d7cb5d4da7ca2fbc859ab2a85080a431155e4e3"
-size = 215
-storage_path = "$datasets_dir/Global/GLOBAL-0.1DEG/grid_GLOBAL-0.1DEG.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Atmosphere_GLOBAL-0.1DEG/2.2.0/grid_GLOBAL-0.1DEG.txt"
-
-["grid_GLOBAL-0.25DEG.txt"]
-checksum = "sha256:18ffa92b5b37bbafa504215d99896bfe5ed3d9cada9beed41bf6f79353279d7e"
-size = 218
-storage_path = "$datasets_dir/Global/GLOBAL-0.25DEG/grid_GLOBAL-0.25DEG.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Atmosphere_GLOBAL-0.25DEG/2.2.0/grid_GLOBAL-0.25DEG.txt"
-
-["grid_GLOBAL-0.5DEG.txt"]
-checksum = "sha256:7d6ca9751973abeb4a15b25146d8c6601cd47bf9e2cbf62a9dce3e00519955cd"
-size = 212
-storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/grid_GLOBAL-0.5DEG.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Atmosphere_GLOBAL-0.5DEG/2.2.0/grid_GLOBAL-0.5DEG.txt"
-
-["grid_GLOBAL-1DEG.txt"]
-checksum = "sha256:38acf47f98866cc1c0479566b51a3a3df28fb09aa295652f52f67fffb2c499fd"
-size = 209
-storage_path = "$datasets_dir/Global/GLOBAL-1DEG/grid_GLOBAL-1DEG.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Atmosphere_GLOBAL-1DEG/2.2.0/grid_GLOBAL-1DEG.txt"
-
-["grid_GLOBAL-2DEG.txt"]
-checksum = "sha256:f09996b59b7b7cc91b348c53eec0a8cb246c5b293a890b4912278435d589fec6"
-size = 208
-storage_path = "$datasets_dir/Global/GLOBAL-2DEG/grid_GLOBAL-2DEG.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Atmosphere_GLOBAL-2DEG/2.2.0/grid_GLOBAL-2DEG.txt"
-
-["grid_GLOBAL-5DEG.txt"]
-checksum = "sha256:647911a4f8fd1afecd212683255ca869a1f3b9bdcb3ae180e7a1415cea84d344"
-size = 206
-storage_path = "$datasets_dir/Global/GLOBAL-5DEG/grid_GLOBAL-5DEG.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Atmosphere_GLOBAL-5DEG/2.2.0/grid_GLOBAL-5DEG.txt"

@@ -2,9 +2,9 @@
 
 [_RELEASE]
 date = "2026-10-16"
-git_tag = "regions-v2.6.0"
+git_tag = "regions-v2.6.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Pyrenees_Regions"
-version = "2.6.0"
+version = "2.6.1"
 
 ["PYR-250M_REGIONS.nc"]
 checksum = "sha256:82df379232f5f3979bf1d9dc70bb7e1372fd16364cf4aef9a333d2e6a98a231c"
@@ -13,12 +13,6 @@ size = 69011
 storage_path = "$datasets_dir/Pyrenees/PYR-250M/PYR-250M_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-250M/2.6.0/PYR-250M_REGIONS.nc"
 
-["PYR-250M_grid.nc"]
-checksum = "sha256:3e0709b31b6cd203060fca5f2475acd3966154dc51f263cbdee01334c452df92"
-size = 2204528
-storage_path = "$datasets_dir/Pyrenees/PYR-250M/PYR-250M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-250M/2.6.0/PYR-250M_grid.nc"
-
 ["PYR-2KM_REGIONS.nc"]
 checksum = "sha256:fa3d5c27084b0784f577137047aaf1bec1f8eea657908b8b0a0480c4f9209de5"
 previous_checksums = ["sha256:56569a628e869203fd426f710b00bed57070665941fa58fb3e8613011fcb79cc", "sha256:98f71bb2003455529192b81c9d2268a558df94d0fe4751365f96cb2a0f07eb14", "sha256:6d9680acf8b8575ae2406909c6151204f9e7b4242a932237892db3f2f482dc02", "sha256:de93bec3bde7c9ccd8a79dcfac0795ef2eb469c3e8bfcfcdbf87793f58f6de69"]
@@ -26,43 +20,9 @@ size = 35483
 storage_path = "$datasets_dir/Pyrenees/PYR-2KM/PYR-2KM_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-2KM/2.6.0/PYR-2KM_REGIONS.nc"
 
-["PYR-2KM_grid.nc"]
-checksum = "sha256:20d63f5741b04cbdfbfe1bf5885e4a73a58a3d4fd9db5cd561dd531d0a3ffde9"
-previous_checksums = ["sha256:02d80a754d9fd500540cfb6796be8ad88aefd7d6cf04ac3ac2b86c3bf831b25f"]
-size = 86648
-storage_path = "$datasets_dir/Pyrenees/PYR-2KM/PYR-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-2KM/2.6.0/PYR-2KM_grid.nc"
-
 ["PYR-500M_REGIONS.nc"]
 checksum = "sha256:649953779776dcf6d9c8db3d80e7a2f481adec5a53a5554d6616abe819671bd2"
 previous_checksums = ["sha256:c9ce9a2f672fc4c888d59ecfcbd9cbf22ebf2031784d7e194e3f1f1a028af5e6", "sha256:b98d20b71e8536e72b8fc897b087da92c71e087402a7117d4c1018f609e058c7", "sha256:5e0d2436776c5b135c21379694b134b850b3bd5985c055221d7507ca4b6c9094", "sha256:5783450cc92eefab5091036180562cfe9c734c61772b8158035bfdc91526757e"]
 size = 46977
 storage_path = "$datasets_dir/Pyrenees/PYR-500M/PYR-500M_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-500M/2.6.0/PYR-500M_REGIONS.nc"
-
-["PYR-500M_grid.nc"]
-checksum = "sha256:ac2f0c297dbceae9d9454ff7938f9a7e57624f06a50836c5e410ff011fb490b5"
-previous_checksums = ["sha256:e1171fb45db05153c818f693ebbc2637e9d501d150217e2a9dfbde2c94a98672"]
-size = 696990
-storage_path = "$datasets_dir/Pyrenees/PYR-500M/PYR-500M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-500M/2.6.0/PYR-500M_grid.nc"
-
-["grid_PYR-250M.txt"]
-checksum = "sha256:2cc0852b3af380633a652ae3ce0bd044899edbc75eadbb6ca64ecc92923f8221"
-size = 331
-storage_path = "$datasets_dir/Pyrenees/PYR-250M/grid_PYR-250M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-250M/2.6.0/grid_PYR-250M.txt"
-
-["grid_PYR-2KM.txt"]
-checksum = "sha256:8a8de7189e5797f759a3a8df305e651006339b630895a4b3da06e4c00098e192"
-previous_checksums = ["sha256:cace1dfc9f744dd1d56f0f4560598dd70aa72f1c7bf01cf033a25b04d480b03d"]
-size = 325
-storage_path = "$datasets_dir/Pyrenees/PYR-2KM/grid_PYR-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-2KM/2.6.0/grid_PYR-2KM.txt"
-
-["grid_PYR-500M.txt"]
-checksum = "sha256:f5c3250096ab76fd6c156518227640019fc7938ab600ad440afafc62f241a757"
-previous_checksums = ["sha256:6ca4be959f99fbb9e7c5dad28c9c9f51e63790182a9d04df077762534ad14598"]
-size = 327
-storage_path = "$datasets_dir/Pyrenees/PYR-500M/grid_PYR-500M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Regions_PYR-500M/2.6.0/grid_PYR-500M.txt"

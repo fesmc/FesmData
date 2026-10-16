@@ -1,10 +1,10 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-14"
-git_tag = "atmosphere-v2.2.0"
+date = "2026-10-16"
+git_tag = "atmosphere-v2.2.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Antarctica_Atmosphere"
-version = "2.2.0"
+version = "2.2.1"
 
 ["ANT-16KM_Atmosphere-CERES-2001-2020.nc"]
 checksum = "sha256:f8fecec0a35da0ab5a37596ff3c1979cbfcf7ec7f0d9ff425802a87bb37441b1"
@@ -41,13 +41,6 @@ size = 76112535
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_Atmosphere-ERA5-plev-1991-2020.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Atmosphere_ANT-16KM/2.2.0/ANT-16KM_Atmosphere-ERA5-plev-1991-2020.nc"
 
-["ANT-16KM_grid.nc"]
-checksum = "sha256:dc1fecc6c052b75d57955d69f028216b5449d2997e17a65fb6fd739af2118189"
-previous_checksums = ["sha256:dea44445828fdc3adbae04afc6662224e96a6838c8381f80a855659b3ad6460c", "sha256:0c9b8e003b33ca4188cc54c9d7dbe4932f742ee4f6ac9431d8d38e33fa5af978"]
-size = 766020
-storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Atmosphere_ANT-16KM/2.2.0/ANT-16KM_grid.nc"
-
 ["ANT-32KM_Atmosphere-CERES-2001-2020.nc"]
 checksum = "sha256:270fb36456e392082beca020a21ccea7736604ea640eae269baf05bfa8d0730d"
 previous_checksums = ["sha256:498ca478d07c5a058e12e8121f85244fb5da2379cadccba2aeff318cb8f18e0f", "sha256:c82dfbed3544a56953b9c1301877057122081bc1ca6543b9fa3dc090200fa145"]
@@ -83,13 +76,6 @@ size = 23579020
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_Atmosphere-ERA5-plev-1991-2020.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Atmosphere_ANT-32KM/2.2.0/ANT-32KM_Atmosphere-ERA5-plev-1991-2020.nc"
 
-["ANT-32KM_grid.nc"]
-checksum = "sha256:c91dabc6970bd7b99809d38352627c34d0d24c3ea9797a18c266a8f302ee1958"
-previous_checksums = ["sha256:66765d3512c62479e60ad1095a4ee84b38edb681fe816eddf9896c3a2799efd8", "sha256:49cf80092bf11538d76d480dea852afea71c414565d6123fb01ff4e7e853bee1"]
-size = 190659
-storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Atmosphere_ANT-32KM/2.2.0/ANT-32KM_grid.nc"
-
 ["ANT-8KM_Atmosphere-ERA5-1981-2010.nc"]
 checksum = "sha256:049991f322d162b121b601819281087f95971b32c68f1ac108cb56b78f6ee57b"
 previous_checksums = ["sha256:41cdb04dae7bf00a4a3b55575fc3ddecacd09e1fb58f155615e14c7996ddeb61", "sha256:8f936abf72eb1c40420b614c843c5aef559a6bec8d7eb85946986c39e55493b6"]
@@ -103,28 +89,3 @@ previous_checksums = ["sha256:32c985c65a7ce9522bd7373b214571c231df7fc74080cf08cd
 size = 47752650
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_Atmosphere-ERA5-1991-2020.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Atmosphere_ANT-8KM/2.2.0/ANT-8KM_Atmosphere-ERA5-1991-2020.nc"
-
-["ANT-8KM_grid.nc"]
-checksum = "sha256:866f0fcc4dd06b0fc27fe92d8528d025206288f01b612839490689daaf469d5a"
-previous_checksums = ["sha256:6d00ae1cafbf496c1375c74c9153d92c5e2aec79d8026f004ba0dc26d0c47ece", "sha256:27b6ffe5af1932ac7e1fcf32b8e8219420fe82be6287f09f931efbebed8ec93d"]
-size = 2776497
-storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Atmosphere_ANT-8KM/2.2.0/ANT-8KM_grid.nc"
-
-["grid_ANT-16KM.txt"]
-checksum = "sha256:09d646757fe153b435cee10a90cf772b4626efbe2f187d410eab83876c8305cb"
-size = 467
-storage_path = "$datasets_dir/Antarctica/ANT-16KM/grid_ANT-16KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Atmosphere_ANT-16KM/2.2.0/grid_ANT-16KM.txt"
-
-["grid_ANT-32KM.txt"]
-checksum = "sha256:619c2b14b9667a6ff1efe4de41f1b2bd0ddc8d3e10df6d5fd99222b80be20276"
-size = 466
-storage_path = "$datasets_dir/Antarctica/ANT-32KM/grid_ANT-32KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Atmosphere_ANT-32KM/2.2.0/grid_ANT-32KM.txt"
-
-["grid_ANT-8KM.txt"]
-checksum = "sha256:66ff6285f42ec156b6c6a6c30fcb0d2e4c94e07d67512fb002cb0348b3420ce5"
-size = 465
-storage_path = "$datasets_dir/Antarctica/ANT-8KM/grid_ANT-8KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Atmosphere_ANT-8KM/2.2.0/grid_ANT-8KM.txt"

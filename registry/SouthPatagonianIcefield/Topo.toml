@@ -2,9 +2,9 @@
 
 [_RELEASE]
 date = "2026-10-16"
-git_tag = "topo-v2.6.0"
+git_tag = "topo-v2.6.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=SouthPatagonianIcefield_Topo"
-version = "2.6.0"
+version = "2.6.1"
 
 ["SPI-250M_TOPO-GLO90-GEBCO2026.nc"]
 checksum = "sha256:ccea21143236ce20a3b8afa0d7d25d09e0476e617cc874f260af3fca6e59b2fc"
@@ -12,15 +12,3 @@ previous_checksums = ["sha256:0f7069e2dfcc4e0c102c6afff61add0b5c0e9afb9ca196f13a
 size = 8393056
 storage_path = "$datasets_dir/SouthPatagonianIcefield/SPI-250M/SPI-250M_TOPO-GLO90-GEBCO2026.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SouthPatagonianIcefield_Topo_SPI-250M/2.6.0/SPI-250M_TOPO-GLO90-GEBCO2026.nc"
-
-["SPI-250M_grid.nc"]
-checksum = "sha256:99a05087a73fdc0f9cb9c1ce2aaff35655712ae2528e377a2bc8d7b8cd5ac2c7"
-size = 1008090
-storage_path = "$datasets_dir/SouthPatagonianIcefield/SPI-250M/SPI-250M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SouthPatagonianIcefield_Topo_SPI-250M/2.6.0/SPI-250M_grid.nc"
-
-["grid_SPI-250M.txt"]
-checksum = "sha256:2743ca07ebc8abb1ac58159d5d4b082eb6edec722eb23f3212596ea3d55cf0b7"
-size = 349
-storage_path = "$datasets_dir/SouthPatagonianIcefield/SPI-250M/grid_SPI-250M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SouthPatagonianIcefield_Topo_SPI-250M/2.6.0/grid_SPI-250M.txt"

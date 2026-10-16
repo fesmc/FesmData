@@ -1,10 +1,10 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-14"
-git_tag = "ghf-v2.3.0"
+date = "2026-10-16"
+git_tag = "ghf-v2.3.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Himalaya_GHF"
-version = "2.3.0"
+version = "2.3.1"
 
 ["HIM-2KM_GHF-Davies2013.nc"]
 checksum = "sha256:1698a090199780314ae5d2ab88a075ee108559fe7b4cb5982fadaa57c9c846b6"
@@ -26,15 +26,3 @@ previous_checksums = ["sha256:e147016642d80240ac3a95aa8087a12108ddf177d506d86390
 size = 367647
 storage_path = "$datasets_dir/Himalaya/HIM-2KM/HIM-2KM_GHF-Shapiro2004.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_GHF_HIM-2KM/2.3.0/HIM-2KM_GHF-Shapiro2004.nc"
-
-["HIM-2KM_grid.nc"]
-checksum = "sha256:c80460c96b66ee86b7f0ad0ba2095ab24de793493dda2a341dfa36b5a715a209"
-size = 2883062
-storage_path = "$datasets_dir/Himalaya/HIM-2KM/HIM-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_GHF_HIM-2KM/2.3.0/HIM-2KM_grid.nc"
-
-["grid_HIM-2KM.txt"]
-checksum = "sha256:534cff6d3562a47b21187e2279ce0b3a848e720b093bc7ae578073c24219bdcf"
-size = 333
-storage_path = "$datasets_dir/Himalaya/HIM-2KM/grid_HIM-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_GHF_HIM-2KM/2.3.0/grid_HIM-2KM.txt"

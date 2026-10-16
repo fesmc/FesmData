@@ -2,9 +2,9 @@
 
 [_RELEASE]
 date = "2026-10-16"
-git_tag = "regions-v2.6.0"
+git_tag = "regions-v2.6.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=WilkesBasin_Regions"
-version = "2.6.0"
+version = "2.6.1"
 
 ["WSB-1KM_BASINS-IMBIE2016-refined.nc"]
 checksum = "sha256:7a99ecc502232e33977767308272165c71a414ce5da5a7ad8706740c10a71b55"
@@ -48,12 +48,6 @@ size = 488230
 storage_path = "$datasets_dir/WilkesBasin/WSB-1KM/WSB-1KM_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Regions_WSB-1KM/2.6.0/WSB-1KM_REGIONS.nc"
 
-["WSB-1KM_grid.nc"]
-checksum = "sha256:f9f76dbe46429b2377b8a835d0dff284099155ce6f72e7d0b878da790a97e056"
-size = 3623202
-storage_path = "$datasets_dir/WilkesBasin/WSB-1KM/WSB-1KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Regions_WSB-1KM/2.6.0/WSB-1KM_grid.nc"
-
 ["WSB-500M_BASINS-IMBIE2016-refined.nc"]
 checksum = "sha256:c4ae77679e7ab18622ad60dac82a421c48d731e68c0a250e9a8ce5951417b4be"
 previous_checksums = ["sha256:7cb625cb7b6d49fd9c61b173b3a6375143da34888ebc1db60957d07aa889a0d3", "sha256:c5c3b156a1a28e4c72b5138adf20872beb63acdb776fe0afdbabb0a79a35006f"]
@@ -95,21 +89,3 @@ previous_checksums = ["sha256:c351874b7c46c06a189248f4c31fa4ed2580a3fe7f1dbb7c37
 size = 1394025
 storage_path = "$datasets_dir/WilkesBasin/WSB-500M/WSB-500M_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Regions_WSB-500M/2.6.0/WSB-500M_REGIONS.nc"
-
-["WSB-500M_grid.nc"]
-checksum = "sha256:ae75837654f0c5f8d19ddda8b84dd8a12aa354240a9c62e965d5cc714822585a"
-size = 11720500
-storage_path = "$datasets_dir/WilkesBasin/WSB-500M/WSB-500M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Regions_WSB-500M/2.6.0/WSB-500M_grid.nc"
-
-["grid_WSB-1KM.txt"]
-checksum = "sha256:6eb013f46c20176e719fe3f4458c27a2930b3ceafc95e2440ea04bbee0bd32a2"
-size = 466
-storage_path = "$datasets_dir/WilkesBasin/WSB-1KM/grid_WSB-1KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Regions_WSB-1KM/2.6.0/grid_WSB-1KM.txt"
-
-["grid_WSB-500M.txt"]
-checksum = "sha256:34c44cfad7a5c085807ba0ebb81f03c8a3b176eb7c8ff267329b4c81a95fa9fe"
-size = 466
-storage_path = "$datasets_dir/WilkesBasin/WSB-500M/grid_WSB-500M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Regions_WSB-500M/2.6.0/grid_WSB-500M.txt"

@@ -1,10 +1,10 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-14"
-git_tag = "sediment-v2.2.0"
+date = "2026-10-16"
+git_tag = "sediment-v2.2.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=North_Sediment"
-version = "2.2.0"
+version = "2.2.1"
 
 ["NH-16KM_Sediment-CRUST1.nc"]
 checksum = "sha256:eb38703cb4b9955a1099a80e963a1cdb319ef21d5fdff2998e4b2f9ca5333d57"
@@ -27,13 +27,6 @@ size = 563523
 storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_Sediment-GlobSed.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Sediment_NH-16KM/2.2.0/NH-16KM_Sediment-GlobSed.nc"
 
-["NH-16KM_grid.nc"]
-checksum = "sha256:854570fc78e4fbb918d307c80874ceeb85265df6ab6b76393344a98e4a874abc"
-previous_checksums = ["sha256:5a64b9ab83264c23ca7c96aa0a1a1b02debcea94890fb2556039c205a148d957"]
-size = 1592909
-storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Sediment_NH-16KM/2.2.0/NH-16KM_grid.nc"
-
 ["NH-32KM_Sediment-CRUST1.nc"]
 checksum = "sha256:796a7caf02afa53d6933d9b23a716b63fed26a9ce39c01033d52af733af46cf7"
 previous_checksums = ["sha256:8113abe248d80267b2cd9ca5111e068e0c82e2162c01860d576c8bb326f48de7", "sha256:0f02fa56b16de0a29b19e4c31dea89ef0bbef90a79b00a8f15bb91d854807070"]
@@ -54,13 +47,6 @@ previous_checksums = ["sha256:32c9c1ca9179ff596daab5964e144269f0854e501fb2784837
 size = 182031
 storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_Sediment-GlobSed.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Sediment_NH-32KM/2.2.0/NH-32KM_Sediment-GlobSed.nc"
-
-["NH-32KM_grid.nc"]
-checksum = "sha256:5acfb784cc05a51351ad8cbfb8d51d8256e96833d9b17acecf39a43c92196c63"
-previous_checksums = ["sha256:3d48fc58818a8820d1c19088ab3ac0a0aa5f463ca080d4d5f8f60d0fc525894f"]
-size = 464986
-storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Sediment_NH-32KM/2.2.0/NH-32KM_grid.nc"
 
 ["NH-4KM_Sediment-CRUST1.nc"]
 checksum = "sha256:9b6c74533525e944d1ca852220bae12af2c1f9ec89e0b5c2e93ef61f0d961f5f"
@@ -83,13 +69,6 @@ size = 6624923
 storage_path = "$datasets_dir/North/NH-4KM/NH-4KM_Sediment-GlobSed.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Sediment_NH-4KM/2.2.0/NH-4KM_Sediment-GlobSed.nc"
 
-["NH-4KM_grid.nc"]
-checksum = "sha256:9bced2023750c842ecc2da1da032d7c8e70d9b55ab3b9adceef7fd5afbc7b9e8"
-previous_checksums = ["sha256:e237d8848d1250e9fa59fc281f80e16784adff8c496c9d9989f29046f6830e94"]
-size = 18052984
-storage_path = "$datasets_dir/North/NH-4KM/NH-4KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Sediment_NH-4KM/2.2.0/NH-4KM_grid.nc"
-
 ["NH-8KM_Sediment-CRUST1.nc"]
 checksum = "sha256:f09e4d0b1e4edef965730fc8ed7b8888602149af00706e97e8986b619d6a5be5"
 previous_checksums = ["sha256:4cbee9c89a9261dbbf846a8b2dfe27641239d246fb380c12e80892267ae125e3", "sha256:b2fad80dcb163005c48a009c910928c49848225a93f56bf7c4d489abd33ba0a6"]
@@ -110,34 +89,3 @@ previous_checksums = ["sha256:e46b78b5bba522ebff2fad43d68517dbb09d3defd41f02bd5e
 size = 1933251
 storage_path = "$datasets_dir/North/NH-8KM/NH-8KM_Sediment-GlobSed.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Sediment_NH-8KM/2.2.0/NH-8KM_Sediment-GlobSed.nc"
-
-["NH-8KM_grid.nc"]
-checksum = "sha256:ca974e22347230883fa4b6a84f9213b4dc984ab36195dcab4c54646ba27134c2"
-previous_checksums = ["sha256:ae6fa2991da8179295e27f76c8de94a400b394c3335375b0255f570a6ceb95cf"]
-size = 5426807
-storage_path = "$datasets_dir/North/NH-8KM/NH-8KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Sediment_NH-8KM/2.2.0/NH-8KM_grid.nc"
-
-["grid_NH-16KM.txt"]
-checksum = "sha256:b784904b58207dc754c6dbb670f90ccd35dfccfadbd68bfea1c239abac6a7c89"
-size = 467
-storage_path = "$datasets_dir/North/NH-16KM/grid_NH-16KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Sediment_NH-16KM/2.2.0/grid_NH-16KM.txt"
-
-["grid_NH-32KM.txt"]
-checksum = "sha256:6562aa2ab0d5e8ac51d50e7caac9b766095e22eb71e450ead46ce581543d44a4"
-size = 466
-storage_path = "$datasets_dir/North/NH-32KM/grid_NH-32KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Sediment_NH-32KM/2.2.0/grid_NH-32KM.txt"
-
-["grid_NH-4KM.txt"]
-checksum = "sha256:4338207aa84d7d969fa1ea8827f49543d1f8c6a16329965e82d1ce27874918c7"
-size = 468
-storage_path = "$datasets_dir/North/NH-4KM/grid_NH-4KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Sediment_NH-4KM/2.2.0/grid_NH-4KM.txt"
-
-["grid_NH-8KM.txt"]
-checksum = "sha256:8220a06ea13149c0973191099db52b5d789c8ecc190c3d1b8ed05223dcb25b41"
-size = 468
-storage_path = "$datasets_dir/North/NH-8KM/grid_NH-8KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Sediment_NH-8KM/2.2.0/grid_NH-8KM.txt"

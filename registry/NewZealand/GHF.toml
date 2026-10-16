@@ -1,10 +1,10 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-14"
-git_tag = "ghf-v2.3.0"
+date = "2026-10-16"
+git_tag = "ghf-v2.3.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=NewZealand_GHF"
-version = "2.3.0"
+version = "2.3.1"
 
 ["NZ-2KM_GHF-Davies2013.nc"]
 checksum = "sha256:211bf42156d6a19a7ce5ea6ffe3b2899e5088be0dea254f0e75ec630a0a1d271"
@@ -23,15 +23,3 @@ checksum = "sha256:5804d719a204f08da44a4bda1c0309a19fb0ed2914b8eebf7c9972205cc9f
 size = 58288
 storage_path = "$datasets_dir/NewZealand/NZ-2KM/NZ-2KM_GHF-Shapiro2004.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_GHF_NZ-2KM/2.3.0/NZ-2KM_GHF-Shapiro2004.nc"
-
-["NZ-2KM_grid.nc"]
-checksum = "sha256:8a6333b930e208cef12d1b144497cd478c0881052c7caf42e928b1b6855f32b2"
-size = 416034
-storage_path = "$datasets_dir/NewZealand/NZ-2KM/NZ-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_GHF_NZ-2KM/2.3.0/NZ-2KM_grid.nc"
-
-["grid_NZ-2KM.txt"]
-checksum = "sha256:00ec7490a3740cfcf1dfa4058f7ef1b5d024f831e2ed1a97075c73bf1a8a7adc"
-size = 334
-storage_path = "$datasets_dir/NewZealand/NZ-2KM/grid_NZ-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_GHF_NZ-2KM/2.3.0/grid_NZ-2KM.txt"

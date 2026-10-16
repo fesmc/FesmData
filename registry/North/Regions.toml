@@ -2,9 +2,9 @@
 
 [_RELEASE]
 date = "2026-10-16"
-git_tag = "regions-v2.6.0"
+git_tag = "regions-v2.6.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=North_Regions"
-version = "2.6.0"
+version = "2.6.1"
 
 ["NH-16KM_BASINS-Mouginot2019.nc"]
 checksum = "sha256:a40acc3781ee6061cf6b7ca44d5507d330d66aef1720c8c94e4ef638ed831c51"
@@ -41,13 +41,6 @@ size = 385175
 storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Regions_NH-16KM/2.6.0/NH-16KM_REGIONS.nc"
 
-["NH-16KM_grid.nc"]
-checksum = "sha256:854570fc78e4fbb918d307c80874ceeb85265df6ab6b76393344a98e4a874abc"
-previous_checksums = ["sha256:5a64b9ab83264c23ca7c96aa0a1a1b02debcea94890fb2556039c205a148d957"]
-size = 1592909
-storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Regions_NH-16KM/2.6.0/NH-16KM_grid.nc"
-
 ["NH-2KM_BASINS-Mouginot2019.nc"]
 checksum = "sha256:7eb9bf7004ece963b6608b57355daa3756a6bdad4fe2d9eb693f255a7e582784"
 previous_checksums = ["sha256:9a6046e494abb535219a34305b984fe9520f4ccbeb2763421d6bfc7ab7a16d21", "sha256:42dd052e5a841295a31f86602d40297c687fddd6b5466d9616df79fba2351f6b", "sha256:ce49dbc157a8d6feb64dc715e9533f5c336cb9c214c2b452e2fa68504efc3e21", "sha256:e2af5f6f01eb7a7c9b137346ec27ba06b63c28dbfa9fc0623ca1782bb1e163a1", "sha256:15f6735cbf01abf280e2738ee230cf5700490f7a4bb4874bd6d32904d2b3d600", "sha256:bacd28b0bf1b0f9d9e84f237e5a7d1ab84d8f92c10c8d9b36c01f604e6bdf724"]
@@ -82,13 +75,6 @@ previous_checksums = ["sha256:4b32c6316c5d69148da1be8f95ed809bae98c7e76d0330f7e3
 size = 7864410
 storage_path = "$datasets_dir/North/NH-2KM/NH-2KM_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Regions_NH-2KM/2.6.0/NH-2KM_REGIONS.nc"
-
-["NH-2KM_grid.nc"]
-checksum = "sha256:9100831d04b2fb2ca91e9a51fd91b6546b2bf4a96a0b0cae533475e4ec485281"
-previous_checksums = ["sha256:17ea7246834ca75081390a11841f74d1316d1f58fcc4bb33e6df3d5a2b3febe6"]
-size = 60833953
-storage_path = "$datasets_dir/North/NH-2KM/NH-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Regions_NH-2KM/2.6.0/NH-2KM_grid.nc"
 
 ["NH-32KM_BASINS-Mouginot2019.nc"]
 checksum = "sha256:849fb227d390584212ce64e04b4eaeccbc28620efff152c090388458e2642d05"
@@ -125,13 +111,6 @@ size = 151012
 storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Regions_NH-32KM/2.6.0/NH-32KM_REGIONS.nc"
 
-["NH-32KM_grid.nc"]
-checksum = "sha256:5acfb784cc05a51351ad8cbfb8d51d8256e96833d9b17acecf39a43c92196c63"
-previous_checksums = ["sha256:3d48fc58818a8820d1c19088ab3ac0a0aa5f463ca080d4d5f8f60d0fc525894f"]
-size = 464986
-storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Regions_NH-32KM/2.6.0/NH-32KM_grid.nc"
-
 ["NH-4KM_BASINS-Mouginot2019.nc"]
 checksum = "sha256:e404f0f17c807f8fc0c11fa810bfb9c6da0ed21586c0a8d0d267b53c35745c1b"
 previous_checksums = ["sha256:74d016c5488aeef79edf6a9e0ce21443c04791fa43b79bf1cff24ff98b440c44", "sha256:a03edde3a1b3733b9c23e6cbf4b8fffd216a9c130f93c3af1b714992e47a5891", "sha256:014dacc9cc343106e8e5bc07c85a3acc7c798c855ffa5784cb421616f71f8731", "sha256:dbe22eb20177cda3a303f064be9a1c0029e5e0c2c27957d009c283a44ef92240", "sha256:9552d366890831312d1e3d4675b8c4e1de6594162a3638b4a7c61cae3ca33701", "sha256:3d362b762b0531ef30fffe5ea4f8803a70a99daa7740e292df6e97c9b6250f17"]
@@ -167,13 +146,6 @@ size = 2942106
 storage_path = "$datasets_dir/North/NH-4KM/NH-4KM_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Regions_NH-4KM/2.6.0/NH-4KM_REGIONS.nc"
 
-["NH-4KM_grid.nc"]
-checksum = "sha256:9bced2023750c842ecc2da1da032d7c8e70d9b55ab3b9adceef7fd5afbc7b9e8"
-previous_checksums = ["sha256:e237d8848d1250e9fa59fc281f80e16784adff8c496c9d9989f29046f6830e94"]
-size = 18052984
-storage_path = "$datasets_dir/North/NH-4KM/NH-4KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Regions_NH-4KM/2.6.0/NH-4KM_grid.nc"
-
 ["NH-8KM_BASINS-Mouginot2019.nc"]
 checksum = "sha256:57b5eeddaa299dd6753c54d335d8366f391ca3d0965984f754ea3715544567f5"
 previous_checksums = ["sha256:dee3f6d3cfa1d5e24be657ef88f3b9b91adab4d9e6e4945368d55fdc10210360", "sha256:8ba2584d2f1b8834a517e91fb0d7cc0aa1ac85e007d0fae2c28a0a4e519118f4", "sha256:006c40e961903ad7edd2f6ab1df8e01788ab2da87bebfbdab812a49e528d7314", "sha256:7c2ee63dfdfe96a01a8b5d6762099b807e74d8571ed8618a8b26d1f3f913509c", "sha256:d1cfb143acde5e4a95f4ae39af812106b8352d5cdb43b246ef4bf6b9282d568c", "sha256:8579a204c5e0e723659624f3e1b04ee883bd19c5c4ea1cbee520854530a0cafe"]
@@ -208,40 +180,3 @@ previous_checksums = ["sha256:95243d01642ff1e9cdd926fcfff1f46834f3cc42193f9c3961
 size = 1072034
 storage_path = "$datasets_dir/North/NH-8KM/NH-8KM_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Regions_NH-8KM/2.6.0/NH-8KM_REGIONS.nc"
-
-["NH-8KM_grid.nc"]
-checksum = "sha256:ca974e22347230883fa4b6a84f9213b4dc984ab36195dcab4c54646ba27134c2"
-previous_checksums = ["sha256:ae6fa2991da8179295e27f76c8de94a400b394c3335375b0255f570a6ceb95cf"]
-size = 5426807
-storage_path = "$datasets_dir/North/NH-8KM/NH-8KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Regions_NH-8KM/2.6.0/NH-8KM_grid.nc"
-
-["grid_NH-16KM.txt"]
-checksum = "sha256:b784904b58207dc754c6dbb670f90ccd35dfccfadbd68bfea1c239abac6a7c89"
-size = 467
-storage_path = "$datasets_dir/North/NH-16KM/grid_NH-16KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Regions_NH-16KM/2.6.0/grid_NH-16KM.txt"
-
-["grid_NH-2KM.txt"]
-checksum = "sha256:8512e56bf6d59c6a51776662bdc110a6179897b1b4e1b898f2bce8bdb71c7189"
-size = 469
-storage_path = "$datasets_dir/North/NH-2KM/grid_NH-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Regions_NH-2KM/2.6.0/grid_NH-2KM.txt"
-
-["grid_NH-32KM.txt"]
-checksum = "sha256:6562aa2ab0d5e8ac51d50e7caac9b766095e22eb71e450ead46ce581543d44a4"
-size = 466
-storage_path = "$datasets_dir/North/NH-32KM/grid_NH-32KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Regions_NH-32KM/2.6.0/grid_NH-32KM.txt"
-
-["grid_NH-4KM.txt"]
-checksum = "sha256:4338207aa84d7d969fa1ea8827f49543d1f8c6a16329965e82d1ce27874918c7"
-size = 468
-storage_path = "$datasets_dir/North/NH-4KM/grid_NH-4KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Regions_NH-4KM/2.6.0/grid_NH-4KM.txt"
-
-["grid_NH-8KM.txt"]
-checksum = "sha256:8220a06ea13149c0973191099db52b5d789c8ecc190c3d1b8ed05223dcb25b41"
-size = 468
-storage_path = "$datasets_dir/North/NH-8KM/grid_NH-8KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Regions_NH-8KM/2.6.0/grid_NH-8KM.txt"

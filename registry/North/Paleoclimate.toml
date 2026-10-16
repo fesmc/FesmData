@@ -2,9 +2,9 @@
 
 [_RELEASE]
 date = "2026-10-16"
-git_tag = "paleoclimate-v2.6.0"
+git_tag = "paleoclimate-v2.6.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=North_Paleoclimate"
-version = "2.6.0"
+version = "2.6.1"
 
 ["NH-16KM_Paleoclimate-PMIP3-CCSM4-lgm.nc"]
 checksum = "sha256:13343a0cf6894cafeec4394f34e3cbe40a92cb8b194505881acae6cf3a2a3d19"
@@ -348,13 +348,6 @@ previous_checksums = ["sha256:7b53067d36187763b2b8447414e772ab37f41d95ff9e815ad9
 size = 8645980
 storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_Paleoclimate-PMIP4-piControl-stdev.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Paleoclimate_NH-16KM/2.6.0/NH-16KM_Paleoclimate-PMIP4-piControl-stdev.nc"
-
-["NH-16KM_grid.nc"]
-checksum = "sha256:854570fc78e4fbb918d307c80874ceeb85265df6ab6b76393344a98e4a874abc"
-previous_checksums = ["sha256:5a64b9ab83264c23ca7c96aa0a1a1b02debcea94890fb2556039c205a148d957"]
-size = 1592909
-storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Paleoclimate_NH-16KM/2.6.0/NH-16KM_grid.nc"
 
 ["NH-32KM_Paleoclimate-CLIMBER3a-lgm_1p7strong-ocean.nc"]
 checksum = "sha256:5174f9bb15040239d5c39dbebd26233c4daeb4b243cc75eb7d3476ef7f11a6f3"
@@ -788,22 +781,3 @@ previous_checksums = ["sha256:48e9d2200a605558708c1f6635dc1b06acf057351fb81f19ef
 size = 2660802
 storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_Paleoclimate-PMIP4-piControl-stdev.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Paleoclimate_NH-32KM/2.6.0/NH-32KM_Paleoclimate-PMIP4-piControl-stdev.nc"
-
-["NH-32KM_grid.nc"]
-checksum = "sha256:5acfb784cc05a51351ad8cbfb8d51d8256e96833d9b17acecf39a43c92196c63"
-previous_checksums = ["sha256:3d48fc58818a8820d1c19088ab3ac0a0aa5f463ca080d4d5f8f60d0fc525894f"]
-size = 464986
-storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Paleoclimate_NH-32KM/2.6.0/NH-32KM_grid.nc"
-
-["grid_NH-16KM.txt"]
-checksum = "sha256:b784904b58207dc754c6dbb670f90ccd35dfccfadbd68bfea1c239abac6a7c89"
-size = 467
-storage_path = "$datasets_dir/North/NH-16KM/grid_NH-16KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Paleoclimate_NH-16KM/2.6.0/grid_NH-16KM.txt"
-
-["grid_NH-32KM.txt"]
-checksum = "sha256:6562aa2ab0d5e8ac51d50e7caac9b766095e22eb71e450ead46ce581543d44a4"
-size = 466
-storage_path = "$datasets_dir/North/NH-32KM/grid_NH-32KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Paleoclimate_NH-32KM/2.6.0/grid_NH-32KM.txt"

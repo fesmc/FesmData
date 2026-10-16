@@ -2,9 +2,9 @@
 
 [_RELEASE]
 date = "2026-10-16"
-git_tag = "regions-v2.6.0"
+git_tag = "regions-v2.6.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Greenland_Regions"
-version = "2.6.0"
+version = "2.6.1"
 
 ["GRL-16KM_BASINS-Mouginot2019.nc"]
 checksum = "sha256:2922efd41fb83d288be396c5b2f8e5801ea1357a50b08cc68034f6a37ba04555"
@@ -55,13 +55,6 @@ size = 66664
 storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Regions_GRL-16KM/2.6.0/GRL-16KM_REGIONS.nc"
 
-["GRL-16KM_grid.nc"]
-checksum = "sha256:a9666b8e2cb615e449209b34094ad14dbb05e06b7d4c34cd7d6b273cfaf9f7a7"
-previous_checksums = ["sha256:e835518450bae0a863fdb7cd68adc7d4f59c48c790090d497939939518960d41"]
-size = 133056
-storage_path = "$datasets_dir/Greenland/GRL-16KM/GRL-16KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Regions_GRL-16KM/2.6.0/GRL-16KM_grid.nc"
-
 ["GRL-1KM_BASINS-Mouginot2019.nc"]
 checksum = "sha256:ae7c703adb1bf5f9ddf617f7407b7394847faa9d52080ba604fcb13c2b3c5f0f"
 previous_checksums = ["sha256:42fba20ee7a8741dc50bde30b071fb87673a2a6109eab1dd39caadd72f3cf824", "sha256:26148615cf486e460d93c3ec8316bcd611160c77f69f8b0db01a33af24906397", "sha256:1993e5bcc15f2e32f605a74db88ee60f7428e3ab7156b6486ec9a1a6c217efeb", "sha256:12e46b4177c228a0cbfc6bdf457df33d5a8b268e5f2a49ea8f2c795bcf9a574c", "sha256:c3590ccad566cf3da451ca0054d28770f1d1b235d254123f4f66be10a8e98abe", "sha256:96a6bf28dba861803fa2f517a43d19ce3a61826d9f318eecac6c4e2450385048"]
@@ -110,13 +103,6 @@ previous_checksums = ["sha256:b84e8678cb99313837fb34fc0422fff54352cd1dabdcf02755
 size = 2335734
 storage_path = "$datasets_dir/Greenland/GRL-1KM/GRL-1KM_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Regions_GRL-1KM/2.6.0/GRL-1KM_REGIONS.nc"
-
-["GRL-1KM_grid.nc"]
-checksum = "sha256:de8de4b5e5b9499e1d7fc99bb0980c4509d31b16ac96292af7068fa384ada741"
-previous_checksums = ["sha256:04da63872f29f82b9a5ae9f8f3dbb0996e9b8a272f539629d1af272147c92f9b"]
-size = 13836137
-storage_path = "$datasets_dir/Greenland/GRL-1KM/GRL-1KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Regions_GRL-1KM/2.6.0/GRL-1KM_grid.nc"
 
 ["GRL-2KM_BASINS-Mouginot2019.nc"]
 checksum = "sha256:d84c16749cd2f658af6b0bfd5173c23e41133cea3ef18fd03bab3d8776194733"
@@ -167,13 +153,6 @@ size = 866548
 storage_path = "$datasets_dir/Greenland/GRL-2KM/GRL-2KM_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Regions_GRL-2KM/2.6.0/GRL-2KM_REGIONS.nc"
 
-["GRL-2KM_grid.nc"]
-checksum = "sha256:967ccf71dec65c6426c88371cc516cd34f7946b5bdb1036b43a52ad81baefb3b"
-previous_checksums = ["sha256:f14a977d6e3a1f3163a45f02a604b05efc34d00a2f27fba14f8114ddf5725fc1"]
-size = 4100509
-storage_path = "$datasets_dir/Greenland/GRL-2KM/GRL-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Regions_GRL-2KM/2.6.0/GRL-2KM_grid.nc"
-
 ["GRL-32KM_BASINS-Mouginot2019.nc"]
 checksum = "sha256:b68d5f1e9f8fdf9552b0d71da3dc30f843f4baba377a6760f4e952bf1c0a23ae"
 previous_checksums = ["sha256:aa43eeebc9a3a0f816c6bf18d20bd3770f760e62fa04451e073f52650e826543", "sha256:5254656848a1acfecf0762912c552fce0fddd9b3f2094434083982ad6cd5d4c4", "sha256:6ec44fb52c35bd69ed4d5485335b0239460078399c85e636839087a6107171a3", "sha256:153bf580df3c374233edec1d520d03ca1b1a5dbc42d7219b4dec402e981d125c", "sha256:3b379c5fb94422c9a6e8a64738be1c981beaa417179013f56c60bc855bd9ad7f", "sha256:4839fb2aacdd169525b14fe477342412b1e638fdd5d37f3e94d672ffbf4f6cc8"]
@@ -222,13 +201,6 @@ previous_checksums = ["sha256:9e168c0e9136f90fdde7b5c062260dd1421fef31e51a46e27a
 size = 42365
 storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Regions_GRL-32KM/2.6.0/GRL-32KM_REGIONS.nc"
-
-["GRL-32KM_grid.nc"]
-checksum = "sha256:6d904e17430d91f2485e2cb4af96bd9475ee857ab7f807a5ae0cb157d69bf60c"
-previous_checksums = ["sha256:c922307bd72e9e5bd3d10d86b97e3c108dcd5a4264dd47b305b9c562ba81e775"]
-size = 52256
-storage_path = "$datasets_dir/Greenland/GRL-32KM/GRL-32KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Regions_GRL-32KM/2.6.0/GRL-32KM_grid.nc"
 
 ["GRL-4KM_BASINS-Mouginot2019.nc"]
 checksum = "sha256:9d55643042ae778092a05f0d86e56aa087fed5742d3489503eeba0a926d357d8"
@@ -279,13 +251,6 @@ size = 320036
 storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Regions_GRL-4KM/2.6.0/GRL-4KM_REGIONS.nc"
 
-["GRL-4KM_grid.nc"]
-checksum = "sha256:453c971ace52027c979a0dcaad7b6522268401bf5fc9e07247c5aed8b10b0166"
-previous_checksums = ["sha256:bfc44b679d56099bfb9306c3bfe8d74d1663a5b7168c2f18b404fdb3b6cabe4f"]
-size = 1250523
-storage_path = "$datasets_dir/Greenland/GRL-4KM/GRL-4KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Regions_GRL-4KM/2.6.0/GRL-4KM_grid.nc"
-
 ["GRL-500M_BASINS-Mouginot2019.nc"]
 checksum = "sha256:f5ceed77c5ec3149304118ebf0fb65ae7c02a758c2efbb3d3dc586d15bff5809"
 previous_checksums = ["sha256:3909eb3bebee28d1ef5d5435280a056538f3fe75ca1dcbf4a032b8564bcaf0e6", "sha256:1bd5ffe3e0150fb1e069f82d99ce378e131ec154f1b0caf8d58363de0dd0209e", "sha256:d1996131497f28a7c212b826838a1615c2bcc81d2c515567c99ed685d00c5f6f", "sha256:2342239984cc68cc8f551e781ea9f94716108b687214307fef8631e619d52807", "sha256:28c860fcc8ef5c8cf56041961f96d2252ea26256a478dad997fb27824ce632a7", "sha256:eadc75f16e583a664b3335d522d0545230cf0a7d7d58cfd2d3c903cf19512f83"]
@@ -335,13 +300,6 @@ size = 6170032
 storage_path = "$datasets_dir/Greenland/GRL-500M/GRL-500M_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Regions_GRL-500M/2.6.0/GRL-500M_REGIONS.nc"
 
-["GRL-500M_grid.nc"]
-checksum = "sha256:9f943ffaa2e21b3cef134a79143fc8ebd5d1ea85ec88621101bc185ba794142e"
-previous_checksums = ["sha256:b05848d86ae7e9cec6c530c7f2ea298350898c1410ce6d86fe6589ec20567045"]
-size = 45594342
-storage_path = "$datasets_dir/Greenland/GRL-500M/GRL-500M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Regions_GRL-500M/2.6.0/GRL-500M_grid.nc"
-
 ["GRL-8KM_BASINS-Mouginot2019.nc"]
 checksum = "sha256:2ae8701bc742f355d4ce50a6da2badaecf321a7ef2da7c08f38ebd4c5f72fb6e"
 previous_checksums = ["sha256:e04253e28c21f7235b021b91c6b5cec23fdac03b4a4333cae5df0bbf8f2ab1c8", "sha256:4e005f5ef26c81f81b4fba22cd04bcfef6cdd8905bd7eeb9383ae2dd8ee46392", "sha256:8b8f6da6f449ebcec5852f978de2b5c2add664fdc6fe117c9243b35b84913026", "sha256:a49d8a8c78559a99d6bc91f90e7fe187c055622f272df2e3b56da540e27a6ef4", "sha256:46080b3f042e4021fa99611689130ad0b2480d96fd646cd6747dffa7cb6680e8", "sha256:7c4ec41f996fcfa61494cfa8b39b0cdea1876c70bc79fbfce8044aa59eb2cfce"]
@@ -390,52 +348,3 @@ previous_checksums = ["sha256:6a32e432b0b0690fbdb35ba018ee7210595a3bbd34904a3ebf
 size = 128564
 storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Regions_GRL-8KM/2.6.0/GRL-8KM_REGIONS.nc"
-
-["GRL-8KM_grid.nc"]
-checksum = "sha256:1887dbadad9d5c78b94f72af5db1d7d17381da34ca2b3b114f27ec711e4eeb38"
-previous_checksums = ["sha256:a7c9769dfbac2eefa4f4a79985475995596d3035f3481009cfff72c2c45fb40e"]
-size = 393325
-storage_path = "$datasets_dir/Greenland/GRL-8KM/GRL-8KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Regions_GRL-8KM/2.6.0/GRL-8KM_grid.nc"
-
-["grid_GRL-16KM.txt"]
-checksum = "sha256:96d8ae58fe971c0fe4bcf3433b0f78c1c46af7104133c842859d47b655060cd6"
-size = 465
-storage_path = "$datasets_dir/Greenland/GRL-16KM/grid_GRL-16KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Regions_GRL-16KM/2.6.0/grid_GRL-16KM.txt"
-
-["grid_GRL-1KM.txt"]
-checksum = "sha256:6c3c8dcbe453c0b9226de89c2c6349a5f1c8b9eb11b395fafcc03e514e756ae6"
-size = 467
-storage_path = "$datasets_dir/Greenland/GRL-1KM/grid_GRL-1KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Regions_GRL-1KM/2.6.0/grid_GRL-1KM.txt"
-
-["grid_GRL-2KM.txt"]
-checksum = "sha256:d795d6d9de510cf0e66e83fb14a1a16680f9914baffb4e23fb521553bf0c47b3"
-size = 466
-storage_path = "$datasets_dir/Greenland/GRL-2KM/grid_GRL-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Regions_GRL-2KM/2.6.0/grid_GRL-2KM.txt"
-
-["grid_GRL-32KM.txt"]
-checksum = "sha256:60caa1794ee7701429bc7ccece8aa52f1f4555ddc051c056409acb398cad52a0"
-size = 462
-storage_path = "$datasets_dir/Greenland/GRL-32KM/grid_GRL-32KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Regions_GRL-32KM/2.6.0/grid_GRL-32KM.txt"
-
-["grid_GRL-4KM.txt"]
-checksum = "sha256:17883e1fab0cfa9f8b288bb7d2fb6fa27955ff3a437d06b0ec4d0fb1e358165f"
-size = 464
-storage_path = "$datasets_dir/Greenland/GRL-4KM/grid_GRL-4KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Regions_GRL-4KM/2.6.0/grid_GRL-4KM.txt"
-
-["grid_GRL-500M.txt"]
-checksum = "sha256:7731e4372f47b90a680fc2a2a329da0988c1c8448eb6636894e6718e946c9d57"
-size = 468
-storage_path = "$datasets_dir/Greenland/GRL-500M/grid_GRL-500M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Regions_GRL-500M/2.6.0/grid_GRL-500M.txt"
-
-["grid_GRL-8KM.txt"]
-checksum = "sha256:455c0a221c44c016c9129b7e1305cc2e1cf1f17be11aace7a68103e92f6c2c5c"
-size = 463
-storage_path = "$datasets_dir/Greenland/GRL-8KM/grid_GRL-8KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Regions_GRL-8KM/2.6.0/grid_GRL-8KM.txt"

@@ -2,9 +2,9 @@
 
 [_RELEASE]
 date = "2026-10-16"
-git_tag = "regions-v2.6.0"
+git_tag = "regions-v2.6.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=NorthPatagonianIcefield_Regions"
-version = "2.6.0"
+version = "2.6.1"
 
 ["NPI-250M_DOMAINS.nc"]
 checksum = "sha256:882c5c3c2f2da8176ce1d1bab06396f0872300f6ec07e00308a6e69408fac911"
@@ -19,15 +19,3 @@ previous_checksums = ["sha256:a6785e39cd1165e5de7bbf787cf11bdb29db72e45e6a2a9429
 size = 89595
 storage_path = "$datasets_dir/NorthPatagonianIcefield/NPI-250M/NPI-250M_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NorthPatagonianIcefield_Regions_NPI-250M/2.6.0/NPI-250M_REGIONS.nc"
-
-["NPI-250M_grid.nc"]
-checksum = "sha256:e622e73dac435e3f26bc47251cf5239192877914b7f82e8c5fc63373f92e71cf"
-size = 320693
-storage_path = "$datasets_dir/NorthPatagonianIcefield/NPI-250M/NPI-250M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NorthPatagonianIcefield_Regions_NPI-250M/2.6.0/NPI-250M_grid.nc"
-
-["grid_NPI-250M.txt"]
-checksum = "sha256:f286d516cb7fd8b24cb84caaa59bc1b6f06226a14e43a9657e3242f2bd58c9c0"
-size = 348
-storage_path = "$datasets_dir/NorthPatagonianIcefield/NPI-250M/grid_NPI-250M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NorthPatagonianIcefield_Regions_NPI-250M/2.6.0/grid_NPI-250M.txt"

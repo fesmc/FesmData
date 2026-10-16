@@ -2,9 +2,9 @@
 
 [_RELEASE]
 date = "2026-10-16"
-git_tag = "topo-v2.6.0"
+git_tag = "topo-v2.6.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=SchiaparelliGlacier_Topo"
-version = "2.6.0"
+version = "2.6.1"
 
 ["SCH-100M_TOPO-GLO30-GEBCO2026.nc"]
 checksum = "sha256:4a972b80e08b43d8dee560cbc01f9e94a8d43e1db498ae1d05aaceeb07513864"
@@ -13,24 +13,12 @@ size = 193152
 storage_path = "$datasets_dir/SchiaparelliGlacier/SCH-100M/SCH-100M_TOPO-GLO30-GEBCO2026.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Topo_SCH-100M/2.6.0/SCH-100M_TOPO-GLO30-GEBCO2026.nc"
 
-["SCH-100M_grid.nc"]
-checksum = "sha256:749a1860e30092c1ece2bc90bb995365740567fda0497f601a55a9a7d694d2c5"
-size = 34450
-storage_path = "$datasets_dir/SchiaparelliGlacier/SCH-100M/SCH-100M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Topo_SCH-100M/2.6.0/SCH-100M_grid.nc"
-
 ["SCH-250M_TOPO-GLO30-GEBCO2026.nc"]
 checksum = "sha256:af624404cdb21eb7cc262f7df960c2c8e0e2b4834e0e91072f68b227402d9627"
 previous_checksums = ["sha256:2d1a44781ecd8a6f0104739b8228bcd37be81e2556e5bee6cef2c2f982e07ff4"]
 size = 76280
 storage_path = "$datasets_dir/SchiaparelliGlacier/SCH-250M/SCH-250M_TOPO-GLO30-GEBCO2026.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Topo_SCH-250M/2.6.0/SCH-250M_TOPO-GLO30-GEBCO2026.nc"
-
-["SCH-250M_grid.nc"]
-checksum = "sha256:64ff20940ce62a1d07ed261474d3d53c6701634711c4035e1c082e5f4d8c3437"
-size = 25997
-storage_path = "$datasets_dir/SchiaparelliGlacier/SCH-250M/SCH-250M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Topo_SCH-250M/2.6.0/SCH-250M_grid.nc"
 
 ["SCH-25M_TOPO-GLO30-GEBCO2026.nc"]
 checksum = "sha256:6f5a494eb361e396df829586c1750635e9b0f29fbb96541651d60c6d27214521"
@@ -39,45 +27,9 @@ size = 1556627
 storage_path = "$datasets_dir/SchiaparelliGlacier/SCH-25M/SCH-25M_TOPO-GLO30-GEBCO2026.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Topo_SCH-25M/2.6.0/SCH-25M_TOPO-GLO30-GEBCO2026.nc"
 
-["SCH-25M_grid.nc"]
-checksum = "sha256:939400fb61c63042da2f1d804df24e1d49b6641f0bdd30a397f376864575f002"
-size = 130741
-storage_path = "$datasets_dir/SchiaparelliGlacier/SCH-25M/SCH-25M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Topo_SCH-25M/2.6.0/SCH-25M_grid.nc"
-
 ["SCH-50M_TOPO-GLO30-GEBCO2026.nc"]
 checksum = "sha256:66ada73ad599f0b892d21d528913cfa4603908eceaafa60b99d6a1079e7da05c"
 previous_checksums = ["sha256:43cb7f746bf7f4273cce4c545dac4ea3a6086aaf854ffe0ad8adba49ac260350"]
 size = 544255
 storage_path = "$datasets_dir/SchiaparelliGlacier/SCH-50M/SCH-50M_TOPO-GLO30-GEBCO2026.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Topo_SCH-50M/2.6.0/SCH-50M_TOPO-GLO30-GEBCO2026.nc"
-
-["SCH-50M_grid.nc"]
-checksum = "sha256:e3ebd92f6e7f907a711df74883f141bf9dc561409c8efcfda71bc422dcdaa1ca"
-size = 56988
-storage_path = "$datasets_dir/SchiaparelliGlacier/SCH-50M/SCH-50M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Topo_SCH-50M/2.6.0/SCH-50M_grid.nc"
-
-["grid_SCH-100M.txt"]
-checksum = "sha256:00f2ea7d1116568bee5fffa1c211c351c5cedc95b8c92a52932824ec753011f2"
-size = 345
-storage_path = "$datasets_dir/SchiaparelliGlacier/SCH-100M/grid_SCH-100M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Topo_SCH-100M/2.6.0/grid_SCH-100M.txt"
-
-["grid_SCH-250M.txt"]
-checksum = "sha256:4e5f7f3c17b3cccbeafe1d81c8f76e31f9ad676569c43abe578a93c5fd829267"
-size = 344
-storage_path = "$datasets_dir/SchiaparelliGlacier/SCH-250M/grid_SCH-250M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Topo_SCH-250M/2.6.0/grid_SCH-250M.txt"
-
-["grid_SCH-25M.txt"]
-checksum = "sha256:c11d8eea4366a430b9888949f8b996dcd9b7b9e791615a5aa40e14b759697ddf"
-size = 350
-storage_path = "$datasets_dir/SchiaparelliGlacier/SCH-25M/grid_SCH-25M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Topo_SCH-25M/2.6.0/grid_SCH-25M.txt"
-
-["grid_SCH-50M.txt"]
-checksum = "sha256:4b63b9d615fcc762ec90e1b2ead37faf4089f23988831309268c00b674165894"
-size = 347
-storage_path = "$datasets_dir/SchiaparelliGlacier/SCH-50M/grid_SCH-50M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Topo_SCH-50M/2.6.0/grid_SCH-50M.txt"

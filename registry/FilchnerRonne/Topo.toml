@@ -2,9 +2,9 @@
 
 [_RELEASE]
 date = "2026-10-16"
-git_tag = "topo-v2.6.0"
+git_tag = "topo-v2.6.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=FilchnerRonne_Topo"
-version = "2.6.0"
+version = "2.6.1"
 
 ["FRIS-1KM_TOPO-BedMachine-v2.nc"]
 checksum = "sha256:fe5bdf9094a4b792b4d0d31e03ae9ac4bcd8a36a927844cf4da895d739be837a"
@@ -41,12 +41,6 @@ size = 16294809
 storage_path = "$datasets_dir/FilchnerRonne/FRIS-1KM/FRIS-1KM_TOPO-Bedmap3.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Topo_FRIS-1KM/2.6.0/FRIS-1KM_TOPO-Bedmap3.nc"
 
-["FRIS-1KM_grid.nc"]
-checksum = "sha256:0c02cf89c76ce327455337d17dde70714b09b28a0ec56e6fc971782118de9384"
-size = 6797667
-storage_path = "$datasets_dir/FilchnerRonne/FRIS-1KM/FRIS-1KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Topo_FRIS-1KM/2.6.0/FRIS-1KM_grid.nc"
-
 ["FRIS-500M_TOPO-BedMachine-v4.nc"]
 checksum = "sha256:6ad3c188ac19056a53d8f445079feadf0fca0370b1f1cd8bee53b17ebc7347f4"
 previous_checksums = ["sha256:36deffa6ff7f92232c6fac321583678c6f574641f975f967c7db91bb4a9ddc15", "sha256:6f9f8b1e39182639f8430b2050d4ba55dcf5c85c6413e5947f713000528dc1cb"]
@@ -60,21 +54,3 @@ previous_checksums = ["sha256:1c69b8b20f41c62b58f58db6e587717cf2b04472b1b3cce0eb
 size = 43777571
 storage_path = "$datasets_dir/FilchnerRonne/FRIS-500M/FRIS-500M_TOPO-Bedmap3.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Topo_FRIS-500M/2.6.0/FRIS-500M_TOPO-Bedmap3.nc"
-
-["FRIS-500M_grid.nc"]
-checksum = "sha256:0c8e9de7f49cd15a2c135cb9a3b9748e4f5624692d452a1199f1b3e52a1dc15e"
-size = 22434824
-storage_path = "$datasets_dir/FilchnerRonne/FRIS-500M/FRIS-500M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Topo_FRIS-500M/2.6.0/FRIS-500M_grid.nc"
-
-["grid_FRIS-1KM.txt"]
-checksum = "sha256:a7f4d34451d77b5a784e3439999ee1adb083ed937053ade210119122904c8fed"
-size = 467
-storage_path = "$datasets_dir/FilchnerRonne/FRIS-1KM/grid_FRIS-1KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Topo_FRIS-1KM/2.6.0/grid_FRIS-1KM.txt"
-
-["grid_FRIS-500M.txt"]
-checksum = "sha256:0e7c50472f23d5491407840cacd7c3cfccf4ec28d2746058ba30a12daf006fcb"
-size = 467
-storage_path = "$datasets_dir/FilchnerRonne/FRIS-500M/grid_FRIS-500M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Topo_FRIS-500M/2.6.0/grid_FRIS-500M.txt"

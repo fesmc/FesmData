@@ -1,10 +1,10 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-14"
-git_tag = "ghf-v2.3.0"
+date = "2026-10-16"
+git_tag = "ghf-v2.3.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Pyrenees_GHF"
-version = "2.3.0"
+version = "2.3.1"
 
 ["PYR-2KM_GHF-Davies2013.nc"]
 checksum = "sha256:ce9ebc8ecf621c57bfce0a7791efc15af56e70fb4a2b08c0490825db62e164ac"
@@ -26,15 +26,3 @@ previous_checksums = ["sha256:3b51b0a633f0ead15f0c70eed779e59348d8fa7f10d7e39b60
 size = 27712
 storage_path = "$datasets_dir/Pyrenees/PYR-2KM/PYR-2KM_GHF-Shapiro2004.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_GHF_PYR-2KM/2.3.0/PYR-2KM_GHF-Shapiro2004.nc"
-
-["PYR-2KM_grid.nc"]
-checksum = "sha256:20d63f5741b04cbdfbfe1bf5885e4a73a58a3d4fd9db5cd561dd531d0a3ffde9"
-size = 86648
-storage_path = "$datasets_dir/Pyrenees/PYR-2KM/PYR-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_GHF_PYR-2KM/2.3.0/PYR-2KM_grid.nc"
-
-["grid_PYR-2KM.txt"]
-checksum = "sha256:8a8de7189e5797f759a3a8df305e651006339b630895a4b3da06e4c00098e192"
-size = 325
-storage_path = "$datasets_dir/Pyrenees/PYR-2KM/grid_PYR-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_GHF_PYR-2KM/2.3.0/grid_PYR-2KM.txt"

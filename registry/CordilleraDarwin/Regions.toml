@@ -2,9 +2,9 @@
 
 [_RELEASE]
 date = "2026-10-16"
-git_tag = "regions-v2.6.0"
+git_tag = "regions-v2.6.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=CordilleraDarwin_Regions"
-version = "2.6.0"
+version = "2.6.1"
 
 ["CDI-100M_DOMAINS.nc"]
 checksum = "sha256:f13fff2f2200298c3df9a0000da5e20bdb2b3d2cbae06a8152d00a81b89e4267"
@@ -20,12 +20,6 @@ size = 133614
 storage_path = "$datasets_dir/CordilleraDarwin/CDI-100M/CDI-100M_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Regions_CDI-100M/2.6.0/CDI-100M_REGIONS.nc"
 
-["CDI-100M_grid.nc"]
-checksum = "sha256:d41df55f93c43ddce877f1f32f2262b037fab306ab9db2e91db2430285411f3d"
-size = 1312140
-storage_path = "$datasets_dir/CordilleraDarwin/CDI-100M/CDI-100M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Regions_CDI-100M/2.6.0/CDI-100M_grid.nc"
-
 ["CDI-250M_DOMAINS.nc"]
 checksum = "sha256:f226d01859c43f095703249ac1bfe92862c339f9797d3b33d59d9eb79adb091f"
 previous_checksums = ["sha256:21235e82ce05a392764bab7bc34c900a05acb50faccf6f811f13beb8e682b649", "sha256:479e12f71a91f8157a36557cee016a2a784cc4bfce6f2f61000dc3518fbd5621"]
@@ -40,12 +34,6 @@ size = 61216
 storage_path = "$datasets_dir/CordilleraDarwin/CDI-250M/CDI-250M_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Regions_CDI-250M/2.6.0/CDI-250M_REGIONS.nc"
 
-["CDI-250M_grid.nc"]
-checksum = "sha256:26b5750d8f6d797030f4db2396a7c6f578629a79ee978b3008e0880f8943f6df"
-size = 341882
-storage_path = "$datasets_dir/CordilleraDarwin/CDI-250M/CDI-250M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Regions_CDI-250M/2.6.0/CDI-250M_grid.nc"
-
 ["CDI-50M_DOMAINS.nc"]
 checksum = "sha256:93c7005fbe16b8a8efa9cc65255c19851a491b75fd2c9d1e88fe5a8cfc978693"
 previous_checksums = ["sha256:425f74a01da2a770cc589ae00802881f28439880d616de7c7f449c60163be0d8", "sha256:87f9faf6b062f11f836c5f306b4fae7ed8052d0aee4ccc59697b9106a09fe86b"]
@@ -59,27 +47,3 @@ previous_checksums = ["sha256:8d9afc02a82a5720c3823b8ac4605a08e2d3fc8494a05a9a80
 size = 359461
 storage_path = "$datasets_dir/CordilleraDarwin/CDI-50M/CDI-50M_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Regions_CDI-50M/2.6.0/CDI-50M_REGIONS.nc"
-
-["CDI-50M_grid.nc"]
-checksum = "sha256:6965d6ba5732ec1028b621de7c75a46eb52abb71c4271fe5d5795f31789101bb"
-size = 4673811
-storage_path = "$datasets_dir/CordilleraDarwin/CDI-50M/CDI-50M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Regions_CDI-50M/2.6.0/CDI-50M_grid.nc"
-
-["grid_CDI-100M.txt"]
-checksum = "sha256:e1d96a1e1ea9dfe99d10892e1144a9a641b5e38525accb0638836f18fbc30de6"
-size = 349
-storage_path = "$datasets_dir/CordilleraDarwin/CDI-100M/grid_CDI-100M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Regions_CDI-100M/2.6.0/grid_CDI-100M.txt"
-
-["grid_CDI-250M.txt"]
-checksum = "sha256:a14cd02e43ff4ff83090dc2dd37bce8fb2ce2039bae2640013e2f781f7b99da6"
-size = 348
-storage_path = "$datasets_dir/CordilleraDarwin/CDI-250M/grid_CDI-250M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Regions_CDI-250M/2.6.0/grid_CDI-250M.txt"
-
-["grid_CDI-50M.txt"]
-checksum = "sha256:ec2c7f2e092ca5bda36190f2f19957361554d597c3c37c9dea3a35488b4cbbfb"
-size = 351
-storage_path = "$datasets_dir/CordilleraDarwin/CDI-50M/grid_CDI-50M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Regions_CDI-50M/2.6.0/grid_CDI-50M.txt"

@@ -2,9 +2,9 @@
 
 [_RELEASE]
 date = "2026-10-16"
-git_tag = "topo-v2.6.0"
+git_tag = "topo-v2.6.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Amundsen_Topo"
-version = "2.6.0"
+version = "2.6.1"
 
 ["ASE-16KM_TOPO-BedMachine-v2.nc"]
 checksum = "sha256:a680c757c7c8c0e680e6906b0bec0978b6d27d46fdd90fce2c53308bc8a68d4c"
@@ -41,12 +41,6 @@ size = 95688
 storage_path = "$datasets_dir/Amundsen/ASE-16KM/ASE-16KM_TOPO-Bedmap3.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-16KM/2.6.0/ASE-16KM_TOPO-Bedmap3.nc"
 
-["ASE-16KM_grid.nc"]
-checksum = "sha256:e0bc2a0aa93531fd7d37af2dc0afe3acb28bac1b9f7b145ab2baa5d9fbc6f1ae"
-size = 42468
-storage_path = "$datasets_dir/Amundsen/ASE-16KM/ASE-16KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-16KM/2.6.0/ASE-16KM_grid.nc"
-
 ["ASE-1KM_TOPO-BedMachine-v2.nc"]
 checksum = "sha256:6f8b07705bd6df8155674028d3e31a0ecec2cad7c60f946f5b12bcd57d5210a6"
 previous_checksums = ["sha256:f5b4e5f8e65689c1e18919873dcad4413aa20f26ead4860c2f3892554c275204", "sha256:60785cbb7d3aa36cbe4262a7ce5876fcc6adecd4f1afe9ee87c9441aed2d6563", "sha256:393479a63226938a754169ba18b6576f7a6710ef7340eb328c9a1c918faadcac", "sha256:fcd52e4e18f3874d0b72322711ff5234618a66ac1fdce64b5db77180b169d217"]
@@ -81,13 +75,6 @@ previous_checksums = ["sha256:ef13242bfef19464058370a5d048b462527f4de665ce5268af
 size = 7394725
 storage_path = "$datasets_dir/Amundsen/ASE-1KM/ASE-1KM_TOPO-Bedmap3.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-1KM/2.6.0/ASE-1KM_TOPO-Bedmap3.nc"
-
-["ASE-1KM_grid.nc"]
-checksum = "sha256:932f933be1385f53e74f21a62b1075d6254c223ca29c07f887c337425d3da22d"
-previous_checksums = ["sha256:372dfde71dfe5885d45c1c5b0809c72b3056ad14a7ed3f9a676d472b97b66e88", "sha256:956d225b43f980f117e20a4c2ef7087c3bfa063065a4c92e53dc778aaba191fa"]
-size = 2409116
-storage_path = "$datasets_dir/Amundsen/ASE-1KM/ASE-1KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-1KM/2.6.0/ASE-1KM_grid.nc"
 
 ["ASE-2KM_TOPO-BedMachine-v2.nc"]
 checksum = "sha256:6fd25516a0b89fabad594ad796a56a2c6a389527f0162f811bc6da5cd093c2f1"
@@ -124,13 +111,6 @@ size = 2187170
 storage_path = "$datasets_dir/Amundsen/ASE-2KM/ASE-2KM_TOPO-Bedmap3.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-2KM/2.6.0/ASE-2KM_TOPO-Bedmap3.nc"
 
-["ASE-2KM_grid.nc"]
-checksum = "sha256:ae1e9bb02a2ce3efe609495ec5d9c3c81c0e95fd9e4d8b21e0406b3bb9ae473f"
-previous_checksums = ["sha256:67a1a92d789b7426ca14a418905aebacb509fa65f22ccf115ce600739e559ba9"]
-size = 750312
-storage_path = "$datasets_dir/Amundsen/ASE-2KM/ASE-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-2KM/2.6.0/ASE-2KM_grid.nc"
-
 ["ASE-32KM_TOPO-BedMachine-v2.nc"]
 checksum = "sha256:1caed5ada361e533deaa13abb13a71d917d0980253a443824c67191c5fa914b9"
 previous_checksums = ["sha256:1273b948baced6838c0ae0a0e657b1393261ac91d1aa349d60bc30531f5b1137", "sha256:24e3864ac8d2da290d439a44894e659e28dbc7e84c39af0ef41ff0c61db02bbb"]
@@ -165,12 +145,6 @@ previous_checksums = ["sha256:ea37f774aadac5cdc4c007378bf033fe0a6187901879eaf969
 size = 61378
 storage_path = "$datasets_dir/Amundsen/ASE-32KM/ASE-32KM_TOPO-Bedmap3.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-32KM/2.6.0/ASE-32KM_TOPO-Bedmap3.nc"
-
-["ASE-32KM_grid.nc"]
-checksum = "sha256:6c4e81fb16a275aef49df14e80981b1262f25221443b9440a80e500cf2a025b2"
-size = 26143
-storage_path = "$datasets_dir/Amundsen/ASE-32KM/ASE-32KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-32KM/2.6.0/ASE-32KM_grid.nc"
 
 ["ASE-4KM_TOPO-BedMachine-v2.nc"]
 checksum = "sha256:ce11bbc6255569bad25a42fdd1f5e209d654eefb2534c2d73ef945ddf2a7fe96"
@@ -207,12 +181,6 @@ size = 641517
 storage_path = "$datasets_dir/Amundsen/ASE-4KM/ASE-4KM_TOPO-Bedmap3.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-4KM/2.6.0/ASE-4KM_TOPO-Bedmap3.nc"
 
-["ASE-4KM_grid.nc"]
-checksum = "sha256:b2df245eccd00992c9727946c8b6d7566b1c78641cc8685a636602ad04236221"
-size = 243707
-storage_path = "$datasets_dir/Amundsen/ASE-4KM/ASE-4KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-4KM/2.6.0/ASE-4KM_grid.nc"
-
 ["ASE-500M_TOPO-BedMachine-v4.nc"]
 checksum = "sha256:ad8e22a1ee42b8b30b62ec0ca89d31d5811c9e659033d9852c0cbb4c67bdd669"
 previous_checksums = ["sha256:0a9ab92bce66b8a9842a184357978c6b821f1bf4c43e5b76bf818ec9302fe128", "sha256:558570657ec421135e7312a81e0d85560a38f6193fbe16d068c53f024d3dca9b", "sha256:dcc982319477f1e343052f7a59c582339167c7f39cb4c6c80d6b96de03357ec8"]
@@ -226,13 +194,6 @@ previous_checksums = ["sha256:564eab4a04775ac934cfef68fd9a5bdecbb1f6fbc626f8a14b
 size = 21259347
 storage_path = "$datasets_dir/Amundsen/ASE-500M/ASE-500M_TOPO-Bedmap3.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-500M/2.6.0/ASE-500M_TOPO-Bedmap3.nc"
-
-["ASE-500M_grid.nc"]
-checksum = "sha256:fb7f3c62a89b5ba3d8b1f6f33e0b7ecd71e5d72ae5c9e2e573fe7497b4d31845"
-previous_checksums = ["sha256:5e19aacfe56268bb0b9cf9556323862e8c3206455e044192ef2c6538f7fe9d40"]
-size = 7439234
-storage_path = "$datasets_dir/Amundsen/ASE-500M/ASE-500M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-500M/2.6.0/ASE-500M_grid.nc"
 
 ["ASE-8KM_TOPO-BedMachine-v2.nc"]
 checksum = "sha256:81764d603fc9d12dbaae435f6333910bb00915bf03fd33e0bd97c9702af845bc"
@@ -268,52 +229,3 @@ previous_checksums = ["sha256:70e5a3a79a96cc4fef444d0a592f01adf1abf855fcf72eecb8
 size = 215152
 storage_path = "$datasets_dir/Amundsen/ASE-8KM/ASE-8KM_TOPO-Bedmap3.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-8KM/2.6.0/ASE-8KM_TOPO-Bedmap3.nc"
-
-["ASE-8KM_grid.nc"]
-checksum = "sha256:3fd26acdc3703b8645a3771517852d4776cea47e2134f46aa337120ac1c5bb5a"
-size = 90193
-storage_path = "$datasets_dir/Amundsen/ASE-8KM/ASE-8KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-8KM/2.6.0/ASE-8KM_grid.nc"
-
-["grid_ASE-16KM.txt"]
-checksum = "sha256:dd78598528afea08ab313aef3d1763bf85369d340fcc547502f210ab00caa87f"
-size = 462
-storage_path = "$datasets_dir/Amundsen/ASE-16KM/grid_ASE-16KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-16KM/2.6.0/grid_ASE-16KM.txt"
-
-["grid_ASE-1KM.txt"]
-checksum = "sha256:77c38a8b59f794987f2c7a8e8e1345ecef466b9fa5aa9eb67a00d5b5d6c289c2"
-previous_checksums = ["sha256:d91c16654cbcd5e95a87a23f7b4a0f3b020c68fa2a71dcbd7d5710c7723740cc"]
-size = 465
-storage_path = "$datasets_dir/Amundsen/ASE-1KM/grid_ASE-1KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-1KM/2.6.0/grid_ASE-1KM.txt"
-
-["grid_ASE-2KM.txt"]
-checksum = "sha256:8957f4f5150fea98e05c924f53e59bdf51562548d34e9113f5d98296a5360e17"
-size = 464
-storage_path = "$datasets_dir/Amundsen/ASE-2KM/grid_ASE-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-2KM/2.6.0/grid_ASE-2KM.txt"
-
-["grid_ASE-32KM.txt"]
-checksum = "sha256:869e1b44423e7053840e745d703f540ee3ad4ef362bfd24ff392c90c26ff4929"
-size = 461
-storage_path = "$datasets_dir/Amundsen/ASE-32KM/grid_ASE-32KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-32KM/2.6.0/grid_ASE-32KM.txt"
-
-["grid_ASE-4KM.txt"]
-checksum = "sha256:8f4916fe1ab65f4a59611b9e4c22bf322f25b6b9f709cebd838cf627dc5dd2b0"
-size = 463
-storage_path = "$datasets_dir/Amundsen/ASE-4KM/grid_ASE-4KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-4KM/2.6.0/grid_ASE-4KM.txt"
-
-["grid_ASE-500M.txt"]
-checksum = "sha256:9963fbdfa2703f308b9b4cb2498a9f945a45cfec8b5d786d37a586263e2a80fa"
-size = 467
-storage_path = "$datasets_dir/Amundsen/ASE-500M/grid_ASE-500M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-500M/2.6.0/grid_ASE-500M.txt"
-
-["grid_ASE-8KM.txt"]
-checksum = "sha256:56c6d578cd60246607af1b7128f90d5934f869028022445d4e3f912e2d61cb17"
-size = 463
-storage_path = "$datasets_dir/Amundsen/ASE-8KM/grid_ASE-8KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-8KM/2.6.0/grid_ASE-8KM.txt"

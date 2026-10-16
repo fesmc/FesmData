@@ -2,9 +2,9 @@
 
 [_RELEASE]
 date = "2026-10-16"
-git_tag = "topo-v2.6.0"
+git_tag = "topo-v2.6.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Jakobshavn_Topo"
-version = "2.6.0"
+version = "2.6.1"
 
 ["JAK-1KM_TOPO-BedMachine-v6.nc"]
 checksum = "sha256:941b306f9350e434705b9e0634c91a91ba5037ad4b22f6b5ecfc9ae1ed59f583"
@@ -13,12 +13,6 @@ size = 2308639
 storage_path = "$datasets_dir/Jakobshavn/JAK-1KM/JAK-1KM_TOPO-BedMachine-v6.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Jakobshavn_Topo_JAK-1KM/2.6.0/JAK-1KM_TOPO-BedMachine-v6.nc"
 
-["JAK-1KM_grid.nc"]
-checksum = "sha256:62e97b87a3d29b6aa887c5adb0e9696a2eb1a0e01ecdf89ca4c031960048c6c1"
-size = 696253
-storage_path = "$datasets_dir/Jakobshavn/JAK-1KM/JAK-1KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Jakobshavn_Topo_JAK-1KM/2.6.0/JAK-1KM_grid.nc"
-
 ["JAK-250M_TOPO-BedMachine-v6.nc"]
 checksum = "sha256:34e0d7cf2b22812f353032a98bbe1c27c38cf26e6241d3048ba601fb51989c78"
 previous_checksums = ["sha256:88d2355cdc47905f6c970114cb380efe44f033b1a9026df717358bbee10095c3", "sha256:69d785559e9ee4b9c218e8c21b1997a5b0ba58e2368b3b1ae5f55f25f450b751", "sha256:7efa56a7ccf3d52fa83260a7a2037887fdd3efaea13b5d0ae8c65c4cb1918ed1"]
@@ -26,39 +20,9 @@ size = 31331387
 storage_path = "$datasets_dir/Jakobshavn/JAK-250M/JAK-250M_TOPO-BedMachine-v6.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Jakobshavn_Topo_JAK-250M/2.6.0/JAK-250M_TOPO-BedMachine-v6.nc"
 
-["JAK-250M_grid.nc"]
-checksum = "sha256:2e86dc013950ff880dfc7179c35ed9dc20d9e6a401e85c2f80ead8a3e4b7f5e5"
-size = 6916075
-storage_path = "$datasets_dir/Jakobshavn/JAK-250M/JAK-250M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Jakobshavn_Topo_JAK-250M/2.6.0/JAK-250M_grid.nc"
-
 ["JAK-500M_TOPO-BedMachine-v6.nc"]
 checksum = "sha256:5e7257861ef9d1cf685951545f4b3269401ac254eb74ba006e6439ee225aab3e"
 previous_checksums = ["sha256:fc1c1a36773583d258c1bea6857bb8bb4378019c01100d39b6d398a11953ff17", "sha256:67f79ee416cc422162c81bf48af32696072b473e4caf99da115d20b520f4b16e", "sha256:9d9b96d6a6d8959570326126f4f78978ffb0f6bb187d8d008fc337f7458ca75d"]
 size = 8466437
 storage_path = "$datasets_dir/Jakobshavn/JAK-500M/JAK-500M_TOPO-BedMachine-v6.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Jakobshavn_Topo_JAK-500M/2.6.0/JAK-500M_TOPO-BedMachine-v6.nc"
-
-["JAK-500M_grid.nc"]
-checksum = "sha256:e147a244ff9efd08f02a5e80083a37e1ef710d3efb416d428d0c5f332e1c624c"
-size = 2307149
-storage_path = "$datasets_dir/Jakobshavn/JAK-500M/JAK-500M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Jakobshavn_Topo_JAK-500M/2.6.0/JAK-500M_grid.nc"
-
-["grid_JAK-1KM.txt"]
-checksum = "sha256:9d45ff0987b2d2a0fb8d67866dbdf520a83aa8c411b1e9985f72e0867a8c284a"
-size = 464
-storage_path = "$datasets_dir/Jakobshavn/JAK-1KM/grid_JAK-1KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Jakobshavn_Topo_JAK-1KM/2.6.0/grid_JAK-1KM.txt"
-
-["grid_JAK-250M.txt"]
-checksum = "sha256:2d37fd9c8e5e5fb395186634719ef2ca3d4095405ba9bf66e5f48a25ce22e045"
-size = 469
-storage_path = "$datasets_dir/Jakobshavn/JAK-250M/grid_JAK-250M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Jakobshavn_Topo_JAK-250M/2.6.0/grid_JAK-250M.txt"
-
-["grid_JAK-500M.txt"]
-checksum = "sha256:95ca6a37840381038baa29f59b593937c82753824d8e98fe218fb3300a95dbb0"
-size = 466
-storage_path = "$datasets_dir/Jakobshavn/JAK-500M/grid_JAK-500M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Jakobshavn_Topo_JAK-500M/2.6.0/grid_JAK-500M.txt"

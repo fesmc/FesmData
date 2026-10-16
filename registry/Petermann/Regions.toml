@@ -2,9 +2,9 @@
 
 [_RELEASE]
 date = "2026-10-16"
-git_tag = "regions-v2.6.0"
+git_tag = "regions-v2.6.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Petermann_Regions"
-version = "2.6.0"
+version = "2.6.1"
 
 ["PET-1KM_BASINS-Mouginot2019.nc"]
 checksum = "sha256:bfe747adca7e4b20cf3afbae62661450c510135127a01cae49c31e3ae2a0fcf3"
@@ -41,12 +41,6 @@ size = 50332
 storage_path = "$datasets_dir/Petermann/PET-1KM/PET-1KM_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Petermann_Regions_PET-1KM/2.6.0/PET-1KM_REGIONS.nc"
 
-["PET-1KM_grid.nc"]
-checksum = "sha256:a4e2f9ce9cc4bba6302952874229a59a09e1189ca61e6aad92e352694a3700f9"
-size = 848269
-storage_path = "$datasets_dir/Petermann/PET-1KM/PET-1KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Petermann_Regions_PET-1KM/2.6.0/PET-1KM_grid.nc"
-
 ["PET-250M_BASINS-Mouginot2019.nc"]
 checksum = "sha256:3b689178bd94db557829e51179adf7c24808c0c883982f237fe6de145446d9e0"
 previous_checksums = ["sha256:b8561ca97c574d11da6e36c74433098a4369f47401a8beb326d7ece809673a25", "sha256:cd5a84455b7b0ea22477a921ac1459813a5ec03ea92a7baad0975390fba7bcbb"]
@@ -82,12 +76,6 @@ size = 212658
 storage_path = "$datasets_dir/Petermann/PET-250M/PET-250M_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Petermann_Regions_PET-250M/2.6.0/PET-250M_REGIONS.nc"
 
-["PET-250M_grid.nc"]
-checksum = "sha256:8282731a02a3e1802802d22b7d79eecaaf3534fee6fa2481bf302779682af332"
-size = 8752882
-storage_path = "$datasets_dir/Petermann/PET-250M/PET-250M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Petermann_Regions_PET-250M/2.6.0/PET-250M_grid.nc"
-
 ["PET-500M_BASINS-Mouginot2019.nc"]
 checksum = "sha256:6d1d4493fa18b10b5e583fee01a495693907212d98def56242c31d3562ab5f24"
 previous_checksums = ["sha256:052e6d80cfc91ffab309ee78ef776b59e231399becb8c4da9b43d9d8a91ea63f", "sha256:f916a3fa04f9f166ed6da569fecc12075d92b9395c44ed9306fb7ebdc531fe5c"]
@@ -122,27 +110,3 @@ previous_checksums = ["sha256:1ce44833900817750b3e29ce2444ad18db2618887e1a0647e8
 size = 100925
 storage_path = "$datasets_dir/Petermann/PET-500M/PET-500M_REGIONS.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Petermann_Regions_PET-500M/2.6.0/PET-500M_REGIONS.nc"
-
-["PET-500M_grid.nc"]
-checksum = "sha256:f04874019fc5ed31a27e20ec7edf5ba38df5cf0dd92848b3015cd02688641897"
-size = 2788356
-storage_path = "$datasets_dir/Petermann/PET-500M/PET-500M_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Petermann_Regions_PET-500M/2.6.0/PET-500M_grid.nc"
-
-["grid_PET-1KM.txt"]
-checksum = "sha256:27a7721c7990ba48ad92f7e505c264659c7ecfc2386684f44561c7bf788f1184"
-size = 464
-storage_path = "$datasets_dir/Petermann/PET-1KM/grid_PET-1KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Petermann_Regions_PET-1KM/2.6.0/grid_PET-1KM.txt"
-
-["grid_PET-250M.txt"]
-checksum = "sha256:e7a4d866ef28928ce8b6f723d89fa28c8bf928080ae8f35b7251ba26b00a21b0"
-size = 469
-storage_path = "$datasets_dir/Petermann/PET-250M/grid_PET-250M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Petermann_Regions_PET-250M/2.6.0/grid_PET-250M.txt"
-
-["grid_PET-500M.txt"]
-checksum = "sha256:a4408ef832a985561016d12bf88ae014ce89457079976352e2d99b1b059b72cd"
-size = 466
-storage_path = "$datasets_dir/Petermann/PET-500M/grid_PET-500M.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Petermann_Regions_PET-500M/2.6.0/grid_PET-500M.txt"
