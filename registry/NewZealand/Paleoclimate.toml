@@ -1,103 +1,103 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-15"
-git_tag = "paleoclimate-v2.5.0"
+date = "2026-10-16"
+git_tag = "paleoclimate-v2.6.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=NewZealand_Paleoclimate"
-version = "2.5.0"
+version = "2.6.0"
 
 ["NZ-2KM_Paleoclimate-PMIP3-lgm-mean.nc"]
-checksum = "sha256:2e95e43a3a8fb0f45323808b2c96ffec7dadcca0caf94661844a6c39338c632b"
-previous_checksums = ["sha256:4cbb593c5970c9ac888a52febaefb43276ea3996049651783ec107ff31a0f152"]
+checksum = "sha256:0c3771f379cac2b5603b5e6e51de495abbce0a3e8967a48c465d5f0689ab50c3"
+previous_checksums = ["sha256:4cbb593c5970c9ac888a52febaefb43276ea3996049651783ec107ff31a0f152", "sha256:2e95e43a3a8fb0f45323808b2c96ffec7dadcca0caf94661844a6c39338c632b"]
 size = 749330
 storage_path = "$datasets_dir/NewZealand/NZ-2KM/NZ-2KM_Paleoclimate-PMIP3-lgm-mean.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Paleoclimate_NZ-2KM/2.5.0/NZ-2KM_Paleoclimate-PMIP3-lgm-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Paleoclimate_NZ-2KM/2.6.0/NZ-2KM_Paleoclimate-PMIP3-lgm-mean.nc"
 
 ["NZ-2KM_Paleoclimate-PMIP3-lgm-stdev.nc"]
-checksum = "sha256:8e96cc16f51d5f52f53cfda9d5d3af35bab30e5ae893d4884be43e5b756eae20"
-previous_checksums = ["sha256:ec132fdedaeb2315853cbf004a0ee72ff3ef64062971ff715cf176e413dee024"]
+checksum = "sha256:e71e154aa1022146e1f44948a715c9d4a9712268e3ed0d65dacabe0b1e5e40eb"
+previous_checksums = ["sha256:ec132fdedaeb2315853cbf004a0ee72ff3ef64062971ff715cf176e413dee024", "sha256:8e96cc16f51d5f52f53cfda9d5d3af35bab30e5ae893d4884be43e5b756eae20"]
 size = 593488
 storage_path = "$datasets_dir/NewZealand/NZ-2KM/NZ-2KM_Paleoclimate-PMIP3-lgm-stdev.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Paleoclimate_NZ-2KM/2.5.0/NZ-2KM_Paleoclimate-PMIP3-lgm-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Paleoclimate_NZ-2KM/2.6.0/NZ-2KM_Paleoclimate-PMIP3-lgm-stdev.nc"
 
 ["NZ-2KM_Paleoclimate-PMIP3-midHolocene-mean.nc"]
-checksum = "sha256:cd0327c796353bbdb99ce8f0c717cc23aab9fd47986a48b3e4d57f00ceaa0a13"
-previous_checksums = ["sha256:59a9fa688e088da42a59895f57aa42bfb547bf2abe71808aabd5fa6145cdd723"]
+checksum = "sha256:ac8ad7f55f44ab5d8e62628a92c2d85f91bbea28dcf8f55d622a1db633111d25"
+previous_checksums = ["sha256:59a9fa688e088da42a59895f57aa42bfb547bf2abe71808aabd5fa6145cdd723", "sha256:cd0327c796353bbdb99ce8f0c717cc23aab9fd47986a48b3e4d57f00ceaa0a13"]
 size = 671930
 storage_path = "$datasets_dir/NewZealand/NZ-2KM/NZ-2KM_Paleoclimate-PMIP3-midHolocene-mean.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Paleoclimate_NZ-2KM/2.5.0/NZ-2KM_Paleoclimate-PMIP3-midHolocene-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Paleoclimate_NZ-2KM/2.6.0/NZ-2KM_Paleoclimate-PMIP3-midHolocene-mean.nc"
 
 ["NZ-2KM_Paleoclimate-PMIP3-midHolocene-stdev.nc"]
-checksum = "sha256:603d8e51a3e6fa8fb4a722a2c5df42b079a830fee93f70177ba8d5d42a20e37b"
-previous_checksums = ["sha256:a53aab5eb89adfd511c0fca6a7479b6fbf75507502869df2222e7bfc19f376a7"]
+checksum = "sha256:7a47a85c09b48ee5696d0fc849bcd8f268453665bc6a3a01edd07f17ab9d4f8f"
+previous_checksums = ["sha256:a53aab5eb89adfd511c0fca6a7479b6fbf75507502869df2222e7bfc19f376a7", "sha256:603d8e51a3e6fa8fb4a722a2c5df42b079a830fee93f70177ba8d5d42a20e37b"]
 size = 534131
 storage_path = "$datasets_dir/NewZealand/NZ-2KM/NZ-2KM_Paleoclimate-PMIP3-midHolocene-stdev.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Paleoclimate_NZ-2KM/2.5.0/NZ-2KM_Paleoclimate-PMIP3-midHolocene-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Paleoclimate_NZ-2KM/2.6.0/NZ-2KM_Paleoclimate-PMIP3-midHolocene-stdev.nc"
 
 ["NZ-2KM_Paleoclimate-PMIP3-piControl-mean.nc"]
-checksum = "sha256:0b1362eb27fa1ae0932fb94c8b0c0d45d62b73292d0e97ccc0870132abec4f46"
-previous_checksums = ["sha256:1a91788ada453eed731c27282f8421ffdfdc80621cb77738aa78a9267ad0799b"]
+checksum = "sha256:577d93fc48ea061f33918e783819d7a539fc21be7802301b28b47fb52d7f5d43"
+previous_checksums = ["sha256:1a91788ada453eed731c27282f8421ffdfdc80621cb77738aa78a9267ad0799b", "sha256:0b1362eb27fa1ae0932fb94c8b0c0d45d62b73292d0e97ccc0870132abec4f46"]
 size = 678014
 storage_path = "$datasets_dir/NewZealand/NZ-2KM/NZ-2KM_Paleoclimate-PMIP3-piControl-mean.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Paleoclimate_NZ-2KM/2.5.0/NZ-2KM_Paleoclimate-PMIP3-piControl-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Paleoclimate_NZ-2KM/2.6.0/NZ-2KM_Paleoclimate-PMIP3-piControl-mean.nc"
 
 ["NZ-2KM_Paleoclimate-PMIP3-piControl-stdev.nc"]
-checksum = "sha256:e038714e9ee29f77da1f1f976fbb6d6f707b379fec646beffa8e02bbc56379fd"
-previous_checksums = ["sha256:d7f022f6fc4078121af39d613412d9fcefab547bc829c46cd1ce1ac00560b199"]
+checksum = "sha256:762143768e22e0053b76eae1058e2f78807950cd0190fd13a78fb8762c233399"
+previous_checksums = ["sha256:d7f022f6fc4078121af39d613412d9fcefab547bc829c46cd1ce1ac00560b199", "sha256:e038714e9ee29f77da1f1f976fbb6d6f707b379fec646beffa8e02bbc56379fd"]
 size = 530302
 storage_path = "$datasets_dir/NewZealand/NZ-2KM/NZ-2KM_Paleoclimate-PMIP3-piControl-stdev.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Paleoclimate_NZ-2KM/2.5.0/NZ-2KM_Paleoclimate-PMIP3-piControl-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Paleoclimate_NZ-2KM/2.6.0/NZ-2KM_Paleoclimate-PMIP3-piControl-stdev.nc"
 
 ["NZ-2KM_Paleoclimate-PMIP4-lgm-mean.nc"]
-checksum = "sha256:99d431cd999b57f9d018d7f9026aae0835db2c923a5ff1915c3a501b46a35f95"
-previous_checksums = ["sha256:88a871f4b51cbafa3cdc8e5bff8f096d749ad20a294c8bd237be081f2d39bf45"]
+checksum = "sha256:74eebb6110a06af17a5835b35850f2a2c37e713683201988e46de6468aa90e58"
+previous_checksums = ["sha256:88a871f4b51cbafa3cdc8e5bff8f096d749ad20a294c8bd237be081f2d39bf45", "sha256:99d431cd999b57f9d018d7f9026aae0835db2c923a5ff1915c3a501b46a35f95"]
 size = 1362829
 storage_path = "$datasets_dir/NewZealand/NZ-2KM/NZ-2KM_Paleoclimate-PMIP4-lgm-mean.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Paleoclimate_NZ-2KM/2.5.0/NZ-2KM_Paleoclimate-PMIP4-lgm-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Paleoclimate_NZ-2KM/2.6.0/NZ-2KM_Paleoclimate-PMIP4-lgm-mean.nc"
 
 ["NZ-2KM_Paleoclimate-PMIP4-lgm-stdev.nc"]
-checksum = "sha256:2df81a9653ecb437d54a8f7c62d5086c8dbd309b96fe03186fa54b7e74826bf3"
-previous_checksums = ["sha256:398aa38f7a1a79518284c321aa994a9f75f7bd7defa81c1f3f854c6556b5d331"]
+checksum = "sha256:628c14711a5907c5986b7fac78b59b5e201076649e39c91cf32c13cf416ef9c7"
+previous_checksums = ["sha256:398aa38f7a1a79518284c321aa994a9f75f7bd7defa81c1f3f854c6556b5d331", "sha256:2df81a9653ecb437d54a8f7c62d5086c8dbd309b96fe03186fa54b7e74826bf3"]
 size = 1330784
 storage_path = "$datasets_dir/NewZealand/NZ-2KM/NZ-2KM_Paleoclimate-PMIP4-lgm-stdev.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Paleoclimate_NZ-2KM/2.5.0/NZ-2KM_Paleoclimate-PMIP4-lgm-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Paleoclimate_NZ-2KM/2.6.0/NZ-2KM_Paleoclimate-PMIP4-lgm-stdev.nc"
 
 ["NZ-2KM_Paleoclimate-PMIP4-midHolocene-mean.nc"]
-checksum = "sha256:4e4f0f9e710ac909b49ca53c46d972d93a73fae0c2bae01fd6c5743d11e1b6ba"
-previous_checksums = ["sha256:31a6b9b4552179cdddee314ed947ed7147ed8102e0a0ca14aa42f35189d67649"]
+checksum = "sha256:9af154a162550f990b9bc90031635a4b47d1ddc29765aff157bcce972c751ca2"
+previous_checksums = ["sha256:31a6b9b4552179cdddee314ed947ed7147ed8102e0a0ca14aa42f35189d67649", "sha256:4e4f0f9e710ac909b49ca53c46d972d93a73fae0c2bae01fd6c5743d11e1b6ba"]
 size = 1243518
 storage_path = "$datasets_dir/NewZealand/NZ-2KM/NZ-2KM_Paleoclimate-PMIP4-midHolocene-mean.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Paleoclimate_NZ-2KM/2.5.0/NZ-2KM_Paleoclimate-PMIP4-midHolocene-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Paleoclimate_NZ-2KM/2.6.0/NZ-2KM_Paleoclimate-PMIP4-midHolocene-mean.nc"
 
 ["NZ-2KM_Paleoclimate-PMIP4-midHolocene-stdev.nc"]
-checksum = "sha256:0ff34b952dcea5b0e2884b41908f5f5f4ae88c31c385a2c304ef466035ea9669"
-previous_checksums = ["sha256:5fb98fe6d4946b28f967c15dff5285ed9197af176e56308ec4ade45c78fbb45b"]
+checksum = "sha256:22ca344e71f8fb2401b6d3c2104f611d208fedacdfbb2204074744504e1c73c5"
+previous_checksums = ["sha256:5fb98fe6d4946b28f967c15dff5285ed9197af176e56308ec4ade45c78fbb45b", "sha256:0ff34b952dcea5b0e2884b41908f5f5f4ae88c31c385a2c304ef466035ea9669"]
 size = 1051222
 storage_path = "$datasets_dir/NewZealand/NZ-2KM/NZ-2KM_Paleoclimate-PMIP4-midHolocene-stdev.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Paleoclimate_NZ-2KM/2.5.0/NZ-2KM_Paleoclimate-PMIP4-midHolocene-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Paleoclimate_NZ-2KM/2.6.0/NZ-2KM_Paleoclimate-PMIP4-midHolocene-stdev.nc"
 
 ["NZ-2KM_Paleoclimate-PMIP4-piControl-mean.nc"]
-checksum = "sha256:f139cd318eeabb9417d6dfd1cdb60696ab4467e81a49315db32c949eac24cc24"
-previous_checksums = ["sha256:d27ccf091048fc86b8c738ac31f3202a443da6f1d5ef634d55394417990e5ea0"]
+checksum = "sha256:b57242b58a2e6ad69534194b8996c0179ff9d9433a8d50a45d12a38afee446fa"
+previous_checksums = ["sha256:d27ccf091048fc86b8c738ac31f3202a443da6f1d5ef634d55394417990e5ea0", "sha256:f139cd318eeabb9417d6dfd1cdb60696ab4467e81a49315db32c949eac24cc24"]
 size = 1242704
 storage_path = "$datasets_dir/NewZealand/NZ-2KM/NZ-2KM_Paleoclimate-PMIP4-piControl-mean.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Paleoclimate_NZ-2KM/2.5.0/NZ-2KM_Paleoclimate-PMIP4-piControl-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Paleoclimate_NZ-2KM/2.6.0/NZ-2KM_Paleoclimate-PMIP4-piControl-mean.nc"
 
 ["NZ-2KM_Paleoclimate-PMIP4-piControl-stdev.nc"]
-checksum = "sha256:20d9ccf84ffb7f491b619f3903a028298d28e407ceaa9b09c22e97365260e1cf"
-previous_checksums = ["sha256:fd9643549ebb4100ecfd763b93653168a858fe6866ccbb0bdf572d6c794f575a"]
+checksum = "sha256:80f36e8e912f0d44ff9669390e0b91e946bf68ea9b88e9a18149bcec6033271e"
+previous_checksums = ["sha256:fd9643549ebb4100ecfd763b93653168a858fe6866ccbb0bdf572d6c794f575a", "sha256:20d9ccf84ffb7f491b619f3903a028298d28e407ceaa9b09c22e97365260e1cf"]
 size = 1065702
 storage_path = "$datasets_dir/NewZealand/NZ-2KM/NZ-2KM_Paleoclimate-PMIP4-piControl-stdev.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Paleoclimate_NZ-2KM/2.5.0/NZ-2KM_Paleoclimate-PMIP4-piControl-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Paleoclimate_NZ-2KM/2.6.0/NZ-2KM_Paleoclimate-PMIP4-piControl-stdev.nc"
 
 ["NZ-2KM_grid.nc"]
 checksum = "sha256:8a6333b930e208cef12d1b144497cd478c0881052c7caf42e928b1b6855f32b2"
 size = 416034
 storage_path = "$datasets_dir/NewZealand/NZ-2KM/NZ-2KM_grid.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Paleoclimate_NZ-2KM/2.5.0/NZ-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Paleoclimate_NZ-2KM/2.6.0/NZ-2KM_grid.nc"
 
 ["grid_NZ-2KM.txt"]
 checksum = "sha256:00ec7490a3740cfcf1dfa4058f7ef1b5d024f831e2ed1a97075c73bf1a8a7adc"
 size = 334
 storage_path = "$datasets_dir/NewZealand/NZ-2KM/grid_NZ-2KM.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Paleoclimate_NZ-2KM/2.5.0/grid_NZ-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Paleoclimate_NZ-2KM/2.6.0/grid_NZ-2KM.txt"
