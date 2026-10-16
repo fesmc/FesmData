@@ -1,0 +1,59 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-16"
+git_tag = "grids-v2.0.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=SchiaparelliGlacier_Grids"
+version = "2.0.0"
+
+["SCH-100M_grid.nc"]
+checksum = "sha256:addbec576f9c9371366ffb98d1ca9eaac5b41d535ebb32372eaac6b4d0512a38"
+previous_checksums = ["sha256:749a1860e30092c1ece2bc90bb995365740567fda0497f601a55a9a7d694d2c5"]
+size = 34643
+storage_path = "$datasets_dir/SchiaparelliGlacier/SCH-100M/SCH-100M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Grids_SCH-100M/2.0.0/SCH-100M_grid.nc"
+
+["SCH-250M_grid.nc"]
+checksum = "sha256:5bb470b768e2d77f3a73961c851a32d8d0a8982c4b2cfd007d8b47d694459947"
+previous_checksums = ["sha256:64ff20940ce62a1d07ed261474d3d53c6701634711c4035e1c082e5f4d8c3437"]
+size = 26190
+storage_path = "$datasets_dir/SchiaparelliGlacier/SCH-250M/SCH-250M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Grids_SCH-250M/2.0.0/SCH-250M_grid.nc"
+
+["SCH-25M_grid.nc"]
+checksum = "sha256:cda862c49a8714336cde1922f053384bfcfa2b13c58d45d5ae6c1b874e3f0dde"
+previous_checksums = ["sha256:939400fb61c63042da2f1d804df24e1d49b6641f0bdd30a397f376864575f002"]
+size = 130934
+storage_path = "$datasets_dir/SchiaparelliGlacier/SCH-25M/SCH-25M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Grids_SCH-25M/2.0.0/SCH-25M_grid.nc"
+
+["SCH-50M_grid.nc"]
+checksum = "sha256:0ccd4101062e03d37048e212d777af842a80b79abcaed4b501a680d07d49762f"
+previous_checksums = ["sha256:e3ebd92f6e7f907a711df74883f141bf9dc561409c8efcfda71bc422dcdaa1ca"]
+size = 57181
+storage_path = "$datasets_dir/SchiaparelliGlacier/SCH-50M/SCH-50M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Grids_SCH-50M/2.0.0/SCH-50M_grid.nc"
+
+["grid_SCH-100M.txt"]
+checksum = "sha256:00f2ea7d1116568bee5fffa1c211c351c5cedc95b8c92a52932824ec753011f2"
+size = 345
+storage_path = "$datasets_dir/SchiaparelliGlacier/SCH-100M/grid_SCH-100M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Grids_SCH-100M/2.0.0/grid_SCH-100M.txt"
+
+["grid_SCH-250M.txt"]
+checksum = "sha256:4e5f7f3c17b3cccbeafe1d81c8f76e31f9ad676569c43abe578a93c5fd829267"
+size = 344
+storage_path = "$datasets_dir/SchiaparelliGlacier/SCH-250M/grid_SCH-250M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Grids_SCH-250M/2.0.0/grid_SCH-250M.txt"
+
+["grid_SCH-25M.txt"]
+checksum = "sha256:c11d8eea4366a430b9888949f8b996dcd9b7b9e791615a5aa40e14b759697ddf"
+size = 350
+storage_path = "$datasets_dir/SchiaparelliGlacier/SCH-25M/grid_SCH-25M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Grids_SCH-25M/2.0.0/grid_SCH-25M.txt"
+
+["grid_SCH-50M.txt"]
+checksum = "sha256:4b63b9d615fcc762ec90e1b2ead37faf4089f23988831309268c00b674165894"
+size = 347
+storage_path = "$datasets_dir/SchiaparelliGlacier/SCH-50M/grid_SCH-50M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Grids_SCH-50M/2.0.0/grid_SCH-50M.txt"

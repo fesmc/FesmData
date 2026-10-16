@@ -1,0 +1,98 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-16"
+git_tag = "grids-v2.0.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Global_Grids"
+version = "2.0.0"
+
+["GLOBAL-0.1DEG_grid.nc"]
+checksum = "sha256:e7318e05a656c35f20f1ee8bdf6c1b6d9e46117353ff81a920c1b7a39625439a"
+previous_checksums = ["sha256:a4e56f174dc574ee53539866c27d4c7f5e740742d1d16f8daa8cb96fac1fc5b8"]
+size = 192119
+storage_path = "$datasets_dir/Global/GLOBAL-0.1DEG/GLOBAL-0.1DEG_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Grids_GLOBAL-0.1DEG/2.0.0/GLOBAL-0.1DEG_grid.nc"
+
+["GLOBAL-0.25DEG_grid.nc"]
+checksum = "sha256:31467c736b24f2892b31249fd756e6a470d0b7826e9ea60a53754a6d92c9966b"
+previous_checksums = ["sha256:5ff16fa62830a5bcf93baa975e7fbb6294ba9e94c9a4e30a1ecbec5fb2afbc42"]
+size = 49648
+storage_path = "$datasets_dir/Global/GLOBAL-0.25DEG/GLOBAL-0.25DEG_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Grids_GLOBAL-0.25DEG/2.0.0/GLOBAL-0.25DEG_grid.nc"
+
+["GLOBAL-0.5DEG_grid.nc"]
+checksum = "sha256:8635dade9115918e347e9fd884178e42e0d1ac6b0129b2a3e7962d77ec5bd03a"
+previous_checksums = ["sha256:43301e8a8f8a7d3a47e181cc3ba1b216c72fbca797d8ed8f8672b5da2c1a95de"]
+size = 25651
+storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/GLOBAL-0.5DEG_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Grids_GLOBAL-0.5DEG/2.0.0/GLOBAL-0.5DEG_grid.nc"
+
+["GLOBAL-1DEG_grid.nc"]
+checksum = "sha256:003150f7650799f6b8ef242792b8f987671c74eb94c246005a09810d4f591d75"
+previous_checksums = ["sha256:72658a61a9d89e56a88266b6a3168ba7ea4e18c4c8b0d2a904164c2c047e5d47"]
+size = 17959
+storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Grids_GLOBAL-1DEG/2.0.0/GLOBAL-1DEG_grid.nc"
+
+["GLOBAL-2DEG_grid.nc"]
+checksum = "sha256:b01ee77dec0e3ab92dc0cd7ee7dd84b9587fbabf7050ba833c848cd7765cbc9e"
+previous_checksums = ["sha256:5fa987a099ab7e60d3a4b22e7bb5bd00cadccc8581874b8d600a38f9a512f104"]
+size = 14649
+storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Grids_GLOBAL-2DEG/2.0.0/GLOBAL-2DEG_grid.nc"
+
+["GLOBAL-5DEG_grid.nc"]
+checksum = "sha256:108c10f309b46429f3ea390e58608c4a931d608d5fb18d73834ace6a48534621"
+previous_checksums = ["sha256:55c037e0371c20123875dc16ddd01d1e864dd5b5b1b0cb29c9bfa3fd23f24cbf"]
+size = 12601
+storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Grids_GLOBAL-5DEG/2.0.0/GLOBAL-5DEG_grid.nc"
+
+["GLOBAL-T170_grid.nc"]
+checksum = "sha256:b32ee8248eacbc0aea006512c37c87b911a63fdad66ff0492a5c112faad09c0b"
+previous_checksums = ["sha256:8e4b1c35f3aef04bbdf0cbda53589b0dc3bf57a77b619c6014150e4c3cab7830"]
+size = 20320
+storage_path = "$datasets_dir/Global/GLOBAL-T170/GLOBAL-T170_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Grids_GLOBAL-T170/2.0.0/GLOBAL-T170_grid.nc"
+
+["grid_GLOBAL-0.1DEG.txt"]
+checksum = "sha256:5b3a831c01fa4276db84a6d54d7cb5d4da7ca2fbc859ab2a85080a431155e4e3"
+size = 215
+storage_path = "$datasets_dir/Global/GLOBAL-0.1DEG/grid_GLOBAL-0.1DEG.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Grids_GLOBAL-0.1DEG/2.0.0/grid_GLOBAL-0.1DEG.txt"
+
+["grid_GLOBAL-0.25DEG.txt"]
+checksum = "sha256:18ffa92b5b37bbafa504215d99896bfe5ed3d9cada9beed41bf6f79353279d7e"
+size = 218
+storage_path = "$datasets_dir/Global/GLOBAL-0.25DEG/grid_GLOBAL-0.25DEG.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Grids_GLOBAL-0.25DEG/2.0.0/grid_GLOBAL-0.25DEG.txt"
+
+["grid_GLOBAL-0.5DEG.txt"]
+checksum = "sha256:7d6ca9751973abeb4a15b25146d8c6601cd47bf9e2cbf62a9dce3e00519955cd"
+size = 212
+storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/grid_GLOBAL-0.5DEG.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Grids_GLOBAL-0.5DEG/2.0.0/grid_GLOBAL-0.5DEG.txt"
+
+["grid_GLOBAL-1DEG.txt"]
+checksum = "sha256:38acf47f98866cc1c0479566b51a3a3df28fb09aa295652f52f67fffb2c499fd"
+size = 209
+storage_path = "$datasets_dir/Global/GLOBAL-1DEG/grid_GLOBAL-1DEG.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Grids_GLOBAL-1DEG/2.0.0/grid_GLOBAL-1DEG.txt"
+
+["grid_GLOBAL-2DEG.txt"]
+checksum = "sha256:f09996b59b7b7cc91b348c53eec0a8cb246c5b293a890b4912278435d589fec6"
+size = 208
+storage_path = "$datasets_dir/Global/GLOBAL-2DEG/grid_GLOBAL-2DEG.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Grids_GLOBAL-2DEG/2.0.0/grid_GLOBAL-2DEG.txt"
+
+["grid_GLOBAL-5DEG.txt"]
+checksum = "sha256:647911a4f8fd1afecd212683255ca869a1f3b9bdcb3ae180e7a1415cea84d344"
+size = 206
+storage_path = "$datasets_dir/Global/GLOBAL-5DEG/grid_GLOBAL-5DEG.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Grids_GLOBAL-5DEG/2.0.0/grid_GLOBAL-5DEG.txt"
+
+["grid_GLOBAL-T170.txt"]
+checksum = "sha256:7b047934f6191deb78bb8d1021626f75123427ab8721728ffd0a5147baf41b24"
+size = 3324
+storage_path = "$datasets_dir/Global/GLOBAL-T170/grid_GLOBAL-T170.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Grids_GLOBAL-T170/2.0.0/grid_GLOBAL-T170.txt"

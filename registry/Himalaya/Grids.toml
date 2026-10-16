@@ -1,0 +1,46 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-16"
+git_tag = "grids-v2.0.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Himalaya_Grids"
+version = "2.0.0"
+
+["HIM-250M_grid.nc"]
+checksum = "sha256:15f22269f925502edb6da194af7156dcfe4af0dd81ba5d015426f36b915a1e99"
+previous_checksums = ["sha256:d8f5e6cb696e1d8c6ff9195f476dd63abc4c13b2fda847ad0fdc92571660b62b"]
+size = 79614489
+storage_path = "$datasets_dir/Himalaya/HIM-250M/HIM-250M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Grids_HIM-250M/2.0.0/HIM-250M_grid.nc"
+
+["HIM-2KM_grid.nc"]
+checksum = "sha256:bdd615690c21d0b2982b2e559d2db01cea5f5f789bcb768095f7eceeb5273143"
+previous_checksums = ["sha256:c80460c96b66ee86b7f0ad0ba2095ab24de793493dda2a341dfa36b5a715a209"]
+size = 2883256
+storage_path = "$datasets_dir/Himalaya/HIM-2KM/HIM-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Grids_HIM-2KM/2.0.0/HIM-2KM_grid.nc"
+
+["HIM-500M_grid.nc"]
+checksum = "sha256:db356eb3ecb3f901a51e1e714228b8f8639c60175bb5e308ccd34dea7ad54b02"
+previous_checksums = ["sha256:b2b49ce5c29c569e29329d67738dae64ad40af75a4af4fcac73731d913bd25d8"]
+size = 28755757
+storage_path = "$datasets_dir/Himalaya/HIM-500M/HIM-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Grids_HIM-500M/2.0.0/HIM-500M_grid.nc"
+
+["grid_HIM-250M.txt"]
+checksum = "sha256:abccefdb9881cf976d320563a960626c932190e9f9613fd38709920675177fcd"
+size = 338
+storage_path = "$datasets_dir/Himalaya/HIM-250M/grid_HIM-250M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Grids_HIM-250M/2.0.0/grid_HIM-250M.txt"
+
+["grid_HIM-2KM.txt"]
+checksum = "sha256:534cff6d3562a47b21187e2279ce0b3a848e720b093bc7ae578073c24219bdcf"
+size = 333
+storage_path = "$datasets_dir/Himalaya/HIM-2KM/grid_HIM-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Grids_HIM-2KM/2.0.0/grid_HIM-2KM.txt"
+
+["grid_HIM-500M.txt"]
+checksum = "sha256:9b8eb519ec9eb47069c6e8cbad7c9e8bb474c3bcefb4ab8de89c55ec4be68ae3"
+size = 335
+storage_path = "$datasets_dir/Himalaya/HIM-500M/grid_HIM-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Grids_HIM-500M/2.0.0/grid_HIM-500M.txt"

@@ -1,0 +1,46 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-16"
+git_tag = "grids-v2.0.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=NewZealand_Grids"
+version = "2.0.0"
+
+["NZ-250M_grid.nc"]
+checksum = "sha256:9428aa8fcc7ee0977bc9b6c57599efa5a9d59a008cf1dc57e332e0275f7d4193"
+previous_checksums = ["sha256:a10fc753479d778955e315667f465e0b726a52684dcd677b2af398da7d4c532d"]
+size = 9706144
+storage_path = "$datasets_dir/NewZealand/NZ-250M/NZ-250M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Grids_NZ-250M/2.0.0/NZ-250M_grid.nc"
+
+["NZ-2KM_grid.nc"]
+checksum = "sha256:e6f5492e10bc333bdb23e39ee3538ebf34b7a75e1163b81b9e41b6646a83dc3b"
+previous_checksums = ["sha256:8a6333b930e208cef12d1b144497cd478c0881052c7caf42e928b1b6855f32b2"]
+size = 416226
+storage_path = "$datasets_dir/NewZealand/NZ-2KM/NZ-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Grids_NZ-2KM/2.0.0/NZ-2KM_grid.nc"
+
+["NZ-500M_grid.nc"]
+checksum = "sha256:fe9358bfabce2dab25ffc6bc143c3ad90cad7fb4523d25986bd339980a0d30ae"
+previous_checksums = ["sha256:386ddcba13dd4d8d2b686d07bc2baf994777b6c16c9bc16d229a9ad1949c471c"]
+size = 3694740
+storage_path = "$datasets_dir/NewZealand/NZ-500M/NZ-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Grids_NZ-500M/2.0.0/NZ-500M_grid.nc"
+
+["grid_NZ-250M.txt"]
+checksum = "sha256:32cbfa45ba75bc74d62e37e6359adf0408daee45b08b448ff4977a69f3182aeb"
+size = 340
+storage_path = "$datasets_dir/NewZealand/NZ-250M/grid_NZ-250M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Grids_NZ-250M/2.0.0/grid_NZ-250M.txt"
+
+["grid_NZ-2KM.txt"]
+checksum = "sha256:00ec7490a3740cfcf1dfa4058f7ef1b5d024f831e2ed1a97075c73bf1a8a7adc"
+size = 334
+storage_path = "$datasets_dir/NewZealand/NZ-2KM/grid_NZ-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Grids_NZ-2KM/2.0.0/grid_NZ-2KM.txt"
+
+["grid_NZ-500M.txt"]
+checksum = "sha256:148c1e8fe2691c9692bde95c55faa47cca48098598f7088b0951dbae7f1fb8c0"
+size = 337
+storage_path = "$datasets_dir/NewZealand/NZ-500M/grid_NZ-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Grids_NZ-500M/2.0.0/grid_NZ-500M.txt"

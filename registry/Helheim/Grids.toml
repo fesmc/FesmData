@@ -1,0 +1,46 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-16"
+git_tag = "grids-v2.0.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Helheim_Grids"
+version = "2.0.0"
+
+["HEL-1KM_grid.nc"]
+checksum = "sha256:ef6bcec981fb95af7bfc52cb679e232facf9f5ad531e98a850ba3d1c998c3784"
+previous_checksums = ["sha256:c5c91160786169fa69c27a596c491c9abdeae09ad999e30b239996d390134314"]
+size = 540968
+storage_path = "$datasets_dir/Helheim/HEL-1KM/HEL-1KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Grids_HEL-1KM/2.0.0/HEL-1KM_grid.nc"
+
+["HEL-250M_grid.nc"]
+checksum = "sha256:f7c115c09b28f35e53a5691abb14d9193721cf51ab4034d925bfc79a7fa7416d"
+previous_checksums = ["sha256:729d6be5006086cd5d24a00e7c6d1bdb3d8ae61c6fcd595b499d4b7677d91f2f"]
+size = 4612795
+storage_path = "$datasets_dir/Helheim/HEL-250M/HEL-250M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Grids_HEL-250M/2.0.0/HEL-250M_grid.nc"
+
+["HEL-500M_grid.nc"]
+checksum = "sha256:214e5cc0cbd62eafb3cb43318b5905fd1381f89dd0e0dc51448de1c611137b22"
+previous_checksums = ["sha256:c6e125170082a9e743b2cd1542ffe3282f19062cbec8ccb6f0757dd6fc898ec4"]
+size = 1700156
+storage_path = "$datasets_dir/Helheim/HEL-500M/HEL-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Grids_HEL-500M/2.0.0/HEL-500M_grid.nc"
+
+["grid_HEL-1KM.txt"]
+checksum = "sha256:9dc58cd00a199e57a061f9ceffa116b7dc7d6c1198c9d055932ac9d2b201a678"
+size = 462
+storage_path = "$datasets_dir/Helheim/HEL-1KM/grid_HEL-1KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Grids_HEL-1KM/2.0.0/grid_HEL-1KM.txt"
+
+["grid_HEL-250M.txt"]
+checksum = "sha256:0ebf5f9b04128645f19cba3cc5b34271ef32951354689bca729bde207c4a2313"
+size = 467
+storage_path = "$datasets_dir/Helheim/HEL-250M/grid_HEL-250M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Grids_HEL-250M/2.0.0/grid_HEL-250M.txt"
+
+["grid_HEL-500M.txt"]
+checksum = "sha256:55f16542254cf301c23c0f562da082761c412f7296c250e9b175285771515b79"
+size = 463
+storage_path = "$datasets_dir/Helheim/HEL-500M/grid_HEL-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Grids_HEL-500M/2.0.0/grid_HEL-500M.txt"

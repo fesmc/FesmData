@@ -1,0 +1,46 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-16"
+git_tag = "grids-v2.0.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Petermann_Grids"
+version = "2.0.0"
+
+["PET-1KM_grid.nc"]
+checksum = "sha256:09f2f0bf3bf9801ea0e2a424df239a20c6dc19da9669e098b1d1db76a9ffaffb"
+previous_checksums = ["sha256:a4e2f9ce9cc4bba6302952874229a59a09e1189ca61e6aad92e352694a3700f9"]
+size = 848462
+storage_path = "$datasets_dir/Petermann/PET-1KM/PET-1KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Petermann_Grids_PET-1KM/2.0.0/PET-1KM_grid.nc"
+
+["PET-250M_grid.nc"]
+checksum = "sha256:910ecce404ea841140ea211d2ba1278a91cf59f3b4db09f037cbad983a646a38"
+previous_checksums = ["sha256:8282731a02a3e1802802d22b7d79eecaaf3534fee6fa2481bf302779682af332"]
+size = 8753075
+storage_path = "$datasets_dir/Petermann/PET-250M/PET-250M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Petermann_Grids_PET-250M/2.0.0/PET-250M_grid.nc"
+
+["PET-500M_grid.nc"]
+checksum = "sha256:3c6d696aab3bbd9d9ededa184bc230fa33cb26ae11d3859250aa07ffd56f793e"
+previous_checksums = ["sha256:f04874019fc5ed31a27e20ec7edf5ba38df5cf0dd92848b3015cd02688641897"]
+size = 2788549
+storage_path = "$datasets_dir/Petermann/PET-500M/PET-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Petermann_Grids_PET-500M/2.0.0/PET-500M_grid.nc"
+
+["grid_PET-1KM.txt"]
+checksum = "sha256:27a7721c7990ba48ad92f7e505c264659c7ecfc2386684f44561c7bf788f1184"
+size = 464
+storage_path = "$datasets_dir/Petermann/PET-1KM/grid_PET-1KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Petermann_Grids_PET-1KM/2.0.0/grid_PET-1KM.txt"
+
+["grid_PET-250M.txt"]
+checksum = "sha256:e7a4d866ef28928ce8b6f723d89fa28c8bf928080ae8f35b7251ba26b00a21b0"
+size = 469
+storage_path = "$datasets_dir/Petermann/PET-250M/grid_PET-250M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Petermann_Grids_PET-250M/2.0.0/grid_PET-250M.txt"
+
+["grid_PET-500M.txt"]
+checksum = "sha256:a4408ef832a985561016d12bf88ae014ce89457079976352e2d99b1b059b72cd"
+size = 466
+storage_path = "$datasets_dir/Petermann/PET-500M/grid_PET-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Petermann_Grids_PET-500M/2.0.0/grid_PET-500M.txt"

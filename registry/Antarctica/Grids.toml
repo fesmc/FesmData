@@ -1,0 +1,98 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-16"
+git_tag = "grids-v2.0.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Antarctica_Grids"
+version = "2.0.0"
+
+["ANT-16KM_grid.nc"]
+checksum = "sha256:5d9716512b470e24dacfc3f13e264c627e42f5a107b8e18af71b2666474cf1d1"
+previous_checksums = ["sha256:0c9b8e003b33ca4188cc54c9d7dbe4932f742ee4f6ac9431d8d38e33fa5af978", "sha256:dc1fecc6c052b75d57955d69f028216b5449d2997e17a65fb6fd739af2118189", "sha256:dea44445828fdc3adbae04afc6662224e96a6838c8381f80a855659b3ad6460c"]
+size = 766213
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Grids_ANT-16KM/2.0.0/ANT-16KM_grid.nc"
+
+["ANT-1KM_grid.nc"]
+checksum = "sha256:b66caecc1a42a77aaed963c9cba288ce288af4b303e6faf06cd41b7941fd527a"
+previous_checksums = ["sha256:024dfbd81ca8e09bd9ae2723e08f2f19e124fcca9681809187aea09483799f7e", "sha256:138b7ff212af93d6d11244da889fcead9cb4956bb787fa135b9161f680a970c3", "sha256:1564185a4ce4e24d55ceaa7e6a6fc6170b28746fb5435d96af1ddb267a5da085"]
+size = 101716061
+storage_path = "$datasets_dir/Antarctica/ANT-1KM/ANT-1KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Grids_ANT-1KM/2.0.0/ANT-1KM_grid.nc"
+
+["ANT-2KM_grid.nc"]
+checksum = "sha256:1a370227517d61a5753694ec5eaf44cac237d924e0ba474bea9ae289b57c1847"
+previous_checksums = ["sha256:405a1131131ba119609bf7c4147b29477ab4801fd0221f56656ab6ff1abf8ffc", "sha256:5ca84d951f1514ff66807c1a3597fdc405fd0622ec0efc2227600ad3943df522", "sha256:b6ac983d1cadde8def80249d1304d0cf5eae0defdf320a7dae437d825e55ab11"]
+size = 30598810
+storage_path = "$datasets_dir/Antarctica/ANT-2KM/ANT-2KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Grids_ANT-2KM/2.0.0/ANT-2KM_grid.nc"
+
+["ANT-32KM_grid.nc"]
+checksum = "sha256:fd4bff6ed6fba40bc1be3a7b4d4f24c75a1fefd07cfb776b1944ebf5e8c172b9"
+previous_checksums = ["sha256:49cf80092bf11538d76d480dea852afea71c414565d6123fb01ff4e7e853bee1", "sha256:66765d3512c62479e60ad1095a4ee84b38edb681fe816eddf9896c3a2799efd8", "sha256:c91dabc6970bd7b99809d38352627c34d0d24c3ea9797a18c266a8f302ee1958"]
+size = 190852
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Grids_ANT-32KM/2.0.0/ANT-32KM_grid.nc"
+
+["ANT-4KM_grid.nc"]
+checksum = "sha256:89e70f509171413fc0dcce9979964f62332720faee8a3a0b253ce471533ab6ea"
+previous_checksums = ["sha256:b553afcb6273200e9cd436c4f3ba5f081c599c58237374342aade5c4588e879f", "sha256:c44530bdcaef1f3b2415a9503dd2eabc0239f25984a3b7ccb0678641dd283f20", "sha256:fb6604c91ce17a3978a380d4e7d8b641d2f57eea5da4c37e0f46189faa07884f"]
+size = 9193103
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Grids_ANT-4KM/2.0.0/ANT-4KM_grid.nc"
+
+["ANT-500M_grid.nc"]
+checksum = "sha256:219f7ab93945da3facf940bf2c53ce40e6ab2ec910990f41710bf40f2a4ecee3"
+previous_checksums = ["sha256:28c3b0fb780403d2c16844aa8da3c4f798eeb613f1417b53081088e2cdcb7e1d"]
+size = 327558332
+storage_path = "$datasets_dir/Antarctica/ANT-500M/ANT-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Grids_ANT-500M/2.0.0/ANT-500M_grid.nc"
+
+["ANT-8KM_grid.nc"]
+checksum = "sha256:300b2eee058b584bc9f3b997ecadfc8da4774d09a237678d9055313ea5bb2b47"
+previous_checksums = ["sha256:27b6ffe5af1932ac7e1fcf32b8e8219420fe82be6287f09f931efbebed8ec93d", "sha256:6d00ae1cafbf496c1375c74c9153d92c5e2aec79d8026f004ba0dc26d0c47ece", "sha256:866f0fcc4dd06b0fc27fe92d8528d025206288f01b612839490689daaf469d5a"]
+size = 2776690
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Grids_ANT-8KM/2.0.0/ANT-8KM_grid.nc"
+
+["grid_ANT-16KM.txt"]
+checksum = "sha256:09d646757fe153b435cee10a90cf772b4626efbe2f187d410eab83876c8305cb"
+size = 467
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/grid_ANT-16KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Grids_ANT-16KM/2.0.0/grid_ANT-16KM.txt"
+
+["grid_ANT-1KM.txt"]
+checksum = "sha256:d8e6029b241c90da5ba2b6f4aed5fc6736d2251dfbf96e1432952605eaf02d67"
+size = 469
+storage_path = "$datasets_dir/Antarctica/ANT-1KM/grid_ANT-1KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Grids_ANT-1KM/2.0.0/grid_ANT-1KM.txt"
+
+["grid_ANT-2KM.txt"]
+checksum = "sha256:d02bf6fb1a40ffa3a09cad2982212ffa925a643e487b74b8c38af6cf773faff5"
+size = 468
+storage_path = "$datasets_dir/Antarctica/ANT-2KM/grid_ANT-2KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Grids_ANT-2KM/2.0.0/grid_ANT-2KM.txt"
+
+["grid_ANT-32KM.txt"]
+checksum = "sha256:619c2b14b9667a6ff1efe4de41f1b2bd0ddc8d3e10df6d5fd99222b80be20276"
+size = 466
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/grid_ANT-32KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Grids_ANT-32KM/2.0.0/grid_ANT-32KM.txt"
+
+["grid_ANT-4KM.txt"]
+checksum = "sha256:dc549c434411d3f7ad5b46e4f954f9bb180d0d2e272e1942d97e7072ae8b711d"
+size = 468
+storage_path = "$datasets_dir/Antarctica/ANT-4KM/grid_ANT-4KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Grids_ANT-4KM/2.0.0/grid_ANT-4KM.txt"
+
+["grid_ANT-500M.txt"]
+checksum = "sha256:2923180d7edf174ad3a57b9d97fc475516fd33c239bcef35073fbce24f08292d"
+size = 472
+storage_path = "$datasets_dir/Antarctica/ANT-500M/grid_ANT-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Grids_ANT-500M/2.0.0/grid_ANT-500M.txt"
+
+["grid_ANT-8KM.txt"]
+checksum = "sha256:66ff6285f42ec156b6c6a6c30fcb0d2e4c94e07d67512fb002cb0348b3420ce5"
+size = 465
+storage_path = "$datasets_dir/Antarctica/ANT-8KM/grid_ANT-8KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Grids_ANT-8KM/2.0.0/grid_ANT-8KM.txt"

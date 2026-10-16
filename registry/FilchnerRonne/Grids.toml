@@ -1,0 +1,33 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-16"
+git_tag = "grids-v2.0.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=FilchnerRonne_Grids"
+version = "2.0.0"
+
+["FRIS-1KM_grid.nc"]
+checksum = "sha256:4e5eb651c6225c438859b5f75ab2da1e9327842e83e8bde54ca29c936fa1b32d"
+previous_checksums = ["sha256:0c02cf89c76ce327455337d17dde70714b09b28a0ec56e6fc971782118de9384"]
+size = 6797860
+storage_path = "$datasets_dir/FilchnerRonne/FRIS-1KM/FRIS-1KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Grids_FRIS-1KM/2.0.0/FRIS-1KM_grid.nc"
+
+["FRIS-500M_grid.nc"]
+checksum = "sha256:b9113498184ba65635680733bc5acc05ca2802cf96cd1efd25701fcc505329c8"
+previous_checksums = ["sha256:0c8e9de7f49cd15a2c135cb9a3b9748e4f5624692d452a1199f1b3e52a1dc15e"]
+size = 22435017
+storage_path = "$datasets_dir/FilchnerRonne/FRIS-500M/FRIS-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Grids_FRIS-500M/2.0.0/FRIS-500M_grid.nc"
+
+["grid_FRIS-1KM.txt"]
+checksum = "sha256:a7f4d34451d77b5a784e3439999ee1adb083ed937053ade210119122904c8fed"
+size = 467
+storage_path = "$datasets_dir/FilchnerRonne/FRIS-1KM/grid_FRIS-1KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Grids_FRIS-1KM/2.0.0/grid_FRIS-1KM.txt"
+
+["grid_FRIS-500M.txt"]
+checksum = "sha256:0e7c50472f23d5491407840cacd7c3cfccf4ec28d2746058ba30a12daf006fcb"
+size = 467
+storage_path = "$datasets_dir/FilchnerRonne/FRIS-500M/grid_FRIS-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Grids_FRIS-500M/2.0.0/grid_FRIS-500M.txt"

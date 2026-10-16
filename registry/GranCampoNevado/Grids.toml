@@ -1,0 +1,46 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-16"
+git_tag = "grids-v2.0.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=GranCampoNevado_Grids"
+version = "2.0.0"
+
+["GCN-100M_grid.nc"]
+checksum = "sha256:10f858f338314aea757282d82900448b60bcf864195e083c1747f024d178c482"
+previous_checksums = ["sha256:d24b70741b21b9102365d41749eb3d7e6115408bf547d03261cae4a6af58aa80"]
+size = 287284
+storage_path = "$datasets_dir/GranCampoNevado/GCN-100M/GCN-100M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Grids_GCN-100M/2.0.0/GCN-100M_grid.nc"
+
+["GCN-250M_grid.nc"]
+checksum = "sha256:a8bd4b876a146efd1d59d019282873f4721ca6ef5bc4bd68b6d429231e299f78"
+previous_checksums = ["sha256:e978a495cdf3c514562045456e23e192fe96cc23f128148b2c44895cfbd5a527"]
+size = 86759
+storage_path = "$datasets_dir/GranCampoNevado/GCN-250M/GCN-250M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Grids_GCN-250M/2.0.0/GCN-250M_grid.nc"
+
+["GCN-50M_grid.nc"]
+checksum = "sha256:b1bc2cfa978dffa939d2f33f7ee7b313685975b84ad0c418000d30ab0d120fdb"
+previous_checksums = ["sha256:6c0ce1bb1bb74fe1802b6b2b6e340fa0d33b889893c8d0da4f9296af9354d31e"]
+size = 756219
+storage_path = "$datasets_dir/GranCampoNevado/GCN-50M/GCN-50M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Grids_GCN-50M/2.0.0/GCN-50M_grid.nc"
+
+["grid_GCN-100M.txt"]
+checksum = "sha256:0eab4ea0d279450046078d07b4f186cb0e4de112919f1a299d68e4d315af748e"
+size = 346
+storage_path = "$datasets_dir/GranCampoNevado/GCN-100M/grid_GCN-100M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Grids_GCN-100M/2.0.0/grid_GCN-100M.txt"
+
+["grid_GCN-250M.txt"]
+checksum = "sha256:0ed503f98e060b004438dbfe972a4a657db1cbf876b362d584c30a6e51cb9f0a"
+size = 347
+storage_path = "$datasets_dir/GranCampoNevado/GCN-250M/grid_GCN-250M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Grids_GCN-250M/2.0.0/grid_GCN-250M.txt"
+
+["grid_GCN-50M.txt"]
+checksum = "sha256:f34d5e4a90ffd3bc1e0fe637e010c82b3c6769971bad171d39198f7adfae6d26"
+size = 351
+storage_path = "$datasets_dir/GranCampoNevado/GCN-50M/grid_GCN-50M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Grids_GCN-50M/2.0.0/grid_GCN-50M.txt"

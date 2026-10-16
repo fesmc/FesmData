@@ -1,0 +1,46 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-16"
+git_tag = "grids-v2.0.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=NEGIS_Grids"
+version = "2.0.0"
+
+["NEGIS-1KM_grid.nc"]
+checksum = "sha256:7e17893ce2640063658e8184b37be49369d7599a1b55ca74290dcea3c408d2ab"
+previous_checksums = ["sha256:d72ad9615b637fb7e5537d89f9e8416daaf3cb517db3dfdf3298249c3870d334"]
+size = 1769381
+storage_path = "$datasets_dir/NEGIS/NEGIS-1KM/NEGIS-1KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Grids_NEGIS-1KM/2.0.0/NEGIS-1KM_grid.nc"
+
+["NEGIS-250M_grid.nc"]
+checksum = "sha256:931b1996d9f35b3a78f153b691535af220136bfd6cd84ad14fc11f554d128df5"
+previous_checksums = ["sha256:8211aff1a9d0be2ad6d10cff1c64572f06e7412095835f009d43c5e6080abca0"]
+size = 17663298
+storage_path = "$datasets_dir/NEGIS/NEGIS-250M/NEGIS-250M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Grids_NEGIS-250M/2.0.0/NEGIS-250M_grid.nc"
+
+["NEGIS-500M_grid.nc"]
+checksum = "sha256:d6421c15456ba5008256b35ebc91530799985251de9aafdec7422769fc798a73"
+previous_checksums = ["sha256:9382a70cc99844d0600d02758bae2ddddccd4a5c590aa6068c077ca493c9b714"]
+size = 5761077
+storage_path = "$datasets_dir/NEGIS/NEGIS-500M/NEGIS-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Grids_NEGIS-500M/2.0.0/NEGIS-500M_grid.nc"
+
+["grid_NEGIS-1KM.txt"]
+checksum = "sha256:621ed798939a58d9e5d3ab085c1fb6297c00b73224aa4473de5bef7c21d74336"
+size = 463
+storage_path = "$datasets_dir/NEGIS/NEGIS-1KM/grid_NEGIS-1KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Grids_NEGIS-1KM/2.0.0/grid_NEGIS-1KM.txt"
+
+["grid_NEGIS-250M.txt"]
+checksum = "sha256:bae390eff5a7ed3bd8ce0902dfc2212fa51b67a6ef909a315da89965ec022c28"
+size = 468
+storage_path = "$datasets_dir/NEGIS/NEGIS-250M/grid_NEGIS-250M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Grids_NEGIS-250M/2.0.0/grid_NEGIS-250M.txt"
+
+["grid_NEGIS-500M.txt"]
+checksum = "sha256:9c535bf2d454cbc1ff1faabea7c6e028122fc12514d0a5da5230fc6149dc4f6b"
+size = 466
+storage_path = "$datasets_dir/NEGIS/NEGIS-500M/grid_NEGIS-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Grids_NEGIS-500M/2.0.0/grid_NEGIS-500M.txt"

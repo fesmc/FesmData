@@ -1,0 +1,59 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-16"
+git_tag = "grids-v2.0.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=DrangDrung_Grids"
+version = "2.0.0"
+
+["DDG-100M_grid.nc"]
+checksum = "sha256:aec61337452bee44972867ddd1131140b8a3a8f4c5b254f56350e15c322a59ca"
+previous_checksums = ["sha256:9d298879d1e3bbeb494d3e41eafe6981aea7ac0a42587d906ab5a75d6e5f2008"]
+size = 60090
+storage_path = "$datasets_dir/DrangDrung/DDG-100M/DDG-100M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Grids_DDG-100M/2.0.0/DDG-100M_grid.nc"
+
+["DDG-250M_grid.nc"]
+checksum = "sha256:c37785f4f8ca1bbe55afaf7f1467fd1cec04f0870a0cd9aad84a0cd3595a9b6f"
+previous_checksums = ["sha256:9408c0dc3d832a8f8d9ff377512f564be9397400cc6ae7b945479874b6312478"]
+size = 32034
+storage_path = "$datasets_dir/DrangDrung/DDG-250M/DDG-250M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Grids_DDG-250M/2.0.0/DDG-250M_grid.nc"
+
+["DDG-25M_grid.nc"]
+checksum = "sha256:7a53f24f885caa2179627dd6acc0394b064aefb61a5ed97f02cdc81d24045401"
+previous_checksums = ["sha256:e888b6c587ccd09f77f7f071a9eefaf0d394e067a64edfc2b84ef43ae4b73252"]
+size = 357906
+storage_path = "$datasets_dir/DrangDrung/DDG-25M/DDG-25M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Grids_DDG-25M/2.0.0/DDG-25M_grid.nc"
+
+["DDG-50M_grid.nc"]
+checksum = "sha256:1dd3e45a35f0b5eff5094fbb340ecdc57ee7c5ef33f49f91d056831e0897e7af"
+previous_checksums = ["sha256:38e817a99d04de54364494636d62e6cace2b652dc34528569ed316b7a2de8a23"]
+size = 139564
+storage_path = "$datasets_dir/DrangDrung/DDG-50M/DDG-50M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Grids_DDG-50M/2.0.0/DDG-50M_grid.nc"
+
+["grid_DDG-100M.txt"]
+checksum = "sha256:0b4bf7cf03c45d5dff9bbd34e6b3f2a3c58dab5c91a9adcde478cd84880c93bd"
+size = 328
+storage_path = "$datasets_dir/DrangDrung/DDG-100M/grid_DDG-100M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Grids_DDG-100M/2.0.0/grid_DDG-100M.txt"
+
+["grid_DDG-250M.txt"]
+checksum = "sha256:53710759793ff9375e3603025b6c422ebeaa5365fd6137ee970e0f087f2ab587"
+size = 329
+storage_path = "$datasets_dir/DrangDrung/DDG-250M/grid_DDG-250M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Grids_DDG-250M/2.0.0/grid_DDG-250M.txt"
+
+["grid_DDG-25M.txt"]
+checksum = "sha256:6b10c6bbad6595ba131119cdfd9e3645a6877313c43558099ce84b574400fea4"
+size = 335
+storage_path = "$datasets_dir/DrangDrung/DDG-25M/grid_DDG-25M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Grids_DDG-25M/2.0.0/grid_DDG-25M.txt"
+
+["grid_DDG-50M.txt"]
+checksum = "sha256:0c19c11587ee8a4bf3183524ea23adb40956e3d196b6af8b109f337933036ce7"
+size = 331
+storage_path = "$datasets_dir/DrangDrung/DDG-50M/grid_DDG-50M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Grids_DDG-50M/2.0.0/grid_DDG-50M.txt"

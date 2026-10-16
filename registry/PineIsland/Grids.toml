@@ -1,0 +1,33 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-16"
+git_tag = "grids-v2.0.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=PineIsland_Grids"
+version = "2.0.0"
+
+["PIG-1KM_grid.nc"]
+checksum = "sha256:ddb857bf11099c88d26a7da614a76967f4120f1633389130bd3ac4df7393a3f2"
+previous_checksums = ["sha256:8a51506735209acbe991ad6cba3f059f079cc249bbc422708c6c0b42de8d053a", "sha256:fce70b563deef10cf46e31b799f055f199c817aa46a838bc3e176595228c6b6d"]
+size = 1126824
+storage_path = "$datasets_dir/PineIsland/PIG-1KM/PIG-1KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Grids_PIG-1KM/2.0.0/PIG-1KM_grid.nc"
+
+["PIG-500M_grid.nc"]
+checksum = "sha256:af9e98c8a979aca36cbba1e18ef44f98572f4ee15ebf0af18ee1c745943e4823"
+previous_checksums = ["sha256:1e53111452d054b459eb49969ced8a9d1d5b0e80440c12188a1137a3dc1e59a6", "sha256:aa519e1467d9f12570520fa77442f036c84a92f5b2241e1adfa78c7c18ee025d"]
+size = 3463122
+storage_path = "$datasets_dir/PineIsland/PIG-500M/PIG-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Grids_PIG-500M/2.0.0/PIG-500M_grid.nc"
+
+["grid_PIG-1KM.txt"]
+checksum = "sha256:014b20f47c3e7e7056576a6de9495351e521d772c62376743fea17f68d079e8c"
+size = 464
+storage_path = "$datasets_dir/PineIsland/PIG-1KM/grid_PIG-1KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Grids_PIG-1KM/2.0.0/grid_PIG-1KM.txt"
+
+["grid_PIG-500M.txt"]
+checksum = "sha256:1385ab1af18969ce4d10acbb2fe96e50184add87c15e703af45c125820389d5b"
+size = 467
+storage_path = "$datasets_dir/PineIsland/PIG-500M/grid_PIG-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Grids_PIG-500M/2.0.0/grid_PIG-500M.txt"

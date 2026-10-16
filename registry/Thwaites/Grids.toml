@@ -1,0 +1,33 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-16"
+git_tag = "grids-v2.0.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Thwaites_Grids"
+version = "2.0.0"
+
+["THW-1KM_grid.nc"]
+checksum = "sha256:5361fd98d9e6186245a91219a4ac45ad82c0dc3d5a65034a569d7a543d592dd9"
+previous_checksums = ["sha256:705cca061b5de19e4c240cd530f9e3761fc7ec33edc9a63c2d5d51264e144250", "sha256:f0844ba5083fd5f5f3ffa1363f7cafdebbf5a0f74a7c2aa7a5289a5498ffb2ff"]
+size = 1499882
+storage_path = "$datasets_dir/Thwaites/THW-1KM/THW-1KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Grids_THW-1KM/2.0.0/THW-1KM_grid.nc"
+
+["THW-500M_grid.nc"]
+checksum = "sha256:3017b6f8c96cce7e13ad4616c4a889aaf9f60496ba5df023d07325ae97abea36"
+previous_checksums = ["sha256:74e70697a5d962a8f05dfd6d61639a8ff285e3cf476e09530db0694df45e3469", "sha256:d50616bf3d370a92f0c024753209f24facc23f52adf0cbb7d86e2d5473c9e766"]
+size = 4661315
+storage_path = "$datasets_dir/Thwaites/THW-500M/THW-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Grids_THW-500M/2.0.0/THW-500M_grid.nc"
+
+["grid_THW-1KM.txt"]
+checksum = "sha256:f5a26a47267918dfdc4cd6e3bef8405e52e6d86836990bc344b6e79df2535b0e"
+size = 464
+storage_path = "$datasets_dir/Thwaites/THW-1KM/grid_THW-1KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Grids_THW-1KM/2.0.0/grid_THW-1KM.txt"
+
+["grid_THW-500M.txt"]
+checksum = "sha256:235395dbd0c851b00ed00c2a51a3b5b5e0c8771a2634c1d48d939eabacf6e6f9"
+size = 467
+storage_path = "$datasets_dir/Thwaites/THW-500M/grid_THW-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Grids_THW-500M/2.0.0/grid_THW-500M.txt"

@@ -1,0 +1,33 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-10-16"
+git_tag = "grids-v2.0.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Amery_Grids"
+version = "2.0.0"
+
+["AMY-1KM_grid.nc"]
+checksum = "sha256:2745fcac76a4eedde4892d1af514f5627dc2254d72f52ec20726ff82fab4dec9"
+previous_checksums = ["sha256:69118798dca9d67d99c7d1f516dc20fd67b5023e6ca9bee09beb31da6949dc2a"]
+size = 2131999
+storage_path = "$datasets_dir/Amery/AMY-1KM/AMY-1KM_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Grids_AMY-1KM/2.0.0/AMY-1KM_grid.nc"
+
+["AMY-500M_grid.nc"]
+checksum = "sha256:01cba6f5cf20a4cc0911d15b406688e19a838bc12b2542768b3352402254f928"
+previous_checksums = ["sha256:ba6a831b936aa8824e569c2773474b7c9efc54601aa5f2e07254f39c391fa6e2"]
+size = 6584284
+storage_path = "$datasets_dir/Amery/AMY-500M/AMY-500M_grid.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Grids_AMY-500M/2.0.0/AMY-500M_grid.nc"
+
+["grid_AMY-1KM.txt"]
+checksum = "sha256:9c34ff38d2907959f9c6ea0379d286f360eba11243c201194ca78354e5860dfe"
+size = 462
+storage_path = "$datasets_dir/Amery/AMY-1KM/grid_AMY-1KM.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Grids_AMY-1KM/2.0.0/grid_AMY-1KM.txt"
+
+["grid_AMY-500M.txt"]
+checksum = "sha256:547d9cf5546f45bd6bda45d91ad010d8ae5f99aca19e95887be6e16a2b650bea"
+size = 465
+storage_path = "$datasets_dir/Amery/AMY-500M/grid_AMY-500M.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Grids_AMY-500M/2.0.0/grid_AMY-500M.txt"
