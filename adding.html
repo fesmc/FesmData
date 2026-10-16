@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.19">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Adding a dataset – FesmData</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-d37df8fd7b43e116a420b34c208e916c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-dae82585467ed893c2d02b9a361b8f7a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">FesmData</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./download.html"> 
+<span class="menu-text">Download</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./products.html"> 
+<span class="menu-text">Products</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./domains.html"> 
+<span class="menu-text">Domains and grids</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-datasets" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Datasets</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-datasets">    
+        <li>
+    <a class="dropdown-item" href="./datasets.html">
+ <span class="dropdown-text">Overview</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./precision.html">
+ <span class="dropdown-text">Precision and file sizes</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Topography and masks</li>
+        <li>
+    <a class="dropdown-item" href="./datasets/topo.html">
+ <span class="dropdown-text">Topo — topography</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/regions.html">
+ <span class="dropdown-text">Regions — regions and basins</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Ice</li>
+        <li>
+    <a class="dropdown-item" href="./datasets/velocity.html">
+ <span class="dropdown-text">Velocity — ice surface velocity</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/icechange.html">
+ <span class="dropdown-text">IceChange — observed ice sheet change</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/icehistory.html">
+ <span class="dropdown-text">IceHistory — paleo ice sheets</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/stratigraphy.html">
+ <span class="dropdown-text">Stratigraphy — age structure</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/basalmelt.html">
+ <span class="dropdown-text">BasalMelt — ice-shelf melt</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/basalstate.html">
+ <span class="dropdown-text">BasalState — basal thermal state</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Solid Earth</li>
+        <li>
+    <a class="dropdown-item" href="./datasets/ghf.html">
+ <span class="dropdown-text">GHF — geothermal heat flow</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/sediment.html">
+ <span class="dropdown-text">Sediment — sediment thickness</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/solidearth.html">
+ <span class="dropdown-text">SolidEarth — lithosphere and mantle</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Ocean and climate</li>
+        <li>
+    <a class="dropdown-item" href="./datasets/ocean.html">
+ <span class="dropdown-text">Ocean — temperature and salinity</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/smb.html">
+ <span class="dropdown-text">SMB — surface mass balance</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/atmosphere.html">
+ <span class="dropdown-text">Atmosphere — reanalysis and satellite</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/paleoclimate.html">
+ <span class="dropdown-text">Paleoclimate — past climates</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-records" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Records</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-records">    
+        <li>
+    <a class="dropdown-item" href="./records_overview.html">
+ <span class="dropdown-text">Overview</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="./datasets/icecores.html">
+ <span class="dropdown-text">IceCores — ice core records</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/ghg.html">
+ <span class="dropdown-text">GHG — greenhouse gases</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/sealevel.html">
+ <span class="dropdown-text">SeaLevel — global sea level</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/stacks.html">
+ <span class="dropdown-text">Stacks — benthic δ18O stacks</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/orbital.html">
+ <span class="dropdown-text">Orbital — orbital elements and insolation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/rsl.html">
+ <span class="dropdown-text">RSL — relative sea level</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/boreholes.html">
+ <span class="dropdown-text">Boreholes — ice temperature profiles</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/gps.html">
+ <span class="dropdown-text">GPS — vertical velocities</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/smbobs.html">
+ <span class="dropdown-text">SMBObs — surface mass balance observations</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/freshwater.html">
+ <span class="dropdown-text">Freshwater — ice sheet freshwater fluxes</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-your-own-data" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Your own data</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-your-own-data">    
+        <li>
+    <a class="dropdown-item" href="./remap.html">
+ <span class="dropdown-text">Gridded data</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./records.html">
+ <span class="dropdown-text">Records format</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-developers" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Developers</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-developers">    
+        <li>
+    <a class="dropdown-item" href="./developers.html">
+ <span class="dropdown-text">Overview and code</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./machines.html">
+ <span class="dropdown-text">Machines and storage</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./adding.html">
+ <span class="dropdown-text">Adding a dataset</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./releasing.html">
+ <span class="dropdown-text">Releasing</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./website.html">
+ <span class="dropdown-text">Website and figures</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/fesmc/FesmData" target="_blank"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#adding-a-dataset" id="toc-adding-a-dataset" class="nav-link active" data-scroll-target="#adding-a-dataset">Adding a dataset</a>
+  <ul class="collapse">
+  <li><a href="#sources" id="toc-sources" class="nav-link" data-scroll-target="#sources">Sources</a></li>
+  <li><a href="#thematic-datasets" id="toc-thematic-datasets" class="nav-link" data-scroll-target="#thematic-datasets">Thematic datasets</a>
+  <ul class="collapse">
+  <li><a href="#grids" id="toc-grids" class="nav-link" data-scroll-target="#grids">Grids</a></li>
+  <li><a href="#gap-filling" id="toc-gap-filling" class="nav-link" data-scroll-target="#gap-filling">Gap filling</a></li>
+  <li><a href="#several-files" id="toc-several-files" class="nav-link" data-scroll-target="#several-files">Several files</a></li>
+  <li><a href="#products-not-released" id="toc-products-not-released" class="nav-link" data-scroll-target="#products-not-released">Products not released</a></li>
+  <li><a href="#precision" id="toc-precision" class="nav-link" data-scroll-target="#precision">Precision</a></li>
+  <li><a href="#masks" id="toc-masks" class="nav-link" data-scroll-target="#masks">Masks</a></li>
+  <li><a href="#ensembles" id="toc-ensembles" class="nav-link" data-scroll-target="#ensembles">Ensembles</a></li>
+  <li><a href="#making-it" id="toc-making-it" class="nav-link" data-scroll-target="#making-it">Making it</a></li>
+  </ul></li>
+  <li><a href="#records-datasets" id="toc-records-datasets" class="nav-link" data-scroll-target="#records-datasets">Records datasets</a></li>
+  <li><a href="#datasets-with-their-own-pipeline" id="toc-datasets-with-their-own-pipeline" class="nav-link" data-scroll-target="#datasets-with-their-own-pipeline">Datasets with their own pipeline</a></li>
+  <li><a href="#publishing-a-new-dataset" id="toc-publishing-a-new-dataset" class="nav-link" data-scroll-target="#publishing-a-new-dataset">Publishing a new dataset</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/fesmc/FesmData/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="adding-a-dataset" class="level1">
+<h1>Adding a dataset</h1>
+<p>A dataset is one of three kinds, by how it is made from its sources:</p>
+<ul>
+<li>a <strong>thematic dataset made by remapping</strong> (e.g.&nbsp;GHF, Velocity, SMB): fields from published maps, each source prepared once and remapped onto the grids of the domains. Most new datasets are of this kind. It is defined by <code>&lt;Dataset&gt;/remap.toml</code>.</li>
+<li>a <strong>records dataset</strong> (e.g.&nbsp;IceCores, RSL): non-gridded data (time series, sites, profiles), whose prepared files are the products. It is defined by <code>&lt;Dataset&gt;/records.toml</code>.</li>
+<li>a <strong>dataset with its own pipeline</strong> (Topo, Regions): processing beyond remapping (merging sources on the base grids, deriving fields), in a pipeline folder of its own.</li>
+</ul>
+<p>All start from prepared sources, and end with the same steps to publish them (see <a href="#publishing-a-new-dataset">Publishing a new dataset</a>).</p>
+<section id="sources" class="level2">
+<h2 class="anchored" data-anchor-id="sources">Sources</h2>
+<p>Each source has a folder named after it (<code>&lt;Author&gt;&lt;Year&gt;_&lt;topic&gt;</code>, e.g. <code>Lucazeau2019_ghf/</code>) with a <code>README.md</code> (the data, where they come from, how to cite them, and their licence: check that it allows redistributing derived products before releasing them) and a <code>prepare.jl</code> (with its own <code>Project.toml</code>), which gets the original files through <code>../datamanifest.toml</code> (with their DOI) and writes the prepared file(s) to <code>$FESMDATA_PREPARED/&lt;source&gt;/</code>. The form of a prepared file is described under <a href="https://fesmc.github.io/FesmData/remap.html#prepare-a-source">Gridded data</a> and <a href="https://fesmc.github.io/FesmData/records.html#file-form">Records format</a>. The commands that make a dataset prepare its missing sources first.</p>
+</section>
+<section id="thematic-datasets" class="level2">
+<h2 class="anchored" data-anchor-id="thematic-datasets">Thematic datasets</h2>
+<p>A thematic dataset (e.g.&nbsp;GHF, geothermal heat flow) gathers the products of several sources on one theme, and is released like Topo, with its own versions (tags <code>ghf-vX.Y.Z</code>). It is defined by <code>&lt;Dataset&gt;/remap.toml</code>, one table per product:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">[products.Lucazeau2019]</span>                      <span class="co"># → &lt;GRID&gt;_GHF-Lucazeau2019.nc</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">source</span> <span class="op">=</span> <span class="st">"Lucazeau2019_ghf"</span>                  <span class="co"># source folder, with prepare.jl</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dt">file</span> <span class="op">=</span> <span class="st">"Lucazeau2019_GHF.nc"</span>                 <span class="co"># prepared file of the source (or a list, see below)</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="dt">variables</span> <span class="op">=</span> <span class="op">[</span><span class="st">"ghf"</span><span class="op">,</span> <span class="st">"ghf_sd"</span><span class="op">]</span>                <span class="co"># optional, default all</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="dt">grids</span> <span class="op">=</span> <span class="op">{ </span><span class="dt">Antarctica</span><span class="op"> =</span> <span class="dv">4</span><span class="op">, </span><span class="dt">Greenland</span><span class="op"> =</span> <span class="dv">4</span><span class="op">, </span><span class="dt">Global</span><span class="op"> =</span> <span class="dv">4</span><span class="op"> }</span>   <span class="co"># by domain, see below</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># method = "con"                             # optional, default "con"</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># smooth = "auto"                            # optional, default "auto"</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># release = false                            # optional: made, but not released</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># figure = { variables = ["ghf"] }            # optional: its figure on the website</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># fill = { variables = ["ux_srf", "uy_srf"], mask = "TOPO-BedMachine-v4" }   # optional: gaps over the ice (or "all") filled, see below</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># precision = { ghf = 0.1 }                  # optional: precision of fields instead of the default, see below</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># mask = { mask_ocn = 0.5 }                  # optional: integer masks of the coverage, see below</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="grids" class="level3">
+<h3 class="anchored" data-anchor-id="grids">Grids</h3>
+<p><code>grids</code> lists the domains (output folders) of the product, each with the grids it is made on; it is not made on other domains. For each domain:</p>
+<ul>
+<li>a number: the minimum grid spacing in km, i.e.&nbsp;all standard grids of the domain not finer than this (on lon-lat grids, 111 km per degree of latitude); 0 means all. Finer grids are left out where a coarse source adds no information and its files would only be large; models that need finer grids can remap online. As a rule, no grid is finer than about a quarter of the source spacing: 16 km and 0.5° (<code>Global = 50</code>) for sources at 1-2°, 8 km and 0.25° (<code>Global = 25</code>) for sources at 0.25-0.5°, 4 km for most others.</li>
+<li>a list of grid names: exactly these grids, e.g.&nbsp;<code>Global = ["GLOBAL-T170"]</code>. This also gives the grids made only on request, which no number selects: the Gaussian grids of the Global domain (<code>gaussian</code> in <code>../shared/domains.toml</code>, e.g.&nbsp;GLOBAL-T170, the T170 grid of 512 x 256 used by VILMA).</li>
+</ul>
+<p>For example, <code>grids = { Antarctica = 16, Global = ["GLOBAL-T170"] }</code> makes ANT-16KM, ANT-32KM and GLOBAL-T170.</p>
+<p>Crops (Greenland, Laurentide, Eurasia, …) and nests are listed only for products their parent domain does not have (e.g.&nbsp;a Greenland-only source on Greenland): their grids lie on those of the parent, so <code>fetch</code> cuts a product of the parent to them on demand (see <a href="https://fesmc.github.io/FesmData/download.html#nests-and-crops">Nests and crops</a>), and it is stored once.</p>
+</section>
+<section id="gap-filling" class="level3">
+<h3 class="anchored" data-anchor-id="gap-filling">Gap filling</h3>
+<p><code>fill</code> fills the gaps of a source over the ice on each grid, after remapping (and the rotation of vectors): the cells of the fields <code>variables</code> with ice (<code>H_ice &gt; 0</code>) in the Topo product <code>mask</code> on the same grid (<code>&lt;GRID&gt;_TOPO-BedMachine-v4.nc</code> in the same folder) but no source data (<code>f_valid = 0</code>) get the harmonic (Laplace) interpolation of the cells around them (<code>laplace_fill</code> of FesmUtils). With <code>mask = "all"</code>, all the cells without source data are filled, e.g.&nbsp;outside the domain of a regional climate model, for fields used as model forcing over the whole grid. Gaps not connected to any data stay missing. Both components of a vector must be filled; the speed of a filled vector (the field with the standard name <code>&lt;x&gt;_speed</code>, for <code>eastward_&lt;x&gt;_velocity</code>) is the magnitude of the filled components there. Other fields (e.g.&nbsp;errors) stay missing in the gaps. The file has <code>mask_fill</code> (1: filled, 0: not; <code>mask_fill_&lt;field&gt;</code> when the fields differ) and the global attribute <code>gap_fill</code>. The Topo product must be made first (thematic datasets depend on Topo, and some on Regions).</p>
+<p><code>fill</code> can also be a list of tables, each with its <code>method</code> (each field in one of them): <code>"harmonic"</code> (the default, as above), <code>"elevation_regression"</code>, for fields that depend on the surface elevation (e.g.&nbsp;the surface mass balance or temperature of a regional climate model, outside its ice mask or domain), or <code>"elevation"</code>, for the surface elevation of the source itself (e.g.&nbsp;the orography of the regional climate model):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">fill</span> <span class="op">=</span> <span class="op">[{ </span><span class="dt">variables</span><span class="op"> =</span> <span class="op">[</span><span class="st">"pr"</span><span class="op">,</span> <span class="st">"sf"</span><span class="op">], </span><span class="dt">mask</span><span class="op"> =</span> <span class="st">"all"</span><span class="op"> },</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>        <span class="op">{ </span><span class="dt">method</span><span class="op"> =</span> <span class="st">"elevation_regression"</span><span class="op">, </span><span class="dt">variables</span><span class="op"> =</span> <span class="op">[</span><span class="st">"smb"</span><span class="op">,</span> <span class="st">"t2m"</span><span class="op">,</span> <span class="st">"T_srf"</span><span class="op">], </span><span class="dt">mask</span><span class="op"> =</span> <span class="st">"all"</span><span class="op">,</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="op">          </span><span class="dt">cap</span><span class="op"> =</span> <span class="op">{ </span><span class="dt">smb</span><span class="op"> =</span> <span class="fl">-91.7</span><span class="op"> } },</span>       <span class="co"># optional: elevation, radius = 150.0, min_points = 20</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="op">{ </span><span class="dt">method</span><span class="op"> =</span> <span class="st">"elevation"</span><span class="op">, </span><span class="dt">variables</span><span class="op"> =</span> <span class="op">[</span><span class="st">"z_srf"</span><span class="op">], </span><span class="dt">mask</span><span class="op"> =</span> <span class="st">"all"</span><span class="op">, </span><span class="dt">gaps_of</span><span class="op"> =</span> <span class="st">"smb"</span><span class="op"> }]</span>   <span class="co"># optional: elevation, gaps_of</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Each gap gets the linear regression of the field on the surface elevation, fitted over the cells with source data (<code>f_valid &gt; 0</code>) within <code>radius</code> km (a disk; grown by <code>radius / 2</code> until it holds at least <code>min_points</code> of them), at the elevation of the cell clamped to the range of the elevations of these cells (no extrapolation beyond the lowest and highest of them). The elevation, for the cells with data as for the gaps, is <code>max(z_srf, 0)</code> of the Topo product <code>elevation</code> on the same grid (default <code>TOPO-BedMachine-v4</code>): the surface elevation, never below sea level. Where the elevations of these cells hardly differ (variance below 1 m2), the gap gets their mean. Fields with extra dimensions are filled slice by slice (e.g.&nbsp;each month). <code>cap</code> gives upper bounds of the filled values, by field, in its units: of each value, or for a monthly field (extra dimension <code>month</code> of 12 only) of the annual mean, the months weighted by their mean length (February 28.25 days, as the <code>-annual-mean</code> products up to the leap days of their period), all months of a cell shifted down by the same amount, so that the seasonal cycle is kept. The log gives, for each field, the cells filled, the cell-slices whose radius was grown and the median slope. Vectors are filled by harmonic interpolation only.</p>
+<p><code>"elevation"</code> fills the gaps with the elevation of the regression itself, <code>max(z_srf, 0)</code> of the Topo product <code>elevation</code> (default <code>TOPO-BedMachine-v4</code>), not clamped (the clamp applies only within the regression). With <code>gaps_of</code>, it fills the cells (of <code>mask</code>) where that field has no source data, in any of its slices (e.g.&nbsp;any month), instead of the gaps of the variables themselves, and so also replaces source data there (marked by <code>mask_fill</code>). Filling the orography of the source where the surface mass balance is filled keeps it the reference elevation of the filled values, e.g.&nbsp;for an elevation correction of the surface mass balance in a model, also where the source has an orography of its own (e.g.&nbsp;0 over its ocean).</p>
+</section>
+<section id="several-files" class="level3">
+<h3 class="anchored" data-anchor-id="several-files">Several files</h3>
+<p><code>file</code> can be a list of prepared files of the source, each on its own grid, combined into one product. The files are meant to cover separate areas, e.g.&nbsp;the grounded and the floating ice of Antarctica on grids of their own (<code>file = ["Smith2020_ANT.nc", "Smith2020_ANT_floating.nc"]</code> in <code>IceChange/remap.toml</code>); they are not suited to alternative sources of the same quantity over the same area. Each file is remapped onto each grid as above; a field in one file only is taken as it is, and a field in several files (with the same units and extra dimensions) is the sum of their contributions, the value of each times the fraction of the cell it covers, divided by the sum of these fractions, with <code>f_valid</code> that sum. Where their remapped coverage overlaps (e.g.&nbsp;source grids offset from each other at a boundary) and the fractions add up to more than 1, <code>f_valid</code> is 1 and the value is the sum of the contributions, so that the total of each file is kept (for integer fields, the class of the file covering most of the cell). <code>variables</code> are taken from the files that have them, and <code>fill</code> applies to the combined fields. The global attributes of the files are joined (their distinct values), and <code>remapped_from</code> lists the files.</p>
+</section>
+<section id="products-not-released" class="level3">
+<h3 class="anchored" data-anchor-id="products-not-released">Products not released</h3>
+<p><code>release = false</code> makes a product locally but leaves it out of the releases, e.g.&nbsp;data obtained by personal communication whose redistribution the authors have not agreed to yet (say so in the README of the dataset).</p>
+</section>
+<section id="precision" class="level3">
+<h3 class="anchored" data-anchor-id="precision">Precision</h3>
+<p><code>precision</code> sets the precision of some float fields instead of the default of their kind (see <a href="https://fesmc.github.io/FesmData/precision.html">Precision and file sizes</a>; <code>../shared/precision.jl</code>), for fields that need more (or allow less): by field, an absolute tolerance in the units of the field (a number), a relative one (<code>"x%"</code>) or <code>"lossless"</code>, e.g.&nbsp;<code>precision = { ghf = 0.1, smb = "1%", lat = "lossless" }</code>. Each float field records its precision in the attributes <code>precision</code> and <code>bitround_keepbits</code>.</p>
+</section>
+<section id="masks" class="level3">
+<h3 class="anchored" data-anchor-id="masks">Masks</h3>
+<p><code>mask</code> adds integer masks of the coverage of the source to the product, by name, each 1 where <code>f_valid</code> is at least its threshold and 0 elsewhere, with <code>f_valid</code> itself (on the same dimensions, e.g.&nbsp;a 3D ocean mask by depth). For a source missing on land and below the sea floor (ORAS5), <code>mask = { mask_ocn = 0.5 }</code> gives the ocean cells of each level that are mostly ocean. It needs one <code>f_valid</code> for all fields of the product.</p>
+</section>
+<section id="ensembles" class="level3">
+<h3 class="anchored" data-anchor-id="ensembles">Ensembles</h3>
+<p>An <strong>ensemble product</strong> is the mean or the standard deviation of other products of the dataset, its members, e.g.&nbsp;the models of a model intercomparison:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">[products.PMIP3-lgm-mean]</span>                    <span class="co"># → &lt;GRID&gt;_Paleoclimate-PMIP3-lgm-mean.nc</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="dt">ensemble</span> <span class="op">=</span> <span class="op">[</span><span class="st">"PMIP3-CCSM4-lgm"</span><span class="op">,</span> <span class="st">"PMIP3-CNRM-CM5-lgm"</span><span class="op">,</span> <span class="er">...</span><span class="op">]</span>   <span class="co"># member products of the dataset</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="dt">stat</span> <span class="op">=</span> <span class="st">"mean"</span>                                <span class="co"># or "stdev"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="dt">grids</span> <span class="op">=</span> <span class="op">{ </span><span class="dt">Antarctica</span><span class="op"> =</span> <span class="dv">8</span><span class="op">, </span><span class="dt">Global</span><span class="op"> =</span> <span class="dv">8</span><span class="op"> }</span>       <span class="co"># members not made on some of these: intermediate there</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># release = false, figure = { ... }, precision = { ... }   # optional, as above</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>It has no <code>source</code>, <code>file</code>, <code>variables</code>, <code>method</code>, <code>smooth</code> or <code>fill</code>: it is made on each grid from the files of its members on that grid (those missing are remapped first), after the other products. On a grid that is not one of a member’s own <code>grids</code>, the member is remapped as an intermediate file (<code>$FESMDATA_WORK/remap/members/</code>, full precision, not released), so that the statistics can be released on grids where the members are not, e.g.&nbsp;the 2 km grids of the mountain-glacier domains. Each of its fields is a field of any member (not <code>f_valid</code>, <code>mask_fill</code> or integer fields), with the same name, units and extra dimensions, and <code>, ensemble mean</code> or <code>, ensemble standard deviation</code> appended to its long name: in each cell, the mean or the standard deviation (population, divided by n, as <code>cdo ensstd</code>) of the members with a value there. <code>n_&lt;field&gt;</code> (a byte field) is the number of these members, e.g.&nbsp;0 for a sea surface temperature over land. The global attributes of the members are joined, and <code>ensemble_members</code> lists them.</p>
+<p>Domains are listed explicitly, so that the files of a release are fixed; each source must cover all its grids (one of its files, for a product of several files). The methods of remapping and smoothing (<code>method</code>, <code>smooth</code>) are described under <a href="https://fesmc.github.io/FesmData/remap.html#remap-a-file">Gridded data</a>.</p>
+</section>
+<section id="making-it" class="level3">
+<h3 class="anchored" data-anchor-id="making-it">Making it</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> <span class="at">-t</span> 8 fesmdata.jl remap GHF                          <span class="co"># all products, all grids</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> fesmdata.jl remap GHF Lucazeau2019 GLOBAL-0.5DEG    <span class="co"># one product, one grid</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> <span class="at">--job-name</span><span class="op">=</span>remap-GHF Remap/jobs/remap_dataset.sbatch GHF   <span class="co"># Levante compute node</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> <span class="at">--job-name</span><span class="op">=</span>remap-Sediment <span class="at">-p</span> shared <span class="at">-c</span> 64 <span class="at">--mem</span><span class="op">=</span>58G <span class="at">-t</span> 02:00:00 <span class="dt">\</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    Remap/jobs/remap_dataset.sbatch Sediment                  <span class="co"># small dataset, shared partition</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The sources not prepared yet are prepared first. Existing files are kept unless <code>--overwrite</code>.</p>
+<p>A new source of an existing thematic dataset is a new source folder and a new table <code>[products.&lt;Name&gt;]</code> in its <code>remap.toml</code>; add it to the table of products of the README of the dataset, run <code>julia fesmdata.jl remap &lt;Dataset&gt; &lt;Name&gt;</code>, and release a new version of the dataset.</p>
+</section>
+</section>
+<section id="records-datasets" class="level2">
+<h2 class="anchored" data-anchor-id="records-datasets">Records datasets</h2>
+<p>A records dataset is defined by <code>&lt;Dataset&gt;/records.toml</code>, one table per product:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">[products.Kindler2014]</span>            <span class="co"># → IceCores-Kindler2014.nc (+ .txt)</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="dt">source</span> <span class="op">=</span> <span class="st">"Kindler2014"</span>            <span class="co"># source folder</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="dt">file</span> <span class="op">=</span> <span class="st">"Kindler2014_NGRIP.nc"</span>     <span class="co"># prepared file</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># figure = { variable = "acc" }   # optional: the variable of its figure on the website</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># text = false                    # optional: no text form (more than two axes, or too large)</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="kw">[products.Rasmussen2014]</span>          <span class="co"># → IceCores-Rasmussen2014-&lt;part&gt;.nc (+ .txt), one per part</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="dt">source</span> <span class="op">=</span> <span class="st">"Rasmussen2014_GICC05"</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="dt">files</span> <span class="op">=</span> <span class="op">{ </span><span class="dt">NGRIP</span><span class="op"> =</span> <span class="st">"Rasmussen2014_NGRIP.nc"</span><span class="op">, </span><span class="dt">GRIP</span><span class="op"> =</span> <span class="st">"Rasmussen2014_GRIP.nc"</span><span class="op"> }</span>   <span class="co"># part = prepared file</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>A product has either <code>file</code> or <code>files</code>: several files when its data do not share their axes (e.g.&nbsp;ice cores, each on its own time axis); part names have letters, digits and <code>_</code> only.</p>
+<p>The prepared files follow the <a href="https://fesmc.github.io/FesmData/records.html">Records format</a>, with the provenance attributes (<code>provenance_attrib(&lt;tag&gt;)</code> of <code>../shared/provenance.jl</code>). <code>../shared/records_prepare.jl</code> has what most sources need: <code>read_noaa</code> and <code>read_pangaea</code> (the text tables of NOAA NCEI and PANGAEA), <code>write_series</code> (time series at sites, with the attributes) and <code>aicc2023_age</code> (AICC2023 ages of the Antarctic cores and NGRIP from their depths). Then</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> fesmdata.jl record IceCores                 <span class="co"># all products</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> fesmdata.jl record IceCores Kindler2014     <span class="co"># one product</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>prepares the missing sources, checks each prepared file against the form, copies it to <code>$FESMDATA_PRODUCTS/Records/&lt;Dataset&gt;/&lt;Dataset&gt;-&lt;Product&gt;[-&lt;part&gt;].nc</code> and writes its <a href="https://fesmc.github.io/FesmData/records.html#text-form">text form</a> next to it (<code>.txt</code>; <code>--overwrite</code> to replace both). A records dataset is released on the domain <code>Records</code> (one package per dataset, <code>Records_&lt;Dataset&gt;</code>, and <code>registry/Records/&lt;Dataset&gt;.toml</code>); <code>fesmdata.jl list</code>, <code>fetch</code> and <code>release</code> work as for the gridded datasets.</p>
+</section>
+<section id="datasets-with-their-own-pipeline" class="level2">
+<h2 class="anchored" data-anchor-id="datasets-with-their-own-pipeline">Datasets with their own pipeline</h2>
+<p>A dataset that needs its own processing (merging sources, deriving fields) is a new pipeline folder, built like Topo and Regions, so that it can be released in the same way:</p>
+<ol type="1">
+<li><strong>Folder</strong> <code>&lt;Dataset&gt;/</code> with a <code>README.md</code>, <code>Project.toml</code>, <code>common.jl</code>, <code>scripts/</code> (numbered steps) and <code>jobs/</code>.</li>
+<li><strong>Original datasets</strong> in <code>../datamanifest.toml</code>, with their DOI, read through <code>manifest()</code> (<code>../shared/manifest.jl</code>).</li>
+<li><strong><code>common.jl</code></strong> includes <code>../shared/io.jl</code> and <code>../shared/domains.jl</code>, and sets <code>const DATASET = "&lt;name&gt;"</code> (lower case), the name of its provenance attributes and release tags (<code>&lt;name&gt;-vX.Y.Z</code>).</li>
+<li><strong>Output</strong> with <code>write_fields(path, grid, fields; dataset=DATASET, ...)</code>, into <code>$FESMDATA_PRODUCTS/&lt;folder&gt;/&lt;GRID&gt;/&lt;GRID&gt;_&lt;NAME&gt;[-&lt;product&gt;].nc</code> on every grid of a domain (<code>outdir(og)</code> for each <code>og in dom.grids</code>). Add a <code>sources</code> attribute with the <code>datamanifest.toml</code> keys of the original datasets.</li>
+<li><strong><code>files.jl</code></strong> with the output file names and a function <code>&lt;name&gt;_release_files(dom, og)</code> giving the files of a release on a grid. It must need only <code>../shared/domains.jl</code> (no other packages), since Publish reads it; add its functions to <code>dataset_pipeline</code> in <code>../Publish/release.jl</code> (and include its <code>files.jl</code> there).</li>
+</ol>
+</section>
+<section id="publishing-a-new-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="publishing-a-new-dataset">Publishing a new dataset</h2>
+<p>For every kind of dataset:</p>
+<ol type="1">
+<li><strong>Release settings</strong>: add the dataset to <code>../Publish/datasets.toml</code> (its release tag, title, README, keywords and description), and to a topic of the website (<code>[_site] topics</code> there).</li>
+<li><strong>README</strong>: write <code>&lt;Dataset&gt;/README.md</code>, which becomes its page on the website, in the form of the other datasets:
+<ol type="1">
+<li><code># &lt;Dataset&gt;: &lt;title&gt;</code>, and 2-4 sentences: what it is, its kind, links to the Products and Domains pages;</li>
+<li><code>## Products</code>: a table of the products, with their source (and DOI), fields (units) and domains (for records: sites, variables, time);</li>
+<li>notes on the fields and the method, in subsections where needed;</li>
+<li><code>## Precision</code>: the precision of its fields (see <a href="https://fesmc.github.io/FesmData/precision.html">Precision and file sizes</a>);</li>
+<li><code>## Licences</code> (or <code>## Sources and licences</code>): the licence of each source;</li>
+<li><code>## Making the dataset</code>, last: the commands that make it, and how to add a source.</li>
+</ol></li>
+<li><strong>Figures</strong>: <code>julia fesmdata.jl figures &lt;Dataset&gt;</code> (see <a href="https://fesmc.github.io/FesmData/website.html">Website and figures</a>, also for the options of <code>figure</code>).</li>
+<li><strong>Page</strong>: add <code>docs/datasets/&lt;name&gt;.qmd</code>, which includes the README, the downloads and the figures (as <code>docs/datasets/ghf.qmd</code>), and add it to the menu in <code>docs/_quarto.yml</code>.</li>
+<li><strong>Release</strong> (see <a href="https://fesmc.github.io/FesmData/releasing.html">Releasing</a>): tag <code>&lt;tag&gt;-vX.Y.Z</code>, <code>julia fesmdata.jl stamp &lt;Dataset&gt;</code> at the tag, and <code>julia fesmdata.jl release &lt;Dataset&gt;</code>. The products page and the downloads of the dataset on the website are made from the registry.</li>
+</ol>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/fesmc\.github\.io\/FesmData\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>FesmData · fesmc</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/fesmc/FesmData/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Built with <a href="https://quarto.org">Quarto</a></p>
+</div>
+  </div>
+</footer>
+<script>document.querySelectorAll('a.toc-action[href^="http"]').forEach(a => { a.target = "_blank"; a.rel = "noopener"; });</script>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

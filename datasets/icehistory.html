@@ -1,0 +1,1848 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.19">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>IceHistory – FesmData</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d37df8fd7b43e116a420b34c208e916c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-dae82585467ed893c2d02b9a361b8f7a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">FesmData</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../download.html"> 
+<span class="menu-text">Download</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../products.html"> 
+<span class="menu-text">Products</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../domains.html"> 
+<span class="menu-text">Domains and grids</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-datasets" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Datasets</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-datasets">    
+        <li>
+    <a class="dropdown-item" href="../datasets.html">
+ <span class="dropdown-text">Overview</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../precision.html">
+ <span class="dropdown-text">Precision and file sizes</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Topography and masks</li>
+        <li>
+    <a class="dropdown-item" href="../datasets/topo.html">
+ <span class="dropdown-text">Topo — topography</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/regions.html">
+ <span class="dropdown-text">Regions — regions and basins</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Ice</li>
+        <li>
+    <a class="dropdown-item" href="../datasets/velocity.html">
+ <span class="dropdown-text">Velocity — ice surface velocity</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/icechange.html">
+ <span class="dropdown-text">IceChange — observed ice sheet change</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/icehistory.html">
+ <span class="dropdown-text">IceHistory — paleo ice sheets</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/stratigraphy.html">
+ <span class="dropdown-text">Stratigraphy — age structure</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/basalmelt.html">
+ <span class="dropdown-text">BasalMelt — ice-shelf melt</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/basalstate.html">
+ <span class="dropdown-text">BasalState — basal thermal state</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Solid Earth</li>
+        <li>
+    <a class="dropdown-item" href="../datasets/ghf.html">
+ <span class="dropdown-text">GHF — geothermal heat flow</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/sediment.html">
+ <span class="dropdown-text">Sediment — sediment thickness</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/solidearth.html">
+ <span class="dropdown-text">SolidEarth — lithosphere and mantle</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Ocean and climate</li>
+        <li>
+    <a class="dropdown-item" href="../datasets/ocean.html">
+ <span class="dropdown-text">Ocean — temperature and salinity</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/smb.html">
+ <span class="dropdown-text">SMB — surface mass balance</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/atmosphere.html">
+ <span class="dropdown-text">Atmosphere — reanalysis and satellite</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/paleoclimate.html">
+ <span class="dropdown-text">Paleoclimate — past climates</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-records" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Records</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-records">    
+        <li>
+    <a class="dropdown-item" href="../records_overview.html">
+ <span class="dropdown-text">Overview</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../datasets/icecores.html">
+ <span class="dropdown-text">IceCores — ice core records</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/ghg.html">
+ <span class="dropdown-text">GHG — greenhouse gases</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/sealevel.html">
+ <span class="dropdown-text">SeaLevel — global sea level</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/stacks.html">
+ <span class="dropdown-text">Stacks — benthic δ18O stacks</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/orbital.html">
+ <span class="dropdown-text">Orbital — orbital elements and insolation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/rsl.html">
+ <span class="dropdown-text">RSL — relative sea level</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/boreholes.html">
+ <span class="dropdown-text">Boreholes — ice temperature profiles</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/gps.html">
+ <span class="dropdown-text">GPS — vertical velocities</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/smbobs.html">
+ <span class="dropdown-text">SMBObs — surface mass balance observations</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/freshwater.html">
+ <span class="dropdown-text">Freshwater — ice sheet freshwater fluxes</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-your-own-data" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Your own data</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-your-own-data">    
+        <li>
+    <a class="dropdown-item" href="../remap.html">
+ <span class="dropdown-text">Gridded data</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../records.html">
+ <span class="dropdown-text">Records format</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-developers" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Developers</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-developers">    
+        <li>
+    <a class="dropdown-item" href="../developers.html">
+ <span class="dropdown-text">Overview and code</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../machines.html">
+ <span class="dropdown-text">Machines and storage</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../adding.html">
+ <span class="dropdown-text">Adding a dataset</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../releasing.html">
+ <span class="dropdown-text">Releasing</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../website.html">
+ <span class="dropdown-text">Website and figures</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/fesmc/FesmData" target="_blank"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#icehistory-paleo-ice-sheets-and-topography" id="toc-icehistory-paleo-ice-sheets-and-topography" class="nav-link active" data-scroll-target="#icehistory-paleo-ice-sheets-and-topography">IceHistory: paleo ice sheets and topography</a>
+  <ul class="collapse">
+  <li><a href="#products" id="toc-products" class="nav-link" data-scroll-target="#products">Products</a></li>
+  <li><a href="#precision" id="toc-precision" class="nav-link" data-scroll-target="#precision">Precision</a></li>
+  <li><a href="#licences" id="toc-licences" class="nav-link" data-scroll-target="#licences">Licences</a></li>
+  <li><a href="#making-the-dataset" id="toc-making-the-dataset" class="nav-link" data-scroll-target="#making-the-dataset">Making the dataset</a></li>
+  <li><a href="#downloads" id="toc-downloads" class="nav-link" data-scroll-target="#downloads">Downloads</a>
+  <ul class="collapse">
+  <li><a href="#download-global" id="toc-download-global" class="nav-link" data-scroll-target="#download-global">Global</a></li>
+  <li><a href="#download-antarctica" id="toc-download-antarctica" class="nav-link" data-scroll-target="#download-antarctica">Antarctica</a></li>
+  <li><a href="#download-greenlandpaleo" id="toc-download-greenlandpaleo" class="nav-link" data-scroll-target="#download-greenlandpaleo">GreenlandPaleo</a></li>
+  <li><a href="#download-north" id="toc-download-north" class="nav-link" data-scroll-target="#download-north">North</a></li>
+  <li><a href="#download-by-cropping" id="toc-download-by-cropping" class="nav-link" data-scroll-target="#download-by-cropping">Nests and crops</a></li>
+  </ul></li>
+  <li><a href="#figures" id="toc-figures" class="nav-link" data-scroll-target="#figures">Figures</a>
+  <ul class="collapse">
+  <li><a href="#batchelor2019" id="toc-batchelor2019" class="nav-link" data-scroll-target="#batchelor2019">Batchelor2019</a></li>
+  <li><a href="#batchelor2019_paleomist_lgc" id="toc-batchelor2019_paleomist_lgc" class="nav-link" data-scroll-target="#batchelor2019_paleomist_lgc">Batchelor2019_PaleoMIST_LGC</a></li>
+  <li><a href="#glac1d" id="toc-glac1d" class="nav-link" data-scroll-target="#glac1d">GLAC1D</a></li>
+  <li><a href="#glac1d_nn9894" id="toc-glac1d_nn9894" class="nav-link" data-scroll-target="#glac1d_nn9894">GLAC1D_nn9894</a></li>
+  <li><a href="#glac1d_nn9927" id="toc-glac1d_nn9927" class="nav-link" data-scroll-target="#glac1d_nn9927">GLAC1D_nn9927</a></li>
+  <li><a href="#ice5g" id="toc-ice5g" class="nav-link" data-scroll-target="#ice5g">ICE5G</a></li>
+  <li><a href="#ice6g_c" id="toc-ice6g_c" class="nav-link" data-scroll-target="#ice6g_c">ICE6G_C</a></li>
+  <li><a href="#ice6g_d" id="toc-ice6g_d" class="nav-link" data-scroll-target="#ice6g_d">ICE6G_D</a></li>
+  <li><a href="#margold2015" id="toc-margold2015" class="nav-link" data-scroll-target="#margold2015">Margold2015</a></li>
+  <li><a href="#prism4" id="toc-prism4" class="nav-link" data-scroll-target="#prism4">PRISM4</a></li>
+  <li><a href="#paleogris" id="toc-paleogris" class="nav-link" data-scroll-target="#paleogris">PaleoGrIS</a></li>
+  <li><a href="#paleomist" id="toc-paleomist" class="nav-link" data-scroll-target="#paleomist">PaleoMIST</a></li>
+  <li><a href="#paleomist_max" id="toc-paleomist_max" class="nav-link" data-scroll-target="#paleomist_max">PaleoMIST_max</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/fesmc/FesmData/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="icehistory-paleo-ice-sheets-and-topography" class="level1">
+<h1>IceHistory: paleo ice sheets and topography</h1>
+<p>Reconstructions of past ice sheets and topography (glacial cycles, Pliocene), remapped onto the grids of the domains and onto global lon-lat grids. IceHistory is a thematic dataset made by remapping (see <a href="https://fesmc.github.io/FesmData/remap.html">Gridded data</a>): its products are defined in <code>IceHistory/remap.toml</code>.</p>
+<section id="products" class="level2">
+<h2 class="anchored" data-anchor-id="products">Products</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Product</th>
+<th>Source</th>
+<th>Fields</th>
+<th>Domains</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>IceHistory-ICE5G</code></td>
+<td>Peltier (2004): ICE-5G v1.2, 1°, 21-0 ka, <a href="https://doi.org/10.1146/annurev.earth.32.082503.144359">doi:10.1146/annurev.earth.32.082503.144359</a></td>
+<td><code>z_topo</code> (topography incl.&nbsp;bathymetry), <code>H_ice</code>, <code>f_ice</code>, on <code>time</code> (years ago)</td>
+<td>Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Eurasia, Global</td>
+</tr>
+<tr class="even">
+<td><code>IceHistory-ICE6G_C</code></td>
+<td>Peltier et al.&nbsp;(2015), Argus et al.&nbsp;(2014): ICE-6G_C (VM5a), 1°, 26-0 ka, <a href="https://doi.org/10.1002/2014JB011176">doi:10.1002/2014JB011176</a></td>
+<td><code>z_topo</code>, <code>z_srf</code>, <code>dz_topo</code>, <code>H_ice</code>, <code>f_ice</code>, <code>f_land</code>, on <code>time</code> (years ago)</td>
+<td>Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Eurasia, Global</td>
+</tr>
+<tr class="odd">
+<td><code>IceHistory-ICE6G_D</code></td>
+<td>Peltier et al.&nbsp;(2018): ICE-6G_D (VM5a), Antarctica south of 60°S, Gaussian grid about 0.35°, 122.5 ka to 0.25 ka after present, <a href="https://doi.org/10.1002/2016JB013844">doi:10.1002/2016JB013844</a></td>
+<td><code>H_ice</code>, <code>H_ice_grounded</code>, <code>z_topo</code>, on <code>time</code> (years ago)</td>
+<td>Antarctica</td>
+</tr>
+<tr class="even">
+<td><code>IceHistory-PRISM4</code></td>
+<td>Dowsett et al.&nbsp;(2016): PRISM4 (PlioMIP2) boundary conditions, 1°, <a href="https://doi.org/10.5194/cp-12-1519-2016">doi:10.5194/cp-12-1519-2016</a></td>
+<td><code>z_topo_enh</code>, <code>z_topo_std</code>, <code>z_topo_mod</code> (enhanced, standard Pliocene, modern), <code>mask_enh</code>, <code>mask_std</code> (0 ocean, 1 land, 2 ice)</td>
+<td>Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Eurasia, Global</td>
+</tr>
+<tr class="odd">
+<td><code>IceHistory-Batchelor2019</code></td>
+<td>Batchelor et al.&nbsp;(2019): Northern Hemisphere ice-sheet extents, 18 time slices from 3.1 Ma to the LGM, rasterized at 2 km, <a href="https://doi.org/10.1038/s41467-019-11601-2">doi:10.1038/s41467-019-11601-2</a></td>
+<td><code>f_ice_best</code>, <code>f_ice_min</code>, <code>f_ice_max</code> (best-estimate, minimum and maximum extents), on <code>time</code> (years ago)</td>
+<td>GreenlandPaleo, Greenland, North, Laurentide, Eurasia (grids of 2 km and coarser)</td>
+</tr>
+<tr class="even">
+<td><code>IceHistory-PaleoMIST</code></td>
+<td>Gowan et al.&nbsp;(2021): PaleoMIST 1.0, minimal MIS 3 scenario for North America (ice-free Hudson Bay at times), 0.25°, 80-0 ka every 2.5 kyr, <a href="https://doi.org/10.1594/PANGAEA.905800">doi:10.1594/PANGAEA.905800</a></td>
+<td><code>z_topo</code>, <code>z_bed</code>, <code>H_ice</code>, <code>dz_sl</code> (sea-level change), <code>f_ice</code> (from the 5 km regional reconstructions), on <code>time</code> (years ago)</td>
+<td>Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Eurasia, Global</td>
+</tr>
+<tr class="odd">
+<td><code>IceHistory-PaleoMIST_max</code></td>
+<td>Gowan et al.&nbsp;(2021): PaleoMIST 1.0, maximal MIS 3 scenario for North America (ice over Hudson Bay throughout MIS 3), 0.25°, 80-0 ka every 2.5 kyr, <a href="https://doi.org/10.1594/PANGAEA.905800">doi:10.1594/PANGAEA.905800</a></td>
+<td><code>z_topo</code>, <code>z_bed</code>, <code>H_ice</code>, <code>dz_sl</code> (sea-level change), <code>f_ice</code> (from the 5 km regional reconstructions), on <code>time</code> (years ago)</td>
+<td>Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Eurasia, Global</td>
+</tr>
+<tr class="even">
+<td><code>IceHistory-GLAC1D</code></td>
+<td>Tarasov et al.&nbsp;(2012), Briggs et al.&nbsp;(2014), Tarasov &amp; Peltier (2002): GLAC-1D for PMIP4, global, 1° x 0.5° (<code>H_ice</code> 0.5° x 0.25°), 26-0 ka every 100 years, <a href="https://doi.org/10.1016/j.epsl.2011.09.010">doi:10.1016/j.epsl.2011.09.010</a></td>
+<td><code>z_topo</code> (base of floating ice under ice shelves), <code>z_srf</code>, <code>H_ice</code>, <code>f_ice</code>, on <code>time</code> (years ago)</td>
+<td>Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Eurasia, Global</td>
+</tr>
+<tr class="odd">
+<td><code>IceHistory-GLAC1D_nn9927</code></td>
+<td>GLAC-1D, North America nn9927 (better fit to the constraints) with Greenland, and Antarctica nn4041, 1° x 0.5°, 120-0 ka (every 1 kyr to 30 ka, then 100 years); no Eurasia</td>
+<td><code>H_ice</code>, <code>H_lake</code> (lake water thickness, North America), on <code>time</code> (years ago)</td>
+<td>Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Global</td>
+</tr>
+<tr class="even">
+<td><code>IceHistory-GLAC1D_nn9894</code></td>
+<td>GLAC-1D, North America nn9894 (more ice at the LGM) with Greenland, and Antarctica nn4041, 1° x 0.5°, 120-0 ka; no Eurasia</td>
+<td><code>H_ice</code>, on <code>time</code> (years ago)</td>
+<td>Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Global</td>
+</tr>
+<tr class="odd">
+<td><code>IceHistory-PaleoGrIS</code></td>
+<td>Leger et al.&nbsp;(2024): PaleoGrIS 1.0 isochrone buffers, 1 km, <a href="https://doi.org/10.17632/nh57cz4gys.1">doi:10.17632/nh57cz4gys.1</a></td>
+<td><code>age_deglac</code> (time of deglaciation, years ago, 13-7 ka), <code>age_deglac_err</code></td>
+<td>GreenlandPaleo, Greenland (grids of 1 km and coarser)</td>
+</tr>
+<tr class="even">
+<td><code>IceHistory-Margold2015</code></td>
+<td>Margold et al.&nbsp;(2015): Laurentide ice streams, rasterized at 1 km, <a href="https://doi.org/10.1080/17445647.2014.912036">doi:10.1080/17445647.2014.912036</a>, with their activity from Stokes et al.&nbsp;(2016), <a href="https://doi.org/10.1038/nature16947">doi:10.1038/nature16947</a></td>
+<td><code>f_stream</code>, <code>f_stream_lgm</code> (streams active at 21.8 ka), <code>age_stream_start</code>, <code>age_stream_end</code> (years ago)</td>
+<td>North, Laurentide</td>
+</tr>
+<tr class="odd">
+<td><code>IceHistory-Batchelor2019_PaleoMIST_LGC</code></td>
+<td>Batchelor et al.&nbsp;(2019) in the Northern Hemisphere and PaleoMIST 1.0 (Gowan et al., 2021) in the Southern Hemisphere, 0.1°, 80-21 ka (replaces <code>Batchelor2019_ice_masks_lgc.nc</code> of v1, used by CLIMBER-X)</td>
+<td><code>f_ice_best</code>, <code>f_ice_min</code>, <code>f_ice_max</code>, on <code>time</code> (years ago: 80000, 65000, 45000, 40000, 35000, 30000, 26500, 21000)</td>
+<td>Global</td>
+</tr>
+</tbody>
+</table>
+<p>Each file <code>&lt;GRID&gt;_IceHistory-&lt;Source&gt;.nc</code> also has <code>f_valid</code>, the fraction of each cell covered by the source. Fields are remapped conservatively and, on grids finer than the source, smoothed with a Gaussian of half the source spacing; the masks are remapped as classes (the class covering most of each cell). Ice extents from outlines (Batchelor, Margold) are rasterized as area fractions at 2 km and 1 km, so that remapping gives the fraction of each cell. The global attribute <code>remap_method</code> records what was done on each grid.</p>
+</section>
+<section id="precision" class="level2">
+<h2 class="anchored" data-anchor-id="precision">Precision</h2>
+<p>The float fields are rounded on output to a tolerance by kind (see <a href="https://fesmc.github.io/FesmData/precision.html">Precision and file sizes</a>): elevations and thicknesses (<code>z_*</code>, <code>dz_*</code>, <code>H_ice*</code>) to 0.01 m; fractions (<code>f_*</code>) to 0.001; ages (<code>age_*</code>) to 3 significant digits. The masks of PRISM4 are exact.</p>
+</section>
+<section id="licences" class="level2">
+<h2 class="anchored" data-anchor-id="licences">Licences</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Source</th>
+<th>Licence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Peltier (2004), ICE-5G</td>
+<td>None stated; cite Peltier (2004)</td>
+</tr>
+<tr class="even">
+<td>Peltier et al.&nbsp;(2015), ICE-6G_C</td>
+<td>None stated; cite Peltier et al.&nbsp;(2015) and Argus et al.&nbsp;(2014)</td>
+</tr>
+<tr class="odd">
+<td>Peltier et al.&nbsp;(2018), ICE-6G_D</td>
+<td>Supporting information of the article (Wiley terms), assumed to be redistributable; obtained through the isostasy_data archive (Zenodo, doi:10.5281/zenodo.11175418); cite also Argus et al.&nbsp;(2014), Peltier et al.&nbsp;(2015)</td>
+</tr>
+<tr class="even">
+<td>Dowsett et al.&nbsp;(2016), PRISM4</td>
+<td>Public domain (USGS); no licence in the files</td>
+</tr>
+<tr class="odd">
+<td>Batchelor et al.&nbsp;(2019)</td>
+<td>No licence stated for the shapefiles (OSF); article CC BY 4.0; cite the article</td>
+</tr>
+<tr class="even">
+<td>Gowan et al.&nbsp;(2021), PaleoMIST 1.0</td>
+<td>CC BY 4.0 (PANGAEA)</td>
+</tr>
+<tr class="odd">
+<td>Tarasov et al.&nbsp;(2012), GLAC-1D</td>
+<td>None stated; cite Tarasov et al.&nbsp;(2012), Briggs et al.&nbsp;(2014), Tarasov &amp; Peltier (2002) and, for the PMIP4 files, Tarasov et al.&nbsp;(2014) and Abe-Ouchi et al.&nbsp;(2013)</td>
+</tr>
+<tr class="even">
+<td>Leger et al.&nbsp;(2024), PaleoGrIS 1.0</td>
+<td>CC BY 4.0 (Mendeley Data)</td>
+</tr>
+<tr class="odd">
+<td>Margold et al.&nbsp;(2015), with Stokes et al.&nbsp;(2016)</td>
+<td>Outlines CC BY 4.0 (figshare); ages from the source data of Stokes et al.&nbsp;(2016), Nature, no open licence stated</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="making-the-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="making-the-dataset">Making the dataset</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> <span class="at">-t</span> 8 fesmdata.jl remap IceHistory</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>See <a href="https://fesmc.github.io/FesmData/datasets/ghf.html#making-the-dataset">GHF</a> for making single products and adding a source.</p>
+<!-- Generated by `julia fesmdata.jl docs` (Publish/site.jl), do not edit. -->
+</section>
+<section id="downloads" class="level2">
+<h2 class="anchored" data-anchor-id="downloads">Downloads</h2>
+<p>Download the files with <code>fesmdata.jl</code> into <code>$FESMDATA_PRODUCTS/&lt;Domain&gt;/&lt;GRID&gt;/</code> (see <a href="../download.html">Download</a>), or one by one from the links below. All released datasets are listed under <a href="../products.html">Products</a>.</p>
+<section id="download-global" class="level3">
+<h3 class="anchored" data-anchor-id="download-global">Global</h3>
+<div class="record">
+<p>Version 2.2.1 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Global_IceHistory">packages</a>). 40 files, 1.11 GB.</p>
+<pre>julia fesmdata.jl fetch IceHistory Global     # all grids
+julia fesmdata.jl fetch IceHistory GLOBAL-5DEG     # one grid</pre>
+<details><summary><b>GLOBAL-0.1DEG</b> <span class="muted">1 files, 3.9 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.1DEG/2.2.0/GLOBAL-0.1DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc">GLOBAL-0.1DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc</a></td>
+<td class="size">3.9 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GLOBAL-0.25DEG</b> <span class="muted">3 files, 459.5 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.25DEG/2.2.0/GLOBAL-0.25DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc">GLOBAL-0.25DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc</a></td>
+<td class="size">1.2 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.25DEG/2.2.0/GLOBAL-0.25DEG_IceHistory-PaleoMIST.nc">GLOBAL-0.25DEG_IceHistory-PaleoMIST.nc</a></td>
+<td class="size">229.2 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.25DEG/2.2.0/GLOBAL-0.25DEG_IceHistory-PaleoMIST_max.nc">GLOBAL-0.25DEG_IceHistory-PaleoMIST_max.nc</a></td>
+<td class="size">229.1 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GLOBAL-0.5DEG</b> <span class="muted">9 files, 456.5 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.5DEG/2.2.0/GLOBAL-0.5DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc">GLOBAL-0.5DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc</a></td>
+<td class="size">503.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.5DEG/2.2.0/GLOBAL-0.5DEG_IceHistory-GLAC1D.nc">GLOBAL-0.5DEG_IceHistory-GLAC1D.nc</a></td>
+<td class="size">207.3 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.5DEG/2.2.0/GLOBAL-0.5DEG_IceHistory-GLAC1D_nn9894.nc">GLOBAL-0.5DEG_IceHistory-GLAC1D_nn9894.nc</a></td>
+<td class="size">14.0 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.5DEG/2.2.0/GLOBAL-0.5DEG_IceHistory-GLAC1D_nn9927.nc">GLOBAL-0.5DEG_IceHistory-GLAC1D_nn9927.nc</a></td>
+<td class="size">15.6 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.5DEG/2.2.0/GLOBAL-0.5DEG_IceHistory-ICE5G.nc">GLOBAL-0.5DEG_IceHistory-ICE5G.nc</a></td>
+<td class="size">25.5 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.5DEG/2.2.0/GLOBAL-0.5DEG_IceHistory-ICE6G_C.nc">GLOBAL-0.5DEG_IceHistory-ICE6G_C.nc</a></td>
+<td class="size">75.4 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.5DEG/2.2.0/GLOBAL-0.5DEG_IceHistory-PRISM4.nc">GLOBAL-0.5DEG_IceHistory-PRISM4.nc</a></td>
+<td class="size">1.6 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.5DEG/2.2.0/GLOBAL-0.5DEG_IceHistory-PaleoMIST.nc">GLOBAL-0.5DEG_IceHistory-PaleoMIST.nc</a></td>
+<td class="size">58.5 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.5DEG/2.2.0/GLOBAL-0.5DEG_IceHistory-PaleoMIST_max.nc">GLOBAL-0.5DEG_IceHistory-PaleoMIST_max.nc</a></td>
+<td class="size">58.0 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GLOBAL-1DEG</b> <span class="muted">9 files, 140.9 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-1DEG/2.2.0/GLOBAL-1DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc">GLOBAL-1DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc</a></td>
+<td class="size">218.4 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-1DEG/2.2.0/GLOBAL-1DEG_IceHistory-GLAC1D.nc">GLOBAL-1DEG_IceHistory-GLAC1D.nc</a></td>
+<td class="size">69.7 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-1DEG/2.2.0/GLOBAL-1DEG_IceHistory-GLAC1D_nn9894.nc">GLOBAL-1DEG_IceHistory-GLAC1D_nn9894.nc</a></td>
+<td class="size">8.4 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-1DEG/2.2.0/GLOBAL-1DEG_IceHistory-GLAC1D_nn9927.nc">GLOBAL-1DEG_IceHistory-GLAC1D_nn9927.nc</a></td>
+<td class="size">9.0 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-1DEG/2.2.0/GLOBAL-1DEG_IceHistory-ICE5G.nc">GLOBAL-1DEG_IceHistory-ICE5G.nc</a></td>
+<td class="size">5.2 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-1DEG/2.2.0/GLOBAL-1DEG_IceHistory-ICE6G_C.nc">GLOBAL-1DEG_IceHistory-ICE6G_C.nc</a></td>
+<td class="size">17.7 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-1DEG/2.2.0/GLOBAL-1DEG_IceHistory-PRISM4.nc">GLOBAL-1DEG_IceHistory-PRISM4.nc</a></td>
+<td class="size">318.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-1DEG/2.2.0/GLOBAL-1DEG_IceHistory-PaleoMIST.nc">GLOBAL-1DEG_IceHistory-PaleoMIST.nc</a></td>
+<td class="size">15.3 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-1DEG/2.2.0/GLOBAL-1DEG_IceHistory-PaleoMIST_max.nc">GLOBAL-1DEG_IceHistory-PaleoMIST_max.nc</a></td>
+<td class="size">15.2 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GLOBAL-2DEG</b> <span class="muted">9 files, 37.7 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-2DEG/2.2.0/GLOBAL-2DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc">GLOBAL-2DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc</a></td>
+<td class="size">93.0 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-2DEG/2.2.0/GLOBAL-2DEG_IceHistory-GLAC1D.nc">GLOBAL-2DEG_IceHistory-GLAC1D.nc</a></td>
+<td class="size">17.8 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-2DEG/2.2.0/GLOBAL-2DEG_IceHistory-GLAC1D_nn9894.nc">GLOBAL-2DEG_IceHistory-GLAC1D_nn9894.nc</a></td>
+<td class="size">2.4 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-2DEG/2.2.0/GLOBAL-2DEG_IceHistory-GLAC1D_nn9927.nc">GLOBAL-2DEG_IceHistory-GLAC1D_nn9927.nc</a></td>
+<td class="size">2.6 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-2DEG/2.2.0/GLOBAL-2DEG_IceHistory-ICE5G.nc">GLOBAL-2DEG_IceHistory-ICE5G.nc</a></td>
+<td class="size">1.6 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-2DEG/2.2.0/GLOBAL-2DEG_IceHistory-ICE6G_C.nc">GLOBAL-2DEG_IceHistory-ICE6G_C.nc</a></td>
+<td class="size">4.9 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-2DEG/2.2.0/GLOBAL-2DEG_IceHistory-PRISM4.nc">GLOBAL-2DEG_IceHistory-PRISM4.nc</a></td>
+<td class="size">168.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-2DEG/2.2.0/GLOBAL-2DEG_IceHistory-PaleoMIST.nc">GLOBAL-2DEG_IceHistory-PaleoMIST.nc</a></td>
+<td class="size">4.0 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-2DEG/2.2.0/GLOBAL-2DEG_IceHistory-PaleoMIST_max.nc">GLOBAL-2DEG_IceHistory-PaleoMIST_max.nc</a></td>
+<td class="size">4.0 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GLOBAL-5DEG</b> <span class="muted">9 files, 6.9 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-5DEG/2.2.0/GLOBAL-5DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc">GLOBAL-5DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc</a></td>
+<td class="size">48.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-5DEG/2.2.0/GLOBAL-5DEG_IceHistory-GLAC1D.nc">GLOBAL-5DEG_IceHistory-GLAC1D.nc</a></td>
+<td class="size">3.0 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-5DEG/2.2.0/GLOBAL-5DEG_IceHistory-GLAC1D_nn9894.nc">GLOBAL-5DEG_IceHistory-GLAC1D_nn9894.nc</a></td>
+<td class="size">512.4 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-5DEG/2.2.0/GLOBAL-5DEG_IceHistory-GLAC1D_nn9927.nc">GLOBAL-5DEG_IceHistory-GLAC1D_nn9927.nc</a></td>
+<td class="size">600.0 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-5DEG/2.2.0/GLOBAL-5DEG_IceHistory-ICE5G.nc">GLOBAL-5DEG_IceHistory-ICE5G.nc</a></td>
+<td class="size">295.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-5DEG/2.2.0/GLOBAL-5DEG_IceHistory-ICE6G_C.nc">GLOBAL-5DEG_IceHistory-ICE6G_C.nc</a></td>
+<td class="size">919.7 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-5DEG/2.2.0/GLOBAL-5DEG_IceHistory-PRISM4.nc">GLOBAL-5DEG_IceHistory-PRISM4.nc</a></td>
+<td class="size">70.2 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-5DEG/2.2.0/GLOBAL-5DEG_IceHistory-PaleoMIST.nc">GLOBAL-5DEG_IceHistory-PaleoMIST.nc</a></td>
+<td class="size">705.8 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-5DEG/2.2.0/GLOBAL-5DEG_IceHistory-PaleoMIST_max.nc">GLOBAL-5DEG_IceHistory-PaleoMIST_max.nc</a></td>
+<td class="size">703.7 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="download-antarctica" class="level3">
+<h3 class="anchored" data-anchor-id="download-antarctica">Antarctica</h3>
+<div class="record">
+<p>Version 2.2.1 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Antarctica_IceHistory">packages</a>). 21 files, 1.14 GB.</p>
+<pre>julia fesmdata.jl fetch IceHistory Antarctica     # all grids
+julia fesmdata.jl fetch IceHistory ANT-32KM     # one grid</pre>
+<details><summary><b>ANT-8KM</b> <span class="muted">3 files, 495.1 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-8KM/2.2.0/ANT-8KM_IceHistory-ICE6G_D.nc">ANT-8KM_IceHistory-ICE6G_D.nc</a></td>
+<td class="size">232.3 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-8KM/2.2.0/ANT-8KM_IceHistory-PaleoMIST.nc">ANT-8KM_IceHistory-PaleoMIST.nc</a></td>
+<td class="size">131.5 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-8KM/2.2.0/ANT-8KM_IceHistory-PaleoMIST_max.nc">ANT-8KM_IceHistory-PaleoMIST_max.nc</a></td>
+<td class="size">131.3 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>ANT-16KM</b> <span class="muted">9 files, 513.4 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-16KM/2.2.0/ANT-16KM_IceHistory-GLAC1D.nc">ANT-16KM_IceHistory-GLAC1D.nc</a></td>
+<td class="size">182.1 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-16KM/2.2.0/ANT-16KM_IceHistory-GLAC1D_nn9894.nc">ANT-16KM_IceHistory-GLAC1D_nn9894.nc</a></td>
+<td class="size">60.6 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-16KM/2.2.0/ANT-16KM_IceHistory-GLAC1D_nn9927.nc">ANT-16KM_IceHistory-GLAC1D_nn9927.nc</a></td>
+<td class="size">60.9 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-16KM/2.2.0/ANT-16KM_IceHistory-ICE5G.nc">ANT-16KM_IceHistory-ICE5G.nc</a></td>
+<td class="size">21.2 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-16KM/2.2.0/ANT-16KM_IceHistory-ICE6G_C.nc">ANT-16KM_IceHistory-ICE6G_C.nc</a></td>
+<td class="size">53.0 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-16KM/2.2.0/ANT-16KM_IceHistory-ICE6G_D.nc">ANT-16KM_IceHistory-ICE6G_D.nc</a></td>
+<td class="size">61.9 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-16KM/2.2.0/ANT-16KM_IceHistory-PRISM4.nc">ANT-16KM_IceHistory-PRISM4.nc</a></td>
+<td class="size">852.0 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-16KM/2.2.0/ANT-16KM_IceHistory-PaleoMIST.nc">ANT-16KM_IceHistory-PaleoMIST.nc</a></td>
+<td class="size">36.4 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-16KM/2.2.0/ANT-16KM_IceHistory-PaleoMIST_max.nc">ANT-16KM_IceHistory-PaleoMIST_max.nc</a></td>
+<td class="size">36.4 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>ANT-32KM</b> <span class="muted">9 files, 130.2 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-32KM/2.2.0/ANT-32KM_IceHistory-GLAC1D.nc">ANT-32KM_IceHistory-GLAC1D.nc</a></td>
+<td class="size">46.0 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-32KM/2.2.0/ANT-32KM_IceHistory-GLAC1D_nn9894.nc">ANT-32KM_IceHistory-GLAC1D_nn9894.nc</a></td>
+<td class="size">16.3 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-32KM/2.2.0/ANT-32KM_IceHistory-GLAC1D_nn9927.nc">ANT-32KM_IceHistory-GLAC1D_nn9927.nc</a></td>
+<td class="size">16.4 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-32KM/2.2.0/ANT-32KM_IceHistory-ICE5G.nc">ANT-32KM_IceHistory-ICE5G.nc</a></td>
+<td class="size">4.4 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-32KM/2.2.0/ANT-32KM_IceHistory-ICE6G_C.nc">ANT-32KM_IceHistory-ICE6G_C.nc</a></td>
+<td class="size">11.6 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-32KM/2.2.0/ANT-32KM_IceHistory-ICE6G_D.nc">ANT-32KM_IceHistory-ICE6G_D.nc</a></td>
+<td class="size">16.5 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-32KM/2.2.0/ANT-32KM_IceHistory-PRISM4.nc">ANT-32KM_IceHistory-PRISM4.nc</a></td>
+<td class="size">277.1 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-32KM/2.2.0/ANT-32KM_IceHistory-PaleoMIST.nc">ANT-32KM_IceHistory-PaleoMIST.nc</a></td>
+<td class="size">9.4 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-32KM/2.2.0/ANT-32KM_IceHistory-PaleoMIST_max.nc">ANT-32KM_IceHistory-PaleoMIST_max.nc</a></td>
+<td class="size">9.3 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="download-greenlandpaleo" class="level3">
+<h3 class="anchored" data-anchor-id="download-greenlandpaleo">GreenlandPaleo</h3>
+<div class="record">
+<p>Version 2.2.1 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=GreenlandPaleo_IceHistory">packages</a>). 29 files, 207.4 MB.</p>
+<pre>julia fesmdata.jl fetch IceHistory GreenlandPaleo     # all grids
+julia fesmdata.jl fetch IceHistory GRL-PAL-32KM     # one grid</pre>
+<details><summary><b>GRL-PAL-1KM</b> <span class="muted">1 files, 875.2 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-1KM/2.2.0/GRL-PAL-1KM_IceHistory-PaleoGrIS.nc">GRL-PAL-1KM_IceHistory-PaleoGrIS.nc</a></td>
+<td class="size">875.2 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GRL-PAL-2KM</b> <span class="muted">2 files, 4.4 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-2KM/2.2.0/GRL-PAL-2KM_IceHistory-Batchelor2019.nc">GRL-PAL-2KM_IceHistory-Batchelor2019.nc</a></td>
+<td class="size">3.9 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-2KM/2.2.0/GRL-PAL-2KM_IceHistory-PaleoGrIS.nc">GRL-PAL-2KM_IceHistory-PaleoGrIS.nc</a></td>
+<td class="size">416.4 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GRL-PAL-4KM</b> <span class="muted">2 files, 2.5 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-4KM/2.2.0/GRL-PAL-4KM_IceHistory-Batchelor2019.nc">GRL-PAL-4KM_IceHistory-Batchelor2019.nc</a></td>
+<td class="size">2.3 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-4KM/2.2.0/GRL-PAL-4KM_IceHistory-PaleoGrIS.nc">GRL-PAL-4KM_IceHistory-PaleoGrIS.nc</a></td>
+<td class="size">191.0 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GRL-PAL-8KM</b> <span class="muted">4 files, 59.3 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-8KM/2.2.0/GRL-PAL-8KM_IceHistory-Batchelor2019.nc">GRL-PAL-8KM_IceHistory-Batchelor2019.nc</a></td>
+<td class="size">811.4 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-8KM/2.2.0/GRL-PAL-8KM_IceHistory-PaleoGrIS.nc">GRL-PAL-8KM_IceHistory-PaleoGrIS.nc</a></td>
+<td class="size">90.5 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-8KM/2.2.0/GRL-PAL-8KM_IceHistory-PaleoMIST.nc">GRL-PAL-8KM_IceHistory-PaleoMIST.nc</a></td>
+<td class="size">29.2 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-8KM/2.2.0/GRL-PAL-8KM_IceHistory-PaleoMIST_max.nc">GRL-PAL-8KM_IceHistory-PaleoMIST_max.nc</a></td>
+<td class="size">29.1 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GRL-PAL-16KM</b> <span class="muted">10 files, 111.2 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-16KM/2.2.0/GRL-PAL-16KM_IceHistory-Batchelor2019.nc">GRL-PAL-16KM_IceHistory-Batchelor2019.nc</a></td>
+<td class="size">329.9 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-16KM/2.2.0/GRL-PAL-16KM_IceHistory-GLAC1D.nc">GRL-PAL-16KM_IceHistory-GLAC1D.nc</a></td>
+<td class="size">41.7 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-16KM/2.2.0/GRL-PAL-16KM_IceHistory-GLAC1D_nn9894.nc">GRL-PAL-16KM_IceHistory-GLAC1D_nn9894.nc</a></td>
+<td class="size">17.6 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-16KM/2.2.0/GRL-PAL-16KM_IceHistory-GLAC1D_nn9927.nc">GRL-PAL-16KM_IceHistory-GLAC1D_nn9927.nc</a></td>
+<td class="size">18.0 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-16KM/2.2.0/GRL-PAL-16KM_IceHistory-ICE5G.nc">GRL-PAL-16KM_IceHistory-ICE5G.nc</a></td>
+<td class="size">4.8 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-16KM/2.2.0/GRL-PAL-16KM_IceHistory-ICE6G_C.nc">GRL-PAL-16KM_IceHistory-ICE6G_C.nc</a></td>
+<td class="size">12.6 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-16KM/2.2.0/GRL-PAL-16KM_IceHistory-PRISM4.nc">GRL-PAL-16KM_IceHistory-PRISM4.nc</a></td>
+<td class="size">239.2 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-16KM/2.2.0/GRL-PAL-16KM_IceHistory-PaleoGrIS.nc">GRL-PAL-16KM_IceHistory-PaleoGrIS.nc</a></td>
+<td class="size">50.0 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-16KM/2.2.0/GRL-PAL-16KM_IceHistory-PaleoMIST.nc">GRL-PAL-16KM_IceHistory-PaleoMIST.nc</a></td>
+<td class="size">7.9 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-16KM/2.2.0/GRL-PAL-16KM_IceHistory-PaleoMIST_max.nc">GRL-PAL-16KM_IceHistory-PaleoMIST_max.nc</a></td>
+<td class="size">7.9 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GRL-PAL-32KM</b> <span class="muted">10 files, 29.3 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-32KM/2.2.0/GRL-PAL-32KM_IceHistory-Batchelor2019.nc">GRL-PAL-32KM_IceHistory-Batchelor2019.nc</a></td>
+<td class="size">143.7 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-32KM/2.2.0/GRL-PAL-32KM_IceHistory-GLAC1D.nc">GRL-PAL-32KM_IceHistory-GLAC1D.nc</a></td>
+<td class="size">10.5 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-32KM/2.2.0/GRL-PAL-32KM_IceHistory-GLAC1D_nn9894.nc">GRL-PAL-32KM_IceHistory-GLAC1D_nn9894.nc</a></td>
+<td class="size">4.8 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-32KM/2.2.0/GRL-PAL-32KM_IceHistory-GLAC1D_nn9927.nc">GRL-PAL-32KM_IceHistory-GLAC1D_nn9927.nc</a></td>
+<td class="size">4.9 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-32KM/2.2.0/GRL-PAL-32KM_IceHistory-ICE5G.nc">GRL-PAL-32KM_IceHistory-ICE5G.nc</a></td>
+<td class="size">1.3 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-32KM/2.2.0/GRL-PAL-32KM_IceHistory-ICE6G_C.nc">GRL-PAL-32KM_IceHistory-ICE6G_C.nc</a></td>
+<td class="size">3.4 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-32KM/2.2.0/GRL-PAL-32KM_IceHistory-PRISM4.nc">GRL-PAL-32KM_IceHistory-PRISM4.nc</a></td>
+<td class="size">105.6 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-32KM/2.2.0/GRL-PAL-32KM_IceHistory-PaleoGrIS.nc">GRL-PAL-32KM_IceHistory-PaleoGrIS.nc</a></td>
+<td class="size">34.1 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-32KM/2.2.0/GRL-PAL-32KM_IceHistory-PaleoMIST.nc">GRL-PAL-32KM_IceHistory-PaleoMIST.nc</a></td>
+<td class="size">2.0 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-32KM/2.2.0/GRL-PAL-32KM_IceHistory-PaleoMIST_max.nc">GRL-PAL-32KM_IceHistory-PaleoMIST_max.nc</a></td>
+<td class="size">2.0 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="download-north" class="level3">
+<h3 class="anchored" data-anchor-id="download-north">North</h3>
+<div class="record">
+<p>Version 2.2.1 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=North_IceHistory">packages</a>). 28 files, 1.66 GB.</p>
+<pre>julia fesmdata.jl fetch IceHistory North     # all grids
+julia fesmdata.jl fetch IceHistory NH-32KM     # one grid</pre>
+<details><summary><b>NH-2KM</b> <span class="muted">2 files, 22.9 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-2KM/2.2.0/NH-2KM_IceHistory-Batchelor2019.nc">NH-2KM_IceHistory-Batchelor2019.nc</a></td>
+<td class="size">20.8 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-2KM/2.2.0/NH-2KM_IceHistory-Margold2015.nc">NH-2KM_IceHistory-Margold2015.nc</a></td>
+<td class="size">2.1 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>NH-4KM</b> <span class="muted">2 files, 13.3 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-4KM/2.2.0/NH-4KM_IceHistory-Batchelor2019.nc">NH-4KM_IceHistory-Batchelor2019.nc</a></td>
+<td class="size">12.4 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-4KM/2.2.0/NH-4KM_IceHistory-Margold2015.nc">NH-4KM_IceHistory-Margold2015.nc</a></td>
+<td class="size">876.3 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>NH-8KM</b> <span class="muted">4 files, 561.2 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-8KM/2.2.0/NH-8KM_IceHistory-Batchelor2019.nc">NH-8KM_IceHistory-Batchelor2019.nc</a></td>
+<td class="size">4.9 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-8KM/2.2.0/NH-8KM_IceHistory-Margold2015.nc">NH-8KM_IceHistory-Margold2015.nc</a></td>
+<td class="size">416.3 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-8KM/2.2.0/NH-8KM_IceHistory-PaleoMIST.nc">NH-8KM_IceHistory-PaleoMIST.nc</a></td>
+<td class="size">278.0 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-8KM/2.2.0/NH-8KM_IceHistory-PaleoMIST_max.nc">NH-8KM_IceHistory-PaleoMIST_max.nc</a></td>
+<td class="size">277.8 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>NH-16KM</b> <span class="muted">10 files, 846.8 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.2.0/NH-16KM_IceHistory-Batchelor2019.nc">NH-16KM_IceHistory-Batchelor2019.nc</a></td>
+<td class="size">2.2 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.2.0/NH-16KM_IceHistory-GLAC1D.nc">NH-16KM_IceHistory-GLAC1D.nc</a></td>
+<td class="size">400.2 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.2.0/NH-16KM_IceHistory-GLAC1D_nn9894.nc">NH-16KM_IceHistory-GLAC1D_nn9894.nc</a></td>
+<td class="size">61.3 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.2.0/NH-16KM_IceHistory-GLAC1D_nn9927.nc">NH-16KM_IceHistory-GLAC1D_nn9927.nc</a></td>
+<td class="size">73.9 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.2.0/NH-16KM_IceHistory-ICE5G.nc">NH-16KM_IceHistory-ICE5G.nc</a></td>
+<td class="size">39.4 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.2.0/NH-16KM_IceHistory-ICE6G_C.nc">NH-16KM_IceHistory-ICE6G_C.nc</a></td>
+<td class="size">116.4 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.2.0/NH-16KM_IceHistory-Margold2015.nc">NH-16KM_IceHistory-Margold2015.nc</a></td>
+<td class="size">199.4 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.2.0/NH-16KM_IceHistory-PRISM4.nc">NH-16KM_IceHistory-PRISM4.nc</a></td>
+<td class="size">2.0 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.2.0/NH-16KM_IceHistory-PaleoMIST.nc">NH-16KM_IceHistory-PaleoMIST.nc</a></td>
+<td class="size">75.7 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.2.0/NH-16KM_IceHistory-PaleoMIST_max.nc">NH-16KM_IceHistory-PaleoMIST_max.nc</a></td>
+<td class="size">75.6 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>NH-32KM</b> <span class="muted">10 files, 219.4 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.2.0/NH-32KM_IceHistory-Batchelor2019.nc">NH-32KM_IceHistory-Batchelor2019.nc</a></td>
+<td class="size">769.2 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.2.0/NH-32KM_IceHistory-GLAC1D.nc">NH-32KM_IceHistory-GLAC1D.nc</a></td>
+<td class="size">101.7 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.2.0/NH-32KM_IceHistory-GLAC1D_nn9894.nc">NH-32KM_IceHistory-GLAC1D_nn9894.nc</a></td>
+<td class="size">17.2 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.2.0/NH-32KM_IceHistory-GLAC1D_nn9927.nc">NH-32KM_IceHistory-GLAC1D_nn9927.nc</a></td>
+<td class="size">21.1 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.2.0/NH-32KM_IceHistory-ICE5G.nc">NH-32KM_IceHistory-ICE5G.nc</a></td>
+<td class="size">9.7 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.2.0/NH-32KM_IceHistory-ICE6G_C.nc">NH-32KM_IceHistory-ICE6G_C.nc</a></td>
+<td class="size">29.5 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.2.0/NH-32KM_IceHistory-Margold2015.nc">NH-32KM_IceHistory-Margold2015.nc</a></td>
+<td class="size">115.6 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.2.0/NH-32KM_IceHistory-PRISM4.nc">NH-32KM_IceHistory-PRISM4.nc</a></td>
+<td class="size">598.5 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.2.0/NH-32KM_IceHistory-PaleoMIST.nc">NH-32KM_IceHistory-PaleoMIST.nc</a></td>
+<td class="size">19.4 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.2.0/NH-32KM_IceHistory-PaleoMIST_max.nc">NH-32KM_IceHistory-PaleoMIST_max.nc</a></td>
+<td class="size">19.4 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="download-by-cropping" class="level3">
+<h3 class="anchored" data-anchor-id="download-by-cropping">Nests and crops</h3>
+<p>These nests and crops get products of IceHistory by cropping those of the domain (or crop) that contains them: <code>fetch</code> downloads these and cuts them (see <a href="../download.html#nests-and-crops">Nests and crops</a>), e.g. <code>julia fesmdata.jl fetch IceHistory Amery</code>.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Nest or crop</th>
+<th>Cut from</th>
+<th>Products</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Amery</td>
+<td>Antarctica</td>
+<td>9</td>
+</tr>
+<tr class="even">
+<td>Amundsen</td>
+<td>Antarctica</td>
+<td>9</td>
+</tr>
+<tr class="odd">
+<td>Eurasia</td>
+<td>North</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>FilchnerRonne</td>
+<td>Antarctica</td>
+<td>9</td>
+</tr>
+<tr class="odd">
+<td>Greenland</td>
+<td>GreenlandPaleo</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>Helheim</td>
+<td>GreenlandPaleo</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td>Jakobshavn</td>
+<td>GreenlandPaleo</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>Laurentide</td>
+<td>North</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td>NEGIS</td>
+<td>GreenlandPaleo</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>Petermann</td>
+<td>GreenlandPaleo</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td>PineIsland</td>
+<td>Antarctica</td>
+<td>9</td>
+</tr>
+<tr class="even">
+<td>Ross</td>
+<td>Antarctica</td>
+<td>9</td>
+</tr>
+<tr class="odd">
+<td>Thwaites</td>
+<td>Antarctica</td>
+<td>9</td>
+</tr>
+<tr class="even">
+<td>WilkesBasin</td>
+<td>Antarctica</td>
+<td>9</td>
+</tr>
+</tbody>
+</table>
+<!-- Generated by `julia fesmdata.jl figures IceHistory` (do not edit). -->
+</section>
+</section>
+<section id="figures" class="level2">
+<h2 class="anchored" data-anchor-id="figures">Figures</h2>
+<section id="batchelor2019" class="level3">
+<h3 class="anchored" data-anchor-id="batchelor2019">Batchelor2019</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/IceHistory/IceHistory-Batchelor2019.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="IceHistory-Batchelor2019 on GRL-PAL-4KM, NH-16KM: f_ice_best."><img src="../figures/IceHistory/IceHistory-Batchelor2019.png" class="img-fluid figure-img" width="540" alt="IceHistory-Batchelor2019 on GRL-PAL-4KM, NH-16KM: f_ice_best."></a></p>
+<figcaption>IceHistory-Batchelor2019 on GRL-PAL-4KM, NH-16KM: f_ice_best.</figcaption>
+</figure>
+</div>
+</section>
+<section id="batchelor2019_paleomist_lgc" class="level3">
+<h3 class="anchored" data-anchor-id="batchelor2019_paleomist_lgc">Batchelor2019_PaleoMIST_LGC</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/IceHistory/IceHistory-Batchelor2019_PaleoMIST_LGC.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="IceHistory-Batchelor2019_PaleoMIST_LGC on GLOBAL-0.5DEG: f_ice_best."><img src="../figures/IceHistory/IceHistory-Batchelor2019_PaleoMIST_LGC.png" class="img-fluid figure-img" width="569" alt="IceHistory-Batchelor2019_PaleoMIST_LGC on GLOBAL-0.5DEG: f_ice_best."></a></p>
+<figcaption>IceHistory-Batchelor2019_PaleoMIST_LGC on GLOBAL-0.5DEG: f_ice_best.</figcaption>
+</figure>
+</div>
+</section>
+<section id="glac1d" class="level3">
+<h3 class="anchored" data-anchor-id="glac1d">GLAC1D</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/IceHistory/IceHistory-GLAC1D.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="IceHistory-GLAC1D on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: H_ice."><img src="../figures/IceHistory/IceHistory-GLAC1D.png" class="img-fluid figure-img" width="1303" alt="IceHistory-GLAC1D on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: H_ice."></a></p>
+<figcaption>IceHistory-GLAC1D on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: H_ice.</figcaption>
+</figure>
+</div>
+</section>
+<section id="glac1d_nn9894" class="level3">
+<h3 class="anchored" data-anchor-id="glac1d_nn9894">GLAC1D_nn9894</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/IceHistory/IceHistory-GLAC1D_nn9894.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="IceHistory-GLAC1D_nn9894 on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: H_ice."><img src="../figures/IceHistory/IceHistory-GLAC1D_nn9894.png" class="img-fluid figure-img" width="1303" alt="IceHistory-GLAC1D_nn9894 on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: H_ice."></a></p>
+<figcaption>IceHistory-GLAC1D_nn9894 on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: H_ice.</figcaption>
+</figure>
+</div>
+</section>
+<section id="glac1d_nn9927" class="level3">
+<h3 class="anchored" data-anchor-id="glac1d_nn9927">GLAC1D_nn9927</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/IceHistory/IceHistory-GLAC1D_nn9927.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="IceHistory-GLAC1D_nn9927 on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: H_ice."><img src="../figures/IceHistory/IceHistory-GLAC1D_nn9927.png" class="img-fluid figure-img" width="1303" alt="IceHistory-GLAC1D_nn9927 on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: H_ice."></a></p>
+<figcaption>IceHistory-GLAC1D_nn9927 on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: H_ice.</figcaption>
+</figure>
+</div>
+</section>
+<section id="ice5g" class="level3">
+<h3 class="anchored" data-anchor-id="ice5g">ICE5G</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/IceHistory/IceHistory-ICE5G.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="IceHistory-ICE5G on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: H_ice."><img src="../figures/IceHistory/IceHistory-ICE5G.png" class="img-fluid figure-img" width="1303" alt="IceHistory-ICE5G on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: H_ice."></a></p>
+<figcaption>IceHistory-ICE5G on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: H_ice.</figcaption>
+</figure>
+</div>
+</section>
+<section id="ice6g_c" class="level3">
+<h3 class="anchored" data-anchor-id="ice6g_c">ICE6G_C</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/IceHistory/IceHistory-ICE6G_C.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="IceHistory-ICE6G_C on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: H_ice."><img src="../figures/IceHistory/IceHistory-ICE6G_C.png" class="img-fluid figure-img" width="1303" alt="IceHistory-ICE6G_C on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: H_ice."></a></p>
+<figcaption>IceHistory-ICE6G_C on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: H_ice.</figcaption>
+</figure>
+</div>
+</section>
+<section id="ice6g_d" class="level3">
+<h3 class="anchored" data-anchor-id="ice6g_d">ICE6G_D</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/IceHistory/IceHistory-ICE6G_D.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="IceHistory-ICE6G_D on ANT-8KM: H_ice."><img src="../figures/IceHistory/IceHistory-ICE6G_D.png" class="img-fluid figure-img" width="336" alt="IceHistory-ICE6G_D on ANT-8KM: H_ice."></a></p>
+<figcaption>IceHistory-ICE6G_D on ANT-8KM: H_ice.</figcaption>
+</figure>
+</div>
+</section>
+<section id="margold2015" class="level3">
+<h3 class="anchored" data-anchor-id="margold2015">Margold2015</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/IceHistory/IceHistory-Margold2015.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="IceHistory-Margold2015 on NH-16KM: f_stream."><img src="../figures/IceHistory/IceHistory-Margold2015.png" class="img-fluid figure-img" width="317" alt="IceHistory-Margold2015 on NH-16KM: f_stream."></a></p>
+<figcaption>IceHistory-Margold2015 on NH-16KM: f_stream.</figcaption>
+</figure>
+</div>
+</section>
+<section id="prism4" class="level3">
+<h3 class="anchored" data-anchor-id="prism4">PRISM4</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/IceHistory/IceHistory-PRISM4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="IceHistory-PRISM4 on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: z_topo_enh."><img src="../figures/IceHistory/IceHistory-PRISM4.png" class="img-fluid figure-img" width="1297" alt="IceHistory-PRISM4 on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: z_topo_enh."></a></p>
+<figcaption>IceHistory-PRISM4 on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: z_topo_enh.</figcaption>
+</figure>
+</div>
+</section>
+<section id="paleogris" class="level3">
+<h3 class="anchored" data-anchor-id="paleogris">PaleoGrIS</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/IceHistory/IceHistory-PaleoGrIS.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="IceHistory-PaleoGrIS on GRL-PAL-4KM: age_deglac."><img src="../figures/IceHistory/IceHistory-PaleoGrIS.png" class="img-fluid figure-img" width="283" alt="IceHistory-PaleoGrIS on GRL-PAL-4KM: age_deglac."></a></p>
+<figcaption>IceHistory-PaleoGrIS on GRL-PAL-4KM: age_deglac.</figcaption>
+</figure>
+</div>
+</section>
+<section id="paleomist" class="level3">
+<h3 class="anchored" data-anchor-id="paleomist">PaleoMIST</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/IceHistory/IceHistory-PaleoMIST.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="IceHistory-PaleoMIST on ANT-8KM, GRL-PAL-8KM, NH-16KM, GLOBAL-0.5DEG: H_ice."><img src="../figures/IceHistory/IceHistory-PaleoMIST.png" class="img-fluid figure-img" width="1303" alt="IceHistory-PaleoMIST on ANT-8KM, GRL-PAL-8KM, NH-16KM, GLOBAL-0.5DEG: H_ice."></a></p>
+<figcaption>IceHistory-PaleoMIST on ANT-8KM, GRL-PAL-8KM, NH-16KM, GLOBAL-0.5DEG: H_ice.</figcaption>
+</figure>
+</div>
+</section>
+<section id="paleomist_max" class="level3">
+<h3 class="anchored" data-anchor-id="paleomist_max">PaleoMIST_max</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/IceHistory/IceHistory-PaleoMIST_max.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="IceHistory-PaleoMIST_max on ANT-8KM, GRL-PAL-8KM, NH-16KM, GLOBAL-0.5DEG: H_ice."><img src="../figures/IceHistory/IceHistory-PaleoMIST_max.png" class="img-fluid figure-img" width="1303" alt="IceHistory-PaleoMIST_max on ANT-8KM, GRL-PAL-8KM, NH-16KM, GLOBAL-0.5DEG: H_ice."></a></p>
+<figcaption>IceHistory-PaleoMIST_max on ANT-8KM, GRL-PAL-8KM, NH-16KM, GLOBAL-0.5DEG: H_ice.</figcaption>
+</figure>
+</div>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/fesmc\.github\.io\/FesmData\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>FesmData · fesmc</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/fesmc/FesmData/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Built with <a href="https://quarto.org">Quarto</a></p>
+</div>
+  </div>
+</footer>
+<script>document.querySelectorAll('a.toc-action[href^="http"]').forEach(a => { a.target = "_blank"; a.rel = "noopener"; });</script>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

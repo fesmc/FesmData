@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.19">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Website and figures – FesmData</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-d37df8fd7b43e116a420b34c208e916c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-dae82585467ed893c2d02b9a361b8f7a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">FesmData</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./download.html"> 
+<span class="menu-text">Download</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./products.html"> 
+<span class="menu-text">Products</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./domains.html"> 
+<span class="menu-text">Domains and grids</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-datasets" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Datasets</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-datasets">    
+        <li>
+    <a class="dropdown-item" href="./datasets.html">
+ <span class="dropdown-text">Overview</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./precision.html">
+ <span class="dropdown-text">Precision and file sizes</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Topography and masks</li>
+        <li>
+    <a class="dropdown-item" href="./datasets/topo.html">
+ <span class="dropdown-text">Topo — topography</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/regions.html">
+ <span class="dropdown-text">Regions — regions and basins</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Ice</li>
+        <li>
+    <a class="dropdown-item" href="./datasets/velocity.html">
+ <span class="dropdown-text">Velocity — ice surface velocity</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/icechange.html">
+ <span class="dropdown-text">IceChange — observed ice sheet change</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/icehistory.html">
+ <span class="dropdown-text">IceHistory — paleo ice sheets</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/stratigraphy.html">
+ <span class="dropdown-text">Stratigraphy — age structure</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/basalmelt.html">
+ <span class="dropdown-text">BasalMelt — ice-shelf melt</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/basalstate.html">
+ <span class="dropdown-text">BasalState — basal thermal state</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Solid Earth</li>
+        <li>
+    <a class="dropdown-item" href="./datasets/ghf.html">
+ <span class="dropdown-text">GHF — geothermal heat flow</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/sediment.html">
+ <span class="dropdown-text">Sediment — sediment thickness</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/solidearth.html">
+ <span class="dropdown-text">SolidEarth — lithosphere and mantle</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Ocean and climate</li>
+        <li>
+    <a class="dropdown-item" href="./datasets/ocean.html">
+ <span class="dropdown-text">Ocean — temperature and salinity</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/smb.html">
+ <span class="dropdown-text">SMB — surface mass balance</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/atmosphere.html">
+ <span class="dropdown-text">Atmosphere — reanalysis and satellite</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/paleoclimate.html">
+ <span class="dropdown-text">Paleoclimate — past climates</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-records" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Records</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-records">    
+        <li>
+    <a class="dropdown-item" href="./records_overview.html">
+ <span class="dropdown-text">Overview</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="./datasets/icecores.html">
+ <span class="dropdown-text">IceCores — ice core records</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/ghg.html">
+ <span class="dropdown-text">GHG — greenhouse gases</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/sealevel.html">
+ <span class="dropdown-text">SeaLevel — global sea level</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/stacks.html">
+ <span class="dropdown-text">Stacks — benthic δ18O stacks</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/orbital.html">
+ <span class="dropdown-text">Orbital — orbital elements and insolation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/rsl.html">
+ <span class="dropdown-text">RSL — relative sea level</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/boreholes.html">
+ <span class="dropdown-text">Boreholes — ice temperature profiles</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/gps.html">
+ <span class="dropdown-text">GPS — vertical velocities</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/smbobs.html">
+ <span class="dropdown-text">SMBObs — surface mass balance observations</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/freshwater.html">
+ <span class="dropdown-text">Freshwater — ice sheet freshwater fluxes</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-your-own-data" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Your own data</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-your-own-data">    
+        <li>
+    <a class="dropdown-item" href="./remap.html">
+ <span class="dropdown-text">Gridded data</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./records.html">
+ <span class="dropdown-text">Records format</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-developers" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Developers</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-developers">    
+        <li>
+    <a class="dropdown-item" href="./developers.html">
+ <span class="dropdown-text">Overview and code</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./machines.html">
+ <span class="dropdown-text">Machines and storage</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./adding.html">
+ <span class="dropdown-text">Adding a dataset</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./releasing.html">
+ <span class="dropdown-text">Releasing</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./website.html">
+ <span class="dropdown-text">Website and figures</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/fesmc/FesmData" target="_blank"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#website" id="toc-website" class="nav-link active" data-scroll-target="#website">Website</a></li>
+  <li><a href="#figures-of-the-products-for-the-website" id="toc-figures-of-the-products-for-the-website" class="nav-link" data-scroll-target="#figures-of-the-products-for-the-website">Figures of the products for the website</a>
+  <ul class="collapse">
+  <li><a href="#gridded-products" id="toc-gridded-products" class="nav-link" data-scroll-target="#gridded-products">Gridded products</a></li>
+  <li><a href="#records" id="toc-records" class="nav-link" data-scroll-target="#records">Records</a></li>
+  <li><a href="#topo-and-regions" id="toc-topo-and-regions" class="nav-link" data-scroll-target="#topo-and-regions">Topo and Regions</a></li>
+  <li><a href="#overview-of-the-domains" id="toc-overview-of-the-domains" class="nav-link" data-scroll-target="#overview-of-the-domains">Overview of the domains</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/fesmc/FesmData/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="website" class="level1">
+<h1>Website</h1>
+<p>The website (https://fesmc.github.io/FesmData/) is a <a href="https://quarto.org">Quarto</a> site in <code>docs/</code>. Most pages include a README of the repository (the datasets, <code>Remap/</code>, <code>Records/</code>, <code>shared/</code>, <code>Publish/</code>, <code>Figures/</code>), so that they are written once, next to the code; the pages for users (Home, Download, Products, Domains, Datasets, Precision) are written in <code>docs/</code>. The menus are set in <code>docs/_quarto.yml</code>.</p>
+<p>Some parts are generated by <code>julia fesmdata.jl docs</code> (<code>Publish/site.jl</code>, standard library only), and not tracked:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>File</th>
+<th>Contents</th>
+<th>From</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>docs/_products.md</code></td>
+<td>The table of the datasets on each domain, with their versions (Products)</td>
+<td><code>registry/</code></td>
+</tr>
+<tr class="even">
+<td><code>docs/_downloads/&lt;Dataset&gt;.md</code></td>
+<td>The files of each grid of a dataset, with their links (Downloads, at the end of its page)</td>
+<td><code>registry/</code></td>
+</tr>
+<tr class="odd">
+<td><code>docs/_datasets.md</code>, <code>docs/_records.md</code></td>
+<td>The overview of the datasets by topic, and of the records</td>
+<td><code>Publish/datasets.toml</code> (<code>[_site] topics</code>), <code>registry/</code></td>
+</tr>
+<tr class="even">
+<td><code>docs/_domains.md</code></td>
+<td>The table of the domains (Domains)</td>
+<td><code>shared/domains.toml</code>, <code>Topo/products.toml</code></td>
+</tr>
+</tbody>
+</table>
+<p>Each dataset page ends with figures of its products, made from the released files on Levante (<code>docs/figures/&lt;Dataset&gt;/</code>, by <code>julia fesmdata.jl figures &lt;Dataset&gt;</code>, see below); only their galleries are committed, the figures are kept on <code>gh-pages</code>. The overview figures of the domains linked from the table of the domains are <code>figures/Domains/&lt;folder&gt;_TOPO-&lt;product&gt;.png</code> (<code>julia fesmdata.jl figures Domains</code>).</p>
+<p><code>.github/workflows/publish-docs.yml</code> renders the site and publishes it to the <code>gh-pages</code> branch (a single commit, with the figures taken from there) on every push to main that changes the docs, the READMEs, the registry, Publish or the definitions of the domains. To preview it locally:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> fesmdata.jl docs</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview docs</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="figures-of-the-products-for-the-website" class="level1">
+<h1>Figures of the products for the website</h1>
+<p>Each dataset page of the website ends with a section of figures, made from the products as released (the files in <code>$FESMDATA_PRODUCTS</code>), so that users see what they download:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> fesmdata.jl figures <span class="op">&lt;</span>Dataset<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>writes a PNG per product and the section, <code>gallery.md</code>, to <code>docs/figures/&lt;Dataset&gt;/</code>, which the page of the dataset (<code>docs/datasets/&lt;name&gt;.qmd</code>) includes at its end (Quarto <code>include</code> of <code>../figures/&lt;Dataset&gt;/gallery.md</code>).</p>
+<p>The figures (PNG at 2 pixels per unit of their layout, mostly under 1 MB each) are made again when a dataset is released. They need all files of the products, so they are made on Levante, on a login node (a few minutes; Bagge2021 and the global 0.1° files are read one field at a time):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> shared/machines/levante.env</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> <span class="at">--project</span><span class="op">=</span>Figures <span class="at">-e</span> <span class="st">'using Pkg; Pkg.instantiate()'</span>   <span class="co"># once</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> fesmdata.jl figures IceHistory</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Only the galleries are committed to main; the figures are kept on the site branch <code>gh-pages</code> alone, which has a single commit, so that they are not versioned. The docs workflow takes them from there to build the site and publishes it again as a single commit. To put new figures on the site, copy them to a checkout that can push to GitHub, run <code>Figures/publish_figures.sh</code>, and then push the galleries (not while the docs workflow deploys, which would replace gh-pages without them):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rsync</span> <span class="at">-a</span> levante:/work/ba1442/robinson/models/FesmData/docs/figures/IceHistory/ docs/figures/IceHistory/</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Figures/publish_figures.sh</span> IceHistory</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add docs/figures/IceHistory/gallery.md <span class="kw">&amp;&amp;</span> <span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Figures: IceHistory"</span> <span class="kw">&amp;&amp;</span> <span class="fu">git</span> push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>A new dataset needs the include line in its page, and its figures before the site is published (the include fails without <code>gallery.md</code>). Products not made yet (no file on any of their grids, e.g.&nbsp;a source still to be downloaded) are left out of the figures; run <code>figures</code> again once they are made.</p>
+<section id="gridded-products" class="level2">
+<h2 class="anchored" data-anchor-id="gridded-products">Gridded products</h2>
+<p>One figure per released product: a column per domain, on the finest grid with at most 800 cells along its longer side (e.g.&nbsp;ANT-8KM, GRL-PAL-4KM, NH-16KM, GLOBAL-0.5DEG), and a row per field, with a colour bar per row. The crops of a domain (Greenland, Laurentide, Eurasia) are shown only if the domain itself is not. Coastlines are the ice-free ocean margin of the topography of the domain on the same grid (the Topo product of the zones of Regions), and the Natural Earth coastline on global grids.</p>
+<p>By default the field is the first of the product’s <code>variables</code> (or of its file), at:</p>
+<ul>
+<li>21 ka and the present, for a time in years ago;</li>
+<li>the last time of a CF time axis;</li>
+<li>January and July of a monthly climatology;</li>
+<li>the first value of other dimensions (depth, structure, …).</li>
+</ul>
+<p>Integer variables are drawn as classes (named by <code>flag_values</code> and <code>flag_meanings</code>), others with the 2-98% range of their values on all panels, symmetric with a diverging colour map when they have both signs in similar amounts.</p>
+<p>The <code>figure</code> table of a product in <code>&lt;Dataset&gt;/remap.toml</code> changes this:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">figure</span> <span class="op">=</span> <span class="op">{ </span><span class="dt">variables</span><span class="op"> =</span> <span class="op">[</span><span class="st">"uxy_srf"</span><span class="op">], </span><span class="dt">scale</span><span class="op"> =</span> <span class="st">"log10"</span><span class="op">, </span><span class="dt">colorrange</span><span class="op"> =</span> <span class="op">[</span><span class="dv">1</span><span class="op">,</span> <span class="dv">3000</span><span class="op">] }</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="dt">figure</span> <span class="op">=</span> <span class="op">{ </span><span class="dt">select</span><span class="op"> =</span> <span class="op">{ </span><span class="dt">depth</span><span class="op"> =</span> <span class="op">[</span><span class="dv">100</span><span class="op">,</span> <span class="dv">300</span><span class="op">] }, </span><span class="dt">colormap</span><span class="op"> =</span> <span class="st">"inferno"</span><span class="op"> }</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>variables</code></td>
+<td>fields shown, a row each</td>
+</tr>
+<tr class="even">
+<td><code>select</code></td>
+<td>values of other dimensions, by dimension: a value or a list (a row each); nearest in each file</td>
+</tr>
+<tr class="odd">
+<td><code>colormap</code></td>
+<td>a Makie colour map (e.g.&nbsp;<code>"viridis"</code>, <code>"balance"</code>, <code>"ice"</code>)</td>
+</tr>
+<tr class="even">
+<td><code>colorrange</code></td>
+<td><code>[min, max]</code></td>
+</tr>
+<tr class="odd">
+<td><code>scale</code></td>
+<td><code>"log10"</code></td>
+</tr>
+<tr class="even">
+<td><code>hide</code></td>
+<td>a value not drawn (e.g.&nbsp;<code>0</code>)</td>
+</tr>
+</tbody>
+</table>
+<p><code>colormap</code>, <code>colorrange</code>, <code>scale</code> and <code>hide</code> can also be tables by variable, e.g. <code>colormap = { z_bed = "oleron", H_ice = "ice" }</code>.</p>
+<p><code>figure = false</code> leaves a product without a figure, e.g.&nbsp;the products of a dataset with many similar ones (Paleoclimate shows the LGM of each model only).</p>
+</section>
+<section id="records" class="level2">
+<h2 class="anchored" data-anchor-id="records">Records</h2>
+<p>One figure per product: maps of the sites on the domains that contain them (GRL-PAL, ANT, NH, each site on the first), and the data next to them: a line per site or region against time (<code>timeSeries</code>) or depth (<code>profile</code>), or the observations against their time (<code>point</code> with a time). Data at sites without a time or depth (e.g.&nbsp;GPS uplift rates) colour the sites. The variable is the first data variable on the sites; <code>figure = { variable = "dD" }</code> in <code>&lt;Dataset&gt;/records.toml</code> shows another.</p>
+</section>
+<section id="topo-and-regions" class="level2">
+<h2 class="anchored" data-anchor-id="topo-and-regions">Topo and Regions</h2>
+<p>Topo has a figure per domain, its products side by side (bed elevation and ice thickness, with colour ranges from the data of the domain: the bed centred on sea level where it reaches below, otherwise over the land elevations), and the bed around Jakobshavn Isbræ on grids of 1, 4 and 16 km (<code>topo.jl</code>). Regions has worked examples of the region codes, zones and basins (<code>regions.jl</code>), on the North and on Antarctica: snippets of Julia code, run in order to make their maps, and shown on the page with their output.</p>
+</section>
+<section id="overview-of-the-domains" class="level2">
+<h2 class="anchored" data-anchor-id="overview-of-the-domains">Overview of the domains</h2>
+<p><code>julia fesmdata.jl figures Domains</code> makes an overview figure of each Topo product of each domain, <code>docs/figures/Domains/&lt;folder&gt;_TOPO-&lt;product&gt;.png</code>, linked from the table of the domains (Domains page; crops link to those of their domain): the bed and surface elevation and ice thickness of the product, the three levels of the regions (labelled by path and name), the zones and the basins of each basin set of the domain, on the finest grid with at most 1600 cells along its longer side (<code>domains.jl</code>). They are large (a few MB) and open on their own; they have no gallery. Publish them as the other figures (<code>Figures/publish_figures.sh Domains</code>).</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/fesmc\.github\.io\/FesmData\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>FesmData · fesmc</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/fesmc/FesmData/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Built with <a href="https://quarto.org">Quarto</a></p>
+</div>
+  </div>
+</footer>
+<script>document.querySelectorAll('a.toc-action[href^="http"]').forEach(a => { a.target = "_blank"; a.rel = "noopener"; });</script>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

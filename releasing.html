@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.19">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Releasing – FesmData</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-d37df8fd7b43e116a420b34c208e916c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-dae82585467ed893c2d02b9a361b8f7a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">FesmData</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./download.html"> 
+<span class="menu-text">Download</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./products.html"> 
+<span class="menu-text">Products</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./domains.html"> 
+<span class="menu-text">Domains and grids</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-datasets" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Datasets</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-datasets">    
+        <li>
+    <a class="dropdown-item" href="./datasets.html">
+ <span class="dropdown-text">Overview</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./precision.html">
+ <span class="dropdown-text">Precision and file sizes</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Topography and masks</li>
+        <li>
+    <a class="dropdown-item" href="./datasets/topo.html">
+ <span class="dropdown-text">Topo — topography</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/regions.html">
+ <span class="dropdown-text">Regions — regions and basins</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Ice</li>
+        <li>
+    <a class="dropdown-item" href="./datasets/velocity.html">
+ <span class="dropdown-text">Velocity — ice surface velocity</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/icechange.html">
+ <span class="dropdown-text">IceChange — observed ice sheet change</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/icehistory.html">
+ <span class="dropdown-text">IceHistory — paleo ice sheets</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/stratigraphy.html">
+ <span class="dropdown-text">Stratigraphy — age structure</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/basalmelt.html">
+ <span class="dropdown-text">BasalMelt — ice-shelf melt</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/basalstate.html">
+ <span class="dropdown-text">BasalState — basal thermal state</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Solid Earth</li>
+        <li>
+    <a class="dropdown-item" href="./datasets/ghf.html">
+ <span class="dropdown-text">GHF — geothermal heat flow</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/sediment.html">
+ <span class="dropdown-text">Sediment — sediment thickness</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/solidearth.html">
+ <span class="dropdown-text">SolidEarth — lithosphere and mantle</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Ocean and climate</li>
+        <li>
+    <a class="dropdown-item" href="./datasets/ocean.html">
+ <span class="dropdown-text">Ocean — temperature and salinity</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/smb.html">
+ <span class="dropdown-text">SMB — surface mass balance</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/atmosphere.html">
+ <span class="dropdown-text">Atmosphere — reanalysis and satellite</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/paleoclimate.html">
+ <span class="dropdown-text">Paleoclimate — past climates</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-records" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Records</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-records">    
+        <li>
+    <a class="dropdown-item" href="./records_overview.html">
+ <span class="dropdown-text">Overview</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="./datasets/icecores.html">
+ <span class="dropdown-text">IceCores — ice core records</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/ghg.html">
+ <span class="dropdown-text">GHG — greenhouse gases</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/sealevel.html">
+ <span class="dropdown-text">SeaLevel — global sea level</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/stacks.html">
+ <span class="dropdown-text">Stacks — benthic δ18O stacks</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/orbital.html">
+ <span class="dropdown-text">Orbital — orbital elements and insolation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/rsl.html">
+ <span class="dropdown-text">RSL — relative sea level</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/boreholes.html">
+ <span class="dropdown-text">Boreholes — ice temperature profiles</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/gps.html">
+ <span class="dropdown-text">GPS — vertical velocities</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/smbobs.html">
+ <span class="dropdown-text">SMBObs — surface mass balance observations</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/freshwater.html">
+ <span class="dropdown-text">Freshwater — ice sheet freshwater fluxes</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-your-own-data" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Your own data</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-your-own-data">    
+        <li>
+    <a class="dropdown-item" href="./remap.html">
+ <span class="dropdown-text">Gridded data</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./records.html">
+ <span class="dropdown-text">Records format</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-developers" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Developers</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-developers">    
+        <li>
+    <a class="dropdown-item" href="./developers.html">
+ <span class="dropdown-text">Overview and code</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./machines.html">
+ <span class="dropdown-text">Machines and storage</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./adding.html">
+ <span class="dropdown-text">Adding a dataset</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./releasing.html">
+ <span class="dropdown-text">Releasing</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./website.html">
+ <span class="dropdown-text">Website and figures</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/fesmc/FesmData" target="_blank"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#publish-releases-of-the-processed-products" id="toc-publish-releases-of-the-processed-products" class="nav-link active" data-scroll-target="#publish-releases-of-the-processed-products">Publish: releases of the processed products</a>
+  <ul class="collapse">
+  <li><a href="#registry" id="toc-registry" class="nav-link" data-scroll-target="#registry">Registry</a></li>
+  <li><a href="#download" id="toc-download" class="nav-link" data-scroll-target="#download">Download</a></li>
+  <li><a href="#release" id="toc-release" class="nav-link" data-scroll-target="#release">Release</a></li>
+  <li><a href="#archive-on-zenodo-optional" id="toc-archive-on-zenodo-optional" class="nav-link" data-scroll-target="#archive-on-zenodo-optional">Archive on Zenodo (optional)</a></li>
+  <li><a href="#access" id="toc-access" class="nav-link" data-scroll-target="#access">Access</a></li>
+  <li><a href="#website" id="toc-website" class="nav-link" data-scroll-target="#website">Website</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/fesmc/FesmData/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="publish-releases-of-the-processed-products" class="level1">
+<h1>Publish: releases of the processed products</h1>
+<p>All commands go through <code>fesmdata.jl</code> at the root of FesmData: <code>julia fesmdata.jl help</code> lists them. Finding and downloading (<code>list</code>, <code>fetch</code>) needs only Julia; the release commands install the packages of <code>Publish/</code> themselves when needed.</p>
+<p>The processed products of the v2 pipelines (Topo, Regions, …) are released on the package registry of the GitLab project <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages">fesmc/fesmdata-products</a> (Helmholtz Codebase), and listed on the <a href="https://fesmc.github.io/FesmData/">website</a>. A release of a dataset (tag <code>&lt;dataset&gt;-vX.Y.Z</code>, e.g.&nbsp;<code>topo-v2.0.0</code>) covers all its domains, with one package per domain, dataset and grid, e.g.&nbsp;<code>Antarctica_Topo_ANT-32KM</code> version <code>2.0.0</code>, with the products of that grid new or changed in that release. A file unchanged since an earlier release stays in the package of the release it was first uploaded at (<code>2.0.0</code>), so that a release uploads, and <code>fetch</code> downloads, only what is new. The grid files of each grid (grid description and grid file) are released once, in the dataset Grids (<code>Antarctica_Grids_ANT-32KM</code>), for all datasets on the grid; <code>fetch</code> gets them with the products. Domains are named by their output folder (<code>folder</code> in <code>../shared/domains.toml</code>, e.g. Antarctica, Greenland, Patagonia; all are listed on the <a href="https://fesmc.github.io/FesmData/domains.html">Domains</a> page). Records datasets (non-gridded data, see <a href="https://fesmc.github.io/FesmData/records_overview.html">Records</a>) have no grids: they are released on the domain <code>Records</code>, with one package per dataset, e.g.&nbsp;<code>Records_IceCores</code>, with its files in <code>$FESMDATA_PRODUCTS/Records/&lt;Dataset&gt;/</code>.</p>
+<p>A release can also be archived on <a href="https://zenodo.org/communities/fesmc">Zenodo</a>, in the <code>fesmc</code> community, for a DOI: one Zenodo record per dataset and domain, with a DOI per version.</p>
+<section id="registry" class="level2">
+<h2 class="anchored" data-anchor-id="registry">Registry</h2>
+<p>Every dataset on a domain has a registry file, <code>../registry/&lt;Domain&gt;/&lt;Dataset&gt;.toml</code>, with the release (<code>[_RELEASE]</code>: version, tag, date, link to the packages), its DOIs if archived on Zenodo (<code>[_ZENODO]</code>), and one entry per file:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">["</span><span class="dt">ANT-4KM_TOPO-Bedmap3.nc"</span><span class="kw">]</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">uri</span> <span class="op">=</span> <span class="st">"https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-4KM/2.0.0/ANT-4KM_TOPO-Bedmap3.nc"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dt">checksum</span> <span class="op">=</span> <span class="st">"sha256:&lt;hex&gt;"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="dt">size</span> <span class="op">=</span> <span class="dv">123456789</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="dt">storage_path</span> <span class="op">=</span> <span class="st">"$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_TOPO-Bedmap3.nc"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>$datasets_dir</code> stands for <code>$FESMDATA_PRODUCTS</code>, so the files land in the usual layout, <code>$FESMDATA_PRODUCTS/&lt;Domain&gt;/&lt;GRID&gt;/</code>. The <code>uri</code> of a file unchanged since an earlier release is that of the package where it was uploaded (e.g.&nbsp;<code>2.0.0</code> in the registry of release <code>2.1.0</code>). A file that changed since an earlier release also has <code>previous_checksums</code>, the checksums of its earlier releases, so that copies of those are updated. The registry files are also <a href="https://github.com/awi-esc/DataManifest.jl">DataManifest.jl</a> databases.</p>
+</section>
+<section id="download" class="level2">
+<h2 class="anchored" data-anchor-id="download">Download</h2>
+<p>Finding and downloading the products (<code>list</code>, <code>fetch</code>, <code>mirror</code>) is described on the <a href="https://fesmc.github.io/FesmData/download.html">Download</a> page.</p>
+</section>
+<section id="release" class="level2">
+<h2 class="anchored" data-anchor-id="release">Release</h2>
+<p>The datasets, the GitLab project and the Zenodo metadata (creators, licence, community) are set in <code>datasets.toml</code>. The files of a release on each grid are defined by the pipeline of the dataset (<code>topo_release_files</code> in <code>../Topo/files.jl</code>: all products of the domain, default and variants; <code>regions_release_files</code> in <code>../Regions/files.jl</code>; the grid files of the grids with products of any dataset for Grids, <code>grids_files</code> in <code>release.jl</code>), and must all be present. A release of a dataset (here GHF, version 2.0.0) is made on Levante, where the files are, from the files as they were made and checked, and needs a GitLab token (see Access below). It takes four steps. The grid files of its grids must be released in Grids, as they are locally (checksums): when grid files are written again (Topo step 1) or a dataset is released on new grids, release Grids first, the same way.</p>
+<p><strong>1. Tag the release</strong> (from any checkout, after the changes are on main):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> fetch origin</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> tag <span class="at">-a</span> ghf-v2.0.0 <span class="at">-m</span> <span class="st">"GHF v2.0.0"</span> origin/main</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin ghf-v2.0.0</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>2. Stamp the files</strong> with the tag, from the usual checkout at the tag (no uncommitted changes):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ../FesmData <span class="kw">&amp;&amp;</span> <span class="fu">git</span> pull</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> shared/machines/levante.env</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> fesmdata.jl stamp GHF</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>stamp</code> sets <code>fesmdata_version</code> of every file new or changed since the earlier release to the tag, in place (only the global attributes change). The files unchanged since then (the checksum of their entry in the registry, which must therefore be committed) keep the version they were released at, and are not uploaded or downloaded again. <code>fesmdata_commit</code> stays the commit that made the file, and <code>history</code> records the stamp and the version the file was made at, so that files made before the tag (whose code may differ in details from the tag) can be recognised. The files are not made again: a product is made and checked once, and released as it is. To make a release fully reproducible from its tag instead, make the files again in a clean checkout of the tag (e.g.&nbsp;<code>git worktree add ../FesmData-ghf-v2.0.0 ghf-v2.0.0</code>, then the pipeline there with <code>--overwrite</code>); they then have the tag already.</p>
+<p><strong>3. Upload</strong>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> fesmdata.jl release GHF <span class="at">--dry-run</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> fesmdata.jl release GHF</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The release is that of the newest tag of the dataset. The dry run checks every domain (all files present, the new and changed files at the release tag, the unchanged ones at an earlier tag) and lists the files to upload by package. <code>release</code> then uploads the new and changed files of each grid to its package, checks them (sha256), and writes the registry file of each domain, with the entries of the unchanged files kept. A domain without new or changed files gets only its registry, at the version of the release. Requests that fail because the server is busy are tried again after a wait. If it still stops, run it again: files already uploaded are kept, and domains already released are skipped.</p>
+<p><strong>4. Commit and push the registry</strong>, which also updates the website:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add registry <span class="kw">&amp;&amp;</span> <span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"registry: GHF v2.0.0"</span> <span class="kw">&amp;&amp;</span> <span class="fu">git</span> push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>5. Clean up</strong> the files the release replaced, once the release is out (and mirrored, <code>fesmdata.jl mirror</code>, on the other machines): products no longer made (e.g.&nbsp;copies on a crop that now gets them by cropping, grids dropped by the resolution rule) stay in <code>$FESMDATA_PRODUCTS</code> until pruned, and the files of earlier releases that were replaced stay on the packages page until deleted:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> fesmdata.jl prune               <span class="co"># or: prune &lt;Dataset&gt; [&lt;Domain&gt;]</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> fesmdata.jl delete GHF          <span class="co"># files of the packages no release refers to</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>prune</code> lists the files that no record of the registry refers to, by domain and dataset with their size, and deletes them after one confirmation (<code>--yes</code>: none), writing their list to <code>$FESMDATA_WORK/prune-&lt;date&gt;.txt</code>. It keeps the products by cropping (files with a <code>cropped_from</code> attribute, made by <code>fetch</code> and <code>mirror</code>), the products not released (<code>release = false</code> in <code>&lt;Dataset&gt;/remap.toml</code>, e.g.&nbsp;SolidEarth Pan2022), the grid files of grids still in use, and the records (<code>Records/</code>). Run it on every machine with a copy (Levante, Albedo), after <code>mirror</code> there.</p>
+<p><code>delete &lt;Dataset&gt;</code> lists the files of the packages of the dataset, all versions, that no entry of the registry refers to, and deletes them after one confirmation, with the packages left without files. It reads the registry of the checkout, so it only cleans the packages of versions up to the registered release of each domain: those of a later version (an upload not finished, or a release not yet pulled) and of domains without a registry are kept, and can be deleted by version.</p>
+<p>At any point, <code>status</code> shows each domain: its local files and their version, its packages on GitLab, and its registered release (and DOI):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> fesmdata.jl status Topo</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>All commands take domains after the dataset to work on some only (e.g.&nbsp;<code>upload Topo Antarctica</code>). <code>--allow-untagged</code> skips the release checks, e.g.&nbsp;for a test. <code>delete Topo &lt;version&gt;</code> removes the packages of a version (e.g.&nbsp;of a test, or of a domain no longer released), after one confirmation; packages with files of the registry are not deleted.</p>
+<p>To test, use <code>--sandbox</code>: the packages are named <code>test_&lt;Domain&gt;_&lt;Dataset&gt;_&lt;GRID&gt;</code> and the registry files go to <code>registry/_sandbox/</code>, which is not tracked (<code>fetch.jl --sandbox</code> downloads from them). Delete the test packages afterwards:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> fesmdata.jl release Topo Eurasia <span class="at">--sandbox</span> <span class="at">--allow-untagged</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> fesmdata.jl delete Topo <span class="op">&lt;</span>version<span class="op">&gt;</span> Eurasia <span class="at">--sandbox</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="archive-on-zenodo-optional" class="level2">
+<h2 class="anchored" data-anchor-id="archive-on-zenodo-optional">Archive on Zenodo (optional)</h2>
+<p>A release on GitLab (with its registry) can be archived on Zenodo for a DOI, with the same local files, after step 3:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> fesmdata.jl archive upload Topo</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> fesmdata.jl archive publish Topo</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add registry <span class="kw">&amp;&amp;</span> <span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"registry: Topo v2.0.1 on Zenodo"</span> <span class="kw">&amp;&amp;</span> <span class="fu">git</span> push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>archive upload</code> puts the files of each domain into a draft of the next version of its Zenodo record (a new record the first time); running it again continues the drafts. <code>archive publish</code> checks the drafts, lists them, publishes them after one confirmation (publishing cannot be undone), and adds their DOIs to the registry. Drafts published on the Zenodo website instead are added with <code>archive register Topo</code>. <code>archive status Topo</code> shows the drafts and archived versions; <code>archive discard Topo</code> deletes the unpublished drafts of a dataset, <code>archive drafts</code> lists all unpublished drafts of your account, and <code>archive discard &lt;id&gt; ...</code> deletes drafts by id. The drafts are recorded in <code>registry/_drafts/</code> (not tracked). With <code>--sandbox</code>, the <a href="https://sandbox.zenodo.org">Zenodo sandbox</a> archives the test releases (<code>registry/_sandbox/</code>).</p>
+</section>
+<section id="access" class="level2">
+<h2 class="anchored" data-anchor-id="access">Access</h2>
+<p><strong>GitLab (Helmholtz Codebase):</strong> uploads need a token of the project: on <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products">fesmdata-products</a>, Settings &gt; Access tokens &gt; Add new token, with the role Developer and the scope <code>api</code> (or a personal token with the scope <code>api</code>, for a member of the project). SSH keys do not work for the package registry. Downloads need no token. Store the token in <code>~/.gitlab_token</code> on the machine with the files (read without being shown or kept in the shell history):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">read</span> <span class="at">-s</span> <span class="at">-p</span> <span class="st">"GitLab token: "</span> <span class="va">t</span> <span class="kw">&amp;&amp;</span> <span class="bu">printf</span> <span class="st">'%s'</span> <span class="st">"</span><span class="va">$t</span><span class="st">"</span> <span class="op">&gt;</span> ~/.gitlab_token <span class="kw">&amp;&amp;</span> <span class="fu">chmod</span> 600 ~/.gitlab_token <span class="kw">&amp;&amp;</span> <span class="bu">unset</span> <span class="va">t</span> <span class="kw">&amp;&amp;</span> <span class="bu">echo</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Zenodo</strong> (only to archive): a personal token, on Zenodo, Account &gt; Applications &gt; Personal access tokens &gt; New token, with the scopes <code>deposit:write</code> and <code>deposit:actions</code>, stored the same way in <code>~/.zenodo_token</code> (and the sandbox one in <code>~/.zenodo_sandbox_token</code>). A new version of a Zenodo record can only be made by its owner, or by those the owner gives access (the record &gt; Share &gt; “Can manage”).</p>
+<p>The machine environments (<code>../shared/machines/*.env</code>) set <code>GITLAB_TOKEN</code>, <code>ZENODO_TOKEN</code> and <code>ZENODO_SANDBOX_TOKEN</code> from these files; a new machine needs the same lines as there. Check with:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> shared/machines/levante.env <span class="kw">&amp;&amp;</span> <span class="bu">[</span> <span class="ot">-n</span> <span class="st">"</span><span class="va">$GITLAB_TOKEN</span><span class="st">"</span> <span class="bu">]</span> <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> <span class="st">"token set"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="website" class="level2">
+<h2 class="anchored" data-anchor-id="website">Website</h2>
+<p>The website and its generated pages are described under <a href="https://fesmc.github.io/FesmData/website.html">Website and figures</a>.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/fesmc\.github\.io\/FesmData\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>FesmData · fesmc</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/fesmc/FesmData/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Built with <a href="https://quarto.org">Quarto</a></p>
+</div>
+  </div>
+</footer>
+<script>document.querySelectorAll('a.toc-action[href^="http"]').forEach(a => { a.target = "_blank"; a.rel = "noopener"; });</script>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

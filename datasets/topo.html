@@ -1,0 +1,3466 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.19">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Topo – FesmData</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d37df8fd7b43e116a420b34c208e916c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-dae82585467ed893c2d02b9a361b8f7a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">FesmData</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../download.html"> 
+<span class="menu-text">Download</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../products.html"> 
+<span class="menu-text">Products</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../domains.html"> 
+<span class="menu-text">Domains and grids</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-datasets" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Datasets</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-datasets">    
+        <li>
+    <a class="dropdown-item" href="../datasets.html">
+ <span class="dropdown-text">Overview</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../precision.html">
+ <span class="dropdown-text">Precision and file sizes</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Topography and masks</li>
+        <li>
+    <a class="dropdown-item" href="../datasets/topo.html">
+ <span class="dropdown-text">Topo — topography</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/regions.html">
+ <span class="dropdown-text">Regions — regions and basins</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Ice</li>
+        <li>
+    <a class="dropdown-item" href="../datasets/velocity.html">
+ <span class="dropdown-text">Velocity — ice surface velocity</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/icechange.html">
+ <span class="dropdown-text">IceChange — observed ice sheet change</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/icehistory.html">
+ <span class="dropdown-text">IceHistory — paleo ice sheets</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/stratigraphy.html">
+ <span class="dropdown-text">Stratigraphy — age structure</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/basalmelt.html">
+ <span class="dropdown-text">BasalMelt — ice-shelf melt</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/basalstate.html">
+ <span class="dropdown-text">BasalState — basal thermal state</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Solid Earth</li>
+        <li>
+    <a class="dropdown-item" href="../datasets/ghf.html">
+ <span class="dropdown-text">GHF — geothermal heat flow</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/sediment.html">
+ <span class="dropdown-text">Sediment — sediment thickness</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/solidearth.html">
+ <span class="dropdown-text">SolidEarth — lithosphere and mantle</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Ocean and climate</li>
+        <li>
+    <a class="dropdown-item" href="../datasets/ocean.html">
+ <span class="dropdown-text">Ocean — temperature and salinity</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/smb.html">
+ <span class="dropdown-text">SMB — surface mass balance</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/atmosphere.html">
+ <span class="dropdown-text">Atmosphere — reanalysis and satellite</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/paleoclimate.html">
+ <span class="dropdown-text">Paleoclimate — past climates</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-records" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Records</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-records">    
+        <li>
+    <a class="dropdown-item" href="../records_overview.html">
+ <span class="dropdown-text">Overview</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../datasets/icecores.html">
+ <span class="dropdown-text">IceCores — ice core records</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/ghg.html">
+ <span class="dropdown-text">GHG — greenhouse gases</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/sealevel.html">
+ <span class="dropdown-text">SeaLevel — global sea level</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/stacks.html">
+ <span class="dropdown-text">Stacks — benthic δ18O stacks</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/orbital.html">
+ <span class="dropdown-text">Orbital — orbital elements and insolation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/rsl.html">
+ <span class="dropdown-text">RSL — relative sea level</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/boreholes.html">
+ <span class="dropdown-text">Boreholes — ice temperature profiles</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/gps.html">
+ <span class="dropdown-text">GPS — vertical velocities</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/smbobs.html">
+ <span class="dropdown-text">SMBObs — surface mass balance observations</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/freshwater.html">
+ <span class="dropdown-text">Freshwater — ice sheet freshwater fluxes</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-your-own-data" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Your own data</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-your-own-data">    
+        <li>
+    <a class="dropdown-item" href="../remap.html">
+ <span class="dropdown-text">Gridded data</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../records.html">
+ <span class="dropdown-text">Records format</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-developers" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Developers</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-developers">    
+        <li>
+    <a class="dropdown-item" href="../developers.html">
+ <span class="dropdown-text">Overview and code</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../machines.html">
+ <span class="dropdown-text">Machines and storage</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../adding.html">
+ <span class="dropdown-text">Adding a dataset</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../releasing.html">
+ <span class="dropdown-text">Releasing</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../website.html">
+ <span class="dropdown-text">Website and figures</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/fesmc/FesmData" target="_blank"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#topo-high-resolution-topography" id="toc-topo-high-resolution-topography" class="nav-link active" data-scroll-target="#topo-high-resolution-topography">Topo: high-resolution topography</a>
+  <ul class="collapse">
+  <li><a href="#products" id="toc-products" class="nav-link" data-scroll-target="#products">Products</a></li>
+  <li><a href="#method" id="toc-method" class="nav-link" data-scroll-target="#method">Method</a>
+  <ul class="collapse">
+  <li><a href="#sources-on-the-base-grid" id="toc-sources-on-the-base-grid" class="nav-link" data-scroll-target="#sources-on-the-base-grid">Sources on the base grid</a></li>
+  <li><a href="#merging" id="toc-merging" class="nav-link" data-scroll-target="#merging">Merging</a></li>
+  <li><a href="#coarser-grids-and-crops" id="toc-coarser-grids-and-crops" class="nav-link" data-scroll-target="#coarser-grids-and-crops">Coarser grids and crops</a></li>
+  <li><a href="#grids" id="toc-grids" class="nav-link" data-scroll-target="#grids">Grids</a></li>
+  <li><a href="#notes-on-the-sources" id="toc-notes-on-the-sources" class="nav-link" data-scroll-target="#notes-on-the-sources">Notes on the sources</a></li>
+  </ul></li>
+  <li><a href="#precision" id="toc-precision" class="nav-link" data-scroll-target="#precision">Precision</a></li>
+  <li><a href="#sources-and-licences" id="toc-sources-and-licences" class="nav-link" data-scroll-target="#sources-and-licences">Sources and licences</a></li>
+  <li><a href="#making-the-dataset" id="toc-making-the-dataset" class="nav-link" data-scroll-target="#making-the-dataset">Making the dataset</a>
+  <ul class="collapse">
+  <li><a href="#layout" id="toc-layout" class="nav-link" data-scroll-target="#layout">Layout</a></li>
+  <li><a href="#steps" id="toc-steps" class="nav-link" data-scroll-target="#steps">Steps</a></li>
+  <li><a href="#running-a-whole-domain" id="toc-running-a-whole-domain" class="nav-link" data-scroll-target="#running-a-whole-domain">Running a whole domain</a></li>
+  <li><a href="#adding-a-source-a-product-or-a-domain" id="toc-adding-a-source-a-product-or-a-domain" class="nav-link" data-scroll-target="#adding-a-source-a-product-or-a-domain">Adding a source, a product or a domain</a></li>
+  <li><a href="#glacier-area-and-volume" id="toc-glacier-area-and-volume" class="nav-link" data-scroll-target="#glacier-area-and-volume">Glacier area and volume</a></li>
+  </ul></li>
+  <li><a href="#downloads" id="toc-downloads" class="nav-link" data-scroll-target="#downloads">Downloads</a>
+  <ul class="collapse">
+  <li><a href="#download-antarctica" id="toc-download-antarctica" class="nav-link" data-scroll-target="#download-antarctica">Antarctica</a></li>
+  <li><a href="#download-amundsen" id="toc-download-amundsen" class="nav-link" data-scroll-target="#download-amundsen">Amundsen</a></li>
+  <li><a href="#download-thwaites" id="toc-download-thwaites" class="nav-link" data-scroll-target="#download-thwaites">Thwaites</a></li>
+  <li><a href="#download-pineisland" id="toc-download-pineisland" class="nav-link" data-scroll-target="#download-pineisland">PineIsland</a></li>
+  <li><a href="#download-filchnerronne" id="toc-download-filchnerronne" class="nav-link" data-scroll-target="#download-filchnerronne">FilchnerRonne</a></li>
+  <li><a href="#download-ross" id="toc-download-ross" class="nav-link" data-scroll-target="#download-ross">Ross</a></li>
+  <li><a href="#download-amery" id="toc-download-amery" class="nav-link" data-scroll-target="#download-amery">Amery</a></li>
+  <li><a href="#download-wilkesbasin" id="toc-download-wilkesbasin" class="nav-link" data-scroll-target="#download-wilkesbasin">WilkesBasin</a></li>
+  <li><a href="#download-greenlandpaleo" id="toc-download-greenlandpaleo" class="nav-link" data-scroll-target="#download-greenlandpaleo">GreenlandPaleo</a></li>
+  <li><a href="#download-greenland" id="toc-download-greenland" class="nav-link" data-scroll-target="#download-greenland">Greenland</a></li>
+  <li><a href="#download-jakobshavn" id="toc-download-jakobshavn" class="nav-link" data-scroll-target="#download-jakobshavn">Jakobshavn</a></li>
+  <li><a href="#download-negis" id="toc-download-negis" class="nav-link" data-scroll-target="#download-negis">NEGIS</a></li>
+  <li><a href="#download-petermann" id="toc-download-petermann" class="nav-link" data-scroll-target="#download-petermann">Petermann</a></li>
+  <li><a href="#download-helheim" id="toc-download-helheim" class="nav-link" data-scroll-target="#download-helheim">Helheim</a></li>
+  <li><a href="#download-north" id="toc-download-north" class="nav-link" data-scroll-target="#download-north">North</a></li>
+  <li><a href="#download-laurentide" id="toc-download-laurentide" class="nav-link" data-scroll-target="#download-laurentide">Laurentide</a></li>
+  <li><a href="#download-eurasia" id="toc-download-eurasia" class="nav-link" data-scroll-target="#download-eurasia">Eurasia</a></li>
+  <li><a href="#download-pyrenees" id="toc-download-pyrenees" class="nav-link" data-scroll-target="#download-pyrenees">Pyrenees</a></li>
+  <li><a href="#download-patagonia" id="toc-download-patagonia" class="nav-link" data-scroll-target="#download-patagonia">Patagonia</a></li>
+  <li><a href="#download-northpatagonianicefield" id="toc-download-northpatagonianicefield" class="nav-link" data-scroll-target="#download-northpatagonianicefield">NorthPatagonianIcefield</a></li>
+  <li><a href="#download-southpatagonianicefield" id="toc-download-southpatagonianicefield" class="nav-link" data-scroll-target="#download-southpatagonianicefield">SouthPatagonianIcefield</a></li>
+  <li><a href="#download-srg" id="toc-download-srg" class="nav-link" data-scroll-target="#download-srg">SRG</a></li>
+  <li><a href="#download-grancamponevado" id="toc-download-grancamponevado" class="nav-link" data-scroll-target="#download-grancamponevado">GranCampoNevado</a></li>
+  <li><a href="#download-cordilleradarwin" id="toc-download-cordilleradarwin" class="nav-link" data-scroll-target="#download-cordilleradarwin">CordilleraDarwin</a></li>
+  <li><a href="#download-montesarmiento" id="toc-download-montesarmiento" class="nav-link" data-scroll-target="#download-montesarmiento">MonteSarmiento</a></li>
+  <li><a href="#download-schiaparelliglacier" id="toc-download-schiaparelliglacier" class="nav-link" data-scroll-target="#download-schiaparelliglacier">SchiaparelliGlacier</a></li>
+  <li><a href="#download-alps" id="toc-download-alps" class="nav-link" data-scroll-target="#download-alps">Alps</a></li>
+  <li><a href="#download-himalaya" id="toc-download-himalaya" class="nav-link" data-scroll-target="#download-himalaya">Himalaya</a></li>
+  <li><a href="#download-drangdrung" id="toc-download-drangdrung" class="nav-link" data-scroll-target="#download-drangdrung">DrangDrung</a></li>
+  <li><a href="#download-svalbard" id="toc-download-svalbard" class="nav-link" data-scroll-target="#download-svalbard">Svalbard</a></li>
+  <li><a href="#download-newzealand" id="toc-download-newzealand" class="nav-link" data-scroll-target="#download-newzealand">NewZealand</a></li>
+  </ul></li>
+  <li><a href="#figures" id="toc-figures" class="nav-link" data-scroll-target="#figures">Figures</a>
+  <ul class="collapse">
+  <li><a href="#antarctica" id="toc-antarctica" class="nav-link" data-scroll-target="#antarctica">Antarctica</a></li>
+  <li><a href="#greenlandpaleo" id="toc-greenlandpaleo" class="nav-link" data-scroll-target="#greenlandpaleo">GreenlandPaleo</a></li>
+  <li><a href="#jakobshavn" id="toc-jakobshavn" class="nav-link" data-scroll-target="#jakobshavn">Jakobshavn</a></li>
+  <li><a href="#negis" id="toc-negis" class="nav-link" data-scroll-target="#negis">NEGIS</a></li>
+  <li><a href="#petermann" id="toc-petermann" class="nav-link" data-scroll-target="#petermann">Petermann</a></li>
+  <li><a href="#helheim" id="toc-helheim" class="nav-link" data-scroll-target="#helheim">Helheim</a></li>
+  <li><a href="#north" id="toc-north" class="nav-link" data-scroll-target="#north">North</a></li>
+  <li><a href="#pyrenees" id="toc-pyrenees" class="nav-link" data-scroll-target="#pyrenees">Pyrenees</a></li>
+  <li><a href="#alps" id="toc-alps" class="nav-link" data-scroll-target="#alps">Alps</a></li>
+  <li><a href="#patagonia" id="toc-patagonia" class="nav-link" data-scroll-target="#patagonia">Patagonia</a></li>
+  <li><a href="#srg" id="toc-srg" class="nav-link" data-scroll-target="#srg">SRG</a></li>
+  <li><a href="#grancamponevado" id="toc-grancamponevado" class="nav-link" data-scroll-target="#grancamponevado">GranCampoNevado</a></li>
+  <li><a href="#cordilleradarwin" id="toc-cordilleradarwin" class="nav-link" data-scroll-target="#cordilleradarwin">CordilleraDarwin</a></li>
+  <li><a href="#montesarmiento" id="toc-montesarmiento" class="nav-link" data-scroll-target="#montesarmiento">MonteSarmiento</a></li>
+  <li><a href="#schiaparelliglacier" id="toc-schiaparelliglacier" class="nav-link" data-scroll-target="#schiaparelliglacier">SchiaparelliGlacier</a></li>
+  <li><a href="#himalaya" id="toc-himalaya" class="nav-link" data-scroll-target="#himalaya">Himalaya</a></li>
+  <li><a href="#drangdrung" id="toc-drangdrung" class="nav-link" data-scroll-target="#drangdrung">DrangDrung</a></li>
+  <li><a href="#svalbard" id="toc-svalbard" class="nav-link" data-scroll-target="#svalbard">Svalbard</a></li>
+  <li><a href="#newzealand" id="toc-newzealand" class="nav-link" data-scroll-target="#newzealand">NewZealand</a></li>
+  <li><a href="#resolutions" id="toc-resolutions" class="nav-link" data-scroll-target="#resolutions">Resolutions</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/fesmc/FesmData/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="topo-high-resolution-topography" class="level1">
+<h1>Topo: high-resolution topography</h1>
+<p>Bed topography, surface elevation, ice thickness and the area fractions of ocean, land and ice on every grid of every active domain, from the base grid (25 m to 2 km) to the coarsest grid, merged from the best available sources: BedMachine and Bedmap3 for the ice sheets, GEBCO 2026 for the ocean and the rest of the land, and the Copernicus DEM and the IceBoost glacier thicknesses for the mountain glaciers. Topo is made by a pipeline of its own; the <a href="https://fesmc.github.io/FesmData/products.html">Products</a> page shows its versions on each domain, the <a href="https://fesmc.github.io/FesmData/domains.html">Domains</a> page the domains and grids.</p>
+<section id="products" class="level2">
+<h2 class="anchored" data-anchor-id="products">Products</h2>
+<p>Each domain has default products, from the latest sources, and variants, from earlier versions of the ice-sheet datasets or other sources; both are released. The sources of a product are merged in order of priority, the first over the others:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Product</th>
+<th>Sources, by priority</th>
+<th>Domains</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>TOPO-BedMachine-v4</code></td>
+<td>BedMachine Antarctica v4, GEBCO 2026</td>
+<td>Antarctica and its crops</td>
+</tr>
+<tr class="even">
+<td><code>TOPO-Bedmap3</code></td>
+<td>Bedmap3, GEBCO 2026</td>
+<td>Antarctica and its crops</td>
+</tr>
+<tr class="odd">
+<td><code>TOPO-BedMachine-v6</code></td>
+<td>BedMachine Greenland v6, GEBCO 2026</td>
+<td>GreenlandPaleo, Greenland, Jakobshavn, NEGIS, Petermann, Helheim</td>
+</tr>
+<tr class="even">
+<td><code>TOPO-GEBCO2026</code></td>
+<td>BedMachine Greenland v6, IceBoost v2.0, GEBCO 2026</td>
+<td>North, Laurentide, Eurasia</td>
+</tr>
+<tr class="odd">
+<td><code>TOPO-GLO30-GEBCO2026</code></td>
+<td>IceBoost v2.0, Copernicus DEM GLO-30, GEBCO 2026</td>
+<td>SRG, MonteSarmiento, SchiaparelliGlacier, DrangDrung</td>
+</tr>
+<tr class="even">
+<td><code>TOPO-GLO90-GEBCO2026</code></td>
+<td>IceBoost v2.0, Copernicus DEM GLO-90, GEBCO 2026</td>
+<td>Pyrenees, Patagonia, NorthPatagonianIcefield, SouthPatagonianIcefield, GranCampoNevado, CordilleraDarwin, Himalaya, Alps, Svalbard, NewZealand</td>
+</tr>
+</tbody>
+</table>
+<p>Variants:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Product</th>
+<th>Sources, by priority</th>
+<th>Domains</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>TOPO-BedMachine-v3</code>, <code>TOPO-BedMachine-v2</code></td>
+<td>BedMachine Antarctica v3, v2, GEBCO 2026</td>
+<td>Antarctica and its crops, 1 km and coarser</td>
+</tr>
+<tr class="even">
+<td><code>TOPO-Bedmap2</code></td>
+<td>Bedmap2, GEBCO 2026</td>
+<td>Antarctica and its crops, 1 km and coarser</td>
+</tr>
+<tr class="odd">
+<td><code>TOPO-BedMachine-v5</code>, <code>TOPO-BedMachine-v4</code></td>
+<td>BedMachine Greenland v5, v4, GEBCO 2026</td>
+<td>GreenlandPaleo, Greenland</td>
+</tr>
+<tr class="even">
+<td><code>TOPO-Sommers2025</code></td>
+<td>Sommers (2025) surface and Millan et al.&nbsp;(2022) thickness, IceBoost v2.0, Copernicus DEM GLO-30, GEBCO 2026</td>
+<td>DrangDrung</td>
+</tr>
+<tr class="odd">
+<td><code>TOPO-GLO90-GEBCO2026</code></td>
+<td>IceBoost v2.0, Copernicus DEM GLO-90, GEBCO 2026</td>
+<td>SRG, MonteSarmiento, DrangDrung</td>
+</tr>
+</tbody>
+</table>
+<p>The variants of Antarctica are merged on ANT-500M, but written only on the grids of 1 km and coarser (<code>variants_resolution</code> in <code>products.toml</code>). The files are <code>&lt;GRID&gt;_TOPO-&lt;product&gt;.nc</code>, with the fields:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Units</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>z_bed</code></td>
+<td>m</td>
+<td>Bed elevation (cell mean)</td>
+</tr>
+<tr class="even">
+<td><code>z_srf</code></td>
+<td>m</td>
+<td>Surface elevation (cell mean; 0 over the ocean; in Antarctica including firn air)</td>
+</tr>
+<tr class="odd">
+<td><code>H_ice</code></td>
+<td>m</td>
+<td>Ice thickness (cell mean)</td>
+</tr>
+<tr class="even">
+<td><code>z_bed_sd</code></td>
+<td>m</td>
+<td>Standard deviation of the bed elevation within the cell</td>
+</tr>
+<tr class="odd">
+<td><code>f_ocn</code>, <code>f_land</code>, <code>f_grnd</code>, <code>f_flt</code></td>
+<td>1</td>
+<td>Area fractions of ice-free ocean, ice-free land, grounded ice and floating ice</td>
+</tr>
+<tr class="even">
+<td><code>mask</code></td>
+<td></td>
+<td>Dominant surface type: 0 ocean, 1 ice-free land, 2 grounded ice, 3 floating ice</td>
+</tr>
+<tr class="odd">
+<td><code>src_id</code></td>
+<td></td>
+<td>Source with the largest weight in the cell (names in <code>flag_meanings</code>)</td>
+</tr>
+</tbody>
+</table>
+<p>The global attributes <code>product</code> and <code>sources</code> give the product and its sources, by priority.</p>
+</section>
+<section id="method" class="level2">
+<h2 class="anchored" data-anchor-id="method">Method</h2>
+<p>The processing has two stages:</p>
+<ol type="1">
+<li><strong>Sources → base grid.</strong> Each source is remapped once onto the base grid of a domain (e.g.&nbsp;ANT-500M, GRL-PAL-500M, NH-2KM, PAT-250M, SRG-25M), and the sources are then merged in order of priority (e.g.&nbsp;BedMachine over GEBCO).</li>
+<li><strong>Base → all other grids.</strong> Every coarser grid, and the crops of a domain (e.g.&nbsp;GRL, LIS, EIS, ASE, THW, NPI, SPI), is remapped from the merged base product.</li>
+</ol>
+<p>Remapping is conservative: exact for sources on the same projection as the domain (BedMachine, Bedmap3), and from sub-cell sampling for sources on other grids (GEBCO, Copernicus DEM tiles, IceBoost glacier tiles, the Drang Drung data in UTM). The methods are in <a href="https://github.com/fesmc/FesmUtils.jl">FesmUtils.jl</a> and are threaded.</p>
+<section id="sources-on-the-base-grid" class="level3">
+<h3 class="anchored" data-anchor-id="sources-on-the-base-grid">Sources on the base grid</h3>
+<p>Each source is remapped onto the base grid as <code>z_bed</code>, <code>z_srf</code>, <code>H_ice</code>, <code>z_bed_sd</code> (sub-cell standard deviation of the bed), the area fractions <code>f_ocn</code>, <code>f_land</code>, <code>f_grnd</code>, <code>f_flt</code>, and <code>f_valid</code> (fraction of the cell covered by the source). Sources on the domain projection (BedMachine, Bedmap3) are remapped exactly; GEBCO, and projected sources on another projection (the Drang Drung data), are sampled at about half their resolution within each cell.</p>
+<p>Land sources (the Copernicus DEMs GLO-90 and GLO-30) give only the elevation of the land, as 1-degree lon-lat tiles. Each tile overlapping the base grid is remapped exactly conservatively onto the base cells it covers: every pixel, a quadrilateral on the projection of the domain, is weighted by its area in each cell. The file has <code>z_land</code> (mean land elevation), <code>f_land</code> (land fraction; elevations at or below 0 m are ocean), <code>f_valid</code> (fraction covered by the tiles) and <code>z_land_sd</code>, the standard deviation of the land elevation within the cell, from the bilinear interpolation of the pixels sampled at most half a pixel apart and at least 4 x 4 times per cell. On cells smaller than about two pixels, the spread of the pixels themselves would show the pixel lattice beating against the grid (stripes in <code>z_bed_sd</code> on the 25-50 m grids); that of the interpolated surface varies smoothly, and tends there to the resolved slope times the cell size over sqrt(12).</p>
+<p>Thickness sources (IceBoost) give only glacier ice thickness, as one tile per glacier on its own projection (UTM). Each tile is sampled at about half its resolution within the base cells it covers, and the file has <code>H_ice</code> (cell mean, 0 off the glaciers) and <code>f_ice</code> (glacier area fraction). The pixels touched by a glacier outline count as glacier in the tiles, so the thickness and area of each tile are scaled to the glacier volume and area given with it (the raw pixels give 2% more volume and 3-6% more area). Tiles still overlap along shared ice divides: where their glacier fractions add up to more than 1, the cell is shared, its glacier fraction and thickness divided by that sum, so that the overlap is not counted twice (this matters on grids of 50-250 m, where a boundary is a large part of a cell). The job log compares the glacier area and volume with those of the tiles, before and after.</p>
+<p>Only the tiles overlapping the base grid are read (threaded). Their grids and latitude ranges, from the file headers, are kept in an index per RGI region (<code>$FESMDATA_WORK/topo/tiles/iceboost_v2_rgiNN.tsv</code>), which the first IceBoost job builds in about 5 min, and rebuilds when the files of a region change. With the index, IceBoost takes under a minute for PYR and SRG and about 11 min for NH, mostly for sampling the 74,000 tiles that overlap NH-2KM.</p>
+</section>
+<section id="merging" class="level3">
+<h3 class="anchored" data-anchor-id="merging">Merging</h3>
+<p>Sources are blended in order of increasing priority: a source replaces the fields below it where it fully covers a cell, with a weight rising linearly from 0 at the edge of its coverage to 1 at a taper width inside it, a property of the source (<code>taper_km</code> in <code>sources.jl</code>, recorded in the file attribute <code>taper_km</code>): 20 km, so that the regional datasets meet GEBCO smoothly, and 0 for the Drang Drung data, whose coverage is smaller than that and whose edge lies on land of nearly the same surface, so that they replace exactly the cells they fully cover. The ice fraction of each cell is then grounded or floating as a whole, by flotation of its mean ice thickness and bed (densities in <code>products.toml</code>). Surface elevation is kept as given by the sources (in Antarctica it includes firn air). The file also has <code>mask</code> (dominant surface type: 0 ocean, 1 ice-free land, 2 grounded ice, 3 floating ice) and <code>src_id</code> (source with the largest weight).</p>
+<p>A land source sets the land wherever its tiles reach (without taper, since it meets GEBCO at sea level along the coast): its land fraction becomes ice-free land with its elevation as bed and surface, and the rest of the cell ocean, with the GEBCO bed below it (at most sea level). The bed standard deviation combines both parts.</p>
+<p>A thickness source adds its glaciers onto the ice-free land of the sources below it (GEBCO or the Copernicus DEM, whose elevation is the ice surface): the glacier fraction, at most the ice-free land fraction, becomes grounded ice, and the bed is lowered by the cell-mean ice thickness. Glaciers on ocean (e.g.&nbsp;retreated termini) are dropped. Cells with glacier ice are always grounded. In the NH product, BedMachine replaces the glaciers within its coverage.</p>
+</section>
+<section id="coarser-grids-and-crops" class="level3">
+<h3 class="anchored" data-anchor-id="coarser-grids-and-crops">Coarser grids and crops</h3>
+<p>Every coarser grid and every crop is remapped from the merged base product. Fields and fractions are conservative cell means, <code>z_bed_sd</code> combines the sub-cell variance of the base grid with the variance of the base-grid means, <code>mask</code> is the dominant surface type (ice where the ice fraction is at least one half), and <code>src_id</code> the source covering most of the cell.</p>
+</section>
+<section id="grids" class="level3">
+<h3 class="anchored" data-anchor-id="grids">Grids</h3>
+<p>Grid extents follow the v1 grids in <code>../maps</code>, so the v1 grids at 4-32 km are reproduced, except GRL-32KM, which has 53 instead of 54 columns so that its extent matches the finer GRL grids, and the EIS grids, which are shifted by 16 km in y and extended so that they lie on the NH grids at all resolutions (crops are cut from them on demand); the 250 m grid of the SRG nest reproduces the v1 SRG-250M grid. The ice-sheet domains are on polar stereographic projections, the mountain-glacier domains on the projection used for glacier modelling in each region (UTM, NZTM2000, and the Albers equal-area projection of High Mountain Asia).</p>
+</section>
+<section id="notes-on-the-sources" class="level3">
+<h3 class="anchored" data-anchor-id="notes-on-the-sources">Notes on the sources</h3>
+<ul>
+<li>Surface elevation is 0 over the ocean for all sources.</li>
+<li>BedMachine Antarctica: the surface includes firn air (<code>firn</code>), and the ice thickness does not. Lake Vostok is grounded ice.</li>
+<li>BedMachine Greenland v4 and v5: non-Greenland land (Canadian Arctic) is ice-free land.</li>
+<li>Bedmap3: the transiently grounded ice shelf is floating ice.</li>
+<li>Bedmap2 (1 km, GeoTIFFs): rock outcrops are ice-free land, and Lake Vostok is grounded ice. Heights are relative to the GL04C geoid (EIGEN-6C4 for BedMachine).</li>
+<li>GEBCO is used as ice-free topography and bathymetry. Its sub-ice grid only has ice thickness for the Greenland and Antarctic ice sheets (covered by the regional sources), and differs from the main grid by a few metres elsewhere.</li>
+<li>IceBoost v2.0 (Maffezzoli et al., doi:10.5281/zenodo.17724512; RGI 7.0 outlines) gives the ice thickness of the glaciers and ice caps outside Greenland in the NH product, and of the glaciers of the mountain-glacier domains (RGI regions 07, 11, 13-15, 17, 18). BedMachine Greenland v6 uses the same dataset for the peripheral glaciers of Greenland.</li>
+<li>Copernicus DEM GLO-90 (ESA, doi:10.5270/ESA-c5d3d65; the edited TanDEM-X DEM, acquisitions 2011-2015, heights above the EGM2008 geoid) gives the land surface of the mountain-glacier products; GLO-30 (1” in latitude) that of the 25-50 m nests San Rafael, Monte Sarmiento, Schiaparelli and Drang Drung (GLO-90 as a variant on SRG, SAR and DDG). IceBoost v2.0 takes its surface features from the TanDEM-X EDEM, from the same acquisitions, so the surface and the glacier thickness are consistent. The ocean is 0 m in its tiles, and there are no tiles over the open ocean; land below sea level is taken as ocean.</li>
+<li>Drang Drung Glacier (<code>sommers2025_drangdrung</code>, DDG variant Sommers2025): the surface DEM and ice thickness of the ISSM setup of Sommers (2025, “Seasonal variability in ice velocity driven by subglacial hydrology of Drang Drung Glacier, Western Himalayas: Modeling scripts and data”, doi:10.5281/zenodo.17593643, CC BY 4.0), MATLAB files on UTM zone 43N (EPSG:32643; not stated in the record, but the outline lies on the glacier, and the DEM matches GLO-90 to 12 m (s.d.) on ice-free land at 50 m). The surface is the 2 m DEM of LEGOS and OMP (2025), in heights above the WGS84 ellipsoid (21 m above GLO-90 on ice-free land, the EGM2008 geoid height there): it is converted to heights above the EGM2008 geoid at each point (PROJ, with the EGM2008 grid of the PROJ data, <code>egm2008_geoid</code>), and its voids (29% of the grid, mostly on ice-free slopes, 0.06 km² within the model domain) are filled with the GLO-30 surface (bilinear). The ice thickness is that of Millan et al.&nbsp;(2022, doi:10.1038/s41561-021-00885-z), 50 m, for all glaciers in a 25 x 25 km box (0 off the ice; RGI 6.0 outlines). The source is the DEM grid within that box (20.5 x 24 km), with bed = surface - thickness; it covers 77% of DDG, all but its edges (most of them in the south).</li>
+</ul>
+</section>
+</section>
+<section id="precision" class="level2">
+<h2 class="anchored" data-anchor-id="precision">Precision</h2>
+<p>The float fields are rounded on output to a tolerance by kind (see <a href="https://fesmc.github.io/FesmData/precision.html">Precision and file sizes</a>): <code>z_bed</code>, <code>z_srf</code>, <code>H_ice</code> and <code>z_bed_sd</code> to 0.01 m, the area fractions (<code>f_*</code>) to 0.001. <code>mask</code> and <code>src_id</code> are exact. The coarser grids are remapped from the rounded base grid and rounded again. The sources on the base grid (step 2) are intermediate files and are not rounded.</p>
+</section>
+<section id="sources-and-licences" class="level2">
+<h2 class="anchored" data-anchor-id="sources-and-licences">Sources and licences</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Source</th>
+<th>Reference</th>
+<th>Licence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>BedMachine Antarctica v2-v4</td>
+<td>Morlighem et al.&nbsp;(2020), NSIDC-0756: v4 <a href="https://doi.org/10.5067/POJQI54A45HX">doi:10.5067/POJQI54A45HX</a>, v3 <a href="https://doi.org/10.5067/FPSU0V1MWUB6">doi:10.5067/FPSU0V1MWUB6</a>, v2 <a href="https://doi.org/10.5067/E1QL9HFQ7A8M">doi:10.5067/E1QL9HFQ7A8M</a></td>
+<td>NASA NSIDC DAAC: no restrictions on use (cite the data)</td>
+</tr>
+<tr class="even">
+<td>BedMachine Greenland v4-v6</td>
+<td>Morlighem et al.&nbsp;(2017), NSIDC-0150: v6 <a href="https://doi.org/10.5067/6B6B225B8V2D">doi:10.5067/6B6B225B8V2D</a>, v5 <a href="https://doi.org/10.5067/GMEVBWFLWA7X">doi:10.5067/GMEVBWFLWA7X</a>, v4 <a href="https://doi.org/10.5067/VLJ5YXKCNGXO">doi:10.5067/VLJ5YXKCNGXO</a></td>
+<td>NASA NSIDC DAAC: no restrictions on use (cite the data)</td>
+</tr>
+<tr class="odd">
+<td>Bedmap3</td>
+<td>Pritchard et al.&nbsp;(2025), <a href="https://doi.org/10.5285/2d0e4791-8e20-46a3-80e4-f5f6716025d2">doi:10.5285/2d0e4791-8e20-46a3-80e4-f5f6716025d2</a></td>
+<td>CC BY 4.0 (UK Polar Data Centre)</td>
+</tr>
+<tr class="even">
+<td>Bedmap2</td>
+<td>Fretwell et al.&nbsp;(2013), <a href="https://doi.org/10.5285/fa5d606c-dc95-47ee-9016-7a82e446f2f2">doi:10.5285/fa5d606c-dc95-47ee-9016-7a82e446f2f2</a></td>
+<td>CC BY 4.0 (UK Polar Data Centre)</td>
+</tr>
+<tr class="odd">
+<td>GEBCO 2026</td>
+<td>GEBCO Compilation Group (2026), <a href="https://doi.org/10.5285/4f68d5c7-45eb-f999-e063-7086abc036fa">doi:10.5285/4f68d5c7-45eb-f999-e063-7086abc036fa</a></td>
+<td>Public domain (GEBCO terms of use: cite the grid)</td>
+</tr>
+<tr class="even">
+<td>Copernicus DEM GLO-90, GLO-30</td>
+<td>ESA, <a href="https://doi.org/10.5270/ESA-c5d3d65">doi:10.5270/ESA-c5d3d65</a></td>
+<td>Free use with attribution (see below)</td>
+</tr>
+<tr class="odd">
+<td>IceBoost v2.0</td>
+<td>Maffezzoli et al., <a href="https://doi.org/10.5281/zenodo.17724512">doi:10.5281/zenodo.17724512</a></td>
+<td>CC BY 4.0 (Zenodo)</td>
+</tr>
+<tr class="even">
+<td>Drang Drung Glacier</td>
+<td>Sommers (2025), <a href="https://doi.org/10.5281/zenodo.17593643">doi:10.5281/zenodo.17593643</a>, with the DEM of LEGOS and OMP (2025) and the ice thickness of Millan et al.&nbsp;(2022), <a href="https://doi.org/10.1038/s41561-021-00885-z">doi:10.1038/s41561-021-00885-z</a></td>
+<td>CC BY 4.0 (Sommers, 2025)</td>
+</tr>
+</tbody>
+</table>
+<p>Products from the Copernicus DEM must credit “Copernicus WorldDEM-90 (WorldDEM-30 for GLO-30) © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA”; products from the Drang Drung data must credit Sommers (2025), LEGOS and OMP (2025) for the DEM and Millan et al.&nbsp;(2022) for the ice thickness. The sources and their download links are in <code>../datamanifest.toml</code>.</p>
+</section>
+<section id="making-the-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="making-the-dataset">Making the dataset</h2>
+<p>The products of each domain are defined in <code>products.toml</code>. The machine environment and the Julia packages are set up as described under <a href="https://fesmc.github.io/FesmData/machines.html">Machines and storage</a>.</p>
+<section id="layout" class="level3">
+<h3 class="anchored" data-anchor-id="layout">Layout</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Location</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>$FESMDATA_SOURCES</code></td>
+<td>Original datasets (see <code>../datamanifest.toml</code>)</td>
+</tr>
+<tr class="even">
+<td><code>$FESMDATA_PRODUCTS/&lt;Domain&gt;/&lt;GRID&gt;/</code></td>
+<td>Output: <code>grid_&lt;GRID&gt;.txt</code>, <code>&lt;GRID&gt;_grid.nc</code>, <code>&lt;GRID&gt;_TOPO-&lt;product&gt;.nc</code></td>
+</tr>
+<tr class="odd">
+<td><code>$FESMDATA_WORK/topo/</code></td>
+<td>Intermediate files (sources on base grids, IceBoost tile index)</td>
+</tr>
+<tr class="even">
+<td><code>$FESMDATA_SOURCES/copernicus_glo90/</code>, <code>copernicus_glo30/</code></td>
+<td>Copernicus DEM GLO-90 and GLO-30 tiles of the domains that use them</td>
+</tr>
+</tbody>
+</table>
+<p>The environment variables are set per machine in <code>../shared/machines/&lt;machine&gt;.env</code>.</p>
+</section>
+<section id="steps" class="level3">
+<h3 class="anchored" data-anchor-id="steps">Steps</h3>
+<p>All commands are run from the FesmData root after sourcing the machine environment. On Levante, every step can be submitted as a job on a full compute node:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> <span class="at">--job-name</span><span class="op">=&lt;</span>name<span class="op">&gt;</span> Topo/jobs/run_step.sbatch <span class="op">&lt;</span>script<span class="op">&gt;</span> <span class="op">&lt;</span>args...<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Logs go to <code>Topo/logs/</code>.</p>
+<section id="original-datasets" class="level4">
+<h4 class="anchored" data-anchor-id="original-datasets">0. Original datasets</h4>
+<p>List the datasets and whether they are present:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> <span class="at">--project</span><span class="op">=</span>Topo Topo/scripts/00_sources.jl</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>GEBCO 2026 (4 GB zipped), Bedmap3 (2.5 GB), IceBoost v2.0 (one zip per RGI region) and the Copernicus DEM GLO-90 and GLO-30 tiles of the active domains that use them (1-degree tiles, a few MB each) are downloaded automatically (Levante login node):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> <span class="at">--project</span><span class="op">=</span>Topo Topo/scripts/00_sources.jl <span class="at">--download</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> <span class="at">--project</span><span class="op">=</span>Topo Topo/scripts/00_sources.jl <span class="at">--download</span> NZ    <span class="co"># the tiles of one domain (also inactive)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The other sources need a manual download into the path printed by the script:</p>
+<ul>
+<li><p><strong>BedMachine Greenland</strong> (v4-v6) and <strong>BedMachine Antarctica</strong> (v2-v4) (NSIDC), including the versions no longer listed by NSIDC, need a free <a href="https://urs.earthdata.nasa.gov">NASA Earthdata login</a>. With the login in <code>~/.netrc</code> (<code>machine urs.earthdata.nasa.gov login &lt;user&gt; password &lt;password&gt;</code>):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">--load-cookies</span> ~/.urs_cookies <span class="at">--save-cookies</span> ~/.urs_cookies <span class="dt">\</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">--keep-session-cookies</span> <span class="at">-P</span> <span class="op">&lt;</span>folder<span class="op">&gt;</span> <span class="op">&lt;</span>uri<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>with <code>&lt;uri&gt;</code> from <code>../datamanifest.toml</code>.</p></li>
+</ul>
+</section>
+<section id="grids-1" class="level4">
+<h4 class="anchored" data-anchor-id="grids-1">1. Grids</h4>
+<p>Write the grid description and grid file of every grid of a domain:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> <span class="at">--project</span><span class="op">=</span>Topo <span class="at">-t</span> 8 Topo/scripts/01_grids.jl GRL-PAL</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The script also reports which grids match the v1 definitions in <code>../maps</code>.</p>
+</section>
+<section id="sources-on-the-base-grid-1" class="level4">
+<h4 class="anchored" data-anchor-id="sources-on-the-base-grid-1">2. Sources on the base grid</h4>
+<p>Remap each source of a domain onto its base grid (one job per source, about a minute each on a Levante node):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> <span class="at">--job-name</span><span class="op">=</span>src-GRL-PAL-bm Topo/jobs/run_step.sbatch 02_regrid_source.jl GRL-PAL bedmachine_greenland_v6</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> <span class="at">--job-name</span><span class="op">=</span>src-GRL-PAL-gebco Topo/jobs/run_step.sbatch 02_regrid_source.jl GRL-PAL gebco2026</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Each writes <code>$FESMDATA_WORK/topo/&lt;BASE&gt;/&lt;BASE&gt;_&lt;source&gt;.nc</code> (see <a href="#sources-on-the-base-grid">Sources on the base grid</a>).</p>
+</section>
+<section id="merge" class="level4">
+<h4 class="anchored" data-anchor-id="merge">3. Merge</h4>
+<p>Merge the sources of the products of a domain:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> <span class="at">--job-name</span><span class="op">=</span>merge-ANT Topo/jobs/run_step.sbatch 03_merge.jl ANT <span class="pp">[</span><span class="ss">PRODUCTS</span><span class="pp">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>PRODUCTS</code> is <code>default</code> (the default products, if omitted), <code>variants</code>, <code>all</code>, or the name of one product; the same holds for steps 4 and 5. This writes <code>$FESMDATA_PRODUCTS/&lt;folder&gt;/&lt;BASE&gt;/&lt;BASE&gt;_TOPO-&lt;product&gt;.nc</code> (see <a href="#merging">Merging</a>).</p>
+</section>
+<section id="all-grids" class="level4">
+<h4 class="anchored" data-anchor-id="all-grids">4. All grids</h4>
+<p>Remap each product from the base grid onto all other grids of the domain, including the crops (GRL from GRL-PAL, LIS and EIS from NH):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> <span class="at">--job-name</span><span class="op">=</span>grids-all-ANT Topo/jobs/run_step.sbatch 04_grids.jl ANT <span class="pp">[</span><span class="ss">PRODUCTS</span><span class="pp">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This writes <code>$FESMDATA_PRODUCTS/&lt;folder&gt;/&lt;GRID&gt;/&lt;GRID&gt;_TOPO-&lt;product&gt;.nc</code> (see <a href="#coarser-grids-and-crops">Coarser grids and crops</a>).</p>
+</section>
+<section id="checks" class="level4">
+<h4 class="anchored" data-anchor-id="checks">5. Checks</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> <span class="at">--job-name</span><span class="op">=</span>plots-ANT Topo/jobs/run_step.sbatch 05_plots.jl ANT <span class="pp">[</span><span class="ss">PRODUCTS</span><span class="pp">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This writes plots to <code>$FESMDATA_WORK/topo/plots/</code> (the base product, ice thickness on all grids, the difference with the v1 product at 16 or 32 km, and for a variant the difference with a default product at 4 km, or on the base grid of DDG), with colour ranges from the data (elevations centred on sea level where there is ocean), and prints the ice area and volume on every grid in the job log as a conservation check (see <a href="#glacier-area-and-volume">Glacier area and volume</a> for the glaciers).</p>
+</section>
+</section>
+<section id="running-a-whole-domain" class="level3">
+<h3 class="anchored" data-anchor-id="running-a-whole-domain">Running a whole domain</h3>
+<p><code>jobs/submit_domain.sh</code> submits steps 1-5 of a domain as a chain of jobs (step 2 as one job per source), each starting when the previous step succeeded:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Topo/jobs/submit_domain.sh</span> ANT                <span class="co"># all steps</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Topo/jobs/submit_domain.sh</span> ANT 3              <span class="co"># from step 3</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Topo/jobs/submit_domain.sh</span> ANT 2 variants     <span class="co"># the variants, from step 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The third argument selects the products (as for steps 3-5), and step 2 then remaps only their sources.</p>
+</section>
+<section id="adding-a-source-a-product-or-a-domain" class="level3">
+<h3 class="anchored" data-anchor-id="adding-a-source-a-product-or-a-domain">Adding a source, a product or a domain</h3>
+<p><strong>A source</strong> (a new topography dataset, or a new version of one):</p>
+<ol type="1">
+<li>Add it to <code>../datamanifest.toml</code>, with its <code>uri</code>, <code>doi</code> and, for a manual download (e.g.&nbsp;NSIDC), <code>skip_download = true</code>; <code>00_sources.jl</code> then lists and downloads it.</li>
+<li>Add a reader to <code>sources.jl</code> and a branch for it in <code>read_source</code>. A topography source returns <code>(grid, z_bed, z_srf, H_ice, mask)</code> on its native grid, with ascending axes: <code>grid</code> a <code>ProjGrid</code> (any projection) or <code>LonLatGrid</code>, heights in m (surface 0 over the ocean), and <code>mask</code> with the classes <code>OCEAN</code>, <code>LAND</code>, <code>GRND</code>, <code>FLT</code>; all fields are <code>missing</code> where the source has no data (the part of a base cell with data is its <code>f_valid</code>). A source on the projection of a domain is remapped exactly; any other is sampled within each base cell. A source that only gives glacier thickness (like IceBoost) is a thickness source (<code>is_thickness_source</code>, <code>GlacierTiles</code>), and a source that only gives the elevation of the land in lon-lat tiles (like the Copernicus DEM) a land source (<code>is_land_source</code>, <code>DEMTiles</code>).</li>
+<li>Use it in a product (below) and run the steps from step 2 for the domain (step 2 only for the new source: <code>02_regrid_source.jl &lt;DOMAIN&gt; &lt;source&gt;</code>).</li>
+</ol>
+<p><strong>A product or a variant</strong> is an entry in <code>products.toml</code>: its name and its sources in order of priority, highest first, under <code>[&lt;domain&gt;.products]</code> (default products, released and made by default) or <code>[&lt;domain&gt;.variants]</code> (made on request with <code>variants</code> or <code>all</code>):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">[ANT.variants]</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="dt">"BedMachine-v3"</span> <span class="op">=</span> <span class="op">[</span><span class="st">"bedmachine_antarctica_v3"</span><span class="op">,</span> <span class="st">"gebco2026"</span><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then run steps 2-5 for it (<code>submit_domain.sh ANT 2 BedMachine-v3</code>). The lowest-priority source must be a topography source covering the whole domain (GEBCO), and a land source must come before it. Variants are released with the default products.</p>
+<p><strong>A domain</strong>: define it in <code>../shared/domains.toml</code> (see <a href="https://fesmc.github.io/FesmData/developers.html#domains">Overview and code</a>), add its densities (<code>rho_ice</code>, <code>rho_sw</code>) and products to <code>products.toml</code>, and run all steps (<code>submit_domain.sh &lt;DOMAIN&gt;</code>). For glaciers outside the IceBoost regions already listed in <code>../datamanifest.toml</code> (<code>iceboost_v2_rgiNN</code>), add the RGI region there.</p>
+</section>
+<section id="glacier-area-and-volume" class="level3">
+<h3 class="anchored" data-anchor-id="glacier-area-and-volume">Glacier area and volume</h3>
+<section id="nh-product" class="level4">
+<h4 class="anchored" data-anchor-id="nh-product">NH product</h4>
+<p>IceBoost glaciers in the NH product (GEBCO 2026, run of 2026-10-09):</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 36%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: right;">Area (km²)</th>
+<th style="text-align: right;">Volume (km³)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>IceBoost tiles overlapping NH-2KM (73,841 of 80,411, incl.&nbsp;parts outside the domain)</td>
+<td style="text-align: right;">348,853</td>
+<td style="text-align: right;">74,614</td>
+</tr>
+<tr class="even">
+<td>Raw tile pixels, before scaling to the glacier area and volume</td>
+<td style="text-align: right;">376,646</td>
+<td style="text-align: right;">76,802</td>
+</tr>
+<tr class="odd">
+<td>Glaciers on NH-2KM (<code>f_ice</code> ≤ 1; max before limiting 1.16)</td>
+<td style="text-align: right;">348,134</td>
+<td style="text-align: right;">74,656</td>
+</tr>
+<tr class="even">
+<td>Within BedMachine Greenland coverage (replaced by BedMachine)</td>
+<td style="text-align: right;">49,679</td>
+<td style="text-align: right;">11,384</td>
+</tr>
+<tr class="odd">
+<td>On GEBCO ocean (dropped)</td>
+<td style="text-align: right;">600</td>
+<td style="text-align: right;">61</td>
+</tr>
+<tr class="even">
+<td>NH product ice, without glaciers</td>
+<td style="text-align: right;">1,865,112</td>
+<td style="text-align: right;">3,007,068</td>
+</tr>
+<tr class="odd">
+<td>NH product ice, with glaciers</td>
+<td style="text-align: right;">2,164,800</td>
+<td style="text-align: right;">3,070,576</td>
+</tr>
+</tbody>
+</table>
+<p>The GRL-PAL and ANT products are unchanged (bitwise identical before and after adding thickness sources).</p>
+</section>
+<section id="mountain-glacier-products" class="level4">
+<h4 class="anchored" data-anchor-id="mountain-glacier-products">Mountain-glacier products</h4>
+<p>The glacier area and volume of each mountain-glacier product, against those of the IceBoost tiles, are printed by step 2 (IceBoost) and step 5 in the job logs. GLO90-GEBCO2026 products (run of 2026-10-13), area (km²) / volume (km³):</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Domain</th>
+<th style="text-align: right;">Tiles overlapping the base grid (incl.&nbsp;parts outside)</th>
+<th style="text-align: right;">On the base grid, summed</th>
+<th style="text-align: right;">On the base grid, overlaps shared</th>
+<th style="text-align: right;">Product, base grid</th>
+<th style="text-align: right;">Product, coarsest grid</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>PYR (250 m / 2 km)</td>
+<td style="text-align: right;">4 / 0.08</td>
+<td style="text-align: right;">4 / 0.08</td>
+<td style="text-align: right;">4 / 0.08</td>
+<td style="text-align: right;">4 / 0</td>
+<td style="text-align: right;">4 / 0</td>
+</tr>
+<tr class="even">
+<td>PAT (250 m / 2 km)</td>
+<td style="text-align: right;">25,846 / 6,676</td>
+<td style="text-align: right;">25,851 / 6,679</td>
+<td style="text-align: right;">25,492 / 6,604</td>
+<td style="text-align: right;">25,481 / 6,602</td>
+<td style="text-align: right;">25,480 / 6,602</td>
+</tr>
+<tr class="odd">
+<td>NPI (250 m)</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">4,744 / 1,624</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td>SPI (250 m)</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">13,353 / 4,227</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td>SRG (50 / 250 m)</td>
+<td style="text-align: right;">2,036 / 855</td>
+<td style="text-align: right;">1,112 / 429</td>
+<td style="text-align: right;">1,097 / 424</td>
+<td style="text-align: right;">1,097 / 424</td>
+<td style="text-align: right;">1,107 / 428</td>
+</tr>
+<tr class="even">
+<td>GCN (50 / 250 m)</td>
+<td style="text-align: right;">366 / 38</td>
+<td style="text-align: right;">346 / 36</td>
+<td style="text-align: right;">333 / 35</td>
+<td style="text-align: right;">332 / 35</td>
+<td style="text-align: right;">334 / 35</td>
+</tr>
+<tr class="odd">
+<td>CDI (50 / 250 m)</td>
+<td style="text-align: right;">2,785 / 338</td>
+<td style="text-align: right;">2,711 / 329</td>
+<td style="text-align: right;">2,621 / 320</td>
+<td style="text-align: right;">2,613 / 319</td>
+<td style="text-align: right;">2,615 / 319</td>
+</tr>
+<tr class="even">
+<td>HIM (250 m / 2 km)</td>
+<td style="text-align: right;">81,866 / 7,386</td>
+<td style="text-align: right;">81,650 / 7,361</td>
+<td style="text-align: right;">80,966 / 7,304</td>
+<td style="text-align: right;">80,965 / 7,304</td>
+<td style="text-align: right;">81,029 / 7,310</td>
+</tr>
+</tbody>
+</table>
+<p>Sharing the cells of overlapping tiles removes 1-4% of the glacier area and volume (where the summed glacier fraction reaches 2-3.5); the products keep it within 0.5% across their grids.</p>
+<p>On DDG-25M (run of 2026-10-13), the Sommers2025 variant against the default product:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: right;">GLO90-GEBCO2026 area (km²)</th>
+<th style="text-align: right;">volume (km³)</th>
+<th style="text-align: right;">Sommers2025 area (km²)</th>
+<th style="text-align: right;">volume (km³)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>DDG</td>
+<td style="text-align: right;">271.7</td>
+<td style="text-align: right;">27.03</td>
+<td style="text-align: right;">269.9</td>
+<td style="text-align: right;">31.26</td>
+</tr>
+<tr class="even">
+<td>Coverage of the Sommers data (486.5 km²)</td>
+<td style="text-align: right;">221.1</td>
+<td style="text-align: right;">22.55</td>
+<td style="text-align: right;">219.2</td>
+<td style="text-align: right;">26.77</td>
+</tr>
+<tr class="odd">
+<td>Model domain of Sommers (2025), DD.exp (27.0 km²)</td>
+<td style="text-align: right;">24.2</td>
+<td style="text-align: right;">5.26</td>
+<td style="text-align: right;">27.0</td>
+<td style="text-align: right;">7.42</td>
+</tr>
+</tbody>
+</table>
+<p>Within the model domain the ice is 275 m thick on average (max 507 m) in Millan et al. (2022), against 218 m (max 398 m) in IceBoost; the surfaces differ by -4.9 m (rms 9.5 m), about the thinning since the GLO-90 acquisitions. Across the edge of the coverage the surface steps by -1.8 m on average (rms 17.5 m, against 10 m between neighbouring cells), and the ice thickness on glaciers by 10 m (rms 43 m, Millan against IceBoost).</p>
+<!-- Generated by `julia fesmdata.jl docs` (Publish/site.jl), do not edit. -->
+</section>
+</section>
+</section>
+<section id="downloads" class="level2">
+<h2 class="anchored" data-anchor-id="downloads">Downloads</h2>
+<p>Download the files with <code>fesmdata.jl</code> into <code>$FESMDATA_PRODUCTS/&lt;Domain&gt;/&lt;GRID&gt;/</code> (see <a href="../download.html">Download</a>), or one by one from the links below. All released datasets are listed under <a href="../products.html">Products</a>.</p>
+<section id="download-antarctica" class="level3">
+<h3 class="anchored" data-anchor-id="download-antarctica">Antarctica</h3>
+<div class="record">
+<p>Version 2.6.1 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Antarctica_Topo">packages</a>). 32 files, 2.59 GB.</p>
+<pre>julia fesmdata.jl fetch Topo Antarctica     # all grids
+julia fesmdata.jl fetch Topo ANT-32KM     # one grid</pre>
+<details><summary><b>ANT-500M</b> <span class="muted">2 files, 1.09 GB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-500M/2.6.0/ANT-500M_TOPO-BedMachine-v4.nc">ANT-500M_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">515.3 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-500M/2.6.0/ANT-500M_TOPO-Bedmap3.nc">ANT-500M_TOPO-Bedmap3.nc</a></td>
+<td class="size">576.8 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>ANT-1KM</b> <span class="muted">5 files, 1.1 GB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-1KM/2.6.0/ANT-1KM_TOPO-BedMachine-v2.nc">ANT-1KM_TOPO-BedMachine-v2.nc</a></td>
+<td class="size">228.0 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-1KM/2.6.0/ANT-1KM_TOPO-BedMachine-v3.nc">ANT-1KM_TOPO-BedMachine-v3.nc</a></td>
+<td class="size">228.1 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-1KM/2.6.0/ANT-1KM_TOPO-BedMachine-v4.nc">ANT-1KM_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">231.6 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-1KM/2.6.0/ANT-1KM_TOPO-Bedmap2.nc">ANT-1KM_TOPO-Bedmap2.nc</a></td>
+<td class="size">202.7 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-1KM/2.6.0/ANT-1KM_TOPO-Bedmap3.nc">ANT-1KM_TOPO-Bedmap3.nc</a></td>
+<td class="size">210.3 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>ANT-2KM</b> <span class="muted">5 files, 289.9 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-2KM/2.6.0/ANT-2KM_TOPO-BedMachine-v2.nc">ANT-2KM_TOPO-BedMachine-v2.nc</a></td>
+<td class="size">60.5 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-2KM/2.6.0/ANT-2KM_TOPO-BedMachine-v3.nc">ANT-2KM_TOPO-BedMachine-v3.nc</a></td>
+<td class="size">60.5 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-2KM/2.6.0/ANT-2KM_TOPO-BedMachine-v4.nc">ANT-2KM_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">61.2 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-2KM/2.6.0/ANT-2KM_TOPO-Bedmap2.nc">ANT-2KM_TOPO-Bedmap2.nc</a></td>
+<td class="size">49.7 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-2KM/2.6.0/ANT-2KM_TOPO-Bedmap3.nc">ANT-2KM_TOPO-Bedmap3.nc</a></td>
+<td class="size">58.1 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>ANT-4KM</b> <span class="muted">5 files, 78.9 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-4KM/2.6.0/ANT-4KM_TOPO-BedMachine-v2.nc">ANT-4KM_TOPO-BedMachine-v2.nc</a></td>
+<td class="size">16.0 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-4KM/2.6.0/ANT-4KM_TOPO-BedMachine-v3.nc">ANT-4KM_TOPO-BedMachine-v3.nc</a></td>
+<td class="size">16.0 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-4KM/2.6.0/ANT-4KM_TOPO-BedMachine-v4.nc">ANT-4KM_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">16.1 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-4KM/2.6.0/ANT-4KM_TOPO-Bedmap2.nc">ANT-4KM_TOPO-Bedmap2.nc</a></td>
+<td class="size">14.8 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-4KM/2.6.0/ANT-4KM_TOPO-Bedmap3.nc">ANT-4KM_TOPO-Bedmap3.nc</a></td>
+<td class="size">16.0 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>ANT-8KM</b> <span class="muted">5 files, 21.1 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-8KM/2.6.0/ANT-8KM_TOPO-BedMachine-v2.nc">ANT-8KM_TOPO-BedMachine-v2.nc</a></td>
+<td class="size">4.2 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-8KM/2.6.0/ANT-8KM_TOPO-BedMachine-v3.nc">ANT-8KM_TOPO-BedMachine-v3.nc</a></td>
+<td class="size">4.2 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-8KM/2.6.0/ANT-8KM_TOPO-BedMachine-v4.nc">ANT-8KM_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">4.2 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-8KM/2.6.0/ANT-8KM_TOPO-Bedmap2.nc">ANT-8KM_TOPO-Bedmap2.nc</a></td>
+<td class="size">4.1 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-8KM/2.6.0/ANT-8KM_TOPO-Bedmap3.nc">ANT-8KM_TOPO-Bedmap3.nc</a></td>
+<td class="size">4.3 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>ANT-16KM</b> <span class="muted">5 files, 5.8 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-16KM/2.6.0/ANT-16KM_TOPO-BedMachine-v2.nc">ANT-16KM_TOPO-BedMachine-v2.nc</a></td>
+<td class="size">1.2 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-16KM/2.6.0/ANT-16KM_TOPO-BedMachine-v3.nc">ANT-16KM_TOPO-BedMachine-v3.nc</a></td>
+<td class="size">1.2 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-16KM/2.6.0/ANT-16KM_TOPO-BedMachine-v4.nc">ANT-16KM_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">1.2 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-16KM/2.6.0/ANT-16KM_TOPO-Bedmap2.nc">ANT-16KM_TOPO-Bedmap2.nc</a></td>
+<td class="size">1.2 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-16KM/2.6.0/ANT-16KM_TOPO-Bedmap3.nc">ANT-16KM_TOPO-Bedmap3.nc</a></td>
+<td class="size">1.2 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>ANT-32KM</b> <span class="muted">5 files, 1.8 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-32KM/2.6.0/ANT-32KM_TOPO-BedMachine-v2.nc">ANT-32KM_TOPO-BedMachine-v2.nc</a></td>
+<td class="size">353.7 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-32KM/2.6.0/ANT-32KM_TOPO-BedMachine-v3.nc">ANT-32KM_TOPO-BedMachine-v3.nc</a></td>
+<td class="size">353.8 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-32KM/2.6.0/ANT-32KM_TOPO-BedMachine-v4.nc">ANT-32KM_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">354.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-32KM/2.6.0/ANT-32KM_TOPO-Bedmap2.nc">ANT-32KM_TOPO-Bedmap2.nc</a></td>
+<td class="size">353.8 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Topo_ANT-32KM/2.6.0/ANT-32KM_TOPO-Bedmap3.nc">ANT-32KM_TOPO-Bedmap3.nc</a></td>
+<td class="size">356.5 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="download-amundsen" class="level3">
+<h3 class="anchored" data-anchor-id="download-amundsen">Amundsen</h3>
+<div class="record">
+<p>Version 2.6.1 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Amundsen_Topo">packages</a>). 32 files, 98.7 MB.</p>
+<pre>julia fesmdata.jl fetch Topo Amundsen     # all grids
+julia fesmdata.jl fetch Topo ASE-32KM     # one grid</pre>
+<details><summary><b>ASE-500M</b> <span class="muted">2 files, 43.6 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-500M/2.6.0/ASE-500M_TOPO-BedMachine-v4.nc">ASE-500M_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">22.4 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-500M/2.6.0/ASE-500M_TOPO-Bedmap3.nc">ASE-500M_TOPO-Bedmap3.nc</a></td>
+<td class="size">21.3 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>ASE-1KM</b> <span class="muted">5 files, 39.4 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-1KM/2.6.0/ASE-1KM_TOPO-BedMachine-v2.nc">ASE-1KM_TOPO-BedMachine-v2.nc</a></td>
+<td class="size">8.3 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-1KM/2.6.0/ASE-1KM_TOPO-BedMachine-v3.nc">ASE-1KM_TOPO-BedMachine-v3.nc</a></td>
+<td class="size">8.3 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-1KM/2.6.0/ASE-1KM_TOPO-BedMachine-v4.nc">ASE-1KM_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">8.4 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-1KM/2.6.0/ASE-1KM_TOPO-Bedmap2.nc">ASE-1KM_TOPO-Bedmap2.nc</a></td>
+<td class="size">7.0 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-1KM/2.6.0/ASE-1KM_TOPO-Bedmap3.nc">ASE-1KM_TOPO-Bedmap3.nc</a></td>
+<td class="size">7.4 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>ASE-2KM</b> <span class="muted">5 files, 10.7 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-2KM/2.6.0/ASE-2KM_TOPO-BedMachine-v2.nc">ASE-2KM_TOPO-BedMachine-v2.nc</a></td>
+<td class="size">2.2 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-2KM/2.6.0/ASE-2KM_TOPO-BedMachine-v3.nc">ASE-2KM_TOPO-BedMachine-v3.nc</a></td>
+<td class="size">2.3 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-2KM/2.6.0/ASE-2KM_TOPO-BedMachine-v4.nc">ASE-2KM_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">2.3 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-2KM/2.6.0/ASE-2KM_TOPO-Bedmap2.nc">ASE-2KM_TOPO-Bedmap2.nc</a></td>
+<td class="size">1.8 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-2KM/2.6.0/ASE-2KM_TOPO-Bedmap3.nc">ASE-2KM_TOPO-Bedmap3.nc</a></td>
+<td class="size">2.2 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>ASE-4KM</b> <span class="muted">5 files, 3.1 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-4KM/2.6.0/ASE-4KM_TOPO-BedMachine-v2.nc">ASE-4KM_TOPO-BedMachine-v2.nc</a></td>
+<td class="size">641.0 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-4KM/2.6.0/ASE-4KM_TOPO-BedMachine-v3.nc">ASE-4KM_TOPO-BedMachine-v3.nc</a></td>
+<td class="size">641.5 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-4KM/2.6.0/ASE-4KM_TOPO-BedMachine-v4.nc">ASE-4KM_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">643.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-4KM/2.6.0/ASE-4KM_TOPO-Bedmap2.nc">ASE-4KM_TOPO-Bedmap2.nc</a></td>
+<td class="size">575.3 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-4KM/2.6.0/ASE-4KM_TOPO-Bedmap3.nc">ASE-4KM_TOPO-Bedmap3.nc</a></td>
+<td class="size">641.5 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>ASE-8KM</b> <span class="muted">5 files, 1.1 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-8KM/2.6.0/ASE-8KM_TOPO-BedMachine-v2.nc">ASE-8KM_TOPO-BedMachine-v2.nc</a></td>
+<td class="size">215.1 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-8KM/2.6.0/ASE-8KM_TOPO-BedMachine-v3.nc">ASE-8KM_TOPO-BedMachine-v3.nc</a></td>
+<td class="size">215.3 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-8KM/2.6.0/ASE-8KM_TOPO-BedMachine-v4.nc">ASE-8KM_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">215.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-8KM/2.6.0/ASE-8KM_TOPO-Bedmap2.nc">ASE-8KM_TOPO-Bedmap2.nc</a></td>
+<td class="size">210.1 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-8KM/2.6.0/ASE-8KM_TOPO-Bedmap3.nc">ASE-8KM_TOPO-Bedmap3.nc</a></td>
+<td class="size">215.2 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>ASE-16KM</b> <span class="muted">5 files, 477.4 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-16KM/2.6.0/ASE-16KM_TOPO-BedMachine-v2.nc">ASE-16KM_TOPO-BedMachine-v2.nc</a></td>
+<td class="size">95.6 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-16KM/2.6.0/ASE-16KM_TOPO-BedMachine-v3.nc">ASE-16KM_TOPO-BedMachine-v3.nc</a></td>
+<td class="size">95.6 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-16KM/2.6.0/ASE-16KM_TOPO-BedMachine-v4.nc">ASE-16KM_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">95.7 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-16KM/2.6.0/ASE-16KM_TOPO-Bedmap2.nc">ASE-16KM_TOPO-Bedmap2.nc</a></td>
+<td class="size">94.8 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-16KM/2.6.0/ASE-16KM_TOPO-Bedmap3.nc">ASE-16KM_TOPO-Bedmap3.nc</a></td>
+<td class="size">95.7 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>ASE-32KM</b> <span class="muted">5 files, 306.1 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-32KM/2.6.0/ASE-32KM_TOPO-BedMachine-v2.nc">ASE-32KM_TOPO-BedMachine-v2.nc</a></td>
+<td class="size">61.4 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-32KM/2.6.0/ASE-32KM_TOPO-BedMachine-v3.nc">ASE-32KM_TOPO-BedMachine-v3.nc</a></td>
+<td class="size">61.4 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-32KM/2.6.0/ASE-32KM_TOPO-BedMachine-v4.nc">ASE-32KM_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">61.4 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-32KM/2.6.0/ASE-32KM_TOPO-Bedmap2.nc">ASE-32KM_TOPO-Bedmap2.nc</a></td>
+<td class="size">60.5 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Topo_ASE-32KM/2.6.0/ASE-32KM_TOPO-Bedmap3.nc">ASE-32KM_TOPO-Bedmap3.nc</a></td>
+<td class="size">61.4 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="download-thwaites" class="level3">
+<h3 class="anchored" data-anchor-id="download-thwaites">Thwaites</h3>
+<div class="record">
+<p>Version 2.6.1 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Thwaites_Topo">packages</a>). 7 files, 50.3 MB.</p>
+<pre>julia fesmdata.jl fetch Topo Thwaites     # all grids
+julia fesmdata.jl fetch Topo THW-1KM     # one grid</pre>
+<details><summary><b>THW-500M</b> <span class="muted">2 files, 26.7 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Topo_THW-500M/2.6.0/THW-500M_TOPO-BedMachine-v4.nc">THW-500M_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">13.7 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Topo_THW-500M/2.6.0/THW-500M_TOPO-Bedmap3.nc">THW-500M_TOPO-Bedmap3.nc</a></td>
+<td class="size">13.0 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>THW-1KM</b> <span class="muted">5 files, 23.6 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Topo_THW-1KM/2.6.0/THW-1KM_TOPO-BedMachine-v2.nc">THW-1KM_TOPO-BedMachine-v2.nc</a></td>
+<td class="size">4.9 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Topo_THW-1KM/2.6.0/THW-1KM_TOPO-BedMachine-v3.nc">THW-1KM_TOPO-BedMachine-v3.nc</a></td>
+<td class="size">4.9 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Topo_THW-1KM/2.6.0/THW-1KM_TOPO-BedMachine-v4.nc">THW-1KM_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">5.0 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Topo_THW-1KM/2.6.0/THW-1KM_TOPO-Bedmap2.nc">THW-1KM_TOPO-Bedmap2.nc</a></td>
+<td class="size">4.2 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Topo_THW-1KM/2.6.0/THW-1KM_TOPO-Bedmap3.nc">THW-1KM_TOPO-Bedmap3.nc</a></td>
+<td class="size">4.5 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="download-pineisland" class="level3">
+<h3 class="anchored" data-anchor-id="download-pineisland">PineIsland</h3>
+<div class="record">
+<p>Version 2.6.1 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=PineIsland_Topo">packages</a>). 7 files, 45.3 MB.</p>
+<pre>julia fesmdata.jl fetch Topo PineIsland     # all grids
+julia fesmdata.jl fetch Topo PIG-1KM     # one grid</pre>
+<details><summary><b>PIG-500M</b> <span class="muted">2 files, 23.9 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Topo_PIG-500M/2.6.0/PIG-500M_TOPO-BedMachine-v4.nc">PIG-500M_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">12.3 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Topo_PIG-500M/2.6.0/PIG-500M_TOPO-Bedmap3.nc">PIG-500M_TOPO-Bedmap3.nc</a></td>
+<td class="size">11.6 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>PIG-1KM</b> <span class="muted">5 files, 21.4 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Topo_PIG-1KM/2.6.0/PIG-1KM_TOPO-BedMachine-v2.nc">PIG-1KM_TOPO-BedMachine-v2.nc</a></td>
+<td class="size">4.5 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Topo_PIG-1KM/2.6.0/PIG-1KM_TOPO-BedMachine-v3.nc">PIG-1KM_TOPO-BedMachine-v3.nc</a></td>
+<td class="size">4.5 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Topo_PIG-1KM/2.6.0/PIG-1KM_TOPO-BedMachine-v4.nc">PIG-1KM_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">4.6 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Topo_PIG-1KM/2.6.0/PIG-1KM_TOPO-Bedmap2.nc">PIG-1KM_TOPO-Bedmap2.nc</a></td>
+<td class="size">3.8 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Topo_PIG-1KM/2.6.0/PIG-1KM_TOPO-Bedmap3.nc">PIG-1KM_TOPO-Bedmap3.nc</a></td>
+<td class="size">4.0 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="download-filchnerronne" class="level3">
+<h3 class="anchored" data-anchor-id="download-filchnerronne">FilchnerRonne</h3>
+<div class="record">
+<p>Version 2.6.1 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=FilchnerRonne_Topo">packages</a>). 7 files, 183.9 MB.</p>
+<pre>julia fesmdata.jl fetch Topo FilchnerRonne     # all grids
+julia fesmdata.jl fetch Topo FRIS-1KM     # one grid</pre>
+<details><summary><b>FRIS-500M</b> <span class="muted">2 files, 94.9 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Topo_FRIS-500M/2.6.0/FRIS-500M_TOPO-BedMachine-v4.nc">FRIS-500M_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">51.1 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Topo_FRIS-500M/2.6.0/FRIS-500M_TOPO-Bedmap3.nc">FRIS-500M_TOPO-Bedmap3.nc</a></td>
+<td class="size">43.8 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>FRIS-1KM</b> <span class="muted">5 files, 89.0 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Topo_FRIS-1KM/2.6.0/FRIS-1KM_TOPO-BedMachine-v2.nc">FRIS-1KM_TOPO-BedMachine-v2.nc</a></td>
+<td class="size">19.0 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Topo_FRIS-1KM/2.6.0/FRIS-1KM_TOPO-BedMachine-v3.nc">FRIS-1KM_TOPO-BedMachine-v3.nc</a></td>
+<td class="size">19.0 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Topo_FRIS-1KM/2.6.0/FRIS-1KM_TOPO-BedMachine-v4.nc">FRIS-1KM_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">19.3 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Topo_FRIS-1KM/2.6.0/FRIS-1KM_TOPO-Bedmap2.nc">FRIS-1KM_TOPO-Bedmap2.nc</a></td>
+<td class="size">15.4 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Topo_FRIS-1KM/2.6.0/FRIS-1KM_TOPO-Bedmap3.nc">FRIS-1KM_TOPO-Bedmap3.nc</a></td>
+<td class="size">16.3 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="download-ross" class="level3">
+<h3 class="anchored" data-anchor-id="download-ross">Ross</h3>
+<div class="record">
+<p>Version 2.6.1 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Ross_Topo">packages</a>). 7 files, 189.3 MB.</p>
+<pre>julia fesmdata.jl fetch Topo Ross     # all grids
+julia fesmdata.jl fetch Topo ROSS-1KM     # one grid</pre>
+<details><summary><b>ROSS-500M</b> <span class="muted">2 files, 98.2 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Topo_ROSS-500M/2.6.0/ROSS-500M_TOPO-BedMachine-v4.nc">ROSS-500M_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">52.9 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Topo_ROSS-500M/2.6.0/ROSS-500M_TOPO-Bedmap3.nc">ROSS-500M_TOPO-Bedmap3.nc</a></td>
+<td class="size">45.2 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>ROSS-1KM</b> <span class="muted">5 files, 91.2 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Topo_ROSS-1KM/2.6.0/ROSS-1KM_TOPO-BedMachine-v2.nc">ROSS-1KM_TOPO-BedMachine-v2.nc</a></td>
+<td class="size">19.5 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Topo_ROSS-1KM/2.6.0/ROSS-1KM_TOPO-BedMachine-v3.nc">ROSS-1KM_TOPO-BedMachine-v3.nc</a></td>
+<td class="size">19.5 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Topo_ROSS-1KM/2.6.0/ROSS-1KM_TOPO-BedMachine-v4.nc">ROSS-1KM_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">19.9 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Topo_ROSS-1KM/2.6.0/ROSS-1KM_TOPO-Bedmap2.nc">ROSS-1KM_TOPO-Bedmap2.nc</a></td>
+<td class="size">15.7 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Topo_ROSS-1KM/2.6.0/ROSS-1KM_TOPO-Bedmap3.nc">ROSS-1KM_TOPO-Bedmap3.nc</a></td>
+<td class="size">16.6 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="download-amery" class="level3">
+<h3 class="anchored" data-anchor-id="download-amery">Amery</h3>
+<div class="record">
+<p>Version 2.6.1 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Amery_Topo">packages</a>). 7 files, 74.1 MB.</p>
+<pre>julia fesmdata.jl fetch Topo Amery     # all grids
+julia fesmdata.jl fetch Topo AMY-1KM     # one grid</pre>
+<details><summary><b>AMY-500M</b> <span class="muted">2 files, 39.2 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Topo_AMY-500M/2.6.0/AMY-500M_TOPO-BedMachine-v4.nc">AMY-500M_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">20.4 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Topo_AMY-500M/2.6.0/AMY-500M_TOPO-Bedmap3.nc">AMY-500M_TOPO-Bedmap3.nc</a></td>
+<td class="size">18.8 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>AMY-1KM</b> <span class="muted">5 files, 34.9 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Topo_AMY-1KM/2.6.0/AMY-1KM_TOPO-BedMachine-v2.nc">AMY-1KM_TOPO-BedMachine-v2.nc</a></td>
+<td class="size">7.3 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Topo_AMY-1KM/2.6.0/AMY-1KM_TOPO-BedMachine-v3.nc">AMY-1KM_TOPO-BedMachine-v3.nc</a></td>
+<td class="size">7.3 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Topo_AMY-1KM/2.6.0/AMY-1KM_TOPO-BedMachine-v4.nc">AMY-1KM_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">7.5 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Topo_AMY-1KM/2.6.0/AMY-1KM_TOPO-Bedmap2.nc">AMY-1KM_TOPO-Bedmap2.nc</a></td>
+<td class="size">6.2 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Topo_AMY-1KM/2.6.0/AMY-1KM_TOPO-Bedmap3.nc">AMY-1KM_TOPO-Bedmap3.nc</a></td>
+<td class="size">6.6 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="download-wilkesbasin" class="level3">
+<h3 class="anchored" data-anchor-id="download-wilkesbasin">WilkesBasin</h3>
+<div class="record">
+<p>Version 2.6.1 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=WilkesBasin_Topo">packages</a>). 7 files, 106.8 MB.</p>
+<pre>julia fesmdata.jl fetch Topo WilkesBasin     # all grids
+julia fesmdata.jl fetch Topo WSB-1KM     # one grid</pre>
+<details><summary><b>WSB-500M</b> <span class="muted">2 files, 56.0 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-500M/2.6.0/WSB-500M_TOPO-BedMachine-v4.nc">WSB-500M_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">29.3 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-500M/2.6.0/WSB-500M_TOPO-Bedmap3.nc">WSB-500M_TOPO-Bedmap3.nc</a></td>
+<td class="size">26.8 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>WSB-1KM</b> <span class="muted">5 files, 50.8 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-1KM/2.6.0/WSB-1KM_TOPO-BedMachine-v2.nc">WSB-1KM_TOPO-BedMachine-v2.nc</a></td>
+<td class="size">10.5 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-1KM/2.6.0/WSB-1KM_TOPO-BedMachine-v3.nc">WSB-1KM_TOPO-BedMachine-v3.nc</a></td>
+<td class="size">10.5 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-1KM/2.6.0/WSB-1KM_TOPO-BedMachine-v4.nc">WSB-1KM_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">10.8 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-1KM/2.6.0/WSB-1KM_TOPO-Bedmap2.nc">WSB-1KM_TOPO-Bedmap2.nc</a></td>
+<td class="size">9.2 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Topo_WSB-1KM/2.6.0/WSB-1KM_TOPO-Bedmap3.nc">WSB-1KM_TOPO-Bedmap3.nc</a></td>
+<td class="size">9.6 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="download-greenlandpaleo" class="level3">
+<h3 class="anchored" data-anchor-id="download-greenlandpaleo">GreenlandPaleo</h3>
+<div class="record">
+<p>Version 2.6.1 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=GreenlandPaleo_Topo">packages</a>). 21 files, 715.5 MB.</p>
+<pre>julia fesmdata.jl fetch Topo GreenlandPaleo     # all grids
+julia fesmdata.jl fetch Topo GRL-PAL-32KM     # one grid</pre>
+<details><summary><b>GRL-PAL-500M</b> <span class="muted">3 files, 519.3 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Topo_GRL-PAL-500M/2.6.0/GRL-PAL-500M_TOPO-BedMachine-v4.nc">GRL-PAL-500M_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">174.4 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Topo_GRL-PAL-500M/2.6.0/GRL-PAL-500M_TOPO-BedMachine-v5.nc">GRL-PAL-500M_TOPO-BedMachine-v5.nc</a></td>
+<td class="size">172.2 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Topo_GRL-PAL-500M/2.6.0/GRL-PAL-500M_TOPO-BedMachine-v6.nc">GRL-PAL-500M_TOPO-BedMachine-v6.nc</a></td>
+<td class="size">172.6 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GRL-PAL-1KM</b> <span class="muted">3 files, 142.9 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Topo_GRL-PAL-1KM/2.6.0/GRL-PAL-1KM_TOPO-BedMachine-v4.nc">GRL-PAL-1KM_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">47.3 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Topo_GRL-PAL-1KM/2.6.0/GRL-PAL-1KM_TOPO-BedMachine-v5.nc">GRL-PAL-1KM_TOPO-BedMachine-v5.nc</a></td>
+<td class="size">47.7 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Topo_GRL-PAL-1KM/2.6.0/GRL-PAL-1KM_TOPO-BedMachine-v6.nc">GRL-PAL-1KM_TOPO-BedMachine-v6.nc</a></td>
+<td class="size">47.9 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GRL-PAL-2KM</b> <span class="muted">3 files, 38.6 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Topo_GRL-PAL-2KM/2.6.0/GRL-PAL-2KM_TOPO-BedMachine-v4.nc">GRL-PAL-2KM_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">12.8 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Topo_GRL-PAL-2KM/2.6.0/GRL-PAL-2KM_TOPO-BedMachine-v5.nc">GRL-PAL-2KM_TOPO-BedMachine-v5.nc</a></td>
+<td class="size">12.9 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Topo_GRL-PAL-2KM/2.6.0/GRL-PAL-2KM_TOPO-BedMachine-v6.nc">GRL-PAL-2KM_TOPO-BedMachine-v6.nc</a></td>
+<td class="size">12.9 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GRL-PAL-4KM</b> <span class="muted">3 files, 10.4 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Topo_GRL-PAL-4KM/2.6.0/GRL-PAL-4KM_TOPO-BedMachine-v4.nc">GRL-PAL-4KM_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">3.5 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Topo_GRL-PAL-4KM/2.6.0/GRL-PAL-4KM_TOPO-BedMachine-v5.nc">GRL-PAL-4KM_TOPO-BedMachine-v5.nc</a></td>
+<td class="size">3.5 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Topo_GRL-PAL-4KM/2.6.0/GRL-PAL-4KM_TOPO-BedMachine-v6.nc">GRL-PAL-4KM_TOPO-BedMachine-v6.nc</a></td>
+<td class="size">3.5 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GRL-PAL-8KM</b> <span class="muted">3 files, 3.0 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Topo_GRL-PAL-8KM/2.6.0/GRL-PAL-8KM_TOPO-BedMachine-v4.nc">GRL-PAL-8KM_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">983.2 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Topo_GRL-PAL-8KM/2.6.0/GRL-PAL-8KM_TOPO-BedMachine-v5.nc">GRL-PAL-8KM_TOPO-BedMachine-v5.nc</a></td>
+<td class="size">986.6 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Topo_GRL-PAL-8KM/2.6.0/GRL-PAL-8KM_TOPO-BedMachine-v6.nc">GRL-PAL-8KM_TOPO-BedMachine-v6.nc</a></td>
+<td class="size">994.8 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GRL-PAL-16KM</b> <span class="muted">3 files, 943.5 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Topo_GRL-PAL-16KM/2.6.0/GRL-PAL-16KM_TOPO-BedMachine-v4.nc">GRL-PAL-16KM_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">313.0 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Topo_GRL-PAL-16KM/2.6.0/GRL-PAL-16KM_TOPO-BedMachine-v5.nc">GRL-PAL-16KM_TOPO-BedMachine-v5.nc</a></td>
+<td class="size">313.9 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Topo_GRL-PAL-16KM/2.6.0/GRL-PAL-16KM_TOPO-BedMachine-v6.nc">GRL-PAL-16KM_TOPO-BedMachine-v6.nc</a></td>
+<td class="size">316.6 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GRL-PAL-32KM</b> <span class="muted">3 files, 377.9 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Topo_GRL-PAL-32KM/2.6.0/GRL-PAL-32KM_TOPO-BedMachine-v4.nc">GRL-PAL-32KM_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">125.6 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Topo_GRL-PAL-32KM/2.6.0/GRL-PAL-32KM_TOPO-BedMachine-v5.nc">GRL-PAL-32KM_TOPO-BedMachine-v5.nc</a></td>
+<td class="size">125.8 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Topo_GRL-PAL-32KM/2.6.0/GRL-PAL-32KM_TOPO-BedMachine-v6.nc">GRL-PAL-32KM_TOPO-BedMachine-v6.nc</a></td>
+<td class="size">126.5 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="download-greenland" class="level3">
+<h3 class="anchored" data-anchor-id="download-greenland">Greenland</h3>
+<div class="record">
+<p>Version 2.6.1 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Greenland_Topo">packages</a>). 21 files, 538.7 MB.</p>
+<pre>julia fesmdata.jl fetch Topo Greenland     # all grids
+julia fesmdata.jl fetch Topo GRL-32KM     # one grid</pre>
+<details><summary><b>GRL-500M</b> <span class="muted">3 files, 392.6 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Topo_GRL-500M/2.6.0/GRL-500M_TOPO-BedMachine-v4.nc">GRL-500M_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">131.5 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Topo_GRL-500M/2.6.0/GRL-500M_TOPO-BedMachine-v5.nc">GRL-500M_TOPO-BedMachine-v5.nc</a></td>
+<td class="size">130.3 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Topo_GRL-500M/2.6.0/GRL-500M_TOPO-BedMachine-v6.nc">GRL-500M_TOPO-BedMachine-v6.nc</a></td>
+<td class="size">130.8 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GRL-1KM</b> <span class="muted">3 files, 106.3 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Topo_GRL-1KM/2.6.0/GRL-1KM_TOPO-BedMachine-v4.nc">GRL-1KM_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">35.1 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Topo_GRL-1KM/2.6.0/GRL-1KM_TOPO-BedMachine-v5.nc">GRL-1KM_TOPO-BedMachine-v5.nc</a></td>
+<td class="size">35.5 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Topo_GRL-1KM/2.6.0/GRL-1KM_TOPO-BedMachine-v6.nc">GRL-1KM_TOPO-BedMachine-v6.nc</a></td>
+<td class="size">35.7 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GRL-2KM</b> <span class="muted">3 files, 28.8 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Topo_GRL-2KM/2.6.0/GRL-2KM_TOPO-BedMachine-v4.nc">GRL-2KM_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">9.5 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Topo_GRL-2KM/2.6.0/GRL-2KM_TOPO-BedMachine-v5.nc">GRL-2KM_TOPO-BedMachine-v5.nc</a></td>
+<td class="size">9.6 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Topo_GRL-2KM/2.6.0/GRL-2KM_TOPO-BedMachine-v6.nc">GRL-2KM_TOPO-BedMachine-v6.nc</a></td>
+<td class="size">9.7 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GRL-4KM</b> <span class="muted">3 files, 7.7 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Topo_GRL-4KM/2.6.0/GRL-4KM_TOPO-BedMachine-v4.nc">GRL-4KM_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">2.6 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Topo_GRL-4KM/2.6.0/GRL-4KM_TOPO-BedMachine-v5.nc">GRL-4KM_TOPO-BedMachine-v5.nc</a></td>
+<td class="size">2.6 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Topo_GRL-4KM/2.6.0/GRL-4KM_TOPO-BedMachine-v6.nc">GRL-4KM_TOPO-BedMachine-v6.nc</a></td>
+<td class="size">2.6 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GRL-8KM</b> <span class="muted">3 files, 2.2 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Topo_GRL-8KM/2.6.0/GRL-8KM_TOPO-BedMachine-v4.nc">GRL-8KM_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">735.7 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Topo_GRL-8KM/2.6.0/GRL-8KM_TOPO-BedMachine-v5.nc">GRL-8KM_TOPO-BedMachine-v5.nc</a></td>
+<td class="size">739.4 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Topo_GRL-8KM/2.6.0/GRL-8KM_TOPO-BedMachine-v6.nc">GRL-8KM_TOPO-BedMachine-v6.nc</a></td>
+<td class="size">748.1 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GRL-16KM</b> <span class="muted">3 files, 736.5 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Topo_GRL-16KM/2.6.0/GRL-16KM_TOPO-BedMachine-v4.nc">GRL-16KM_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">244.1 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Topo_GRL-16KM/2.6.0/GRL-16KM_TOPO-BedMachine-v5.nc">GRL-16KM_TOPO-BedMachine-v5.nc</a></td>
+<td class="size">244.9 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Topo_GRL-16KM/2.6.0/GRL-16KM_TOPO-BedMachine-v6.nc">GRL-16KM_TOPO-BedMachine-v6.nc</a></td>
+<td class="size">247.5 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GRL-32KM</b> <span class="muted">3 files, 313.4 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Topo_GRL-32KM/2.6.0/GRL-32KM_TOPO-BedMachine-v4.nc">GRL-32KM_TOPO-BedMachine-v4.nc</a></td>
+<td class="size">104.2 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Topo_GRL-32KM/2.6.0/GRL-32KM_TOPO-BedMachine-v5.nc">GRL-32KM_TOPO-BedMachine-v5.nc</a></td>
+<td class="size">104.3 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Topo_GRL-32KM/2.6.0/GRL-32KM_TOPO-BedMachine-v6.nc">GRL-32KM_TOPO-BedMachine-v6.nc</a></td>
+<td class="size">105.0 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="download-jakobshavn" class="level3">
+<h3 class="anchored" data-anchor-id="download-jakobshavn">Jakobshavn</h3>
+<div class="record">
+<p>Version 2.6.1 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Jakobshavn_Topo">packages</a>). 3 files, 42.1 MB.</p>
+<pre>julia fesmdata.jl fetch Topo Jakobshavn     # all grids
+julia fesmdata.jl fetch Topo JAK-1KM     # one grid</pre>
+<details><summary><b>JAK-250M</b> <span class="muted">1 files, 31.3 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Jakobshavn_Topo_JAK-250M/2.6.0/JAK-250M_TOPO-BedMachine-v6.nc">JAK-250M_TOPO-BedMachine-v6.nc</a></td>
+<td class="size">31.3 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>JAK-500M</b> <span class="muted">1 files, 8.5 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Jakobshavn_Topo_JAK-500M/2.6.0/JAK-500M_TOPO-BedMachine-v6.nc">JAK-500M_TOPO-BedMachine-v6.nc</a></td>
+<td class="size">8.5 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>JAK-1KM</b> <span class="muted">1 files, 2.3 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Jakobshavn_Topo_JAK-1KM/2.6.0/JAK-1KM_TOPO-BedMachine-v6.nc">JAK-1KM_TOPO-BedMachine-v6.nc</a></td>
+<td class="size">2.3 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="download-negis" class="level3">
+<h3 class="anchored" data-anchor-id="download-negis">NEGIS</h3>
+<div class="record">
+<p>Version 2.6.1 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=NEGIS_Topo">packages</a>). 3 files, 97.3 MB.</p>
+<pre>julia fesmdata.jl fetch Topo NEGIS     # all grids
+julia fesmdata.jl fetch Topo NEGIS-1KM     # one grid</pre>
+<details><summary><b>NEGIS-250M</b> <span class="muted">1 files, 72.4 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Topo_NEGIS-250M/2.6.0/NEGIS-250M_TOPO-BedMachine-v6.nc">NEGIS-250M_TOPO-BedMachine-v6.nc</a></td>
+<td class="size">72.4 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>NEGIS-500M</b> <span class="muted">1 files, 19.6 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Topo_NEGIS-500M/2.6.0/NEGIS-500M_TOPO-BedMachine-v6.nc">NEGIS-500M_TOPO-BedMachine-v6.nc</a></td>
+<td class="size">19.6 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>NEGIS-1KM</b> <span class="muted">1 files, 5.3 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Topo_NEGIS-1KM/2.6.0/NEGIS-1KM_TOPO-BedMachine-v6.nc">NEGIS-1KM_TOPO-BedMachine-v6.nc</a></td>
+<td class="size">5.3 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="download-petermann" class="level3">
+<h3 class="anchored" data-anchor-id="download-petermann">Petermann</h3>
+<div class="record">
+<p>Version 2.6.1 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Petermann_Topo">packages</a>). 3 files, 46.8 MB.</p>
+<pre>julia fesmdata.jl fetch Topo Petermann     # all grids
+julia fesmdata.jl fetch Topo PET-1KM     # one grid</pre>
+<details><summary><b>PET-250M</b> <span class="muted">1 files, 34.8 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Petermann_Topo_PET-250M/2.6.0/PET-250M_TOPO-BedMachine-v6.nc">PET-250M_TOPO-BedMachine-v6.nc</a></td>
+<td class="size">34.8 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>PET-500M</b> <span class="muted">1 files, 9.4 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Petermann_Topo_PET-500M/2.6.0/PET-500M_TOPO-BedMachine-v6.nc">PET-500M_TOPO-BedMachine-v6.nc</a></td>
+<td class="size">9.4 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>PET-1KM</b> <span class="muted">1 files, 2.6 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Petermann_Topo_PET-1KM/2.6.0/PET-1KM_TOPO-BedMachine-v6.nc">PET-1KM_TOPO-BedMachine-v6.nc</a></td>
+<td class="size">2.6 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="download-helheim" class="level3">
+<h3 class="anchored" data-anchor-id="download-helheim">Helheim</h3>
+<div class="record">
+<p>Version 2.6.1 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Helheim_Topo">packages</a>). 3 files, 32.4 MB.</p>
+<pre>julia fesmdata.jl fetch Topo Helheim     # all grids
+julia fesmdata.jl fetch Topo HEL-1KM     # one grid</pre>
+<details><summary><b>HEL-250M</b> <span class="muted">1 files, 24.0 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Topo_HEL-250M/2.6.0/HEL-250M_TOPO-BedMachine-v6.nc">HEL-250M_TOPO-BedMachine-v6.nc</a></td>
+<td class="size">24.0 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>HEL-500M</b> <span class="muted">1 files, 6.6 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Topo_HEL-500M/2.6.0/HEL-500M_TOPO-BedMachine-v6.nc">HEL-500M_TOPO-BedMachine-v6.nc</a></td>
+<td class="size">6.6 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>HEL-1KM</b> <span class="muted">1 files, 1.8 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Topo_HEL-1KM/2.6.0/HEL-1KM_TOPO-BedMachine-v6.nc">HEL-1KM_TOPO-BedMachine-v6.nc</a></td>
+<td class="size">1.8 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="download-north" class="level3">
+<h3 class="anchored" data-anchor-id="download-north">North</h3>
+<div class="record">
+<p>Version 2.6.1 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=North_Topo">packages</a>). 5 files, 170.4 MB.</p>
+<pre>julia fesmdata.jl fetch Topo North     # all grids
+julia fesmdata.jl fetch Topo NH-32KM     # one grid</pre>
+<details><summary><b>NH-2KM</b> <span class="muted">1 files, 125.4 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Topo_NH-2KM/2.6.0/NH-2KM_TOPO-GEBCO2026.nc">NH-2KM_TOPO-GEBCO2026.nc</a></td>
+<td class="size">125.4 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>NH-4KM</b> <span class="muted">1 files, 33.1 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Topo_NH-4KM/2.6.0/NH-4KM_TOPO-GEBCO2026.nc">NH-4KM_TOPO-GEBCO2026.nc</a></td>
+<td class="size">33.1 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>NH-8KM</b> <span class="muted">1 files, 8.8 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Topo_NH-8KM/2.6.0/NH-8KM_TOPO-GEBCO2026.nc">NH-8KM_TOPO-GEBCO2026.nc</a></td>
+<td class="size">8.8 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>NH-16KM</b> <span class="muted">1 files, 2.4 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Topo_NH-16KM/2.6.0/NH-16KM_TOPO-GEBCO2026.nc">NH-16KM_TOPO-GEBCO2026.nc</a></td>
+<td class="size">2.4 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>NH-32KM</b> <span class="muted">1 files, 694.4 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Topo_NH-32KM/2.6.0/NH-32KM_TOPO-GEBCO2026.nc">NH-32KM_TOPO-GEBCO2026.nc</a></td>
+<td class="size">694.4 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="download-laurentide" class="level3">
+<h3 class="anchored" data-anchor-id="download-laurentide">Laurentide</h3>
+<div class="record">
+<p>Version 2.6.1 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Laurentide_Topo">packages</a>). 5 files, 77.6 MB.</p>
+<pre>julia fesmdata.jl fetch Topo Laurentide     # all grids
+julia fesmdata.jl fetch Topo LIS-32KM     # one grid</pre>
+<details><summary><b>LIS-2KM</b> <span class="muted">1 files, 57.0 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Topo_LIS-2KM/2.6.0/LIS-2KM_TOPO-GEBCO2026.nc">LIS-2KM_TOPO-GEBCO2026.nc</a></td>
+<td class="size">57.0 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>LIS-4KM</b> <span class="muted">1 files, 15.2 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Topo_LIS-4KM/2.6.0/LIS-4KM_TOPO-GEBCO2026.nc">LIS-4KM_TOPO-GEBCO2026.nc</a></td>
+<td class="size">15.2 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>LIS-8KM</b> <span class="muted">1 files, 4.0 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Topo_LIS-8KM/2.6.0/LIS-8KM_TOPO-GEBCO2026.nc">LIS-8KM_TOPO-GEBCO2026.nc</a></td>
+<td class="size">4.0 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>LIS-16KM</b> <span class="muted">1 files, 1.1 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Topo_LIS-16KM/2.6.0/LIS-16KM_TOPO-GEBCO2026.nc">LIS-16KM_TOPO-GEBCO2026.nc</a></td>
+<td class="size">1.1 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>LIS-32KM</b> <span class="muted">1 files, 348.0 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Topo_LIS-32KM/2.6.0/LIS-32KM_TOPO-GEBCO2026.nc">LIS-32KM_TOPO-GEBCO2026.nc</a></td>
+<td class="size">348.0 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="download-eurasia" class="level3">
+<h3 class="anchored" data-anchor-id="download-eurasia">Eurasia</h3>
+<div class="record">
+<p>Version 2.6.1 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Eurasia_Topo">packages</a>). 5 files, 47.7 MB.</p>
+<pre>julia fesmdata.jl fetch Topo Eurasia     # all grids
+julia fesmdata.jl fetch Topo EIS-32KM     # one grid</pre>
+<details><summary><b>EIS-2KM</b> <span class="muted">1 files, 34.8 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Topo_EIS-2KM/2.6.0/EIS-2KM_TOPO-GEBCO2026.nc">EIS-2KM_TOPO-GEBCO2026.nc</a></td>
+<td class="size">34.8 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>EIS-4KM</b> <span class="muted">1 files, 9.4 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Topo_EIS-4KM/2.6.0/EIS-4KM_TOPO-GEBCO2026.nc">EIS-4KM_TOPO-GEBCO2026.nc</a></td>
+<td class="size">9.4 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>EIS-8KM</b> <span class="muted">1 files, 2.5 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Topo_EIS-8KM/2.6.0/EIS-8KM_TOPO-GEBCO2026.nc">EIS-8KM_TOPO-GEBCO2026.nc</a></td>
+<td class="size">2.5 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>EIS-16KM</b> <span class="muted">1 files, 721.9 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Topo_EIS-16KM/2.6.0/EIS-16KM_TOPO-GEBCO2026.nc">EIS-16KM_TOPO-GEBCO2026.nc</a></td>
+<td class="size">721.9 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>EIS-32KM</b> <span class="muted">1 files, 242.5 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Topo_EIS-32KM/2.6.0/EIS-32KM_TOPO-GEBCO2026.nc">EIS-32KM_TOPO-GEBCO2026.nc</a></td>
+<td class="size">242.5 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="download-pyrenees" class="level3">
+<h3 class="anchored" data-anchor-id="download-pyrenees">Pyrenees</h3>
+<div class="record">
+<p>Version 2.6.1 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Pyrenees_Topo">packages</a>). 3 files, 9.3 MB.</p>
+<pre>julia fesmdata.jl fetch Topo Pyrenees     # all grids
+julia fesmdata.jl fetch Topo PYR-2KM     # one grid</pre>
+<details><summary><b>PYR-250M</b> <span class="muted">1 files, 7.2 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Topo_PYR-250M/2.6.0/PYR-250M_TOPO-GLO90-GEBCO2026.nc">PYR-250M_TOPO-GLO90-GEBCO2026.nc</a></td>
+<td class="size">7.2 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>PYR-500M</b> <span class="muted">1 files, 1.9 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Topo_PYR-500M/2.6.0/PYR-500M_TOPO-GLO90-GEBCO2026.nc">PYR-500M_TOPO-GLO90-GEBCO2026.nc</a></td>
+<td class="size">1.9 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>PYR-2KM</b> <span class="muted">1 files, 175.4 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Topo_PYR-2KM/2.6.0/PYR-2KM_TOPO-GLO90-GEBCO2026.nc">PYR-2KM_TOPO-GLO90-GEBCO2026.nc</a></td>
+<td class="size">175.4 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="download-patagonia" class="level3">
+<h3 class="anchored" data-anchor-id="download-patagonia">Patagonia</h3>
+<div class="record">
+<p>Version 2.6.1 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Patagonia_Topo">packages</a>). 3 files, 213.8 MB.</p>
+<pre>julia fesmdata.jl fetch Topo Patagonia     # all grids
+julia fesmdata.jl fetch Topo PAT-2KM     # one grid</pre>
+<details><summary><b>PAT-250M</b> <span class="muted">1 files, 156.6 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Topo_PAT-250M/2.6.0/PAT-250M_TOPO-GLO90-GEBCO2026.nc">PAT-250M_TOPO-GLO90-GEBCO2026.nc</a></td>
+<td class="size">156.6 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>PAT-500M</b> <span class="muted">1 files, 53.2 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Topo_PAT-500M/2.6.0/PAT-500M_TOPO-GLO90-GEBCO2026.nc">PAT-500M_TOPO-GLO90-GEBCO2026.nc</a></td>
+<td class="size">53.2 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>PAT-2KM</b> <span class="muted">1 files, 4.0 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Topo_PAT-2KM/2.6.0/PAT-2KM_TOPO-GLO90-GEBCO2026.nc">PAT-2KM_TOPO-GLO90-GEBCO2026.nc</a></td>
+<td class="size">4.0 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="download-northpatagonianicefield" class="level3">
+<h3 class="anchored" data-anchor-id="download-northpatagonianicefield">NorthPatagonianIcefield</h3>
+<div class="record">
+<p>Version 2.6.1 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=NorthPatagonianIcefield_Topo">packages</a>). 1 files, 2.9 MB.</p>
+<pre>julia fesmdata.jl fetch Topo NorthPatagonianIcefield     # all grids
+julia fesmdata.jl fetch Topo NPI-250M     # one grid</pre>
+<details><summary><b>NPI-250M</b> <span class="muted">1 files, 2.9 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NorthPatagonianIcefield_Topo_NPI-250M/2.6.0/NPI-250M_TOPO-GLO90-GEBCO2026.nc">NPI-250M_TOPO-GLO90-GEBCO2026.nc</a></td>
+<td class="size">2.9 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="download-southpatagonianicefield" class="level3">
+<h3 class="anchored" data-anchor-id="download-southpatagonianicefield">SouthPatagonianIcefield</h3>
+<div class="record">
+<p>Version 2.6.1 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=SouthPatagonianIcefield_Topo">packages</a>). 1 files, 8.4 MB.</p>
+<pre>julia fesmdata.jl fetch Topo SouthPatagonianIcefield     # all grids
+julia fesmdata.jl fetch Topo SPI-250M     # one grid</pre>
+<details><summary><b>SPI-250M</b> <span class="muted">1 files, 8.4 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SouthPatagonianIcefield_Topo_SPI-250M/2.6.0/SPI-250M_TOPO-GLO90-GEBCO2026.nc">SPI-250M_TOPO-GLO90-GEBCO2026.nc</a></td>
+<td class="size">8.4 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="download-srg" class="level3">
+<h3 class="anchored" data-anchor-id="download-srg">SRG</h3>
+<div class="record">
+<p>Version 2.6.1 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=SRG_Topo">packages</a>). 8 files, 39.5 MB.</p>
+<pre>julia fesmdata.jl fetch Topo SRG     # all grids
+julia fesmdata.jl fetch Topo SRG-250M     # one grid</pre>
+<details><summary><b>SRG-25M</b> <span class="muted">2 files, 25.9 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-25M/2.6.0/SRG-25M_TOPO-GLO30-GEBCO2026.nc">SRG-25M_TOPO-GLO30-GEBCO2026.nc</a></td>
+<td class="size">13.8 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-25M/2.6.0/SRG-25M_TOPO-GLO90-GEBCO2026.nc">SRG-25M_TOPO-GLO90-GEBCO2026.nc</a></td>
+<td class="size">12.1 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>SRG-50M</b> <span class="muted">2 files, 10.2 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-50M/2.6.0/SRG-50M_TOPO-GLO30-GEBCO2026.nc">SRG-50M_TOPO-GLO30-GEBCO2026.nc</a></td>
+<td class="size">5.1 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-50M/2.6.0/SRG-50M_TOPO-GLO90-GEBCO2026.nc">SRG-50M_TOPO-GLO90-GEBCO2026.nc</a></td>
+<td class="size">5.1 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>SRG-100M</b> <span class="muted">2 files, 2.8 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-100M/2.6.0/SRG-100M_TOPO-GLO30-GEBCO2026.nc">SRG-100M_TOPO-GLO30-GEBCO2026.nc</a></td>
+<td class="size">1.4 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-100M/2.6.0/SRG-100M_TOPO-GLO90-GEBCO2026.nc">SRG-100M_TOPO-GLO90-GEBCO2026.nc</a></td>
+<td class="size">1.4 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>SRG-250M</b> <span class="muted">2 files, 608.3 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-250M/2.6.0/SRG-250M_TOPO-GLO30-GEBCO2026.nc">SRG-250M_TOPO-GLO30-GEBCO2026.nc</a></td>
+<td class="size">304.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Topo_SRG-250M/2.6.0/SRG-250M_TOPO-GLO90-GEBCO2026.nc">SRG-250M_TOPO-GLO90-GEBCO2026.nc</a></td>
+<td class="size">304.0 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="download-grancamponevado" class="level3">
+<h3 class="anchored" data-anchor-id="download-grancamponevado">GranCampoNevado</h3>
+<div class="record">
+<p>Version 2.6.1 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=GranCampoNevado_Topo">packages</a>). 3 files, 12.4 MB.</p>
+<pre>julia fesmdata.jl fetch Topo GranCampoNevado     # all grids
+julia fesmdata.jl fetch Topo GCN-250M     # one grid</pre>
+<details><summary><b>GCN-50M</b> <span class="muted">1 files, 9.0 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Topo_GCN-50M/2.6.0/GCN-50M_TOPO-GLO90-GEBCO2026.nc">GCN-50M_TOPO-GLO90-GEBCO2026.nc</a></td>
+<td class="size">9.0 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GCN-100M</b> <span class="muted">1 files, 2.8 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Topo_GCN-100M/2.6.0/GCN-100M_TOPO-GLO90-GEBCO2026.nc">GCN-100M_TOPO-GLO90-GEBCO2026.nc</a></td>
+<td class="size">2.8 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GCN-250M</b> <span class="muted">1 files, 576.4 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Topo_GCN-250M/2.6.0/GCN-250M_TOPO-GLO90-GEBCO2026.nc">GCN-250M_TOPO-GLO90-GEBCO2026.nc</a></td>
+<td class="size">576.4 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="download-cordilleradarwin" class="level3">
+<h3 class="anchored" data-anchor-id="download-cordilleradarwin">CordilleraDarwin</h3>
+<div class="record">
+<p>Version 2.6.1 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=CordilleraDarwin_Topo">packages</a>). 3 files, 54.3 MB.</p>
+<pre>julia fesmdata.jl fetch Topo CordilleraDarwin     # all grids
+julia fesmdata.jl fetch Topo CDI-250M     # one grid</pre>
+<details><summary><b>CDI-50M</b> <span class="muted">1 files, 39.4 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Topo_CDI-50M/2.6.0/CDI-50M_TOPO-GLO90-GEBCO2026.nc">CDI-50M_TOPO-GLO90-GEBCO2026.nc</a></td>
+<td class="size">39.4 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>CDI-100M</b> <span class="muted">1 files, 12.5 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Topo_CDI-100M/2.6.0/CDI-100M_TOPO-GLO90-GEBCO2026.nc">CDI-100M_TOPO-GLO90-GEBCO2026.nc</a></td>
+<td class="size">12.5 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>CDI-250M</b> <span class="muted">1 files, 2.4 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Topo_CDI-250M/2.6.0/CDI-250M_TOPO-GLO90-GEBCO2026.nc">CDI-250M_TOPO-GLO90-GEBCO2026.nc</a></td>
+<td class="size">2.4 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="download-montesarmiento" class="level3">
+<h3 class="anchored" data-anchor-id="download-montesarmiento">MonteSarmiento</h3>
+<div class="record">
+<p>Version 2.6.1 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=MonteSarmiento_Topo">packages</a>). 6 files, 7.0 MB.</p>
+<pre>julia fesmdata.jl fetch Topo MonteSarmiento     # all grids
+julia fesmdata.jl fetch Topo SAR-250M     # one grid</pre>
+<details><summary><b>SAR-50M</b> <span class="muted">2 files, 4.9 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/MonteSarmiento_Topo_SAR-50M/2.6.0/SAR-50M_TOPO-GLO30-GEBCO2026.nc">SAR-50M_TOPO-GLO30-GEBCO2026.nc</a></td>
+<td class="size">2.4 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/MonteSarmiento_Topo_SAR-50M/2.6.0/SAR-50M_TOPO-GLO90-GEBCO2026.nc">SAR-50M_TOPO-GLO90-GEBCO2026.nc</a></td>
+<td class="size">2.4 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>SAR-100M</b> <span class="muted">2 files, 1.7 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/MonteSarmiento_Topo_SAR-100M/2.6.0/SAR-100M_TOPO-GLO30-GEBCO2026.nc">SAR-100M_TOPO-GLO30-GEBCO2026.nc</a></td>
+<td class="size">838.7 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/MonteSarmiento_Topo_SAR-100M/2.6.0/SAR-100M_TOPO-GLO90-GEBCO2026.nc">SAR-100M_TOPO-GLO90-GEBCO2026.nc</a></td>
+<td class="size">835.1 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>SAR-250M</b> <span class="muted">2 files, 425.3 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/MonteSarmiento_Topo_SAR-250M/2.6.0/SAR-250M_TOPO-GLO30-GEBCO2026.nc">SAR-250M_TOPO-GLO30-GEBCO2026.nc</a></td>
+<td class="size">212.9 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/MonteSarmiento_Topo_SAR-250M/2.6.0/SAR-250M_TOPO-GLO90-GEBCO2026.nc">SAR-250M_TOPO-GLO90-GEBCO2026.nc</a></td>
+<td class="size">212.4 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="download-schiaparelliglacier" class="level3">
+<h3 class="anchored" data-anchor-id="download-schiaparelliglacier">SchiaparelliGlacier</h3>
+<div class="record">
+<p>Version 2.6.1 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=SchiaparelliGlacier_Topo">packages</a>). 4 files, 2.4 MB.</p>
+<pre>julia fesmdata.jl fetch Topo SchiaparelliGlacier     # all grids
+julia fesmdata.jl fetch Topo SCH-250M     # one grid</pre>
+<details><summary><b>SCH-25M</b> <span class="muted">1 files, 1.6 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Topo_SCH-25M/2.6.0/SCH-25M_TOPO-GLO30-GEBCO2026.nc">SCH-25M_TOPO-GLO30-GEBCO2026.nc</a></td>
+<td class="size">1.6 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>SCH-50M</b> <span class="muted">1 files, 544.3 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Topo_SCH-50M/2.6.0/SCH-50M_TOPO-GLO30-GEBCO2026.nc">SCH-50M_TOPO-GLO30-GEBCO2026.nc</a></td>
+<td class="size">544.3 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>SCH-100M</b> <span class="muted">1 files, 193.2 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Topo_SCH-100M/2.6.0/SCH-100M_TOPO-GLO30-GEBCO2026.nc">SCH-100M_TOPO-GLO30-GEBCO2026.nc</a></td>
+<td class="size">193.2 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>SCH-250M</b> <span class="muted">1 files, 76.3 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Topo_SCH-250M/2.6.0/SCH-250M_TOPO-GLO30-GEBCO2026.nc">SCH-250M_TOPO-GLO30-GEBCO2026.nc</a></td>
+<td class="size">76.3 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="download-alps" class="level3">
+<h3 class="anchored" data-anchor-id="download-alps">Alps</h3>
+<div class="record">
+<p>Version 2.6.1 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Alps_Topo">packages</a>). 3 files, 98.1 MB.</p>
+<pre>julia fesmdata.jl fetch Topo Alps     # all grids
+julia fesmdata.jl fetch Topo ALP-2KM     # one grid</pre>
+<details><summary><b>ALP-250M</b> <span class="muted">1 files, 75.8 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Topo_ALP-250M/2.6.0/ALP-250M_TOPO-GLO90-GEBCO2026.nc">ALP-250M_TOPO-GLO90-GEBCO2026.nc</a></td>
+<td class="size">75.8 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>ALP-500M</b> <span class="muted">1 files, 20.8 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Topo_ALP-500M/2.6.0/ALP-500M_TOPO-GLO90-GEBCO2026.nc">ALP-500M_TOPO-GLO90-GEBCO2026.nc</a></td>
+<td class="size">20.8 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>ALP-2KM</b> <span class="muted">1 files, 1.5 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Topo_ALP-2KM/2.6.0/ALP-2KM_TOPO-GLO90-GEBCO2026.nc">ALP-2KM_TOPO-GLO90-GEBCO2026.nc</a></td>
+<td class="size">1.5 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="download-himalaya" class="level3">
+<h3 class="anchored" data-anchor-id="download-himalaya">Himalaya</h3>
+<div class="record">
+<p>Version 2.6.1 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Himalaya_Topo">packages</a>). 3 files, 671.4 MB.</p>
+<pre>julia fesmdata.jl fetch Topo Himalaya     # all grids
+julia fesmdata.jl fetch Topo HIM-2KM     # one grid</pre>
+<details><summary><b>HIM-250M</b> <span class="muted">1 files, 521.1 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Topo_HIM-250M/2.6.0/HIM-250M_TOPO-GLO90-GEBCO2026.nc">HIM-250M_TOPO-GLO90-GEBCO2026.nc</a></td>
+<td class="size">521.1 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>HIM-500M</b> <span class="muted">1 files, 140.6 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Topo_HIM-500M/2.6.0/HIM-500M_TOPO-GLO90-GEBCO2026.nc">HIM-500M_TOPO-GLO90-GEBCO2026.nc</a></td>
+<td class="size">140.6 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>HIM-2KM</b> <span class="muted">1 files, 9.6 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Topo_HIM-2KM/2.6.0/HIM-2KM_TOPO-GLO90-GEBCO2026.nc">HIM-2KM_TOPO-GLO90-GEBCO2026.nc</a></td>
+<td class="size">9.6 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="download-drangdrung" class="level3">
+<h3 class="anchored" data-anchor-id="download-drangdrung">DrangDrung</h3>
+<div class="record">
+<p>Version 2.6.1 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=DrangDrung_Topo">packages</a>). 12 files, 26.3 MB.</p>
+<pre>julia fesmdata.jl fetch Topo DrangDrung     # all grids
+julia fesmdata.jl fetch Topo DDG-250M     # one grid</pre>
+<details><summary><b>DDG-25M</b> <span class="muted">3 files, 17.8 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-25M/2.6.0/DDG-25M_TOPO-GLO30-GEBCO2026.nc">DDG-25M_TOPO-GLO30-GEBCO2026.nc</a></td>
+<td class="size">5.6 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-25M/2.6.0/DDG-25M_TOPO-GLO90-GEBCO2026.nc">DDG-25M_TOPO-GLO90-GEBCO2026.nc</a></td>
+<td class="size">5.3 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-25M/2.6.0/DDG-25M_TOPO-Sommers2025.nc">DDG-25M_TOPO-Sommers2025.nc</a></td>
+<td class="size">7.0 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>DDG-50M</b> <span class="muted">3 files, 6.1 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-50M/2.6.0/DDG-50M_TOPO-GLO30-GEBCO2026.nc">DDG-50M_TOPO-GLO30-GEBCO2026.nc</a></td>
+<td class="size">2.0 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-50M/2.6.0/DDG-50M_TOPO-GLO90-GEBCO2026.nc">DDG-50M_TOPO-GLO90-GEBCO2026.nc</a></td>
+<td class="size">2.0 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-50M/2.6.0/DDG-50M_TOPO-Sommers2025.nc">DDG-50M_TOPO-Sommers2025.nc</a></td>
+<td class="size">2.1 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>DDG-100M</b> <span class="muted">3 files, 1.9 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-100M/2.6.0/DDG-100M_TOPO-GLO30-GEBCO2026.nc">DDG-100M_TOPO-GLO30-GEBCO2026.nc</a></td>
+<td class="size">620.4 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-100M/2.6.0/DDG-100M_TOPO-GLO90-GEBCO2026.nc">DDG-100M_TOPO-GLO90-GEBCO2026.nc</a></td>
+<td class="size">619.5 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-100M/2.6.0/DDG-100M_TOPO-Sommers2025.nc">DDG-100M_TOPO-Sommers2025.nc</a></td>
+<td class="size">627.2 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>DDG-250M</b> <span class="muted">3 files, 494.9 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-250M/2.6.0/DDG-250M_TOPO-GLO30-GEBCO2026.nc">DDG-250M_TOPO-GLO30-GEBCO2026.nc</a></td>
+<td class="size">164.6 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-250M/2.6.0/DDG-250M_TOPO-GLO90-GEBCO2026.nc">DDG-250M_TOPO-GLO90-GEBCO2026.nc</a></td>
+<td class="size">164.6 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Topo_DDG-250M/2.6.0/DDG-250M_TOPO-Sommers2025.nc">DDG-250M_TOPO-Sommers2025.nc</a></td>
+<td class="size">165.6 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="download-svalbard" class="level3">
+<h3 class="anchored" data-anchor-id="download-svalbard">Svalbard</h3>
+<div class="record">
+<p>Version 2.6.1 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Svalbard_Topo">packages</a>). 3 files, 20.6 MB.</p>
+<pre>julia fesmdata.jl fetch Topo Svalbard     # all grids
+julia fesmdata.jl fetch Topo SVB-2KM     # one grid</pre>
+<details><summary><b>SVB-500M</b> <span class="muted">1 files, 15.0 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Topo_SVB-500M/2.6.0/SVB-500M_TOPO-GLO90-GEBCO2026.nc">SVB-500M_TOPO-GLO90-GEBCO2026.nc</a></td>
+<td class="size">15.0 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>SVB-1KM</b> <span class="muted">1 files, 4.4 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Topo_SVB-1KM/2.6.0/SVB-1KM_TOPO-GLO90-GEBCO2026.nc">SVB-1KM_TOPO-GLO90-GEBCO2026.nc</a></td>
+<td class="size">4.4 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>SVB-2KM</b> <span class="muted">1 files, 1.2 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Topo_SVB-2KM/2.6.0/SVB-2KM_TOPO-GLO90-GEBCO2026.nc">SVB-2KM_TOPO-GLO90-GEBCO2026.nc</a></td>
+<td class="size">1.2 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="download-newzealand" class="level3">
+<h3 class="anchored" data-anchor-id="download-newzealand">NewZealand</h3>
+<div class="record">
+<p>Version 2.6.1 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=NewZealand_Topo">packages</a>). 3 files, 45.0 MB.</p>
+<pre>julia fesmdata.jl fetch Topo NewZealand     # all grids
+julia fesmdata.jl fetch Topo NZ-2KM     # one grid</pre>
+<details><summary><b>NZ-250M</b> <span class="muted">1 files, 31.7 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Topo_NZ-250M/2.6.0/NZ-250M_TOPO-GLO90-GEBCO2026.nc">NZ-250M_TOPO-GLO90-GEBCO2026.nc</a></td>
+<td class="size">31.7 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>NZ-500M</b> <span class="muted">1 files, 12.3 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Topo_NZ-500M/2.6.0/NZ-500M_TOPO-GLO90-GEBCO2026.nc">NZ-500M_TOPO-GLO90-GEBCO2026.nc</a></td>
+<td class="size">12.3 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>NZ-2KM</b> <span class="muted">1 files, 981.4 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Topo_NZ-2KM/2.6.0/NZ-2KM_TOPO-GLO90-GEBCO2026.nc">NZ-2KM_TOPO-GLO90-GEBCO2026.nc</a></td>
+<td class="size">981.4 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+<!-- Generated by `julia fesmdata.jl figures Topo` (do not edit). -->
+</section>
+</section>
+<section id="figures" class="level2">
+<h2 class="anchored" data-anchor-id="figures">Figures</h2>
+<section id="antarctica" class="level3">
+<h3 class="anchored" data-anchor-id="antarctica">Antarctica</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/Topo/Topo-Antarctica.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Topo of Antarctica on ANT-8KM: z_bed, H_ice."><img src="../figures/Topo/Topo-Antarctica.png" class="img-fluid figure-img" width="1362" alt="Topo of Antarctica on ANT-8KM: z_bed, H_ice."></a></p>
+<figcaption>Topo of Antarctica on ANT-8KM: z_bed, H_ice.</figcaption>
+</figure>
+</div>
+</section>
+<section id="greenlandpaleo" class="level3">
+<h3 class="anchored" data-anchor-id="greenlandpaleo">GreenlandPaleo</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/Topo/Topo-GreenlandPaleo.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Topo of GreenlandPaleo on GRL-PAL-4KM: z_bed, H_ice."><img src="../figures/Topo/Topo-GreenlandPaleo.png" class="img-fluid figure-img" width="705" alt="Topo of GreenlandPaleo on GRL-PAL-4KM: z_bed, H_ice."></a></p>
+<figcaption>Topo of GreenlandPaleo on GRL-PAL-4KM: z_bed, H_ice.</figcaption>
+</figure>
+</div>
+</section>
+<section id="jakobshavn" class="level3">
+<h3 class="anchored" data-anchor-id="jakobshavn">Jakobshavn</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/Topo/Topo-Jakobshavn.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Topo of Jakobshavn on JAK-1KM: z_bed, H_ice."><img src="../figures/Topo/Topo-Jakobshavn.png" class="img-fluid figure-img" width="464" alt="Topo of Jakobshavn on JAK-1KM: z_bed, H_ice."></a></p>
+<figcaption>Topo of Jakobshavn on JAK-1KM: z_bed, H_ice.</figcaption>
+</figure>
+</div>
+</section>
+<section id="negis" class="level3">
+<h3 class="anchored" data-anchor-id="negis">NEGIS</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/Topo/Topo-NEGIS.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Topo of NEGIS on NEGIS-1KM: z_bed, H_ice."><img src="../figures/Topo/Topo-NEGIS.png" class="img-fluid figure-img" width="249" alt="Topo of NEGIS on NEGIS-1KM: z_bed, H_ice."></a></p>
+<figcaption>Topo of NEGIS on NEGIS-1KM: z_bed, H_ice.</figcaption>
+</figure>
+</div>
+</section>
+<section id="petermann" class="level3">
+<h3 class="anchored" data-anchor-id="petermann">Petermann</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/Topo/Topo-Petermann.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Topo of Petermann on PET-1KM: z_bed, H_ice."><img src="../figures/Topo/Topo-Petermann.png" class="img-fluid figure-img" width="231" alt="Topo of Petermann on PET-1KM: z_bed, H_ice."></a></p>
+<figcaption>Topo of Petermann on PET-1KM: z_bed, H_ice.</figcaption>
+</figure>
+</div>
+</section>
+<section id="helheim" class="level3">
+<h3 class="anchored" data-anchor-id="helheim">Helheim</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/Topo/Topo-Helheim.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Topo of Helheim on HEL-1KM: z_bed, H_ice."><img src="../figures/Topo/Topo-Helheim.png" class="img-fluid figure-img" width="263" alt="Topo of Helheim on HEL-1KM: z_bed, H_ice."></a></p>
+<figcaption>Topo of Helheim on HEL-1KM: z_bed, H_ice.</figcaption>
+</figure>
+</div>
+</section>
+<section id="north" class="level3">
+<h3 class="anchored" data-anchor-id="north">North</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/Topo/Topo-North.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Topo of North on NH-16KM: z_bed, H_ice."><img src="../figures/Topo/Topo-North.png" class="img-fluid figure-img" width="330" alt="Topo of North on NH-16KM: z_bed, H_ice."></a></p>
+<figcaption>Topo of North on NH-16KM: z_bed, H_ice.</figcaption>
+</figure>
+</div>
+</section>
+<section id="pyrenees" class="level3">
+<h3 class="anchored" data-anchor-id="pyrenees">Pyrenees</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/Topo/Topo-Pyrenees.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Topo of Pyrenees on PYR-500M: z_bed, H_ice."><img src="../figures/Topo/Topo-Pyrenees.png" class="img-fluid figure-img" width="616" alt="Topo of Pyrenees on PYR-500M: z_bed, H_ice."></a></p>
+<figcaption>Topo of Pyrenees on PYR-500M: z_bed, H_ice.</figcaption>
+</figure>
+</div>
+</section>
+<section id="alps" class="level3">
+<h3 class="anchored" data-anchor-id="alps">Alps</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/Topo/Topo-Alps.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Topo of Alps on ALP-2KM: z_bed, H_ice."><img src="../figures/Topo/Topo-Alps.png" class="img-fluid figure-img" width="478" alt="Topo of Alps on ALP-2KM: z_bed, H_ice."></a></p>
+<figcaption>Topo of Alps on ALP-2KM: z_bed, H_ice.</figcaption>
+</figure>
+</div>
+</section>
+<section id="patagonia" class="level3">
+<h3 class="anchored" data-anchor-id="patagonia">Patagonia</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/Topo/Topo-Patagonia.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Topo of Patagonia on PAT-2KM: z_bed, H_ice."><img src="../figures/Topo/Topo-Patagonia.png" class="img-fluid figure-img" width="210" alt="Topo of Patagonia on PAT-2KM: z_bed, H_ice."></a></p>
+<figcaption>Topo of Patagonia on PAT-2KM: z_bed, H_ice.</figcaption>
+</figure>
+</div>
+</section>
+<section id="srg" class="level3">
+<h3 class="anchored" data-anchor-id="srg">SRG</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/Topo/Topo-SRG.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Topo of SRG on SRG-100M: z_bed, H_ice."><img src="../figures/Topo/Topo-SRG.png" class="img-fluid figure-img" width="944" alt="Topo of SRG on SRG-100M: z_bed, H_ice."></a></p>
+<figcaption>Topo of SRG on SRG-100M: z_bed, H_ice.</figcaption>
+</figure>
+</div>
+</section>
+<section id="grancamponevado" class="level3">
+<h3 class="anchored" data-anchor-id="grancamponevado">GranCampoNevado</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/Topo/Topo-GranCampoNevado.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="Topo of GranCampoNevado on GCN-100M: z_bed, H_ice."><img src="../figures/Topo/Topo-GranCampoNevado.png" class="img-fluid figure-img" width="349" alt="Topo of GranCampoNevado on GCN-100M: z_bed, H_ice."></a></p>
+<figcaption>Topo of GranCampoNevado on GCN-100M: z_bed, H_ice.</figcaption>
+</figure>
+</div>
+</section>
+<section id="cordilleradarwin" class="level3">
+<h3 class="anchored" data-anchor-id="cordilleradarwin">CordilleraDarwin</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/Topo/Topo-CordilleraDarwin.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="Topo of CordilleraDarwin on CDI-250M: z_bed, H_ice."><img src="../figures/Topo/Topo-CordilleraDarwin.png" class="img-fluid figure-img" width="503" alt="Topo of CordilleraDarwin on CDI-250M: z_bed, H_ice."></a></p>
+<figcaption>Topo of CordilleraDarwin on CDI-250M: z_bed, H_ice.</figcaption>
+</figure>
+</div>
+</section>
+<section id="montesarmiento" class="level3">
+<h3 class="anchored" data-anchor-id="montesarmiento">MonteSarmiento</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/Topo/Topo-MonteSarmiento.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14" title="Topo of MonteSarmiento on SAR-50M: z_bed, H_ice."><img src="../figures/Topo/Topo-MonteSarmiento.png" class="img-fluid figure-img" width="666" alt="Topo of MonteSarmiento on SAR-50M: z_bed, H_ice."></a></p>
+<figcaption>Topo of MonteSarmiento on SAR-50M: z_bed, H_ice.</figcaption>
+</figure>
+</div>
+</section>
+<section id="schiaparelliglacier" class="level3">
+<h3 class="anchored" data-anchor-id="schiaparelliglacier">SchiaparelliGlacier</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/Topo/Topo-SchiaparelliGlacier.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="Topo of SchiaparelliGlacier on SCH-25M: z_bed, H_ice."><img src="../figures/Topo/Topo-SchiaparelliGlacier.png" class="img-fluid figure-img" width="350" alt="Topo of SchiaparelliGlacier on SCH-25M: z_bed, H_ice."></a></p>
+<figcaption>Topo of SchiaparelliGlacier on SCH-25M: z_bed, H_ice.</figcaption>
+</figure>
+</div>
+</section>
+<section id="himalaya" class="level3">
+<h3 class="anchored" data-anchor-id="himalaya">Himalaya</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/Topo/Topo-Himalaya.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="Topo of Himalaya on HIM-2KM: z_bed, H_ice."><img src="../figures/Topo/Topo-Himalaya.png" class="img-fluid figure-img" width="554" alt="Topo of Himalaya on HIM-2KM: z_bed, H_ice."></a></p>
+<figcaption>Topo of Himalaya on HIM-2KM: z_bed, H_ice.</figcaption>
+</figure>
+</div>
+</section>
+<section id="drangdrung" class="level3">
+<h3 class="anchored" data-anchor-id="drangdrung">DrangDrung</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/Topo/Topo-DrangDrung.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17" title="Topo of DrangDrung on DDG-50M: z_bed, H_ice."><img src="../figures/Topo/Topo-DrangDrung.png" class="img-fluid figure-img" width="625" alt="Topo of DrangDrung on DDG-50M: z_bed, H_ice."></a></p>
+<figcaption>Topo of DrangDrung on DDG-50M: z_bed, H_ice.</figcaption>
+</figure>
+</div>
+</section>
+<section id="svalbard" class="level3">
+<h3 class="anchored" data-anchor-id="svalbard">Svalbard</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/Topo/Topo-Svalbard.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18" title="Topo of Svalbard on SVB-2KM: z_bed, H_ice."><img src="../figures/Topo/Topo-Svalbard.png" class="img-fluid figure-img" width="330" alt="Topo of Svalbard on SVB-2KM: z_bed, H_ice."></a></p>
+<figcaption>Topo of Svalbard on SVB-2KM: z_bed, H_ice.</figcaption>
+</figure>
+</div>
+</section>
+<section id="newzealand" class="level3">
+<h3 class="anchored" data-anchor-id="newzealand">NewZealand</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/Topo/Topo-NewZealand.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19" title="Topo of NewZealand on NZ-2KM: z_bed, H_ice."><img src="../figures/Topo/Topo-NewZealand.png" class="img-fluid figure-img" width="305" alt="Topo of NewZealand on NZ-2KM: z_bed, H_ice."></a></p>
+<figcaption>Topo of NewZealand on NZ-2KM: z_bed, H_ice.</figcaption>
+</figure>
+</div>
+</section>
+<section id="resolutions" class="level3">
+<h3 class="anchored" data-anchor-id="resolutions">Resolutions</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/Topo/Topo-resolutions.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20" title="Bed elevation of BedMachine-v6 around Jakobshavn Isbræ (300 km × 300 km) on GRL-PAL-1KM, GRL-PAL-4KM, GRL-PAL-16KM."><img src="../figures/Topo/Topo-resolutions.png" class="img-fluid figure-img" width="846" alt="Bed elevation of BedMachine-v6 around Jakobshavn Isbræ (300 km × 300 km) on GRL-PAL-1KM, GRL-PAL-4KM, GRL-PAL-16KM."></a></p>
+<figcaption>Bed elevation of BedMachine-v6 around Jakobshavn Isbræ (300 km × 300 km) on GRL-PAL-1KM, GRL-PAL-4KM, GRL-PAL-16KM.</figcaption>
+</figure>
+</div>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/fesmc\.github\.io\/FesmData\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>FesmData · fesmc</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/fesmc/FesmData/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Built with <a href="https://quarto.org">Quarto</a></p>
+</div>
+  </div>
+</footer>
+<script>document.querySelectorAll('a.toc-action[href^="http"]').forEach(a => { a.target = "_blank"; a.rel = "noopener"; });</script>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.19">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>SeaLevel – FesmData</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d37df8fd7b43e116a420b34c208e916c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-dae82585467ed893c2d02b9a361b8f7a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">FesmData</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../download.html"> 
+<span class="menu-text">Download</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../products.html"> 
+<span class="menu-text">Products</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../domains.html"> 
+<span class="menu-text">Domains and grids</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-datasets" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Datasets</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-datasets">    
+        <li>
+    <a class="dropdown-item" href="../datasets.html">
+ <span class="dropdown-text">Overview</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../precision.html">
+ <span class="dropdown-text">Precision and file sizes</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Topography and masks</li>
+        <li>
+    <a class="dropdown-item" href="../datasets/topo.html">
+ <span class="dropdown-text">Topo — topography</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/regions.html">
+ <span class="dropdown-text">Regions — regions and basins</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Ice</li>
+        <li>
+    <a class="dropdown-item" href="../datasets/velocity.html">
+ <span class="dropdown-text">Velocity — ice surface velocity</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/icechange.html">
+ <span class="dropdown-text">IceChange — observed ice sheet change</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/icehistory.html">
+ <span class="dropdown-text">IceHistory — paleo ice sheets</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/stratigraphy.html">
+ <span class="dropdown-text">Stratigraphy — age structure</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/basalmelt.html">
+ <span class="dropdown-text">BasalMelt — ice-shelf melt</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/basalstate.html">
+ <span class="dropdown-text">BasalState — basal thermal state</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Solid Earth</li>
+        <li>
+    <a class="dropdown-item" href="../datasets/ghf.html">
+ <span class="dropdown-text">GHF — geothermal heat flow</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/sediment.html">
+ <span class="dropdown-text">Sediment — sediment thickness</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/solidearth.html">
+ <span class="dropdown-text">SolidEarth — lithosphere and mantle</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Ocean and climate</li>
+        <li>
+    <a class="dropdown-item" href="../datasets/ocean.html">
+ <span class="dropdown-text">Ocean — temperature and salinity</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/smb.html">
+ <span class="dropdown-text">SMB — surface mass balance</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/atmosphere.html">
+ <span class="dropdown-text">Atmosphere — reanalysis and satellite</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/paleoclimate.html">
+ <span class="dropdown-text">Paleoclimate — past climates</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-records" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Records</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-records">    
+        <li>
+    <a class="dropdown-item" href="../records_overview.html">
+ <span class="dropdown-text">Overview</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../datasets/icecores.html">
+ <span class="dropdown-text">IceCores — ice core records</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/ghg.html">
+ <span class="dropdown-text">GHG — greenhouse gases</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/sealevel.html">
+ <span class="dropdown-text">SeaLevel — global sea level</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/stacks.html">
+ <span class="dropdown-text">Stacks — benthic δ18O stacks</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/orbital.html">
+ <span class="dropdown-text">Orbital — orbital elements and insolation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/rsl.html">
+ <span class="dropdown-text">RSL — relative sea level</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/boreholes.html">
+ <span class="dropdown-text">Boreholes — ice temperature profiles</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/gps.html">
+ <span class="dropdown-text">GPS — vertical velocities</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/smbobs.html">
+ <span class="dropdown-text">SMBObs — surface mass balance observations</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/freshwater.html">
+ <span class="dropdown-text">Freshwater — ice sheet freshwater fluxes</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-your-own-data" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Your own data</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-your-own-data">    
+        <li>
+    <a class="dropdown-item" href="../remap.html">
+ <span class="dropdown-text">Gridded data</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../records.html">
+ <span class="dropdown-text">Records format</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-developers" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Developers</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-developers">    
+        <li>
+    <a class="dropdown-item" href="../developers.html">
+ <span class="dropdown-text">Overview and code</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../machines.html">
+ <span class="dropdown-text">Machines and storage</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../adding.html">
+ <span class="dropdown-text">Adding a dataset</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../releasing.html">
+ <span class="dropdown-text">Releasing</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../website.html">
+ <span class="dropdown-text">Website and figures</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/fesmc/FesmData" target="_blank"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#sealevel-global-sea-level-over-glacial-cycles" id="toc-sealevel-global-sea-level-over-glacial-cycles" class="nav-link active" data-scroll-target="#sealevel-global-sea-level-over-glacial-cycles">SeaLevel: global sea level over glacial cycles</a>
+  <ul class="collapse">
+  <li><a href="#products" id="toc-products" class="nav-link" data-scroll-target="#products">Products</a></li>
+  <li><a href="#licences" id="toc-licences" class="nav-link" data-scroll-target="#licences">Licences</a></li>
+  <li><a href="#making-the-dataset" id="toc-making-the-dataset" class="nav-link" data-scroll-target="#making-the-dataset">Making the dataset</a></li>
+  <li><a href="#downloads" id="toc-downloads" class="nav-link" data-scroll-target="#downloads">Downloads</a></li>
+  <li><a href="#figures" id="toc-figures" class="nav-link" data-scroll-target="#figures">Figures</a>
+  <ul class="collapse">
+  <li><a href="#berends2021" id="toc-berends2021" class="nav-link" data-scroll-target="#berends2021">Berends2021</a></li>
+  <li><a href="#bintanja2008" id="toc-bintanja2008" class="nav-link" data-scroll-target="#bintanja2008">Bintanja2008</a></li>
+  <li><a href="#grant2014" id="toc-grant2014" class="nav-link" data-scroll-target="#grant2014">Grant2014</a></li>
+  <li><a href="#lambeck2014" id="toc-lambeck2014" class="nav-link" data-scroll-target="#lambeck2014">Lambeck2014</a></li>
+  <li><a href="#paleomist" id="toc-paleomist" class="nav-link" data-scroll-target="#paleomist">PaleoMIST</a></li>
+  <li><a href="#paleomist_max" id="toc-paleomist_max" class="nav-link" data-scroll-target="#paleomist_max">PaleoMIST_max</a></li>
+  <li><a href="#rohling2021" id="toc-rohling2021" class="nav-link" data-scroll-target="#rohling2021">Rohling2021</a></li>
+  <li><a href="#spratt2016" id="toc-spratt2016" class="nav-link" data-scroll-target="#spratt2016">Spratt2016</a></li>
+  <li><a href="#waelbroeck2002" id="toc-waelbroeck2002" class="nav-link" data-scroll-target="#waelbroeck2002">Waelbroeck2002</a></li>
+  <li><a href="#deboer2014" id="toc-deboer2014" class="nav-link" data-scroll-target="#deboer2014">deBoer2014</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/fesmc/FesmData/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="sealevel-global-sea-level-over-glacial-cycles" class="level1">
+<h1>SeaLevel: global sea level over glacial cycles</h1>
+<p>Reconstructions of global (mean or eustatic) sea level over glacial cycles, some with the contributions of the ice sheets: stacks and regressions of benthic δ18O, inverse modelling of ice sheets, the Red Sea record, and the ice sheets of PaleoMIST 1.0. SeaLevel is a records dataset (non-gridded data, see <a href="https://fesmc.github.io/FesmData/records_overview.html">Records</a>): its products, defined in <code>SeaLevel/records.toml</code>, are prepared files in the form of the CF discrete sampling geometries, written to <code>$FESMDATA_PRODUCTS/Records/SeaLevel/SeaLevel-&lt;product&gt;[-&lt;part&gt;].nc</code>, each with its text form (<code>.txt</code>). Relative sea level indicators at sites are in RSL.</p>
+<section id="products" class="level2">
+<h2 class="anchored" data-anchor-id="products">Products</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Product</th>
+<th>Source</th>
+<th>Variables</th>
+<th>Time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>SeaLevel-Spratt2016</code></td>
+<td>Spratt and Lisiecki (2016): sea-level stacks, <a href="https://doi.org/10.25921/rd66-5820">doi:10.25921/rd66-5820</a></td>
+<td><code>sl_short</code> (7 records, 0-430 ka), <code>sl_long</code> (5 records, 0-798 ka), each with <code>_sd</code>, <code>_min</code>, <code>_max</code> (95%)</td>
+<td>0-798 ka, 1 kyr (LR04)</td>
+</tr>
+<tr class="even">
+<td><code>SeaLevel-Waelbroeck2002</code></td>
+<td>Waelbroeck et al.&nbsp;(2002): from benthic δ18O, <a href="https://doi.org/10.25921/08dt-1228">doi:10.25921/08dt-1228</a></td>
+<td><code>sl</code>, <code>sl_min</code>, <code>sl_max</code>, <code>d18O_sw</code> with its range; alternate age models</td>
+<td>0.5-430 ka, 1.5 kyr</td>
+</tr>
+<tr class="odd">
+<td><code>SeaLevel-Bintanja2008</code></td>
+<td>Bintanja and van de Wal (2008): inverse modelling, <a href="https://doi.org/10.25921/revb-da37">doi:10.25921/revb-da37</a></td>
+<td><code>sl</code>, <code>sl_nam</code>, <code>sl_eas</code>, <code>tas_anom_nh</code>, <code>t_deep_anom</code>, <code>d18O_benthic</code>, <code>d18O_ice</code>, <code>d18O_temp</code></td>
+<td>0-3 Ma, 100 years</td>
+</tr>
+<tr class="even">
+<td><code>SeaLevel-deBoer2014</code></td>
+<td>de Boer et al.&nbsp;(2014): inverse modelling with four ice sheets, <a href="https://doi.org/10.25921/xs31-nt56">doi:10.25921/xs31-nt56</a></td>
+<td><code>sl</code>, <code>sl_eis</code>, <code>sl_nais</code>, <code>sl_ais</code>, <code>sl_gris</code>, <code>tas_anom_nh</code>, <code>d18O_benthic</code>, <code>d18O_sw</code>, <code>d18O_temp</code>, <code>V_ais</code>, <code>D_ais</code></td>
+<td>0-5.3 Ma, 100 years</td>
+</tr>
+<tr class="odd">
+<td><code>SeaLevel-Berends2021</code></td>
+<td>Berends et al.&nbsp;(2021): coupled ice-sheet-climate model, <a href="https://doi.org/10.5281/zenodo.3793592">doi:10.5281/zenodo.3793592</a></td>
+<td><code>sl</code>, <code>sl_min</code>, <code>sl_max</code>, <code>co2</code>, <code>co2_min</code>, <code>co2_max</code> (three simulations)</td>
+<td>0-3.6 Ma, 100 years</td>
+</tr>
+<tr class="even">
+<td><code>SeaLevel-Rohling2021</code></td>
+<td>Rohling et al.&nbsp;(2021): regression on the LR04 stack, <a href="https://doi.org/10.25921/rq2y-4k67">doi:10.25921/rq2y-4k67</a></td>
+<td><code>sl</code>, <code>sl_lis</code>, <code>sl_eis</code>, <code>sl_ais</code>, <code>sl_gris</code>, <code>d18O_benthic</code>, <code>d18O_sw</code>, <code>d18O_temp</code>, <code>t_deep_anom</code></td>
+<td>0-5.3 Ma, 1 kyr (LR04)</td>
+</tr>
+<tr class="odd">
+<td><code>SeaLevel-Lambeck2014</code></td>
+<td>Lambeck et al.&nbsp;(2014): ice-volume equivalent sea level from sea-level indicators and glacial isostatic adjustment, <a href="https://doi.org/10.1073/pnas.1411762111">doi:10.1073/pnas.1411762111</a></td>
+<td><code>sl</code>, <code>sl_sd</code>, <code>sl_nominal</code></td>
+<td>0-35 ka, 326 values</td>
+</tr>
+<tr class="even">
+<td><code>SeaLevel-Grant2014-&lt;part&gt;</code></td>
+<td>Grant et al.&nbsp;(2014): Red Sea relative sea level, <a href="https://doi.org/10.1038/ncomms6076">doi:10.1038/ncomms6076</a>; parts <code>probabilistic</code> and <code>data</code></td>
+<td><code>rsl</code>, <code>rsl_min</code>, <code>rsl_max</code> (95%), <code>rsl_data_min</code>, <code>rsl_data_max</code>, <code>drsl</code> with its range; <code>data</code>: <code>rsl</code> of the data points</td>
+<td>0-492 ka, 125 years; data points</td>
+</tr>
+<tr class="odd">
+<td><code>SeaLevel-PaleoMIST</code>, <code>SeaLevel-PaleoMIST_max</code></td>
+<td>Gowan et al.&nbsp;(2021): ice sheets of PaleoMIST 1.0, minimal and maximal MIS 3 scenarios, <a href="https://doi.org/10.1594/PANGAEA.905800">doi:10.1594/PANGAEA.905800</a></td>
+<td><code>sl</code>, <code>sl_nam</code> (with Greenland), <code>sl_eis</code>, <code>sl_ais</code>, <code>sl_pat</code></td>
+<td>0-80 ka, 2.5 kyr</td>
+</tr>
+</tbody>
+</table>
+<p>All are series of the region “global” without a location (featureType timeSeries, dimension <code>region</code>, <code>lat</code> and <code>lon</code> missing), except Grant et al.&nbsp;(2014), a time series at the Hanish Sill of the Red Sea (dimension <code>station</code>). <code>time</code> is in years before 1950 CE (units “years ago”), on the age model of the source (in the comment of <code>time</code>).</p>
+<p>Conventions: <code>sl</code> is sea level relative to the present in m, negative when lower (e.g. about -120 m at the Last Glacial Maximum); <code>sl_&lt;ice sheet&gt;</code> is the contribution of an ice sheet to it, with the same sign (minus the change of its volume from the present, in m sea level equivalent). Sources with the opposite sign (Bintanja and van de Wal, 2008) or with total ice volumes (de Boer et al., 2014; Rohling et al., 2021) are converted; values at the present are kept as given, not set to zero (e.g.&nbsp;Spratt and Lisiecki, 2016: +8.5 m; Berends et al., 2021: -3.3 m). <code>_sd</code> is 1 sigma, <code>_min</code> and <code>_max</code> the bounds given by the source (see the long names).</p>
+</section>
+<section id="licences" class="level2">
+<h2 class="anchored" data-anchor-id="licences">Licences</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Source</th>
+<th>Licence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Spratt and Lisiecki (2016), Waelbroeck et al.&nbsp;(2002), Bintanja and van de Wal (2008), de Boer et al.&nbsp;(2014), Rohling et al.&nbsp;(2021)</td>
+<td>NOAA NCEI open data, no licence stated; publishing assumed to be allowed</td>
+</tr>
+<tr class="even">
+<td>Berends et al.&nbsp;(2021)</td>
+<td>CC BY 4.0 (Zenodo)</td>
+</tr>
+<tr class="odd">
+<td>Grant et al.&nbsp;(2014)</td>
+<td>Supplement of a Nature Communications article, no open licence stated; publishing assumed to be allowed</td>
+</tr>
+<tr class="even">
+<td>Lambeck et al.&nbsp;(2014)</td>
+<td>Supporting information of a PNAS article, no open licence stated; publishing assumed to be allowed</td>
+</tr>
+<tr class="odd">
+<td>Gowan et al.&nbsp;(2021), PaleoMIST 1.0</td>
+<td>CC BY 4.0 (PANGAEA)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="making-the-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="making-the-dataset">Making the dataset</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> fesmdata.jl record SeaLevel</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>prepares the missing sources (<code>&lt;Source&gt;/prepare.jl</code>), checks the prepared files and copies them to <code>$FESMDATA_PRODUCTS/Records/SeaLevel/</code> with their text forms (<code>--overwrite</code> to replace them). PaleoMIST needs the archive of PaleoMIST 1.0 (3.5 GB, also used by IceHistory); Lambeck2014 a manual download (see its README) and <code>pdftotext</code>.</p>
+<!-- Generated by `julia fesmdata.jl docs` (Publish/site.jl), do not edit. -->
+</section>
+<section id="downloads" class="level2">
+<h2 class="anchored" data-anchor-id="downloads">Downloads</h2>
+<p>Download the files with <code>fesmdata.jl</code> into <code>$FESMDATA_PRODUCTS/&lt;Domain&gt;/&lt;GRID&gt;/</code> (see <a href="../download.html">Download</a>), or one by one from the links below. All released datasets are listed under <a href="../products.html">Products</a>.</p>
+<div class="record">
+<p>Version 2.0.0 (2026-10-15, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Records_SeaLevel">packages</a>). 22 files, 15.3 MB.</p>
+<pre>julia fesmdata.jl fetch SeaLevel Records</pre>
+<details><summary><b>SeaLevel</b> <span class="muted">22 files, 15.3 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-Berends2021.nc">SeaLevel-Berends2021.nc</a></td>
+<td class="size">829.2 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-Berends2021.txt">SeaLevel-Berends2021.txt</a></td>
+<td class="size">2.0 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-Bintanja2008.nc">SeaLevel-Bintanja2008.nc</a></td>
+<td class="size">950.9 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-Bintanja2008.txt">SeaLevel-Bintanja2008.txt</a></td>
+<td class="size">2.7 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-Grant2014-data.nc">SeaLevel-Grant2014-data.nc</a></td>
+<td class="size">38.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-Grant2014-data.txt">SeaLevel-Grant2014-data.txt</a></td>
+<td class="size">36.1 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-Grant2014-probabilistic.nc">SeaLevel-Grant2014-probabilistic.nc</a></td>
+<td class="size">168.9 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-Grant2014-probabilistic.txt">SeaLevel-Grant2014-probabilistic.txt</a></td>
+<td class="size">364.2 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-Lambeck2014.nc">SeaLevel-Lambeck2014.nc</a></td>
+<td class="size">27.9 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-Lambeck2014.txt">SeaLevel-Lambeck2014.txt</a></td>
+<td class="size">12.1 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-PaleoMIST.nc">SeaLevel-PaleoMIST.nc</a></td>
+<td class="size">32.6 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-PaleoMIST.txt">SeaLevel-PaleoMIST.txt</a></td>
+<td class="size">4.2 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-PaleoMIST_max.nc">SeaLevel-PaleoMIST_max.nc</a></td>
+<td class="size">32.7 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-PaleoMIST_max.txt">SeaLevel-PaleoMIST_max.txt</a></td>
+<td class="size">4.3 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-Rohling2021.nc">SeaLevel-Rohling2021.nc</a></td>
+<td class="size">205.4 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-Rohling2021.txt">SeaLevel-Rohling2021.txt</a></td>
+<td class="size">516.2 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-Spratt2016.nc">SeaLevel-Spratt2016.nc</a></td>
+<td class="size">61.7 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-Spratt2016.txt">SeaLevel-Spratt2016.txt</a></td>
+<td class="size">80.9 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-Waelbroeck2002.nc">SeaLevel-Waelbroeck2002.nc</a></td>
+<td class="size">52.4 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-Waelbroeck2002.txt">SeaLevel-Waelbroeck2002.txt</a></td>
+<td class="size">29.2 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-deBoer2014.nc">SeaLevel-deBoer2014.nc</a></td>
+<td class="size">1.5 MB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-deBoer2014.txt">SeaLevel-deBoer2014.txt</a></td>
+<td class="size">5.7 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+<!-- Generated by `julia fesmdata.jl figures SeaLevel` (do not edit). -->
+</section>
+<section id="figures" class="level2">
+<h2 class="anchored" data-anchor-id="figures">Figures</h2>
+<section id="berends2021" class="level3">
+<h3 class="anchored" data-anchor-id="berends2021">Berends2021</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/SeaLevel/SeaLevel-Berends2021.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="SeaLevel-Berends2021.nc: 1 region, sl."><img src="../figures/SeaLevel/SeaLevel-Berends2021.png" class="img-fluid figure-img" width="540" alt="SeaLevel-Berends2021.nc: 1 region, sl."></a></p>
+<figcaption>SeaLevel-Berends2021.nc: 1 region, sl.</figcaption>
+</figure>
+</div>
+</section>
+<section id="bintanja2008" class="level3">
+<h3 class="anchored" data-anchor-id="bintanja2008">Bintanja2008</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/SeaLevel/SeaLevel-Bintanja2008.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="SeaLevel-Bintanja2008.nc: 1 region, sl."><img src="../figures/SeaLevel/SeaLevel-Bintanja2008.png" class="img-fluid figure-img" width="540" alt="SeaLevel-Bintanja2008.nc: 1 region, sl."></a></p>
+<figcaption>SeaLevel-Bintanja2008.nc: 1 region, sl.</figcaption>
+</figure>
+</div>
+</section>
+<section id="grant2014" class="level3">
+<h3 class="anchored" data-anchor-id="grant2014">Grant2014</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/SeaLevel/SeaLevel-Grant2014.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="SeaLevel-Grant2014-data.nc, SeaLevel-Grant2014-probabilistic.nc: 1 site, rsl (2 outside the maps)."><img src="../figures/SeaLevel/SeaLevel-Grant2014.png" class="img-fluid figure-img" width="540" alt="SeaLevel-Grant2014-data.nc, SeaLevel-Grant2014-probabilistic.nc: 1 site, rsl (2 outside the maps)."></a></p>
+<figcaption>SeaLevel-Grant2014-data.nc, SeaLevel-Grant2014-probabilistic.nc: 1 site, rsl (2 outside the maps).</figcaption>
+</figure>
+</div>
+</section>
+<section id="lambeck2014" class="level3">
+<h3 class="anchored" data-anchor-id="lambeck2014">Lambeck2014</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/SeaLevel/SeaLevel-Lambeck2014.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="SeaLevel-Lambeck2014.nc: 1 region, sl."><img src="../figures/SeaLevel/SeaLevel-Lambeck2014.png" class="img-fluid figure-img" width="540" alt="SeaLevel-Lambeck2014.nc: 1 region, sl."></a></p>
+<figcaption>SeaLevel-Lambeck2014.nc: 1 region, sl.</figcaption>
+</figure>
+</div>
+</section>
+<section id="paleomist" class="level3">
+<h3 class="anchored" data-anchor-id="paleomist">PaleoMIST</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/SeaLevel/SeaLevel-PaleoMIST.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="SeaLevel-PaleoMIST.nc: 1 region, sl."><img src="../figures/SeaLevel/SeaLevel-PaleoMIST.png" class="img-fluid figure-img" width="540" alt="SeaLevel-PaleoMIST.nc: 1 region, sl."></a></p>
+<figcaption>SeaLevel-PaleoMIST.nc: 1 region, sl.</figcaption>
+</figure>
+</div>
+</section>
+<section id="paleomist_max" class="level3">
+<h3 class="anchored" data-anchor-id="paleomist_max">PaleoMIST_max</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/SeaLevel/SeaLevel-PaleoMIST_max.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="SeaLevel-PaleoMIST_max.nc: 1 region, sl."><img src="../figures/SeaLevel/SeaLevel-PaleoMIST_max.png" class="img-fluid figure-img" width="540" alt="SeaLevel-PaleoMIST_max.nc: 1 region, sl."></a></p>
+<figcaption>SeaLevel-PaleoMIST_max.nc: 1 region, sl.</figcaption>
+</figure>
+</div>
+</section>
+<section id="rohling2021" class="level3">
+<h3 class="anchored" data-anchor-id="rohling2021">Rohling2021</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/SeaLevel/SeaLevel-Rohling2021.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="SeaLevel-Rohling2021.nc: 1 region, sl."><img src="../figures/SeaLevel/SeaLevel-Rohling2021.png" class="img-fluid figure-img" width="540" alt="SeaLevel-Rohling2021.nc: 1 region, sl."></a></p>
+<figcaption>SeaLevel-Rohling2021.nc: 1 region, sl.</figcaption>
+</figure>
+</div>
+</section>
+<section id="spratt2016" class="level3">
+<h3 class="anchored" data-anchor-id="spratt2016">Spratt2016</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/SeaLevel/SeaLevel-Spratt2016.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="SeaLevel-Spratt2016.nc: 1 region, sl_long."><img src="../figures/SeaLevel/SeaLevel-Spratt2016.png" class="img-fluid figure-img" width="540" alt="SeaLevel-Spratt2016.nc: 1 region, sl_long."></a></p>
+<figcaption>SeaLevel-Spratt2016.nc: 1 region, sl_long.</figcaption>
+</figure>
+</div>
+</section>
+<section id="waelbroeck2002" class="level3">
+<h3 class="anchored" data-anchor-id="waelbroeck2002">Waelbroeck2002</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/SeaLevel/SeaLevel-Waelbroeck2002.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="SeaLevel-Waelbroeck2002.nc: 1 region, sl."><img src="../figures/SeaLevel/SeaLevel-Waelbroeck2002.png" class="img-fluid figure-img" width="540" alt="SeaLevel-Waelbroeck2002.nc: 1 region, sl."></a></p>
+<figcaption>SeaLevel-Waelbroeck2002.nc: 1 region, sl.</figcaption>
+</figure>
+</div>
+</section>
+<section id="deboer2014" class="level3">
+<h3 class="anchored" data-anchor-id="deboer2014">deBoer2014</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/SeaLevel/SeaLevel-deBoer2014.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="SeaLevel-deBoer2014.nc: 1 region, sl."><img src="../figures/SeaLevel/SeaLevel-deBoer2014.png" class="img-fluid figure-img" width="540" alt="SeaLevel-deBoer2014.nc: 1 region, sl."></a></p>
+<figcaption>SeaLevel-deBoer2014.nc: 1 region, sl.</figcaption>
+</figure>
+</div>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/fesmc\.github\.io\/FesmData\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>FesmData · fesmc</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/fesmc/FesmData/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Built with <a href="https://quarto.org">Quarto</a></p>
+</div>
+  </div>
+</footer>
+<script>document.querySelectorAll('a.toc-action[href^="http"]').forEach(a => { a.target = "_blank"; a.rel = "noopener"; });</script>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
