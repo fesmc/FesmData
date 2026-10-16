@@ -30,6 +30,30 @@
 
 ![Paleoclimate-CLIMBER3a-lgm_1p7weak-ocean on ANT-32KM, GRL-PAL-32KM, NH-32KM, GLOBAL-1DEG: to.](../figures/Paleoclimate/Paleoclimate-CLIMBER3a-lgm_1p7weak-ocean.png){width=1292px}
 
+### CLIMBERX-Willeit2025-heinrich
+
+![Paleoclimate-CLIMBERX-Willeit2025-heinrich on ANT-32KM, GRL-PAL-32KM, NH-32KM, GLOBAL-1DEG: t2m_ann_anom.](../figures/Paleoclimate/Paleoclimate-CLIMBERX-Willeit2025-heinrich.png){width=1286px}
+
+### CLIMBERX-Willeit2025-heinrich-ocean
+
+![Paleoclimate-CLIMBERX-Willeit2025-heinrich-ocean on ANT-32KM, GRL-PAL-32KM, NH-32KM, GLOBAL-1DEG: to_anom.](../figures/Paleoclimate/Paleoclimate-CLIMBERX-Willeit2025-heinrich-ocean.png){width=1293px}
+
+### CLIMBERX-Willeit2025-interstadial
+
+![Paleoclimate-CLIMBERX-Willeit2025-interstadial on ANT-32KM, GRL-PAL-32KM, NH-32KM, GLOBAL-1DEG: t2m_ann_anom.](../figures/Paleoclimate/Paleoclimate-CLIMBERX-Willeit2025-interstadial.png){width=1286px}
+
+### CLIMBERX-Willeit2025-interstadial-ocean
+
+![Paleoclimate-CLIMBERX-Willeit2025-interstadial-ocean on ANT-32KM, GRL-PAL-32KM, NH-32KM, GLOBAL-1DEG: to_anom.](../figures/Paleoclimate/Paleoclimate-CLIMBERX-Willeit2025-interstadial-ocean.png){width=1293px}
+
+### CLIMBERX-Willeit2025-stadial
+
+![Paleoclimate-CLIMBERX-Willeit2025-stadial on ANT-32KM, GRL-PAL-32KM, NH-32KM, GLOBAL-1DEG: t2m_ann_anom.](../figures/Paleoclimate/Paleoclimate-CLIMBERX-Willeit2025-stadial.png){width=1286px}
+
+### CLIMBERX-Willeit2025-stadial-ocean
+
+![Paleoclimate-CLIMBERX-Willeit2025-stadial-ocean on ANT-32KM, GRL-PAL-32KM, NH-32KM, GLOBAL-1DEG: to_anom.](../figures/Paleoclimate/Paleoclimate-CLIMBERX-Willeit2025-stadial-ocean.png){width=1300px}
+
 ### PMIP3-CCSM4-lgm
 
 ![Paleoclimate-PMIP3-CCSM4-lgm on ANT-16KM, GRL-PAL-16KM, NH-16KM, GLOBAL-0.5DEG: t2m_ann.](../figures/Paleoclimate/Paleoclimate-PMIP3-CCSM4-lgm.png){width=1287px}
