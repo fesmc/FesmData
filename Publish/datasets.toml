@@ -21,12 +21,23 @@ creators = [
 # Topics of the datasets on the website (overview pages and products page), in order
 [_site]
 topics = [
-    { name = "Topography and masks", datasets = ["Topo", "Regions"] },
+    { name = "Topography and masks", datasets = ["Topo", "Regions", "Grids"] },
     { name = "Ice", datasets = ["Velocity", "IceChange", "IceHistory", "Stratigraphy", "BasalMelt", "BasalState"] },
     { name = "Solid Earth", datasets = ["GHF", "Sediment", "SolidEarth"] },
     { name = "Ocean and climate", datasets = ["Ocean", "SMB", "Atmosphere", "Paleoclimate"] },
     { name = "Records", datasets = ["IceCores", "GHG", "SeaLevel", "Stacks", "Orbital", "RSL", "Boreholes", "GPS", "SMBObs", "Freshwater"] },
 ]
+
+[Grids]
+tag = "grids"
+title = "grid files"
+readme = "Grids/README.md"
+keywords = ["model grids", "grid description", "cdo", "model input"]
+description = """
+The grid description for cdo and the grid file (x, y, lon, lat and area of the cells)
+of each grid of a model domain with released products, shared by all datasets on the
+grid.
+"""
 
 [Topo]
 tag = "topo"

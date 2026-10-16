@@ -51,6 +51,8 @@ website:
             href: datasets/topo.qmd
           - text: "Regions — regions and basins"
             href: datasets/regions.qmd
+          - text: "Grids — grid files"
+            href: datasets/grids.qmd
           - text: "---"
           - text: "Ice"
           - text: "Velocity — ice surface velocity"
