@@ -25,15 +25,17 @@ What the pipeline of a dataset releases: `files(domain)`, the files of a release
 domain (output folder, a `Vector{ProductFile}`, present or not), and `domains()`, the
 output folders of its domains. Topo and Regions have their own pipelines; thematic
 datasets (<Dataset>/remap.toml) are made by remapping, on grids; records datasets
-(<Dataset>/records.toml) are not gridded, and released on the domain `Records`.
+(<Dataset>/records.toml) are not gridded, and released on the domain `Records`; Grids
+holds the grid files of the grids of all the others (`grids_files`).
 """
 function dataset_pipeline(dataset::AbstractString)
-    dataset == "Topo" && return (d -> grid_files(d, topo_release_files), () -> key_folders(topo_domains()))
-    dataset == "Regions" && return (d -> grid_files(d, regions_release_files), () -> key_folders(regions_domains()))
+    dataset == "Topo" && return (d -> gridded_files(d, topo_release_files), () -> key_folders(topo_domains()))
+    dataset == "Regions" && return (d -> gridded_files(d, regions_release_files), () -> key_folders(regions_domains()))
+    dataset == GRIDS && return (grids_files, grids_domains)
     is_remap_dataset(dataset) &&
-        return (d -> grid_files(d, (dom, og) -> remap_release_files(dataset, og)), () -> remap_domains(dataset))
+        return (d -> gridded_files(d, (dom, og) -> remap_release_files(dataset, og)), () -> remap_domains(dataset))
     is_records_dataset(dataset) && return (_ -> records_files(dataset), () -> [RECORDS_FOLDER])
-    error("dataset $dataset has no pipeline (no Topo, Regions, $dataset/remap.toml or $dataset/records.toml)")
+    error("dataset $dataset has no pipeline (no Topo, Regions, Grids, $dataset/remap.toml or $dataset/records.toml)")
 end
 
 function dataset_config(dataset::AbstractString)
@@ -51,13 +53,11 @@ end
 """
     ProductFile
 
-A file of a record: its grid (empty for records, which are not gridded), local path,
-and whether it is a grid file.
+A file of a record: its grid (empty for records, which are not gridded) and local path.
 """
 struct ProductFile
     grid::String
     path::String
-    is_grid::Bool
 end
 
 Base.basename(f::ProductFile) = basename(f.path)
@@ -77,32 +77,44 @@ function release_files(domain::AbstractString, dataset::AbstractString)
 end
 
 """
-    grid_files(domain, names) -> Vector{ProductFile}
+    gridded_files(domain, names) -> Vector{ProductFile}
 
-Files of a release of a gridded dataset on a domain: on every grid of the domain with
-files of the dataset, `names(dom, og)` on grid `og`, the grid files and those files.
+Files of a release of a gridded dataset on a domain: on every grid of the domain,
+`names(dom, og)` on grid `og`. Their grid files are released in Grids.
 """
-function grid_files(domain::AbstractString, names)
+function gridded_files(domain::AbstractString, names)
     dom, grids = folder_grids(domain)
-    files = ProductFile[]
-    for og in grids
-        g = og.grid.name
-        data = names(dom, og)
-        isempty(data) && continue
-        push!(files, ProductFile(g, joinpath(outdir(og), "grid_$g.txt"), true),
-                     ProductFile(g, joinpath(outdir(og), "$(g)_grid.nc"), true))
-        append!(files, [ProductFile(g, joinpath(outdir(og), name), false) for name in data])
-    end
-    return files
+    return [ProductFile(og.grid.name, joinpath(outdir(og), name)) for og in grids for name in names(dom, og)]
+end
+
+"Gridded datasets, whose grid files are released in Grids: all but Grids and the records datasets."
+gridded_datasets() =
+    sort([k for k in keys(read_datasets()) if !startswith(k, "_") && k != GRIDS && !is_records_dataset(k)])
+
+"Domains (output folders) of Grids: those of the gridded datasets."
+grids_domains() = sort(unique(d for s in gridded_datasets() for d in release_domains(s)))
+
+"""
+    grids_files(domain) -> Vector{ProductFile}
+
+Files of a release of Grids on a domain: the grid files (`grid_file_names`) of each of
+its grids with files of a gridded dataset present, released once for all datasets on
+the grid.
+"""
+function grids_files(domain::AbstractString)
+    _, grids = folder_grids(domain)
+    used = Set(f.grid for s in gridded_datasets() if domain in release_domains(s)
+                      for f in release_files(domain, s) if isfile(f.path))
+    return [ProductFile(og.grid.name, joinpath(outdir(og), name))
+            for og in grids if og.grid.name in used for name in grid_file_names(og.grid.name)]
 end
 
 "Files of a release of a records dataset, in \$FESMDATA_PRODUCTS/Records/<Dataset>/ (no grids)."
 records_files(dataset::AbstractString) =
-    [ProductFile("", joinpath(records_dir(dataset), name), false) for name in records_release_files(dataset)]
+    [ProductFile("", joinpath(records_dir(dataset), name)) for name in records_release_files(dataset)]
 
-"Whether any file of the dataset itself (not a grid file) is present on a domain."
-has_files(domain::AbstractString, dataset::AbstractString) =
-    any(f -> !f.is_grid && isfile(f.path), release_files(domain, dataset))
+"Whether any file of a dataset is present on a domain."
+has_files(domain::AbstractString, dataset::AbstractString) = any(f -> isfile(f.path), release_files(domain, dataset))
 
 """
     collect_files(domain, dataset) -> Vector{ProductFile}
@@ -152,7 +164,7 @@ release tags of the dataset, else \"mixed versions\".
 """
 function files_version(files::Vector{ProductFile}, dataset::AbstractString)
     tag = dataset_config(dataset)["tag"]
-    data = filter(f -> !f.is_grid && endswith(f.path, ".nc"), files)
+    data = filter(f -> endswith(f.path, ".nc"), files)
     versions = unique(something(nc_attrib(f.path, "fesmdata_version"), "missing") for f in data)
     length(versions) == 1 && return only(versions)
     return all(v -> is_release_tag(v, tag), versions) ? argmax(tag_number, versions) : "mixed versions"
@@ -165,14 +177,13 @@ Version of a release of the files of a dataset on a domain: the newest release t
 <tag>-vX.Y.Z of the dataset in the repository. The files unchanged since the earlier
 release (`unchanged`, by the entries `old` of its registry) keep the version they were
 released at, an earlier tag; all other files (new or made again) must have the version
-of the release (`fesmdata.jl stamp`). The grid files must not be made from uncommitted
-changes. With `allow_untagged`, no checks are made and the version is that of the files
-if they all have the same, else that of the repository.
+of the release (`fesmdata.jl stamp`). With `allow_untagged`, no checks are made and the
+version is that of the files if they all have the same, else that of the repository.
 """
 function release_version(files::Vector{ProductFile}, dataset::AbstractString; old::AbstractDict=Dict{String,Any}(),
                          allow_untagged::Bool=false, what::AbstractString=dataset)
     tag = dataset_config(dataset)["tag"]
-    data = filter(f -> !f.is_grid && endswith(f.path, ".nc"), files)
+    data = filter(f -> endswith(f.path, ".nc"), files)
     versions = Dict(basename(f) => something(nc_attrib(f.path, "fesmdata_version"), "missing") for f in data)
     if allow_untagged
         found = unique(values(versions))
@@ -196,12 +207,33 @@ function release_version(files::Vector{ProductFile}, dataset::AbstractString; ol
         error("$(length(wrong)) files of $what are not at release $version, or at an earlier release " *
               "if unchanged (stamp the files at the tag, `fesmdata.jl stamp`, or use --allow-untagged):\n  " *
               join(wrong, "\n  "))
-    for f in filter(f -> f.is_grid && endswith(f.path, ".nc"), files)
-        v = something(nc_attrib(f.path, "fesmdata_version"), "missing")
-        (v == "missing" || endswith(v, "-dirty")) &&
-            error("grid file $(f.path) has version $v (rerun Topo step 1 at a commit)")
-    end
     return version
+end
+
+"""
+    check_grids(domain, files; sandbox=false)
+
+Check that the grids of the files of a release of a gridded dataset on a domain are
+released in Grids, with the local grid files as released (checksums): the products are
+on these grid files, which `fetch` gets from Grids.
+"""
+function check_grids(domain::AbstractString, files::Vector{ProductFile}; sandbox::Bool=false)
+    grids = filter(!isempty, unique(f.grid for f in files))
+    isempty(grids) && return
+    entries = registry_entries(domain, GRIDS; sandbox=sandbox)
+    dir(g) = dirname(first(f.path for f in files if f.grid == g))
+    wrong = String[]
+    for g in grids, name in grid_file_names(g)
+        path = joinpath(dir(g), name)
+        if !haskey(entries, name)
+            push!(wrong, "$name: not released in Grids")
+        elseif !isfile(path) || release_checksum(path) != entries[name]["checksum"]
+            push!(wrong, "$path: not the file released in Grids $(registry_tables(domain, GRIDS; sandbox=sandbox)["_RELEASE"]["version"])")
+        end
+    end
+    isempty(wrong) ||
+        error("$(length(wrong)) grid files of $domain are not released in Grids (release Grids first, README.md):\n  " *
+              join(wrong, "\n  "))
 end
 
 """
@@ -228,8 +260,8 @@ function stamp(dataset::AbstractString, domains=String[])
     for domain in select_domains(dataset, domains)
         all_files = collect_files(domain, dataset)
         old = registry_entries(domain, dataset)
-        files = filter(f -> !f.is_grid && endswith(f.path, ".nc"), all_files)
-        texts = Set(f.path for f in all_files if endswith(f.path, ".txt") && !f.is_grid)
+        files = filter(f -> endswith(f.path, ".nc"), all_files)
+        texts = Set(f.path for f in all_files if endswith(f.path, ".txt"))
         n, kept = 0, 0
         for f in files
             unchanged(f, old) && (kept += 1; continue)
@@ -271,7 +303,7 @@ function source_dois(files::Vector{ProductFile})
     manifest = TOML.parsefile(joinpath(REPO_DIR, "datamanifest.toml"))
     sources = Set{String}()
     for f in files
-        (f.is_grid || !endswith(f.path, ".nc")) && continue
+        endswith(f.path, ".nc") || continue
         s = nc_attrib(f.path, "sources")
         s === nothing || union!(sources, strip.(split(s, r"[>,]")))   # Topo "a > b", Regions "a, b"
     end

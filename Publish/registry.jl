@@ -87,21 +87,37 @@ local_path(entry::AbstractDict, root::AbstractString=products_dir()) =
 "Grid of a registry entry: the folder of its storage path, <Domain>/<GRID>/<file>."
 entry_grid(entry::AbstractDict) = basename(dirname(entry["storage_path"]))
 
+"The dataset of the grid files, released once per grid for all datasets on it."
+const GRIDS = "Grids"
+
+"Grid files of a grid: its grid description for cdo and its grid file (x, y, lon, lat, area)."
+grid_file_names(grid::AbstractString) = ["grid_$grid.txt", "$(grid)_grid.nc"]
+
 file_sha256(path::AbstractString) = open(io -> bytes2hex(sha256(io)), path)
 
 "Checksum of a file in the registry format, sha256:<hex>."
 checksum(path::AbstractString) = "sha256:" * file_sha256(path)
 
 """
-    previous_checksums(old, checksum) -> Vector{String}
+    previous_checksums(old, checksum, registered=String[]) -> Vector{String}
 
 Checksums of the earlier releases of a file, for its entry in a new release with
 `checksum`: those of its entry `old` in the previous registry (`nothing` for a new
-file), without `checksum`.
+file), and `registered`, those of the same local file in other records (e.g. the grid
+files that each dataset released before Grids), without `checksum`.
 """
-previous_checksums(::Nothing, checksum::AbstractString) = String[]
-previous_checksums(old::AbstractDict, checksum::AbstractString) =
-    unique(filter(!=(checksum), vcat(get(old, "previous_checksums", String[]), old["checksum"])))
+previous_checksums(old, checksum::AbstractString, registered=String[]) =
+    unique(filter(!=(checksum), vcat(old === nothing ? String[] : get(old, "previous_checksums", String[]),
+                                     old === nothing ? String[] : [old["checksum"]], sort(collect(registered)))))
+
+"Checksums, current and earlier, of each local file (`storage_path`) in all records of the registry."
+function path_checksums(; sandbox::Bool=false)
+    sums = Dict{String,Set{String}}()
+    for (d, s) in list_records(; sandbox=sandbox), e in values(read_record(d, s; sandbox=sandbox)[2])
+        union!(get!(sums, e["storage_path"], Set{String}()), [e["checksum"]; get(e, "previous_checksums", String[])])
+    end
+    return sums
+end
 
 """
     local_state(entry, root=products_dir()) -> Symbol

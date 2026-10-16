@@ -1,0 +1,7 @@
+---
+pagetitle: "Grids"
+---
+
+{{< include ../../Grids/README.md >}}
+
+{{< include ../_downloads/Grids.md >}}

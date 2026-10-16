@@ -7,6 +7,7 @@
 include(joinpath(@__DIR__, "..", "shared", "io.jl"))
 include(joinpath(@__DIR__, "..", "shared", "domains.jl"))
 include(joinpath(@__DIR__, "datasets.jl"))
+include(joinpath(@__DIR__, "..", "Publish", "registry.jl"))
 
 # ---------------------------------------------------------------------------
 # Prepared files
@@ -1119,8 +1120,7 @@ function remap_prepared(ps::AbstractVector{Prepared}, grids::Vector{OutGrid}; na
             _per_field!(fields, dims, varattrib, filled, pf.dims, "mask_fill", f -> mask_fill_attrib(fill, f))
             push!(attrib, "gap_fill" => fills_description(fill) * " (mask_fill)")
         end
-        intermediate || isfile(joinpath(outdir(og), "$(og.grid.name)_grid.nc")) ||
-            write_grid_files(outdir(og), og.grid; dataset)
+        intermediate || grid_files!(og; dataset)
         aux = unique(a -> a.name, [a for p in ps for a in p.aux])
         write_fields(path, og.grid, fields; dataset, attrib, varattrib, dims, aux, precision, og.elevation,
                      lossless=intermediate)
@@ -1313,12 +1313,36 @@ function make_product(p::EnsembleProduct, grids::Vector{OutGrid}; tag::AbstractS
                        "ensemble_stat" => "$how over the members with a value in each cell (n_<field>)"],
                       merged_attrib([m.attrib for m in ms]))
         aux = unique(a -> a.name, [a for m in ms for a in m.aux])
-        isfile(joinpath(outdir(og), "$(og.grid.name)_grid.nc")) || write_grid_files(outdir(og), og.grid; dataset=tag)
+        grid_files!(og; dataset=tag)
         write_fields(path, og.grid, fields; dataset=tag, attrib, varattrib, dims, aux, p.precision, og.elevation)
         println("$(og.grid.name): $(basename(path))")
         push!(paths, path)
     end
     return paths
+end
+
+"""
+    grid_files!(og; dataset)
+
+The grid files of grid `og` (`grid_file_names`), if missing: those released in Grids if
+the grid is (downloaded, so that they are the files that `fetch` gets with any dataset
+on the grid), else written, with the provenance of `dataset` (also if the download
+fails, e.g. offline).
+"""
+function grid_files!(og::OutGrid; dataset::AbstractString)
+    names = grid_file_names(og.grid.name)
+    all(n -> isfile(joinpath(outdir(og), n)), names) && return
+    entries = isfile(registry_file(og.folder, GRIDS)) ? read_record(og.folder, GRIDS)[2] : Dict{String,Any}()
+    if all(n -> haskey(entries, n), names)
+        try
+            foreach(n -> fetch_file(entries[n]), names)
+            println("$(og.grid.name): grid files downloaded from $GRIDS")
+            return
+        catch e
+            @warn "$(og.grid.name): grid files not downloaded from $GRIDS, written instead" exception = e
+        end
+    end
+    write_grid_files(outdir(og), og.grid; dataset)
 end
 
 """

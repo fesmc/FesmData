@@ -15,7 +15,9 @@ julia fesmdata.jl remap $FESMDATA_PREPARED/Lucazeau2019_ghf/Lucazeau2019_GHF.nc 
 
 This writes, e.g., `$FESMDATA_PRODUCTS/Antarctica/ANT-8KM/ANT-8KM_GHF-Lucazeau2019.nc` and
 `$FESMDATA_PRODUCTS/Global/GLOBAL-1DEG/GLOBAL-1DEG_GHF-Lucazeau2019.nc`, on every grid of
-Antarctica and of the global lon-lat grids.
+Antarctica and of the global lon-lat grids. The grid files of a grid, if missing, are
+downloaded from the dataset [Grids](https://fesmc.github.io/FesmData/datasets/grids.html)
+when the grid is released there, else written.
 
 To release it with FesmData, make it a product of a thematic dataset, e.g. GHF (see
 [Adding a dataset](https://fesmc.github.io/FesmData/adding.html#thematic-datasets)).

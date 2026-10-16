@@ -131,8 +131,11 @@ files new or changed since the earlier release to the packages of the release, o
 grid, and write the registry file of the domain. The files unchanged since the earlier
 release (`unchanged`) are not uploaded again: their entries, with the packages of the
 release they were uploaded at, are kept. A domain without such files gets only its
-registry, at the version of the release. All domains are checked first
-(`collect_files`, `release_version`), so that nothing is uploaded if one of them is
+registry, at the version of the release. A new entry has the earlier checksums of its
+file also from the other records that released it (`path_checksums`, e.g. the grid
+files that each dataset released before Grids). All domains are checked first
+(`collect_files`, `check_grids`: the grid files of a gridded dataset must be released in
+Grids first, `release_version`), so that nothing is uploaded if one of them is
 incomplete. Domains already released at this version on the current store are skipped;
 an interrupted upload is continued by running it again.
 """
@@ -141,6 +144,7 @@ function upload(dataset::AbstractString, domains=String[]; sandbox::Bool=false,
     releases = []
     for domain in select_domains(dataset, domains)
         files = collect_files(domain, dataset)
+        dataset == GRIDS || check_grids(domain, files; sandbox=sandbox)
         old = registry_entries(domain, dataset; sandbox=sandbox)
         version = release_version(files, dataset; old=old, allow_untagged=allow_untagged, what="$domain/$dataset")
         number = release_number(version, dataset)
@@ -164,6 +168,7 @@ function upload(dataset::AbstractString, domains=String[]; sandbox::Bool=false,
         return nothing
     end
     any(r -> !isempty(r[3]), releases) && _env("GITLAB_TOKEN")   # needed to upload
+    registered = path_checksums(; sandbox=sandbox)
     for (domain, files, new, old, version, number) in releases
         entries = Dict{String,Any}()
         uploaded = Set(basename.(new))
@@ -184,7 +189,7 @@ function upload(dataset::AbstractString, domains=String[]; sandbox::Bool=false,
                                                            number, name),
                                      "checksum" => sha, "size" => filesize(f.path),
                                      "storage_path" => "\$datasets_dir/" * relpath(f.path, products_dir()))
-            previous = previous_checksums(get(old, name, nothing), sha)
+            previous = previous_checksums(get(old, name, nothing), sha, get(registered, entry["storage_path"], String[]))
             isempty(previous) || (entry["previous_checksums"] = previous)
             entries[name] = entry
         end

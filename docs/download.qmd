@@ -44,8 +44,8 @@ everything a model needs on that grid, and can be copied as a whole:
 $FESMDATA_PRODUCTS/
   Antarctica/
     ANT-8KM/
-      grid_ANT-8KM.txt                 grid description (cdo)
-      ANT-8KM_grid.nc                  x, y, lon, lat and area of the cells
+      grid_ANT-8KM.txt                 grid description (cdo), of the dataset Grids
+      ANT-8KM_grid.nc                  x, y, lon, lat and area of the cells, of Grids
       ANT-8KM_TOPO-BedMachine-v4.nc    a product of the dataset Topo
       ANT-8KM_TOPO-Bedmap3.nc
       ANT-8KM_GHF-Lucazeau2019.nc      a product of the dataset GHF
@@ -137,7 +137,7 @@ has (`list` shows where each comes from). `fetch` downloads the files of these p
 crop, as `$FESMDATA_PRODUCTS/<Domain>/<GRID>/<GRID>_<NAME>.nc` with the grid files:
 
 - at a resolution of the nest or crop, on its own grid (e.g. JAK-1KM, next to its Topo
-  and Regions, whose grid files it takes);
+  and Regions, with the grid files of the grid from Grids);
 - at the other resolutions, on the cells of the domain grids that overlap the nest or
   crop (e.g. JAK-4KM, the same cells from the parent and from a crop, which lie on the
   parent grids).
@@ -227,4 +227,5 @@ Single files can also be downloaded without the tool, from the end of the page o
 dataset (Downloads) or from
 [Helmholtz Codebase](https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages),
 one package per domain, dataset and grid. Download the grid files of the grid too
-(`grid_<GRID>.txt`, `<GRID>_grid.nc`).
+(`grid_<GRID>.txt`, `<GRID>_grid.nc`), from the dataset
+[Grids](datasets/grids.qmd).

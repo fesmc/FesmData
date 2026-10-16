@@ -88,6 +88,8 @@ function record_detail(domain::AbstractString, dataset::AbstractString; grids=St
     selected = filter(g -> isempty(grids) || first(g) in grids, all_grids)
     println("$domain/$dataset, version $(release["version"]) ($(release["git_tag"])), released $(release["date"])")
     println("Packages: $(release["store"])")
+    dataset == GRIDS || domain == RECORDS_FOLDER ||
+        println("Grid files: in the record of $GRIDS on $domain (fetch gets them with the products)")
     doi = record_doi(tables)
     isempty(doi) || println("DOI: https://doi.org/$doi")
     have_local = dir !== nothing || has_fesmdata_dir("products")
@@ -261,15 +263,44 @@ function crop_data_files(c::CropRecord, entries, root::AbstractString)
 end
 
 """
+    grids_entries(domain, grids; sandbox=false) -> Vector
+
+Entries of the grid files of `grids` in the record of Grids of a domain (those it has;
+none without a record).
+"""
+function grids_entries(domain::AbstractString, grids; sandbox::Bool=false)
+    isfile(registry_file(domain, GRIDS; sandbox=sandbox)) || return Any[]
+    files = read_record(domain, GRIDS; sandbox=sandbox)[2]
+    return [files[name] for name in sort(collect(keys(files))) if entry_grid(files[name]) in grids]
+end
+
+"""
+    grids_downloads(selected; sandbox=false) -> Vector
+
+The grid files that `fetch` downloads with the records `selected` ((domain, dataset,
+grids), see `select_records`), as (domain, "Grids", entries): those of their grids (the
+named grids, else all grids of the record) in the record of Grids of their domain.
+"""
+function grids_downloads(selected; sandbox::Bool=false)
+    downloads = Tuple{String,String,Vector}[]
+    for (d, s, grids) in selected
+        s == GRIDS && continue
+        gs = isempty(grids) ? unique(entry_grid(e) for e in values(read_record(d, s; sandbox=sandbox)[2])) : grids
+        es = grids_entries(d, gs; sandbox=sandbox)
+        isempty(es) || push!(downloads, (d, GRIDS, es))
+    end
+    return downloads
+end
+
+"""
     crop_downloads(cropped; sandbox=false) -> Vector
 
 What `fetch` downloads for records by cropping, `cropped` ((record, grids) of
 `select_records`), as (domain, dataset, entries): the files of their products in their
 source records on these grids (all if none are named; not the grid files of the source,
-which cropping does not need), and the grid files that the records of the nest or crop
-(e.g. Topo) have on these grids, i.e. on the grids of the nest or crop itself, so that
-these are the released files rather than files written again. A file may be in several
-of these (see `unique_files`).
+which cropping does not need), and the grid files of the nest or crop on these grids, in
+its record of Grids, so that these are the released files rather than files written
+again. A file may be in several of these (see `unique_files`).
 """
 function crop_downloads(cropped; sandbox::Bool=false)
     sources = Tuple{String,String,Vector}[]
@@ -277,12 +308,8 @@ function crop_downloads(cropped; sandbox::Bool=false)
         pentries = filter(e -> is_crop_product(c, e),
                           record_entries(c.source, c.dataset; grids=[source_grid_name(c, g) for g in grids], sandbox=sandbox))
         push!(sources, (c.source, c.dataset, pentries))
-        targets = Set(crop_grid_name(c, entry_grid(e)) for e in pentries)
-        for (d, s) in list_records(; sandbox=sandbox)
-            d == c.folder || continue
-            es = filter(e -> entry_grid(e) in targets && !is_data_file(e), record_entries(d, s; sandbox=sandbox))
-            isempty(es) || push!(sources, (d, s, es))
-        end
+        es = grids_entries(c.folder, Set(crop_grid_name(c, entry_grid(e)) for e in pentries); sandbox=sandbox)
+        isempty(es) || push!(sources, (c.folder, GRIDS, es))
     end
     return sources
 end
@@ -615,8 +642,8 @@ selected_entries(selected; sandbox::Bool=false) =
     fetch_files(args; dir=nothing, copy=false, overwrite=false, sandbox=false) -> (paths, cropped)
 
 `fesmdata.jl fetch`: download the files of a dataset on a domain, or on grids (which
-imply their domain), into \$FESMDATA_PRODUCTS or `dir`. The dataset must be named, and a
-domain or grids. The files present are checked first, as by `mirror`, and files in
+imply their domain), with the grid files of these grids (`grids_downloads`), into
+\$FESMDATA_PRODUCTS or `dir`. The dataset must be named, and a domain or grids. The files present are checked first, as by `mirror`, and files in
 \$FESMDATA_PRODUCTS are hard linked (or copied with `copy`) into `dir`, as by `mirror`. On a
 nest or crop, the files of the products it gets by cropping are downloaded on their
 source domains (`crop_downloads`), and the records by cropping, `cropped`, are left for
@@ -630,7 +657,8 @@ function fetch_files(args; dir=nothing, copy::Bool=false, overwrite::Bool=false,
     length(datasets) == 1 && only(datasets) in args || error("fetch: name the dataset (e.g. Topo)")
     detail || error("fetch: name a domain or grids (e.g. Antarctica, ANT-32KM)")
     root = local_root(dir)
-    records = unique_files([selected_entries(selected; sandbox=sandbox); crop_downloads(cropped; sandbox=sandbox)])
+    records = unique_files([grids_downloads(selected; sandbox=sandbox); selected_entries(selected; sandbox=sandbox);
+                            crop_downloads(cropped; sandbox=sandbox)])
     entries = [e for (_, _, es) in records for e in es]
     states = check_local(entries, root; overwrite=overwrite)
     sources = local_sources(entries, root, states)
@@ -643,8 +671,9 @@ end
     mirror(args; dir=nothing, copy=false, overwrite=false, sandbox=false, yes=false) -> (paths, cropped)
 
 `fesmdata.jl mirror`: download all records (or those of a dataset and/or a domain)
-into \$FESMDATA_PRODUCTS, or `dir`, with the files that the records by cropping on the
-active nests and crops need (`crop_downloads`). The files present are checked first
+into \$FESMDATA_PRODUCTS, or `dir`, with the grid files of their grids (`grids_downloads`)
+and the files that the records by cropping on the active nests and crops need
+(`crop_downloads`). The files present are checked first
 (checksums): files of the release are kept, files of an earlier release are updated,
 and files changed locally stop the mirror (replaced with `overwrite`). Into `dir`, files
 of the release in \$FESMDATA_PRODUCTS are hard linked from there (copied with `copy`, or
@@ -659,7 +688,8 @@ function mirror(args; dir=nothing, copy::Bool=false, overwrite::Bool=false, sand
     filter!(((c, _),) -> subs[c.folder].active, cropped)
     isempty(selected) && isempty(cropped) && (println("Nothing released"); return String[], cropped)
     root = local_root(dir)
-    records = unique_files([selected_entries(selected; sandbox=sandbox); crop_downloads(cropped; sandbox=sandbox)])
+    records = unique_files([grids_downloads(selected; sandbox=sandbox); selected_entries(selected; sandbox=sandbox);
+                            crop_downloads(cropped; sandbox=sandbox)])
     entries = [e for (_, _, es) in records for e in es]
     println("$(length(selected)) datasets on domains and $(length(cropped)) by cropping on nests and crops, ",
             "$(length(entries)) files to keep, $(human_size(total_size(entries))) in total")
