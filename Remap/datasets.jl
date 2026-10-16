@@ -199,13 +199,19 @@ function product_precision(value, what)
     return Dict{String,Precision}(k => parse_precision(v, "$what: precision.$k") for (k, v) in value)
 end
 
+const _REMAP_PRODUCTS = Dict{String,Vector{ThematicProduct}}()
+
 """
     remap_products(dataset) -> Vector{ThematicProduct}
 
 Products of a thematic dataset (<Dataset>/remap.toml), by name: a table with
-`ensemble` is an `EnsembleProduct`, any other a `RemapProduct`.
+`ensemble` is an `EnsembleProduct`, any other a `RemapProduct`. Read once per run
+(`read_remap_products`), since the release of a dataset (and of Grids, for all
+datasets) asks for them on every grid.
 """
-function remap_products(dataset::AbstractString)
+remap_products(dataset::AbstractString) = get!(() -> read_remap_products(dataset), _REMAP_PRODUCTS, dataset)
+
+function read_remap_products(dataset::AbstractString)
     is_remap_dataset(dataset) || error("no thematic dataset $dataset (no $(remap_spec_file(dataset)))")
     spec = TOML.parsefile(remap_spec_file(dataset))
     folders = domain_folders()
