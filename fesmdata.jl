@@ -84,11 +84,12 @@ Figures for the website (maintainers, see Figures/README.md):
                                                domain, docs/figures/Domains/
 
 Release (maintainers, see Publish/README.md):
-  stamp <Dataset> [<Domain> ...]               set the version of the files to the release
-                                               tag on the checked-out commit (in place)
-  release <Dataset> [<Domain> ...]             upload to the packages (Helmholtz Codebase)
-                                               and write the registry (--dry-run: check
-                                               and list only)
+  stamp <Dataset> [<Domain> ...]               set the version of the files new or changed
+                                               since the last release to the release tag
+                                               on the checked-out commit (in place)
+  release <Dataset> [<Domain> ...]             upload the files new or changed to the
+                                               packages (Helmholtz Codebase) and write the
+                                               registry (--dry-run: check and list only)
   status <Dataset> [<Domain> ...]              local files, packages, registered release
   prune [<Dataset>] [<Domain>]                 delete the files in \$FESMDATA_PRODUCTS that no
                                                release refers to (not crops, unreleased

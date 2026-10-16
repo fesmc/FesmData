@@ -67,10 +67,10 @@ must be those of the registry (checksums).
 function released_files(domain::AbstractString, dataset::AbstractString; sandbox::Bool=false,
                         allow_untagged::Bool=false)
     files = collect_files(domain, dataset)
-    version = release_version(files, dataset; allow_untagged=allow_untagged, what="$domain/$dataset")
     reg = registry_file(domain, dataset; sandbox=sandbox)
     isfile(reg) || error("$domain/$dataset is not released yet (fesmdata.jl release first)")
     tables, entries = read_record(domain, dataset; sandbox=sandbox)
+    version = release_version(files, dataset; old=entries, allow_untagged=allow_untagged, what="$domain/$dataset")
     tables["_RELEASE"]["git_tag"] == version ||
         error("$domain/$dataset: the local files ($version) are not the registered release " *
               "($(tables["_RELEASE"]["git_tag"]))")

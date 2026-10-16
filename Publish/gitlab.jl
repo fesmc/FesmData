@@ -92,61 +92,72 @@ end
     upload(dataset, domains=String[]; sandbox=false, allow_untagged=false, dry_run=false)
 
 Release a dataset on each domain (all domains with its files by default): upload the
-files of each grid to its package, versioned by the release, and write the registry
-file of the domain. All domains are checked first (`collect_files`, `release_version`),
-so that nothing is uploaded if one of them is incomplete. Domains already released at
-this version on the current store are skipped; an interrupted upload is continued by
-running it again.
+files new or changed since the earlier release to the packages of the release, one per
+grid, and write the registry file of the domain. The files unchanged since the earlier
+release (`unchanged`) are not uploaded again: their entries, with the packages of the
+release they were uploaded at, are kept. A domain without such files gets only its
+registry, at the version of the release. All domains are checked first
+(`collect_files`, `release_version`), so that nothing is uploaded if one of them is
+incomplete. Domains already released at this version on the current store are skipped;
+an interrupted upload is continued by running it again.
 """
 function upload(dataset::AbstractString, domains=String[]; sandbox::Bool=false,
                 allow_untagged::Bool=false, dry_run::Bool=false)
     releases = []
     for domain in select_domains(dataset, domains)
         files = collect_files(domain, dataset)
-        version = release_version(files, dataset; allow_untagged=allow_untagged, what="$domain/$dataset")
+        old = registry_entries(domain, dataset; sandbox=sandbox)
+        version = release_version(files, dataset; old=old, allow_untagged=allow_untagged, what="$domain/$dataset")
         number = release_number(version, dataset)
-        grids = unique(f.grid for f in files)
-        total = sum(filesize(f.path) for f in files)
         release = get(registry_tables(domain, dataset; sandbox=sandbox), "_RELEASE", Dict())
         if get(release, "git_tag", "") == version && startswith(get(release, "store", ""), gitlab_config()["url"])
             println("$domain/$dataset $version: already released, skipped")
             continue
         end
-        println("$domain/$dataset $version: $(length(files)) files in $(length(grids)) packages, " *
-                "$(round(total / 1e9; digits=2)) GB")
-        push!(releases, (domain, files, version, number))
+        new = filter(f -> !unchanged(f, old), files)
+        total = isempty(new) ? 0 : sum(filesize(f.path) for f in new)
+        println("$domain/$dataset $version: $(length(files)) files, $(length(new)) to upload " *
+                "($(round(total / 1e9; digits=2)) GB) in $(length(unique(f.grid for f in new))) packages, " *
+                "$(length(files) - length(new)) unchanged")
+        push!(releases, (domain, files, new, old, version, number))
     end
     if dry_run
-        for (domain, files, version, number) in releases, grid in unique(f.grid for f in files)
+        for (domain, files, new, old, version, number) in releases, grid in unique(f.grid for f in new)
             println("  ", package_name(domain, dataset, grid; sandbox=sandbox), " ", number, ": ",
-                    join(basename.(filter(f -> f.grid == grid, files)), ", "))
+                    join(basename.(filter(f -> f.grid == grid, new)), ", "))
         end
         return nothing
     end
-    isempty(releases) || _env("GITLAB_TOKEN")   # needed to upload
-    for (domain, files, version, number) in releases
-        old = registry_entries(domain, dataset; sandbox=sandbox)
+    any(r -> !isempty(r[3]), releases) && _env("GITLAB_TOKEN")   # needed to upload
+    for (domain, files, new, old, version, number) in releases
         entries = Dict{String,Any}()
-        for grid in unique(f.grid for f in files)
+        uploaded = Set(basename.(new))
+        for grid in unique(f.grid for f in new)
             package = package_name(domain, dataset, grid; sandbox=sandbox)
             println("$package $number")
-            gfiles = filter(f -> f.grid == grid, files)
-            sync_package!(package, number, gfiles)
-            for f in gfiles
-                sha = release_checksum(f.path)
-                entry = Dict{String,Any}("uri" => download_url(package, number, basename(f)),
-                                         "checksum" => sha, "size" => filesize(f.path),
-                                         "storage_path" => "\$datasets_dir/" * relpath(f.path, products_dir()))
-                previous = previous_checksums(get(old, basename(f), nothing), sha)
-                isempty(previous) || (entry["previous_checksums"] = previous)
-                entries[basename(f)] = entry
-            end
+            # the package of the release holds the new files and those of its version kept
+            sync_package!(package, number, filter(files) do f
+                f.grid == grid && (basename(f) in uploaded ||
+                                   old[basename(f)]["uri"] == download_url(package, number, basename(f)))
+            end)
+        end
+        for f in files
+            name = basename(f)
+            name in uploaded || (entries[name] = old[name]; continue)
+            sha = release_checksum(f.path)
+            entry = Dict{String,Any}("uri" => download_url(package_name(domain, dataset, f.grid; sandbox=sandbox),
+                                                           number, name),
+                                     "checksum" => sha, "size" => filesize(f.path),
+                                     "storage_path" => "\$datasets_dir/" * relpath(f.path, products_dir()))
+            previous = previous_checksums(get(old, name, nothing), sha)
+            isempty(previous) || (entry["previous_checksums"] = previous)
+            entries[name] = entry
         end
         tables = registry_tables(domain, dataset; sandbox=sandbox)   # keeps an earlier _ZENODO
         tables["_RELEASE"] = Dict("version" => number, "git_tag" => version, "date" => string(today()),
                                   "store" => packages_page(package_name(domain, dataset, ""; sandbox=sandbox)))
         path = write_registry(registry_file(domain, dataset; sandbox=sandbox), tables, entries)
-        println("$domain/$dataset: released $number, wrote $path")
+        println("$domain/$dataset: released $number ($(length(new)) of $(length(files)) files uploaded), wrote $path")
     end
     isempty(releases) || sandbox || println("""
 
@@ -158,8 +169,9 @@ end
     status(dataset, domains=String[]; sandbox=false)
 
 State of the release of a dataset on each domain (all domains by default): the local
-files (present, version), the packages of that version on GitLab, and the registered
-release (and its DOI if archived on Zenodo).
+files (present, newest version), the packages of that version on GitLab (of the grids
+with files new or changed at that version only), and the registered release (and its
+DOI if archived on Zenodo).
 """
 function status(dataset::AbstractString, domains=String[]; sandbox::Bool=false)
     dataset_config(dataset)
@@ -170,12 +182,12 @@ function status(dataset::AbstractString, domains=String[]; sandbox::Bool=false)
         present = count(f -> isfile(f.path), files)
         localinfo, gitinfo = "$present/$(length(files))", "-"
         if present == length(files)
-            version = files_version(files)
+            version = files_version(files, dataset)
             localinfo *= " " * version
             number = release_number(version, dataset)
             grids = unique(f.grid for f in files)
             n = count(g -> find_package(package_name(domain, dataset, g; sandbox=sandbox), number) !== nothing, grids)
-            gitinfo = "$n/$(length(grids)) $number"
+            gitinfo = "$n of $(length(grids)) at $number"
         end
         tables = registry_tables(domain, dataset; sandbox=sandbox)
         reginfo = haskey(tables, "_RELEASE") ? "$(tables["_RELEASE"]["version"]) ($(tables["_RELEASE"]["date"]))" : "-"

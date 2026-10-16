@@ -123,39 +123,79 @@ end
 nc_attrib(path::AbstractString, key::AbstractString) =
     NCDataset(ds -> get(ds.attrib, key, nothing), path)
 
-"Version of the local files of a dataset (`fesmdata_version`), or \"mixed versions\"."
-function files_version(files::Vector{ProductFile})
-    data = filter(f -> !f.is_grid && endswith(f.path, ".nc"), files)
-    versions = unique(something(nc_attrib(f.path, "fesmdata_version"), "missing") for f in data)
-    return length(versions) == 1 ? only(versions) : "mixed versions"
+"Whether `version` is a release tag <tag>-vX.Y.Z of the dataset with tag `tag`."
+is_release_tag(version::AbstractString, tag::AbstractString) =
+    occursin(Regex("^$(tag)-v\\d+\\.\\d+\\.\\d+\$"), version)
+
+"Version number of a release tag (topo-v2.0.0 -> v\"2.0.0\")."
+tag_number(version::AbstractString) = VersionNumber(match(r"-v(\d+\.\d+\.\d+)$", version)[1])
+
+"Newest release tag <tag>-vX.Y.Z of a dataset with tag `tag` in the repository (`nothing` if none)."
+function newest_tag(tag::AbstractString)
+    tags = filter(t -> is_release_tag(t, tag), split(_git("tag", "--list", "$(tag)-v*"), '\n'))
+    return isempty(tags) ? nothing : argmax(tag_number, tags)
 end
 
 """
-    release_version(files, dataset; allow_untagged=false) -> String
+    unchanged(f, old) -> Bool
 
-Version of the files of a release: all files of the dataset must have the same
-`fesmdata_version`, a release tag <tag>-vX.Y.Z that exists in the repository, and the
-grid files must not be made from uncommitted changes. With `allow_untagged`, no checks
-are made and the version is that of the files if they all have the same, else that of
-the repository.
+Whether a file is that of its entry in the registry of the earlier release (`old`, name
+=> entry), by its checksum: such a file is kept as released, not stamped or uploaded
+again.
 """
-function release_version(files::Vector{ProductFile}, dataset::AbstractString; allow_untagged::Bool=false,
-                         what::AbstractString=dataset)
+unchanged(f::ProductFile, old::AbstractDict) =
+    haskey(old, basename(f)) && old[basename(f)]["checksum"] == release_checksum(f.path)
+
+"""
+Version of the local files of a dataset (`fesmdata_version`): the newest if all are
+release tags of the dataset, else \"mixed versions\".
+"""
+function files_version(files::Vector{ProductFile}, dataset::AbstractString)
+    tag = dataset_config(dataset)["tag"]
+    data = filter(f -> !f.is_grid && endswith(f.path, ".nc"), files)
+    versions = unique(something(nc_attrib(f.path, "fesmdata_version"), "missing") for f in data)
+    length(versions) == 1 && return only(versions)
+    return all(v -> is_release_tag(v, tag), versions) ? argmax(tag_number, versions) : "mixed versions"
+end
+
+"""
+    release_version(files, dataset; old=Dict(), allow_untagged=false) -> String
+
+Version of a release of the files of a dataset on a domain: the newest release tag
+<tag>-vX.Y.Z of the dataset in the repository. The files unchanged since the earlier
+release (`unchanged`, by the entries `old` of its registry) keep the version they were
+released at, an earlier tag; all other files (new or made again) must have the version
+of the release (`fesmdata.jl stamp`). The grid files must not be made from uncommitted
+changes. With `allow_untagged`, no checks are made and the version is that of the files
+if they all have the same, else that of the repository.
+"""
+function release_version(files::Vector{ProductFile}, dataset::AbstractString; old::AbstractDict=Dict{String,Any}(),
+                         allow_untagged::Bool=false, what::AbstractString=dataset)
     tag = dataset_config(dataset)["tag"]
     data = filter(f -> !f.is_grid && endswith(f.path, ".nc"), files)
     versions = Dict(basename(f) => something(nc_attrib(f.path, "fesmdata_version"), "missing") for f in data)
-    found = sort(unique(values(versions)))
     if allow_untagged
+        found = unique(values(versions))
         return length(found) == 1 ? only(found) : git_version(tag)
     end
-    length(found) == 1 ||
-        error("files of $what have different versions: " *
-              join(["$v ($(count(==(v), values(versions))) files)" for v in found], ", "))
-    version = only(found)
-    occursin(Regex("^$(tag)-v\\d+\\.\\d+\\.\\d+\$"), version) ||
-        error("files of $what have version $version, not a release tag $(tag)-vX.Y.Z " *
-              "(stamp the files at the tag, `fesmdata.jl stamp`, or use --allow-untagged)")
-    _git("tag", "--list", version) == version || error("tag $version does not exist in the repository")
+    version = newest_tag(tag)
+    version === nothing && error("no release tag $(tag)-vX.Y.Z of $dataset in the repository " *
+                                 "(tag the release first, or use --allow-untagged)")
+    tags = Set(split(_git("tag", "--list", "$(tag)-v*"), '\n'))
+    wrong = String[]
+    for f in data
+        v = versions[basename(f)]
+        if unchanged(f, old)
+            (is_release_tag(v, tag) && v in tags && tag_number(v) <= tag_number(version)) ||
+                push!(wrong, "$(basename(f)): $v (unchanged since the earlier release)")
+        else
+            v == version || push!(wrong, "$(basename(f)): $v (new or made again)")
+        end
+    end
+    isempty(wrong) ||
+        error("$(length(wrong)) files of $what are not at release $version, or at an earlier release " *
+              "if unchanged (stamp the files at the tag, `fesmdata.jl stamp`, or use --allow-untagged):\n  " *
+              join(wrong, "\n  "))
     for f in filter(f -> f.is_grid && endswith(f.path, ".nc"), files)
         v = something(nc_attrib(f.path, "fesmdata_version"), "missing")
         (v == "missing" || endswith(v, "-dirty")) &&
@@ -170,7 +210,10 @@ end
 Set the version of the files of a release of a dataset on each domain (all domains with
 its files by default) to its release tag, in place: the tag `<tag>-vX.Y.Z` of the
 dataset on the checked-out commit, which must have no uncommitted changes. Only the
-global attributes of the data files change: `fesmdata_version` becomes the tag, and
+files new or made again since the earlier release are stamped: those unchanged
+(`unchanged`, by the registry of the earlier release, which must be committed) keep the
+version they were released at, so that they are not uploaded or downloaded again. Only
+the global attributes of the data files change: `fesmdata_version` becomes the tag, and
 `history` records the stamp and the version the file was made at; `fesmdata_commit`
 stays the commit that made it. The text forms of records (.txt) are written again from
 their stamped files. All files must be present (`collect_files`).
@@ -178,16 +221,18 @@ their stamped files. All files must be present (`collect_files`).
 function stamp(dataset::AbstractString, domains=String[])
     tag = dataset_config(dataset)["tag"]
     version = _git("describe", "--tags", "--exact-match", "--match", "$(tag)-v*", "--dirty")
-    occursin(Regex("^$(tag)-v\\d+\\.\\d+\\.\\d+\$"), version) ||
+    is_release_tag(version, tag) ||
         error("the checkout is not at a release tag $(tag)-vX.Y.Z of $dataset without uncommitted changes " *
               "(git describe: $version); tag the release first (README.md, Release)")
     time = Dates.format(now(), dateformat"yyyy-mm-ddTHH:MM:SS")
     for domain in select_domains(dataset, domains)
         all_files = collect_files(domain, dataset)
+        old = registry_entries(domain, dataset)
         files = filter(f -> !f.is_grid && endswith(f.path, ".nc"), all_files)
         texts = Set(f.path for f in all_files if endswith(f.path, ".txt") && !f.is_grid)
-        n = 0
+        n, kept = 0, 0
         for f in files
+            unchanged(f, old) && (kept += 1; continue)
             NCDataset(f.path, "a") do ds
                 made = get(ds.attrib, "fesmdata_version", "missing")
                 made == version && return
@@ -196,9 +241,10 @@ function stamp(dataset::AbstractString, domains=String[])
                                        get(ds.attrib, "history", "")
                 n += 1
             end
+            delete!(_CHECKSUMS, f.path)   # changed by the stamp
             text_path(f.path) in texts && write_record_text(f.path, text_path(f.path))
         end
-        println("$domain/$dataset: $n of $(length(files)) files stamped $version")
+        println("$domain/$dataset: $n of $(length(files)) files stamped $version, $kept unchanged since the earlier release")
     end
 end
 
