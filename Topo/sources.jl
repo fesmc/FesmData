@@ -499,7 +499,7 @@ axes `x`, `y` in m, rows in descending `y`).
 - Surface: the 2 m DEM of LEGOS and OMP (2025), in heights above the WGS84 ellipsoid,
   converted to heights above the EGM2008 geoid (as GLO-90 and GEBCO) at each point
   with PROJ and the EGM2008 grid (`egm2008_geoid`, see `ellipsoid_to_egm2008!`). Its
-  voids (NaN, 29% of the grid, mostly on ice-free slopes) are filled with the GLO-90
+  voids (NaN, 29% of the grid, mostly on ice-free slopes) are filled with the GLO-30
   surface, interpolated bilinearly.
 - Ice thickness: Millan et al. (2022), 50 m, for all glaciers in a 25 x 25 km box (0
   off the ice), taken at each DEM point from the cell that contains it.
@@ -523,10 +523,10 @@ function read_sommers2025(db, dom::Domain)
     println("Sommers (2025) DEM within the thickness box: $(size(grid)) points, ",
             "$(round(100 * nvoid / length(z_srf); digits=1))% voids")
 
-    # Ellipsoidal heights to EGM2008, then voids from GLO-90
+    # Ellipsoidal heights to EGM2008, then voids from GLO-30
     N = ellipsoid_to_egm2008!(z_srf, grid, get_dataset_path(db, "egm2008_geoid"))
     println("EGM2008 geoid height over the DEM: $(round.(N; digits=2)) m")
-    glo = read_copdem(db, "copernicus_glo90", grid, dom.key)
+    glo = read_copdem(db, "copernicus_glo30", grid, dom.key)
     for (file, g) in zip(glo.files, glo.grids)
         _, z = read_dem_tile(file)
         zg, fv = remap_bilinear(grid, g, z)
@@ -537,7 +537,7 @@ function read_sommers2025(db, dom::Domain)
         end
     end
     left = count(isnan, z_srf)
-    left == 0 || error("$left voids of the Sommers (2025) DEM not covered by GLO-90")
+    left == 0 || error("$left voids of the Sommers (2025) DEM not covered by GLO-30")
 
     # Thickness of the cell containing each point (all points are inside the box)
     nxh, nyh = size(gh)

@@ -67,11 +67,11 @@ grids of 250 m (500 m for Svalbard) and a 2 km grid:
 
 - **Pyrenees** (PYR, UTM 31N).
 - **Patagonia** (PAT, UTM 18S), from 38°S to Cape Horn, with crops of the Northern and
-  Southern Patagonian Icefields (NPI, SPI, 250 m), and nests of single icefields at 50,
-  100 and 250 m: the San Rafael Glacier (SRG, whose 250 m grid is the v1 SRG-250M grid),
-  Gran Campo Nevado (GCN), the Cordillera Darwin Icefield (CDI) and Monte Sarmiento
-  (SAR), and a nest of the Schiaparelli Glacier (SCH, Monte Sarmiento) at 25, 50, 100
-  and 250 m.
+  Southern Patagonian Icefields (NPI, SPI, 250 m), nests of single icefields at 50,
+  100 and 250 m: Gran Campo Nevado (GCN), the Cordillera Darwin Icefield (CDI) and Monte
+  Sarmiento (SAR), and nests at 25, 50, 100 and 250 m of the San Rafael Glacier (SRG,
+  whose 250 m grid is the v1 SRG-250M grid) and the Schiaparelli Glacier (SCH, Monte
+  Sarmiento).
 - **Himalaya** (HIM, Albers equal-area of High Mountain Asia), the Himalaya, Karakoram
   and Hindu Kush, with a nest of the Drang Drung Glacier (DDG, Zanskar) at 25, 50, 100
   and 250 m.

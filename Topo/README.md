@@ -21,8 +21,8 @@ a product are merged in order of priority, the first over the others:
 | `TOPO-Bedmap3` | Bedmap3, GEBCO 2026 | Antarctica and its crops |
 | `TOPO-BedMachine-v6` | BedMachine Greenland v6, GEBCO 2026 | GreenlandPaleo, Greenland, Jakobshavn, NEGIS, Petermann, Helheim |
 | `TOPO-GEBCO2026` | BedMachine Greenland v6, IceBoost v2.0, GEBCO 2026 | North, Laurentide, Eurasia |
-| `TOPO-GLO30-GEBCO2026` | IceBoost v2.0, Copernicus DEM GLO-30, GEBCO 2026 | MonteSarmiento, SchiaparelliGlacier |
-| `TOPO-GLO90-GEBCO2026` | IceBoost v2.0, Copernicus DEM GLO-90, GEBCO 2026 | Pyrenees, Patagonia, NorthPatagonianIcefield, SouthPatagonianIcefield, SRG, GranCampoNevado, CordilleraDarwin, Himalaya, DrangDrung, Alps, Svalbard, NewZealand |
+| `TOPO-GLO30-GEBCO2026` | IceBoost v2.0, Copernicus DEM GLO-30, GEBCO 2026 | SRG, MonteSarmiento, SchiaparelliGlacier, DrangDrung |
+| `TOPO-GLO90-GEBCO2026` | IceBoost v2.0, Copernicus DEM GLO-90, GEBCO 2026 | Pyrenees, Patagonia, NorthPatagonianIcefield, SouthPatagonianIcefield, GranCampoNevado, CordilleraDarwin, Himalaya, Alps, Svalbard, NewZealand |
 
 Variants:
 
@@ -31,8 +31,8 @@ Variants:
 | `TOPO-BedMachine-v3`, `TOPO-BedMachine-v2` | BedMachine Antarctica v3, v2, GEBCO 2026 | Antarctica and its crops, 1 km and coarser |
 | `TOPO-Bedmap2` | Bedmap2, GEBCO 2026 | Antarctica and its crops, 1 km and coarser |
 | `TOPO-BedMachine-v5`, `TOPO-BedMachine-v4` | BedMachine Greenland v5, v4, GEBCO 2026 | GreenlandPaleo, Greenland |
-| `TOPO-Sommers2025` | Sommers (2025) surface and Millan et al. (2022) thickness, IceBoost v2.0, Copernicus DEM GLO-90, GEBCO 2026 | DrangDrung |
-| `TOPO-GLO90-GEBCO2026` | IceBoost v2.0, Copernicus DEM GLO-90, GEBCO 2026 | MonteSarmiento |
+| `TOPO-Sommers2025` | Sommers (2025) surface and Millan et al. (2022) thickness, IceBoost v2.0, Copernicus DEM GLO-30, GEBCO 2026 | DrangDrung |
+| `TOPO-GLO90-GEBCO2026` | IceBoost v2.0, Copernicus DEM GLO-90, GEBCO 2026 | SRG, MonteSarmiento, DrangDrung |
 
 The variants of Antarctica are merged on ANT-500M, but
 written only on the grids of 1 km and coarser (`variants_resolution` in
@@ -57,7 +57,7 @@ priority.
 The processing has two stages:
 
 1. **Sources → base grid.** Each source is remapped once onto the base grid of a
-   domain (e.g. ANT-500M, GRL-PAL-500M, NH-2KM, PAT-250M, SRG-50M), and the sources are
+   domain (e.g. ANT-500M, GRL-PAL-500M, NH-2KM, PAT-250M, SRG-25M), and the sources are
    then merged in order of priority (e.g. BedMachine over GEBCO).
 2. **Base → all other grids.** Every coarser grid, and the crops of a domain (e.g. GRL,
    LIS, EIS, ASE, THW, NPI, SPI), is remapped from the merged base product.
@@ -174,8 +174,9 @@ Albers equal-area projection of High Mountain Asia).
   glaciers of Greenland.
 - Copernicus DEM GLO-90 (ESA, doi:10.5270/ESA-c5d3d65; the edited TanDEM-X DEM,
   acquisitions 2011-2015, heights above the EGM2008 geoid) gives the land surface of
-  the mountain-glacier products; GLO-30 (1" in latitude) that of Monte Sarmiento (50 m)
-  and the Schiaparelli Glacier (25 m). IceBoost v2.0 takes its surface
+  the mountain-glacier products; GLO-30 (1" in latitude) that of the 25-50 m nests San
+  Rafael, Monte Sarmiento, Schiaparelli and Drang Drung (GLO-90 as a variant on SRG, SAR
+  and DDG). IceBoost v2.0 takes its surface
   features from the TanDEM-X EDEM, from the same acquisitions, so the surface and the
   glacier thickness are consistent. The ocean is 0 m in its tiles, and there are no tiles over the open
   ocean; land below sea level is taken as ocean.
@@ -189,7 +190,7 @@ Albers equal-area projection of High Mountain Asia).
   (21 m above GLO-90 on ice-free land, the EGM2008 geoid height there): it is converted
   to heights above the EGM2008 geoid at each point (PROJ, with the EGM2008 grid of the
   PROJ data, `egm2008_geoid`), and its voids (29% of the grid, mostly on ice-free
-  slopes, 0.06 km² within the model domain) are filled with the GLO-90 surface
+  slopes, 0.06 km² within the model domain) are filled with the GLO-30 surface
   (bilinear). The ice thickness is that of Millan et al. (2022,
   doi:10.1038/s41561-021-00885-z), 50 m, for all glaciers in a 25 x 25 km box (0 off
   the ice; RGI 6.0 outlines). The source is the DEM grid within that box (20.5 x 24 km),
