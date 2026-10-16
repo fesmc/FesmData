@@ -79,13 +79,13 @@ Heinrich event, the hosing file leaves 0.001 Sv):
 
 | State | Rule | Records (years) |
 |---|---|---|
-| `interstadial` | AMOC >= 16 Sv | |
-| `stadial` | 6 <= AMOC <= 13 Sv | |
-| `heinrich` | AMOC < 3 Sv (Heinrich stadial, collapsed overturning) | |
+| `interstadial` | AMOC >= 16 Sv | 343 |
+| `stadial` | 6 <= AMOC <= 13 Sv | 243 |
+| `heinrich` | AMOC < 3 Sv (Heinrich stadial, collapsed overturning) | 162 |
 | `piControl` | the records of `piControl` before its hosing starts (model years 1000-5000) | 5 |
 
 The overturning has three modes in `HS4` (about 25-35 Sv, 8-12 Sv and below 2 Sv); the
-records between them (the transitions) are in no state. A state is the mean over its
+records between them (the transitions, 52) are in no state. A state is the mean over its
 records, each a single model year: the stadial and interstadial means average over
 the internal variability of the noise and of the oscillations themselves (e.g. the
 gradual cooling of the interstadials).
