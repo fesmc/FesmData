@@ -2,7 +2,7 @@
 # registry file, registry/<Domain>/<Dataset>.toml, with one entry per file (uri,
 # checksum, size, storage_path), the release in a `[_RELEASE]` table (version, tag,
 # date, store), and, if the release is archived on Zenodo, its DOIs in a `[_ZENODO]`
-# table. The files are DataManifest.jl databases, with `$datasets_dir` = $FESMDATA_PRODUCTS.
+# table. The files are DataManifest.jl databases, with `$datasets_dir` = $FESMDATA.
 # Test releases (test packages, Zenodo sandbox) have their registry in
 # registry/_sandbox/, which is not tracked. Uses only the Julia standard library, so
 # that fetch.jl runs without a project.
@@ -17,7 +17,7 @@ include(joinpath(@__DIR__, "..", "shared", "provenance.jl"))
 registry_dir(sandbox::Bool=false) =
     sandbox ? joinpath(REPO_DIR, "registry", "_sandbox") : joinpath(REPO_DIR, "registry")
 
-"Root of the products, \$FESMDATA_PRODUCTS, which `\$datasets_dir` in the registry stands for."
+"Root of the products, \$FESMDATA, which `\$datasets_dir` in the registry stands for."
 products_dir() = fesmdata_dir("products")
 
 "Registry file of the record of a dataset on a domain."
@@ -76,11 +76,11 @@ function confirm(question::AbstractString)
     return lowercase(strip(readline())) in ("y", "yes")
 end
 
-"Root of the local files: `dir` if given (a folder for a copy, e.g. an archive), else \$FESMDATA_PRODUCTS."
+"Root of the local files: `dir` if given (a folder for a copy, e.g. an archive), else \$FESMDATA."
 local_root(dir::Nothing=nothing) = products_dir()
 local_root(dir::AbstractString) = abspath(expanduser(dir))
 
-"Local path of a registry entry, under `root` (\$FESMDATA_PRODUCTS by default)."
+"Local path of a registry entry, under `root` (\$FESMDATA by default)."
 local_path(entry::AbstractDict, root::AbstractString=products_dir()) =
     replace(entry["storage_path"], r"^\$datasets_dir" => root)
 

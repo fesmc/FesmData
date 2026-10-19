@@ -30,7 +30,7 @@ GRL-PAL-500M.
 A domain is **active** if its products are made and released. An inactive domain is
 defined, but left out of the releases (see [Inactive domains](#inactive-domains)).
 
-Each domain, crop and nest has an output **folder** under `$FESMDATA_PRODUCTS`, which is
+Each domain, crop and nest has an output **folder** under `$FESMDATA`, which is
 also its name in `fesmdata.jl` and on the website (e.g. Antarctica, Thwaites), and a
 **key**, the prefix of the names of its grids (e.g. ANT, THW).
 
@@ -96,7 +96,7 @@ domain. Every grid has its own folder, with its grid files and all datasets on t
 grid:
 
 ```
-$FESMDATA_PRODUCTS/<folder>/<GRID>/
+$FESMDATA/<folder>/<GRID>/
     grid_<GRID>.txt         grid description (cdo)
     <GRID>_grid.nc          x, y, lon, lat and area of the cells
     <GRID>_TOPO-<product>.nc, <GRID>_REGIONS.nc, <GRID>_GHF-<source>.nc, ...

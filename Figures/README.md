@@ -1,7 +1,7 @@
 # Figures of the products for the website
 
 Each dataset page of the website ends with a section of figures, made from the
-products as released (the files in `$FESMDATA_PRODUCTS`), so that users see what they
+products as released (the files in `$FESMDATA`), so that users see what they
 download:
 
 ```bash

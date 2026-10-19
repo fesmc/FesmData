@@ -1,5 +1,5 @@
 # Products of the records dataset GPS (see ../Records/README.md):
-# $FESMDATA_PRODUCTS/Records/GPS/GPS-<product>.nc
+# $FESMDATA/Records/GPS/GPS-<product>.nc
 
 [products.Schumacher2018]
 source = "Schumacher2018_gps"

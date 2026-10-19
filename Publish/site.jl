@@ -184,7 +184,7 @@ function write_downloads(path::AbstractString, cat::Catalog, dataset::AbstractSt
             return
         end
         println(io, """
-            Download the files with `fesmdata.jl` into `\$FESMDATA_PRODUCTS/<Domain>/<GRID>/`
+            Download the files with `fesmdata.jl` into `\$FESMDATA/<Domain>/<GRID>/`
             (see [Download](../download.qmd)), or one by one from the links below. All
             released datasets are listed under [Products](../products.qmd).
             """)

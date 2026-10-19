@@ -6,15 +6,15 @@ put on the FesmData grids in two steps:
 1. **Prepare**: write the data as a NetCDF file on its own (native) grid, in a simple
    standard form. This is specific to each source and lives in the source's folder.
 2. **Remap**: one command puts that file onto any domains and grids, in the usual
-   layout `$FESMDATA_PRODUCTS/<Domain>/<GRID>/`, including global lon-lat grids.
+   layout `$FESMDATA/<Domain>/<GRID>/`, including global lon-lat grids.
 
 ```bash
 julia --project=Lucazeau2019_ghf Lucazeau2019_ghf/prepare.jl
 julia fesmdata.jl remap $FESMDATA_PREPARED/Lucazeau2019_ghf/Lucazeau2019_GHF.nc Antarctica Global --name=GHF-Lucazeau2019
 ```
 
-This writes, e.g., `$FESMDATA_PRODUCTS/Antarctica/ANT-8KM/ANT-8KM_GHF-Lucazeau2019.nc` and
-`$FESMDATA_PRODUCTS/Global/GLOBAL-1DEG/GLOBAL-1DEG_GHF-Lucazeau2019.nc`, on every grid of
+This writes, e.g., `$FESMDATA/Antarctica/ANT-8KM/ANT-8KM_GHF-Lucazeau2019.nc` and
+`$FESMDATA/Global/GLOBAL-1DEG/GLOBAL-1DEG_GHF-Lucazeau2019.nc`, on every grid of
 Antarctica and of the global lon-lat grids. The grid files of a grid, if missing, are
 downloaded from the dataset [Grids](https://fesmc.github.io/FesmData/domains.html#grid-files)
 when the grid is released there, else written.

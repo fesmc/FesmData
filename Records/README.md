@@ -8,8 +8,8 @@ prepared files are the product (see
 ones). They go to
 
 ```
-$FESMDATA_PRODUCTS/Records/<Dataset>/<Dataset>-<Product>.nc           # a product of one file
-$FESMDATA_PRODUCTS/Records/<Dataset>/<Dataset>-<Product>-<part>.nc    # or of several, one per part
+$FESMDATA/Records/<Dataset>/<Dataset>-<Product>.nc           # a product of one file
+$FESMDATA/Records/<Dataset>/<Dataset>-<Product>-<part>.nc    # or of several, one per part
 ```
 
 next to the domain folders of the gridded data, e.g.

@@ -6,7 +6,7 @@ chronology. IceCores is a records dataset (non-gridded data, see
 [Records](https://fesmc.github.io/FesmData/records_overview.html)): its products,
 defined in `IceCores/records.toml`, are prepared files in the form of the CF discrete
 sampling geometries, written to
-`$FESMDATA_PRODUCTS/Records/IceCores/IceCores-<product>[-<part>].nc`, each with its text
+`$FESMDATA/Records/IceCores/IceCores-<product>[-<part>].nc`, each with its text
 form (`.txt`).
 
 ## Products
@@ -62,6 +62,6 @@ julia fesmdata.jl record IceCores
 ```
 
 prepares the missing sources (`<Source>/prepare.jl`), checks the prepared files and
-copies them to `$FESMDATA_PRODUCTS/Records/IceCores/` with their text forms
+copies them to `$FESMDATA/Records/IceCores/` with their text forms
 (`--overwrite` to replace them). The sources with AICC2023 ages prepare
 `Bouchet2023_AICC2023` first if needed.

@@ -7,7 +7,7 @@
 # Usage:
 #     julia --project=Regions -t 8 Regions/scripts/04_grids.jl DOMAIN [SET] [--folder=FOLDER]
 #
-# Writes $FESMDATA_PRODUCTS/<folder>/<GRID>/<GRID>_REGIONS.nc (region_1-3, zone,
+# Writes $FESMDATA/<folder>/<GRID>/<GRID>_REGIONS.nc (region_1-3, zone,
 # dist_shelfbreak) and <GRID>_BASINS-<SET>.nc for each basin set of the domain, or only
 # the files of basin set SET; with --folder, only on the grids in output folder FOLDER
 # (e.g. the grids added to a crop).

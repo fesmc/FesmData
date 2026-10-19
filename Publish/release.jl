@@ -109,7 +109,7 @@ function grids_files(domain::AbstractString)
             for og in grids if og.grid.name in used for name in grid_file_names(og.grid.name)]
 end
 
-"Files of a release of a records dataset, in \$FESMDATA_PRODUCTS/Records/<Dataset>/ (no grids)."
+"Files of a release of a records dataset, in \$FESMDATA/Records/<Dataset>/ (no grids)."
 records_files(dataset::AbstractString) =
     [ProductFile("", joinpath(records_dir(dataset), name)) for name in records_release_files(dataset)]
 

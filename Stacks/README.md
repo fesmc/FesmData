@@ -5,7 +5,7 @@ temperature over glacial cycles and the age model of many reconstructions. Stack
 records dataset (non-gridded data, see
 [Records](https://fesmc.github.io/FesmData/records_overview.html)): its products,
 defined in `Stacks/records.toml`, are prepared files in the form of the CF discrete
-sampling geometries, written to `$FESMDATA_PRODUCTS/Records/Stacks/Stacks-<product>.nc`,
+sampling geometries, written to `$FESMDATA/Records/Stacks/Stacks-<product>.nc`,
 each with its text form (`.txt`).
 
 ## Products
@@ -33,5 +33,5 @@ julia fesmdata.jl record Stacks
 ```
 
 prepares the missing sources (`<Source>/prepare.jl`), checks the prepared files and
-copies them to `$FESMDATA_PRODUCTS/Records/Stacks/` with their text forms (`--overwrite`
+copies them to `$FESMDATA/Records/Stacks/` with their text forms (`--overwrite`
 to replace them).

@@ -1,5 +1,5 @@
 # Products of the records dataset RSL (see ../Records/README.md):
-# $FESMDATA_PRODUCTS/Records/RSL/RSL-<product>.nc
+# $FESMDATA/Records/RSL/RSL-<product>.nc
 
 [products.GAPSLIP]
 source = "Gowan2023_GAPSLIP_GrIS"

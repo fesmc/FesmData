@@ -36,7 +36,7 @@ file_bytes(path::AbstractString) = lstat(path).size
 """
     prune(args; yes=false, sandbox=false) -> Vector{String}
 
-`fesmdata.jl prune`: delete the files in \$FESMDATA_PRODUCTS (all, or those of a dataset
+`fesmdata.jl prune`: delete the files in \$FESMDATA (all, or those of a dataset
 and/or a domain, named in any order) that no record of the registry refers to: products
 no longer made (e.g. copies on a crop that now gets them by cropping, grids dropped by
 the resolution rule) and files of grids that changed. Kept are:

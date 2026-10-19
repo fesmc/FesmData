@@ -2,7 +2,7 @@
 # Remap each product of a domain from its base grid (output of step 3) onto all
 # other grids of the domain, including the crops (for a variant, those not finer than
 # `variants_resolution`), and write <GRID>_TOPO-<product>.nc to
-# $FESMDATA_PRODUCTS/<folder>/<GRID>/.
+# $FESMDATA/<folder>/<GRID>/.
 #
 # Fields and area fractions are conservative cell means. The bed standard deviation
 # combines the sub-cell variance of the base grid with the variance of the base-grid

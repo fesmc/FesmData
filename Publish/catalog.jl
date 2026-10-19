@@ -75,7 +75,7 @@ end
     record_detail(domain, dataset; grids=String[], dir=nothing, sandbox=false)
 
 Print a record: its release, and the files of each grid (all grids, or those of
-`grids`) with their sizes and whether they are in \$FESMDATA_PRODUCTS, or in `dir` (by size;
+`grids`) with their sizes and whether they are in \$FESMDATA, or in `dir` (by size;
 `fetch` checks the checksums).
 """
 function record_detail(domain::AbstractString, dataset::AbstractString; grids=String[], dir=nothing,
@@ -355,7 +355,7 @@ end
 
 Print a record by cropping: the release of its source record, and for each grid (all,
 or those of `grids`) the source grid, its download size, and the files to crop, with
-whether they are in \$FESMDATA_PRODUCTS, or in `dir` (`fetch` checks that they are the crops of
+whether they are in \$FESMDATA, or in `dir` (`fetch` checks that they are the crops of
 the current source files).
 """
 function crop_detail(c::CropRecord; grids=String[], dir=nothing, sandbox::Bool=false)
@@ -503,7 +503,7 @@ end
     list_outdated(selected; dir=nothing, sandbox=false)
 
 `fesmdata.jl list --outdated`: the local files of the records `selected` ((domain,
-dataset, grids), see `select_records`) in \$FESMDATA_PRODUCTS or `dir` that are not of
+dataset, grids), see `select_records`) in \$FESMDATA or `dir` that are not of
 their release (checksums): of an earlier release, or changed locally, with the commands
 to update them. The files missing are not listed, nor the products by cropping (`fetch`
 cuts them again from the current files of their source).
@@ -534,7 +534,7 @@ end
 
 `fesmdata.jl list`: all records, or those of a dataset and/or a domain, and the records
 by cropping on nests and crops; with a domain and a dataset, or with grids, the records
-in detail (for those grids), with the local files in \$FESMDATA_PRODUCTS or `dir`. With
+in detail (for those grids), with the local files in \$FESMDATA or `dir`. With
 `outdated`, the local files of these records that are not of their release
 (`list_outdated`).
 """
@@ -583,9 +583,9 @@ end
 """
     local_sources(entries, root, states) -> Dict
 
-For a copy in another folder than \$FESMDATA_PRODUCTS (`root`): the files of `entries` to get
-that are in \$FESMDATA_PRODUCTS at the same release (checksums), to hard link or copy from
-there instead of downloading them (local path under `root` => path in \$FESMDATA_PRODUCTS).
+For a copy in another folder than \$FESMDATA (`root`): the files of `entries` to get
+that are in \$FESMDATA at the same release (checksums), to hard link or copy from
+there instead of downloading them (local path under `root` => path in \$FESMDATA).
 """
 function local_sources(entries, root::AbstractString, states::AbstractDict)
     sources = Dict{String,String}()
@@ -608,7 +608,7 @@ end
 Get the files of `records`, (domain, dataset, entries), that are not present under
 `root`, with the `states` of `check_local`: from `sources` (see `local_sources`; hard
 linked, or copied with `copy`), else downloaded (see `fetch_file`). With
-`copy_registry` (a copy in another folder than \$FESMDATA_PRODUCTS), the registry files of
+`copy_registry` (a copy in another folder than \$FESMDATA), the registry files of
 the records are copied to `root`/registry/, as a record of the releases it holds.
 Returns the local paths.
 """
@@ -643,8 +643,8 @@ selected_entries(selected; sandbox::Bool=false) =
 
 `fesmdata.jl fetch`: download the files of a dataset on a domain, or on grids (which
 imply their domain), with the grid files of these grids (`grids_downloads`), into
-\$FESMDATA_PRODUCTS or `dir`. The dataset must be named, and a domain or grids. The files present are checked first, as by `mirror`, and files in
-\$FESMDATA_PRODUCTS are hard linked (or copied with `copy`) into `dir`, as by `mirror`. On a
+\$FESMDATA or `dir`. The dataset must be named, and a domain or grids. The files present are checked first, as by `mirror`, and files in
+\$FESMDATA are hard linked (or copied with `copy`) into `dir`, as by `mirror`. On a
 nest or crop, the files of the products it gets by cropping are downloaded on their
 source domains (`crop_downloads`), and the records by cropping, `cropped`, are left for
 `crop_files` (crop.jl, in the Publish environment). Returns the local paths of the
@@ -671,12 +671,12 @@ end
     mirror(args; dir=nothing, copy=false, overwrite=false, sandbox=false, yes=false) -> (paths, cropped)
 
 `fesmdata.jl mirror`: download all records (or those of a dataset and/or a domain)
-into \$FESMDATA_PRODUCTS, or `dir`, with the grid files of their grids (`grids_downloads`)
+into \$FESMDATA, or `dir`, with the grid files of their grids (`grids_downloads`)
 and the files that the records by cropping on the active nests and crops need
 (`crop_downloads`). The files present are checked first
 (checksums): files of the release are kept, files of an earlier release are updated,
 and files changed locally stop the mirror (replaced with `overwrite`). Into `dir`, files
-of the release in \$FESMDATA_PRODUCTS are hard linked from there (copied with `copy`, or
+of the release in \$FESMDATA are hard linked from there (copied with `copy`, or
 on another file system), e.g. to archive the releases there before updating it. Then,
 after one confirmation (none with `yes`) showing what is to get, the missing and
 outdated files are downloaded. Returns their local paths, and the records by cropping,

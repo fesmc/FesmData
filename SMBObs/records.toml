@@ -1,5 +1,5 @@
 # Products of the records dataset SMBObs (see ../Records/README.md):
-# $FESMDATA_PRODUCTS/Records/SMBObs/SMBObs-<product>.nc
+# $FESMDATA/Records/SMBObs/SMBObs-<product>.nc
 
 [products.SUMup2025]
 source = "SUMup_smb"

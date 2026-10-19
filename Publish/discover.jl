@@ -247,7 +247,7 @@ end
 `fesmdata.jl path <Dataset> [<Domain> | <GRID> ...] [<product> ...]`: the local paths
 of the data files (not the grid files and text forms) of the products of a dataset (all,
 or those named) on a domain or grids (all if none are named), also of the products by
-cropping on nests and crops, in \$FESMDATA_PRODUCTS or `dir`, one per line, for scripts.
+cropping on nests and crops, in \$FESMDATA or `dir`, one per line, for scripts.
 Only the files present are printed; the missing ones are counted on stderr, with the
 command to fetch them.
 """

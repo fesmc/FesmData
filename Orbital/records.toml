@@ -1,5 +1,5 @@
 # Products of the records dataset Orbital (see ../Records/README.md):
-# $FESMDATA_PRODUCTS/Records/Orbital/Orbital-<product>.nc
+# $FESMDATA/Records/Orbital/Orbital-<product>.nc
 
 [products.La2004]
 source = "Laskar2004_orbital"

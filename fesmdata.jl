@@ -8,8 +8,8 @@
 # installs its packages if needed.
 
 const USAGE = """
-FesmData products (https://fesmc.github.io/FesmData/), in \$FESMDATA_PRODUCTS (default
-\$FESMDATA/products, see https://fesmc.github.io/FesmData/download.html)
+FesmData products (https://fesmc.github.io/FesmData/), in \$FESMDATA (see
+https://fesmc.github.io/FesmData/download.html)
 
 Find and download:
   list [<Dataset>] [<Domain>]                  the released datasets on each domain (of a
@@ -17,11 +17,11 @@ Find and download:
                                                by cropping on nests and crops
   list <Domain> <Dataset>                      a dataset on a domain in detail: grids,
                                                files, sizes, files present in
-                                               \$FESMDATA_PRODUCTS
+                                               \$FESMDATA
   list [<Dataset>] <GRID> ...                  the datasets on grids in detail (a grid
                                                implies its domain, e.g. ANT-32KM)
   list [<Dataset>] [<Domain> | <GRID> ...] --outdated
-                                               the files in \$FESMDATA_PRODUCTS that are not
+                                               the files in \$FESMDATA that are not
                                                of the release (earlier releases, changed
                                                locally; checksums), with the fetch commands
   search <term> ...                            the products whose dataset, name, sources
@@ -32,7 +32,7 @@ Find and download:
                                                the READMEs of their sources and dataset
   path <Dataset> [<Domain> | <GRID> ...] [<product> ...]
                                                the files of the products present in
-                                               \$FESMDATA_PRODUCTS, one per line (e.g.
+                                               \$FESMDATA, one per line (e.g.
                                                ncview \$(julia fesmdata.jl path ...))
   domains                                      the domains, crops and nests: folder, grid
                                                prefix, kind, grids, projection, active
@@ -40,7 +40,7 @@ Find and download:
                                                point, with its position on their grids and
                                                their datasets (installs the Publish
                                                packages once)
-  fetch <Dataset> <Domain> | <GRID> ...        download into \$FESMDATA_PRODUCTS/<Domain>/<GRID>/
+  fetch <Dataset> <Domain> | <GRID> ...        download into \$FESMDATA/<Domain>/<GRID>/
                                                and verify; files of earlier releases are
                                                updated (--overwrite: also replace files
                                                changed locally). On a nest or crop: also
@@ -53,14 +53,14 @@ Find and download:
                                                no confirmation); also the products by
                                                cropping on the active nests and crops
   (arguments in any order; --dir=<folder>: list, path, fetch or mirror in <folder> instead of
-  \$FESMDATA_PRODUCTS, e.g. to archive the releases there before updating: files already in
-  \$FESMDATA_PRODUCTS are hard linked (--copy: copied), and the registry files go to
+  \$FESMDATA, e.g. to archive the releases there before updating: files already in
+  \$FESMDATA are hard linked (--copy: copied), and the registry files go to
   <folder>/registry/; the crops are written there too)
 
 Your own data (see Remap/README.md):
   remap <file.nc> <Domain> | <GRID> | all ...  remap the fields of a prepared NetCDF file
                                                (lon-lat or projected grid) onto the grids,
-                                               as \$FESMDATA_PRODUCTS/<Domain>/<GRID>/<GRID>_<name>.nc
+                                               as \$FESMDATA/<Domain>/<GRID>/<GRID>_<name>.nc
                                                (--vars=a,b: only these fields; --name=NAME:
                                                default the file name; --method=con|bilinear;
                                                --smooth=auto|<km>: Gaussian smoothing after,
@@ -73,7 +73,7 @@ Your own data (see Remap/README.md):
 Records datasets, non-gridded data (maintainers, see Remap/DATASETS.md):
   record <Dataset> [<product> ...]             make the products of a records dataset
                                                (defined in <Dataset>/records.toml) as
-                                               \$FESMDATA_PRODUCTS/Records/<Dataset>/<Dataset>-<product>[-<part>].nc
+                                               \$FESMDATA/Records/<Dataset>/<Dataset>-<product>[-<part>].nc
                                                with their text forms (.txt), preparing
                                                missing sources first (--overwrite)
 
@@ -91,7 +91,7 @@ Release (maintainers, see Publish/README.md):
                                                packages (Helmholtz Codebase) and write the
                                                registry (--dry-run: check and list only)
   status <Dataset> [<Domain> ...]              local files, packages, registered release
-  prune [<Dataset>] [<Domain>]                 delete the files in \$FESMDATA_PRODUCTS that no
+  prune [<Dataset>] [<Domain>]                 delete the files in \$FESMDATA that no
                                                release refers to (not crops, unreleased
                                                products, grid files in use), after one
                                                confirmation (--yes: none)
@@ -133,7 +133,7 @@ call(name::Symbol, args...; kwargs...) =
     crop_downloaded(cropped, dir; sandbox=false) -> Vector{String}
 
 Cut the products by cropping on nests and crops, `cropped` (left by `fetch` or
-`mirror`), from the files just downloaded into \$FESMDATA_PRODUCTS or `dir`, in the
+`mirror`), from the files just downloaded into \$FESMDATA or `dir`, in the
 Publish environment (crop.jl). Returns the paths of the crops and their grid files.
 """
 function crop_downloaded(cropped, dir; sandbox::Bool=false)

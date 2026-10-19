@@ -1,5 +1,5 @@
 # Products of the records dataset Stacks (see ../Records/README.md):
-# $FESMDATA_PRODUCTS/Records/Stacks/Stacks-<product>.nc
+# $FESMDATA/Records/Stacks/Stacks-<product>.nc
 
 [products.LR04]
 source = "Lisiecki2005_LR04"

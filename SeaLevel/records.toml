@@ -1,5 +1,5 @@
 # Products of the records dataset SeaLevel (see ../Records/README.md):
-# $FESMDATA_PRODUCTS/Records/SeaLevel/SeaLevel-<product>[-<part>].nc
+# $FESMDATA/Records/SeaLevel/SeaLevel-<product>[-<part>].nc
 
 [products.Spratt2016]
 source = "Spratt2016_sealevel"

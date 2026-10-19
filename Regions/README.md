@@ -254,7 +254,7 @@ The machine environment is set up as described under
 | Location | Contents |
 |---|---|
 | `$FESMDATA_SOURCES` | Original datasets (see `../datamanifest.toml`) |
-| `$FESMDATA_PRODUCTS/<Domain>/<GRID>/` | Output: `<GRID>_REGIONS.nc`, `<GRID>_BASINS-<set>.nc`, `<GRID>_DOMAINS.nc` |
+| `$FESMDATA/<Domain>/<GRID>/` | Output: `<GRID>_REGIONS.nc`, `<GRID>_BASINS-<set>.nc`, `<GRID>_DOMAINS.nc` |
 | `$FESMDATA_WORK/regions/` | Intermediate files (base grids) and check plots |
 
 ### Steps

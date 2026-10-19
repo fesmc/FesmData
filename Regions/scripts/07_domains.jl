@@ -7,7 +7,7 @@
 # Usage:
 #     julia --project=Regions Regions/scripts/07_domains.jl DOMAIN [--folder=FOLDER]
 #
-# Writes $FESMDATA_PRODUCTS/<folder>/<GRID>/<GRID>_DOMAINS.nc, with one variable
+# Writes $FESMDATA/<folder>/<GRID>/<GRID>_DOMAINS.nc, with one variable
 # domain_<KEY> (int8, 0/1) per active nest and crop of the family; nothing if it has
 # none. With --folder, only on the grids in output folder FOLDER (e.g. the grids added to
 # a crop).

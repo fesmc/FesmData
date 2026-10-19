@@ -22,7 +22,7 @@ Antarctica, Greenland, Patagonia; all are listed on the
 (non-gridded data, see
 [Records](https://fesmc.github.io/FesmData/records_overview.html)) have no grids: they
 are released on the domain `Records`, with one package per dataset, e.g. `Records_IceCores`,
-with its files in `$FESMDATA_PRODUCTS/Records/<Dataset>/`.
+with its files in `$FESMDATA/Records/<Dataset>/`.
 
 A release can also be archived on [Zenodo](https://zenodo.org/communities/fesmc), in
 the `fesmc` community, for a DOI: one Zenodo record per dataset and domain, with a DOI
@@ -42,8 +42,8 @@ size = 123456789
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_TOPO-Bedmap3.nc"
 ```
 
-`$datasets_dir` stands for `$FESMDATA_PRODUCTS`, so the files land in the usual layout,
-`$FESMDATA_PRODUCTS/<Domain>/<GRID>/`. The `uri` of a file unchanged since an earlier
+`$datasets_dir` stands for `$FESMDATA`, so the files land in the usual layout,
+`$FESMDATA/<Domain>/<GRID>/`. The `uri` of a file unchanged since an earlier
 release is that of the package where it was uploaded (e.g. `2.0.0` in the registry of
 release `2.1.0`). A file that changed since an earlier release also has
 `previous_checksums`, the checksums of its earlier releases, so that copies of those
@@ -123,7 +123,7 @@ git add registry && git commit -m "registry: GHF v2.0.0" && git push
 **5. Clean up** the files the release replaced, once the release is out (and mirrored,
 `fesmdata.jl mirror`, on the other machines): products no longer made (e.g. copies on a
 crop that now gets them by cropping, grids dropped by the resolution rule) stay in
-`$FESMDATA_PRODUCTS` until pruned, and the files of earlier releases that were replaced
+`$FESMDATA` until pruned, and the files of earlier releases that were replaced
 stay on the packages page until deleted:
 
 ```bash

@@ -251,7 +251,7 @@ julia fesmdata.jl record IceCores Kindler2014     # one product
 ```
 
 prepares the missing sources, checks each prepared file against the form, copies it
-to `$FESMDATA_PRODUCTS/Records/<Dataset>/<Dataset>-<Product>[-<part>].nc` and writes
+to `$FESMDATA/Records/<Dataset>/<Dataset>-<Product>[-<part>].nc` and writes
 its [text form](https://fesmc.github.io/FesmData/records.html#text-form) next to it
 (`.txt`; `--overwrite` to replace both). A records dataset is released on the domain `Records` (one package per
 dataset, `Records_<Dataset>`, and `registry/Records/<Dataset>.toml`); `fesmdata.jl
@@ -271,7 +271,7 @@ way:
    `const DATASET = "<name>"` (lower case), the name of its provenance attributes and
    release tags (`<name>-vX.Y.Z`).
 4. **Output** with `write_fields(path, grid, fields; dataset=DATASET, ...)`, into
-   `$FESMDATA_PRODUCTS/<folder>/<GRID>/<GRID>_<NAME>[-<product>].nc` on every grid of a
+   `$FESMDATA/<folder>/<GRID>/<GRID>_<NAME>[-<product>].nc` on every grid of a
    domain (`outdir(og)` for each `og in dom.grids`). Add a `sources` attribute with the
    `datamanifest.toml` keys of the original datasets.
 5. **`files.jl`** with the output file names and a function

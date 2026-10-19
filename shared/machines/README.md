@@ -19,7 +19,7 @@ It sets:
 |---|---|
 | `FESMDATA_MACHINE` | The name of the machine; the job scripts source `shared/machines/$FESMDATA_MACHINE.env` again on the compute node |
 | `PATH`, `JULIAUP_CHANNEL` | Julia from juliaup, at the version of the pipelines (see below) |
-| `FESMDATA`, `FESMDATA_SOURCES`, `FESMDATA_PREPARED`, `FESMDATA_PRODUCTS`, `FESMDATA_WORK` | The storage folders (see below) |
+| `FESMDATA`, `FESMDATA_SOURCES`, `FESMDATA_PREPARED`, `FESMDATA_WORK` | The storage folders (see below) |
 | `FESMDATA_V1` | The folder of the v1 products, which Topo step 5 compares with (optional) |
 | `SBATCH_ACCOUNT`, `SBATCH_PARTITION`, `SBATCH_QOS` | The Slurm account, partition and QOS of the jobs |
 | `GITLAB_TOKEN`, `ZENODO_TOKEN`, `ZENODO_SANDBOX_TOKEN` | The tokens for releases, read from files in the home folder (see [Access](https://fesmc.github.io/FesmData/releasing.html#access)) |
@@ -51,24 +51,26 @@ itself when a command needs them.
 
 ## Storage
 
-All data lives in one folder, `$FESMDATA` (`fesmdata_dir` in `../provenance.jl`):
+The products live in `$FESMDATA`, and what makes them in sibling folders named after it
+(`fesmdata_dir` in `../provenance.jl`):
 
 | Folder | Variable | Contents |
 |---|---|---|
-| `$FESMDATA/sources` | `FESMDATA_SOURCES` | Original datasets (`$datasets_dir` of `../../datamanifest.toml`) |
-| `$FESMDATA/prepared` | `FESMDATA_PREPARED` | Prepared sources (`<source>/prepare.jl`), input of remapping and of the records datasets |
-| `$FESMDATA/products` | `FESMDATA_PRODUCTS` | Products, as released: `<folder>/<GRID>/`, `Records/<Dataset>/` |
-| `$FESMDATA/work` | `FESMDATA_WORK` | Intermediate files (Topo, Regions, ensemble members of Remap, plots) |
+| `$FESMDATA` | `FESMDATA` | Products, as released: `<folder>/<GRID>/`, `Records/<Dataset>/` |
+| `$FESMDATA-sources` | `FESMDATA_SOURCES` | Original datasets (`$datasets_dir` of `../../datamanifest.toml`) |
+| `$FESMDATA-prepared` | `FESMDATA_PREPARED` | Prepared sources (`<source>/prepare.jl`), input of remapping and of the records datasets |
+| `$FESMDATA-work` | `FESMDATA_WORK` | Intermediate files (Topo, Regions, ensemble members of Remap, plots) |
 
-Each variable, if set, replaces the default folder. On a case-insensitive file system
-(macOS, Windows), a folder `fesmdata` next to the FesmData checkout is the checkout
-itself: choose another place.
+A copy of the products (a model's machine, a mirror) is thus just `$FESMDATA`, and
+`ln -s $FESMDATA` links it under its own name. Each `FESMDATA_<KIND>` variable, if set,
+replaces the sibling folder. On a case-insensitive file system (macOS, Windows), a folder
+`fesmdata` next to the FesmData checkout is the checkout itself: choose another place.
 
 | Machine | `FESMDATA` | `FESMDATA_WORK` |
 |---|---|---|
-| Levante | `/work/ba1442/fesmdata` | `/scratch/<u>/$USER/fesmdata` (deleted 14 days after the last access) |
-| Albedo | `$FORCLIMA/fesmdata` | `/albedo/scratch/user/$USER/fesmdata` |
-| Mac (`macbook.env`) | `$HOME/data/fesmdata` | `$FESMDATA/work` |
+| Levante | `/work/ba1442/fesmdata` | `/scratch/<u>/$USER/fesmdata-work` (deleted 14 days after the last access) |
+| Albedo | `$FORCLIMA/fesmdata` | `/albedo/scratch/user/$USER/fesmdata-work` |
+| Mac (`macbook.env`) | `$HOME/data/fesmdata` | `$HOME/data/fesmdata-work` |
 
 On the HPC machines the project folder is shared by the group, and the intermediate
 files are per user on scratch, where they are deleted after a while without access (the
@@ -79,11 +81,13 @@ which the files created in them inherit whatever the `umask`. To set them up on 
 machine, or to change who may write later (e.g. read-only products):
 
 ```bash
-chmod -R g+w $FESMDATA && find $FESMDATA -type d -exec chmod g+s {} +
-setfacl -R -m g::rwX -d -m g::rwX $FESMDATA
+for d in $FESMDATA $FESMDATA_SOURCES $FESMDATA_PREPARED; do
+    chmod -R g+w $d && find $d -type d -exec chmod g+s {} +
+    setfacl -R -m g::rwX -d -m g::rwX $d
+done
 ```
 
-Each shared folder has a README for those who browse it, `$FESMDATA/README.md`, a copy of
+The products folder has a README for those who browse it, `$FESMDATA/README.md`, a copy of
 [`FESMDATA_README.md`](https://github.com/fesmc/FesmData/blob/main/shared/machines/FESMDATA_README.md)
 (copy it again when it changes, and on a new machine):
 

@@ -1,7 +1,7 @@
 # Grids: the grid files of each grid
 
 Every grid of FesmData has two grid files, in its folder
-`$FESMDATA_PRODUCTS/<Domain>/<GRID>/`:
+`$FESMDATA/<Domain>/<GRID>/`:
 
 ```
 grid_<GRID>.txt         grid description for cdo (e.g. cdo remapcon,grid_ANT-8KM.txt)

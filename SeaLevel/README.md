@@ -7,7 +7,7 @@ SeaLevel is a records dataset (non-gridded data, see
 [Records](https://fesmc.github.io/FesmData/records_overview.html)): its products,
 defined in `SeaLevel/records.toml`, are prepared files in the form of the CF discrete
 sampling geometries, written to
-`$FESMDATA_PRODUCTS/Records/SeaLevel/SeaLevel-<product>[-<part>].nc`, each with its text
+`$FESMDATA/Records/SeaLevel/SeaLevel-<product>[-<part>].nc`, each with its text
 form (`.txt`). Relative sea level indicators at sites are in RSL.
 
 ## Products
@@ -55,6 +55,6 @@ julia fesmdata.jl record SeaLevel
 ```
 
 prepares the missing sources (`<Source>/prepare.jl`), checks the prepared files and
-copies them to `$FESMDATA_PRODUCTS/Records/SeaLevel/` with their text forms
+copies them to `$FESMDATA/Records/SeaLevel/` with their text forms
 (`--overwrite` to replace them). PaleoMIST needs the archive of PaleoMIST 1.0 (3.5 GB,
 also used by IceHistory); Lambeck2014 a manual download (see its README) and `pdftotext`.

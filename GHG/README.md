@@ -5,7 +5,7 @@ of EPICA Dome C, a composite of several cores, and spline-smoothed series with t
 radiative forcing. GHG is a records dataset (non-gridded data, see
 [Records](https://fesmc.github.io/FesmData/records_overview.html)): its products,
 defined in `GHG/records.toml`, are prepared files in the form of the CF discrete
-sampling geometries, written to `$FESMDATA_PRODUCTS/Records/GHG/GHG-<product>.nc`, each
+sampling geometries, written to `$FESMDATA/Records/GHG/GHG-<product>.nc`, each
 with its text form (`.txt`).
 
 ## Products
@@ -40,5 +40,5 @@ julia fesmdata.jl record GHG
 ```
 
 prepares the missing sources (`<Source>/prepare.jl`), checks the prepared files and
-copies them to `$FESMDATA_PRODUCTS/Records/GHG/` with their text forms (`--overwrite`
+copies them to `$FESMDATA/Records/GHG/` with their text forms (`--overwrite`
 to replace them).

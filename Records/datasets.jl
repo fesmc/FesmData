@@ -67,7 +67,7 @@ part_name(p::RecordProduct, part::AbstractString) = isempty(part) ? product_name
 "Prepared files of a product, part => path."
 prepared_files(p::RecordProduct) = [part => joinpath(prepared_dir(p.source), f) for (part, f) in p.files]
 
-"Folder of the records of a dataset: \$FESMDATA_PRODUCTS/$RECORDS_FOLDER/<Dataset>."
+"Folder of the records of a dataset: \$FESMDATA/$RECORDS_FOLDER/<Dataset>."
 records_dir(dataset::AbstractString) = joinpath(fesmdata_dir("products"), RECORDS_FOLDER, dataset)
 
 "Output files (NetCDF) of a product, part => path."

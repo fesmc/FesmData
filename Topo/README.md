@@ -235,7 +235,7 @@ the Julia packages are set up as described under
 | Location | Contents |
 |---|---|
 | `$FESMDATA_SOURCES` | Original datasets (see `../datamanifest.toml`) |
-| `$FESMDATA_PRODUCTS/<Domain>/<GRID>/` | Output: `grid_<GRID>.txt`, `<GRID>_grid.nc`, `<GRID>_TOPO-<product>.nc` |
+| `$FESMDATA/<Domain>/<GRID>/` | Output: `grid_<GRID>.txt`, `<GRID>_grid.nc`, `<GRID>_TOPO-<product>.nc` |
 | `$FESMDATA_WORK/topo/` | Intermediate files (sources on base grids, IceBoost tile index) |
 | `$FESMDATA_SOURCES/copernicus_glo90/`, `copernicus_glo30/` | Copernicus DEM GLO-90 and GLO-30 tiles of the domains that use them |
 
@@ -316,7 +316,7 @@ sbatch --job-name=merge-ANT Topo/jobs/run_step.sbatch 03_merge.jl ANT [PRODUCTS]
 
 `PRODUCTS` is `default` (the default products, if omitted), `variants`, `all`, or
 the name of one product; the same holds for steps 4 and 5. This writes
-`$FESMDATA_PRODUCTS/<folder>/<BASE>/<BASE>_TOPO-<product>.nc` (see
+`$FESMDATA/<folder>/<BASE>/<BASE>_TOPO-<product>.nc` (see
 [Merging](#merging)).
 
 #### 4. All grids
@@ -328,7 +328,7 @@ the crops (GRL from GRL-PAL, LIS and EIS from NH):
 sbatch --job-name=grids-all-ANT Topo/jobs/run_step.sbatch 04_grids.jl ANT [PRODUCTS]
 ```
 
-This writes `$FESMDATA_PRODUCTS/<folder>/<GRID>/<GRID>_TOPO-<product>.nc` (see
+This writes `$FESMDATA/<folder>/<GRID>/<GRID>_TOPO-<product>.nc` (see
 [Coarser grids and crops](#coarser-grids-and-crops)).
 
 #### 5. Checks

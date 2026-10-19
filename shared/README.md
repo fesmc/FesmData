@@ -15,7 +15,7 @@ Every dataset is made from the original sources, with each step in this reposito
 2. **Remap** or **pipeline**: a thematic dataset (e.g. `GHF/`) groups the products of
    several sources in its `remap.toml`, and `julia fesmdata.jl remap GHF` puts the
    prepared files onto the grids of the domains, as
-   `$FESMDATA_PRODUCTS/<Domain>/<GRID>/<GRID>_<Dataset>-<Product>.nc`. Remapping is
+   `$FESMDATA/<Domain>/<GRID>/<GRID>_<Dataset>-<Product>.nc`. Remapping is
    conservative (with smoothing where the grid is finer than the source), and handles
    extra dimensions (month, time, depth, ...), integer fields (dominant class) and
    vectors (rotated to the grid axes); see

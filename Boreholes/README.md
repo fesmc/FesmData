@@ -5,7 +5,7 @@ a records dataset (non-gridded data, see
 [Records](https://fesmc.github.io/FesmData/records_overview.html)): its products,
 defined in `Boreholes/records.toml`, are prepared files in the form of the CF discrete
 sampling geometries, written to
-`$FESMDATA_PRODUCTS/Records/Boreholes/Boreholes-<product>.nc`.
+`$FESMDATA/Records/Boreholes/Boreholes-<product>.nc`.
 
 ## Products
 
@@ -29,4 +29,4 @@ julia fesmdata.jl record Boreholes
 ```
 
 prepares the missing sources (`<Source>/prepare.jl`), checks the prepared files and
-copies them to `$FESMDATA_PRODUCTS/Records/Boreholes/` (`--overwrite` to replace them).
+copies them to `$FESMDATA/Records/Boreholes/` (`--overwrite` to replace them).

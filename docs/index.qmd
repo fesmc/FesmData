@@ -26,10 +26,10 @@ With [Julia](https://julialang.org/downloads/) installed (no packages needed):
 ```bash
 git clone https://github.com/fesmc/FesmData.git
 cd FesmData
-export FESMDATA=/path/to/fesmdata          # the files go to $FESMDATA/products
+export FESMDATA=/path/to/fesmdata          # where the files go
 julia fesmdata.jl list Topo                # where Topo is released
 julia fesmdata.jl fetch Topo ANT-8KM       # Topo on the 8 km grid of Antarctica
 ```
 
-The files land in `$FESMDATA/products/Antarctica/ANT-8KM/`, with the grid files. See
+The files land in `$FESMDATA/Antarctica/ANT-8KM/`, with the grid files. See
 [Download](download.qmd) for the details.

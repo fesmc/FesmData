@@ -1,6 +1,6 @@
 #
 # Merge the sources of each product of a domain on its base grid (output of step 2),
-# and write <BASE>_TOPO-<product>.nc to $FESMDATA_PRODUCTS/<folder>/<BASE>/ (to
+# and write <BASE>_TOPO-<product>.nc to $FESMDATA/<folder>/<BASE>/ (to
 # $FESMDATA_WORK/topo/<BASE>/ for a variant not written on the base grid, see
 # `variants_resolution` in products.toml).
 #

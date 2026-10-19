@@ -1,5 +1,5 @@
 # Datasets released by Publish (see README.md): one record per dataset and domain (the
-# output folder under $FESMDATA_PRODUCTS, e.g. Greenland). `tag` is the dataset name of the
+# output folder under $FESMDATA, e.g. Greenland). `tag` is the dataset name of the
 # provenance attributes and release tags (<tag>-vX.Y.Z). The files of a release on each
 # grid are defined by the pipeline (e.g. topo_release_files in ../Topo/files.jl, or
 # <Dataset>/remap.toml for a thematic dataset), with the grid files grid_<GRID>.txt and

@@ -29,19 +29,18 @@ The environment variable `FESMDATA` sets the folder for the data, e.g. in your
 export FESMDATA=/path/to/fesmdata
 ```
 
-The products go to `$FESMDATA/products` (or to `$FESMDATA_PRODUCTS`, if set). On
-Levante and Albedo, `source shared/machines/<machine>.env` sets it to the shared folder
-of the project, where the products usually are already (see
+On Levante and Albedo, `source shared/machines/<machine>.env` sets it to the shared
+folder of the project, where the products usually are already (see
 [Machines and storage](machines.qmd)). On macOS or Windows, do not put it next to the
 FesmData folder as `fesmdata`: on a case-insensitive file system, that is FesmData
 itself.
 
-Every file goes to `$FESMDATA_PRODUCTS/<Domain>/<GRID>/`: one folder per domain, and in
+Every file goes to `$FESMDATA/<Domain>/<GRID>/`: one folder per domain, and in
 it one folder per grid with all datasets on that grid. A grid folder thus holds
 everything a model needs on that grid, and can be copied as a whole:
 
 ```
-$FESMDATA_PRODUCTS/
+$FESMDATA/
   Antarctica/
     ANT-8KM/
       grid_ANT-8KM.txt                 grid description (cdo), of the dataset Grids
@@ -133,8 +132,8 @@ A nest or crop gets, for each thematic dataset, its own products; those of its p
 domain that it does not have; and those of the crops of its parent domain that contain
 it (e.g. Greenland for the nests of GreenlandPaleo: MAR, Joughin2018, ...) that neither
 has (`list` shows where each comes from). `fetch` downloads the files of these products
-(e.g. Greenland/SMB, to `$FESMDATA_PRODUCTS/Greenland/`), and cuts each to the nest or
-crop, as `$FESMDATA_PRODUCTS/<Domain>/<GRID>/<GRID>_<NAME>.nc` with the grid files:
+(e.g. Greenland/SMB, to `$FESMDATA/Greenland/`), and cuts each to the nest or
+crop, as `$FESMDATA/<Domain>/<GRID>/<GRID>_<NAME>.nc` with the grid files:
 
 - at a resolution of the nest or crop, on its own grid (e.g. JAK-1KM, next to its Topo
   and Regions, with the grid files of the grid from Grids);
@@ -173,19 +172,19 @@ crops already made from the current files are kept.
 ## Archives and other folders
 
 `--dir=<folder>` lists, fetches or mirrors in `<folder>/<Domain>/<GRID>/` instead of
-`$FESMDATA_PRODUCTS` (`FESMDATA` need not be set); `fetch --dir` writes the crops there
+`$FESMDATA` (`FESMDATA` need not be set); `fetch --dir` writes the crops there
 too. Only the latest release of each dataset is kept on Helmholtz Codebase, so to keep
 the releases in use before updating, mirror them into a folder first:
 
 ```bash
-julia fesmdata.jl mirror --dir=/work/ba1442/fesmdata/archive/2026-10-12
+julia fesmdata.jl mirror --dir=/work/ba1442/fesmdata-archive/2026-10-12
 julia fesmdata.jl mirror
 ```
 
-Files already in `$FESMDATA_PRODUCTS` at the same release (checksums) are hard linked
+Files already in `$FESMDATA` at the same release (checksums) are hard linked
 from there (no extra space; copied on another file system, or with `--copy`), the others
 downloaded, and the registry files of the released datasets go to `<folder>/registry/`,
-as the list of what the folder holds. Updates of `$FESMDATA_PRODUCTS` write new files,
+as the list of what the folder holds. Updates of `$FESMDATA` write new files,
 so the hard links keep the archived ones; tools that change files in place (e.g.
 `ncatted`) would change both: use `--copy` for an archive next to files that may be
 changed in place. Running `mirror --dir` again on an archive updates it to the latest
@@ -201,7 +200,7 @@ present (of all datasets, or of a dataset, domain or grids) and lists those of e
 releases or changed locally, with the `fetch` commands to update them:
 
 ```bash
-julia fesmdata.jl list --outdated                # everything in $FESMDATA_PRODUCTS
+julia fesmdata.jl list --outdated                # everything in $FESMDATA
 julia fesmdata.jl list Antarctica --outdated     # one domain
 ```
 

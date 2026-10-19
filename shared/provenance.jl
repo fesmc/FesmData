@@ -22,22 +22,23 @@ const STORAGE_FOLDERS = ("sources", "prepared", "products", "work")
 """
     fesmdata_dir(kind) -> String
 
-Storage folder `kind` of FesmData: `sources` (the original datasets, `\$datasets_dir` of
-datamanifest.toml), `prepared` (the prepared sources, input of remapping and records),
-`products` (the products and records, as released) or `work` (intermediate files). It
-is `\$FESMDATA_<KIND>` if set (e.g. `FESMDATA_WORK` on a scratch file system), else
-`\$FESMDATA/<kind>`.
+Storage folder `kind` of FesmData: `products` (the products and records, as released),
+`sources` (the original datasets, `\$datasets_dir` of datamanifest.toml), `prepared`
+(the prepared sources, input of remapping and records) or `work` (intermediate files).
+The products are `\$FESMDATA` itself; the others are `\$FESMDATA_<KIND>` if set (e.g.
+`FESMDATA_WORK` on a scratch file system), else the sibling folder `\$FESMDATA-<kind>`.
 """
 function fesmdata_dir(kind::AbstractString)
     kind in STORAGE_FOLDERS || error("unknown storage folder $kind, available: $(join(STORAGE_FOLDERS, ", "))")
+    kind == "products" && return _env("FESMDATA")
     var = "FESMDATA_" * uppercase(kind)
     haskey(ENV, var) && return ENV[var]
-    haskey(ENV, "FESMDATA") && return joinpath(ENV["FESMDATA"], kind)
+    haskey(ENV, "FESMDATA") && return rstrip(ENV["FESMDATA"], '/') * "-" * kind
     error("neither $var nor FESMDATA is set (source shared/machines/<machine>.env)")
 end
 
-"Whether storage folder `kind` is set (`FESMDATA_<KIND>` or `FESMDATA`, see `fesmdata_dir`)."
-has_fesmdata_dir(kind::AbstractString) = haskey(ENV, "FESMDATA_" * uppercase(kind)) || haskey(ENV, "FESMDATA")
+"Whether storage folder `kind` is set (`FESMDATA`, or `FESMDATA_<KIND>` for the others, see `fesmdata_dir`)."
+has_fesmdata_dir(kind::AbstractString) = haskey(ENV, "FESMDATA") || (kind != "products" && haskey(ENV, "FESMDATA_" * uppercase(kind)))
 
 "Datasets released by Publish, with their release tags (Publish/datasets.toml)."
 read_datasets() = TOML.parsefile(joinpath(REPO_DIR, "Publish", "datasets.toml"))

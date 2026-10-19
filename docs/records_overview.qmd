@@ -14,7 +14,7 @@ next to it (`.txt`), for reading without a NetCDF library. They are not split by
 domain: a model reads a file and selects its sites.
 
 Records are released on the domain `Records`, one package per dataset, and go to
-`$FESMDATA_PRODUCTS/Records/<Dataset>/<Dataset>-<Product>[-<part>].nc` and `.txt` (see
+`$FESMDATA/Records/<Dataset>/<Dataset>-<Product>[-<part>].nc` and `.txt` (see
 [Download](download.qmd)):
 
 ```bash

@@ -1,5 +1,5 @@
 # Products of the records dataset GHG (see ../Records/README.md):
-# $FESMDATA_PRODUCTS/Records/GHG/GHG-<product>.nc
+# $FESMDATA/Records/GHG/GHG-<product>.nc
 
 [products.Bereiter2015]
 source = "Bereiter2015_CO2"
