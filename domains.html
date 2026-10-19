@@ -1,0 +1,3113 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.19">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Domains and grids – FesmData</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-d37df8fd7b43e116a420b34c208e916c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-dae82585467ed893c2d02b9a361b8f7a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">FesmData</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./download.html"> 
+<span class="menu-text">Download</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./products.html"> 
+<span class="menu-text">Products</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./domains.html" aria-current="page"> 
+<span class="menu-text">Domains and grids</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-datasets" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Datasets</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-datasets">    
+        <li>
+    <a class="dropdown-item" href="./datasets.html">
+ <span class="dropdown-text">Overview</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./precision.html">
+ <span class="dropdown-text">Precision and file sizes</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Topography and masks</li>
+        <li>
+    <a class="dropdown-item" href="./datasets/topo.html">
+ <span class="dropdown-text">Topo — topography</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/regions.html">
+ <span class="dropdown-text">Regions — regions and basins</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Ice</li>
+        <li>
+    <a class="dropdown-item" href="./datasets/velocity.html">
+ <span class="dropdown-text">Velocity — ice surface velocity</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/icechange.html">
+ <span class="dropdown-text">IceChange — observed ice sheet change</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/icehistory.html">
+ <span class="dropdown-text">IceHistory — paleo ice sheets</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/stratigraphy.html">
+ <span class="dropdown-text">Stratigraphy — age structure</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/basalmelt.html">
+ <span class="dropdown-text">BasalMelt — ice-shelf melt</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/basalstate.html">
+ <span class="dropdown-text">BasalState — basal thermal state</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Solid Earth</li>
+        <li>
+    <a class="dropdown-item" href="./datasets/ghf.html">
+ <span class="dropdown-text">GHF — geothermal heat flow</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/sediment.html">
+ <span class="dropdown-text">Sediment — sediment thickness</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/solidearth.html">
+ <span class="dropdown-text">SolidEarth — lithosphere and mantle</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Ocean and climate</li>
+        <li>
+    <a class="dropdown-item" href="./datasets/ocean.html">
+ <span class="dropdown-text">Ocean — temperature and salinity</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/smb.html">
+ <span class="dropdown-text">SMB — surface mass balance</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/atmosphere.html">
+ <span class="dropdown-text">Atmosphere — reanalysis and satellite</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/paleoclimate.html">
+ <span class="dropdown-text">Paleoclimate — past climates</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-records" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Records</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-records">    
+        <li>
+    <a class="dropdown-item" href="./records_overview.html">
+ <span class="dropdown-text">Overview</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="./datasets/icecores.html">
+ <span class="dropdown-text">IceCores — ice core records</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/ghg.html">
+ <span class="dropdown-text">GHG — greenhouse gases</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/sealevel.html">
+ <span class="dropdown-text">SeaLevel — global sea level</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/stacks.html">
+ <span class="dropdown-text">Stacks — benthic δ18O stacks</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/orbital.html">
+ <span class="dropdown-text">Orbital — orbital elements and insolation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/rsl.html">
+ <span class="dropdown-text">RSL — relative sea level</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/boreholes.html">
+ <span class="dropdown-text">Boreholes — ice temperature profiles</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/gps.html">
+ <span class="dropdown-text">GPS — vertical velocities</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/smbobs.html">
+ <span class="dropdown-text">SMBObs — surface mass balance observations</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./datasets/freshwater.html">
+ <span class="dropdown-text">Freshwater — ice sheet freshwater fluxes</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-your-own-data" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Your own data</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-your-own-data">    
+        <li>
+    <a class="dropdown-item" href="./remap.html">
+ <span class="dropdown-text">Gridded data</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./records.html">
+ <span class="dropdown-text">Records format</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-developers" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Developers</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-developers">    
+        <li>
+    <a class="dropdown-item" href="./developers.html">
+ <span class="dropdown-text">Overview and code</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./machines.html">
+ <span class="dropdown-text">Machines and storage</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./adding.html">
+ <span class="dropdown-text">Adding a dataset</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./releasing.html">
+ <span class="dropdown-text">Releasing</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./website.html">
+ <span class="dropdown-text">Website and figures</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/fesmc/FesmData" target="_blank"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#concepts" id="toc-concepts" class="nav-link active" data-scroll-target="#concepts">Concepts</a></li>
+  <li><a href="#domains-crops-and-nests" id="toc-domains-crops-and-nests" class="nav-link" data-scroll-target="#domains-crops-and-nests">Domains, crops and nests</a></li>
+  <li><a href="#ice-sheet-domains-and-nests" id="toc-ice-sheet-domains-and-nests" class="nav-link" data-scroll-target="#ice-sheet-domains-and-nests">Ice-sheet domains and nests</a></li>
+  <li><a href="#mountain-glacier-domains" id="toc-mountain-glacier-domains" class="nav-link" data-scroll-target="#mountain-glacier-domains">Mountain-glacier domains</a></li>
+  <li><a href="#global-grids" id="toc-global-grids" class="nav-link" data-scroll-target="#global-grids">Global grids</a></li>
+  <li><a href="#grid-files" id="toc-grid-files" class="nav-link" data-scroll-target="#grid-files">Grid names and grid files</a>
+  <ul class="collapse">
+  <li><a href="#grid-downloads" id="toc-grid-downloads" class="nav-link" data-scroll-target="#grid-downloads">Grid files of each domain</a></li>
+  </ul></li>
+  <li><a href="#which-datasets-are-on-which-grids" id="toc-which-datasets-are-on-which-grids" class="nav-link" data-scroll-target="#which-datasets-are-on-which-grids">Which datasets are on which grids</a></li>
+  <li><a href="#inactive-domains" id="toc-inactive-domains" class="nav-link" data-scroll-target="#inactive-domains">Inactive domains</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/fesmc/FesmData/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Domains and grids</h1>
+<p class="subtitle lead">The model domains, their grids and grid files</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>All datasets are made on the same model domains and grids, defined in <a href="https://github.com/fesmc/FesmData/blob/main/shared/domains.toml"><code>shared/domains.toml</code></a>.</p>
+<section id="concepts" class="level2">
+<h2 class="anchored" data-anchor-id="concepts">Concepts</h2>
+<p>A <strong>domain</strong> is a region on a map projection (polar stereographic, transverse Mercator such as UTM, or Albers equal-area) with a <strong>base grid</strong>, its finest resolution, e.g. ANT-500M for Antarctica. The <strong>coarser grids</strong> of the domain are made from the base grid by merging whole cells, e.g.&nbsp;ANT-1KM to ANT-32KM. All grids of a domain are therefore nested: every coarse cell is made of whole base cells, and the datasets on them are exact conservative means of the base grid.</p>
+<p>A <strong>crop</strong> is a smaller region inside a domain, cut from its grids, at the same resolutions or some of them, e.g.&nbsp;Greenland, a crop of GreenlandPaleo. Its extent is that of its grid at the base resolution; at each coarser resolution its grid is the cells of the domain grid that overlap this extent, so adding a resolution does not change the others.</p>
+<p>A <strong>nest</strong> is a smaller domain inside a domain, on the same projection, with a finer base grid of its own, made from the sources like any domain, e.g.&nbsp;Jakobshavn (250 m) in GreenlandPaleo (500 m). At the resolutions it shares with its parent, its grids are the cells of the parent grids that overlap its extent, so that its 500 m grid is a part of GRL-PAL-500M.</p>
+<p>A domain is <strong>active</strong> if its products are made and released. An inactive domain is defined, but left out of the releases (see <a href="#inactive-domains">Inactive domains</a>).</p>
+<p>Each domain, crop and nest has an output <strong>folder</strong> under <code>$FESMDATA</code>, which is also its name in <code>fesmdata.jl</code> and on the website (e.g.&nbsp;Antarctica, Thwaites), and a <strong>key</strong>, the prefix of the names of its grids (e.g.&nbsp;ANT, THW).</p>
+</section>
+<section id="domains-crops-and-nests" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="domains-crops-and-nests">Domains, crops and nests</h2>
+<p>The <strong>overview figures</strong> show, for each Topo product of a domain (default products, then variants; of its parent, for a crop), its bed, surface and ice thickness together with the regions, zones and basins of the domain, on one of its finer grids. They are large and open on their own.</p>
+<!-- Generated by `julia fesmdata.jl docs` (Publish/site.jl), do not edit. -->
+<div class="wide-table domains-table column-screen-inset">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Folder</th>
+<th>Overview figures (Topo products)</th>
+<th>Grid prefix</th>
+<th>Kind</th>
+<th>Grids</th>
+<th>Base grid (nx × ny)</th>
+<th>Extent</th>
+<th>Projection</th>
+<th>Active</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Global</td>
+<td></td>
+<td><code>GLOBAL</code></td>
+<td>domain</td>
+<td><a href="#grids-global">0.1°, 0.25°, 0.5°, 1°, 2°, 5°; Gaussian T170</a></td>
+<td>3,600 × 1,800</td>
+<td></td>
+<td>lon-lat</td>
+<td>yes</td>
+</tr>
+<tr class="even">
+<td>Antarctica</td>
+<td><a href="figures/Domains/Antarctica_TOPO-BedMachine-v4.png">BedMachine-v4</a>, <a href="figures/Domains/Antarctica_TOPO-Bedmap3.png">Bedmap3</a>, <a href="figures/Domains/Antarctica_TOPO-BedMachine-v3.png">BedMachine-v3</a>, <a href="figures/Domains/Antarctica_TOPO-BedMachine-v2.png">BedMachine-v2</a>, <a href="figures/Domains/Antarctica_TOPO-Bedmap2.png">Bedmap2</a></td>
+<td><code>ANT</code></td>
+<td>domain</td>
+<td><a href="#grids-antarctica">500 m, 1, 2, 4, 8, 16, 32 km</a></td>
+<td>12,161 × 12,161</td>
+<td>6,080 × 6,080 km</td>
+<td>polar stereographic, south</td>
+<td>yes</td>
+</tr>
+<tr class="odd">
+<td>Amundsen</td>
+<td><a href="figures/Domains/Antarctica_TOPO-BedMachine-v4.png">BedMachine-v4</a>, <a href="figures/Domains/Antarctica_TOPO-Bedmap3.png">Bedmap3</a>, <a href="figures/Domains/Antarctica_TOPO-BedMachine-v3.png">BedMachine-v3</a>, <a href="figures/Domains/Antarctica_TOPO-BedMachine-v2.png">BedMachine-v2</a>, <a href="figures/Domains/Antarctica_TOPO-Bedmap2.png">Bedmap2</a> (of Antarctica)</td>
+<td><code>ASE</code></td>
+<td>crop of Antarctica</td>
+<td><a href="#grids-amundsen">500 m, 1, 2, 4, 8, 16, 32 km</a></td>
+<td>1,837 × 2,121</td>
+<td>918 × 1,060 km</td>
+<td>polar stereographic, south</td>
+<td>yes</td>
+</tr>
+<tr class="even">
+<td>Thwaites</td>
+<td><a href="figures/Domains/Antarctica_TOPO-BedMachine-v4.png">BedMachine-v4</a>, <a href="figures/Domains/Antarctica_TOPO-Bedmap3.png">Bedmap3</a>, <a href="figures/Domains/Antarctica_TOPO-BedMachine-v3.png">BedMachine-v3</a>, <a href="figures/Domains/Antarctica_TOPO-BedMachine-v2.png">BedMachine-v2</a>, <a href="figures/Domains/Antarctica_TOPO-Bedmap2.png">Bedmap2</a> (of Antarctica)</td>
+<td><code>THW</code></td>
+<td>crop of Antarctica</td>
+<td><a href="#grids-thwaites">500 m, 1 km</a></td>
+<td>1,405 × 1,625</td>
+<td>702 × 812 km</td>
+<td>polar stereographic, south</td>
+<td>yes</td>
+</tr>
+<tr class="odd">
+<td>PineIsland</td>
+<td><a href="figures/Domains/Antarctica_TOPO-BedMachine-v4.png">BedMachine-v4</a>, <a href="figures/Domains/Antarctica_TOPO-Bedmap3.png">Bedmap3</a>, <a href="figures/Domains/Antarctica_TOPO-BedMachine-v3.png">BedMachine-v3</a>, <a href="figures/Domains/Antarctica_TOPO-BedMachine-v2.png">BedMachine-v2</a>, <a href="figures/Domains/Antarctica_TOPO-Bedmap2.png">Bedmap2</a> (of Antarctica)</td>
+<td><code>PIG</code></td>
+<td>crop of Antarctica</td>
+<td><a href="#grids-pineisland">500 m, 1 km</a></td>
+<td>1,711 × 1,165</td>
+<td>856 × 582 km</td>
+<td>polar stereographic, south</td>
+<td>yes</td>
+</tr>
+<tr class="even">
+<td>FilchnerRonne</td>
+<td><a href="figures/Domains/Antarctica_TOPO-BedMachine-v4.png">BedMachine-v4</a>, <a href="figures/Domains/Antarctica_TOPO-Bedmap3.png">Bedmap3</a>, <a href="figures/Domains/Antarctica_TOPO-BedMachine-v3.png">BedMachine-v3</a>, <a href="figures/Domains/Antarctica_TOPO-BedMachine-v2.png">BedMachine-v2</a>, <a href="figures/Domains/Antarctica_TOPO-Bedmap2.png">Bedmap2</a> (of Antarctica)</td>
+<td><code>FRIS</code></td>
+<td>crop of Antarctica</td>
+<td><a href="#grids-filchnerronne">500 m, 1 km</a></td>
+<td>3,109 × 3,021</td>
+<td>1,554 × 1,510 km</td>
+<td>polar stereographic, south</td>
+<td>yes</td>
+</tr>
+<tr class="odd">
+<td>Ross</td>
+<td><a href="figures/Domains/Antarctica_TOPO-BedMachine-v4.png">BedMachine-v4</a>, <a href="figures/Domains/Antarctica_TOPO-Bedmap3.png">Bedmap3</a>, <a href="figures/Domains/Antarctica_TOPO-BedMachine-v3.png">BedMachine-v3</a>, <a href="figures/Domains/Antarctica_TOPO-BedMachine-v2.png">BedMachine-v2</a>, <a href="figures/Domains/Antarctica_TOPO-Bedmap2.png">Bedmap2</a> (of Antarctica)</td>
+<td><code>ROSS</code></td>
+<td>crop of Antarctica</td>
+<td><a href="#grids-ross">500 m, 1 km</a></td>
+<td>3,377 × 2,635</td>
+<td>1,688 × 1,318 km</td>
+<td>polar stereographic, south</td>
+<td>yes</td>
+</tr>
+<tr class="even">
+<td>Amery</td>
+<td><a href="figures/Domains/Antarctica_TOPO-BedMachine-v4.png">BedMachine-v4</a>, <a href="figures/Domains/Antarctica_TOPO-Bedmap3.png">Bedmap3</a>, <a href="figures/Domains/Antarctica_TOPO-BedMachine-v3.png">BedMachine-v3</a>, <a href="figures/Domains/Antarctica_TOPO-BedMachine-v2.png">BedMachine-v2</a>, <a href="figures/Domains/Antarctica_TOPO-Bedmap2.png">Bedmap2</a> (of Antarctica)</td>
+<td><code>AMY</code></td>
+<td>crop of Antarctica</td>
+<td><a href="#grids-amery">500 m, 1 km</a></td>
+<td>1,921 × 1,715</td>
+<td>960 × 858 km</td>
+<td>polar stereographic, south</td>
+<td>yes</td>
+</tr>
+<tr class="odd">
+<td>WilkesBasin</td>
+<td><a href="figures/Domains/Antarctica_TOPO-BedMachine-v4.png">BedMachine-v4</a>, <a href="figures/Domains/Antarctica_TOPO-Bedmap3.png">Bedmap3</a>, <a href="figures/Domains/Antarctica_TOPO-BedMachine-v3.png">BedMachine-v3</a>, <a href="figures/Domains/Antarctica_TOPO-BedMachine-v2.png">BedMachine-v2</a>, <a href="figures/Domains/Antarctica_TOPO-Bedmap2.png">Bedmap2</a> (of Antarctica)</td>
+<td><code>WSB</code></td>
+<td>crop of Antarctica</td>
+<td><a href="#grids-wilkesbasin">500 m, 1 km</a></td>
+<td>2,005 × 2,643</td>
+<td>1,002 × 1,322 km</td>
+<td>polar stereographic, south</td>
+<td>yes</td>
+</tr>
+<tr class="even">
+<td>GreenlandPaleo</td>
+<td><a href="figures/Domains/GreenlandPaleo_TOPO-BedMachine-v6.png">BedMachine-v6</a>, <a href="figures/Domains/GreenlandPaleo_TOPO-BedMachine-v5.png">BedMachine-v5</a>, <a href="figures/Domains/GreenlandPaleo_TOPO-BedMachine-v4.png">BedMachine-v4</a></td>
+<td><code>GRL-PAL</code></td>
+<td>domain</td>
+<td><a href="#grids-greenlandpaleo">500 m, 1, 2, 4, 8, 16, 32 km</a></td>
+<td>4,641 × 5,761</td>
+<td>2,320 × 2,880 km</td>
+<td>polar stereographic, north</td>
+<td>yes</td>
+</tr>
+<tr class="odd">
+<td>Greenland</td>
+<td><a href="figures/Domains/GreenlandPaleo_TOPO-BedMachine-v6.png">BedMachine-v6</a>, <a href="figures/Domains/GreenlandPaleo_TOPO-BedMachine-v5.png">BedMachine-v5</a>, <a href="figures/Domains/GreenlandPaleo_TOPO-BedMachine-v4.png">BedMachine-v4</a> (of GreenlandPaleo)</td>
+<td><code>GRL</code></td>
+<td>crop of GreenlandPaleo</td>
+<td><a href="#grids-greenland">500 m, 1, 2, 4, 8, 16, 32 km</a></td>
+<td>3,361 × 5,761</td>
+<td>1,680 × 2,880 km</td>
+<td>polar stereographic, north</td>
+<td>yes</td>
+</tr>
+<tr class="even">
+<td>Jakobshavn</td>
+<td><a href="figures/Domains/Jakobshavn_TOPO-BedMachine-v6.png">BedMachine-v6</a></td>
+<td><code>JAK</code></td>
+<td>nest of GreenlandPaleo</td>
+<td><a href="#grids-jakobshavn">250, 500 m, 1 km</a></td>
+<td>2,537 × 1,629</td>
+<td>634 × 407 km</td>
+<td>polar stereographic, north</td>
+<td>yes</td>
+</tr>
+<tr class="odd">
+<td>NEGIS</td>
+<td><a href="figures/Domains/NEGIS_TOPO-BedMachine-v6.png">BedMachine-v6</a></td>
+<td><code>NEGIS</code></td>
+<td>nest of GreenlandPaleo</td>
+<td><a href="#grids-negis">250, 500 m, 1 km</a></td>
+<td>2,509 × 3,789</td>
+<td>627 × 947 km</td>
+<td>polar stereographic, north</td>
+<td>yes</td>
+</tr>
+<tr class="even">
+<td>Petermann</td>
+<td><a href="figures/Domains/Petermann_TOPO-BedMachine-v6.png">BedMachine-v6</a></td>
+<td><code>PET</code></td>
+<td>nest of GreenlandPaleo</td>
+<td><a href="#grids-petermann">250, 500 m, 1 km</a></td>
+<td>1,661 × 2,825</td>
+<td>415 × 706 km</td>
+<td>polar stereographic, north</td>
+<td>yes</td>
+</tr>
+<tr class="odd">
+<td>Helheim</td>
+<td><a href="figures/Domains/Helheim_TOPO-BedMachine-v6.png">BedMachine-v6</a></td>
+<td><code>HEL</code></td>
+<td>nest of GreenlandPaleo</td>
+<td><a href="#grids-helheim">250, 500 m, 1 km</a></td>
+<td>1,501 × 2,081</td>
+<td>375 × 520 km</td>
+<td>polar stereographic, north</td>
+<td>yes</td>
+</tr>
+<tr class="even">
+<td>North</td>
+<td><a href="figures/Domains/North_TOPO-GEBCO2026.png">GEBCO2026</a></td>
+<td><code>NH</code></td>
+<td>domain</td>
+<td><a href="#grids-north">2, 4, 8, 16, 32 km</a></td>
+<td>4,401 × 4,401</td>
+<td>8,802 × 8,802 km</td>
+<td>polar stereographic, north</td>
+<td>yes</td>
+</tr>
+<tr class="odd">
+<td>Laurentide</td>
+<td><a href="figures/Domains/North_TOPO-GEBCO2026.png">GEBCO2026</a> (of North)</td>
+<td><code>LIS</code></td>
+<td>crop of North</td>
+<td><a href="#grids-laurentide">2, 4, 8, 16, 32 km</a></td>
+<td>2,433 × 3,489</td>
+<td>4,866 × 6,978 km</td>
+<td>polar stereographic, north</td>
+<td>yes</td>
+</tr>
+<tr class="even">
+<td>Eurasia</td>
+<td><a href="figures/Domains/North_TOPO-GEBCO2026.png">GEBCO2026</a> (of North)</td>
+<td><code>EIS</code></td>
+<td>crop of North</td>
+<td><a href="#grids-eurasia">2, 4, 8, 16, 32 km</a></td>
+<td>1,761 × 3,217</td>
+<td>3,522 × 6,434 km</td>
+<td>polar stereographic, north</td>
+<td>yes</td>
+</tr>
+<tr class="odd">
+<td>Pyrenees</td>
+<td><a href="figures/Domains/Pyrenees_TOPO-GLO90-GEBCO2026.png">GLO90-GEBCO2026</a></td>
+<td><code>PYR</code></td>
+<td>domain</td>
+<td><a href="#grids-pyrenees">250, 500 m, 2 km</a></td>
+<td>1,520 × 688</td>
+<td>380 × 172 km</td>
+<td>UTM 31N</td>
+<td>yes</td>
+</tr>
+<tr class="even">
+<td>Patagonia</td>
+<td><a href="figures/Domains/Patagonia_TOPO-GLO90-GEBCO2026.png">GLO90-GEBCO2026</a></td>
+<td><code>PAT</code></td>
+<td>domain</td>
+<td><a href="#grids-patagonia">250, 500 m, 2 km</a></td>
+<td>4,221 × 8,407</td>
+<td>1,055 × 2,102 km</td>
+<td>UTM 18S</td>
+<td>yes</td>
+</tr>
+<tr class="odd">
+<td>NorthPatagonianIcefield</td>
+<td><a href="figures/Domains/Patagonia_TOPO-GLO90-GEBCO2026.png">GLO90-GEBCO2026</a> (of Patagonia)</td>
+<td><code>NPI</code></td>
+<td>crop of Patagonia</td>
+<td><a href="#grids-northpatagonianicefield">250 m</a></td>
+<td>471 × 677</td>
+<td>118 × 169 km</td>
+<td>UTM 18S</td>
+<td>yes</td>
+</tr>
+<tr class="even">
+<td>SouthPatagonianIcefield</td>
+<td><a href="figures/Domains/Patagonia_TOPO-GLO90-GEBCO2026.png">GLO90-GEBCO2026</a> (of Patagonia)</td>
+<td><code>SPI</code></td>
+<td>crop of Patagonia</td>
+<td><a href="#grids-southpatagonianicefield">250 m</a></td>
+<td>632 × 1,570</td>
+<td>158 × 392 km</td>
+<td>UTM 18S</td>
+<td>yes</td>
+</tr>
+<tr class="odd">
+<td>SRG</td>
+<td><a href="figures/Domains/SRG_TOPO-GLO30-GEBCO2026.png">GLO30-GEBCO2026</a>, <a href="figures/Domains/SRG_TOPO-GLO90-GEBCO2026.png">GLO90-GEBCO2026</a></td>
+<td><code>SRG</code></td>
+<td>nest of Patagonia</td>
+<td><a href="#grids-srg">25, 50, 100, 250 m</a></td>
+<td>2,071 × 1,191</td>
+<td>52 × 30 km</td>
+<td>UTM 18S</td>
+<td>yes</td>
+</tr>
+<tr class="even">
+<td>GranCampoNevado</td>
+<td><a href="figures/Domains/GranCampoNevado_TOPO-GLO90-GEBCO2026.png">GLO90-GEBCO2026</a></td>
+<td><code>GCN</code></td>
+<td>nest of Patagonia</td>
+<td><a href="#grids-grancamponevado">50, 100, 250 m</a></td>
+<td>1,251 × 1,161</td>
+<td>63 × 58 km</td>
+<td>UTM 18S</td>
+<td>yes</td>
+</tr>
+<tr class="odd">
+<td>CordilleraDarwin</td>
+<td><a href="figures/Domains/CordilleraDarwin_TOPO-GLO90-GEBCO2026.png">GLO90-GEBCO2026</a></td>
+<td><code>CDI</code></td>
+<td>nest of Patagonia</td>
+<td><a href="#grids-cordilleradarwin">50, 100, 250 m</a></td>
+<td>3,491 × 2,031</td>
+<td>175 × 102 km</td>
+<td>UTM 18S</td>
+<td>yes</td>
+</tr>
+<tr class="even">
+<td>MonteSarmiento</td>
+<td><a href="figures/Domains/MonteSarmiento_TOPO-GLO30-GEBCO2026.png">GLO30-GEBCO2026</a>, <a href="figures/Domains/MonteSarmiento_TOPO-GLO90-GEBCO2026.png">GLO90-GEBCO2026</a></td>
+<td><code>SAR</code></td>
+<td>nest of Patagonia</td>
+<td><a href="#grids-montesarmiento">50, 100, 250 m</a></td>
+<td>721 × 621</td>
+<td>36 × 31 km</td>
+<td>UTM 18S</td>
+<td>yes</td>
+</tr>
+<tr class="odd">
+<td>SchiaparelliGlacier</td>
+<td><a href="figures/Domains/SchiaparelliGlacier_TOPO-GLO30-GEBCO2026.png">GLO30-GEBCO2026</a></td>
+<td><code>SCH</code></td>
+<td>nest of Patagonia</td>
+<td><a href="#grids-schiaparelliglacier">25, 50, 100, 250 m</a></td>
+<td>521 × 481</td>
+<td>13 × 12 km</td>
+<td>UTM 18S</td>
+<td>yes</td>
+</tr>
+<tr class="even">
+<td>Alps</td>
+<td><a href="figures/Domains/Alps_TOPO-GLO90-GEBCO2026.png">GLO90-GEBCO2026</a></td>
+<td><code>ALP</code></td>
+<td>domain</td>
+<td><a href="#grids-alps">250, 500 m, 2 km</a></td>
+<td>4,405 × 2,725</td>
+<td>1,101 × 681 km</td>
+<td>UTM 32N</td>
+<td>yes</td>
+</tr>
+<tr class="odd">
+<td>Himalaya</td>
+<td><a href="figures/Domains/Himalaya_TOPO-GLO90-GEBCO2026.png">GLO90-GEBCO2026</a></td>
+<td><code>HIM</code></td>
+<td>domain</td>
+<td><a href="#grids-himalaya">250, 500 m, 2 km</a></td>
+<td>12,401 × 6,345</td>
+<td>3,100 × 1,586 km</td>
+<td>Albers equal-area</td>
+<td>yes</td>
+</tr>
+<tr class="even">
+<td>DrangDrung</td>
+<td><a href="figures/Domains/DrangDrung_TOPO-GLO30-GEBCO2026.png">GLO30-GEBCO2026</a>, <a href="figures/Domains/DrangDrung_TOPO-Sommers2025.png">Sommers2025</a>, <a href="figures/Domains/DrangDrung_TOPO-GLO90-GEBCO2026.png">GLO90-GEBCO2026</a></td>
+<td><code>DDG</code></td>
+<td>nest of Himalaya</td>
+<td><a href="#grids-drangdrung">25, 50, 100, 250 m</a></td>
+<td>841 × 1,201</td>
+<td>21 × 30 km</td>
+<td>Albers equal-area</td>
+<td>yes</td>
+</tr>
+<tr class="odd">
+<td>Svalbard</td>
+<td><a href="figures/Domains/Svalbard_TOPO-GLO90-GEBCO2026.png">GLO90-GEBCO2026</a></td>
+<td><code>SVB</code></td>
+<td>domain</td>
+<td><a href="#grids-svalbard">500 m, 1, 2 km</a></td>
+<td>1,825 × 1,789</td>
+<td>912 × 894 km</td>
+<td>UTM 33N</td>
+<td>yes</td>
+</tr>
+<tr class="even">
+<td>NewZealand</td>
+<td><a href="figures/Domains/NewZealand_TOPO-GLO90-GEBCO2026.png">GLO90-GEBCO2026</a></td>
+<td><code>NZ</code></td>
+<td>domain</td>
+<td><a href="#grids-newzealand">250, 500 m, 2 km</a></td>
+<td>3,077 × 3,433</td>
+<td>769 × 858 km</td>
+<td>transverse Mercator, 173°E</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="ice-sheet-domains-and-nests" class="level2">
+<h2 class="anchored" data-anchor-id="ice-sheet-domains-and-nests">Ice-sheet domains and nests</h2>
+<p>Antarctica (ANT, 500 m to 32 km), GreenlandPaleo (GRL-PAL, 500 m to 32 km; Greenland and the surrounding ocean and land, for glacial cycles) and North (NH, 2-32 km; the Northern Hemisphere ice sheets) are on polar stereographic projections. Greenland (GRL) is a crop of GreenlandPaleo, and Laurentide (LIS) and Eurasia (EIS) are crops of North.</p>
+<p>The crops of Antarctica and the nests of Greenland cover single drainage basins, with their ice shelves or fjords and 50 km around them: in Antarctica the Amundsen Sea Embayment (ASE, at 500 m to 32 km), the Thwaites (THW) and Pine Island (PIG) glaciers, the Filchner-Ronne (FRIS), Ross (ROSS) and Amery (AMY) ice shelves with the grounded ice within 300 km upstream of them, and the Wilkes Subglacial Basin (WSB), at 500 m and 1 km; in Greenland Jakobshavn Isbrae (JAK), the Northeast Greenland Ice Stream (NEGIS), and the Petermann (PET) and Helheim (HEL) glaciers, at 250 m, 500 m and 1 km.</p>
+</section>
+<section id="mountain-glacier-domains" class="level2">
+<h2 class="anchored" data-anchor-id="mountain-glacier-domains">Mountain-glacier domains</h2>
+<p>The mountain-glacier domains cover the extent of their glaciers at the Last Glacial Maximum, each on the projection used for glacier modelling in its region, with base grids of 250 m (500 m for Svalbard) and a 2 km grid:</p>
+<ul>
+<li><strong>Pyrenees</strong> (PYR, UTM 31N).</li>
+<li><strong>Patagonia</strong> (PAT, UTM 18S), from 38°S to Cape Horn, with crops of the Northern and Southern Patagonian Icefields (NPI, SPI, 250 m), nests of single icefields at 50, 100 and 250 m: Gran Campo Nevado (GCN), the Cordillera Darwin Icefield (CDI) and Monte Sarmiento (SAR), and nests at 25, 50, 100 and 250 m of the San Rafael Glacier (SRG, whose 250 m grid is the v1 SRG-250M grid) and the Schiaparelli Glacier (SCH, Monte Sarmiento).</li>
+<li><strong>Himalaya</strong> (HIM, Albers equal-area of High Mountain Asia), the Himalaya, Karakoram and Hindu Kush, with a nest of the Drang Drung Glacier (DDG, Zanskar) at 25, 50, 100 and 250 m.</li>
+<li><strong>Alps</strong> (ALP, UTM 32N).</li>
+<li><strong>Svalbard</strong> (SVB, UTM 33N).</li>
+<li><strong>New Zealand</strong> (NZ, NZTM2000).</li>
+</ul>
+</section>
+<section id="global-grids" class="level2">
+<h2 class="anchored" data-anchor-id="global-grids">Global grids</h2>
+<p>The Global domain (GLOBAL) has global lon-lat grids at 0.1°, 0.25°, 0.5°, 1°, 2° and 5° (GLOBAL-0.1DEG, …, GLOBAL-5DEG), each with cell edges at -180° and -90°. They are not nested (0.25° is not a multiple of 0.1°). It also has Gaussian grids, named by their spectral truncation, e.g.&nbsp;GLOBAL-T170 (512 x 256, as used by VILMA), made only for the products that need them. Global sources are remapped onto these grids, so that all global products share them.</p>
+</section>
+<section id="grid-files" class="level2">
+<h2 class="anchored" data-anchor-id="grid-files">Grid names and grid files</h2>
+<p>Grids are named after the key of their domain (or crop, or nest) and their resolution: <code>ANT-8KM</code>, <code>GRL-PAL-500M</code>, <code>DDG-25M</code>, <code>GLOBAL-0.5DEG</code>. A grid name thus also gives its domain. Every grid has its own folder, with its grid files and all datasets on that grid:</p>
+<pre><code>$FESMDATA/&lt;folder&gt;/&lt;GRID&gt;/
+    grid_&lt;GRID&gt;.txt         grid description (cdo)
+    &lt;GRID&gt;_grid.nc          x, y, lon, lat and area of the cells
+    &lt;GRID&gt;_TOPO-&lt;product&gt;.nc, &lt;GRID&gt;_REGIONS.nc, &lt;GRID&gt;_GHF-&lt;source&gt;.nc, ...</code></pre>
+<p>The grid files are released once per grid, in the dataset Grids, for all datasets on the grid: <code>fetch</code> gets them with the products of any dataset. To get only the grid files of a domain, or of a grid:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> fesmdata.jl fetch Grids Antarctica</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> fesmdata.jl fetch Grids ANT-8KM</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>They are released on the grids with products of at least one dataset (Grids in the table above links to those of each domain), and listed below. The other grids (e.g.&nbsp;the grids of a nest at the resolutions of its parent, which get their products by cropping) get their grid files from <code>fetch</code>, which writes them with the crops. The grid files are written by Topo step 1 on the projected grids, and by <code>fesmdata.jl remap</code> on the global grids (see <a href="https://github.com/fesmc/FesmData/blob/main/Grids/README.md">Grids/README.md</a>).</p>
+<section id="grid-downloads" class="level3">
+<h3 class="anchored" data-anchor-id="grid-downloads">Grid files of each domain</h3>
+<!-- Generated by `julia fesmdata.jl docs` (Publish/site.jl), do not edit. -->
+<section id="grids-global" class="level4">
+<h4 class="anchored" data-anchor-id="grids-global">Global</h4>
+<div class="record">
+<p>Version 2.0.0 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Global_Grids">packages</a>). 14 files, 337.5 kB.</p>
+<pre>julia fesmdata.jl fetch Grids Global     # all grids
+julia fesmdata.jl fetch Grids GLOBAL-T170     # one grid</pre>
+<details><summary><b>GLOBAL-0.1DEG</b> <span class="muted">2 files, 192.3 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Grids_GLOBAL-0.1DEG/2.0.0/grid_GLOBAL-0.1DEG.txt">grid_GLOBAL-0.1DEG.txt</a></td>
+<td class="size">0.2 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Grids_GLOBAL-0.1DEG/2.0.0/GLOBAL-0.1DEG_grid.nc">GLOBAL-0.1DEG_grid.nc</a></td>
+<td class="size">192.1 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GLOBAL-0.25DEG</b> <span class="muted">2 files, 49.9 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Grids_GLOBAL-0.25DEG/2.0.0/grid_GLOBAL-0.25DEG.txt">grid_GLOBAL-0.25DEG.txt</a></td>
+<td class="size">0.2 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Grids_GLOBAL-0.25DEG/2.0.0/GLOBAL-0.25DEG_grid.nc">GLOBAL-0.25DEG_grid.nc</a></td>
+<td class="size">49.6 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GLOBAL-0.5DEG</b> <span class="muted">2 files, 25.9 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Grids_GLOBAL-0.5DEG/2.0.0/grid_GLOBAL-0.5DEG.txt">grid_GLOBAL-0.5DEG.txt</a></td>
+<td class="size">0.2 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Grids_GLOBAL-0.5DEG/2.0.0/GLOBAL-0.5DEG_grid.nc">GLOBAL-0.5DEG_grid.nc</a></td>
+<td class="size">25.7 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GLOBAL-1DEG</b> <span class="muted">2 files, 18.2 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Grids_GLOBAL-1DEG/2.0.0/grid_GLOBAL-1DEG.txt">grid_GLOBAL-1DEG.txt</a></td>
+<td class="size">0.2 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Grids_GLOBAL-1DEG/2.0.0/GLOBAL-1DEG_grid.nc">GLOBAL-1DEG_grid.nc</a></td>
+<td class="size">18.0 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GLOBAL-2DEG</b> <span class="muted">2 files, 14.9 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Grids_GLOBAL-2DEG/2.0.0/grid_GLOBAL-2DEG.txt">grid_GLOBAL-2DEG.txt</a></td>
+<td class="size">0.2 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Grids_GLOBAL-2DEG/2.0.0/GLOBAL-2DEG_grid.nc">GLOBAL-2DEG_grid.nc</a></td>
+<td class="size">14.6 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GLOBAL-5DEG</b> <span class="muted">2 files, 12.8 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Grids_GLOBAL-5DEG/2.0.0/grid_GLOBAL-5DEG.txt">grid_GLOBAL-5DEG.txt</a></td>
+<td class="size">0.2 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Grids_GLOBAL-5DEG/2.0.0/GLOBAL-5DEG_grid.nc">GLOBAL-5DEG_grid.nc</a></td>
+<td class="size">12.6 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GLOBAL-T170</b> <span class="muted">2 files, 23.6 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Grids_GLOBAL-T170/2.0.0/grid_GLOBAL-T170.txt">grid_GLOBAL-T170.txt</a></td>
+<td class="size">3.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_Grids_GLOBAL-T170/2.0.0/GLOBAL-T170_grid.nc">GLOBAL-T170_grid.nc</a></td>
+<td class="size">20.3 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="grids-antarctica" class="level4">
+<h4 class="anchored" data-anchor-id="grids-antarctica">Antarctica</h4>
+<div class="record">
+<p>Version 2.0.0 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Antarctica_Grids">packages</a>). 14 files, 472.8 MB.</p>
+<pre>julia fesmdata.jl fetch Grids Antarctica     # all grids
+julia fesmdata.jl fetch Grids ANT-32KM     # one grid</pre>
+<details><summary><b>ANT-500M</b> <span class="muted">2 files, 327.6 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Grids_ANT-500M/2.0.0/grid_ANT-500M.txt">grid_ANT-500M.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Grids_ANT-500M/2.0.0/ANT-500M_grid.nc">ANT-500M_grid.nc</a></td>
+<td class="size">327.6 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>ANT-1KM</b> <span class="muted">2 files, 101.7 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Grids_ANT-1KM/2.0.0/grid_ANT-1KM.txt">grid_ANT-1KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Grids_ANT-1KM/2.0.0/ANT-1KM_grid.nc">ANT-1KM_grid.nc</a></td>
+<td class="size">101.7 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>ANT-2KM</b> <span class="muted">2 files, 30.6 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Grids_ANT-2KM/2.0.0/grid_ANT-2KM.txt">grid_ANT-2KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Grids_ANT-2KM/2.0.0/ANT-2KM_grid.nc">ANT-2KM_grid.nc</a></td>
+<td class="size">30.6 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>ANT-4KM</b> <span class="muted">2 files, 9.2 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Grids_ANT-4KM/2.0.0/grid_ANT-4KM.txt">grid_ANT-4KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Grids_ANT-4KM/2.0.0/ANT-4KM_grid.nc">ANT-4KM_grid.nc</a></td>
+<td class="size">9.2 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>ANT-8KM</b> <span class="muted">2 files, 2.8 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Grids_ANT-8KM/2.0.0/grid_ANT-8KM.txt">grid_ANT-8KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Grids_ANT-8KM/2.0.0/ANT-8KM_grid.nc">ANT-8KM_grid.nc</a></td>
+<td class="size">2.8 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>ANT-16KM</b> <span class="muted">2 files, 766.7 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Grids_ANT-16KM/2.0.0/grid_ANT-16KM.txt">grid_ANT-16KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Grids_ANT-16KM/2.0.0/ANT-16KM_grid.nc">ANT-16KM_grid.nc</a></td>
+<td class="size">766.2 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>ANT-32KM</b> <span class="muted">2 files, 191.3 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Grids_ANT-32KM/2.0.0/grid_ANT-32KM.txt">grid_ANT-32KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_Grids_ANT-32KM/2.0.0/ANT-32KM_grid.nc">ANT-32KM_grid.nc</a></td>
+<td class="size">190.9 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="grids-amundsen" class="level4">
+<h4 class="anchored" data-anchor-id="grids-amundsen">Amundsen</h4>
+<div class="record">
+<p>Version 2.0.0 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Amundsen_Grids">packages</a>). 14 files, 11.0 MB.</p>
+<pre>julia fesmdata.jl fetch Grids Amundsen     # all grids
+julia fesmdata.jl fetch Grids ASE-32KM     # one grid</pre>
+<details><summary><b>ASE-500M</b> <span class="muted">2 files, 7.4 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Grids_ASE-500M/2.0.0/grid_ASE-500M.txt">grid_ASE-500M.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Grids_ASE-500M/2.0.0/ASE-500M_grid.nc">ASE-500M_grid.nc</a></td>
+<td class="size">7.4 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>ASE-1KM</b> <span class="muted">2 files, 2.4 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Grids_ASE-1KM/2.0.0/grid_ASE-1KM.txt">grid_ASE-1KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Grids_ASE-1KM/2.0.0/ASE-1KM_grid.nc">ASE-1KM_grid.nc</a></td>
+<td class="size">2.4 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>ASE-2KM</b> <span class="muted">2 files, 751.0 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Grids_ASE-2KM/2.0.0/grid_ASE-2KM.txt">grid_ASE-2KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Grids_ASE-2KM/2.0.0/ASE-2KM_grid.nc">ASE-2KM_grid.nc</a></td>
+<td class="size">750.5 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>ASE-4KM</b> <span class="muted">2 files, 244.4 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Grids_ASE-4KM/2.0.0/grid_ASE-4KM.txt">grid_ASE-4KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Grids_ASE-4KM/2.0.0/ASE-4KM_grid.nc">ASE-4KM_grid.nc</a></td>
+<td class="size">243.9 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>ASE-8KM</b> <span class="muted">2 files, 90.9 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Grids_ASE-8KM/2.0.0/grid_ASE-8KM.txt">grid_ASE-8KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Grids_ASE-8KM/2.0.0/ASE-8KM_grid.nc">ASE-8KM_grid.nc</a></td>
+<td class="size">90.4 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>ASE-16KM</b> <span class="muted">2 files, 43.1 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Grids_ASE-16KM/2.0.0/grid_ASE-16KM.txt">grid_ASE-16KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Grids_ASE-16KM/2.0.0/ASE-16KM_grid.nc">ASE-16KM_grid.nc</a></td>
+<td class="size">42.7 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>ASE-32KM</b> <span class="muted">2 files, 26.8 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Grids_ASE-32KM/2.0.0/grid_ASE-32KM.txt">grid_ASE-32KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amundsen_Grids_ASE-32KM/2.0.0/ASE-32KM_grid.nc">ASE-32KM_grid.nc</a></td>
+<td class="size">26.4 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="grids-thwaites" class="level4">
+<h4 class="anchored" data-anchor-id="grids-thwaites">Thwaites</h4>
+<div class="record">
+<p>Version 2.0.0 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Thwaites_Grids">packages</a>). 4 files, 6.2 MB.</p>
+<pre>julia fesmdata.jl fetch Grids Thwaites     # all grids
+julia fesmdata.jl fetch Grids THW-1KM     # one grid</pre>
+<details><summary><b>THW-500M</b> <span class="muted">2 files, 4.7 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Grids_THW-500M/2.0.0/grid_THW-500M.txt">grid_THW-500M.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Grids_THW-500M/2.0.0/THW-500M_grid.nc">THW-500M_grid.nc</a></td>
+<td class="size">4.7 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>THW-1KM</b> <span class="muted">2 files, 1.5 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Grids_THW-1KM/2.0.0/grid_THW-1KM.txt">grid_THW-1KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Thwaites_Grids_THW-1KM/2.0.0/THW-1KM_grid.nc">THW-1KM_grid.nc</a></td>
+<td class="size">1.5 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="grids-pineisland" class="level4">
+<h4 class="anchored" data-anchor-id="grids-pineisland">PineIsland</h4>
+<div class="record">
+<p>Version 2.0.0 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=PineIsland_Grids">packages</a>). 4 files, 4.6 MB.</p>
+<pre>julia fesmdata.jl fetch Grids PineIsland     # all grids
+julia fesmdata.jl fetch Grids PIG-1KM     # one grid</pre>
+<details><summary><b>PIG-500M</b> <span class="muted">2 files, 3.5 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Grids_PIG-500M/2.0.0/grid_PIG-500M.txt">grid_PIG-500M.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Grids_PIG-500M/2.0.0/PIG-500M_grid.nc">PIG-500M_grid.nc</a></td>
+<td class="size">3.5 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>PIG-1KM</b> <span class="muted">2 files, 1.1 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Grids_PIG-1KM/2.0.0/grid_PIG-1KM.txt">grid_PIG-1KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PineIsland_Grids_PIG-1KM/2.0.0/PIG-1KM_grid.nc">PIG-1KM_grid.nc</a></td>
+<td class="size">1.1 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="grids-filchnerronne" class="level4">
+<h4 class="anchored" data-anchor-id="grids-filchnerronne">FilchnerRonne</h4>
+<div class="record">
+<p>Version 2.0.0 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=FilchnerRonne_Grids">packages</a>). 4 files, 29.2 MB.</p>
+<pre>julia fesmdata.jl fetch Grids FilchnerRonne     # all grids
+julia fesmdata.jl fetch Grids FRIS-1KM     # one grid</pre>
+<details><summary><b>FRIS-500M</b> <span class="muted">2 files, 22.4 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Grids_FRIS-500M/2.0.0/grid_FRIS-500M.txt">grid_FRIS-500M.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Grids_FRIS-500M/2.0.0/FRIS-500M_grid.nc">FRIS-500M_grid.nc</a></td>
+<td class="size">22.4 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>FRIS-1KM</b> <span class="muted">2 files, 6.8 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Grids_FRIS-1KM/2.0.0/grid_FRIS-1KM.txt">grid_FRIS-1KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/FilchnerRonne_Grids_FRIS-1KM/2.0.0/FRIS-1KM_grid.nc">FRIS-1KM_grid.nc</a></td>
+<td class="size">6.8 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="grids-ross" class="level4">
+<h4 class="anchored" data-anchor-id="grids-ross">Ross</h4>
+<div class="record">
+<p>Version 2.0.0 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Ross_Grids">packages</a>). 4 files, 29.5 MB.</p>
+<pre>julia fesmdata.jl fetch Grids Ross     # all grids
+julia fesmdata.jl fetch Grids ROSS-1KM     # one grid</pre>
+<details><summary><b>ROSS-500M</b> <span class="muted">2 files, 22.9 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Grids_ROSS-500M/2.0.0/grid_ROSS-500M.txt">grid_ROSS-500M.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Grids_ROSS-500M/2.0.0/ROSS-500M_grid.nc">ROSS-500M_grid.nc</a></td>
+<td class="size">22.9 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>ROSS-1KM</b> <span class="muted">2 files, 6.7 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Grids_ROSS-1KM/2.0.0/grid_ROSS-1KM.txt">grid_ROSS-1KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Ross_Grids_ROSS-1KM/2.0.0/ROSS-1KM_grid.nc">ROSS-1KM_grid.nc</a></td>
+<td class="size">6.7 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="grids-amery" class="level4">
+<h4 class="anchored" data-anchor-id="grids-amery">Amery</h4>
+<div class="record">
+<p>Version 2.0.0 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Amery_Grids">packages</a>). 4 files, 8.7 MB.</p>
+<pre>julia fesmdata.jl fetch Grids Amery     # all grids
+julia fesmdata.jl fetch Grids AMY-1KM     # one grid</pre>
+<details><summary><b>AMY-500M</b> <span class="muted">2 files, 6.6 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Grids_AMY-500M/2.0.0/grid_AMY-500M.txt">grid_AMY-500M.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Grids_AMY-500M/2.0.0/AMY-500M_grid.nc">AMY-500M_grid.nc</a></td>
+<td class="size">6.6 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>AMY-1KM</b> <span class="muted">2 files, 2.1 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Grids_AMY-1KM/2.0.0/grid_AMY-1KM.txt">grid_AMY-1KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Amery_Grids_AMY-1KM/2.0.0/AMY-1KM_grid.nc">AMY-1KM_grid.nc</a></td>
+<td class="size">2.1 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="grids-wilkesbasin" class="level4">
+<h4 class="anchored" data-anchor-id="grids-wilkesbasin">WilkesBasin</h4>
+<div class="record">
+<p>Version 2.0.0 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=WilkesBasin_Grids">packages</a>). 4 files, 15.3 MB.</p>
+<pre>julia fesmdata.jl fetch Grids WilkesBasin     # all grids
+julia fesmdata.jl fetch Grids WSB-1KM     # one grid</pre>
+<details><summary><b>WSB-500M</b> <span class="muted">2 files, 11.7 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Grids_WSB-500M/2.0.0/grid_WSB-500M.txt">grid_WSB-500M.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Grids_WSB-500M/2.0.0/WSB-500M_grid.nc">WSB-500M_grid.nc</a></td>
+<td class="size">11.7 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>WSB-1KM</b> <span class="muted">2 files, 3.6 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Grids_WSB-1KM/2.0.0/grid_WSB-1KM.txt">grid_WSB-1KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/WilkesBasin_Grids_WSB-1KM/2.0.0/WSB-1KM_grid.nc">WSB-1KM_grid.nc</a></td>
+<td class="size">3.6 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="grids-greenlandpaleo" class="level4">
+<h4 class="anchored" data-anchor-id="grids-greenlandpaleo">GreenlandPaleo</h4>
+<div class="record">
+<p>Version 2.0.0 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=GreenlandPaleo_Grids">packages</a>). 14 files, 90.7 MB.</p>
+<pre>julia fesmdata.jl fetch Grids GreenlandPaleo     # all grids
+julia fesmdata.jl fetch Grids GRL-PAL-32KM     # one grid</pre>
+<details><summary><b>GRL-PAL-500M</b> <span class="muted">2 files, 63.4 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Grids_GRL-PAL-500M/2.0.0/grid_GRL-PAL-500M.txt">grid_GRL-PAL-500M.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Grids_GRL-PAL-500M/2.0.0/GRL-PAL-500M_grid.nc">GRL-PAL-500M_grid.nc</a></td>
+<td class="size">63.4 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GRL-PAL-1KM</b> <span class="muted">2 files, 19.2 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Grids_GRL-PAL-1KM/2.0.0/grid_GRL-PAL-1KM.txt">grid_GRL-PAL-1KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Grids_GRL-PAL-1KM/2.0.0/GRL-PAL-1KM_grid.nc">GRL-PAL-1KM_grid.nc</a></td>
+<td class="size">19.2 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GRL-PAL-2KM</b> <span class="muted">2 files, 5.7 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Grids_GRL-PAL-2KM/2.0.0/grid_GRL-PAL-2KM.txt">grid_GRL-PAL-2KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Grids_GRL-PAL-2KM/2.0.0/GRL-PAL-2KM_grid.nc">GRL-PAL-2KM_grid.nc</a></td>
+<td class="size">5.7 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GRL-PAL-4KM</b> <span class="muted">2 files, 1.7 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Grids_GRL-PAL-4KM/2.0.0/grid_GRL-PAL-4KM.txt">grid_GRL-PAL-4KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Grids_GRL-PAL-4KM/2.0.0/GRL-PAL-4KM_grid.nc">GRL-PAL-4KM_grid.nc</a></td>
+<td class="size">1.7 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GRL-PAL-8KM</b> <span class="muted">2 files, 534.1 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Grids_GRL-PAL-8KM/2.0.0/grid_GRL-PAL-8KM.txt">grid_GRL-PAL-8KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Grids_GRL-PAL-8KM/2.0.0/GRL-PAL-8KM_grid.nc">GRL-PAL-8KM_grid.nc</a></td>
+<td class="size">533.6 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GRL-PAL-16KM</b> <span class="muted">2 files, 173.1 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Grids_GRL-PAL-16KM/2.0.0/grid_GRL-PAL-16KM.txt">grid_GRL-PAL-16KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Grids_GRL-PAL-16KM/2.0.0/GRL-PAL-16KM_grid.nc">GRL-PAL-16KM_grid.nc</a></td>
+<td class="size">172.6 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GRL-PAL-32KM</b> <span class="muted">2 files, 64.0 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Grids_GRL-PAL-32KM/2.0.0/grid_GRL-PAL-32KM.txt">grid_GRL-PAL-32KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_Grids_GRL-PAL-32KM/2.0.0/GRL-PAL-32KM_grid.nc">GRL-PAL-32KM_grid.nc</a></td>
+<td class="size">63.5 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="grids-greenland" class="level4">
+<h4 class="anchored" data-anchor-id="grids-greenland">Greenland</h4>
+<div class="record">
+<p>Version 2.0.0 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Greenland_Grids">packages</a>). 14 files, 65.4 MB.</p>
+<pre>julia fesmdata.jl fetch Grids Greenland     # all grids
+julia fesmdata.jl fetch Grids GRL-32KM     # one grid</pre>
+<details><summary><b>GRL-500M</b> <span class="muted">2 files, 45.6 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Grids_GRL-500M/2.0.0/grid_GRL-500M.txt">grid_GRL-500M.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Grids_GRL-500M/2.0.0/GRL-500M_grid.nc">GRL-500M_grid.nc</a></td>
+<td class="size">45.6 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GRL-1KM</b> <span class="muted">2 files, 13.8 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Grids_GRL-1KM/2.0.0/grid_GRL-1KM.txt">grid_GRL-1KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Grids_GRL-1KM/2.0.0/GRL-1KM_grid.nc">GRL-1KM_grid.nc</a></td>
+<td class="size">13.8 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GRL-2KM</b> <span class="muted">2 files, 4.1 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Grids_GRL-2KM/2.0.0/grid_GRL-2KM.txt">grid_GRL-2KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Grids_GRL-2KM/2.0.0/GRL-2KM_grid.nc">GRL-2KM_grid.nc</a></td>
+<td class="size">4.1 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GRL-4KM</b> <span class="muted">2 files, 1.3 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Grids_GRL-4KM/2.0.0/grid_GRL-4KM.txt">grid_GRL-4KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Grids_GRL-4KM/2.0.0/GRL-4KM_grid.nc">GRL-4KM_grid.nc</a></td>
+<td class="size">1.3 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GRL-8KM</b> <span class="muted">2 files, 394.0 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Grids_GRL-8KM/2.0.0/grid_GRL-8KM.txt">grid_GRL-8KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Grids_GRL-8KM/2.0.0/GRL-8KM_grid.nc">GRL-8KM_grid.nc</a></td>
+<td class="size">393.5 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GRL-16KM</b> <span class="muted">2 files, 133.7 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Grids_GRL-16KM/2.0.0/grid_GRL-16KM.txt">grid_GRL-16KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Grids_GRL-16KM/2.0.0/GRL-16KM_grid.nc">GRL-16KM_grid.nc</a></td>
+<td class="size">133.3 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GRL-32KM</b> <span class="muted">2 files, 52.9 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Grids_GRL-32KM/2.0.0/grid_GRL-32KM.txt">grid_GRL-32KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Greenland_Grids_GRL-32KM/2.0.0/GRL-32KM_grid.nc">GRL-32KM_grid.nc</a></td>
+<td class="size">52.5 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="grids-jakobshavn" class="level4">
+<h4 class="anchored" data-anchor-id="grids-jakobshavn">Jakobshavn</h4>
+<div class="record">
+<p>Version 2.0.0 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Jakobshavn_Grids">packages</a>). 6 files, 9.9 MB.</p>
+<pre>julia fesmdata.jl fetch Grids Jakobshavn     # all grids
+julia fesmdata.jl fetch Grids JAK-1KM     # one grid</pre>
+<details><summary><b>JAK-250M</b> <span class="muted">2 files, 6.9 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Jakobshavn_Grids_JAK-250M/2.0.0/grid_JAK-250M.txt">grid_JAK-250M.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Jakobshavn_Grids_JAK-250M/2.0.0/JAK-250M_grid.nc">JAK-250M_grid.nc</a></td>
+<td class="size">6.9 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>JAK-500M</b> <span class="muted">2 files, 2.3 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Jakobshavn_Grids_JAK-500M/2.0.0/grid_JAK-500M.txt">grid_JAK-500M.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Jakobshavn_Grids_JAK-500M/2.0.0/JAK-500M_grid.nc">JAK-500M_grid.nc</a></td>
+<td class="size">2.3 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>JAK-1KM</b> <span class="muted">2 files, 696.9 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Jakobshavn_Grids_JAK-1KM/2.0.0/grid_JAK-1KM.txt">grid_JAK-1KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Jakobshavn_Grids_JAK-1KM/2.0.0/JAK-1KM_grid.nc">JAK-1KM_grid.nc</a></td>
+<td class="size">696.4 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="grids-negis" class="level4">
+<h4 class="anchored" data-anchor-id="grids-negis">NEGIS</h4>
+<div class="record">
+<p>Version 2.0.0 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=NEGIS_Grids">packages</a>). 6 files, 25.2 MB.</p>
+<pre>julia fesmdata.jl fetch Grids NEGIS     # all grids
+julia fesmdata.jl fetch Grids NEGIS-1KM     # one grid</pre>
+<details><summary><b>NEGIS-250M</b> <span class="muted">2 files, 17.7 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Grids_NEGIS-250M/2.0.0/grid_NEGIS-250M.txt">grid_NEGIS-250M.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Grids_NEGIS-250M/2.0.0/NEGIS-250M_grid.nc">NEGIS-250M_grid.nc</a></td>
+<td class="size">17.7 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>NEGIS-500M</b> <span class="muted">2 files, 5.8 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Grids_NEGIS-500M/2.0.0/grid_NEGIS-500M.txt">grid_NEGIS-500M.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Grids_NEGIS-500M/2.0.0/NEGIS-500M_grid.nc">NEGIS-500M_grid.nc</a></td>
+<td class="size">5.8 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>NEGIS-1KM</b> <span class="muted">2 files, 1.8 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Grids_NEGIS-1KM/2.0.0/grid_NEGIS-1KM.txt">grid_NEGIS-1KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NEGIS_Grids_NEGIS-1KM/2.0.0/NEGIS-1KM_grid.nc">NEGIS-1KM_grid.nc</a></td>
+<td class="size">1.8 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="grids-petermann" class="level4">
+<h4 class="anchored" data-anchor-id="grids-petermann">Petermann</h4>
+<div class="record">
+<p>Version 2.0.0 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Petermann_Grids">packages</a>). 6 files, 12.4 MB.</p>
+<pre>julia fesmdata.jl fetch Grids Petermann     # all grids
+julia fesmdata.jl fetch Grids PET-1KM     # one grid</pre>
+<details><summary><b>PET-250M</b> <span class="muted">2 files, 8.8 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Petermann_Grids_PET-250M/2.0.0/grid_PET-250M.txt">grid_PET-250M.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Petermann_Grids_PET-250M/2.0.0/PET-250M_grid.nc">PET-250M_grid.nc</a></td>
+<td class="size">8.8 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>PET-500M</b> <span class="muted">2 files, 2.8 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Petermann_Grids_PET-500M/2.0.0/grid_PET-500M.txt">grid_PET-500M.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Petermann_Grids_PET-500M/2.0.0/PET-500M_grid.nc">PET-500M_grid.nc</a></td>
+<td class="size">2.8 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>PET-1KM</b> <span class="muted">2 files, 848.9 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Petermann_Grids_PET-1KM/2.0.0/grid_PET-1KM.txt">grid_PET-1KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Petermann_Grids_PET-1KM/2.0.0/PET-1KM_grid.nc">PET-1KM_grid.nc</a></td>
+<td class="size">848.5 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="grids-helheim" class="level4">
+<h4 class="anchored" data-anchor-id="grids-helheim">Helheim</h4>
+<div class="record">
+<p>Version 2.0.0 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Helheim_Grids">packages</a>). 6 files, 6.9 MB.</p>
+<pre>julia fesmdata.jl fetch Grids Helheim     # all grids
+julia fesmdata.jl fetch Grids HEL-1KM     # one grid</pre>
+<details><summary><b>HEL-250M</b> <span class="muted">2 files, 4.6 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Grids_HEL-250M/2.0.0/grid_HEL-250M.txt">grid_HEL-250M.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Grids_HEL-250M/2.0.0/HEL-250M_grid.nc">HEL-250M_grid.nc</a></td>
+<td class="size">4.6 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>HEL-500M</b> <span class="muted">2 files, 1.7 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Grids_HEL-500M/2.0.0/grid_HEL-500M.txt">grid_HEL-500M.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Grids_HEL-500M/2.0.0/HEL-500M_grid.nc">HEL-500M_grid.nc</a></td>
+<td class="size">1.7 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>HEL-1KM</b> <span class="muted">2 files, 541.4 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Grids_HEL-1KM/2.0.0/grid_HEL-1KM.txt">grid_HEL-1KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Helheim_Grids_HEL-1KM/2.0.0/HEL-1KM_grid.nc">HEL-1KM_grid.nc</a></td>
+<td class="size">541.0 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="grids-north" class="level4">
+<h4 class="anchored" data-anchor-id="grids-north">North</h4>
+<div class="record">
+<p>Version 2.0.0 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=North_Grids">packages</a>). 10 files, 86.4 MB.</p>
+<pre>julia fesmdata.jl fetch Grids North     # all grids
+julia fesmdata.jl fetch Grids NH-32KM     # one grid</pre>
+<details><summary><b>NH-2KM</b> <span class="muted">2 files, 60.8 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Grids_NH-2KM/2.0.0/grid_NH-2KM.txt">grid_NH-2KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Grids_NH-2KM/2.0.0/NH-2KM_grid.nc">NH-2KM_grid.nc</a></td>
+<td class="size">60.8 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>NH-4KM</b> <span class="muted">2 files, 18.1 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Grids_NH-4KM/2.0.0/grid_NH-4KM.txt">grid_NH-4KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Grids_NH-4KM/2.0.0/NH-4KM_grid.nc">NH-4KM_grid.nc</a></td>
+<td class="size">18.1 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>NH-8KM</b> <span class="muted">2 files, 5.4 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Grids_NH-8KM/2.0.0/grid_NH-8KM.txt">grid_NH-8KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Grids_NH-8KM/2.0.0/NH-8KM_grid.nc">NH-8KM_grid.nc</a></td>
+<td class="size">5.4 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>NH-16KM</b> <span class="muted">2 files, 1.6 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Grids_NH-16KM/2.0.0/grid_NH-16KM.txt">grid_NH-16KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Grids_NH-16KM/2.0.0/NH-16KM_grid.nc">NH-16KM_grid.nc</a></td>
+<td class="size">1.6 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>NH-32KM</b> <span class="muted">2 files, 465.6 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Grids_NH-32KM/2.0.0/grid_NH-32KM.txt">grid_NH-32KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_Grids_NH-32KM/2.0.0/NH-32KM_grid.nc">NH-32KM_grid.nc</a></td>
+<td class="size">465.2 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="grids-laurentide" class="level4">
+<h4 class="anchored" data-anchor-id="grids-laurentide">Laurentide</h4>
+<div class="record">
+<p>Version 2.0.0 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Laurentide_Grids">packages</a>). 10 files, 36.0 MB.</p>
+<pre>julia fesmdata.jl fetch Grids Laurentide     # all grids
+julia fesmdata.jl fetch Grids LIS-32KM     # one grid</pre>
+<details><summary><b>LIS-2KM</b> <span class="muted">2 files, 25.4 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Grids_LIS-2KM/2.0.0/grid_LIS-2KM.txt">grid_LIS-2KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Grids_LIS-2KM/2.0.0/LIS-2KM_grid.nc">LIS-2KM_grid.nc</a></td>
+<td class="size">25.4 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>LIS-4KM</b> <span class="muted">2 files, 7.5 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Grids_LIS-4KM/2.0.0/grid_LIS-4KM.txt">grid_LIS-4KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Grids_LIS-4KM/2.0.0/LIS-4KM_grid.nc">LIS-4KM_grid.nc</a></td>
+<td class="size">7.5 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>LIS-8KM</b> <span class="muted">2 files, 2.3 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Grids_LIS-8KM/2.0.0/grid_LIS-8KM.txt">grid_LIS-8KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Grids_LIS-8KM/2.0.0/LIS-8KM_grid.nc">LIS-8KM_grid.nc</a></td>
+<td class="size">2.3 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>LIS-16KM</b> <span class="muted">2 files, 656.0 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Grids_LIS-16KM/2.0.0/grid_LIS-16KM.txt">grid_LIS-16KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Grids_LIS-16KM/2.0.0/LIS-16KM_grid.nc">LIS-16KM_grid.nc</a></td>
+<td class="size">655.5 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>LIS-32KM</b> <span class="muted">2 files, 214.9 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Grids_LIS-32KM/2.0.0/grid_LIS-32KM.txt">grid_LIS-32KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Laurentide_Grids_LIS-32KM/2.0.0/LIS-32KM_grid.nc">LIS-32KM_grid.nc</a></td>
+<td class="size">214.4 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="grids-eurasia" class="level4">
+<h4 class="anchored" data-anchor-id="grids-eurasia">Eurasia</h4>
+<div class="record">
+<p>Version 2.0.0 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Eurasia_Grids">packages</a>). 10 files, 26.5 MB.</p>
+<pre>julia fesmdata.jl fetch Grids Eurasia     # all grids
+julia fesmdata.jl fetch Grids EIS-32KM     # one grid</pre>
+<details><summary><b>EIS-2KM</b> <span class="muted">2 files, 18.7 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Grids_EIS-2KM/2.0.0/grid_EIS-2KM.txt">grid_EIS-2KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Grids_EIS-2KM/2.0.0/EIS-2KM_grid.nc">EIS-2KM_grid.nc</a></td>
+<td class="size">18.7 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>EIS-4KM</b> <span class="muted">2 files, 5.5 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Grids_EIS-4KM/2.0.0/grid_EIS-4KM.txt">grid_EIS-4KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Grids_EIS-4KM/2.0.0/EIS-4KM_grid.nc">EIS-4KM_grid.nc</a></td>
+<td class="size">5.5 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>EIS-8KM</b> <span class="muted">2 files, 1.7 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Grids_EIS-8KM/2.0.0/grid_EIS-8KM.txt">grid_EIS-8KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Grids_EIS-8KM/2.0.0/EIS-8KM_grid.nc">EIS-8KM_grid.nc</a></td>
+<td class="size">1.7 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>EIS-16KM</b> <span class="muted">2 files, 468.7 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Grids_EIS-16KM/2.0.0/grid_EIS-16KM.txt">grid_EIS-16KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Grids_EIS-16KM/2.0.0/EIS-16KM_grid.nc">EIS-16KM_grid.nc</a></td>
+<td class="size">468.2 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>EIS-32KM</b> <span class="muted">2 files, 163.1 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Grids_EIS-32KM/2.0.0/grid_EIS-32KM.txt">grid_EIS-32KM.txt</a></td>
+<td class="size">0.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Eurasia_Grids_EIS-32KM/2.0.0/EIS-32KM_grid.nc">EIS-32KM_grid.nc</a></td>
+<td class="size">162.6 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="grids-pyrenees" class="level4">
+<h4 class="anchored" data-anchor-id="grids-pyrenees">Pyrenees</h4>
+<div class="record">
+<p>Version 2.0.0 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Pyrenees_Grids">packages</a>). 6 files, 3.0 MB.</p>
+<pre>julia fesmdata.jl fetch Grids Pyrenees     # all grids
+julia fesmdata.jl fetch Grids PYR-2KM     # one grid</pre>
+<details><summary><b>PYR-250M</b> <span class="muted">2 files, 2.2 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Grids_PYR-250M/2.0.0/grid_PYR-250M.txt">grid_PYR-250M.txt</a></td>
+<td class="size">0.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Grids_PYR-250M/2.0.0/PYR-250M_grid.nc">PYR-250M_grid.nc</a></td>
+<td class="size">2.2 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>PYR-500M</b> <span class="muted">2 files, 697.5 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Grids_PYR-500M/2.0.0/grid_PYR-500M.txt">grid_PYR-500M.txt</a></td>
+<td class="size">0.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Grids_PYR-500M/2.0.0/PYR-500M_grid.nc">PYR-500M_grid.nc</a></td>
+<td class="size">697.2 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>PYR-2KM</b> <span class="muted">2 files, 87.2 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Grids_PYR-2KM/2.0.0/grid_PYR-2KM.txt">grid_PYR-2KM.txt</a></td>
+<td class="size">0.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Pyrenees_Grids_PYR-2KM/2.0.0/PYR-2KM_grid.nc">PYR-2KM_grid.nc</a></td>
+<td class="size">86.8 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="grids-patagonia" class="level4">
+<h4 class="anchored" data-anchor-id="grids-patagonia">Patagonia</h4>
+<div class="record">
+<p>Version 2.0.0 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Patagonia_Grids">packages</a>). 6 files, 51.6 MB.</p>
+<pre>julia fesmdata.jl fetch Grids Patagonia     # all grids
+julia fesmdata.jl fetch Grids PAT-2KM     # one grid</pre>
+<details><summary><b>PAT-250M</b> <span class="muted">2 files, 36.2 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Grids_PAT-250M/2.0.0/grid_PAT-250M.txt">grid_PAT-250M.txt</a></td>
+<td class="size">0.4 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Grids_PAT-250M/2.0.0/PAT-250M_grid.nc">PAT-250M_grid.nc</a></td>
+<td class="size">36.2 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>PAT-500M</b> <span class="muted">2 files, 14.0 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Grids_PAT-500M/2.0.0/grid_PAT-500M.txt">grid_PAT-500M.txt</a></td>
+<td class="size">0.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Grids_PAT-500M/2.0.0/PAT-500M_grid.nc">PAT-500M_grid.nc</a></td>
+<td class="size">14.0 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>PAT-2KM</b> <span class="muted">2 files, 1.4 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Grids_PAT-2KM/2.0.0/grid_PAT-2KM.txt">grid_PAT-2KM.txt</a></td>
+<td class="size">0.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Patagonia_Grids_PAT-2KM/2.0.0/PAT-2KM_grid.nc">PAT-2KM_grid.nc</a></td>
+<td class="size">1.4 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="grids-northpatagonianicefield" class="level4">
+<h4 class="anchored" data-anchor-id="grids-northpatagonianicefield">NorthPatagonianIcefield</h4>
+<div class="record">
+<p>Version 2.0.0 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=NorthPatagonianIcefield_Grids">packages</a>). 2 files, 321.2 kB.</p>
+<pre>julia fesmdata.jl fetch Grids NorthPatagonianIcefield     # all grids
+julia fesmdata.jl fetch Grids NPI-250M     # one grid</pre>
+<details><summary><b>NPI-250M</b> <span class="muted">2 files, 321.2 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NorthPatagonianIcefield_Grids_NPI-250M/2.0.0/grid_NPI-250M.txt">grid_NPI-250M.txt</a></td>
+<td class="size">0.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NorthPatagonianIcefield_Grids_NPI-250M/2.0.0/NPI-250M_grid.nc">NPI-250M_grid.nc</a></td>
+<td class="size">320.9 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="grids-southpatagonianicefield" class="level4">
+<h4 class="anchored" data-anchor-id="grids-southpatagonianicefield">SouthPatagonianIcefield</h4>
+<div class="record">
+<p>Version 2.0.0 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=SouthPatagonianIcefield_Grids">packages</a>). 2 files, 1.0 MB.</p>
+<pre>julia fesmdata.jl fetch Grids SouthPatagonianIcefield     # all grids
+julia fesmdata.jl fetch Grids SPI-250M     # one grid</pre>
+<details><summary><b>SPI-250M</b> <span class="muted">2 files, 1.0 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SouthPatagonianIcefield_Grids_SPI-250M/2.0.0/grid_SPI-250M.txt">grid_SPI-250M.txt</a></td>
+<td class="size">0.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SouthPatagonianIcefield_Grids_SPI-250M/2.0.0/SPI-250M_grid.nc">SPI-250M_grid.nc</a></td>
+<td class="size">1.0 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="grids-srg" class="level4">
+<h4 class="anchored" data-anchor-id="grids-srg">SRG</h4>
+<div class="record">
+<p>Version 2.0.0 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=SRG_Grids">packages</a>). 8 files, 1.4 MB.</p>
+<pre>julia fesmdata.jl fetch Grids SRG     # all grids
+julia fesmdata.jl fetch Grids SRG-250M     # one grid</pre>
+<details><summary><b>SRG-25M</b> <span class="muted">2 files, 864.4 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Grids_SRG-25M/2.0.0/grid_SRG-25M.txt">grid_SRG-25M.txt</a></td>
+<td class="size">0.4 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Grids_SRG-25M/2.0.0/SRG-25M_grid.nc">SRG-25M_grid.nc</a></td>
+<td class="size">864.0 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>SRG-50M</b> <span class="muted">2 files, 322.8 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Grids_SRG-50M/2.0.0/grid_SRG-50M.txt">grid_SRG-50M.txt</a></td>
+<td class="size">0.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Grids_SRG-50M/2.0.0/SRG-50M_grid.nc">SRG-50M_grid.nc</a></td>
+<td class="size">322.4 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>SRG-100M</b> <span class="muted">2 files, 132.3 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Grids_SRG-100M/2.0.0/grid_SRG-100M.txt">grid_SRG-100M.txt</a></td>
+<td class="size">0.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Grids_SRG-100M/2.0.0/SRG-100M_grid.nc">SRG-100M_grid.nc</a></td>
+<td class="size">132.0 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>SRG-250M</b> <span class="muted">2 files, 52.0 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Grids_SRG-250M/2.0.0/grid_SRG-250M.txt">grid_SRG-250M.txt</a></td>
+<td class="size">0.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SRG_Grids_SRG-250M/2.0.0/SRG-250M_grid.nc">SRG-250M_grid.nc</a></td>
+<td class="size">51.7 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="grids-grancamponevado" class="level4">
+<h4 class="anchored" data-anchor-id="grids-grancamponevado">GranCampoNevado</h4>
+<div class="record">
+<p>Version 2.0.0 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=GranCampoNevado_Grids">packages</a>). 6 files, 1.1 MB.</p>
+<pre>julia fesmdata.jl fetch Grids GranCampoNevado     # all grids
+julia fesmdata.jl fetch Grids GCN-250M     # one grid</pre>
+<details><summary><b>GCN-50M</b> <span class="muted">2 files, 756.6 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Grids_GCN-50M/2.0.0/grid_GCN-50M.txt">grid_GCN-50M.txt</a></td>
+<td class="size">0.4 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Grids_GCN-50M/2.0.0/GCN-50M_grid.nc">GCN-50M_grid.nc</a></td>
+<td class="size">756.2 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GCN-100M</b> <span class="muted">2 files, 287.6 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Grids_GCN-100M/2.0.0/grid_GCN-100M.txt">grid_GCN-100M.txt</a></td>
+<td class="size">0.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Grids_GCN-100M/2.0.0/GCN-100M_grid.nc">GCN-100M_grid.nc</a></td>
+<td class="size">287.3 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>GCN-250M</b> <span class="muted">2 files, 87.1 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Grids_GCN-250M/2.0.0/grid_GCN-250M.txt">grid_GCN-250M.txt</a></td>
+<td class="size">0.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GranCampoNevado_Grids_GCN-250M/2.0.0/GCN-250M_grid.nc">GCN-250M_grid.nc</a></td>
+<td class="size">86.8 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="grids-cordilleradarwin" class="level4">
+<h4 class="anchored" data-anchor-id="grids-cordilleradarwin">CordilleraDarwin</h4>
+<div class="record">
+<p>Version 2.0.0 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=CordilleraDarwin_Grids">packages</a>). 6 files, 6.3 MB.</p>
+<pre>julia fesmdata.jl fetch Grids CordilleraDarwin     # all grids
+julia fesmdata.jl fetch Grids CDI-250M     # one grid</pre>
+<details><summary><b>CDI-50M</b> <span class="muted">2 files, 4.7 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Grids_CDI-50M/2.0.0/grid_CDI-50M.txt">grid_CDI-50M.txt</a></td>
+<td class="size">0.4 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Grids_CDI-50M/2.0.0/CDI-50M_grid.nc">CDI-50M_grid.nc</a></td>
+<td class="size">4.7 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>CDI-100M</b> <span class="muted">2 files, 1.3 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Grids_CDI-100M/2.0.0/grid_CDI-100M.txt">grid_CDI-100M.txt</a></td>
+<td class="size">0.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Grids_CDI-100M/2.0.0/CDI-100M_grid.nc">CDI-100M_grid.nc</a></td>
+<td class="size">1.3 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>CDI-250M</b> <span class="muted">2 files, 342.4 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Grids_CDI-250M/2.0.0/grid_CDI-250M.txt">grid_CDI-250M.txt</a></td>
+<td class="size">0.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/CordilleraDarwin_Grids_CDI-250M/2.0.0/CDI-250M_grid.nc">CDI-250M_grid.nc</a></td>
+<td class="size">342.1 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="grids-montesarmiento" class="level4">
+<h4 class="anchored" data-anchor-id="grids-montesarmiento">MonteSarmiento</h4>
+<div class="record">
+<p>Version 2.0.0 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=MonteSarmiento_Grids">packages</a>). 6 files, 457.9 kB.</p>
+<pre>julia fesmdata.jl fetch Grids MonteSarmiento     # all grids
+julia fesmdata.jl fetch Grids SAR-250M     # one grid</pre>
+<details><summary><b>SAR-50M</b> <span class="muted">2 files, 307.3 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/MonteSarmiento_Grids_SAR-50M/2.0.0/grid_SAR-50M.txt">grid_SAR-50M.txt</a></td>
+<td class="size">0.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/MonteSarmiento_Grids_SAR-50M/2.0.0/SAR-50M_grid.nc">SAR-50M_grid.nc</a></td>
+<td class="size">306.9 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>SAR-100M</b> <span class="muted">2 files, 102.3 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/MonteSarmiento_Grids_SAR-100M/2.0.0/grid_SAR-100M.txt">grid_SAR-100M.txt</a></td>
+<td class="size">0.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/MonteSarmiento_Grids_SAR-100M/2.0.0/SAR-100M_grid.nc">SAR-100M_grid.nc</a></td>
+<td class="size">101.9 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>SAR-250M</b> <span class="muted">2 files, 48.3 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/MonteSarmiento_Grids_SAR-250M/2.0.0/grid_SAR-250M.txt">grid_SAR-250M.txt</a></td>
+<td class="size">0.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/MonteSarmiento_Grids_SAR-250M/2.0.0/SAR-250M_grid.nc">SAR-250M_grid.nc</a></td>
+<td class="size">47.9 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="grids-schiaparelliglacier" class="level4">
+<h4 class="anchored" data-anchor-id="grids-schiaparelliglacier">SchiaparelliGlacier</h4>
+<div class="record">
+<p>Version 2.0.0 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=SchiaparelliGlacier_Grids">packages</a>). 8 files, 250.3 kB.</p>
+<pre>julia fesmdata.jl fetch Grids SchiaparelliGlacier     # all grids
+julia fesmdata.jl fetch Grids SCH-250M     # one grid</pre>
+<details><summary><b>SCH-25M</b> <span class="muted">2 files, 131.3 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Grids_SCH-25M/2.0.0/grid_SCH-25M.txt">grid_SCH-25M.txt</a></td>
+<td class="size">0.4 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Grids_SCH-25M/2.0.0/SCH-25M_grid.nc">SCH-25M_grid.nc</a></td>
+<td class="size">130.9 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>SCH-50M</b> <span class="muted">2 files, 57.5 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Grids_SCH-50M/2.0.0/grid_SCH-50M.txt">grid_SCH-50M.txt</a></td>
+<td class="size">0.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Grids_SCH-50M/2.0.0/SCH-50M_grid.nc">SCH-50M_grid.nc</a></td>
+<td class="size">57.2 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>SCH-100M</b> <span class="muted">2 files, 35.0 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Grids_SCH-100M/2.0.0/grid_SCH-100M.txt">grid_SCH-100M.txt</a></td>
+<td class="size">0.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Grids_SCH-100M/2.0.0/SCH-100M_grid.nc">SCH-100M_grid.nc</a></td>
+<td class="size">34.6 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>SCH-250M</b> <span class="muted">2 files, 26.5 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Grids_SCH-250M/2.0.0/grid_SCH-250M.txt">grid_SCH-250M.txt</a></td>
+<td class="size">0.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/SchiaparelliGlacier_Grids_SCH-250M/2.0.0/SCH-250M_grid.nc">SCH-250M_grid.nc</a></td>
+<td class="size">26.2 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="grids-alps" class="level4">
+<h4 class="anchored" data-anchor-id="grids-alps">Alps</h4>
+<div class="record">
+<p>Version 2.0.0 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Alps_Grids">packages</a>). 6 files, 24.0 MB.</p>
+<pre>julia fesmdata.jl fetch Grids Alps     # all grids
+julia fesmdata.jl fetch Grids ALP-2KM     # one grid</pre>
+<details><summary><b>ALP-250M</b> <span class="muted">2 files, 17.2 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Grids_ALP-250M/2.0.0/grid_ALP-250M.txt">grid_ALP-250M.txt</a></td>
+<td class="size">0.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Grids_ALP-250M/2.0.0/ALP-250M_grid.nc">ALP-250M_grid.nc</a></td>
+<td class="size">17.2 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>ALP-500M</b> <span class="muted">2 files, 6.2 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Grids_ALP-500M/2.0.0/grid_ALP-500M.txt">grid_ALP-500M.txt</a></td>
+<td class="size">0.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Grids_ALP-500M/2.0.0/ALP-500M_grid.nc">ALP-500M_grid.nc</a></td>
+<td class="size">6.2 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>ALP-2KM</b> <span class="muted">2 files, 573.3 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Grids_ALP-2KM/2.0.0/grid_ALP-2KM.txt">grid_ALP-2KM.txt</a></td>
+<td class="size">0.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Alps_Grids_ALP-2KM/2.0.0/ALP-2KM_grid.nc">ALP-2KM_grid.nc</a></td>
+<td class="size">573.0 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="grids-himalaya" class="level4">
+<h4 class="anchored" data-anchor-id="grids-himalaya">Himalaya</h4>
+<div class="record">
+<p>Version 2.0.0 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Himalaya_Grids">packages</a>). 6 files, 111.3 MB.</p>
+<pre>julia fesmdata.jl fetch Grids Himalaya     # all grids
+julia fesmdata.jl fetch Grids HIM-2KM     # one grid</pre>
+<details><summary><b>HIM-250M</b> <span class="muted">2 files, 79.6 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Grids_HIM-250M/2.0.0/grid_HIM-250M.txt">grid_HIM-250M.txt</a></td>
+<td class="size">0.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Grids_HIM-250M/2.0.0/HIM-250M_grid.nc">HIM-250M_grid.nc</a></td>
+<td class="size">79.6 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>HIM-500M</b> <span class="muted">2 files, 28.8 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Grids_HIM-500M/2.0.0/grid_HIM-500M.txt">grid_HIM-500M.txt</a></td>
+<td class="size">0.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Grids_HIM-500M/2.0.0/HIM-500M_grid.nc">HIM-500M_grid.nc</a></td>
+<td class="size">28.8 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>HIM-2KM</b> <span class="muted">2 files, 2.9 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Grids_HIM-2KM/2.0.0/grid_HIM-2KM.txt">grid_HIM-2KM.txt</a></td>
+<td class="size">0.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Himalaya_Grids_HIM-2KM/2.0.0/HIM-2KM_grid.nc">HIM-2KM_grid.nc</a></td>
+<td class="size">2.9 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="grids-drangdrung" class="level4">
+<h4 class="anchored" data-anchor-id="grids-drangdrung">DrangDrung</h4>
+<div class="record">
+<p>Version 2.0.0 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=DrangDrung_Grids">packages</a>). 8 files, 590.9 kB.</p>
+<pre>julia fesmdata.jl fetch Grids DrangDrung     # all grids
+julia fesmdata.jl fetch Grids DDG-250M     # one grid</pre>
+<details><summary><b>DDG-25M</b> <span class="muted">2 files, 358.2 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Grids_DDG-25M/2.0.0/grid_DDG-25M.txt">grid_DDG-25M.txt</a></td>
+<td class="size">0.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Grids_DDG-25M/2.0.0/DDG-25M_grid.nc">DDG-25M_grid.nc</a></td>
+<td class="size">357.9 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>DDG-50M</b> <span class="muted">2 files, 139.9 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Grids_DDG-50M/2.0.0/grid_DDG-50M.txt">grid_DDG-50M.txt</a></td>
+<td class="size">0.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Grids_DDG-50M/2.0.0/DDG-50M_grid.nc">DDG-50M_grid.nc</a></td>
+<td class="size">139.6 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>DDG-100M</b> <span class="muted">2 files, 60.4 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Grids_DDG-100M/2.0.0/grid_DDG-100M.txt">grid_DDG-100M.txt</a></td>
+<td class="size">0.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Grids_DDG-100M/2.0.0/DDG-100M_grid.nc">DDG-100M_grid.nc</a></td>
+<td class="size">60.1 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>DDG-250M</b> <span class="muted">2 files, 32.4 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Grids_DDG-250M/2.0.0/grid_DDG-250M.txt">grid_DDG-250M.txt</a></td>
+<td class="size">0.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/DrangDrung_Grids_DDG-250M/2.0.0/DDG-250M_grid.nc">DDG-250M_grid.nc</a></td>
+<td class="size">32.0 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="grids-svalbard" class="level4">
+<h4 class="anchored" data-anchor-id="grids-svalbard">Svalbard</h4>
+<div class="record">
+<p>Version 2.0.0 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Svalbard_Grids">packages</a>). 6 files, 11.7 MB.</p>
+<pre>julia fesmdata.jl fetch Grids Svalbard     # all grids
+julia fesmdata.jl fetch Grids SVB-2KM     # one grid</pre>
+<details><summary><b>SVB-500M</b> <span class="muted">2 files, 8.5 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Grids_SVB-500M/2.0.0/grid_SVB-500M.txt">grid_SVB-500M.txt</a></td>
+<td class="size">0.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Grids_SVB-500M/2.0.0/SVB-500M_grid.nc">SVB-500M_grid.nc</a></td>
+<td class="size">8.5 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>SVB-1KM</b> <span class="muted">2 files, 2.5 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Grids_SVB-1KM/2.0.0/grid_SVB-1KM.txt">grid_SVB-1KM.txt</a></td>
+<td class="size">0.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Grids_SVB-1KM/2.0.0/SVB-1KM_grid.nc">SVB-1KM_grid.nc</a></td>
+<td class="size">2.5 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>SVB-2KM</b> <span class="muted">2 files, 745.1 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Grids_SVB-2KM/2.0.0/grid_SVB-2KM.txt">grid_SVB-2KM.txt</a></td>
+<td class="size">0.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Svalbard_Grids_SVB-2KM/2.0.0/SVB-2KM_grid.nc">SVB-2KM_grid.nc</a></td>
+<td class="size">744.7 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+<section id="grids-newzealand" class="level4">
+<h4 class="anchored" data-anchor-id="grids-newzealand">NewZealand</h4>
+<div class="record">
+<p>Version 2.0.0 (2026-10-16, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=NewZealand_Grids">packages</a>). 6 files, 13.8 MB.</p>
+<pre>julia fesmdata.jl fetch Grids NewZealand     # all grids
+julia fesmdata.jl fetch Grids NZ-2KM     # one grid</pre>
+<details><summary><b>NZ-250M</b> <span class="muted">2 files, 9.7 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Grids_NZ-250M/2.0.0/grid_NZ-250M.txt">grid_NZ-250M.txt</a></td>
+<td class="size">0.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Grids_NZ-250M/2.0.0/NZ-250M_grid.nc">NZ-250M_grid.nc</a></td>
+<td class="size">9.7 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>NZ-500M</b> <span class="muted">2 files, 3.7 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Grids_NZ-500M/2.0.0/grid_NZ-500M.txt">grid_NZ-500M.txt</a></td>
+<td class="size">0.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Grids_NZ-500M/2.0.0/NZ-500M_grid.nc">NZ-500M_grid.nc</a></td>
+<td class="size">3.7 MB</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary><b>NZ-2KM</b> <span class="muted">2 files, 416.6 kB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Grids_NZ-2KM/2.0.0/grid_NZ-2KM.txt">grid_NZ-2KM.txt</a></td>
+<td class="size">0.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/NewZealand_Grids_NZ-2KM/2.0.0/NZ-2KM_grid.nc">NZ-2KM_grid.nc</a></td>
+<td class="size">416.2 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</section>
+</section>
+</section>
+<section id="which-datasets-are-on-which-grids" class="level2">
+<h2 class="anchored" data-anchor-id="which-datasets-are-on-which-grids">Which datasets are on which grids</h2>
+<p>Topo and Regions are made on every grid of every active domain, crop and nest, from the high-resolution sources. Regions also has the masks of the nests and crops of a domain on all grids of the domain, its crops and nests (<code>&lt;GRID&gt;_DOMAINS.nc</code>, see <a href="./datasets/regions.html#domains">Regions</a>).</p>
+<p>The thematic datasets (GHF, Velocity, SMB, …) are made by remapping published maps, which are much coarser than the base grids. They are made only on the grids that add information: as a rule, no grid is finer than about a quarter of the spacing of the source, e.g.&nbsp;16 km and 0.5° for sources at 1-2°, 8 km and 0.25° for sources at 0.25-0.5°, 4 km for most others, and the 2 km grids of the mountain-glacier domains. A model that needs a finer grid can remap online.</p>
+<p>They are released on the domains, and on the crops that a product lists (e.g. Greenland, Laurentide and Eurasia, or a Greenland-only source on Greenland). The other crops and the nests lie on the grids of their domain, so they get the thematic datasets by cropping those of their domain (or of a crop that contains them, e.g.&nbsp;Greenland for Jakobshavn), on demand, when they are downloaded (see <a href="./download.html#nests-and-crops">Nests and crops</a>). <a href="./products.html">Products</a> shows which dataset is on which domain.</p>
+</section>
+<section id="inactive-domains" class="level2">
+<h2 class="anchored" data-anchor-id="inactive-domains">Inactive domains</h2>
+<p>A domain can be defined but not used yet (<code>active = false</code> in <code>shared/domains.toml</code>; none at present): its grids and products are made only on request, and it is left out of the releases and figures. To have one made and released, open an <a href="https://github.com/fesmc/FesmData/issues">issue</a>.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/fesmc\.github\.io\/FesmData\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>FesmData · fesmc</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/fesmc/FesmData/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Built with <a href="https://quarto.org">Quarto</a></p>
+</div>
+  </div>
+</footer>
+<script>document.querySelectorAll('a.toc-action[href^="http"]').forEach(a => { a.target = "_blank"; a.rel = "noopener"; });</script>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

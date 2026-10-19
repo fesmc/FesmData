@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.19">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>IceCores – FesmData</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d37df8fd7b43e116a420b34c208e916c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-dae82585467ed893c2d02b9a361b8f7a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">FesmData</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../download.html"> 
+<span class="menu-text">Download</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../products.html"> 
+<span class="menu-text">Products</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../domains.html"> 
+<span class="menu-text">Domains and grids</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-datasets" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Datasets</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-datasets">    
+        <li>
+    <a class="dropdown-item" href="../datasets.html">
+ <span class="dropdown-text">Overview</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../precision.html">
+ <span class="dropdown-text">Precision and file sizes</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Topography and masks</li>
+        <li>
+    <a class="dropdown-item" href="../datasets/topo.html">
+ <span class="dropdown-text">Topo — topography</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/regions.html">
+ <span class="dropdown-text">Regions — regions and basins</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Ice</li>
+        <li>
+    <a class="dropdown-item" href="../datasets/velocity.html">
+ <span class="dropdown-text">Velocity — ice surface velocity</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/icechange.html">
+ <span class="dropdown-text">IceChange — observed ice sheet change</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/icehistory.html">
+ <span class="dropdown-text">IceHistory — paleo ice sheets</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/stratigraphy.html">
+ <span class="dropdown-text">Stratigraphy — age structure</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/basalmelt.html">
+ <span class="dropdown-text">BasalMelt — ice-shelf melt</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/basalstate.html">
+ <span class="dropdown-text">BasalState — basal thermal state</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Solid Earth</li>
+        <li>
+    <a class="dropdown-item" href="../datasets/ghf.html">
+ <span class="dropdown-text">GHF — geothermal heat flow</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/sediment.html">
+ <span class="dropdown-text">Sediment — sediment thickness</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/solidearth.html">
+ <span class="dropdown-text">SolidEarth — lithosphere and mantle</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Ocean and climate</li>
+        <li>
+    <a class="dropdown-item" href="../datasets/ocean.html">
+ <span class="dropdown-text">Ocean — temperature and salinity</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/smb.html">
+ <span class="dropdown-text">SMB — surface mass balance</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/atmosphere.html">
+ <span class="dropdown-text">Atmosphere — reanalysis and satellite</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/paleoclimate.html">
+ <span class="dropdown-text">Paleoclimate — past climates</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-records" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Records</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-records">    
+        <li>
+    <a class="dropdown-item" href="../records_overview.html">
+ <span class="dropdown-text">Overview</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../datasets/icecores.html">
+ <span class="dropdown-text">IceCores — ice core records</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/ghg.html">
+ <span class="dropdown-text">GHG — greenhouse gases</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/sealevel.html">
+ <span class="dropdown-text">SeaLevel — global sea level</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/stacks.html">
+ <span class="dropdown-text">Stacks — benthic δ18O stacks</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/orbital.html">
+ <span class="dropdown-text">Orbital — orbital elements and insolation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/rsl.html">
+ <span class="dropdown-text">RSL — relative sea level</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/boreholes.html">
+ <span class="dropdown-text">Boreholes — ice temperature profiles</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/gps.html">
+ <span class="dropdown-text">GPS — vertical velocities</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/smbobs.html">
+ <span class="dropdown-text">SMBObs — surface mass balance observations</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../datasets/freshwater.html">
+ <span class="dropdown-text">Freshwater — ice sheet freshwater fluxes</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-your-own-data" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Your own data</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-your-own-data">    
+        <li>
+    <a class="dropdown-item" href="../remap.html">
+ <span class="dropdown-text">Gridded data</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../records.html">
+ <span class="dropdown-text">Records format</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-developers" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Developers</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-developers">    
+        <li>
+    <a class="dropdown-item" href="../developers.html">
+ <span class="dropdown-text">Overview and code</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../machines.html">
+ <span class="dropdown-text">Machines and storage</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../adding.html">
+ <span class="dropdown-text">Adding a dataset</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../releasing.html">
+ <span class="dropdown-text">Releasing</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../website.html">
+ <span class="dropdown-text">Website and figures</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/fesmc/FesmData" target="_blank"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#icecores-ice-core-records" id="toc-icecores-ice-core-records" class="nav-link active" data-scroll-target="#icecores-ice-core-records">IceCores: ice core records</a>
+  <ul class="collapse">
+  <li><a href="#products" id="toc-products" class="nav-link" data-scroll-target="#products">Products</a></li>
+  <li><a href="#licences" id="toc-licences" class="nav-link" data-scroll-target="#licences">Licences</a></li>
+  <li><a href="#making-the-dataset" id="toc-making-the-dataset" class="nav-link" data-scroll-target="#making-the-dataset">Making the dataset</a></li>
+  <li><a href="#downloads" id="toc-downloads" class="nav-link" data-scroll-target="#downloads">Downloads</a></li>
+  <li><a href="#figures" id="toc-figures" class="nav-link" data-scroll-target="#figures">Figures</a>
+  <ul class="collapse">
+  <li><a href="#aicc2023" id="toc-aicc2023" class="nav-link" data-scroll-target="#aicc2023">AICC2023</a></li>
+  <li><a href="#barker2011" id="toc-barker2011" class="nav-link" data-scroll-target="#barker2011">Barker2011</a></li>
+  <li><a href="#buizert2018" id="toc-buizert2018" class="nav-link" data-scroll-target="#buizert2018">Buizert2018</a></li>
+  <li><a href="#epica2006" id="toc-epica2006" class="nav-link" data-scroll-target="#epica2006">EPICA2006</a></li>
+  <li><a href="#gkinis2020" id="toc-gkinis2020" class="nav-link" data-scroll-target="#gkinis2020">Gkinis2020</a></li>
+  <li><a href="#jouzel2007" id="toc-jouzel2007" class="nav-link" data-scroll-target="#jouzel2007">Jouzel2007</a></li>
+  <li><a href="#kindler2014" id="toc-kindler2014" class="nav-link" data-scroll-target="#kindler2014">Kindler2014</a></li>
+  <li><a href="#lambert2012" id="toc-lambert2012" class="nav-link" data-scroll-target="#lambert2012">Lambert2012</a></li>
+  <li><a href="#petit1999" id="toc-petit1999" class="nav-link" data-scroll-target="#petit1999">Petit1999</a></li>
+  <li><a href="#rasmussen2014" id="toc-rasmussen2014" class="nav-link" data-scroll-target="#rasmussen2014">Rasmussen2014</a></li>
+  <li><a href="#stenni2011" id="toc-stenni2011" class="nav-link" data-scroll-target="#stenni2011">Stenni2011</a></li>
+  <li><a href="#uemura2018" id="toc-uemura2018" class="nav-link" data-scroll-target="#uemura2018">Uemura2018</a></li>
+  <li><a href="#vinther2009" id="toc-vinther2009" class="nav-link" data-scroll-target="#vinther2009">Vinther2009</a></li>
+  <li><a href="#wais2015" id="toc-wais2015" class="nav-link" data-scroll-target="#wais2015">WAIS2015</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/fesmc/FesmData/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="icecores-ice-core-records" class="level1">
+<h1>IceCores: ice core records</h1>
+<p>Time series at Antarctic and Greenland ice core sites over glacial cycles: water isotopes, temperature, accumulation, dust and surface elevation, and the AICC2023 ice core chronology. IceCores is a records dataset (non-gridded data, see <a href="https://fesmc.github.io/FesmData/records_overview.html">Records</a>): its products, defined in <code>IceCores/records.toml</code>, are prepared files in the form of the CF discrete sampling geometries, written to <code>$FESMDATA/Records/IceCores/IceCores-&lt;product&gt;[-&lt;part&gt;].nc</code>, each with its text form (<code>.txt</code>).</p>
+<section id="products" class="level2">
+<h2 class="anchored" data-anchor-id="products">Products</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Product</th>
+<th>Source</th>
+<th>Sites</th>
+<th>Variables</th>
+<th>Time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>IceCores-Jouzel2007</code></td>
+<td>Jouzel et al.&nbsp;(2007): EPICA Dome C deuterium, <a href="https://doi.org/10.25921/8t7e-z147">doi:10.25921/8t7e-z147</a></td>
+<td>EDC</td>
+<td><code>dD</code> (‰), <code>tas_anom</code> (K), <code>depth</code></td>
+<td>0-802 ka, 0.55 m bags (EDC3; also AICC2023)</td>
+</tr>
+<tr class="even">
+<td><code>IceCores-Petit1999</code></td>
+<td>Petit et al.&nbsp;(1999): Vostok deuterium, <a href="https://doi.org/10.25921/kcry-ae86">doi:10.25921/kcry-ae86</a></td>
+<td>Vostok</td>
+<td><code>dD</code> (‰), <code>tas_anom</code> (K), <code>depth</code></td>
+<td>0-423 ka, every 1 m (GT4; also AICC2023)</td>
+</tr>
+<tr class="odd">
+<td><code>IceCores-Uemura2018</code></td>
+<td>Uemura et al.&nbsp;(2012, 2018): Dome Fuji water isotopes, <a href="https://doi.org/10.25921/9886-bg13">doi:10.25921/9886-bg13</a></td>
+<td>Dome Fuji</td>
+<td><code>d18O</code>, <code>dD</code>, <code>dxs</code>, <code>dln</code> (‰), <code>tas_anom</code>, <code>t_source_anom</code> (K), <code>depth_top</code>, <code>depth_bottom</code></td>
+<td>0-716 ka (AICC2012)</td>
+</tr>
+<tr class="even">
+<td><code>IceCores-EPICA2006</code></td>
+<td>EPICA Community Members (2006): EDML δ18O, <a href="https://doi.org/10.1594/PANGAEA.754444">doi:10.1594/PANGAEA.754444</a></td>
+<td>EDML</td>
+<td><code>d18O</code>, <code>d18O_swcor</code>, <code>d18O_swaltcor</code>, <code>d18O_sw</code> (‰), <code>dz_srf</code>, <code>depth</code></td>
+<td>0-150 ka, 0.5 m (EDML1; also AICC2023)</td>
+</tr>
+<tr class="odd">
+<td><code>IceCores-WAIS2015</code></td>
+<td>WAIS Divide Project Members (2015): WAIS Divide δ18O, <a href="https://doi.org/10.7265/N5GT5K41">doi:10.7265/N5GT5K41</a></td>
+<td>WAIS Divide</td>
+<td><code>d18O</code> (‰), <code>depth</code>, <code>depth_top</code>, <code>depth_bottom</code>, <code>tube</code></td>
+<td>0-68 ka, about 1 m tubes (WD2014; AICC2023 for 10-57 ka)</td>
+</tr>
+<tr class="even">
+<td><code>IceCores-Stenni2011</code></td>
+<td>Stenni et al.&nbsp;(2011): TALDICE δ18O on AICC2012, <a href="https://doi.org/10.1594/PANGAEA.824890">doi:10.1594/PANGAEA.824890</a></td>
+<td>TALDICE</td>
+<td><code>d18O</code> (‰), <code>depth</code></td>
+<td>0-153 ka, every 1 m (AICC2012; also AICC2023)</td>
+</tr>
+<tr class="odd">
+<td><code>IceCores-Lambert2012</code></td>
+<td>Lambert et al.&nbsp;(2012): EPICA Dome C dust flux, <a href="https://doi.org/10.1594/PANGAEA.778213">doi:10.1594/PANGAEA.778213</a></td>
+<td>EDC</td>
+<td><code>dust_flux</code> (mg m-2 yr-1), <code>depth</code></td>
+<td>0.4-801 ka, 25 years (EDC3; also AICC2023)</td>
+</tr>
+<tr class="even">
+<td><code>IceCores-Rasmussen2014</code></td>
+<td>Rasmussen et al.&nbsp;(2014), Seierstad et al.&nbsp;(2014): synchronized Greenland records, <a href="https://doi.org/10.1016/j.quascirev.2014.09.007">doi:10.1016/j.quascirev.2014.09.007</a></td>
+<td>NGRIP1, NGRIP2, GRIP, GISP2</td>
+<td><code>d18O</code> (‰), <code>ca</code> (ng g-1), <code>depth</code>, <code>mce</code></td>
+<td>0-122 ka, 20 years (GICC05modelext; NGRIP also AICC2023)</td>
+</tr>
+<tr class="odd">
+<td><code>IceCores-Buizert2018</code></td>
+<td>Buizert et al.&nbsp;(2018): seasonal temperatures at ice core sites, <a href="https://doi.org/10.25921/psvs-yg80">doi:10.25921/psvs-yg80</a></td>
+<td>NEEM, NGRIP, GISP2, Dye-3, ReCAP, Agassiz, Hans Tausen, Camp Century, EGRIP</td>
+<td><code>tas_ann</code>, <code>tas_djf</code>, <code>tas_mam</code>, <code>tas_jja</code>, <code>tas_son</code> (K)</td>
+<td>22 ka to present, 20 years</td>
+</tr>
+<tr class="even">
+<td><code>IceCores-Barker2011-&lt;part&gt;</code></td>
+<td>Barker et al.&nbsp;(2011): synthetic Greenland record GLT_syn from EDC, <a href="https://doi.org/10.1126/science.1203580">doi:10.1126/science.1203580</a>; parts <code>GLTsyn</code> and <code>events</code></td>
+<td>Greenland (synthetic, no location)</td>
+<td><code>glt_syn</code>, <code>glt_syn_hi</code>, <code>glt_syn_lo</code> (‰); <code>events</code>: <code>do_pick</code>, <code>do_pick_var</code></td>
+<td>5-800 ka, 50 years (EDC3; speleothem ages to 400 ka)</td>
+</tr>
+<tr class="odd">
+<td><code>IceCores-Kindler2014</code></td>
+<td>Kindler et al.&nbsp;(2014): reconstruction from δ15N and a firn model, <a href="https://doi.org/10.5194/cp-10-887-2014">doi:10.5194/cp-10-887-2014</a></td>
+<td>NGRIP</td>
+<td><code>tas</code> (K), <code>acc</code> (kg m-2 yr-1), <code>depth</code></td>
+<td>10-122 ka, 20 years (GICC05modelext)</td>
+</tr>
+<tr class="even">
+<td><code>IceCores-Gkinis2020</code></td>
+<td>Gkinis et al.&nbsp;(2020): 0.05 m samples, <a href="https://doi.org/10.1594/PANGAEA.925552">doi:10.1594/PANGAEA.925552</a></td>
+<td>NEEM</td>
+<td><code>d18O</code>, <code>dD</code> (‰) with precision and accuracy offsets, <code>depth</code></td>
+<td>8-121 ka (GICC05, GICC05_modelext; also AICC2012)</td>
+</tr>
+<tr class="odd">
+<td><code>IceCores-Vinther2009</code></td>
+<td>Vinther et al.&nbsp;(2009): Holocene thinning, <a href="https://doi.org/10.1038/nature08355">doi:10.1038/nature08355</a></td>
+<td>Camp Century, NGRIP, GRIP, DYE-3</td>
+<td><code>dz_srf</code>, <code>dz_srf_sd</code> (m), <code>z_srf</code> (present)</td>
+<td>11.7 ka to present, 20 years (GICC05)</td>
+</tr>
+<tr class="even">
+<td><code>IceCores-AICC2023-&lt;core&gt;</code></td>
+<td>Bouchet et al.&nbsp;(2023): AICC2023 chronology, <a href="https://doi.org/10.1594/PANGAEA.961017">doi:10.1594/PANGAEA.961017</a>; one file per core</td>
+<td>EDC, EDML, NGRIP, TALDICE, Vostok</td>
+<td><code>age_ice_aicc2023</code>, <code>age_gas_aicc2023</code> and their <code>_sd</code>, <code>age_ice_aicc2012</code>, <code>age_gas_aicc2012</code>, <code>acc</code>, <code>thinning</code>, <code>lid</code>, <code>delta_depth</code> (profiles along <code>depth</code>)</td>
+<td>to 813 ka (EDC)</td>
+</tr>
+</tbody>
+</table>
+<p>The records are time series at fixed sites (featureType timeSeries, dimension <code>station</code>, with <code>lat</code>, <code>lon</code>, <code>site_name</code>, and <code>z_srf</code> where the source gives it); the AICC2023 files are profiles along depth (featureType profile); GLT_syn is a series of a region without a location. <code>time</code> is in years before 1950 CE (units “years ago”), on the time scale of the source (in the comment of <code>time</code>); ages b2k (before 2000 CE) are converted by subtracting 50. Water isotopes are in ‰ (units <code>1e-3</code>); temperature anomalies <code>tas_anom</code> are relative to the present (see each source).</p>
+<p><code>time_aicc2023</code>: the records of EDC, EDML, TALDICE, Vostok and NGRIP with depths also have the ages on AICC2023 (Bouchet et al., 2023), interpolated linearly in depth in the AICC2023 table of the core (<code>IceCores-AICC2023-&lt;core&gt;</code>); missing outside the table. WAIS Divide has AICC2023 ages from the WAIS Divide-EDC tie points of AICC2023 (10-57 ka).</p>
+</section>
+<section id="licences" class="level2">
+<h2 class="anchored" data-anchor-id="licences">Licences</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Source</th>
+<th>Licence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Jouzel et al.&nbsp;(2007), Petit et al.&nbsp;(1999), Uemura et al.&nbsp;(2018), Buizert et al.&nbsp;(2018)</td>
+<td>NOAA NCEI open data, no licence stated; publishing assumed to be allowed</td>
+</tr>
+<tr class="even">
+<td>EPICA Community Members (2006), Stenni et al.&nbsp;(2011) on AICC2012, Lambert et al.&nbsp;(2012)</td>
+<td>CC BY 3.0 (PANGAEA)</td>
+</tr>
+<tr class="odd">
+<td>Rasmussen et al.&nbsp;(2014), Seierstad et al.&nbsp;(2014)</td>
+<td>No licence stated (Centre for Ice and Climate); publishing assumed to be allowed</td>
+</tr>
+<tr class="even">
+<td>Bouchet et al.&nbsp;(2023), AICC2023</td>
+<td>CC BY 4.0 (PANGAEA)</td>
+</tr>
+<tr class="odd">
+<td>WAIS Divide Project Members (2015), data of E. Steig</td>
+<td>CC BY-NC 4.0 (USAP-DC)</td>
+</tr>
+<tr class="even">
+<td>Barker et al.&nbsp;(2011)</td>
+<td>Supplement of a Science article, no open licence stated; publishing assumed to be allowed</td>
+</tr>
+<tr class="odd">
+<td>Kindler et al.&nbsp;(2014)</td>
+<td>CC BY 3.0 (Clim. Past supplement)</td>
+</tr>
+<tr class="even">
+<td>Gkinis et al.&nbsp;(2020)</td>
+<td>CC BY 4.0 (PANGAEA)</td>
+</tr>
+<tr class="odd">
+<td>Vinther et al.&nbsp;(2009)</td>
+<td>NOAA NCEI open data, no licence stated; publishing assumed to be allowed</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="making-the-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="making-the-dataset">Making the dataset</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">julia</span> fesmdata.jl record IceCores</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>prepares the missing sources (<code>&lt;Source&gt;/prepare.jl</code>), checks the prepared files and copies them to <code>$FESMDATA/Records/IceCores/</code> with their text forms (<code>--overwrite</code> to replace them). The sources with AICC2023 ages prepare <code>Bouchet2023_AICC2023</code> first if needed.</p>
+<!-- Generated by `julia fesmdata.jl docs` (Publish/site.jl), do not edit. -->
+</section>
+<section id="downloads" class="level2">
+<h2 class="anchored" data-anchor-id="downloads">Downloads</h2>
+<p>Download the files with <code>fesmdata.jl</code> into <code>$FESMDATA/&lt;Domain&gt;/&lt;GRID&gt;/</code> (see <a href="../download.html">Download</a>), or one by one from the links below. All released datasets are listed under <a href="../products.html">Products</a>.</p>
+<div class="record">
+<p>Version 2.1.0 (2026-10-15, <a href="https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Records_IceCores">packages</a>). 38 files, 17.4 MB.</p>
+<pre>julia fesmdata.jl fetch IceCores Records</pre>
+<details><summary><b>IceCores</b> <span class="muted">38 files, 17.4 MB</span></summary>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-AICC2023-EDC.nc">IceCores-AICC2023-EDC.nc</a></td>
+<td class="size">297.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-AICC2023-EDC.txt">IceCores-AICC2023-EDC.txt</a></td>
+<td class="size">1.2 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-AICC2023-EDML.nc">IceCores-AICC2023-EDML.nc</a></td>
+<td class="size">169.1 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-AICC2023-EDML.txt">IceCores-AICC2023-EDML.txt</a></td>
+<td class="size">494.4 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-AICC2023-NGRIP.nc">IceCores-AICC2023-NGRIP.nc</a></td>
+<td class="size">186.6 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-AICC2023-NGRIP.txt">IceCores-AICC2023-NGRIP.txt</a></td>
+<td class="size">636.1 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-AICC2023-TALDICE.nc">IceCores-AICC2023-TALDICE.nc</a></td>
+<td class="size">130.0 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-AICC2023-TALDICE.txt">IceCores-AICC2023-TALDICE.txt</a></td>
+<td class="size">331.8 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-AICC2023-Vostok.nc">IceCores-AICC2023-Vostok.nc</a></td>
+<td class="size">202.9 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-AICC2023-Vostok.txt">IceCores-AICC2023-Vostok.txt</a></td>
+<td class="size">676.9 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Barker2011-GLTsyn.nc">IceCores-Barker2011-GLTsyn.nc</a></td>
+<td class="size">361.4 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Barker2011-GLTsyn.txt">IceCores-Barker2011-GLTsyn.txt</a></td>
+<td class="size">921.4 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Barker2011-events.nc">IceCores-Barker2011-events.nc</a></td>
+<td class="size">24.9 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Barker2011-events.txt">IceCores-Barker2011-events.txt</a></td>
+<td class="size">6.6 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Buizert2018.nc">IceCores-Buizert2018.nc</a></td>
+<td class="size">184.6 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Buizert2018.txt">IceCores-Buizert2018.txt</a></td>
+<td class="size">904.2 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-EPICA2006.nc">IceCores-EPICA2006.nc</a></td>
+<td class="size">221.7 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-EPICA2006.txt">IceCores-EPICA2006.txt</a></td>
+<td class="size">499.6 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Gkinis2020.nc">IceCores-Gkinis2020.nc</a></td>
+<td class="size">695.1 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Gkinis2020.txt">IceCores-Gkinis2020.txt</a></td>
+<td class="size">2.2 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Jouzel2007.nc">IceCores-Jouzel2007.nc</a></td>
+<td class="size">132.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Jouzel2007.txt">IceCores-Jouzel2007.txt</a></td>
+<td class="size">292.0 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Kindler2014.nc">IceCores-Kindler2014.nc</a></td>
+<td class="size">192.2 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Kindler2014.txt">IceCores-Kindler2014.txt</a></td>
+<td class="size">351.8 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Lambert2012.nc">IceCores-Lambert2012.nc</a></td>
+<td class="size">641.9 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Lambert2012.txt">IceCores-Lambert2012.txt</a></td>
+<td class="size">1.3 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Petit1999.nc">IceCores-Petit1999.nc</a></td>
+<td class="size">85.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Petit1999.txt">IceCores-Petit1999.txt</a></td>
+<td class="size">157.2 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Rasmussen2014.nc">IceCores-Rasmussen2014.nc</a></td>
+<td class="size">339.8 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Rasmussen2014.txt">IceCores-Rasmussen2014.txt</a></td>
+<td class="size">1.5 MB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Stenni2011.nc">IceCores-Stenni2011.nc</a></td>
+<td class="size">45.5 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Stenni2011.txt">IceCores-Stenni2011.txt</a></td>
+<td class="size">57.5 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Uemura2018.nc">IceCores-Uemura2018.nc</a></td>
+<td class="size">200.6 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Uemura2018.txt">IceCores-Uemura2018.txt</a></td>
+<td class="size">592.3 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Vinther2009.nc">IceCores-Vinther2009.nc</a></td>
+<td class="size">44.3 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-Vinther2009.txt">IceCores-Vinther2009.txt</a></td>
+<td class="size">96.2 kB</td>
+</tr>
+<tr class="odd">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-WAIS2015.nc">IceCores-WAIS2015.nc</a></td>
+<td class="size">305.8 kB</td>
+</tr>
+<tr class="even">
+<td><a href="https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_IceCores/2.1.0/IceCores-WAIS2015.txt">IceCores-WAIS2015.txt</a></td>
+<td class="size">633.3 kB</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+<!-- Generated by `julia fesmdata.jl figures IceCores` (do not edit). -->
+</section>
+<section id="figures" class="level2">
+<h2 class="anchored" data-anchor-id="figures">Figures</h2>
+<section id="aicc2023" class="level3">
+<h3 class="anchored" data-anchor-id="aicc2023">AICC2023</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/IceCores/IceCores-AICC2023.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="IceCores-AICC2023-EDC.nc, IceCores-AICC2023-EDML.nc, IceCores-AICC2023-NGRIP.nc, IceCores-AICC2023-TALDICE.nc, IceCores-AICC2023-Vostok.nc: 5 sites, age_ice_aicc2023."><img src="../figures/IceCores/IceCores-AICC2023.png" class="img-fluid figure-img" width="836" alt="IceCores-AICC2023-EDC.nc, IceCores-AICC2023-EDML.nc, IceCores-AICC2023-NGRIP.nc, IceCores-AICC2023-TALDICE.nc, IceCores-AICC2023-Vostok.nc: 5 sites, age_ice_aicc2023."></a></p>
+<figcaption>IceCores-AICC2023-EDC.nc, IceCores-AICC2023-EDML.nc, IceCores-AICC2023-NGRIP.nc, IceCores-AICC2023-TALDICE.nc, IceCores-AICC2023-Vostok.nc: 5 sites, age_ice_aicc2023.</figcaption>
+</figure>
+</div>
+</section>
+<section id="barker2011" class="level3">
+<h3 class="anchored" data-anchor-id="barker2011">Barker2011</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/IceCores/IceCores-Barker2011.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="IceCores-Barker2011-GLTsyn.nc, IceCores-Barker2011-events.nc: 1 region, glt_syn, do_pick."><img src="../figures/IceCores/IceCores-Barker2011.png" class="img-fluid figure-img" width="543" alt="IceCores-Barker2011-GLTsyn.nc, IceCores-Barker2011-events.nc: 1 region, glt_syn, do_pick."></a></p>
+<figcaption>IceCores-Barker2011-GLTsyn.nc, IceCores-Barker2011-events.nc: 1 region, glt_syn, do_pick.</figcaption>
+</figure>
+</div>
+</section>
+<section id="buizert2018" class="level3">
+<h3 class="anchored" data-anchor-id="buizert2018">Buizert2018</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/IceCores/IceCores-Buizert2018.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="IceCores-Buizert2018.nc: 9 sites, tas_ann."><img src="../figures/IceCores/IceCores-Buizert2018.png" class="img-fluid figure-img" width="764" alt="IceCores-Buizert2018.nc: 9 sites, tas_ann."></a></p>
+<figcaption>IceCores-Buizert2018.nc: 9 sites, tas_ann.</figcaption>
+</figure>
+</div>
+</section>
+<section id="epica2006" class="level3">
+<h3 class="anchored" data-anchor-id="epica2006">EPICA2006</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/IceCores/IceCores-EPICA2006.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="IceCores-EPICA2006.nc: 1 site, d18O."><img src="../figures/IceCores/IceCores-EPICA2006.png" class="img-fluid figure-img" width="820" alt="IceCores-EPICA2006.nc: 1 site, d18O."></a></p>
+<figcaption>IceCores-EPICA2006.nc: 1 site, d18O.</figcaption>
+</figure>
+</div>
+</section>
+<section id="gkinis2020" class="level3">
+<h3 class="anchored" data-anchor-id="gkinis2020">Gkinis2020</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/IceCores/IceCores-Gkinis2020.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="IceCores-Gkinis2020.nc: 1 site, d18O."><img src="../figures/IceCores/IceCores-Gkinis2020.png" class="img-fluid figure-img" width="765" alt="IceCores-Gkinis2020.nc: 1 site, d18O."></a></p>
+<figcaption>IceCores-Gkinis2020.nc: 1 site, d18O.</figcaption>
+</figure>
+</div>
+</section>
+<section id="jouzel2007" class="level3">
+<h3 class="anchored" data-anchor-id="jouzel2007">Jouzel2007</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/IceCores/IceCores-Jouzel2007.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="IceCores-Jouzel2007.nc: 1 site, dD."><img src="../figures/IceCores/IceCores-Jouzel2007.png" class="img-fluid figure-img" width="817" alt="IceCores-Jouzel2007.nc: 1 site, dD."></a></p>
+<figcaption>IceCores-Jouzel2007.nc: 1 site, dD.</figcaption>
+</figure>
+</div>
+</section>
+<section id="kindler2014" class="level3">
+<h3 class="anchored" data-anchor-id="kindler2014">Kindler2014</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/IceCores/IceCores-Kindler2014.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="IceCores-Kindler2014.nc: 1 site, tas."><img src="../figures/IceCores/IceCores-Kindler2014.png" class="img-fluid figure-img" width="764" alt="IceCores-Kindler2014.nc: 1 site, tas."></a></p>
+<figcaption>IceCores-Kindler2014.nc: 1 site, tas.</figcaption>
+</figure>
+</div>
+</section>
+<section id="lambert2012" class="level3">
+<h3 class="anchored" data-anchor-id="lambert2012">Lambert2012</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/IceCores/IceCores-Lambert2012.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="IceCores-Lambert2012.nc: 1 site, dust_flux."><img src="../figures/IceCores/IceCores-Lambert2012.png" class="img-fluid figure-img" width="806" alt="IceCores-Lambert2012.nc: 1 site, dust_flux."></a></p>
+<figcaption>IceCores-Lambert2012.nc: 1 site, dust_flux.</figcaption>
+</figure>
+</div>
+</section>
+<section id="petit1999" class="level3">
+<h3 class="anchored" data-anchor-id="petit1999">Petit1999</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/IceCores/IceCores-Petit1999.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="IceCores-Petit1999.nc: 1 site, dD."><img src="../figures/IceCores/IceCores-Petit1999.png" class="img-fluid figure-img" width="817" alt="IceCores-Petit1999.nc: 1 site, dD."></a></p>
+<figcaption>IceCores-Petit1999.nc: 1 site, dD.</figcaption>
+</figure>
+</div>
+</section>
+<section id="rasmussen2014" class="level3">
+<h3 class="anchored" data-anchor-id="rasmussen2014">Rasmussen2014</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/IceCores/IceCores-Rasmussen2014.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="IceCores-Rasmussen2014.nc: 4 sites, d18O."><img src="../figures/IceCores/IceCores-Rasmussen2014.png" class="img-fluid figure-img" width="765" alt="IceCores-Rasmussen2014.nc: 4 sites, d18O."></a></p>
+<figcaption>IceCores-Rasmussen2014.nc: 4 sites, d18O.</figcaption>
+</figure>
+</div>
+</section>
+<section id="stenni2011" class="level3">
+<h3 class="anchored" data-anchor-id="stenni2011">Stenni2011</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/IceCores/IceCores-Stenni2011.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="IceCores-Stenni2011.nc: 1 site, d18O."><img src="../figures/IceCores/IceCores-Stenni2011.png" class="img-fluid figure-img" width="812" alt="IceCores-Stenni2011.nc: 1 site, d18O."></a></p>
+<figcaption>IceCores-Stenni2011.nc: 1 site, d18O.</figcaption>
+</figure>
+</div>
+</section>
+<section id="uemura2018" class="level3">
+<h3 class="anchored" data-anchor-id="uemura2018">Uemura2018</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/IceCores/IceCores-Uemura2018.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="IceCores-Uemura2018.nc: 1 site, d18O."><img src="../figures/IceCores/IceCores-Uemura2018.png" class="img-fluid figure-img" width="812" alt="IceCores-Uemura2018.nc: 1 site, d18O."></a></p>
+<figcaption>IceCores-Uemura2018.nc: 1 site, d18O.</figcaption>
+</figure>
+</div>
+</section>
+<section id="vinther2009" class="level3">
+<h3 class="anchored" data-anchor-id="vinther2009">Vinther2009</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/IceCores/IceCores-Vinther2009.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="IceCores-Vinther2009.nc: 4 sites, dz_srf."><img src="../figures/IceCores/IceCores-Vinther2009.png" class="img-fluid figure-img" width="764" alt="IceCores-Vinther2009.nc: 4 sites, dz_srf."></a></p>
+<figcaption>IceCores-Vinther2009.nc: 4 sites, dz_srf.</figcaption>
+</figure>
+</div>
+</section>
+<section id="wais2015" class="level3">
+<h3 class="anchored" data-anchor-id="wais2015">WAIS2015</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/IceCores/IceCores-WAIS2015.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14" title="IceCores-WAIS2015.nc: 1 site, d18O."><img src="../figures/IceCores/IceCores-WAIS2015.png" class="img-fluid figure-img" width="812" alt="IceCores-WAIS2015.nc: 1 site, d18O."></a></p>
+<figcaption>IceCores-WAIS2015.nc: 1 site, d18O.</figcaption>
+</figure>
+</div>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/fesmc\.github\.io\/FesmData\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>FesmData · fesmc</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/fesmc/FesmData/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Built with <a href="https://quarto.org">Quarto</a></p>
+</div>
+  </div>
+</footer>
+<script>document.querySelectorAll('a.toc-action[href^="http"]').forEach(a => { a.target = "_blank"; a.rel = "noopener"; });</script>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
