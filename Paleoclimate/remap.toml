@@ -471,3 +471,19 @@ mask = { mask_ocn = 0.5 }
 precision = { so = 0.001 }
 grids = { Global = ["GLOBAL-5DEG"] }
 figure = false
+
+# CHELSA-TraCE21k v1.0 (Karger et al., 2023): TraCE-21ka downscaled to 30 arc seconds, 221
+# centennial steps from the Last Glacial Maximum to the present, over the Pyrenees, on the
+# 1 km grid of PYR (its own resolution); and its ice extent at the Last Glacial Maximum.
+
+[products.CHELSA-TraCE21k]
+source = "Karger2023_chelsatrace21k"
+file = "Karger2023_CHELSA-TraCE21k_Pyrenees.nc"
+grids = { Pyrenees = ["PYR-1KM"] }
+figure = { variables = ["tas"], select = { month = 7, time = [21950, 50] } }   # July at the LGM and in 1900 CE
+
+[products.CHELSA-TraCE21k-LGM-ice]
+source = "Karger2023_chelsatrace21k"
+file = "Karger2023_CHELSA-TraCE21k-LGM-ice_Pyrenees.nc"
+grids = { Pyrenees = ["PYR-1KM"] }
+figure = { variables = ["mask_ice"] }
