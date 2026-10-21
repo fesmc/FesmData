@@ -21,8 +21,22 @@ data](https://fesmc.github.io/FesmData/remap.html)): its products are defined in
 | `Paleoclimate-CLIMBERX-Willeit2025-<run>-transient`, `...-<run>-transient-ocean` | The same simulations, `HS4` (40-32 ka of the model calendar) and `piControl`: their 2D output (one model year every 100 years, every 1000 years for `piControl`), on the model grid | `t2m_mon`, `pr_mon`, `sst_mon`, `f_sic_mon` on `month` and `time`, `state` of each record; annual series on `time_ann` (`amoc`, `t2m_glob`, `t2m_grl`, `co2`, `hosing`, `sic_ext_nh`, ...); ocean: `to`, `so` on `depth` and `time`, the Atlantic overturning streamfunction `moc_atl` | Global (GLOBAL-5DEG only) |
 | `Paleoclimate-Buizert2018`, `Paleoclimate-Buizert2018-1981-2010` | Buizert et al. (2018): Greenland monthly temperature and precipitation, 22 ka to present, decadal, [doi:10.25921/psvs-yg80](https://doi.org/10.25921/psvs-yg80); and its 1981-2010 baseline | `tas` (K), `pr` (kg m-2 s-1) on `month` and `time` (years ago), `z_srf` | Greenland |
 | `Paleoclimate-Badgeley2020` | Badgeley et al. (2020): Greenland temperature and precipitation from data assimilation, 20 ka to present, 50-year means, [doi:10.18739/A2599Z26M](https://doi.org/10.18739/A2599Z26M) | `tas_anom` (K), `pr_frac`, `pr_frac_low`, `pr_frac_high` (relative to 1850-2000 CE) on `time` (years ago) | Greenland |
+| `Paleoclimate-CHELSA-TraCE21k` | Karger et al. (2023): CHELSA-TraCE21k v1.0, the TraCE-21ka simulation downscaled to 30 arc seconds (about 1 km), 221 centennial steps, from 21,950 years ago (time ID −200) to 2000 CE (ID 20), [doi:10.16904/envidat.211](https://doi.org/10.16904/envidat.211) | `tas`, `tasmax`, `tasmin` (K), `pr` (kg m-2 d-1) on `month` and `time` (years ago; with `time_id`, the ID of the files); `dem` (paleo-orography, m), `glz` (glacier surface elevation, m), `gle` (glacier extent, 0/1) on `time` | Pyrenees (PYR-1KM) |
+| `Paleoclimate-CHELSA-TraCE21k-LGM-ice` | as above: the glacier extent `gle` of the first step (Last Glacial Maximum) | `mask_ice` (0/1) | Pyrenees (PYR-1KM) |
 
 On the mountain-glacier domains (Pyrenees, Patagonia, Himalaya), on their 2 km grid: the ensemble means and standard deviations of PMIP3 and PMIP4 (`-mean`, `-stdev`; not the members); their nests and crops get these by cropping (see [Nests and crops](https://fesmc.github.io/FesmData/download.html#nests-and-crops)).
+
+CHELSA-TraCE21k is on the 1 km grid of the Pyrenees (PYR-1KM), its own resolution
+(the global files, about 6-7 TB, are read only over the box of the domain). The time
+IDs of the files are centuries of the calendar (−200: 20,000 BCE, the start of
+TraCE-21ka, about 22 ka; 19: 1900 CE; 20: 2000 CE), given as `time` in years before
+1950 CE (21950 to −50); this reading of the IDs follows the span of TraCE-21ka and is not
+stated in the documentation of the data set. The temperatures refer to the
+paleo-orography `dem` of each step, which partly includes the ice (up to about 900 m
+higher than today in the Pyrenees at the LGM): reduce them with a lapse rate before
+taking differences between steps. July of step −13 (`tasmax`, `tasmin`) is missing
+on the server and interpolated in time (attribute `comment`). The lapse rate `tz` of
+the data set, on the TraCE-21ka grid (about 3.75°), is not included.
 
 The model output is on the models' own grids (some Gaussian), remapped conservatively.
 Products are made on grids of 8 km and coarser (16 km for the Buizert et al. time
@@ -37,7 +51,7 @@ cell, the mean or the standard deviation (population) of the models with a value
 
 The float fields are rounded on output to a tolerance by kind (see [Precision and file
 sizes](https://fesmc.github.io/FesmData/precision.html)): temperatures to 0.01 K;
-precipitation to 1%; `z_srf` and `dz_srf` to 0.01 m; fractions (`f_*`, `pr_frac*`) to
+precipitation to 1%; `z_srf`, `dz_srf`, `dem` and `glz` to 0.01 m; fractions (`f_*`, `pr_frac*`) to
 0.001. The ensemble products are computed from the rounded products of their members and
 rounded again.
 
@@ -52,11 +66,13 @@ rounded again.
 | Badgeley et al. (2020) | CC0 1.0 (Arctic Data Center) |
 | CLIMBER-3α (Montoya and Levermann, 2008) | CC BY 4.0 ([github.com/fesmc/Montoya2008-CLIMBER3a](https://github.com/fesmc/Montoya2008-CLIMBER3a)); cite Montoya and Levermann (2008) and Montoya et al. (2005) |
 | CLIMBER-X (Willeit et al., 2025) | CC BY 4.0 (output provided by M. Willeit); cite Willeit et al. (2025) and Willeit et al. (2022) |
+| CHELSA-TraCE21k (Karger et al., 2023) | CC BY-SA 4.0 (EnviDat record; the CHELSA website states CC0 1.0, the stricter is recorded): releases must keep the ShareAlike terms |
 
 ## Not included
 
-Large model output, such as the transient TraCE-21ka simulation, is not remapped here:
-models should read it with online remapping.
+Large model output, such as the transient TraCE-21ka simulation on the global or ice-sheet
+grids, is not remapped here: models should read it with online remapping. Its downscaled
+version CHELSA-TraCE21k is included over the Pyrenees only, at 1 km.
 
 ## Making the dataset
 

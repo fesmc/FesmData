@@ -31,3 +31,36 @@ source = "Loeb2018_ceres"
 file = "Loeb2018_CERES-EBAF_2001-2020.nc"
 grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 16 }
 figure = { variables = ["sfc_net_tot_all"] }
+
+# Regional climatologies of the Pyrenees at about 1 km, on the 1 km grid of PYR (their own
+# resolution; the 2 km grid of the thematic datasets would lose it).
+
+[products.CLIMPY-1981-2010]
+source = "Cuadrat2024_climpy"
+file = "Cuadrat2024_CLIMPY_1981-2010.nc"
+grids = { Pyrenees = ["PYR-1KM"] }
+# Filled outside the area of CLIMPY (the forelands, about 30% of PYR), so that the product
+# covers the whole grid: temperatures by the regression on the elevation, precipitation
+# by harmonic interpolation
+fill = [{ variables = ["pr"], mask = "all" },
+        { method = "elevation_regression", variables = ["tas", "tasmax", "tasmin"], mask = "all",
+          elevation = "TOPO-GLO90-GEBCO2026", radius = 50.0 }]
+figure = { variables = ["tas"], select = { month = 7 } }
+
+[products.CLIMPY-1991-2020]
+source = "Cuadrat2024_climpy"
+file = "Cuadrat2024_CLIMPY_1991-2020.nc"
+grids = { Pyrenees = ["PYR-1KM"] }
+# Filled outside the area of CLIMPY (the forelands, about 30% of PYR), so that the product
+# covers the whole grid: temperatures by the regression on the elevation, precipitation
+# by harmonic interpolation
+fill = [{ variables = ["pr"], mask = "all" },
+        { method = "elevation_regression", variables = ["tas", "tasmax", "tasmin"], mask = "all",
+          elevation = "TOPO-GLO90-GEBCO2026", radius = 50.0 }]
+figure = { variables = ["tas"], select = { month = 7 } }
+
+[products.CHELSA-1981-2010]
+source = "Karger2017_chelsa"
+file = "Karger2017_CHELSA-V2.1_1981-2010_Pyrenees.nc"
+grids = { Pyrenees = ["PYR-1KM"] }
+figure = { variables = ["tas"], select = { month = 7 } }

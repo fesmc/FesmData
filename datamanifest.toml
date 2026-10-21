@@ -1918,3 +1918,40 @@ uri = "https://zenodo.org/records/7760491/files/t2m_monthlyA_ANT27_ERA5-3H_RACMO
 doi = "10.5281/zenodo.7760491"
 storage_path = "$datasets_dir/racmo23p2_ant27/tskin_monthlyA_ANT27_ERA5-3H_RACMO2.3p2_197901_202212.nc"
 uri = "https://zenodo.org/records/7760491/files/tskin_monthlyA_ANT27_ERA5-3H_RACMO2.3p2_197901_202212.nc?download=1"
+
+# CLIMPY, climate of the Pyrenees (Cuadrat et al., 2024, CC BY 4.0): daily grids 1981-2020,
+# 1 km, UTM zone 30N, one file per variable (each with the field named pcp).
+# Cuadrat2024_climpy/README.md.
+
+[climpy_tmax]
+doi = "10.5281/zenodo.10972236"
+storage_path = "$datasets_dir/climpy/tmax_daily_1981_2020.nc"
+uri = "https://zenodo.org/records/10972236/files/tmax_daily_1981_2020.nc?download=1"
+
+[climpy_tmin]
+doi = "10.5281/zenodo.10972236"
+storage_path = "$datasets_dir/climpy/tmin_daily_1981_2020.nc"
+uri = "https://zenodo.org/records/10972236/files/tmin_daily_1981_2020.nc?download=1"
+
+[climpy_pcp]
+doi = "10.5281/zenodo.10972236"
+storage_path = "$datasets_dir/climpy/pcp_daily_1981_2020.nc"
+uri = "https://zenodo.org/records/10972236/files/pcp_daily_1981_2020.nc?download=1"
+
+# CHELSA V2.1 climatologies 1981-2010 (Karger et al., 2017; CC0 1.0) and CHELSA-TraCE21k
+# v1.0 (Karger et al., 2023; CC BY-SA 4.0), global Cloud-Optimized GeoTIFFs at 30 arc
+# seconds: not downloaded, prepare.jl reads only a box of each file through GDAL /vsicurl/
+# and keeps the clipped files in the storage_path. Karger2017_chelsa/README.md,
+# Karger2023_chelsatrace21k/README.md.
+
+[chelsa_v21]
+doi = "10.16904/envidat.228"
+skip_download = true
+storage_path = "$datasets_dir/chelsa_v21_pyrenees"
+uri = "https://os.zhdk.cloud.switch.ch/chelsav2/GLOBAL/climatologies/1981-2010"
+
+[chelsa_trace21k]
+doi = "10.16904/envidat.211"
+skip_download = true
+storage_path = "$datasets_dir/chelsa_trace21k_pyrenees"
+uri = "https://os.zhdk.cloud.switch.ch/chelsav1/chelsa_trace"
