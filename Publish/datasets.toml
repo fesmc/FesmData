@@ -277,10 +277,10 @@ future, as CF discrete sampling geometry files with text copies.
 tag = "rsl"
 title = "relative sea level indicators"
 readme = "RSL/README.md"
-keywords = ["relative sea level", "sea-level indicators", "glacial isostatic adjustment", "Greenland"]
+keywords = ["relative sea level", "sea-level indicators", "glacial isostatic adjustment", "Greenland", "PaleoMIST"]
 description = """
-Dated relative sea level indicators of Greenland (index points and limiting data) from
-GAPSLIP 2.1 (Gowan, 2023), one observation per sample.
+Dated relative sea level indicators (index points and limiting data) from GAPSLIP 2.1
+(Gowan, 2023): Greenland, and all regions of the database, one observation per sample.
 """
 
 [Boreholes]

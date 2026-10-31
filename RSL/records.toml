@@ -4,3 +4,7 @@
 [products.GAPSLIP]
 source = "Gowan2023_GAPSLIP_GrIS"
 file = "GAPSLIP_Greenland.nc"
+
+[products.GAPSLIP_global]
+source = "Gowan2023_GAPSLIP"
+file = "GAPSLIP_global.nc"
