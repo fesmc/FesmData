@@ -1,8 +1,8 @@
-# Relative sea level indicators of all regions, GAPSLIP (Gowan, 2023)
+# Relative sea level indicators, GAPSLIP (Gowan, 2023)
 
-The relative sea level indicators of all regions in the Global Archive of Paleo Sea
-Level Indicators and Proxies (GAPSLIP), version 2.1: the database with which Gowan
-evaluates the PaleoMIST 1.0 ice-sheet reconstruction (Gowan et al., 2021; PaleoMIST
+The relative sea level indicators of the Global Archive of Paleo Sea Level Indicators
+and Proxies (GAPSLIP), version 2.1, of all regions and of Greenland: the database with
+which Gowan evaluates the PaleoMIST 1.0 ice-sheet reconstruction (Gowan et al., 2021; PaleoMIST
 reports with GAPSLIP 2.0, Zenodo doi:10.5281/zenodo.7923553). From:
 
 Gowan, E. J.: Paleo sea-level indicators and proxies from Greenland in the GAPSLIP
@@ -20,8 +20,8 @@ Data: Gowan, E. J.: evangowan/paleo_sea_level: Version 2.1, Zenodo, 2023,
 (GitHub repository evangowan/paleo_sea_level, commit 1c72e2f). The individual data are
 from the publications in the `reference` of each sample; GAPSLIP asks to cite them.
 
-The Greenland data alone are the product `RSL-GAPSLIP` (source `Gowan2023_GAPSLIP_GrIS`);
-the same samples are in this product with `region = "Greenland"`.
+Two products of the records dataset RSL: `RSL-GAPSLIP_global` (all regions) and
+`RSL-GAPSLIP` (the region Greenland: 1019 samples at 47 locations, up to about 44 ka).
 
 ## Licence
 
@@ -31,8 +31,9 @@ shared under CC BY-SA 4.0.
 
 ## Original data
 
-The archive of version 2.1 on Zenodo (datamanifest key `gapslip_v2_1`, shared with
-`Gowan2023_GAPSLIP_GrIS`; 16 MB, no login), extracted to
+The archive of version 2.1 on Zenodo,
+https://zenodo.org/records/10121689/files/evangowan/paleo_sea_level-V2.1.zip (datamanifest
+key `gapslip_v2_1`; 16 MB, no login), downloaded by `prepare.jl` and extracted to
 `evangowan-paleo_sea_level-1c72e2f/`. In `sea_level_data/`, `region_list.txt` lists the
 regions; each region has `location_list.txt` (location, sector, site, names for the
 plots) and each location `calibrated.txt`, written by the calibration scripts of GAPSLIP
@@ -67,11 +68,21 @@ from the indicators by GAPSLIP) and the folder `Australia/Sahul_Shelf`, which is
 
 ```bash
 julia --project=Gowan2023_GAPSLIP Gowan2023_GAPSLIP/prepare.jl
-julia fesmdata.jl record RSL GAPSLIP_global
+julia fesmdata.jl record RSL
 ```
 
-`prepare.jl` writes `$FESMDATA_PREPARED/Gowan2023_GAPSLIP/GAPSLIP_global.nc` (see
-`Records/README.md`), one observation per sample (featureType point, dimension `obs`):
-`lat`, `lon`, `time`, `time_min`, `time_max`, `rsl`, `rsl_min`, `rsl_max`, `type`,
-`alternative`, and the strings `lab_id`, `site_name`, `site`, `sector`, `region` and
-`reference` (bibtex keys of GAPSLIP).
+`prepare.jl` writes, in `$FESMDATA_PREPARED/Gowan2023_GAPSLIP/` (see `Records/README.md`),
+one observation per sample (featureType point, dimension `obs`):
+
+- `GAPSLIP_global.nc` (`RSL-GAPSLIP_global`): `lat`, `lon`, `time`, `time_min`,
+  `time_max`, `rsl`, `rsl_min`, `rsl_max`, `type`, `alternative`, and the strings
+  `lab_id`, `site_name`, `site`, `sector`, `region` and `reference` (bibtex keys of
+  GAPSLIP), sorted by region, location and age;
+- `GAPSLIP_Greenland.nc` (`RSL-GAPSLIP`): the samples of the region Greenland, without
+  `alternative`, `site` and `region` (all primary, site = location there).
+
+Until RSL v2.1.0 the Greenland product had a source of its own,
+`Gowan2023_GAPSLIP_GrIS`, with the same data. Its v1 files `rsl_dataset.nc` and
+`rsl_dataset_reduced.nc` grouped the samples by the cells of the GRL-8KM grid and by
+location for one model; they are not made any more (see `Records/README.md`: inputs
+derived for one model stay with the model).

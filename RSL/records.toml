@@ -2,7 +2,7 @@
 # $FESMDATA/Records/RSL/RSL-<product>.nc
 
 [products.GAPSLIP]
-source = "Gowan2023_GAPSLIP_GrIS"
+source = "Gowan2023_GAPSLIP"
 file = "GAPSLIP_Greenland.nc"
 
 [products.GAPSLIP_global]

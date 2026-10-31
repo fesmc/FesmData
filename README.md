@@ -68,8 +68,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | geo      | Gowan2019_sed               | Surface sediment properties of North America and Greenland | Gowan et al. (2019) |
 | paleo    | Gowan2021_PaleoMIST1.0      | PaleoMIST 1.0 global ice sheet reconstruction, 80 ka to present | Gowan et al. (2021) |
 | paleo    | Gowan2021_PaleoMIST_esl     | Sea level from the ice sheets of PaleoMIST 1.0, 80 kyr | Gowan et al. (2021)            |
-| paleo    | Gowan2023_GAPSLIP           | Relative sea level indicators, all regions of GAPSLIP | Gowan (2023)              |
-| paleo    | Gowan2023_GAPSLIP_GrIS      | Relative sea level data for Greenland            | Gowan (2023)                   |
+| paleo    | Gowan2023_GAPSLIP           | Relative sea level indicators, GAPSLIP (all regions and Greenland) | Gowan (2023) |
 | paleo    | Grant2014_RedSea            | Red Sea relative sea level, 492 kyr              | Grant et al. (2014)            |
 | geo      | Hazzard2023_visc            | Antarctic mantle viscosity and lithosphere thickness | Hazzard et al. (2023)      |
 | geo      | HazzardRichards2024_ghf     | Antarctic geothermal heat flow                   | Hazzard & Richards (2024)      |
