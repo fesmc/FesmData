@@ -1,20 +1,33 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-15"
-git_tag = "rsl-v2.1.0"
+date = "2026-10-31"
+git_tag = "rsl-v2.2.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Records_RSL"
-version = "2.1.0"
+version = "2.2.0"
 
 ["RSL-GAPSLIP.nc"]
-checksum = "sha256:d0ab01d004756cc00e5da564ee6dbb76f0a93e264ee79e1926714094b5ba53f1"
-previous_checksums = ["sha256:44ae08e6c9555cae4fc0896e8e4ce86e4424b1ba695ba2bcb6757a985ce49c9f"]
-size = 379546
+checksum = "sha256:d80954553dcf8e7eb83f0ca7ebafee8cf73f3251f9a3691903b5dc2a7c44e442"
+previous_checksums = ["sha256:44ae08e6c9555cae4fc0896e8e4ce86e4424b1ba695ba2bcb6757a985ce49c9f", "sha256:d0ab01d004756cc00e5da564ee6dbb76f0a93e264ee79e1926714094b5ba53f1"]
+size = 379492
 storage_path = "$datasets_dir/Records/RSL/RSL-GAPSLIP.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_RSL/2.1.0/RSL-GAPSLIP.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_RSL/2.2.0/RSL-GAPSLIP.nc"
 
 ["RSL-GAPSLIP.txt"]
-checksum = "sha256:a8cc08e4ad494634410904b49ba049db0cd91ba9f7c7e9ae26d7bcdd8695a3e0"
+checksum = "sha256:921250c41e0c0c70fe49b207f440f5a59800856ae491170b46b01d34256c99a4"
+previous_checksums = ["sha256:a8cc08e4ad494634410904b49ba049db0cd91ba9f7c7e9ae26d7bcdd8695a3e0"]
 size = 220944
 storage_path = "$datasets_dir/Records/RSL/RSL-GAPSLIP.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_RSL/2.1.0/RSL-GAPSLIP.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_RSL/2.2.0/RSL-GAPSLIP.txt"
+
+["RSL-GAPSLIP_global.nc"]
+checksum = "sha256:d049003cc4fc08b26015db21808c294472518432d85493b764a6af637311ca17"
+size = 4654486
+storage_path = "$datasets_dir/Records/RSL/RSL-GAPSLIP_global.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_RSL/2.2.0/RSL-GAPSLIP_global.nc"
+
+["RSL-GAPSLIP_global.txt"]
+checksum = "sha256:10822e08e16605746ca4dc396f2a5c6cc126ed898188a823fb946b6379360d58"
+size = 3534931
+storage_path = "$datasets_dir/Records/RSL/RSL-GAPSLIP_global.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_RSL/2.2.0/RSL-GAPSLIP_global.txt"
