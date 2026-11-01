@@ -1,10 +1,10 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-15"
-git_tag = "sealevel-v2.0.0"
+date = "2026-11-01"
+git_tag = "sealevel-v2.0.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Records_SeaLevel"
-version = "2.0.0"
+version = "2.0.1"
 
 ["SeaLevel-Berends2021.nc"]
 checksum = "sha256:1ea6a0e93b7260d206cc535344103727634628d543a1ccdb98d835d6cb4ec7df"
@@ -67,28 +67,32 @@ storage_path = "$datasets_dir/Records/SeaLevel/SeaLevel-Lambeck2014.txt"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-Lambeck2014.txt"
 
 ["SeaLevel-PaleoMIST.nc"]
-checksum = "sha256:9beb84874b4b8518092fb85eb9b0478e9dadf155e785495e1701276be1c4800e"
-size = 32649
+checksum = "sha256:bbb039f8ff64675589a561935cc723647a4b4f5e2d3c8d626ff8ad3c0d4fb3ac"
+previous_checksums = ["sha256:9beb84874b4b8518092fb85eb9b0478e9dadf155e785495e1701276be1c4800e"]
+size = 35413
 storage_path = "$datasets_dir/Records/SeaLevel/SeaLevel-PaleoMIST.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-PaleoMIST.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.1/SeaLevel-PaleoMIST.nc"
 
 ["SeaLevel-PaleoMIST.txt"]
-checksum = "sha256:024ceb06bac111cbdca307581b633f75dde63c733746cf1559796c6dda5c9292"
-size = 4211
+checksum = "sha256:434b6df8a0d3c99396e71596b8ba47b8d8b13c2f361632523e9b95948efb6852"
+previous_checksums = ["sha256:024ceb06bac111cbdca307581b633f75dde63c733746cf1559796c6dda5c9292"]
+size = 4307
 storage_path = "$datasets_dir/Records/SeaLevel/SeaLevel-PaleoMIST.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-PaleoMIST.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.1/SeaLevel-PaleoMIST.txt"
 
 ["SeaLevel-PaleoMIST_max.nc"]
-checksum = "sha256:6a3d0144dc2b558e7bc2f2a0988165f771a2f42d21f8c53eafa34996d2dd6d23"
-size = 32657
+checksum = "sha256:6529910ddc853af68d8a29652b464ee142731210f294272dd46863566c8192b1"
+previous_checksums = ["sha256:6a3d0144dc2b558e7bc2f2a0988165f771a2f42d21f8c53eafa34996d2dd6d23"]
+size = 35439
 storage_path = "$datasets_dir/Records/SeaLevel/SeaLevel-PaleoMIST_max.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-PaleoMIST_max.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.1/SeaLevel-PaleoMIST_max.nc"
 
 ["SeaLevel-PaleoMIST_max.txt"]
-checksum = "sha256:c51ac9e33ba01d4a87fad573d551c737cf577999511fa349fc47a3ff2c3695ad"
-size = 4265
+checksum = "sha256:bfea14fa0c23959e2bc9c67a2be7206905a8a995bb9f7b7872e9cdc6aaaa9388"
+previous_checksums = ["sha256:c51ac9e33ba01d4a87fad573d551c737cf577999511fa349fc47a3ff2c3695ad"]
+size = 4330
 storage_path = "$datasets_dir/Records/SeaLevel/SeaLevel-PaleoMIST_max.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.0/SeaLevel-PaleoMIST_max.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_SeaLevel/2.0.1/SeaLevel-PaleoMIST_max.txt"
 
 ["SeaLevel-Rohling2021.nc"]
 checksum = "sha256:013039fccb9e297be60aa984091743d59b336916c7db1f39cd5fdc8f53d7214a"
