@@ -67,6 +67,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | paleo    | Gkinis2020_NEEMwateriso     | NEEM ice core high-resolution water isotopes     | Gkinis et al. (2020)           |
 | geo      | Gowan2019_sed               | Surface sediment properties of North America and Greenland | Gowan et al. (2019) |
 | paleo    | Gowan2021_PaleoMIST1.0      | PaleoMIST 1.0 global ice sheet reconstruction, 80 ka to present | Gowan et al. (2021) |
+| paleo    | Gowan2021_PaleoMIST_taub    | Basal shear stress domains and values of PaleoMIST 1.0 (ICESHEET 2.0), 80 kyr | Gowan et al. (2021)            |
 | paleo    | Gowan2021_PaleoMIST_esl     | Sea level from the ice sheets of PaleoMIST 1.0, 80 kyr | Gowan et al. (2021)            |
 | paleo    | Gowan2023_GAPSLIP           | Relative sea level indicators, GAPSLIP (all regions and Greenland) | Gowan (2023) |
 | paleo    | Grant2014_RedSea            | Red Sea relative sea level, 492 kyr              | Grant et al. (2014)            |

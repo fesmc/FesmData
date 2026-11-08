@@ -645,6 +645,15 @@ doi = "10.1594/PANGAEA.905800"
 extract = true
 uri = "https://hs.pangaea.de/Maps/Global_Ice_Sheets/Gowan_ice_reconstruction.zip"
 
+# ICESHEET 2.0 (E. J. Gowan, GPL-3.0), GitHub, at its last commit: the program and its
+# global/ setup of PaleoMIST 1.0 (margins, basal shear stress domains and values).
+
+[gowan2021_icesheet]
+key = "gowan2021_icesheet.tar.gz"
+doi = "10.1038/s41467-021-21469-w"
+extract = true
+uri = "https://github.com/evangowan/icesheet/archive/641d172230c76fc44ec9ea40ab1a0e9f76d0f42f.tar.gz"
+
 # GLAC-1D (Tarasov et al., 2012; Briggs et al., 2014; Tarasov & Peltier, 2002), from the data
 # page of L. Tarasov (https://www.physics.mun.ca/~lev/dataAccess.html): ice thickness of
 # North America + Greenland (two variants, nn9927 with lake water thickness, and nn9894)
