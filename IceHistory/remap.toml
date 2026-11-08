@@ -43,6 +43,17 @@ variables = ["z_topo", "z_bed", "H_ice", "dz_sl", "f_ice"]
 grids = { Antarctica = 8, GreenlandPaleo = 8, North = 8, Global = 25 }
 figure = { variables = ["H_ice"], hide = 0, colormap = "ice" }
 
+# Basal shear stress domains of PaleoMIST (ICESHEET 2.0), one file per region on its 5 km
+# grid, extended to the nearest domain near the ice (mask_extended); the domain list and
+# the values through time (taub_t) are off the grid. Licence GPL-3.0 (ICESHEET 2.0).
+[products.PaleoMIST_taub]
+source = "Gowan2021_PaleoMIST_taub"
+file = ["Gowan2021_PaleoMIST_taub_NorthAmerica.nc", "Gowan2021_PaleoMIST_taub_Eurasia.nc",
+        "Gowan2021_PaleoMIST_taub_Antarctica.nc"]
+variables = ["taub_domain", "taub_map", "mask_extended"]
+grids = { Antarctica = 8, GreenlandPaleo = 8, North = 8 }
+figure = { variables = ["taub_map"] }
+
 # GLAC-1D: global for PMIP4 (26-0 ka), with the ice thickness on a finer grid of its own;
 # and the regional reconstructions (120-0 ka) of North America + Greenland (two variants)
 # and Antarctica, without Eurasia (f_valid = 0 outside them)

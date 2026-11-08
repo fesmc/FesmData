@@ -17,6 +17,7 @@ data](https://fesmc.github.io/FesmData/remap.html)): its products are defined in
 | `IceHistory-Batchelor2019` | Batchelor et al. (2019): Northern Hemisphere ice-sheet extents, 18 time slices from 3.1 Ma to the LGM, rasterized at 2 km, [doi:10.1038/s41467-019-11601-2](https://doi.org/10.1038/s41467-019-11601-2) | `f_ice_best`, `f_ice_min`, `f_ice_max` (best-estimate, minimum and maximum extents), on `time` (years ago) | GreenlandPaleo, Greenland, North, Laurentide, Eurasia (grids of 2 km and coarser) |
 | `IceHistory-PaleoMIST` | Gowan et al. (2021): PaleoMIST 1.0, minimal MIS 3 scenario for North America (ice-free Hudson Bay at times), 0.25°, 80-0 ka every 2.5 kyr, [doi:10.1594/PANGAEA.905800](https://doi.org/10.1594/PANGAEA.905800) | `z_topo`, `z_bed`, `H_ice`, `dz_sl` (sea-level change), `f_ice` (from the 5 km regional reconstructions), on `time` (years ago) | Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Eurasia, Global |
 | `IceHistory-PaleoMIST_max` | Gowan et al. (2021): PaleoMIST 1.0, maximal MIS 3 scenario for North America (ice over Hudson Bay throughout MIS 3), 0.25°, 80-0 ka every 2.5 kyr, [doi:10.1594/PANGAEA.905800](https://doi.org/10.1594/PANGAEA.905800) | `z_topo`, `z_bed`, `H_ice`, `dz_sl` (sea-level change), `f_ice` (from the 5 km regional reconstructions), on `time` (years ago) | Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Eurasia, Global |
+| `IceHistory-PaleoMIST_taub` | Gowan et al. (2021): basal shear stress of PaleoMIST 1.0 (both scenarios), the domains of ICESHEET 2.0 (North America with Greenland, Eurasia, Antarctica) on their 5 km grids, 80-0 ka every 2.5 kyr, [doi:10.1038/s41467-021-21469-w](https://doi.org/10.1038/s41467-021-21469-w) | `taub_domain` (domain id, classes), `taub_map` (base value, Pa), `mask_extended`; per domain (`domain`): `domain_id`, `region`, `taub`, `taub_min`, `taub_max`, `taub_t` on `time` (years ago, Pa) | Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Eurasia (grids of 8 km and coarser) |
 | `IceHistory-GLAC1D` | Tarasov et al. (2012), Briggs et al. (2014), Tarasov & Peltier (2002): GLAC-1D for PMIP4, global, 1° x 0.5° (`H_ice` 0.5° x 0.25°), 26-0 ka every 100 years, [doi:10.1016/j.epsl.2011.09.010](https://doi.org/10.1016/j.epsl.2011.09.010) | `z_topo` (base of floating ice under ice shelves), `z_srf`, `H_ice`, `f_ice`, on `time` (years ago) | Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Eurasia, Global |
 | `IceHistory-GLAC1D_nn9927` | GLAC-1D, North America nn9927 (better fit to the constraints) with Greenland, and Antarctica nn4041, 1° x 0.5°, 120-0 ka (every 1 kyr to 30 ka, then 100 years); no Eurasia | `H_ice`, `H_lake` (lake water thickness, North America), on `time` (years ago) | Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Global |
 | `IceHistory-GLAC1D_nn9894` | GLAC-1D, North America nn9894 (more ice at the LGM) with Greenland, and Antarctica nn4041, 1° x 0.5°, 120-0 ka; no Eurasia | `H_ice`, on `time` (years ago) | Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Global |
@@ -27,7 +28,13 @@ data](https://fesmc.github.io/FesmData/remap.html)): its products are defined in
 Each file `<GRID>_IceHistory-<Source>.nc` also has `f_valid`, the fraction of each cell
 covered by the source. Fields are remapped conservatively and, on grids finer than the
 source, smoothed with a Gaussian of half the source spacing; the masks are remapped as
-classes (the class covering most of each cell). Ice extents from outlines (Batchelor,
+classes (the class covering most of each cell). The shear stress domains of PaleoMIST
+(`taub_domain`, classes) and their base value (`taub_map`) are extended, on the 5 km
+grids of the source, to the nearest domain within 150 km of the ice of PaleoMIST
+(`mask_extended`), so that every cell with ice in `IceHistory-PaleoMIST` has a domain;
+the value of each domain at each time is `taub_t` (see
+`Gowan2021_PaleoMIST_taub/README.md`). `IceHistory-PaleoMIST_taub` is under the GPL-3.0
+(see Licences). Ice extents from outlines (Batchelor,
 Margold) are rasterized as area fractions at 2 km and 1 km, so that remapping gives the fraction of
 each cell. The global attribute `remap_method` records what was done on each grid.
 
@@ -36,7 +43,9 @@ each cell. The global attribute `remap_method` records what was done on each gri
 The float fields are rounded on output to a tolerance by kind (see [Precision and file
 sizes](https://fesmc.github.io/FesmData/precision.html)): elevations and
 thicknesses (`z_*`, `dz_*`, `H_ice*`) to 0.01 m; fractions (`f_*`) to 0.001; ages
-(`age_*`) to 3 significant digits. The masks of PRISM4 are exact.
+(`age_*`) to 3 significant digits; the shear stress `taub_map` to 3 significant digits.
+The masks of PRISM4, the domains of PaleoMIST and their values (`taub*`, off the grid)
+are exact.
 
 ## Licences
 
@@ -48,6 +57,7 @@ thicknesses (`z_*`, `dz_*`, `H_ice*`) to 0.01 m; fractions (`f_*`) to 0.001; age
 | Dowsett et al. (2016), PRISM4 | Public domain (USGS); no licence in the files |
 | Batchelor et al. (2019) | No licence stated for the shapefiles (OSF); article CC BY 4.0; cite the article |
 | Gowan et al. (2021), PaleoMIST 1.0 | CC BY 4.0 (PANGAEA) |
+| Gowan et al. (2021), PaleoMIST 1.0 basal shear stress (`IceHistory-PaleoMIST_taub`) | GPL-3.0: derived from the input files of the global/ setup of ICESHEET 2.0 (E. J. Gowan, GPL-3.0), released under the same licence (attribute `license` of the files), not CC BY 4.0 like the other products of the record |
 | Tarasov et al. (2012), GLAC-1D | None stated; cite Tarasov et al. (2012), Briggs et al. (2014), Tarasov & Peltier (2002) and, for the PMIP4 files, Tarasov et al. (2014) and Abe-Ouchi et al. (2013) |
 | Leger et al. (2024), PaleoGrIS 1.0 | CC BY 4.0 (Mendeley Data) |
 | Margold et al. (2015), with Stokes et al. (2016) | Outlines CC BY 4.0 (figshare); ages from the source data of Stokes et al. (2016), Nature, no open licence stated |
