@@ -1,10 +1,10 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-16"
-git_tag = "icehistory-v2.2.1"
+date = "2026-11-09"
+git_tag = "icehistory-v2.3.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=North_IceHistory"
-version = "2.2.1"
+version = "2.3.0"
 
 ["NH-16KM_IceHistory-Batchelor2019.nc"]
 checksum = "sha256:3c007d6c08ee3adcb52da6457c97e899f4ad0e9e7169494c31e01b8e045a0c87"
@@ -72,6 +72,13 @@ previous_checksums = ["sha256:9acb9277a27507ed38936e6f0cd009aa399e1ca0918d45972e
 size = 75645489
 storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_IceHistory-PaleoMIST_max.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.2.0/NH-16KM_IceHistory-PaleoMIST_max.nc"
+
+["NH-16KM_IceHistory-PaleoMIST_taub.nc"]
+checksum = "sha256:4d7237a10a5a7940891a4347efbfed157b1bb1e6eba930d02e8ee34fc5e30d6d"
+license = "GPL-3.0-only (ICESHEET 2.0, E. J. Gowan): derived from the input files of its global/ setup (shear stress domains and values), distributed under the GPL-3.0"
+size = 356083
+storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_IceHistory-PaleoMIST_taub.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.3.0/NH-16KM_IceHistory-PaleoMIST_taub.nc"
 
 ["NH-2KM_IceHistory-Batchelor2019.nc"]
 checksum = "sha256:781cbc66ded296bfa332a2495a1fb21a2882326ac40c80d7cc796fddd9fbddd5"
@@ -154,6 +161,13 @@ size = 19354269
 storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_IceHistory-PaleoMIST_max.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.2.0/NH-32KM_IceHistory-PaleoMIST_max.nc"
 
+["NH-32KM_IceHistory-PaleoMIST_taub.nc"]
+checksum = "sha256:de559fabaca6cfdf0b7b83d457bed11279601c09ea5cf66ee404f548cd9d8a6b"
+license = "GPL-3.0-only (ICESHEET 2.0, E. J. Gowan): derived from the input files of its global/ setup (shear stress domains and values), distributed under the GPL-3.0"
+size = 260909
+storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_IceHistory-PaleoMIST_taub.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.3.0/NH-32KM_IceHistory-PaleoMIST_taub.nc"
+
 ["NH-4KM_IceHistory-Batchelor2019.nc"]
 checksum = "sha256:289618c7648e9dd6ffc0e65519361e091d0d87ee86dcdc55c4606d8cfa641273"
 previous_checksums = ["sha256:21d933f2cc16f439a240758025878b56462fdf90e84c8654b1b66574513f6acd", "sha256:eb3a7f15d668b3a82e281365211067bc0b38cfc809c2cb24bde67fcc06155b31"]
@@ -195,3 +209,10 @@ previous_checksums = ["sha256:d62f6f6a8e02dcd687a93787d5a21db082f2d906cb1b7f40ea
 size = 277842081
 storage_path = "$datasets_dir/North/NH-8KM/NH-8KM_IceHistory-PaleoMIST_max.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-8KM/2.2.0/NH-8KM_IceHistory-PaleoMIST_max.nc"
+
+["NH-8KM_IceHistory-PaleoMIST_taub.nc"]
+checksum = "sha256:2f2748a747362e4cb56550d486478534391df4925925613742cadde01e8b59b9"
+license = "GPL-3.0-only (ICESHEET 2.0, E. J. Gowan): derived from the input files of its global/ setup (shear stress domains and values), distributed under the GPL-3.0"
+size = 575804
+storage_path = "$datasets_dir/North/NH-8KM/NH-8KM_IceHistory-PaleoMIST_taub.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-8KM/2.3.0/NH-8KM_IceHistory-PaleoMIST_taub.nc"
