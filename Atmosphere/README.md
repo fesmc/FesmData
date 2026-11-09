@@ -16,6 +16,8 @@ data](https://fesmc.github.io/FesmData/remap.html)): its products are defined in
 
 On the mountain-glacier domains (Pyrenees, Patagonia, Himalaya), on their 2 km grid: `Atmosphere-ERA5-1981-2010` and `Atmosphere-ERA5-1991-2020`; their nests and crops get these by cropping (see [Nests and crops](https://fesmc.github.io/FesmData/download.html#nests-and-crops)).
 
+On PatagoniaPaleo (the paleo domain of Patagonia, 26-57°S, 2-8 km), all products, on its coarsest grid, PAT-PAL-8KM (the products at 16 km on GreenlandPaleo included).
+
 Winds are remapped as vectors and rotated to the axes of projected grids. Each file also
 has `f_valid`, the fraction of each cell covered by the source. Fields are remapped
 conservatively and smoothed on grids finer than the source.
