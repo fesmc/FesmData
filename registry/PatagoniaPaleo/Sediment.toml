@@ -1,0 +1,49 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-11-09"
+git_tag = "sediment-v2.3.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=PatagoniaPaleo_Sediment"
+version = "2.3.0"
+
+["PAT-PAL-4KM_Sediment-CRUST1.nc"]
+checksum = "sha256:4873a36678e5743090fdd880745a2cf3775793313a5283b8af0366fa9d295f87"
+license = "No licence stated by the authors (https://igppweb.ucsd.edu/~gabi/crust1.html); cite Laske et al. (2013) and refer to the REM web site"
+size = 1298645
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-4KM/PAT-PAL-4KM_Sediment-CRUST1.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Sediment_PAT-PAL-4KM/2.3.0/PAT-PAL-4KM_Sediment-CRUST1.nc"
+
+["PAT-PAL-4KM_Sediment-ECM1.nc"]
+checksum = "sha256:bdc77241539ecb07e6c83c3cb667630d0ffc96555fe4d65def7417f8dc960593"
+license = "No licence stated by the authors (https://www.earthcrustmodel1.com/); cite Mooney et al. (2023)"
+size = 1195246
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-4KM/PAT-PAL-4KM_Sediment-ECM1.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Sediment_PAT-PAL-4KM/2.3.0/PAT-PAL-4KM_Sediment-ECM1.nc"
+
+["PAT-PAL-4KM_Sediment-GlobSed.nc"]
+checksum = "sha256:f606a0332b15a9a057a0d623e5dcbf578d4e36a210d39478eeabd21076812eb7"
+license = "CC BY 4.0 (PANGAEA, doi:10.1594/PANGAEA.982339)"
+size = 343947
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-4KM/PAT-PAL-4KM_Sediment-GlobSed.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Sediment_PAT-PAL-4KM/2.3.0/PAT-PAL-4KM_Sediment-GlobSed.nc"
+
+["PAT-PAL-8KM_Sediment-CRUST1.nc"]
+checksum = "sha256:d045100d1c4ef50caa589f23b67e5b30ea033fc57f4aef7516b8853834694929"
+license = "No licence stated by the authors (https://igppweb.ucsd.edu/~gabi/crust1.html); cite Laske et al. (2013) and refer to the REM web site"
+size = 397769
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Sediment-CRUST1.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Sediment_PAT-PAL-8KM/2.3.0/PAT-PAL-8KM_Sediment-CRUST1.nc"
+
+["PAT-PAL-8KM_Sediment-ECM1.nc"]
+checksum = "sha256:489a8380e13c61348c87dab0f037deee8f1f0d6ba34fa3d000f2a42f6c73abcf"
+license = "No licence stated by the authors (https://www.earthcrustmodel1.com/); cite Mooney et al. (2023)"
+size = 368858
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Sediment-ECM1.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Sediment_PAT-PAL-8KM/2.3.0/PAT-PAL-8KM_Sediment-ECM1.nc"
+
+["PAT-PAL-8KM_Sediment-GlobSed.nc"]
+checksum = "sha256:56bec9f7963ef1a45af94a714507c3f53d81af16a0e31440cac5d280e07dd978"
+license = "CC BY 4.0 (PANGAEA, doi:10.1594/PANGAEA.982339)"
+size = 121737
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Sediment-GlobSed.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Sediment_PAT-PAL-8KM/2.3.0/PAT-PAL-8KM_Sediment-GlobSed.nc"

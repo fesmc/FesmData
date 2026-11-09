@@ -1,10 +1,10 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-16"
-git_tag = "regions-v2.6.1"
+date = "2026-11-09"
+git_tag = "regions-v2.7.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=NewZealand_Regions"
-version = "2.6.1"
+version = "2.7.0"
 
 ["NZ-250M_REGIONS.nc"]
 checksum = "sha256:2cde2764b8785b7e3548cb665b3728a17bdff40d5a81cb67ea48112824011ed2"

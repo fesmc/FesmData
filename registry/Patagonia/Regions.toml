@@ -1,10 +1,10 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-16"
-git_tag = "regions-v2.6.1"
+date = "2026-11-09"
+git_tag = "regions-v2.7.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Patagonia_Regions"
-version = "2.6.1"
+version = "2.7.0"
 
 ["PAT-250M_DOMAINS.nc"]
 checksum = "sha256:3b2e107421bb42ebb1dc6892972322362ac2837e2441c35a27913bff91f2ba03"

@@ -1,10 +1,10 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-16"
-git_tag = "regions-v2.6.1"
+date = "2026-11-09"
+git_tag = "regions-v2.7.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=CordilleraDarwin_Regions"
-version = "2.6.1"
+version = "2.7.0"
 
 ["CDI-100M_DOMAINS.nc"]
 checksum = "sha256:f13fff2f2200298c3df9a0000da5e20bdb2b3d2cbae06a8152d00a81b89e4267"

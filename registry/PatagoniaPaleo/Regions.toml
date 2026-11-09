@@ -1,0 +1,25 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-11-09"
+git_tag = "regions-v2.7.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=PatagoniaPaleo_Regions"
+version = "2.7.0"
+
+["PAT-PAL-2KM_REGIONS.nc"]
+checksum = "sha256:02622d4afedf0e907dffa55f976f0464b840b91b3e0cb8852f925fe67b9923e1"
+size = 441172
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-2KM/PAT-PAL-2KM_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Regions_PAT-PAL-2KM/2.7.0/PAT-PAL-2KM_REGIONS.nc"
+
+["PAT-PAL-4KM_REGIONS.nc"]
+checksum = "sha256:65bdace2e6936d98415b81712f1cc5526f665983d8029ea3267e28aa14669339"
+size = 186882
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-4KM/PAT-PAL-4KM_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Regions_PAT-PAL-4KM/2.7.0/PAT-PAL-4KM_REGIONS.nc"
+
+["PAT-PAL-8KM_REGIONS.nc"]
+checksum = "sha256:4a76da540df7e44b7f1cefa20cb5fc8948e750eb2818b29ccdc2d3a8df7b9216"
+size = 90797
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_REGIONS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Regions_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_REGIONS.nc"

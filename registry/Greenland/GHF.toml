@@ -1,10 +1,10 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-16"
-git_tag = "ghf-v2.3.1"
+date = "2026-11-09"
+git_tag = "ghf-v2.4.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Greenland_GHF"
-version = "2.3.1"
+version = "2.4.0"
 
 ["GRL-16KM_GHF-Colgan2021-topocorr-GRL.nc"]
 checksum = "sha256:a9708bc88fdd855910e7345585e55314fe4b6dbea41919101a2cf25a6054ef96"

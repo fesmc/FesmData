@@ -1,10 +1,10 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-16"
-git_tag = "atmosphere-v2.2.1"
+date = "2026-11-09"
+git_tag = "atmosphere-v2.3.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Global_Atmosphere"
-version = "2.2.1"
+version = "2.3.0"
 
 ["GLOBAL-0.1DEG_Atmosphere-ERA5-1981-2010.nc"]
 checksum = "sha256:d86544abaa7d81656b66b6b110e47f31b43b7b23143acf36709863bae895daca"

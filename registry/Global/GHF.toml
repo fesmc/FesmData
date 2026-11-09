@@ -1,10 +1,10 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-16"
-git_tag = "ghf-v2.3.1"
+date = "2026-11-09"
+git_tag = "ghf-v2.4.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Global_GHF"
-version = "2.3.1"
+version = "2.4.0"
 
 ["GLOBAL-0.1DEG_GHF-Davies2013.nc"]
 checksum = "sha256:19b8d9555b71777f2857046f38fff450ad7f95beb1ba10f73fdfed471987c9e5"

@@ -1,0 +1,25 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-11-09"
+git_tag = "topo-v2.7.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=PatagoniaPaleo_Topo"
+version = "2.7.0"
+
+["PAT-PAL-2KM_TOPO-GEBCO2026.nc"]
+checksum = "sha256:f42898451b06e9dc5dea5150fa78f16723b0fd0655074b0feec239a8aecd3f59"
+size = 6202548
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-2KM/PAT-PAL-2KM_TOPO-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Topo_PAT-PAL-2KM/2.7.0/PAT-PAL-2KM_TOPO-GEBCO2026.nc"
+
+["PAT-PAL-4KM_TOPO-GEBCO2026.nc"]
+checksum = "sha256:3bf6e3c80aa3ea83079cffef6d571f7b318e8c8eac0b542de605fa407af101c6"
+size = 1711262
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-4KM/PAT-PAL-4KM_TOPO-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Topo_PAT-PAL-4KM/2.7.0/PAT-PAL-4KM_TOPO-GEBCO2026.nc"
+
+["PAT-PAL-8KM_TOPO-GEBCO2026.nc"]
+checksum = "sha256:b5e06f939fe16c15d17434096d24272d16643ced0e9c45244b17f006f9eb7e15"
+size = 495529
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_TOPO-GEBCO2026.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Topo_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_TOPO-GEBCO2026.nc"

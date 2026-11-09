@@ -1,10 +1,10 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-16"
-git_tag = "topo-v2.6.1"
+date = "2026-11-09"
+git_tag = "topo-v2.7.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=SRG_Topo"
-version = "2.6.1"
+version = "2.7.0"
 
 ["SRG-100M_TOPO-GLO30-GEBCO2026.nc"]
 checksum = "sha256:a6e503e5d61871e256a08d696d649f78ef2e08c536f03d01ab8e2b1ed558f256"

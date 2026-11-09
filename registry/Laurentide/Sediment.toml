@@ -1,10 +1,10 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-16"
-git_tag = "sediment-v2.2.1"
+date = "2026-11-09"
+git_tag = "sediment-v2.3.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Laurentide_Sediment"
-version = "2.2.1"
+version = "2.3.0"
 
 ["LIS-16KM_Sediment-Gowan2019.nc"]
 checksum = "sha256:848348d9cfaaeb544e6770994f85680ce972efc741f2848330e102a5eec1033f"

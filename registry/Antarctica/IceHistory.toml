@@ -2,9 +2,9 @@
 
 [_RELEASE]
 date = "2026-11-09"
-git_tag = "icehistory-v2.3.0"
+git_tag = "icehistory-v2.4.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Antarctica_IceHistory"
-version = "2.3.0"
+version = "2.4.0"
 
 ["ANT-16KM_IceHistory-GLAC1D.nc"]
 checksum = "sha256:c4a09af7b696d65440d01b6262fa5fcf2927355e8cd546da91568818665e5c5f"

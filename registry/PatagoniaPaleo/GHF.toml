@@ -1,0 +1,49 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-11-09"
+git_tag = "ghf-v2.4.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=PatagoniaPaleo_GHF"
+version = "2.4.0"
+
+["PAT-PAL-4KM_GHF-Davies2013.nc"]
+checksum = "sha256:22fa8f76d6b5ed4f6c5708e38856f4b924b63a209e48ef256bbeffada50e4ea1"
+license = "Supporting information of an AGU article, under the Wiley standard terms (no open licence)"
+size = 126906
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-4KM/PAT-PAL-4KM_GHF-Davies2013.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_GHF_PAT-PAL-4KM/2.4.0/PAT-PAL-4KM_GHF-Davies2013.nc"
+
+["PAT-PAL-4KM_GHF-Lucazeau2019.nc"]
+checksum = "sha256:da91314b1727f5dc5a821fd21b1a1f305b598d213cb9fdc0da9071a26bb5c5d9"
+license = "Supporting information of an AGU article, under the Wiley standard terms (no open licence): redistribution needs permission from AGU or the author"
+size = 193423
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-4KM/PAT-PAL-4KM_GHF-Lucazeau2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_GHF_PAT-PAL-4KM/2.4.0/PAT-PAL-4KM_GHF-Lucazeau2019.nc"
+
+["PAT-PAL-4KM_GHF-Shapiro2004.nc"]
+checksum = "sha256:1d8047f59639c80db3defd169c208b208fafacada770adebd11f9df3f8fa6d2a"
+license = "No licence stated by the authors"
+size = 99220
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-4KM/PAT-PAL-4KM_GHF-Shapiro2004.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_GHF_PAT-PAL-4KM/2.4.0/PAT-PAL-4KM_GHF-Shapiro2004.nc"
+
+["PAT-PAL-8KM_GHF-Davies2013.nc"]
+checksum = "sha256:c0e4d22054dae2c8176931cb84dcddf7da1c28c52ef044fc560df03d9a52a979"
+license = "Supporting information of an AGU article, under the Wiley standard terms (no open licence)"
+size = 69724
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_GHF-Davies2013.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_GHF_PAT-PAL-8KM/2.4.0/PAT-PAL-8KM_GHF-Davies2013.nc"
+
+["PAT-PAL-8KM_GHF-Lucazeau2019.nc"]
+checksum = "sha256:116e73a04db2eaf5e8fc1a52beb5537b2c08173397261b0e6228069ac2c8e47f"
+license = "Supporting information of an AGU article, under the Wiley standard terms (no open licence): redistribution needs permission from AGU or the author"
+size = 91229
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_GHF-Lucazeau2019.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_GHF_PAT-PAL-8KM/2.4.0/PAT-PAL-8KM_GHF-Lucazeau2019.nc"
+
+["PAT-PAL-8KM_GHF-Shapiro2004.nc"]
+checksum = "sha256:4e67dcdc7d66b09b0e8f87bb4a3fd1168be6cacd6b2ef7d0b9bf316a7172783f"
+license = "No licence stated by the authors"
+size = 56419
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_GHF-Shapiro2004.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_GHF_PAT-PAL-8KM/2.4.0/PAT-PAL-8KM_GHF-Shapiro2004.nc"

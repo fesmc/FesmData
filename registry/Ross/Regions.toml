@@ -1,10 +1,10 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-16"
-git_tag = "regions-v2.6.1"
+date = "2026-11-09"
+git_tag = "regions-v2.7.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Ross_Regions"
-version = "2.6.1"
+version = "2.7.0"
 
 ["ROSS-1KM_BASINS-IMBIE2016-refined.nc"]
 checksum = "sha256:4e49096c93926f3c71f9a9e02b5b505f7a94ba4d34d3dfaef4330ca358023b31"

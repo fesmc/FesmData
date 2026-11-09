@@ -1,10 +1,10 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-16"
-git_tag = "regions-v2.6.1"
+date = "2026-11-09"
+git_tag = "regions-v2.7.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=PineIsland_Regions"
-version = "2.6.1"
+version = "2.7.0"
 
 ["PIG-1KM_BASINS-IMBIE2016-refined.nc"]
 checksum = "sha256:a9519079f34fc04f6945ea16ae0c53b1567c2ae04253673e4c16d69dbb4c8c96"

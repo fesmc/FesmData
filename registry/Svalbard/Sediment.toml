@@ -1,10 +1,10 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-16"
-git_tag = "sediment-v2.2.1"
+date = "2026-11-09"
+git_tag = "sediment-v2.3.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Svalbard_Sediment"
-version = "2.2.1"
+version = "2.3.0"
 
 ["SVB-2KM_Sediment-CRUST1.nc"]
 checksum = "sha256:c0c7ff8092266dda9d79d4d503be13af12de5919d2bfeb8256a41c5d7dc9948b"

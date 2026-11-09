@@ -1,10 +1,10 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-16"
-git_tag = "regions-v2.6.1"
+date = "2026-11-09"
+git_tag = "regions-v2.7.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=MonteSarmiento_Regions"
-version = "2.6.1"
+version = "2.7.0"
 
 ["SAR-100M_DOMAINS.nc"]
 checksum = "sha256:a1006128d8f5f1dc5af2729e8c9b5cb600725b9245f4c1825815480188117fd4"

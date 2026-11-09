@@ -1,10 +1,10 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-16"
-git_tag = "atmosphere-v2.2.1"
+date = "2026-11-09"
+git_tag = "atmosphere-v2.3.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Patagonia_Atmosphere"
-version = "2.2.1"
+version = "2.3.0"
 
 ["PAT-2KM_Atmosphere-ERA5-1981-2010.nc"]
 checksum = "sha256:53f1eb1babc05a85ac50af207a60e5040575c6a462b4ab3a2984812948fc5319"

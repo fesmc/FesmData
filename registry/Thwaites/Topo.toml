@@ -1,10 +1,10 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-16"
-git_tag = "topo-v2.6.1"
+date = "2026-11-09"
+git_tag = "topo-v2.7.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Thwaites_Topo"
-version = "2.6.1"
+version = "2.7.0"
 
 ["THW-1KM_TOPO-BedMachine-v2.nc"]
 checksum = "sha256:f94bc3dcee38cb2ed29e1c6183e0ebbe53e52cc9f9e8db996365dc7a2f0ee7b2"

@@ -1,0 +1,448 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-11-09"
+git_tag = "paleoclimate-v2.7.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=PatagoniaPaleo_Paleoclimate"
+version = "2.7.0"
+
+["PAT-PAL-8KM_Paleoclimate-CLIMBER3a-lgm_1p7strong-ocean.nc"]
+checksum = "sha256:149681dbb72ce9c11d2b4d09c0f4456b0dd5900c7e4caad270bdcce86b810a74"
+license = "CC BY 4.0 (https://github.com/fesmc/Montoya2008-CLIMBER3a)"
+size = 428477
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-CLIMBER3a-lgm_1p7strong-ocean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-CLIMBER3a-lgm_1p7strong-ocean.nc"
+
+["PAT-PAL-8KM_Paleoclimate-CLIMBER3a-lgm_1p7strong.nc"]
+checksum = "sha256:ebb30f13be0cb798a12a4e2fb1bff509426e020d695dfb9cd5a5e4eb5600f5a5"
+license = "CC BY 4.0 (https://github.com/fesmc/Montoya2008-CLIMBER3a)"
+size = 100617
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-CLIMBER3a-lgm_1p7strong.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-CLIMBER3a-lgm_1p7strong.nc"
+
+["PAT-PAL-8KM_Paleoclimate-CLIMBER3a-lgm_1p7weak-ocean.nc"]
+checksum = "sha256:7306476d07b11be7f7c3cd8504634072b22e14a857d7b7fa47daf7d17408c752"
+license = "CC BY 4.0 (https://github.com/fesmc/Montoya2008-CLIMBER3a)"
+size = 411487
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-CLIMBER3a-lgm_1p7weak-ocean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-CLIMBER3a-lgm_1p7weak-ocean.nc"
+
+["PAT-PAL-8KM_Paleoclimate-CLIMBER3a-lgm_1p7weak.nc"]
+checksum = "sha256:18a33f83dfa4a0574e7a72ba2914d58ca203303a64b88e427eba5f892913f4b2"
+license = "CC BY 4.0 (https://github.com/fesmc/Montoya2008-CLIMBER3a)"
+size = 101310
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-CLIMBER3a-lgm_1p7weak.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-CLIMBER3a-lgm_1p7weak.nc"
+
+["PAT-PAL-8KM_Paleoclimate-CLIMBER3a-present-ocean.nc"]
+checksum = "sha256:695d5c0c08e2eea3b7058dd53d97f8503c38d4073b9647b39dfcbca0210015b6"
+license = "CC BY 4.0 (https://github.com/fesmc/Montoya2008-CLIMBER3a)"
+size = 361077
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-CLIMBER3a-present-ocean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-CLIMBER3a-present-ocean.nc"
+
+["PAT-PAL-8KM_Paleoclimate-CLIMBER3a-present.nc"]
+checksum = "sha256:d1af782bb914008f325b840f72bcb7dc43c0b6c1f27aa4e8170e267948af2af7"
+license = "CC BY 4.0 (https://github.com/fesmc/Montoya2008-CLIMBER3a)"
+size = 98463
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-CLIMBER3a-present.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-CLIMBER3a-present.nc"
+
+["PAT-PAL-8KM_Paleoclimate-CLIMBERX-Willeit2025-heinrich-ocean.nc"]
+checksum = "sha256:6bf0d09b99b0a789d3c0f14527739a1f0fcdea8c9cd1642bf291473f2b07548b"
+license = "CC BY 4.0 (model output provided by M. Willeit; cite Willeit et al., 2025)"
+size = 1020571
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-CLIMBERX-Willeit2025-heinrich-ocean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-CLIMBERX-Willeit2025-heinrich-ocean.nc"
+
+["PAT-PAL-8KM_Paleoclimate-CLIMBERX-Willeit2025-heinrich.nc"]
+checksum = "sha256:07c13467be36efd6fa9f98f6c63b9388ea8389f26c6b654e6be391d566a34c9c"
+license = "CC BY 4.0 (model output provided by M. Willeit; cite Willeit et al., 2025)"
+size = 1957400
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-CLIMBERX-Willeit2025-heinrich.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-CLIMBERX-Willeit2025-heinrich.nc"
+
+["PAT-PAL-8KM_Paleoclimate-CLIMBERX-Willeit2025-interstadial-ocean.nc"]
+checksum = "sha256:f82c31ffffd307698959be0ec28b13cbcd9f2489bdfd0b32df4aca5cb93a189b"
+license = "CC BY 4.0 (model output provided by M. Willeit; cite Willeit et al., 2025)"
+size = 818265
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-CLIMBERX-Willeit2025-interstadial-ocean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-CLIMBERX-Willeit2025-interstadial-ocean.nc"
+
+["PAT-PAL-8KM_Paleoclimate-CLIMBERX-Willeit2025-interstadial.nc"]
+checksum = "sha256:22455a8f1353c5c5f8a49d4f256a24d804fb96b2a21baad9a99d002e2210a527"
+license = "CC BY 4.0 (model output provided by M. Willeit; cite Willeit et al., 2025)"
+size = 1635180
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-CLIMBERX-Willeit2025-interstadial.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-CLIMBERX-Willeit2025-interstadial.nc"
+
+["PAT-PAL-8KM_Paleoclimate-CLIMBERX-Willeit2025-piControl-ocean.nc"]
+checksum = "sha256:3799c3aafe99681dbd9da51b3f5b93f04589b7d25db8962c45c2201453a22c5b"
+license = "CC BY 4.0 (model output provided by M. Willeit; cite Willeit et al., 2025)"
+size = 505423
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-CLIMBERX-Willeit2025-piControl-ocean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-CLIMBERX-Willeit2025-piControl-ocean.nc"
+
+["PAT-PAL-8KM_Paleoclimate-CLIMBERX-Willeit2025-piControl.nc"]
+checksum = "sha256:561e3c79eda45d9a5353688e50c948c73b9cb01b708fe139b7ccac3f468d2c4a"
+license = "CC BY 4.0 (model output provided by M. Willeit; cite Willeit et al., 2025)"
+size = 1095538
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-CLIMBERX-Willeit2025-piControl.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-CLIMBERX-Willeit2025-piControl.nc"
+
+["PAT-PAL-8KM_Paleoclimate-CLIMBERX-Willeit2025-stadial-ocean.nc"]
+checksum = "sha256:ba9e5a5daaf74fb841f88eac559458a74e72e64fb9ecdc7ed2639ad2e049f937"
+license = "CC BY 4.0 (model output provided by M. Willeit; cite Willeit et al., 2025)"
+size = 856304
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-CLIMBERX-Willeit2025-stadial-ocean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-CLIMBERX-Willeit2025-stadial-ocean.nc"
+
+["PAT-PAL-8KM_Paleoclimate-CLIMBERX-Willeit2025-stadial.nc"]
+checksum = "sha256:919740a46d248b1a6d78e8e915836232978653d7f0c09556fb682a20108ea8bf"
+license = "CC BY 4.0 (model output provided by M. Willeit; cite Willeit et al., 2025)"
+size = 1742742
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-CLIMBERX-Willeit2025-stadial.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-CLIMBERX-Willeit2025-stadial.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP3-CCSM4-lgm.nc"]
+checksum = "sha256:c9f98b1feac028025713a6c131e34e81e880f9b8e30cdad058cda949f4872faa"
+license = "CMIP5 model output (terms of use: https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html; for some models non-commercial research and education only), processed with the NCAR CVDP (free for non-commercial use; acknowledge the NCAR Climate Analysis Section's Climate Variability Diagnostics Package)"
+size = 578586
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP3-CCSM4-lgm.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP3-CCSM4-lgm.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP3-CCSM4-midHolocene.nc"]
+checksum = "sha256:8eb5df53a91dab43d744f7c1e72b3ca4ac9c8a2d69d9159764d701ddfb3048e9"
+license = "CMIP5 model output (terms of use: https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html; for some models non-commercial research and education only), processed with the NCAR CVDP (free for non-commercial use; acknowledge the NCAR Climate Analysis Section's Climate Variability Diagnostics Package)"
+size = 526315
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP3-CCSM4-midHolocene.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP3-CCSM4-midHolocene.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP3-CCSM4-piControl.nc"]
+checksum = "sha256:fa404b87050723fc152c6bd51f67f40447f3a239fb3015db648ca5439f0d5f77"
+license = "CMIP5 model output (terms of use: https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html; for some models non-commercial research and education only), processed with the NCAR CVDP (free for non-commercial use; acknowledge the NCAR Climate Analysis Section's Climate Variability Diagnostics Package)"
+size = 523268
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP3-CCSM4-piControl.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP3-CCSM4-piControl.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP3-CNRM-CM5-lgm.nc"]
+checksum = "sha256:c4055dca933fee59cdfcf656fe7cc39528fe5db0bd7dbddf730d72461c6675f1"
+license = "CMIP5 model output (terms of use: https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html; for some models non-commercial research and education only), processed with the NCAR CVDP (free for non-commercial use; acknowledge the NCAR Climate Analysis Section's Climate Variability Diagnostics Package)"
+size = 598427
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP3-CNRM-CM5-lgm.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP3-CNRM-CM5-lgm.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP3-CNRM-CM5-midHolocene.nc"]
+checksum = "sha256:6116a77af2349b82bfc89489b84c49654656ec391c94947546eb7a194a7ec1a6"
+license = "CMIP5 model output (terms of use: https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html; for some models non-commercial research and education only), processed with the NCAR CVDP (free for non-commercial use; acknowledge the NCAR Climate Analysis Section's Climate Variability Diagnostics Package)"
+size = 562306
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP3-CNRM-CM5-midHolocene.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP3-CNRM-CM5-midHolocene.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP3-CNRM-CM5-piControl.nc"]
+checksum = "sha256:3d5b18f19315c26d17037cd696a80530e89c0a0b82d4064e1f8bb45a51548fe5"
+license = "CMIP5 model output (terms of use: https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html; for some models non-commercial research and education only), processed with the NCAR CVDP (free for non-commercial use; acknowledge the NCAR Climate Analysis Section's Climate Variability Diagnostics Package)"
+size = 560661
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP3-CNRM-CM5-piControl.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP3-CNRM-CM5-piControl.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP3-FGOALS-g2-lgm.nc"]
+checksum = "sha256:db4743eb0c0ebae2f9dffec30168fa30ef5845614430c2a2c764ffdfa106d09b"
+license = "CMIP5 model output (terms of use: https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html; for some models non-commercial research and education only), processed with the NCAR CVDP (free for non-commercial use; acknowledge the NCAR Climate Analysis Section's Climate Variability Diagnostics Package)"
+size = 471164
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP3-FGOALS-g2-lgm.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP3-FGOALS-g2-lgm.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP3-FGOALS-g2-midHolocene.nc"]
+checksum = "sha256:7a1aa95c745f23ae578707cb5d46c0b6dc70a8267c0bafe67e20a7d6358e2095"
+license = "CMIP5 model output (terms of use: https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html; for some models non-commercial research and education only), processed with the NCAR CVDP (free for non-commercial use; acknowledge the NCAR Climate Analysis Section's Climate Variability Diagnostics Package)"
+size = 425114
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP3-FGOALS-g2-midHolocene.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP3-FGOALS-g2-midHolocene.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP3-FGOALS-g2-piControl.nc"]
+checksum = "sha256:8883b7a485ff7fc13771de419ac09a814a81eb5e9e71137d994e525b03656ab7"
+license = "CMIP5 model output (terms of use: https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html; for some models non-commercial research and education only), processed with the NCAR CVDP (free for non-commercial use; acknowledge the NCAR Climate Analysis Section's Climate Variability Diagnostics Package)"
+size = 416556
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP3-FGOALS-g2-piControl.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP3-FGOALS-g2-piControl.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP3-GISS-E2-R-lgm.nc"]
+checksum = "sha256:ea26bdcf46a6d1519e2b8fbf63e5b1eb6726aa041c6d78dfa37a00290ff9b804"
+license = "CMIP5 model output (terms of use: https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html; for some models non-commercial research and education only), processed with the NCAR CVDP (free for non-commercial use; acknowledge the NCAR Climate Analysis Section's Climate Variability Diagnostics Package)"
+size = 581895
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP3-GISS-E2-R-lgm.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP3-GISS-E2-R-lgm.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP3-GISS-E2-R-midHolocene.nc"]
+checksum = "sha256:728ee2d77af863927a8724a50a9b7e846588e3513d5e7a52dd87455942a0342f"
+license = "CMIP5 model output (terms of use: https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html; for some models non-commercial research and education only), processed with the NCAR CVDP (free for non-commercial use; acknowledge the NCAR Climate Analysis Section's Climate Variability Diagnostics Package)"
+size = 498598
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP3-GISS-E2-R-midHolocene.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP3-GISS-E2-R-midHolocene.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP3-GISS-E2-R-piControl.nc"]
+checksum = "sha256:3f9e14e503817d5ac1c531556032d6003570a5250eb92a6801c960f8644119de"
+license = "CMIP5 model output (terms of use: https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html; for some models non-commercial research and education only), processed with the NCAR CVDP (free for non-commercial use; acknowledge the NCAR Climate Analysis Section's Climate Variability Diagnostics Package)"
+size = 439436
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP3-GISS-E2-R-piControl.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP3-GISS-E2-R-piControl.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP3-IPSL-CM5A-LR-lgm.nc"]
+checksum = "sha256:b59d12923a87a4125c173e99b47577b6ee8bd8bc7a8cfa034cf114e9aa1feb9f"
+license = "CMIP5 model output (terms of use: https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html; for some models non-commercial research and education only), processed with the NCAR CVDP (free for non-commercial use; acknowledge the NCAR Climate Analysis Section's Climate Variability Diagnostics Package)"
+size = 569083
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP3-IPSL-CM5A-LR-lgm.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP3-IPSL-CM5A-LR-lgm.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP3-IPSL-CM5A-LR-midHolocene.nc"]
+checksum = "sha256:825bf2989a711fd3c29efa0f096f08671c2a59cab129cdb37aaa1d9c68c8b42a"
+license = "CMIP5 model output (terms of use: https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html; for some models non-commercial research and education only), processed with the NCAR CVDP (free for non-commercial use; acknowledge the NCAR Climate Analysis Section's Climate Variability Diagnostics Package)"
+size = 519430
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP3-IPSL-CM5A-LR-midHolocene.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP3-IPSL-CM5A-LR-midHolocene.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP3-IPSL-CM5A-LR-piControl.nc"]
+checksum = "sha256:1f17db45da79adf79384292efdb14daa2ce574db35969a690b9f903793a21dbc"
+license = "CMIP5 model output (terms of use: https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html; for some models non-commercial research and education only), processed with the NCAR CVDP (free for non-commercial use; acknowledge the NCAR Climate Analysis Section's Climate Variability Diagnostics Package)"
+size = 515073
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP3-IPSL-CM5A-LR-piControl.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP3-IPSL-CM5A-LR-piControl.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP3-MIROC-ESM-lgm.nc"]
+checksum = "sha256:b33a381a691fe77f6cc903ca6f2c2ad85d1191a95c243a62fe32fb01ad081245"
+license = "CMIP5 model output (terms of use: https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html; for some models non-commercial research and education only), processed with the NCAR CVDP (free for non-commercial use; acknowledge the NCAR Climate Analysis Section's Climate Variability Diagnostics Package)"
+size = 481169
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP3-MIROC-ESM-lgm.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP3-MIROC-ESM-lgm.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP3-MIROC-ESM-midHolocene.nc"]
+checksum = "sha256:aa027971205c44baa34385e4bda3bbd4eeb7b40488b113b2e1f86036df4851e9"
+license = "CMIP5 model output (terms of use: https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html; for some models non-commercial research and education only), processed with the NCAR CVDP (free for non-commercial use; acknowledge the NCAR Climate Analysis Section's Climate Variability Diagnostics Package)"
+size = 398127
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP3-MIROC-ESM-midHolocene.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP3-MIROC-ESM-midHolocene.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP3-MIROC-ESM-piControl.nc"]
+checksum = "sha256:c3086b6e6f644fbb3a50882738e06c3bcf7322f46c9334e43fe532cac1a4d7f6"
+license = "CMIP5 model output (terms of use: https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html; for some models non-commercial research and education only), processed with the NCAR CVDP (free for non-commercial use; acknowledge the NCAR Climate Analysis Section's Climate Variability Diagnostics Package)"
+size = 398761
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP3-MIROC-ESM-piControl.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP3-MIROC-ESM-piControl.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP3-MPI-ESM-P-lgm.nc"]
+checksum = "sha256:5f3e6fb3322ab74f69fe7b5eabc2f9a170e7abfb6ab110e11b3a9138059de960"
+license = "CMIP5 model output (terms of use: https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html; for some models non-commercial research and education only), processed with the NCAR CVDP (free for non-commercial use; acknowledge the NCAR Climate Analysis Section's Climate Variability Diagnostics Package)"
+size = 407454
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP3-MPI-ESM-P-lgm.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP3-MPI-ESM-P-lgm.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP3-MPI-ESM-P-midHolocene.nc"]
+checksum = "sha256:27f2acb2c7be8c72236a85f533e3caacce0109201fab832f7a278e06aeabbc4b"
+license = "CMIP5 model output (terms of use: https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html; for some models non-commercial research and education only), processed with the NCAR CVDP (free for non-commercial use; acknowledge the NCAR Climate Analysis Section's Climate Variability Diagnostics Package)"
+size = 501565
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP3-MPI-ESM-P-midHolocene.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP3-MPI-ESM-P-midHolocene.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP3-MPI-ESM-P-piControl.nc"]
+checksum = "sha256:bf3eb902f01518bc452e95287ff0fe4ad31a17b62c2de6956fef508284bf8949"
+license = "CMIP5 model output (terms of use: https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html; for some models non-commercial research and education only), processed with the NCAR CVDP (free for non-commercial use; acknowledge the NCAR Climate Analysis Section's Climate Variability Diagnostics Package)"
+size = 497704
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP3-MPI-ESM-P-piControl.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP3-MPI-ESM-P-piControl.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP3-MRI-CGCM3-lgm.nc"]
+checksum = "sha256:b44d456ad58d483e2263d415188972be3e56e4288e2c42813dc3fc428270d48e"
+license = "CMIP5 model output (terms of use: https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html; for some models non-commercial research and education only), processed with the NCAR CVDP (free for non-commercial use; acknowledge the NCAR Climate Analysis Section's Climate Variability Diagnostics Package)"
+size = 603096
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP3-MRI-CGCM3-lgm.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP3-MRI-CGCM3-lgm.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP3-MRI-CGCM3-midHolocene.nc"]
+checksum = "sha256:554c9d1c49012d17d2a4fe6ef0067452eade5a38d171bd0f872ba0cb8c09c4ed"
+license = "CMIP5 model output (terms of use: https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html; for some models non-commercial research and education only), processed with the NCAR CVDP (free for non-commercial use; acknowledge the NCAR Climate Analysis Section's Climate Variability Diagnostics Package)"
+size = 517217
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP3-MRI-CGCM3-midHolocene.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP3-MRI-CGCM3-midHolocene.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP3-MRI-CGCM3-piControl.nc"]
+checksum = "sha256:25d4c277a541f51354be342438bdc0ea3f5296faac2724ca7a2c0f2e5d969916"
+license = "CMIP5 model output (terms of use: https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html; for some models non-commercial research and education only), processed with the NCAR CVDP (free for non-commercial use; acknowledge the NCAR Climate Analysis Section's Climate Variability Diagnostics Package)"
+size = 516425
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP3-MRI-CGCM3-piControl.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP3-MRI-CGCM3-piControl.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP3-lgm-boundary-conditions.nc"]
+checksum = "sha256:4a8997714852fe52e8ced3a249954d551b0cb40987b5a98a8333abf95fa8742e"
+license = "No licence stated (PMIP3 experimental design, https://pmip3.lsce.ipsl.fr)"
+size = 189411
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP3-lgm-boundary-conditions.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP3-lgm-boundary-conditions.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP3-lgm-mean.nc"]
+checksum = "sha256:8f7b6b4153ec8fc16b74d47ae60b6130f16470abc35c725576c9af1d49750d89"
+license = "CMIP5 model output (terms of use: https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html; for some models non-commercial research and education only), processed with the NCAR CVDP (free for non-commercial use; acknowledge the NCAR Climate Analysis Section's Climate Variability Diagnostics Package)"
+size = 589275
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP3-lgm-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP3-lgm-mean.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP3-lgm-stdev.nc"]
+checksum = "sha256:660b3faf038a69da53b215cbe389d165ee4f06d0364973c6a4b3fddafe08f49e"
+license = "CMIP5 model output (terms of use: https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html; for some models non-commercial research and education only), processed with the NCAR CVDP (free for non-commercial use; acknowledge the NCAR Climate Analysis Section's Climate Variability Diagnostics Package)"
+size = 574090
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP3-lgm-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP3-lgm-stdev.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP3-midHolocene-mean.nc"]
+checksum = "sha256:087dd94d17a56f61c7bd58840a9aea8e9184702a640ad5f6c65b1ec387c7b1a8"
+license = "CMIP5 model output (terms of use: https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html; for some models non-commercial research and education only), processed with the NCAR CVDP (free for non-commercial use; acknowledge the NCAR Climate Analysis Section's Climate Variability Diagnostics Package)"
+size = 517667
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP3-midHolocene-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP3-midHolocene-mean.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP3-midHolocene-stdev.nc"]
+checksum = "sha256:7029db90c03fb56a4cb8b2f7f1f216b27e95c554336bfa6b5d8e467f35212de5"
+license = "CMIP5 model output (terms of use: https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html; for some models non-commercial research and education only), processed with the NCAR CVDP (free for non-commercial use; acknowledge the NCAR Climate Analysis Section's Climate Variability Diagnostics Package)"
+size = 523826
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP3-midHolocene-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP3-midHolocene-stdev.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP3-piControl-mean.nc"]
+checksum = "sha256:263cf9999f16039c66634509cf7a38a4b126fd9bceae03fa0dc1a28cdcf37c26"
+license = "CMIP5 model output (terms of use: https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html; for some models non-commercial research and education only), processed with the NCAR CVDP (free for non-commercial use; acknowledge the NCAR Climate Analysis Section's Climate Variability Diagnostics Package)"
+size = 516474
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP3-piControl-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP3-piControl-mean.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP3-piControl-stdev.nc"]
+checksum = "sha256:a64254515721b3ca147aedb88adfe12d47d53035d4e0cd586dfe3e15027ebccd"
+license = "CMIP5 model output (terms of use: https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html; for some models non-commercial research and education only), processed with the NCAR CVDP (free for non-commercial use; acknowledge the NCAR Climate Analysis Section's Climate Variability Diagnostics Package)"
+size = 524863
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP3-piControl-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP3-piControl-stdev.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP4-AWI-ESM-1-1-LR-lgm.nc"]
+checksum = "sha256:2c5f4c5b58d7be827c43fb8929f625dabf9528e86ca8df878b3fb2dcd3b299b3"
+license = "CMIP6 model data produced by Alfred Wegener Institute is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file). The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."
+size = 1459471
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP4-AWI-ESM-1-1-LR-lgm.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP4-AWI-ESM-1-1-LR-lgm.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP4-AWI-ESM-1-1-LR-midHolocene.nc"]
+checksum = "sha256:5549a60cba3cbea3139b2f68279ce169e6c2502234114daf136a1b960f0d4de7"
+license = "CMIP6 model data produced by Alfred Wegener Institute is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file). The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."
+size = 1289391
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP4-AWI-ESM-1-1-LR-midHolocene.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP4-AWI-ESM-1-1-LR-midHolocene.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP4-AWI-ESM-1-1-LR-piControl.nc"]
+checksum = "sha256:73ef1af2bb3fd796f3eafa2a0ea3598eca47693343c8f7a2236cbd2e056a06d3"
+license = "CMIP6 model data produced by Alfred Wegener Institute is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file). The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."
+size = 1260573
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP4-AWI-ESM-1-1-LR-piControl.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP4-AWI-ESM-1-1-LR-piControl.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP4-INM-CM4-8-lgm.nc"]
+checksum = "sha256:16d218fbc2b426ceb21852268a13f820cba7f949294130d61ff6cce90e0cc424"
+license = "CMIP6 model data produced by Lawrence Livermore PCMDI is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."
+size = 1472685
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP4-INM-CM4-8-lgm.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP4-INM-CM4-8-lgm.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP4-INM-CM4-8-midHolocene.nc"]
+checksum = "sha256:34fde2520e00bb963c90dc938e57fe631f7fb15df734b6f0b1c81fc205456c25"
+license = "CMIP6 model data produced by Lawrence Livermore PCMDI is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."
+size = 1180885
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP4-INM-CM4-8-midHolocene.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP4-INM-CM4-8-midHolocene.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP4-INM-CM4-8-piControl.nc"]
+checksum = "sha256:8a45b5660114cfe385cdfa4b500ca338e78d1877ed2a32626f1d20e59567a082"
+license = "CMIP6 model data produced by Lawrence Livermore PCMDI is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."
+size = 1166890
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP4-INM-CM4-8-piControl.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP4-INM-CM4-8-piControl.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP4-MIROC-ES2L-lgm.nc"]
+checksum = "sha256:96ebf899985b156aa1796c2f434c72444b02801233b1e18825588b3cdeff9cea"
+license = "CMIP6 model data produced by MIROC is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses/). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file). The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."
+size = 1087776
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP4-MIROC-ES2L-lgm.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP4-MIROC-ES2L-lgm.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP4-MIROC-ES2L-midHolocene.nc"]
+checksum = "sha256:f5a880b8576c9270fc988181c8ebe71b04d9e7751c75d22b2c2a6e9868b2ec03"
+license = "CMIP6 model data produced by MIROC is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses/). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file). The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."
+size = 835930
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP4-MIROC-ES2L-midHolocene.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP4-MIROC-ES2L-midHolocene.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP4-MIROC-ES2L-piControl.nc"]
+checksum = "sha256:26fb954d43bd6042e138279b7fa56c8ed77a6a7e477af31adcfe3e2eed32592c"
+license = "CMIP6 model data produced by MIROC is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses/). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file). The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."
+size = 836054
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP4-MIROC-ES2L-piControl.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP4-MIROC-ES2L-piControl.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP4-MPI-ESM1-2-LR-lgm.nc"]
+checksum = "sha256:1c00c3d3c026f82f6b0d7d190dbe739e2a203f483545d98a44c711a07878fdec"
+license = "CMIP6 model data produced by MPI-M is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."
+size = 1549521
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP4-MPI-ESM1-2-LR-lgm.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP4-MPI-ESM1-2-LR-lgm.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP4-MPI-ESM1-2-LR-midHolocene.nc"]
+checksum = "sha256:fe281f88fb8ba2afa519cf33a368bf65030c08d43aebc93fad61b71b742863db"
+license = "CMIP6 model data produced by MPI-M is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."
+size = 1290963
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP4-MPI-ESM1-2-LR-midHolocene.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP4-MPI-ESM1-2-LR-midHolocene.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP4-MPI-ESM1-2-LR-piControl.nc"]
+checksum = "sha256:4c4fc3a7a9494ff47d1b6781cd6ccfbd458e16a900a7f35cfc86389c4fcae974"
+license = "CMIP6 model data produced by MPI-M is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."
+size = 1267945
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP4-MPI-ESM1-2-LR-piControl.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP4-MPI-ESM1-2-LR-piControl.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP4-lgm-mean.nc"]
+checksum = "sha256:2bca815c80eaf4da458d3ac9f487e39232890553ed1fd6067c9981b0be598b32"
+license = "CMIP6 model data produced by Alfred Wegener Institute is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file). The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.; CMIP6 model data produced by Lawrence Livermore PCMDI is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.; CMIP6 model data produced by MIROC is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses/). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file). The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.; CMIP6 model data produced by MPI-M is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."
+size = 1507769
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP4-lgm-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP4-lgm-mean.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP4-lgm-stdev.nc"]
+checksum = "sha256:f8d0daf66b5ee958d9684828e3abdb5e9080c8dbc3708c981e12350c4d6e4cc8"
+license = "CMIP6 model data produced by Alfred Wegener Institute is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file). The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.; CMIP6 model data produced by Lawrence Livermore PCMDI is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.; CMIP6 model data produced by MIROC is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses/). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file). The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.; CMIP6 model data produced by MPI-M is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."
+size = 1605017
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP4-lgm-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP4-lgm-stdev.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP4-midHolocene-mean.nc"]
+checksum = "sha256:b4cb385cef3168ebbf7d126c67caf95ac24fd37d0c65c11e4f547ded5eb637ae"
+license = "CMIP6 model data produced by Alfred Wegener Institute is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file). The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.; CMIP6 model data produced by Lawrence Livermore PCMDI is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.; CMIP6 model data produced by MIROC is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses/). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file). The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.; CMIP6 model data produced by MPI-M is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."
+size = 1218730
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP4-midHolocene-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP4-midHolocene-mean.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP4-midHolocene-stdev.nc"]
+checksum = "sha256:111dad86362cae1fb84b5b797aa4280ce30a5136bca00c9a75c42ec84fdf60e5"
+license = "CMIP6 model data produced by Alfred Wegener Institute is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file). The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.; CMIP6 model data produced by Lawrence Livermore PCMDI is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.; CMIP6 model data produced by MIROC is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses/). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file). The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.; CMIP6 model data produced by MPI-M is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."
+size = 1523499
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP4-midHolocene-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP4-midHolocene-stdev.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP4-piControl-mean.nc"]
+checksum = "sha256:d6083f126e2fc775f675c0441d08931f4948e44442fd4316ee5ee2af9858ea7e"
+license = "CMIP6 model data produced by Alfred Wegener Institute is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file). The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.; CMIP6 model data produced by Lawrence Livermore PCMDI is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.; CMIP6 model data produced by MIROC is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses/). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file). The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.; CMIP6 model data produced by MPI-M is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."
+size = 1198452
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP4-piControl-mean.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP4-piControl-mean.nc"
+
+["PAT-PAL-8KM_Paleoclimate-PMIP4-piControl-stdev.nc"]
+checksum = "sha256:d84caa00a18702fbfd2ac2d576607796e3ae8386fd91dcd5d1a0ab7588969de3"
+license = "CMIP6 model data produced by Alfred Wegener Institute is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file). The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.; CMIP6 model data produced by Lawrence Livermore PCMDI is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.; CMIP6 model data produced by MIROC is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses/). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file). The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.; CMIP6 model data produced by MPI-M is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."
+size = 1507281
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Paleoclimate-PMIP4-piControl-stdev.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Paleoclimate_PAT-PAL-8KM/2.7.0/PAT-PAL-8KM_Paleoclimate-PMIP4-piControl-stdev.nc"

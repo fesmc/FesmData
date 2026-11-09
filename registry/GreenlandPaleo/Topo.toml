@@ -1,10 +1,10 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-16"
-git_tag = "topo-v2.6.1"
+date = "2026-11-09"
+git_tag = "topo-v2.7.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=GreenlandPaleo_Topo"
-version = "2.6.1"
+version = "2.7.0"
 
 ["GRL-PAL-16KM_TOPO-BedMachine-v4.nc"]
 checksum = "sha256:dad78a12e82287fbcf2adfd2de8e9cdb20cb95ced79ba422ae0854fab4ac4c73"

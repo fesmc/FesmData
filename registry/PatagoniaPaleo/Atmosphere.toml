@@ -1,0 +1,42 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-11-09"
+git_tag = "atmosphere-v2.3.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=PatagoniaPaleo_Atmosphere"
+version = "2.3.0"
+
+["PAT-PAL-8KM_Atmosphere-CERES-2001-2020.nc"]
+checksum = "sha256:10d221d29e1091ff9f3953b9472a2b9c3eab2f56cafef12b63de0dda07302502"
+license = "NASA Earth science data, open without restriction on use or redistribution (NASA Earth Science Data and Information Policy); cite the data products"
+size = 4376361
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Atmosphere-CERES-2001-2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Atmosphere_PAT-PAL-8KM/2.3.0/PAT-PAL-8KM_Atmosphere-CERES-2001-2020.nc"
+
+["PAT-PAL-8KM_Atmosphere-ERA5-1981-2010.nc"]
+checksum = "sha256:5ce8beeb572b956946923e18d6963df3ee30d5db94141a48c1c0472169e6ea8f"
+license = "Copernicus licence (free use and redistribution with attribution): contains modified Copernicus Climate Change Service information 2026; neither the European Commission nor ECMWF is responsible for any use of it"
+size = 6749640
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Atmosphere-ERA5-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Atmosphere_PAT-PAL-8KM/2.3.0/PAT-PAL-8KM_Atmosphere-ERA5-1981-2010.nc"
+
+["PAT-PAL-8KM_Atmosphere-ERA5-1991-2020.nc"]
+checksum = "sha256:e6e608dc6004225b703efeeff9619670876cdf72b540b5d16304b8f13ba2756c"
+license = "Copernicus licence (free use and redistribution with attribution): contains modified Copernicus Climate Change Service information 2026; neither the European Commission nor ECMWF is responsible for any use of it"
+size = 6744717
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Atmosphere-ERA5-1991-2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Atmosphere_PAT-PAL-8KM/2.3.0/PAT-PAL-8KM_Atmosphere-ERA5-1991-2020.nc"
+
+["PAT-PAL-8KM_Atmosphere-ERA5-plev-1981-2010.nc"]
+checksum = "sha256:a53981458e08ef1b79321adb7408bd2d61d18cfa7e0f3457219b27f9e6dfe984"
+license = "Copernicus licence (free use and redistribution with attribution): contains modified Copernicus Climate Change Service information 2026; neither the European Commission nor ECMWF is responsible for any use of it"
+size = 25667389
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Atmosphere-ERA5-plev-1981-2010.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Atmosphere_PAT-PAL-8KM/2.3.0/PAT-PAL-8KM_Atmosphere-ERA5-plev-1981-2010.nc"
+
+["PAT-PAL-8KM_Atmosphere-ERA5-plev-1991-2020.nc"]
+checksum = "sha256:eacf8698f31dd229c5322ecc669bba6f569acbf95af018c7f0068f8cae66544d"
+license = "Copernicus licence (free use and redistribution with attribution): contains modified Copernicus Climate Change Service information 2026; neither the European Commission nor ECMWF is responsible for any use of it"
+size = 25677688
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_Atmosphere-ERA5-plev-1991-2020.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_Atmosphere_PAT-PAL-8KM/2.3.0/PAT-PAL-8KM_Atmosphere-ERA5-plev-1991-2020.nc"

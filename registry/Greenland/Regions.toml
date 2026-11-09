@@ -1,10 +1,10 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-16"
-git_tag = "regions-v2.6.1"
+date = "2026-11-09"
+git_tag = "regions-v2.7.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Greenland_Regions"
-version = "2.6.1"
+version = "2.7.0"
 
 ["GRL-16KM_BASINS-Mouginot2019.nc"]
 checksum = "sha256:2922efd41fb83d288be396c5b2f8e5801ea1357a50b08cc68034f6a37ba04555"

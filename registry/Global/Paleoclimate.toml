@@ -1,10 +1,10 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-16"
-git_tag = "paleoclimate-v2.6.1"
+date = "2026-11-09"
+git_tag = "paleoclimate-v2.7.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Global_Paleoclimate"
-version = "2.6.1"
+version = "2.7.0"
 
 ["GLOBAL-0.5DEG_Paleoclimate-CLIMBER3a-lgm_1p7strong.nc"]
 checksum = "sha256:436217b897afd6d80620732cb67a87e25f30e9b2956eade9bb3c3df899a3853b"

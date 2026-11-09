@@ -1,0 +1,28 @@
+# Registry of a released record, written by Publish (see Publish/README.md).
+
+[_RELEASE]
+date = "2026-11-09"
+git_tag = "icehistory-v2.4.0"
+store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=PatagoniaPaleo_IceHistory"
+version = "2.4.0"
+
+["PAT-PAL-8KM_IceHistory-PaleoMIST.nc"]
+checksum = "sha256:4d1486dcedac01771865226026a9bf19ac2cb8a9f4cd5c3954394a43c3e40b21"
+license = "CC BY 4.0 (PANGAEA)"
+size = 12745494
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_IceHistory-PaleoMIST.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_IceHistory_PAT-PAL-8KM/2.4.0/PAT-PAL-8KM_IceHistory-PaleoMIST.nc"
+
+["PAT-PAL-8KM_IceHistory-PaleoMIST_max.nc"]
+checksum = "sha256:df8035ec9cb09c93ad8eee73d5f7183789f84bc441585b402998e4a1b83a938b"
+license = "CC BY 4.0 (PANGAEA)"
+size = 12693291
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_IceHistory-PaleoMIST_max.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_IceHistory_PAT-PAL-8KM/2.4.0/PAT-PAL-8KM_IceHistory-PaleoMIST_max.nc"
+
+["PAT-PAL-8KM_IceHistory-PaleoMIST_taub.nc"]
+checksum = "sha256:c5323c65fc249ab510cc9e6f2d17e461dcde866c697285b6aee489eaccdc7c97"
+license = "GPL-3.0-only (ICESHEET 2.0, E. J. Gowan): derived from the input files of its global/ setup (shear stress domains and values), distributed under the GPL-3.0"
+size = 234677
+storage_path = "$datasets_dir/PatagoniaPaleo/PAT-PAL-8KM/PAT-PAL-8KM_IceHistory-PaleoMIST_taub.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/PatagoniaPaleo_IceHistory_PAT-PAL-8KM/2.4.0/PAT-PAL-8KM_IceHistory-PaleoMIST_taub.nc"
