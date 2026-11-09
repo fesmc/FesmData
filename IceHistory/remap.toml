@@ -45,7 +45,7 @@ figure = { variables = ["H_ice"], hide = 0, colormap = "ice" }
 
 # Basal shear stress domains of PaleoMIST (ICESHEET 2.0), one file per region on its 5 km
 # grid, extended to the nearest domain near the ice (mask_extended); the domain list and
-# the values through time (taub_t) are off the grid. Licence GPL-3.0 (ICESHEET 2.0).
+# the values through time (taub_t) are off the grid. Licence GPL-3.0-only (ICESHEET 2.0).
 [products.PaleoMIST_taub]
 source = "Gowan2021_PaleoMIST_taub"
 file = ["Gowan2021_PaleoMIST_taub_NorthAmerica.nc", "Gowan2021_PaleoMIST_taub_Eurasia.nc",

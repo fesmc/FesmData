@@ -33,7 +33,7 @@ classes (the class covering most of each cell). The shear stress domains of Pale
 grids of the source, to the nearest domain within 150 km of the ice of PaleoMIST
 (`mask_extended`), so that every cell with ice in `IceHistory-PaleoMIST` has a domain;
 the value of each domain at each time is `taub_t` (see
-`Gowan2021_PaleoMIST_taub/README.md`). `IceHistory-PaleoMIST_taub` is under the GPL-3.0
+`Gowan2021_PaleoMIST_taub/README.md`). `IceHistory-PaleoMIST_taub` is under the GPL-3.0-only
 (see Licences). Ice extents from outlines (Batchelor,
 Margold) are rasterized as area fractions at 2 km and 1 km, so that remapping gives the fraction of
 each cell. The global attribute `remap_method` records what was done on each grid.
@@ -57,7 +57,7 @@ are exact.
 | Dowsett et al. (2016), PRISM4 | Public domain (USGS); no licence in the files |
 | Batchelor et al. (2019) | No licence stated for the shapefiles (OSF); article CC BY 4.0; cite the article |
 | Gowan et al. (2021), PaleoMIST 1.0 | CC BY 4.0 (PANGAEA) |
-| Gowan et al. (2021), PaleoMIST 1.0 basal shear stress (`IceHistory-PaleoMIST_taub`) | GPL-3.0: derived from the input files of the global/ setup of ICESHEET 2.0 (E. J. Gowan, GPL-3.0), released under the same licence (attribute `license` of the files), not CC BY 4.0 like the other products of the record |
+| Gowan et al. (2021), PaleoMIST 1.0 basal shear stress (`IceHistory-PaleoMIST_taub`) | GPL-3.0-only: derived from the input files of the global/ setup of ICESHEET 2.0 (E. J. Gowan, GNU GPL v3), released under the same licence (attribute `license` of the files and of their registry entries) |
 | Tarasov et al. (2012), GLAC-1D | None stated; cite Tarasov et al. (2012), Briggs et al. (2014), Tarasov & Peltier (2002) and, for the PMIP4 files, Tarasov et al. (2014) and Abe-Ouchi et al. (2013) |
 | Leger et al. (2024), PaleoGrIS 1.0 | CC BY 4.0 (Mendeley Data) |
 | Margold et al. (2015), with Stokes et al. (2016) | Outlines CC BY 4.0 (figshare); ages from the source data of Stokes et al. (2016), Nature, no open licence stated |
