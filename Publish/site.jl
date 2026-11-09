@@ -103,13 +103,9 @@ function record_html(io::IO, domain::AbstractString, dataset::AbstractString)
     tables, files = read_record(domain, dataset)
     release, zenodo = tables["_RELEASE"], get(tables, "_ZENODO", nothing)
     doi(d) = "<a href=\"https://doi.org/$(esc(d))\">doi:$(esc(d))</a>"
-    archived(z) = z["git_tag"] == release["git_tag"] ? "$(doi(z["doi"])) (all versions: $(doi(z["concept_doi"])))" :
-        "archived versions: $(doi(z["concept_doi"]))"
-    archive = zenodo === nothing ? "" : "; " * archived(zenodo)
-    # Products in Zenodo records of their own (licences, see ArchivePart in zenodo.jl)
-    for k in sort([k for k in keys(tables) if startswith(k, "_ZENODO_")])
-        archive *= "; $(esc(chopprefix(k, "_ZENODO_"))): " * archived(tables[k])
-    end
+    archive = zenodo === nothing ? "" :
+        zenodo["git_tag"] == release["git_tag"] ? "; $(doi(zenodo["doi"])) (all versions: $(doi(zenodo["concept_doi"])))" :
+        "; archived versions: $(doi(zenodo["concept_doi"]))"
     grids = record_grids(files)
     println(io, "<div class=\"record\">")
     println(io, "<p>Version $(esc(release["version"])) ($(esc(release["date"])), ",

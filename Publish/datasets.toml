@@ -100,9 +100,6 @@ domain, or onto global lon-lat grids. The basal shear stress of PaleoMIST
 (IceHistory-PaleoMIST_taub, from ICESHEET 2.0) is under the GPL-3.0, the other files
 under the licences of their sources (see the README).
 """
-# Products archived on Zenodo in records of their own, with their licence (Zenodo ids;
-# see README.md, Archive on Zenodo)
-licenses = { PaleoMIST_taub = "gpl-3.0-only" }
 
 [Stratigraphy]
 tag = "stratigraphy"

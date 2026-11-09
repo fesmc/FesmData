@@ -188,18 +188,6 @@ Topo` shows the drafts and archived versions; `archive discard Topo` deletes the
 unpublished drafts of a dataset, `archive drafts` lists all unpublished drafts of your
 account, and `archive discard <id> ...`
 deletes drafts by id. The drafts are recorded in `registry/_drafts/` (not tracked).
-`archive upload --dry-run` lists the records, their licences and files without uploading.
-
-A Zenodo record has one licence, that of `[_zenodo]` in `datasets.toml` (CC BY 4.0). A
-product under another licence (e.g. GPL-3.0, from GPL-licensed inputs) is archived in a
-record of its own on each domain, with its licence: `licenses = { <product> = "<Zenodo
-licence id>" }` in the table of the dataset, e.g. `licenses = { PaleoMIST_taub =
-"gpl-3.0-only" }` for IceHistory. Its record is titled `FesmData <Domain>
-<Dataset>-<product>`, has its own draft (`registry/_drafts/<Domain>/<Dataset>-<product>.toml`)
-and its DOIs in `[_ZENODO_<product>]` of the registry file of the release; the record of
-the dataset holds the other files and names it. The GitLab packages and the registry
-file of the release are not split.
-
 With `--sandbox`, the [Zenodo sandbox](https://sandbox.zenodo.org) archives the test
 releases (`registry/_sandbox/`).
 
