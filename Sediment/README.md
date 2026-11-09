@@ -18,6 +18,8 @@ data](https://fesmc.github.io/FesmData/remap.html)): its products are defined in
 
 On the mountain-glacier domains (Pyrenees, Patagonia, Himalaya), on their 2 km grid: `Sediment-CRUST1` and `Sediment-ECM1`, and `Sediment-GlobSed` on Patagonia (ocean only); their nests and crops get these by cropping (see [Nests and crops](https://fesmc.github.io/FesmData/download.html#nests-and-crops)).
 
+On PatagoniaPaleo (the paleo domain of Patagonia, 26-57°S), on its 4 and 8 km grids, as on GreenlandPaleo: `Sediment-CRUST1`, `Sediment-GlobSed` (ocean only) and `Sediment-ECM1`.
+
 Each file `<GRID>_Sediment-<Source>.nc` also has `f_valid`, the fraction of each cell
 covered by the source. Each source is remapped conservatively; on grids finer than the
 source it is then smoothed with a Gaussian of half the source spacing. CRUST1.0 contains the sediment map of Laske and Masters (1997) (A Global Digital Map of
