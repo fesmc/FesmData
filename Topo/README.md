@@ -20,7 +20,7 @@ a product are merged in order of priority, the first over the others:
 | `TOPO-BedMachine-v4` | BedMachine Antarctica v4, GEBCO 2026 | Antarctica and its crops |
 | `TOPO-Bedmap3` | Bedmap3, GEBCO 2026 | Antarctica and its crops |
 | `TOPO-BedMachine-v6` | BedMachine Greenland v6, GEBCO 2026 | GreenlandPaleo, Greenland, Jakobshavn, NEGIS, Petermann, Helheim |
-| `TOPO-GEBCO2026` | BedMachine Greenland v6, IceBoost v2.0, GEBCO 2026 | North, Laurentide, Eurasia |
+| `TOPO-GEBCO2026` | BedMachine Greenland v6, IceBoost v2.0, GEBCO 2026 (PatagoniaPaleo: IceBoost v2.0, GEBCO 2026) | North, Laurentide, Eurasia, PatagoniaPaleo |
 | `TOPO-GLO30-GEBCO2026` | IceBoost v2.0, Copernicus DEM GLO-30, GEBCO 2026 | SRG, MonteSarmiento, SchiaparelliGlacier, DrangDrung |
 | `TOPO-GLO90-GEBCO2026` | IceBoost v2.0, Copernicus DEM GLO-90, GEBCO 2026 | Pyrenees, Patagonia, NorthPatagonianIcefield, SouthPatagonianIcefield, GranCampoNevado, CordilleraDarwin, Himalaya, Alps, Svalbard, NewZealand |
 

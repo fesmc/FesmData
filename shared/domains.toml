@@ -248,6 +248,20 @@ xlim = [748.087171469987, 784.087171469987]
 ylim = [3946.102314639904, 3977.102314639904]
 resolutions = [0.05, 0.1, 0.25]
 
+# PatagoniaPaleo (2-8 km): the Patagonian Ice Sheet and the Andean ice north of it over
+# the last glacial cycle, for paleo runs, beside PAT (as GRL-PAL beside GRL): all the
+# ice of the region Patagonia of PaleoMIST 1.0 (Gowan et al., 2021; 75.97-66.80W,
+# 55.54-28.09S, both MIS 3 scenarios) with about 200 km around it (79.5-62.4W,
+# 57.4-26.2S). On the projection of PAT (UTM zone 18S; scale error below 0.4 % over the
+# domain, against 6-34 % for a polar stereographic projection at these latitudes), with
+# its cells on those of PAT-2KM and an extent of whole 8 km cells.
+[PAT-PAL]
+folder = "PatagoniaPaleo"
+proj = "+proj=tmerc +lat_0=0 +lon_0=-75 +k=0.9996 +x_0=500000 +y_0=10000000 +a=6378137 +rf=298.257223563 +units=km"
+xlim = [228.087171469987, 1268.087171469987]
+ylim = [3627.102314639904, 7083.102314639904]
+resolutions = [2, 4, 8]
+
 # 54.37-54.46S, 70.93-70.74W: the Schiaparelli Glacier (RGI2000-v7.0-G-17-15343) and its
 # proglacial lake
 [PAT.nests.SCH]
