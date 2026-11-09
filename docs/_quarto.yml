@@ -13,6 +13,7 @@ project:
     - "datasets/*.qmd"
     - "records_overview.qmd"
     - "remap.qmd"
+    - "ismip8.qmd"
     - "records.qmd"
     - "developers.qmd"
     - "machines.qmd"

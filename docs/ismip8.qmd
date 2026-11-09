@@ -1,0 +1,283 @@
+---
+title: "ISMIP8 input data"
+subtitle: "Get the ISMIP8 forcing and initialization data on your model grid"
+search: false   # prototype: reachable by its link only (not in the menus or search)
+---
+
+::: {.callout-warning}
+## Prototype
+
+ISMIP8 does not exist. This page shows how the input data of an ISMIP protocol could be
+distributed with FesmData. `list`, `fetch`, `mirror`, `remap` and `cite` exist today for the
+FesmData datasets (see [Download](download.qmd) and [Your own data](remap.qmd)), as do
+the products named below (Topo, Regions, GHF, Ocean, SMB). Proposed, and not implemented:
+the bundle `ISMIP8` and its experiments, the dataset of ESM anomalies, remapping onto a
+grid file (`--to`), the options `--years` and `check`. The ESMs, scenarios and the sizes
+of the anomalies are illustrative.
+:::
+
+## In short
+
+```bash
+git clone https://github.com/fesmc/FesmData.git && cd FesmData
+git checkout ismip8-v1.0.0                       # protocol version
+julia fesmdata.jl fetch ISMIP8 Antarctica init   # common fields
+julia fesmdata.jl fetch ISMIP8 Antarctica CESM2-WACCM-ssp585
+julia -t 8 fesmdata.jl remap ISMIP8 Antarctica --to=grid_MYMODEL-10KM.txt
+```
+
+This gives every input of the experiment on your own grid, in
+`$FESMDATA/Antarctica/MYMODEL-10KM/`, each file with the protocol version and the
+checksums of the files it was made from. You need [Julia](https://julialang.org/downloads/)
+only; `remap` installs its packages on first use. Set `FESMDATA` to the folder for the data
+(see [Download](download.qmd#where-the-data-go)).
+
+## How it works
+
+The ISMIP forcing comes from many ESMs and scenarios, with each field every year, so the
+full set of files on the ISMIP grids reaches terabytes. Most groups then interpolate it
+onto their own grid anyway. Here, each input is stored once, on a **reference grid** no
+finer than the information it holds, and remapped on your machine onto the grid you run:
+
+- the fields that are the same in all experiments (topography, basins, the ocean and SMB
+  climatologies) are fine, small and stored once, on fine grids;
+- the anomalies from the ESMs, which make up nearly all of the volume, are stored on
+  coarse grids (8 to 32 km), since an ESM (or a regional model at 10 km) holds no finer
+  structure.
+
+```{mermaid}
+flowchart LR
+  S["ESM output,<br/>observations,<br/>regional models"] -->|"ISMIP team:<br/>prepare, remap"| R[("Reference files<br/>on reference grids<br/>versioned, sha256")]
+  R -->|"fetch"| L["$FESMDATA<br/>on your machine"]
+  L -->|"remap --to=your grid"| M["Inputs on your grid,<br/>with provenance"]
+  R -.->|"mirror"| H["Shared copy on<br/>an HPC system"]
+  H -.->|"remap"| M
+```
+
+What is fetched, and how each input is remapped (method, smoothing, how anomalies are
+combined with climatologies), is fixed by the protocol, in a file under version control
+(see [Setting up a protocol](#setting-up-a-protocol)). All groups thus get the same inputs
+from the same files by the same method, whatever their grid, and each file records how it
+was made.
+
+## What ISMIP8 contains
+
+`julia fesmdata.jl list ISMIP8` shows the members, the experiments and their sizes. Each
+member is a product of a FesmData dataset, from any theme; the anomalies of the ESMs are
+the products of the dataset `ISMIP8`.
+
+**Antarctica**
+
+| Member | Product | Source | Reference grid | Remapping | Size |
+|----------|------------------------|---------|---------|----------|--------|
+| geometry | TOPO-BedMachine-v4 | 500 m | ANT-1KM | con | 228 MB |
+| basins | BASINS-IMBIE2016 | polygons | ANT-1KM | class | 1 MB |
+| ghf | GHF-Stal2020 | 20 km | ANT-16KM | con, smooth | 0.1 MB |
+| ocean-climatology | Ocean-ISMIP7 | 8 km | ANT-8KM | con, smooth | 26 MB |
+| smb-climatology | SMB-RACMO2.4p1-1991-2020 | 11 km | ANT-8KM | con, smooth | 3 MB |
+| ocean | ISMIP8-ocean-*ESM*-*scenario* | ESM, about 1° | ANT-32KM | con, smooth, + climatology | 5.9 GB each |
+| atmosphere | ISMIP8-atmosphere-*ESM*-*scenario* | ESM, about 1° | ANT-32KM | con, smooth | 0.26 GB each |
+
+**Greenland**
+
+| Member | Product | Source | Reference grid | Remapping | Size |
+|----------|------------------------|---------|---------|----------|--------|
+| geometry | TOPO-BedMachine-v6 | 150 m | GRL-1KM | con | 35 MB |
+| basins | BASINS-Mouginot2019 | polygons | GRL-1KM | class | 0.1 MB |
+| ghf | GHF-Colgan2021 | 55 km | GRL-32KM | con, smooth | 0.03 MB |
+| smb-climatology | SMB-MARv3.14-1991-2020 | 10 km | GRL-8KM | con, smooth | 0.6 MB |
+| atmosphere | ISMIP8-atmosphere-*ESM*-*scenario* | MAR, 10 km | GRL-8KM | con, smooth | 0.55 GB each |
+| ocean | ISMIP8-ocean-*ESM*-*scenario* | by basin | by basin | value of the basin | < 1 MB each |
+
+The products come from the datasets Topo, Regions (`BASINS-`), GHF, Ocean, SMB and
+ISMIP8. The anomalies are, in Antarctica, of temperature, salinity and thermal forcing on
+30 levels (ocean) and of the SMB and surface temperature with their elevation gradients
+(atmosphere: aSMB, dSMBdz, aST, dSTdz), annual, 1850-2300; in Greenland, the same
+atmosphere fields from MAR, and the thermal forcing and runoff of each basin (ocean).
+Remapping: `con` conservative; `smooth` Gaussian smoothing where the reference grid is
+coarser than yours; `class` the dominant class of each cell; `+ climatology` added to the
+ocean climatology.
+
+The reference grid of a member is the coarsest FesmData grid at least as fine as its
+source, and no finer than the finest grid of the ISMIP8 models (1 km). ANT-8KM is the
+ISMIP 8 km grid (761 × 761 cells, EPSG:3031). The sizes of the anomalies are uncompressed;
+the others are those of the released files.
+
+**Experiments.** The names given to `fetch` and `remap` select the members:
+
+| Name | Members |
+|---|---|
+| `init` | geometry, basins, ghf and the climatologies: the fields common to all experiments |
+| `<ESM>-<scenario>` | `init` and the anomalies of one ESM and scenario (historical to 2014), e.g. `CESM2-WACCM-ssp585` |
+| `tier1` | `init` and the 6 Tier 1 pairs: CESM2-WACCM, UKESM1-0-LL and MRI-ESM2-0 under ssp126 and ssp585 |
+| `tier2` | `init` and the 12 Tier 2 pairs: IPSL-CM6A-LR, NorESM2-MM and ACCESS-ESM1-5 under all three scenarios, and the Tier 1 ESMs under ssp245 |
+| `all` | everything |
+
+## Get the reference files
+
+```bash
+julia fesmdata.jl list ISMIP8                          # members, experiments, sizes
+julia fesmdata.jl list ISMIP8 Antarctica tier1         # files, sizes, which are here
+julia fesmdata.jl fetch ISMIP8 Antarctica tier1        # download and verify (sha256)
+julia fesmdata.jl fetch ISMIP8 Greenland all
+```
+
+Files go to `$FESMDATA/<Domain>/<GRID>/`, the reference grid of each member, and are
+checked against their checksums. Files already present are kept if they are of the
+release (e.g. Topo, fetched for another purpose), and updated if they are of an earlier
+one.
+
+On the HPC systems used by several groups, one copy is kept up to date with
+`julia fesmdata.jl mirror ISMIP8`, and each group sets `FESMDATA` to it: nothing is
+downloaded, only remapped.
+
+## Remap onto your grid
+
+```bash
+julia -t 8 fesmdata.jl remap ISMIP8 Antarctica tier1 --to=grid_MYMODEL-10KM.txt
+julia -t 8 fesmdata.jl remap ISMIP8 Antarctica CESM2-WACCM-ssp585 ANT-16KM
+```
+
+The target is either your own grid, given by a grid file (`--to`), or a FesmData grid
+(`ANT-16KM`; see [Domains and grids](domains.qmd)). A grid file is either a grid
+description of cdo, as the FesmData grid files `grid_<GRID>.txt`, or a NetCDF file with the
+coordinates `x`, `y` and a grid mapping (polar stereographic, as for the ISMIP grids). The
+grid is named after the file (`MYMODEL-10KM`), and the files are written to
+`$FESMDATA/<Domain>/<GRID>/<GRID>_<product>.nc`.
+
+Each member is remapped as the protocol says (conservatively, then smoothed where the
+reference grid is coarser than yours; classes by dominant class), slice by slice for the
+fields with time and depth. The ocean anomalies are added to the climatology on your
+grid, so the ocean files hold the full fields, as in ISMIP6; the atmosphere anomalies
+stay anomalies, applied by your model with its own surface elevation (dSMBdz, dSTdz).
+
+The remapped files are as large as your grid makes them: the ocean forcing of one ESM and
+scenario is 6 GB on ANT-32KM, but 94 GB on ANT-8KM and 375 GB on ANT-4KM (uncompressed).
+Select what you run:
+
+```bash
+julia fesmdata.jl remap ISMIP8 Antarctica CESM2-WACCM-ssp585 \
+    --to=grid_MYMODEL-4KM.txt --vars=tf --years=1995:2300
+```
+
+If your model interpolates its forcing at run time, use the reference files as they are
+(`julia fesmdata.jl path ISMIP8 Antarctica CESM2-WACCM-ssp585`).
+
+## What you get
+
+```
+$FESMDATA/Antarctica/
+  ANT-32KM/                                    reference files (fetch)
+    ANT-32KM_ISMIP8-ocean-CESM2-WACCM-ssp585.nc
+    ANT-32KM_ISMIP8-atmosphere-CESM2-WACCM-ssp585.nc
+  ANT-8KM/
+    ANT-8KM_Ocean-ISMIP7.nc
+    ...
+  MYMODEL-10KM/                                your grid (remap)
+    grid_MYMODEL-10KM.txt
+    MYMODEL-10KM_grid.nc                       x, y, lon, lat, area of the cells
+    MYMODEL-10KM_TOPO-BedMachine-v4.nc
+    MYMODEL-10KM_BASINS-IMBIE2016.nc
+    MYMODEL-10KM_ISMIP8-ocean-CESM2-WACCM-ssp585.nc
+    MYMODEL-10KM_ISMIP8-atmosphere-CESM2-WACCM-ssp585.nc
+    ...
+    ISMIP8_inputs.toml                         the inputs used, for your submission
+```
+
+Each file records how it was made in its global attributes, e.g.:
+
+```
+ismip_protocol   = "ismip8-v1.0.0"
+source_files     = "ANT-8KM_Ocean-ISMIP7.nc, ANT-32KM_ISMIP8-ocean-CESM2-WACCM-ssp585.nc"
+source_checksums = "sha256:3f9c...e1, sha256:a41e...07"
+remap_method     = "conservative, then Gaussian smoothing (sigma = 16.0 km)"
+fesmdata_commit  = "8b39427"
+```
+
+`julia fesmdata.jl check ISMIP8 MYMODEL-10KM` checks the files on your grid against the
+protocol (version, checksums of the reference files, methods) and writes
+`ISMIP8_inputs.toml`, the list of the inputs used, to submit with your model output. ISMIP
+can then confirm that all groups ran with the same forcing.
+
+## Why reference grids
+
+The forcing of one ESM and scenario (uncompressed, annual 1850-2300):
+
+| | On the ISMIP grids | On the reference grids |
+|---|---|---|
+| Antarctica, ocean (T, S, TF; 30 levels) | 94 GB (ANT-8KM) | 5.9 GB (ANT-32KM) |
+| Antarctica, atmosphere (4 fields) | 4.2 GB (ANT-8KM) | 0.26 GB (ANT-32KM) |
+| Greenland, atmosphere (4 fields, MAR at 10 km) | 35 GB (GRL-1KM) | 0.55 GB (GRL-8KM) |
+| One ESM and scenario | 133 GB | 6.7 GB |
+| 18 ESMs and scenarios | 2.4 TB | 121 GB |
+
+The factor of 20 comes from the cells alone: 16 times fewer from 8 to 32 km, 64 times fewer
+from 1 to 8 km. Compression reduces both by a similar factor; the released FesmData files
+show it, e.g. the annual RACMO2.4p1 SMB (1979-2023) is 23 MB on ANT-8KM and 2.3 MB on
+ANT-32KM, and the ISMIP7 ocean climatology 26 MB and 2.4 MB.
+
+Remapping twice (from the source to the reference grid, then to yours) adds little error
+as long as the reference grid is at least as fine as the source: both steps are
+conservative, and the smoothing only removes the steps between the coarse cells. Each
+release checks this (step 3 under [Setting up a protocol](#setting-up-a-protocol)).
+
+## Setting up a protocol {#setting-up-a-protocol}
+
+*For the ISMIP team.* A protocol is a folder of FesmData and the products it refers to:
+
+```
+FesmData/
+  ISMIP8/
+    bundle.toml                  members, reference grids, remapping, experiments
+    README.md                    this page
+    prepare.jl                   ESM output -> prepared anomalies (or the ISMIP tools)
+  registry/Antarctica/ISMIP8.toml    uri and sha256 of each reference file (by release)
+  registry/Greenland/ISMIP8.toml
+```
+
+`bundle.toml` defines what `fetch ISMIP8` and `remap ISMIP8` mean:
+
+```toml
+[members.geometry]
+product = "Topo/TOPO-BedMachine-v4"
+grids = { Antarctica = 1 }                    # reference grid (km)
+remap = { method = "con" }
+
+[members.ocean-climatology]
+product = "Ocean/Ocean-ISMIP7"
+grids = { Antarctica = 8 }
+remap = { method = "con", smooth = "auto" }
+
+[members.ocean]
+product = "ISMIP8/ISMIP8-ocean-{esm}-{scenario}"
+grids = { Antarctica = 32 }
+remap = { method = "con", smooth = "auto", add_to = "ocean-climatology" }
+
+[experiments]
+init  = ["geometry", "basins", "ghf", "ocean-climatology", "smb-climatology"]
+tier1 = { esm = ["CESM2-WACCM", "UKESM1-0-LL", "MRI-ESM2-0"], scenario = ["ssp126", "ssp585"] }
+```
+
+The steps of a release:
+
+1. **Prepare** the output of each ESM and scenario with the ISMIP tools (e.g. the
+   extrapolation into the ice-shelf cavities), as prepared files: NetCDF on the native or
+   ISMIP grid, with units and references (see [Your own data](remap.qmd)).
+2. **Remap** them onto the reference grids: `julia fesmdata.jl remap ISMIP8`.
+3. **Verify** the reference grids: remapped from the reference grid onto the ISMIP grid,
+   each field must match the field remapped from the source within a tolerance (e.g.
+   0.05 °C in thermal forcing).
+4. **Release**: `stamp` and `release` upload the files and write their uri and checksum
+   to the registry; commit and tag `ismip8-v1.0.0`.
+
+The registry holds only addresses and checksums, so the files can stay where ISMIP keeps
+them now (e.g. the public HTTPS of the ISMIP Globus endpoint), with copies on Helmholtz
+Codebase or Zenodo (a DOI per release). An erratum is a patch release (`ismip8-v1.0.1`):
+`julia fesmdata.jl list ISMIP8 --outdated` shows each group the files that changed, and
+`fetch` and `remap` replace only those.
+
+The protocol can also add steps of its own after remapping, as Julia functions in
+`ISMIP8/`: adding anomalies to a climatology (`add_to`), extrapolating ocean fields into
+the cavities of the model's own ice mask, or computing the thermal forcing at the model's
+depths. The bundle is generic: another intercomparison (e.g. a PMIP or a regional MIP)
+would be another folder with its own `bundle.toml`, using the same products.
