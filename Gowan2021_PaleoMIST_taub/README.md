@@ -29,18 +29,20 @@ The GitHub archive of ICESHEET 2.0 at its last commit (641d172, 2022), no login,
 `gowan2021_icesheet` in `datamanifest.toml` (pinned to that commit), in
 `$FESMDATA_SOURCES/gowan2021_icesheet/icesheet-641d172230c76fc44ec9ea40ab1a0e9f76d0f42f/`,
 downloaded and extracted by `prepare.jl` if missing, of which `global/<region>/shear_stress/` is
-used, for North_America (with Greenland), Eurasia and Antarctica (Patagonia is left
-out); and the 5 km regional reconstructions of PaleoMIST 1.0 (`gowan2021_paleomist`,
+used, for North_America (with Greenland), Eurasia, Antarctica and Patagonia; and the 5 km regional reconstructions of PaleoMIST 1.0 (`gowan2021_paleomist`,
 see `../Gowan2021_PaleoMIST1.0/`; `$FESMDATA_SOURCES/gowan2021_paleomist/`), for their
 grids and ice. Per region:
 
 - `shear_stress_domains.gmt` (Antarctica: `shear_stress_domains3.gmt`, as named in
   `projection_info.sh`): the domains, polygons in the GMT text format exported by QGIS,
   on the projection of the region with x and y from the projection centre (Lambert
-  azimuthal equal-area at 60°N 94°W and at the North Pole; polar stereographic, true
-  scale at 71°S), each with its domain number and a shear stress (Pa);
+  azimuthal equal-area at 60°N 94°W, at the North Pole and at 45°S 73°W; polar
+  stereographic, true scale at 71°S), each with its domain number and a shear stress
+  (Pa);
 - `domains_max.txt`, `domains_min.txt`: `domain value` (Pa), the base and the minimum
-  shear stress of the domains;
+  shear stress of the domains. Patagonia has no `domains_min.txt`, so that
+  `create_bin_var.sh` (lines 93-97) gives none to `create_ss_grid` and every minimum is
+  5000 Pa; its `domains.txt` is an output of `create_ss_grid` (line 21), not used;
 - `adjust_0.txt`: `domain t_max t_min ss_min`, the changes in time (years ago).
 
 ## The shear stress of PaleoMIST 1.0
@@ -87,9 +89,9 @@ julia --project=Gowan2021_PaleoMIST_taub Gowan2021_PaleoMIST_taub/prepare.jl
 julia fesmdata.jl remap IceHistory PaleoMIST_taub
 ```
 
-`prepare.jl` writes three files to `$FESMDATA_PREPARED/Gowan2021_PaleoMIST_taub/`
+`prepare.jl` writes four files to `$FESMDATA_PREPARED/Gowan2021_PaleoMIST_taub/`
 (see `Remap/README.md`), `Gowan2021_PaleoMIST_taub_<region>.nc` (NorthAmerica, Eurasia,
-Antarctica), each on the 5 km grid of the region: the nodes of the shear stress grids of
+Antarctica, Patagonia), each on the 5 km grid of the region: the nodes of the shear stress grids of
 ICESHEET, those of the regional reconstructions of PaleoMIST
 (`ice_reconstruction_files/<region>/thickness/`), with x and y in km from the centre of
 the projection, with
@@ -97,7 +99,7 @@ the projection, with
 - `taub_domain`: the domain of each node as in step 4 (the polygons shifted from the
   projection centre to the corner of the grid, as `create_ss_grid` does); the domain ids
   are 1000 × region + the domain number of ICESHEET, region 1 North_America, 2 Eurasia,
-  3 Antarctica. The nodes with ice in any time slice of the regional reconstruction but
+  3 Antarctica, 4 Patagonia. The nodes with ice in any time slice of the regional reconstruction but
   outside all polygons are in the domain 1000 × region (domain 0, 5000 Pa at all times,
   as in ICESHEET): mainly the eastern margin of the Eurasian ice sheet in MIS 4-3 (Kara
   Sea, 52.5-72.5 ka, about 10 400 nodes of 5 km), which the polygons do not reach. The
@@ -110,7 +112,7 @@ the projection, with
 - `mask_extended`: 1 where the domain is the nearest one (outside the polygons and the
   ice), 0 in the polygons and the ice, missing elsewhere;
 
-and, in each file, all domains of the three regions (dimension `domain`, variables off
+and, in each file, all domains of the four regions (dimension `domain`, variables off
 the grid): `domain_id`, `region`, `taub` and `taub_max` (Pa, the base value), `taub_min`
 (Pa), and `taub_t` (Pa, on `time`, years ago before 1950 CE, 80000 to 0, oldest first, as
 `IceHistory-PaleoMIST`), the value at each time slice (steps 1-3).

@@ -3,7 +3,7 @@
 # the published reconstruction (minimal and maximal MIS 3 scenarios alike), one prepared
 # NetCDF file per region in $FESMDATA_PREPARED/Gowan2021_PaleoMIST_taub/:
 # Gowan2021_PaleoMIST_taub_<region>.nc (NorthAmerica, with Greenland; Eurasia; Antarctica;
-# not Patagonia), on the 5 km grid of the region in ICESHEET (the nodes of its shear stress
+# Patagonia), on the 5 km grid of the region in ICESHEET (the nodes of its shear stress
 # grids, those of the regional reconstructions of PaleoMIST), with
 #
 #   taub_domain(x, y)    domain of each node (domain_id); the nodes with ice in any time
@@ -14,9 +14,9 @@
 #   mask_extended(x, y)  1 where the domain is the nearest one (beyond the polygons and
 #                        the ice), 0 in the polygons and the ice, missing elsewhere
 #
-# and, in every file, all domains of the three regions (dimension `domain`):
+# and, in every file, all domains of the four regions (dimension `domain`):
 # domain_id = 1000 region + id of Gowan, region (1 North_America, 2 Eurasia,
-# 3 Antarctica), taub = taub_max (base value), taub_min, and taub_t(domain, time), the
+# 3 Antarctica, 4 Patagonia), taub = taub_max (base value), taub_min, and taub_t(domain, time), the
 # value at each time slice of the reconstruction (80000 to 0 years ago).
 #
 # How create_ss_grid (ICESHEET) sets the shear stress of a time slice (see README.md):
@@ -70,6 +70,10 @@ const REGIONS = [
      proj="+proj=laea +lat_0=90 +lon_0=0 +datum=WGS84 +units=m", corner=(-12.0, 47.0)),
     (code=3, name="Antarctica", file="Antarctica", domains="shear_stress_domains3.gmt",
      proj="+proj=stere +lat_0=-90 +lat_ts=-71 +lon_0=0 +datum=WGS84 +units=m", corner=nothing),
+    # no domains_min.txt (minimum 5000 Pa); polygons on GRS80, taken as WGS84 (identical
+    # for this projection to well below a metre)
+    (code=4, name="Patagonia", file="Patagonia", domains="shear_stress_domains.gmt",
+     proj="+proj=laea +lat_0=-45 +lon_0=-73 +datum=WGS84 +units=m", corner=(-80.0, -57.0)),
 ]
 
 """
@@ -309,7 +313,7 @@ for (r, g) in zip(REGIONS, regions)
                "comment" => "1000 region + id of the domain in ICESHEET 2.0 (taub_domain); 1000 region: the ice " *
                             "outside all polygons (5000 Pa, nominal_shear_stress of create_ss_grid)"])
         defVar(ds, "region", region, ("domain",); attrib=["units" => "1", "long_name" => "region of the domain",
-               "flag_values" => Int8[1, 2, 3], "flag_meanings" => "North_America Eurasia Antarctica"])
+               "flag_values" => Int8[1, 2, 3, 4], "flag_meanings" => "North_America Eurasia Antarctica Patagonia"])
         defVar(ds, "taub", base, ("domain",); attrib=["units" => "Pa",
                "long_name" => "basal shear stress of the domain, base value (= taub_max)",
                "comment" => "the value at the time slices outside the adjustments of adjust_0.txt (taub_t)"])
@@ -328,13 +332,12 @@ for (r, g) in zip(REGIONS, regions)
         ds.attrib["doi"] = "10.1038/s41467-021-21469-w"
         ds.attrib["license"] = "GPL-3.0-only (ICESHEET 2.0, E. J. Gowan): derived from the input files of its global/ " *
                                "setup (shear stress domains and values), distributed under the GPL-3.0"
-        ds.attrib["comment"] = "Domains of North_America (with Greenland), Eurasia and Antarctica of ICESHEET 2.0 " *
+        ds.attrib["comment"] = "Domains of North_America (with Greenland), Eurasia, Antarctica and Patagonia of ICESHEET 2.0 " *
             "(global/<region>/shear_stress/), rasterized at the nodes of the 5 km grids of the regional " *
             "reconstructions of PaleoMIST 1.0 as create_ss_grid does; values from domains_max.txt, domains_min.txt " *
             "and adjust_0.txt, the files of the published reconstruction (both MIS 3 scenarios). Nodes with ice " *
             "in any time slice outside the polygons (domain 1000 region, 5000 Pa as in ICESHEET): " *
-            join(("$(q.name) $(h.stats.nout) of $(h.stats.nice)" for (q, h) in zip(REGIONS, regions)), ", ") *
-            ". Patagonia is left out."
+            join(("$(q.name) $(h.stats.nout) of $(h.stats.nice)" for (q, h) in zip(REGIONS, regions)), ", ") * "."
         foreach(((k, v),) -> ds.attrib[k] = v, provenance_attrib("icehistory"))
     end
     println("Wrote $path")

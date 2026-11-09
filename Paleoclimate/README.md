@@ -24,6 +24,8 @@ data](https://fesmc.github.io/FesmData/remap.html)): its products are defined in
 
 On the mountain-glacier domains (Pyrenees, Patagonia, Himalaya), on their 2 km grid: the ensemble means and standard deviations of PMIP3 and PMIP4 (`-mean`, `-stdev`; not the members); their nests and crops get these by cropping (see [Nests and crops](https://fesmc.github.io/FesmData/download.html#nests-and-crops)).
 
+On PatagoniaPaleo (the paleo domain of Patagonia, 26-57°S, 2-8 km), the products of GreenlandPaleo (PMIP3 and PMIP4 members and ensembles, the PMIP3 boundary conditions, CLIMBER-3α and CLIMBER-X), on its coarsest grid, PAT-PAL-8KM.
+
 The model output is on the models' own grids (some Gaussian), remapped conservatively.
 Products are made on grids of 8 km and coarser (16 km for the Buizert et al. time
 series, 32 km for CLIMBER-3α and CLIMBER-X, which are also on global grids of 1° and

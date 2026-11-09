@@ -9,145 +9,145 @@
 [products.PMIP3-CCSM4-lgm]
 source = "PMIP3_cvdp"
 file = "PMIP3_CCSM4_lgm.nc"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = { variables = ["t2m_ann"] }
 
 [products.PMIP3-CCSM4-midHolocene]
 source = "PMIP3_cvdp"
 file = "PMIP3_CCSM4_midHolocene.nc"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
 [products.PMIP3-CCSM4-piControl]
 source = "PMIP3_cvdp"
 file = "PMIP3_CCSM4_piControl.nc"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
 [products.PMIP3-CNRM-CM5-lgm]
 source = "PMIP3_cvdp"
 file = "PMIP3_CNRM-CM5_lgm.nc"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = { variables = ["t2m_ann"] }
 
 [products.PMIP3-CNRM-CM5-midHolocene]
 source = "PMIP3_cvdp"
 file = "PMIP3_CNRM-CM5_midHolocene.nc"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
 [products.PMIP3-CNRM-CM5-piControl]
 source = "PMIP3_cvdp"
 file = "PMIP3_CNRM-CM5_piControl.nc"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
 [products.PMIP3-FGOALS-g2-lgm]
 source = "PMIP3_cvdp"
 file = "PMIP3_FGOALS-g2_lgm.nc"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = { variables = ["t2m_ann"] }
 
 [products.PMIP3-FGOALS-g2-midHolocene]
 source = "PMIP3_cvdp"
 file = "PMIP3_FGOALS-g2_midHolocene.nc"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
 [products.PMIP3-FGOALS-g2-piControl]
 source = "PMIP3_cvdp"
 file = "PMIP3_FGOALS-g2_piControl.nc"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
 [products.PMIP3-GISS-E2-R-lgm]
 source = "PMIP3_cvdp"
 file = "PMIP3_GISS-E2-R_lgm.nc"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = { variables = ["t2m_ann"] }
 
 [products.PMIP3-GISS-E2-R-midHolocene]
 source = "PMIP3_cvdp"
 file = "PMIP3_GISS-E2-R_midHolocene.nc"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
 [products.PMIP3-GISS-E2-R-piControl]
 source = "PMIP3_cvdp"
 file = "PMIP3_GISS-E2-R_piControl.nc"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
 [products.PMIP3-IPSL-CM5A-LR-lgm]
 source = "PMIP3_cvdp"
 file = "PMIP3_IPSL-CM5A-LR_lgm.nc"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = { variables = ["t2m_ann"] }
 
 [products.PMIP3-IPSL-CM5A-LR-midHolocene]
 source = "PMIP3_cvdp"
 file = "PMIP3_IPSL-CM5A-LR_midHolocene.nc"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
 [products.PMIP3-IPSL-CM5A-LR-piControl]
 source = "PMIP3_cvdp"
 file = "PMIP3_IPSL-CM5A-LR_piControl.nc"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
 [products.PMIP3-MIROC-ESM-lgm]
 source = "PMIP3_cvdp"
 file = "PMIP3_MIROC-ESM_lgm.nc"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = { variables = ["t2m_ann"] }
 
 [products.PMIP3-MIROC-ESM-midHolocene]
 source = "PMIP3_cvdp"
 file = "PMIP3_MIROC-ESM_midHolocene.nc"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
 [products.PMIP3-MIROC-ESM-piControl]
 source = "PMIP3_cvdp"
 file = "PMIP3_MIROC-ESM_piControl.nc"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
 [products.PMIP3-MPI-ESM-P-lgm]
 source = "PMIP3_cvdp"
 file = "PMIP3_MPI-ESM-P_lgm.nc"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = { variables = ["t2m_ann"] }
 
 [products.PMIP3-MPI-ESM-P-midHolocene]
 source = "PMIP3_cvdp"
 file = "PMIP3_MPI-ESM-P_midHolocene.nc"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
 [products.PMIP3-MPI-ESM-P-piControl]
 source = "PMIP3_cvdp"
 file = "PMIP3_MPI-ESM-P_piControl.nc"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
 [products.PMIP3-MRI-CGCM3-lgm]
 source = "PMIP3_cvdp"
 file = "PMIP3_MRI-CGCM3_lgm.nc"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = { variables = ["t2m_ann"] }
 
 [products.PMIP3-MRI-CGCM3-midHolocene]
 source = "PMIP3_cvdp"
 file = "PMIP3_MRI-CGCM3_midHolocene.nc"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
 [products.PMIP3-MRI-CGCM3-piControl]
 source = "PMIP3_cvdp"
 file = "PMIP3_MRI-CGCM3_piControl.nc"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
 [products.PMIP3-lgm-mean]
@@ -155,7 +155,7 @@ ensemble = ["PMIP3-CCSM4-lgm", "PMIP3-CNRM-CM5-lgm", "PMIP3-FGOALS-g2-lgm", "PMI
             "PMIP3-IPSL-CM5A-LR-lgm", "PMIP3-MIROC-ESM-lgm", "PMIP3-MPI-ESM-P-lgm",
             "PMIP3-MRI-CGCM3-lgm"]
 stat = "mean"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50, Pyrenees = 2, Patagonia = 2, Himalaya = 2, Alps = 2, Svalbard = 2, NewZealand = 2 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50, Pyrenees = 2, Patagonia = 2, Himalaya = 2, Alps = 2, Svalbard = 2, NewZealand = 2 }
 figure = { variables = ["t2m_ann"] }
 
 [products.PMIP3-lgm-stdev]
@@ -163,7 +163,7 @@ ensemble = ["PMIP3-CCSM4-lgm", "PMIP3-CNRM-CM5-lgm", "PMIP3-FGOALS-g2-lgm", "PMI
             "PMIP3-IPSL-CM5A-LR-lgm", "PMIP3-MIROC-ESM-lgm", "PMIP3-MPI-ESM-P-lgm",
             "PMIP3-MRI-CGCM3-lgm"]
 stat = "stdev"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50, Pyrenees = 2, Patagonia = 2, Himalaya = 2, Alps = 2, Svalbard = 2, NewZealand = 2 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50, Pyrenees = 2, Patagonia = 2, Himalaya = 2, Alps = 2, Svalbard = 2, NewZealand = 2 }
 figure = false
 
 [products.PMIP3-midHolocene-mean]
@@ -172,7 +172,7 @@ ensemble = ["PMIP3-CCSM4-midHolocene", "PMIP3-CNRM-CM5-midHolocene", "PMIP3-FGOA
             "PMIP3-MIROC-ESM-midHolocene", "PMIP3-MPI-ESM-P-midHolocene",
             "PMIP3-MRI-CGCM3-midHolocene"]
 stat = "mean"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50, Pyrenees = 2, Patagonia = 2, Himalaya = 2, Alps = 2, Svalbard = 2, NewZealand = 2 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50, Pyrenees = 2, Patagonia = 2, Himalaya = 2, Alps = 2, Svalbard = 2, NewZealand = 2 }
 figure = false
 
 [products.PMIP3-midHolocene-stdev]
@@ -181,7 +181,7 @@ ensemble = ["PMIP3-CCSM4-midHolocene", "PMIP3-CNRM-CM5-midHolocene", "PMIP3-FGOA
             "PMIP3-MIROC-ESM-midHolocene", "PMIP3-MPI-ESM-P-midHolocene",
             "PMIP3-MRI-CGCM3-midHolocene"]
 stat = "stdev"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50, Pyrenees = 2, Patagonia = 2, Himalaya = 2, Alps = 2, Svalbard = 2, NewZealand = 2 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50, Pyrenees = 2, Patagonia = 2, Himalaya = 2, Alps = 2, Svalbard = 2, NewZealand = 2 }
 figure = false
 
 [products.PMIP3-piControl-mean]
@@ -189,7 +189,7 @@ ensemble = ["PMIP3-CCSM4-piControl", "PMIP3-CNRM-CM5-piControl", "PMIP3-FGOALS-g
             "PMIP3-GISS-E2-R-piControl", "PMIP3-IPSL-CM5A-LR-piControl",
             "PMIP3-MIROC-ESM-piControl", "PMIP3-MPI-ESM-P-piControl", "PMIP3-MRI-CGCM3-piControl"]
 stat = "mean"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50, Pyrenees = 2, Patagonia = 2, Himalaya = 2, Alps = 2, Svalbard = 2, NewZealand = 2 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50, Pyrenees = 2, Patagonia = 2, Himalaya = 2, Alps = 2, Svalbard = 2, NewZealand = 2 }
 figure = false
 
 [products.PMIP3-piControl-stdev]
@@ -197,126 +197,126 @@ ensemble = ["PMIP3-CCSM4-piControl", "PMIP3-CNRM-CM5-piControl", "PMIP3-FGOALS-g
             "PMIP3-GISS-E2-R-piControl", "PMIP3-IPSL-CM5A-LR-piControl",
             "PMIP3-MIROC-ESM-piControl", "PMIP3-MPI-ESM-P-piControl", "PMIP3-MRI-CGCM3-piControl"]
 stat = "stdev"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50, Pyrenees = 2, Patagonia = 2, Himalaya = 2, Alps = 2, Svalbard = 2, NewZealand = 2 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50, Pyrenees = 2, Patagonia = 2, Himalaya = 2, Alps = 2, Svalbard = 2, NewZealand = 2 }
 figure = false
 
 [products.PMIP3-lgm-boundary-conditions]
 source = "PMIP3_cvdp"
 file = "PMIP3_lgm_boundary_conditions.nc"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 
 [products.PMIP4-AWI-ESM-1-1-LR-lgm]
 source = "PMIP4_cmip6"
 file = "PMIP4_AWI-ESM-1-1-LR_lgm.nc"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = { variables = ["t2m_ann"] }
 
 [products.PMIP4-AWI-ESM-1-1-LR-midHolocene]
 source = "PMIP4_cmip6"
 file = "PMIP4_AWI-ESM-1-1-LR_midHolocene.nc"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
 [products.PMIP4-AWI-ESM-1-1-LR-piControl]
 source = "PMIP4_cmip6"
 file = "PMIP4_AWI-ESM-1-1-LR_piControl.nc"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
 [products.PMIP4-INM-CM4-8-lgm]
 source = "PMIP4_cmip6"
 file = "PMIP4_INM-CM4-8_lgm.nc"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = { variables = ["t2m_ann"] }
 
 [products.PMIP4-INM-CM4-8-midHolocene]
 source = "PMIP4_cmip6"
 file = "PMIP4_INM-CM4-8_midHolocene.nc"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
 [products.PMIP4-INM-CM4-8-piControl]
 source = "PMIP4_cmip6"
 file = "PMIP4_INM-CM4-8_piControl.nc"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
 [products.PMIP4-MIROC-ES2L-lgm]
 source = "PMIP4_cmip6"
 file = "PMIP4_MIROC-ES2L_lgm.nc"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = { variables = ["t2m_ann"] }
 
 [products.PMIP4-MIROC-ES2L-midHolocene]
 source = "PMIP4_cmip6"
 file = "PMIP4_MIROC-ES2L_midHolocene.nc"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
 [products.PMIP4-MIROC-ES2L-piControl]
 source = "PMIP4_cmip6"
 file = "PMIP4_MIROC-ES2L_piControl.nc"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
 [products.PMIP4-MPI-ESM1-2-LR-lgm]
 source = "PMIP4_cmip6"
 file = "PMIP4_MPI-ESM1-2-LR_lgm.nc"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = { variables = ["t2m_ann"] }
 
 [products.PMIP4-MPI-ESM1-2-LR-midHolocene]
 source = "PMIP4_cmip6"
 file = "PMIP4_MPI-ESM1-2-LR_midHolocene.nc"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
 [products.PMIP4-MPI-ESM1-2-LR-piControl]
 source = "PMIP4_cmip6"
 file = "PMIP4_MPI-ESM1-2-LR_piControl.nc"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
 [products.PMIP4-lgm-mean]
 ensemble = ["PMIP4-AWI-ESM-1-1-LR-lgm", "PMIP4-INM-CM4-8-lgm", "PMIP4-MIROC-ES2L-lgm",
             "PMIP4-MPI-ESM1-2-LR-lgm"]
 stat = "mean"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50, Pyrenees = 2, Patagonia = 2, Himalaya = 2, Alps = 2, Svalbard = 2, NewZealand = 2 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50, Pyrenees = 2, Patagonia = 2, Himalaya = 2, Alps = 2, Svalbard = 2, NewZealand = 2 }
 figure = { variables = ["t2m_ann"] }
 
 [products.PMIP4-lgm-stdev]
 ensemble = ["PMIP4-AWI-ESM-1-1-LR-lgm", "PMIP4-INM-CM4-8-lgm", "PMIP4-MIROC-ES2L-lgm",
             "PMIP4-MPI-ESM1-2-LR-lgm"]
 stat = "stdev"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50, Pyrenees = 2, Patagonia = 2, Himalaya = 2, Alps = 2, Svalbard = 2, NewZealand = 2 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50, Pyrenees = 2, Patagonia = 2, Himalaya = 2, Alps = 2, Svalbard = 2, NewZealand = 2 }
 figure = false
 
 [products.PMIP4-midHolocene-mean]
 ensemble = ["PMIP4-AWI-ESM-1-1-LR-midHolocene", "PMIP4-INM-CM4-8-midHolocene",
             "PMIP4-MIROC-ES2L-midHolocene", "PMIP4-MPI-ESM1-2-LR-midHolocene"]
 stat = "mean"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50, Pyrenees = 2, Patagonia = 2, Himalaya = 2, Alps = 2, Svalbard = 2, NewZealand = 2 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50, Pyrenees = 2, Patagonia = 2, Himalaya = 2, Alps = 2, Svalbard = 2, NewZealand = 2 }
 figure = false
 
 [products.PMIP4-midHolocene-stdev]
 ensemble = ["PMIP4-AWI-ESM-1-1-LR-midHolocene", "PMIP4-INM-CM4-8-midHolocene",
             "PMIP4-MIROC-ES2L-midHolocene", "PMIP4-MPI-ESM1-2-LR-midHolocene"]
 stat = "stdev"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50, Pyrenees = 2, Patagonia = 2, Himalaya = 2, Alps = 2, Svalbard = 2, NewZealand = 2 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50, Pyrenees = 2, Patagonia = 2, Himalaya = 2, Alps = 2, Svalbard = 2, NewZealand = 2 }
 figure = false
 
 [products.PMIP4-piControl-mean]
 ensemble = ["PMIP4-AWI-ESM-1-1-LR-piControl", "PMIP4-INM-CM4-8-piControl",
             "PMIP4-MIROC-ES2L-piControl", "PMIP4-MPI-ESM1-2-LR-piControl"]
 stat = "mean"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50, Pyrenees = 2, Patagonia = 2, Himalaya = 2, Alps = 2, Svalbard = 2, NewZealand = 2 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50, Pyrenees = 2, Patagonia = 2, Himalaya = 2, Alps = 2, Svalbard = 2, NewZealand = 2 }
 figure = false
 
 [products.PMIP4-piControl-stdev]
 ensemble = ["PMIP4-AWI-ESM-1-1-LR-piControl", "PMIP4-INM-CM4-8-piControl",
             "PMIP4-MIROC-ES2L-piControl", "PMIP4-MPI-ESM1-2-LR-piControl"]
 stat = "stdev"
-grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50, Pyrenees = 2, Patagonia = 2, Himalaya = 2, Alps = 2, Svalbard = 2, NewZealand = 2 }
+grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50, Pyrenees = 2, Patagonia = 2, Himalaya = 2, Alps = 2, Svalbard = 2, NewZealand = 2 }
 figure = false
 
 [products.Buizert2018]
@@ -343,40 +343,40 @@ grids = { Greenland = 16 }
 [products.CLIMBER3a-present]
 source = "Montoya2008_climber3a"
 file = "CLIMBER3a_present.nc"
-grids = { Antarctica = 32, GreenlandPaleo = 32, North = 32, Global = 50 }
+grids = { Antarctica = 32, GreenlandPaleo = 32, PatagoniaPaleo = 8, North = 32, Global = 50 }
 figure = false
 
 [products.CLIMBER3a-lgm_1p7weak]
 source = "Montoya2008_climber3a"
 file = "CLIMBER3a_lgm_1p7weak.nc"
-grids = { Antarctica = 32, GreenlandPaleo = 32, North = 32, Global = 50 }
+grids = { Antarctica = 32, GreenlandPaleo = 32, PatagoniaPaleo = 8, North = 32, Global = 50 }
 figure = { variables = ["t2m_ann"] }
 
 [products.CLIMBER3a-lgm_1p7strong]
 source = "Montoya2008_climber3a"
 file = "CLIMBER3a_lgm_1p7strong.nc"
-grids = { Antarctica = 32, GreenlandPaleo = 32, North = 32, Global = 50 }
+grids = { Antarctica = 32, GreenlandPaleo = 32, PatagoniaPaleo = 8, North = 32, Global = 50 }
 figure = { variables = ["t2m_ann"] }
 
 [products.CLIMBER3a-present-ocean]
 source = "Montoya2008_climber3a"
 file = "CLIMBER3a_present_ocean.nc"
 mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
-grids = { Antarctica = 32, GreenlandPaleo = 32, North = 32, Global = 100 }   # source at 3.75°
+grids = { Antarctica = 32, GreenlandPaleo = 32, PatagoniaPaleo = 8, North = 32, Global = 100 }   # source at 3.75°
 figure = false
 
 [products.CLIMBER3a-lgm_1p7weak-ocean]
 source = "Montoya2008_climber3a"
 file = "CLIMBER3a_lgm_1p7weak_ocean.nc"
 mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
-grids = { Antarctica = 32, GreenlandPaleo = 32, North = 32, Global = 100 }   # source at 3.75°
+grids = { Antarctica = 32, GreenlandPaleo = 32, PatagoniaPaleo = 8, North = 32, Global = 100 }   # source at 3.75°
 figure = { variables = ["to"], select = { depth = 400 } }
 
 [products.CLIMBER3a-lgm_1p7strong-ocean]
 source = "Montoya2008_climber3a"
 file = "CLIMBER3a_lgm_1p7strong_ocean.nc"
 mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
-grids = { Antarctica = 32, GreenlandPaleo = 32, North = 32, Global = 100 }   # source at 3.75°
+grids = { Antarctica = 32, GreenlandPaleo = 32, PatagoniaPaleo = 8, North = 32, Global = 100 }   # source at 3.75°
 figure = { variables = ["to"], select = { depth = 400 } }
 
 # CLIMBER-X (Willeit et al., 2025): climate states of the reference simulation HS4
@@ -387,25 +387,25 @@ figure = { variables = ["to"], select = { depth = 400 } }
 [products.CLIMBERX-Willeit2025-piControl]
 source = "Willeit2025_climberx"
 file = "CLIMBERX_Willeit2025_piControl.nc"
-grids = { Antarctica = 32, GreenlandPaleo = 32, North = 32, Global = 100 }   # source at 5°
+grids = { Antarctica = 32, GreenlandPaleo = 32, PatagoniaPaleo = 8, North = 32, Global = 100 }   # source at 5°
 figure = false
 
 [products.CLIMBERX-Willeit2025-interstadial]
 source = "Willeit2025_climberx"
 file = "CLIMBERX_Willeit2025_interstadial.nc"
-grids = { Antarctica = 32, GreenlandPaleo = 32, North = 32, Global = 100 }
+grids = { Antarctica = 32, GreenlandPaleo = 32, PatagoniaPaleo = 8, North = 32, Global = 100 }
 figure = { variables = ["t2m_ann_anom"] }
 
 [products.CLIMBERX-Willeit2025-stadial]
 source = "Willeit2025_climberx"
 file = "CLIMBERX_Willeit2025_stadial.nc"
-grids = { Antarctica = 32, GreenlandPaleo = 32, North = 32, Global = 100 }
+grids = { Antarctica = 32, GreenlandPaleo = 32, PatagoniaPaleo = 8, North = 32, Global = 100 }
 figure = { variables = ["t2m_ann_anom"] }
 
 [products.CLIMBERX-Willeit2025-heinrich]
 source = "Willeit2025_climberx"
 file = "CLIMBERX_Willeit2025_heinrich.nc"
-grids = { Antarctica = 32, GreenlandPaleo = 32, North = 32, Global = 100 }
+grids = { Antarctica = 32, GreenlandPaleo = 32, PatagoniaPaleo = 8, North = 32, Global = 100 }
 figure = { variables = ["t2m_ann_anom"] }
 
 [products.CLIMBERX-Willeit2025-piControl-ocean]
@@ -413,7 +413,7 @@ source = "Willeit2025_climberx"
 file = "CLIMBERX_Willeit2025_piControl_ocean.nc"
 mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 precision = { so = 0.001 }
-grids = { Antarctica = 32, GreenlandPaleo = 32, North = 32, Global = 100 }
+grids = { Antarctica = 32, GreenlandPaleo = 32, PatagoniaPaleo = 8, North = 32, Global = 100 }
 figure = false
 
 [products.CLIMBERX-Willeit2025-interstadial-ocean]
@@ -421,7 +421,7 @@ source = "Willeit2025_climberx"
 file = "CLIMBERX_Willeit2025_interstadial_ocean.nc"
 mask = { mask_ocn = 0.5 }
 precision = { so = 0.001, so_anom = 0.001 }
-grids = { Antarctica = 32, GreenlandPaleo = 32, North = 32, Global = 100 }
+grids = { Antarctica = 32, GreenlandPaleo = 32, PatagoniaPaleo = 8, North = 32, Global = 100 }
 figure = { variables = ["to_anom"], select = { depth = 400 } }
 
 [products.CLIMBERX-Willeit2025-stadial-ocean]
@@ -429,7 +429,7 @@ source = "Willeit2025_climberx"
 file = "CLIMBERX_Willeit2025_stadial_ocean.nc"
 mask = { mask_ocn = 0.5 }
 precision = { so = 0.001, so_anom = 0.001 }
-grids = { Antarctica = 32, GreenlandPaleo = 32, North = 32, Global = 100 }
+grids = { Antarctica = 32, GreenlandPaleo = 32, PatagoniaPaleo = 8, North = 32, Global = 100 }
 figure = { variables = ["to_anom"], select = { depth = 400 } }
 
 [products.CLIMBERX-Willeit2025-heinrich-ocean]
@@ -437,7 +437,7 @@ source = "Willeit2025_climberx"
 file = "CLIMBERX_Willeit2025_heinrich_ocean.nc"
 mask = { mask_ocn = 0.5 }
 precision = { so = 0.001, so_anom = 0.001 }
-grids = { Antarctica = 32, GreenlandPaleo = 32, North = 32, Global = 100 }
+grids = { Antarctica = 32, GreenlandPaleo = 32, PatagoniaPaleo = 8, North = 32, Global = 100 }
 figure = { variables = ["to_anom"], select = { depth = 400 } }
 
 # The 2D output of the two runs (HS4: every 100 years; piControl: every 1000 years) with

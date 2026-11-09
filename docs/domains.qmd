@@ -49,6 +49,9 @@ Antarctica (ANT, 500 m to 32 km), GreenlandPaleo (GRL-PAL, 500 m to 32 km; Green
 surrounding ocean and land, for glacial cycles) and North (NH, 2-32 km; the Northern
 Hemisphere ice sheets) are on polar stereographic projections. Greenland (GRL) is a crop
 of GreenlandPaleo, and Laurentide (LIS) and Eurasia (EIS) are crops of North.
+PatagoniaPaleo (PAT-PAL, 2-8 km; the Patagonian Ice Sheet and the Andean ice north of it,
+26-57°S, for glacial cycles) is on the projection of Patagonia (UTM zone 18S), with its
+cells on those of PAT-2KM.
 
 The crops of Antarctica and the nests of Greenland cover single drainage basins, with
 their ice shelves or fjords and 50 km around them: in Antarctica the Amundsen Sea
