@@ -2,9 +2,9 @@
 
 [_RELEASE]
 date = "2026-11-09"
-git_tag = "icehistory-v2.4.0"
+git_tag = "icehistory-v2.4.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=GreenlandPaleo_IceHistory"
-version = "2.4.0"
+version = "2.4.1"
 
 ["GRL-PAL-16KM_IceHistory-Batchelor2019.nc"]
 checksum = "sha256:c58bde83da6f1a30d7e58c2914ab349a01999e34d73018331dd734981de4a452"
@@ -74,11 +74,12 @@ storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_IceHistor
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-16KM/2.2.0/GRL-PAL-16KM_IceHistory-PaleoMIST_max.nc"
 
 ["GRL-PAL-16KM_IceHistory-PaleoMIST_taub.nc"]
-checksum = "sha256:e42a8d5796ce11d537f9b57121d35fe60f2e732d7d40471abd83f04d8af6efcf"
+checksum = "sha256:9347bdd02dc05578db6ad41d81baad54aad586369aa8c2808a20264368da8a4b"
 license = "GPL-3.0-only (ICESHEET 2.0, E. J. Gowan): derived from the input files of its global/ setup (shear stress domains and values), distributed under the GPL-3.0"
-size = 220982
+previous_checksums = ["sha256:e42a8d5796ce11d537f9b57121d35fe60f2e732d7d40471abd83f04d8af6efcf"]
+size = 227647
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-16KM/GRL-PAL-16KM_IceHistory-PaleoMIST_taub.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-16KM/2.3.0/GRL-PAL-16KM_IceHistory-PaleoMIST_taub.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-16KM/2.4.1/GRL-PAL-16KM_IceHistory-PaleoMIST_taub.nc"
 
 ["GRL-PAL-1KM_IceHistory-PaleoGrIS.nc"]
 checksum = "sha256:db551215afb6bf9d971d35c6800bf7014fd9d5051f529f32050fc6e01b7a08dc"
@@ -169,11 +170,12 @@ storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_IceHistor
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-32KM/2.2.0/GRL-PAL-32KM_IceHistory-PaleoMIST_max.nc"
 
 ["GRL-PAL-32KM_IceHistory-PaleoMIST_taub.nc"]
-checksum = "sha256:4561d4d054d6474c7b6e1e67e7887db1d788377112b2b645a66986c497543c59"
+checksum = "sha256:34cf3065942cc56733df6e5fe0c5f1882553f672bc649c8052dc6851e3341f80"
 license = "GPL-3.0-only (ICESHEET 2.0, E. J. Gowan): derived from the input files of its global/ setup (shear stress domains and values), distributed under the GPL-3.0"
-size = 201143
+previous_checksums = ["sha256:4561d4d054d6474c7b6e1e67e7887db1d788377112b2b645a66986c497543c59"]
+size = 207808
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-32KM/GRL-PAL-32KM_IceHistory-PaleoMIST_taub.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-32KM/2.3.0/GRL-PAL-32KM_IceHistory-PaleoMIST_taub.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-32KM/2.4.1/GRL-PAL-32KM_IceHistory-PaleoMIST_taub.nc"
 
 ["GRL-PAL-4KM_IceHistory-Batchelor2019.nc"]
 checksum = "sha256:5f501df281eccf8f9e25986472de5d7947b011bd0c2c794cb6de70060046a6c1"
@@ -218,8 +220,9 @@ storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_IceHistory-
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-8KM/2.2.0/GRL-PAL-8KM_IceHistory-PaleoMIST_max.nc"
 
 ["GRL-PAL-8KM_IceHistory-PaleoMIST_taub.nc"]
-checksum = "sha256:5e5f22c71195361b033fcdd33217ff7fb4c4cacf60cbdf03322001c2fc3ba6ad"
+checksum = "sha256:bf9612fb85acc50223feb679c91dd5b6934bdf1f1043c64f98a4ccdab8b0b732"
 license = "GPL-3.0-only (ICESHEET 2.0, E. J. Gowan): derived from the input files of its global/ setup (shear stress domains and values), distributed under the GPL-3.0"
-size = 262317
+previous_checksums = ["sha256:5e5f22c71195361b033fcdd33217ff7fb4c4cacf60cbdf03322001c2fc3ba6ad"]
+size = 267968
 storage_path = "$datasets_dir/GreenlandPaleo/GRL-PAL-8KM/GRL-PAL-8KM_IceHistory-PaleoMIST_taub.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-8KM/2.3.0/GRL-PAL-8KM_IceHistory-PaleoMIST_taub.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/GreenlandPaleo_IceHistory_GRL-PAL-8KM/2.4.1/GRL-PAL-8KM_IceHistory-PaleoMIST_taub.nc"

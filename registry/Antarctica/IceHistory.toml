@@ -2,9 +2,9 @@
 
 [_RELEASE]
 date = "2026-11-09"
-git_tag = "icehistory-v2.4.0"
+git_tag = "icehistory-v2.4.1"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Antarctica_IceHistory"
-version = "2.4.0"
+version = "2.4.1"
 
 ["ANT-16KM_IceHistory-GLAC1D.nc"]
 checksum = "sha256:c4a09af7b696d65440d01b6262fa5fcf2927355e8cd546da91568818665e5c5f"
@@ -67,11 +67,12 @@ storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_IceHistory-PaleoMIST_
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-16KM/2.2.0/ANT-16KM_IceHistory-PaleoMIST_max.nc"
 
 ["ANT-16KM_IceHistory-PaleoMIST_taub.nc"]
-checksum = "sha256:6fe899ea9cedbe4b90c603601f3ffd96d1565e790920a575a9eaa9852e96ebc0"
+checksum = "sha256:3c9ddd119cb7608324184f1b9155228b9b5b759ca50426cfe546b6536f239803"
 license = "GPL-3.0-only (ICESHEET 2.0, E. J. Gowan): derived from the input files of its global/ setup (shear stress domains and values), distributed under the GPL-3.0"
-size = 295005
+previous_checksums = ["sha256:6fe899ea9cedbe4b90c603601f3ffd96d1565e790920a575a9eaa9852e96ebc0"]
+size = 300656
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_IceHistory-PaleoMIST_taub.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-16KM/2.3.0/ANT-16KM_IceHistory-PaleoMIST_taub.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-16KM/2.4.1/ANT-16KM_IceHistory-PaleoMIST_taub.nc"
 
 ["ANT-32KM_IceHistory-GLAC1D.nc"]
 checksum = "sha256:aac12226bc578a9bac4f585358b611587a339046354c1d752b49563b464dc297"
@@ -134,11 +135,12 @@ storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_IceHistory-PaleoMIST_
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-32KM/2.2.0/ANT-32KM_IceHistory-PaleoMIST_max.nc"
 
 ["ANT-32KM_IceHistory-PaleoMIST_taub.nc"]
-checksum = "sha256:782e6521fe34df45b601d70552457ff6d7321c45e4705eb865a606f8dbd8c5ba"
+checksum = "sha256:13da917ed52633ed586d1a478a4101eac9a0d97ca439549aba2b4ec8e5f7bb5b"
 license = "GPL-3.0-only (ICESHEET 2.0, E. J. Gowan): derived from the input files of its global/ setup (shear stress domains and values), distributed under the GPL-3.0"
-size = 233575
+previous_checksums = ["sha256:782e6521fe34df45b601d70552457ff6d7321c45e4705eb865a606f8dbd8c5ba"]
+size = 240240
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_IceHistory-PaleoMIST_taub.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-32KM/2.3.0/ANT-32KM_IceHistory-PaleoMIST_taub.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-32KM/2.4.1/ANT-32KM_IceHistory-PaleoMIST_taub.nc"
 
 ["ANT-8KM_IceHistory-ICE6G_D.nc"]
 checksum = "sha256:3fe1c114210bb72f0a447f9177203d076859b65d93b8d36b65007532d3e6fae5"
@@ -162,8 +164,9 @@ storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_IceHistory-PaleoMIST_ma
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-8KM/2.2.0/ANT-8KM_IceHistory-PaleoMIST_max.nc"
 
 ["ANT-8KM_IceHistory-PaleoMIST_taub.nc"]
-checksum = "sha256:4ddf0e7f4724fbd5aaf97bd7b7a7a51b3e50a7cc257f3543464c05f4aa910e6b"
+checksum = "sha256:e943df81aa1c5bc3739e662814427f22286bd2a823f4b524e5fb7ede41f369e2"
 license = "GPL-3.0-only (ICESHEET 2.0, E. J. Gowan): derived from the input files of its global/ setup (shear stress domains and values), distributed under the GPL-3.0"
-size = 427640
+previous_checksums = ["sha256:4ddf0e7f4724fbd5aaf97bd7b7a7a51b3e50a7cc257f3543464c05f4aa910e6b"]
+size = 433291
 storage_path = "$datasets_dir/Antarctica/ANT-8KM/ANT-8KM_IceHistory-PaleoMIST_taub.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-8KM/2.3.0/ANT-8KM_IceHistory-PaleoMIST_taub.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-8KM/2.4.1/ANT-8KM_IceHistory-PaleoMIST_taub.nc"
