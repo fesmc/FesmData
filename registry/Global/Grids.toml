@@ -1,10 +1,10 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-16"
-git_tag = "grids-v2.0.0"
+date = "2026-11-09"
+git_tag = "grids-v2.1.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Global_Grids"
-version = "2.0.0"
+version = "2.1.0"
 
 ["GLOBAL-0.1DEG_grid.nc"]
 checksum = "sha256:e7318e05a656c35f20f1ee8bdf6c1b6d9e46117353ff81a920c1b7a39625439a"
