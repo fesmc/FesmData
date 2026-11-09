@@ -42,6 +42,10 @@ size = 123456789
 storage_path = "$datasets_dir/Antarctica/ANT-4KM/ANT-4KM_TOPO-Bedmap3.nc"
 ```
 
+The entries of the files uploaded by a release also have `license`, the global
+attribute `license` of the file (the licence of its source, e.g. GPL-3.0-only for
+IceHistory-PaleoMIST_taub), which the website shows next to the file.
+
 `$datasets_dir` stands for `$FESMDATA`, so the files land in the usual layout,
 `$FESMDATA/<Domain>/<GRID>/`. The `uri` of a file unchanged since an earlier
 release is that of the package where it was uploaded (e.g. `2.0.0` in the registry of

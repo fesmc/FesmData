@@ -108,6 +108,19 @@ function source_readme(source::AbstractString)
     return isfile(path) ? path : nothing
 end
 
+"First paragraph of the section `## Licence` (or `## Licences`) of a README (empty if none)."
+function readme_licence(path::AbstractString)
+    lines = readlines(path)
+    k = findfirst(l -> startswith(l, "## Licence"), lines)
+    k === nothing && return ""
+    para = String[]
+    for l in lines[k+1:end]
+        startswith(l, "#") && break
+        isempty(strip(l)) ? (isempty(para) ? continue : break) : push!(para, strip(l))
+    end
+    return join(para, " ")
+end
+
 "Title of a README (its first heading) and its introduction (the text before the first section)."
 function readme_intro(path::AbstractString)
     lines = readlines(path)
@@ -230,6 +243,8 @@ function cite(args; sandbox::Bool=false)
     for s in filter(s -> source_readme(s) !== nothing, sources)
         path = source_readme(s)
         println("\n$s: $(readme_intro(path).title)\n  README: $path")
+        lic = readme_licence(path)
+        isempty(lic) || println("  Licence: ", lic)
         println("  Products: ", join((p.name for p in products if s in p.sources), ", "))
     end
     others = filter(s -> source_readme(s) === nothing, sources)

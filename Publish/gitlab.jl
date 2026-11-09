@@ -191,6 +191,8 @@ function upload(dataset::AbstractString, domains=String[]; sandbox::Bool=false,
                                      "storage_path" => "\$datasets_dir/" * relpath(f.path, products_dir()))
             previous = previous_checksums(get(old, name, nothing), sha, get(registered, entry["storage_path"], String[]))
             isempty(previous) || (entry["previous_checksums"] = previous)
+            lic = endswith(name, ".nc") ? nc_attrib(f.path, "license") : nothing
+            lic === nothing || (entry["license"] = lic)
             entries[name] = entry
         end
         tables = registry_tables(domain, dataset; sandbox=sandbox)   # keeps an earlier _ZENODO

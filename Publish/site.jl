@@ -122,7 +122,8 @@ function record_html(io::IO, domain::AbstractString, dataset::AbstractString)
                 "$(length(entries)) files, $(human_size(total_size(last.(entries))))</span></summary><table>")
         for (name, e) in entries
             println(io, "<tr><td><a href=\"$(esc(e["uri"]))\">$(esc(name))</a></td>",
-                    "<td class=\"size\">$(human_size(get(e, "size", 0)))</td></tr>")
+                    "<td class=\"size\">$(human_size(get(e, "size", 0)))</td>",
+                    "<td class=\"muted\">$(esc(get(e, "license", "")))</td></tr>")
         end
         println(io, "</table></details>")
     end
