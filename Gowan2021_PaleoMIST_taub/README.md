@@ -18,7 +18,7 @@ with minimal assumptions, Geosci. Model Dev., 9, 1673-1682, 2016,
 
 ## Licence
 
-GPL-3.0: the domains and values are input files of ICESHEET 2.0
+GPL-3.0-only: the domains and values are input files of ICESHEET 2.0
 (<https://github.com/evangowan/icesheet>, E. J. Gowan, GNU General Public License v3),
 and the prepared and remapped files (`IceHistory-PaleoMIST_taub`, released with
 IceHistory) are derived from them under the same licence. Cite both papers.
@@ -26,10 +26,13 @@ IceHistory) are derived from them under the same licence. Cite both papers.
 ## Original data
 
 The GitHub archive of ICESHEET 2.0 at its last commit (641d172, 2022), no login,
-`gowan2021_icesheet` in `datamanifest.toml`, of which `global/<region>/shear_stress/` is
+`gowan2021_icesheet` in `datamanifest.toml` (pinned to that commit), in
+`$FESMDATA_SOURCES/gowan2021_icesheet/icesheet-641d172230c76fc44ec9ea40ab1a0e9f76d0f42f/`,
+downloaded and extracted by `prepare.jl` if missing, of which `global/<region>/shear_stress/` is
 used, for North_America (with Greenland), Eurasia and Antarctica (Patagonia is left
 out); and the 5 km regional reconstructions of PaleoMIST 1.0 (`gowan2021_paleomist`,
-see `../Gowan2021_PaleoMIST1.0/`), for their grids and ice. Per region:
+see `../Gowan2021_PaleoMIST1.0/`; `$FESMDATA_SOURCES/gowan2021_paleomist/`), for their
+grids and ice. Per region:
 
 - `shear_stress_domains.gmt` (Antarctica: `shear_stress_domains3.gmt`, as named in
   `projection_info.sh`): the domains, polygons in the GMT text format exported by QGIS,
@@ -43,12 +46,14 @@ see `../Gowan2021_PaleoMIST1.0/`), for their grids and ice. Per region:
 ## The shear stress of PaleoMIST 1.0
 
 `create_ss_grid` (ICESHEET 2.0, `create_ss_grid.f90`), called by
-`global/<region>/shear_stress/create_bin_var.sh` for each time slice (from
-`global/prepare_icesheet.sh`, lines 220-234), makes the shear stress grid of a time slice:
+`global/<region>/shear_stress/create_bin_var.sh` (lines 82-92) for each time slice, with
+the time in years ago (from `global/prepare_icesheet.sh`, lines 220-234, which copies the
+domain file, `domains_max.txt`, `domains_min.txt` and the adjustment file of `run.sh`),
+makes the shear stress grid of a time slice (line numbers of `create_ss_grid.f90`):
 
-1. Each domain gets the shear stress of its polygon in the GMT file (lines 146-158),
-   replaced by that of `domains_max.txt` (lines 213-227, always given, line 84-90 of
-   `create_bin_var.sh`): the base value, `taub` (= `taub_max`).
+1. Each domain gets the shear stress of its polygon in the GMT file (lines 146-158; the
+   last polygon of a domain wins), replaced by that of `domains_max.txt` (lines 213-227,
+   always given): the base value, `taub` (= `taub_max`).
 2. Its minimum is that of `domains_min.txt`, else 5000 Pa (lines 229-244): `taub_min`.
 3. The lines of `adjust_0.txt`, in the order of the file, change the value of their
    domain at the times t with min(t_max, t_min) ≤ t ≤ max(t_max, t_min) (lines 247-300):
@@ -63,8 +68,12 @@ The published reconstruction used `adjust_0.txt` in all regions: in both MIS 3
 scenarios of North America, the minimal one (runs 72-75 of ICESHEET, with the
 deformation `icesheet_Evan_ehgr_71_67_64_65` of the PANGAEA archive) and the maximal one
 (runs 82-85, `a1` margins); `adjust_a1.txt` and `adjust_a1_high_ss.txt` were tests (runs
-77-78 and 86-87). The input files have not changed since these runs (git history of
-ICESHEET 2.0, `global/run.sh`). How the values were chosen (Gowan et al., 2021, Methods):
+77-78 and 86-87). This is in the git history of ICESHEET 2.0: `global/run.sh` at the
+commits of these runs (a754a87: run 72, `adjust_0.txt` written into `run_parameters`;
+5e64d18: run 82, `shear_adjustment="adjust_0.txt"`), and the shear stress files have not
+changed since run 71 (3f9f86d). Gowan's plots of the shear stress of both scenarios
+(`local_plots/` and `local_plots_a1/` of the PANGAEA archive) are the same, e.g. at
+50 ka, where `adjust_a1.txt` would differ. How the values were chosen (Gowan et al., 2021, Methods):
 domains from topography (higher in mountainous terrain) and surficial geology (lower on
 continuous sediment, and for major ice streams), values tuned to the sea-level and GIA
 data, raised to maximise the LGM ice volume and lowered during deglaciation; for

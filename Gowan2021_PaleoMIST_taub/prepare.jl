@@ -326,7 +326,7 @@ for (r, g) in zip(REGIONS, regions)
                              "through time (ICESHEET 2.0)"
         ds.attrib["references"] = REFERENCES
         ds.attrib["doi"] = "10.1038/s41467-021-21469-w"
-        ds.attrib["license"] = "GPL-3.0 (ICESHEET 2.0, E. J. Gowan): derived from the input files of its global/ " *
+        ds.attrib["license"] = "GPL-3.0-only (ICESHEET 2.0, E. J. Gowan): derived from the input files of its global/ " *
                                "setup (shear stress domains and values), distributed under the GPL-3.0"
         ds.attrib["comment"] = "Domains of North_America (with Greenland), Eurasia and Antarctica of ICESHEET 2.0 " *
             "(global/<region>/shear_stress/), rasterized at the nodes of the 5 km grids of the regional " *
