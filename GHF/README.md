@@ -24,6 +24,8 @@ in `GHF/remap.toml`.
 
 On the mountain-glacier domains (Pyrenees, Patagonia, Himalaya), on their 2 km grid: `GHF-Lucazeau2019`, `GHF-Davies2013` and `GHF-Shapiro2004`; their nests and crops get these by cropping (see [Nests and crops](https://fesmc.github.io/FesmData/download.html#nests-and-crops)).
 
+On PatagoniaPaleo (the paleo domain of Patagonia, 26-57°S), on its 4 and 8 km grids, as on GreenlandPaleo: `GHF-Lucazeau2019`, `GHF-Davies2013` and `GHF-Shapiro2004` (not `GHF-FoxMaule2005`, which has no data there).
+
 The topographic correction of Colgan et al. (2021) is not a heat flow but a
 dimensionless relative correction (about 0 on average), to be applied to any heat flow
 product as corrected heat flow = (1 + `ghf_corr`) × `ghf` (higher heat flow in
