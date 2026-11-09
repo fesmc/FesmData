@@ -1,23 +1,84 @@
 # Archive of releases on Zenodo, optional, for a DOI (see README.md): a release on the
 # store (gitlab.jl) is uploaded to a draft of the next version of its Zenodo record
-# (one record per dataset and domain), published, and its DOIs added to the registry
-# (`[_ZENODO]`). Uses the deposit API with a personal token (scopes deposit:write and
+# (one record per dataset and domain, and one per product with a licence of its own, see
+# `ArchivePart`), published, and its DOIs added to the registry (`[_ZENODO]`,
+# `[_ZENODO_<product>]`). Uses the deposit API with a personal token (scopes deposit:write and
 # deposit:actions) in ZENODO_TOKEN, or ZENODO_SANDBOX_TOKEN for the sandbox, whose
 # records archive the test releases (registry/_sandbox/).
 
 include(joinpath(@__DIR__, "release.jl"))
 
-"Title of the record of a dataset on a domain."
-record_title(domain::AbstractString, dataset::AbstractString) =
-    "FesmData $domain $dataset: $(dataset_config(dataset)["title"])"
+"""
+    ArchivePart
+
+A Zenodo record of the release of a dataset on a domain: the record of the dataset
+(`product` empty), under the licence of the archive (`license` of `_zenodo` in
+datasets.toml), with the files of all its products but those with a licence of their
+own; and one record per such product (`licenses` of the dataset in datasets.toml,
+product => Zenodo licence id, e.g. `licenses = { PaleoMIST_taub = "gpl-3.0-only" }`),
+with its files, since a record has one licence. Each record has its draft file and its
+table in the registry file of the release (`[_ZENODO]`, `[_ZENODO_<product>]`).
+"""
+struct ArchivePart
+    domain::String
+    dataset::String
+    product::String          # "" for the record of the dataset
+    license::String
+end
+
+"Products of a dataset with a licence of their own (product => Zenodo licence id)."
+dataset_licenses(dataset::AbstractString) =
+    Dict{String,String}(get(dataset_config(dataset), "licenses", Dict{String,Any}()))
+
+"Records of a dataset on a domain: that of the dataset, then one per product with a licence of its own."
+archive_parts(domain::AbstractString, dataset::AbstractString) =
+    vcat([ArchivePart(domain, dataset, "", read_datasets()["_zenodo"]["license"])],
+         [ArchivePart(domain, dataset, p, l) for (p, l) in sort(collect(dataset_licenses(dataset)))])
+
+"Name of a record part, for the messages: <Domain>/<Dataset>[-<product>]."
+part_name(part::ArchivePart) = "$(part.domain)/$(part.dataset)" * (isempty(part.product) ? "" : "-$(part.product)")
+
+"Registry table of the DOIs of a record: `_ZENODO`, or `_ZENODO_<product>`."
+zenodo_table(part::ArchivePart) = isempty(part.product) ? "_ZENODO" : "_ZENODO_$(part.product)"
 
 """
-    record_metadata(domain, dataset, files, version) -> Dict
+    file_product(f, dataset) -> String
 
-Zenodo metadata of the record of a dataset on a domain.
+Product of a file of a dataset, from its name (`<GRID>_<Dataset>-<product>.nc`, or
+`<Dataset>-<product>.nc` and `.txt` for records); empty for other files.
 """
-function record_metadata(domain::AbstractString, dataset::AbstractString,
-                         files::Vector{ProductFile}, version::AbstractString)
+function file_product(f::ProductFile, dataset::AbstractString)
+    m = match(Regex("(?:^|_)\\Q$(dataset)\\E-(.+)\\.[a-z]+\$"), basename(f))
+    return m === nothing ? "" : String(m[1])
+end
+
+"""
+    part_files(part, files) -> Vector{ProductFile}
+
+Files of a record among the files of the release of its dataset on its domain: those of
+its product, or for the record of the dataset all but those of the products with a
+licence of their own.
+"""
+function part_files(part::ArchivePart, files::Vector{ProductFile})
+    isempty(part.product) || return filter(f -> file_product(f, part.dataset) == part.product, files)
+    own = keys(dataset_licenses(part.dataset))
+    return filter(f -> !(file_product(f, part.dataset) in own), files)
+end
+
+"Title of a record: of a dataset on a domain, or of one of its products."
+record_title(part::ArchivePart) =
+    "FesmData $(part.domain) $(part.dataset)$(isempty(part.product) ? "" : "-" * part.product): " *
+    dataset_config(part.dataset)["title"]
+
+"""
+    record_metadata(part, files, version; others=String[]) -> Dict
+
+Zenodo metadata of a record (`part`) with its `files`; `others`, the products of the
+dataset on the domain in records of their own (named in the record of the dataset).
+"""
+function record_metadata(part::ArchivePart, files::Vector{ProductFile}, version::AbstractString;
+                         others=String[])
+    domain, dataset = part.domain, part.dataset
     common = read_datasets()["_zenodo"]
     cfg = dataset_config(dataset)
     data = filter(f -> endswith(f.path, ".nc"), files)
@@ -34,8 +95,16 @@ function record_metadata(domain::AbstractString, dataset::AbstractString,
         """The grid description for cdo (<code>grid_&lt;GRID&gt;.txt</code>) and the grid
         file (<code>&lt;GRID&gt;_grid.nc</code>) of each grid are in the record of the
         dataset Grids on the domain.""")
+    own = isempty(part.product) ?
+        (isempty(others) ? "" :
+         """<p>The products $(join(("$dataset-$p" for p in others), ", ")) are in records of their own,
+         for their licences (see the README).</p>""") :
+        """<p>This record holds the product $dataset-$(part.product) of the dataset $dataset, in a
+        record of its own for its licence ($(part.license)); the other products are in the
+        record "$(record_title(ArchivePart(domain, dataset, "", common["license"])))".</p>"""
     description = """
         <p>$(strip(replace(cfg["description"], '\n' => ' ')))</p>
+        $own
         <p>Produced with <a href="$REPO_URL">FesmData</a> version $version (commit
         $commit); see the <a href="$readme">$dataset README</a> for the sources and methods.
         $layout To download into the FesmData layout,
@@ -48,11 +117,11 @@ function record_metadata(domain::AbstractString, dataset::AbstractString,
     end
     return Dict(
         "upload_type" => "dataset",
-        "title" => record_title(domain, dataset),
+        "title" => record_title(part),
         "creators" => common["creators"],
         "description" => description,
         "version" => release_number(version, dataset),
-        "license" => common["license"],
+        "license" => part.license,
         "keywords" => cfg["keywords"],
         "communities" => [Dict("identifier" => common["community"])],
         "related_identifiers" => related,
@@ -96,23 +165,23 @@ api(method, url; token::AbstractString="", kwargs...) =
             kwargs...)
 
 """
-    drafts_file(domain, dataset; sandbox=false)
+    drafts_file(part; sandbox=false)
 
 File recording the open draft of a record, written by `upload` and removed by
-`register`: registry/_drafts/<Domain>/<Dataset>.toml (local, not tracked).
+`register`: registry/_drafts/<Domain>/<Dataset>[-<product>].toml (local, not tracked).
 """
-drafts_file(domain::AbstractString, dataset::AbstractString; sandbox::Bool=false) =
-    joinpath(registry_dir(sandbox), "_drafts", domain, "$dataset.toml")
+drafts_file(part::ArchivePart; sandbox::Bool=false) =
+    joinpath(registry_dir(sandbox), "_drafts", part.domain,
+             part.dataset * (isempty(part.product) ? "" : "-$(part.product)") * ".toml")
 
 "Recorded draft of a record (`nothing` if none)."
-function read_draft(domain::AbstractString, dataset::AbstractString; sandbox::Bool=false)
-    path = drafts_file(domain, dataset; sandbox=sandbox)
+function read_draft(part::ArchivePart; sandbox::Bool=false)
+    path = drafts_file(part; sandbox=sandbox)
     return isfile(path) ? TOML.parsefile(path) : nothing
 end
 
-function write_draft(domain::AbstractString, dataset::AbstractString, dep, version::AbstractString;
-                     sandbox::Bool=false)
-    path = drafts_file(domain, dataset; sandbox=sandbox)
+function write_draft(part::ArchivePart, dep, version::AbstractString; sandbox::Bool=false)
+    path = drafts_file(part; sandbox=sandbox)
     mkpath(dirname(path))
     open(io -> TOML.print(io, Dict("draft_id" => dep["id"], "version" => version,
                                    "url" => dep["links"]["html"])), path, "w")
@@ -124,23 +193,23 @@ published_record(id::Integer; sandbox::Bool=false) =
     api("GET", "$(zenodo_url(sandbox))/api/records/$id"; missing_ok=true)
 
 """
-    open_draft(domain, dataset; sandbox=false) -> deposition
+    open_draft(part; sandbox=false) -> deposition
 
 Draft of the next version of a record: the draft recorded by an earlier `upload`, else
 a new version of the archived record in the registry, else an unpublished draft with
 the title of the record (from an upload not recorded here), else a new record.
 """
-function open_draft(domain::AbstractString, dataset::AbstractString; sandbox::Bool=false)
+function open_draft(part::ArchivePart; sandbox::Bool=false)
     base, token = zenodo_url(sandbox), zenodo_token(sandbox)
-    draft = read_draft(domain, dataset; sandbox=sandbox)
+    draft = read_draft(part; sandbox=sandbox)
     if draft !== nothing
         id = draft["draft_id"]
         published_record(id; sandbox=sandbox) === nothing ||
-            error("$domain/$dataset: draft $id is already published; register it first")
+            error("$(part_name(part)): draft $id is already published; register it first")
         println("Draft $id of an earlier upload")
         return api("GET", "$base/api/deposit/depositions/$id"; token=token)
     end
-    archived = get(registry_tables(domain, dataset; sandbox=sandbox), "_ZENODO", nothing)
+    archived = get(registry_tables(part.domain, part.dataset; sandbox=sandbox), zenodo_table(part), nothing)
     if archived !== nothing
         id = archived["record_id"]
         println("New version of record $id ($(archived["version"]))")
@@ -148,10 +217,10 @@ function open_draft(domain::AbstractString, dataset::AbstractString; sandbox::Bo
         r = api("POST", "$base/api/deposit/depositions/$id/actions/newversion"; token=token)
         return api("GET", r["links"]["latest_draft"]; token=token)
     end
-    title = record_title(domain, dataset)
+    title = record_title(part)
     drafts = filter(d -> get(d["metadata"], "title", "") == title && !d["submitted"],
                     api("GET", "$base/api/deposit/depositions?status=draft&size=100"; token=token))
-    length(drafts) > 1 && error("$domain/$dataset: several drafts titled \"$title\" " *
+    length(drafts) > 1 && error("$(part_name(part)): several drafts titled \"$title\" " *
                                 "($(join([d["id"] for d in drafts], ", "))); discard all but one")
     length(drafts) == 1 && (println("Draft $(only(drafts)["id"]) of an earlier upload"); return only(drafts))
     println("New record")
@@ -212,40 +281,66 @@ draft_md5(dep) = Dict(f["filename"] => replace(f["checksum"], "md5:" => "") for 
 # ---------------------------------------------------------------------------
 
 """
+    archive_releases(domain, dataset, files, version, tables; sandbox=false) -> [(part, files, version, meta)]
+
+The records of the release (`files` at `version`, registry `tables`) of a dataset on a
+domain to upload: each record (`archive_parts`) with files there and not archived at
+this version yet, with its files and metadata.
+"""
+function archive_releases(domain::AbstractString, dataset::AbstractString, files::Vector{ProductFile},
+                          version::AbstractString, tables::AbstractDict; sandbox::Bool=false)
+    parts = [(part, part_files(part, files)) for part in archive_parts(domain, dataset)]
+    others = [part.product for (part, fs) in parts if !isempty(part.product) && !isempty(fs)]
+    releases = []
+    for (part, fs) in parts
+        isempty(fs) && continue
+        z = get(tables, zenodo_table(part), Dict())
+        if get(z, "git_tag", "") == version
+            println("$(part_name(part)) $version: already archived (doi:$(z["doi"])), skipped")
+            continue
+        end
+        meta = record_metadata(part, fs, version; others=others)
+        sandbox && delete!(meta, "communities")   # the community exists only on Zenodo
+        total = sum(filesize(f.path) for f in fs)
+        println("$(part_name(part)) $version: $(length(fs)) files, $(round(total / 1e9; digits=2)) GB, $(part.license)")
+        push!(releases, (part, fs, version, meta))
+    end
+    return releases
+end
+
+"The records of `archive_releases` (dry run): title, version, licence, files and related identifiers."
+function print_releases(releases)
+    for (part, files, version, meta) in releases
+        println("\n$(meta["title"]), version $(meta["version"]), licence $(meta["license"])")
+        println("  files: ", join(basename.(files), ", "))
+        println("  related: ", join([r["relation"] * " " * r["identifier"] for r in meta["related_identifiers"]], ", "))
+    end
+end
+
+"""
     upload(dataset, domains=String[]; sandbox=false, allow_untagged=false, dry_run=false)
 
 Upload the release of a dataset on each domain (all domains with its files by default)
-to a draft of the next version of its Zenodo record, with its metadata. Each domain
-must be released on the store at the version of its local files; all are checked
-first. Running it again continues the recorded drafts. The drafts are then published
-with `publish`.
+to drafts of the next versions of its Zenodo records (see `ArchivePart`), with their
+metadata. Each domain must be released on the store at the version of its local files;
+all are checked first. Running it again continues the recorded drafts. The drafts are
+then published with `publish`. With `dry_run`, only the records are listed.
 """
 function upload(dataset::AbstractString, domains=String[]; sandbox::Bool=false,
                 allow_untagged::Bool=false, dry_run::Bool=false)
     releases = []
     for domain in select_domains(dataset, domains)
-        files, version, tables = released_files(domain, dataset; sandbox=sandbox, allow_untagged=allow_untagged)
-        if get(get(tables, "_ZENODO", Dict()), "git_tag", "") == version
-            println("$domain/$dataset $version: already archived (doi:$(tables["_ZENODO"]["doi"])), skipped")
-            continue
-        end
-        meta = record_metadata(domain, dataset, files, version)
-        sandbox && delete!(meta, "communities")   # the community exists only on Zenodo
-        total = sum(filesize(f.path) for f in files)
-        println("$domain/$dataset $version: $(length(files)) files, $(round(total / 1e9; digits=2)) GB")
-        push!(releases, (domain, files, version, meta))
+        all_files, version, tables = released_files(domain, dataset; sandbox=sandbox, allow_untagged=allow_untagged)
+        append!(releases, archive_releases(domain, dataset, all_files, version, tables; sandbox=sandbox))
     end
     if dry_run
-        for (domain, files, version, meta) in releases
-            println("\n$(meta["title"]), version $(meta["version"])")
-            println("  related: ", join([r["relation"] * " " * r["identifier"] for r in meta["related_identifiers"]], ", "))
-        end
+        print_releases(releases)
         return nothing
     end
-    for (domain, files, version, meta) in releases
-        println("\n$domain/$dataset")
-        dep = open_draft(domain, dataset; sandbox=sandbox)
-        write_draft(domain, dataset, dep, version; sandbox=sandbox)
+    for (part, files, version, meta) in releases
+        println("\n$(part_name(part))")
+        dep = open_draft(part; sandbox=sandbox)
+        write_draft(part, dep, version; sandbox=sandbox)
         # Metadata first, so that an interrupted draft has its title (see open_draft)
         api("PUT", "$(zenodo_url(sandbox))/api/deposit/depositions/$(dep["id"])";
             token=zenodo_token(sandbox), json=Dict("metadata" => meta))
@@ -260,13 +355,13 @@ function upload(dataset::AbstractString, domains=String[]; sandbox::Bool=false,
             julia fesmdata.jl archive publish $dataset$flags""")
 end
 
-"Recorded drafts of a dataset that are not published yet, as domain => draft."
+"Recorded drafts of a dataset that are not published yet, as part => draft."
 function open_drafts(dataset::AbstractString, domains=String[]; sandbox::Bool=false)
-    drafts = Pair{String,Any}[]
-    for domain in (isempty(domains) ? release_domains(dataset) : domains)
-        draft = read_draft(domain, dataset; sandbox=sandbox)
+    drafts = Pair{ArchivePart,Any}[]
+    for domain in (isempty(domains) ? release_domains(dataset) : domains), part in archive_parts(domain, dataset)
+        draft = read_draft(part; sandbox=sandbox)
         draft === nothing && continue
-        published_record(draft["draft_id"]; sandbox=sandbox) === nothing && push!(drafts, domain => draft)
+        published_record(draft["draft_id"]; sandbox=sandbox) === nothing && push!(drafts, part => draft)
     end
     return drafts
 end
@@ -285,21 +380,22 @@ function publish(dataset::AbstractString, domains=String[]; sandbox::Bool=false,
     isempty(drafts) && error("no unpublished drafts of $dataset (run upload first)")
     base, token = zenodo_url(sandbox), zenodo_token(sandbox)
     println("Drafts to publish on $base:")
-    for (domain, draft) in drafts
+    for (part, draft) in drafts
         id = draft["draft_id"]
         dep = api("GET", "$base/api/deposit/depositions/$id"; token=token)
-        files, version, _ = released_files(domain, dataset; sandbox=sandbox, allow_untagged=allow_untagged)
-        check_remote_files(files, draft_md5(dep), "draft $id ($domain/$dataset, run upload again)")
-        println("  ", rpad(domain, 16), rpad(id, 10), get(dep["metadata"], "title", "(no title)"),
-                ", $version, $(length(files)) files")
+        all_files, version, _ = released_files(part.domain, dataset; sandbox=sandbox, allow_untagged=allow_untagged)
+        files = part_files(part, all_files)
+        check_remote_files(files, draft_md5(dep), "draft $id ($(part_name(part)), run upload again)")
+        println("  ", rpad(part.domain, 16), rpad(id, 10), get(dep["metadata"], "title", "(no title)"),
+                ", $version, $(length(files)) files, $(part.license)")
     end
     yes || confirm("Publish these $(length(drafts)) drafts? This cannot be undone.") ||
         (println("Nothing published."); return String[])
-    for (domain, draft) in drafts
+    for (part, draft) in drafts
         api("POST", "$base/api/deposit/depositions/$(draft["draft_id"])/actions/publish"; token=token)
-        println("$domain/$dataset: published $(draft["draft_id"])")
+        println("$(part_name(part)): published $(draft["draft_id"])")
     end
-    return register(dataset, first.(drafts); sandbox=sandbox, allow_untagged=allow_untagged)
+    return register(dataset, unique(p.domain for p in first.(drafts)); sandbox=sandbox, allow_untagged=allow_untagged)
 end
 
 """
@@ -312,17 +408,17 @@ Zenodo website) are skipped.
 function register(dataset::AbstractString, domains=String[]; sandbox::Bool=false,
                   allow_untagged::Bool=false)
     dataset_config(dataset)
-    domains = isempty(domains) ? filter(d -> read_draft(d, dataset; sandbox=sandbox) !== nothing, release_domains(dataset)) : domains
-    isempty(domains) && error("no drafts of $dataset to register (run upload first)")
+    parts = [part for domain in (isempty(domains) ? release_domains(dataset) : domains)
+             for part in archive_parts(domain, dataset) if read_draft(part; sandbox=sandbox) !== nothing]
+    isempty(parts) && error("no drafts of $dataset to register (run upload first)")
     written = String[]
-    for domain in domains
-        draft = read_draft(domain, dataset; sandbox=sandbox)
-        draft === nothing && (println("$domain/$dataset: no draft"); continue)
+    for part in parts
+        draft = read_draft(part; sandbox=sandbox)
         id = draft["draft_id"]
         rec = published_record(id; sandbox=sandbox)
-        rec === nothing && (println("$domain/$dataset: draft $id is not published yet, skipped ($(draft["url"]))"); continue)
-        push!(written, register_record(domain, dataset, rec; sandbox=sandbox, allow_untagged=allow_untagged))
-        rm(drafts_file(domain, dataset; sandbox=sandbox))
+        rec === nothing && (println("$(part_name(part)): draft $id is not published yet, skipped ($(draft["url"]))"); continue)
+        push!(written, register_record(part, rec; sandbox=sandbox, allow_untagged=allow_untagged))
+        rm(drafts_file(part; sandbox=sandbox))
     end
     isempty(written) || sandbox || println("""
 
@@ -332,18 +428,20 @@ function register(dataset::AbstractString, domains=String[]; sandbox::Bool=false
 end
 
 """
-    register_record(domain, dataset, rec; sandbox=false, allow_untagged=false)
+    register_record(part, rec; sandbox=false, allow_untagged=false)
 
 Add the DOIs of a published record `rec` (from the records API) to the registry file of
-its release (`[_ZENODO]`), after checking that its files are the released files.
+its release (`[_ZENODO]`, or `[_ZENODO_<product>]`), after checking that its files are
+the released files of the record.
 """
-function register_record(domain::AbstractString, dataset::AbstractString, rec;
-                         sandbox::Bool=false, allow_untagged::Bool=false)
-    files, version, tables = released_files(domain, dataset; sandbox=sandbox, allow_untagged=allow_untagged)
+function register_record(part::ArchivePart, rec; sandbox::Bool=false, allow_untagged::Bool=false)
+    domain, dataset = part.domain, part.dataset
+    all_files, version, tables = released_files(domain, dataset; sandbox=sandbox, allow_untagged=allow_untagged)
+    files = part_files(part, all_files)
     check_remote_files(files, Dict(f["key"] => replace(f["checksum"], "md5:" => "") for f in rec["files"]),
                        "record $(rec["id"])")
     base = zenodo_url(sandbox)
-    tables["_ZENODO"] = Dict(
+    tables[zenodo_table(part)] = Dict(
         "record_id" => rec["id"],
         "concept_record_id" => parse(Int, string(rec["conceptrecid"])),
         "doi" => rec["doi"],
@@ -355,28 +453,29 @@ function register_record(domain::AbstractString, dataset::AbstractString, rec;
     )
     path = registry_file(domain, dataset; sandbox=sandbox)
     write_registry(path, tables, read_record(domain, dataset; sandbox=sandbox)[2])
-    println("$domain/$dataset: doi:$(rec["doi"]) added to $path")
+    println("$(part_name(part)): doi:$(rec["doi"]) added to $path")
     return path
 end
 
 """
     status(dataset, domains=String[]; sandbox=false)
 
-State of the archive of a dataset on each domain (all domains by default): the
-registered release, the recorded draft (and whether it is published), and the
-archived version with its DOI.
+State of the archive of a dataset on each domain (all domains by default), per record
+(see `ArchivePart`): the registered release, the recorded draft (and whether it is
+published), and the archived version with its DOI.
 """
 function status(dataset::AbstractString, domains=String[]; sandbox::Bool=false)
     dataset_config(dataset)
-    println(rpad("Domain", 16), rpad("Released", 22), rpad("Draft", 26), "Archived")
-    for domain in (isempty(domains) ? release_domains(dataset) : domains)
+    println(rpad("Record", 36), rpad("Released", 22), rpad("Draft", 26), "Archived")
+    for domain in (isempty(domains) ? release_domains(dataset) : domains), part in archive_parts(domain, dataset)
         tables = registry_tables(domain, dataset; sandbox=sandbox)
         relinfo = haskey(tables, "_RELEASE") ? tables["_RELEASE"]["git_tag"] : "-"
-        draft = read_draft(domain, dataset; sandbox=sandbox)
+        draft = read_draft(part; sandbox=sandbox)
         draftinfo = draft === nothing ? "-" :
             "$(draft["draft_id"]) " * (published_record(draft["draft_id"]; sandbox=sandbox) === nothing ? "(not published)" : "(published)")
-        archinfo = haskey(tables, "_ZENODO") ? "$(tables["_ZENODO"]["git_tag"]) doi:$(tables["_ZENODO"]["doi"])" : "-"
-        println(rpad(domain, 16), rpad(relinfo, 22), rpad(draftinfo, 26), archinfo)
+        z = get(tables, zenodo_table(part), nothing)
+        archinfo = z === nothing ? "-" : "$(z["git_tag"]) doi:$(z["doi"])"
+        println(rpad(part_name(part), 36), rpad(relinfo, 22), rpad(draftinfo, 26), archinfo)
     end
 end
 
@@ -391,7 +490,7 @@ function discard(dataset::AbstractString, domains=String[]; sandbox::Bool=false)
     drafts = open_drafts(dataset, domains; sandbox=sandbox)
     isempty(drafts) && (println("No unpublished drafts of $dataset"); return)
     discard_drafts([d["draft_id"] for (_, d) in drafts]; sandbox=sandbox)
-    foreach(((domain, _),) -> rm(drafts_file(domain, dataset; sandbox=sandbox)), drafts)
+    foreach(((part, _),) -> rm(drafts_file(part; sandbox=sandbox)), drafts)
 end
 
 """

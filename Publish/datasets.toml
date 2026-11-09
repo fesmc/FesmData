@@ -96,8 +96,13 @@ Reconstructions of past ice sheets and topography (ICE-5G, ICE-6G_C, ICE-6G_D,
 PaleoMIST, GLAC-1D, PRISM4), ice extents (Batchelor et al., 2019, and a last-glacial-cycle
 combination with PaleoMIST), the deglaciation of Greenland (PaleoGrIS) and the ice
 streams of the Laurentide ice sheet, remapped conservatively onto the grids of a model
-domain, or onto global lon-lat grids.
+domain, or onto global lon-lat grids. The basal shear stress of PaleoMIST
+(IceHistory-PaleoMIST_taub, from ICESHEET 2.0) is under the GPL-3.0, the other files
+under the licences of their sources (see the README).
 """
+# Products archived on Zenodo in records of their own, with their licence (Zenodo ids;
+# see README.md, Archive on Zenodo)
+licenses = { PaleoMIST_taub = "gpl-3.0-only" }
 
 [Stratigraphy]
 tag = "stratigraphy"
