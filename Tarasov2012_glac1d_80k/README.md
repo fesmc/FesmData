@@ -64,5 +64,7 @@ the 0.5° x 0.25° grid of the PMIP4 ice thickness (global, longitudes in -180:1
 
 The rest of the globe changes source between 26.1 ka (PaleoMIST) and 26 ka (PMIP4
 GLAC-1D), with a step in the ice volume there, mostly in Eurasia; it is not smoothed.
-`prepare.jl` prints its size (the volume outside the regional grids at 26 ka from each
-source) and the global ice volume at 80, 26, 21 and 0 ka.
+Outside the regional grids, the ice volume at 26 ka is 11.48 m sea-level equivalent in
+PaleoMIST (interpolated) and 12.07 m in the PMIP4 GLAC-1D, a step of 0.59 m. `prepare.jl`
+prints these and the global ice volume at 80, 26, 21 and 0 ka (ice density 910 kg m-3,
+ocean area 361e6 km2, as `../Gowan2021_PaleoMIST_esl/`).
