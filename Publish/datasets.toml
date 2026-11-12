@@ -301,8 +301,11 @@ title = "GPS vertical velocities"
 readme = "GPS/README.md"
 keywords = ["GPS", "vertical land motion", "glacial isostatic adjustment", "uplift rates"]
 description = """
-Vertical velocities of about 4000 GPS stations corrected for non-GIA effects, as
-observational estimates of GIA uplift rates (Schumacher et al., 2018).
+Vertical velocities of GPS stations to test models of glacial isostatic adjustment:
+global (Schumacher et al., 2018, corrected for non-GIA effects; the MIDAS velocities of
+the Nevada Geodetic Laboratory, uncorrected), Fennoscandia (BIFROST2015), Greenland
+(GNET) and Antarctica, with the elastic response to present ice changes removed or
+given.
 """
 
 [SMBObs]
