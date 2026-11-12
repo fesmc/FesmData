@@ -1468,6 +1468,15 @@ doi = "10.1029/2023JB026653"
 extract = true
 uri = "https://osf.io/download/j485x/"
 
+# Vestøl et al. (2019): land uplift model NKG2016LU of Fennoscandia (absolute and
+# levelled uplift, standard uncertainty; 1/12° x 1/6°), Lantmäteriet (CC BY 4.0).
+
+[vestol2019_nkg2016lu]
+key = "vestol2019_nkg2016lu.zip"
+doi = "10.1007/s00190-019-01280-8"
+extract = true
+uri = "https://www.lantmateriet.se/sv/geodata/gps-geodesi-och-swepos/Referenssystem/Landhojning/contentassets/nkg2016lu-with-readme.zip"
+
 # Ice cores (IceCores/)
 # ---------------------------------------------------------------------------
 

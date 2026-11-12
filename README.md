@@ -134,6 +134,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | paleo    | Uemura2018_DomeFuji         | Dome Fuji water isotopes and temperatures, 720 kyr | Uemura et al. (2012, 2018)     |
 | smb      | vanDalum2025_racmo24        | Antarctic SMB and surface climate, RACMO2.4p1    | van Dalum et al. (2025)        |
 | smb      | vanWessem2023_racmo23       | Antarctic SMB and surface climate, RACMO2.3p2    | van Wessem et al. (2018, 2023) |
+| geo      | Vestol2019_nkg2016lu        | Land uplift model NKG2016LU of Fennoscandia | Vestøl et al. (2019) |
 | paleo    | Vinther2009_elevations      | Elevations at the ice core locations             | Vinther et al. (2009)          |
 | paleo    | Waelbroeck2002_sealevel     | Sea level from benthic foraminifera, 430 kyr     | Waelbroeck et al. (2002)       |
 | paleo    | WAIS2015_WDC                | WAIS Divide d18O, 68 kyr                         | WAIS Divide Project Members (2015) |

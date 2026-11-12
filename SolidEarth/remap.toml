@@ -1,5 +1,6 @@
 # Solid Earth structure for glacial isostatic adjustment: lithosphere thickness and
-# mantle viscosity (thematic dataset, see ../Remap/DATASETS.md).
+# mantle viscosity, and gridded present-day uplift rates to test GIA models (thematic
+# dataset, see ../Remap/DATASETS.md).
 #
 # Each table of `products` is a product, written as <GRID>_SolidEarth-<name>.nc on its `grids` (by domain), from the prepared file `file` of the source
 # `source` (made by <source>/prepare.jl in $FESMDATA_PREPARED/<source>/). See
@@ -59,3 +60,11 @@ file = "Hazzard2023_visc.nc"
 variables = ["log10_visc", "log10_visc_sd"]
 grids = { Antarctica = 16 }
 figure = { select = { depth = 200000 } }
+
+[products.NKG2016LU]
+source = "Vestol2019_nkg2016lu"
+file = "Vestol2019_NKG2016LU.nc"
+variables = ["uplift_rate", "uplift_rate_sd"]
+grids = { Eurasia = 4, Global = 25 }   # Fennoscandia only (49-75N, 0-50E): the Eurasia crop of North, and the global grids
+precision = { uplift_rate = 0.01, uplift_rate_sd = 0.01 }
+figure = { variables = ["uplift_rate"] }
