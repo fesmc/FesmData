@@ -78,6 +78,24 @@ variables = ["H_ice"]
 grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
 figure = { variables = ["H_ice"], hide = 0, colormap = "ice" }
 
+# GLAC-1D extended to 80 ka, global: the regional reconstructions (North America +
+# Greenland nn9894, as in PMIP4, or nn9927; Antarctica nn4041) and elsewhere the PMIP4
+# GLAC-1D from 26 ka and PaleoMIST 1.0 before (Tarasov2012_glac1d_80k/README.md); on
+# 0.25° for the global grids of GIA models
+[products.GLAC1D_80k]
+source = "Tarasov2012_glac1d_80k"
+file = "Tarasov2012_GLAC1D_80k.nc"
+variables = ["H_ice", "f_ice"]
+grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 25 }
+figure = { variables = ["H_ice"], hide = 0, colormap = "ice" }
+
+[products.GLAC1D_nn9927_80k]
+source = "Tarasov2012_glac1d_80k"
+file = "Tarasov2012_GLAC1D_nn9927_80k.nc"
+variables = ["H_ice", "f_ice"]
+grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 25 }
+figure = { variables = ["H_ice"], hide = 0, colormap = "ice" }
+
 [products.PaleoGrIS]
 source = "Leger2024_PaleoGris"
 file = "Leger2024_PaleoGrIS.nc"

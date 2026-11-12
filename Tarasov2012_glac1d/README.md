@@ -88,3 +88,10 @@ The products of `IceHistory/remap.toml` combine them: `GLAC1D` (the two PMIP4 fi
 `GLAC1D_nn9927` and `GLAC1D_nn9894` (North America + Greenland of the variant with
 Antarctica). The regional products cover only North America, Greenland and Antarctica:
 `f_valid` is 0 elsewhere (Eurasia is not in the regional files).
+
+## Extended to 80 ka
+
+`../Tarasov2012_glac1d_80k/` splices these files into global ice histories from 80 ka,
+the products `GLAC1D_80k` (North America nn9894) and `GLAC1D_nn9927_80k`: the regional
+reconstructions where their grids are, and elsewhere the PMIP4 GLAC-1D from 26 ka and
+PaleoMIST 1.0 before (see its README).
