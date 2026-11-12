@@ -1828,6 +1828,15 @@ uri = "https://doi.pangaea.de/10.1594/PANGAEA.889923?format=textfile"
 doi = "10.1002/2015JB012552"
 storage_path = "$datasets_dir/blewitt2016_midas/2026-11-12/midas.IGS.txt"
 uri = "https://geodesy.unr.edu/gps_timeseries/IGS20/midas/midas.IGS.txt"
+
+# Kierulf et al. (2021): BIFROST2015 GNSS velocities of Fennoscandia (164 stations,
+# ITRF2008) with their elastic corrections, supplement of the article (CC BY 4.0).
+
+[kierulf2021_bifrost]
+key = "kierulf2021_bifrost.zip"
+doi = "10.1016/j.jog.2021.101845"
+extract = true
+uri = "https://ars.els-cdn.com/content/image/1-s2.0-S0264370721000314-mmc1.zip"
 uri = "https://pmc-oa-opendata.s3.amazonaws.com/PMC5111427.1/JGRB-121-6947-s002.xlsx"
 
 # ---------------------------------------------------------------------------

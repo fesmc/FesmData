@@ -8,3 +8,7 @@ file = "Schumacher2018_GPS.nc"
 [products.MIDAS]
 source = "Blewitt2016_midas"
 file = "Blewitt2016_MIDAS.nc"
+
+[products.BIFROST2015]
+source = "Kierulf2021_bifrost"
+file = "Kierulf2021_BIFROST2015.nc"

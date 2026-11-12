@@ -79,6 +79,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | ice      | Joughin2018                 | Greenland ice surface velocity                   | Joughin et al. (2018)          |
 | ocean    | Jourdain2020_ismip6         | ISMIP6 Antarctic ocean climatology (deprecated, see Zhou2026_ismip7ocean) | Jourdain et al. (2020) |
 | paleo    | Jouzel2007_EDC              | EPICA Dome C deuterium and temperature, 800 kyr  | Jouzel et al. (2007)           |
+| geo      | Kierulf2021_bifrost         | BIFROST2015 GNSS velocities of Fennoscandia, observed and elastic | Kierulf et al. (2021) |
 | paleo    | Kindler2014                 | NGRIP temperature reconstruction, 10-120 kyr b2k | Kindler et al. (2014)          |
 | paleo    | Koehler2017_GHG             | CO2, CH4, N2O splines and radiative forcing, 156 kyr | Köhler et al. (2017)           |
 | paleo    | Lambeck2014_esl             | Ice-volume equivalent sea level, 35 ka to present | Lambeck et al. (2014)          |
