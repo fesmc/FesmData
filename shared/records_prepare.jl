@@ -1,6 +1,7 @@
 # Helpers of the prepare.jl of record sources (see ../Records/README.md): readers of the
-# text tables of the data centres (NOAA NCEI template, PANGAEA), a writer of time series
-# at sites (featureType timeSeries), and the AICC2023 ages of the Antarctic cores and
+# text tables of the data centres (NOAA NCEI template, PANGAEA), writers of time series
+# at sites (featureType timeSeries) and of one value per site (featureType point), and
+# the AICC2023 ages of the Antarctic cores and
 # NGRIP (../Bouchet2023_AICC2023). Include after provenance.jl; needs NCDatasets.
 
 using NCDatasets
@@ -263,6 +264,55 @@ function write_series(path::AbstractString; sites::Vector{Site}, time::AbstractV
         ds.attrib["doi"] = doi
         ds.attrib["license"] = license
         ds.attrib["featureType"] = "timeSeries"
+        ds.attrib["Conventions"] = "CF-1.11"
+        foreach(((k, v),) -> ds.attrib[k] = v, provenance_attrib(tag))
+    end
+    println("Wrote $path")
+    return path
+end
+
+# ---------------------------------------------------------------------------
+# One value per site
+# ---------------------------------------------------------------------------
+
+"""
+    write_points(path; sites, vars, title, references, doi, license, tag,
+                 site_long_name="site", attrib=Pair{String,String}[])
+
+Write a record of one value per site (featureType point, dimension `station`, e.g. the
+velocity of each GPS station): `site_name` (described as `site_long_name`), `lat`, `lon`
+(longitudes in -180:180) and `z_srf` (if known for all sites), and the `vars`, each a
+vector on the sites. The global attributes are `title`, `references`, `doi`, `license`,
+`attrib` (e.g. the reference frame) and the CF and provenance attributes of `tag`.
+"""
+function write_points(path::AbstractString; sites::Vector{Site}, vars::Vector{Var}, title::AbstractString,
+                      references::AbstractString, doi::AbstractString, license::AbstractString,
+                      tag::AbstractString, site_long_name::AbstractString="site",
+                      attrib::Vector{<:Pair{<:AbstractString,<:AbstractString}}=Pair{String,String}[])
+    ns = length(sites)
+    all(s -> -90 <= s.lat <= 90 && -180 <= s.lon <= 180, sites) || error("$path: locations outside -90:90, -180:180")
+    mkpath(dirname(path))
+    rm(path; force=true)
+    NCDataset(path, "c") do ds
+        defDim(ds, "station", ns)
+        defVar(ds, "site_name", [s.name for s in sites], ("station",); attrib=["long_name" => site_long_name])
+        defVar(ds, "lat", [s.lat for s in sites], ("station",); attrib=["units" => "degrees_north", "standard_name" => "latitude"])
+        defVar(ds, "lon", [s.lon for s in sites], ("station",); attrib=["units" => "degrees_east", "standard_name" => "longitude"])
+        if all(s -> s.z_srf !== nothing, sites)
+            defVar(ds, "z_srf", [s.z_srf for s in sites], ("station",);
+                   attrib=["units" => "m", "long_name" => "present surface elevation of the site"])
+        end
+        for v in vars
+            length(v.data) == ns || error("$path: $(v.name) has $(length(v.data)) values, not one per site ($ns)")
+            defVar(ds, v.name, _values(v.T, v.data), ("station",); fillvalue=_fill(v.T),
+                   attrib=["units" => v.units, "long_name" => v.long_name, "coordinates" => "lat lon", v.attrib...])
+        end
+        ds.attrib["title"] = title
+        ds.attrib["references"] = references
+        ds.attrib["doi"] = doi
+        ds.attrib["license"] = license
+        foreach(((k, v),) -> ds.attrib[k] = v, attrib)
+        ds.attrib["featureType"] = "point"
         ds.attrib["Conventions"] = "CF-1.11"
         foreach(((k, v),) -> ds.attrib[k] = v, provenance_attrib(tag))
     end
