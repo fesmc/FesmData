@@ -1,8 +1,9 @@
-# SolidEarth: lithosphere thickness and mantle viscosity
+# SolidEarth: lithosphere thickness, mantle viscosity and land uplift
 
 Lithosphere thickness (m) and mantle viscosity (log10 of the viscosity in Pa s, on
 depth) from published Earth structures for glacial isostatic adjustment (GIA) models,
-remapped onto the grids of the domains and onto global lon-lat grids. SolidEarth is a
+and gridded present-day land uplift rates (mm yr-1) to test GIA models, remapped onto
+the grids of the domains and onto global lon-lat grids. SolidEarth is a
 thematic dataset made by remapping (see [Gridded
 data](https://fesmc.github.io/FesmData/remap.html)): its products are defined in
 `SolidEarth/remap.toml`.
@@ -18,6 +19,7 @@ data](https://fesmc.github.io/FesmData/remap.html)): its products are defined in
 | `SolidEarth-Wiens2022` (not released) | Wiens et al. (2022), Ivins et al. (2022): Antarctic upper-mantle viscosity from ANT-20, 40 km, [doi:10.1144/M56-2020-18](https://doi.org/10.1144/M56-2020-18) | `log10_visc` on `depth` (100, 200, 300 km) | Antarctica (16 km and coarser) |
 | `SolidEarth-Hazzard2023-litho` | Hazzard et al. (2023): Antarctic lithosphere from ANT-20 (1200 °C isotherm), 0.5°, south of 60°S, [doi:10.1029/2023JB026653](https://doi.org/10.1029/2023JB026653) | `z_litho`, `z_litho_sd` (standard deviation) | Antarctica |
 | `SolidEarth-Hazzard2023-visc` | Hazzard et al. (2023): Antarctic mantle viscosity from ANT-20, 0.5°, south of 45°S | `log10_visc`, `log10_visc_sd` (standard deviation) on `depth` (75-400 km every 25 km) | Antarctica (16 km and coarser) |
+| `SolidEarth-NKG2016LU` | Vestøl et al. (2019): land uplift model NKG2016LU of Fennoscandia and the Baltic region, absolute uplift (ITRF2008), 1/12° x 1/6°, 49-75°N, 0-50°E, [doi:10.1007/s00190-019-01280-8](https://doi.org/10.1007/s00190-019-01280-8) | `uplift_rate`, `uplift_rate_sd` (standard uncertainty), mm yr-1 | Eurasia (4 km and coarser), Global (0.25° and coarser) |
 
 `log10_visc` is the log10 of the viscosity in Pa s (units `log10(Pa s)`); `depth` is
 in m, positive down, from the surface (from the Earth radius of the model where the
@@ -34,6 +36,20 @@ instead of the regular global lon-lat grids.
 obtained by personal communication, are made but left out of the releases
 (`release = false`) until their authors agree to their redistribution (to be asked),
 although the isostasy_data archive on Zenodo already redistributes them under CC BY 4.0.
+
+## Land uplift
+
+`SolidEarth-NKG2016LU` is the absolute land uplift NKG2016LU_abs (relative to the
+Earth's centre of mass, ITRF2008) and its standard uncertainty: a semi-empirical model
+of the GNSS uplift rates of BIFROST, levelling and tide gauges, with a GIA model filling
+the gaps and the area outside the observations (where the uncertainty grows from about
+0.2 to 0.7 mm/yr). It is the observed total uplift: the elastic response to present ice
+and water changes is **not removed** (as the long name of `uplift_rate` says; 0.5-1.35
+mm/yr at the BIFROST stations). The station velocities, with their elastic part, are
+the records `GPS-BIFROST2015` and `GPS-MIDAS` (see
+[GPS](https://fesmc.github.io/FesmData/datasets/gps.html)). It is made on the Eurasia
+crop of the North domain, which covers Fennoscandia, and on the global grids (missing
+outside 49-75°N, 0-50°E).
 
 ## Relation to isostasy_data
 
@@ -53,7 +69,7 @@ original files where they are published:
 
 The float fields are rounded on output to a tolerance by kind (see [Precision and file
 sizes](https://fesmc.github.io/FesmData/precision.html)): `z_litho` and
-`z_litho_sd` to 0.01 m; `log10_visc` and `log10_visc_sd` to 3 significant digits (about
+`z_litho_sd` to 0.01 m; `uplift_rate` and `uplift_rate_sd` to 0.01 mm yr-1; `log10_visc` and `log10_visc_sd` to 3 significant digits (about
 0.01, 2% in viscosity); `f_valid` to 0.001.
 
 ## Licences
@@ -65,6 +81,7 @@ sizes](https://fesmc.github.io/FesmData/precision.html)): `z_litho` and
 | Lloyd et al. (2024) | CC BY 4.0 (supporting information of the article) |
 | Wiens et al. (2022) | Not published by the authors, no licence stated (provided by D. A. Wiens for isostasy_data, archived under CC BY 4.0): not released until the authors agree |
 | Hazzard et al. (2023) | No licence set on OSF (article CC BY 4.0); publishing assumed to be allowed |
+| Vestøl et al. (2019), NKG2016LU | CC BY 4.0 (Lantmäteriet) |
 
 The licence of each source is in its README and in the `license` attribute of its
 files. A source can be released under the FesmData licence (CC BY 4.0) only if its own

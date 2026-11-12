@@ -4,3 +4,19 @@
 [products.Schumacher2018]
 source = "Schumacher2018_gps"
 file = "Schumacher2018_GPS.nc"
+
+[products.MIDAS]
+source = "Blewitt2016_midas"
+file = "Blewitt2016_MIDAS.nc"
+
+[products.BIFROST2015]
+source = "Kierulf2021_bifrost"
+file = "Kierulf2021_BIFROST2015.nc"
+
+[products.GNET]
+source = "Berg2024_gnet"
+file = "Berg2024_GNET.nc"
+
+[products.MartinEspanol2016]
+source = "MartinEspanol2016_gps"
+file = "MartinEspanol2016_GPS.nc"

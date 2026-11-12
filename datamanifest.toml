@@ -1467,6 +1467,16 @@ key = "hazzard2023_visc.zip"
 doi = "10.1029/2023JB026653"
 extract = true
 uri = "https://osf.io/download/j485x/"
+
+# Vestøl et al. (2019): land uplift model NKG2016LU of Fennoscandia (absolute and
+# levelled uplift, standard uncertainty; 1/12° x 1/6°), Lantmäteriet (CC BY 4.0).
+
+[vestol2019_nkg2016lu]
+key = "vestol2019_nkg2016lu.zip"
+doi = "10.1007/s00190-019-01280-8"
+extract = true
+uri = "https://www.lantmateriet.se/sv/geodata/gps-geodesi-och-swepos/Referenssystem/Landhojning/contentassets/nkg2016lu-with-readme.zip"
+
 # Ice cores (IceCores/)
 # ---------------------------------------------------------------------------
 
@@ -1818,6 +1828,49 @@ uri = "https://dataverse.geus.dk/api/access/datafile/84072"
 doi = "10.1594/PANGAEA.889923"
 storage_path = "$datasets_dir/schumacher2018_gps/Schumacher_etal_2018_GIA.tab"
 uri = "https://doi.pangaea.de/10.1594/PANGAEA.889923?format=textfile"
+
+# Blewitt et al. (2016): MIDAS velocities of all GPS stations of the Nevada Geodetic
+# Laboratory, IGS20 (CC BY 4.0). NGL updates the file weekly: the folder is the date of
+# the snapshot (a new snapshot is a new date here).
+
+[blewitt2016_midas]
+doi = "10.1002/2015JB012552"
+storage_path = "$datasets_dir/blewitt2016_midas/2026-11-12/midas.IGS.txt"
+uri = "https://geodesy.unr.edu/gps_timeseries/IGS20/midas/midas.IGS.txt"
+
+# Kierulf et al. (2021): BIFROST2015 GNSS velocities of Fennoscandia (164 stations,
+# ITRF2008) with their elastic corrections, supplement of the article (CC BY 4.0).
+
+[kierulf2021_bifrost]
+key = "kierulf2021_bifrost.zip"
+doi = "10.1016/j.jog.2021.101845"
+extract = true
+uri = "https://ars.els-cdn.com/content/image/1-s2.0-S0264370721000314-mmc1.zip"
+
+# Berg et al. (2024): GNET vertical velocities of Greenland, observed and elastic (55
+# stations, IGS14), from the data of Lewright et al. (2025) (Zenodo, CC BY 4.0), with the
+# station names, coordinates and series of Berg et al. (Dryad/Zenodo, CC0).
+
+[lewright2025_vlm]
+key = "lewright2025_vlm.zip"
+doi = "10.5281/zenodo.16878392"
+extract = true
+uri = "https://zenodo.org/records/16878392/files/Greenland_SL_Projections_model_output.zip?download=1"
+
+[berg2024_gnet]
+key = "berg2024_gnet.zip"
+doi = "10.5061/dryad.9zw3r22n0"
+extract = true
+uri = "https://zenodo.org/records/10048911/files/GNET_NEU_v2022_5_31.zip?download=1"
+
+# Martín-Español et al. (2016): elastic-corrected GPS vertical velocities of Antarctica
+# (67 stations, 2009-2014), Table S1 of the article, open-access copy of PubMed Central
+# (CC BY 4.0).
+
+[martinespanol2016_gps]
+doi = "10.1002/2016JB013154"
+storage_path = "$datasets_dir/martinespanol2016_gps/JGRB-121-6947-s002.xlsx"
+uri = "https://pmc-oa-opendata.s3.amazonaws.com/PMC5111427.1/JGRB-121-6947-s002.xlsx"
 
 # ---------------------------------------------------------------------------
 # SMB observations (SMBObs/)

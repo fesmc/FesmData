@@ -48,7 +48,9 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | paleo    | Batchelor2019_PaleoMIST_lgc | Global ice extents of the last glacial cycle (Batchelor north, PaleoMIST south) | Batchelor et al. (2019), Gowan et al. (2021) |
 | paleo    | Bereiter2015_CO2            | Antarctic ice core CO2 composite, 800 kyr        | Bereiter et al. (2015)         |
 | paleo    | Berends2021_sealevel        | Sea level and CO2 of an ice-sheet-climate model, 3.6 Myr | Berends et al. (2021)          |
+| geo      | Berg2024_gnet               | GNET GNSS vertical velocities of Greenland, observed and elastic | Berg et al. (2024) |
 | paleo    | Bintanja2008_sealevel       | Sea level, NH ice volume and temperature, 3 Myr  | Bintanja and van de Wal (2008) |
+| geo      | Blewitt2016_midas           | MIDAS GPS velocities of the Nevada Geodetic Laboratory, global | Blewitt et al. (2016) |
 | paleo    | Bouchet2023_AICC2023        | AICC2023 ice core chronology (EDC, EDML, NGRIP, TALDICE, Vostok) | Bouchet et al. (2023)          |
 | paleo    | Buizert2018                 | Greenland seasonal temperatures, 22 ka to present | Buizert et al. (2018)         |
 | paleo    | Buizert2018_cores           | Seasonal temperatures at Greenland ice core sites, 22 ka | Buizert et al. (2018)          |
@@ -78,6 +80,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | ice      | Joughin2018                 | Greenland ice surface velocity                   | Joughin et al. (2018)          |
 | ocean    | Jourdain2020_ismip6         | ISMIP6 Antarctic ocean climatology (deprecated, see Zhou2026_ismip7ocean) | Jourdain et al. (2020) |
 | paleo    | Jouzel2007_EDC              | EPICA Dome C deuterium and temperature, 800 kyr  | Jouzel et al. (2007)           |
+| geo      | Kierulf2021_bifrost         | BIFROST2015 GNSS velocities of Fennoscandia, observed and elastic | Kierulf et al. (2021) |
 | paleo    | Kindler2014                 | NGRIP temperature reconstruction, 10-120 kyr b2k | Kindler et al. (2014)          |
 | paleo    | Koehler2017_GHG             | CO2, CH4, N2O splines and radiative forcing, 156 kyr | Köhler et al. (2017)           |
 | paleo    | Lambeck2014_esl             | Ice-volume equivalent sea level, 35 ka to present | Lambeck et al. (2014)          |
@@ -94,6 +97,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | geo      | Lucazeau2019_ghf            | Global geothermal heat flow                      | Lucazeau (2019)                |
 | ice      | MacGregor2025_strat         | Radiostratigraphy and age structure of the Greenland Ice Sheet | MacGregor et al. (2025) |
 | ice      | Margold2015_icestreams      | Ice stream outlines                              | Margold et al. (2015)          |
+| geo      | MartinEspanol2016_gps       | Elastic-corrected GPS vertical velocities of Antarctica | Martín-Español et al. (2016) |
 | geo      | Martos2017_ghf              | Antarctic geothermal heat flow                   | Martos et al. (2017)           |
 | geo      | Martos2018_ghf              | Geothermal heat flux of Greenland                | Martos et al. (2018)           |
 | paleo    | Montoya2008_climber3a       | CLIMBER-3α present-day and LGM (weak, strong AMOC) climatologies | Montoya & Levermann (2008) |
@@ -130,6 +134,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | paleo    | Uemura2018_DomeFuji         | Dome Fuji water isotopes and temperatures, 720 kyr | Uemura et al. (2012, 2018)     |
 | smb      | vanDalum2025_racmo24        | Antarctic SMB and surface climate, RACMO2.4p1    | van Dalum et al. (2025)        |
 | smb      | vanWessem2023_racmo23       | Antarctic SMB and surface climate, RACMO2.3p2    | van Wessem et al. (2018, 2023) |
+| geo      | Vestol2019_nkg2016lu        | Land uplift model NKG2016LU of Fennoscandia | Vestøl et al. (2019) |
 | paleo    | Vinther2009_elevations      | Elevations at the ice core locations             | Vinther et al. (2009)          |
 | paleo    | Waelbroeck2002_sealevel     | Sea level from benthic foraminifera, 430 kyr     | Waelbroeck et al. (2002)       |
 | paleo    | WAIS2015_WDC                | WAIS Divide d18O, 68 kyr                         | WAIS Divide Project Members (2015) |
