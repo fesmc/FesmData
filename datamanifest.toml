@@ -1837,6 +1837,22 @@ key = "kierulf2021_bifrost.zip"
 doi = "10.1016/j.jog.2021.101845"
 extract = true
 uri = "https://ars.els-cdn.com/content/image/1-s2.0-S0264370721000314-mmc1.zip"
+
+# Berg et al. (2024): GNET vertical velocities of Greenland, observed and elastic (55
+# stations, IGS14), from the data of Lewright et al. (2025) (Zenodo, CC BY 4.0), with the
+# station names, coordinates and series of Berg et al. (Dryad/Zenodo, CC0).
+
+[lewright2025_vlm]
+key = "lewright2025_vlm.zip"
+doi = "10.5281/zenodo.16878392"
+extract = true
+uri = "https://zenodo.org/records/16878392/files/Greenland_SL_Projections_model_output.zip?download=1"
+
+[berg2024_gnet]
+key = "berg2024_gnet.zip"
+doi = "10.5061/dryad.9zw3r22n0"
+extract = true
+uri = "https://zenodo.org/records/10048911/files/GNET_NEU_v2022_5_31.zip?download=1"
 uri = "https://pmc-oa-opendata.s3.amazonaws.com/PMC5111427.1/JGRB-121-6947-s002.xlsx"
 
 # ---------------------------------------------------------------------------

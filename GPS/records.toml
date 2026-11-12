@@ -12,3 +12,7 @@ file = "Blewitt2016_MIDAS.nc"
 [products.BIFROST2015]
 source = "Kierulf2021_bifrost"
 file = "Kierulf2021_BIFROST2015.nc"
+
+[products.GNET]
+source = "Berg2024_gnet"
+file = "Berg2024_GNET.nc"
