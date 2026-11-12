@@ -1467,6 +1467,7 @@ key = "hazzard2023_visc.zip"
 doi = "10.1029/2023JB026653"
 extract = true
 uri = "https://osf.io/download/j485x/"
+
 # Ice cores (IceCores/)
 # ---------------------------------------------------------------------------
 
@@ -1818,6 +1819,16 @@ uri = "https://dataverse.geus.dk/api/access/datafile/84072"
 doi = "10.1594/PANGAEA.889923"
 storage_path = "$datasets_dir/schumacher2018_gps/Schumacher_etal_2018_GIA.tab"
 uri = "https://doi.pangaea.de/10.1594/PANGAEA.889923?format=textfile"
+
+# Blewitt et al. (2016): MIDAS velocities of all GPS stations of the Nevada Geodetic
+# Laboratory, IGS20 (CC BY 4.0). NGL updates the file weekly: the folder is the date of
+# the snapshot (a new snapshot is a new date here).
+
+[blewitt2016_midas]
+doi = "10.1002/2015JB012552"
+storage_path = "$datasets_dir/blewitt2016_midas/2026-11-12/midas.IGS.txt"
+uri = "https://geodesy.unr.edu/gps_timeseries/IGS20/midas/midas.IGS.txt"
+uri = "https://pmc-oa-opendata.s3.amazonaws.com/PMC5111427.1/JGRB-121-6947-s002.xlsx"
 
 # ---------------------------------------------------------------------------
 # SMB observations (SMBObs/)

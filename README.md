@@ -49,6 +49,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | paleo    | Bereiter2015_CO2            | Antarctic ice core CO2 composite, 800 kyr        | Bereiter et al. (2015)         |
 | paleo    | Berends2021_sealevel        | Sea level and CO2 of an ice-sheet-climate model, 3.6 Myr | Berends et al. (2021)          |
 | paleo    | Bintanja2008_sealevel       | Sea level, NH ice volume and temperature, 3 Myr  | Bintanja and van de Wal (2008) |
+| geo      | Blewitt2016_midas           | MIDAS GPS velocities of the Nevada Geodetic Laboratory, global | Blewitt et al. (2016) |
 | paleo    | Bouchet2023_AICC2023        | AICC2023 ice core chronology (EDC, EDML, NGRIP, TALDICE, Vostok) | Bouchet et al. (2023)          |
 | paleo    | Buizert2018                 | Greenland seasonal temperatures, 22 ka to present | Buizert et al. (2018)         |
 | paleo    | Buizert2018_cores           | Seasonal temperatures at Greenland ice core sites, 22 ka | Buizert et al. (2018)          |

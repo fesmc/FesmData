@@ -4,3 +4,7 @@
 [products.Schumacher2018]
 source = "Schumacher2018_gps"
 file = "Schumacher2018_GPS.nc"
+
+[products.MIDAS]
+source = "Blewitt2016_midas"
+file = "Blewitt2016_MIDAS.nc"
