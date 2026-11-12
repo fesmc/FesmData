@@ -97,6 +97,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | geo      | Lucazeau2019_ghf            | Global geothermal heat flow                      | Lucazeau (2019)                |
 | ice      | MacGregor2025_strat         | Radiostratigraphy and age structure of the Greenland Ice Sheet | MacGregor et al. (2025) |
 | ice      | Margold2015_icestreams      | Ice stream outlines                              | Margold et al. (2015)          |
+| geo      | MartinEspanol2016_gps       | Elastic-corrected GPS vertical velocities of Antarctica | Martín-Español et al. (2016) |
 | geo      | Martos2017_ghf              | Antarctic geothermal heat flow                   | Martos et al. (2017)           |
 | geo      | Martos2018_ghf              | Geothermal heat flux of Greenland                | Martos et al. (2018)           |
 | paleo    | Montoya2008_climber3a       | CLIMBER-3α present-day and LGM (weak, strong AMOC) climatologies | Montoya & Levermann (2008) |

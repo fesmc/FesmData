@@ -16,3 +16,7 @@ file = "Kierulf2021_BIFROST2015.nc"
 [products.GNET]
 source = "Berg2024_gnet"
 file = "Berg2024_GNET.nc"
+
+[products.MartinEspanol2016]
+source = "MartinEspanol2016_gps"
+file = "MartinEspanol2016_GPS.nc"

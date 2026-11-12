@@ -1853,6 +1853,14 @@ key = "berg2024_gnet.zip"
 doi = "10.5061/dryad.9zw3r22n0"
 extract = true
 uri = "https://zenodo.org/records/10048911/files/GNET_NEU_v2022_5_31.zip?download=1"
+
+# Martín-Español et al. (2016): elastic-corrected GPS vertical velocities of Antarctica
+# (67 stations, 2009-2014), Table S1 of the article, open-access copy of PubMed Central
+# (CC BY 4.0).
+
+[martinespanol2016_gps]
+doi = "10.1002/2016JB013154"
+storage_path = "$datasets_dir/martinespanol2016_gps/JGRB-121-6947-s002.xlsx"
 uri = "https://pmc-oa-opendata.s3.amazonaws.com/PMC5111427.1/JGRB-121-6947-s002.xlsx"
 
 # ---------------------------------------------------------------------------
