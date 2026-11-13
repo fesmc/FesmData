@@ -44,9 +44,9 @@ function time_records(files)
     recs = NamedTuple[]
     for f in files
         NCDataset(f) do ds
-            t = ds["time"][:]
+            t = decoded_time(ds, "time", :)
             bname = get(ds["time"].attrib, "bounds", "")
-            b = haskey(ds, bname) ? ds[bname][:, :] : nothing
+            b = haskey(ds, bname) ? decoded_time(ds, bname, :, :) : nothing
             for i in eachindex(t)
                 if b === nothing
                     mid, days = t[i], Dates.daysinmonth(t[i])
@@ -59,6 +59,20 @@ function time_records(files)
         end
     end
     return recs
+end
+
+"""
+    decoded_time(ds, name, indices...) -> times
+
+The time variable `name` (time or its bounds) at `indices`, decoded with the units of time;
+also where the units lack the day of the reference date (FGOALS-g2 ocean: days since 0001-01),
+which NCDatasets leaves undecoded.
+"""
+function decoded_time(ds, name, indices...)
+    m = match(r"^(\w+) since (-?\d+)-(\d+)$", strip(get(ds["time"].attrib, "units", "")))
+    m === nothing && return ds[name][indices...]
+    return NCDatasets.CFTime.timedecode(Float64.(ds[name].var[indices...]), "$(m[1]) since $(m[2])-$(m[3])-01",
+                                        get(ds["time"].attrib, "calendar", "standard"))
 end
 
 "Years with all 12 months in the time records `recs`."
