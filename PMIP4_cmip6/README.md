@@ -25,13 +25,22 @@ The data of all four models are under Creative Commons Attribution-ShareAlike 4.
 files), with the CMIP6 terms of use (https://pcmdi.llnl.gov/CMIP6/TermsOfUse): cite the
 model data (DOIs above) and the PMIP4 protocol. Derived products must keep CC BY-SA 4.0.
 
+CESM2-FV2 and CESM2-WACCM-FV2 (NCAR, lgm and piControl, member r1i2p2f1, the physics of
+their lgm runs; no DOI in the files, global attribute `further_info_url`) come from the AWI
+pool on Albedo. CESM2-FV2 published no `pr` for its lgm run, and neither model a `pr` for
+the r1i2p2f1 piControl: those files lack `pr` (global attribute `missing`).
+
 ## Original data
 
 The CMIP6 data in the DKRZ pool on Levante (no download):
 `/pool/data/CMIP6/data/PMIP/<institution>/<model>/{lgm,midHolocene}/<member>/` and
 `/pool/data/CMIP6/data/CMIP/<institution>/<model>/piControl/<member>/`, member r1i1p1f1
 (r1i1p1f2 for MIROC-ES2L), variables Amon `tas`, `pr` and fx `orog`, `sftlf`, `sftgif`
-(latest version). Elsewhere, set `CMIP6_POOL` to a copy of the same tree (e.g. from ESGF).
+(latest version). Elsewhere, set `CMIP6_POOL` to one or more copies of the same tree
+(':'-separated, searched in order; the latest readable version of each variable is taken).
+On Albedo (`shared/machines/albedo.env`): the AWI pool `/albedo/work/projects/p_pool_clim_data/CMIP6`
+and its tree `p_pool_clim_data/esgf/CMIP6`, where files missing from the pool are fetched
+from ESGF with `CMIP/esgf_fetch.py` (see PMIP3_cmip5/README.md).
 
 ## Prepare and remap
 
