@@ -33,7 +33,13 @@ end
 "Whether two coordinate vectors are the same grid (to 0.001°; fx and Amon files differ in rounding, e.g. CCSM4)."
 same_grid(a, b) = length(a) == length(b) && maximum(abs.(Float64.(a) .- Float64.(b))) < 1e-3
 
-"Time records (file, index, year, month, length in days) of `files`."
+"""
+    time_records(files) -> records
+
+Time records (file, index, year, month, length in days) of `files`. The month is that of the
+middle of the time bounds if there are bounds (CESM's CAM and POP history files stamp a
+monthly mean at the end of its month), else of the time itself.
+"""
 function time_records(files)
     recs = NamedTuple[]
     for f in files
@@ -42,8 +48,13 @@ function time_records(files)
             bname = get(ds["time"].attrib, "bounds", "")
             b = haskey(ds, bname) ? ds[bname][:, :] : nothing
             for i in eachindex(t)
-                days = b === nothing ? Dates.daysinmonth(t[i]) : Dates.value(b[2, i] - b[1, i]) / 86_400_000
-                push!(recs, (file=f, i=i, year=Dates.year(t[i]), month=Dates.month(t[i]), days=days))
+                if b === nothing
+                    mid, days = t[i], Dates.daysinmonth(t[i])
+                else
+                    len = b[2, i] - b[1, i]
+                    mid, days = b[1, i] + Dates.Millisecond(div(Dates.value(len), 2)), Dates.value(len) / 86_400_000
+                end
+                push!(recs, (file=f, i=i, year=Dates.year(mid), month=Dates.month(mid), days=days))
             end
         end
     end
@@ -57,13 +68,15 @@ complete_years(recs) = [y for y in unique(r.year for r in recs) if count(r -> r.
 last_complete_year(files) = maximum(complete_years(time_records(files)))
 
 """
-    monthly_climatology(files, name, nyears; y1=last complete year) -> (M, days, years)
+    monthly_climatology(files, name, nyears; y1=last complete year, transform=identity) -> (M, days, years)
 
 Mean of each calendar month of the variable `name` over the `nyears` complete years in
-`files` up to `y1` (lon × lat × 12, NaN for missing values), the mean length of each month
-in days (from the time bounds, else from the calendar), and the first and last year used.
+`files` up to `y1` (the dimensions of the variable without time, × 12; NaN for missing
+values), the mean length of each month in days (from the time bounds, else from the
+calendar), and the first and last year used. `transform` is applied to each value before
+averaging (e.g. an indicator x >= 15 for the sea-ice extent).
 """
-function monthly_climatology(files, name, nyears; y1=nothing)
+function monthly_climatology(files, name, nyears; y1=nothing, transform=identity)
     recs = time_records(files)
     complete = complete_years(recs)
     isempty(complete) && error("$name: no complete year in $(join(basename.(files), ", "))")
@@ -81,17 +94,19 @@ function monthly_climatology(files, name, nyears; y1=nothing)
         i = [r.i for r in rs]
         i == first(i):last(i) || error("$f: time steps not contiguous")
         NCDataset(f) do ds
-            A = Float64.(coalesce.(ds[name][:, :, first(i):last(i)], NaN))
-            S === nothing && (S = zeros(size(A, 1), size(A, 2), 12))
+            v = ds[name]
+            A = Float64.(coalesce.(v[ntuple(_ -> Colon(), ndims(v) - 1)..., first(i):last(i)], NaN))
+            transform === identity || (A = transform.(A))
+            S === nothing && (S = zeros(size(A)[1:end-1]..., 12))
             for (k, r) in enumerate(rs)
-                S[:, :, r.month] .+= A[:, :, k]
+                selectdim(S, ndims(S), r.month) .+= selectdim(A, ndims(A), k)
                 n[r.month] += 1
                 days[r.month] += r.days
             end
         end
     end
     all(==(y1 - y0 + 1), n) || error("$name: months missing in $y0-$y1")
-    return S ./ reshape(n, 1, 1, 12), days ./ n, (y0, y1)
+    return S ./ reshape(n, ntuple(_ -> 1, ndims(S) - 1)..., 12), days ./ n, (y0, y1)
 end
 
 "Mean over the months `months` of a monthly climatology, weighted by month length."
