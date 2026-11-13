@@ -8,17 +8,22 @@ CMIP6.PMIP.NCAR.CESM2-FV2.lgm.r1i1p1f1.Amon.pr.gn.v20191120) is stored under
 dataset is taken, from the first data node in --nodes that holds it (else any node). With
 --last-years N only the files that overlap the last N years of the run are fetched. Files
 already present with the right size, under --root or readable under one of the --skip-in
-roots (other pools of the same layout), are skipped. Standard library only.
+roots (other pools of the same layout), are skipped. With --subset-depth D (3-D ocean
+fields) only the levels down to D m are fetched, by OPeNDAP with ncks (NCO), as compressed
+netCDF-4 files under the same names. Standard library only.
 
 Examples:
     esgf_fetch.py --root $POOL CMIP5 CCSM4 piControl Amon pr --member r1i1p1 --last-years 100
     esgf_fetch.py --root $POOL CMIP5 CCSM4 lgm fx sftlf --member r0i0p0
     esgf_fetch.py --root $POOL CMIP6 CESM2-FV2 lgm Amon pr --member r1i1p1f1 --last-years 100 --dry-run
+    esgf_fetch.py --root $POOL CMIP5 MPI-ESM-P piControl Omon thetao --member r1i1p1 --last-years 30 --subset-depth 3000
 """
-import argparse, json, os, re, sys, time, urllib.parse, urllib.request
+import argparse, json, os, re, subprocess, sys, time, urllib.parse, urllib.request
 
 INDEX = "https://esgf.ceda.ac.uk/esg-search/search"
 NODES = ["esgf.ceda.ac.uk", "esgf1.dkrz.de", "esgf-data1.llnl.gov", "esgf.nci.org.au", "esgf-data.dkrz.de"]
+# CMIP5 models whose search facet differs from the name in the dataset ids
+CMIP5_FACET = {"bcc-csm1-1": "BCC-CSM1.1", "bcc-csm1-1-m": "BCC-CSM1.1(m)", "CSIRO-Mk3-6-0": "CSIRO-Mk3.6.0"}
 
 
 def search(params):
@@ -54,12 +59,15 @@ def main():
     p.add_argument("--skip-in", default="", help="other pool roots (':'-separated) whose readable files are not fetched again")
     p.add_argument("--last-years", type=int, default=0, help="only files overlapping the last N years (0: all)")
     p.add_argument("--nodes", default=",".join(NODES), help="preferred data nodes, in order")
+    p.add_argument("--subset-depth", type=float, default=0,
+                   help="only the levels down to this depth [m], by OPeNDAP with ncks (0: whole files by HTTP)")
+    p.add_argument("--level-dim", default="lev", help="vertical dimension of --subset-depth")
     p.add_argument("--dry-run", action="store_true")
     a = p.parse_args()
 
     q = dict(project=a.project, type="File", variable=a.variable, fields="dataset_id,title,url,size,data_node,checksum")
     if a.project == "CMIP5":
-        q.update(model=a.model, experiment=a.experiment, cmor_table=a.table, ensemble=a.member)
+        q.update(model=CMIP5_FACET.get(a.model, a.model), experiment=a.experiment, cmor_table=a.table, ensemble=a.member)
     else:
         q.update(source_id=a.model, experiment_id=a.experiment, table_id=a.table, variant_label=a.member)
     docs = search(q)
@@ -87,6 +95,10 @@ def main():
             sys.exit("cannot read the years of " + ", ".join(t for t, s in spans.items() if s is None))
         last = max(s[1] for s in spans.values())
         files = [f for f in files if spans[f["title"]][1] > last - a.last_years]
+    if a.subset_depth > 0:      # nodes with an OPeNDAP service only
+        files = [f for f in files if any(u.split("|")[2] == "OPENDAP" for u in f["url"])]
+        if not files:
+            sys.exit(f"no OPeNDAP service on {node}")
     dsid = next(iter(files))["dataset_id"].split("|")[0]
     parts = dsid.split(".")
     if a.project == "CMIP5":
@@ -103,7 +115,7 @@ def main():
         vers = [parts[-1]] + (sorted(os.listdir(vdir)) if anyversion and os.path.isdir(vdir) else [])
         for v in vers:
             q = os.path.join(vdir, v, title)
-            if os.path.exists(q) and os.access(q, os.R_OK) and (anyversion or os.path.getsize(q) == size):
+            if os.path.exists(q) and os.access(q, os.R_OK) and (anyversion or a.subset_depth > 0 or os.path.getsize(q) == size):
                 return True
         return False
     others = [r for r in a.skip_in.split(":") if r]
@@ -116,13 +128,19 @@ def main():
         path = os.path.join(dest, f["title"])
         if present(a.root, f["title"], f["size"]):
             continue
-        url = next(u.split("|")[0] for u in f["url"] if u.split("|")[2] == "HTTPServer")
+        service = "OPENDAP" if a.subset_depth > 0 else "HTTPServer"
+        url = next(u.split("|")[0] for u in f["url"] if u.split("|")[2] == service)
         tmp = path + ".part"
         for attempt in range(3):
             try:
-                urllib.request.urlretrieve(url, tmp)
-                if os.path.getsize(tmp) != f["size"]:
-                    raise IOError(f"size {os.path.getsize(tmp)} != {f['size']}")
+                if a.subset_depth > 0:
+                    url = url[:-5] if url.endswith(".html") else url
+                    subprocess.run(["ncks", "-O", "-4", "-L", "1", "-v", a.variable,
+                                    "-d", f"{a.level_dim},0.,{a.subset_depth}", url, tmp], check=True)
+                else:
+                    urllib.request.urlretrieve(url, tmp)
+                    if os.path.getsize(tmp) != f["size"]:
+                        raise IOError(f"size {os.path.getsize(tmp)} != {f['size']}")
                 os.replace(tmp, path)
                 break
             except Exception as e:
