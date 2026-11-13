@@ -24,13 +24,15 @@ const NYEARS_THETAO = 30
 "The ocean and sea-ice files of a run (see ocean_fields)."
 function ocean_sources(m, experiment)
     mem = member(m, experiment)
-    area = cmip5_files(m, experiment, "fx", "fx", "areacello", fxmember(m, experiment))
+    # areacello of the run, else of the other experiments (the same grid, checked by latitude)
+    area = reduce(vcat, [cmip5_files(m, e, "fx", "fx", "areacello", fxmember(m, e))
+                         for e in [experiment; filter(!=(experiment), experiments(m))]])
     return Dict{String,Any}(
         "tos" => cmip5_files(m, experiment, "mon", "Omon", "tos", mem),
         "sic" => cmip5_files(m, experiment, "mon", "OImon", "sic", mem), "sic_name" => "sic",
         "thetao" => cmip5_files(m, experiment, "mon", "Omon", "thetao", mem),
         "msft" => cmip5_files(m, experiment, "mon", "Omon", "msftmyz", mem), "msft_name" => "msftmyz",
-        "areacello" => isempty(area) ? nothing : only(area))
+        "areacello" => area)
 end
 
 function prepare(m, experiment, outdir, workdir)

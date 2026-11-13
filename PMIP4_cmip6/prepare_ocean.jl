@@ -45,10 +45,13 @@ function ocean_sources(m, experiment, activity)
         ctrl = cmip6_files("CMIP", m, "piControl", "Omon", src["msft_name"]; grids=[basename(dirname(dirname(first(src["msft"]))))])
         isempty(ctrl) || (src["msft_latfile"] = first(ctrl))
     end
-    # areacello on the grid of the sea ice (CESM2 midHolocene: a gr file in the gn dataset)
+    # areacello on the grid of the sea ice (CESM2 midHolocene: a gr file in the gn dataset), of
+    # the run, else of the other experiments (the same grid, checked by latitude)
     grid = isempty(src["sic"]) ? "gn" : basename(dirname(dirname(first(src["sic"]))))
-    area = filter(f -> endswith(f, "_$grid.nc"), files("Ofx", "areacello"; grids=[grid]))
-    src["areacello"] = isempty(area) ? nothing : only(area)
+    exps = [(e, a) for (e, a) in EXPERIMENTS if e in get(m, :experiments, first.(EXPERIMENTS))]
+    sort!(exps; by=ea -> ea[1] != experiment)
+    src["areacello"] = [f for (e, a) in exps for f in cmip6_files(a, m, e, "Ofx", "areacello"; grids=[grid])
+                        if endswith(f, "_$grid.nc")]
     return src
 end
 

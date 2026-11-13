@@ -234,17 +234,20 @@ function sea_ice(files, name, areafile, workdir; nyears)
 end
 
 """
-    cell_area(file, name, areafile, workdir) -> (area, description)
+    cell_area(file, name, areafiles, workdir) -> (area, description)
 
-Cell areas [m2] of the native grid of the field `name` of `file`: areacello of `areafile` if
-on that grid (or on that grid with one more row at the end: the duplicated fold row of
-NorESM2), else from the cell bounds of `file` (cdo gridarea).
+Cell areas [m2] of the native grid of the field `name` of `file`: areacello of the first of
+`areafiles` (a file, a list, e.g. the run's own and those of the other experiments of the
+model, or nothing) that is on that grid, by latitude (or on that grid with one more row at
+the end: the duplicated fold row of NorESM2); else from the cell bounds of `file` (cdo
+gridarea); else approximated from the cell centres. Given areas: a tuple (areas, description).
 """
-cell_area(file, name, area::Tuple, workdir) = area      # given: (areas [m2], description)
+cell_area(file, name, area::Tuple, workdir) = area
 
-function cell_area(file, name, areafile, workdir)
-    lat, hsize = NCDataset(ds -> (l = native_lat(ds, name); (l, size(l))), file)
-    if areafile !== nothing
+function cell_area(file, name, areafiles, workdir)
+    lat, lon = NCDataset(ds -> (native_lat(ds, name), native_lon(ds, name)), file)
+    hsize = size(lat)
+    for areafile in (areafiles === nothing ? String[] : areafiles isa AbstractString ? [areafiles] : areafiles)
         A, alat = NCDataset(areafile) do ds
             Float64.(coalesce.(Array(ds["areacello"]), NaN)), native_lat(ds, "areacello"; time=false)
         end
@@ -256,14 +259,54 @@ function cell_area(file, name, areafile, workdir)
             maximum(abs.(lat[ok] .- alat[ok]); init=0.0) < 0.01 && return A, "areacello ($(basename(areafile)))"
         end
     end
+    earth = 4pi * 6.371e6^2
     out = joinpath(workdir, "gridarea.nc")
     rm(out; force=true)
-    run(`cdo -s gridarea $file $out`)
-    A = NCDataset(ds -> Float64.(Array(ds["cell_area"])), out)
-    size(A) == hsize || error("$file: cdo gridarea of size $(size(A)), not $hsize")
-    A[.!isfinite.(lat)] .= NaN
-    sum(filter(isfinite, A)) < 1.01 * 4pi * 6.371e6^2 || error("$file: cdo gridarea larger than the Earth (cell bounds?)")
-    return A, "cdo gridarea (cell bounds of the sea-ice grid)"
+    try
+        run(pipeline(`cdo -s gridarea $file $out`; stderr=devnull))
+        A = NCDataset(ds -> Float64.(Array(ds["cell_area"])), out)
+        A[.!isfinite.(lat)] .= NaN
+        size(A) == hsize && sum(filter(isfinite, A)) < 1.01 * earth &&
+            return A, "cdo gridarea (cell bounds of the sea-ice grid)"
+    catch
+    end
+    A = centre_area(lat, lon)
+    sum(filter(isfinite, A)) < 1.05 * earth || error("$file: no cell areas")
+    return A, "approximated from the cell centres (no areacello, no cell bounds)"
+end
+
+"Longitude [°E] of each cell of the horizontal grid of `name` (as native_lat)."
+function native_lon(ds, name)
+    c = coordinate_var(ds, name, "longitude")
+    lon = Float64.(coalesce.(Array(ds[c]), NaN))
+    lon[abs.(lon) .> 720] .= NaN
+    collect(dimnames(ds[c])) == horizontal_dims(ds, name) && return lon
+    lat = native_lat(ds, name)                 # regular grid: lon(lon)
+    k = findfirst(==(only(dimnames(ds[c]))), horizontal_dims(ds, name))
+    return repeat(reshape(lon, ntuple(i -> i == k ? length(lon) : 1, ndims(lat))),
+                  outer=ntuple(i -> i == k ? 1 : size(lat, i), ndims(lat)))
+end
+
+"""
+    centre_area(lat, lon) -> area
+
+Cell areas [m2] of a logically rectangular grid approximated from its cell centres: the
+area of the parallelogram spanned by the centred differences of the centre positions along
+the two grid directions (one-sided at the edges, longitudes periodic in the first).
+"""
+function centre_area(lat, lon)
+    ndims(lat) == 2 || error("cell areas from the centres: not a logically rectangular grid")
+    R = 6.371e6
+    P = [R .* [cosd(la) * cosd(lo), cosd(la) * sind(lo), sind(la)] for (la, lo) in zip(lat, lon)]
+    ni, nj = size(lat)
+    A = fill(NaN, ni, nj)
+    for j in 1:nj, i in 1:ni
+        di = (P[mod1(i + 1, ni), j] .- P[mod1(i - 1, ni), j]) ./ 2
+        dj = (P[i, min(j + 1, nj)] .- P[i, max(j - 1, 1)]) ./ (min(j + 1, nj) - max(j - 1, 1))
+        c = [di[2] * dj[3] - di[3] * dj[2], di[3] * dj[1] - di[1] * dj[3], di[1] * dj[2] - di[2] * dj[1]]
+        A[i, j] = sqrt(sum(abs2, c))
+    end
+    return A
 end
 
 """
@@ -476,7 +519,7 @@ const OCEAN_FIELDS = Dict("tos" => ["sst_mon"], "sic" => ["sic_mon", "siext_mon"
 
 All ocean fields of a model run from its files `src` (a Dict: "tos", "sic" (with the
 variable name in "sic_name"), "thetao", "msft" (with "msft_name", and optionally
-"msft_latfile", see amoc) => files, and "areacello" => file or nothing). A field without
+"msft_latfile", see amoc) => files, and "areacello" => areacello files, see cell_area). A field without
 files, or whose preparation fails (the error is printed), is named in `missing`.
 """
 function ocean_fields(src, workdir; nyears, nyears_thetao)
