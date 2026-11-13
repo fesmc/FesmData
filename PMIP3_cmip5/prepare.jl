@@ -1,4 +1,4 @@
-# Prepare the PMIP3 (CMIP5) lgm, midHolocene and piControl climatologies for remapping:
+# Prepare the PMIP3 (CMIP5) lgm, midHolocene and piControl atmosphere climatologies for remapping:
 # monthly, annual, DJF and JJA means of tas and pr over the last 100 years of each run
 # (Amon), with the orography and the land and ice fractions (fx) of the experiment, one
 # file per model and experiment on the model's own lon-lat grid,
@@ -10,6 +10,7 @@
 # p_pool_clim_data and its esgf/ tree, where CMIP/esgf_fetch.py adds missing files, see
 # README.md). Of each variable the latest version whose files are all readable is taken. A
 # missing variable or fx field is left out of the file and named in its global attribute `missing`.
+# The models: models.jl. Ocean and sea ice: prepare_ocean.jl.
 #
 # Usage (on Albedo):
 #     source shared/machines/albedo.env
@@ -21,58 +22,7 @@ using NCDatasets
 include(joinpath(@__DIR__, "..", "shared", "provenance.jl"))
 include(joinpath(@__DIR__, "..", "shared", "cmip_climatology.jl"))
 
-const POOLS = pool_roots("CMIP5_POOL", "/albedo/work/projects/p_pool_clim_data/cmip5/output1:" *
-                                      "/albedo/work/projects/p_pool_clim_data/esgf/cmip5/output1")
-
-# The PMIP3 models, their ensemble member per experiment (r1i1p1 unless given) and fx member
-# (r0i0p0 unless given). GISS-E2-R lgm: physics version p150 (as PMIP3_cvdp).
-const MODELS = [
-    (institute="NCAR", model="CCSM4"),
-    (institute="CNRM-CERFACS", model="CNRM-CM5"),
-    (institute="LASG-CESS", model="FGOALS-g2"),
-    (institute="NASA-GISS", model="GISS-E2-R", member=Dict("lgm" => "r1i1p150"), fxmember=Dict("lgm" => "r0i0p150")),
-    (institute="IPSL", model="IPSL-CM5A-LR"),
-    (institute="MIROC", model="MIROC-ESM"),
-    (institute="MPI-M", model="MPI-ESM-P"),
-    (institute="MRI", model="MRI-CGCM3"),
-]
-const EXPERIMENTS = ["lgm", "midHolocene", "piControl"]
-const NYEARS = 100      # climatology over the last NYEARS years (all years if fewer)
-
-member(m, e) = get(get(m, :member, Dict{String,String}()), e, "r1i1p1")
-fxmember(m, e) = get(get(m, :fxmember, Dict{String,String}()), e, "r0i0p0")
-
-const PROTOCOL =
-    "Braconnot, P., Harrison, S. P., Kageyama, M., et al.: Evaluation of climate models using " *
-    "palaeoclimatic data, Nat. Clim. Change, 2, 417-424, 2012, doi:10.1038/nclimate1456; Taylor, K. E., " *
-    "Stouffer, R. J., and Meehl, G. A.: An overview of CMIP5 and the experiment design, Bull. Amer. " *
-    "Meteor. Soc., 93, 485-498, 2012, doi:10.1175/BAMS-D-11-00094.1"
-const LICENSE = "CMIP5 model output, terms of use https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html " *
-                "(for some models non-commercial research and education only)"
-
-"""
-    cmip5_files(m, experiment, frequency, table, var, member) -> Vector{String}
-
-The files of `var` (any realm) in the latest version that is readable in one of the pools,
-[] if none.
-"""
-function cmip5_files(m, experiment, frequency, table, var, member)
-    cands = Tuple{String,Vector{String}}[]
-    for pool in POOLS
-        base = joinpath(pool, m.institute, m.model, experiment, frequency)
-        isdir(base) || continue
-        for realm in readdir(base)
-            dir = joinpath(base, realm, table, member)
-            isdir(dir) || continue
-            for v in readdir(dir)
-                isdir(joinpath(dir, v)) || continue
-                fs = filter(f -> startswith(f, "$(var)_") && endswith(f, ".nc"), readdir(joinpath(dir, v)))
-                push!(cands, (v, joinpath.(dir, v, fs)))
-            end
-        end
-    end
-    return latest_version(cands)
-end
+include(joinpath(@__DIR__, "models.jl"))
 
 function read_fx(m, experiment, var)
     fs = cmip5_files(m, experiment, "fx", "fx", var, fxmember(m, experiment))
@@ -139,6 +89,6 @@ end
 
 outdir = prepared_dir("PMIP3_cmip5")
 mkpath(outdir)
-for m in filter(m -> isempty(ARGS) || m.model in ARGS, MODELS), experiment in EXPERIMENTS
+for (m, experiment) in selection(ARGS)
     prepare(m, experiment, outdir)
 end
