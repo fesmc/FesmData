@@ -157,7 +157,7 @@ end
 function level_depths(ds, z)
     v = ds[z]
     if get(v.attrib, "standard_name", "") == "ocean_sigma_z" && haskey(ds, "zlev")
-        return Float64.(ds["zlev"][:])
+        return abs.(Float64.(ds["zlev"][:]))      # positive down (MIROC-ES2L: negative)
     end
     units = lowercase(get(v.attrib, "units", ""))
     units in ("m", "meter", "meters", "metre", "metres") && return Float64.(v[:])
@@ -343,37 +343,50 @@ function atlantic_index(ds, bd)
 end
 
 """
-    amoc(files, name; nyears) -> fields
+    amoc(files, name; nyears, latfile=nothing) -> fields
 
 The Atlantic meridional overturning streamfunction [Sv] of `name` (msftmyz, msftmz or
 msftyz) averaged over the last `nyears` years: on the common latitudes × MOC_DEPTHS
 (interpolated linearly from the model's own latitude and depth axes), and its maximum below
-AMOC_MAX_DEPTH between the latitudes AMOC_MAX_LAT (on the model's axes).
+AMOC_MAX_DEPTH between the latitudes AMOC_MAX_LAT (on the model's axes). Where the latitude
+axis of the files is invalid, that of `latfile` (the same variable on the same grid, e.g.
+of the piControl run; EC-Earth3 midHolocene) is taken.
 """
-function amoc(files, name; nyears)
+function amoc(files, name; nyears, latfile=nothing)
     M, days, years = monthly_climatology(files, name, nyears)
     A = sum(selectdim(M, ndims(M), m) .* days[m] for m in 1:12) ./ sum(days)
     lat, z, P = NCDataset(first(files)) do ds
         dn = collect(dimnames(ds[name]))       # ([x,] lat, lev, basin, time)
-        bd, zd, yd = dn[end-1], dn[end-2], dn[end-3]
-        P = selectdim(A, length(dn) - 1, atlantic_index(ds, bd))
-        lat = if haskey(ds, yd) && ndims(ds[yd]) == 1 && startswith(get(ds[yd].attrib, "units", ""), "degree")
-            Float64.(ds[yd][:])
-        else                                    # e.g. IPSL: nav_lat(x = 1, y)
-            c = coordinate_var(ds, name, "latitude")
-            Float64.(vec(ds[c][:, :]))
-        end
+        P = selectdim(A, length(dn) - 1, atlantic_index(ds, dn[end-1]))
         size(P)[1:end-2] == ntuple(_ -> 1, ndims(P) - 2) || error("$name: more than one column ($(size(P)))")
-        lat, level_depths(ds, zd), reshape(P, size(P, ndims(P) - 1), size(P, ndims(P)))
+        moc_lat(ds, name), level_depths(ds, dn[end-2]), reshape(P, size(P, ndims(P) - 1), size(P, ndims(P)))
+    end
+    notes = String[]
+    if !valid_lat(lat)
+        latfile === nothing && error("$name: invalid latitude axis")
+        lat = NCDataset(ds -> moc_lat(ds, name), latfile)
+        valid_lat(lat) && length(lat) == size(P, 1) || error("$name: invalid latitude axis, also in $(basename(latfile))")
+        push!(notes, "latitudes of $(basename(latfile)) (the latitude axis of the files is invalid)")
     end
     P = P ./ 1e9                                                    # kg s-1 to Sv
-    note = nothing
     if maximum(abs, filter(isfinite, P)) < 1e-3     # CNRM-CM5: "1035*(zomsfatl)", 1035 × Sv given as kg s-1
         P .*= 1e9 / 1035
-        note = "values given in the file as 1035 × Sv (original_name $(NCDataset(ds -> get(ds[name].attrib, "original_name", ""), first(files)))), divided by 1035"
+        push!(notes, "values given in the file as 1035 × Sv (original_name " *
+                     "$(NCDataset(ds -> get(ds[name].attrib, "original_name", ""), first(files)))), divided by 1035")
     end
-    return amoc_fields(lat, z, P, years, name, files; note)
+    return amoc_fields(lat, z, P, years, name, files; note=isempty(notes) ? nothing : join(notes, "; "))
 end
+
+"The latitudes of the overturning streamfunction `name`: its latitude dimension, or (IPSL) nav_lat(x = 1, y)."
+function moc_lat(ds, name)
+    yd = collect(dimnames(ds[name]))[end-3]
+    haskey(ds, yd) && ndims(ds[yd]) == 1 && startswith(get(ds[yd].attrib, "units", ""), "degree") &&
+        return Float64.(ds[yd][:])
+    return Float64.(vec(ds[coordinate_var(ds, name, "latitude")][:, :]))
+end
+
+"Whether `lat` is a latitude axis: within ±90° and spanning more than 10°."
+valid_lat(lat) = all(l -> -90 <= l <= 90, lat) && maximum(lat) - minimum(lat) > 10
 
 """
     amoc_fields(lat, z, P, years, source, files) -> fields
@@ -462,16 +475,16 @@ const OCEAN_FIELDS = Dict("tos" => ["sst_mon"], "sic" => ["sic_mon", "siext_mon"
     ocean_fields(src, workdir; nyears, nyears_thetao) -> (fields, missing)
 
 All ocean fields of a model run from its files `src` (a Dict: "tos", "sic" (with the
-variable name in "sic_name"), "thetao", "msft" (with "msft_name") => files, and "areacello"
-=> file or nothing). A field without files, or whose preparation fails (the error is
-printed), is named in `missing`.
+variable name in "sic_name"), "thetao", "msft" (with "msft_name", and optionally
+"msft_latfile", see amoc) => files, and "areacello" => file or nothing). A field without
+files, or whose preparation fails (the error is printed), is named in `missing`.
 """
 function ocean_fields(src, workdir; nyears, nyears_thetao)
     fields, missing_ = [], String[]
     for (key, make) in (("tos", fs -> sst_mon(fs, workdir; nyears)),
                         ("sic", fs -> sea_ice(fs, src["sic_name"], src["areacello"], workdir; nyears)),
                         ("thetao", fs -> to_ann(fs, workdir; nyears=nyears_thetao)),
-                        ("msft", fs -> amoc(fs, src["msft_name"]; nyears)))
+                        ("msft", fs -> amoc(fs, src["msft_name"]; nyears, latfile=get(src, "msft_latfile", nothing))))
         fs = get(src, key, String[])
         if isempty(fs)
             append!(missing_, OCEAN_FIELDS[key])
