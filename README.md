@@ -107,6 +107,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | paleo    | Peltier2015_ice6g           | ICE-6G_C (VM5a) ice-sheet and topography reconstruction | Peltier et al. (2015)   |
 | paleo    | Peltier2018_ice6gd          | ICE-6G_D (VM5a) ice thickness and topography of Antarctica | Peltier et al. (2018) |
 | paleo    | Petit1999_Vostok            | Vostok deuterium and temperature, 420 kyr        | Petit et al. (1999)            |
+| paleo    | PMIP3_cmip5                 | PMIP3 monthly climatologies (CMIP5 lgm, midHolocene, piControl) | Braconnot et al. (2012) |
 | paleo    | PMIP3_cvdp                  | PMIP3 climatologies (CMIP5 lgm, midHolocene, piControl) | Braconnot et al. (2012)  |
 | paleo    | PMIP4_cmip6                 | PMIP4 climatologies (CMIP6 lgm, midHolocene, piControl) | Kageyama et al. (2018)  |
 | paleo    | Rasmussen2014_GICC05        | NGRIP, GRIP, GISP2 d18O and calcium, GICC05modelext | Rasmussen et al. (2014)        |
