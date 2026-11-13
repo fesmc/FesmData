@@ -6,8 +6,8 @@
 # is left out of the file and named in its global attribute `missing`.
 #
 # The CMIP6 files are read from the pools in $CMIP6_POOL (':'-separated, searched in order:
-# the DKRZ pool /pool/data/CMIP6/data on Levante by default; on Albedo the AWI pool and its
-# esgf/ tree, shared/machines/albedo.env); of each variable the latest readable version. The
+# the DKRZ pool /pool/data/CMIP6/data on Levante by default; on Albedo the AWI pool,
+# shared/machines/albedo.env); of each variable the latest readable version. The
 # models: models.jl. Ocean and sea ice: prepare_ocean.jl.
 #
 # Usage:

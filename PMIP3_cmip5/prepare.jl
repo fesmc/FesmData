@@ -7,8 +7,7 @@
 # The CMIP5 files are read from pools laid out as the ESGF dataset ids,
 # <pool>/<institute>/<model>/<experiment>/<frequency>/<realm>/<table>/<member>/<version>/,
 # $CMIP5_POOL a ':'-separated list of pools (shared/machines/albedo.env: the AWI pool
-# p_pool_clim_data and its esgf/ tree, where CMIP/esgf_fetch.py adds missing files, see
-# README.md). Of each variable the latest version whose files are all readable is taken. A
+# p_pool_clim_data, to which CMIP/esgf_fetch.py adds missing files, see README.md). Of each variable the latest version whose files are all readable is taken. A
 # missing variable or fx field is left out of the file and named in its global attribute `missing`.
 # The models: models.jl. Ocean and sea ice: prepare_ocean.jl.
 #
