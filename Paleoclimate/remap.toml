@@ -20,7 +20,6 @@ figure = false
 [products.PMIP3-bcc-csm1-1-midHolocene-ocean]
 source = "PMIP3_cmip5"
 file = "PMIP3_bcc-csm1-1_midHolocene_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -33,7 +32,6 @@ figure = false
 [products.PMIP3-bcc-csm1-1-piControl-ocean]
 source = "PMIP3_cmip5"
 file = "PMIP3_bcc-csm1-1_piControl_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -46,7 +44,6 @@ figure = { variables = ["t2m_ann"] }
 [products.PMIP3-CCSM4-lgm-ocean]
 source = "PMIP3_cmip5"
 file = "PMIP3_CCSM4_lgm_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -59,7 +56,6 @@ figure = false
 [products.PMIP3-CCSM4-midHolocene-ocean]
 source = "PMIP3_cmip5"
 file = "PMIP3_CCSM4_midHolocene_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -72,7 +68,6 @@ figure = false
 [products.PMIP3-CCSM4-piControl-ocean]
 source = "PMIP3_cmip5"
 file = "PMIP3_CCSM4_piControl_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -85,7 +80,6 @@ figure = { variables = ["t2m_ann"] }
 [products.PMIP3-CNRM-CM5-lgm-ocean]
 source = "PMIP3_cmip5"
 file = "PMIP3_CNRM-CM5_lgm_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -98,7 +92,6 @@ figure = false
 [products.PMIP3-CNRM-CM5-midHolocene-ocean]
 source = "PMIP3_cmip5"
 file = "PMIP3_CNRM-CM5_midHolocene_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -111,7 +104,6 @@ figure = false
 [products.PMIP3-CNRM-CM5-piControl-ocean]
 source = "PMIP3_cmip5"
 file = "PMIP3_CNRM-CM5_piControl_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -124,7 +116,6 @@ figure = false
 [products.PMIP3-CSIRO-Mk3-6-0-midHolocene-ocean]
 source = "PMIP3_cmip5"
 file = "PMIP3_CSIRO-Mk3-6-0_midHolocene_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -137,7 +128,6 @@ figure = false
 [products.PMIP3-CSIRO-Mk3-6-0-piControl-ocean]
 source = "PMIP3_cmip5"
 file = "PMIP3_CSIRO-Mk3-6-0_piControl_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -150,7 +140,6 @@ figure = { variables = ["t2m_ann"] }
 [products.PMIP3-FGOALS-g2-lgm-ocean]
 source = "PMIP3_cmip5"
 file = "PMIP3_FGOALS-g2_lgm_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -163,7 +152,6 @@ figure = false
 [products.PMIP3-FGOALS-g2-midHolocene-ocean]
 source = "PMIP3_cmip5"
 file = "PMIP3_FGOALS-g2_midHolocene_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -176,7 +164,6 @@ figure = false
 [products.PMIP3-FGOALS-g2-piControl-ocean]
 source = "PMIP3_cmip5"
 file = "PMIP3_FGOALS-g2_piControl_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -189,7 +176,6 @@ figure = false
 [products.PMIP3-FGOALS-s2-midHolocene-ocean]
 source = "PMIP3_cmip5"
 file = "PMIP3_FGOALS-s2_midHolocene_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -202,7 +188,6 @@ figure = false
 [products.PMIP3-FGOALS-s2-piControl-ocean]
 source = "PMIP3_cmip5"
 file = "PMIP3_FGOALS-s2_piControl_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -215,7 +200,6 @@ figure = { variables = ["t2m_ann"] }
 [products.PMIP3-GISS-E2-R-lgm-ocean]
 source = "PMIP3_cmip5"
 file = "PMIP3_GISS-E2-R_lgm_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -228,7 +212,6 @@ figure = false
 [products.PMIP3-GISS-E2-R-midHolocene-ocean]
 source = "PMIP3_cmip5"
 file = "PMIP3_GISS-E2-R_midHolocene_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -241,7 +224,6 @@ figure = false
 [products.PMIP3-GISS-E2-R-piControl-ocean]
 source = "PMIP3_cmip5"
 file = "PMIP3_GISS-E2-R_piControl_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -254,7 +236,6 @@ figure = false
 [products.PMIP3-HadGEM2-CC-midHolocene-ocean]
 source = "PMIP3_cmip5"
 file = "PMIP3_HadGEM2-CC_midHolocene_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -267,7 +248,6 @@ figure = false
 [products.PMIP3-HadGEM2-CC-piControl-ocean]
 source = "PMIP3_cmip5"
 file = "PMIP3_HadGEM2-CC_piControl_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -280,7 +260,6 @@ figure = false
 [products.PMIP3-HadGEM2-ES-midHolocene-ocean]
 source = "PMIP3_cmip5"
 file = "PMIP3_HadGEM2-ES_midHolocene_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -293,7 +272,6 @@ figure = false
 [products.PMIP3-HadGEM2-ES-piControl-ocean]
 source = "PMIP3_cmip5"
 file = "PMIP3_HadGEM2-ES_piControl_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -306,7 +284,6 @@ figure = { variables = ["t2m_ann"] }
 [products.PMIP3-IPSL-CM5A-LR-lgm-ocean]
 source = "PMIP3_cmip5"
 file = "PMIP3_IPSL-CM5A-LR_lgm_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -319,7 +296,6 @@ figure = false
 [products.PMIP3-IPSL-CM5A-LR-midHolocene-ocean]
 source = "PMIP3_cmip5"
 file = "PMIP3_IPSL-CM5A-LR_midHolocene_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -332,7 +308,6 @@ figure = false
 [products.PMIP3-IPSL-CM5A-LR-piControl-ocean]
 source = "PMIP3_cmip5"
 file = "PMIP3_IPSL-CM5A-LR_piControl_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -345,7 +320,6 @@ figure = { variables = ["t2m_ann"] }
 [products.PMIP3-MIROC-ESM-lgm-ocean]
 source = "PMIP3_cmip5"
 file = "PMIP3_MIROC-ESM_lgm_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -358,7 +332,6 @@ figure = false
 [products.PMIP3-MIROC-ESM-midHolocene-ocean]
 source = "PMIP3_cmip5"
 file = "PMIP3_MIROC-ESM_midHolocene_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -371,7 +344,6 @@ figure = false
 [products.PMIP3-MIROC-ESM-piControl-ocean]
 source = "PMIP3_cmip5"
 file = "PMIP3_MIROC-ESM_piControl_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -384,7 +356,6 @@ figure = { variables = ["t2m_ann"] }
 [products.PMIP3-MPI-ESM-P-lgm-ocean]
 source = "PMIP3_cmip5"
 file = "PMIP3_MPI-ESM-P_lgm_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -397,7 +368,6 @@ figure = false
 [products.PMIP3-MPI-ESM-P-midHolocene-ocean]
 source = "PMIP3_cmip5"
 file = "PMIP3_MPI-ESM-P_midHolocene_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -410,7 +380,6 @@ figure = false
 [products.PMIP3-MPI-ESM-P-piControl-ocean]
 source = "PMIP3_cmip5"
 file = "PMIP3_MPI-ESM-P_piControl_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -423,7 +392,6 @@ figure = { variables = ["t2m_ann"] }
 [products.PMIP3-MRI-CGCM3-lgm-ocean]
 source = "PMIP3_cmip5"
 file = "PMIP3_MRI-CGCM3_lgm_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -436,7 +404,6 @@ figure = false
 [products.PMIP3-MRI-CGCM3-midHolocene-ocean]
 source = "PMIP3_cmip5"
 file = "PMIP3_MRI-CGCM3_midHolocene_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -449,7 +416,6 @@ figure = false
 [products.PMIP3-MRI-CGCM3-piControl-ocean]
 source = "PMIP3_cmip5"
 file = "PMIP3_MRI-CGCM3_piControl_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -571,7 +537,6 @@ figure = false
 [products.PMIP4-ACCESS-ESM1-5-midHolocene-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_ACCESS-ESM1-5_midHolocene_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -584,7 +549,6 @@ figure = false
 [products.PMIP4-ACCESS-ESM1-5-piControl-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_ACCESS-ESM1-5_piControl_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -597,7 +561,6 @@ figure = { variables = ["t2m_ann"] }
 [products.PMIP4-AWI-ESM-1-1-LR-lgm-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_AWI-ESM-1-1-LR_lgm_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -610,7 +573,6 @@ figure = false
 [products.PMIP4-AWI-ESM-1-1-LR-midHolocene-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_AWI-ESM-1-1-LR_midHolocene_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -623,7 +585,6 @@ figure = false
 [products.PMIP4-AWI-ESM-1-1-LR-piControl-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_AWI-ESM-1-1-LR_piControl_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -636,7 +597,6 @@ figure = false
 [products.PMIP4-CESM2-midHolocene-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_CESM2_midHolocene_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -649,7 +609,6 @@ figure = false
 [products.PMIP4-CESM2-piControl-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_CESM2_piControl_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -662,7 +621,6 @@ figure = { variables = ["t2m_ann"] }
 [products.PMIP4-CESM2-FV2-lgm-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_CESM2-FV2_lgm_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -675,7 +633,6 @@ figure = false
 [products.PMIP4-CESM2-FV2-piControl-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_CESM2-FV2_piControl_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -688,7 +645,6 @@ figure = { variables = ["t2m_ann"] }
 [products.PMIP4-CESM2-PaleoCalibr-lgm-ocean]
 source = "Zhu2022_PaleoCalibr"
 file = "PMIP4_CESM2-PaleoCalibr_lgm_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -701,7 +657,6 @@ figure = false
 [products.PMIP4-CESM2-PaleoCalibr-piControl-ocean]
 source = "Zhu2022_PaleoCalibr"
 file = "PMIP4_CESM2-PaleoCalibr_piControl_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -714,7 +669,6 @@ figure = { variables = ["t2m_ann"] }
 [products.PMIP4-CESM2-WACCM-FV2-lgm-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_CESM2-WACCM-FV2_lgm_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -727,7 +681,6 @@ figure = false
 [products.PMIP4-CESM2-WACCM-FV2-piControl-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_CESM2-WACCM-FV2_piControl_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -740,7 +693,6 @@ figure = false
 [products.PMIP4-EC-Earth3-midHolocene-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_EC-Earth3_midHolocene_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -753,7 +705,6 @@ figure = false
 [products.PMIP4-EC-Earth3-piControl-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_EC-Earth3_piControl_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -766,7 +717,6 @@ figure = false
 [products.PMIP4-EC-Earth3-LR-midHolocene-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_EC-Earth3-LR_midHolocene_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -779,7 +729,6 @@ figure = false
 [products.PMIP4-EC-Earth3-LR-piControl-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_EC-Earth3-LR_piControl_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -792,7 +741,6 @@ figure = false
 [products.PMIP4-EC-Earth3-Veg-midHolocene-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_EC-Earth3-Veg_midHolocene_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -805,7 +753,6 @@ figure = false
 [products.PMIP4-EC-Earth3-Veg-piControl-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_EC-Earth3-Veg_piControl_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -818,7 +765,6 @@ figure = false
 [products.PMIP4-FGOALS-f3-L-midHolocene-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_FGOALS-f3-L_midHolocene_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -831,7 +777,6 @@ figure = false
 [products.PMIP4-FGOALS-f3-L-piControl-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_FGOALS-f3-L_piControl_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -844,7 +789,6 @@ figure = false
 [products.PMIP4-FGOALS-g3-midHolocene-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_FGOALS-g3_midHolocene_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -857,7 +801,6 @@ figure = false
 [products.PMIP4-FGOALS-g3-piControl-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_FGOALS-g3_piControl_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -870,7 +813,6 @@ figure = false
 [products.PMIP4-GISS-E2-1-G-midHolocene-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_GISS-E2-1-G_midHolocene_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -883,7 +825,6 @@ figure = false
 [products.PMIP4-GISS-E2-1-G-piControl-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_GISS-E2-1-G_piControl_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -896,7 +837,6 @@ figure = false
 [products.PMIP4-HadGEM3-GC31-LL-midHolocene-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_HadGEM3-GC31-LL_midHolocene_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -909,7 +849,6 @@ figure = false
 [products.PMIP4-HadGEM3-GC31-LL-piControl-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_HadGEM3-GC31-LL_piControl_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -922,7 +861,6 @@ figure = { variables = ["t2m_ann"] }
 [products.PMIP4-INM-CM4-8-lgm-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_INM-CM4-8_lgm_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -935,7 +873,6 @@ figure = false
 [products.PMIP4-INM-CM4-8-midHolocene-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_INM-CM4-8_midHolocene_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -948,7 +885,6 @@ figure = false
 [products.PMIP4-INM-CM4-8-piControl-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_INM-CM4-8_piControl_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -961,7 +897,6 @@ figure = false
 [products.PMIP4-IPSL-CM6A-LR-midHolocene-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_IPSL-CM6A-LR_midHolocene_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -974,7 +909,6 @@ figure = false
 [products.PMIP4-IPSL-CM6A-LR-piControl-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_IPSL-CM6A-LR_piControl_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -987,7 +921,6 @@ figure = { variables = ["t2m_ann"] }
 [products.PMIP4-MIROC-ES2L-lgm-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_MIROC-ES2L_lgm_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -1000,7 +933,6 @@ figure = false
 [products.PMIP4-MIROC-ES2L-midHolocene-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_MIROC-ES2L_midHolocene_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -1013,7 +945,6 @@ figure = false
 [products.PMIP4-MIROC-ES2L-piControl-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_MIROC-ES2L_piControl_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -1026,7 +957,6 @@ figure = { variables = ["t2m_ann"] }
 [products.PMIP4-MPI-ESM1-2-LR-lgm-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_MPI-ESM1-2-LR_lgm_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -1039,7 +969,6 @@ figure = false
 [products.PMIP4-MPI-ESM1-2-LR-midHolocene-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_MPI-ESM1-2-LR_midHolocene_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -1052,7 +981,6 @@ figure = false
 [products.PMIP4-MPI-ESM1-2-LR-piControl-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_MPI-ESM1-2-LR_piControl_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -1065,7 +993,6 @@ figure = false
 [products.PMIP4-MRI-ESM2-0-midHolocene-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_MRI-ESM2-0_midHolocene_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -1078,7 +1005,6 @@ figure = false
 [products.PMIP4-MRI-ESM2-0-piControl-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_MRI-ESM2-0_piControl_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -1091,7 +1017,6 @@ figure = false
 [products.PMIP4-NESM3-midHolocene-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_NESM3_midHolocene_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -1104,7 +1029,6 @@ figure = false
 [products.PMIP4-NESM3-piControl-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_NESM3_piControl_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -1117,7 +1041,6 @@ figure = false
 [products.PMIP4-NorESM1-F-midHolocene-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_NorESM1-F_midHolocene_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -1130,7 +1053,6 @@ figure = false
 [products.PMIP4-NorESM1-F-piControl-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_NorESM1-F_piControl_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -1143,7 +1065,6 @@ figure = false
 [products.PMIP4-NorESM2-LM-midHolocene-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_NorESM2-LM_midHolocene_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
@@ -1156,7 +1077,6 @@ figure = false
 [products.PMIP4-NorESM2-LM-piControl-ocean]
 source = "PMIP4_cmip6"
 file = "PMIP4_NorESM2-LM_piControl_ocean.nc"
-mask = { mask_ocn = 0.5 }   # ocean where mostly ocean (land and sea floor are missing)
 grids = { Antarctica = 16, GreenlandPaleo = 16, PatagoniaPaleo = 8, North = 16, Global = 50 }
 figure = false
 
