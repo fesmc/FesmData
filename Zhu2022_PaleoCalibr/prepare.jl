@@ -5,9 +5,9 @@
 # (f19, 1.9° x 2.5°), $FESMDATA_PREPARED/Zhu2022_PaleoCalibr/PMIP4_CESM2-PaleoCalibr_{lgm,piControl}.nc.
 #
 # The CAM history time series (cam.h0.<var>.<yyyymm>-<yyyymm>.nc) are read from $PALEOCALIBR_DIR
-# (default /albedo/work/projects/p_pool_clim_data/gdex/d583116, fetched from NCAR GDEX d583116,
-# see README.md). CAM stamps a monthly mean at the end of its month, so the month is taken from
-# the middle of time_bnds.
+# (default /albedo/work/projects/p_pool_clim_data/PaleoCalibr, fetched from NCAR GDEX d583116
+# by fetch.sh, see README.md). CAM stamps a monthly mean at the end of its month, so the month
+# is taken from the middle of time_bnds.
 #
 # Usage: julia --project=Zhu2022_PaleoCalibr Zhu2022_PaleoCalibr/prepare.jl
 
@@ -17,7 +17,7 @@ using NCDatasets
 include(joinpath(@__DIR__, "..", "shared", "provenance.jl"))
 include(joinpath(@__DIR__, "..", "shared", "cmip_climatology.jl"))
 
-const DIR = get(ENV, "PALEOCALIBR_DIR", "/albedo/work/projects/p_pool_clim_data/gdex/d583116")
+const DIR = get(ENV, "PALEOCALIBR_DIR", "/albedo/work/projects/p_pool_clim_data/PaleoCalibr")
 const CASES = ["lgm" => "b.e21.B1850.f19_g17.PaleoCalibr.21ka.02", "piControl" => "b.e21.B1850.f19_g17.PaleoCalibr.PI.02"]
 const YEARS = (401, 500)
 const G = 9.80616      # CAM's gravity [m s-2] (PHIS = g z)

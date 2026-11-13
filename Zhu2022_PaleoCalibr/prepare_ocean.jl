@@ -9,9 +9,9 @@
 # Arctic Ocean, the sum of the Eulerian mean, eddy-induced and submesoscale components).
 #
 # The POP files are read from $PALEOCALIBR_DIR (default /albedo/work/projects/p_pool_clim_data/
-# gdex/d583116), fetched from NCAR GDEX d583116: IFRAC and MOC whole, TEMP subset (the top
-# level of years 401-500 without the level dimension, TEMP_top; the levels down to 2200 m of
-# years 471-500, TEMP_0-2200m; see README.md).
+# PaleoCalibr), fetched from NCAR GDEX d583116 by fetch.sh: IFRAC and MOC whole, TEMP subset
+# (the top level of years 401-500 without the level dimension, TEMP_top; the levels down to
+# 2200 m of years 471-500, TEMP_0-2200m; see README.md).
 #
 # Usage (on Albedo, with cdo):
 #     source shared/machines/albedo.env; module load cdo
@@ -24,7 +24,7 @@ include(joinpath(@__DIR__, "..", "shared", "provenance.jl"))
 include(joinpath(@__DIR__, "..", "shared", "cmip_climatology.jl"))
 include(joinpath(@__DIR__, "..", "shared", "cmip_ocean.jl"))
 
-const DIR = get(ENV, "PALEOCALIBR_DIR", "/albedo/work/projects/p_pool_clim_data/gdex/d583116")
+const DIR = get(ENV, "PALEOCALIBR_DIR", "/albedo/work/projects/p_pool_clim_data/PaleoCalibr")
 const CASES = ["lgm" => "b.e21.B1850.f19_g17.PaleoCalibr.21ka.02", "piControl" => "b.e21.B1850.f19_g17.PaleoCalibr.PI.02"]
 const NYEARS = 100
 const NYEARS_THETAO = 30

@@ -24,15 +24,37 @@ Creative Commons Attribution 4.0 International (CC BY 4.0): cite the paper and t
 
 ## Original data
 
-NCAR GDEX dataset d583116 (https://gdex.ucar.edu/datasets/d583116/, open download), CAM
-monthly history time series of the cases `b.e21.B1850.f19_g17.PaleoCalibr.21ka.02` (lgm) and
-`b.e21.B1850.f19_g17.PaleoCalibr.PI.02` (piControl): `cam.h0.{TREFHT,PRECC,PRECL,PHIS,LANDFRAC}`,
-chunks `040101-045012` and `045101-050012`, kept on Albedo in
-`/albedo/work/projects/p_pool_clim_data/gdex/d583116` (`PALEOCALIBR_DIR`):
+NCAR GDEX dataset d583116 (https://gdex.ucar.edu/datasets/d583116/, open download, no
+account needed): the CAM and POP monthly history time series of the PaleoCalibr runs, in
+50-year chunks. FesmData uses the cases `b.e21.B1850.f19_g17.PaleoCalibr.21ka.02` (lgm) and
+`b.e21.B1850.f19_g17.PaleoCalibr.PI.02` (piControl), years 401-500 (chunks `040101-045012`
+and `045101-050012`):
+
+| Files | Variables | Size |
+|---|---|---|
+| `<case>.cam.h0.<var>.<chunk>.nc` | `TREFHT`, `PRECC`, `PRECL`, `PHIS`, `LANDFRAC` | 0.4 GB |
+| `<case>.pop.h.<var>.<chunk>.nc` | `IFRAC`, `MOC` | 0.9 GB |
+| `<case>.pop.h.TEMP_top.<chunk>.nc` | `TEMP`, top level (5 m), years 401-500 | 0.7 GB |
+| `<case>.pop.h.TEMP_0-2200m.047101-050012.nc` | `TEMP`, levels down to 2200 m, years 471-500 | 9.4 GB |
+
+On Albedo they are in the AWI pool, `/albedo/work/projects/p_pool_clim_data/PaleoCalibr`
+(`PALEOCALIBR_DIR`), beside the surface temperature `TS` of the 21ka, PI and historical runs
+(years 1-300). `fetch.sh` downloads them into `PALEOCALIBR_DIR`, skipping the files present.
+The `TEMP` files (7.4 GB per chunk) are downloaded to `SCRATCH_DIR`, cut with NCO to the two
+subsets above and deleted:
 
 ```bash
-cd /albedo/work/projects/p_pool_clim_data/gdex/d583116
-wget -nc https://osdf-director.osg-htc.org/ncar/gdex/d583116/b.e21.B1850.f19_g17.PaleoCalibr.21ka.02.cam.h0.TREFHT.040101-045012.nc
+module load nco; bash Zhu2022_PaleoCalibr/fetch.sh
+```
+
+The full dataset holds more: 38 CAM and 10 POP variables of all 500 years of these runs (in
+10 chunks), and the other PaleoCalibr runs (historical, abrupt-4xCO2, 1pctCO2). The list of all files, with their sizes, is at
+https://gdex.ucar.edu/datasets/d583116/filelist/; each file downloads from
+`https://osdf-director.osg-htc.org/ncar/gdex/d583116/<file>`, e.g. into the pool:
+
+```bash
+cd /albedo/work/projects/p_pool_clim_data/PaleoCalibr
+wget -nc https://osdf-director.osg-htc.org/ncar/gdex/d583116/b.e21.B1850.f19_g17.PaleoCalibr.21ka.02.cam.h0.PSL.045101-050012.nc
 ```
 
 ## Prepare
@@ -61,15 +83,4 @@ cell areas `TAREA`), `to_ann` from `TEMP` of years 471-500, and `amoc`, `amoc_ma
 (region "Atlantic Ocean + Mediterranean Sea + Labrador Sea + GIN Sea + Arctic Ocean", the sum
 of the Eulerian mean, eddy-induced (bolus) and submesoscale components; on `lat_aux_grid` and
 `moc_z`). The POP grid has no cell bounds in the files: the fields are remapped bilinearly
-(cdo `remapbil`). `IFRAC` and `MOC` are downloaded whole (OSDF, chunks `040101-045012` and `045101-050012`);
-`TEMP` (7.4 GB per chunk) is downloaded to scratch and subset with NCO, then deleted: the top
-level of years 401-500 (`*.pop.h.TEMP_top.*.nc`, the level dimension removed) and the levels
-down to 2200 m of years 471-500 (`*.pop.h.TEMP_0-2200m.047101-050012.nc`):
-
-```bash
-ncks -6 -v TEMP -d z_t,0,0 $case.pop.h.TEMP.045101-050012.nc top.nc     # netCDF-3 subsets,
-ncwa -6 -a z_t top.nc top2.nc                                           # then compressed
-nccopy -d 1 top2.nc $case.pop.h.TEMP_top.045101-050012.nc
-ncks -6 -v TEMP -d z_t,0.,220000. -d time,240,599 $case.pop.h.TEMP.045101-050012.nc deep.nc
-nccopy -d 1 deep.nc $case.pop.h.TEMP_0-2200m.047101-050012.nc
-```
+(cdo `remapbil`).
