@@ -444,8 +444,11 @@ function write_ocean(path, fields, attrib)
             haskey(f, :cell_area) && push!(atts, "cell_area" => f.cell_area)
             haskey(f, :comment) && push!(atts, "comment" => f.comment)
             haskey(f, :march) && push!(atts, "march" => Float32(f.march), "september" => Float32(f.september))
-            data = f.dims == () ? fill(Float32(f.data)) : Float32.(f.data)
-            defVar(ds, f.name, data, f.dims; fillvalue=NaN32, deflatelevel=1, attrib=atts)
+            if f.dims == ()        # scalar: no compression
+                defVar(ds, f.name, fill(Float32(f.data)), (); fillvalue=NaN32, attrib=atts)
+            else
+                defVar(ds, f.name, Float32.(f.data), f.dims; fillvalue=NaN32, deflatelevel=1, attrib=atts)
+            end
         end
         foreach(((k, v),) -> ds.attrib[k] = v, attrib)
     end
