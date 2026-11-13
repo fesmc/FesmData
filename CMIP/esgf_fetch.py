@@ -9,8 +9,9 @@ dataset is taken, from the first data node in --nodes that holds it (else any no
 --last-years N only the files that overlap the last N years of the run are fetched. Files
 already present with the right size, under --root or readable under one of the --skip-in
 roots (other pools of the same layout), are skipped. With --subset-depth D (3-D ocean
-fields) only the levels down to D m are fetched, by OPeNDAP with ncks (NCO), as compressed
-netCDF-4 files under the same names. Standard library only.
+fields) only the levels down to D m (and the last N years) are fetched, by OPeNDAP with ncks
+(NCO), as compressed netCDF-4 files under the same names. A file that fails on the chosen node
+is fetched from another node holding the same version. Standard library only.
 
 Examples:
     esgf_fetch.py --root $POOL CMIP5 CCSM4 piControl Amon pr --member r1i1p1 --last-years 100
@@ -89,6 +90,7 @@ def main():
         ver = max(byver, key=vkey)
         node = sorted(byver[ver])[0]
     files = list({f["title"]: f for f in byver[ver][node]}.values())
+    last = None
     if a.last_years > 0:
         spans = {f["title"]: span(f["title"]) for f in files}
         if any(s is None for s in spans.values()):
@@ -124,19 +126,21 @@ def main():
         print("  all present")
         return
     os.makedirs(dest, exist_ok=True)
+    first = last - a.last_years + 1 if a.last_years > 0 else None
+    service = "OPENDAP" if a.subset_depth > 0 else "HTTPServer"
     for f in sorted(files, key=lambda f: f["title"]):
         path = os.path.join(dest, f["title"])
         if present(a.root, f["title"], f["size"]):
             continue
-        service = "OPENDAP" if a.subset_depth > 0 else "HTTPServer"
-        url = next(u.split("|")[0] for u in f["url"] if u.split("|")[2] == service)
+        # the file on the chosen node, then on the other nodes with the same version
+        urls = [u.split("|")[0] for n in [node] + sorted(set(byver[ver]) - {node})
+                for g in byver[ver][n] if g["title"] == f["title"]
+                for u in g["url"] if u.split("|")[2] == service]
         tmp = path + ".part"
-        for attempt in range(3):
+        for url in [u for u in urls for _ in range(2)]:       # two attempts per node
             try:
                 if a.subset_depth > 0:
-                    url = url[:-5] if url.endswith(".html") else url
-                    subprocess.run(["ncks", "-O", "-4", "-L", "1", "-v", a.variable,
-                                    "-d", f"{a.level_dim},0.,{a.subset_depth}", url, tmp], check=True)
+                    opendap_subset(url[:-5] if url.endswith(".html") else url, a, f["title"], first, tmp)
                 else:
                     urllib.request.urlretrieve(url, tmp)
                     if os.path.getsize(tmp) != f["size"]:
@@ -144,11 +148,30 @@ def main():
                 os.replace(tmp, path)
                 break
             except Exception as e:
-                print(f"  retry {f['title']}: {e}", file=sys.stderr)
-                time.sleep(20)
+                print(f"  failed {url}: {e}", file=sys.stderr)
+                time.sleep(10)
         else:
-            sys.exit(f"failed: {url}")
+            sys.exit(f"failed: {f['title']} ({len(urls)} nodes)")
         print("  ", f["title"])
+
+
+def opendap_subset(url, a, title, first, path):
+    """The levels down to a.subset_depth of the monthly file `url` (from the year `first` on,
+    if given), by OPeNDAP in pieces of a year (servers limit the size of a request)."""
+    run = lambda *cmd: subprocess.run(cmd, check=True, stdout=subprocess.PIPE, universal_newlines=True).stdout
+    nt = int(re.search(r"time = (?:UNLIMITED ; // \()?(\d+)", run("ncks", "-m", "-v", "time", url)).group(1))
+    start = re.search(r"_(\d{4,8})-\d{4,8}(?:-clim)?\.nc$", title).group(1)
+    y0, m0 = int(start[:-2] if len(start) <= 6 else start[:4]), int(start[-2:] if len(start) <= 6 else start[4:6])
+    i0 = max(0, (first - y0) * 12 - (m0 - 1)) if first else 0
+    pieces = []
+    for i in range(i0, nt, 12):
+        piece = f"{path}.{len(pieces):03d}"
+        run("ncks", "-O", "-4", "-L", "1", "-v", a.variable, "-d", f"{a.level_dim},0.,{a.subset_depth}",
+            "-d", f"time,{i},{min(i + 11, nt - 1)}", url, piece)
+        pieces.append(piece)
+    run("ncrcat", "-O", "-4", "-L", "1", *pieces, path)
+    for piece in pieces:
+        os.remove(piece)
 
 
 if __name__ == "__main__":
