@@ -45,3 +45,31 @@ julia --project=Zhu2022_PaleoCalibr Zhu2022_PaleoCalibr/prepare.jl
 `pr_djf`, `pr_jja`, `pr_mon` (mm d-1, PRECC + PRECL), `z_srf` (m, PHIS / g) and `f_land`
 (LANDFRAC); no land-ice fraction is published. CAM stamps a monthly mean at the end of its
 month, so the month of each record is taken from the middle of its time bounds.
+
+## Ocean and sea ice
+
+```bash
+module load cdo; julia --project=Zhu2022_PaleoCalibr Zhu2022_PaleoCalibr/prepare_ocean.jl
+```
+
+`prepare_ocean.jl` writes `PMIP4_CESM2-PaleoCalibr_{lgm,piControl}_ocean.nc` in the form of
+the ocean files of PMIP4_cmip6 (regular 1° grid, shared/cmip_ocean.jl; variables in
+PMIP4_cmip6/README.md), from the POP monthly history time series of the same cases:
+`sst_mon` from the top level of `TEMP` (5 m), `sic_mon`, `siext_mon` and the hemispheric
+extents from `IFRAC` (ice fraction from the coupler, on the ocean grid; extent with the POP
+cell areas `TAREA`), `to_ann` from `TEMP` of years 471-500, and `amoc`, `amoc_max` from `MOC`
+(region "Atlantic Ocean + Mediterranean Sea + Labrador Sea + GIN Sea + Arctic Ocean", the sum
+of the Eulerian mean, eddy-induced (bolus) and submesoscale components; on `lat_aux_grid` and
+`moc_z`). The POP grid has no cell bounds in the files: the fields are remapped bilinearly
+(cdo `remapbil`). `IFRAC` and `MOC` are downloaded whole (OSDF, chunks `040101-045012` and `045101-050012`);
+`TEMP` (7.4 GB per chunk) is downloaded to scratch and subset with NCO, then deleted: the top
+level of years 401-500 (`*.pop.h.TEMP_top.*.nc`, the level dimension removed) and the levels
+down to 2200 m of years 471-500 (`*.pop.h.TEMP_0-2200m.047101-050012.nc`):
+
+```bash
+ncks -6 -v TEMP -d z_t,0,0 $case.pop.h.TEMP.045101-050012.nc top.nc     # netCDF-3 subsets,
+ncwa -6 -a z_t top.nc top2.nc                                           # then compressed
+nccopy -d 1 top2.nc $case.pop.h.TEMP_top.045101-050012.nc
+ncks -6 -v TEMP -d z_t,0.,220000. -d time,240,599 $case.pop.h.TEMP.045101-050012.nc deep.nc
+nccopy -d 1 deep.nc $case.pop.h.TEMP_0-2200m.047101-050012.nc
+```
