@@ -107,9 +107,9 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | paleo    | Peltier2015_ice6g           | ICE-6G_C (VM5a) ice-sheet and topography reconstruction | Peltier et al. (2015)   |
 | paleo    | Peltier2018_ice6gd          | ICE-6G_D (VM5a) ice thickness and topography of Antarctica | Peltier et al. (2018) |
 | paleo    | Petit1999_Vostok            | Vostok deuterium and temperature, 420 kyr        | Petit et al. (1999)            |
-| paleo    | PMIP3_cmip5                 | PMIP3 monthly climatologies (CMIP5 lgm, midHolocene, piControl) | Braconnot et al. (2012) |
+| paleo    | PMIP3_cmip5                 | PMIP3 monthly climatologies (CMIP5 lgm, midHolocene, piControl; atmosphere, ocean, sea ice) | Braconnot et al. (2012) |
 | paleo    | PMIP3_cvdp                  | PMIP3 climatologies (CMIP5 lgm, midHolocene, piControl) | Braconnot et al. (2012)  |
-| paleo    | PMIP4_cmip6                 | PMIP4 climatologies (CMIP6 lgm, midHolocene, piControl) | Kageyama et al. (2018)  |
+| paleo    | PMIP4_cmip6                 | PMIP4 climatologies (CMIP6 lgm, midHolocene, piControl; atmosphere, ocean, sea ice) | Kageyama et al. (2018)  |
 | paleo    | Rasmussen2014_GICC05        | NGRIP, GRIP, GISP2 d18O and calcium, GICC05modelext | Rasmussen et al. (2014)        |
 | masks    | Regions                     | Regions v2: region tree, shelf zone, ice-sheet basins, 25 m-32 km | Multiple (see Regions/README.md) |
 | masks    | regions_legacy              | Ice relevant regions (v1, deprecated)            | Robinson et al.  - no ref      |
@@ -143,4 +143,5 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | geo      | Wiens2022_visc              | Antarctic upper-mantle viscosity                 | Wiens et al. (2022)            |
 | paleo    | Willeit2025_climberx        | CLIMBER-X Dansgaard-Oeschger and Heinrich events (stadial, interstadial climates; transient output) | Willeit et al. (2025) |
 | ocean    | Zhou2026_ismip7ocean        | ISMIP7 Antarctic ocean climatology               | Zhou et al. (2026)             |
+| paleo    | Zhu2022_PaleoCalibr         | CESM2 PaleoCalibr LGM and preindustrial climatologies (atmosphere, ocean, sea ice) | Zhu et al. (2022) |
 | ocean    | Zuo2019_oras5               | Ocean temperature and salinity from ORAS5        | Zuo et al. (2019)              |
