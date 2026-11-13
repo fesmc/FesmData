@@ -21,7 +21,7 @@
 #
 set -euo pipefail
 source shared/machines/$FESMDATA_MACHINE.env
-module load cdo                      # used by some prepare.jl (e.g. Hersbach2020_era5)
+module is-loaded cdo || module load cdo   # used by some prepare.jl (e.g. Hersbach2020_era5); a cdo loaded at submission is kept
 export JULIA_NUM_THREADS=$(nproc)
 
 echo "$(date)  host=$(hostname)  threads=$JULIA_NUM_THREADS  remap $*"
