@@ -147,9 +147,8 @@ SImon `siconc` (else `siconca`), fx `orog`, `sftlf`, `sftgif` (on the grid of ta
 native grid (gn) where published, else the first of gr, gr1, gr2, grz, gr1z, gr2z (thetao: the
 first grid with depth levels; NorESM2-LM thetao gn is on density levels). On Levante the
 DKRZ pool `/pool/data/CMIP6/data` (default). On Albedo (`shared/machines/albedo.env`): the AWI
-pool `/albedo/work/projects/p_pool_clim_data/CMIP6` and its tree `p_pool_clim_data/esgf/CMIP6`,
-where the files missing from the pool were fetched from ESGF with `CMIP/esgf_fetch.py` (last
-100 years; see PMIP3_cmip5/README.md).
+pool `/albedo/work/projects/p_pool_clim_data/CMIP6`, to which the files it missed were added
+from ESGF with `CMIP/esgf_fetch.py` (last 100 years; see PMIP3_cmip5/README.md).
 
 ## Prepare and remap
 

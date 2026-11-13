@@ -111,10 +111,9 @@ Amon `tas`, `pr`, Omon `tos`, `thetao`, `msftmyz`, OImon `sic` and fx `orog`, `s
 `sftgif`, `areacello` (latest readable version) from pools laid out as the ESGF dataset ids,
 `<pool>/<institute>/<model>/<experiment>/<frequency>/<realm>/<table>/<member>/<version>/`,
 listed in `CMIP5_POOL` (':'-separated, searched in order; `models.jl`). On Albedo
-(`shared/machines/albedo.env`): the AWI pool `/albedo/work/projects/p_pool_clim_data/cmip5/output1`
-and its tree `p_pool_clim_data/esgf/cmip5/output1`, where the files missing from the pool
-were fetched from ESGF (last 100 years; `thetao` by OPeNDAP, the levels down to 3000 m of the
-last 30 years):
+(`shared/machines/albedo.env`): the AWI pool `/albedo/work/projects/p_pool_clim_data/cmip5/output1`,
+to which the files it missed were added from ESGF (last 100 years; `thetao` by OPeNDAP, the
+levels down to 3000 m of the last 30 years):
 
 ```bash
 source shared/machines/albedo.env

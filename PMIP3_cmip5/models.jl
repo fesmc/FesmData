@@ -2,8 +2,7 @@
 # of use, and the CMIP5 files in the pools. Included by prepare.jl (atmosphere) and
 # prepare_ocean.jl (ocean and sea ice), after shared/cmip_climatology.jl.
 
-const POOLS = pool_roots("CMIP5_POOL", "/albedo/work/projects/p_pool_clim_data/cmip5/output1:" *
-                                      "/albedo/work/projects/p_pool_clim_data/esgf/cmip5/output1")
+const POOLS = pool_roots("CMIP5_POOL", "/albedo/work/projects/p_pool_clim_data/cmip5/output1")
 
 # The models with a PMIP3 lgm or midHolocene run on ESGF (see README.md), their experiments
 # (all three unless given), ensemble member per experiment (r1i1p1 unless given) and fx member
