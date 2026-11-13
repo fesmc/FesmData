@@ -15,7 +15,7 @@
 #
 set -euo pipefail
 source shared/machines/levante.env
-module load cdo
+module is-loaded cdo || module load cdo
 
 echo "$(date)  host=$(hostname)  $(cdo -V 2>&1 | head -1)"
 julia --project=Hersbach2020_era5 Hersbach2020_era5/prepare.jl
