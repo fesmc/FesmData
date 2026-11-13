@@ -85,8 +85,9 @@ last_complete_year(files) = maximum(complete_years(time_records(files)))
     monthly_climatology(files, name, nyears; y1=last complete year, transform=identity) -> (M, days, years)
 
 Mean of each calendar month of the variable `name` over the `nyears` complete years in
-`files` up to `y1` (the dimensions of the variable without time, × 12; NaN for missing
-values), the mean length of each month in days (from the time bounds, else from the
+`files` up to `y1`, or the fewer contiguous complete years up to `y1` if a year before is
+incomplete or missing (a pool may miss files of a run): the dimensions of the variable
+without time, × 12 (NaN for missing values); the mean length of each month in days (from the time bounds, else from the
 calendar), and the first and last year used. `transform` is applied to each value before
 averaging (e.g. an indicator x >= 15 for the sea-ice extent).
 """
@@ -96,8 +97,11 @@ function monthly_climatology(files, name, nyears; y1=nothing, transform=identity
     isempty(complete) && error("$name: no complete year in $(join(basename.(files), ", "))")
     y1 === nothing && (y1 = maximum(complete))
     y1 in complete || error("$name: year $y1 not complete in $(join(basename.(files), ", "))")
-    y0 = max(minimum(complete), y1 - nyears + 1)
-    all(y -> y in complete, y0:y1) || error("$name: incomplete years in $y0-$y1")
+    # the last contiguous complete years up to y1 (a pool may miss files of a run)
+    y0 = y1
+    while y0 > y1 - nyears + 1 && (y0 - 1) in complete
+        y0 -= 1
+    end
     sel = filter(r -> y0 <= r.year <= y1, recs)
 
     S = nothing
