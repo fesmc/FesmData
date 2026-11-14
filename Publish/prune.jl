@@ -46,7 +46,8 @@ the resolution rule) and files of grids that changed. Kept are:
   make and update;
 - the products not released (`release = false` in <Dataset>/remap.toml);
 - the grid files of a grid that keeps other files (with a dataset named: all grid files);
-- the records datasets (Records/).
+- the records datasets (Records/);
+- symbolic links (e.g. a `products/` folder of links to the domains, for old paths).
 
 The files to delete are listed by domain and dataset with their size, and deleted after
 one confirmation (none with `yes`); their list is written to
@@ -70,7 +71,8 @@ function prune(args; yes::Bool=false, sandbox::Bool=false)
 
     candidates = String[]
     for folder in (isempty(domain) ? folders : domain)
-        for (dir, _, files) in walkdir(joinpath(root, folder))
+        for (dir, _, entries) in walkdir(joinpath(root, folder))
+            files = filter(f -> !islink(joinpath(dir, f)), entries)
             data = filter(f -> !is_grid_file(f), files)
             keep = filter(data) do f
                 path = joinpath(dir, f)
