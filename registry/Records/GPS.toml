@@ -1,20 +1,74 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-10-15"
-git_tag = "gps-v2.1.0"
+date = "2026-11-14"
+git_tag = "gps-v2.2.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Records_GPS"
-version = "2.1.0"
+version = "2.2.0"
+
+["GPS-BIFROST2015.nc"]
+checksum = "sha256:6f1dc67e114c8704f32d56ec085267bf849d9778dd3556c2e1d4887e20b31cf4"
+license = "CC BY 4.0 (open access article and its supplement)"
+size = 30744
+storage_path = "$datasets_dir/Records/GPS/GPS-BIFROST2015.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_GPS/2.2.0/GPS-BIFROST2015.nc"
+
+["GPS-BIFROST2015.txt"]
+checksum = "sha256:422245a9709f5da26d19b41e2d492a086b966a3d3ad2b5ec3dd2d087a437be41"
+size = 16736
+storage_path = "$datasets_dir/Records/GPS/GPS-BIFROST2015.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_GPS/2.2.0/GPS-BIFROST2015.txt"
+
+["GPS-GNET.nc"]
+checksum = "sha256:7add77cd5c252038bfa1a473c6446649f3e6ca64d791d73afa39f27967da83fd"
+license = "CC BY 4.0 (velocities, Lewright et al., 2025, Zenodo); CC0 (station coordinates and series, Berg et al., 2024, Dryad/Zenodo)"
+size = 22055
+storage_path = "$datasets_dir/Records/GPS/GPS-GNET.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_GPS/2.2.0/GPS-GNET.nc"
+
+["GPS-GNET.txt"]
+checksum = "sha256:e426f5069c74047964b0792d53a5f900f137a4328c6a33ae22d3ac6099a23b2e"
+size = 8858
+storage_path = "$datasets_dir/Records/GPS/GPS-GNET.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_GPS/2.2.0/GPS-GNET.txt"
+
+["GPS-MIDAS.nc"]
+checksum = "sha256:d2494b47edbcbc7140ef9b64ff1755ee91861d9c71a49506668437ecd6b9c908"
+license = "CC BY 4.0 (data products policy of the Nevada Bureau of Mines and Geology, University of Nevada, Reno)"
+size = 2214380
+storage_path = "$datasets_dir/Records/GPS/GPS-MIDAS.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_GPS/2.2.0/GPS-MIDAS.nc"
+
+["GPS-MIDAS.txt"]
+checksum = "sha256:65d0299b82ff20777e6fb78d220c4fa602ba0d392ab39d5f998fef61ef4ccc7c"
+size = 2059592
+storage_path = "$datasets_dir/Records/GPS/GPS-MIDAS.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_GPS/2.2.0/GPS-MIDAS.txt"
+
+["GPS-MartinEspanol2016.nc"]
+checksum = "sha256:6b7c60e337031880e250a5b27893f6347615cef8b94ea9525563aa4450a557c6"
+license = "CC BY 4.0 (open access article and its supporting information)"
+size = 18401
+storage_path = "$datasets_dir/Records/GPS/GPS-MartinEspanol2016.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_GPS/2.2.0/GPS-MartinEspanol2016.nc"
+
+["GPS-MartinEspanol2016.txt"]
+checksum = "sha256:9575751292c6cf6306e1b4b170fed91240cb57599611f03e4fe61cf94d6fbfb8"
+size = 6681
+storage_path = "$datasets_dir/Records/GPS/GPS-MartinEspanol2016.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_GPS/2.2.0/GPS-MartinEspanol2016.txt"
 
 ["GPS-Schumacher2018.nc"]
-checksum = "sha256:d49fd9fb6ab1df9b8a3920dc91fdec0f48cc44dce96c96d26d07a7b3cc234e14"
-previous_checksums = ["sha256:1c3c7a001055aa461b519f5af6eb2ef5dcc95a6e9e518c729d84c26f961c60ce"]
-size = 338420
+checksum = "sha256:cf411b0a4f405098c9e56d1587057298f4625f9a3d96c9cb7cfd040fc7f654e5"
+license = "CC BY 3.0 (PANGAEA)"
+previous_checksums = ["sha256:1c3c7a001055aa461b519f5af6eb2ef5dcc95a6e9e518c729d84c26f961c60ce", "sha256:d49fd9fb6ab1df9b8a3920dc91fdec0f48cc44dce96c96d26d07a7b3cc234e14"]
+size = 338594
 storage_path = "$datasets_dir/Records/GPS/GPS-Schumacher2018.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_GPS/2.1.0/GPS-Schumacher2018.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_GPS/2.2.0/GPS-Schumacher2018.nc"
 
 ["GPS-Schumacher2018.txt"]
-checksum = "sha256:650600a44175a2ce3fd2207982713dfdf23bb2630d8368620f121c6aab972f75"
-size = 245461
+checksum = "sha256:422d03408ba631057bcd720ffa4d9844f96cd6b949780552b2234303dc7d8743"
+previous_checksums = ["sha256:650600a44175a2ce3fd2207982713dfdf23bb2630d8368620f121c6aab972f75"]
+size = 245491
 storage_path = "$datasets_dir/Records/GPS/GPS-Schumacher2018.txt"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_GPS/2.1.0/GPS-Schumacher2018.txt"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Records_GPS/2.2.0/GPS-Schumacher2018.txt"
