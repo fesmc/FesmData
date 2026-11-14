@@ -53,7 +53,8 @@ Entries of `../datamanifest.toml`, downloaded by `prepare.jl` (no login):
   26-0 ka every 100 years: `TOPicemsk.GLACD26kN9894GE90227A6005GGrBgic.nc` (812 MB,
   1° x 0.5°; `HDC`, elevation relative to the sea level of the time, the surface of land
   and ice including ice shelves, and the sea floor in the open ocean; `HDCB`, the same
-  but the base of the floating ice under ice shelves; `ICEM`, ice fraction) and
+  but the sea floor under ice shelves, "bathymetry for floating ice" (e.g. -581 m under
+  the Ross Ice Shelf at 0 ka, whose base is at -312 m); `ICEM`, ice fraction) and
   `GLAC1DHiceF26.nc` (57 MB, 0.5° x 0.25°; `HGLOBH`, ice thickness).
 
 `HGLOBH` has thin ice (up to about 85 m) over Siberia and Alaska, about the same at

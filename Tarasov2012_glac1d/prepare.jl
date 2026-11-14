@@ -65,7 +65,7 @@ const REGIONAL = [
 const PMIP4 = [
     ("Tarasov2012_GLAC1D_PMIP4_topo.nc", "glac1d_pmip4_topo",
      ["z_topo" => ("HDCB", "m", "topography relative to sea level at the time (surface of land and grounded ice, " *
-                                "base of floating ice, sea floor in the open ocean)"),
+                                "sea floor under floating ice and in the open ocean)"),
       "z_srf" => ("HDC", "m", "surface elevation relative to sea level at the time (surface of land and ice, " *
                               "including ice shelves, sea floor in the open ocean)"),
       "f_ice" => ("ICEM", "1", "ice area fraction")],
