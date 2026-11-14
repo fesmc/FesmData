@@ -53,7 +53,8 @@ Entries of `../datamanifest.toml`, downloaded by `prepare.jl` (no login):
   26-0 ka every 100 years: `TOPicemsk.GLACD26kN9894GE90227A6005GGrBgic.nc` (812 MB,
   1° x 0.5°; `HDC`, elevation relative to the sea level of the time, the surface of land
   and ice including ice shelves, and the sea floor in the open ocean; `HDCB`, the same
-  but the base of the floating ice under ice shelves; `ICEM`, ice fraction) and
+  but the sea floor under ice shelves, "bathymetry for floating ice" (e.g. -581 m under
+  the Ross Ice Shelf at 0 ka, whose base is at -312 m); `ICEM`, ice fraction) and
   `GLAC1DHiceF26.nc` (57 MB, 0.5° x 0.25°; `HGLOBH`, ice thickness).
 
 `HGLOBH` has thin ice (up to about 85 m) over Siberia and Alaska, about the same at
@@ -79,8 +80,12 @@ each on the grid of its source with longitudes in -180:180 and the dimension `ti
   is identical in both);
 - `Tarasov2012_GLAC1D_NA_nn9894.nc`: `H_ice` of North America + Greenland, 120-0 ka;
 - `Tarasov2012_GLAC1D_ANT_nn4041.nc`: `H_ice` of Antarctica, 120-0 ka;
-- `Tarasov2012_GLAC1D_PMIP4_topo.nc`: `z_topo` (m, `HDCB`), `z_srf` (m, `HDC`) and
-  `f_ice` (1, `ICEM`), global, 26-0 ka every 100 years;
+- `Tarasov2012_GLAC1D_PMIP4_topo.nc`: `z_topo` (m, `HDCB`), `z_srf` (m, `HDC`),
+  `f_ice` (1, `ICEM`) and `z_bed` (m), global, 26-0 ka every 100 years. `z_bed`, the bed
+  relative to the sea level of the time, is derived: under grounded ice (`f_ice` > 0 and
+  `z_srf` = `z_topo`) the surface minus `HGLOBH` averaged onto this grid (area weighted,
+  2 x 2 cells), elsewhere `z_topo` (the land surface and the sea floor, also under
+  floating ice);
 - `Tarasov2012_GLAC1D_PMIP4_ice.nc`: `H_ice` (m, `HGLOBH`), global, 26-0 ka every 100
   years.
 
