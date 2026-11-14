@@ -1,10 +1,10 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-11-09"
-git_tag = "icehistory-v2.4.1"
+date = "2026-11-14"
+git_tag = "icehistory-v2.5.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=PatagoniaPaleo_IceHistory"
-version = "2.4.1"
+version = "2.5.0"
 
 ["PAT-PAL-8KM_IceHistory-PaleoMIST.nc"]
 checksum = "sha256:4d1486dcedac01771865226026a9bf19ac2cb8a9f4cd5c3954394a43c3e40b21"

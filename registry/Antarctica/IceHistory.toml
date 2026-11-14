@@ -1,16 +1,25 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-11-09"
-git_tag = "icehistory-v2.4.1"
+date = "2026-11-14"
+git_tag = "icehistory-v2.5.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Antarctica_IceHistory"
-version = "2.4.1"
+version = "2.5.0"
 
 ["ANT-16KM_IceHistory-GLAC1D.nc"]
-checksum = "sha256:c4a09af7b696d65440d01b6262fa5fcf2927355e8cd546da91568818665e5c5f"
-size = 182102990
+checksum = "sha256:45e2edebd1f1175ec1bb5cc70607add36d670593d2430d82ae69845d09177ce8"
+license = "No licence stated by the providers (L. Tarasov, Memorial University of Newfoundland, https://www.physics.mun.ca/~lev/dataAccess.html; PMIP4, https://pmip4.lsce.ipsl.fr/doku.php/data:ice_glac_1d); users are asked to cite the references"
+previous_checksums = ["sha256:c4a09af7b696d65440d01b6262fa5fcf2927355e8cd546da91568818665e5c5f"]
+size = 253270119
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_IceHistory-GLAC1D.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-16KM/2.2.0/ANT-16KM_IceHistory-GLAC1D.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-16KM/2.5.0/ANT-16KM_IceHistory-GLAC1D.nc"
+
+["ANT-16KM_IceHistory-GLAC1D_80k.nc"]
+checksum = "sha256:b0f87915c1449e1416f20e5d9784eaaf16aa131a43db6729b0ebce4fc7ad9056"
+license = "GLAC-1D: no licence stated by the providers, users are asked to cite the references; PaleoMIST 1.0: CC BY 4.0 (PANGAEA)"
+size = 53809372
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_IceHistory-GLAC1D_80k.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-16KM/2.5.0/ANT-16KM_IceHistory-GLAC1D_80k.nc"
 
 ["ANT-16KM_IceHistory-GLAC1D_nn9894.nc"]
 checksum = "sha256:4cc3019f2a9d5e573c7e149e33db166aa44bdedf7a7a4d0c87175ee87a866d79"
@@ -23,6 +32,13 @@ checksum = "sha256:7e4b1f401ece95d593b591b712783840914bf4dd69942c334d94c2582fc68
 size = 60851349
 storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_IceHistory-GLAC1D_nn9927.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-16KM/2.2.0/ANT-16KM_IceHistory-GLAC1D_nn9927.nc"
+
+["ANT-16KM_IceHistory-GLAC1D_nn9927_80k.nc"]
+checksum = "sha256:0a6be6c751dd78ef8f9088a2db9540620d69141712e6c9acb02aa079cf749058"
+license = "GLAC-1D: no licence stated by the providers, users are asked to cite the references; PaleoMIST 1.0: CC BY 4.0 (PANGAEA)"
+size = 53809372
+storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_IceHistory-GLAC1D_nn9927_80k.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-16KM/2.5.0/ANT-16KM_IceHistory-GLAC1D_nn9927_80k.nc"
 
 ["ANT-16KM_IceHistory-ICE5G.nc"]
 checksum = "sha256:00601acde01ab83c2dc325d4fcede5b2c241cfe43de8aaeafc8943bba5a1b28d"
@@ -75,10 +91,19 @@ storage_path = "$datasets_dir/Antarctica/ANT-16KM/ANT-16KM_IceHistory-PaleoMIST_
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-16KM/2.4.1/ANT-16KM_IceHistory-PaleoMIST_taub.nc"
 
 ["ANT-32KM_IceHistory-GLAC1D.nc"]
-checksum = "sha256:aac12226bc578a9bac4f585358b611587a339046354c1d752b49563b464dc297"
-size = 46036677
+checksum = "sha256:b67c4c170b3c8aa8c37ff55db98db8d82eece082b91178d26141653e11245af7"
+license = "No licence stated by the providers (L. Tarasov, Memorial University of Newfoundland, https://www.physics.mun.ca/~lev/dataAccess.html; PMIP4, https://pmip4.lsce.ipsl.fr/doku.php/data:ice_glac_1d); users are asked to cite the references"
+previous_checksums = ["sha256:aac12226bc578a9bac4f585358b611587a339046354c1d752b49563b464dc297"]
+size = 63768889
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_IceHistory-GLAC1D.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-32KM/2.2.0/ANT-32KM_IceHistory-GLAC1D.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-32KM/2.5.0/ANT-32KM_IceHistory-GLAC1D.nc"
+
+["ANT-32KM_IceHistory-GLAC1D_80k.nc"]
+checksum = "sha256:b59277b7273a455d9dc50876331b1b4687622fdef8bd396c50bfe2c51113c152"
+license = "GLAC-1D: no licence stated by the providers, users are asked to cite the references; PaleoMIST 1.0: CC BY 4.0 (PANGAEA)"
+size = 12840941
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_IceHistory-GLAC1D_80k.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-32KM/2.5.0/ANT-32KM_IceHistory-GLAC1D_80k.nc"
 
 ["ANT-32KM_IceHistory-GLAC1D_nn9894.nc"]
 checksum = "sha256:52eada49f6d8ccc0f0878c171943dc00daed36ca0ffdb203789233d07716eeee"
@@ -91,6 +116,13 @@ checksum = "sha256:1e6539a0fd95ebd513d60f48411b9c549bde3f27626670b3e60c251730977
 size = 16412863
 storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_IceHistory-GLAC1D_nn9927.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-32KM/2.2.0/ANT-32KM_IceHistory-GLAC1D_nn9927.nc"
+
+["ANT-32KM_IceHistory-GLAC1D_nn9927_80k.nc"]
+checksum = "sha256:cefd7ea82916a03f24c17edf8da892c77c0b03805a2acbcf8697b7f14ba24ca0"
+license = "GLAC-1D: no licence stated by the providers, users are asked to cite the references; PaleoMIST 1.0: CC BY 4.0 (PANGAEA)"
+size = 12840941
+storage_path = "$datasets_dir/Antarctica/ANT-32KM/ANT-32KM_IceHistory-GLAC1D_nn9927_80k.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Antarctica_IceHistory_ANT-32KM/2.5.0/ANT-32KM_IceHistory-GLAC1D_nn9927_80k.nc"
 
 ["ANT-32KM_IceHistory-ICE5G.nc"]
 checksum = "sha256:c3777c89648bee6bee71e8e3e5427df522d23cad0dfab433fc90e057d2b9fd1b"
