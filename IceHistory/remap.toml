@@ -60,7 +60,7 @@ figure = { variables = ["taub_map"] }
 [products.GLAC1D]
 source = "Tarasov2012_glac1d"
 file = ["Tarasov2012_GLAC1D_PMIP4_topo.nc", "Tarasov2012_GLAC1D_PMIP4_ice.nc"]
-variables = ["z_topo", "z_srf", "H_ice", "f_ice"]
+variables = ["z_topo", "z_srf", "H_ice", "f_ice", "z_bed"]
 grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 50 }
 figure = { variables = ["H_ice"], hide = 0, colormap = "ice" }
 

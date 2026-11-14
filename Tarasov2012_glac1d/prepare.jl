@@ -7,7 +7,7 @@
 #   Tarasov2012_GLAC1D_NA_nn9894.nc (North America + Greenland, H_ice) and
 #   Tarasov2012_GLAC1D_ANT_nn4041.nc (Antarctica, H_ice);
 # - from the PMIP4 GLAC-1D files, global, 26-0 ka every 100 years:
-#   Tarasov2012_GLAC1D_PMIP4_topo.nc (z_topo, z_srf, f_ice, 1° x 0.5°) and
+#   Tarasov2012_GLAC1D_PMIP4_topo.nc (z_topo, z_srf, f_ice and z_bed, derived, 1° x 0.5°) and
 #   Tarasov2012_GLAC1D_PMIP4_ice.nc (H_ice, 0.5° x 0.25°).
 #
 # Usage:
@@ -158,6 +158,35 @@ function write_prepared(file, lon, lat, ages, data; title, references, doi, comm
     println("Wrote $path")
 end
 
+"""
+    coarsen2(A, lon, lat, lonc, latc) -> Ac
+
+`A` (lon, lat, time) averaged, weighted by cell area, over the blocks of 2 x 2 cells that
+make up each cell of the grid with centres `lonc`, `latc` (an error if they do not).
+"""
+function coarsen2(A, lon, lat, lonc, latc)
+    pair(x) = (x[1:2:end] .+ x[2:2:end]) ./ 2
+    pair(lon) ≈ lonc && pair(lat) ≈ latc || error("the grid is not that of 2 x 2 blocks of the coarse grid")
+    w = Float32.(cosd.(lat))
+    Ac = zeros(Float32, length(lonc), length(latc), size(A, 3))
+    for k in axes(A, 3), j in eachindex(latc), i in eachindex(lonc)
+        jj = 2j-1:2j
+        Ac[i, j, k] = sum(A[2i-1:2i, jj, k] .* w[jj]') / (2 * sum(w[jj]))
+    end
+    return Ac
+end
+
+"""
+    bed(z_topo, z_srf, f_ice, H) -> z_bed
+
+The bed relative to the sea level of the time, on the grid of the PMIP4 topography: under
+grounded ice (`f_ice` > 0 and the surface `z_srf` at `z_topo`), the surface minus the ice
+thickness `H` (HGLOBH averaged onto this grid); elsewhere `z_topo`, which is the land
+surface, the sea floor in the open ocean and the sea floor under floating ice (where
+`z_srf` > `z_topo`).
+"""
+bed(z_topo, z_srf, f_ice, H) = ifelse.((f_ice .> 0) .& (z_srf .== z_topo), z_srf .- H, z_topo)
+
 dir = tarasov_dir()
 for (file, prefix, fields, title, refs, doi) in REGIONAL
     lon, lat, ages, data = read_regional(dir, prefix, fields)
@@ -169,7 +198,7 @@ for (file, prefix, fields, title, refs, doi) in REGIONAL
                            "second); covers only the area of its grid")
 end
 
-for (file, key, fields, title) in PMIP4
+pmip4 = map(PMIP4) do (file, key, fields, title)
     src = download_dataset(manifest(), key)
     lon, lat, ages, data = NCDataset(src) do ds
         v1 = first(fields)[2][1]
@@ -177,6 +206,17 @@ for (file, key, fields, title) in PMIP4
         lon, lat, read_ages(ds, v1),
         [name => (read_field(ds, v, perm), units, long_name) for (name, (v, units, long_name)) in fields]
     end
+    (; file, title, src, lon, lat, ages, data)
+end
+topo, ice = pmip4
+topo.ages == ice.ages || error("the PMIP4 topography and ice thickness have different time axes")
+field(p, name) = only(A for (n, (A, _, _)) in p.data if n == name)
+push!(topo.data, "z_bed" => (bed(field(topo, "z_topo"), field(topo, "z_srf"), field(topo, "f_ice"),
+                                 coarsen2(field(ice, "H_ice"), ice.lon, ice.lat, topo.lon, topo.lat)),
+                             "m", "bed elevation relative to sea level at the time (surface minus ice thickness " *
+                                  "under grounded ice, z_topo elsewhere)"))
+
+for (; file, title, src, lon, lat, ages, data) in pmip4
     write_prepared(file, lon, lat, ages, data;
                    title=title * " (Tarasov et al., 2012; Briggs et al., 2014; Tarasov and Peltier, 2002)",
                    references=[REF_GR, REF_NA, REF_ANT, REF_EU, REF_AO], doi="10.1016/j.epsl.2011.09.010",

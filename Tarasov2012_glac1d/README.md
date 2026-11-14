@@ -80,8 +80,12 @@ each on the grid of its source with longitudes in -180:180 and the dimension `ti
   is identical in both);
 - `Tarasov2012_GLAC1D_NA_nn9894.nc`: `H_ice` of North America + Greenland, 120-0 ka;
 - `Tarasov2012_GLAC1D_ANT_nn4041.nc`: `H_ice` of Antarctica, 120-0 ka;
-- `Tarasov2012_GLAC1D_PMIP4_topo.nc`: `z_topo` (m, `HDCB`), `z_srf` (m, `HDC`) and
-  `f_ice` (1, `ICEM`), global, 26-0 ka every 100 years;
+- `Tarasov2012_GLAC1D_PMIP4_topo.nc`: `z_topo` (m, `HDCB`), `z_srf` (m, `HDC`),
+  `f_ice` (1, `ICEM`) and `z_bed` (m), global, 26-0 ka every 100 years. `z_bed`, the bed
+  relative to the sea level of the time, is derived: under grounded ice (`f_ice` > 0 and
+  `z_srf` = `z_topo`) the surface minus `HGLOBH` averaged onto this grid (area weighted,
+  2 x 2 cells), elsewhere `z_topo` (the land surface and the sea floor, also under
+  floating ice);
 - `Tarasov2012_GLAC1D_PMIP4_ice.nc`: `H_ice` (m, `HGLOBH`), global, 26-0 ka every 100
   years.
 
