@@ -1,10 +1,10 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-11-14"
-git_tag = "icehistory-v2.5.0"
+date = "2026-11-16"
+git_tag = "icehistory-v2.6.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=Global_IceHistory"
-version = "2.5.0"
+version = "2.6.0"
 
 ["GLOBAL-0.1DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc"]
 checksum = "sha256:3ad45aa76f1550cbd860a72a7eceeb7e5f5bd23044628fef10844c8a0feb0921"
@@ -21,18 +21,20 @@ storage_path = "$datasets_dir/Global/GLOBAL-0.25DEG/GLOBAL-0.25DEG_IceHistory-Ba
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.25DEG/2.2.0/GLOBAL-0.25DEG_IceHistory-Batchelor2019_PaleoMIST_LGC.nc"
 
 ["GLOBAL-0.25DEG_IceHistory-GLAC1D_80k.nc"]
-checksum = "sha256:352a1f457f3fd1797a47faf0263145e515ddc12aa3b556518a33513fecd54f09"
+checksum = "sha256:cd96000962c21d2793fdfec64e035c1a868123730a03e3d1c2f20395ced45771"
 license = "GLAC-1D: no licence stated by the providers, users are asked to cite the references; PaleoMIST 1.0: CC BY 4.0 (PANGAEA)"
-size = 34352602
+previous_checksums = ["sha256:352a1f457f3fd1797a47faf0263145e515ddc12aa3b556518a33513fecd54f09"]
+size = 326102807
 storage_path = "$datasets_dir/Global/GLOBAL-0.25DEG/GLOBAL-0.25DEG_IceHistory-GLAC1D_80k.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.25DEG/2.5.0/GLOBAL-0.25DEG_IceHistory-GLAC1D_80k.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.25DEG/2.6.0/GLOBAL-0.25DEG_IceHistory-GLAC1D_80k.nc"
 
 ["GLOBAL-0.25DEG_IceHistory-GLAC1D_nn9927_80k.nc"]
-checksum = "sha256:19a40e26661dc99aa7b9b7b5e82beac68c6a4dfbca0cb5de0e639f392e72786e"
+checksum = "sha256:74eecaaa53053da33c2350f9aac2e29cf2fe4c907bfb249c63297a1bff0563e6"
 license = "GLAC-1D: no licence stated by the providers, users are asked to cite the references; PaleoMIST 1.0: CC BY 4.0 (PANGAEA)"
-size = 34306164
+previous_checksums = ["sha256:19a40e26661dc99aa7b9b7b5e82beac68c6a4dfbca0cb5de0e639f392e72786e"]
+size = 326056369
 storage_path = "$datasets_dir/Global/GLOBAL-0.25DEG/GLOBAL-0.25DEG_IceHistory-GLAC1D_nn9927_80k.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.25DEG/2.5.0/GLOBAL-0.25DEG_IceHistory-GLAC1D_nn9927_80k.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.25DEG/2.6.0/GLOBAL-0.25DEG_IceHistory-GLAC1D_nn9927_80k.nc"
 
 ["GLOBAL-0.25DEG_IceHistory-PaleoMIST.nc"]
 checksum = "sha256:e3dff10c88fc24de8256173f2d4b200feaf1a10c8ff1a975f5bdad87b94798e5"
@@ -64,11 +66,12 @@ storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/GLOBAL-0.5DEG_IceHistory-GLAC
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.5DEG/2.5.0/GLOBAL-0.5DEG_IceHistory-GLAC1D.nc"
 
 ["GLOBAL-0.5DEG_IceHistory-GLAC1D_80k.nc"]
-checksum = "sha256:b813b47156e573e1726912a50f2f5421c83a66cd513345fdcce108e4f926e5fb"
+checksum = "sha256:4677f8ec511561c6c97d5a27cb866417ca388eb53507ada9a9e42ec01ad25dc8"
 license = "GLAC-1D: no licence stated by the providers, users are asked to cite the references; PaleoMIST 1.0: CC BY 4.0 (PANGAEA)"
-size = 18019239
+previous_checksums = ["sha256:b813b47156e573e1726912a50f2f5421c83a66cd513345fdcce108e4f926e5fb"]
+size = 162793508
 storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/GLOBAL-0.5DEG_IceHistory-GLAC1D_80k.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.5DEG/2.5.0/GLOBAL-0.5DEG_IceHistory-GLAC1D_80k.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.5DEG/2.6.0/GLOBAL-0.5DEG_IceHistory-GLAC1D_80k.nc"
 
 ["GLOBAL-0.5DEG_IceHistory-GLAC1D_nn9894.nc"]
 checksum = "sha256:997853c7497a0497303c8e2cac5e79b0a627c0a66fa21db102ff0e09a423ad13"
@@ -83,11 +86,12 @@ storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/GLOBAL-0.5DEG_IceHistory-GLAC
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.5DEG/2.2.0/GLOBAL-0.5DEG_IceHistory-GLAC1D_nn9927.nc"
 
 ["GLOBAL-0.5DEG_IceHistory-GLAC1D_nn9927_80k.nc"]
-checksum = "sha256:6df7f6a8baa9385d5923c60d37834f4026887d4d6c23687faf8a9e5344f650db"
+checksum = "sha256:42dc3d5f4292e2967b05cf26089d0d0efca96314657ceab24b4d65c82a46e40c"
 license = "GLAC-1D: no licence stated by the providers, users are asked to cite the references; PaleoMIST 1.0: CC BY 4.0 (PANGAEA)"
-size = 18043732
+previous_checksums = ["sha256:6df7f6a8baa9385d5923c60d37834f4026887d4d6c23687faf8a9e5344f650db"]
+size = 162818001
 storage_path = "$datasets_dir/Global/GLOBAL-0.5DEG/GLOBAL-0.5DEG_IceHistory-GLAC1D_nn9927_80k.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.5DEG/2.5.0/GLOBAL-0.5DEG_IceHistory-GLAC1D_nn9927_80k.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-0.5DEG/2.6.0/GLOBAL-0.5DEG_IceHistory-GLAC1D_nn9927_80k.nc"
 
 ["GLOBAL-0.5DEG_IceHistory-ICE5G.nc"]
 checksum = "sha256:59176a6fcb39a831d794ea8cfbbea6224a9b813ce9213943b9a8e0d9621698e6"
@@ -140,11 +144,12 @@ storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_IceHistory-GLAC1D.n
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-1DEG/2.5.0/GLOBAL-1DEG_IceHistory-GLAC1D.nc"
 
 ["GLOBAL-1DEG_IceHistory-GLAC1D_80k.nc"]
-checksum = "sha256:fae0d2bbdeceb915a65e1e128a17afce24faa898d117442c52b00e318b005dc8"
+checksum = "sha256:e3ea321a5b74a64b4bedef6a2cdfd40fae6ac97138278c2537e21da2924f6f40"
 license = "GLAC-1D: no licence stated by the providers, users are asked to cite the references; PaleoMIST 1.0: CC BY 4.0 (PANGAEA)"
-size = 9470061
+previous_checksums = ["sha256:fae0d2bbdeceb915a65e1e128a17afce24faa898d117442c52b00e318b005dc8"]
+size = 53579553
 storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_IceHistory-GLAC1D_80k.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-1DEG/2.5.0/GLOBAL-1DEG_IceHistory-GLAC1D_80k.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-1DEG/2.6.0/GLOBAL-1DEG_IceHistory-GLAC1D_80k.nc"
 
 ["GLOBAL-1DEG_IceHistory-GLAC1D_nn9894.nc"]
 checksum = "sha256:8f2ec50ef46c08f3ea77f2ee3cc225fb58c02571e0673f2df42bea8bf87d7a61"
@@ -159,11 +164,12 @@ storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_IceHistory-GLAC1D_n
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-1DEG/2.2.0/GLOBAL-1DEG_IceHistory-GLAC1D_nn9927.nc"
 
 ["GLOBAL-1DEG_IceHistory-GLAC1D_nn9927_80k.nc"]
-checksum = "sha256:78f8c8b97edd5eca03b6686be5e4ccaa731506e19463355cbf9209a87d823030"
+checksum = "sha256:0b8eb143ba9a6dd028da8019a89f80dee5dada2d7727cb22dd66e0badc5ad425"
 license = "GLAC-1D: no licence stated by the providers, users are asked to cite the references; PaleoMIST 1.0: CC BY 4.0 (PANGAEA)"
-size = 9471204
+previous_checksums = ["sha256:78f8c8b97edd5eca03b6686be5e4ccaa731506e19463355cbf9209a87d823030"]
+size = 53580696
 storage_path = "$datasets_dir/Global/GLOBAL-1DEG/GLOBAL-1DEG_IceHistory-GLAC1D_nn9927_80k.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-1DEG/2.5.0/GLOBAL-1DEG_IceHistory-GLAC1D_nn9927_80k.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-1DEG/2.6.0/GLOBAL-1DEG_IceHistory-GLAC1D_nn9927_80k.nc"
 
 ["GLOBAL-1DEG_IceHistory-ICE5G.nc"]
 checksum = "sha256:bf3de1e4710e628961d6aa2df6d9efd52b5683deb2da22227956a7775b17ff48"
@@ -216,11 +222,12 @@ storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_IceHistory-GLAC1D.n
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-2DEG/2.5.0/GLOBAL-2DEG_IceHistory-GLAC1D.nc"
 
 ["GLOBAL-2DEG_IceHistory-GLAC1D_80k.nc"]
-checksum = "sha256:4cc01ca0f0cc5fe1a5a76485106efbbc20ccfd289bf5c385308d7de4ccc7e553"
+checksum = "sha256:09ab917f297af1eab5816e0d402c0c73f1cf0939320621189d065a9e9dbc6705"
 license = "GLAC-1D: no licence stated by the providers, users are asked to cite the references; PaleoMIST 1.0: CC BY 4.0 (PANGAEA)"
-size = 2923483
+previous_checksums = ["sha256:4cc01ca0f0cc5fe1a5a76485106efbbc20ccfd289bf5c385308d7de4ccc7e553"]
+size = 13874083
 storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_IceHistory-GLAC1D_80k.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-2DEG/2.5.0/GLOBAL-2DEG_IceHistory-GLAC1D_80k.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-2DEG/2.6.0/GLOBAL-2DEG_IceHistory-GLAC1D_80k.nc"
 
 ["GLOBAL-2DEG_IceHistory-GLAC1D_nn9894.nc"]
 checksum = "sha256:ba6f3782a290897a3806520688089fa6c59f7dc9d8a4e7656d009b343520fd5b"
@@ -235,11 +242,12 @@ storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_IceHistory-GLAC1D_n
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-2DEG/2.2.0/GLOBAL-2DEG_IceHistory-GLAC1D_nn9927.nc"
 
 ["GLOBAL-2DEG_IceHistory-GLAC1D_nn9927_80k.nc"]
-checksum = "sha256:a38a8cd60ed82c97b13ff2112fccef93eca0fdc5bc5852681adcabf4fa9cc56f"
+checksum = "sha256:c9f4f17a721c96c6053f040aa41d8c8045d6703642d5fb1c8dbdb1e34c59443a"
 license = "GLAC-1D: no licence stated by the providers, users are asked to cite the references; PaleoMIST 1.0: CC BY 4.0 (PANGAEA)"
-size = 2921489
+previous_checksums = ["sha256:a38a8cd60ed82c97b13ff2112fccef93eca0fdc5bc5852681adcabf4fa9cc56f"]
+size = 13872089
 storage_path = "$datasets_dir/Global/GLOBAL-2DEG/GLOBAL-2DEG_IceHistory-GLAC1D_nn9927_80k.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-2DEG/2.5.0/GLOBAL-2DEG_IceHistory-GLAC1D_nn9927_80k.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-2DEG/2.6.0/GLOBAL-2DEG_IceHistory-GLAC1D_nn9927_80k.nc"
 
 ["GLOBAL-2DEG_IceHistory-ICE5G.nc"]
 checksum = "sha256:4888553a1a7c2b7f8c5ecd16d8fcb6eddbba04eadfd57f92c2c50fb75c166456"
@@ -292,11 +300,12 @@ storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_IceHistory-GLAC1D.n
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-5DEG/2.5.0/GLOBAL-5DEG_IceHistory-GLAC1D.nc"
 
 ["GLOBAL-5DEG_IceHistory-GLAC1D_80k.nc"]
-checksum = "sha256:c27ee36bfac48e329a1425f0679b03033b2b9a042b9324e7c7e98dbf248d8c05"
+checksum = "sha256:46db959d0676a99522433bf977f9d595a3cf7375e755edd85a2a1d1aa3edc002"
 license = "GLAC-1D: no licence stated by the providers, users are asked to cite the references; PaleoMIST 1.0: CC BY 4.0 (PANGAEA)"
-size = 702889
+previous_checksums = ["sha256:c27ee36bfac48e329a1425f0679b03033b2b9a042b9324e7c7e98dbf248d8c05"]
+size = 2451700
 storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_IceHistory-GLAC1D_80k.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-5DEG/2.5.0/GLOBAL-5DEG_IceHistory-GLAC1D_80k.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-5DEG/2.6.0/GLOBAL-5DEG_IceHistory-GLAC1D_80k.nc"
 
 ["GLOBAL-5DEG_IceHistory-GLAC1D_nn9894.nc"]
 checksum = "sha256:d52e86784438ec154f8fc707a78c38afee792b35e5fa8d7b8a9eba344b750071"
@@ -311,11 +320,12 @@ storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_IceHistory-GLAC1D_n
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-5DEG/2.2.0/GLOBAL-5DEG_IceHistory-GLAC1D_nn9927.nc"
 
 ["GLOBAL-5DEG_IceHistory-GLAC1D_nn9927_80k.nc"]
-checksum = "sha256:c8fbc41f74db9db84bab507f9f0bed4e1d6c438c28cfbff615f886459be61fcd"
+checksum = "sha256:8294ae39333e45207d6b23f00925093f14e0bf9a5d152adda673dbba3e343ec8"
 license = "GLAC-1D: no licence stated by the providers, users are asked to cite the references; PaleoMIST 1.0: CC BY 4.0 (PANGAEA)"
-size = 702795
+previous_checksums = ["sha256:c8fbc41f74db9db84bab507f9f0bed4e1d6c438c28cfbff615f886459be61fcd"]
+size = 2451606
 storage_path = "$datasets_dir/Global/GLOBAL-5DEG/GLOBAL-5DEG_IceHistory-GLAC1D_nn9927_80k.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-5DEG/2.5.0/GLOBAL-5DEG_IceHistory-GLAC1D_nn9927_80k.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/Global_IceHistory_GLOBAL-5DEG/2.6.0/GLOBAL-5DEG_IceHistory-GLAC1D_nn9927_80k.nc"
 
 ["GLOBAL-5DEG_IceHistory-ICE5G.nc"]
 checksum = "sha256:f8b25ff67f8f16a8792ee3d904061ea54622950380989d8db787dfb813711f58"

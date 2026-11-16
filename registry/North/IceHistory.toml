@@ -1,10 +1,10 @@
 # Registry of a released record, written by Publish (see Publish/README.md).
 
 [_RELEASE]
-date = "2026-11-14"
-git_tag = "icehistory-v2.5.0"
+date = "2026-11-16"
+git_tag = "icehistory-v2.6.0"
 store = "https://codebase.helmholtz.cloud/fesmc/fesmdata-products/-/packages?search=North_IceHistory"
-version = "2.5.0"
+version = "2.6.0"
 
 ["NH-16KM_IceHistory-Batchelor2019.nc"]
 checksum = "sha256:3c007d6c08ee3adcb52da6457c97e899f4ad0e9e7169494c31e01b8e045a0c87"
@@ -22,11 +22,12 @@ storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_IceHistory-GLAC1D.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.5.0/NH-16KM_IceHistory-GLAC1D.nc"
 
 ["NH-16KM_IceHistory-GLAC1D_80k.nc"]
-checksum = "sha256:426bc434d9b96949bac2c97731767566b5ffdcf096be5d2bd854e037ad4cac39"
+checksum = "sha256:59b1a36a6e9cc0e184b06087171847e31a4c4702c1a9423460172d2c62415dca"
 license = "GLAC-1D: no licence stated by the providers, users are asked to cite the references; PaleoMIST 1.0: CC BY 4.0 (PANGAEA)"
-size = 84052004
+previous_checksums = ["sha256:426bc434d9b96949bac2c97731767566b5ffdcf096be5d2bd854e037ad4cac39"]
+size = 316549027
 storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_IceHistory-GLAC1D_80k.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.5.0/NH-16KM_IceHistory-GLAC1D_80k.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.6.0/NH-16KM_IceHistory-GLAC1D_80k.nc"
 
 ["NH-16KM_IceHistory-GLAC1D_nn9894.nc"]
 checksum = "sha256:10bf448c84458faa4773e90157568539ecc17cee8a9221e254a5d1d487d9f62d"
@@ -41,11 +42,12 @@ storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_IceHistory-GLAC1D_nn9927.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.2.0/NH-16KM_IceHistory-GLAC1D_nn9927.nc"
 
 ["NH-16KM_IceHistory-GLAC1D_nn9927_80k.nc"]
-checksum = "sha256:e7f1eadf3cfeab8ff75686838128b2a8b467f715cedb7c6d9e8f46a55e287392"
+checksum = "sha256:54878d5d042cb14d10847235b9939097dce450aeadf6580bca7469477c46da11"
 license = "GLAC-1D: no licence stated by the providers, users are asked to cite the references; PaleoMIST 1.0: CC BY 4.0 (PANGAEA)"
-size = 83610148
+previous_checksums = ["sha256:e7f1eadf3cfeab8ff75686838128b2a8b467f715cedb7c6d9e8f46a55e287392"]
+size = 316107171
 storage_path = "$datasets_dir/North/NH-16KM/NH-16KM_IceHistory-GLAC1D_nn9927_80k.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.5.0/NH-16KM_IceHistory-GLAC1D_nn9927_80k.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-16KM/2.6.0/NH-16KM_IceHistory-GLAC1D_nn9927_80k.nc"
 
 ["NH-16KM_IceHistory-ICE5G.nc"]
 checksum = "sha256:8ffe5107f10170938666b48c18535949ab15ce37a9eadd5563f45ed47d94c6e3"
@@ -127,11 +129,12 @@ storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_IceHistory-GLAC1D.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.5.0/NH-32KM_IceHistory-GLAC1D.nc"
 
 ["NH-32KM_IceHistory-GLAC1D_80k.nc"]
-checksum = "sha256:856a990cc6cdf03d0ffb14d56fe3006d9845ae081baf475e3dbd539ff61809ad"
+checksum = "sha256:307c7b26d602d0d8e92a51d25e263af1f77f20f9a249ebfe2d9c010e0e19c9d0"
 license = "GLAC-1D: no licence stated by the providers, users are asked to cite the references; PaleoMIST 1.0: CC BY 4.0 (PANGAEA)"
-size = 19699170
+previous_checksums = ["sha256:856a990cc6cdf03d0ffb14d56fe3006d9845ae081baf475e3dbd539ff61809ad"]
+size = 78485098
 storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_IceHistory-GLAC1D_80k.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.5.0/NH-32KM_IceHistory-GLAC1D_80k.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.6.0/NH-32KM_IceHistory-GLAC1D_80k.nc"
 
 ["NH-32KM_IceHistory-GLAC1D_nn9894.nc"]
 checksum = "sha256:18295ed929e03d0e9eb0ce5f20baa0e0de83d91c07c4dfa9abff2f732eb3d172"
@@ -146,11 +149,12 @@ storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_IceHistory-GLAC1D_nn9927.nc"
 uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.2.0/NH-32KM_IceHistory-GLAC1D_nn9927.nc"
 
 ["NH-32KM_IceHistory-GLAC1D_nn9927_80k.nc"]
-checksum = "sha256:c028c298fda23f67a23469f2f3491510a4fa0bc31f43f4d74470aad391deac17"
+checksum = "sha256:07be4ef428e9995c0e70fe7bacfc17c3dc08355392249ee7635df1eee386e0dd"
 license = "GLAC-1D: no licence stated by the providers, users are asked to cite the references; PaleoMIST 1.0: CC BY 4.0 (PANGAEA)"
-size = 19586436
+previous_checksums = ["sha256:c028c298fda23f67a23469f2f3491510a4fa0bc31f43f4d74470aad391deac17"]
+size = 78372364
 storage_path = "$datasets_dir/North/NH-32KM/NH-32KM_IceHistory-GLAC1D_nn9927_80k.nc"
-uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.5.0/NH-32KM_IceHistory-GLAC1D_nn9927_80k.nc"
+uri = "https://codebase.helmholtz.cloud/api/v4/projects/22725/packages/generic/North_IceHistory_NH-32KM/2.6.0/NH-32KM_IceHistory-GLAC1D_nn9927_80k.nc"
 
 ["NH-32KM_IceHistory-ICE5G.nc"]
 checksum = "sha256:f73143d2f803afdc079f34966c4e1c1e0c5e171dbff3d1992139ddfe5625e3e9"
