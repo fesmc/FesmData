@@ -85,14 +85,14 @@ figure = { variables = ["H_ice"], hide = 0, colormap = "ice" }
 [products.GLAC1D_80k]
 source = "Tarasov2012_glac1d_80k"
 file = "Tarasov2012_GLAC1D_80k.nc"
-variables = ["H_ice", "f_ice"]
+variables = ["H_ice", "f_ice", "z_bed"]
 grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 25 }
 figure = { variables = ["H_ice"], hide = 0, colormap = "ice" }
 
 [products.GLAC1D_nn9927_80k]
 source = "Tarasov2012_glac1d_80k"
 file = "Tarasov2012_GLAC1D_nn9927_80k.nc"
-variables = ["H_ice", "f_ice"]
+variables = ["H_ice", "f_ice", "z_bed"]
 grids = { Antarctica = 16, GreenlandPaleo = 16, North = 16, Global = 25 }
 figure = { variables = ["H_ice"], hide = 0, colormap = "ice" }
 

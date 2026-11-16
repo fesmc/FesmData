@@ -1,7 +1,8 @@
 # GLAC-1D extended to 80 ka with PaleoMIST 1.0
 
 Global ice histories from 80 ka to present, for ice-load forcing of glacial isostatic
-adjustment models, e.g. to compare with PaleoMIST 1.0, which spans the same time:
+adjustment models and imposed ice-sheet geometries, e.g. to compare with PaleoMIST 1.0,
+which spans the same time:
 
 - North America + Greenland and Antarctica: the regional GLAC-1D reconstructions of
   `../Tarasov2012_glac1d/`, North America nn9894 (as in the PMIP4 GLAC-1D) or nn9927, with
@@ -39,7 +40,7 @@ julia fesmdata.jl remap IceHistory GLAC1D_80k GLAC1D_nn9927_80k
 `Remap/README.md`), `Tarasov2012_GLAC1D_80k.nc` (North America nn9894, product
 `GLAC1D_80k`) and `Tarasov2012_GLAC1D_nn9927_80k.nc` (nn9927, `GLAC1D_nn9927_80k`), on
 the 0.5° x 0.25° grid of the PMIP4 ice thickness (global, longitudes in -180:180), with
-`H_ice` (m) and `f_ice` (1) on (lon, lat, time).
+`H_ice` (m), `f_ice` (1) and `z_bed` (m) on (lon, lat, time).
 
 - Time (years ago, before 1950 CE, oldest first): the steps of the regional
   reconstructions from 80 ka, where PaleoMIST starts, every 1 kyr to 30 ka and then
@@ -61,6 +62,12 @@ the 0.5° x 0.25° grid of the PMIP4 ice thickness (global, longitudes in -180:1
   before. So it keeps the extents of the sources, also where they differ from their
   thickness (the thin `HGLOBH` ice over Siberia and Alaska, where `ICEM` is 0, and the
   smoothed PaleoMIST thickness beyond its margins).
+- `z_bed`: the bed relative to the sea level of the time, of the global sources
+  everywhere, since the regional reconstructions have no bed: `z_bed` of the PMIP4
+  GLAC-1D (1° x 0.5°, remapped conservatively) at and after 26 ka, PaleoMIST's
+  (`base_topography`, remapped, interpolated in time) before. Before 26 ka the bed under
+  the North American and Antarctic GLAC-1D ice is PaleoMIST's, isostatically adjusted to
+  PaleoMIST's ice, not to GLAC-1D's.
 
 The rest of the globe changes source between 26.1 ka (PaleoMIST) and 26 ka (PMIP4
 GLAC-1D), with a step in the ice volume there, mostly in Eurasia; it is not smoothed.
