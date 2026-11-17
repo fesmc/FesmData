@@ -102,6 +102,26 @@ file = "Leger2024_PaleoGrIS.nc"
 variables = ["age_deglac", "age_deglac_err"]
 grids = { GreenlandPaleo = 1 }
 
+# Dated ice-margin chronologies of the last deglaciation, rasterized at 2 km: North America
+# (Dalton et al., 2020; with Greenland and the Canadian Arctic ice caps), 36 isochrones
+# 22.1-0.91 ka, and Eurasia (DATED-1, Hughes et al., 2016), 25-10 ka every 1 kyr, the
+# most-credible extent (f_ice) and the minimum and maximum. Dalton2020: no licence stated
+# for the supplementary data of the article, not released until that is settled.
+[products.Dalton2020]
+source = "Dalton2020_isochrones"
+file = "Dalton2020_ISOCHRONES.nc"
+variables = ["f_ice"]
+grids = { North = 2 }
+release = false
+figure = { select = { time = [22100, 16800, 11500] } }
+
+[products.DATED1]
+source = "Hughes2016_DATED1"
+file = "Hughes2016_DATED1.nc"
+variables = ["f_ice", "f_ice_min", "f_ice_max"]
+grids = { North = 2 }
+figure = { select = { time = [25000, 20000, 15000] } }
+
 [products.Margold2015]
 source = "Margold2015_icestreams"
 file = "Margold2015_ICESTREAMS.nc"

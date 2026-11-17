@@ -24,6 +24,8 @@ data](https://fesmc.github.io/FesmData/remap.html)): its products are defined in
 | `IceHistory-GLAC1D_80k` | GLAC-1D extended to 80 ka, global, 0.5° x 0.25°: North America nn9894 (as in PMIP4) with Greenland, and Antarctica nn4041; elsewhere the PMIP4 GLAC-1D (Eurasia etc.) from 26 ka and PaleoMIST 1.0 (Gowan et al., 2021) before; 80-0 ka (every 1 kyr to 30 ka, then 100 years) | `H_ice`, `f_ice`, on `time` (years ago) | Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Eurasia, Global |
 | `IceHistory-GLAC1D_nn9927_80k` | The same with North America nn9927 | `H_ice`, `f_ice`, on `time` (years ago) | Antarctica, GreenlandPaleo, Greenland, North, Laurentide, Eurasia, Global |
 | `IceHistory-PaleoGrIS` | Leger et al. (2024): PaleoGrIS 1.0 isochrone buffers, 1 km, [doi:10.17632/nh57cz4gys.1](https://doi.org/10.17632/nh57cz4gys.1) | `age_deglac` (time of deglaciation, years ago, 13-7 ka), `age_deglac_err` | GreenlandPaleo, Greenland (grids of 1 km and coarser) |
+| `IceHistory-Dalton2020` | Dalton et al. (2020): ice-margin chronology of the North American Ice Sheet Complex (with Greenland and the Canadian Arctic ice caps), 36 isochrones 22.1-0.91 cal ka (18-1 14C ka), rasterized at 2 km, [doi:10.1016/j.quascirev.2020.106223](https://doi.org/10.1016/j.quascirev.2020.106223); not released (licence) | `f_ice`, `age_14c` (radiocarbon age), on `time` (years ago) | North, Laurentide, Eurasia (grids of 2 km and coarser) |
+| `IceHistory-DATED1` | Hughes et al. (2016): DATED-1, time-slice reconstructions of the Eurasian ice sheets, 25-10 ka every 1 kyr, rasterized at 2 km, [doi:10.1594/PANGAEA.848117](https://doi.org/10.1594/PANGAEA.848117) | `f_ice` (most-credible extent), `f_ice_min`, `f_ice_max`, on `time` (years ago) | North, Laurentide, Eurasia (grids of 2 km and coarser) |
 | `IceHistory-Margold2015` | Margold et al. (2015): Laurentide ice streams, rasterized at 1 km, [doi:10.1080/17445647.2014.912036](https://doi.org/10.1080/17445647.2014.912036), with their activity from Stokes et al. (2016), [doi:10.1038/nature16947](https://doi.org/10.1038/nature16947) | `f_stream`, `f_stream_lgm` (streams active at 21.8 ka), `age_stream_start`, `age_stream_end` (years ago) | North, Laurentide |
 | `IceHistory-Batchelor2019_PaleoMIST_LGC` | Batchelor et al. (2019) in the Northern Hemisphere and PaleoMIST 1.0 (Gowan et al., 2021) in the Southern Hemisphere, 0.1°, 80-21 ka (replaces `Batchelor2019_ice_masks_lgc.nc` of v1, used by CLIMBER-X) | `f_ice_best`, `f_ice_min`, `f_ice_max`, on `time` (years ago: 80000, 65000, 45000, 40000, 35000, 30000, 26500, 21000) | Global |
 
@@ -40,7 +42,7 @@ domains of the four regions (993), whether or not they have cells there (since v
 before, the grids other than PatagoniaPaleo listed the 949 domains of the first three
 regions). `IceHistory-PaleoMIST_taub` is under the GPL-3.0-only
 (see Licences). Ice extents from outlines (Batchelor,
-Margold) are rasterized as area fractions at 2 km and 1 km, so that remapping gives the fraction of
+Margold, Dalton, DATED-1) are rasterized as area fractions at 2 km and 1 km, so that remapping gives the fraction of
 each cell. The global attribute `remap_method` records what was done on each grid.
 
 ## Precision
@@ -65,6 +67,8 @@ are exact.
 | Gowan et al. (2021), PaleoMIST 1.0 basal shear stress (`IceHistory-PaleoMIST_taub`) | GPL-3.0-only: derived from the input files of the global/ setup of ICESHEET 2.0 (E. J. Gowan, GNU GPL v3), released under the same licence (attribute `license` of the files and of their registry entries) |
 | Tarasov et al. (2012), GLAC-1D | None stated; cite Tarasov et al. (2012), Briggs et al. (2014), Tarasov & Peltier (2002) and, for the PMIP4 files, Tarasov et al. (2014) and Abe-Ouchi et al. (2013) |
 | Leger et al. (2024), PaleoGrIS 1.0 | CC BY 4.0 (Mendeley Data) |
+| Dalton et al. (2020) | No licence stated for the shapefiles (supplementary data of the article, Elsevier); the product is not released until the redistribution of derived products is settled |
+| Hughes et al. (2016), DATED-1 | CC BY 3.0 (PANGAEA) |
 | Margold et al. (2015), with Stokes et al. (2016) | Outlines CC BY 4.0 (figshare); ages from the source data of Stokes et al. (2016), Nature, no open licence stated |
 
 ## Making the dataset

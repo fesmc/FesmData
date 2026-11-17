@@ -57,6 +57,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | climate  | CMIP                        | Working with CMIP data (CMIP5/CMIP6/etc)         | Unpublished                    |
 | geo      | Colgan2021_ghf              | Geothermal heat flow of Greenland                | Colgan & Wansing (2021)        |
 | geo      | Colgan2021_topocorr         | Topographic correction of geothermal heat flow   | Colgan et al. (2021)           |
+| paleo    | Dalton2020_isochrones       | Ice-margin chronology of the North American Ice Sheet Complex, 22.1-0.91 ka | Dalton et al. (2020) |
 | geo      | Davies2013_ghf              | Global geothermal heat flow                      | Davies (2013)                  |
 | ice      | Dawson2022_basalstate       | Antarctic ice sheet basal thermal state          | Dawson et al. (2022)           |
 | paleo    | deBoer2014_sealevel         | Sea level and ice sheet contributions, 5.3 Myr   | de Boer et al. (2014)          |
@@ -76,6 +77,7 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | geo      | Hazzard2023_visc            | Antarctic mantle viscosity and lithosphere thickness | Hazzard et al. (2023)      |
 | geo      | HazzardRichards2024_ghf     | Antarctic geothermal heat flow                   | Hazzard & Richards (2024)      |
 | climate  | Hersbach2020_era5           | ERA5 monthly climatologies                       | Hersbach et al. (2020)         |
+| paleo    | Hughes2016_DATED1           | DATED-1 time-slice reconstructions of the Eurasian ice sheets, 25-10 ka | Hughes et al. (2016) |
 | climate  | Jackson2022                 | NAHosMIP freshwater hosing                       | Jackson et al. (2022)          |
 | ice      | Joughin2018                 | Greenland ice surface velocity                   | Joughin et al. (2018)          |
 | ocean    | Jourdain2020_ismip6         | ISMIP6 Antarctic ocean climatology (deprecated, see Zhou2026_ismip7ocean) | Jourdain et al. (2020) |
