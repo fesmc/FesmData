@@ -122,6 +122,25 @@ variables = ["f_ice", "f_ice_min", "f_ice_max"]
 grids = { North = 2 }
 figure = { select = { time = [25000, 20000, 15000] } }
 
+# North America with bounds (Dalton et al.): the Laurentide and Innuitian ice sheets before the
+# LGM, 115-25 ka every 5 kyr (Dalton et al., 2022; the Cordilleran ice of Batchelor et al.,
+# 2019), and NADI-1, the Laurentide, Cordilleran and Innuitian ice sheets 25-1 ka every 500
+# years (Dalton et al., 2023), rasterized at 2 km: the best (optimal) extent (f_ice) and the
+# minimum and maximum.
+[products.Dalton2022]
+source = "Dalton2022_preLGM"
+file = "Dalton2022_PRELGM.nc"
+variables = ["f_ice", "f_ice_min", "f_ice_max"]
+grids = { North = 2 }
+figure = { select = { time = [60000, 45000, 30000] } }
+
+[products.NADI1]
+source = "Dalton2023_NADI1"
+file = "Dalton2023_NADI1.nc"
+variables = ["f_ice", "f_ice_min", "f_ice_max"]
+grids = { North = 2 }
+figure = { select = { time = [25000, 18000, 11000] } }
+
 [products.Margold2015]
 source = "Margold2015_icestreams"
 file = "Margold2015_ICESTREAMS.nc"

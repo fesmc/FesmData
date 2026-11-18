@@ -715,6 +715,25 @@ doi = "10.1016/j.quascirev.2020.106223"
 extract = true
 uri = "https://ars.els-cdn.com/content/image/1-s2.0-S0277379119307619-mmc4.zip"
 
+# Laurentide and Innuitian ice sheets 115-25 ka (Dalton, Stokes and Batchelor, 2022): the
+# shapefiles of the 19 time slices (best, minimum, maximum), supplementary data of the
+# article (Elsevier, mmc3, 62 MB).
+
+[dalton2022_prelgm]
+key = "dalton2022_prelgm.zip"
+doi = "10.1016/j.earscirev.2021.103875"
+extract = true
+uri = "https://ars.els-cdn.com/content/image/1-s2.0-S0012825221003767-mmc3.zip"
+
+# NADI-1, North American Deglacial Isochrones 25-1 ka (Dalton et al., 2023), Zenodo: the
+# shapefiles of the 49 time steps (optimal, minimum, maximum; 55 MB), CC BY 4.0.
+
+[dalton2023_nadi1]
+key = "dalton2023_nadi1.zip"
+doi = "10.5281/zenodo.8161764"
+extract = true
+uri = "https://zenodo.org/records/8161764/files/NADI-1%20shapefiles%20Dalton%20et%20al.%20QSR.zip?download=1"
+
 # DATED-1, time-slice reconstructions of the Eurasian ice sheets 40-10 ka (Hughes et al.,
 # 2016), PANGAEA: the shapefiles of the time slices (min, most-credible, max; 12 MB).
 
