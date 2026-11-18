@@ -6,6 +6,9 @@
 #   GAPSLIP_global.nc    all regions (product RSL-GAPSLIP_global)
 #   GAPSLIP_Greenland.nc the region Greenland, without the fields alternative, site and
 #                        region (product RSL-GAPSLIP)
+#   GAPSLIP_proxy.nc     the region Proxy_Based_Sea_Level: the two proxy records GAPSLIP
+#                        files as site RSL, the Red Sea (Bab-el-Mandeb) and the Karimata
+#                        Strait (product RSL-GAPSLIP_proxy)
 #
 # Usage:
 #     julia --project=Gowan2023_GAPSLIP Gowan2023_GAPSLIP/prepare.jl
@@ -27,22 +30,24 @@ dir = download_dataset(manifest(), "gapslip_v2_1")
 repo = only(filter(d -> startswith(d, "evangowan-paleo_sea_level"), readdir(dir)))
 data = joinpath(dir, repo, "sea_level_data")
 
-# The regions (region_list.txt), without Proxy_Based_Sea_Level: sea level from d18O
-# proxies, which GAPSLIP keeps apart from the indicators.
-regions = filter(r -> !isempty(r) && r != "Proxy_Based_Sea_Level", strip.(readlines(joinpath(data, "region_list.txt"))))
+# The regions (region_list.txt). Proxy_Based_Sea_Level (sea level from d18O proxies, which
+# GAPSLIP keeps apart from the indicators) is its own product, GAPSLIP_proxy.
+const PROXY = "Proxy_Based_Sea_Level"
+regions = filter(r -> !isempty(r) && r != PROXY, strip.(readlines(joinpath(data, "region_list.txt"))))
+PROXY in strip.(readlines(joinpath(data, "region_list.txt"))) || error("no region $PROXY in region_list.txt")
 
 # <region>/location_list.txt (tab separated): location (folder), sector, site, and the
 # names of the plots (LaTeX, GMT). A location whose site differs from its own name is an
 # alternative of the data of that site: another interpretation (Bonaparte Gulf, Sahul
-# Shelf, Huon Peninsula) or another uplift correction (Kikaijima).
+# Shelf, Huon Peninsula) or another uplift correction (Kikaijima); not in the proxy
+# region, whose locations (<site>_proxy) are the only reading of their sites.
 # <location>/calibrated.txt, written by the calibration script of GAPSLIP (one line per
 # sample, tab separated): LAB_ID, latitude, longitude, age (cal yr BP, before 1950 CE:
 # middle of the 2-sigma range), age uncertainty (half the 2-sigma range, years),
 # indicator type (-1 marine limiting, 0 index point, 1 terrestrial limiting), RSL (m),
 # upper and lower 2-sigma uncertainty of RSL (m), references.
-obs = NamedTuple[]
-nloc = 0
-for region in regions
+function read_region(data, region; proxy::Bool=false)
+    obs = NamedTuple[]; nloc = 0
     rdir = joinpath(data, region)
     listed = String[]
     for l in eachline(joinpath(rdir, "location_list.txt"))
@@ -52,7 +57,7 @@ for region in regions
         push!(listed, loc)
         file = joinpath(rdir, loc, "calibrated.txt")
         isfile(file) || error("$region/$loc is listed but has no calibrated.txt")
-        global nloc += 1
+        nloc += 1
         for s in eachline(file)
             isempty(strip(s)) && continue
             c = split(s, '\t')
@@ -60,13 +65,24 @@ for region in regions
             push!(obs, (lab_id=String(c[1]), lat=parse(Float64, c[2]), lon=parse(Float64, c[3]),
                         age=parse(Float64, c[4]), age_err=parse(Float64, c[5]), type=Int8(parse(Float64, c[6])),
                         rsl=parse(Float64, c[7]), rsl_upper=parse(Float64, c[8]), rsl_lower=parse(Float64, c[9]),
-                        reference=String(c[10]), location=loc, site=site, alternative=Int8(loc != site),
+                        reference=String(c[10]), location=loc, site=site, alternative=Int8(loc != site && !proxy),
                         sector=sector, region=String(region)))
         end
     end
     unlisted = setdiff(filter(d -> isfile(joinpath(rdir, d, "calibrated.txt")), readdir(rdir)), listed)
     isempty(unlisted) || println("$region: not in location_list.txt, left out: $(join(unlisted, ", "))")
+    obs, nloc
 end
+obs = NamedTuple[]
+nloc = 0
+for region in regions
+    o, n = read_region(data, region)
+    append!(obs, o); global nloc += n
+end
+proxy, nproxy = read_region(data, PROXY; proxy=true)
+all(o -> o.type in (-1, 0, 1), proxy) || error("proxy: indicator types other than -1, 0, 1")
+sort!(proxy; by=o -> (o.location, o.age))
+println("$(length(proxy)) proxy samples at $nproxy locations")
 all(o -> o.type in (-1, 0, 1), obs) || error("indicator types other than -1, 0, 1")
 sort!(obs; by=o -> (o.region, o.location, o.age))
 println("$(length(obs)) samples at $nloc locations in $(length(regions)) regions")
@@ -134,3 +150,9 @@ write_gapslip(joinpath(out, "GAPSLIP_Greenland.nc"), filter(o -> o.region == "Gr
               title="Relative sea level indicators of Greenland, GAPSLIP 2.1 (Gowan, 2023)",
               references="$GEUS_REF. Data: $DATA_REF",
               sector_long_name="sector of Greenland (GAPSLIP region)")
+write_gapslip(joinpath(out, "GAPSLIP_proxy.nc"), proxy; with_region=true,
+              title="Proxy-based relative sea level of GAPSLIP 2.1 (Gowan, 2023): the Red Sea (Bab-el-Mandeb) and the " *
+                    "Karimata Strait",
+              references="$GEUS_REF. Data: $DATA_REF (sea_level_data/$PROXY; the records: Grant et al. 2012, 2014, " *
+                         "Weiss et al. 2022, the keys in `reference`)",
+              sector_long_name="sector of the region (GAPSLIP location_list.txt)")

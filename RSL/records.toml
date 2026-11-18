@@ -8,3 +8,7 @@ file = "GAPSLIP_Greenland.nc"
 [products.GAPSLIP_global]
 source = "Gowan2023_GAPSLIP"
 file = "GAPSLIP_global.nc"
+
+[products.GAPSLIP_proxy]
+source = "Gowan2023_GAPSLIP"
+file = "GAPSLIP_proxy.nc"
