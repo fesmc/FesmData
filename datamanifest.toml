@@ -732,7 +732,7 @@ uri = "https://ars.els-cdn.com/content/image/1-s2.0-S0012825221003767-mmc3.zip"
 key = "dalton2023_nadi1.zip"
 doi = "10.5281/zenodo.8161764"
 extract = true
-uri = "https://zenodo.org/api/records/8161764/files/NADI-1%20shapefiles%20Dalton%20et%20al.%20QSR.zip/content"
+uri = "https://zenodo.org/records/8161764/files/NADI-1%20shapefiles%20Dalton%20et%20al.%20QSR.zip?download=1"
 
 # DATED-1, time-slice reconstructions of the Eurasian ice sheets 40-10 ka (Hughes et al.,
 # 2016), PANGAEA: the shapefiles of the time slices (min, most-credible, max; 12 MB).
