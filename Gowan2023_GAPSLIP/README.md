@@ -20,8 +20,10 @@ Data: Gowan, E. J.: evangowan/paleo_sea_level: Version 2.1, Zenodo, 2023,
 (GitHub repository evangowan/paleo_sea_level, commit 1c72e2f). The individual data are
 from the publications in the `reference` of each sample; GAPSLIP asks to cite them.
 
-Two products of the records dataset RSL: `RSL-GAPSLIP_global` (all regions) and
-`RSL-GAPSLIP` (the region Greenland: 1019 samples at 47 locations, up to about 44 ka).
+Three products of the records dataset RSL: `RSL-GAPSLIP_global` (all regions),
+`RSL-GAPSLIP` (the region Greenland: 1019 samples at 47 locations, up to about 44 ka) and
+`RSL-GAPSLIP_proxy` (the proxy-based sea level GAPSLIP files as site records: the Red Sea
+at Bab-el-Mandeb and the Karimata Strait).
 
 ## Licence
 
@@ -60,9 +62,31 @@ range, indicator type, RSL (m), its upper and lower 2σ uncertainty, references.
   Huon Peninsula after de Gelder, Kikaijima with uplift rates of 1.7-2.3 mm/yr), 0 for the
   primary data. Use `alternative == 0` to count each sample once.
 
-Left out: the region `Proxy_Based_Sea_Level` (sea level from δ18O proxies, kept apart
-from the indicators by GAPSLIP) and the folder `Australia/Sahul_Shelf`, which is not in
-`location_list.txt` (its two alternatives are).
+Left out of `RSL-GAPSLIP_global`: the region `Proxy_Based_Sea_Level` (sea level from δ18O
+proxies, kept apart from the indicators by GAPSLIP: its own product, `RSL-GAPSLIP_proxy`)
+and the folder `Australia/Sahul_Shelf`, which is not in `location_list.txt` (its two
+alternatives are).
+
+## The proxy records (`RSL-GAPSLIP_proxy`)
+
+The region `Proxy_Based_Sea_Level` of `sea_level_data/`, in the format of the indicators
+(the same columns; `alternative` 0: the locations `<site>_proxy` are the only reading of
+their sites):
+
+- `Bab-el-Mandeb_proxy` (site Bab-el-Mandeb, sector Red_Sea; 13.733°N, 42.533°E): the
+  Red Sea relative sea level at the Hanish Sill from planktic δ18O and a hydraulic model of
+  the strait, Grant et al. (2012), Nature 491, 744, doi:10.1038/nature11593, and Grant et
+  al. (2014), Nat. Commun. 5, 5076, doi:10.1038/ncomms6076: 1928 samples, 0-492 ka, index
+  points (`type` 0), RSL ±12 m and age ±1 kyr (2σ, as GAPSLIP gives them). A continuous
+  record: its samples are not independent (a user thins or carries their correlation).
+- `Karimata_Strait_proxy` (site Karimata_Strait, sector Java_Sea; 2.16°S, 108.83°E): the
+  flooding history of the Karimata Strait from the Sulu Sea δ18O, Weiss et al. (2022),
+  Paleoceanogr. Paleoclimatol., doi:10.1029/2021PA004361: 15 samples,
+  60-32 ka (the early and late MIS 3 values and GAPSLIP's interpolation every 2 kyr between
+  them), terrestrial limiting (`type` 1: sea level was below `rsl_max`), ±5-6 m (2σ).
+
+GAPSLIP's sea levels of these records are relative sea level at the site, not global
+mean sea level.
 
 ## Prepare and record
 
@@ -80,6 +104,9 @@ one observation per sample (featureType point, dimension `obs`):
   GAPSLIP), sorted by region, location and age;
 - `GAPSLIP_Greenland.nc` (`RSL-GAPSLIP`): the samples of the region Greenland, without
   `alternative`, `site` and `region` (all primary, site = location there).
+- `GAPSLIP_proxy.nc` (`RSL-GAPSLIP_proxy`): the samples of the region
+  `Proxy_Based_Sea_Level`, with the fields of `GAPSLIP_global.nc` (`alternative` 0),
+  sorted by location and age.
 
 Until RSL v2.1.0 the Greenland product had a source of its own,
 `Gowan2023_GAPSLIP_GrIS`, with the same data. Its v1 files `rsl_dataset.nc` and

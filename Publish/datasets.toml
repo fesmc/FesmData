@@ -284,7 +284,8 @@ readme = "RSL/README.md"
 keywords = ["relative sea level", "sea-level indicators", "glacial isostatic adjustment", "Greenland", "PaleoMIST"]
 description = """
 Dated relative sea level indicators (index points and limiting data) from GAPSLIP 2.1
-(Gowan, 2023): Greenland, and all regions of the database, one observation per sample.
+(Gowan, 2023): Greenland, and all regions of the database, one observation per sample; and
+the two proxy-based site records GAPSLIP files apart (the Red Sea, the Karimata Strait).
 """
 
 [Boreholes]
