@@ -706,6 +706,24 @@ doi = "10.6084/m9.figshare.1033955.v3"
 extract = true
 uri = "https://ndownloader.figshare.com/files/1507383"
 
+# Ice-margin chronology of the North American Ice Sheet Complex (Dalton et al., 2020): the
+# shapefiles of the isochrones, supplementary data of the article (Elsevier, mmc4, 14 MB).
+
+[dalton2020_isochrones]
+key = "dalton2020_isochrones.zip"
+doi = "10.1016/j.quascirev.2020.106223"
+extract = true
+uri = "https://ars.els-cdn.com/content/image/1-s2.0-S0277379119307619-mmc4.zip"
+
+# DATED-1, time-slice reconstructions of the Eurasian ice sheets 40-10 ka (Hughes et al.,
+# 2016), PANGAEA: the shapefiles of the time slices (min, most-credible, max; 12 MB).
+
+[hughes2016_dated1]
+key = "hughes2016_dated1.zip"
+doi = "10.1594/PANGAEA.848117"
+extract = true
+uri = "https://store.pangaea.de/Publications/HughesA-etal_2015/DATED-1_TimeSlices_shp.zip"
+
 # ---------------------------------------------------------------------------
 # Surface velocity (Velocity/)
 # ---------------------------------------------------------------------------
