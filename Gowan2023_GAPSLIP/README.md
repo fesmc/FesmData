@@ -76,12 +76,12 @@ their sites):
 - `Bab-el-Mandeb_proxy` (site Bab-el-Mandeb, sector Red_Sea; 13.733°N, 42.533°E): the
   Red Sea relative sea level at the Hanish Sill from planktic δ18O and a hydraulic model of
   the strait, Grant et al. (2012), Nature 491, 744, doi:10.1038/nature11593, and Grant et
-  al. (2014), Nat. Commun. 5, 5076, doi:10.1038/ncomms6076: 1927 samples, 0-500 ka, index
+  al. (2014), Nat. Commun. 5, 5076, doi:10.1038/ncomms6076: 1928 samples, 0-492 ka, index
   points (`type` 0), RSL ±12 m and age ±1 kyr (2σ, as GAPSLIP gives them). A continuous
   record: its samples are not independent (a user thins or carries their correlation).
 - `Karimata_Strait_proxy` (site Karimata_Strait, sector Java_Sea; 2.16°S, 108.83°E): the
   flooding history of the Karimata Strait from the Sulu Sea δ18O, Weiss et al. (2022),
-  Paleoceanogr. Paleoclimatol., doi:10.1029/2021PA004361: 14 samples,
+  Paleoceanogr. Paleoclimatol., doi:10.1029/2021PA004361: 15 samples,
   60-32 ka (the early and late MIS 3 values and GAPSLIP's interpolation every 2 kyr between
   them), terrestrial limiting (`type` 1: sea level was below `rsl_max`), ±5-6 m (2σ).
 
