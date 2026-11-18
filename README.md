@@ -58,6 +58,8 @@ In the past, we used the `gridding` ([https://github.com/alex-robinson/gridding]
 | geo      | Colgan2021_ghf              | Geothermal heat flow of Greenland                | Colgan & Wansing (2021)        |
 | geo      | Colgan2021_topocorr         | Topographic correction of geothermal heat flow   | Colgan et al. (2021)           |
 | paleo    | Dalton2020_isochrones       | Ice-margin chronology of the North American Ice Sheet Complex, 22.1-0.91 ka | Dalton et al. (2020) |
+| paleo    | Dalton2022_preLGM           | Laurentide and Innuitian ice sheets before the LGM, 115-25 ka (best, min, max) | Dalton et al. (2022) |
+| paleo    | Dalton2023_NADI1            | NADI-1, North American Deglacial Isochrones, 25-1 ka (optimal, min, max) | Dalton et al. (2023) |
 | geo      | Davies2013_ghf              | Global geothermal heat flow                      | Davies (2013)                  |
 | ice      | Dawson2022_basalstate       | Antarctic ice sheet basal thermal state          | Dawson et al. (2022)           |
 | paleo    | deBoer2014_sealevel         | Sea level and ice sheet contributions, 5.3 Myr   | de Boer et al. (2014)          |
